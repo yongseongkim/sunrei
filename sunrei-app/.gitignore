@@ -1,0 +1,109 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+out/
+coverage/
+.tmp/
+.temp/
+.cache/
+.next/
+.svelte-kit/
+.snowpack/
+.vite/
+.esbuild/
+*.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+
+# Misc
+*.local
+*.lock
+*.bak
+*.orig
+*.rej
+
+# Test output
+test-results/
+junit.xml
+coverage-final.json
+
+# Custom sunrei-app files (if any)
+sunrei-app/cache/
+sunrei-app/build/# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+out/
+coverage/
+.tmp/
+.temp/
+.cache/
+.next/
+.svelte-kit/
+.snowpack/
+.vite/
+.esbuild/
+*.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+
+# Misc
+*.local
+*.lock
+*.bak
+*.orig
+*.rej
+
+# Test output
+test-results/
+junit.xml
+coverage-final.json
+
+# Custom sunrei-app files (if any)
+sunrei-app/cache/
+sunrei-app/build/
