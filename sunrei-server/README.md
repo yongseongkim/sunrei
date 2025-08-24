@@ -1,93 +1,69 @@
-# Recommendation System for Animation and Drama Locations
+# Sunrei Server (Ktor)
 
-This project is a NestJS-based backend application designed to provide recommendations for locations featured in popular animations and dramas. It allows users to create, retrieve, and manage recommendations and locations through a RESTful API.
+Sunrei 프로젝트의 Kotlin + Ktor 기반 백엔드 서버입니다.
 
-## Project Structure
+## 기술 스택
 
-```
-server
-├── src
-│   ├── app.module.ts
-│   ├── main.ts
-│   ├── modules
-│   │   ├── recommendations
-│   │   │   ├── recommendations.controller.ts
-│   │   │   ├── recommendations.service.ts
-│   │   │   ├── recommendations.module.ts
-│   │   │   └── dto
-│   │   │       └── create-recommendation.dto.ts
-│   │   ├── locations
-│   │   │   ├── locations.controller.ts
-│   │   │   ├── locations.service.ts
-│   │   │   ├── locations.module.ts
-│   │   │   └── dto
-│   │   │       └── create-location.dto.ts
-│   │   └── users
-│   │       ├── users.controller.ts
-│   │       ├── users.service.ts
-│   │       ├── users.module.ts
-│   │       └── dto
-│   │           └── create-user.dto.ts
-│   └── common
-│       ├── filters
-│       │   └── http-exception.filter.ts
-│       ├── interceptors
-│       │   └── logging.interceptor.ts
-│       └── pipes
-│           └── validation.pipe.ts
-├── package.json
-├── tsconfig.json
-└── README.md
+- **Kotlin** + **Ktor** - 웹 프레임워크
+- **Exposed** - ORM
+- **PostgreSQL** - 데이터베이스
+
+## 환경 설정
+
+### 설정 파일
+
+- `application.yaml` - 개발 환경 설정 (기본)
+- `application-production.yaml` - 프로덕션 환경 설정
+
+## 실행 방법
+
+### 개발 환경 (기본)
+
+```bash
+./gradlew run
 ```
 
-## Features
+### 프로덕션 환경
 
-- **Recommendations Module**: Handles the creation and management of recommendations for locations in animations and dramas.
-- **Locations Module**: Manages the locations that can be recommended, including their details.
-- **Users Module**: Manages user accounts and their interactions with the recommendations and locations.
-- **Common Utilities**: Includes filters, interceptors, and pipes for handling exceptions, logging, and validation.
+```bash
+# 환경 변수 설정
+export DATABASE_HOST=prod-db.sunrei.com
+export DATABASE_USER=sunrei_prod
+export DATABASE_PASSWORD=your_secure_password
 
-## Getting Started
+# JAR 빌드 및 실행
+./gradlew buildFatJar
+java -jar build/libs/sunrei-server-ktor-1.0.0-all.jar -config=application-production.yaml
+```
 
-1. **Clone the repository**:
-   ```
-   git clone <repository-url>
-   cd server
-   ```
+## API 엔드포인트
 
-2. **Install dependencies**:
-   ```
-   npm install
-   ```
+- `GET /` - 헬스체크
+- `GET /sunreis` - Sunrei 목록 조회
+    - Query: `polygon` (optional) - WKT 형식의 polygon으로 필터링
+- `GET /sunreis/{id}` - Sunrei 상세 조회
+- `GET /sunrei-spots/{id}` - SunreiSpot 상세 조회
+- `GET /tags` - 태그 목록 조회
 
-3. **Run the application**:
-   ```
-   npm run start
-   ```
+## 데이터베이스
 
-4. **Access the API**: The application will be running on `http://localhost:3000`.
+기존 PostgreSQL 데이터베이스와 호환됩니다. 개발 환경에서 `ENABLE_SEED_DATA=true`로 설정하면 테이블을 자동으로 생성합니다.
 
-## API Endpoints
+## 빌드 & 실행
 
-- **Recommendations**:
-  - `GET /recommendations`: Retrieve all recommendations.
-  - `POST /recommendations`: Create a new recommendation.
-  - `DELETE /recommendations/:id`: Delete a recommendation by ID.
+| Task                         | Description                              |
+|------------------------------|------------------------------------------|
+| `./gradlew test`             | 테스트 실행                                   |
+| `./gradlew build`            | 프로젝트 빌드                                  |
+| `./gradlew buildFatJar`      | 모든 의존성을 포함한 실행 가능한 JAR 빌드              |
+| `./gradlew run`              | 서버 실행                                    |
+| `./gradlew generateProtocols`| OpenAPI 스펙에서 DTO 자동 생성                  |
+| `./gradlew clean`            | 빌드 디렉토리 및 생성된 코드 정리                     |
 
-- **Locations**:
-  - `GET /locations`: Retrieve all locations.
-  - `POST /locations`: Create a new location.
-  - `DELETE /locations/:id`: Delete a location by ID.
+서버가 성공적으로 시작되면 다음과 같은 출력을 볼 수 있습니다:
 
-- **Users**:
-  - `GET /users`: Retrieve all users.
-  - `POST /users`: Create a new user.
-  - `DELETE /users/:id`: Delete a user by ID.
+```
+2024-12-04 14:32:45.584 [main] INFO  Application - Starting Sunrei Server in development mode
+2024-12-04 14:32:45.682 [main] INFO  Application - Responding at http://0.0.0.0:3000
+```
 
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
