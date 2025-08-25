@@ -1,0 +1,27 @@
+ktor:
+  application:
+    modules:
+      - com.sunrei.ApplicationKt.module
+  deployment:
+    port: 3030
+    host: 0.0.0.0
+
+database:
+  host: ${DATABASE_HOST}
+  port: 5432
+  name: sunrei_prod
+  user: ${DATABASE_USER}
+  password: ${DATABASE_PASSWORD}
+  poolSize: 20
+  connectionTimeout: 30000
+  logging: false
+
+logging:
+  level: WARN
+
+cors:
+  allowedHosts: "https://sunrei.com,https://www.sunrei.com"
+
+features:
+  seedData: false
+  apiDocs: false

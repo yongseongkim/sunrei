@@ -1,0 +1,55 @@
+package com.sunrei.config
+
+import com.zaxxer.hikari.HikariConfig
+import com.zaxxer.hikari.HikariDataSource
+import io.ktor.server.application.*
+import io.ktor.server.config.*
+import org.jetbrains.exposed.sql.Database
+import org.jetbrains.exposed.sql.SchemaUtils
+import org.jetbrains.exposed.sql.transactions.transaction
+import com.sunrei.model.*
+
+object DatabaseConfig {
+    private lateinit var appConfig: ApplicationConfig
+    
+    fun init(config: ApplicationConfig) {
+        appConfig = config
+        val dataSource = hikari()
+        Database.connect(dataSource)
+        
+        // Only create tables in development mode
+        val seedData = config.propertyOrNull("features.seedData")?.getString()?.toBoolean() ?: false
+        if (seedData) {
+            transaction {
+                SchemaUtils.create(
+                    Places,
+                    Sunreis,
+                    SunreiSpots,
+                    Tags,
+                    SunreiTags
+                )
+            }
+        }
+    }
+
+    private fun hikari(): HikariDataSource {
+        val config = HikariConfig()
+        config.driverClassName = "org.postgresql.Driver"
+        
+        val host = appConfig.property("database.host").getString()
+        val port = appConfig.property("database.port").getString()
+        val name = appConfig.property("database.name").getString()
+        val user = appConfig.property("database.user").getString()
+        val password = appConfig.property("database.password").getString()
+        
+        config.jdbcUrl = "jdbc:postgresql://$host:$port/$name"
+        config.username = user
+        config.password = password
+        config.maximumPoolSize = appConfig.property("database.poolSize").getString().toInt()
+        config.connectionTimeout = appConfig.property("database.connectionTimeout").getString().toLong()
+        config.isAutoCommit = false
+        config.transactionIsolation = "TRANSACTION_REPEATABLE_READ"
+        config.validate()
+        return HikariDataSource(config)
+    }
+}

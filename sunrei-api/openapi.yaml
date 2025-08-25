@@ -153,9 +153,6 @@ components:
         height:
           type: integer
           description: Height of the image in pixels
-        displayOrder:
-          type: integer
-          description: Display order for sorting images
     SunreiSpotDTO:
       type: object
       properties:
