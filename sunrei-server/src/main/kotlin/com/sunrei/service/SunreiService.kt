@@ -35,11 +35,9 @@ class SunreiService {
                     link = row[Sunreis.link],
                     images = row[Sunreis.images].map { img ->
                         ImageDTO(
-                            id = img.id,
                             url = img.url,
                             width = img.width,
                             height = img.height,
-                            displayOrder = img.displayOrder
                         )
                     },
                     spots = spots,
@@ -63,11 +61,9 @@ class SunreiService {
                     link = row[Sunreis.link],
                     images = row[Sunreis.images].map { img ->
                         ImageDTO(
-                            id = img.id,
                             url = img.url,
                             width = img.width,
                             height = img.height,
-                            displayOrder = img.displayOrder
                         )
                     },
                     spots = spots,
@@ -112,11 +108,9 @@ class SunreiService {
                         link = row[Sunreis.link],
                         images = row[Sunreis.images].map { img ->
                             ImageDTO(
-                                id = img.id,
                                 url = img.url,
                                 width = img.width,
                                 height = img.height,
-                                displayOrder = img.displayOrder
                             )
                         },
                         spots = spots,
@@ -140,11 +134,9 @@ class SunreiService {
                     youtubeLink = row[SunreiSpots.youtubeLink],
                     images = row[SunreiSpots.images].map { img ->
                         ImageDTO(
-                            id = img.id,
                             url = img.url,
                             width = img.width,
                             height = img.height,
-                            displayOrder = img.displayOrder
                         )
                     },
                     places = listOf(

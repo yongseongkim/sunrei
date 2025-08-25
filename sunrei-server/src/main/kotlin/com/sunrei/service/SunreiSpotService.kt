@@ -1,12 +1,15 @@
 package com.sunrei.service
 
-import com.sunrei.generated.dto.*
-import com.sunrei.model.*
-import org.jetbrains.exposed.sql.*
+import com.sunrei.generated.dto.ImageDTO
+import com.sunrei.generated.dto.PlaceDTO
+import com.sunrei.generated.dto.SunreiSpotDTO
+import com.sunrei.model.Places
+import com.sunrei.model.SunreiSpots
+import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
 
 class SunreiSpotService {
-    
+
     fun findOne(id: String): SunreiSpotDTO? = transaction {
         (SunreiSpots innerJoin Places)
             .select { SunreiSpots.id eq id }
@@ -18,11 +21,9 @@ class SunreiSpotService {
                     youtubeLink = row[SunreiSpots.youtubeLink],
                     images = row[SunreiSpots.images].map { img ->
                         ImageDTO(
-                            id = img.id,
                             url = img.url,
                             width = img.width,
                             height = img.height,
-                            displayOrder = img.displayOrder
                         )
                     },
                     places = listOf(
