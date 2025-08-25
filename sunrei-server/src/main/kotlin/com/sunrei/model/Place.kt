@@ -7,12 +7,3 @@ object Places : ULIDTimestampedTable("place", "P") {
     val longitude = float("longitude")
     val googleMapsId = varchar("google_maps_id", 255).nullable()
 }
-
-data class PlaceEntity(
-    val id: String,
-    val name: String,
-    val address: String,
-    val latitude: Float,
-    val longitude: Float,
-    val googleMapsId: String? = null
-)
