@@ -3,44 +3,32 @@ info:
   title: Sunrei API
   version: 1.0.0
   description: API documentation for Sunrei project
+
+servers:
+  - url: http://localhost:3030
+    description: Development server
+
+tags:
+  - name: Public API
+    description: Public read-only endpoints
+  - name: Admin API
+    description: Admin endpoints requiring authentication
+
+security: []
+
 paths:
-  /sunrei-spots:
+  # ===== Public API (Read-only) =====
+  /api/sunreis:
     get:
-      summary: List Sunrei Spots with filters
-      parameters:
-        - name: lat
-          in: query
-          required: true
-          schema:
-            type: number
-            format: float
-        - name: lng
-          in: query
-          required: true
-          schema:
-            type: number
-            format: float
-        - name: radius
-          in: query
-          required: true
-          schema:
-            type: number
-            format: float
-      responses:
-        '200':
-          description: Filtered list of Sunrei Spots
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ListSunreiSpotsResult'
-  /sunreis:
-    get:
+      tags:
+        - Public API
       summary: List Sunrei with optional polygon filter
+      operationId: listSunreis
       parameters:
         - name: polygon
           in: query
           required: false
-          description: JSON string of coordinate array forming a polygon to filter results (e.g., "[[35.6762,139.6503],[35.6795,139.7005],[35.6585,139.7454]]")
+          description: WKT format polygon string (e.g., "POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))")
           schema:
             type: string
       responses:
@@ -50,9 +38,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListSunreiResult'
-  /sunreis/{id}:
+
+  /api/sunreis/{id}:
     get:
+      tags:
+        - Public API
       summary: Get Sunrei by ID
+      operationId: getSunrei
       parameters:
         - name: id
           in: path
@@ -67,8 +59,385 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetSunreiResult'
+        '404':
+          description: Sunrei not found
+
+  /api/sunrei-spots:
+    get:
+      tags:
+        - Public API
+      summary: List Sunrei Spots
+      operationId: listSunreiSpots
+      responses:
+        '200':
+          description: List of Sunrei Spots
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SunreiSpotDTO'
+
+  /api/places:
+    get:
+      tags:
+        - Public API
+      summary: List all places
+      operationId: listPlaces
+      responses:
+        '200':
+          description: List of places
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PlaceDTO'
+
+  /api/tags:
+    get:
+      tags:
+        - Public API
+      summary: List all tags
+      operationId: listTags
+      responses:
+        '200':
+          description: List of tags
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TagDTO'
+
+  # ===== Admin API (CRUD with Auth) =====
+  /admin/auth/login:
+    post:
+      tags:
+        - Admin API
+      summary: Admin login
+      operationId: adminLogin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: Invalid credentials
+
+  /admin/sunreis:
+    get:
+      tags:
+        - Admin API
+      summary: List Sunreis with pagination (Admin)
+      operationId: adminListSunreis
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: size
+          in: query
+          schema:
+            type: integer
+            default: 20
+        - name: search
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of Sunreis
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedSunreiResult'
+        '401':
+          description: Unauthorized
+
+    post:
+      tags:
+        - Admin API
+      summary: Create new Sunrei
+      operationId: createSunrei
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSunreiRequest'
+      responses:
+        '201':
+          description: Sunrei created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SunreiDTO'
+        '401':
+          description: Unauthorized
+        '400':
+          description: Bad request
+
+  /admin/sunreis/{id}:
+    get:
+      tags:
+        - Admin API
+      summary: Get Sunrei details (Admin)
+      operationId: adminGetSunrei
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Sunrei details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SunreiDTO'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+
+    put:
+      tags:
+        - Admin API
+      summary: Update Sunrei
+      operationId: updateSunrei
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateSunreiRequest'
+      responses:
+        '200':
+          description: Sunrei updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SunreiDTO'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+
+    delete:
+      tags:
+        - Admin API
+      summary: Delete Sunrei
+      operationId: deleteSunrei
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Sunrei deleted
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+
+  # Place search endpoint for autocomplete/search in admin
+  /admin/places/search:
+    get:
+      tags:
+        - Admin API
+      summary: Search places for autocomplete
+      operationId: searchPlaces
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Search query
+      responses:
+        '200':
+          description: List of matching places
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PlaceDTO'
+        '401':
+          description: Unauthorized
+
+  /admin/tags:
+    get:
+      tags:
+        - Admin API
+      summary: List tags (Admin)
+      operationId: adminListTags
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of tags
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TagDTO'
+        '401':
+          description: Unauthorized
+
+    post:
+      tags:
+        - Admin API
+      summary: Create new tag
+      operationId: createTag
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTagRequest'
+      responses:
+        '201':
+          description: Tag created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagDTO'
+        '401':
+          description: Unauthorized
+
+  /admin/tags/{id}:
+    put:
+      tags:
+        - Admin API
+      summary: Update tag
+      operationId: updateTag
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTagRequest'
+      responses:
+        '200':
+          description: Tag updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagDTO'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+
+    delete:
+      tags:
+        - Admin API
+      summary: Delete tag
+      operationId: deleteTag
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Tag deleted
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+
+  /admin/images/upload:
+    post:
+      tags:
+        - Admin API
+      summary: Upload image
+      operationId: uploadImage
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                entityType:
+                  type: string
+                  enum: [sunrei, sunrei-spot]
+                entityId:
+                  type: string
+      responses:
+        '201':
+          description: Image uploaded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageDTO'
+        '401':
+          description: Unauthorized
+        '400':
+          description: Bad request
+
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT token for admin authentication
+
   schemas:
+    # ===== Common DTOs =====
     Coordinate:
       type: object
       required:
@@ -83,43 +452,7 @@ components:
           type: number
           format: float
           description: Longitude coordinate
-    ListSunreiParams:
-      type: object
-      required:
-        - polygon
-      properties:
-        polygon:
-          type: array
-          minItems: 3
-          items:
-            $ref: '#/components/schemas/Coordinate'
-          description: Array of coordinates forming a polygon (minimum 3 points)
-    ListSunreiResult:
-      type: object
-      properties:
-        sunreis:
-          type: array
-          items:
-            $ref: '#/components/schemas/SunreiDTO'
-          description: List of Sunrei within the polygon area
-        totalCount:
-          type: integer
-          description: Total number of Sunrei found
-    GetSunreiParams:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: ID of the Sunrei to retrieve
-    GetSunreiResult:
-      type: object
-      properties:
-        sunrei:
-          $ref: '#/components/schemas/SunreiDTO'
-    ListSunreiSpotsResult:
-      type: array
-      items:
-        $ref: '#/components/schemas/SunreiSpotDTO'
+
     PlaceDTO:
       type: object
       properties:
@@ -139,6 +472,7 @@ components:
           type: number
           format: float
           description: Longitude of the place
+
     ImageDTO:
       type: object
       properties:
@@ -153,11 +487,15 @@ components:
         height:
           type: integer
           description: Height of the image in pixels
+
     SunreiSpotDTO:
       type: object
       properties:
         id:
           type: string
+        sunreiId:
+          type: string
+          description: ID of the parent Sunrei
         title:
           type: string
           description: Title of the Sunrei Spot
@@ -175,9 +513,10 @@ components:
             $ref: '#/components/schemas/ImageDTO'
         places:
           type: array
-          description: Foreign key to the associated Place
+          description: Associated places
           items:
             $ref: '#/components/schemas/PlaceDTO'
+
     TagDTO:
       type: object
       properties:
@@ -190,6 +529,7 @@ components:
           type: string
           description: Description of the tag
           nullable: true
+
     SunreiDTO:
       type: object
       properties:
@@ -220,3 +560,220 @@ components:
           description: Array of tags associated with this Sunrei
           items:
             $ref: '#/components/schemas/TagDTO'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    # ===== Public API Response Models =====
+    ListSunreiResult:
+      type: object
+      properties:
+        sunreis:
+          type: array
+          items:
+            $ref: '#/components/schemas/SunreiDTO'
+          description: List of Sunrei
+        totalCount:
+          type: integer
+          description: Total number of Sunrei found
+
+    GetSunreiResult:
+      type: object
+      properties:
+        sunrei:
+          $ref: '#/components/schemas/SunreiDTO'
+
+    # ===== Admin API Request/Response Models =====
+    LoginRequest:
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+
+    LoginResponse:
+      type: object
+      properties:
+        token:
+          type: string
+          description: JWT token
+        expiresIn:
+          type: integer
+          description: Token expiration time in seconds
+        user:
+          type: object
+          properties:
+            id:
+              type: string
+            username:
+              type: string
+            role:
+              type: string
+
+    PaginatedSunreiResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/SunreiDTO'
+        page:
+          type: integer
+        size:
+          type: integer
+        totalElements:
+          type: integer
+        totalPages:
+          type: integer
+
+    CreateSunreiRequest:
+      type: object
+      required:
+        - title
+        - description
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        link:
+          type: string
+          nullable: true
+        tagIds:
+          type: array
+          items:
+            type: string
+        spots:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateSunreiSpotInline'
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageInput'
+
+    UpdateSunreiRequest:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        link:
+          type: string
+          nullable: true
+        tagIds:
+          type: array
+          items:
+            type: string
+        spots:
+          type: array
+          items:
+            $ref: '#/components/schemas/UpdateSunreiSpotInline'
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageInput'
+
+    CreateSunreiSpotInline:
+      type: object
+      required:
+        - title
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        youtubeLink:
+          type: string
+          nullable: true
+        places:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlaceInput'
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageInput'
+
+    UpdateSunreiSpotInline:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID for existing spot (omit for new spots)
+        title:
+          type: string
+        description:
+          type: string
+        youtubeLink:
+          type: string
+          nullable: true
+        places:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlaceInput'
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageInput'
+        _delete:
+          type: boolean
+          description: Mark this spot for deletion
+
+    PlaceInput:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID for existing place (omit to create new)
+        name:
+          type: string
+        address:
+          type: string
+        latitude:
+          type: number
+          format: float
+        longitude:
+          type: number
+          format: float
+
+    ImageInput:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID for existing image (omit for new upload)
+        url:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
+
+    CreateTagRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+
+    UpdateTagRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true

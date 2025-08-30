@@ -23,600 +23,205 @@ import type { RequestArgs } from './base';
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, BaseAPI, RequiredError, operationServerMap } from './base';
 
-/**
- * 
- * @export
- * @interface Coordinate
- */
 export interface Coordinate {
     /**
      * Latitude coordinate
-     * @type {number}
-     * @memberof Coordinate
      */
     'lat': number;
     /**
      * Longitude coordinate
-     * @type {number}
-     * @memberof Coordinate
      */
     'lng': number;
 }
-/**
- * 
- * @export
- * @interface CreatePlaceRequest
- */
 export interface CreatePlaceRequest {
-    /**
-     * 
-     * @type {string}
-     * @memberof CreatePlaceRequest
-     */
     'name': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreatePlaceRequest
-     */
     'address'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof CreatePlaceRequest
-     */
     'latitude'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof CreatePlaceRequest
-     */
     'longitude'?: number;
 }
-/**
- * 
- * @export
- * @interface CreateSunreiRequest
- */
 export interface CreateSunreiRequest {
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateSunreiRequest
-     */
     'title': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateSunreiRequest
-     */
     'description': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateSunreiRequest
-     */
     'link'?: string | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof CreateSunreiRequest
-     */
     'tagIds'?: Array<string>;
 }
-/**
- * 
- * @export
- * @interface CreateSunreiSpotRequest
- */
 export interface CreateSunreiSpotRequest {
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateSunreiSpotRequest
-     */
     'sunreiId': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateSunreiSpotRequest
-     */
     'title': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateSunreiSpotRequest
-     */
     'description'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateSunreiSpotRequest
-     */
     'youtubeLink'?: string | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof CreateSunreiSpotRequest
-     */
     'placeIds'?: Array<string>;
 }
-/**
- * 
- * @export
- * @interface CreateTagRequest
- */
 export interface CreateTagRequest {
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateTagRequest
-     */
     'name': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateTagRequest
-     */
     'description'?: string | null;
 }
-/**
- * 
- * @export
- * @interface GetSunreiResult
- */
 export interface GetSunreiResult {
-    /**
-     * 
-     * @type {SunreiDTO}
-     * @memberof GetSunreiResult
-     */
     'sunrei'?: SunreiDTO;
 }
-/**
- * 
- * @export
- * @interface ImageDTO
- */
 export interface ImageDTO {
-    /**
-     * 
-     * @type {string}
-     * @memberof ImageDTO
-     */
     'id'?: string;
     /**
      * URL of the image
-     * @type {string}
-     * @memberof ImageDTO
      */
     'url'?: string;
     /**
      * Width of the image in pixels
-     * @type {number}
-     * @memberof ImageDTO
      */
     'width'?: number;
     /**
      * Height of the image in pixels
-     * @type {number}
-     * @memberof ImageDTO
      */
     'height'?: number;
 }
-/**
- * 
- * @export
- * @interface ListSunreiResult
- */
 export interface ListSunreiResult {
     /**
      * List of Sunrei
-     * @type {Array<SunreiDTO>}
-     * @memberof ListSunreiResult
      */
     'sunreis'?: Array<SunreiDTO>;
     /**
      * Total number of Sunrei found
-     * @type {number}
-     * @memberof ListSunreiResult
      */
     'totalCount'?: number;
 }
-/**
- * 
- * @export
- * @interface LoginRequest
- */
 export interface LoginRequest {
-    /**
-     * 
-     * @type {string}
-     * @memberof LoginRequest
-     */
     'username': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof LoginRequest
-     */
     'password': string;
 }
-/**
- * 
- * @export
- * @interface LoginResponse
- */
 export interface LoginResponse {
     /**
      * JWT token
-     * @type {string}
-     * @memberof LoginResponse
      */
     'token'?: string;
     /**
      * Token expiration time in seconds
-     * @type {number}
-     * @memberof LoginResponse
      */
     'expiresIn'?: number;
-    /**
-     * 
-     * @type {LoginResponseUser}
-     * @memberof LoginResponse
-     */
     'user'?: LoginResponseUser;
 }
-/**
- * 
- * @export
- * @interface LoginResponseUser
- */
 export interface LoginResponseUser {
-    /**
-     * 
-     * @type {string}
-     * @memberof LoginResponseUser
-     */
     'id'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof LoginResponseUser
-     */
     'username'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof LoginResponseUser
-     */
     'role'?: string;
 }
-/**
- * 
- * @export
- * @interface PaginatedSunreiResult
- */
 export interface PaginatedSunreiResult {
-    /**
-     * 
-     * @type {Array<SunreiDTO>}
-     * @memberof PaginatedSunreiResult
-     */
     'data'?: Array<SunreiDTO>;
-    /**
-     * 
-     * @type {number}
-     * @memberof PaginatedSunreiResult
-     */
     'page'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PaginatedSunreiResult
-     */
     'size'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PaginatedSunreiResult
-     */
     'totalElements'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof PaginatedSunreiResult
-     */
     'totalPages'?: number;
 }
-/**
- * 
- * @export
- * @interface PlaceDTO
- */
 export interface PlaceDTO {
-    /**
-     * 
-     * @type {string}
-     * @memberof PlaceDTO
-     */
     'id'?: string;
     /**
      * Name of the place
-     * @type {string}
-     * @memberof PlaceDTO
      */
     'name'?: string;
     /**
      * Address of the place
-     * @type {string}
-     * @memberof PlaceDTO
      */
     'address'?: string;
     /**
      * Latitude of the place
-     * @type {number}
-     * @memberof PlaceDTO
      */
     'latitude'?: number;
     /**
      * Longitude of the place
-     * @type {number}
-     * @memberof PlaceDTO
      */
     'longitude'?: number;
 }
-/**
- * 
- * @export
- * @interface SunreiDTO
- */
 export interface SunreiDTO {
-    /**
-     * 
-     * @type {string}
-     * @memberof SunreiDTO
-     */
     'id'?: string;
     /**
      * Title of the Sunrei
-     * @type {string}
-     * @memberof SunreiDTO
      */
     'title'?: string;
     /**
      * Detailed description of the Sunrei
-     * @type {string}
-     * @memberof SunreiDTO
      */
     'description'?: string;
     /**
      * External link for this Sunrei (program URL or YouTube channel)
-     * @type {string}
-     * @memberof SunreiDTO
      */
     'link'?: string | null;
     /**
      * Array of images for this Sunrei
-     * @type {Array<ImageDTO>}
-     * @memberof SunreiDTO
      */
     'images'?: Array<ImageDTO>;
     /**
      * Array of Sunrei spots associated with this Sunrei
-     * @type {Array<SunreiSpotDTO>}
-     * @memberof SunreiDTO
      */
     'spots'?: Array<SunreiSpotDTO>;
     /**
      * Array of tags associated with this Sunrei
-     * @type {Array<TagDTO>}
-     * @memberof SunreiDTO
      */
     'tags'?: Array<TagDTO>;
-    /**
-     * 
-     * @type {string}
-     * @memberof SunreiDTO
-     */
     'createdAt'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SunreiDTO
-     */
     'updatedAt'?: string;
 }
-/**
- * 
- * @export
- * @interface SunreiSpotDTO
- */
 export interface SunreiSpotDTO {
-    /**
-     * 
-     * @type {string}
-     * @memberof SunreiSpotDTO
-     */
     'id'?: string;
     /**
      * ID of the parent Sunrei
-     * @type {string}
-     * @memberof SunreiSpotDTO
      */
     'sunreiId'?: string;
     /**
      * Title of the Sunrei Spot
-     * @type {string}
-     * @memberof SunreiSpotDTO
      */
     'title'?: string;
     /**
      * Detailed description of the Sunrei Spot
-     * @type {string}
-     * @memberof SunreiSpotDTO
      */
     'description'?: string;
     /**
      * YouTube video link for this spot
-     * @type {string}
-     * @memberof SunreiSpotDTO
      */
     'youtubeLink'?: string | null;
     /**
      * Array of images for this spot
-     * @type {Array<ImageDTO>}
-     * @memberof SunreiSpotDTO
      */
     'images'?: Array<ImageDTO>;
     /**
      * Associated places
-     * @type {Array<PlaceDTO>}
-     * @memberof SunreiSpotDTO
      */
     'places'?: Array<PlaceDTO>;
 }
-/**
- * 
- * @export
- * @interface TagDTO
- */
 export interface TagDTO {
-    /**
-     * 
-     * @type {string}
-     * @memberof TagDTO
-     */
     'id'?: string;
     /**
      * Name of the tag
-     * @type {string}
-     * @memberof TagDTO
      */
     'name'?: string;
     /**
      * Description of the tag
-     * @type {string}
-     * @memberof TagDTO
      */
     'description'?: string | null;
 }
-/**
- * 
- * @export
- * @interface UpdatePlaceRequest
- */
 export interface UpdatePlaceRequest {
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdatePlaceRequest
-     */
     'name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdatePlaceRequest
-     */
     'address'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof UpdatePlaceRequest
-     */
     'latitude'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof UpdatePlaceRequest
-     */
     'longitude'?: number;
 }
-/**
- * 
- * @export
- * @interface UpdateSunreiRequest
- */
 export interface UpdateSunreiRequest {
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateSunreiRequest
-     */
     'title'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateSunreiRequest
-     */
     'description'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateSunreiRequest
-     */
     'link'?: string | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof UpdateSunreiRequest
-     */
     'tagIds'?: Array<string>;
 }
-/**
- * 
- * @export
- * @interface UpdateSunreiSpotRequest
- */
 export interface UpdateSunreiSpotRequest {
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateSunreiSpotRequest
-     */
     'title'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateSunreiSpotRequest
-     */
     'description'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateSunreiSpotRequest
-     */
     'youtubeLink'?: string | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof UpdateSunreiSpotRequest
-     */
     'placeIds'?: Array<string>;
 }
-/**
- * 
- * @export
- * @interface UpdateTagRequest
- */
 export interface UpdateTagRequest {
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateTagRequest
-     */
     'name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateTagRequest
-     */
     'description'?: string | null;
 }
 
 /**
  * AdminAPIApi - axios parameter creator
- * @export
  */
 export const AdminAPIApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -1401,7 +1006,6 @@ export const AdminAPIApiAxiosParamCreator = function (configuration?: Configurat
 
 /**
  * AdminAPIApi - functional programming interface
- * @export
  */
 export const AdminAPIApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = AdminAPIApiAxiosParamCreator(configuration)
@@ -1665,7 +1269,6 @@ export const AdminAPIApiFp = function(configuration?: Configuration) {
 
 /**
  * AdminAPIApi - factory interface
- * @export
  */
 export const AdminAPIApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = AdminAPIApiFp(configuration)
@@ -1872,9 +1475,6 @@ export const AdminAPIApiFactory = function (configuration?: Configuration, baseP
 
 /**
  * AdminAPIApi - object-oriented interface
- * @export
- * @class AdminAPIApi
- * @extends {BaseAPI}
  */
 export class AdminAPIApi extends BaseAPI {
     /**
@@ -1883,7 +1483,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {string} id 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public adminGetSunrei(id: string, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).adminGetSunrei(id, options).then((request) => request(this.axios, this.basePath));
@@ -1895,7 +1494,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {string} [search] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public adminListPlaces(search?: string, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).adminListPlaces(search, options).then((request) => request(this.axios, this.basePath));
@@ -1907,7 +1505,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {string} [sunreiId] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public adminListSunreiSpots(sunreiId?: string, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).adminListSunreiSpots(sunreiId, options).then((request) => request(this.axios, this.basePath));
@@ -1921,7 +1518,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {string} [search] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public adminListSunreis(page?: number, size?: number, search?: string, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).adminListSunreis(page, size, search, options).then((request) => request(this.axios, this.basePath));
@@ -1932,7 +1528,6 @@ export class AdminAPIApi extends BaseAPI {
      * @summary List tags (Admin)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public adminListTags(options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).adminListTags(options).then((request) => request(this.axios, this.basePath));
@@ -1944,7 +1539,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {LoginRequest} loginRequest 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public adminLogin(loginRequest: LoginRequest, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).adminLogin(loginRequest, options).then((request) => request(this.axios, this.basePath));
@@ -1956,7 +1550,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {CreatePlaceRequest} createPlaceRequest 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public createPlace(createPlaceRequest: CreatePlaceRequest, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).createPlace(createPlaceRequest, options).then((request) => request(this.axios, this.basePath));
@@ -1968,7 +1561,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {CreateSunreiRequest} createSunreiRequest 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public createSunrei(createSunreiRequest: CreateSunreiRequest, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).createSunrei(createSunreiRequest, options).then((request) => request(this.axios, this.basePath));
@@ -1980,7 +1572,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {CreateSunreiSpotRequest} createSunreiSpotRequest 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public createSunreiSpot(createSunreiSpotRequest: CreateSunreiSpotRequest, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).createSunreiSpot(createSunreiSpotRequest, options).then((request) => request(this.axios, this.basePath));
@@ -1992,7 +1583,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {CreateTagRequest} createTagRequest 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public createTag(createTagRequest: CreateTagRequest, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).createTag(createTagRequest, options).then((request) => request(this.axios, this.basePath));
@@ -2004,7 +1594,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {string} id 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public deletePlace(id: string, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).deletePlace(id, options).then((request) => request(this.axios, this.basePath));
@@ -2016,7 +1605,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {string} id 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public deleteSunrei(id: string, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).deleteSunrei(id, options).then((request) => request(this.axios, this.basePath));
@@ -2028,7 +1616,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {string} id 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public deleteSunreiSpot(id: string, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).deleteSunreiSpot(id, options).then((request) => request(this.axios, this.basePath));
@@ -2040,7 +1627,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {string} id 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public deleteTag(id: string, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).deleteTag(id, options).then((request) => request(this.axios, this.basePath));
@@ -2053,7 +1639,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {UpdatePlaceRequest} updatePlaceRequest 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public updatePlace(id: string, updatePlaceRequest: UpdatePlaceRequest, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).updatePlace(id, updatePlaceRequest, options).then((request) => request(this.axios, this.basePath));
@@ -2066,7 +1651,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {UpdateSunreiRequest} updateSunreiRequest 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public updateSunrei(id: string, updateSunreiRequest: UpdateSunreiRequest, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).updateSunrei(id, updateSunreiRequest, options).then((request) => request(this.axios, this.basePath));
@@ -2079,7 +1663,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {UpdateSunreiSpotRequest} updateSunreiSpotRequest 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public updateSunreiSpot(id: string, updateSunreiSpotRequest: UpdateSunreiSpotRequest, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).updateSunreiSpot(id, updateSunreiSpotRequest, options).then((request) => request(this.axios, this.basePath));
@@ -2092,7 +1675,6 @@ export class AdminAPIApi extends BaseAPI {
      * @param {UpdateTagRequest} updateTagRequest 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public updateTag(id: string, updateTagRequest: UpdateTagRequest, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).updateTag(id, updateTagRequest, options).then((request) => request(this.axios, this.basePath));
@@ -2106,16 +1688,12 @@ export class AdminAPIApi extends BaseAPI {
      * @param {string} [entityId] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof AdminAPIApi
      */
     public uploadImage(file?: File, entityType?: UploadImageEntityTypeEnum, entityId?: string, options?: RawAxiosRequestConfig) {
         return AdminAPIApiFp(this.configuration).uploadImage(file, entityType, entityId, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
 export const UploadImageEntityTypeEnum = {
     Sunrei: 'sunrei',
     SunreiSpot: 'sunrei-spot'
@@ -2125,7 +1703,6 @@ export type UploadImageEntityTypeEnum = typeof UploadImageEntityTypeEnum[keyof t
 
 /**
  * PublicAPIApi - axios parameter creator
- * @export
  */
 export const PublicAPIApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -2293,7 +1870,6 @@ export const PublicAPIApiAxiosParamCreator = function (configuration?: Configura
 
 /**
  * PublicAPIApi - functional programming interface
- * @export
  */
 export const PublicAPIApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = PublicAPIApiAxiosParamCreator(configuration)
@@ -2365,7 +1941,6 @@ export const PublicAPIApiFp = function(configuration?: Configuration) {
 
 /**
  * PublicAPIApi - factory interface
- * @export
  */
 export const PublicAPIApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = PublicAPIApiFp(configuration)
@@ -2422,9 +1997,6 @@ export const PublicAPIApiFactory = function (configuration?: Configuration, base
 
 /**
  * PublicAPIApi - object-oriented interface
- * @export
- * @class PublicAPIApi
- * @extends {BaseAPI}
  */
 export class PublicAPIApi extends BaseAPI {
     /**
@@ -2433,7 +2005,6 @@ export class PublicAPIApi extends BaseAPI {
      * @param {string} id ID of the Sunrei to retrieve
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof PublicAPIApi
      */
     public getSunrei(id: string, options?: RawAxiosRequestConfig) {
         return PublicAPIApiFp(this.configuration).getSunrei(id, options).then((request) => request(this.axios, this.basePath));
@@ -2444,7 +2015,6 @@ export class PublicAPIApi extends BaseAPI {
      * @summary List all places
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof PublicAPIApi
      */
     public listPlaces(options?: RawAxiosRequestConfig) {
         return PublicAPIApiFp(this.configuration).listPlaces(options).then((request) => request(this.axios, this.basePath));
@@ -2455,7 +2025,6 @@ export class PublicAPIApi extends BaseAPI {
      * @summary List Sunrei Spots
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof PublicAPIApi
      */
     public listSunreiSpots(options?: RawAxiosRequestConfig) {
         return PublicAPIApiFp(this.configuration).listSunreiSpots(options).then((request) => request(this.axios, this.basePath));
@@ -2467,7 +2036,6 @@ export class PublicAPIApi extends BaseAPI {
      * @param {string} [polygon] WKT format polygon string (e.g., \&quot;POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))\&quot;)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof PublicAPIApi
      */
     public listSunreis(polygon?: string, options?: RawAxiosRequestConfig) {
         return PublicAPIApiFp(this.configuration).listSunreis(polygon, options).then((request) => request(this.axios, this.basePath));
@@ -2478,7 +2046,6 @@ export class PublicAPIApi extends BaseAPI {
      * @summary List all tags
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof PublicAPIApi
      */
     public listTags(options?: RawAxiosRequestConfig) {
         return PublicAPIApiFp(this.configuration).listTags(options).then((request) => request(this.axios, this.basePath));

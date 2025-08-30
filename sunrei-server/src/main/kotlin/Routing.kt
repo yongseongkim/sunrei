@@ -9,12 +9,17 @@ import io.ktor.server.routing.*
 
 fun Application.configureRouting() {
     routing {
-        sunreiRoutes()
-        sunreiSpotRoutes()
-        tagRoutes()
-        
-        get("/") {
-            call.respondText("Sunrei API Server")
+        // Public API endpoints (read-only)
+        route("/api") {
+            sunreiRoutes()
+            sunreiSpotRoutes()
+            tagRoutes()
+        }
+
+        // Admin API endpoints (CRUD with auth)
+        route("/admin") {
+            // TODO: Add authentication middleware
+            // TODO: Add admin routes
         }
     }
 }

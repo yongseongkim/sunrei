@@ -66,3 +66,8 @@ docker-compose.override.yml
 
 # Ignore local workspace settings
 *.code-workspace
+
+# OpenAPI Generator
+**/dto/docs/
+**/api/docs/
+**/.openapi-generator/

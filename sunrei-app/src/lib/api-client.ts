@@ -1,7 +1,7 @@
-import { Configuration, DefaultApi } from '@/dto';
+import { Configuration, PublicAPIApi } from '@/dto';
 
 const configuration = new Configuration({
   basePath: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3030',
 });
 
-export const apiClient = new DefaultApi(configuration);
+export const apiClient = new PublicAPIApi(configuration);

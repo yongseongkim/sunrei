@@ -27,7 +27,7 @@ export default function Home() {
 
   const fetchSunreis = useCallback(async (polygon?: string) => {
     try {
-      const response = await apiClient.sunreisGet(polygon);
+      const response = await apiClient.listSunreis(polygon);
       const result = response.data;
       setSunreis(result.sunreis || []);
     } catch (error) {
