@@ -1,7 +1,9 @@
 import { AdminAPIApi, Configuration, PublicAPIApi } from '@/api';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3030';
+const TOKEN_COOKIE = 'adminToken';
 
 // Public API client (read-only)
 const publicConfig = new Configuration({
@@ -15,7 +17,7 @@ const adminConfig = new Configuration({
   basePath: API_BASE,
   accessToken: () => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('adminToken') || '';
+      return Cookies.get(TOKEN_COOKIE) || '';
     }
     return '';
   },
@@ -32,7 +34,7 @@ export const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   (config) => {
     if (typeof window !== 'undefined') {
-      const token = localStorage.getItem('adminToken');
+      const token = Cookies.get(TOKEN_COOKIE);
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
       }
@@ -49,7 +51,8 @@ axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401 && typeof window !== 'undefined') {
-      localStorage.removeItem('adminToken');
+      // Remove auth cookie
+      Cookies.remove(TOKEN_COOKIE, { path: '/' });
       window.location.href = '/login';
     }
     return Promise.reject(error);

@@ -511,11 +511,10 @@ components:
           description: Array of images for this spot
           items:
             $ref: '#/components/schemas/ImageDTO'
-        places:
-          type: array
-          description: Associated places
-          items:
-            $ref: '#/components/schemas/PlaceDTO'
+        place:
+          description: Associated place
+          $ref: '#/components/schemas/PlaceDTO'
+          nullable: true
 
     TagDTO:
       type: object
@@ -694,10 +693,9 @@ components:
         youtubeLink:
           type: string
           nullable: true
-        places:
-          type: array
-          items:
-            $ref: '#/components/schemas/PlaceInput'
+        place:
+          $ref: '#/components/schemas/PlaceInput'
+          nullable: true
         images:
           type: array
           items:
@@ -716,10 +714,9 @@ components:
         youtubeLink:
           type: string
           nullable: true
-        places:
-          type: array
-          items:
-            $ref: '#/components/schemas/PlaceInput'
+        place:
+          $ref: '#/components/schemas/PlaceInput'
+          nullable: true
         images:
           type: array
           items:

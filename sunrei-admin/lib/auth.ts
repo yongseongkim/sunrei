@@ -1,48 +1,45 @@
-import { LoginRequest, LoginResponse } from '@/api';
-import { adminApi } from './api-client';
+import { LoginRequest } from '@/api';
+import axios from 'axios';
+import Cookies from 'js-cookie';
 
-export interface AuthUser {
-  id: string;
-  username: string;
-  role: string;
-}
+const TOKEN_COOKIE = 'adminToken';
+const COOKIE_EXPIRES = 7; // 7 days
 
 export const auth = {
-  async login(credentials: LoginRequest): Promise<LoginResponse> {
-    const response = await adminApi.adminLogin(credentials);
-    const data = response.data;
-    
-    if (data.token) {
-      localStorage.setItem('adminToken', data.token);
-      localStorage.setItem('adminUser', JSON.stringify(data.user));
+  async login(credentials: LoginRequest): Promise<void> {
+    const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3030';
+
+    // Use axios directly to access response headers
+    const response = await axios.post(
+      `${API_BASE}/admin/auth/login`,
+      credentials,
+    );
+
+    // Get token from Authorization header
+    const authHeader = response.headers['authorization'] || response.headers['Authorization'];
+
+    if (authHeader && authHeader.startsWith('Bearer ')) {
+      const token = authHeader.substring(7); // Remove 'Bearer ' prefix
+
+      // Set cookie with 7 day expiration
+      Cookies.set(TOKEN_COOKIE, token, {
+        expires: COOKIE_EXPIRES,
+        sameSite: 'Lax',
+        path: '/',
+      });
+    } else {
+      throw new Error('No authorization token in response');
     }
-    
-    return data;
   },
 
   logout(): void {
-    localStorage.removeItem('adminToken');
-    localStorage.removeItem('adminUser');
+    Cookies.remove(TOKEN_COOKIE, { path: '/' });
     window.location.href = '/login';
   },
 
   getToken(): string | null {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('adminToken');
-    }
-    return null;
-  },
-
-  getUser(): AuthUser | null {
-    if (typeof window !== 'undefined') {
-      const userStr = localStorage.getItem('adminUser');
-      if (userStr) {
-        try {
-          return JSON.parse(userStr);
-        } catch {
-          return null;
-        }
-      }
+      return Cookies.get(TOKEN_COOKIE) || null;
     }
     return null;
   },

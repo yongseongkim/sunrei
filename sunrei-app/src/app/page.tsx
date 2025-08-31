@@ -2,6 +2,7 @@
 
 import { SunreiDTO } from '@/dto';
 import { apiClient } from '@/lib/api-client';
+import { config } from '@/lib/config';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { GoogleMap, Marker } from '../components/Map';
 import { boundsToWKTPolygon } from '../utils/map-utils';
@@ -220,7 +221,7 @@ export default function Home() {
 
       <div className="flex-1 relative">
         <GoogleMap
-          apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}
+          apiKey={config.googleMaps.apiKey}
           center={center}
           zoom={12}
           onMapLoad={onLoad}
