@@ -1,13 +1,15 @@
 package com.sunrei
 
+import com.sunrei.routes.adminRoutes
 import com.sunrei.routes.sunreiRoutes
 import com.sunrei.routes.sunreiSpotRoutes
 import com.sunrei.routes.tagRoutes
-import io.ktor.server.application.*
-import io.ktor.server.response.*
-import io.ktor.server.routing.*
+import com.sunrei.service.S3Service
+import io.ktor.server.application.Application
+import io.ktor.server.routing.route
+import io.ktor.server.routing.routing
 
-fun Application.configureRouting() {
+fun Application.configureRouting(s3Service: S3Service) {
     routing {
         // Public API endpoints (read-only)
         route("/api") {
@@ -17,9 +19,6 @@ fun Application.configureRouting() {
         }
 
         // Admin API endpoints (CRUD with auth)
-        route("/admin") {
-            // TODO: Add authentication middleware
-            // TODO: Add admin routes
-        }
+        adminRoutes(s3Service)
     }
 }

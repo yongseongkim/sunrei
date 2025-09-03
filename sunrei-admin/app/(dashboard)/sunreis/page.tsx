@@ -1,7 +1,8 @@
 'use client';
 
-import { CreateSunreiRequest, PlaceInput, SunreiDTO, UpdateSunreiRequest } from '@/api';
+import { CreateSunreiRequest, ImageInput, PlaceInput, SunreiDTO, UpdateSunreiRequest } from '@/api';
 import PlaceSearchModal from '@/components/PlaceSearchModalNew';
+import ImageUpload from '@/components/ImageUpload';
 import { adminApi } from '@/lib/api-client';
 import { useEffect, useState } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
@@ -16,7 +17,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Separator } from '@/components/ui/separator';
 import { 
   Plus, Edit2, Trash2, MapPin, AlertCircle, Loader2, 
-  X, Save, ChevronDown, ChevronRight 
+  X, Save, ChevronDown, ChevronRight, Image
 } from 'lucide-react';
 
 export default function SunreisPage() {
@@ -285,6 +286,15 @@ function SunreiCard({
 
             <Separator />
 
+            <ImageUpload
+              images={watch('images') || []}
+              onChange={(newImages) => setValue('images', newImages)}
+              label="Sunrei Images"
+              maxImages={10}
+            />
+
+            <Separator />
+
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <Label>Spots</Label>
@@ -343,6 +353,12 @@ function SunreiCard({
                       setValue={setValue}
                       watch={watch}
                       onOpenMap={openMapForPlace}
+                    />
+                    <ImageUpload
+                      images={watch(`spots.${index}.images`) || []}
+                      onChange={(newImages) => setValue(`spots.${index}.images`, newImages)}
+                      label="Spot Images"
+                      maxImages={5}
                     />
                   </CardContent>
                 </Card>
@@ -433,6 +449,25 @@ function SunreiCard({
                 </a>
               )}
             </div>
+            {sunrei.images && sunrei.images.length > 0 && (
+              <>
+                <Separator />
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">Images:</p>
+                  <div className="grid grid-cols-4 gap-2">
+                    {sunrei.images.map((image, index) => (
+                      <div key={image.id || index} className="aspect-square rounded-md overflow-hidden bg-muted">
+                        <img
+                          src={image.url}
+                          alt={`Sunrei image ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
             {sunrei.spots && sunrei.spots.length > 0 && (
               <>
                 <Separator />
@@ -450,6 +485,26 @@ function SunreiCard({
                           <span className="text-xs text-muted-foreground">
                             {spot.place.name} - {spot.place.address}
                           </span>
+                        </div>
+                      )}
+                      {spot.images && spot.images.length > 0 && (
+                        <div className="pl-4 mt-2">
+                          <div className="flex gap-1">
+                            {spot.images.slice(0, 3).map((image, imgIndex) => (
+                              <div key={image.id || imgIndex} className="w-12 h-12 rounded overflow-hidden bg-muted">
+                                <img
+                                  src={image.url}
+                                  alt={`Spot image ${imgIndex + 1}`}
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                            ))}
+                            {spot.images.length > 3 && (
+                              <div className="w-12 h-12 rounded bg-muted flex items-center justify-center">
+                                <span className="text-xs text-muted-foreground">+{spot.images.length - 3}</span>
+                              </div>
+                            )}
+                          </div>
                         </div>
                       )}
                     </div>
@@ -575,6 +630,15 @@ function CreateSunreiForm({ onCancel, onSuccess }: { onCancel: () => void; onSuc
 
           <Separator />
 
+          <ImageUpload
+            images={watch('images') || []}
+            onChange={(newImages) => setValue('images', newImages)}
+            label="Sunrei Images"
+            maxImages={10}
+          />
+
+          <Separator />
+
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <Label>Spots</Label>
@@ -633,6 +697,12 @@ function CreateSunreiForm({ onCancel, onSuccess }: { onCancel: () => void; onSuc
                     setValue={setValue}
                     watch={watch}
                     onOpenMap={openMapForPlace}
+                  />
+                  <ImageUpload
+                    images={watch(`spots.${index}.images`) || []}
+                    onChange={(newImages) => setValue(`spots.${index}.images`, newImages)}
+                    label="Spot Images"
+                    maxImages={5}
                   />
                 </CardContent>
               </Card>

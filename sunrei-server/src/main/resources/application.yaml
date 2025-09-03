@@ -26,3 +26,7 @@ cors:
 features:
   seedData: true
   apiDocs: true
+
+jwt:
+  pageToken:
+    secret: ${JWT_PAGE_TOKEN_SECRET:-sunrei-dev-page-token-secret-change-in-production}

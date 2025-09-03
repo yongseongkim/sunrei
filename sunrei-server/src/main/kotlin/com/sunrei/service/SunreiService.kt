@@ -41,7 +41,9 @@ class SunreiService {
                         )
                     },
                     spots = spots,
-                    tags = tags
+                    tags = tags,
+                    createdAt = row[Sunreis.createdAt],
+                    updatedAt = row[Sunreis.updatedAt]
                 )
             }
         sunreis
@@ -67,7 +69,9 @@ class SunreiService {
                         )
                     },
                     spots = spots,
-                    tags = tags
+                    tags = tags,
+                    createdAt = row[Sunreis.createdAt],
+                    updatedAt = row[Sunreis.updatedAt]
                 )
             }
     }
@@ -86,16 +90,16 @@ class SunreiService {
 
                 // Check if any spot's place is within the polygon
                 val hasSpotInPolygon = spots.any { spot ->
-                    spot.places?.any { place ->
-                        if (place.latitude == null || place.longitude == null) {
-                            return@any false
-                        }
+                    val place = spot.place
+                    if (place.latitude == null || place.longitude == null) {
+                        false
+                    } else {
                         val point = Point(
                             latitude = place.latitude,
                             longitude = place.longitude
                         )
                         isPointInPolygon(point, polygon)
-                    } ?: false
+                    }
                 }
 
                 if (hasSpotInPolygon) {
@@ -114,7 +118,9 @@ class SunreiService {
                             )
                         },
                         spots = spots,
-                        tags = tags
+                        tags = tags,
+                        createdAt = row[Sunreis.createdAt],
+                        updatedAt = row[Sunreis.updatedAt]
                     )
                 } else {
                     null
@@ -129,6 +135,7 @@ class SunreiService {
             .map { row ->
                 SunreiSpotDTO(
                     id = row[SunreiSpots.id],
+                    sunreiId = sunreiId,
                     title = row[SunreiSpots.title],
                     description = row[SunreiSpots.description],
                     youtubeLink = row[SunreiSpots.youtubeLink],
@@ -139,14 +146,12 @@ class SunreiService {
                             height = img.height,
                         )
                     },
-                    places = listOf(
-                        PlaceDTO(
-                            id = row[Places.id],
-                            name = row[Places.name],
-                            address = row[Places.address],
-                            latitude = row[Places.latitude],
-                            longitude = row[Places.longitude]
-                        )
+                    place = PlaceDTO(
+                        id = row[Places.id],
+                        name = row[Places.name],
+                        address = row[Places.address],
+                        latitude = row[Places.latitude],
+                        longitude = row[Places.longitude]
                     )
                 )
             }

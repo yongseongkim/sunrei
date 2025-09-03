@@ -16,6 +16,7 @@ class SunreiSpotService {
             .firstOrNull()?.let { row ->
                 SunreiSpotDTO(
                     id = row[SunreiSpots.id],
+                    sunreiId = row[SunreiSpots.sunreiId],
                     title = row[SunreiSpots.title],
                     description = row[SunreiSpots.description],
                     youtubeLink = row[SunreiSpots.youtubeLink],
@@ -26,14 +27,12 @@ class SunreiSpotService {
                             height = img.height,
                         )
                     },
-                    places = listOf(
-                        PlaceDTO(
-                            id = row[Places.id],
-                            name = row[Places.name],
-                            address = row[Places.address],
-                            latitude = row[Places.latitude],
-                            longitude = row[Places.longitude]
-                        )
+                    place = PlaceDTO(
+                        id = row[Places.id],
+                        name = row[Places.name],
+                        address = row[Places.address],
+                        latitude = row[Places.latitude],
+                        longitude = row[Places.longitude]
                     )
                 )
             }

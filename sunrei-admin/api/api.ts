@@ -196,7 +196,7 @@ export interface SunreiSpotDTO {
      * Array of images for this spot
      */
     'images'?: Array<ImageDTO>;
-    'place'?: PlaceDTO;
+    'place': PlaceDTO;
 }
 export interface TagDTO {
     'id'?: string;
@@ -235,6 +235,12 @@ export interface UpdateSunreiSpotInline {
 export interface UpdateTagRequest {
     'name'?: string;
     'description'?: string | null;
+}
+export interface UploadImageFromUrlRequest {
+    /**
+     * URL of the image to download and upload
+     */
+    'url': string;
 }
 
 /**
@@ -687,13 +693,13 @@ export const AdminAPIApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Upload image
-         * @param {File} [file] 
-         * @param {UploadImageEntityTypeEnum} [entityType] 
-         * @param {string} [entityId] 
+         * @param {File} file 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        uploadImage: async (file?: File, entityType?: UploadImageEntityTypeEnum, entityId?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        uploadImage: async (file: File, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'file' is not null or undefined
+            assertParamExists('uploadImage', 'file', file)
             const localVarPath = `/admin/images/upload`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -716,14 +722,6 @@ export const AdminAPIApiAxiosParamCreator = function (configuration?: Configurat
                 localVarFormParams.append('file', file as any);
             }
     
-            if (entityType !== undefined) { 
-                localVarFormParams.append('entityType', entityType as any);
-            }
-    
-            if (entityId !== undefined) { 
-                localVarFormParams.append('entityId', entityId as any);
-            }
-    
     
             localVarHeaderParameter['Content-Type'] = 'multipart/form-data';
     
@@ -731,6 +729,46 @@ export const AdminAPIApiAxiosParamCreator = function (configuration?: Configurat
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = localVarFormParams;
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Upload image from URL
+         * @param {UploadImageFromUrlRequest} uploadImageFromUrlRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        uploadImageFromUrl: async (uploadImageFromUrlRequest: UploadImageFromUrlRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'uploadImageFromUrlRequest' is not null or undefined
+            assertParamExists('uploadImageFromUrl', 'uploadImageFromUrlRequest', uploadImageFromUrlRequest)
+            const localVarPath = `/admin/images/upload-url`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(uploadImageFromUrlRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -895,16 +933,27 @@ export const AdminAPIApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Upload image
-         * @param {File} [file] 
-         * @param {UploadImageEntityTypeEnum} [entityType] 
-         * @param {string} [entityId] 
+         * @param {File} file 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async uploadImage(file?: File, entityType?: UploadImageEntityTypeEnum, entityId?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageDTO>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.uploadImage(file, entityType, entityId, options);
+        async uploadImage(file: File, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.uploadImage(file, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.uploadImage']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Upload image from URL
+         * @param {UploadImageFromUrlRequest} uploadImageFromUrlRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async uploadImageFromUrl(uploadImageFromUrlRequest: UploadImageFromUrlRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.uploadImageFromUrl(uploadImageFromUrlRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.uploadImageFromUrl']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -1032,14 +1081,22 @@ export const AdminAPIApiFactory = function (configuration?: Configuration, baseP
         /**
          * 
          * @summary Upload image
-         * @param {File} [file] 
-         * @param {UploadImageEntityTypeEnum} [entityType] 
-         * @param {string} [entityId] 
+         * @param {File} file 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        uploadImage(file?: File, entityType?: UploadImageEntityTypeEnum, entityId?: string, options?: RawAxiosRequestConfig): AxiosPromise<ImageDTO> {
-            return localVarFp.uploadImage(file, entityType, entityId, options).then((request) => request(axios, basePath));
+        uploadImage(file: File, options?: RawAxiosRequestConfig): AxiosPromise<ImageDTO> {
+            return localVarFp.uploadImage(file, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Upload image from URL
+         * @param {UploadImageFromUrlRequest} uploadImageFromUrlRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        uploadImageFromUrl(uploadImageFromUrlRequest: UploadImageFromUrlRequest, options?: RawAxiosRequestConfig): AxiosPromise<ImageDTO> {
+            return localVarFp.uploadImageFromUrl(uploadImageFromUrlRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1175,22 +1232,26 @@ export class AdminAPIApi extends BaseAPI {
     /**
      * 
      * @summary Upload image
-     * @param {File} [file] 
-     * @param {UploadImageEntityTypeEnum} [entityType] 
-     * @param {string} [entityId] 
+     * @param {File} file 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public uploadImage(file?: File, entityType?: UploadImageEntityTypeEnum, entityId?: string, options?: RawAxiosRequestConfig) {
-        return AdminAPIApiFp(this.configuration).uploadImage(file, entityType, entityId, options).then((request) => request(this.axios, this.basePath));
+    public uploadImage(file: File, options?: RawAxiosRequestConfig) {
+        return AdminAPIApiFp(this.configuration).uploadImage(file, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Upload image from URL
+     * @param {UploadImageFromUrlRequest} uploadImageFromUrlRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public uploadImageFromUrl(uploadImageFromUrlRequest: UploadImageFromUrlRequest, options?: RawAxiosRequestConfig) {
+        return AdminAPIApiFp(this.configuration).uploadImageFromUrl(uploadImageFromUrlRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-export const UploadImageEntityTypeEnum = {
-    Sunrei: 'sunrei',
-    SunreiSpot: 'sunrei-spot'
-} as const;
-export type UploadImageEntityTypeEnum = typeof UploadImageEntityTypeEnum[keyof typeof UploadImageEntityTypeEnum];
 
 
 /**

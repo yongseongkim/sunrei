@@ -41,12 +41,12 @@ fun Route.sunreiRoutes() {
             }
 
             val sunrei = sunreiService.findOne(id)
-            val result = GetSunreiResult(sunrei = sunrei)
 
-            if (sunrei == null) {
-                call.respond(HttpStatusCode.NotFound, result)
-            } else {
+            if (sunrei != null) {
+                val result = GetSunreiResult(sunrei = sunrei)
                 call.respond(result)
+            } else {
+                call.respond(HttpStatusCode.NotFound, mapOf("error" to "Sunrei not found"))
             }
         }
     }

@@ -38,6 +38,18 @@ dependencies {
     
     // Utilities
     implementation(libs.ulid.creator)
+    implementation(libs.java.jwt)
+    
+    // AWS SDK
+    implementation(libs.aws.s3)
+    
+    // Ktor Client for downloading images
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.cio)
+    implementation(libs.ktor.client.content.negotiation)
+    
+    // Image processing
+    implementation(libs.thumbnailator)
     
     // Logging
     implementation(libs.logback.classic)
