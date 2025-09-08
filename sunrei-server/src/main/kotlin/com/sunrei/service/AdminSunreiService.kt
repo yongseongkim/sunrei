@@ -1,11 +1,11 @@
 package com.sunrei.service
 
-import com.sunrei.generated.dto.ImageDTO
-import com.sunrei.generated.dto.ListSunreisResult
-import com.sunrei.generated.dto.PlaceDTO
-import com.sunrei.generated.dto.SunreiDTO
-import com.sunrei.generated.dto.SunreiSpotDTO
-import com.sunrei.generated.dto.TagDTO
+import com.sunrei.generated.dto.admin.ImageDTO
+import com.sunrei.generated.dto.admin.ListSunreisResult
+import com.sunrei.generated.dto.admin.PlaceDTO
+import com.sunrei.generated.dto.admin.SunreiDTO
+import com.sunrei.generated.dto.admin.SunreiSpotDTO
+import com.sunrei.generated.dto.admin.TagDTO
 import com.sunrei.model.Places
 import com.sunrei.model.SunreiSpots
 import com.sunrei.model.SunreiTags
@@ -105,6 +105,33 @@ class AdminSunreiService {
             }
     }
 
+    fun findOne(id: String): SunreiDTO? = transaction {
+        Sunreis.select { Sunreis.id eq id }
+            .firstOrNull()?.let { row ->
+                val sunreiId = row[Sunreis.id]
+                val spots = fetchSpotsForSunrei(sunreiId)
+                val tags = fetchTagsForSunrei(sunreiId)
+                
+                SunreiDTO(
+                    id = sunreiId,
+                    title = row[Sunreis.title],
+                    description = row[Sunreis.description],
+                    link = row[Sunreis.link],
+                    images = row[Sunreis.images].map { img ->
+                        ImageDTO(
+                            url = img.url,
+                            width = img.width,
+                            height = img.height,
+                        )
+                    },
+                    spots = spots,
+                    tags = tags,
+                    createdAt = row[Sunreis.createdAt],
+                    updatedAt = row[Sunreis.updatedAt]
+                )
+            }
+    }
+    
     private fun fetchTagsForSunrei(sunreiId: String): List<TagDTO> {
         return (SunreiTags innerJoin Tags)
             .select { SunreiTags.sunreiId eq sunreiId }

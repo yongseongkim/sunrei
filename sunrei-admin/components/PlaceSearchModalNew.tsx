@@ -1,6 +1,6 @@
 'use client';
 
-import { PlaceInput } from '@/api';
+import { PlaceInput } from '@/api/admin';
 import { config } from '@/lib/config';
 import { useEffect, useRef, useState } from 'react';
 import GoogleMap from './GoogleMap';

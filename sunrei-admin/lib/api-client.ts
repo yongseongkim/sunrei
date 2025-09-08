@@ -1,16 +1,9 @@
-import { AdminAPIApi, Configuration, PublicAPIApi } from '@/api';
+import { Configuration, DefaultApi } from '@/api/admin';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3030';
 const TOKEN_COOKIE = 'adminToken';
-
-// Public API client (read-only)
-const publicConfig = new Configuration({
-  basePath: API_BASE,
-});
-
-export const publicApi = new PublicAPIApi(publicConfig);
 
 // Admin API client (with auth)
 const adminConfig = new Configuration({
@@ -23,7 +16,7 @@ const adminConfig = new Configuration({
   },
 });
 
-export const adminApi = new AdminAPIApi(adminConfig);
+export const adminApi = new DefaultApi(adminConfig);
 
 // Axios instance for custom requests
 export const axiosInstance = axios.create({

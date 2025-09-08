@@ -1,7 +1,7 @@
 package com.sunrei.routes
 
-import com.sunrei.generated.dto.GetSunreiResult
-import com.sunrei.generated.dto.ListSunreiResult
+import com.sunrei.generated.dto.app.GetSunreiResult
+import com.sunrei.generated.dto.app.ListSunreiResult
 import com.sunrei.service.SunreiService
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.response.respond

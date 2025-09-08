@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Sunrei API
- * API documentation for Sunrei project
+ * Sunrei Admin API
+ * Admin API for Sunrei management
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -23,16 +23,6 @@ import type { RequestArgs } from './base';
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, BaseAPI, RequiredError, operationServerMap } from './base';
 
-export interface Coordinate {
-    /**
-     * Latitude coordinate
-     */
-    'lat': number;
-    /**
-     * Longitude coordinate
-     */
-    'lng': number;
-}
 export interface CreateSunreiRequest {
     'title': string;
     'description': string;
@@ -52,15 +42,11 @@ export interface CreateTagRequest {
     'name': string;
     'description'?: string | null;
 }
-export interface GetSunreiResult {
-    'sunrei'?: SunreiDTO;
-}
 export interface ImageDTO {
-    'id'?: string;
     /**
      * URL of the image
      */
-    'url'?: string;
+    'url': string;
     /**
      * Width of the image in pixels
      */
@@ -71,23 +57,24 @@ export interface ImageDTO {
     'height'?: number;
 }
 export interface ImageInput {
-    /**
-     * ID for existing image (omit for new upload)
-     */
-    'id'?: string;
-    'url'?: string;
+    'url': string;
     'width'?: number;
     'height'?: number;
 }
-export interface ListSunreiResult {
+export interface ListSunreisResult {
+    'data': Array<SunreiDTO>;
     /**
-     * List of Sunrei
+     * Number of items in this page
      */
-    'sunreis'?: Array<SunreiDTO>;
+    'totalSize': number;
     /**
-     * Total number of Sunrei found
+     * Total number of items across all pages
      */
-    'totalCount'?: number;
+    'totalElements': number;
+    /**
+     * Token to retrieve next page (null if no more pages)
+     */
+    'nextToken'?: string | null;
 }
 export interface LoginRequest {
     'username': string;
@@ -97,31 +84,24 @@ export interface LoginResponse {
     /**
      * JWT token
      */
-    'token'?: string;
+    'token': string;
     /**
      * Token expiration time in seconds
      */
-    'expiresIn'?: number;
-    'user'?: LoginResponseUser;
+    'expiresIn': number;
+    'user': LoginResponseUser;
 }
 export interface LoginResponseUser {
-    'id'?: string;
-    'username'?: string;
-    'role'?: string;
-}
-export interface PaginatedSunreiResult {
-    'data'?: Array<SunreiDTO>;
-    'page'?: number;
-    'size'?: number;
-    'totalElements'?: number;
-    'totalPages'?: number;
+    'id': string;
+    'username': string;
+    'role': string;
 }
 export interface PlaceDTO {
-    'id'?: string;
+    'id': string;
     /**
      * Name of the place
      */
-    'name'?: string;
+    'name': string;
     /**
      * Address of the place
      */
@@ -129,28 +109,28 @@ export interface PlaceDTO {
     /**
      * Latitude of the place
      */
-    'latitude'?: number;
+    'latitude': number;
     /**
      * Longitude of the place
      */
-    'longitude'?: number;
+    'longitude': number;
 }
 export interface PlaceInput {
     /**
      * ID for existing place (omit to create new)
      */
     'id'?: string;
-    'name'?: string;
+    'name': string;
     'address'?: string;
-    'latitude'?: number;
-    'longitude'?: number;
+    'latitude': number;
+    'longitude': number;
 }
 export interface SunreiDTO {
-    'id'?: string;
+    'id': string;
     /**
      * Title of the Sunrei
      */
-    'title'?: string;
+    'title': string;
     /**
      * Detailed description of the Sunrei
      */
@@ -162,28 +142,28 @@ export interface SunreiDTO {
     /**
      * Array of images for this Sunrei
      */
-    'images'?: Array<ImageDTO>;
+    'images': Array<ImageDTO>;
     /**
      * Array of Sunrei spots associated with this Sunrei
      */
-    'spots'?: Array<SunreiSpotDTO>;
+    'spots': Array<SunreiSpotDTO>;
     /**
      * Array of tags associated with this Sunrei
      */
-    'tags'?: Array<TagDTO>;
+    'tags': Array<TagDTO>;
     'createdAt'?: string;
     'updatedAt'?: string;
 }
 export interface SunreiSpotDTO {
-    'id'?: string;
+    'id': string;
     /**
      * ID of the parent Sunrei
      */
-    'sunreiId'?: string;
+    'sunreiId': string;
     /**
      * Title of the Sunrei Spot
      */
-    'title'?: string;
+    'title': string;
     /**
      * Detailed description of the Sunrei Spot
      */
@@ -195,15 +175,15 @@ export interface SunreiSpotDTO {
     /**
      * Array of images for this spot
      */
-    'images'?: Array<ImageDTO>;
+    'images': Array<ImageDTO>;
     'place': PlaceDTO;
 }
 export interface TagDTO {
-    'id'?: string;
+    'id': string;
     /**
      * Name of the tag
      */
-    'name'?: string;
+    'name': string;
     /**
      * Description of the tag
      */
@@ -222,7 +202,7 @@ export interface UpdateSunreiSpotInline {
      * ID for existing spot (omit for new spots)
      */
     'id'?: string;
-    'title'?: string;
+    'title': string;
     'description'?: string;
     'youtubeLink'?: string | null;
     'place'?: PlaceInput;
@@ -244,167 +224,10 @@ export interface UploadImageFromUrlRequest {
 }
 
 /**
- * AdminAPIApi - axios parameter creator
+ * DefaultApi - axios parameter creator
  */
-export const AdminAPIApiAxiosParamCreator = function (configuration?: Configuration) {
+export const DefaultApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
-        /**
-         * 
-         * @summary Get Sunrei details (Admin)
-         * @param {string} id 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        adminGetSunrei: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('adminGetSunrei', 'id', id)
-            const localVarPath = `/admin/sunreis/{id}`
-                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication bearerAuth required
-            // http bearer authentication required
-            await setBearerAuthToObject(localVarHeaderParameter, configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary List Sunreis with pagination (Admin)
-         * @param {number} [page] 
-         * @param {number} [size] 
-         * @param {string} [search] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        adminListSunreis: async (page?: number, size?: number, search?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/admin/sunreis`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication bearerAuth required
-            // http bearer authentication required
-            await setBearerAuthToObject(localVarHeaderParameter, configuration)
-
-            if (page !== undefined) {
-                localVarQueryParameter['page'] = page;
-            }
-
-            if (size !== undefined) {
-                localVarQueryParameter['size'] = size;
-            }
-
-            if (search !== undefined) {
-                localVarQueryParameter['search'] = search;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary List tags (Admin)
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        adminListTags: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/admin/tags`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication bearerAuth required
-            // http bearer authentication required
-            await setBearerAuthToObject(localVarHeaderParameter, configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Admin login
-         * @param {LoginRequest} loginRequest 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        adminLogin: async (loginRequest: LoginRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'loginRequest' is not null or undefined
-            assertParamExists('adminLogin', 'loginRequest', loginRequest)
-            const localVarPath = `/admin/auth/login`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(loginRequest, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
         /**
          * 
          * @summary Create new Sunrei
@@ -555,6 +378,163 @@ export const AdminAPIApiAxiosParamCreator = function (configuration?: Configurat
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get Sunrei details
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getSunrei: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('getSunrei', 'id', id)
+            const localVarPath = `/admin/sunreis/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary List Sunreis with pagination
+         * @param {string} [nextToken] Token for next page (from previous response)
+         * @param {number} [size] 
+         * @param {string} [search] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listSunreis: async (nextToken?: string, size?: number, search?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/admin/sunreis`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (nextToken !== undefined) {
+                localVarQueryParameter['nextToken'] = nextToken;
+            }
+
+            if (size !== undefined) {
+                localVarQueryParameter['size'] = size;
+            }
+
+            if (search !== undefined) {
+                localVarQueryParameter['search'] = search;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary List tags
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listTags: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/admin/tags`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Admin login
+         * @param {LoginRequest} loginRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        login: async (loginRequest: LoginRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'loginRequest' is not null or undefined
+            assertParamExists('login', 'loginRequest', loginRequest)
+            const localVarPath = `/admin/auth/login`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(loginRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -779,64 +759,11 @@ export const AdminAPIApiAxiosParamCreator = function (configuration?: Configurat
 };
 
 /**
- * AdminAPIApi - functional programming interface
+ * DefaultApi - functional programming interface
  */
-export const AdminAPIApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = AdminAPIApiAxiosParamCreator(configuration)
+export const DefaultApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = DefaultApiAxiosParamCreator(configuration)
     return {
-        /**
-         * 
-         * @summary Get Sunrei details (Admin)
-         * @param {string} id 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async adminGetSunrei(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SunreiDTO>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.adminGetSunrei(id, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.adminGetSunrei']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary List Sunreis with pagination (Admin)
-         * @param {number} [page] 
-         * @param {number} [size] 
-         * @param {string} [search] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async adminListSunreis(page?: number, size?: number, search?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaginatedSunreiResult>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.adminListSunreis(page, size, search, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.adminListSunreis']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary List tags (Admin)
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async adminListTags(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<TagDTO>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.adminListTags(options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.adminListTags']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Admin login
-         * @param {LoginRequest} loginRequest 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async adminLogin(loginRequest: LoginRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LoginResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.adminLogin(loginRequest, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.adminLogin']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
         /**
          * 
          * @summary Create new Sunrei
@@ -847,7 +774,7 @@ export const AdminAPIApiFp = function(configuration?: Configuration) {
         async createSunrei(createSunreiRequest: CreateSunreiRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SunreiDTO>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createSunrei(createSunreiRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.createSunrei']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.createSunrei']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -860,7 +787,7 @@ export const AdminAPIApiFp = function(configuration?: Configuration) {
         async createTag(createTagRequest: CreateTagRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TagDTO>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createTag(createTagRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.createTag']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.createTag']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -873,7 +800,7 @@ export const AdminAPIApiFp = function(configuration?: Configuration) {
         async deleteSunrei(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteSunrei(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.deleteSunrei']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.deleteSunrei']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -886,7 +813,60 @@ export const AdminAPIApiFp = function(configuration?: Configuration) {
         async deleteTag(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTag(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.deleteTag']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.deleteTag']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Get Sunrei details
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getSunrei(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SunreiDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getSunrei(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getSunrei']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List Sunreis with pagination
+         * @param {string} [nextToken] Token for next page (from previous response)
+         * @param {number} [size] 
+         * @param {string} [search] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listSunreis(nextToken?: string, size?: number, search?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListSunreisResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listSunreis(nextToken, size, search, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listSunreis']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List tags
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listTags(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<TagDTO>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listTags(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listTags']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Admin login
+         * @param {LoginRequest} loginRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async login(loginRequest: LoginRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LoginResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.login(loginRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.login']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -899,7 +879,7 @@ export const AdminAPIApiFp = function(configuration?: Configuration) {
         async searchPlaces(q: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<PlaceDTO>>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchPlaces(q, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.searchPlaces']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.searchPlaces']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -913,7 +893,7 @@ export const AdminAPIApiFp = function(configuration?: Configuration) {
         async updateSunrei(id: string, updateSunreiRequest: UpdateSunreiRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SunreiDTO>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateSunrei(id, updateSunreiRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.updateSunrei']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.updateSunrei']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -927,7 +907,7 @@ export const AdminAPIApiFp = function(configuration?: Configuration) {
         async updateTag(id: string, updateTagRequest: UpdateTagRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TagDTO>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateTag(id, updateTagRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.updateTag']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.updateTag']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -937,10 +917,10 @@ export const AdminAPIApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async uploadImage(file: File, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageDTO>> {
+        async uploadImage(file: File, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ImageDTO>>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.uploadImage(file, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.uploadImage']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.uploadImage']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -950,62 +930,21 @@ export const AdminAPIApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async uploadImageFromUrl(uploadImageFromUrlRequest: UploadImageFromUrlRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageDTO>> {
+        async uploadImageFromUrl(uploadImageFromUrlRequest: UploadImageFromUrlRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ImageDTO>>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.uploadImageFromUrl(uploadImageFromUrlRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminAPIApi.uploadImageFromUrl']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.uploadImageFromUrl']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
 
 /**
- * AdminAPIApi - factory interface
+ * DefaultApi - factory interface
  */
-export const AdminAPIApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = AdminAPIApiFp(configuration)
+export const DefaultApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = DefaultApiFp(configuration)
     return {
-        /**
-         * 
-         * @summary Get Sunrei details (Admin)
-         * @param {string} id 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        adminGetSunrei(id: string, options?: RawAxiosRequestConfig): AxiosPromise<SunreiDTO> {
-            return localVarFp.adminGetSunrei(id, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary List Sunreis with pagination (Admin)
-         * @param {number} [page] 
-         * @param {number} [size] 
-         * @param {string} [search] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        adminListSunreis(page?: number, size?: number, search?: string, options?: RawAxiosRequestConfig): AxiosPromise<PaginatedSunreiResult> {
-            return localVarFp.adminListSunreis(page, size, search, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary List tags (Admin)
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        adminListTags(options?: RawAxiosRequestConfig): AxiosPromise<Array<TagDTO>> {
-            return localVarFp.adminListTags(options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Admin login
-         * @param {LoginRequest} loginRequest 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        adminLogin(loginRequest: LoginRequest, options?: RawAxiosRequestConfig): AxiosPromise<LoginResponse> {
-            return localVarFp.adminLogin(loginRequest, options).then((request) => request(axios, basePath));
-        },
         /**
          * 
          * @summary Create new Sunrei
@@ -1048,6 +987,47 @@ export const AdminAPIApiFactory = function (configuration?: Configuration, baseP
         },
         /**
          * 
+         * @summary Get Sunrei details
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getSunrei(id: string, options?: RawAxiosRequestConfig): AxiosPromise<SunreiDTO> {
+            return localVarFp.getSunrei(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List Sunreis with pagination
+         * @param {string} [nextToken] Token for next page (from previous response)
+         * @param {number} [size] 
+         * @param {string} [search] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listSunreis(nextToken?: string, size?: number, search?: string, options?: RawAxiosRequestConfig): AxiosPromise<ListSunreisResult> {
+            return localVarFp.listSunreis(nextToken, size, search, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List tags
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listTags(options?: RawAxiosRequestConfig): AxiosPromise<Array<TagDTO>> {
+            return localVarFp.listTags(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Admin login
+         * @param {LoginRequest} loginRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        login(loginRequest: LoginRequest, options?: RawAxiosRequestConfig): AxiosPromise<LoginResponse> {
+            return localVarFp.login(loginRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Search places for autocomplete
          * @param {string} q Search query
          * @param {*} [options] Override http request option.
@@ -1085,7 +1065,7 @@ export const AdminAPIApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        uploadImage(file: File, options?: RawAxiosRequestConfig): AxiosPromise<ImageDTO> {
+        uploadImage(file: File, options?: RawAxiosRequestConfig): AxiosPromise<Array<ImageDTO>> {
             return localVarFp.uploadImage(file, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1095,61 +1075,16 @@ export const AdminAPIApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        uploadImageFromUrl(uploadImageFromUrlRequest: UploadImageFromUrlRequest, options?: RawAxiosRequestConfig): AxiosPromise<ImageDTO> {
+        uploadImageFromUrl(uploadImageFromUrlRequest: UploadImageFromUrlRequest, options?: RawAxiosRequestConfig): AxiosPromise<Array<ImageDTO>> {
             return localVarFp.uploadImageFromUrl(uploadImageFromUrlRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * AdminAPIApi - object-oriented interface
+ * DefaultApi - object-oriented interface
  */
-export class AdminAPIApi extends BaseAPI {
-    /**
-     * 
-     * @summary Get Sunrei details (Admin)
-     * @param {string} id 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public adminGetSunrei(id: string, options?: RawAxiosRequestConfig) {
-        return AdminAPIApiFp(this.configuration).adminGetSunrei(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary List Sunreis with pagination (Admin)
-     * @param {number} [page] 
-     * @param {number} [size] 
-     * @param {string} [search] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public adminListSunreis(page?: number, size?: number, search?: string, options?: RawAxiosRequestConfig) {
-        return AdminAPIApiFp(this.configuration).adminListSunreis(page, size, search, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary List tags (Admin)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public adminListTags(options?: RawAxiosRequestConfig) {
-        return AdminAPIApiFp(this.configuration).adminListTags(options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Admin login
-     * @param {LoginRequest} loginRequest 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public adminLogin(loginRequest: LoginRequest, options?: RawAxiosRequestConfig) {
-        return AdminAPIApiFp(this.configuration).adminLogin(loginRequest, options).then((request) => request(this.axios, this.basePath));
-    }
-
+export class DefaultApi extends BaseAPI {
     /**
      * 
      * @summary Create new Sunrei
@@ -1158,7 +1093,7 @@ export class AdminAPIApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public createSunrei(createSunreiRequest: CreateSunreiRequest, options?: RawAxiosRequestConfig) {
-        return AdminAPIApiFp(this.configuration).createSunrei(createSunreiRequest, options).then((request) => request(this.axios, this.basePath));
+        return DefaultApiFp(this.configuration).createSunrei(createSunreiRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1169,7 +1104,7 @@ export class AdminAPIApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public createTag(createTagRequest: CreateTagRequest, options?: RawAxiosRequestConfig) {
-        return AdminAPIApiFp(this.configuration).createTag(createTagRequest, options).then((request) => request(this.axios, this.basePath));
+        return DefaultApiFp(this.configuration).createTag(createTagRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1180,7 +1115,7 @@ export class AdminAPIApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public deleteSunrei(id: string, options?: RawAxiosRequestConfig) {
-        return AdminAPIApiFp(this.configuration).deleteSunrei(id, options).then((request) => request(this.axios, this.basePath));
+        return DefaultApiFp(this.configuration).deleteSunrei(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1191,7 +1126,52 @@ export class AdminAPIApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public deleteTag(id: string, options?: RawAxiosRequestConfig) {
-        return AdminAPIApiFp(this.configuration).deleteTag(id, options).then((request) => request(this.axios, this.basePath));
+        return DefaultApiFp(this.configuration).deleteTag(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get Sunrei details
+     * @param {string} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getSunrei(id: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getSunrei(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List Sunreis with pagination
+     * @param {string} [nextToken] Token for next page (from previous response)
+     * @param {number} [size] 
+     * @param {string} [search] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listSunreis(nextToken?: string, size?: number, search?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listSunreis(nextToken, size, search, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List tags
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listTags(options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listTags(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Admin login
+     * @param {LoginRequest} loginRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public login(loginRequest: LoginRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).login(loginRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1202,7 +1182,7 @@ export class AdminAPIApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public searchPlaces(q: string, options?: RawAxiosRequestConfig) {
-        return AdminAPIApiFp(this.configuration).searchPlaces(q, options).then((request) => request(this.axios, this.basePath));
+        return DefaultApiFp(this.configuration).searchPlaces(q, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1214,7 +1194,7 @@ export class AdminAPIApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public updateSunrei(id: string, updateSunreiRequest: UpdateSunreiRequest, options?: RawAxiosRequestConfig) {
-        return AdminAPIApiFp(this.configuration).updateSunrei(id, updateSunreiRequest, options).then((request) => request(this.axios, this.basePath));
+        return DefaultApiFp(this.configuration).updateSunrei(id, updateSunreiRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1226,7 +1206,7 @@ export class AdminAPIApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public updateTag(id: string, updateTagRequest: UpdateTagRequest, options?: RawAxiosRequestConfig) {
-        return AdminAPIApiFp(this.configuration).updateTag(id, updateTagRequest, options).then((request) => request(this.axios, this.basePath));
+        return DefaultApiFp(this.configuration).updateTag(id, updateTagRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1237,7 +1217,7 @@ export class AdminAPIApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public uploadImage(file: File, options?: RawAxiosRequestConfig) {
-        return AdminAPIApiFp(this.configuration).uploadImage(file, options).then((request) => request(this.axios, this.basePath));
+        return DefaultApiFp(this.configuration).uploadImage(file, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1248,360 +1228,7 @@ export class AdminAPIApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public uploadImageFromUrl(uploadImageFromUrlRequest: UploadImageFromUrlRequest, options?: RawAxiosRequestConfig) {
-        return AdminAPIApiFp(this.configuration).uploadImageFromUrl(uploadImageFromUrlRequest, options).then((request) => request(this.axios, this.basePath));
-    }
-}
-
-
-
-/**
- * PublicAPIApi - axios parameter creator
- */
-export const PublicAPIApiAxiosParamCreator = function (configuration?: Configuration) {
-    return {
-        /**
-         * 
-         * @summary Get Sunrei by ID
-         * @param {string} id ID of the Sunrei to retrieve
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getSunrei: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('getSunrei', 'id', id)
-            const localVarPath = `/api/sunreis/{id}`
-                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary List all places
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listPlaces: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/api/places`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary List Sunrei Spots
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listSunreiSpots: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/api/sunrei-spots`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary List Sunrei with optional polygon filter
-         * @param {string} [polygon] WKT format polygon string (e.g., \&quot;POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))\&quot;)
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listSunreis: async (polygon?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/api/sunreis`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (polygon !== undefined) {
-                localVarQueryParameter['polygon'] = polygon;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary List all tags
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listTags: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/api/tags`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-    }
-};
-
-/**
- * PublicAPIApi - functional programming interface
- */
-export const PublicAPIApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = PublicAPIApiAxiosParamCreator(configuration)
-    return {
-        /**
-         * 
-         * @summary Get Sunrei by ID
-         * @param {string} id ID of the Sunrei to retrieve
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getSunrei(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSunreiResult>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getSunrei(id, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['PublicAPIApi.getSunrei']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary List all places
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async listPlaces(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<PlaceDTO>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listPlaces(options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['PublicAPIApi.listPlaces']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary List Sunrei Spots
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async listSunreiSpots(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SunreiSpotDTO>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listSunreiSpots(options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['PublicAPIApi.listSunreiSpots']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary List Sunrei with optional polygon filter
-         * @param {string} [polygon] WKT format polygon string (e.g., \&quot;POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))\&quot;)
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async listSunreis(polygon?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListSunreiResult>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listSunreis(polygon, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['PublicAPIApi.listSunreis']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary List all tags
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async listTags(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<TagDTO>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listTags(options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['PublicAPIApi.listTags']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-    }
-};
-
-/**
- * PublicAPIApi - factory interface
- */
-export const PublicAPIApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = PublicAPIApiFp(configuration)
-    return {
-        /**
-         * 
-         * @summary Get Sunrei by ID
-         * @param {string} id ID of the Sunrei to retrieve
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getSunrei(id: string, options?: RawAxiosRequestConfig): AxiosPromise<GetSunreiResult> {
-            return localVarFp.getSunrei(id, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary List all places
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listPlaces(options?: RawAxiosRequestConfig): AxiosPromise<Array<PlaceDTO>> {
-            return localVarFp.listPlaces(options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary List Sunrei Spots
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listSunreiSpots(options?: RawAxiosRequestConfig): AxiosPromise<Array<SunreiSpotDTO>> {
-            return localVarFp.listSunreiSpots(options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary List Sunrei with optional polygon filter
-         * @param {string} [polygon] WKT format polygon string (e.g., \&quot;POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))\&quot;)
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listSunreis(polygon?: string, options?: RawAxiosRequestConfig): AxiosPromise<ListSunreiResult> {
-            return localVarFp.listSunreis(polygon, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary List all tags
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        listTags(options?: RawAxiosRequestConfig): AxiosPromise<Array<TagDTO>> {
-            return localVarFp.listTags(options).then((request) => request(axios, basePath));
-        },
-    };
-};
-
-/**
- * PublicAPIApi - object-oriented interface
- */
-export class PublicAPIApi extends BaseAPI {
-    /**
-     * 
-     * @summary Get Sunrei by ID
-     * @param {string} id ID of the Sunrei to retrieve
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public getSunrei(id: string, options?: RawAxiosRequestConfig) {
-        return PublicAPIApiFp(this.configuration).getSunrei(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary List all places
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public listPlaces(options?: RawAxiosRequestConfig) {
-        return PublicAPIApiFp(this.configuration).listPlaces(options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary List Sunrei Spots
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public listSunreiSpots(options?: RawAxiosRequestConfig) {
-        return PublicAPIApiFp(this.configuration).listSunreiSpots(options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary List Sunrei with optional polygon filter
-     * @param {string} [polygon] WKT format polygon string (e.g., \&quot;POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))\&quot;)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public listSunreis(polygon?: string, options?: RawAxiosRequestConfig) {
-        return PublicAPIApiFp(this.configuration).listSunreis(polygon, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary List all tags
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public listTags(options?: RawAxiosRequestConfig) {
-        return PublicAPIApiFp(this.configuration).listTags(options).then((request) => request(this.axios, this.basePath));
+        return DefaultApiFp(this.configuration).uploadImageFromUrl(uploadImageFromUrlRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -59,13 +59,39 @@ dependencies {
     testImplementation(libs.kotlin.test.junit)
 }
 
-// OpenAPI Generator configuration
-openApiGenerate {
+// Generate DTOs from App API spec
+tasks.register<org.openapitools.generator.gradle.plugin.tasks.GenerateTask>("generateAppApi") {
     generatorName.set("kotlin")
-    inputSpec.set("$rootDir/../sunrei-api/openapi.yaml")
-    outputDir.set("$buildDir/generated")
-    apiPackage.set("com.sunrei.generated.api")
-    modelPackage.set("com.sunrei.generated.dto")
+    inputSpec.set("$rootDir/../sunrei-api/app-api-spec.yaml")
+    outputDir.set("$buildDir/generated-app")
+    apiPackage.set("com.sunrei.generated.api.app")
+    modelPackage.set("com.sunrei.generated.dto.app")
+    configOptions.set(mapOf(
+        "dateLibrary" to "kotlinx-datetime",
+        "serializationLibrary" to "kotlinx_serialization",
+        "enumPropertyNaming" to "UPPERCASE",
+        "collectionType" to "list"
+    ))
+    generateApiDocumentation.set(false)
+    generateModelDocumentation.set(false)
+    generateApiTests.set(false)
+    generateModelTests.set(false)
+    
+    // Only generate models, not API clients
+    globalProperties.set(mapOf(
+        "models" to "",
+        "apis" to "false",
+        "supportingFiles" to "false"
+    ))
+}
+
+// Generate DTOs from Admin API spec
+tasks.register<org.openapitools.generator.gradle.plugin.tasks.GenerateTask>("generateAdminApi") {
+    generatorName.set("kotlin")
+    inputSpec.set("$rootDir/../sunrei-api/admin-api-spec.yaml")
+    outputDir.set("$buildDir/generated-admin")
+    apiPackage.set("com.sunrei.generated.api.admin")
+    modelPackage.set("com.sunrei.generated.dto.admin")
     configOptions.set(mapOf(
         "dateLibrary" to "kotlinx-datetime",
         "serializationLibrary" to "kotlinx_serialization",
@@ -87,8 +113,8 @@ openApiGenerate {
 
 // Create custom task with desired name
 tasks.register("generateProtocols") {
-    dependsOn(tasks.openApiGenerate)
-    description = "Generate DTOs from OpenAPI specification"
+    dependsOn("generateAppApi", "generateAdminApi")
+    description = "Generate DTOs from OpenAPI specifications"
     group = "code generation"
 }
 
@@ -96,7 +122,8 @@ tasks.register("generateProtocols") {
 kotlin {
     sourceSets {
         main {
-            kotlin.srcDir("$buildDir/generated/src/main/kotlin")
+            kotlin.srcDir("$buildDir/generated-app/src/main/kotlin")
+            kotlin.srcDir("$buildDir/generated-admin/src/main/kotlin")
         }
     }
 }
@@ -108,5 +135,6 @@ tasks.compileKotlin {
 
 // Clean generated sources when cleaning
 tasks.clean {
-    delete("$buildDir/generated")
+    delete("$buildDir/generated-app")
+    delete("$buildDir/generated-admin")
 }

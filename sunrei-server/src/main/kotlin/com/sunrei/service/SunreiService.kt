@@ -1,10 +1,10 @@
 package com.sunrei.service
 
-import com.sunrei.generated.dto.ImageDTO
-import com.sunrei.generated.dto.PlaceDTO
-import com.sunrei.generated.dto.SunreiDTO
-import com.sunrei.generated.dto.SunreiSpotDTO
-import com.sunrei.generated.dto.TagDTO
+import com.sunrei.generated.dto.app.ImageDTO
+import com.sunrei.generated.dto.app.PlaceDTO
+import com.sunrei.generated.dto.app.SunreiDTO
+import com.sunrei.generated.dto.app.SunreiSpotDTO
+import com.sunrei.generated.dto.app.TagDTO
 import com.sunrei.model.Places
 import com.sunrei.model.SunreiSpots
 import com.sunrei.model.SunreiTags

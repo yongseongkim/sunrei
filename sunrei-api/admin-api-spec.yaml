@@ -1,122 +1,20 @@
 openapi: 3.0.0
 info:
-  title: Sunrei API
+  title: Sunrei Admin API
   version: 1.0.0
-  description: API documentation for Sunrei project
+  description: Admin API for Sunrei management
 
 servers:
   - url: http://localhost:3030
     description: Development server
 
-tags:
-  - name: Public API
-    description: Public read-only endpoints
-  - name: Admin API
-    description: Admin endpoints requiring authentication
-
-security: [ ]
+security: []
 
 paths:
-  # ===== Public API (Read-only) =====
-  /api/sunreis:
-    get:
-      tags:
-        - Public API
-      summary: List Sunrei with optional polygon filter
-      operationId: listSunreis
-      parameters:
-        - name: polygon
-          in: query
-          required: false
-          description: WKT format polygon string (e.g., "POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))")
-          schema:
-            type: string
-      responses:
-        '200':
-          description: List of Sunrei (all or filtered by polygon)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ListSunreiResult'
-
-  /api/sunreis/{id}:
-    get:
-      tags:
-        - Public API
-      summary: Get Sunrei by ID
-      operationId: getSunrei
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-          description: ID of the Sunrei to retrieve
-      responses:
-        '200':
-          description: Details of the Sunrei
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetSunreiResult'
-        '404':
-          description: Sunrei not found
-
-  /api/sunrei-spots:
-    get:
-      tags:
-        - Public API
-      summary: List Sunrei Spots
-      operationId: listSunreiSpots
-      responses:
-        '200':
-          description: List of Sunrei Spots
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/SunreiSpotDTO'
-
-  /api/places:
-    get:
-      tags:
-        - Public API
-      summary: List all places
-      operationId: listPlaces
-      responses:
-        '200':
-          description: List of places
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/PlaceDTO'
-
-  /api/tags:
-    get:
-      tags:
-        - Public API
-      summary: List all tags
-      operationId: listTags
-      responses:
-        '200':
-          description: List of tags
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/TagDTO'
-
-  # ===== Admin API (CRUD with Auth) =====
   /admin/auth/login:
     post:
-      tags:
-        - Admin API
       summary: Admin login
-      operationId: adminLogin
+      operationId: login
       requestBody:
         required: true
         content:
@@ -135,12 +33,10 @@ paths:
 
   /admin/sunreis:
     get:
-      tags:
-        - Admin API
-      summary: List Sunreis with pagination (Admin)
-      operationId: adminListSunreis
+      summary: List Sunreis with pagination
+      operationId: listSunreis
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       parameters:
         - name: nextToken
           in: query
@@ -169,12 +65,10 @@ paths:
           description: Unauthorized
 
     post:
-      tags:
-        - Admin API
       summary: Create new Sunrei
       operationId: createSunrei
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -195,12 +89,10 @@ paths:
 
   /admin/sunreis/{id}:
     get:
-      tags:
-        - Admin API
-      summary: Get Sunrei details (Admin)
-      operationId: adminGetSunrei
+      summary: Get Sunrei details
+      operationId: getSunrei
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       parameters:
         - name: id
           in: path
@@ -220,12 +112,10 @@ paths:
           description: Not found
 
     put:
-      tags:
-        - Admin API
       summary: Update Sunrei
       operationId: updateSunrei
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       parameters:
         - name: id
           in: path
@@ -251,12 +141,10 @@ paths:
           description: Not found
 
     delete:
-      tags:
-        - Admin API
       summary: Delete Sunrei
       operationId: deleteSunrei
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       parameters:
         - name: id
           in: path
@@ -271,15 +159,12 @@ paths:
         '404':
           description: Not found
 
-  # Place search endpoint for autocomplete/search in admin
   /admin/places/search:
     get:
-      tags:
-        - Admin API
       summary: Search places for autocomplete
       operationId: searchPlaces
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       parameters:
         - name: q
           in: query
@@ -301,12 +186,10 @@ paths:
 
   /admin/tags:
     get:
-      tags:
-        - Admin API
-      summary: List tags (Admin)
-      operationId: adminListTags
+      summary: List tags
+      operationId: listTags
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       responses:
         '200':
           description: List of tags
@@ -320,12 +203,10 @@ paths:
           description: Unauthorized
 
     post:
-      tags:
-        - Admin API
       summary: Create new tag
       operationId: createTag
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -344,12 +225,10 @@ paths:
 
   /admin/tags/{id}:
     put:
-      tags:
-        - Admin API
       summary: Update tag
       operationId: updateTag
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       parameters:
         - name: id
           in: path
@@ -375,12 +254,10 @@ paths:
           description: Not found
 
     delete:
-      tags:
-        - Admin API
       summary: Delete tag
       operationId: deleteTag
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       parameters:
         - name: id
           in: path
@@ -397,12 +274,10 @@ paths:
 
   /admin/images/upload:
     post:
-      tags:
-        - Admin API
       summary: Upload image
       operationId: uploadImage
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -431,12 +306,10 @@ paths:
 
   /admin/images/upload-url:
     post:
-      tags:
-        - Admin API
       summary: Upload image from URL
       operationId: uploadImageFromUrl
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -473,21 +346,6 @@ components:
 
   schemas:
     # ===== Common DTOs =====
-    Coordinate:
-      type: object
-      required:
-        - lat
-        - lng
-      properties:
-        lat:
-          type: number
-          format: float
-          description: Latitude coordinate
-        lng:
-          type: number
-          format: float
-          description: Longitude coordinate
-
     PlaceDTO:
       type: object
       required:
@@ -619,30 +477,6 @@ components:
         updatedAt:
           type: string
           format: date-time
-
-    # ===== Public API Response Models =====
-    ListSunreiResult:
-      type: object
-      required:
-        - sunreis
-        - totalCount
-      properties:
-        sunreis:
-          type: array
-          items:
-            $ref: '#/components/schemas/SunreiDTO'
-          description: List of Sunrei
-        totalCount:
-          type: integer
-          description: Total number of Sunrei found
-
-    GetSunreiResult:
-      type: object
-      required:
-        - sunrei
-      properties:
-        sunrei:
-          $ref: '#/components/schemas/SunreiDTO'
 
     # ===== Admin API Request/Response Models =====
     LoginRequest:

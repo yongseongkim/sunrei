@@ -1,8 +1,8 @@
 package com.sunrei.service
 
-import com.sunrei.generated.dto.ImageDTO
-import com.sunrei.generated.dto.PlaceDTO
-import com.sunrei.generated.dto.SunreiSpotDTO
+import com.sunrei.generated.dto.app.ImageDTO
+import com.sunrei.generated.dto.app.PlaceDTO
+import com.sunrei.generated.dto.app.SunreiSpotDTO
 import com.sunrei.model.Places
 import com.sunrei.model.SunreiSpots
 import org.jetbrains.exposed.sql.select

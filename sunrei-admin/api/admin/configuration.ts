@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Sunrei API
- * API documentation for Sunrei project
+ * Sunrei Admin API
+ * Admin API for Sunrei management
  *
  * The version of the OpenAPI document: 1.0.0
  * 

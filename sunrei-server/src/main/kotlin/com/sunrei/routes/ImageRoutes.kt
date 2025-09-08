@@ -1,7 +1,7 @@
 package com.sunrei.routes
 
-import com.sunrei.generated.dto.ImageDTO
-import com.sunrei.generated.dto.UploadImageFromUrlRequest
+import com.sunrei.generated.dto.admin.ImageDTO
+import com.sunrei.generated.dto.admin.UploadImageFromUrlRequest
 import com.sunrei.service.S3Service
 import io.ktor.http.ContentType
 import io.ktor.http.HttpStatusCode

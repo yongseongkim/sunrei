@@ -1,4 +1,4 @@
-import { LoginRequest } from '@/api';
+import { LoginRequest } from '@/api/admin';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 

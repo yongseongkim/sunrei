@@ -2,6 +2,7 @@ package com.sunrei.routes
 
 import com.sunrei.service.AdminSunreiService
 import com.sunrei.service.S3Service
+import io.ktor.http.HttpStatusCode
 import io.ktor.server.response.respond
 import io.ktor.server.routing.Route
 import io.ktor.server.routing.get
@@ -33,6 +34,21 @@ fun Route.adminRoutes(s3Service: S3Service) {
                 )
 
                 call.respond(result)
+            }
+            
+            get("/{id}") {
+                val id = call.parameters["id"] ?: run {
+                    call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
+                    return@get
+                }
+
+                val sunrei = adminSunreiService.findOne(id)
+
+                if (sunrei != null) {
+                    call.respond(sunrei)
+                } else {
+                    call.respond(HttpStatusCode.NotFound, mapOf("error" to "Sunrei not found"))
+                }
             }
         }
     }
