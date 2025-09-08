@@ -23,6 +23,7 @@ out/
 # Environment variables
 .env
 .env.*.local
+application-local.conf
 
 # IDEs and editors
 .vscode/

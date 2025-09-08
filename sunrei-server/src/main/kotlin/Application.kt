@@ -24,9 +24,8 @@ fun main(args: Array<String>) {
 
 fun Application.module() {
     val config = environment.config
-    
-    val isDevelopment = config.propertyOrNull("ktor.deployment.environment")?.getString() == "development" ||
-            config.propertyOrNull("ktor.deployment.watch")?.getList()?.isNotEmpty() == true
+
+    val isDevelopment = config.propertyOrNull("ktor.deployment.watch")?.getList()?.isNotEmpty() == true
 
     // Initialize database
     DatabaseConfig.init(config)
@@ -98,11 +97,13 @@ fun Application.module() {
     }
 
     // Log startup information
+    val appName = config.propertyOrNull("app.name")?.getString() ?: "Sunrei Server"
+    val appVersion = config.propertyOrNull("app.version")?.getString() ?: "1.0.0"
     val dbHost = config.property("database.host").getString()
     val dbPort = config.property("database.port").getString()
     val dbName = config.property("database.name").getString()
 
-    log.info("Starting Sunrei Server")
+    log.info("Starting $appName v$appVersion")
     log.info("Environment: ${if (isDevelopment) "development" else "production"}")
     log.info("Database: $dbHost:$dbPort/$dbName")
 
