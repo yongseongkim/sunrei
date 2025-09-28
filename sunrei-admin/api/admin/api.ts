@@ -44,17 +44,35 @@ export interface CreateTagRequest {
 }
 export interface ImageDTO {
     /**
-     * URL of the image
+     * URL of the original full-size image
      */
     'url': string;
+    'thumbnails'?: ImageDTOThumbnails;
     /**
-     * Width of the image in pixels
+     * Width of the original image in pixels
      */
     'width'?: number;
     /**
-     * Height of the image in pixels
+     * Height of the original image in pixels
      */
     'height'?: number;
+}
+/**
+ * URLs for different thumbnail sizes
+ */
+export interface ImageDTOThumbnails {
+    /**
+     * Small thumbnail (150x150)
+     */
+    'small'?: string;
+    /**
+     * Medium thumbnail (400x400)
+     */
+    'medium'?: string;
+    /**
+     * Large thumbnail (800x800)
+     */
+    'large'?: string;
 }
 export interface ImageInput {
     'url': string;
@@ -95,6 +113,12 @@ export interface LoginResponseUser {
     'id': string;
     'username': string;
     'role': string;
+}
+export interface MultiSizeImageDTO {
+    /**
+     * Array of different image sizes (original, large, medium, small)
+     */
+    'images': Array<ImageDTO>;
 }
 export interface PlaceDTO {
     'id': string;
@@ -140,9 +164,9 @@ export interface SunreiDTO {
      */
     'link'?: string | null;
     /**
-     * Array of images for this Sunrei
+     * Array of multi-size images for this Sunrei
      */
-    'images': Array<ImageDTO>;
+    'images': Array<MultiSizeImageDTO>;
     /**
      * Array of Sunrei spots associated with this Sunrei
      */
@@ -173,9 +197,9 @@ export interface SunreiSpotDTO {
      */
     'youtubeLink'?: string | null;
     /**
-     * Array of images for this spot
+     * Array of multi-size images for this spot
      */
-    'images': Array<ImageDTO>;
+    'images': Array<MultiSizeImageDTO>;
     'place': PlaceDTO;
 }
 export interface TagDTO {

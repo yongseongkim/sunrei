@@ -58,6 +58,7 @@ export default function ImageUpload({
 
         // Upload to S3 via API
         const response = await adminApi.uploadImage(file);
+        console.log('Upload response:', response.data);
         
         return {
           url: response.data.url,
@@ -68,6 +69,7 @@ export default function ImageUpload({
 
       const uploadedImages = await Promise.all(uploadPromises);
       const newImages = [...images, ...uploadedImages].slice(0, maxImages);
+      console.log('New images array:', newImages);
       onChange(newImages);
     } catch (err: any) {
       setError(err.message || 'Failed to upload image');
@@ -226,7 +228,7 @@ export default function ImageUpload({
       {images.length > 0 && (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {images.map((image, index) => (
-            <div key={index} className="relative group">
+            <div key={`${image.url}-${index}`} className="relative group">
               <Card className="overflow-hidden">
                 <div className="aspect-square relative">
                   {image.url ? (
@@ -234,6 +236,10 @@ export default function ImageUpload({
                       src={image.url}
                       alt={`Image ${index + 1}`}
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        console.error('Failed to load image:', image.url);
+                        (e.target as HTMLImageElement).src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100"%3E%3Crect width="100" height="100" fill="%23cccccc"/%3E%3C/svg%3E';
+                      }}
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-muted">

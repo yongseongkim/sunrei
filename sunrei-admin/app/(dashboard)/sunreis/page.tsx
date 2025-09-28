@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Separator } from '@/components/ui/separator';
+import ResponsiveImage, { useFirstImage } from '@/components/ResponsiveImage';
 import { 
   Plus, Edit2, Trash2, MapPin, AlertCircle, Loader2, 
   ChevronDown, ChevronRight
@@ -20,10 +21,8 @@ export default function SunreisPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     fetchSunreis();
   }, []);
 
@@ -52,7 +51,7 @@ export default function SunreisPage() {
     }
   };
 
-  if (!mounted || loading) {
+  if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
@@ -141,7 +140,9 @@ function SunreiCard({
             </Button>
             <div>
               <CardTitle className="text-lg">{sunrei.title}</CardTitle>
-              <CardDescription className="line-clamp-1">{sunrei.description}</CardDescription>
+              {!isExpanded && sunrei.description && (
+                <CardDescription className="line-clamp-1">{sunrei.description}</CardDescription>
+              )}
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -178,11 +179,12 @@ function SunreiCard({
                 <div className="space-y-2">
                   <p className="text-sm font-medium">Images:</p>
                   <div className="flex gap-2">
-                    {sunrei.images.slice(0, 6).map((image, index) => (
-                      <div key={image.id || index} className="w-16 h-16 rounded-md overflow-hidden bg-muted flex-shrink-0">
-                        <img
-                          src={image.url}
+                    {sunrei.images.slice(0, 6).map((multiSizeImage, index) => (
+                      <div key={index} className="w-16 h-16 rounded-md overflow-hidden bg-muted flex-shrink-0">
+                        <ResponsiveImage
+                          multiSizeImage={multiSizeImage}
                           alt={`Sunrei image ${index + 1}`}
+                          size="small"
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -218,11 +220,12 @@ function SunreiCard({
                       {spot.images && spot.images.length > 0 && (
                         <div className="pl-4 mt-2">
                           <div className="flex gap-1">
-                            {spot.images.slice(0, 4).map((image, imgIndex) => (
-                              <div key={image.id || imgIndex} className="w-10 h-10 rounded overflow-hidden bg-muted">
-                                <img
-                                  src={image.url}
+                            {spot.images.slice(0, 4).map((multiSizeImage, imgIndex) => (
+                              <div key={imgIndex} className="w-10 h-10 rounded overflow-hidden bg-muted">
+                                <ResponsiveImage
+                                  multiSizeImage={multiSizeImage}
                                   alt={`Spot image ${imgIndex + 1}`}
+                                  size="small"
                                   className="w-full h-full object-cover"
                                 />
                               </div>

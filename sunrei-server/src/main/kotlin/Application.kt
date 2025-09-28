@@ -4,6 +4,7 @@ import com.sunrei.config.DatabaseConfig
 import com.sunrei.config.JwtConfig
 import com.sunrei.service.S3Config
 import com.sunrei.service.S3Service
+import com.typesafe.config.ConfigFactory
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.http.HttpHeaders
@@ -12,6 +13,11 @@ import io.ktor.serialization.kotlinx.json.json
 import io.ktor.server.application.Application
 import io.ktor.server.application.install
 import io.ktor.server.application.log
+import io.ktor.server.config.HoconApplicationConfig
+import io.ktor.server.engine.EngineConnectorBuilder
+import io.ktor.server.engine.applicationEnvironment
+import io.ktor.server.engine.embeddedServer
+import io.ktor.server.netty.Netty
 import io.ktor.server.plugins.calllogging.CallLogging
 import io.ktor.server.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.server.plugins.cors.routing.CORS
@@ -19,7 +25,25 @@ import kotlinx.serialization.json.Json
 import org.slf4j.event.Level
 
 fun main(args: Array<String>) {
-    io.ktor.server.netty.EngineMain.main(args)
+    val env = System.getenv("KTOR_ENV") ?: "local"
+    val appConfig = ConfigFactory.load("application-$env.conf")
+
+    val server = embeddedServer(
+        Netty,
+        environment = applicationEnvironment {
+            config = HoconApplicationConfig(appConfig)
+        },
+        configure = {
+            connectors.add(
+                EngineConnectorBuilder().apply {
+                    host = appConfig.getString("ktor.deployment.host")
+                    port = appConfig.getInt("ktor.deployment.port")
+                }
+            )
+        },
+        module = Application::module
+    )
+    server.start(wait = true)
 }
 
 fun Application.module() {

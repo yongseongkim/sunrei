@@ -13,9 +13,10 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Separator } from '@/components/ui/separator';
 import PlaceSearchModal from '@/components/PlaceSearchModalNew';
 import ImageUpload from '@/components/ImageUpload';
+import SpotsMap from '@/components/SpotsMap';
 import { 
   Save, Loader2, Plus, Trash2, MapPin, 
-  AlertCircle, X 
+  AlertCircle, X, Map
 } from 'lucide-react';
 
 type SunreiFormProps = {
@@ -33,11 +34,6 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
   const [mapModalOpen, setMapModalOpen] = useState(false);
   const [currentSpotIndex, setCurrentSpotIndex] = useState<number | null>(null);
   const [editingPlace, setEditingPlace] = useState<PlaceInput | undefined>();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const {
     register,
@@ -133,7 +129,7 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
     setMapModalOpen(false);
   };
 
-  if (loading || !mounted) {
+  if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
@@ -232,54 +228,83 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
                 </Button>
               </div>
 
-              {spotFields.map((field, index) => (
-                <Card key={field.id}>
-                  <CardHeader className="py-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium">Spot {index + 1}</span>
-                      <Button
-                        type="button"
-                        onClick={() => removeSpot(index)}
-                        variant="ghost"
-                        size="sm"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </Button>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                {/* Spots List */}
+                <div className="space-y-4 overflow-y-auto" style={{ maxHeight: '1000px' }}>
+                  {spotFields.map((field, index) => (
+                    <Card key={field.id}>
+                      <CardHeader className="py-3">
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm font-medium">Spot {index + 1}</span>
+                          <Button
+                            type="button"
+                            onClick={() => removeSpot(index)}
+                            variant="ghost"
+                            size="sm"
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="space-y-3">
+                        <Input
+                          {...register(`spots.${index}.title` as const, { 
+                            required: 'Spot title is required' 
+                          })}
+                          placeholder="Spot title"
+                        />
+                        <Textarea
+                          {...register(`spots.${index}.description` as const)}
+                          rows={2}
+                          placeholder="Spot description"
+                        />
+                        <Input
+                          {...register(`spots.${index}.youtubeLink` as const)}
+                          type="url"
+                          placeholder="YouTube link"
+                        />
+                        <PlaceSection
+                          spotIndex={index}
+                          register={register}
+                          setValue={setValue}
+                          watch={watch}
+                          onOpenMap={openMapForPlace}
+                        />
+                        <ImageUpload
+                          images={watch(`spots.${index}.images`) || []}
+                          onChange={(newImages) => setValue(`spots.${index}.images`, newImages)}
+                          label="Spot Images"
+                          maxImages={5}
+                        />
+                      </CardContent>
+                    </Card>
+                  ))}
+                  {spotFields.length === 0 && (
+                    <div className="text-center py-8 text-muted-foreground">
+                      <MapPin className="h-12 w-12 mx-auto mb-2 opacity-50" />
+                      <p className="text-sm">No spots added yet</p>
+                      <p className="text-xs mt-1">Click "Add Spot" to get started</p>
                     </div>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    <Input
-                      {...register(`spots.${index}.title` as const, { 
-                        required: 'Spot title is required' 
-                      })}
-                      placeholder="Spot title"
+                  )}
+                </div>
+
+                {/* Map */}
+                <div className="lg:sticky lg:top-0">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <Map className="h-4 w-4" />
+                      <Label className="text-sm">Spots Map</Label>
+                    </div>
+                    <SpotsMap 
+                      spots={spotFields.map((field, index) => ({
+                        title: watch(`spots.${index}.title`) || `Spot ${index + 1}`,
+                        place: watch(`spots.${index}.place`)
+                      }))}
+                      height="980px"
                     />
-                    <Textarea
-                      {...register(`spots.${index}.description` as const)}
-                      rows={2}
-                      placeholder="Spot description"
-                    />
-                    <Input
-                      {...register(`spots.${index}.youtubeLink` as const)}
-                      type="url"
-                      placeholder="YouTube link"
-                    />
-                    <PlaceSection
-                      spotIndex={index}
-                      register={register}
-                      setValue={setValue}
-                      watch={watch}
-                      onOpenMap={openMapForPlace}
-                    />
-                    <ImageUpload
-                      images={watch(`spots.${index}.images`) || []}
-                      onChange={(newImages) => setValue(`spots.${index}.images`, newImages)}
-                      label="Spot Images"
-                      maxImages={5}
-                    />
-                  </CardContent>
-                </Card>
-              ))}
+                  </div>
+                </div>
+              </div>
             </div>
 
             <Separator />

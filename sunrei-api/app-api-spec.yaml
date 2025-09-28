@@ -116,6 +116,7 @@ components:
         - name
         - latitude
         - longitude
+        - isClosed
       properties:
         id:
           type: string
@@ -133,6 +134,19 @@ components:
           type: number
           format: float
           description: Longitude of the place
+        isClosed:
+          type: boolean
+          description: Whether the place is permanently closed or no longer exists
+        closedReason:
+          type: string
+          description: Reason for closure (e.g., "Permanently closed", "Demolished", "Relocated")
+        closedAt:
+          type: string
+          format: date-time
+          description: Date when the place was closed or ceased to exist
+        notes:
+          type: string
+          description: Additional notes about the place status or history
 
     ImageDTO:
       type: object
@@ -148,6 +162,17 @@ components:
         height:
           type: integer
           description: Height of the image in pixels
+    
+    MultiSizeImageDTO:
+      type: object
+      required:
+        - images
+      properties:
+        images:
+          type: array
+          description: Array of different image sizes (original, large, medium, small)
+          items:
+            $ref: '#/components/schemas/ImageDTO'
 
     SunreiSpotDTO:
       type: object
@@ -175,9 +200,9 @@ components:
           nullable: true
         images:
           type: array
-          description: Array of images for this spot
+          description: Array of multi-size images for this spot
           items:
-            $ref: '#/components/schemas/ImageDTO'
+            $ref: '#/components/schemas/MultiSizeImageDTO'
         place:
           description: Associated place
           $ref: '#/components/schemas/PlaceDTO'
@@ -221,9 +246,9 @@ components:
           nullable: true
         images:
           type: array
-          description: Array of images for this Sunrei
+          description: Array of multi-size images for this Sunrei
           items:
-            $ref: '#/components/schemas/ImageDTO'
+            $ref: '#/components/schemas/MultiSizeImageDTO'
         spots:
           type: array
           description: Array of Sunrei spots associated with this Sunrei

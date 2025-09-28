@@ -1,22 +1,27 @@
-package com.sunrei.routes
+package com.sunrei.routes.admin
 
 import com.sunrei.generated.dto.admin.ImageDTO
+import com.sunrei.generated.dto.admin.MultiSizeImageDTO
 import com.sunrei.generated.dto.admin.UploadImageFromUrlRequest
+import com.sunrei.model.Image
+import com.sunrei.model.MultiSizeImage
 import com.sunrei.service.S3Service
 import io.ktor.http.ContentType
 import io.ktor.http.HttpStatusCode
 import io.ktor.http.content.PartData
 import io.ktor.http.content.forEachPart
-import io.ktor.http.content.streamProvider
+import io.ktor.server.application.call
 import io.ktor.server.request.receive
 import io.ktor.server.request.receiveMultipart
 import io.ktor.server.response.respond
 import io.ktor.server.routing.Route
 import io.ktor.server.routing.post
 import io.ktor.server.routing.route
+import io.ktor.utils.io.readRemaining
+import kotlinx.io.readByteArray
 
 fun Route.imageRoutes(s3Service: S3Service) {
-    route("/admin/images") {
+    route("/images") {
         // Upload image file
         post("/upload") {
             val multipart = call.receiveMultipart()
@@ -44,13 +49,12 @@ fun Route.imageRoutes(s3Service: S3Service) {
 
             try {
                 // Check file size (max 5MB)
-                val bytes = file.streamProvider().readBytes()
+                val bytes = file.provider().readRemaining().readByteArray()
                 if (bytes.size > 5 * 1024 * 1024) {
                     call.respond(HttpStatusCode.BadRequest, mapOf("error" to "File too large (max 5MB)"))
                     return@post
                 }
 
-                // Check content type
                 val contentType = file.contentType ?: ContentType.Application.OctetStream
                 if (!contentType.match(ContentType.Image.Any)) {
                     call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Only image files are allowed"))
@@ -60,15 +64,20 @@ fun Route.imageRoutes(s3Service: S3Service) {
                 val originalFileName = file.originalFileName ?: "image.jpg"
                 val results = s3Service.uploadImage(bytes, originalFileName)
 
-                val imageDTOs = results.map { result ->
+                val images = results.map { result ->
+                    Image(url = result.url, width = result.width, height = result.height)
+                }
+
+                val multiSizeImage = MultiSizeImage.from(images)
+                val imageDTOs = multiSizeImage.images.map { img ->
                     ImageDTO(
-                        url = result.url,
-                        width = result.width,
-                        height = result.height
+                        url = img.url,
+                        width = img.width,
+                        height = img.height
                     )
                 }
 
-                call.respond(HttpStatusCode.Created, imageDTOs)
+                call.respond(HttpStatusCode.Created, MultiSizeImageDTO(images = imageDTOs))
             } catch (e: Exception) {
                 call.respond(
                     HttpStatusCode.InternalServerError,
@@ -99,15 +108,20 @@ fun Route.imageRoutes(s3Service: S3Service) {
             try {
                 val results = s3Service.uploadImageFromUrl(request.url)
 
-                val imageDTOs = results.map { result ->
-                    ImageDTO(
-                        url = result.url,
-                        width = result.width,
-                        height = result.height
-                    )
+                val images = results.map { result ->
+                    Image(url = result.url, width = result.width, height = result.height)
                 }
 
-                call.respond(HttpStatusCode.Created, imageDTOs)
+                val multiSizeImage = MultiSizeImage.from(images)
+
+                val imageDTOs = multiSizeImage.images.map { img ->
+                    ImageDTO(
+                        url = img.url,
+                        width = img.width,
+                        height = img.height
+                    )
+                }
+                call.respond(HttpStatusCode.Created, MultiSizeImageDTO(images = imageDTOs))
             } catch (e: IllegalArgumentException) {
                 call.respond(HttpStatusCode.BadRequest, mapOf("error" to e.message))
             } catch (e: Exception) {

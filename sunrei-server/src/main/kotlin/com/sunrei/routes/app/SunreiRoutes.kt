@@ -1,9 +1,10 @@
-package com.sunrei.routes
+package com.sunrei.routes.app
 
 import com.sunrei.generated.dto.app.GetSunreiResult
 import com.sunrei.generated.dto.app.ListSunreiResult
 import com.sunrei.service.SunreiService
 import io.ktor.http.HttpStatusCode
+import io.ktor.server.application.call
 import io.ktor.server.response.respond
 import io.ktor.server.routing.Route
 import io.ktor.server.routing.get

@@ -8,7 +8,7 @@ servers:
   - url: http://localhost:3030
     description: Development server
 
-security: []
+security: [ ]
 
 paths:
   /admin/auth/login:
@@ -36,7 +36,7 @@ paths:
       summary: List Sunreis with pagination
       operationId: listSunreis
       security:
-        - bearerAuth: []
+        - bearerAuth: [ ]
       parameters:
         - name: nextToken
           in: query
@@ -68,7 +68,7 @@ paths:
       summary: Create new Sunrei
       operationId: createSunrei
       security:
-        - bearerAuth: []
+        - bearerAuth: [ ]
       requestBody:
         required: true
         content:
@@ -92,7 +92,7 @@ paths:
       summary: Get Sunrei details
       operationId: getSunrei
       security:
-        - bearerAuth: []
+        - bearerAuth: [ ]
       parameters:
         - name: id
           in: path
@@ -115,7 +115,7 @@ paths:
       summary: Update Sunrei
       operationId: updateSunrei
       security:
-        - bearerAuth: []
+        - bearerAuth: [ ]
       parameters:
         - name: id
           in: path
@@ -144,7 +144,7 @@ paths:
       summary: Delete Sunrei
       operationId: deleteSunrei
       security:
-        - bearerAuth: []
+        - bearerAuth: [ ]
       parameters:
         - name: id
           in: path
@@ -164,7 +164,7 @@ paths:
       summary: Search places for autocomplete
       operationId: searchPlaces
       security:
-        - bearerAuth: []
+        - bearerAuth: [ ]
       parameters:
         - name: q
           in: query
@@ -189,7 +189,7 @@ paths:
       summary: List tags
       operationId: listTags
       security:
-        - bearerAuth: []
+        - bearerAuth: [ ]
       responses:
         '200':
           description: List of tags
@@ -206,7 +206,7 @@ paths:
       summary: Create new tag
       operationId: createTag
       security:
-        - bearerAuth: []
+        - bearerAuth: [ ]
       requestBody:
         required: true
         content:
@@ -228,7 +228,7 @@ paths:
       summary: Update tag
       operationId: updateTag
       security:
-        - bearerAuth: []
+        - bearerAuth: [ ]
       parameters:
         - name: id
           in: path
@@ -257,7 +257,7 @@ paths:
       summary: Delete tag
       operationId: deleteTag
       security:
-        - bearerAuth: []
+        - bearerAuth: [ ]
       parameters:
         - name: id
           in: path
@@ -277,7 +277,7 @@ paths:
       summary: Upload image
       operationId: uploadImage
       security:
-        - bearerAuth: []
+        - bearerAuth: [ ]
       requestBody:
         required: true
         content:
@@ -292,13 +292,11 @@ paths:
                   format: binary
       responses:
         '201':
-          description: Images uploaded (multiple sizes)
+          description: Image uploaded (multiple sizes)
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/ImageDTO'
+                $ref: '#/components/schemas/MultiSizeImageDTO'
         '401':
           description: Unauthorized
         '400':
@@ -309,7 +307,7 @@ paths:
       summary: Upload image from URL
       operationId: uploadImageFromUrl
       security:
-        - bearerAuth: []
+        - bearerAuth: [ ]
       requestBody:
         required: true
         content:
@@ -324,13 +322,11 @@ paths:
                   description: URL of the image to download and upload
       responses:
         '201':
-          description: Images uploaded from URL (multiple sizes)
+          description: Image uploaded from URL (multiple sizes)
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/ImageDTO'
+                $ref: '#/components/schemas/MultiSizeImageDTO'
         '401':
           description: Unauthorized
         '400':
@@ -353,6 +349,7 @@ components:
         - name
         - latitude
         - longitude
+        - isClosed
       properties:
         id:
           type: string
@@ -370,6 +367,19 @@ components:
           type: number
           format: float
           description: Longitude of the place
+        isClosed:
+          type: boolean
+          description: Whether the place is permanently closed or no longer exists
+        closedReason:
+          type: string
+          description: Reason for closure (e.g., "Permanently closed", "Demolished", "Relocated")
+        closedAt:
+          type: string
+          format: date-time
+          description: Date when the place was closed or ceased to exist
+        notes:
+          type: string
+          description: Additional notes about the place status or history
 
     ImageDTO:
       type: object
@@ -385,6 +395,17 @@ components:
         height:
           type: integer
           description: Height of the image in pixels
+    
+    MultiSizeImageDTO:
+      type: object
+      required:
+        - images
+      properties:
+        images:
+          type: array
+          description: Array of different image sizes (original, large, medium, small)
+          items:
+            $ref: '#/components/schemas/ImageDTO'
 
     SunreiSpotDTO:
       type: object
@@ -412,9 +433,9 @@ components:
           nullable: true
         images:
           type: array
-          description: Array of images for this spot
+          description: Array of multi-size images for this spot
           items:
-            $ref: '#/components/schemas/ImageDTO'
+            $ref: '#/components/schemas/MultiSizeImageDTO'
         place:
           description: Associated place
           $ref: '#/components/schemas/PlaceDTO'
@@ -458,9 +479,9 @@ components:
           nullable: true
         images:
           type: array
-          description: Array of images for this Sunrei
+          description: Array of multi-size images for this Sunrei
           items:
-            $ref: '#/components/schemas/ImageDTO'
+            $ref: '#/components/schemas/MultiSizeImageDTO'
         spots:
           type: array
           description: Array of Sunrei spots associated with this Sunrei

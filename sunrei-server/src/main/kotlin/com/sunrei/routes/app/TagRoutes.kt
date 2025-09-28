@@ -1,4 +1,4 @@
-package com.sunrei.routes
+package com.sunrei.routes.app
 
 import com.sunrei.service.TagService
 import io.ktor.server.application.*
@@ -7,7 +7,7 @@ import io.ktor.server.routing.*
 
 fun Route.tagRoutes() {
     val tagService = TagService()
-    
+
     route("/tags") {
         get {
             val tags = tagService.findAll()

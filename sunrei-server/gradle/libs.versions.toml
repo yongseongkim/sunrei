@@ -12,6 +12,7 @@ jwt = "4.4.0"
 aws = "1.0.44"
 ktor-client = "3.2.3"
 thumbnailator = "0.4.20"
+flyway = "10.7.1"
 
 [libraries]
 ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
@@ -52,7 +53,12 @@ ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negoti
 # Image processing
 thumbnailator = { module = "net.coobird:thumbnailator", version.ref = "thumbnailator" }
 
+# Flyway database migration
+flyway-core = { module = "org.flywaydb:flyway-core", version.ref = "flyway" }
+flyway-database-postgresql = { module = "org.flywaydb:flyway-database-postgresql", version.ref = "flyway" }
+
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
+flyway = { id = "org.flywaydb.flyway", version.ref = "flyway" }
