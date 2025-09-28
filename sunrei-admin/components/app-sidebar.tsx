@@ -27,11 +27,6 @@ import {
 
 const navigationItems = [
   {
-    title: 'Dashboard',
-    href: '/',
-    icon: LayoutDashboard,
-  },
-  {
     title: 'Sunreis',
     href: '/sunreis',
     icon: MapPin,
