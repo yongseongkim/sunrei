@@ -94,7 +94,41 @@ class S3Service(
             else -> imageVariants.take(1) // Only create thumbnail
         }
 
-        // Always add the original (optimized) version first
+        // Process variants first (small to large)
+        for (variant in variantsToCreate) {
+            // Skip if original is already smaller than this variant
+            if (originalWidth <= variant.maxDimension && originalHeight <= variant.maxDimension) {
+                continue
+            }
+
+            val variantOutputStream = ByteArrayOutputStream()
+            val builder = Thumbnails.of(originalImage)
+                .size(variant.maxDimension, variant.maxDimension)
+                .keepAspectRatio(true)
+
+            if (outputFormat == "jpg") {
+                builder.outputQuality(variant.quality).outputFormat("jpg")
+            } else {
+                builder.outputFormat("png")
+            }
+
+            builder.toOutputStream(variantOutputStream)
+
+            val variantBytes = variantOutputStream.toByteArray()
+            val variantImage = ImageIO.read(ByteArrayInputStream(variantBytes))
+
+            processedImages.add(
+                ProcessedImage(
+                    bytes = variantBytes,
+                    width = variantImage?.width ?: 0,
+                    height = variantImage?.height ?: 0,
+                    contentType = contentType,
+                    isOriginal = false
+                )
+            )
+        }
+
+        // Add the original (optimized) version last
         val originalOutputStream = ByteArrayOutputStream()
         val maxOriginalDimension = 2048
 
@@ -137,40 +171,6 @@ class S3Service(
                 isOriginal = true
             )
         )
-
-        // Create variants
-        for (variant in variantsToCreate) {
-            // Skip if original is already smaller than this variant
-            if (originalWidth <= variant.maxDimension && originalHeight <= variant.maxDimension) {
-                continue
-            }
-
-            val variantOutputStream = ByteArrayOutputStream()
-            val builder = Thumbnails.of(originalImage)
-                .size(variant.maxDimension, variant.maxDimension)
-                .keepAspectRatio(true)
-
-            if (outputFormat == "jpg") {
-                builder.outputQuality(variant.quality).outputFormat("jpg")
-            } else {
-                builder.outputFormat("png")
-            }
-
-            builder.toOutputStream(variantOutputStream)
-
-            val variantBytes = variantOutputStream.toByteArray()
-            val variantImage = ImageIO.read(ByteArrayInputStream(variantBytes))
-
-            processedImages.add(
-                ProcessedImage(
-                    bytes = variantBytes,
-                    width = variantImage?.width ?: 0,
-                    height = variantImage?.height ?: 0,
-                    contentType = contentType,
-                    isOriginal = false
-                )
-            )
-        }
 
         processedImages
     }
@@ -227,7 +227,7 @@ class S3Service(
             )
         }
 
-        // Return list ordered by size (original first, then largest to smallest)
+        // Return list ordered by size (small to large, with original last)
         return results
     }
 
