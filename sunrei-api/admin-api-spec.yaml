@@ -584,7 +584,7 @@ components:
         images:
           type: array
           items:
-            $ref: '#/components/schemas/ImageInput'
+            $ref: '#/components/schemas/MultiSizeImageDTO'
 
     UpdateSunreiRequest:
       type: object
@@ -607,7 +607,7 @@ components:
         images:
           type: array
           items:
-            $ref: '#/components/schemas/ImageInput'
+            $ref: '#/components/schemas/MultiSizeImageDTO'
 
     CreateSunreiSpotInline:
       type: object
@@ -627,7 +627,7 @@ components:
         images:
           type: array
           items:
-            $ref: '#/components/schemas/ImageInput'
+            $ref: '#/components/schemas/MultiSizeImageDTO'
 
     UpdateSunreiSpotInline:
       type: object
@@ -650,7 +650,7 @@ components:
         images:
           type: array
           items:
-            $ref: '#/components/schemas/ImageInput'
+            $ref: '#/components/schemas/MultiSizeImageDTO'
         _delete:
           type: boolean
           description: Mark this spot for deletion
@@ -659,6 +659,7 @@ components:
       type: object
       required:
         - name
+        - address
         - latitude
         - longitude
       properties:

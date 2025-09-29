@@ -3,6 +3,7 @@ package com.sunrei.model
 import com.sunrei.utils.IdGenerator
 import kotlinx.datetime.Clock
 import org.jetbrains.exposed.sql.Table
+import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.kotlin.datetime.timestamp
 import org.jetbrains.exposed.sql.statements.InsertStatement
 
@@ -40,3 +41,15 @@ abstract class ULIDTimestampedTable(name: String, idPrefix: String) : ULIDTable(
  * Extension function to check if a string is null or empty
  */
 private fun String?.isNullOrEmpty(): Boolean = this == null || this.isEmpty()
+
+/**
+ * Extension function to insert a record and return the generated ID
+ */
+fun <T : ULIDTable> T.insertAndGetId(body: T.(InsertStatement<Number>) -> Unit): String {
+    val generatedId = generateId()
+    insert {
+        it[id] = generatedId
+        body(it)
+    }
+    return generatedId
+}

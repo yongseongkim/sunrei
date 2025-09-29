@@ -1,7 +1,20 @@
 'use client';
 
 import { PlaceInput } from '@/api/admin';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Separator } from '@/components/ui/separator';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { config } from '@/lib/config';
+import { MapPin, Navigation, Search } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import GoogleMap from './GoogleMap';
 
@@ -22,15 +35,17 @@ export default function PlaceSearchModal({
     initialPlace || {
       name: '',
       address: '',
-      latitude: undefined,
-      longitude: undefined,
-    }
+      latitude: 0,
+      longitude: 0,
+    },
   );
   const [mapCenter, setMapCenter] = useState({ lat: 35.6762, lng: 139.6503 }); // Tokyo
-  const [mapZoom, setMapZoom] = useState(12);
-  const [searchInput, setSearchInput] = useState('');
+  const [mapZoom, setMapZoom] = useState(14);
+  const [addressSearchInput, setAddressSearchInput] = useState('');
+  const [coordinateSearchInput, setCoordinateSearchInput] = useState('');
   const [map, setMap] = useState<google.maps.Map | null>(null);
-  const [searchBox, setSearchBox] = useState<google.maps.places.SearchBox | null>(null);
+  const [searchBox, setSearchBox] =
+    useState<google.maps.places.SearchBox | null>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const geocoder = useRef<google.maps.Geocoder | null>(null);
 
@@ -83,41 +98,105 @@ export default function PlaceSearchModal({
       geocoder.current = new google.maps.Geocoder();
     }
 
-    geocoder.current.geocode(
-      { location: { lat, lng } },
-      (results, status) => {
-        if (status === 'OK' && results && results[0]) {
-          setSelectedPlace({
-            name: results[0].name || 'Selected Location',
-            address: results[0].formatted_address || '',
-            latitude: lat,
-            longitude: lng,
-          });
-        } else {
-          setSelectedPlace({
-            name: 'Selected Location',
-            address: '',
-            latitude: lat,
-            longitude: lng,
-          });
+    geocoder.current.geocode({ location: { lat, lng } }, (results, status) => {
+      if (status === 'OK' && results && results[0]) {
+        const result = results[0];
+        let placeName = 'Selected Location';
+
+        // Try to get a more specific name from address components
+        if (result.address_components) {
+          const pointOfInterest = result.address_components.find(
+            (comp) =>
+              comp.types.includes('point_of_interest') ||
+              comp.types.includes('establishment'),
+          );
+          const locality = result.address_components.find(
+            (comp) =>
+              comp.types.includes('locality') ||
+              comp.types.includes('sublocality'),
+          );
+
+          if (pointOfInterest) {
+            placeName = pointOfInterest.long_name;
+          } else if (locality) {
+            placeName = locality.long_name;
+          }
         }
+
+        setSelectedPlace({
+          name: placeName,
+          address: result.formatted_address || '',
+          latitude: lat,
+          longitude: lng,
+        });
+      } else {
+        setSelectedPlace({
+          name: 'Selected Location',
+          address: '',
+          latitude: lat,
+          longitude: lng,
+        });
       }
-    );
+    });
   };
 
   const handleCoordinateSearch = () => {
-    const coords = searchInput.match(/(-?\d+\.?\d*),\s*(-?\d+\.?\d*)/);
+    const coords = coordinateSearchInput.match(
+      /(-?\d+\.?\d*)[,\s]+(-?\d+\.?\d*)/,
+    );
     if (coords) {
       const lat = parseFloat(coords[1]);
       const lng = parseFloat(coords[2]);
-      
-      setSelectedPlace({
-        name: 'Custom Location',
-        address: `${lat}, ${lng}`,
-        latitude: lat,
-        longitude: lng,
-      });
-      
+
+      // Reverse geocoding to get address
+      if (!geocoder.current) {
+        geocoder.current = new google.maps.Geocoder();
+      }
+
+      geocoder.current.geocode(
+        { location: { lat, lng } },
+        (results, status) => {
+          if (status === 'OK' && results && results[0]) {
+            const result = results[0];
+            let placeName = 'Custom Location';
+
+            // Try to get a more specific name from address components
+            if (result.address_components) {
+              const pointOfInterest = result.address_components.find(
+                (comp) =>
+                  comp.types.includes('point_of_interest') ||
+                  comp.types.includes('establishment'),
+              );
+              const locality = result.address_components.find(
+                (comp) =>
+                  comp.types.includes('locality') ||
+                  comp.types.includes('sublocality'),
+              );
+
+              if (pointOfInterest) {
+                placeName = pointOfInterest.long_name;
+              } else if (locality) {
+                placeName = locality.long_name;
+              }
+            }
+
+            setSelectedPlace({
+              name: placeName,
+              address: result.formatted_address || `${lat}, ${lng}`,
+              latitude: lat,
+              longitude: lng,
+            });
+          } else {
+            setSelectedPlace({
+              name: 'Custom Location',
+              address: `${lat}, ${lng}`,
+              latitude: lat,
+              longitude: lng,
+            });
+          }
+        },
+      );
+
       setMapCenter({ lat, lng });
       if (map) {
         map.setCenter({ lat, lng });
@@ -133,64 +212,80 @@ export default function PlaceSearchModal({
     }
   };
 
-  if (!isOpen) return null;
-
   return (
-    <div
-      className="fixed inset-0 flex items-center justify-center z-50 p-4"
-      style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
-      onClick={onClose}
-    >
-      <div
-        className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="p-6 overflow-y-auto">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-bold text-gray-900">Search Location</h2>
-            <button
-              onClick={onClose}
-              className="text-gray-500 hover:text-gray-700 p-1"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-          
-          <div className="mb-4">
-            <div className="flex gap-2">
-              <input
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
+        <DialogHeader>
+          <DialogTitle className="text-xl flex items-center gap-2">
+            <MapPin className="h-5 w-5" />
+            Search Location
+          </DialogTitle>
+        </DialogHeader>
+
+        <div className="flex-1 overflow-y-auto space-y-4">
+          <Tabs defaultValue="address" className="w-full">
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="address">
+                <MapPin className="h-4 w-4 mr-2" />
+                Search by Address
+              </TabsTrigger>
+              <TabsTrigger value="coordinates">
+                <Navigation className="h-4 w-4 mr-2" />
+                Search by Coordinates
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="address" className="mt-4 space-y-2">
+              <Label htmlFor="address-search">Address or Place Name</Label>
+              <Input
+                id="address-search"
                 ref={searchInputRef}
                 type="text"
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                placeholder="Search place or enter coordinates (lat, lng)"
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-gray-900 placeholder-gray-600"
+                value={addressSearchInput}
+                onChange={(e) => setAddressSearchInput(e.target.value)}
+                placeholder="Enter address or place name (e.g., Tokyo Tower, Shibuya Station)"
+                className="w-full"
               />
-              <button
-                onClick={handleCoordinateSearch}
-                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
-              >
-                Search Coords
-              </button>
-            </div>
-            <p className="text-xs text-gray-600 mt-1">
-              Enter address to search or coordinates like: 35.6762, 139.6503
-            </p>
-          </div>
+              <p className="text-xs text-muted-foreground">
+                Start typing to search for places. Select from suggestions or
+                click on the map.
+              </p>
+            </TabsContent>
 
-          <div className="h-96 mb-4 border rounded-lg overflow-hidden">
+            <TabsContent value="coordinates" className="mt-4 space-y-2">
+              <Label htmlFor="coord-search">GPS Coordinates</Label>
+              <div className="flex gap-2">
+                <Input
+                  id="coord-search"
+                  type="text"
+                  value={coordinateSearchInput}
+                  onChange={(e) => setCoordinateSearchInput(e.target.value)}
+                  placeholder="35.6762, 139.6503"
+                  className="flex-1"
+                  onKeyPress={(e) => {
+                    if (e.key === 'Enter') {
+                      handleCoordinateSearch();
+                    }
+                  }}
+                />
+                <Button
+                  onClick={handleCoordinateSearch}
+                  variant="default"
+                  size="default"
+                  className="min-w-[100px]"
+                >
+                  <Search className="h-4 w-4 mr-2" />
+                  Search
+                </Button>
+              </div>
+              <p className="text-xs text-muted-foreground">
+                Enter coordinates in format: latitude, longitude (e.g., 35.6762,
+                139.6503)
+              </p>
+            </TabsContent>
+          </Tabs>
+
+          <div className="h-96 border rounded-lg overflow-hidden">
             <GoogleMap
               apiKey={config.googleMaps.apiKey}
               center={mapCenter}
@@ -199,83 +294,104 @@ export default function PlaceSearchModal({
               onLoad={setMap}
               markers={
                 selectedPlace.latitude && selectedPlace.longitude
-                  ? [{ position: { lat: selectedPlace.latitude, lng: selectedPlace.longitude } }]
+                  ? [
+                      {
+                        position: {
+                          lat: selectedPlace.latitude,
+                          lng: selectedPlace.longitude,
+                        },
+                      },
+                    ]
                   : []
               }
             />
           </div>
 
-          <div className="bg-gray-50 p-3 rounded-lg mb-4">
-            <h3 className="font-medium text-gray-900 mb-2">Selected Location</h3>
-            <div className="grid grid-cols-2 gap-2 text-sm">
-              <div>
-                <label className="text-gray-700">Name:</label>
-                <input
+          <Card className="p-4">
+            <h3 className="font-medium mb-3">Selected Location</h3>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="name">Name</Label>
+                <Input
+                  id="name"
                   type="text"
                   value={selectedPlace.name || ''}
-                  onChange={(e) => setSelectedPlace({ ...selectedPlace, name: e.target.value })}
+                  onChange={(e) =>
+                    setSelectedPlace({ ...selectedPlace, name: e.target.value })
+                  }
                   placeholder="Enter place name"
-                  className="w-full mt-1 px-2 py-1 border rounded text-gray-900 placeholder-gray-600"
                 />
               </div>
-              <div>
-                <label className="text-gray-700">Address:</label>
-                <input
+              <div className="space-y-2">
+                <Label htmlFor="address">Address</Label>
+                <Input
+                  id="address"
                   type="text"
                   value={selectedPlace.address || ''}
-                  onChange={(e) => setSelectedPlace({ ...selectedPlace, address: e.target.value })}
+                  onChange={(e) =>
+                    setSelectedPlace({
+                      ...selectedPlace,
+                      address: e.target.value,
+                    })
+                  }
                   placeholder="Enter address"
-                  className="w-full mt-1 px-2 py-1 border rounded text-gray-900 placeholder-gray-600"
                 />
               </div>
-              <div>
-                <label className="text-gray-700">Latitude:</label>
-                <input
+              <div className="space-y-2">
+                <Label htmlFor="latitude">Latitude</Label>
+                <Input
+                  id="latitude"
                   type="number"
                   value={selectedPlace.latitude || ''}
-                  onChange={(e) => setSelectedPlace({ 
-                    ...selectedPlace, 
-                    latitude: parseFloat(e.target.value) 
-                  })}
+                  onChange={(e) =>
+                    setSelectedPlace({
+                      ...selectedPlace,
+                      latitude: parseFloat(e.target.value),
+                    })
+                  }
                   placeholder="0.000000"
-                  className="w-full mt-1 px-2 py-1 border rounded text-gray-900 placeholder-gray-600"
                   step="any"
                 />
               </div>
-              <div>
-                <label className="text-gray-700">Longitude:</label>
-                <input
+              <div className="space-y-2">
+                <Label htmlFor="longitude">Longitude</Label>
+                <Input
+                  id="longitude"
                   type="number"
                   value={selectedPlace.longitude || ''}
-                  onChange={(e) => setSelectedPlace({ 
-                    ...selectedPlace, 
-                    longitude: parseFloat(e.target.value) 
-                  })}
+                  onChange={(e) =>
+                    setSelectedPlace({
+                      ...selectedPlace,
+                      longitude: parseFloat(e.target.value),
+                    })
+                  }
                   placeholder="0.000000"
-                  className="w-full mt-1 px-2 py-1 border rounded text-gray-900 placeholder-gray-600"
                   step="any"
                 />
               </div>
             </div>
-          </div>
-
-          <div className="flex justify-end gap-2">
-            <button
-              onClick={onClose}
-              className="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300"
-            >
-              Cancel
-            </button>
-            <button
-              onClick={handleSave}
-              disabled={!selectedPlace.latitude || !selectedPlace.longitude}
-              className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50"
-            >
-              Add Location
-            </button>
-          </div>
+          </Card>
         </div>
-      </div>
-    </div>
+
+        <Separator className="my-4" />
+
+        <div className="flex justify-end gap-2">
+          <Button onClick={onClose} variant="outline">
+            Cancel
+          </Button>
+          <Button
+            onClick={handleSave}
+            disabled={
+              !selectedPlace.name ||
+              !selectedPlace.address ||
+              selectedPlace.latitude === 0 ||
+              selectedPlace.longitude === 0
+            }
+          >
+            Add Location
+          </Button>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }

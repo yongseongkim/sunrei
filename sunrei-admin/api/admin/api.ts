@@ -29,14 +29,14 @@ export interface CreateSunreiRequest {
     'link'?: string | null;
     'tagIds'?: Array<string>;
     'spots'?: Array<CreateSunreiSpotInline>;
-    'images'?: Array<ImageInput>;
+    'images'?: Array<MultiSizeImageDTO>;
 }
 export interface CreateSunreiSpotInline {
     'title': string;
     'description'?: string;
     'youtubeLink'?: string | null;
     'place'?: PlaceInput;
-    'images'?: Array<ImageInput>;
+    'images'?: Array<MultiSizeImageDTO>;
 }
 export interface CreateTagRequest {
     'name': string;
@@ -44,35 +44,17 @@ export interface CreateTagRequest {
 }
 export interface ImageDTO {
     /**
-     * URL of the original full-size image
+     * URL of the image
      */
     'url': string;
-    'thumbnails'?: ImageDTOThumbnails;
     /**
-     * Width of the original image in pixels
+     * Width of the image in pixels
      */
     'width'?: number;
     /**
-     * Height of the original image in pixels
+     * Height of the image in pixels
      */
     'height'?: number;
-}
-/**
- * URLs for different thumbnail sizes
- */
-export interface ImageDTOThumbnails {
-    /**
-     * Small thumbnail (150x150)
-     */
-    'small'?: string;
-    /**
-     * Medium thumbnail (400x400)
-     */
-    'medium'?: string;
-    /**
-     * Large thumbnail (800x800)
-     */
-    'large'?: string;
 }
 export interface ImageInput {
     'url': string;
@@ -138,6 +120,22 @@ export interface PlaceDTO {
      * Longitude of the place
      */
     'longitude': number;
+    /**
+     * Whether the place is permanently closed or no longer exists
+     */
+    'isClosed': boolean;
+    /**
+     * Reason for closure (e.g., \"Permanently closed\", \"Demolished\", \"Relocated\")
+     */
+    'closedReason'?: string;
+    /**
+     * Date when the place was closed or ceased to exist
+     */
+    'closedAt'?: string;
+    /**
+     * Additional notes about the place status or history
+     */
+    'notes'?: string;
 }
 export interface PlaceInput {
     /**
@@ -145,7 +143,7 @@ export interface PlaceInput {
      */
     'id'?: string;
     'name': string;
-    'address'?: string;
+    'address': string;
     'latitude': number;
     'longitude': number;
 }
@@ -219,7 +217,7 @@ export interface UpdateSunreiRequest {
     'link'?: string | null;
     'tagIds'?: Array<string>;
     'spots'?: Array<UpdateSunreiSpotInline>;
-    'images'?: Array<ImageInput>;
+    'images'?: Array<MultiSizeImageDTO>;
 }
 export interface UpdateSunreiSpotInline {
     /**
@@ -230,7 +228,7 @@ export interface UpdateSunreiSpotInline {
     'description'?: string;
     'youtubeLink'?: string | null;
     'place'?: PlaceInput;
-    'images'?: Array<ImageInput>;
+    'images'?: Array<MultiSizeImageDTO>;
     /**
      * Mark this spot for deletion
      */
@@ -941,7 +939,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async uploadImage(file: File, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ImageDTO>>> {
+        async uploadImage(file: File, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<MultiSizeImageDTO>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.uploadImage(file, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.uploadImage']?.[localVarOperationServerIndex]?.url;
@@ -954,7 +952,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async uploadImageFromUrl(uploadImageFromUrlRequest: UploadImageFromUrlRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ImageDTO>>> {
+        async uploadImageFromUrl(uploadImageFromUrlRequest: UploadImageFromUrlRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<MultiSizeImageDTO>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.uploadImageFromUrl(uploadImageFromUrlRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.uploadImageFromUrl']?.[localVarOperationServerIndex]?.url;
@@ -1089,7 +1087,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        uploadImage(file: File, options?: RawAxiosRequestConfig): AxiosPromise<Array<ImageDTO>> {
+        uploadImage(file: File, options?: RawAxiosRequestConfig): AxiosPromise<MultiSizeImageDTO> {
             return localVarFp.uploadImage(file, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1099,7 +1097,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        uploadImageFromUrl(uploadImageFromUrlRequest: UploadImageFromUrlRequest, options?: RawAxiosRequestConfig): AxiosPromise<Array<ImageDTO>> {
+        uploadImageFromUrl(uploadImageFromUrlRequest: UploadImageFromUrlRequest, options?: RawAxiosRequestConfig): AxiosPromise<MultiSizeImageDTO> {
             return localVarFp.uploadImageFromUrl(uploadImageFromUrlRequest, options).then((request) => request(axios, basePath));
         },
     };

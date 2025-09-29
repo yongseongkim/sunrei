@@ -1,23 +1,33 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { CreateSunreiRequest, UpdateSunreiRequest, PlaceInput, SunreiDTO } from '@/api/admin';
-import { adminApi } from '@/lib/api-client';
-import { useFieldArray, useForm } from 'react-hook-form';
+import {
+  CreateSunreiRequest,
+  PlaceInput,
+  UpdateSunreiRequest,
+} from '@/api/admin';
+import ImageUpload from '@/components/ImageUpload';
+import PlaceSearchModal from '@/components/PlaceSearchModal';
+import SpotsMap from '@/components/SpotsMap';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Separator } from '@/components/ui/separator';
-import PlaceSearchModal from '@/components/PlaceSearchModalNew';
-import ImageUpload from '@/components/ImageUpload';
-import SpotsMap from '@/components/SpotsMap';
-import { 
-  Save, Loader2, Plus, Trash2, MapPin, 
-  AlertCircle, X, Map
+import { Textarea } from '@/components/ui/textarea';
+import { adminApi } from '@/lib/api-client';
+import {
+  AlertCircle,
+  Loader2,
+  Map,
+  MapPin,
+  Plus,
+  Save,
+  Trash2,
+  X,
 } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { useFieldArray, useForm } from 'react-hook-form';
 
 type SunreiFormProps = {
   mode: 'create' | 'edit';
@@ -28,7 +38,12 @@ type SunreiFormProps = {
 
 type FormData = CreateSunreiRequest | UpdateSunreiRequest;
 
-export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: SunreiFormProps) {
+export default function SunreiForm({
+  mode,
+  sunreiId,
+  onSuccess,
+  onCancel,
+}: SunreiFormProps) {
   const [loading, setLoading] = useState(mode === 'edit');
   const [error, setError] = useState<string | null>(null);
   const [mapModalOpen, setMapModalOpen] = useState(false);
@@ -50,11 +65,15 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
       link: '',
       spots: [],
       tagIds: [],
-      images: []
-    }
+      images: [],
+    },
   });
 
-  const { fields: spotFields, append: appendSpot, remove: removeSpot } = useFieldArray({
+  const {
+    fields: spotFields,
+    append: appendSpot,
+    remove: removeSpot,
+  } = useFieldArray({
     control,
     name: 'spots',
   });
@@ -67,27 +86,28 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
 
   const fetchSunrei = async () => {
     if (!sunreiId) return;
-    
+
     try {
       setLoading(true);
       setError(null);
       const response = await adminApi.getSunrei(sunreiId);
-      
+
       // Set form default values
       reset({
         title: response.data.title,
         description: response.data.description,
         link: response.data.link || '',
-        spots: response.data.spots?.map(spot => ({
-          id: spot.id,
-          title: spot.title,
-          description: spot.description || '',
-          youtubeLink: spot.youtubeLink || '',
-          place: spot.place || null,
-          images: spot.images || []
-        })) || [],
-        tagIds: response.data.tags?.map(t => t.id!) || [],
-        images: response.data.images || []
+        spots:
+          response.data.spots?.map((spot) => ({
+            id: spot.id,
+            title: spot.title,
+            description: spot.description || '',
+            youtubeLink: spot.youtubeLink || '',
+            place: spot.place || null,
+            images: spot.images || [],
+          })) || [],
+        tagIds: response.data.tags?.map((t) => t.id!) || [],
+        images: response.data.images || [],
       });
     } catch (err: any) {
       setError(err.response?.data?.message || 'Failed to fetch Sunrei');
@@ -99,13 +119,13 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
   const onSubmit = async (data: FormData) => {
     try {
       setError(null);
-      
+
       if (mode === 'edit' && sunreiId) {
         await adminApi.updateSunrei(sunreiId, data as UpdateSunreiRequest);
       } else {
         await adminApi.createSunrei(data as CreateSunreiRequest);
       }
-      
+
       onSuccess();
     } catch (err: any) {
       setError(err.response?.data?.message || `Failed to ${mode} Sunrei`);
@@ -144,8 +164,8 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
           {mode === 'create' ? 'Create New Sunrei' : 'Edit Sunrei'}
         </h1>
         <p className="text-muted-foreground mt-2">
-          {mode === 'create' 
-            ? 'Add a new Sunrei location with spots' 
+          {mode === 'create'
+            ? 'Add a new Sunrei location with spots'
             : 'Update sunrei information and spots'}
         </p>
       </div>
@@ -169,7 +189,9 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
                   placeholder="Enter Sunrei title"
                 />
                 {errors.title && (
-                  <p className="text-sm text-destructive">{errors.title.message}</p>
+                  <p className="text-sm text-destructive">
+                    {errors.title.message}
+                  </p>
                 )}
               </div>
 
@@ -188,12 +210,16 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
               <Label htmlFor="description">Description *</Label>
               <Textarea
                 id="description"
-                {...register('description', { required: 'Description is required' })}
+                {...register('description', {
+                  required: 'Description is required',
+                })}
                 rows={3}
                 placeholder="Describe this Sunrei location"
               />
               {errors.description && (
-                <p className="text-sm text-destructive">{errors.description.message}</p>
+                <p className="text-sm text-destructive">
+                  {errors.description.message}
+                </p>
               )}
             </div>
 
@@ -213,13 +239,15 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
                 <Label className="text-base">Spots</Label>
                 <Button
                   type="button"
-                  onClick={() => appendSpot({ 
-                    title: '', 
-                    description: '', 
-                    youtubeLink: '', 
-                    place: null,
-                    images: [] 
-                  })}
+                  onClick={() =>
+                    appendSpot({
+                      title: '',
+                      description: '',
+                      youtubeLink: '',
+                      place: null,
+                      images: [],
+                    })
+                  }
                   size="sm"
                   variant="outline"
                 >
@@ -230,12 +258,17 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {/* Spots List */}
-                <div className="space-y-4 overflow-y-auto" style={{ maxHeight: '1000px' }}>
+                <div
+                  className="space-y-4 overflow-y-auto"
+                  style={{ maxHeight: '1000px' }}
+                >
                   {spotFields.map((field, index) => (
                     <Card key={field.id}>
                       <CardHeader className="py-3">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium">Spot {index + 1}</span>
+                          <span className="text-sm font-medium">
+                            Spot {index + 1}
+                          </span>
                           <Button
                             type="button"
                             onClick={() => removeSpot(index)}
@@ -248,8 +281,8 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
                       </CardHeader>
                       <CardContent className="space-y-3">
                         <Input
-                          {...register(`spots.${index}.title` as const, { 
-                            required: 'Spot title is required' 
+                          {...register(`spots.${index}.title` as const, {
+                            required: 'Spot title is required',
                           })}
                           placeholder="Spot title"
                         />
@@ -272,7 +305,9 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
                         />
                         <ImageUpload
                           images={watch(`spots.${index}.images`) || []}
-                          onChange={(newImages) => setValue(`spots.${index}.images`, newImages)}
+                          onChange={(newImages) =>
+                            setValue(`spots.${index}.images`, newImages)
+                          }
                           label="Spot Images"
                           maxImages={5}
                         />
@@ -283,7 +318,9 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
                     <div className="text-center py-8 text-muted-foreground">
                       <MapPin className="h-12 w-12 mx-auto mb-2 opacity-50" />
                       <p className="text-sm">No spots added yet</p>
-                      <p className="text-xs mt-1">Click "Add Spot" to get started</p>
+                      <p className="text-xs mt-1">
+                        Click "Add Spot" to get started
+                      </p>
                     </div>
                   )}
                 </div>
@@ -295,10 +332,11 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
                       <Map className="h-4 w-4" />
                       <Label className="text-sm">Spots Map</Label>
                     </div>
-                    <SpotsMap 
+                    <SpotsMap
                       spots={spotFields.map((field, index) => ({
-                        title: watch(`spots.${index}.title`) || `Spot ${index + 1}`,
-                        place: watch(`spots.${index}.place`)
+                        title:
+                          watch(`spots.${index}.title`) || `Spot ${index + 1}`,
+                        place: watch(`spots.${index}.place`),
                       }))}
                       height="980px"
                     />
@@ -310,11 +348,7 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
             <Separator />
 
             <div className="flex justify-end gap-2">
-              <Button
-                type="button"
-                variant="outline"
-                onClick={onCancel}
-              >
+              <Button type="button" variant="outline" onClick={onCancel}>
                 Cancel
               </Button>
               <Button type="submit" disabled={isSubmitting}>
@@ -345,7 +379,13 @@ export default function SunreiForm({ mode, sunreiId, onSuccess, onCancel }: Sunr
   );
 }
 
-function PlaceSection({ spotIndex, register, setValue, watch, onOpenMap }: any) {
+function PlaceSection({
+  spotIndex,
+  register,
+  setValue,
+  watch,
+  onOpenMap,
+}: any) {
   const place = watch(`spots.${spotIndex}.place`);
 
   // Ensure place data is registered when it exists
@@ -382,7 +422,9 @@ function PlaceSection({ spotIndex, register, setValue, watch, onOpenMap }: any) 
       {place && (
         <div className="bg-muted rounded-md p-2 flex items-start justify-between">
           <div className="flex-1 space-y-0.5">
-            <p className="text-xs font-medium">{place.name || 'Unnamed Place'}</p>
+            <p className="text-xs font-medium">
+              {place.name || 'Unnamed Place'}
+            </p>
             <p className="text-xs text-muted-foreground">{place.address}</p>
             {place.latitude && place.longitude && (
               <p className="text-xs font-mono text-muted-foreground">
@@ -399,7 +441,6 @@ function PlaceSection({ spotIndex, register, setValue, watch, onOpenMap }: any) 
           >
             <X className="h-3 w-3" />
           </Button>
-          
         </div>
       )}
     </div>
