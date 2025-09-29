@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Sunrei API
- * API documentation for Sunrei project
+ * Sunrei App API
+ * Public API for Sunrei client applications
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -45,19 +45,6 @@ export interface Coordinate {
 /**
  * 
  * @export
- * @interface GetSunreiParams
- */
-export interface GetSunreiParams {
-    /**
-     * ID of the Sunrei to retrieve
-     * @type {number}
-     * @memberof GetSunreiParams
-     */
-    'id'?: number;
-}
-/**
- * 
- * @export
  * @interface GetSunreiResult
  */
 export interface GetSunreiResult {
@@ -66,20 +53,32 @@ export interface GetSunreiResult {
      * @type {SunreiDTO}
      * @memberof GetSunreiResult
      */
-    'sunrei'?: SunreiDTO;
+    'sunrei': SunreiDTO;
 }
 /**
  * 
  * @export
- * @interface ListSunreiParams
+ * @interface ImageDTO
  */
-export interface ListSunreiParams {
+export interface ImageDTO {
     /**
-     * Array of coordinates forming a polygon (minimum 3 points)
-     * @type {Array<Coordinate>}
-     * @memberof ListSunreiParams
+     * URL of the image
+     * @type {string}
+     * @memberof ImageDTO
      */
-    'polygon': Array<Coordinate>;
+    'url': string;
+    /**
+     * Width of the image in pixels
+     * @type {number}
+     * @memberof ImageDTO
+     */
+    'width'?: number;
+    /**
+     * Height of the image in pixels
+     * @type {number}
+     * @memberof ImageDTO
+     */
+    'height'?: number;
 }
 /**
  * 
@@ -88,17 +87,17 @@ export interface ListSunreiParams {
  */
 export interface ListSunreiResult {
     /**
-     * List of Sunrei within the polygon area
+     * List of Sunrei
      * @type {Array<SunreiDTO>}
      * @memberof ListSunreiResult
      */
-    'sunreis'?: Array<SunreiDTO>;
+    'sunreis': Array<SunreiDTO>;
     /**
      * Total number of Sunrei found
      * @type {number}
      * @memberof ListSunreiResult
      */
-    'totalCount'?: number;
+    'totalCount': number;
 }
 /**
  * 
@@ -111,13 +110,13 @@ export interface PlaceDTO {
      * @type {string}
      * @memberof PlaceDTO
      */
-    'id'?: string;
+    'id': string;
     /**
      * Name of the place
      * @type {string}
      * @memberof PlaceDTO
      */
-    'name'?: string;
+    'name': string;
     /**
      * Address of the place
      * @type {string}
@@ -129,13 +128,13 @@ export interface PlaceDTO {
      * @type {number}
      * @memberof PlaceDTO
      */
-    'latitude'?: number;
+    'latitude': number;
     /**
      * Longitude of the place
      * @type {number}
      * @memberof PlaceDTO
      */
-    'longitude'?: number;
+    'longitude': number;
 }
 /**
  * 
@@ -148,25 +147,55 @@ export interface SunreiDTO {
      * @type {string}
      * @memberof SunreiDTO
      */
-    'id'?: string;
+    'id': string;
     /**
-     * Title of the Sunrei Spot
+     * Title of the Sunrei
      * @type {string}
      * @memberof SunreiDTO
      */
-    'title'?: string;
+    'title': string;
     /**
-     * Detailed description of the Sunrei Spot
+     * Detailed description of the Sunrei
      * @type {string}
      * @memberof SunreiDTO
      */
     'description'?: string;
     /**
-     * Foreign key to the associated Place
+     * External link for this Sunrei (program URL or YouTube channel)
+     * @type {string}
+     * @memberof SunreiDTO
+     */
+    'link'?: string | null;
+    /**
+     * Array of images for this Sunrei
+     * @type {Array<ImageDTO>}
+     * @memberof SunreiDTO
+     */
+    'images': Array<ImageDTO>;
+    /**
+     * Array of Sunrei spots associated with this Sunrei
      * @type {Array<SunreiSpotDTO>}
      * @memberof SunreiDTO
      */
-    'spots'?: Array<SunreiSpotDTO>;
+    'spots': Array<SunreiSpotDTO>;
+    /**
+     * Array of tags associated with this Sunrei
+     * @type {Array<TagDTO>}
+     * @memberof SunreiDTO
+     */
+    'tags': Array<TagDTO>;
+    /**
+     * 
+     * @type {string}
+     * @memberof SunreiDTO
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SunreiDTO
+     */
+    'updatedAt'?: string;
 }
 /**
  * 
@@ -179,13 +208,19 @@ export interface SunreiSpotDTO {
      * @type {string}
      * @memberof SunreiSpotDTO
      */
-    'id'?: string;
+    'id': string;
+    /**
+     * ID of the parent Sunrei
+     * @type {string}
+     * @memberof SunreiSpotDTO
+     */
+    'sunreiId': string;
     /**
      * Title of the Sunrei Spot
      * @type {string}
      * @memberof SunreiSpotDTO
      */
-    'title'?: string;
+    'title': string;
     /**
      * Detailed description of the Sunrei Spot
      * @type {string}
@@ -193,11 +228,48 @@ export interface SunreiSpotDTO {
      */
     'description'?: string;
     /**
-     * Foreign key to the associated Place
-     * @type {Array<PlaceDTO>}
+     * YouTube video link for this spot
+     * @type {string}
      * @memberof SunreiSpotDTO
      */
-    'places'?: Array<PlaceDTO>;
+    'youtubeLink'?: string | null;
+    /**
+     * Array of images for this spot
+     * @type {Array<ImageDTO>}
+     * @memberof SunreiSpotDTO
+     */
+    'images': Array<ImageDTO>;
+    /**
+     * 
+     * @type {PlaceDTO}
+     * @memberof SunreiSpotDTO
+     */
+    'place': PlaceDTO;
+}
+/**
+ * 
+ * @export
+ * @interface TagDTO
+ */
+export interface TagDTO {
+    /**
+     * 
+     * @type {string}
+     * @memberof TagDTO
+     */
+    'id': string;
+    /**
+     * Name of the tag
+     * @type {string}
+     * @memberof TagDTO
+     */
+    'name': string;
+    /**
+     * Description of the tag
+     * @type {string}
+     * @memberof TagDTO
+     */
+    'description'?: string | null;
 }
 
 /**
@@ -208,21 +280,16 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
     return {
         /**
          * 
-         * @summary List Sunrei Spots with filters
-         * @param {number} lat 
-         * @param {number} lng 
-         * @param {number} radius 
+         * @summary Get Sunrei by ID
+         * @param {string} id ID of the Sunrei to retrieve
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        sunreiSpotsGet: async (lat: number, lng: number, radius: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'lat' is not null or undefined
-            assertParamExists('sunreiSpotsGet', 'lat', lat)
-            // verify required parameter 'lng' is not null or undefined
-            assertParamExists('sunreiSpotsGet', 'lng', lng)
-            // verify required parameter 'radius' is not null or undefined
-            assertParamExists('sunreiSpotsGet', 'radius', radius)
-            const localVarPath = `/sunrei-spots`;
+        getSunrei: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('getSunrei', 'id', id)
+            const localVarPath = `/api/sunreis/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -234,17 +301,65 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            if (lat !== undefined) {
-                localVarQueryParameter['lat'] = lat;
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary List all places
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listPlaces: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/places`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
             }
 
-            if (lng !== undefined) {
-                localVarQueryParameter['lng'] = lng;
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary List Sunrei Spots
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listSunreiSpots: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/sunrei-spots`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
             }
 
-            if (radius !== undefined) {
-                localVarQueryParameter['radius'] = radius;
-            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
 
 
     
@@ -260,12 +375,12 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * 
          * @summary List Sunrei with optional polygon filter
-         * @param {string} [polygon] JSON string of coordinate array forming a polygon to filter results (e.g., \&quot;[[35.6762,139.6503],[35.6795,139.7005],[35.6585,139.7454]]\&quot;)
+         * @param {string} [polygon] WKT format polygon string (e.g., \&quot;POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))\&quot;)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        sunreisGet: async (polygon?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/sunreis`;
+        listSunreis: async (polygon?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/sunreis`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -294,16 +409,12 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         },
         /**
          * 
-         * @summary Get Sunrei by ID
-         * @param {string} id ID of the Sunrei to retrieve
+         * @summary List all tags
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        sunreisIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('sunreisIdGet', 'id', id)
-            const localVarPath = `/sunreis/{id}`
-                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+        listTags: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/tags`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -338,43 +449,64 @@ export const DefaultApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
-         * @summary List Sunrei Spots with filters
-         * @param {number} lat 
-         * @param {number} lng 
-         * @param {number} radius 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async sunreiSpotsGet(lat: number, lng: number, radius: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SunreiSpotDTO>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.sunreiSpotsGet(lat, lng, radius, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.sunreiSpotsGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary List Sunrei with optional polygon filter
-         * @param {string} [polygon] JSON string of coordinate array forming a polygon to filter results (e.g., \&quot;[[35.6762,139.6503],[35.6795,139.7005],[35.6585,139.7454]]\&quot;)
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async sunreisGet(polygon?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListSunreiResult>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.sunreisGet(polygon, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.sunreisGet']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
          * @summary Get Sunrei by ID
          * @param {string} id ID of the Sunrei to retrieve
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async sunreisIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSunreiResult>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.sunreisIdGet(id, options);
+        async getSunrei(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSunreiResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getSunrei(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.sunreisIdGet']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getSunrei']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List all places
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listPlaces(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<PlaceDTO>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listPlaces(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listPlaces']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List Sunrei Spots
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listSunreiSpots(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SunreiSpotDTO>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listSunreiSpots(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listSunreiSpots']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List Sunrei with optional polygon filter
+         * @param {string} [polygon] WKT format polygon string (e.g., \&quot;POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))\&quot;)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listSunreis(polygon?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListSunreiResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listSunreis(polygon, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listSunreis']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List all tags
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listTags(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<TagDTO>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listTags(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listTags']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -389,35 +521,50 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
     return {
         /**
          * 
-         * @summary List Sunrei Spots with filters
-         * @param {number} lat 
-         * @param {number} lng 
-         * @param {number} radius 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        sunreiSpotsGet(lat: number, lng: number, radius: number, options?: RawAxiosRequestConfig): AxiosPromise<Array<SunreiSpotDTO>> {
-            return localVarFp.sunreiSpotsGet(lat, lng, radius, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary List Sunrei with optional polygon filter
-         * @param {string} [polygon] JSON string of coordinate array forming a polygon to filter results (e.g., \&quot;[[35.6762,139.6503],[35.6795,139.7005],[35.6585,139.7454]]\&quot;)
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        sunreisGet(polygon?: string, options?: RawAxiosRequestConfig): AxiosPromise<ListSunreiResult> {
-            return localVarFp.sunreisGet(polygon, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Get Sunrei by ID
          * @param {string} id ID of the Sunrei to retrieve
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        sunreisIdGet(id: string, options?: RawAxiosRequestConfig): AxiosPromise<GetSunreiResult> {
-            return localVarFp.sunreisIdGet(id, options).then((request) => request(axios, basePath));
+        getSunrei(id: string, options?: RawAxiosRequestConfig): AxiosPromise<GetSunreiResult> {
+            return localVarFp.getSunrei(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List all places
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listPlaces(options?: RawAxiosRequestConfig): AxiosPromise<Array<PlaceDTO>> {
+            return localVarFp.listPlaces(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List Sunrei Spots
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listSunreiSpots(options?: RawAxiosRequestConfig): AxiosPromise<Array<SunreiSpotDTO>> {
+            return localVarFp.listSunreiSpots(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List Sunrei with optional polygon filter
+         * @param {string} [polygon] WKT format polygon string (e.g., \&quot;POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))\&quot;)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listSunreis(polygon?: string, options?: RawAxiosRequestConfig): AxiosPromise<ListSunreiResult> {
+            return localVarFp.listSunreis(polygon, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List all tags
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listTags(options?: RawAxiosRequestConfig): AxiosPromise<Array<TagDTO>> {
+            return localVarFp.listTags(options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -431,40 +578,59 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
 export class DefaultApi extends BaseAPI {
     /**
      * 
-     * @summary List Sunrei Spots with filters
-     * @param {number} lat 
-     * @param {number} lng 
-     * @param {number} radius 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public sunreiSpotsGet(lat: number, lng: number, radius: number, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).sunreiSpotsGet(lat, lng, radius, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary List Sunrei with optional polygon filter
-     * @param {string} [polygon] JSON string of coordinate array forming a polygon to filter results (e.g., \&quot;[[35.6762,139.6503],[35.6795,139.7005],[35.6585,139.7454]]\&quot;)
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public sunreisGet(polygon?: string, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).sunreisGet(polygon, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
      * @summary Get Sunrei by ID
      * @param {string} id ID of the Sunrei to retrieve
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public sunreisIdGet(id: string, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).sunreisIdGet(id, options).then((request) => request(this.axios, this.basePath));
+    public getSunrei(id: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getSunrei(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List all places
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public listPlaces(options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listPlaces(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List Sunrei Spots
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public listSunreiSpots(options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listSunreiSpots(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List Sunrei with optional polygon filter
+     * @param {string} [polygon] WKT format polygon string (e.g., \&quot;POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))\&quot;)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public listSunreis(polygon?: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listSunreis(polygon, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List all tags
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public listTags(options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listTags(options).then((request) => request(this.axios, this.basePath));
     }
 }
 

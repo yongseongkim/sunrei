@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Sunrei API
- * API documentation for Sunrei project
+ * Sunrei App API
+ * Public API for Sunrei client applications
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -15,5 +15,4 @@
 
 export * from "./api";
 export * from "./configuration";
-export type { SunreiDTO, SunreiSpotDTO, PlaceDTO, ImageDTO, TagDTO } from "./api";
 

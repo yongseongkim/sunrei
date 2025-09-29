@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Sunrei API
- * API documentation for Sunrei project
+ * Sunrei App API
+ * Public API for Sunrei client applications
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -19,7 +19,7 @@ import type { Configuration } from './configuration';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 
-export const BASE_PATH = "http://localhost".replace(/\/+$/, "");
+export const BASE_PATH = "http://localhost:3030".replace(/\/+$/, "");
 
 /**
  *

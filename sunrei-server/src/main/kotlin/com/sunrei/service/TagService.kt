@@ -1,6 +1,6 @@
 package com.sunrei.service
 
-import com.sunrei.generated.dto.TagDTO
+import com.sunrei.generated.dto.app.TagDTO
 import com.sunrei.model.Tags
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction

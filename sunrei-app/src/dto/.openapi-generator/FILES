@@ -5,14 +5,5 @@ api.ts
 base.ts
 common.ts
 configuration.ts
-docs/Coordinate.md
-docs/DefaultApi.md
-docs/GetSunreiParams.md
-docs/GetSunreiResult.md
-docs/ListSunreiParams.md
-docs/ListSunreiResult.md
-docs/PlaceDTO.md
-docs/SunreiDTO.md
-docs/SunreiSpotDTO.md
 git_push.sh
 index.ts

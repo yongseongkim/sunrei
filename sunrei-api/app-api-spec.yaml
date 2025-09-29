@@ -1,0 +1,291 @@
+openapi: 3.0.0
+info:
+  title: Sunrei App API
+  version: 1.0.0
+  description: Public API for Sunrei client applications
+
+servers:
+  - url: http://localhost:3030
+    description: Development server
+
+paths:
+  /api/sunreis:
+    get:
+      summary: List Sunrei with optional polygon filter
+      operationId: listSunreis
+      parameters:
+        - name: polygon
+          in: query
+          required: false
+          description: WKT format polygon string (e.g., "POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))")
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of Sunrei (all or filtered by polygon)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListSunreiResult'
+
+  /api/sunreis/{id}:
+    get:
+      summary: Get Sunrei by ID
+      operationId: getSunrei
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the Sunrei to retrieve
+      responses:
+        '200':
+          description: Details of the Sunrei
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetSunreiResult'
+        '404':
+          description: Sunrei not found
+
+  /api/sunrei-spots:
+    get:
+      summary: List Sunrei Spots
+      operationId: listSunreiSpots
+      responses:
+        '200':
+          description: List of Sunrei Spots
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SunreiSpotDTO'
+
+  /api/places:
+    get:
+      summary: List all places
+      operationId: listPlaces
+      responses:
+        '200':
+          description: List of places
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PlaceDTO'
+
+  /api/tags:
+    get:
+      summary: List all tags
+      operationId: listTags
+      responses:
+        '200':
+          description: List of tags
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TagDTO'
+
+components:
+  schemas:
+    # ===== Common DTOs =====
+    Coordinate:
+      type: object
+      required:
+        - lat
+        - lng
+      properties:
+        lat:
+          type: number
+          format: float
+          description: Latitude coordinate
+        lng:
+          type: number
+          format: float
+          description: Longitude coordinate
+
+    PlaceDTO:
+      type: object
+      required:
+        - id
+        - name
+        - latitude
+        - longitude
+        - isClosed
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+          description: Name of the place
+        address:
+          type: string
+          description: Address of the place
+        latitude:
+          type: number
+          format: float
+          description: Latitude of the place
+        longitude:
+          type: number
+          format: float
+          description: Longitude of the place
+        isClosed:
+          type: boolean
+          description: Whether the place is permanently closed or no longer exists
+        closedReason:
+          type: string
+          description: Reason for closure (e.g., "Permanently closed", "Demolished", "Relocated")
+        closedAt:
+          type: string
+          format: date-time
+          description: Date when the place was closed or ceased to exist
+        notes:
+          type: string
+          description: Additional notes about the place status or history
+
+    ImageDTO:
+      type: object
+      required:
+        - url
+      properties:
+        url:
+          type: string
+          description: URL of the image
+        width:
+          type: integer
+          description: Width of the image in pixels
+        height:
+          type: integer
+          description: Height of the image in pixels
+    
+    MultiSizeImageDTO:
+      type: object
+      required:
+        - images
+      properties:
+        images:
+          type: array
+          description: Array of different image sizes (original, large, medium, small)
+          items:
+            $ref: '#/components/schemas/ImageDTO'
+
+    SunreiSpotDTO:
+      type: object
+      required:
+        - id
+        - sunreiId
+        - title
+        - place
+        - images
+      properties:
+        id:
+          type: string
+        sunreiId:
+          type: string
+          description: ID of the parent Sunrei
+        title:
+          type: string
+          description: Title of the Sunrei Spot
+        description:
+          type: string
+          description: Detailed description of the Sunrei Spot
+        youtubeLink:
+          type: string
+          description: YouTube video link for this spot
+          nullable: true
+        images:
+          type: array
+          description: Array of multi-size images for this spot
+          items:
+            $ref: '#/components/schemas/MultiSizeImageDTO'
+        place:
+          description: Associated place
+          $ref: '#/components/schemas/PlaceDTO'
+
+    TagDTO:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+          description: Name of the tag
+        description:
+          type: string
+          description: Description of the tag
+          nullable: true
+
+    SunreiDTO:
+      type: object
+      required:
+        - id
+        - title
+        - images
+        - spots
+        - tags
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+          description: Title of the Sunrei
+        description:
+          type: string
+          description: Detailed description of the Sunrei
+        link:
+          type: string
+          description: External link for this Sunrei (program URL or YouTube channel)
+          nullable: true
+        images:
+          type: array
+          description: Array of multi-size images for this Sunrei
+          items:
+            $ref: '#/components/schemas/MultiSizeImageDTO'
+        spots:
+          type: array
+          description: Array of Sunrei spots associated with this Sunrei
+          items:
+            $ref: '#/components/schemas/SunreiSpotDTO'
+        tags:
+          type: array
+          description: Array of tags associated with this Sunrei
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    # ===== App API Response Models =====
+    ListSunreiResult:
+      type: object
+      required:
+        - sunreis
+        - totalCount
+      properties:
+        sunreis:
+          type: array
+          items:
+            $ref: '#/components/schemas/SunreiDTO'
+          description: List of Sunrei
+        totalCount:
+          type: integer
+          description: Total number of Sunrei found
+
+    GetSunreiResult:
+      type: object
+      required:
+        - sunrei
+      properties:
+        sunrei:
+          $ref: '#/components/schemas/SunreiDTO'
