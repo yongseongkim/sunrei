@@ -1,6 +1,7 @@
 package com.sunrei.model
 
-object Tags : ULIDTable("tag", "T") {
-    val name = varchar("name", 64)
-    val description = text("description").nullable()
-}
+data class Tag(
+    val id: String,
+    val name: String,
+    val description: String?
+)

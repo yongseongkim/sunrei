@@ -46,6 +46,7 @@ dependencies {
     implementation(libs.exposed.json)
     implementation(libs.postgresql)
     implementation(libs.hikaricp)
+    implementation("net.postgis:postgis-jdbc:2.5.1")
 
     // Flyway
     implementation(libs.flyway.core)

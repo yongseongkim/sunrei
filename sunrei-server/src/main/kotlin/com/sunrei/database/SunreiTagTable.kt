@@ -1,4 +1,4 @@
-package com.sunrei.model
+package com.sunrei.database
 
 import org.jetbrains.exposed.sql.Table
 

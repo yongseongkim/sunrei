@@ -2,9 +2,9 @@ package com.sunrei.routes.app
 
 import com.sunrei.generated.dto.app.GetSunreiResult
 import com.sunrei.generated.dto.app.ListSunreiResult
+import com.sunrei.routes.app.converter.toDTO
 import com.sunrei.service.SunreiService
 import io.ktor.http.HttpStatusCode
-import io.ktor.server.application.call
 import io.ktor.server.response.respond
 import io.ktor.server.routing.Route
 import io.ktor.server.routing.get
@@ -19,17 +19,17 @@ fun Route.sunreiRoutes() {
 
             val sunreis = if (polygon != null) {
                 try {
-                    sunreiService.findByPolygon(polygon)
+                    sunreiService.listByPolygon(polygon)
                 } catch (e: IllegalArgumentException) {
                     call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Invalid polygon format"))
                     return@get
                 }
             } else {
-                sunreiService.findAll()
+                sunreiService.list()
             }
 
             val result = ListSunreiResult(
-                sunreis = sunreis,
+                sunreis = sunreis.map { it.toDTO() },
                 totalCount = sunreis.size
             )
             call.respond(result)
@@ -41,10 +41,10 @@ fun Route.sunreiRoutes() {
                 return@get
             }
 
-            val sunrei = sunreiService.findOne(id)
+            val sunrei = sunreiService.getById(id)
 
             if (sunrei != null) {
-                val result = GetSunreiResult(sunrei = sunrei)
+                val result = GetSunreiResult(sunrei = sunrei.toDTO())
                 call.respond(result)
             } else {
                 call.respond(HttpStatusCode.NotFound, mapOf("error" to "Sunrei not found"))

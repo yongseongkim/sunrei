@@ -1,123 +1,176 @@
 package com.sunrei.service
 
-import com.sunrei.generated.dto.app.PlaceDTO
-import com.sunrei.generated.dto.app.SunreiDTO
-import com.sunrei.generated.dto.app.SunreiSpotDTO
-import com.sunrei.generated.dto.app.TagDTO
-import com.sunrei.model.Places
-import com.sunrei.model.SunreiSpots
-import com.sunrei.model.SunreiTags
-import com.sunrei.model.Sunreis
-import com.sunrei.model.Tags
+import com.sunrei.config.JwtConfig
+import com.sunrei.database.Places
+import com.sunrei.database.SunreiSpots
+import com.sunrei.database.SunreiTags
+import com.sunrei.database.Sunreis
+import com.sunrei.database.Tags
+import com.sunrei.database.insertAndGetId
+import com.sunrei.generated.dto.admin.CreateSunreiRequest
+import com.sunrei.generated.dto.admin.CreateSunreiSpotInline
+import com.sunrei.generated.dto.admin.ListSunreisResult
+import com.sunrei.generated.dto.admin.PlaceInput
+import com.sunrei.generated.dto.admin.UpdateSunreiRequest
+import com.sunrei.generated.dto.admin.UpdateSunreiSpotInline
+import com.sunrei.model.Place
+import com.sunrei.model.Sunrei
+import com.sunrei.model.SunreiSpot
+import com.sunrei.model.Tag
+import com.sunrei.routes.admin.converter.toDTO
+import com.sunrei.routes.admin.converter.toModel
+import com.sunrei.utils.PaginationToken
 import com.sunrei.utils.Point
 import com.sunrei.utils.isPointInPolygon
 import com.sunrei.utils.parseWKTPolygon
-import com.sunrei.utils.toAppMultiSizeImages
+import kotlinx.datetime.Clock
 import org.jetbrains.exposed.sql.SortOrder
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.and
+import org.jetbrains.exposed.sql.andWhere
+import org.jetbrains.exposed.sql.deleteWhere
+import org.jetbrains.exposed.sql.insert
+import org.jetbrains.exposed.sql.or
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
+import org.jetbrains.exposed.sql.update
 
 class SunreiService {
+    private val pageToken = PaginationToken(JwtConfig.getPageTokenSecret())
 
-    fun findAll(): List<SunreiDTO> = transaction {
+    fun list(): List<Sunrei> = transaction {
         val sunreis = Sunreis.select { Sunreis.deletedAt.isNull() }
             .orderBy(Sunreis.createdAt to SortOrder.DESC)
-            .map { row ->
-                val sunreiId = row[Sunreis.id]
-                val spots = fetchSpotsForSunrei(sunreiId)
-                val tags = fetchTagsForSunrei(sunreiId)
+            .toList()
 
-                SunreiDTO(
-                    id = sunreiId,
-                    title = row[Sunreis.title],
-                    description = row[Sunreis.description],
-                    link = row[Sunreis.link],
-                    images = row[Sunreis.images].toAppMultiSizeImages(),
-                    spots = spots,
-                    tags = tags,
-                    createdAt = row[Sunreis.createdAt],
-                    updatedAt = row[Sunreis.updatedAt]
-                )
-            }
-        sunreis
+        buildSunreiList(sunreis)
     }
 
-    fun findOne(id: String): SunreiDTO? = transaction {
-        Sunreis.select { (Sunreis.id eq id) and (Sunreis.deletedAt.isNull()) }
-            .firstOrNull()?.let { row ->
-                val sunreiId = row[Sunreis.id]
-                val spots = fetchSpotsForSunrei(sunreiId)
-                val tags = fetchTagsForSunrei(sunreiId)
+    fun getById(id: String): Sunrei? = transaction {
+        val row = Sunreis.select { (Sunreis.id eq id) and (Sunreis.deletedAt.isNull()) }
+            .firstOrNull() ?: return@transaction null
 
-                SunreiDTO(
-                    id = sunreiId,
-                    title = row[Sunreis.title],
-                    description = row[Sunreis.description],
-                    link = row[Sunreis.link],
-                    images = row[Sunreis.images].toAppMultiSizeImages(),
-                    spots = spots,
-                    tags = tags,
-                    createdAt = row[Sunreis.createdAt],
-                    updatedAt = row[Sunreis.updatedAt]
-                )
-            }
+        val sunreiId = row[Sunreis.id]
+        val spots = fetchSpotsMapBySunreiIds(listOf(sunreiId))[sunreiId] ?: emptyList()
+        val tags = fetchTagsMapBySunreiIds(listOf(sunreiId))[sunreiId] ?: emptyList()
+
+        buildSunreiFromRow(row, spots, tags)
     }
 
-    fun findByPolygon(polygonWKT: String): List<SunreiDTO> {
-        val polygon = parseWKTPolygon(polygonWKT)
+    fun listByPolygon(polygonWKT: String): List<Sunrei> {
+        val placeService = PlaceService()
+        val sunreiSpotService = SunreiSpotService()
 
         return transaction {
-            val allSunreis = Sunreis.select { Sunreis.deletedAt.isNull() }
-                .orderBy(Sunreis.createdAt to SortOrder.DESC)
-                .toList()
+            // Step 1: Get places within polygon using PostGIS
+            val places = placeService.listByPolygon(polygonWKT)
+            if (places.isEmpty()) return@transaction emptyList()
 
-            allSunreis.mapNotNull { row ->
-                val sunreiId = row[Sunreis.id]
-                val spots = fetchSpotsForSunrei(sunreiId)
+            val placeIds = places.map { it.id }
 
-                // Check if any spot's place is within the polygon
-                val hasSpotInPolygon = spots.any { spot ->
-                    val point = Point(
-                        latitude = spot.place.latitude,
-                        longitude = spot.place.longitude
-                    )
-                    isPointInPolygon(point, polygon)
-                }
+            // Step 2: Get sunrei spots for those places
+            val spotsMap = sunreiSpotService.listByPlaceIds(placeIds)
+            if (spotsMap.isEmpty()) return@transaction emptyList()
 
-                if (hasSpotInPolygon) {
-                    val tags = fetchTagsForSunrei(sunreiId)
+            // Step 3: Get unique sunrei IDs from the spots
+            val sunreiIds = spotsMap.values
+                .flatten()
+                .map { it.sunreiId }
+                .distinct()
 
-                    SunreiDTO(
-                        id = sunreiId,
-                        title = row[Sunreis.title],
-                        description = row[Sunreis.description],
-                        link = row[Sunreis.link],
-                        images = row[Sunreis.images].toAppMultiSizeImages(),
-                        spots = spots,
-                        tags = tags,
-                        createdAt = row[Sunreis.createdAt],
-                        updatedAt = row[Sunreis.updatedAt]
-                    )
-                } else {
-                    null
-                }
-            }
+            // Step 4: Get sunreis and build with spots/tags
+            val sunreis = Sunreis.select {
+                (Sunreis.id inList sunreiIds) and (Sunreis.deletedAt.isNull())
+            }.orderBy(Sunreis.createdAt to SortOrder.DESC).toList()
+
+            buildSunreiList(sunreis)
         }
     }
 
-    private fun fetchSpotsForSunrei(sunreiId: String): List<SunreiSpotDTO> {
+    fun listByKeyword(nextToken: String? = null, size: Int = 20, keyword: String? = null): ListSunreisResult {
+        val tokenData = pageToken.decodeToken(nextToken)
+        val offset = tokenData?.offset ?: 0
+        val effectiveSize = tokenData?.size ?: size
+
+        return transaction {
+            var query = Sunreis.select { Sunreis.deletedAt.isNull() }
+
+            // Apply search filter if provided
+            if (!keyword.isNullOrBlank()) {
+                query = query.andWhere {
+                    (Sunreis.title like "%$keyword%") or
+                            (Sunreis.description like "%$keyword%")
+                }
+            }
+
+            // Get total count
+            val totalElements = query.count().toInt()
+
+            // Apply pagination
+            val sunreis = query
+                .orderBy(Sunreis.createdAt to SortOrder.DESC)
+                .limit(effectiveSize, offset.toLong())
+                .toList()
+
+            val results = buildSunreiList(sunreis)
+
+            val newNextToken = pageToken.createNextPageToken(offset, effectiveSize, totalElements)
+
+            ListSunreisResult(
+                data = results.map { it.toDTO() },
+                totalSize = results.size,
+                totalElements = totalElements,
+                nextToken = newNextToken
+            )
+        }
+    }
+    
+    private fun buildSunreiList(sunreiRows: List<org.jetbrains.exposed.sql.ResultRow>): List<Sunrei> {
+        if (sunreiRows.isEmpty()) return emptyList()
+
+        val sunreiIds = sunreiRows.map { it[Sunreis.id] }
+        val spotsMap = fetchSpotsMapBySunreiIds(sunreiIds)
+        val tagsMap = fetchTagsMapBySunreiIds(sunreiIds)
+
+        return sunreiRows.map { row ->
+            val sunreiId = row[Sunreis.id]
+            buildSunreiFromRow(row, spotsMap[sunreiId] ?: emptyList(), tagsMap[sunreiId] ?: emptyList())
+        }
+    }
+
+    private fun buildSunreiFromRow(
+        row: org.jetbrains.exposed.sql.ResultRow,
+        spots: List<SunreiSpot>,
+        tags: List<Tag>
+    ): Sunrei {
+        return Sunrei(
+            id = row[Sunreis.id],
+            title = row[Sunreis.title],
+            description = row[Sunreis.description],
+            link = row[Sunreis.link],
+            images = row[Sunreis.images],
+            spots = spots,
+            tags = tags,
+            createdAt = row[Sunreis.createdAt],
+            updatedAt = row[Sunreis.updatedAt]
+        )
+    }
+
+    private fun fetchSpotsMapBySunreiIds(sunreiIds: List<String>): Map<String, List<SunreiSpot>> {
+        if (sunreiIds.isEmpty()) return emptyMap()
+
         return (SunreiSpots innerJoin Places)
-            .select { (SunreiSpots.sunreiId eq sunreiId) and (SunreiSpots.deletedAt.isNull()) }
+            .select { (SunreiSpots.sunreiId inList sunreiIds) and (SunreiSpots.deletedAt.isNull()) }
             .map { row ->
-                SunreiSpotDTO(
+                val sunreiId = row[SunreiSpots.sunreiId]
+                val spot = SunreiSpot(
                     id = row[SunreiSpots.id],
                     sunreiId = sunreiId,
                     title = row[SunreiSpots.title],
                     description = row[SunreiSpots.description],
                     youtubeLink = row[SunreiSpots.youtubeLink],
-                    images = row[SunreiSpots.images].toAppMultiSizeImages(),
-                    place = PlaceDTO(
+                    images = row[SunreiSpots.images],
+                    place = Place(
                         id = row[Places.id],
                         name = row[Places.name],
                         address = row[Places.address],
@@ -129,18 +182,160 @@ class SunreiService {
                         notes = row[Places.notes]
                     )
                 )
+                sunreiId to spot
             }
+            .groupBy({ it.first }, { it.second })
     }
 
-    private fun fetchTagsForSunrei(sunreiId: String): List<TagDTO> {
+    private fun fetchTagsMapBySunreiIds(sunreiIds: List<String>): Map<String, List<Tag>> {
+        if (sunreiIds.isEmpty()) return emptyMap()
+
         return (SunreiTags innerJoin Tags)
-            .select { SunreiTags.sunreiId eq sunreiId }
+            .select { SunreiTags.sunreiId inList sunreiIds }
             .map { row ->
-                TagDTO(
+                val sunreiId = row[SunreiTags.sunreiId]
+                val tag = Tag(
                     id = row[Tags.id],
                     name = row[Tags.name],
                     description = row[Tags.description]
                 )
+                sunreiId to tag
             }
+            .groupBy({ it.first }, { it.second })
+    }
+
+    fun create(request: CreateSunreiRequest): Sunrei = transaction {
+        val sunreiId = Sunreis.insertAndGetId { stmt ->
+            stmt[Sunreis.title] = request.title
+            stmt[Sunreis.description] = request.description
+            stmt[Sunreis.link] = request.link
+            stmt[Sunreis.images] = request.images?.map { it.toModel() } ?: emptyList()
+        }
+
+        request.tagIds?.forEach { tagId ->
+            SunreiTags.insert {
+                it[SunreiTags.sunreiId] = sunreiId
+                it[SunreiTags.tagId] = tagId
+            }
+        }
+
+        request.spots?.forEach { spotRequest ->
+            createSunreiSpot(sunreiId, spotRequest)
+        }
+
+        getById(sunreiId) ?: throw Exception("Failed to create Sunrei")
+    }
+
+    fun update(id: String, request: UpdateSunreiRequest): Sunrei? = transaction {
+        Sunreis.select { (Sunreis.id eq id) and (Sunreis.deletedAt.isNull()) }
+            .firstOrNull() ?: return@transaction null
+
+        Sunreis.update({ Sunreis.id eq id }) { stmt ->
+            request.title?.let { title -> stmt[Sunreis.title] = title }
+            request.description?.let { desc -> stmt[Sunreis.description] = desc }
+            request.link?.let { link -> stmt[Sunreis.link] = link }
+            request.images?.let { imgs -> stmt[Sunreis.images] = imgs.map { it.toModel() } }
+            stmt[Sunreis.updatedAt] = Clock.System.now()
+        }
+
+        if (request.tagIds != null) {
+            SunreiTags.deleteWhere { sunreiId eq id }
+            request.tagIds.forEach { tagId ->
+                SunreiTags.insert {
+                    it[SunreiTags.sunreiId] = id
+                    it[SunreiTags.tagId] = tagId
+                }
+            }
+        }
+
+        request.spots?.let { spotsRequest ->
+            val existingSpotIds =
+                SunreiSpots.select { (SunreiSpots.sunreiId eq id) and (SunreiSpots.deletedAt.isNull()) }
+                    .map { it[SunreiSpots.id] }
+
+            spotsRequest.forEach { spotRequest ->
+                if (spotRequest.id != null && spotRequest.id in existingSpotIds) {
+                    updateSunreiSpot(spotRequest.id, spotRequest)
+                } else if (spotRequest.id == null) {
+                    createSunreiSpot(
+                        id, CreateSunreiSpotInline(
+                            title = spotRequest.title,
+                            description = spotRequest.description,
+                            youtubeLink = spotRequest.youtubeLink,
+                            place = spotRequest.place,
+                            images = spotRequest.images
+                        )
+                    )
+                }
+            }
+
+            val requestSpotIds = spotsRequest.mapNotNull { it.id }
+            val spotsToDelete = existingSpotIds.filter { it !in requestSpotIds }
+            if (spotsToDelete.isNotEmpty()) {
+                SunreiSpots.update({ SunreiSpots.id inList spotsToDelete }) {
+                    it[deletedAt] = Clock.System.now()
+                }
+            }
+        }
+
+        getById(id)
+    }
+
+    fun delete(id: String): Boolean = transaction {
+        val updateCount = Sunreis.update({ (Sunreis.id eq id) and (Sunreis.deletedAt.isNull()) }) { stmt ->
+            stmt[Sunreis.deletedAt] = Clock.System.now()
+            stmt[Sunreis.updatedAt] = Clock.System.now()
+        }
+
+        if (updateCount > 0) {
+            SunreiSpots.update({ SunreiSpots.sunreiId eq id }) { stmt ->
+                stmt[SunreiSpots.deletedAt] = Clock.System.now()
+            }
+        }
+
+        updateCount > 0
+    }
+
+    private fun createSunreiSpot(sunreiId: String, request: CreateSunreiSpotInline): String {
+        val placeId = request.place?.let { placeInput ->
+            findOrCreatePlace(placeInput)
+        } ?: throw Exception("Place is required for SunreiSpot")
+
+        return SunreiSpots.insertAndGetId { stmt ->
+            stmt[SunreiSpots.sunreiId] = sunreiId
+            stmt[SunreiSpots.title] = request.title
+            stmt[SunreiSpots.description] = request.description
+            stmt[SunreiSpots.placeId] = placeId
+            stmt[SunreiSpots.youtubeLink] = request.youtubeLink
+            stmt[SunreiSpots.images] = request.images?.map { it.toModel() } ?: emptyList()
+        }
+    }
+
+    private fun updateSunreiSpot(spotId: String, request: UpdateSunreiSpotInline) {
+        SunreiSpots.update({ SunreiSpots.id eq spotId }) { stmt ->
+            request.title.let { title -> stmt[SunreiSpots.title] = title }
+            request.description?.let { desc -> stmt[SunreiSpots.description] = desc }
+            request.youtubeLink?.let { link -> stmt[SunreiSpots.youtubeLink] = link }
+            request.place?.let { placeInput ->
+                stmt[SunreiSpots.placeId] = findOrCreatePlace(placeInput)
+            }
+            request.images?.let { imgs -> stmt[SunreiSpots.images] = imgs.map { it.toModel() } }
+            stmt[SunreiSpots.updatedAt] = Clock.System.now()
+        }
+    }
+
+    private fun findOrCreatePlace(placeInput: PlaceInput): String {
+        val existingPlace =
+            Places.select { (Places.latitude eq placeInput.latitude) and (Places.longitude eq placeInput.longitude) }
+                .firstOrNull()
+
+        return existingPlace?.get(Places.id) ?: Places.insertAndGetId { stmt ->
+            stmt[Places.name] = placeInput.name
+            stmt[Places.address] = placeInput.address
+            stmt[Places.latitude] = placeInput.latitude
+            stmt[Places.longitude] = placeInput.longitude
+            stmt[Places.isClosed] = false
+        }
     }
 }
+

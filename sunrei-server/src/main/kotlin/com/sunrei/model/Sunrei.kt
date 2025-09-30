@@ -1,13 +1,15 @@
 package com.sunrei.model
 
-import kotlinx.serialization.json.Json
-import org.jetbrains.exposed.sql.json.json
-import org.jetbrains.exposed.sql.kotlin.datetime.timestamp
+import kotlinx.datetime.Instant
 
-object Sunreis : ULIDTimestampedTable("sunrei", "SR") {
-    val title = varchar("title", 128)
-    val description = text("description").nullable()
-    val link = varchar("link", 255).nullable()
-    val images = json<List<MultiSizeImage>>("images", Json.Default).default(emptyList())
-    val deletedAt = timestamp("deleted_at").nullable()
-}
+data class Sunrei(
+    val id: String,
+    val title: String,
+    val description: String?,
+    val link: String?,
+    val images: List<MultiSizeImage>,
+    val spots: List<SunreiSpot>,
+    val tags: List<Tag>,
+    val createdAt: Instant,
+    val updatedAt: Instant
+)
