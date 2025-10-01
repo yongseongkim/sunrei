@@ -2,9 +2,9 @@ package com.sunrei.routes.app
 
 import com.sunrei.generated.dto.app.GetSunreiResult
 import com.sunrei.generated.dto.app.ListSunreiResult
+import com.sunrei.routes.app.converter.toDTO
 import com.sunrei.service.SunreiService
 import io.ktor.http.HttpStatusCode
-import io.ktor.server.application.call
 import io.ktor.server.response.respond
 import io.ktor.server.routing.Route
 import io.ktor.server.routing.get
@@ -17,22 +17,26 @@ fun Route.sunreiRoutes() {
         get {
             val polygon = call.request.queryParameters["polygon"]
 
-            val sunreis = if (polygon != null) {
+            if (polygon != null) {
                 try {
-                    sunreiService.findByPolygon(polygon)
+                    val sunreis = sunreiService.listByPolygon(polygon)
+                    val result = ListSunreiResult(
+                        sunreis = sunreis.map { it.toDTO() },
+                        totalCount = sunreis.size
+                    )
+                    call.respond(result)
                 } catch (e: IllegalArgumentException) {
                     call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Invalid polygon format"))
                     return@get
                 }
             } else {
-                sunreiService.findAll()
+                val sunreis = sunreiService.list()
+                val result = ListSunreiResult(
+                    sunreis = sunreis.map { it.toDTO() },
+                    totalCount = sunreis.size
+                )
+                call.respond(result)
             }
-
-            val result = ListSunreiResult(
-                sunreis = sunreis,
-                totalCount = sunreis.size
-            )
-            call.respond(result)
         }
 
         get("/{id}") {
@@ -41,10 +45,10 @@ fun Route.sunreiRoutes() {
                 return@get
             }
 
-            val sunrei = sunreiService.findOne(id)
+            val sunrei = sunreiService.getById(id)
 
             if (sunrei != null) {
-                val result = GetSunreiResult(sunrei = sunrei)
+                val result = GetSunreiResult(sunrei = sunrei.toDTO())
                 call.respond(result)
             } else {
                 call.respond(HttpStatusCode.NotFound, mapOf("error" to "Sunrei not found"))

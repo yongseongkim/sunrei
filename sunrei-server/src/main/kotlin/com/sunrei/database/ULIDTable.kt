@@ -1,4 +1,4 @@
-package com.sunrei.model
+package com.sunrei.database
 
 import com.sunrei.utils.IdGenerator
 import kotlinx.datetime.Clock

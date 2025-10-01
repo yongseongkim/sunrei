@@ -10,7 +10,7 @@ fun Route.tagRoutes() {
 
     route("/tags") {
         get {
-            val tags = tagService.findAll()
+            val tags = tagService.list()
             call.respond(mapOf(
                 "tags" to tags,
                 "totalCount" to tags.size

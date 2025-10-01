@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: kartoza/postgis:17-3.5
+    container_name: sunrei-postgres
+    platform: linux/arm64
+    environment:
+      POSTGRES_DB: sunrei
+      POSTGRES_USER: sunrei
+      POSTGRES_PASSWORD: sunrei
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+    driver: local

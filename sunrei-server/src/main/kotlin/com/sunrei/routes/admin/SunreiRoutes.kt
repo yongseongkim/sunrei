@@ -2,7 +2,8 @@ package com.sunrei.routes.admin
 
 import com.sunrei.generated.dto.admin.CreateSunreiRequest
 import com.sunrei.generated.dto.admin.UpdateSunreiRequest
-import com.sunrei.service.AdminSunreiService
+import com.sunrei.routes.admin.converter.toDTO
+import com.sunrei.service.SunreiService
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.request.receive
 import io.ktor.server.response.respond
@@ -14,13 +15,13 @@ import io.ktor.server.routing.put
 import io.ktor.server.routing.route
 
 fun Route.adminSunreiRoutes() {
-    val adminSunreiService = AdminSunreiService()
+    val sunreiService = SunreiService()
 
     route("/sunreis") {
         get {
             val nextToken = call.request.queryParameters["nextToken"]
             val size = call.request.queryParameters["size"]?.toIntOrNull() ?: 20
-            val search = call.request.queryParameters["search"]
+            val keyword = call.request.queryParameters["keyword"]
 
             // Validate size
             val validatedSize = when {
@@ -29,10 +30,10 @@ fun Route.adminSunreiRoutes() {
                 else -> size
             }
 
-            val result = adminSunreiService.list(
+            val result = sunreiService.listByKeyword(
                 nextToken = nextToken,
                 size = validatedSize,
-                search = search
+                keyword = keyword
             )
 
             call.respond(result)
@@ -44,10 +45,10 @@ fun Route.adminSunreiRoutes() {
                 return@get
             }
 
-            val sunrei = adminSunreiService.findOne(id)
+            val sunrei = sunreiService.getById(id)
 
             if (sunrei != null) {
-                call.respond(sunrei)
+                call.respond(sunrei.toDTO())
             } else {
                 call.respond(HttpStatusCode.NotFound, mapOf("error" to "Sunrei not found"))
             }
@@ -56,8 +57,8 @@ fun Route.adminSunreiRoutes() {
         post {
             try {
                 val request = call.receive<CreateSunreiRequest>()
-                val created = adminSunreiService.create(request)
-                call.respond(HttpStatusCode.Created, created)
+                val created = sunreiService.create(request)
+                call.respond(HttpStatusCode.Created, created.toDTO())
             } catch (e: Exception) {
                 call.respond(HttpStatusCode.BadRequest, mapOf("error" to (e.message ?: "Invalid request")))
             }
@@ -71,10 +72,10 @@ fun Route.adminSunreiRoutes() {
 
             try {
                 val request = call.receive<UpdateSunreiRequest>()
-                val updated = adminSunreiService.update(id, request)
+                val updated = sunreiService.update(id, request)
 
                 if (updated != null) {
-                    call.respond(updated)
+                    call.respond(updated.toDTO())
                 } else {
                     call.respond(HttpStatusCode.NotFound, mapOf("error" to "Sunrei not found"))
                 }
@@ -89,7 +90,7 @@ fun Route.adminSunreiRoutes() {
                 return@delete
             }
 
-            val deleted = adminSunreiService.delete(id)
+            val deleted = sunreiService.delete(id)
 
             if (deleted) {
                 call.respond(HttpStatusCode.NoContent)

@@ -1,10 +1,10 @@
 package com.sunrei.config
 
-import com.sunrei.model.Places
-import com.sunrei.model.SunreiSpots
-import com.sunrei.model.SunreiTags
-import com.sunrei.model.Sunreis
-import com.sunrei.model.Tags
+import com.sunrei.database.Places
+import com.sunrei.database.SunreiSpots
+import com.sunrei.database.SunreiTags
+import com.sunrei.database.Sunreis
+import com.sunrei.database.Tags
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import io.ktor.server.config.ApplicationConfig

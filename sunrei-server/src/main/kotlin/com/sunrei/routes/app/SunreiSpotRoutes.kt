@@ -1,5 +1,6 @@
 package com.sunrei.routes.app
 
+import com.sunrei.routes.app.converter.toDTO
 import com.sunrei.service.SunreiSpotService
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -16,12 +17,12 @@ fun Route.sunreiSpotRoutes() {
                 return@get
             }
 
-            val sunreiSpot = sunreiSpotService.findOne(id)
+            val sunreiSpot = sunreiSpotService.getById(id)
 
             if (sunreiSpot == null) {
                 call.respond(HttpStatusCode.NotFound, mapOf("error" to "SunreiSpot not found"))
             } else {
-                call.respond(sunreiSpot)
+                call.respond(sunreiSpot.toDTO())
             }
         }
     }
