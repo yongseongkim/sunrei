@@ -17,22 +17,26 @@ fun Route.sunreiRoutes() {
         get {
             val polygon = call.request.queryParameters["polygon"]
 
-            val sunreis = if (polygon != null) {
+            if (polygon != null) {
                 try {
-                    sunreiService.listByPolygon(polygon)
+                    val sunreis = sunreiService.listByPolygon(polygon)
+                    val result = ListSunreiResult(
+                        sunreis = sunreis.map { it.toDTO() },
+                        totalCount = sunreis.size
+                    )
+                    call.respond(result)
                 } catch (e: IllegalArgumentException) {
                     call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Invalid polygon format"))
                     return@get
                 }
             } else {
-                sunreiService.list()
+                val sunreis = sunreiService.list()
+                val result = ListSunreiResult(
+                    sunreis = sunreis.map { it.toDTO() },
+                    totalCount = sunreis.size
+                )
+                call.respond(result)
             }
-
-            val result = ListSunreiResult(
-                sunreis = sunreis.map { it.toDTO() },
-                totalCount = sunreis.size
-            )
-            call.respond(result)
         }
 
         get("/{id}") {

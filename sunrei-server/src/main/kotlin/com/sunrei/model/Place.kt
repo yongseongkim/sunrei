@@ -11,5 +11,6 @@ data class Place(
     val isClosed: Boolean,
     val closedReason: String? = null,
     val closedAt: Instant? = null,
-    val notes: String? = null
+    val notes: String? = null,
+    val deletedAt: Instant? = null
 )

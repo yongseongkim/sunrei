@@ -30,7 +30,8 @@ class SunreiSpotService {
                         isClosed = row[Places.isClosed],
                         closedReason = row[Places.closedReason],
                         closedAt = row[Places.closedAt],
-                        notes = row[Places.notes]
+                        notes = row[Places.notes],
+                        deletedAt = row[Places.deletedAt]
                     )
                 )
             }
@@ -60,7 +61,8 @@ class SunreiSpotService {
                             isClosed = row[Places.isClosed],
                             closedReason = row[Places.closedReason],
                             closedAt = row[Places.closedAt],
-                            notes = row[Places.notes]
+                            notes = row[Places.notes],
+                            deletedAt = row[Places.deletedAt]
                         )
                     )
                     placeId to spot

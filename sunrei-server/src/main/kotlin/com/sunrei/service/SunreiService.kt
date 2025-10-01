@@ -20,9 +20,6 @@ import com.sunrei.model.Tag
 import com.sunrei.routes.admin.converter.toDTO
 import com.sunrei.routes.admin.converter.toModel
 import com.sunrei.utils.PaginationToken
-import com.sunrei.utils.Point
-import com.sunrei.utils.isPointInPolygon
-import com.sunrei.utils.parseWKTPolygon
 import kotlinx.datetime.Clock
 import org.jetbrains.exposed.sql.SortOrder
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
@@ -37,6 +34,8 @@ import org.jetbrains.exposed.sql.update
 
 class SunreiService {
     private val pageToken = PaginationToken(JwtConfig.getPageTokenSecret())
+    private val sunreiSpotService = SunreiSpotService()
+    private val placeService = PlaceService()
 
     fun list(): List<Sunrei> = transaction {
         val sunreis = Sunreis.select { Sunreis.deletedAt.isNull() }
@@ -57,34 +56,30 @@ class SunreiService {
         buildSunreiFromRow(row, spots, tags)
     }
 
-    fun listByPolygon(polygonWKT: String): List<Sunrei> {
-        val placeService = PlaceService()
-        val sunreiSpotService = SunreiSpotService()
+    fun listByPolygon(polygonWKT: String, limit: Int = 200): List<Sunrei> = transaction {
+        // Step 1: Get places within polygon using PostGIS
+        val places = placeService.listByPolygon(polygonWKT, limit = limit)
+        if (places.isEmpty()) return@transaction emptyList()
 
-        return transaction {
-            // Step 1: Get places within polygon using PostGIS
-            val places = placeService.listByPolygon(polygonWKT)
-            if (places.isEmpty()) return@transaction emptyList()
+        val placeIds = places.map { it.id }
 
-            val placeIds = places.map { it.id }
+        // Step 2: Get sunrei spots for those places
+        val spotsMap = sunreiSpotService.listByPlaceIds(placeIds)
+        if (spotsMap.isEmpty()) return@transaction emptyList()
 
-            // Step 2: Get sunrei spots for those places
-            val spotsMap = sunreiSpotService.listByPlaceIds(placeIds)
-            if (spotsMap.isEmpty()) return@transaction emptyList()
+        // Step 3: Get unique sunrei IDs from the spots
+        val sunreiIds = spotsMap.values
+            .flatten()
+            .map { it.sunreiId }
+            .distinct()
 
-            // Step 3: Get unique sunrei IDs from the spots
-            val sunreiIds = spotsMap.values
-                .flatten()
-                .map { it.sunreiId }
-                .distinct()
+        // Step 4: Get sunreis and build with spots/tags
+        val sunreis = Sunreis.select {
+            (Sunreis.id inList sunreiIds) and (Sunreis.deletedAt.isNull())
+        }.orderBy(Sunreis.createdAt to SortOrder.DESC)
+            .toList()
 
-            // Step 4: Get sunreis and build with spots/tags
-            val sunreis = Sunreis.select {
-                (Sunreis.id inList sunreiIds) and (Sunreis.deletedAt.isNull())
-            }.orderBy(Sunreis.createdAt to SortOrder.DESC).toList()
-
-            buildSunreiList(sunreis)
-        }
+        buildSunreiList(sunreis)
     }
 
     fun listByKeyword(nextToken: String? = null, size: Int = 20, keyword: String? = null): ListSunreisResult {
@@ -124,7 +119,7 @@ class SunreiService {
             )
         }
     }
-    
+
     private fun buildSunreiList(sunreiRows: List<org.jetbrains.exposed.sql.ResultRow>): List<Sunrei> {
         if (sunreiRows.isEmpty()) return emptyList()
 
@@ -179,7 +174,8 @@ class SunreiService {
                         isClosed = row[Places.isClosed],
                         closedReason = row[Places.closedReason],
                         closedAt = row[Places.closedAt],
-                        notes = row[Places.notes]
+                        notes = row[Places.notes],
+                        deletedAt = row[Places.deletedAt]
                     )
                 )
                 sunreiId to spot
