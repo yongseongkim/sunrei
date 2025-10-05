@@ -7,7 +7,7 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
-    "codegen": "rm -rf api/admin && openapi-generator-cli generate -i ../sunrei-api/admin-api-spec.yaml -g typescript-axios -o api/admin --additional-properties=typescriptThreePlus=true,apiPackage=admin,modelPackage=admin --global-property=apiDocs=false,modelDocs=false"
+    "codegen": "rm -rf src/api/admin && openapi-generator-cli generate -i ../sunrei-api/admin-api-spec.yaml -g typescript-axios -o src/api/admin --additional-properties=typescriptThreePlus=true,apiPackage=admin,modelPackage=admin --global-property=apiDocs=false,modelDocs=false"
   },
   "dependencies": {
     "@googlemaps/react-wrapper": "^1.2.0",
@@ -32,7 +32,8 @@
     "react-dom": "19.1.0",
     "react-hook-form": "^7.62.0",
     "tailwind-merge": "^3.3.1",
-    "zod": "^4.1.5"
+    "zod": "^4.1.5",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

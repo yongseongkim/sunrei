@@ -44,24 +44,61 @@ export default function PlaceSearchModal({
   const [addressSearchInput, setAddressSearchInput] = useState('');
   const [coordinateSearchInput, setCoordinateSearchInput] = useState('');
   const [map, setMap] = useState<google.maps.Map | null>(null);
-  const [searchBox, setSearchBox] =
-    useState<google.maps.places.SearchBox | null>(null);
+  const searchBoxRef = useRef<google.maps.places.SearchBox | null>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const geocoder = useRef<google.maps.Geocoder | null>(null);
+  const initialPlaceRef = useRef<PlaceInput | undefined>(undefined);
 
+  // Update ref when initialPlace changes
   useEffect(() => {
-    if (initialPlace?.latitude && initialPlace?.longitude) {
-      setMapCenter({ lat: initialPlace.latitude, lng: initialPlace.longitude });
-      setSelectedPlace(initialPlace);
-    }
+    initialPlaceRef.current = initialPlace;
   }, [initialPlace]);
 
+  // Reset state when modal opens
   useEffect(() => {
-    if (map && searchInputRef.current && !searchBox) {
-      const box = new google.maps.places.SearchBox(searchInputRef.current);
-      setSearchBox(box);
+    if (isOpen) {
+      // Reset all input fields
+      setAddressSearchInput('');
+      setCoordinateSearchInput('');
 
-      box.addListener('places_changed', () => {
+      // Clear SearchBox input
+      if (searchInputRef.current) {
+        searchInputRef.current.value = '';
+      }
+
+      // Reset to initial place or default values
+      const initial = initialPlaceRef.current;
+      if (initial?.latitude && initial?.longitude) {
+        setMapCenter({
+          lat: initial.latitude,
+          lng: initial.longitude,
+        });
+        setSelectedPlace(initial);
+        setMapZoom(16);
+      } else {
+        setSelectedPlace({
+          name: '',
+          address: '',
+          latitude: 0,
+          longitude: 0,
+        });
+        setMapCenter({ lat: 35.6762, lng: 139.6503 }); // Tokyo
+        setMapZoom(14);
+      }
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (map && searchInputRef.current && isOpen) {
+      // Clean up previous SearchBox if exists
+      if (searchBoxRef.current) {
+        google.maps.event.clearInstanceListeners(searchBoxRef.current);
+      }
+
+      const box = new google.maps.places.SearchBox(searchInputRef.current);
+      searchBoxRef.current = box;
+
+      const listener = box.addListener('places_changed', () => {
         const places = box.getPlaces();
         if (!places || places.length === 0) return;
 
@@ -84,8 +121,12 @@ export default function PlaceSearchModal({
           map.setZoom(16);
         }
       });
+
+      return () => {
+        google.maps.event.removeListener(listener);
+      };
     }
-  }, [map, searchBox]);
+  }, [map, isOpen]);
 
   const handleMapClick = (e: google.maps.MapMouseEvent) => {
     if (!e.latLng) return;
@@ -212,8 +253,18 @@ export default function PlaceSearchModal({
     }
   };
 
+  const handleClose = () => {
+    // Clean up state when closing
+    setAddressSearchInput('');
+    setCoordinateSearchInput('');
+    if (searchInputRef.current) {
+      searchInputRef.current.value = '';
+    }
+    onClose();
+  };
+
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
         <DialogHeader>
           <DialogTitle className="text-xl flex items-center gap-2">
@@ -376,7 +427,7 @@ export default function PlaceSearchModal({
         <Separator className="my-4" />
 
         <div className="flex justify-end gap-2">
-          <Button onClick={onClose} variant="outline">
+          <Button onClick={handleClose} variant="outline">
             Cancel
           </Button>
           <Button

@@ -85,7 +85,11 @@ export default function ImageUpload({
         URL.revokeObjectURL(newUploadingImages[index].preview);
 
         const multiSizeImage = response.data;
-        if (!multiSizeImage || !multiSizeImage.images || multiSizeImage.images.length === 0) {
+        if (
+          !multiSizeImage ||
+          !multiSizeImage.images ||
+          multiSizeImage.images.length === 0
+        ) {
           throw new Error('No image data returned from server');
         }
 
@@ -139,7 +143,11 @@ export default function ImageUpload({
       );
 
       const multiSizeImage = response.data;
-      if (!multiSizeImage || !multiSizeImage.images || multiSizeImage.images.length === 0) {
+      if (
+        !multiSizeImage ||
+        !multiSizeImage.images ||
+        multiSizeImage.images.length === 0
+      ) {
         throw new Error('No image data returned from server');
       }
 
@@ -290,10 +298,14 @@ export default function ImageUpload({
           ))}
 
           {images.map((multiSizeImage, index) => {
-            const largestImage = multiSizeImage.images[multiSizeImage.images.length - 1];
+            const largestImage =
+              multiSizeImage.images[multiSizeImage.images.length - 1];
 
             return (
-              <div key={`${largestImage?.url || index}-${index}`} className="relative group">
+              <div
+                key={`${largestImage?.url || index}-${index}`}
+                className="relative group"
+              >
                 <Card className="overflow-hidden">
                   <div className="aspect-square relative">
                     {largestImage?.url ? (

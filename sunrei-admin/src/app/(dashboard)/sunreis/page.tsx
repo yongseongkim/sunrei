@@ -1,8 +1,8 @@
 'use client';
 
 import { SunreiDTO } from '@/api/admin';
-import { adminApi } from '@/lib/api-client';
-import { useEffect, useState } from 'react';
+import { useSunreis, useDeleteSunrei } from '@/lib/hooks/use-sunreis';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,45 +10,24 @@ import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Separator } from '@/components/ui/separator';
 import ResponsiveImage, { useFirstImage } from '@/components/ResponsiveImage';
-import { 
-  Plus, Edit2, Trash2, MapPin, AlertCircle, Loader2, 
+import {
+  Plus, Edit2, Trash2, MapPin, AlertCircle, Loader2,
   ChevronDown, ChevronRight
 } from 'lucide-react';
 
 export default function SunreisPage() {
   const router = useRouter();
-  const [sunreis, setSunreis] = useState<SunreiDTO[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
-  useEffect(() => {
-    fetchSunreis();
-  }, []);
+  const { data: sunreis = [], isLoading: loading, error: queryError } = useSunreis();
+  const deleteMutation = useDeleteSunrei();
 
-  const fetchSunreis = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      // Using page 1 with large size to get all items for now
-      const response = await adminApi.listSunreis(1, 100);
-      setSunreis(response.data.data || []);
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Failed to fetch Sunreis');
-    } finally {
-      setLoading(false);
-    }
-  };
+  const error = queryError?.message || (deleteMutation.error as any)?.response?.data?.message || null;
 
   const handleDelete = async (id: string) => {
     if (typeof window !== 'undefined' && !confirm('Are you sure you want to delete this Sunrei?')) return;
-    
-    try {
-      await adminApi.deleteSunrei(id);
-      await fetchSunreis();
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Failed to delete Sunrei');
-    }
+
+    deleteMutation.mutate(id);
   };
 
   if (loading) {
