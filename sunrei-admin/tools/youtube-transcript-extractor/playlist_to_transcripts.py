@@ -189,7 +189,7 @@ def extract_playlist_transcripts(playlist_id: str, api_key: str, output_dir: str
 
         # Add random delay to avoid rate limiting (only for new extractions)
         if not used_cache and i < len(videos):  # Don't delay after the last video or when using cache
-            delay = random.uniform(1, 10)
+            delay = random.uniform(10, 30)
             print(f"⏱️  Waiting {delay:.1f}s to avoid rate limiting...")
             time.sleep(delay)
 
