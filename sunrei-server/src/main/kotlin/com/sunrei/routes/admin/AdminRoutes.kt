@@ -16,6 +16,7 @@ fun Route.adminRoutes(s3Service: S3Service) {
         }
 
         adminSunreiRoutes()
+        adminTagRoutes()
         imageRoutes(s3Service)
     }
 }

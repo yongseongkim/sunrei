@@ -13,7 +13,7 @@ fun Route.tagRoutes() {
             val tags = tagService.list()
             call.respond(mapOf(
                 "tags" to tags,
-                "totalCount" to tags.size
+                "totalCount" to tags.totalSize
             ))
         }
     }

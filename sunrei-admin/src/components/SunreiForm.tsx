@@ -3,6 +3,7 @@
 import {
   CreateSunreiRequest,
   PlaceInput,
+  TagDTO,
   UpdateSunreiRequest,
 } from '@/api/admin';
 import ImageUpload from '@/components/ImageUpload';
@@ -11,6 +12,7 @@ import BasicInfoSection from '@/components/sunrei-form/BasicInfoSection';
 import FormActions from '@/components/sunrei-form/FormActions';
 import SpotsList from '@/components/sunrei-form/SpotsList';
 import SpotsMapSection from '@/components/sunrei-form/SpotsMapSection';
+import TagAutocomplete from '@/components/TagAutocomplete';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
@@ -41,6 +43,7 @@ export default function SunreiForm({
   const [mapModalOpen, setMapModalOpen] = useState(false);
   const [currentSpotIndex, setCurrentSpotIndex] = useState<number | null>(null);
   const [editingPlace, setEditingPlace] = useState<PlaceInput | undefined>();
+  const [selectedTags, setSelectedTags] = useState<TagDTO[]>([]);
 
   const { data: sunreiData, isLoading: loading } = useSunrei(sunreiId || '');
   const createMutation = useCreateSunrei();
@@ -106,6 +109,7 @@ export default function SunreiForm({
         tagIds: sunreiData.tags?.map((t) => t.id!) || [],
         images: sunreiData.images || [],
       });
+      setSelectedTags(sunreiData.tags || []);
     }
   }, [sunreiData, reset]);
 
@@ -169,6 +173,20 @@ export default function SunreiForm({
             )}
 
             <BasicInfoSection register={register} errors={errors} />
+
+            <Separator />
+
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Tags</label>
+              <TagAutocomplete
+                selectedTagIds={watch('tagIds') || []}
+                selectedTags={selectedTags}
+                onTagsChange={(tagIds, tags) => {
+                  setValue('tagIds', tagIds);
+                  setSelectedTags(tags);
+                }}
+              />
+            </div>
 
             <Separator />
 

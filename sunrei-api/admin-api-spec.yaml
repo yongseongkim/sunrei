@@ -186,19 +186,30 @@ paths:
 
   /admin/tags:
     get:
-      summary: List tags
+      summary: List tags with pagination
       operationId: listTags
       security:
         - bearerAuth: [ ]
+      parameters:
+        - name: nextToken
+          in: query
+          schema:
+            type: string
+          description: Token for next page (from previous response)
+        - name: size
+          in: query
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+            maximum: 100
       responses:
         '200':
-          description: List of tags
+          description: Paginated list of tags
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/TagDTO'
+                $ref: '#/components/schemas/ListTagsResult'
         '401':
           description: Unauthorized
 
@@ -223,7 +234,55 @@ paths:
         '401':
           description: Unauthorized
 
+  /admin/tags/search:
+    get:
+      summary: Search tags by name
+      operationId: searchTags
+      security:
+        - bearerAuth: [ ]
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Search query for tag name
+      responses:
+        '200':
+          description: List of matching tags
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TagDTO'
+        '401':
+          description: Unauthorized
+
   /admin/tags/{id}:
+    get:
+      summary: Get tag with associated Sunreis
+      operationId: getTag
+      security:
+        - bearerAuth: [ ]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Tag with Sunrei IDs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagWithSunreis'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+
     put:
       summary: Update tag
       operationId: updateTag
@@ -271,6 +330,33 @@ paths:
           description: Unauthorized
         '404':
           description: Not found
+
+  /admin/tags/{id}/sunreis/{sunreiId}:
+    delete:
+      summary: Remove Sunrei from tag
+      operationId: removeSunreiFromTag
+      security:
+        - bearerAuth: [ ]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Tag ID
+        - name: sunreiId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Sunrei ID to remove from tag
+      responses:
+        '204':
+          description: Sunrei removed from tag
+        '401':
+          description: Unauthorized
+        '404':
+          description: Tag-Sunrei association not found
 
   /admin/images/upload:
     post:
@@ -456,6 +542,28 @@ components:
           description: Description of the tag
           nullable: true
 
+    SunreiBasicInfo:
+      type: object
+      required:
+        - id
+        - title
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+
+    TagWithSunreis:
+      allOf:
+        - $ref: '#/components/schemas/TagDTO'
+        - type: object
+          properties:
+            sunreis:
+              type: array
+              items:
+                $ref: '#/components/schemas/SunreiBasicInfo'
+              description: List of Sunreis associated with this tag
+
     SunreiDTO:
       type: object
       required:
@@ -559,6 +667,33 @@ components:
           type: string
           description: Token to retrieve next page (null if no more pages)
           nullable: true
+
+    ListTagsResult:
+      type: object
+      required:
+        - data
+        - totalSize
+        - totalElements
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        totalSize:
+          type: integer
+          description: Number of items in this page
+        totalElements:
+          type: integer
+          description: Total number of items across all pages
+        nextToken:
+          type: string
+          description: Token to retrieve next page (null if no more pages)
+          nullable: true
+        sunreiCountByTagId:
+          type: object
+          description: Map of tag ID to number of associated Sunreis
+          additionalProperties:
+            type: integer
 
     CreateSunreiRequest:
       type: object
