@@ -1,26 +1,117 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Pantone 2025 Colors as Tailwind utilities */
+  --color-pantone-mocha-mousse: var(--pantone-mocha-mousse);
+  --color-pantone-tendril: var(--pantone-tendril);
+  --color-pantone-cornflower-blue: var(--pantone-cornflower-blue);
+  --color-pantone-viola: var(--pantone-viola);
+  --color-pantone-cobblestone: var(--pantone-cobblestone);
+  --color-pantone-willow: var(--pantone-willow);
+  --color-pantone-gardenia: var(--pantone-gardenia);
+
+  /* UI Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Pantone 2025 Color Palette */
+  --pantone-mocha-mousse: #A47764;
+  --pantone-tendril: #B4D79E;
+  --pantone-cornflower-blue: #6495ED;
+  --pantone-viola: #9370DB;
+  --pantone-cobblestone: #8B8680;
+  --pantone-willow: #9CAF88;
+  --pantone-gardenia: #F8F6F0;
+
+  /* UI Variables */
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+
+  /* Primary: Cornflower Blue */
+  --primary: oklch(0.62 0.15 265);
+  --primary-foreground: oklch(1 0 0);
+
+  /* Secondary: Tendril (light green) */
+  --secondary: oklch(0.83 0.08 130);
+  --secondary-foreground: oklch(0.25 0 0);
+
+  /* Accent: Viola */
+  --accent: oklch(0.64 0.18 290);
+  --accent-foreground: oklch(1 0 0);
+
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.62 0.15 265);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+
+  /* Primary: Lighter Cornflower Blue for dark mode */
+  --primary: oklch(0.72 0.18 265);
+  --primary-foreground: oklch(0.145 0 0);
+
+  /* Secondary: Brighter Tendril for dark mode */
+  --secondary: oklch(0.75 0.12 130);
+  --secondary-foreground: oklch(0.145 0 0);
+
+  /* Accent: Lighter Viola for dark mode */
+  --accent: oklch(0.74 0.22 290);
+  --accent-foreground: oklch(0.145 0 0);
+
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.72 0.18 265);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+  }
 }

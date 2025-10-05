@@ -1,83 +1,100 @@
 'use client';
 
-import { SunreiDTO } from '@/dto';
-import { apiClient } from '@/lib/api-client';
 import { config } from '@/lib/config';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { GoogleMap, Marker } from '../components/Map';
+import { MarkerInfoWindow } from '../components/MarkerInfoWindow';
 import { boundsToWKTPolygon } from '../utils/map-utils';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
+import { Button } from '@/components/ui/button';
+import { MapPin, Image as ImageIcon, ExternalLink } from 'lucide-react';
+import { useUIStore } from '@/stores/ui-store';
+import { useMapStore } from '@/stores/map-store';
+import { useSunreis } from '@/hooks/useSunreis';
 
 const center = {
   lat: 35.6762,
   lng: 139.6503,
 };
 
+// YouTube video ID 추출 함수
+function getYoutubeVideoId(url: string): string | null {
+  if (!url) return null;
+
+  // https://www.youtube.com/watch?v=VIDEO_ID
+  // https://youtu.be/VIDEO_ID
+  // https://www.youtube.com/embed/VIDEO_ID
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\s]+)/,
+    /youtube\.com\/watch\?.*v=([^&\s]+)/,
+  ];
+
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match && match[1]) {
+      return match[1];
+    }
+  }
+
+  return null;
+}
+
+// YouTube 썸네일 URL 생성
+function getYoutubeThumbnail(videoId: string): string {
+  return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+}
+
 export default function Home() {
-  const [selectedSunrei, setSelectedSunrei] = useState<string | null>(null);
-  const [hoveredMarker, setHoveredMarker] = useState<string | null>(null);
+  // Zustand stores
+  const { selectedSunrei, hoveredMarker, modalSpot, setSelectedSunrei, setHoveredMarker, setModalSpot } =
+    useUIStore();
+  const { isLoaded, setIsLoaded } = useMapStore();
+
+  // Local state
   const [selectedSpot, setSelectedSpot] = useState<string | null>(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [modalSpot, setModalSpot] = useState<any>(null);
-  const [sunreis, setSunreis] = useState<SunreiDTO[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [currentPolygon, setCurrentPolygon] = useState<string | undefined>(undefined);
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // React Query
+  const { data: sunreis = [], isLoading: loading } = useSunreis(currentPolygon);
 
   const onLoad = useCallback(() => {
     setIsLoaded(true);
-  }, []);
+  }, [setIsLoaded]);
 
-  const fetchSunreis = useCallback(async (polygon?: string) => {
-    try {
-      const response = await apiClient.listSunreis(polygon);
-      const result = response.data;
-      setSunreis(result.sunreis || []);
-    } catch (error) {
-      console.error('Failed to fetch sunreis:', error);
-      setSunreis([]);
-    } finally {
-      setLoading(false);
+  const handleBoundsChanged = useCallback((bounds: google.maps.LatLngBounds) => {
+    // Clear existing timer
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
     }
+
+    // Set new timer with 500ms delay
+    debounceTimerRef.current = setTimeout(() => {
+      const polygon = boundsToWKTPolygon(bounds);
+      setCurrentPolygon(polygon);
+    }, 500);
   }, []);
-
-  useEffect(() => {
-    // Initial load without polygon
-    fetchSunreis();
-  }, [fetchSunreis]);
-
-  const handleBoundsChanged = useCallback(
-    (bounds: google.maps.LatLngBounds) => {
-      // Clear existing timer
-      if (debounceTimerRef.current) {
-        clearTimeout(debounceTimerRef.current);
-      }
-
-      // Set new timer with 500ms delay
-      debounceTimerRef.current = setTimeout(() => {
-        const polygon = boundsToWKTPolygon(bounds);
-        setLoading(true);
-        fetchSunreis(polygon);
-      }, 500);
-    },
-    [fetchSunreis],
-  );
 
   const allSpots = sunreis.flatMap(
     (sunrei) =>
-      sunrei.spots?.flatMap(
-        (spot) =>
-          spot.places?.map((place) => ({
-            id: spot.id,
-            title: spot.title,
-            description: spot.description,
-            placeId: place.id,
-            placeName: place.name,
-            placeAddress: place.address,
-            lat: place.latitude || 0,
-            lng: place.longitude || 0,
-            sunreiId: sunrei.id,
-            sunreiTitle: sunrei.title,
-          })) || [],
-      ) || [],
+      sunrei.spots?.map((spot) => ({
+        id: spot.id,
+        title: spot.title,
+        description: spot.description,
+        youtubeLink: spot.youtubeLink,
+        images: spot.images,
+        placeId: spot.place.id,
+        placeName: spot.place.name,
+        placeAddress: spot.place.address,
+        lat: spot.place.latitude || 0,
+        lng: spot.place.longitude || 0,
+        sunreiId: sunrei.id,
+        sunreiTitle: sunrei.title,
+      })) || [],
   );
 
   const handleSunreiClick = (sunreiId: string) => {
@@ -87,132 +104,122 @@ export default function Home() {
 
   return (
     <div className="flex h-screen">
-      <div className="w-96 h-full overflow-y-auto border-r border-gray-200">
+      <div className="w-96 h-full overflow-y-auto border-r">
         <div className="p-4">
           <h1 className="text-2xl font-bold mb-6">성지순례</h1>
           {loading ? (
-            <div className="flex justify-center items-center h-64">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+            <div className="space-y-4">
+              {[...Array(3)].map((_, i) => (
+                <Card key={i}>
+                  <CardHeader>
+                    <Skeleton className="h-6 w-3/4" />
+                    <Skeleton className="h-4 w-full" />
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-4 gap-1">
+                      {[...Array(4)].map((_, j) => (
+                        <Skeleton key={j} className="aspect-square" />
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           ) : (
             <div className="space-y-4">
               {sunreis.map((sunrei: any) => (
-                <div
+                <Card
                   key={sunrei.id}
-                  className={`p-4 border rounded-lg cursor-pointer transition-all ${
+                  className={`cursor-pointer transition-all ${
                     selectedSunrei === sunrei.id
-                      ? 'border-blue-500 bg-blue-50'
-                      : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                      ? 'border-primary'
+                      : 'hover:border-muted-foreground/50'
                   }`}
                   onClick={() => handleSunreiClick(sunrei.id)}
                 >
-                  <div className="space-y-3">
-                    <div>
-                      <h3 className="font-semibold text-lg mb-1">
-                        {sunrei.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 mb-2">
-                        {sunrei.description}
-                      </p>
-                      <div className="flex items-center gap-3 text-xs text-gray-500">
-                        <span className="flex items-center gap-1">
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                            />
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                            />
-                          </svg>
-                          {sunrei.spots?.length || 0}개 장소
-                        </span>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-4 gap-1">
-                      {sunrei.images && sunrei.images.length > 0 ? (
-                        sunrei.images.slice(0, 4).map((image, index) => (
-                          <div
-                            key={index}
-                            className="relative aspect-square rounded overflow-hidden"
-                          >
-                            <img
-                              src={image.url || ''}
-                              alt={sunrei.title || ''}
-                              className="w-full h-full object-cover hover:scale-110 transition-transform cursor-pointer"
-                            />
-                            {sunrei.images &&
-                              sunrei.images.length > 4 &&
-                              index === 3 && (
-                                <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
-                                  <span className="text-white text-sm font-medium">
-                                    +{sunrei.images.length - 4}
-                                  </span>
-                                </div>
-                              )}
-                          </div>
-                        ))
-                      ) : (
-                        <div className="aspect-square rounded bg-gray-100 flex items-center justify-center">
-                          <svg
-                            className="w-6 h-6 text-gray-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                            />
-                          </svg>
-                        </div>
+                  <CardHeader>
+                    <CardTitle>{sunrei.title}</CardTitle>
+                    <CardDescription>{sunrei.description}</CardDescription>
+                    <div className="flex items-center justify-between pt-2">
+                      <Badge variant="secondary" className="flex items-center gap-1">
+                        <MapPin className="w-3 h-3" />
+                        {sunrei.spots?.length || 0}개 장소
+                      </Badge>
+                      {sunrei.link && (
+                        <a
+                          href={sunrei.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="text-xs text-primary hover:underline flex items-center gap-1"
+                        >
+                          보러가기
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
                       )}
                     </div>
-                  </div>
-                  {selectedSunrei === sunrei.id && sunrei.spots && (
-                    <div className="mt-3 pt-3 border-t border-gray-200">
-                      <p className="text-xs font-medium text-gray-700 mb-2">
-                        방문 가능한 장소:
-                      </p>
-                      <div className="space-y-1">
-                        {sunrei.spots.map((spot) => (
-                          <div key={spot.id} className="space-y-1">
-                            <p className="text-xs font-medium text-gray-700">
-                              {spot.title}
-                            </p>
-                            {spot.places?.map((place) => (
-                              <div
-                                key={place.id}
-                                className="text-xs text-gray-600 flex items-center gap-2 hover:text-blue-600 ml-2"
-                                onMouseEnter={() =>
-                                  setHoveredMarker(`${spot.id}-${place.id}`)
-                                }
-                                onMouseLeave={() => setHoveredMarker(null)}
-                              >
-                                <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
-                                <span>
-                                  {place.name} - {place.address}
-                                </span>
+                  </CardHeader>
+                  {(sunrei.images?.length > 0 || (selectedSunrei === sunrei.id && sunrei.spots)) && (
+                    <CardContent>
+                      {sunrei.images && sunrei.images.length > 0 && (
+                        <div className="grid grid-cols-4 gap-1">
+                          {sunrei.images.slice(0, 4).map((image, index) => (
+                            <div
+                              key={index}
+                              className="relative aspect-square rounded overflow-hidden"
+                            >
+                              <img
+                                src={image.url || ''}
+                                alt={sunrei.title || ''}
+                                className="w-full h-full object-cover hover:scale-110 transition-transform cursor-pointer"
+                              />
+                              {sunrei.images &&
+                                sunrei.images.length > 4 &&
+                                index === 3 && (
+                                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                                    <span className="text-white text-sm font-medium">
+                                      +{sunrei.images.length - 4}
+                                    </span>
+                                  </div>
+                                )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      {selectedSunrei === sunrei.id && sunrei.spots && (
+                      <>
+                        {sunrei.images && sunrei.images.length > 0 && (
+                          <Separator className="my-4" />
+                        )}
+                        <div>
+                          <p className="text-xs font-medium text-muted-foreground mb-2">
+                            방문 가능한 장소:
+                          </p>
+                          <div className="space-y-2">
+                            {sunrei.spots.map((spot) => (
+                              <div key={spot.id} className="space-y-1">
+                                <p className="text-xs font-medium">{spot.title}</p>
+                                <div
+                                  className="text-xs text-muted-foreground flex items-center gap-2 hover:text-primary ml-2 cursor-pointer"
+                                  onMouseEnter={() =>
+                                    setHoveredMarker(`${spot.id}-${spot.place.id}`)
+                                  }
+                                  onMouseLeave={() => setHoveredMarker(null)}
+                                >
+                                  <span className="w-1 h-1 bg-muted-foreground rounded-full"></span>
+                                  <span>
+                                    {spot.place.name} - {spot.place.address}
+                                  </span>
+                                </div>
                               </div>
                             ))}
                           </div>
-                        ))}
-                      </div>
-                    </div>
+                        </div>
+                      </>
+                      )}
+                    </CardContent>
                   )}
-                </div>
+                </Card>
               ))}
             </div>
           )}
@@ -229,14 +236,58 @@ export default function Home() {
         >
           {allSpots.map((spot) => {
             const markerId = `${spot.id}-${spot.placeId}`;
-            const isHighlighted =
-              selectedSunrei === spot.sunreiId || hoveredMarker === markerId;
+
+            // 마커 상태 결정
+            let markerState: 'selected' | 'related' | 'default';
+            if (modalSpot && markerId === `${modalSpot.id}-${modalSpot.placeId}`) {
+              // A: 선택된 마커 (다이얼로그가 보이는 마커)
+              markerState = 'selected';
+            } else if (modalSpot && spot.sunreiId === modalSpot.sunreiId) {
+              // B: 같은 Sunrei의 마커들
+              markerState = 'related';
+            } else if (selectedSunrei === spot.sunreiId || hoveredMarker === markerId) {
+              // hover나 선택된 sunrei도 related로 처리
+              markerState = 'related';
+            } else {
+              // C: 선택되지 않은 마커
+              markerState = 'default';
+            }
+
             return (
               <Marker
                 key={markerId}
                 position={{ lat: spot.lat, lng: spot.lng }}
                 title={`${spot.sunreiTitle} - ${spot.title} - ${spot.placeName}`}
-                isHighlighted={isHighlighted}
+                markerState={markerState}
+                onClick={() => {
+                  setSelectedSunrei(spot.sunreiId);
+                  setModalSpot(spot);
+                }}
+              />
+            );
+          })}
+          {allSpots.map((spot) => {
+            const markerId = `${spot.id}-${spot.placeId}`;
+
+            // 마커 상태 결정 (동일한 로직)
+            let markerState: 'selected' | 'related' | 'default';
+            if (modalSpot && markerId === `${modalSpot.id}-${modalSpot.placeId}`) {
+              markerState = 'selected';
+            } else if (modalSpot && spot.sunreiId === modalSpot.sunreiId) {
+              markerState = 'related';
+            } else if (selectedSunrei === spot.sunreiId || hoveredMarker === markerId) {
+              markerState = 'related';
+            } else {
+              markerState = 'default';
+            }
+
+            return (
+              <MarkerInfoWindow
+                key={`info-${markerId}`}
+                position={{ lat: spot.lat, lng: spot.lng }}
+                sunreiTitle={spot.sunreiTitle}
+                placeName={spot.placeName}
+                markerState={markerState}
                 onClick={() => {
                   setSelectedSunrei(spot.sunreiId);
                   setModalSpot(spot);
@@ -247,98 +298,81 @@ export default function Home() {
         </GoogleMap>
       </div>
 
-      {modalSpot && (
-        <div
-          className="fixed inset-0 flex items-center justify-center z-50 p-4"
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
-          onClick={() => setModalSpot(null)}
-        >
-          <div
-            className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="relative h-64 bg-gray-200 flex items-center justify-center">
-              <svg
-                className="w-12 h-12 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              <button
-                className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100"
-                onClick={() => setModalSpot(null)}
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
+      <Dialog open={!!modalSpot} onOpenChange={(open) => !open && useUIStore.getState().closeModal()}>
+        <DialogContent className="max-w-2xl">
+          <DialogHeader>
+            <DialogTitle>{modalSpot?.placeName}</DialogTitle>
+            <DialogDescription>
+              {modalSpot?.placeAddress}
+            </DialogDescription>
+            <p className="text-sm text-muted-foreground">
+              {modalSpot?.sunreiTitle} - {modalSpot?.title}
+            </p>
+          </DialogHeader>
+          {(() => {
+            // 이미지가 있으면 첫 번째 이미지 표시
+            const firstImage = modalSpot?.images?.[0]?.images?.[0];
+            if (firstImage?.url) {
+              return (
+                <div className="relative h-64 bg-muted rounded-lg overflow-hidden">
+                  <img
+                    src={firstImage.url}
+                    alt={modalSpot?.title || ''}
+                    className="w-full h-full object-cover"
                   />
-                </svg>
-              </button>
-            </div>
-            <div className="p-6">
-              <h2 className="text-2xl font-bold mb-2">{modalSpot.placeName}</h2>
-              <p className="text-gray-600 mb-1">{modalSpot.placeAddress}</p>
-              <p className="text-gray-500 text-sm mb-4">
-                {modalSpot.sunreiTitle} - {modalSpot.title}
-              </p>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-sm text-gray-700 mb-1">
-                    설명
-                  </h3>
-                  <p className="text-gray-800 leading-relaxed">
-                    {modalSpot.description}
-                  </p>
                 </div>
-                <div className="pt-4 border-t">
+              );
+            }
+
+            // 이미지가 없고 YouTube 링크가 있으면 썸네일 표시
+            if (modalSpot?.youtubeLink) {
+              const videoId = getYoutubeVideoId(modalSpot.youtubeLink);
+              if (videoId) {
+                return (
                   <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${modalSpot.lat},${modalSpot.lng}`}
+                    href={modalSpot.youtubeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:text-blue-800 font-medium text-sm flex items-center gap-1"
+                    className="relative h-64 bg-muted rounded-lg overflow-hidden block group cursor-pointer"
                   >
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    Google Maps에서 보기
+                    <img
+                      src={getYoutubeThumbnail(videoId)}
+                      alt={modalSpot?.title || ''}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors">
+                      <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center">
+                        <div className="w-0 h-0 border-l-[20px] border-l-white border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"></div>
+                      </div>
+                    </div>
                   </a>
-                </div>
-              </div>
+                );
+              }
+            }
+
+            // 둘 다 없으면 이미지 영역 표시하지 않음
+            return null;
+          })()}
+          <div className="space-y-4">
+            <div>
+              <h3 className="font-semibold text-sm mb-1">설명</h3>
+              <p className="text-sm leading-relaxed">{modalSpot?.description}</p>
             </div>
+            <Separator />
+            <Button variant="outline" className="w-full" asChild>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${modalSpot?.lat},${modalSpot?.lng}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <ExternalLink className="w-4 h-4" />
+                Google Maps에서 보기
+              </a>
+            </Button>
           </div>
-        </div>
-      )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
