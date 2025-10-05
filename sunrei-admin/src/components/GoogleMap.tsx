@@ -1,6 +1,6 @@
 'use client';
 
-import { Wrapper } from '@googlemaps/react-wrapper';
+import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import React, { useEffect, useRef, useState } from 'react';
 
 interface MapProps {
@@ -16,17 +16,17 @@ interface MapProps {
 }
 
 // Main Map component
-const MapComponent: React.FC<MapProps> = ({ 
-  center, 
-  zoom, 
-  onClick, 
-  onLoad, 
+const MapComponent: React.FC<MapProps> = ({
+  center,
+  zoom,
+  onClick,
+  onLoad,
   style,
-  markers = []
+  markers = [],
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [map, setMap] = useState<google.maps.Map>();
-  const markersRef = useRef<google.maps.Marker[]>([]);
+  const markersRef = useRef<google.maps.marker.AdvancedMarkerElement[]>([]);
 
   useEffect(() => {
     if (ref.current && !map) {
@@ -40,10 +40,11 @@ const MapComponent: React.FC<MapProps> = ({
         streetViewControl: true,
         rotateControl: false,
         fullscreenControl: true,
+        mapId: process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID || 'DEMO_MAP_ID',
       });
 
       setMap(newMap);
-      
+
       if (onLoad) {
         onLoad(newMap);
       }
@@ -59,21 +60,36 @@ const MapComponent: React.FC<MapProps> = ({
     if (!map) return;
 
     // Clear existing markers
-    markersRef.current.forEach(marker => marker.setMap(null));
+    markersRef.current.forEach((marker) => {
+      marker.map = null;
+    });
     markersRef.current = [];
 
     // Add new markers
     markers.forEach(({ position, title }) => {
-      const marker = new google.maps.Marker({
+      // Create custom marker element with Pantone color
+      const markerElement = document.createElement('div');
+      markerElement.style.width = '24px';
+      markerElement.style.height = '24px';
+      markerElement.style.borderRadius = '50%';
+      markerElement.style.backgroundColor = 'var(--pantone-cornflower-blue)';
+      markerElement.style.border = '3px solid white';
+      markerElement.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.3)';
+      markerElement.style.cursor = 'pointer';
+
+      const marker = new google.maps.marker.AdvancedMarkerElement({
         position,
         map,
         title,
+        content: markerElement,
       });
       markersRef.current.push(marker);
     });
 
     return () => {
-      markersRef.current.forEach(marker => marker.setMap(null));
+      markersRef.current.forEach((marker) => {
+        marker.map = null;
+      });
       markersRef.current = [];
     };
   }, [map, markers]);
@@ -86,22 +102,37 @@ interface GoogleMapProps extends MapProps {
   apiKey: string;
 }
 
-export const GoogleMap: React.FC<GoogleMapProps> = ({ apiKey, ...mapProps }) => {
-  const render = (status: any) => {
+export const GoogleMap: React.FC<GoogleMapProps> = ({
+  apiKey,
+  ...mapProps
+}) => {
+  const render = (status: Status) => {
     switch (status) {
-      case 'LOADING':
-        return <div className="flex items-center justify-center h-full">Loading map...</div>;
-      case 'FAILURE':
-        return <div className="flex items-center justify-center h-full text-red-500">Error loading map</div>;
-      case 'SUCCESS':
+      case Status.LOADING:
+        return (
+          <div className="flex items-center justify-center h-full">
+            Loading map...
+          </div>
+        );
+      case Status.FAILURE:
+        return (
+          <div className="flex items-center justify-center h-full text-red-500">
+            Error loading map
+          </div>
+        );
+      case Status.SUCCESS:
         return <MapComponent {...mapProps} />;
       default:
-        return null;
+        return (
+          <div className="flex items-center justify-center h-full">
+            Loading map...
+          </div>
+        );
     }
   };
 
   return (
-    <Wrapper apiKey={apiKey} render={render} libraries={['places']}>
+    <Wrapper apiKey={apiKey} render={render} libraries={['places', 'marker']}>
       <MapComponent {...mapProps} />
     </Wrapper>
   );

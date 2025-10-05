@@ -27,7 +27,7 @@ export default function ResponsiveImage({
   fallbackSrc = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100"%3E%3Crect width="100" height="100" fill="%23e5e7eb"/%3E%3C/svg%3E',
   priority = false,
   onError,
-  onClick
+  onClick,
 }: ResponsiveImageProps) {
   const [selectedImage, setSelectedImage] = useState<ImageDTO | null>(null);
   const [imageSrc, setImageSrc] = useState<string>(fallbackSrc);
@@ -53,11 +53,20 @@ export default function ResponsiveImage({
       } else if (containerWidth > 800) {
         selected = images[0]; // Original
       } else if (containerWidth > 400) {
-        selected = images.find(img => img.width && img.width <= 800) || images[1] || images[0];
+        selected =
+          images.find((img) => img.width && img.width <= 800) ||
+          images[1] ||
+          images[0];
       } else if (containerWidth > 150) {
-        selected = images.find(img => img.width && img.width <= 400) || images[2] || images[1] || images[0];
+        selected =
+          images.find((img) => img.width && img.width <= 400) ||
+          images[2] ||
+          images[1] ||
+          images[0];
       } else {
-        selected = images.find(img => img.width && img.width <= 150) || images[images.length - 1];
+        selected =
+          images.find((img) => img.width && img.width <= 150) ||
+          images[images.length - 1];
       }
     } else {
       // Manual size selection
@@ -67,31 +76,35 @@ export default function ResponsiveImage({
           break;
         case 'large':
           // Find image around 800px or fallback
-          selected = images.find(img => img.width && img.width > 600 && img.width <= 1000) || images[1] || images[0];
+          selected =
+            images.find(
+              (img) => img.width && img.width > 600 && img.width <= 1000,
+            ) ||
+            images[1] ||
+            images[0];
           break;
         case 'medium':
           // Find image around 400px or fallback
-          selected = images.find(img => img.width && img.width > 300 && img.width <= 600) || images[2] || images[1] || images[0];
+          selected =
+            images.find(
+              (img) => img.width && img.width > 300 && img.width <= 600,
+            ) ||
+            images[2] ||
+            images[1] ||
+            images[0];
           break;
         case 'small':
           // Find smallest image or around 150px
-          selected = images.find(img => img.width && img.width <= 200) || images[images.length - 1];
+          selected =
+            images.find((img) => img.width && img.width <= 200) ||
+            images[images.length - 1];
           break;
       }
     }
 
     if (selected) {
       setSelectedImage(selected);
-      // Use thumbnail if available, otherwise use main URL
-      if (size === 'small' && selected.thumbnails?.small) {
-        setImageSrc(selected.thumbnails.small);
-      } else if (size === 'medium' && selected.thumbnails?.medium) {
-        setImageSrc(selected.thumbnails.medium);
-      } else if (size === 'large' && selected.thumbnails?.large) {
-        setImageSrc(selected.thumbnails.large);
-      } else {
-        setImageSrc(selected.url);
-      }
+      setImageSrc(selected.url);
     }
   }, [multiSizeImage, size, containerWidth, fallbackSrc]);
 
@@ -108,7 +121,7 @@ export default function ResponsiveImage({
 
     measureContainer();
     window.addEventListener('resize', measureContainer);
-    
+
     // Initial measurement after mount
     const timer = setTimeout(measureContainer, 100);
 
@@ -125,12 +138,13 @@ export default function ResponsiveImage({
   };
 
   return (
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       id={`responsive-img-${alt}`}
       src={imageSrc}
       alt={alt}
       className={cn('transition-opacity duration-200', className, {
-        'cursor-pointer': onClick
+        'cursor-pointer': onClick,
       })}
       loading={priority ? 'eager' : 'lazy'}
       onError={handleError}
@@ -144,7 +158,9 @@ export default function ResponsiveImage({
 /**
  * Helper hook to get the first image from MultiSizeImageDTO array
  */
-export function useFirstImage(images?: MultiSizeImageDTO[]): MultiSizeImageDTO | undefined {
+export function useFirstImage(
+  images?: MultiSizeImageDTO[],
+): MultiSizeImageDTO | undefined {
   return images && images.length > 0 ? images[0] : undefined;
 }
 
@@ -153,28 +169,25 @@ export function useFirstImage(images?: MultiSizeImageDTO[]): MultiSizeImageDTO |
  */
 export function getImageUrl(
   multiSizeImage?: MultiSizeImageDTO,
-  size: 'small' | 'medium' | 'large' | 'original' = 'medium'
+  size: 'small' | 'medium' | 'large' | 'original' = 'medium',
 ): string {
   if (!multiSizeImage?.images || multiSizeImage.images.length === 0) {
     return '';
   }
 
   const images = multiSizeImage.images;
-  
-  // Try to get the appropriate size
+
+  // Get the appropriate size from images array
   switch (size) {
     case 'small':
-      // Try thumbnail first, then smallest image
-      const smallImg = images[images.length - 1];
-      return smallImg?.thumbnails?.small || smallImg?.url || '';
+      // Get smallest image
+      return images[images.length - 1]?.url || '';
     case 'medium':
-      // Try medium thumbnail, then middle image
-      const mediumImg = images[Math.floor(images.length / 2)];
-      return mediumImg?.thumbnails?.medium || mediumImg?.url || '';
+      // Get middle image
+      return images[Math.floor(images.length / 2)]?.url || '';
     case 'large':
-      // Try large thumbnail, then second image (if exists)
-      const largeImg = images[1] || images[0];
-      return largeImg?.thumbnails?.large || largeImg?.url || '';
+      // Get second image (if exists)
+      return (images[1] || images[0])?.url || '';
     case 'original':
       return images[0]?.url || '';
     default:

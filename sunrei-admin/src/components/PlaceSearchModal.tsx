@@ -63,7 +63,10 @@ export default function PlaceSearchModal({
 
       // Reset to initial place or default values
       if (initialPlace?.latitude && initialPlace?.longitude) {
-        setMapCenter({ lat: initialPlace.latitude, lng: initialPlace.longitude });
+        setMapCenter({
+          lat: initialPlace.latitude,
+          lng: initialPlace.longitude,
+        });
         setSelectedPlace(initialPlace);
         setMapZoom(16);
       } else {
@@ -117,7 +120,7 @@ export default function PlaceSearchModal({
         google.maps.event.removeListener(listener);
       };
     }
-  }, [map, isOpen]);
+  }, [map, isOpen, searchBox]);
 
   const handleMapClick = (e: google.maps.MapMouseEvent) => {
     if (!e.latLng) return;
