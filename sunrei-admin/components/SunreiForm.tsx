@@ -15,7 +15,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Textarea } from '@/components/ui/textarea';
-import { adminApi } from '@/lib/api-client';
+import { useSunrei, useCreateSunrei, useUpdateSunrei } from '@/lib/hooks/use-sunreis';
 import {
   AlertCircle,
   Loader2,
@@ -44,11 +44,18 @@ export default function SunreiForm({
   onSuccess,
   onCancel,
 }: SunreiFormProps) {
-  const [loading, setLoading] = useState(mode === 'edit');
-  const [error, setError] = useState<string | null>(null);
   const [mapModalOpen, setMapModalOpen] = useState(false);
   const [currentSpotIndex, setCurrentSpotIndex] = useState<number | null>(null);
   const [editingPlace, setEditingPlace] = useState<PlaceInput | undefined>();
+
+  const { data: sunreiData, isLoading: loading } = useSunrei(sunreiId || '');
+  const createMutation = useCreateSunrei();
+  const updateMutation = useUpdateSunrei();
+
+  const error =
+    (createMutation.error as any)?.response?.data?.message ||
+    (updateMutation.error as any)?.response?.data?.message ||
+    null;
 
   const {
     register,
@@ -57,7 +64,7 @@ export default function SunreiForm({
     setValue,
     watch,
     reset,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<FormData>({
     defaultValues: {
       title: '',
@@ -79,26 +86,13 @@ export default function SunreiForm({
   });
 
   useEffect(() => {
-    if (mode === 'edit' && sunreiId) {
-      fetchSunrei();
-    }
-  }, [mode, sunreiId]);
-
-  const fetchSunrei = async () => {
-    if (!sunreiId) return;
-
-    try {
-      setLoading(true);
-      setError(null);
-      const response = await adminApi.getSunrei(sunreiId);
-
-      // Set form default values
+    if (sunreiData) {
       reset({
-        title: response.data.title,
-        description: response.data.description,
-        link: response.data.link || '',
+        title: sunreiData.title,
+        description: sunreiData.description,
+        link: sunreiData.link || '',
         spots:
-          response.data.spots?.map((spot) => ({
+          sunreiData.spots?.map((spot) => ({
             id: spot.id,
             title: spot.title,
             description: spot.description || '',
@@ -106,29 +100,20 @@ export default function SunreiForm({
             place: spot.place || null,
             images: spot.images || [],
           })) || [],
-        tagIds: response.data.tags?.map((t) => t.id!) || [],
-        images: response.data.images || [],
+        tagIds: sunreiData.tags?.map((t) => t.id!) || [],
+        images: sunreiData.images || [],
       });
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Failed to fetch Sunrei');
-    } finally {
-      setLoading(false);
     }
-  };
+  }, [sunreiData, reset]);
 
   const onSubmit = async (data: FormData) => {
-    try {
-      setError(null);
-
-      if (mode === 'edit' && sunreiId) {
-        await adminApi.updateSunrei(sunreiId, data as UpdateSunreiRequest);
-      } else {
-        await adminApi.createSunrei(data as CreateSunreiRequest);
-      }
-
-      onSuccess();
-    } catch (err: any) {
-      setError(err.response?.data?.message || `Failed to ${mode} Sunrei`);
+    if (mode === 'edit' && sunreiId) {
+      updateMutation.mutate(
+        { id: sunreiId, data: data as UpdateSunreiRequest },
+        { onSuccess }
+      );
+    } else {
+      createMutation.mutate(data as CreateSunreiRequest, { onSuccess });
     }
   };
 
@@ -351,8 +336,8 @@ export default function SunreiForm({
               <Button type="button" variant="outline" onClick={onCancel}>
                 Cancel
               </Button>
-              <Button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? (
+              <Button type="submit" disabled={createMutation.isPending || updateMutation.isPending}>
+                {createMutation.isPending || updateMutation.isPending ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                     {mode === 'create' ? 'Creating...' : 'Saving...'}
