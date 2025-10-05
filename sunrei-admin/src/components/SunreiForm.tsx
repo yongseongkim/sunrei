@@ -15,7 +15,11 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Textarea } from '@/components/ui/textarea';
-import { useSunrei, useCreateSunrei, useUpdateSunrei } from '@/lib/hooks/use-sunreis';
+import {
+  useCreateSunrei,
+  useSunrei,
+  useUpdateSunrei,
+} from '@/lib/hooks/use-sunreis';
 import {
   AlertCircle,
   Loader2,
@@ -110,7 +114,7 @@ export default function SunreiForm({
     if (mode === 'edit' && sunreiId) {
       updateMutation.mutate(
         { id: sunreiId, data: data as UpdateSunreiRequest },
-        { onSuccess }
+        { onSuccess },
       );
     } else {
       createMutation.mutate(data as CreateSunreiRequest, { onSuccess });
@@ -336,7 +340,10 @@ export default function SunreiForm({
               <Button type="button" variant="outline" onClick={onCancel}>
                 Cancel
               </Button>
-              <Button type="submit" disabled={createMutation.isPending || updateMutation.isPending}>
+              <Button
+                type="submit"
+                disabled={createMutation.isPending || updateMutation.isPending}
+              >
                 {createMutation.isPending || updateMutation.isPending ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />

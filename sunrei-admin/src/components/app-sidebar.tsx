@@ -1,8 +1,5 @@
 'use client';
 
-import { auth } from '@/lib/auth';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
 import {
   Sidebar,
   SidebarContent,
@@ -16,14 +13,10 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from '@/components/ui/sidebar';
-import { Button } from '@/components/ui/button';
-import { 
-  LayoutDashboard, 
-  MapPin, 
-  Tag,
-  LogOut,
-  Menu
-} from 'lucide-react';
+import { auth } from '@/lib/auth';
+import { LogOut, MapPin, Tag } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const navigationItems = [
   {
@@ -54,11 +47,13 @@ export function AppSidebar() {
           </div>
           <div className="flex flex-col">
             <span className="text-sm font-semibold">Sunrei Admin</span>
-            <span className="text-xs text-muted-foreground">Management Portal</span>
+            <span className="text-xs text-muted-foreground">
+              Management Portal
+            </span>
           </div>
         </div>
       </SidebarHeader>
-      
+
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Navigation</SidebarGroupLabel>
@@ -92,7 +87,7 @@ export function AppSidebar() {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>
-      
+
       <SidebarRail />
     </Sidebar>
   );
