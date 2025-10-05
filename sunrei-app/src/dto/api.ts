@@ -102,6 +102,19 @@ export interface ListSunreiResult {
 /**
  * 
  * @export
+ * @interface MultiSizeImageDTO
+ */
+export interface MultiSizeImageDTO {
+    /**
+     * Array of different image sizes (original, large, medium, small)
+     * @type {Array<ImageDTO>}
+     * @memberof MultiSizeImageDTO
+     */
+    'images': Array<ImageDTO>;
+}
+/**
+ * 
+ * @export
  * @interface PlaceDTO
  */
 export interface PlaceDTO {
@@ -135,6 +148,30 @@ export interface PlaceDTO {
      * @memberof PlaceDTO
      */
     'longitude': number;
+    /**
+     * Whether the place is permanently closed or no longer exists
+     * @type {boolean}
+     * @memberof PlaceDTO
+     */
+    'isClosed': boolean;
+    /**
+     * Reason for closure (e.g., \"Permanently closed\", \"Demolished\", \"Relocated\")
+     * @type {string}
+     * @memberof PlaceDTO
+     */
+    'closedReason'?: string;
+    /**
+     * Date when the place was closed or ceased to exist
+     * @type {string}
+     * @memberof PlaceDTO
+     */
+    'closedAt'?: string;
+    /**
+     * Additional notes about the place status or history
+     * @type {string}
+     * @memberof PlaceDTO
+     */
+    'notes'?: string;
 }
 /**
  * 
@@ -167,11 +204,11 @@ export interface SunreiDTO {
      */
     'link'?: string | null;
     /**
-     * Array of images for this Sunrei
-     * @type {Array<ImageDTO>}
+     * Array of multi-size images for this Sunrei
+     * @type {Array<MultiSizeImageDTO>}
      * @memberof SunreiDTO
      */
-    'images': Array<ImageDTO>;
+    'images': Array<MultiSizeImageDTO>;
     /**
      * Array of Sunrei spots associated with this Sunrei
      * @type {Array<SunreiSpotDTO>}
@@ -234,11 +271,11 @@ export interface SunreiSpotDTO {
      */
     'youtubeLink'?: string | null;
     /**
-     * Array of images for this spot
-     * @type {Array<ImageDTO>}
+     * Array of multi-size images for this spot
+     * @type {Array<MultiSizeImageDTO>}
      * @memberof SunreiSpotDTO
      */
-    'images': Array<ImageDTO>;
+    'images': Array<MultiSizeImageDTO>;
     /**
      * 
      * @type {PlaceDTO}

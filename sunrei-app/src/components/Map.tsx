@@ -16,62 +16,144 @@ interface MarkerProps {
   position: { lat: number; lng: number };
   map: google.maps.Map;
   title?: string;
-  isHighlighted?: boolean;
+  markerState?: 'selected' | 'related' | 'default';
   onClick?: () => void;
 }
 
-// Custom marker component
-export const Marker: React.FC<MarkerProps> = ({ position, map, title, isHighlighted = false, onClick }) => {
-  const markerRef = useRef<google.maps.Marker | null>(null);
+// Custom marker component using company design system
+export const Marker: React.FC<MarkerProps> = ({ position, map, title, markerState = 'default', onClick }) => {
+  const overlayRef = useRef<google.maps.OverlayView | null>(null);
 
   useEffect(() => {
     if (!map) return;
 
-    // 기존 마커 제거
-    if (markerRef.current) {
-      markerRef.current.setMap(null);
-      markerRef.current = null;
+    // 기존 오버레이 제거
+    if (overlayRef.current) {
+      overlayRef.current.setMap(null);
+      overlayRef.current = null;
     }
 
-    // 강조 상태에 따른 스타일 결정
-    const markerStyle = isHighlighted ? {
-      path: google.maps.SymbolPath.CIRCLE,
-      scale: 20,
-      fillColor: '#FF5A5F', // Airbnb red color
-      fillOpacity: 1,
-      strokeColor: '#FFFFFF',
-      strokeWeight: 6,
-    } : {
-      path: google.maps.SymbolPath.CIRCLE,
-      scale: 14,
-      fillColor: '#FF5A5F', // Airbnb red color
-      fillOpacity: 0.8,
-      strokeColor: '#FFFFFF',
-      strokeWeight: 3,
-    };
+    // Custom HTML 마커 생성
+    class CustomOverlay extends google.maps.OverlayView {
+      private position: google.maps.LatLng;
+      private containerDiv: HTMLDivElement | null = null;
+      private onClick?: () => void;
+      private markerState: 'selected' | 'related' | 'default';
 
-    // 새 마커 생성
-    markerRef.current = new google.maps.Marker({
-      position,
-      map,
-      title,
-      icon: markerStyle,
-      zIndex: isHighlighted ? 1000 : 100, // 강조된 마커를 위에 표시
-    });
+      constructor(position: google.maps.LatLng, markerState: 'selected' | 'related' | 'default', onClick?: () => void) {
+        super();
+        this.position = position;
+        this.markerState = markerState;
+        this.onClick = onClick;
+      }
 
-    // 클릭 이벤트 추가
-    if (onClick) {
-      markerRef.current.addListener('click', onClick);
+      onAdd() {
+        const markerContainer = document.createElement('div');
+        markerContainer.style.position = 'absolute';
+        markerContainer.style.width = '28px';
+        markerContainer.style.height = '28px';
+        markerContainer.style.cursor = 'pointer';
+
+        // 상태별 크기와 색상 결정
+        let size: string;
+        let offset: string;
+        let bgColor: string;
+        let shadow: string;
+
+        switch (this.markerState) {
+          case 'selected':
+            // A: 선택된 마커 - Viola, 가장 크게
+            size = '18px';
+            offset = 'calc(50% - 9px)';
+            bgColor = 'var(--pantone-viola)'; // #9370DB
+            shadow = '0 2px 10px rgba(147, 112, 219, 0.5)';
+            break;
+          case 'related':
+            // B: 같은 Sunrei - Cornflower Blue, 중간 크기
+            size = '16px';
+            offset = 'calc(50% - 8px)';
+            bgColor = 'var(--pantone-cornflower-blue)'; // #6495ED
+            shadow = '0 2px 8px rgba(100, 149, 237, 0.4)';
+            break;
+          default:
+            // C: 선택되지 않은 - Cobblestone, 작게
+            size = '12px';
+            offset = 'calc(50% - 6px)';
+            bgColor = 'var(--pantone-cobblestone)'; // #8B8680
+            shadow = 'none';
+            break;
+        }
+
+        // Outer circle
+        const outerCircle = document.createElement('div');
+        outerCircle.style.position = 'absolute';
+        outerCircle.style.width = size;
+        outerCircle.style.height = size;
+        outerCircle.style.left = offset;
+        outerCircle.style.top = offset;
+        outerCircle.style.background = bgColor;
+        outerCircle.style.borderRadius = '50%';
+        outerCircle.style.transition = 'all 0.2s ease';
+        outerCircle.style.boxShadow = shadow;
+
+        // Inner circle (4px)
+        const innerCircle = document.createElement('div');
+        innerCircle.style.position = 'absolute';
+        innerCircle.style.width = '4px';
+        innerCircle.style.height = '4px';
+        innerCircle.style.left = 'calc(50% - 2px)';
+        innerCircle.style.top = 'calc(50% - 2px)';
+        innerCircle.style.background = '#FFFFFF';
+        innerCircle.style.borderRadius = '50%';
+
+        outerCircle.appendChild(innerCircle);
+        markerContainer.appendChild(outerCircle);
+
+        // Click handler
+        if (this.onClick) {
+          markerContainer.addEventListener('click', this.onClick);
+        }
+
+        this.containerDiv = markerContainer;
+        const panes = this.getPanes();
+        panes?.overlayMouseTarget.appendChild(markerContainer);
+      }
+
+      draw() {
+        if (!this.containerDiv) return;
+
+        const overlayProjection = this.getProjection();
+        const position = overlayProjection.fromLatLngToDivPixel(this.position);
+
+        if (position) {
+          this.containerDiv.style.left = position.x - 14 + 'px'; // center the 28px marker
+          this.containerDiv.style.top = position.y - 14 + 'px';
+        }
+      }
+
+      onRemove() {
+        if (this.containerDiv && this.containerDiv.parentNode) {
+          this.containerDiv.parentNode.removeChild(this.containerDiv);
+          this.containerDiv = null;
+        }
+      }
     }
 
-    // cleanup 함수
+    const overlay = new CustomOverlay(
+      new google.maps.LatLng(position.lat, position.lng),
+      markerState,
+      onClick,
+    );
+    overlay.setMap(map);
+    overlayRef.current = overlay;
+
     return () => {
-      if (markerRef.current) {
-        markerRef.current.setMap(null);
-        markerRef.current = null;
+      if (overlayRef.current) {
+        overlayRef.current.setMap(null);
+        overlayRef.current = null;
       }
     };
-  }, [map, position.lat, position.lng, title, isHighlighted, onClick]);
+  }, [map, position.lat, position.lng, markerState, onClick]);
 
   return null;
 };
