@@ -44,10 +44,15 @@ export default function PlaceSearchModal({
   const [addressSearchInput, setAddressSearchInput] = useState('');
   const [coordinateSearchInput, setCoordinateSearchInput] = useState('');
   const [map, setMap] = useState<google.maps.Map | null>(null);
-  const [searchBox, setSearchBox] =
-    useState<google.maps.places.SearchBox | null>(null);
+  const searchBoxRef = useRef<google.maps.places.SearchBox | null>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const geocoder = useRef<google.maps.Geocoder | null>(null);
+  const initialPlaceRef = useRef<PlaceInput | undefined>(undefined);
+
+  // Update ref when initialPlace changes
+  useEffect(() => {
+    initialPlaceRef.current = initialPlace;
+  }, [initialPlace]);
 
   // Reset state when modal opens
   useEffect(() => {
@@ -62,12 +67,13 @@ export default function PlaceSearchModal({
       }
 
       // Reset to initial place or default values
-      if (initialPlace?.latitude && initialPlace?.longitude) {
+      const initial = initialPlaceRef.current;
+      if (initial?.latitude && initial?.longitude) {
         setMapCenter({
-          lat: initialPlace.latitude,
-          lng: initialPlace.longitude,
+          lat: initial.latitude,
+          lng: initial.longitude,
         });
-        setSelectedPlace(initialPlace);
+        setSelectedPlace(initial);
         setMapZoom(16);
       } else {
         setSelectedPlace({
@@ -80,17 +86,17 @@ export default function PlaceSearchModal({
         setMapZoom(14);
       }
     }
-  }, [isOpen, initialPlace]);
+  }, [isOpen]);
 
   useEffect(() => {
     if (map && searchInputRef.current && isOpen) {
       // Clean up previous SearchBox if exists
-      if (searchBox) {
-        google.maps.event.clearInstanceListeners(searchBox);
+      if (searchBoxRef.current) {
+        google.maps.event.clearInstanceListeners(searchBoxRef.current);
       }
 
       const box = new google.maps.places.SearchBox(searchInputRef.current);
-      setSearchBox(box);
+      searchBoxRef.current = box;
 
       const listener = box.addListener('places_changed', () => {
         const places = box.getPlaces();
@@ -120,7 +126,7 @@ export default function PlaceSearchModal({
         google.maps.event.removeListener(listener);
       };
     }
-  }, [map, isOpen, searchBox]);
+  }, [map, isOpen]);
 
   const handleMapClick = (e: google.maps.MapMouseEvent) => {
     if (!e.latLng) return;

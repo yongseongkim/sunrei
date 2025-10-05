@@ -65,7 +65,6 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
         private containerDiv: HTMLDivElement | null = null;
         private index: number;
         private spotTitle: string;
-        private placeName: string;
         private isActive: boolean;
         private isSelected: boolean;
 
@@ -73,7 +72,6 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
           position: google.maps.LatLng,
           index: number,
           spotTitle: string,
-          placeName: string,
           isActive: boolean,
           isSelected: boolean,
         ) {
@@ -81,7 +79,6 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
           this.position = position;
           this.index = index;
           this.spotTitle = spotTitle;
-          this.placeName = placeName;
           this.isActive = isActive;
           this.isSelected = isSelected;
         }
@@ -146,17 +143,7 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
             titleText.style.color = '#FFFFFF';
             titleText.textContent = this.spotTitle;
 
-            // Place name
-            const placeText = document.createElement('span');
-            placeText.style.fontFamily = '-apple-system, sans-serif';
-            placeText.style.fontWeight = '400';
-            placeText.style.fontSize = '11px';
-            placeText.style.lineHeight = '14px';
-            placeText.style.color = 'rgba(255, 255, 255, 0.9)';
-            placeText.textContent = this.placeName;
-
             bubble.appendChild(titleText);
-            bubble.appendChild(placeText);
 
             // Arrow
             const arrow = document.createElement('div');
@@ -223,7 +210,6 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
         new google.maps.LatLng(position.lat, position.lng),
         index,
         spot.title,
-        spot.place.name || spot.place.address || 'No address',
         true, // Always show info window
         selectedIndex === index, // Is selected
       );
@@ -277,7 +263,7 @@ export default function SpotsMap({ spots, height = '400px' }: SpotsMapProps) {
 
   return (
     <div style={{ height }} className="w-full">
-      <Wrapper apiKey={apiKey} libraries={['places']}>
+      <Wrapper apiKey={apiKey} libraries={['places', 'marker']}>
         <Map spots={spots} />
       </Wrapper>
     </div>
