@@ -34,6 +34,7 @@ class PlaceService {
                 address = row[Places.address],
                 latitude = row[Places.latitude],
                 longitude = row[Places.longitude],
+                googleMapsId = row[Places.googleMapsId],
                 isClosed = row[Places.isClosed],
                 closedReason = row[Places.closedReason],
                 closedAt = row[Places.closedAt],
