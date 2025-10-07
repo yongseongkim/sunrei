@@ -103,6 +103,51 @@ uv run geocode_locations.py output/
 
 실행 후 각 location에 `latitude`, `longitude` 필드가 추가됩니다.
 
+## S3 Upload (백업)
+
+추출한 transcript 및 output 데이터를 S3에 백업:
+
+```bash
+# aws-vault 사용 (권장)
+aws-vault exec xxx -- uv run upload_to_s3.py --all             # 실제 업로드
+# 특정 디렉토리만 업로드
+uv run upload_to_s3.py --transcripts transcripts/ --bucket my-bucket
+uv run upload_to_s3.py --outputs output/ --bucket my-bucket
+```
+
+## 데이터베이스에 Import
+
+추출한 장소 데이터를 Sunrei 데이터베이스에 저장합니다.
+
+### 1. 개별 영상을 각각 Sunrei로 Import (기존 방식)
+
+```bash
+# 단일 파일
+uv run import_to_database.py output/PLAYLIST_ID/VIDEO_ID.json
+
+# 디렉토리 전체 (각 영상이 별도 Sunrei로 생성됨)
+uv run import_to_database.py output/
+```
+
+### 2. Playlist 전체를 하나의 Sunrei로 Import (권장)
+
+Playlist의 모든 영상을 하나의 Sunrei로 묶어서 생성합니다. 각 영상의 장소들이 SunreiSpot으로 추가됩니다.
+
+```bash
+# 특정 플레이리스트 import
+uv run import_playlist_to_database.py output/PLAYLIST_ID
+
+# 모든 플레이리스트 일괄 import
+uv run import_playlist_to_database.py output/
+
+# Dry run으로 미리보기
+uv run import_playlist_to_database.py output/PLAYLIST_ID --dry-run
+```
+
+**Environment variables** (`.env`):
+- `SUNREI_API_URL`: Sunrei Admin API URL (기본값: `http://localhost:8080`)
+- `SUNREI_API_TOKEN`: JWT 인증 토큰 (선택사항)
+
 ## API 키
 
 `.env` 파일에 다음 키를 설정:

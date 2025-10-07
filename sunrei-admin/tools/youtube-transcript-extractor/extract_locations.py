@@ -335,12 +335,20 @@ def extract_with_openai(
 
     client = OpenAI(api_key=api_key)
 
-    # Chunk transcript by time (needed for both description generation and location extraction)
-    chunks = chunk_transcript_by_time(transcript_data.get('transcript', []))
-    transcript_chunks_text = '\n'.join([
-        f"[{chunk['time_range']}] {chunk['text']}"
-        for chunk in chunks
-    ])
+    # Check if we have transcript
+    has_transcript = transcript_data.get('success', False)
+
+    # Chunk transcript by time (if available)
+    if has_transcript:
+        chunks = chunk_transcript_by_time(transcript_data.get('transcript', []))
+        transcript_chunks_text = '\n'.join([
+            f"[{chunk['time_range']}] {chunk['text']}"
+            for chunk in chunks
+        ])
+    else:
+        chunks = []
+        transcript_chunks_text = "[No transcript available]"
+        print(f"📝 Extracting locations from description only (no transcript)")
 
     # Prepare description
     title = transcript_data.get('title', 'Unknown')
@@ -358,15 +366,19 @@ def extract_with_openai(
             print(f"⚠️  Failed to prepare description: {e}")
             description = raw_description
     else:
-        # Description is empty or too short, summarize transcript instead
-        try:
-            print(f"📝 Description empty/short, summarizing transcript with gpt-4o-mini...")
-            # Limit transcript length for summarization (use first ~2000 chars)
-            transcript_sample = transcript_chunks_text[:2000]
-            description = summarize_transcript_with_openai(transcript_sample, api_key)
-            print(f"✓ Transcript summarized ({len(description)} chars)")
-        except Exception as e:
-            print(f"⚠️  Failed to summarize transcript: {e}")
+        # Description is empty or too short
+        if has_transcript:
+            # Summarize transcript instead
+            try:
+                print(f"📝 Description empty/short, summarizing transcript with gpt-4o-mini...")
+                # Limit transcript length for summarization (use first ~2000 chars)
+                transcript_sample = transcript_chunks_text[:2000]
+                description = summarize_transcript_with_openai(transcript_sample, api_key)
+                print(f"✓ Transcript summarized ({len(description)} chars)")
+            except Exception as e:
+                print(f"⚠️  Failed to summarize transcript: {e}")
+                description = raw_description if raw_description else ''
+        else:
             description = raw_description if raw_description else ''
 
     user_prompt = USER_PROMPT_TEMPLATE.format(
@@ -454,12 +466,20 @@ def extract_with_gemini(transcript_data: Dict, api_key: str, model: str = "gemin
     genai.configure(api_key=api_key)
     client = genai.GenerativeModel(model)
 
-    # Chunk transcript by time (needed for both description generation and location extraction)
-    chunks = chunk_transcript_by_time(transcript_data.get('transcript', []))
-    transcript_chunks_text = '\n'.join([
-        f"[{chunk['time_range']}] {chunk['text']}"
-        for chunk in chunks
-    ])
+    # Check if we have transcript
+    has_transcript = transcript_data.get('success', False)
+
+    # Chunk transcript by time (if available)
+    if has_transcript:
+        chunks = chunk_transcript_by_time(transcript_data.get('transcript', []))
+        transcript_chunks_text = '\n'.join([
+            f"[{chunk['time_range']}] {chunk['text']}"
+            for chunk in chunks
+        ])
+    else:
+        chunks = []
+        transcript_chunks_text = "[No transcript available]"
+        print(f"📝 Extracting locations from description only (no transcript)")
 
     # Prepare description
     title = transcript_data.get('title', 'Unknown')
@@ -477,15 +497,19 @@ def extract_with_gemini(transcript_data: Dict, api_key: str, model: str = "gemin
             print(f"⚠️  Failed to prepare description: {e}")
             description = raw_description
     else:
-        # Description is empty or too short, summarize transcript instead
-        try:
-            print(f"📝 Description empty/short, summarizing transcript with gemini-1.5-flash...")
-            # Limit transcript length for summarization (use first ~2000 chars)
-            transcript_sample = transcript_chunks_text[:2000]
-            description = summarize_transcript_with_gemini(transcript_sample, api_key)
-            print(f"✓ Transcript summarized ({len(description)} chars)")
-        except Exception as e:
-            print(f"⚠️  Failed to summarize transcript: {e}")
+        # Description is empty or too short
+        if has_transcript:
+            # Summarize transcript instead
+            try:
+                print(f"📝 Description empty/short, summarizing transcript with gemini-1.5-flash...")
+                # Limit transcript length for summarization (use first ~2000 chars)
+                transcript_sample = transcript_chunks_text[:2000]
+                description = summarize_transcript_with_gemini(transcript_sample, api_key)
+                print(f"✓ Transcript summarized ({len(description)} chars)")
+            except Exception as e:
+                print(f"⚠️  Failed to summarize transcript: {e}")
+                description = raw_description if raw_description else ''
+        else:
             description = raw_description if raw_description else ''
 
     user_prompt = USER_PROMPT_TEMPLATE.format(
@@ -579,8 +603,11 @@ def extract_locations(
     with open(transcript_file, 'r', encoding='utf-8') as f:
         transcript_data = json.load(f)
 
-    if not transcript_data.get('success'):
-        raise ValueError(f"Transcript extraction failed: {transcript_data.get('error')}")
+    # Check if transcript extraction failed
+    has_transcript = transcript_data.get('success', False)
+    if not has_transcript:
+        print(f"⚠️  No transcript available: {transcript_data.get('error', 'Unknown error')}")
+        print(f"   Will attempt to extract locations from description only")
 
     # Extract playlist_id from file path (transcripts/PLAYLIST_ID/VIDEO_ID.json)
     path_parts = os.path.normpath(transcript_file).split(os.sep)
