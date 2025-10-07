@@ -4,37 +4,138 @@ from typing import Dict, List, Optional
 from enum import Enum
 
 
-CLEAN_DESCRIPTION_PROMPT = """Remove irrelevant information from this YouTube video description.
+PREPARE_DESCRIPTION_PROMPT = """Extract useful information from this YouTube video description for location analysis.
 
-Keep only:
-- Video content summary
-- Location information
-- Timeline/chapters if relevant to locations
+## Title
+{title}
+
+## Description
+{description}
+
+Extract and summarize:
+- Video theme and topic
+- Location information (place names, addresses, landmarks, areas) if mentioned
+- Timeline/chapter markers if present
+- Any context helpful for understanding locations in the video
 
 Remove:
 - Music credits and links
 - Social media links
-- Channel promotion
-- Generic information not related to video content
+- Generic promotional text
 
-Description:
-{description}
-
-Return only the cleaned description, nothing else."""
+Return a concise summary focusing on location-related information and video context."""
 
 
-def clean_description_with_openai(description: str, api_key: str) -> str:
-    """Clean description using OpenAI Responses API with the cheapest model."""
+SUMMARIZE_TRANSCRIPT_PROMPT = """Summarize this video transcript to extract location-related information.
+
+Focus on:
+- What places or locations are mentioned
+- What the video is about (general theme)
+- Any location-specific details or context
+
+## Transcript
+{transcript}
+
+Return a concise summary (2-3 sentences) focusing on location information."""
+
+
+# JSON Schema for description preparation
+DESCRIPTION_PREPARATION_SCHEMA = {
+    "name": "description_preparation",
+    "strict": True,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "prepared_description": {
+                "type": "string",
+                "description": "Cleaned and summarized description with location info and video context"
+            }
+        },
+        "required": ["prepared_description"],
+        "additionalProperties": False
+    }
+}
+
+
+def prepare_description_with_openai(title: str, description: str, api_key: str) -> str:
+    """
+    Prepare description for location extraction using OpenAI Responses API with the cheapest model.
+
+    Returns:
+        Cleaned and summarized description string
+    """
     from openai import OpenAI
 
     client = OpenAI(api_key=api_key)
 
-    # Always use the cheapest model for description cleaning
+    # Always use the cheapest model for description preparation
     model = "gpt-4o-mini"
 
     params = {
         "model": model,
-        "input": CLEAN_DESCRIPTION_PROMPT.format(description=description),
+        "input": PREPARE_DESCRIPTION_PROMPT.format(title=title, description=description),
+        "temperature": 0.3,
+        "text": {
+            "format": {
+                "type": "json_schema",
+                "name": "description_preparation",
+                "schema": DESCRIPTION_PREPARATION_SCHEMA["schema"],
+                "strict": True
+            }
+        }
+    }
+
+    response = client.responses.create(**params)
+
+    result = json.loads(response.output_text)
+    return result["prepared_description"]
+
+
+def prepare_description_with_gemini(title: str, description: str, api_key: str) -> str:
+    """
+    Prepare description for location extraction using Gemini API with the cheapest model.
+
+    Returns:
+        Cleaned and summarized description string
+    """
+    import google.generativeai as genai
+
+    genai.configure(api_key=api_key)
+    # Always use the cheapest model for description preparation
+    client = genai.GenerativeModel("gemini-1.5-flash")
+
+    response = client.generate_content(
+        PREPARE_DESCRIPTION_PROMPT.format(title=title, description=description),
+        generation_config=genai.GenerationConfig(
+            temperature=0.3,
+            max_output_tokens=500,
+            response_mime_type="application/json",
+            response_schema={
+                "type": "object",
+                "properties": {
+                    "prepared_description": {"type": "string"}
+                },
+                "required": ["prepared_description"]
+            }
+        )
+    )
+
+    result = json.loads(response.text)
+    return result["prepared_description"]
+
+
+def summarize_transcript_with_openai(transcript_text: str, api_key: str) -> str:
+    """Summarize transcript using OpenAI Responses API with the cheapest model."""
+    from openai import OpenAI
+
+    client = OpenAI(api_key=api_key)
+
+    # Always use the cheapest model for transcript summarization
+    model = "gpt-4o-mini"
+
+    params = {
+        "model": model,
+        "input": SUMMARIZE_TRANSCRIPT_PROMPT.format(transcript=transcript_text),
         "temperature": 0.3
     }
 
@@ -43,16 +144,16 @@ def clean_description_with_openai(description: str, api_key: str) -> str:
     return response.output_text.strip()
 
 
-def clean_description_with_gemini(description: str, api_key: str) -> str:
-    """Clean description using Gemini API with the cheapest model."""
+def summarize_transcript_with_gemini(transcript_text: str, api_key: str) -> str:
+    """Summarize transcript using Gemini API with the cheapest model."""
     import google.generativeai as genai
 
     genai.configure(api_key=api_key)
-    # Always use the cheapest model for description cleaning
+    # Always use the cheapest model for transcript summarization
     client = genai.GenerativeModel("gemini-1.5-flash")
 
     response = client.generate_content(
-        CLEAN_DESCRIPTION_PROMPT.format(description=description),
+        SUMMARIZE_TRANSCRIPT_PROMPT.format(transcript=transcript_text),
         generation_config=genai.GenerationConfig(
             temperature=0.3,
             max_output_tokens=500
@@ -127,56 +228,50 @@ class AIProvider(Enum):
 
 
 SYSTEM_PROMPT = """
-You are an expert at analyzing YouTube video transcripts to identify and extract SPECIFIC PLACES featured in the video.
+Extract SPECIFIC PLACES from this video transcript (buildings, restaurants, landmarks, museums, etc.).
 
-First, understand the video's main topic from the title and description.
-Then, extract SPECIFIC LOCATIONS that are the focus of the video content - NOT generic area names.
+IMPORTANT: Check description for timeline/chapter markers and extract ALL locations at those timestamps.
 
-Analyze the transcript and extract:
+What to extract:
+- Specific venues (e.g., "Tokyo Tower", "Ichiran Ramen Shibuya")
+- Architectural works (e.g., "Tadao Ando's Water Temple")
+- Museums, galleries, cultural facilities
+- For architecture videos: Extract even if exact name is unknown (use "Architect + Description")
+- For multi-location videos: Extract ALL featured locations, check entire transcript
 
-1. video_summary: Brief summary of the video (1-2 sentences)
+What NOT to extract:
+- Generic areas (e.g., "Tokyo", "Shibuya") unless it's the main destination
+- Generic descriptions (e.g., "a cafe", "the station")
+- Project/initiative names (e.g., "Kumamoto Artpolis")
 
-2. locations: Array of SPECIFIC PLACES that match the video's theme
-   Extract ONLY:
-   - Specific buildings (e.g., "Tokyo Tower", "Senso-ji Temple")
-   - Specific restaurants/cafes (e.g., "Ichiran Ramen Shibuya", "Blue Bottle Coffee")
-   - Specific landmarks (e.g., "Shibuya Scramble Crossing", "Meiji Shrine")
-   - Specific stores/shops (e.g., "Don Quijote Shibuya", "Tsukiji Fish Market")
-   - Other specific venues that align with the video's theme
+Output format:
+1. video_summary: Brief 1-2 sentence summary
+2. locations: Array with:
+   - location_name: English name (or "Architect + Description" if unknown)
+   - location_query: "Place Name, Area, City, Country" for geocoding
+   - description: How it's introduced in video (SAME LANGUAGE as transcript)
+   - timestamp: First mention time in seconds (from chunk start time)
 
-   DO NOT extract:
-   - Generic city/area names alone (e.g., "Tokyo", "Shibuya", "Kyoto") unless they are the specific destination being introduced
-   - Generic descriptive locations (e.g., "a cafe", "the station", "the park")
-
-   For each location, extract:
-   - location_name: Name of the specific place in English (e.g., "Tokyo Skytree", "Tsutaya Daikanyama")
-   - location_query: Search query for geocoding based on information available in the video
-     - Include: Place name, district/area, city, country (use only available parts)
-     - Format: "Place Name, District/Area, City, Country"
-     - Examples: "Tokyo Skytree, Sumida, Tokyo, Japan" or "Tsutaya Daikanyama, Shibuya, Tokyo"
-   - description: Summary of how the location is introduced in the video (what the narrator says about it). Write in the SAME LANGUAGE as the transcript (e.g., if transcript is in Korean, write description in Korean)
-   - timestamp: Time in seconds when the location is FIRST mentioned (use the start time of the time chunk where it first appears)
-
-Important:
-- The transcript is provided in 30-second time chunks (e.g., [0:00-0:30], [0:30-1:00])
-- Each chunk shows a time range. Extract the start time in seconds for the timestamp field.
-- Extract each unique location only ONCE, even if mentioned multiple times
-- Use the timestamp of the FIRST mention of each location
-- If a location is mentioned multiple times, combine the information in the description
-- Sort locations by timestamp in ascending order (earliest first)
-- For location_query, use ONLY information explicitly mentioned in the video - don't infer or add details
-- Focus on QUALITY over QUANTITY - only extract places that are specifically featured/introduced
-- If the video is about general travel tips without specific places, the locations array can be empty
+Rules:
+- Transcript is in 30-second chunks [MM:SS-MM:SS]
+- Extract each location ONCE (first mention timestamp)
+- Combine info if mentioned multiple times
+- Sort by timestamp (earliest first)
 - Keep descriptions concise (1-3 sentences)
+- Use ONLY info from video (don't infer details)
+- Quality over quantity
 
-Return ONLY valid JSON format with no additional text."""
+Return ONLY valid JSON."""
 
 
 USER_PROMPT_TEMPLATE = """
-Video Title: {title}
-Video Description: {description}
+## Title
+{title}
 
-Transcript (grouped by time):
+## Description
+{description}
+
+## Transcript (grouped by time)
 {transcript_chunks}
 
 Extract all locations mentioned in this video."""
@@ -240,25 +335,51 @@ def extract_with_openai(
 
     client = OpenAI(api_key=api_key)
 
-    # Clean description
+    # Check if we have transcript
+    has_transcript = transcript_data.get('success', False)
+
+    # Chunk transcript by time (if available)
+    if has_transcript:
+        chunks = chunk_transcript_by_time(transcript_data.get('transcript', []))
+        transcript_chunks_text = '\n'.join([
+            f"[{chunk['time_range']}] {chunk['text']}"
+            for chunk in chunks
+        ])
+    else:
+        chunks = []
+        transcript_chunks_text = "[No transcript available]"
+        print(f"📝 Extracting locations from description only (no transcript)")
+
+    # Prepare description
+    title = transcript_data.get('title', 'Unknown')
     raw_description = transcript_data.get('description', '')
-    description = raw_description
+    description = ''
 
-    if raw_description:
+    if raw_description and len(raw_description.strip()) > 20:
+        # Description exists, prepare it
         try:
-            print(f"🧹 Cleaning description with gpt-4o-mini ({len(raw_description)} chars)...")
-            description = clean_description_with_openai(raw_description, api_key)
-            print(f"✓ Description cleaned ({len(description)} chars)")
+            print(f"🔍 Preparing description with gpt-4o-mini ({len(raw_description)} chars)...")
+            description = prepare_description_with_openai(title, raw_description, api_key)
+            print(f"✓ Description prepared ({len(description)} chars)")
+            print(f"  → Content: {description}")
         except Exception as e:
-            print(f"⚠️  Failed to clean description: {e}")
+            print(f"⚠️  Failed to prepare description: {e}")
             description = raw_description
-
-    # Chunk transcript by time
-    chunks = chunk_transcript_by_time(transcript_data.get('transcript', []))
-    transcript_chunks_text = '\n'.join([
-        f"[{chunk['time_range']}] {chunk['text']}"
-        for chunk in chunks
-    ])
+    else:
+        # Description is empty or too short
+        if has_transcript:
+            # Summarize transcript instead
+            try:
+                print(f"📝 Description empty/short, summarizing transcript with gpt-4o-mini...")
+                # Limit transcript length for summarization (use first ~2000 chars)
+                transcript_sample = transcript_chunks_text[:2000]
+                description = summarize_transcript_with_openai(transcript_sample, api_key)
+                print(f"✓ Transcript summarized ({len(description)} chars)")
+            except Exception as e:
+                print(f"⚠️  Failed to summarize transcript: {e}")
+                description = raw_description if raw_description else ''
+        else:
+            description = raw_description if raw_description else ''
 
     user_prompt = USER_PROMPT_TEMPLATE.format(
         title=transcript_data.get('title', 'Unknown'),
@@ -286,7 +407,9 @@ def extract_with_openai(
         text_format = {
             "format": {
                 "type": "json_schema",
-                "json_schema": LOCATION_EXTRACTION_SCHEMA
+                "name": "location_extraction",
+                "schema": LOCATION_EXTRACTION_SCHEMA["schema"],
+                "strict": True
             }
         }
     else:
@@ -343,25 +466,51 @@ def extract_with_gemini(transcript_data: Dict, api_key: str, model: str = "gemin
     genai.configure(api_key=api_key)
     client = genai.GenerativeModel(model)
 
-    # Clean description
+    # Check if we have transcript
+    has_transcript = transcript_data.get('success', False)
+
+    # Chunk transcript by time (if available)
+    if has_transcript:
+        chunks = chunk_transcript_by_time(transcript_data.get('transcript', []))
+        transcript_chunks_text = '\n'.join([
+            f"[{chunk['time_range']}] {chunk['text']}"
+            for chunk in chunks
+        ])
+    else:
+        chunks = []
+        transcript_chunks_text = "[No transcript available]"
+        print(f"📝 Extracting locations from description only (no transcript)")
+
+    # Prepare description
+    title = transcript_data.get('title', 'Unknown')
     raw_description = transcript_data.get('description', '')
-    description = raw_description
+    description = ''
 
-    if raw_description:
+    if raw_description and len(raw_description.strip()) > 20:
+        # Description exists, prepare it
         try:
-            print(f"🧹 Cleaning description with gemini-1.5-flash ({len(raw_description)} chars)...")
-            description = clean_description_with_gemini(raw_description, api_key)
-            print(f"✓ Description cleaned ({len(description)} chars)")
+            print(f"🔍 Preparing description with gemini-1.5-flash ({len(raw_description)} chars)...")
+            description = prepare_description_with_gemini(title, raw_description, api_key)
+            print(f"✓ Description prepared ({len(description)} chars)")
+            print(f"  → Content: {description}")
         except Exception as e:
-            print(f"⚠️  Failed to clean description: {e}")
+            print(f"⚠️  Failed to prepare description: {e}")
             description = raw_description
-
-    # Chunk transcript by time
-    chunks = chunk_transcript_by_time(transcript_data.get('transcript', []))
-    transcript_chunks_text = '\n'.join([
-        f"[{chunk['time_range']}] {chunk['text']}"
-        for chunk in chunks
-    ])
+    else:
+        # Description is empty or too short
+        if has_transcript:
+            # Summarize transcript instead
+            try:
+                print(f"📝 Description empty/short, summarizing transcript with gemini-1.5-flash...")
+                # Limit transcript length for summarization (use first ~2000 chars)
+                transcript_sample = transcript_chunks_text[:2000]
+                description = summarize_transcript_with_gemini(transcript_sample, api_key)
+                print(f"✓ Transcript summarized ({len(description)} chars)")
+            except Exception as e:
+                print(f"⚠️  Failed to summarize transcript: {e}")
+                description = raw_description if raw_description else ''
+        else:
+            description = raw_description if raw_description else ''
 
     user_prompt = USER_PROMPT_TEMPLATE.format(
         title=transcript_data.get('title', 'Unknown'),
@@ -454,8 +603,11 @@ def extract_locations(
     with open(transcript_file, 'r', encoding='utf-8') as f:
         transcript_data = json.load(f)
 
-    if not transcript_data.get('success'):
-        raise ValueError(f"Transcript extraction failed: {transcript_data.get('error')}")
+    # Check if transcript extraction failed
+    has_transcript = transcript_data.get('success', False)
+    if not has_transcript:
+        print(f"⚠️  No transcript available: {transcript_data.get('error', 'Unknown error')}")
+        print(f"   Will attempt to extract locations from description only")
 
     # Extract playlist_id from file path (transcripts/PLAYLIST_ID/VIDEO_ID.json)
     path_parts = os.path.normpath(transcript_file).split(os.sep)

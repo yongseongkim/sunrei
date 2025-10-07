@@ -8,6 +8,7 @@ data class Place(
     val address: String,
     val latitude: Float,
     val longitude: Float,
+    val googleMapsId: String? = null,
     val isClosed: Boolean,
     val closedReason: String? = null,
     val closedAt: Instant? = null,

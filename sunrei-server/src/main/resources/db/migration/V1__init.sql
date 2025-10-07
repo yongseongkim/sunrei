@@ -58,7 +58,7 @@ CREATE INDEX IF NOT EXISTS idx_sunrei_deleted_at ON sunrei(deleted_at);
 -- SunreiSpot
 CREATE TABLE IF NOT EXISTS sunrei_spot (
     id VARCHAR(32) PRIMARY KEY,
-    title VARCHAR(64) NOT NULL,
+    title VARCHAR(128) NOT NULL,
     description TEXT,
     youtube_link VARCHAR(255),
     images JSONB NOT NULL DEFAULT '[]'::jsonb,

@@ -46,7 +46,8 @@ fun Place.toDTO(): PlaceDTO {
         isClosed = isClosed,
         closedReason = closedReason,
         closedAt = closedAt,
-        notes = notes
+        notes = notes,
+        googleMapsId = googleMapsId
     )
 }
 

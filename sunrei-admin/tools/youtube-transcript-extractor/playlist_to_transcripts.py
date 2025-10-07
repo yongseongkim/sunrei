@@ -8,6 +8,38 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api._errors import TranscriptsDisabled, NoTranscriptFound
 
 
+def get_playlist_info(playlist_id: str, api_key: str) -> Dict:
+    """
+    Get playlist metadata.
+
+    Args:
+        playlist_id: YouTube playlist ID
+        api_key: YouTube Data API v3 key
+
+    Returns:
+        Dict with playlist metadata (title, description, channel_title, etc.)
+    """
+    youtube = build('youtube', 'v3', developerKey=api_key)
+
+    request = youtube.playlists().list(
+        part='snippet',
+        id=playlist_id
+    )
+    response = request.execute()
+
+    if not response.get('items'):
+        return {}
+
+    snippet = response['items'][0]['snippet']
+    return {
+        'playlist_id': playlist_id,
+        'title': snippet.get('title', ''),
+        'description': snippet.get('description', ''),
+        'channel_title': snippet.get('channelTitle', ''),
+        'channel_id': snippet.get('channelId', '')
+    }
+
+
 def get_playlist_videos(playlist_id: str, api_key: str) -> List[Dict[str, str]]:
     """
     Get all video IDs and metadata from a YouTube playlist.
@@ -134,7 +166,13 @@ def extract_playlist_transcripts(playlist_id: str, api_key: str, output_dir: str
     playlist_dir = os.path.join(output_dir, playlist_id)
     os.makedirs(playlist_dir, exist_ok=True)
 
-    print(f"Fetching videos from playlist: {playlist_id}")
+    print(f"Fetching playlist info: {playlist_id}")
+    playlist_info = get_playlist_info(playlist_id, api_key)
+    if playlist_info:
+        print(f"Playlist: {playlist_info.get('title', 'Unknown')}")
+        print(f"Channel: {playlist_info.get('channel_title', 'Unknown')}")
+
+    print(f"\nFetching videos from playlist: {playlist_id}")
     videos = get_playlist_videos(playlist_id, api_key)
     print(f"Found {len(videos)} videos")
 
@@ -179,29 +217,42 @@ def extract_playlist_transcripts(playlist_id: str, api_key: str, output_dir: str
 
             if transcript_result['success']:
                 print(f"✓ Transcript extracted ({transcript_result['language']})")
-                # Save individual transcript file
-                with open(filename, 'w', encoding='utf-8') as f:
-                    json.dump(video_data, f, ensure_ascii=False, indent=2)
             else:
-                print(f"✗ Failed: {transcript_result['error']}")
+                print(f"✗ Transcript extraction failed: {transcript_result['error']}")
+                # Ensure transcript field exists as empty list for failed extractions
+                if 'transcript' not in video_data:
+                    video_data['transcript'] = []
+
+            # Always save individual transcript file (even if extraction failed)
+            with open(filename, 'w', encoding='utf-8') as f:
+                json.dump(video_data, f, ensure_ascii=False, indent=2)
 
         results.append(video_data)
 
         # Add random delay to avoid rate limiting (only for new extractions)
         if not used_cache and i < len(videos):  # Don't delay after the last video or when using cache
-            delay = random.uniform(1, 10)
+            delay = random.uniform(20, 30)
             print(f"⏱️  Waiting {delay:.1f}s to avoid rate limiting...")
             time.sleep(delay)
 
     # Save summary file
     summary_file = os.path.join(playlist_dir, f"playlist_summary.json")
+    summary_data = {
+        'playlist_id': playlist_id,
+        'total_videos': len(videos),
+        'successful_transcripts': sum(1 for r in results if r['success']),
+        'videos': results
+    }
+
+    # Add playlist info if available
+    if playlist_info:
+        summary_data['playlist_title'] = playlist_info.get('title', '')
+        summary_data['playlist_description'] = playlist_info.get('description', '')
+        summary_data['channel_title'] = playlist_info.get('channel_title', '')
+        summary_data['channel_id'] = playlist_info.get('channel_id', '')
+
     with open(summary_file, 'w', encoding='utf-8') as f:
-        json.dump({
-            'playlist_id': playlist_id,
-            'total_videos': len(videos),
-            'successful_transcripts': sum(1 for r in results if r['success']),
-            'videos': results
-        }, f, ensure_ascii=False, indent=2)
+        json.dump(summary_data, f, ensure_ascii=False, indent=2)
 
     print(f"\n✓ All transcripts saved to {playlist_dir}/")
     print(f"✓ Summary saved to {summary_file}")

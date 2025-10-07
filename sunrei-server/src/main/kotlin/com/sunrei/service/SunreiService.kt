@@ -171,6 +171,7 @@ class SunreiService {
                         address = row[Places.address],
                         latitude = row[Places.latitude],
                         longitude = row[Places.longitude],
+                        googleMapsId = row[Places.googleMapsId],
                         isClosed = row[Places.isClosed],
                         closedReason = row[Places.closedReason],
                         closedAt = row[Places.closedAt],
@@ -321,15 +322,21 @@ class SunreiService {
     }
 
     private fun findOrCreatePlace(placeInput: PlaceInput): String {
-        val existingPlace =
-            Places.select { (Places.latitude eq placeInput.latitude) and (Places.longitude eq placeInput.longitude) }
+        // 이미 존재하는 Place 를 확인해서 재사용한다
+        val existingPlace = if (placeInput.googleMapsId != null) {
+            Places.select { (Places.googleMapsId eq placeInput.googleMapsId) and (Places.deletedAt.isNull()) }
                 .firstOrNull()
+        } else {
+            Places.select { (Places.latitude eq placeInput.latitude) and (Places.longitude eq placeInput.longitude) and (Places.deletedAt.isNull()) }
+                .firstOrNull()
+        }
 
         return existingPlace?.get(Places.id) ?: Places.insertAndGetId { stmt ->
             stmt[Places.name] = placeInput.name
             stmt[Places.address] = placeInput.address
             stmt[Places.latitude] = placeInput.latitude
             stmt[Places.longitude] = placeInput.longitude
+            stmt[Places.googleMapsId] = placeInput.googleMapsId
             stmt[Places.isClosed] = false
         }
     }

@@ -7,7 +7,7 @@ import json
 import sys
 import glob
 import os
-from extract_locations import SYSTEM_PROMPT, USER_PROMPT_TEMPLATE, chunk_transcript_by_time, clean_description_with_openai
+from extract_locations import SYSTEM_PROMPT, USER_PROMPT_TEMPLATE, chunk_transcript_by_time, prepare_description_with_openai, summarize_transcript_with_openai
 
 
 def load_transcript_file(file_path: str) -> dict:
@@ -42,16 +42,27 @@ def generate_example_prompt(transcript_data: dict = None, file_path: str = None)
     video_id = transcript_data['video_id']
     title = transcript_data['title']
 
-    # Clean description (using OpenAI for example prompts)
-    raw_description = transcript_data.get('description', '')
-    description = clean_description_with_openai(raw_description, os.getenv('OPENAI_API_KEY')) if raw_description else ''
-
-    # Chunk transcript by time
+    # Chunk transcript by time (needed for both description generation and location extraction)
     chunks = chunk_transcript_by_time(transcript_data.get('transcript', []))
     transcript_chunks_text = '\n'.join([
         f"[{chunk['time_range']}] {chunk['text']}"
         for chunk in chunks
     ])
+
+    # Prepare description (using OpenAI for example prompts)
+    raw_description = transcript_data.get('description', '')
+    description = ''
+    api_key = os.getenv('OPENAI_API_KEY')
+
+    if raw_description and len(raw_description.strip()) > 20 and api_key:
+        # Description exists, prepare it
+        description = prepare_description_with_openai(title, raw_description, api_key)
+    elif api_key:
+        # Description is empty or too short, summarize transcript instead
+        transcript_sample = transcript_chunks_text[:2000]
+        description = summarize_transcript_with_openai(transcript_sample, api_key)
+    else:
+        description = raw_description
 
     user_prompt = USER_PROMPT_TEMPLATE.format(
         title=title,

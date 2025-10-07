@@ -6,33 +6,46 @@ Add geocoding (latitude/longitude) to extracted location data using Google Maps 
 import json
 import os
 import sys
+import time
+import random
 from typing import Dict, Optional
 import googlemaps
 from dotenv import load_dotenv
 
 
-def geocode_location(gmaps_client: googlemaps.Client, location_query: str) -> Optional[Dict]:
+def geocode_location(gmaps_client: googlemaps.Client, location_query: str, language: str = 'ko') -> Optional[Dict]:
     """
-    Geocode a location query to get latitude and longitude.
+    Search for a location using Google Maps Places API (text search) to get latitude, longitude, address, and place_id.
 
     Args:
         gmaps_client: Google Maps client
-        location_query: Location search query
+        location_query: Location search query (keyword search)
+        language: Language code for results (default: 'ko' for Korean)
 
     Returns:
-        Dict with latitude and longitude, or None if not found
+        Dict with latitude, longitude, address, and google_maps_id, or None if not found
     """
     try:
-        result = gmaps_client.geocode(location_query)
-        if result:
-            location = result[0]['geometry']['location']
+        # Use Places API text search instead of geocoding for better keyword matching
+        result = gmaps_client.places(query=location_query, language=language)
+
+        if result and result.get('results'):
+            place = result['results'][0]  # Get the first (best) result
+            location = place['geometry']['location']
+            formatted_address = place.get('formatted_address', '')
+            place_id = place.get('place_id', '')
+            place_name = place.get('name', '')
+
             return {
                 'latitude': location['lat'],
-                'longitude': location['lng']
+                'longitude': location['lng'],
+                'address': formatted_address,
+                'google_maps_id': place_id,
+                'name': place_name
             }
         return None
     except Exception as e:
-        print(f"  ✗ Geocoding failed: {str(e)}")
+        print(f"  ✗ Place search failed: {str(e)}")
         return None
 
 
@@ -70,16 +83,29 @@ def add_geocoding_to_file(
         print(f"[{i}/{len(locations)}] {location.get('location_name', 'Unknown')}")
         print(f"  Query: {location_query}")
 
-        coords = geocode_location(gmaps_client, location_query)
-        if coords:
-            location['latitude'] = coords['latitude']
-            location['longitude'] = coords['longitude']
-            print(f"  ✓ Geocoded: {coords['latitude']:.6f}, {coords['longitude']:.6f}")
+        geocode_data = geocode_location(gmaps_client, location_query)
+        if geocode_data:
+            location['latitude'] = geocode_data['latitude']
+            location['longitude'] = geocode_data['longitude']
+            location['address'] = geocode_data['address']
+            location['google_maps_id'] = geocode_data['google_maps_id']
+            print(f"  ✓ Found: {geocode_data['name']}")
+            print(f"  ✓ Coordinates: {geocode_data['latitude']:.6f}, {geocode_data['longitude']:.6f}")
+            print(f"  ✓ Address: {geocode_data['address']}")
+            print(f"  ✓ Place ID: {geocode_data['google_maps_id']}")
             geocoded_count += 1
         else:
             location['latitude'] = None
             location['longitude'] = None
+            location['address'] = None
+            location['google_maps_id'] = None
             print(f"  ✗ Not found")
+
+        # Add delay to avoid rate limiting (except for the last item)
+        if i < len(locations):
+            delay = random.uniform(1, 3)
+            print(f"  ⏱️  Waiting {delay:.1f}s to avoid rate limiting...")
+            time.sleep(delay)
 
     # Save to output file
     if not output_file:

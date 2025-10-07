@@ -95,7 +95,9 @@ export default function PlaceSearchModal({
         google.maps.event.clearInstanceListeners(searchBoxRef.current);
       }
 
-      const box = new google.maps.places.SearchBox(searchInputRef.current);
+      const box = new google.maps.places.SearchBox(searchInputRef.current, {
+        language: 'ko',
+      });
       searchBoxRef.current = box;
 
       const listener = box.addListener('places_changed', () => {
@@ -139,46 +141,49 @@ export default function PlaceSearchModal({
       geocoder.current = new google.maps.Geocoder();
     }
 
-    geocoder.current.geocode({ location: { lat, lng } }, (results, status) => {
-      if (status === 'OK' && results && results[0]) {
-        const result = results[0];
-        let placeName = 'Selected Location';
+    geocoder.current.geocode(
+      { location: { lat, lng }, language: 'ko' },
+      (results, status) => {
+        if (status === 'OK' && results && results[0]) {
+          const result = results[0];
+          let placeName = 'Selected Location';
 
-        // Try to get a more specific name from address components
-        if (result.address_components) {
-          const pointOfInterest = result.address_components.find(
-            (comp) =>
-              comp.types.includes('point_of_interest') ||
-              comp.types.includes('establishment'),
-          );
-          const locality = result.address_components.find(
-            (comp) =>
-              comp.types.includes('locality') ||
-              comp.types.includes('sublocality'),
-          );
+          // Try to get a more specific name from address components
+          if (result.address_components) {
+            const pointOfInterest = result.address_components.find(
+              (comp) =>
+                comp.types.includes('point_of_interest') ||
+                comp.types.includes('establishment'),
+            );
+            const locality = result.address_components.find(
+              (comp) =>
+                comp.types.includes('locality') ||
+                comp.types.includes('sublocality'),
+            );
 
-          if (pointOfInterest) {
-            placeName = pointOfInterest.long_name;
-          } else if (locality) {
-            placeName = locality.long_name;
+            if (pointOfInterest) {
+              placeName = pointOfInterest.long_name;
+            } else if (locality) {
+              placeName = locality.long_name;
+            }
           }
-        }
 
-        setSelectedPlace({
-          name: placeName,
-          address: result.formatted_address || '',
-          latitude: lat,
-          longitude: lng,
-        });
-      } else {
-        setSelectedPlace({
-          name: 'Selected Location',
-          address: '',
-          latitude: lat,
-          longitude: lng,
-        });
-      }
-    });
+          setSelectedPlace({
+            name: placeName,
+            address: result.formatted_address || '',
+            latitude: lat,
+            longitude: lng,
+          });
+        } else {
+          setSelectedPlace({
+            name: 'Selected Location',
+            address: '',
+            latitude: lat,
+            longitude: lng,
+          });
+        }
+      },
+    );
   };
 
   const handleCoordinateSearch = () => {
@@ -195,7 +200,7 @@ export default function PlaceSearchModal({
       }
 
       geocoder.current.geocode(
-        { location: { lat, lng } },
+        { location: { lat, lng }, language: 'ko' },
         (results, status) => {
           if (status === 'OK' && results && results[0]) {
             const result = results[0];

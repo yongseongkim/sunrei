@@ -147,6 +147,9 @@ components:
         notes:
           type: string
           description: Additional notes about the place status or history
+        googleMapsId:
+          type: string
+          description: Google Maps Place ID
 
     ImageDTO:
       type: object
@@ -190,6 +193,7 @@ components:
           description: ID of the parent Sunrei
         title:
           type: string
+          maxLength: 128
           description: Title of the Sunrei Spot
         description:
           type: string
