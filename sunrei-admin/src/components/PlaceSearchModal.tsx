@@ -95,9 +95,7 @@ export default function PlaceSearchModal({
         google.maps.event.clearInstanceListeners(searchBoxRef.current);
       }
 
-      const box = new google.maps.places.SearchBox(searchInputRef.current, {
-        language: 'ko',
-      });
+      const box = new google.maps.places.SearchBox(searchInputRef.current);
       searchBoxRef.current = box;
 
       const listener = box.addListener('places_changed', () => {

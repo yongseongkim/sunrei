@@ -24,7 +24,7 @@ export default function PlaceSection({
   setValue,
   onOpenMap,
 }: PlaceSectionProps) {
-  const place: PlaceInput | null = watch(`spots.${spotIndex}.place`);
+  const place: PlaceInput | null = watch(`spots.${spotIndex}.place`) ?? null;
 
   // Ensure place data is registered when it exists
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function PlaceSection({
   }, [place, spotIndex, setValue]);
 
   const handleRemovePlace = () => {
-    setValue(`spots.${spotIndex}.place`, null);
+    setValue(`spots.${spotIndex}.place`, undefined);
   };
 
   return (

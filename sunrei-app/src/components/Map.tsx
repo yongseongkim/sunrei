@@ -9,12 +9,12 @@ interface MapProps {
   zoom: number;
   onMapLoad?: (map: google.maps.Map) => void;
   onBoundsChanged?: (bounds: google.maps.LatLngBounds) => void;
-  children?: React.ReactElement<any>[];
+  children?: React.ReactNode;
 }
 
 interface MarkerProps {
   position: { lat: number; lng: number };
-  map: google.maps.Map;
+  map?: google.maps.Map;
   title?: string;
   markerState?: 'selected' | 'related' | 'default';
   onClick?: () => void;
@@ -161,8 +161,8 @@ export const Marker: React.FC<MarkerProps> = ({ position, map, title, markerStat
 // Main Map component
 const MapComponent: React.FC<MapProps> = ({ center, zoom, onMapLoad, onBoundsChanged, children }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [map, setMap] = useState<google.maps.Map>();
-  const boundsListenerRef = useRef<google.maps.MapsEventListener>();
+  const [map, setMap] = useState<google.maps.Map | undefined>(undefined);
+  const boundsListenerRef = useRef<google.maps.MapsEventListener | undefined>(undefined);
 
   useEffect(() => {
     if (ref.current && !map) {
@@ -221,7 +221,7 @@ const MapComponent: React.FC<MapProps> = ({ center, zoom, onMapLoad, onBoundsCha
       <div ref={ref} className="w-full h-full" />
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child) && map) {
-          return React.cloneElement(child, { map });
+          return React.cloneElement(child, { map } as any);
         }
         return child;
       })}

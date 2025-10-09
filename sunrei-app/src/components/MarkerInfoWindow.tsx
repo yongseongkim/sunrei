@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 
 interface MarkerInfoWindowProps {
   position: { lat: number; lng: number };
-  map: google.maps.Map;
+  map?: google.maps.Map;
   sunreiTitle: string;
   placeName: string;
   markerState?: 'selected' | 'related' | 'default';

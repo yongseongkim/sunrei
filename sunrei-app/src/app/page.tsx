@@ -163,7 +163,7 @@ export default function Home() {
                     <CardContent>
                       {sunrei.images && sunrei.images.length > 0 && (
                         <div className="grid grid-cols-4 gap-1">
-                          {sunrei.images.slice(0, 4).map((image, index) => (
+                          {sunrei.images.slice(0, 4).map((image: any, index: number) => (
                             <div
                               key={index}
                               className="relative aspect-square rounded overflow-hidden"
@@ -196,7 +196,7 @@ export default function Home() {
                             방문 가능한 장소:
                           </p>
                           <div className="space-y-2">
-                            {sunrei.spots.map((spot) => (
+                            {sunrei.spots.map((spot: any) => (
                               <div key={spot.id} className="space-y-1">
                                 <p className="text-xs font-medium">{spot.title}</p>
                                 <div

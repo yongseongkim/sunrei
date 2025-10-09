@@ -210,7 +210,7 @@ export default function SunreiForm({
                     title: '',
                     description: '',
                     youtubeLink: '',
-                    place: null,
+                    place: undefined,
                     images: [],
                   })
                 }

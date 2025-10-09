@@ -6,17 +6,17 @@ import { CreateSunreiRequest, UpdateSunreiRequest, SunreiDTO } from '@/api/admin
 export const sunreiKeys = {
   all: ['sunreis'] as const,
   lists: () => [...sunreiKeys.all, 'list'] as const,
-  list: (page: number, size: number) => [...sunreiKeys.lists(), page, size] as const,
+  list: (nextToken: string, size: number) => [...sunreiKeys.lists(), nextToken, size] as const,
   details: () => [...sunreiKeys.all, 'detail'] as const,
   detail: (id: string) => [...sunreiKeys.details(), id] as const,
 };
 
 // List sunreis
-export function useSunreis(page: number = 1, size: number = 100) {
+export function useSunreis(nextToken?: string, size: number = 100) {
   return useQuery({
-    queryKey: sunreiKeys.list(page, size),
+    queryKey: sunreiKeys.list(nextToken || '', size),
     queryFn: async () => {
-      const response = await adminApi.listSunreis(page, size);
+      const response = await adminApi.listSunreis(nextToken, size);
       return response.data.data || [];
     },
   });
