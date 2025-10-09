@@ -151,7 +151,6 @@ tasks.register("generateProtocols") {
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(21))
-        vendor.set(JvmVendorSpec.AMAZON)
     }
 }
 
@@ -159,7 +158,6 @@ java {
 kotlin {
     jvmToolchain {
         languageVersion.set(JavaLanguageVersion.of(21))
-        vendor.set(JvmVendorSpec.AMAZON)
     }
 
     sourceSets {
