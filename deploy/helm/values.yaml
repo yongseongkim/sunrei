@@ -2,7 +2,7 @@
 # This file will be automatically updated by release.sh script
 
 # Oracle Cloud Container Registry
-registry: icn.ocir.io/mytenancy
+registry: yny.ocir.io/axrudau2tcfl/sunrei
 
 # Image tags (automatically updated by release.sh)
 images:
