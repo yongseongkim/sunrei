@@ -1,0 +1,56 @@
+{{- if .Values.admin.enabled }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "sunrei.fullname" . }}-admin
+  labels:
+    {{- include "sunrei.componentLabels" (dict "Chart" .Chart "Release" .Release "Values" .Values "component" "admin") | nindent 4 }}
+spec:
+  type: {{ .Values.admin.service.type }}
+  ports:
+    - port: {{ .Values.admin.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "sunrei.componentSelectorLabels" (dict "Chart" .Chart "Release" .Release "Values" .Values "component" "admin") | nindent 4 }}
+{{- end }}
+
+{{- if .Values.app.enabled }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "sunrei.fullname" . }}-app
+  labels:
+    {{- include "sunrei.componentLabels" (dict "Chart" .Chart "Release" .Release "Values" .Values "component" "app") | nindent 4 }}
+spec:
+  type: {{ .Values.app.service.type }}
+  ports:
+    - port: {{ .Values.app.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "sunrei.componentSelectorLabels" (dict "Chart" .Chart "Release" .Release "Values" .Values "component" "app") | nindent 4 }}
+{{- end }}
+
+{{- if .Values.server.enabled }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "sunrei.fullname" . }}-server
+  labels:
+    {{- include "sunrei.componentLabels" (dict "Chart" .Chart "Release" .Release "Values" .Values "component" "server") | nindent 4 }}
+spec:
+  type: {{ .Values.server.service.type }}
+  ports:
+    - port: {{ .Values.server.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "sunrei.componentSelectorLabels" (dict "Chart" .Chart "Release" .Release "Values" .Values "component" "server") | nindent 4 }}
+{{- end }}

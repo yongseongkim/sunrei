@@ -1,0 +1,144 @@
+# Default values for sunrei
+# This file will be automatically updated by release.sh script
+
+# Oracle Cloud Container Registry
+registry: icn.ocir.io/mytenancy
+
+# Image tags (automatically updated by release.sh)
+images:
+  admin:
+    repository: sunrei-admin
+    tag: v0.0.1
+    pullPolicy: IfNotPresent
+  app:
+    repository: sunrei-app
+    tag: v0.0.1
+    pullPolicy: IfNotPresent
+  server:
+    repository: sunrei-server
+    tag: v0.0.1
+    pullPolicy: IfNotPresent
+
+# Image pull secrets for OCI Registry
+imagePullSecrets:
+  - name: oci-registry-secret
+
+# Sunrei Admin (관리자 웹)
+admin:
+  enabled: true
+  replicaCount: 1
+  service:
+    type: ClusterIP
+    port: 3102
+  env:
+    - name: NEXT_PUBLIC_API_URL
+      value: "http://sunrei-server:3100"
+    - name: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+      valueFrom:
+        secretKeyRef:
+          name: sunrei-secrets
+          key: google-maps-api-key
+    - name: NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID
+      valueFrom:
+        secretKeyRef:
+          name: sunrei-secrets
+          key: google-maps-map-id
+
+# Sunrei App (사용자 웹)
+app:
+  enabled: true
+  replicaCount: 2
+  service:
+    type: ClusterIP
+    port: 3101
+  env:
+    - name: NEXT_PUBLIC_API_URL
+      value: "http://sunrei-server:3100"
+    - name: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+      valueFrom:
+        secretKeyRef:
+          name: sunrei-secrets
+          key: google-maps-api-key
+
+# Sunrei Server (API 서버)
+server:
+  enabled: true
+  replicaCount: 2
+  service:
+    type: ClusterIP
+    port: 3100
+  env:
+    - name: KTOR_ENV
+      value: "prod"
+    - name: DATABASE_HOST
+      valueFrom:
+        secretKeyRef:
+          name: sunrei-secrets
+          key: database-host
+    - name: DATABASE_PORT
+      value: "5432"
+    - name: DATABASE_NAME
+      valueFrom:
+        secretKeyRef:
+          name: sunrei-secrets
+          key: database-name
+    - name: DATABASE_USER
+      valueFrom:
+        secretKeyRef:
+          name: sunrei-secrets
+          key: database-user
+    - name: DATABASE_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: sunrei-secrets
+          key: database-password
+    - name: JWT_PAGE_TOKEN_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: sunrei-secrets
+          key: jwt-page-token-secret
+    - name: AWS_ACCESS_KEY_ID
+      valueFrom:
+        secretKeyRef:
+          name: sunrei-secrets
+          key: aws-access-key-id
+    - name: AWS_SECRET_ACCESS_KEY
+      valueFrom:
+        secretKeyRef:
+          name: sunrei-secrets
+          key: aws-secret-access-key
+
+# Cloudflare Tunnel Configuration
+# Services are exposed via Cloudflare Tunnel (cloudflared)
+# No Ingress needed - Tunnel connects directly to ClusterIP services
+cloudflare:
+  tunnel:
+    enabled: true
+    domains:
+      app: sunrei.com
+      admin: admin.sunrei.com
+      server: api.sunrei.com
+
+# Resource limits
+resources:
+  admin:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+  app:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+  server:
+    limits:
+      cpu: 1000m
+      memory: 1Gi
+    requests:
+      cpu: 200m
+      memory: 256Mi
