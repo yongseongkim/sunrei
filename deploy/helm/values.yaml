@@ -78,15 +78,9 @@ server:
     - name: DATABASE_PORT
       value: "5432"
     - name: DATABASE_NAME
-      valueFrom:
-        secretKeyRef:
-          name: sunrei-secrets
-          key: database-name
+      value: "sunrei"
     - name: DATABASE_USER
-      valueFrom:
-        secretKeyRef:
-          name: sunrei-secrets
-          key: database-user
+      value: "postgres"
     - name: DATABASE_PASSWORD
       valueFrom:
         secretKeyRef:
