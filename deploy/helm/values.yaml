@@ -8,7 +8,7 @@ registry: yny.ocir.io/axrudau2tcfl/sunrei
 images:
   admin:
     repository: sunrei-admin
-    tag: v0.0.1
+    tag: v0.0.2
     pullPolicy: IfNotPresent
   app:
     repository: sunrei-app
