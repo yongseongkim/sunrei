@@ -8,15 +8,15 @@ registry: yny.ocir.io/axrudau2tcfl/sunrei
 images:
   admin:
     repository: sunrei-admin
-    tag: v0.0.2
+    tag: v0.0.3
     pullPolicy: IfNotPresent
   app:
     repository: sunrei-app
-    tag: v0.0.1
+    tag: v0.0.3
     pullPolicy: IfNotPresent
   server:
     repository: sunrei-server
-    tag: v0.0.1
+    tag: v0.0.3
     pullPolicy: IfNotPresent
 
 # Image pull secrets for OCI Registry
