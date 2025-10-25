@@ -104,7 +104,8 @@ update_helm_values() {
     log_step "Updating Helm values.yaml image tags to $version..."
 
     # Update all image tags in values.yaml
-    sed -i.bak "/images:/,/pullPolicy:/ s/tag: .*/tag: $version/" deploy/helm/values.yaml
+    # Match from 'images:' section to next non-indented line, update all '    tag:' lines
+    sed -i.bak '/^images:/,/^[^ ]/{/^    tag: /s/tag: .*/tag: '"$version"'/;}' deploy/helm/values.yaml
     rm deploy/helm/values.yaml.bak
 
     log_info "values.yaml updated"
