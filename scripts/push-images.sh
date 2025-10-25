@@ -84,7 +84,32 @@ build_image() {
         exit 1
     fi
 
-    docker build -f "$dockerfile" -t "$image_name:$IMAGE_TAG" .
+    # Load .env file for the specific app (for Next.js apps only)
+    local env_file="${image_name}/.env"
+    local build_args=""
+
+    if [ -f "$env_file" ]; then
+        log_info "Loading environment from $env_file"
+
+        # Read environment variables from .env file
+        set -a
+        source "$env_file"
+        set +a
+
+        # Prepare build args for Next.js public environment variables
+        if [ -n "$NEXT_PUBLIC_API_URL" ]; then
+            build_args="$build_args --build-arg NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}"
+        fi
+        if [ -n "$NEXT_PUBLIC_GOOGLE_MAPS_API_KEY" ]; then
+            build_args="$build_args --build-arg NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=${NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}"
+        fi
+        if [ -n "$NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID" ]; then
+            build_args="$build_args --build-arg NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID=${NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID}"
+        fi
+    fi
+
+    # Build with environment variables
+    docker build -f "$dockerfile" $build_args -t "$image_name:$IMAGE_TAG" .
 
     log_info "Built $image_name:$IMAGE_TAG"
 }
