@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack --port 3001",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "codegen": "rm -rf src/api/admin && openapi-generator-cli generate -i ../sunrei-api/admin-api-spec.yaml -g typescript-axios -o src/api/admin --additional-properties=typescriptThreePlus=true,apiPackage=admin,modelPackage=admin --global-property=apiDocs=false,modelDocs=false"
@@ -36,19 +36,19 @@
     "react-hook-form": "^7.62.0",
     "tailwind-merge": "^3.3.1",
     "zod": "^4.1.5",
-    "zustand": "^5.0.8"
+    "zustand": "^5.0.8",
+    "lines-and-columns": "^1.2.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9",
     "eslint-config-next": "15.5.0",
-    "tailwindcss": "^4",
-    "tw-animate-css": "^1.3.7",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
 }

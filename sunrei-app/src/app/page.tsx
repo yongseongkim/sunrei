@@ -1,20 +1,32 @@
 'use client';
 
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import { Separator } from '@/components/ui/separator';
+import { Skeleton } from '@/components/ui/skeleton';
+import { useSunreis } from '@/hooks/useSunreis';
 import { config } from '@/lib/config';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useMapStore } from '@/stores/map-store';
+import { useUIStore } from '@/stores/ui-store';
+import { ExternalLink, MapPin } from 'lucide-react';
+import { useCallback, useRef, useState } from 'react';
 import { GoogleMap, Marker } from '../components/Map';
 import { MarkerInfoWindow } from '../components/MarkerInfoWindow';
 import { boundsToWKTPolygon } from '../utils/map-utils';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Skeleton } from '@/components/ui/skeleton';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
-import { Button } from '@/components/ui/button';
-import { MapPin, Image as ImageIcon, ExternalLink } from 'lucide-react';
-import { useUIStore } from '@/stores/ui-store';
-import { useMapStore } from '@/stores/map-store';
-import { useSunreis } from '@/hooks/useSunreis';
 
 const center = {
   lat: 35.6762,
@@ -50,13 +62,21 @@ function getYoutubeThumbnail(videoId: string): string {
 
 export default function Home() {
   // Zustand stores
-  const { selectedSunrei, hoveredMarker, modalSpot, setSelectedSunrei, setHoveredMarker, setModalSpot } =
-    useUIStore();
+  const {
+    selectedSunrei,
+    hoveredMarker,
+    modalSpot,
+    setSelectedSunrei,
+    setHoveredMarker,
+    setModalSpot,
+  } = useUIStore();
   const { isLoaded, setIsLoaded } = useMapStore();
 
   // Local state
   const [selectedSpot, setSelectedSpot] = useState<string | null>(null);
-  const [currentPolygon, setCurrentPolygon] = useState<string | undefined>(undefined);
+  const [currentPolygon, setCurrentPolygon] = useState<string | undefined>(
+    undefined,
+  );
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // React Query
@@ -66,18 +86,21 @@ export default function Home() {
     setIsLoaded(true);
   }, [setIsLoaded]);
 
-  const handleBoundsChanged = useCallback((bounds: google.maps.LatLngBounds) => {
-    // Clear existing timer
-    if (debounceTimerRef.current) {
-      clearTimeout(debounceTimerRef.current);
-    }
+  const handleBoundsChanged = useCallback(
+    (bounds: google.maps.LatLngBounds) => {
+      // Clear existing timer
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
 
-    // Set new timer with 500ms delay
-    debounceTimerRef.current = setTimeout(() => {
-      const polygon = boundsToWKTPolygon(bounds);
-      setCurrentPolygon(polygon);
-    }, 500);
-  }, []);
+      // Set new timer with 500ms delay
+      debounceTimerRef.current = setTimeout(() => {
+        const polygon = boundsToWKTPolygon(bounds);
+        setCurrentPolygon(polygon);
+      }, 500);
+    },
+    [],
+  );
 
   const allSpots = sunreis.flatMap(
     (sunrei) =>
@@ -141,7 +164,10 @@ export default function Home() {
                     <CardTitle>{sunrei.title}</CardTitle>
                     <CardDescription>{sunrei.description}</CardDescription>
                     <div className="flex items-center justify-between pt-2">
-                      <Badge variant="secondary" className="flex items-center gap-1">
+                      <Badge
+                        variant="secondary"
+                        className="flex items-center gap-1"
+                      >
                         <MapPin className="w-3 h-3" />
                         {sunrei.spots?.length || 0}개 장소
                       </Badge>
@@ -159,63 +185,70 @@ export default function Home() {
                       )}
                     </div>
                   </CardHeader>
-                  {(sunrei.images?.length > 0 || (selectedSunrei === sunrei.id && sunrei.spots)) && (
+                  {(sunrei.images?.length > 0 ||
+                    (selectedSunrei === sunrei.id && sunrei.spots)) && (
                     <CardContent>
                       {sunrei.images && sunrei.images.length > 0 && (
                         <div className="grid grid-cols-4 gap-1">
-                          {sunrei.images.slice(0, 4).map((image: any, index: number) => (
-                            <div
-                              key={index}
-                              className="relative aspect-square rounded overflow-hidden"
-                            >
-                              <img
-                                src={image.url || ''}
-                                alt={sunrei.title || ''}
-                                className="w-full h-full object-cover hover:scale-110 transition-transform cursor-pointer"
-                              />
-                              {sunrei.images &&
-                                sunrei.images.length > 4 &&
-                                index === 3 && (
-                                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                                    <span className="text-white text-sm font-medium">
-                                      +{sunrei.images.length - 4}
-                                    </span>
-                                  </div>
-                                )}
-                            </div>
-                          ))}
+                          {sunrei.images
+                            .slice(0, 4)
+                            .map((image: any, index: number) => (
+                              <div
+                                key={index}
+                                className="relative aspect-square rounded overflow-hidden"
+                              >
+                                <img
+                                  src={image.url || ''}
+                                  alt={sunrei.title || ''}
+                                  className="w-full h-full object-cover hover:scale-110 transition-transform cursor-pointer"
+                                />
+                                {sunrei.images &&
+                                  sunrei.images.length > 4 &&
+                                  index === 3 && (
+                                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                                      <span className="text-white text-sm font-medium">
+                                        +{sunrei.images.length - 4}
+                                      </span>
+                                    </div>
+                                  )}
+                              </div>
+                            ))}
                         </div>
                       )}
                       {selectedSunrei === sunrei.id && sunrei.spots && (
-                      <>
-                        {sunrei.images && sunrei.images.length > 0 && (
-                          <Separator className="my-4" />
-                        )}
-                        <div>
-                          <p className="text-xs font-medium text-muted-foreground mb-2">
-                            방문 가능한 장소:
-                          </p>
-                          <div className="space-y-2">
-                            {sunrei.spots.map((spot: any) => (
-                              <div key={spot.id} className="space-y-1">
-                                <p className="text-xs font-medium">{spot.title}</p>
-                                <div
-                                  className="text-xs text-muted-foreground flex items-center gap-2 hover:text-primary ml-2 cursor-pointer"
-                                  onMouseEnter={() =>
-                                    setHoveredMarker(`${spot.id}-${spot.place.id}`)
-                                  }
-                                  onMouseLeave={() => setHoveredMarker(null)}
-                                >
-                                  <span className="w-1 h-1 bg-muted-foreground rounded-full"></span>
-                                  <span>
-                                    {spot.place.name} - {spot.place.address}
-                                  </span>
+                        <>
+                          {sunrei.images && sunrei.images.length > 0 && (
+                            <Separator className="my-4" />
+                          )}
+                          <div>
+                            <p className="text-xs font-medium text-muted-foreground mb-2">
+                              방문 가능한 장소:
+                            </p>
+                            <div className="space-y-2">
+                              {sunrei.spots.map((spot: any) => (
+                                <div key={spot.id} className="space-y-1">
+                                  <p className="text-xs font-medium">
+                                    {spot.title}
+                                  </p>
+                                  <div
+                                    className="text-xs text-muted-foreground flex items-center gap-2 hover:text-primary ml-2 cursor-pointer"
+                                    onMouseEnter={() =>
+                                      setHoveredMarker(
+                                        `${spot.id}-${spot.place.id}`,
+                                      )
+                                    }
+                                    onMouseLeave={() => setHoveredMarker(null)}
+                                  >
+                                    <span className="w-1 h-1 bg-muted-foreground rounded-full"></span>
+                                    <span>
+                                      {spot.place.name} - {spot.place.address}
+                                    </span>
+                                  </div>
                                 </div>
-                              </div>
-                            ))}
+                              ))}
+                            </div>
                           </div>
-                        </div>
-                      </>
+                        </>
                       )}
                     </CardContent>
                   )}
@@ -239,13 +272,19 @@ export default function Home() {
 
             // 마커 상태 결정
             let markerState: 'selected' | 'related' | 'default';
-            if (modalSpot && markerId === `${modalSpot.id}-${modalSpot.placeId}`) {
+            if (
+              modalSpot &&
+              markerId === `${modalSpot.id}-${modalSpot.placeId}`
+            ) {
               // A: 선택된 마커 (다이얼로그가 보이는 마커)
               markerState = 'selected';
             } else if (modalSpot && spot.sunreiId === modalSpot.sunreiId) {
               // B: 같은 Sunrei의 마커들
               markerState = 'related';
-            } else if (selectedSunrei === spot.sunreiId || hoveredMarker === markerId) {
+            } else if (
+              selectedSunrei === spot.sunreiId ||
+              hoveredMarker === markerId
+            ) {
               // hover나 선택된 sunrei도 related로 처리
               markerState = 'related';
             } else {
@@ -271,11 +310,17 @@ export default function Home() {
 
             // 마커 상태 결정 (동일한 로직)
             let markerState: 'selected' | 'related' | 'default';
-            if (modalSpot && markerId === `${modalSpot.id}-${modalSpot.placeId}`) {
+            if (
+              modalSpot &&
+              markerId === `${modalSpot.id}-${modalSpot.placeId}`
+            ) {
               markerState = 'selected';
             } else if (modalSpot && spot.sunreiId === modalSpot.sunreiId) {
               markerState = 'related';
-            } else if (selectedSunrei === spot.sunreiId || hoveredMarker === markerId) {
+            } else if (
+              selectedSunrei === spot.sunreiId ||
+              hoveredMarker === markerId
+            ) {
               markerState = 'related';
             } else {
               markerState = 'default';
@@ -298,13 +343,14 @@ export default function Home() {
         </GoogleMap>
       </div>
 
-      <Dialog open={!!modalSpot} onOpenChange={(open) => !open && useUIStore.getState().closeModal()}>
+      <Dialog
+        open={!!modalSpot}
+        onOpenChange={(open) => !open && useUIStore.getState().closeModal()}
+      >
         <DialogContent className="max-w-2xl">
           <DialogHeader>
             <DialogTitle>{modalSpot?.placeName}</DialogTitle>
-            <DialogDescription>
-              {modalSpot?.placeAddress}
-            </DialogDescription>
+            <DialogDescription>{modalSpot?.placeAddress}</DialogDescription>
             <p className="text-sm text-muted-foreground">
               {modalSpot?.sunreiTitle} - {modalSpot?.title}
             </p>
@@ -356,7 +402,9 @@ export default function Home() {
           <div className="space-y-4">
             <div>
               <h3 className="font-semibold text-sm mb-1">설명</h3>
-              <p className="text-sm leading-relaxed">{modalSpot?.description}</p>
+              <p className="text-sm leading-relaxed">
+                {modalSpot?.description}
+              </p>
             </div>
             <Separator />
             <Button variant="outline" className="w-full" asChild>
