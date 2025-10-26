@@ -24,18 +24,15 @@ COPY sunrei-admin/ ./
 # Build the application
 RUN npm run build
 
-# Prune devDependencies
-RUN npm prune --production && npm cache clean --force
-
 # Runner stage
 FROM node:22-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/.next ./.next
+# Copy standalone output
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/package.json ./package.json
 
 # Create a non-root user
 RUN addgroup -g 1001 nodejs && \
@@ -47,4 +44,4 @@ USER nextjs
 EXPOSE 3102
 ENV PORT=3102
 
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
