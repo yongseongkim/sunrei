@@ -20,7 +20,7 @@ OCI_REGISTRY="${OCI_REGION}.ocir.io/${OCI_TENANCY_NAMESPACE}/sunrei"
 IMAGE_TAG=$1
 
 # Image names
-IMAGES=("sunrei-admin" "sunrei-app" "sunrei-server")
+IMAGES=("sunrei-admin" "sunrei-app" "sunrei-server" "sunrei-migration")
 
 # Functions
 log_info() {

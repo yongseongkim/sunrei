@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   postgres:
-    image: kartoza/postgis:17-3.5
+    image: ghcr.io/yongseongkim/homelab-infra/postgres18-postgis:latest
     container_name: sunrei-postgres
     platform: linux/arm64
     environment:
@@ -12,7 +12,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
 
 volumes:
   postgres_data:
