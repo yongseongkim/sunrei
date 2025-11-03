@@ -108,8 +108,8 @@ build_image() {
         fi
     fi
 
-    # Build with environment variables
-    docker build -f "$dockerfile" $build_args -t "$image_name:$IMAGE_TAG" .
+    # Build with environment variables for ARM64 platform
+    docker build --platform linux/arm64 -f "$dockerfile" $build_args -t "$image_name:$IMAGE_TAG" .
 
     log_info "Built $image_name:$IMAGE_TAG"
 }

@@ -1,5 +1,5 @@
 # Flyway Migration Image
-FROM flyway/flyway:10-alpine
+FROM flyway/flyway:11-alpine
 
 # Copy migration SQL files
 COPY sunrei-server/src/main/resources/db/migration /flyway/sql
