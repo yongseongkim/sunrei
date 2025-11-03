@@ -101,6 +101,8 @@ server:
         secretKeyRef:
           name: sunrei-secrets
           key: aws-secret-access-key
+    - name: CORS_ALLOWED_HOSTS
+      value: "sunrei.com,admin.sunrei.com,api.sunrei.com,yongseongkimm.com"
 
 # Cloudflare Tunnel Configuration
 # Services are exposed via Cloudflare Tunnel (cloudflared)
