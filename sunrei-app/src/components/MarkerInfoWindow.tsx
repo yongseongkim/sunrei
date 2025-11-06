@@ -5,8 +5,9 @@ import { useEffect, useRef } from 'react';
 interface MarkerInfoWindowProps {
   position: { lat: number; lng: number };
   map?: google.maps.Map;
-  sunreiTitle: string;
   placeName: string;
+  placeAddress: string;
+  sunreiTitles: string[]; // 여러 Sunrei 타이틀
   markerState?: 'selected' | 'related' | 'default';
   onClick?: () => void;
 }
@@ -14,15 +15,18 @@ interface MarkerInfoWindowProps {
 export const MarkerInfoWindow: React.FC<MarkerInfoWindowProps> = ({
   position,
   map,
-  sunreiTitle,
   placeName,
+  placeAddress,
+  sunreiTitles,
   markerState = 'default',
   onClick,
 }) => {
   const overlayRef = useRef<google.maps.OverlayView | null>(null);
 
   useEffect(() => {
-    if (!map) return;
+    if (!map) {
+      return;
+    }
 
     // 기존 오버레이 제거
     if (overlayRef.current) {
@@ -35,205 +39,185 @@ export const MarkerInfoWindow: React.FC<MarkerInfoWindowProps> = ({
       private position: google.maps.LatLng;
       private containerDiv: HTMLDivElement | null = null;
       private onClick?: () => void;
-      private sunreiTitle: string;
       private placeName: string;
+      private placeAddress: string;
+      private sunreiTitles: string[];
       private markerState: 'selected' | 'related' | 'default';
-      private containerWidth: number = 0;
-      private containerHeight: number = 0;
 
       constructor(
         position: google.maps.LatLng,
-        sunreiTitle: string,
         placeName: string,
+        placeAddress: string,
+        sunreiTitles: string[],
         markerState: 'selected' | 'related' | 'default',
         onClick?: () => void,
       ) {
         super();
         this.position = position;
-        this.sunreiTitle = sunreiTitle;
         this.placeName = placeName;
+        this.placeAddress = placeAddress;
+        this.sunreiTitles = sunreiTitles;
         this.markerState = markerState;
         this.onClick = onClick;
       }
 
       onAdd() {
-        // Canvas를 사용하여 텍스트 너비 측정 및 텍스트 자르기
-        const canvas = document.createElement('canvas');
-        const context = canvas.getContext('2d');
-
-        const maxTextWidth = 150; // 최대 텍스트 너비 (padding 제외)
-
-        // Sunrei 제목 처리
-        let displayTitle = this.sunreiTitle;
-        if (context) {
-          context.font = "700 12px 'SpoqaHanSans', -apple-system, sans-serif";
-          let titleWidth = context.measureText(displayTitle).width;
-
-          // 너무 길면 자르기
-          if (titleWidth > maxTextWidth) {
-            while (titleWidth > maxTextWidth && displayTitle.length > 0) {
-              displayTitle = displayTitle.slice(0, -1);
-              titleWidth = context.measureText(displayTitle + '...').width;
-            }
-            displayTitle = displayTitle + '...';
-          }
-        }
-
-        // Place 이름 처리
-        let displayPlace = this.placeName;
-        if (context) {
-          context.font = "400 11px 'SpoqaHanSans', -apple-system, sans-serif";
-          let placeWidth = context.measureText(displayPlace).width;
-
-          // 너무 길면 자르기
-          if (placeWidth > maxTextWidth) {
-            while (placeWidth > maxTextWidth && displayPlace.length > 0) {
-              displayPlace = displayPlace.slice(0, -1);
-              placeWidth = context.measureText(displayPlace + '...').width;
-            }
-            displayPlace = displayPlace + '...';
-          }
-        }
-
-        // 최종 너비 측정
-        if (context) {
-          context.font = "700 12px 'SpoqaHanSans', -apple-system, sans-serif";
-        }
-        const titleWidth = context ? context.measureText(displayTitle).width : 0;
-
-        if (context) {
-          context.font = "400 11px 'SpoqaHanSans', -apple-system, sans-serif";
-        }
-        const placeWidth = context ? context.measureText(displayPlace).width : 0;
-
-        // padding (12px * 2) + 텍스트 너비, 최소 88px
-        const bubbleWidth = Math.max(88, Math.ceil(Math.max(titleWidth, placeWidth)) + 24);
-
-        // bubble 높이 계산: padding(8*2) + title line-height(16) + place line-height(14)
-        const bubbleHeight = 8 + 16 + 14 + 8; // 46px
-
-        // container 전체 높이: bubble bottom(14) + bubble height
-        const containerHeight = 14 + bubbleHeight; // 60px
-
-        // 너비와 높이를 인스턴스 변수에 저장
-        this.containerWidth = bubbleWidth;
-        this.containerHeight = containerHeight;
-
-        // 상태별 색상 결정
+        // 상태별 배경색 결정
         let bgColor: string;
         let borderColor: string;
 
         switch (this.markerState) {
           case 'selected':
-            // A: 선택된 마커 - Viola
-            bgColor = 'var(--pantone-viola)'; // #9370DB
-            borderColor = 'rgba(147, 112, 219, 0.2)';
+            bgColor = '#9370DB'; // Viola
+            borderColor = 'rgba(147, 112, 219, 0.3)';
             break;
           case 'related':
-            // B: 같은 Sunrei - Cornflower Blue
-            bgColor = 'var(--pantone-cornflower-blue)'; // #6495ED
-            borderColor = 'rgba(100, 149, 237, 0.2)';
+            bgColor = '#6495ED'; // Cornflower Blue
+            borderColor = 'rgba(100, 149, 237, 0.3)';
             break;
           default:
-            // C: 선택되지 않은 - Cobblestone
-            bgColor = 'var(--pantone-cobblestone)'; // #8B8680
-            borderColor = 'rgba(139, 134, 128, 0.2)';
+            bgColor = '#FFFFFF'; // White
+            borderColor = 'rgba(0, 0, 0, 0.1)';
             break;
         }
+
+        const textColor =
+          this.markerState === 'default' ? '#000000' : '#FFFFFF';
+        const secondaryTextColor =
+          this.markerState === 'default'
+            ? 'rgba(0, 0, 0, 0.6)'
+            : 'rgba(255, 255, 255, 0.8)';
 
         // Container
         const container = document.createElement('div');
         container.style.position = 'absolute';
-        container.style.filter = 'drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.249547))';
+        container.style.filter =
+          'drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15))';
         container.style.cursor = 'pointer';
         container.style.pointerEvents = 'auto';
-        container.style.width = bubbleWidth + 'px';
-        container.style.height = containerHeight + 'px';
+        container.style.minWidth = '200px';
+        container.style.maxWidth = '280px';
+        container.style.transition = 'transform 0.2s ease';
 
-        // Bubble (rounded rectangle with two lines of text)
+        // Bubble (card)
         const bubble = document.createElement('div');
         bubble.style.boxSizing = 'border-box';
         bubble.style.display = 'flex';
         bubble.style.flexDirection = 'column';
-        bubble.style.justifyContent = 'center';
-        bubble.style.alignItems = 'center';
-        bubble.style.padding = '8px 12px';
-        bubble.style.position = 'absolute';
-        bubble.style.width = '100%';
-        bubble.style.left = '0';
-        bubble.style.bottom = '14px';
+        bubble.style.gap = '6px';
+        bubble.style.padding = '12px';
+        bubble.style.position = 'relative';
         bubble.style.background = bgColor;
         bubble.style.border = `1px solid ${borderColor}`;
-        bubble.style.borderRadius = '100px';
-        bubble.style.whiteSpace = 'nowrap';
+        bubble.style.borderRadius = '8px';
+        bubble.style.transition = 'all 0.2s ease';
 
-        // Arrow (rotated square) - 컨테이너 중앙에 배치
+        // Hover 효과
+        container.addEventListener('mouseenter', () => {
+          container.style.transform = 'translateY(-2px)';
+          container.style.filter =
+            'drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.2))';
+        });
+        container.addEventListener('mouseleave', () => {
+          container.style.transform = 'translateY(0)';
+          container.style.filter =
+            'drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15))';
+        });
+
+        // Place name (bold)
+        const placeNameText = document.createElement('div');
+        placeNameText.style.fontFamily =
+          "'Pretendard Variable', -apple-system, sans-serif";
+        placeNameText.style.fontWeight = '700';
+        placeNameText.style.fontSize = '14px';
+        placeNameText.style.lineHeight = '1.4';
+        placeNameText.style.color = textColor;
+        placeNameText.style.overflow = 'hidden';
+        placeNameText.style.textOverflow = 'ellipsis';
+        placeNameText.style.whiteSpace = 'nowrap';
+        placeNameText.textContent = this.placeName;
+
+        // Address
+        const addressText = document.createElement('div');
+        addressText.style.fontFamily =
+          "'Pretendard Variable', -apple-system, sans-serif";
+        addressText.style.fontWeight = '400';
+        addressText.style.fontSize = '12px';
+        addressText.style.lineHeight = '1.4';
+        addressText.style.color = secondaryTextColor;
+        addressText.style.overflow = 'hidden';
+        addressText.style.textOverflow = 'ellipsis';
+        addressText.style.whiteSpace = 'nowrap';
+        addressText.textContent = this.placeAddress;
+
+        // Featured in section
+        if (this.sunreiTitles.length > 0) {
+          const featuredLabel = document.createElement('div');
+          featuredLabel.style.fontFamily =
+            "'Pretendard Variable', -apple-system, sans-serif";
+          featuredLabel.style.fontWeight = '600';
+          featuredLabel.style.fontSize = '11px';
+          featuredLabel.style.lineHeight = '1.4';
+          featuredLabel.style.color = secondaryTextColor;
+          featuredLabel.style.marginTop = '2px';
+          featuredLabel.textContent = 'Featured in:';
+
+          bubble.appendChild(placeNameText);
+          bubble.appendChild(addressText);
+          bubble.appendChild(featuredLabel);
+
+          // Sunrei titles (최대 3개만 표시)
+          const displayTitles = this.sunreiTitles.slice(0, 3);
+          displayTitles.forEach((title) => {
+            const sunreiItem = document.createElement('div');
+            sunreiItem.style.fontFamily =
+              "'Pretendard Variable', -apple-system, sans-serif";
+            sunreiItem.style.fontWeight = '400';
+            sunreiItem.style.fontSize = '11px';
+            sunreiItem.style.lineHeight = '1.4';
+            sunreiItem.style.color = textColor;
+            sunreiItem.style.overflow = 'hidden';
+            sunreiItem.style.textOverflow = 'ellipsis';
+            sunreiItem.style.whiteSpace = 'nowrap';
+            sunreiItem.style.paddingLeft = '8px';
+            sunreiItem.textContent = `• ${title}`;
+            bubble.appendChild(sunreiItem);
+          });
+
+          // 더 많은 Sunrei가 있으면 표시
+          if (this.sunreiTitles.length > 3) {
+            const moreItem = document.createElement('div');
+            moreItem.style.fontFamily =
+              "'Pretendard Variable', -apple-system, sans-serif";
+            moreItem.style.fontWeight = '400';
+            moreItem.style.fontSize = '11px';
+            moreItem.style.lineHeight = '1.4';
+            moreItem.style.color = secondaryTextColor;
+            moreItem.style.paddingLeft = '8px';
+            moreItem.textContent = `+${this.sunreiTitles.length - 3} more`;
+            bubble.appendChild(moreItem);
+          }
+        } else {
+          bubble.appendChild(placeNameText);
+          bubble.appendChild(addressText);
+        }
+
+        // Arrow (pointer)
         const arrow = document.createElement('div');
-        arrow.style.boxSizing = 'border-box';
         arrow.style.position = 'absolute';
         arrow.style.width = '10px';
         arrow.style.height = '10px';
         arrow.style.left = '50%';
         arrow.style.marginLeft = '-5px';
-        arrow.style.bottom = '12.14px';
+        arrow.style.bottom = '-5px';
         arrow.style.background = bgColor;
         arrow.style.border = `1px solid ${borderColor}`;
+        arrow.style.borderTop = 'none';
+        arrow.style.borderLeft = 'none';
         arrow.style.transform = 'rotate(45deg)';
 
-        // First line: Sunrei Title
-        const titleText = document.createElement('span');
-        titleText.style.fontFamily = "'SpoqaHanSans', -apple-system, sans-serif";
-        titleText.style.fontWeight = '700';
-        titleText.style.fontSize = '12px';
-        titleText.style.lineHeight = '16px';
-        titleText.style.color = '#FFFFFF';
-        titleText.textContent = displayTitle;
-
-        // Second line: Place Name
-        const placeText = document.createElement('span');
-        placeText.style.fontFamily = "'SpoqaHanSans', -apple-system, sans-serif";
-        placeText.style.fontWeight = '400';
-        placeText.style.fontSize = '11px';
-        placeText.style.lineHeight = '14px';
-        placeText.style.color = 'rgba(255, 255, 255, 0.9)';
-        placeText.textContent = displayPlace;
-
-        bubble.appendChild(titleText);
-        bubble.appendChild(placeText);
-
-        // Blockers (to prevent bubble border from showing through arrow) - 컨테이너 중앙 기준
-        const leftBlocker = document.createElement('div');
-        leftBlocker.style.position = 'absolute';
-        leftBlocker.style.width = '2px';
-        leftBlocker.style.height = '1px';
-        leftBlocker.style.left = '50%';
-        leftBlocker.style.marginLeft = '-6px';
-        leftBlocker.style.bottom = '14px';
-        leftBlocker.style.background = bgColor;
-
-        const rightBlocker = document.createElement('div');
-        rightBlocker.style.position = 'absolute';
-        rightBlocker.style.width = '2px';
-        rightBlocker.style.height = '1px';
-        rightBlocker.style.left = '50%';
-        rightBlocker.style.marginLeft = '3px';
-        rightBlocker.style.bottom = '14px';
-        rightBlocker.style.background = bgColor;
-
-        const centerBlocker = document.createElement('div');
-        centerBlocker.style.position = 'absolute';
-        centerBlocker.style.width = '7px';
-        centerBlocker.style.height = '1px';
-        centerBlocker.style.left = '50%';
-        centerBlocker.style.marginLeft = '-4px';
-        centerBlocker.style.bottom = '14px';
-        centerBlocker.style.background = bgColor;
-
-        container.appendChild(arrow);
         container.appendChild(bubble);
-        container.appendChild(leftBlocker);
-        container.appendChild(rightBlocker);
-        container.appendChild(centerBlocker);
+        container.appendChild(arrow);
 
         // Click handler
         if (this.onClick) {
@@ -252,12 +236,15 @@ export const MarkerInfoWindow: React.FC<MarkerInfoWindowProps> = ({
         const position = overlayProjection.fromLatLngToDivPixel(this.position);
 
         if (position) {
-          // Arrow와 마커 사이에 간격을 두기 위해 추가 offset 적용
-          // 마커 반지름(6-8px) + 간격(8px) = 약 5px 위로 이동
-          const markerGap = 5;
+          const rect = this.containerDiv.getBoundingClientRect();
+          const width = rect.width || 200;
+          const height = rect.height || 100;
 
-          this.containerDiv.style.left = position.x - this.containerWidth / 2 + 'px';
-          this.containerDiv.style.top = position.y + 5 - this.containerHeight - markerGap + 'px';
+          // 마커 위에 표시 (마커 + 간격)
+          const markerGap = 20;
+
+          this.containerDiv.style.left = `${position.x - width / 2}px`;
+          this.containerDiv.style.top = `${position.y - height - markerGap}px`;
         }
       }
 
@@ -271,8 +258,9 @@ export const MarkerInfoWindow: React.FC<MarkerInfoWindowProps> = ({
 
     const overlay = new InfoWindowOverlay(
       new google.maps.LatLng(position.lat, position.lng),
-      sunreiTitle,
       placeName,
+      placeAddress,
+      sunreiTitles,
       markerState,
       onClick,
     );
@@ -285,7 +273,16 @@ export const MarkerInfoWindow: React.FC<MarkerInfoWindowProps> = ({
         overlayRef.current = null;
       }
     };
-  }, [map, position.lat, position.lng, sunreiTitle, placeName, markerState, onClick]);
+  }, [
+    map,
+    position.lat,
+    position.lng,
+    placeName,
+    placeAddress,
+    sunreiTitles,
+    markerState,
+    onClick,
+  ]);
 
   return null;
 };

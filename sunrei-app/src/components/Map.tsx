@@ -17,11 +17,12 @@ interface MarkerProps {
   map?: google.maps.Map;
   title?: string;
   markerState?: 'selected' | 'related' | 'default';
+  count?: number; // 마커에 표시할 숫자 (2 이상일 때만 표시)
   onClick?: () => void;
 }
 
 // Custom marker component using company design system
-export const Marker: React.FC<MarkerProps> = ({ position, map, title, markerState = 'default', onClick }) => {
+export const Marker: React.FC<MarkerProps> = ({ position, map, title, markerState = 'default', count, onClick }) => {
   const overlayRef = useRef<google.maps.OverlayView | null>(null);
 
   useEffect(() => {
@@ -39,11 +40,13 @@ export const Marker: React.FC<MarkerProps> = ({ position, map, title, markerStat
       private containerDiv: HTMLDivElement | null = null;
       private onClick?: () => void;
       private markerState: 'selected' | 'related' | 'default';
+      private count?: number;
 
-      constructor(position: google.maps.LatLng, markerState: 'selected' | 'related' | 'default', onClick?: () => void) {
+      constructor(position: google.maps.LatLng, markerState: 'selected' | 'related' | 'default', count: number | undefined, onClick?: () => void) {
         super();
         this.position = position;
         this.markerState = markerState;
+        this.count = count;
         this.onClick = onClick;
       }
 
@@ -54,60 +57,110 @@ export const Marker: React.FC<MarkerProps> = ({ position, map, title, markerStat
         markerContainer.style.height = '28px';
         markerContainer.style.cursor = 'pointer';
 
-        // 상태별 크기와 색상 결정
-        let size: string;
-        let offset: string;
-        let bgColor: string;
-        let shadow: string;
+        // 숫자 마커 (count >= 2)
+        if (this.count !== undefined && this.count >= 2) {
+          // 상태별 색상 결정
+          let bgColor: string;
+          let borderColor: string;
 
-        switch (this.markerState) {
-          case 'selected':
-            // A: 선택된 마커 - Viola, 가장 크게
-            size = '18px';
-            offset = 'calc(50% - 9px)';
-            bgColor = 'var(--pantone-viola)'; // #9370DB
-            shadow = '0 2px 10px rgba(147, 112, 219, 0.5)';
-            break;
-          case 'related':
-            // B: 같은 Sunrei - Cornflower Blue, 중간 크기
-            size = '16px';
-            offset = 'calc(50% - 8px)';
-            bgColor = 'var(--pantone-cornflower-blue)'; // #6495ED
-            shadow = '0 2px 8px rgba(100, 149, 237, 0.4)';
-            break;
-          default:
-            // C: 선택되지 않은 - Cobblestone, 작게
-            size = '12px';
-            offset = 'calc(50% - 6px)';
-            bgColor = 'var(--pantone-cobblestone)'; // #8B8680
-            shadow = 'none';
-            break;
+          switch (this.markerState) {
+            case 'selected':
+              bgColor = 'var(--pantone-viola)'; // #9370DB
+              borderColor = 'rgba(0, 0, 0, 0.15)';
+              break;
+            case 'related':
+              bgColor = 'var(--pantone-cornflower-blue)'; // #6495ED
+              borderColor = 'rgba(0, 0, 0, 0.15)';
+              break;
+            default:
+              bgColor = 'var(--pantone-cobblestone)'; // #8B8680 회색
+              borderColor = 'rgba(0, 0, 0, 0.15)';
+              break;
+          }
+
+          // 숫자 마커 (16x16px)
+          const numberCircle = document.createElement('div');
+          numberCircle.style.boxSizing = 'border-box';
+          numberCircle.style.position = 'absolute';
+          numberCircle.style.width = '16px';
+          numberCircle.style.height = '16px';
+          numberCircle.style.left = 'calc(50% - 8px)';
+          numberCircle.style.top = 'calc(50% - 8px)';
+          numberCircle.style.background = bgColor;
+          numberCircle.style.border = `1px solid ${borderColor}`;
+          numberCircle.style.borderRadius = '50%';
+          numberCircle.style.display = 'flex';
+          numberCircle.style.alignItems = 'center';
+          numberCircle.style.justifyContent = 'center';
+          numberCircle.style.transition = 'all 0.2s ease';
+
+          // 숫자 텍스트
+          const numberText = document.createElement('span');
+          numberText.style.color = '#FFFFFF';
+          numberText.style.fontSize = '9px';
+          numberText.style.fontWeight = '700';
+          numberText.style.lineHeight = '1';
+          numberText.textContent = this.count.toString();
+
+          numberCircle.appendChild(numberText);
+          markerContainer.appendChild(numberCircle);
+        } else {
+          // 기존 원형 마커 (count < 2)
+          // 상태별 크기와 색상 결정
+          let size: string;
+          let offset: string;
+          let bgColor: string;
+          let shadow: string;
+
+          switch (this.markerState) {
+            case 'selected':
+              // A: 선택된 마커 - Viola, 가장 크게
+              size = '18px';
+              offset = 'calc(50% - 9px)';
+              bgColor = 'var(--pantone-viola)'; // #9370DB
+              shadow = '0 2px 10px rgba(147, 112, 219, 0.5)';
+              break;
+            case 'related':
+              // B: 같은 Sunrei - Cornflower Blue, 중간 크기
+              size = '16px';
+              offset = 'calc(50% - 8px)';
+              bgColor = 'var(--pantone-cornflower-blue)'; // #6495ED
+              shadow = '0 2px 8px rgba(100, 149, 237, 0.4)';
+              break;
+            default:
+              // C: 선택되지 않은 - Cobblestone, 작게
+              size = '12px';
+              offset = 'calc(50% - 6px)';
+              bgColor = 'var(--pantone-cobblestone)'; // #8B8680
+              shadow = 'none';
+              break;
+          }
+
+          // Outer circle
+          const outerCircle = document.createElement('div');
+          outerCircle.style.position = 'absolute';
+          outerCircle.style.width = size;
+          outerCircle.style.height = size;
+          outerCircle.style.left = offset;
+          outerCircle.style.top = offset;
+          outerCircle.style.background = bgColor;
+          outerCircle.style.borderRadius = '50%';
+          outerCircle.style.transition = 'all 0.2s ease';
+          outerCircle.style.boxShadow = shadow;
+
+          // Inner circle (4px)
+          const innerCircle = document.createElement('div');
+          innerCircle.style.position = 'absolute';
+          innerCircle.style.width = '4px';
+          innerCircle.style.height = '4px';
+          innerCircle.style.left = 'calc(50% - 2px)';
+          innerCircle.style.top = 'calc(50% - 2px)';
+          innerCircle.style.background = '#FFFFFF';
+          innerCircle.style.borderRadius = '50%';
+
+          outerCircle.appendChild(innerCircle);
+          markerContainer.appendChild(outerCircle);
         }
-
-        // Outer circle
-        const outerCircle = document.createElement('div');
-        outerCircle.style.position = 'absolute';
-        outerCircle.style.width = size;
-        outerCircle.style.height = size;
-        outerCircle.style.left = offset;
-        outerCircle.style.top = offset;
-        outerCircle.style.background = bgColor;
-        outerCircle.style.borderRadius = '50%';
-        outerCircle.style.transition = 'all 0.2s ease';
-        outerCircle.style.boxShadow = shadow;
-
-        // Inner circle (4px)
-        const innerCircle = document.createElement('div');
-        innerCircle.style.position = 'absolute';
-        innerCircle.style.width = '4px';
-        innerCircle.style.height = '4px';
-        innerCircle.style.left = 'calc(50% - 2px)';
-        innerCircle.style.top = 'calc(50% - 2px)';
-        innerCircle.style.background = '#FFFFFF';
-        innerCircle.style.borderRadius = '50%';
-
-        outerCircle.appendChild(innerCircle);
-        markerContainer.appendChild(outerCircle);
 
         // Click handler
         if (this.onClick) {
@@ -142,6 +195,7 @@ export const Marker: React.FC<MarkerProps> = ({ position, map, title, markerStat
     const overlay = new CustomOverlay(
       new google.maps.LatLng(position.lat, position.lng),
       markerState,
+      count,
       onClick,
     );
     overlay.setMap(map);
@@ -153,7 +207,7 @@ export const Marker: React.FC<MarkerProps> = ({ position, map, title, markerStat
         overlayRef.current = null;
       }
     };
-  }, [map, position.lat, position.lng, markerState, onClick]);
+  }, [map, position.lat, position.lng, markerState, count, onClick]);
 
   return null;
 };
