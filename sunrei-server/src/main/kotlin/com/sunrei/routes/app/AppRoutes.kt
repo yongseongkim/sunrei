@@ -7,6 +7,7 @@ fun Route.appRoutes() {
     route("/api") {
         sunreiRoutes()
         sunreiSpotRoutes()
+        mapRoutes()
         tagRoutes()
     }
 }

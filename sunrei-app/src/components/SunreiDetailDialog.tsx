@@ -9,7 +9,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Separator } from '@/components/ui/separator';
-import { ExternalLink } from 'lucide-react';
+import { ArrowLeft, ExternalLink } from 'lucide-react';
 
 interface ModalSpot {
   id: string;
@@ -29,6 +29,7 @@ interface ModalSpot {
 interface SunreiDetailDialogProps {
   modalSpot: ModalSpot | null;
   onClose: () => void;
+  onBack?: () => void; // 뒤로가기 버튼이 있을 때만 표시
 }
 
 // YouTube video ID 추출 함수
@@ -58,11 +59,24 @@ function getYoutubeThumbnail(videoId: string): string {
 export const SunreiDetailDialog: React.FC<SunreiDetailDialogProps> = ({
   modalSpot,
   onClose,
+  onBack,
 }) => {
   return (
     <Dialog open={!!modalSpot} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-w-2xl">
         <DialogHeader>
+          {/* 뒤로가기 버튼 */}
+          {onBack && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={onBack}
+              className="w-fit mb-2 -ml-2"
+            >
+              <ArrowLeft className="w-4 h-4 mr-1" />
+              Back to location
+            </Button>
+          )}
           <DialogTitle>{modalSpot?.placeName}</DialogTitle>
           <DialogDescription>{modalSpot?.placeAddress}</DialogDescription>
           <p className="text-sm text-muted-foreground">

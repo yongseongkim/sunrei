@@ -11,18 +11,11 @@ servers:
 paths:
   /api/sunreis:
     get:
-      summary: List Sunrei with optional polygon filter
+      summary: List all Sunrei
       operationId: listSunreis
-      parameters:
-        - name: polygon
-          in: query
-          required: false
-          description: WKT format polygon string (e.g., "POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))")
-          schema:
-            type: string
       responses:
         '200':
-          description: List of Sunrei (all or filtered by polygon)
+          description: List of all Sunrei
           content:
             application/json:
               schema:
@@ -49,19 +42,24 @@ paths:
         '404':
           description: Sunrei not found
 
-  /api/sunrei-spots:
+  /api/map:
     get:
-      summary: List Sunrei Spots
-      operationId: listSunreiSpots
+      summary: Get map data (spots with Sunrei info) filtered by polygon
+      operationId: getMapData
+      parameters:
+        - name: polygon
+          in: query
+          required: false
+          description: WKT format polygon string (e.g., "POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))")
+          schema:
+            type: string
       responses:
         '200':
-          description: List of Sunrei Spots
+          description: Map data containing spots with embedded Sunrei info
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/SunreiSpotDTO'
+                $ref: '#/components/schemas/ListMapSpots'
 
   /api/places:
     get:
@@ -270,6 +268,81 @@ components:
           type: string
           format: date-time
 
+    SunreiInfoDTO:
+      type: object
+      required:
+        - id
+        - title
+        - images
+        - tags
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+          description: Title of the Sunrei
+        description:
+          type: string
+          description: Detailed description of the Sunrei
+        link:
+          type: string
+          description: External link for this Sunrei (program URL or YouTube channel)
+          nullable: true
+        images:
+          type: array
+          description: Array of multi-size images for this Sunrei
+          items:
+            $ref: '#/components/schemas/MultiSizeImageDTO'
+        tags:
+          type: array
+          description: Array of tags associated with this Sunrei
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    MapSunreiSpotDTO:
+      type: object
+      required:
+        - id
+        - sunreiId
+        - title
+        - place
+        - images
+        - sunreiInfo
+      properties:
+        id:
+          type: string
+        sunreiId:
+          type: string
+          description: ID of the parent Sunrei
+        title:
+          type: string
+          maxLength: 128
+          description: Title of the Sunrei Spot
+        description:
+          type: string
+          description: Detailed description of the Sunrei Spot
+        youtubeLink:
+          type: string
+          description: YouTube video link for this spot
+          nullable: true
+        images:
+          type: array
+          description: Array of multi-size images for this spot
+          items:
+            $ref: '#/components/schemas/MultiSizeImageDTO'
+        place:
+          description: Associated place
+          $ref: '#/components/schemas/PlaceDTO'
+        sunreiInfo:
+          description: Associated Sunrei information (without nested spots)
+          $ref: '#/components/schemas/SunreiInfoDTO'
+
     # ===== App API Response Models =====
     ListSunreiResult:
       type: object
@@ -293,3 +366,14 @@ components:
       properties:
         sunrei:
           $ref: '#/components/schemas/SunreiDTO'
+
+    ListMapSpots:
+      type: object
+      required:
+        - spots
+      properties:
+        spots:
+          type: array
+          items:
+            $ref: '#/components/schemas/MapSunreiSpotDTO'
+          description: List of spots with embedded Sunrei info for map display

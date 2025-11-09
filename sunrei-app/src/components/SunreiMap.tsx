@@ -24,18 +24,13 @@ interface SunreiMapProps {
   onBoundsChanged: (polygon: string) => void;
 }
 
-const center = {
-  lat: 35.6762,
-  lng: 139.6503,
-};
-
 export const SunreiMap: React.FC<SunreiMapProps> = ({
   groupedMarkers,
   selectedSunrei,
   onMarkerClick,
   onBoundsChanged,
 }) => {
-  const { setIsLoaded } = useMapStore();
+  const { center, zoom, setIsLoaded } = useMapStore();
   const { selectedPlaceId, setSelectedPlaceId } = useUIStore();
 
   const onLoad = useCallback(() => {
@@ -55,7 +50,7 @@ export const SunreiMap: React.FC<SunreiMapProps> = ({
       <GoogleMap
         apiKey={config.googleMaps.apiKey}
         center={center}
-        zoom={12}
+        zoom={zoom}
         onMapLoad={onLoad}
         onBoundsChanged={handleBoundsChanged}
       >
@@ -117,10 +112,30 @@ export const SunreiMap: React.FC<SunreiMapProps> = ({
               markerState = 'default';
             }
 
-            // Sunrei 타이틀 목록 추출 (중복 제거)
-            const sunreiTitles = Array.from(
-              new Set(selectedMarker.spots.map((s) => s.sunreiTitle)),
-            );
+            // Sunrei 정보 목록 추출 (중복 제거) with spots
+            const sunreiMap = new Map<
+              string,
+              {
+                title: string;
+                tags: string[];
+                spots: Array<{ id: string; title: string }>;
+              }
+            >();
+            selectedMarker.spots.forEach((spot) => {
+              if (sunreiMap.has(spot.sunreiId)) {
+                sunreiMap.get(spot.sunreiId)!.spots.push({
+                  id: spot.id,
+                  title: spot.title,
+                });
+              } else {
+                sunreiMap.set(spot.sunreiId, {
+                  title: spot.sunreiTitle,
+                  tags: spot.sunreiTags || [],
+                  spots: [{ id: spot.id, title: spot.title }],
+                });
+              }
+            });
+            const sunreis = Array.from(sunreiMap.values());
 
             return (
               <MarkerInfoWindow
@@ -128,8 +143,9 @@ export const SunreiMap: React.FC<SunreiMapProps> = ({
                 position={{ lat: selectedMarker.lat, lng: selectedMarker.lng }}
                 placeName={selectedMarker.placeName}
                 placeAddress={selectedMarker.placeAddress}
-                sunreiTitles={sunreiTitles}
+                sunreis={sunreis}
                 markerState={markerState}
+                onClose={() => setSelectedPlaceId(null)}
                 onClick={() => {
                   // InfoWindow 클릭 시 Place 상세 Dialog 열기
                   setSelectedPlaceId(null);

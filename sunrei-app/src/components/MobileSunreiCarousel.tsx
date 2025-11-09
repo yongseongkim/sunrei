@@ -1,42 +1,73 @@
 'use client';
 
+import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { Search } from 'lucide-react';
+import { MapPin, Search } from 'lucide-react';
 
-interface Sunrei {
+// YouTube video ID 추출 함수
+function getYoutubeVideoId(url: string): string | null {
+  if (!url) return null;
+
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\s]+)/,
+    /youtube\.com\/watch\?.*v=([^&\s]+)/,
+  ];
+
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match && match[1]) {
+      return match[1];
+    }
+  }
+
+  return null;
+}
+
+// YouTube 썸네일 URL 생성
+function getYoutubeThumbnail(videoId: string): string {
+  return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+}
+
+interface Spot {
   id: string;
   title: string;
   description?: string;
   youtubeLink?: string;
-  images?: any[];
-  spots?: any[];
+  images: any[];
+  placeId: string;
+  placeName: string;
+  placeAddress: string;
+  lat: number;
+  lng: number;
+  sunreiId: string;
+  sunreiTitle: string;
 }
 
 interface MobileSunreiCarouselProps {
-  sunreis: Sunrei[];
+  spots: Spot[];
   searchQuery: string;
   onSearchChange: (query: string) => void;
-  onSunreiClick: (sunreiId: string) => void;
+  onSpotClick: (spot: Spot) => void;
   loading?: boolean;
 }
 
 export const MobileSunreiCarousel: React.FC<MobileSunreiCarouselProps> = ({
-  sunreis,
+  spots,
   searchQuery,
   onSearchChange,
-  onSunreiClick,
+  onSpotClick,
   loading,
 }) => {
   // 검색 필터링
-  const filteredSunreis = searchQuery.trim()
-    ? sunreis.filter(
-        (sunrei) =>
-          sunrei.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          sunrei.description
-            ?.toLowerCase()
-            .includes(searchQuery.toLowerCase()),
+  const filteredSpots = searchQuery.trim()
+    ? spots.filter(
+        (spot) =>
+          spot.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          spot.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          spot.sunreiTitle?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          spot.placeName?.toLowerCase().includes(searchQuery.toLowerCase()),
       )
-    : sunreis;
+    : spots;
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg z-10">
@@ -56,62 +87,92 @@ export const MobileSunreiCarousel: React.FC<MobileSunreiCarouselProps> = ({
 
       {/* 가로 스크롤 카드 */}
       <div className="overflow-x-auto overflow-y-hidden scrollbar-hide">
-        <div className="flex gap-3 p-3 min-w-max">
+        <div className="flex gap-2 p-3 min-w-max">
           {loading ? (
             // 로딩 스켈레톤
             <>
               {[...Array(3)].map((_, i) => (
                 <div
                   key={i}
-                  className="w-64 h-32 bg-muted rounded-lg animate-pulse flex-shrink-0"
-                />
+                  className="w-64 flex-shrink-0 border rounded-lg overflow-hidden bg-white"
+                >
+                  <div className="w-full aspect-[2/1] bg-muted animate-pulse" />
+                  <div className="p-2 space-y-1">
+                    <div className="h-3 w-2/3 bg-muted rounded animate-pulse" />
+                    <div className="h-3 w-full bg-muted rounded animate-pulse" />
+                    <div className="h-2.5 w-full bg-muted rounded animate-pulse" />
+                    <div className="h-2.5 w-3/4 bg-muted rounded animate-pulse" />
+                  </div>
+                </div>
               ))}
             </>
-          ) : filteredSunreis.length === 0 ? (
+          ) : filteredSpots.length === 0 ? (
             <div className="w-full text-center py-8 text-muted-foreground">
               검색 결과가 없습니다
             </div>
           ) : (
-            filteredSunreis.map((sunrei) => {
-              // 첫 번째 이미지 가져오기
-              const firstImage =
-                sunrei.images?.[0]?.images?.[0]?.url ||
-                sunrei.spots?.[0]?.images?.[0]?.images?.[0]?.url;
+            filteredSpots.map((spot) => {
+              // 썸네일 가져오기
+              let thumbnail: string | null = null;
 
-              // 장소 개수 계산
-              const placeCount = new Set(
-                sunrei.spots?.map((spot: any) => spot.place?.id),
-              ).size;
+              // 1. YouTube 썸네일
+              if (spot.youtubeLink) {
+                const videoId = getYoutubeVideoId(spot.youtubeLink);
+                if (videoId) {
+                  thumbnail = getYoutubeThumbnail(videoId);
+                }
+              }
+
+              // 2. 이미지
+              if (!thumbnail && spot.images?.[0]?.images?.[0]?.url) {
+                thumbnail = spot.images[0].images[0].url;
+              }
 
               return (
                 <div
-                  key={sunrei.id}
-                  onClick={() => onSunreiClick(sunrei.id)}
-                  className="w-64 flex-shrink-0 bg-white rounded-lg border shadow-sm overflow-hidden cursor-pointer hover:shadow-md transition-shadow snap-start"
+                  key={spot.id}
+                  onClick={() => onSpotClick(spot)}
+                  className="w-64 flex-shrink-0 border rounded-lg overflow-hidden bg-white cursor-pointer transition-all hover:border-muted-foreground/50 hover:shadow-md snap-start"
                 >
-                  {/* 썸네일 */}
-                  {firstImage ? (
-                    <div className="relative h-24 bg-muted">
+                  {/* 썸네일 - 2:1 비율 */}
+                  {thumbnail ? (
+                    <div className="w-full aspect-[2/1] bg-muted">
                       <img
-                        src={firstImage}
-                        alt={sunrei.title}
+                        src={thumbnail}
+                        alt={spot.title}
                         className="w-full h-full object-cover"
                       />
                     </div>
                   ) : (
-                    <div className="h-24 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-                      <span className="text-4xl">🗾</span>
+                    <div className="w-full aspect-[2/1] bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+                      <span className="text-3xl">🗾</span>
                     </div>
                   )}
 
-                  {/* 카드 내용 */}
-                  <div className="p-3">
-                    <h3 className="font-semibold text-sm line-clamp-1 mb-1">
-                      {sunrei.title}
+                  {/* 정보 */}
+                  <div className="p-2 space-y-1">
+                    {/* Sunrei 제목 */}
+                    <Badge variant="secondary" className="text-xs h-5">
+                      <span className="truncate">{spot.sunreiTitle}</span>
+                    </Badge>
+
+                    {/* Spot 제목 */}
+                    <h3 className="font-semibold text-sm line-clamp-1 leading-tight">
+                      {spot.title}
                     </h3>
-                    <p className="text-xs text-muted-foreground">
-                      {placeCount}개 장소
-                    </p>
+
+                    {/* Description */}
+                    {spot.description && (
+                      <p className="text-xs text-muted-foreground line-clamp-1 leading-relaxed">
+                        {spot.description}
+                      </p>
+                    )}
+
+                    {/* 장소 */}
+                    <div className="flex items-start gap-1 text-xs text-muted-foreground">
+                      <MapPin className="w-3 h-3 flex-shrink-0 mt-0.5" />
+                      <span className="line-clamp-1">{spot.placeName}</span>
+                    </div>
                   </div>
                 </div>
               );

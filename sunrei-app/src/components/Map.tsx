@@ -240,6 +240,20 @@ const MapComponent: React.FC<MapProps> = ({ center, zoom, onMapLoad, onBoundsCha
     }
   }, [ref, map, center, zoom, onMapLoad]);
 
+  // Update map center when center prop changes
+  useEffect(() => {
+    if (map && center) {
+      map.panTo(center);
+    }
+  }, [map, center.lat, center.lng]);
+
+  // Update map zoom when zoom prop changes
+  useEffect(() => {
+    if (map && zoom) {
+      map.setZoom(zoom);
+    }
+  }, [map, zoom]);
+
   // Add bounds changed listener
   useEffect(() => {
     if (map && onBoundsChanged) {
