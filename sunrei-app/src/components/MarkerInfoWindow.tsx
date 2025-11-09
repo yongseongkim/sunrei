@@ -5,24 +5,34 @@ import { useEffect, useRef } from 'react';
 interface MarkerInfoWindowProps {
   position: { lat: number; lng: number };
   map?: google.maps.Map;
-  sunreiTitle: string;
   placeName: string;
+  placeAddress: string;
+  sunreis: Array<{
+    title: string;
+    tags: string[];
+    spots: Array<{ id: string; title: string }>;
+  }>; // Sunrei with tags and spots
   markerState?: 'selected' | 'related' | 'default';
+  onClose?: () => void;
   onClick?: () => void;
 }
 
 export const MarkerInfoWindow: React.FC<MarkerInfoWindowProps> = ({
   position,
   map,
-  sunreiTitle,
   placeName,
+  placeAddress,
+  sunreis,
   markerState = 'default',
+  onClose,
   onClick,
 }) => {
   const overlayRef = useRef<google.maps.OverlayView | null>(null);
 
   useEffect(() => {
-    if (!map) return;
+    if (!map) {
+      return;
+    }
 
     // 기존 오버레이 제거
     if (overlayRef.current) {
@@ -35,210 +45,351 @@ export const MarkerInfoWindow: React.FC<MarkerInfoWindowProps> = ({
       private position: google.maps.LatLng;
       private containerDiv: HTMLDivElement | null = null;
       private onClick?: () => void;
-      private sunreiTitle: string;
+      private onClose?: () => void;
       private placeName: string;
+      private placeAddress: string;
+      private sunreis: Array<{
+        title: string;
+        tags: string[];
+        spots: Array<{ id: string; title: string }>;
+      }>;
       private markerState: 'selected' | 'related' | 'default';
-      private containerWidth: number = 0;
-      private containerHeight: number = 0;
 
       constructor(
         position: google.maps.LatLng,
-        sunreiTitle: string,
         placeName: string,
+        placeAddress: string,
+        sunreis: Array<{
+          title: string;
+          tags: string[];
+          spots: Array<{ id: string; title: string }>;
+        }>,
         markerState: 'selected' | 'related' | 'default',
+        onClose?: () => void,
         onClick?: () => void,
       ) {
         super();
         this.position = position;
-        this.sunreiTitle = sunreiTitle;
         this.placeName = placeName;
+        this.placeAddress = placeAddress;
+        this.sunreis = sunreis;
         this.markerState = markerState;
+        this.onClose = onClose;
         this.onClick = onClick;
       }
 
       onAdd() {
-        // Canvas를 사용하여 텍스트 너비 측정 및 텍스트 자르기
-        const canvas = document.createElement('canvas');
-        const context = canvas.getContext('2d');
-
-        const maxTextWidth = 150; // 최대 텍스트 너비 (padding 제외)
-
-        // Sunrei 제목 처리
-        let displayTitle = this.sunreiTitle;
-        if (context) {
-          context.font = "700 12px 'SpoqaHanSans', -apple-system, sans-serif";
-          let titleWidth = context.measureText(displayTitle).width;
-
-          // 너무 길면 자르기
-          if (titleWidth > maxTextWidth) {
-            while (titleWidth > maxTextWidth && displayTitle.length > 0) {
-              displayTitle = displayTitle.slice(0, -1);
-              titleWidth = context.measureText(displayTitle + '...').width;
-            }
-            displayTitle = displayTitle + '...';
-          }
-        }
-
-        // Place 이름 처리
-        let displayPlace = this.placeName;
-        if (context) {
-          context.font = "400 11px 'SpoqaHanSans', -apple-system, sans-serif";
-          let placeWidth = context.measureText(displayPlace).width;
-
-          // 너무 길면 자르기
-          if (placeWidth > maxTextWidth) {
-            while (placeWidth > maxTextWidth && displayPlace.length > 0) {
-              displayPlace = displayPlace.slice(0, -1);
-              placeWidth = context.measureText(displayPlace + '...').width;
-            }
-            displayPlace = displayPlace + '...';
-          }
-        }
-
-        // 최종 너비 측정
-        if (context) {
-          context.font = "700 12px 'SpoqaHanSans', -apple-system, sans-serif";
-        }
-        const titleWidth = context ? context.measureText(displayTitle).width : 0;
-
-        if (context) {
-          context.font = "400 11px 'SpoqaHanSans', -apple-system, sans-serif";
-        }
-        const placeWidth = context ? context.measureText(displayPlace).width : 0;
-
-        // padding (12px * 2) + 텍스트 너비, 최소 88px
-        const bubbleWidth = Math.max(88, Math.ceil(Math.max(titleWidth, placeWidth)) + 24);
-
-        // bubble 높이 계산: padding(8*2) + title line-height(16) + place line-height(14)
-        const bubbleHeight = 8 + 16 + 14 + 8; // 46px
-
-        // container 전체 높이: bubble bottom(14) + bubble height
-        const containerHeight = 14 + bubbleHeight; // 60px
-
-        // 너비와 높이를 인스턴스 변수에 저장
-        this.containerWidth = bubbleWidth;
-        this.containerHeight = containerHeight;
-
-        // 상태별 색상 결정
-        let bgColor: string;
-        let borderColor: string;
-
-        switch (this.markerState) {
-          case 'selected':
-            // A: 선택된 마커 - Viola
-            bgColor = 'var(--pantone-viola)'; // #9370DB
-            borderColor = 'rgba(147, 112, 219, 0.2)';
-            break;
-          case 'related':
-            // B: 같은 Sunrei - Cornflower Blue
-            bgColor = 'var(--pantone-cornflower-blue)'; // #6495ED
-            borderColor = 'rgba(100, 149, 237, 0.2)';
-            break;
-          default:
-            // C: 선택되지 않은 - Cobblestone
-            bgColor = 'var(--pantone-cobblestone)'; // #8B8680
-            borderColor = 'rgba(139, 134, 128, 0.2)';
-            break;
-        }
+        // 항상 흰색 배경 사용
+        const bgColor = '#FFFFFF';
+        const borderColor = 'rgba(0, 0, 0, 0.1)';
+        const textColor = '#000000';
+        const secondaryTextColor = 'rgba(0, 0, 0, 0.6)';
 
         // Container
         const container = document.createElement('div');
         container.style.position = 'absolute';
-        container.style.filter = 'drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.249547))';
-        container.style.cursor = 'pointer';
+        container.style.filter =
+          'drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15))';
         container.style.pointerEvents = 'auto';
-        container.style.width = bubbleWidth + 'px';
-        container.style.height = containerHeight + 'px';
+        container.style.minWidth = '240px';
+        container.style.maxWidth = '300px';
+        container.style.transition = 'transform 0.2s ease, filter 0.2s ease';
 
-        // Bubble (rounded rectangle with two lines of text)
+        // Bubble (card)
         const bubble = document.createElement('div');
         bubble.style.boxSizing = 'border-box';
         bubble.style.display = 'flex';
         bubble.style.flexDirection = 'column';
-        bubble.style.justifyContent = 'center';
-        bubble.style.alignItems = 'center';
-        bubble.style.padding = '8px 12px';
-        bubble.style.position = 'absolute';
-        bubble.style.width = '100%';
-        bubble.style.left = '0';
-        bubble.style.bottom = '14px';
+        bubble.style.gap = '8px';
+        bubble.style.padding = '16px';
+        bubble.style.position = 'relative';
         bubble.style.background = bgColor;
         bubble.style.border = `1px solid ${borderColor}`;
-        bubble.style.borderRadius = '100px';
-        bubble.style.whiteSpace = 'nowrap';
+        bubble.style.borderRadius = '12px';
+        bubble.style.transition = 'all 0.2s ease';
 
-        // Arrow (rotated square) - 컨테이너 중앙에 배치
+        // Header with place name and close button
+        const header = document.createElement('div');
+        header.style.display = 'flex';
+        header.style.alignItems = 'flex-start';
+        header.style.justifyContent = 'space-between';
+        header.style.gap = '8px';
+
+        // Place name (bold)
+        const placeNameText = document.createElement('div');
+        placeNameText.style.fontFamily =
+          "'Pretendard Variable', -apple-system, sans-serif";
+        placeNameText.style.fontWeight = '700';
+        placeNameText.style.fontSize = '14px';
+        placeNameText.style.lineHeight = '1.4';
+        placeNameText.style.color = textColor;
+        placeNameText.style.flex = '1';
+        placeNameText.style.overflow = 'hidden';
+        placeNameText.style.textOverflow = 'ellipsis';
+        placeNameText.style.whiteSpace = 'nowrap';
+        placeNameText.textContent = this.placeName;
+
+        // Close button (X)
+        const closeButton = document.createElement('button');
+        closeButton.style.background = 'transparent';
+        closeButton.style.border = 'none';
+        closeButton.style.padding = '0';
+        closeButton.style.width = '20px';
+        closeButton.style.height = '20px';
+        closeButton.style.cursor = 'pointer';
+        closeButton.style.display = 'flex';
+        closeButton.style.alignItems = 'center';
+        closeButton.style.justifyContent = 'center';
+        closeButton.style.borderRadius = '4px';
+        closeButton.style.transition = 'background 0.2s ease';
+        closeButton.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L13 13M1 13L13 1" stroke="${textColor}" stroke-width="2" stroke-linecap="round"/>
+        </svg>`;
+        closeButton.addEventListener('mouseenter', () => {
+          closeButton.style.background = 'rgba(0, 0, 0, 0.05)';
+        });
+        closeButton.addEventListener('mouseleave', () => {
+          closeButton.style.background = 'transparent';
+        });
+        if (this.onClose) {
+          closeButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.onClose!();
+          });
+        }
+
+        header.appendChild(placeNameText);
+        header.appendChild(closeButton);
+        bubble.appendChild(header);
+
+        // Address
+        const addressText = document.createElement('div');
+        addressText.style.fontFamily =
+          "'Pretendard Variable', -apple-system, sans-serif";
+        addressText.style.fontWeight = '400';
+        addressText.style.fontSize = '12px';
+        addressText.style.lineHeight = '1.4';
+        addressText.style.color = secondaryTextColor;
+        addressText.style.overflow = 'hidden';
+        addressText.style.textOverflow = 'ellipsis';
+        addressText.style.whiteSpace = 'nowrap';
+        addressText.textContent = this.placeAddress;
+        bubble.appendChild(addressText);
+
+        // Featured in section with count badge
+        if (this.sunreis.length > 0) {
+          // Separator
+          const separator = document.createElement('div');
+          separator.style.height = '1px';
+          separator.style.background = 'rgba(0, 0, 0, 0.08)';
+          separator.style.margin = '4px 0';
+          bubble.appendChild(separator);
+
+          // "Featured In:" with count badge
+          const featuredHeader = document.createElement('div');
+          featuredHeader.style.display = 'flex';
+          featuredHeader.style.alignItems = 'center';
+          featuredHeader.style.gap = '6px';
+          featuredHeader.style.marginBottom = '4px';
+
+          const featuredLabel = document.createElement('span');
+          featuredLabel.style.fontFamily =
+            "'Pretendard Variable', -apple-system, sans-serif";
+          featuredLabel.style.fontWeight = '600';
+          featuredLabel.style.fontSize = '11px';
+          featuredLabel.style.lineHeight = '1.4';
+          featuredLabel.style.color = secondaryTextColor;
+          featuredLabel.textContent = 'Featured In:';
+
+          const countBadge = document.createElement('span');
+          countBadge.style.fontFamily =
+            "'Pretendard Variable', -apple-system, sans-serif";
+          countBadge.style.fontWeight = '600';
+          countBadge.style.fontSize = '10px';
+          countBadge.style.lineHeight = '1';
+          countBadge.style.color = '#FFFFFF';
+          countBadge.style.background = '#6495ED'; // Cornflower Blue
+          countBadge.style.padding = '2px 6px';
+          countBadge.style.borderRadius = '10px';
+          countBadge.textContent = this.sunreis.length.toString();
+
+          featuredHeader.appendChild(featuredLabel);
+          featuredHeader.appendChild(countBadge);
+          bubble.appendChild(featuredHeader);
+
+          // Sunrei list (최대 3개만 표시)
+          const displaySunreis = this.sunreis.slice(0, 3);
+          const sunreiList = document.createElement('div');
+          sunreiList.style.display = 'flex';
+          sunreiList.style.flexDirection = 'column';
+          sunreiList.style.gap = '6px';
+
+          displaySunreis.forEach((sunrei) => {
+            const sunreiItem = document.createElement('div');
+            sunreiItem.style.display = 'flex';
+            sunreiItem.style.flexDirection = 'column';
+            sunreiItem.style.gap = '4px';
+
+            // Sunrei title
+            const title = document.createElement('div');
+            title.style.fontFamily =
+              "'Pretendard Variable', -apple-system, sans-serif";
+            title.style.fontWeight = '600';
+            title.style.fontSize = '12px';
+            title.style.lineHeight = '1.4';
+            title.style.color = textColor;
+            title.style.overflow = 'hidden';
+            title.style.textOverflow = 'ellipsis';
+            title.style.whiteSpace = 'nowrap';
+            title.textContent = sunrei.title;
+            sunreiItem.appendChild(title);
+
+            // Tags
+            if (sunrei.tags.length > 0) {
+              const tagsContainer = document.createElement('div');
+              tagsContainer.style.display = 'flex';
+              tagsContainer.style.gap = '4px';
+              tagsContainer.style.flexWrap = 'wrap';
+              tagsContainer.style.marginBottom = '2px';
+
+              sunrei.tags.forEach((tag) => {
+                const tagBadge = document.createElement('span');
+                tagBadge.style.fontFamily =
+                  "'Pretendard Variable', -apple-system, sans-serif";
+                tagBadge.style.fontWeight = '400';
+                tagBadge.style.fontSize = '10px';
+                tagBadge.style.lineHeight = '1';
+                tagBadge.style.color = secondaryTextColor;
+                tagBadge.style.background = 'rgba(0, 0, 0, 0.05)';
+                tagBadge.style.padding = '3px 6px';
+                tagBadge.style.borderRadius = '4px';
+                tagBadge.textContent = tag;
+                tagsContainer.appendChild(tagBadge);
+              });
+
+              sunreiItem.appendChild(tagsContainer);
+            }
+
+            // Spots 목록 (최대 2개만 표시)
+            if (sunrei.spots.length > 0) {
+              const spotsContainer = document.createElement('div');
+              spotsContainer.style.display = 'flex';
+              spotsContainer.style.flexDirection = 'column';
+              spotsContainer.style.gap = '2px';
+              spotsContainer.style.paddingLeft = '8px';
+
+              const displaySpots = sunrei.spots.slice(0, 2);
+              displaySpots.forEach((spot) => {
+                const spotItem = document.createElement('div');
+                spotItem.style.fontFamily =
+                  "'Pretendard Variable', -apple-system, sans-serif";
+                spotItem.style.fontWeight = '400';
+                spotItem.style.fontSize = '11px';
+                spotItem.style.lineHeight = '1.4';
+                spotItem.style.color = secondaryTextColor;
+                spotItem.style.overflow = 'hidden';
+                spotItem.style.textOverflow = 'ellipsis';
+                spotItem.style.whiteSpace = 'nowrap';
+                spotItem.textContent = `• ${spot.title}`;
+                spotsContainer.appendChild(spotItem);
+              });
+
+              // 더 많은 spots가 있으면 표시
+              if (sunrei.spots.length > 2) {
+                const moreSpots = document.createElement('div');
+                moreSpots.style.fontFamily =
+                  "'Pretendard Variable', -apple-system, sans-serif";
+                moreSpots.style.fontWeight = '400';
+                moreSpots.style.fontSize = '10px';
+                moreSpots.style.lineHeight = '1.4';
+                moreSpots.style.color = secondaryTextColor;
+                moreSpots.style.fontStyle = 'italic';
+                moreSpots.textContent = `  +${sunrei.spots.length - 2} more spots`;
+                spotsContainer.appendChild(moreSpots);
+              }
+
+              sunreiItem.appendChild(spotsContainer);
+            }
+
+            sunreiList.appendChild(sunreiItem);
+          });
+
+          bubble.appendChild(sunreiList);
+
+          // "+N more" if there are more than 3
+          if (this.sunreis.length > 3) {
+            const moreText = document.createElement('div');
+            moreText.style.fontFamily =
+              "'Pretendard Variable', -apple-system, sans-serif";
+            moreText.style.fontWeight = '400';
+            moreText.style.fontSize = '11px';
+            moreText.style.lineHeight = '1.4';
+            moreText.style.color = secondaryTextColor;
+            moreText.style.marginTop = '2px';
+            moreText.textContent = `+${this.sunreis.length - 3} more`;
+            bubble.appendChild(moreText);
+          }
+
+          // View Details button
+          const viewButton = document.createElement('button');
+          viewButton.style.fontFamily =
+            "'Pretendard Variable', -apple-system, sans-serif";
+          viewButton.style.fontWeight = '600';
+          viewButton.style.fontSize = '12px';
+          viewButton.style.lineHeight = '1';
+          viewButton.style.color = '#FFFFFF';
+          viewButton.style.background = '#000000';
+          viewButton.style.border = 'none';
+          viewButton.style.padding = '10px 16px';
+          viewButton.style.borderRadius = '8px';
+          viewButton.style.cursor = 'pointer';
+          viewButton.style.marginTop = '8px';
+          viewButton.style.width = '100%';
+          viewButton.style.transition = 'background 0.2s ease';
+          viewButton.textContent = 'View Details';
+          viewButton.addEventListener('mouseenter', () => {
+            viewButton.style.background = '#333333';
+          });
+          viewButton.addEventListener('mouseleave', () => {
+            viewButton.style.background = '#000000';
+          });
+          if (this.onClick) {
+            viewButton.addEventListener('click', (e) => {
+              e.stopPropagation();
+              this.onClick!();
+            });
+          }
+          bubble.appendChild(viewButton);
+        }
+
+        // Arrow (pointer)
         const arrow = document.createElement('div');
-        arrow.style.boxSizing = 'border-box';
         arrow.style.position = 'absolute';
-        arrow.style.width = '10px';
-        arrow.style.height = '10px';
+        arrow.style.width = '12px';
+        arrow.style.height = '12px';
         arrow.style.left = '50%';
-        arrow.style.marginLeft = '-5px';
-        arrow.style.bottom = '12.14px';
+        arrow.style.marginLeft = '-6px';
+        arrow.style.bottom = '-6px';
         arrow.style.background = bgColor;
         arrow.style.border = `1px solid ${borderColor}`;
+        arrow.style.borderTop = 'none';
+        arrow.style.borderLeft = 'none';
         arrow.style.transform = 'rotate(45deg)';
 
-        // First line: Sunrei Title
-        const titleText = document.createElement('span');
-        titleText.style.fontFamily = "'SpoqaHanSans', -apple-system, sans-serif";
-        titleText.style.fontWeight = '700';
-        titleText.style.fontSize = '12px';
-        titleText.style.lineHeight = '16px';
-        titleText.style.color = '#FFFFFF';
-        titleText.textContent = displayTitle;
-
-        // Second line: Place Name
-        const placeText = document.createElement('span');
-        placeText.style.fontFamily = "'SpoqaHanSans', -apple-system, sans-serif";
-        placeText.style.fontWeight = '400';
-        placeText.style.fontSize = '11px';
-        placeText.style.lineHeight = '14px';
-        placeText.style.color = 'rgba(255, 255, 255, 0.9)';
-        placeText.textContent = displayPlace;
-
-        bubble.appendChild(titleText);
-        bubble.appendChild(placeText);
-
-        // Blockers (to prevent bubble border from showing through arrow) - 컨테이너 중앙 기준
-        const leftBlocker = document.createElement('div');
-        leftBlocker.style.position = 'absolute';
-        leftBlocker.style.width = '2px';
-        leftBlocker.style.height = '1px';
-        leftBlocker.style.left = '50%';
-        leftBlocker.style.marginLeft = '-6px';
-        leftBlocker.style.bottom = '14px';
-        leftBlocker.style.background = bgColor;
-
-        const rightBlocker = document.createElement('div');
-        rightBlocker.style.position = 'absolute';
-        rightBlocker.style.width = '2px';
-        rightBlocker.style.height = '1px';
-        rightBlocker.style.left = '50%';
-        rightBlocker.style.marginLeft = '3px';
-        rightBlocker.style.bottom = '14px';
-        rightBlocker.style.background = bgColor;
-
-        const centerBlocker = document.createElement('div');
-        centerBlocker.style.position = 'absolute';
-        centerBlocker.style.width = '7px';
-        centerBlocker.style.height = '1px';
-        centerBlocker.style.left = '50%';
-        centerBlocker.style.marginLeft = '-4px';
-        centerBlocker.style.bottom = '14px';
-        centerBlocker.style.background = bgColor;
-
-        container.appendChild(arrow);
         container.appendChild(bubble);
-        container.appendChild(leftBlocker);
-        container.appendChild(rightBlocker);
-        container.appendChild(centerBlocker);
+        container.appendChild(arrow);
 
-        // Click handler
-        if (this.onClick) {
-          container.addEventListener('click', this.onClick);
-        }
+        // Hover effect on container
+        container.addEventListener('mouseenter', () => {
+          container.style.transform = 'translateY(-2px)';
+          container.style.filter =
+            'drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.2))';
+        });
+        container.addEventListener('mouseleave', () => {
+          container.style.transform = 'translateY(0)';
+          container.style.filter =
+            'drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15))';
+        });
 
         this.containerDiv = container;
         const panes = this.getPanes();
@@ -252,12 +403,15 @@ export const MarkerInfoWindow: React.FC<MarkerInfoWindowProps> = ({
         const position = overlayProjection.fromLatLngToDivPixel(this.position);
 
         if (position) {
-          // Arrow와 마커 사이에 간격을 두기 위해 추가 offset 적용
-          // 마커 반지름(6-8px) + 간격(8px) = 약 5px 위로 이동
-          const markerGap = 5;
+          const rect = this.containerDiv.getBoundingClientRect();
+          const width = rect.width || 200;
+          const height = rect.height || 100;
 
-          this.containerDiv.style.left = position.x - this.containerWidth / 2 + 'px';
-          this.containerDiv.style.top = position.y + 5 - this.containerHeight - markerGap + 'px';
+          // 마커 위에 표시 (마커 + 간격)
+          const markerGap = 20;
+
+          this.containerDiv.style.left = `${position.x - width / 2}px`;
+          this.containerDiv.style.top = `${position.y - height - markerGap}px`;
         }
       }
 
@@ -271,9 +425,11 @@ export const MarkerInfoWindow: React.FC<MarkerInfoWindowProps> = ({
 
     const overlay = new InfoWindowOverlay(
       new google.maps.LatLng(position.lat, position.lng),
-      sunreiTitle,
       placeName,
+      placeAddress,
+      sunreis,
       markerState,
+      onClose,
       onClick,
     );
     overlay.setMap(map);
@@ -285,7 +441,17 @@ export const MarkerInfoWindow: React.FC<MarkerInfoWindowProps> = ({
         overlayRef.current = null;
       }
     };
-  }, [map, position.lat, position.lng, sunreiTitle, placeName, markerState, onClick]);
+  }, [
+    map,
+    position.lat,
+    position.lng,
+    placeName,
+    placeAddress,
+    sunreis,
+    markerState,
+    onClose,
+    onClick,
+  ]);
 
   return null;
 };

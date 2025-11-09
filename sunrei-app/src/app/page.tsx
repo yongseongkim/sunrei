@@ -1,64 +1,15 @@
 'use client';
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
-import { Separator } from '@/components/ui/separator';
-import { Skeleton } from '@/components/ui/skeleton';
-import { useSunreis } from '@/hooks/useSunreis';
-import { config } from '@/lib/config';
-import { useMapStore } from '@/stores/map-store';
+import { useMapSpots } from '@/hooks/useMapSpots';
 import { useUIStore } from '@/stores/ui-store';
-import { ExternalLink, MapPin } from 'lucide-react';
-import { useCallback, useRef, useState } from 'react';
-import { GoogleMap, Marker } from '../components/Map';
-import { MarkerInfoWindow } from '../components/MarkerInfoWindow';
-import { boundsToWKTPolygon } from '../utils/map-utils';
-
-const center = {
-  lat: 35.6762,
-  lng: 139.6503,
-};
-
-// YouTube video ID 추출 함수
-function getYoutubeVideoId(url: string): string | null {
-  if (!url) return null;
-
-  // https://www.youtube.com/watch?v=VIDEO_ID
-  // https://youtu.be/VIDEO_ID
-  // https://www.youtube.com/embed/VIDEO_ID
-  const patterns = [
-    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\s]+)/,
-    /youtube\.com\/watch\?.*v=([^&\s]+)/,
-  ];
-
-  for (const pattern of patterns) {
-    const match = url.match(pattern);
-    if (match && match[1]) {
-      return match[1];
-    }
-  }
-
-  return null;
-}
-
-// YouTube 썸네일 URL 생성
-function getYoutubeThumbnail(videoId: string): string {
-  return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-}
+import { useMapStore } from '@/stores/map-store';
+import { useMemo, useRef, useState } from 'react';
+import { Header } from '../components/Header';
+import { SunreiDetailDialog } from '../components/SunreiDetailDialog';
+import { SunreiMap } from '../components/SunreiMap';
+import { SunreiSidebar } from '../components/SunreiSidebar';
+import { MobileSunreiCarousel } from '../components/MobileSunreiCarousel';
+import { PlaceDetailDialog } from '../components/PlaceDetailDialog';
 
 export default function Home() {
   // Zustand stores
@@ -66,361 +17,237 @@ export default function Home() {
     selectedSunrei,
     hoveredMarker,
     modalSpot,
+    searchQuery,
+    selectedPlaceId,
     setSelectedSunrei,
     setHoveredMarker,
     setModalSpot,
+    setSearchQuery,
+    setSelectedPlaceId,
   } = useUIStore();
-  const { isLoaded, setIsLoaded } = useMapStore();
+  const { setCenter, setZoom } = useMapStore();
 
   // Local state
-  const [selectedSpot, setSelectedSpot] = useState<string | null>(null);
   const [currentPolygon, setCurrentPolygon] = useState<string | undefined>(
     undefined,
   );
+  const [placeDetail, setPlaceDetail] = useState<any>(null);
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // React Query
-  const { data: sunreis = [], isLoading: loading } = useSunreis(currentPolygon);
+  // React Query - fetch map spots with embedded sunrei info
+  const { data: mapSpots = [], isLoading: loading } = useMapSpots(currentPolygon);
 
-  const onLoad = useCallback(() => {
-    setIsLoaded(true);
-  }, [setIsLoaded]);
+  // Debounced bounds change handler
+  const handleBoundsChanged = (polygon: string) => {
+    // Clear existing timer
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
 
-  const handleBoundsChanged = useCallback(
-    (bounds: google.maps.LatLngBounds) => {
-      // Clear existing timer
-      if (debounceTimerRef.current) {
-        clearTimeout(debounceTimerRef.current);
-      }
-
-      // Set new timer with 500ms delay
-      debounceTimerRef.current = setTimeout(() => {
-        const polygon = boundsToWKTPolygon(bounds);
-        setCurrentPolygon(polygon);
-      }, 500);
-    },
-    [],
-  );
-
-  const allSpots = sunreis.flatMap(
-    (sunrei) =>
-      sunrei.spots?.map((spot) => ({
-        id: spot.id,
-        title: spot.title,
-        description: spot.description,
-        youtubeLink: spot.youtubeLink,
-        images: spot.images,
-        placeId: spot.place.id,
-        placeName: spot.place.name,
-        placeAddress: spot.place.address,
-        lat: spot.place.latitude || 0,
-        lng: spot.place.longitude || 0,
-        sunreiId: sunrei.id,
-        sunreiTitle: sunrei.title,
-      })) || [],
-  );
-
-  const handleSunreiClick = (sunreiId: string) => {
-    setSelectedSunrei(sunreiId);
-    setSelectedSpot(null);
+    // Set new timer with 500ms delay
+    debounceTimerRef.current = setTimeout(() => {
+      setCurrentPolygon(polygon);
+    }, 500);
   };
 
+  // Transform MapSpotDTO to the format expected by components
+  const allSpots = mapSpots.map((spot) => ({
+    id: spot.id,
+    title: spot.title,
+    description: spot.description,
+    youtubeLink: spot.youtubeLink,
+    images: spot.images,
+    placeId: spot.place?.id || '',
+    placeName: spot.place?.name || '',
+    placeAddress: spot.place?.address || '',
+    lat: spot.place?.latitude || 0,
+    lng: spot.place?.longitude || 0,
+    sunreiId: spot.sunreiId,
+    sunreiTitle: spot.sunreiInfo?.title || '',
+    sunreiTags: spot.sunreiInfo?.tags?.map((tag) => tag.name) || [],
+  }));
+
+  // Place 기준으로 마커 그룹화
+  const groupedMarkers = useMemo(() => {
+    const markerMap = new Map<
+      string,
+      {
+        placeId: string;
+        placeName: string;
+        placeAddress: string;
+        lat: number;
+        lng: number;
+        spots: typeof allSpots;
+      }
+    >();
+
+    allSpots.forEach((spot) => {
+      const existing = markerMap.get(spot.placeId);
+      if (existing) {
+        existing.spots.push(spot);
+      } else {
+        markerMap.set(spot.placeId, {
+          placeId: spot.placeId,
+          placeName: spot.placeName,
+          placeAddress: spot.placeAddress,
+          lat: spot.lat,
+          lng: spot.lng,
+          spots: [spot],
+        });
+      }
+    });
+
+    return Array.from(markerMap.values());
+  }, [allSpots]);
+
+  // Handlers
+  const handleSunreiClick = (sunreiId: string) => {
+    setSelectedSunrei(sunreiId);
+  };
+
+  const handleMarkerClick = (marker: any) => {
+    setPlaceDetail(marker);
+  };
+
+  const handleShowAllContent = () => {
+    setSelectedSunrei(null);
+    setSearchQuery('');
+  };
+
+  const handleCloseModal = () => {
+    setModalSpot(null);
+    // modalSpot을 닫을 때 placeDetail이 있었다면 다시 표시
+    // (이미 placeDetail state가 유지되고 있으므로 별도 처리 불필요)
+  };
+
+  const handleClosePlaceDetail = () => {
+    setPlaceDetail(null);
+    // modalSpot도 함께 닫기
+    setModalSpot(null);
+  };
+
+  // 장소 개수 계산
+  const totalPlaces = useMemo(() => {
+    const placeIds = new Set<string>();
+    allSpots.forEach((spot) => {
+      if (spot.placeId) {
+        placeIds.add(spot.placeId);
+      }
+    });
+    return placeIds.size;
+  }, [allSpots]);
+
+  // Sunrei 개수 계산
+  const totalSunreis = useMemo(() => {
+    const sunreiIds = new Set<string>();
+    allSpots.forEach((spot) => {
+      if (spot.sunreiId) {
+        sunreiIds.add(spot.sunreiId);
+      }
+    });
+    return sunreiIds.size;
+  }, [allSpots]);
+
+  // 검색 필터링된 spots
+  const filteredSpots = useMemo(() => {
+    if (!searchQuery.trim()) return allSpots;
+    const query = searchQuery.toLowerCase();
+    return allSpots.filter(
+      (spot) =>
+        spot.title?.toLowerCase().includes(query) ||
+        spot.description?.toLowerCase().includes(query) ||
+        spot.sunreiTitle?.toLowerCase().includes(query) ||
+        spot.placeName?.toLowerCase().includes(query),
+    );
+  }, [allSpots, searchQuery]);
+
+  // 모바일: 지도 영역에 보이는 Spot만 필터링
+  const visibleSpots = useMemo(() => {
+    // groupedMarkers에서 placeId 추출
+    const visiblePlaceIds = new Set<string>();
+    groupedMarkers.forEach((marker) => {
+      visiblePlaceIds.add(marker.placeId);
+    });
+
+    // 검색 필터링 적용 후 visible spot만 반환
+    return filteredSpots.filter((spot) => visiblePlaceIds.has(spot.placeId));
+  }, [groupedMarkers, filteredSpots]);
+
   return (
-    <div className="flex h-screen">
-      <div className="w-96 h-full overflow-y-auto border-r">
-        <div className="p-4">
-          <h1 className="text-2xl font-bold mb-6">성지순례</h1>
-          {loading ? (
-            <div className="space-y-4">
-              {[...Array(3)].map((_, i) => (
-                <Card key={i}>
-                  <CardHeader>
-                    <Skeleton className="h-6 w-3/4" />
-                    <Skeleton className="h-4 w-full" />
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-4 gap-1">
-                      {[...Array(4)].map((_, j) => (
-                        <Skeleton key={j} className="aspect-square" />
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="space-y-4">
-              {sunreis.map((sunrei: any) => (
-                <Card
-                  key={sunrei.id}
-                  className={`cursor-pointer transition-all ${
-                    selectedSunrei === sunrei.id
-                      ? 'border-primary'
-                      : 'hover:border-muted-foreground/50'
-                  }`}
-                  onClick={() => handleSunreiClick(sunrei.id)}
-                >
-                  <CardHeader>
-                    <CardTitle>{sunrei.title}</CardTitle>
-                    <CardDescription>{sunrei.description}</CardDescription>
-                    <div className="flex items-center justify-between pt-2">
-                      <Badge
-                        variant="secondary"
-                        className="flex items-center gap-1"
-                      >
-                        <MapPin className="w-3 h-3" />
-                        {sunrei.spots?.length || 0}개 장소
-                      </Badge>
-                      {sunrei.link && (
-                        <a
-                          href={sunrei.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="text-xs text-primary hover:underline flex items-center gap-1"
-                        >
-                          보러가기
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
-                      )}
-                    </div>
-                  </CardHeader>
-                  {(sunrei.images?.length > 0 ||
-                    (selectedSunrei === sunrei.id && sunrei.spots)) && (
-                    <CardContent>
-                      {sunrei.images && sunrei.images.length > 0 && (
-                        <div className="grid grid-cols-4 gap-1">
-                          {sunrei.images
-                            .slice(0, 4)
-                            .map((image: any, index: number) => (
-                              <div
-                                key={index}
-                                className="relative aspect-square rounded overflow-hidden"
-                              >
-                                <img
-                                  src={image.url || ''}
-                                  alt={sunrei.title || ''}
-                                  className="w-full h-full object-cover hover:scale-110 transition-transform cursor-pointer"
-                                />
-                                {sunrei.images &&
-                                  sunrei.images.length > 4 &&
-                                  index === 3 && (
-                                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                                      <span className="text-white text-sm font-medium">
-                                        +{sunrei.images.length - 4}
-                                      </span>
-                                    </div>
-                                  )}
-                              </div>
-                            ))}
-                        </div>
-                      )}
-                      {selectedSunrei === sunrei.id && sunrei.spots && (
-                        <>
-                          {sunrei.images && sunrei.images.length > 0 && (
-                            <Separator className="my-4" />
-                          )}
-                          <div>
-                            <p className="text-xs font-medium text-muted-foreground mb-2">
-                              방문 가능한 장소:
-                            </p>
-                            <div className="space-y-2">
-                              {sunrei.spots.map((spot: any) => (
-                                <div key={spot.id} className="space-y-1">
-                                  <p className="text-xs font-medium">
-                                    {spot.title}
-                                  </p>
-                                  <div
-                                    className="text-xs text-muted-foreground flex items-center gap-2 hover:text-primary ml-2 cursor-pointer"
-                                    onMouseEnter={() =>
-                                      setHoveredMarker(
-                                        `${spot.id}-${spot.place.id}`,
-                                      )
-                                    }
-                                    onMouseLeave={() => setHoveredMarker(null)}
-                                  >
-                                    <span className="w-1 h-1 bg-muted-foreground rounded-full"></span>
-                                    <span>
-                                      {spot.place.name} - {spot.place.address}
-                                    </span>
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </>
-                      )}
-                    </CardContent>
-                  )}
-                </Card>
-              ))}
-            </div>
-          )}
+    <div className="flex flex-col h-screen bg-muted/30">
+      {/* Header */}
+      <Header onViewMarkersClick={() => console.log('View markers clicked')} />
+
+      {/* Body with padding - 반응형 */}
+      <div className="flex flex-1 overflow-hidden lg:p-4 lg:gap-4">
+        {/* Sidebar - 데스크톱만 */}
+        <div className="hidden lg:flex">
+          <SunreiSidebar
+            spots={filteredSpots}
+            loading={loading}
+            searchQuery={searchQuery}
+            totalPlaces={totalPlaces}
+            totalSunreis={totalSunreis}
+            onSpotClick={(spot) => {
+              // 지도를 해당 장소로 이동
+              setCenter({ lat: spot.lat, lng: spot.lng });
+              setZoom(15); // 더 가까이 확대
+              // InfoWindow 표시
+              setSelectedPlaceId(spot.placeId);
+            }}
+            onSearchChange={setSearchQuery}
+            onShowAllContent={handleShowAllContent}
+          />
         </div>
-      </div>
 
-      <div className="flex-1 relative">
-        <GoogleMap
-          apiKey={config.googleMaps.apiKey}
-          center={center}
-          zoom={12}
-          onMapLoad={onLoad}
+        {/* Map - 전체 화면 */}
+        <SunreiMap
+          groupedMarkers={groupedMarkers}
+          selectedSunrei={selectedSunrei}
+          onMarkerClick={handleMarkerClick}
           onBoundsChanged={handleBoundsChanged}
-        >
-          {allSpots.map((spot) => {
-            const markerId = `${spot.id}-${spot.placeId}`;
-
-            // 마커 상태 결정
-            let markerState: 'selected' | 'related' | 'default';
-            if (
-              modalSpot &&
-              markerId === `${modalSpot.id}-${modalSpot.placeId}`
-            ) {
-              // A: 선택된 마커 (다이얼로그가 보이는 마커)
-              markerState = 'selected';
-            } else if (modalSpot && spot.sunreiId === modalSpot.sunreiId) {
-              // B: 같은 Sunrei의 마커들
-              markerState = 'related';
-            } else if (
-              selectedSunrei === spot.sunreiId ||
-              hoveredMarker === markerId
-            ) {
-              // hover나 선택된 sunrei도 related로 처리
-              markerState = 'related';
-            } else {
-              // C: 선택되지 않은 마커
-              markerState = 'default';
-            }
-
-            return (
-              <Marker
-                key={markerId}
-                position={{ lat: spot.lat, lng: spot.lng }}
-                title={`${spot.sunreiTitle} - ${spot.title} - ${spot.placeName}`}
-                markerState={markerState}
-                onClick={() => {
-                  setSelectedSunrei(spot.sunreiId);
-                  setModalSpot(spot);
-                }}
-              />
-            );
-          })}
-          {allSpots.map((spot) => {
-            const markerId = `${spot.id}-${spot.placeId}`;
-
-            // 마커 상태 결정 (동일한 로직)
-            let markerState: 'selected' | 'related' | 'default';
-            if (
-              modalSpot &&
-              markerId === `${modalSpot.id}-${modalSpot.placeId}`
-            ) {
-              markerState = 'selected';
-            } else if (modalSpot && spot.sunreiId === modalSpot.sunreiId) {
-              markerState = 'related';
-            } else if (
-              selectedSunrei === spot.sunreiId ||
-              hoveredMarker === markerId
-            ) {
-              markerState = 'related';
-            } else {
-              markerState = 'default';
-            }
-
-            return (
-              <MarkerInfoWindow
-                key={`info-${markerId}`}
-                position={{ lat: spot.lat, lng: spot.lng }}
-                sunreiTitle={spot.sunreiTitle}
-                placeName={spot.placeName}
-                markerState={markerState}
-                onClick={() => {
-                  setSelectedSunrei(spot.sunreiId);
-                  setModalSpot(spot);
-                }}
-              />
-            );
-          })}
-        </GoogleMap>
+        />
       </div>
 
-      <Dialog
-        open={!!modalSpot}
-        onOpenChange={(open) => !open && useUIStore.getState().closeModal()}
-      >
-        <DialogContent className="max-w-2xl">
-          <DialogHeader>
-            <DialogTitle>{modalSpot?.placeName}</DialogTitle>
-            <DialogDescription>{modalSpot?.placeAddress}</DialogDescription>
-            <p className="text-sm text-muted-foreground">
-              {modalSpot?.sunreiTitle} - {modalSpot?.title}
-            </p>
-          </DialogHeader>
-          {(() => {
-            // 이미지가 있으면 첫 번째 이미지 표시
-            const firstImage = modalSpot?.images?.[0]?.images?.[0];
-            if (firstImage?.url) {
-              return (
-                <div className="relative h-64 bg-muted rounded-lg overflow-hidden">
-                  <img
-                    src={firstImage.url}
-                    alt={modalSpot?.title || ''}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              );
-            }
+      {/* Mobile Carousel - 모바일만 */}
+      <div className="lg:hidden">
+        <MobileSunreiCarousel
+          spots={visibleSpots}
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          onSpotClick={(spot) => {
+            // 지도를 해당 장소로 이동
+            setCenter({ lat: spot.lat, lng: spot.lng });
+            setZoom(15); // 더 가까이 확대
+            // InfoWindow 표시
+            setSelectedPlaceId(spot.placeId);
+          }}
+          loading={loading}
+        />
+      </div>
 
-            // 이미지가 없고 YouTube 링크가 있으면 썸네일 표시
-            if (modalSpot?.youtubeLink) {
-              const videoId = getYoutubeVideoId(modalSpot.youtubeLink);
-              if (videoId) {
-                return (
-                  <a
-                    href={modalSpot.youtubeLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative h-64 bg-muted rounded-lg overflow-hidden block group cursor-pointer"
-                  >
-                    <img
-                      src={getYoutubeThumbnail(videoId)}
-                      alt={modalSpot?.title || ''}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors">
-                      <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center">
-                        <div className="w-0 h-0 border-l-[20px] border-l-white border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"></div>
-                      </div>
-                    </div>
-                  </a>
-                );
-              }
-            }
-
-            // 둘 다 없으면 이미지 영역 표시하지 않음
-            return null;
-          })()}
-          <div className="space-y-4">
-            <div>
-              <h3 className="font-semibold text-sm mb-1">설명</h3>
-              <p className="text-sm leading-relaxed">
-                {modalSpot?.description}
-              </p>
-            </div>
-            <Separator />
-            <Button variant="outline" className="w-full" asChild>
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${modalSpot?.lat},${modalSpot?.lng}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <ExternalLink className="w-4 h-4" />
-                Google Maps에서 보기
-              </a>
-            </Button>
-          </div>
-        </DialogContent>
-      </Dialog>
+      {/* Detail Dialogs */}
+      {/* PlaceDetailDialog는 modalSpot이 없을 때만 표시 */}
+      {placeDetail && !modalSpot && (
+        <PlaceDetailDialog
+          placeName={placeDetail.placeName}
+          placeAddress={placeDetail.placeAddress}
+          lat={placeDetail.lat}
+          lng={placeDetail.lng}
+          spots={placeDetail.spots}
+          onClose={handleClosePlaceDetail}
+          onSpotClick={(spot) => {
+            // placeDetail을 유지하고 modalSpot만 설정
+            setModalSpot(spot);
+          }}
+        />
+      )}
+      {/* SunreiDetailDialog는 modalSpot이 있을 때 표시 */}
+      <SunreiDetailDialog
+        modalSpot={modalSpot}
+        onClose={handleCloseModal}
+        onBack={placeDetail ? () => setModalSpot(null) : undefined}
+      />
     </div>
   );
 }

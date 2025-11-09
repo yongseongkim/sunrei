@@ -9,6 +9,7 @@ import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
 
 class SunreiSpotService {
+    private val placeService = PlaceService()
 
     fun getById(id: String): SunreiSpot? = transaction {
         (SunreiSpots innerJoin Places)
@@ -70,6 +71,43 @@ class SunreiSpotService {
                     placeId to spot
                 }
                 .groupBy({ it.first }, { it.second })
+        }
+    }
+
+    fun listInPolygon(polygonWKT: String, limit: Int = 200): List<SunreiSpot> {
+        val places = placeService.listByPolygon(polygonWKT, limit)
+        if (places.isEmpty()) return emptyList()
+        val placeIds = places.map { it.id }
+
+        return transaction {
+            (SunreiSpots innerJoin Places)
+                .select {
+                    (SunreiSpots.placeId inList placeIds) and
+                            (SunreiSpots.deletedAt.isNull())
+                }
+                .map { row ->
+                    SunreiSpot(
+                        id = row[SunreiSpots.id],
+                        sunreiId = row[SunreiSpots.sunreiId],
+                        title = row[SunreiSpots.title],
+                        description = row[SunreiSpots.description],
+                        youtubeLink = row[SunreiSpots.youtubeLink],
+                        images = row[SunreiSpots.images],
+                        place = Place(
+                            id = row[Places.id],
+                            name = row[Places.name],
+                            address = row[Places.address],
+                            latitude = row[Places.latitude],
+                            longitude = row[Places.longitude],
+                            googleMapsId = row[Places.googleMapsId],
+                            isClosed = row[Places.isClosed],
+                            closedReason = row[Places.closedReason],
+                            closedAt = row[Places.closedAt],
+                            notes = row[Places.notes],
+                            deletedAt = row[Places.deletedAt]
+                        )
+                    )
+                }
         }
     }
 }
