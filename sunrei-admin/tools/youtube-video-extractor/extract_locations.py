@@ -235,7 +235,7 @@ def build_user_prompt(
 def extract_with_claude(
     video_data: VideoTranscript,
     api_key: str,
-    model: str = "claude-sonnet-4-20250514"
+    model: str = "claude-sonnet-4-5-20250929"
 ) -> ExtractionResult:
     """
     Extract locations using Anthropic Claude API.
@@ -321,7 +321,7 @@ def extract_with_claude(
 def extract_with_gemini(
     video_data: VideoTranscript,
     api_key: str,
-    model: str = "gemini-2.0-flash"
+    model: str = "gemini-2.5-flash"
 ) -> ExtractionResult:
     """
     Extract locations using Google Gemini API.
@@ -424,8 +424,8 @@ def extract_locations(
 
     # Default models
     default_models = {
-        AIProvider.CLAUDE: "claude-sonnet-4-20250514",
-        AIProvider.GEMINI: "gemini-2.0-flash"
+        AIProvider.CLAUDE: "claude-sonnet-4-5-20250929",
+        AIProvider.GEMINI: "gemini-2.5-flash"
     }
     model = model or default_models[provider]
 

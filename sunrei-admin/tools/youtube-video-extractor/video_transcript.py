@@ -1,5 +1,3 @@
-"""YouTube video transcript and metadata extraction."""
-
 import os
 from typing import Optional
 from dataclasses import dataclass, field
@@ -7,12 +5,11 @@ from googleapiclient.discovery import build
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api._errors import TranscriptsDisabled, NoTranscriptFound
 
-from utils import extract_video_id, clean_description, extract_timeline_from_description
+from utils import extract_video_id, extract_playlist_id, clean_description, extract_timeline_from_description
 
 
 @dataclass
 class TranscriptEntry:
-    """Single transcript entry with timing."""
     text: str
     start: float
     duration: float
@@ -20,7 +17,6 @@ class TranscriptEntry:
 
 @dataclass
 class VideoMetadata:
-    """YouTube video metadata."""
     video_id: str
     title: str
     description: str
@@ -42,11 +38,10 @@ class VideoMetadata:
 
 @dataclass
 class VideoTranscript:
-    """Complete video transcript data."""
     metadata: VideoMetadata
     transcript: list[TranscriptEntry] = field(default_factory=list)
     language: Optional[str] = None
-    transcript_source: str = "none"  # "youtube_api", "google_stt", "none"
+    transcript_source: str = "none"
     error: Optional[str] = None
 
     @property
@@ -85,17 +80,101 @@ class VideoTranscript:
         }
 
 
+@dataclass
+class PlaylistMetadata:
+    playlist_id: str
+    title: str
+    channel_name: str
+    channel_id: str
+    video_count: int
+    description: str
+
+    @property
+    def url(self) -> str:
+        return f"https://www.youtube.com/playlist?list={self.playlist_id}"
+
+
+@dataclass
+class PlaylistVideo:
+    video_id: str
+    title: str
+    position: int
+
+
+def get_playlist_metadata(
+    playlist_id: str,
+    api_key: Optional[str] = None
+) -> Optional[PlaylistMetadata]:
+    api_key = api_key or os.getenv('YOUTUBE_API_KEY')
+    if not api_key:
+        raise ValueError("YOUTUBE_API_KEY not found in environment")
+
+    youtube = build('youtube', 'v3', developerKey=api_key)
+
+    request = youtube.playlists().list(
+        part='snippet,contentDetails',
+        id=playlist_id
+    )
+    response = request.execute()
+
+    if not response.get('items'):
+        return None
+
+    item = response['items'][0]
+    snippet = item['snippet']
+
+    return PlaylistMetadata(
+        playlist_id=playlist_id,
+        title=snippet['title'],
+        channel_name=snippet['channelTitle'],
+        channel_id=snippet['channelId'],
+        video_count=item['contentDetails']['itemCount'],
+        description=snippet.get('description', '')
+    )
+
+
+def get_playlist_video_ids(
+    playlist_id: str,
+    api_key: Optional[str] = None
+) -> list[PlaylistVideo]:
+    api_key = api_key or os.getenv('YOUTUBE_API_KEY')
+    if not api_key:
+        raise ValueError("YOUTUBE_API_KEY not found in environment")
+
+    youtube = build('youtube', 'v3', developerKey=api_key)
+
+    videos = []
+    next_page_token = None
+
+    while True:
+        request = youtube.playlistItems().list(
+            part='snippet,contentDetails',
+            playlistId=playlist_id,
+            maxResults=50,
+            pageToken=next_page_token
+        )
+        response = request.execute()
+
+        for item in response.get('items', []):
+            video_id = item['contentDetails']['videoId']
+            title = item['snippet']['title']
+            position = item['snippet']['position']
+
+            if title != 'Deleted video' and title != 'Private video':
+                videos.append(PlaylistVideo(
+                    video_id=video_id,
+                    title=title,
+                    position=position
+                ))
+
+        next_page_token = response.get('nextPageToken')
+        if not next_page_token:
+            break
+
+    return videos
+
+
 def get_video_metadata(video_id: str, api_key: str) -> Optional[VideoMetadata]:
-    """
-    Fetch video metadata from YouTube Data API.
-
-    Args:
-        video_id: YouTube video ID
-        api_key: YouTube Data API key
-
-    Returns:
-        VideoMetadata or None if video not found
-    """
     youtube = build('youtube', 'v3', developerKey=api_key)
 
     request = youtube.videos().list(
@@ -130,18 +209,8 @@ def get_video_metadata(video_id: str, api_key: str) -> Optional[VideoMetadata]:
 
 def get_youtube_transcript(
     video_id: str,
-    languages: list[str] = ['ko', 'ja', 'en', 'zh']
+    languages: list[str] = ['ko', 'en']
 ) -> tuple[list[TranscriptEntry], Optional[str], Optional[str]]:
-    """
-    Get transcript from YouTube Transcript API.
-
-    Args:
-        video_id: YouTube video ID
-        languages: Preferred languages in order
-
-    Returns:
-        Tuple of (transcript entries, language code, error message)
-    """
     try:
         ytt_api = YouTubeTranscriptApi()
         fetched = ytt_api.fetch(video_id, languages=languages)
@@ -166,19 +235,8 @@ def get_youtube_transcript(
 def extract_video_transcript(
     url_or_id: str,
     api_key: Optional[str] = None,
-    languages: list[str] = ['ko', 'ja', 'en', 'zh']
+    languages: list[str] = ['ko', 'en']
 ) -> VideoTranscript:
-    """
-    Extract transcript and metadata from a YouTube video.
-
-    Args:
-        url_or_id: YouTube video URL or video ID
-        api_key: YouTube Data API key (uses env var if not provided)
-        languages: Preferred transcript languages
-
-    Returns:
-        VideoTranscript with metadata and transcript data
-    """
     video_id = extract_video_id(url_or_id)
     if not video_id:
         raise ValueError(f"Could not extract video ID from: {url_or_id}")
@@ -187,7 +245,6 @@ def extract_video_transcript(
     if not api_key:
         raise ValueError("YOUTUBE_API_KEY not found in environment")
 
-    # Get video metadata
     print(f"Fetching metadata for video: {video_id}")
     metadata = get_video_metadata(video_id, api_key)
     if not metadata:
@@ -196,7 +253,6 @@ def extract_video_transcript(
     print(f"  Title: {metadata.title}")
     print(f"  Channel: {metadata.channel_name}")
 
-    # Get transcript
     print(f"Extracting transcript...")
     entries, language, error = get_youtube_transcript(video_id, languages)
 

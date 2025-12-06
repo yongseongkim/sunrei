@@ -1,5 +1,3 @@
-"""Audio transcription using Google Cloud Speech-to-Text as fallback."""
-
 import os
 import tempfile
 import subprocess
@@ -11,27 +9,17 @@ from video_transcript import TranscriptEntry
 
 @dataclass
 class AudioTranscriptionResult:
-    """Result of audio transcription."""
     success: bool
     transcript: list[TranscriptEntry]
     language: Optional[str]
+    source: str = "none"
     error: Optional[str] = None
 
 
 def download_audio(video_id: str, output_dir: str) -> Optional[str]:
-    """
-    Download audio from YouTube video using yt-dlp.
+    output_template = os.path.join(output_dir, f"{video_id}.%(ext)s")
+    output_path = os.path.join(output_dir, f"{video_id}.mp3")
 
-    Args:
-        video_id: YouTube video ID
-        output_dir: Directory to save audio file
-
-    Returns:
-        Path to downloaded audio file or None if failed
-    """
-    output_path = os.path.join(output_dir, f"{video_id}.wav")
-
-    # Skip if already exists
     if os.path.exists(output_path):
         print(f"  Using cached audio: {output_path}")
         return output_path
@@ -39,13 +27,12 @@ def download_audio(video_id: str, output_dir: str) -> Optional[str]:
     print(f"  Downloading audio for {video_id}...")
 
     try:
-        # Use yt-dlp to download audio as WAV (required by Google Cloud STT)
         cmd = [
             'yt-dlp',
-            '-x',  # Extract audio
-            '--audio-format', 'wav',
+            '-x',
+            '--audio-format', 'mp3',
             '--audio-quality', '0',
-            '-o', output_path,
+            '-o', output_template,
             '--no-playlist',
             '--quiet',
             f'https://www.youtube.com/watch?v={video_id}'
@@ -56,13 +43,6 @@ def download_audio(video_id: str, output_dir: str) -> Optional[str]:
         if result.returncode != 0:
             print(f"  yt-dlp error: {result.stderr}")
             return None
-
-        # yt-dlp might add extension, check for the file
-        if not os.path.exists(output_path):
-            # Try with .wav extension added by yt-dlp
-            alt_path = output_path.replace('.wav', '.wav.wav')
-            if os.path.exists(alt_path):
-                os.rename(alt_path, output_path)
 
         if os.path.exists(output_path):
             print(f"  Audio downloaded: {output_path}")
@@ -78,100 +58,170 @@ def download_audio(video_id: str, output_dir: str) -> Optional[str]:
         return None
 
 
-def transcribe_with_google_stt(
+def transcribe_with_gemini(
     audio_path: str,
-    language_code: str = "ko-KR"
+    language: Optional[str] = None,
+    api_key: Optional[str] = None
 ) -> AudioTranscriptionResult:
-    """
-    Transcribe audio using Google Cloud Speech-to-Text.
-
-    Requires GOOGLE_APPLICATION_CREDENTIALS environment variable
-    to be set with path to service account JSON file.
-
-    Args:
-        audio_path: Path to audio file (WAV format recommended)
-        language_code: BCP-47 language code (e.g., "ko-KR", "ja-JP", "en-US")
-
-    Returns:
-        AudioTranscriptionResult with transcript entries
-    """
     try:
-        from google.cloud import speech
+        import google.generativeai as genai
 
-        # Check credentials
-        if not os.getenv('GOOGLE_APPLICATION_CREDENTIALS'):
+        api_key = api_key or os.getenv('GEMINI_API_KEY')
+        if not api_key:
             return AudioTranscriptionResult(
                 success=False,
                 transcript=[],
                 language=None,
-                error="GOOGLE_APPLICATION_CREDENTIALS not set"
+                source="none",
+                error="GEMINI_API_KEY not found"
             )
 
-        print(f"  Transcribing with Google Cloud STT ({language_code})...")
+        print(f"  Transcribing with Gemini...")
 
-        client = speech.SpeechClient()
+        genai.configure(api_key=api_key)
+        audio_file = genai.upload_file(audio_path)
+        model = genai.GenerativeModel('gemini-2.0-flash')
 
-        # Read audio file
-        with open(audio_path, 'rb') as f:
-            audio_content = f.read()
+        language_hint = f" The audio is in {language} language." if language else ""
 
-        audio = speech.RecognitionAudio(content=audio_content)
+        prompt = f"""Transcribe this audio file accurately.{language_hint}
 
-        # Configure recognition
-        config = speech.RecognitionConfig(
-            encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
-            sample_rate_hertz=16000,
-            language_code=language_code,
-            enable_word_time_offsets=True,
-            enable_automatic_punctuation=True,
-            model="latest_long",  # Better for long-form content
-        )
+Return the transcription in this exact JSON format:
+{{
+  "language": "detected language code (e.g., ko, ja, en)",
+  "segments": [
+    {{"start": 0.0, "end": 2.5, "text": "transcribed text"}},
+    {{"start": 2.5, "end": 5.0, "text": "more text"}}
+  ]
+}}
 
-        # For long audio files, use long_running_recognize
-        file_size = os.path.getsize(audio_path)
-        if file_size > 10 * 1024 * 1024:  # > 10MB
-            print(f"  Using long-running recognition (file size: {file_size / 1024 / 1024:.1f}MB)")
-            operation = client.long_running_recognize(config=config, audio=audio)
-            response = operation.result(timeout=600)  # 10 min timeout
-        else:
-            response = client.recognize(config=config, audio=audio)
+Rules:
+- Segment the transcript into natural speech segments (sentences or phrases)
+- Include accurate start and end times in seconds
+- Preserve the original language, do not translate
+- Return ONLY valid JSON, no other text"""
 
-        # Convert to TranscriptEntry format
+        response = model.generate_content([prompt, audio_file])
+
+        import json
+        import re
+
+        response_text = response.text.strip()
+
+        json_match = re.search(r'```(?:json)?\s*([\s\S]*?)\s*```', response_text)
+        if json_match:
+            response_text = json_match.group(1)
+
+        result = json.loads(response_text)
+
+        detected_language = result.get("language", language)
+        segments = result.get("segments", [])
+
         entries = []
-        for result in response.results:
-            if not result.alternatives:
-                continue
+        for segment in segments:
+            start = float(segment.get("start", 0))
+            end = float(segment.get("end", start))
+            text = segment.get("text", "").strip()
+            if text:
+                entries.append(TranscriptEntry(
+                    text=text,
+                    start=start,
+                    duration=end - start
+                ))
 
-            alternative = result.alternatives[0]
-            text = alternative.transcript
-
-            # Get timing from first word
-            if alternative.words:
-                start_time = alternative.words[0].start_time.total_seconds()
-                end_time = alternative.words[-1].end_time.total_seconds()
-                duration = end_time - start_time
-            else:
-                start_time = 0
-                duration = 0
-
-            entries.append(TranscriptEntry(
-                text=text,
-                start=start_time,
-                duration=duration
-            ))
+        try:
+            audio_file.delete()
+        except:
+            pass
 
         if entries:
-            print(f"  Transcription complete: {len(entries)} segments")
+            print(f"  Gemini transcription complete: {len(entries)} segments (language: {detected_language})")
             return AudioTranscriptionResult(
                 success=True,
                 transcript=entries,
-                language=language_code
+                language=detected_language,
+                source="gemini"
             )
         else:
             return AudioTranscriptionResult(
                 success=False,
                 transcript=[],
                 language=None,
+                source="none",
+                error="No transcription segments returned"
+            )
+
+    except ImportError:
+        return AudioTranscriptionResult(
+            success=False,
+            transcript=[],
+            language=None,
+            source="none",
+            error="google-generativeai not installed"
+        )
+    except Exception as e:
+        error_msg = str(e)
+        print(f"  Gemini transcription failed: {error_msg}")
+        return AudioTranscriptionResult(
+            success=False,
+            transcript=[],
+            language=None,
+            source="none",
+            error=error_msg
+        )
+
+
+def transcribe_with_whisper(
+    audio_path: str,
+    language: Optional[str] = None,
+    model_name: str = "base"
+) -> AudioTranscriptionResult:
+    try:
+        import torch
+        import whisper
+
+        # Use CUDA or CPU (MPS has known issues with Whisper)
+        if torch.cuda.is_available():
+            device = "cuda"
+            fp16 = True
+        else:
+            device = "cpu"
+            fp16 = False
+
+        print(f"  Transcribing with Whisper ({model_name} model, {device})...")
+
+        model = whisper.load_model(model_name, device=device)
+
+        transcribe_options = {"verbose": False, "fp16": fp16}
+        if language:
+            transcribe_options["language"] = language
+
+        result = model.transcribe(audio_path, **transcribe_options)
+
+        detected_language = result.get("language", language)
+
+        entries = []
+        for segment in result.get("segments", []):
+            entries.append(TranscriptEntry(
+                text=segment["text"].strip(),
+                start=segment["start"],
+                duration=segment["end"] - segment["start"]
+            ))
+
+        if entries:
+            print(f"  Whisper transcription complete: {len(entries)} segments (language: {detected_language})")
+            return AudioTranscriptionResult(
+                success=True,
+                transcript=entries,
+                language=detected_language,
+                source="whisper"
+            )
+        else:
+            return AudioTranscriptionResult(
+                success=False,
+                transcript=[],
+                language=None,
+                source="none",
                 error="No transcription results"
             )
 
@@ -180,34 +230,26 @@ def transcribe_with_google_stt(
             success=False,
             transcript=[],
             language=None,
-            error="google-cloud-speech not installed"
+            source="none",
+            error="openai-whisper not installed. Install with: pip install openai-whisper"
         )
     except Exception as e:
         return AudioTranscriptionResult(
             success=False,
             transcript=[],
             language=None,
+            source="none",
             error=str(e)
         )
 
 
 def transcribe_video_audio(
     video_id: str,
-    language_code: str = "ko-KR",
-    cache_dir: Optional[str] = None
+    language: Optional[str] = None,
+    whisper_model: str = "medium",
+    cache_dir: Optional[str] = None,
+    use_gemini: bool = False
 ) -> AudioTranscriptionResult:
-    """
-    Download and transcribe audio from a YouTube video.
-
-    Args:
-        video_id: YouTube video ID
-        language_code: BCP-47 language code for transcription
-        cache_dir: Directory to cache downloaded audio (uses temp dir if not provided)
-
-    Returns:
-        AudioTranscriptionResult with transcript entries
-    """
-    # Use cache dir or create temp directory
     if cache_dir:
         os.makedirs(cache_dir, exist_ok=True)
         audio_dir = cache_dir
@@ -217,48 +259,40 @@ def transcribe_video_audio(
         cleanup = True
 
     try:
-        # Download audio
         audio_path = download_audio(video_id, audio_dir)
         if not audio_path:
             return AudioTranscriptionResult(
                 success=False,
                 transcript=[],
                 language=None,
+                source="none",
                 error="Failed to download audio"
             )
 
-        # Transcribe
-        result = transcribe_with_google_stt(audio_path, language_code)
+        if use_gemini:
+            result = transcribe_with_gemini(audio_path, language)
+            if result.success:
+                return result
+            print(f"  Gemini failed, falling back to Whisper...")
 
+        result = transcribe_with_whisper(audio_path, language, whisper_model)
         return result
 
     finally:
-        # Cleanup temp directory if we created one
         if cleanup and os.path.exists(audio_dir):
             import shutil
             shutil.rmtree(audio_dir, ignore_errors=True)
 
 
-# Language code mapping for common languages
 LANGUAGE_CODES = {
-    'ko': 'ko-KR',  # Korean
-    'ja': 'ja-JP',  # Japanese
-    'en': 'en-US',  # English
-    'zh': 'zh-CN',  # Chinese (Simplified)
-    'zh-tw': 'zh-TW',  # Chinese (Traditional)
-    'es': 'es-ES',  # Spanish
-    'fr': 'fr-FR',  # French
-    'de': 'de-DE',  # German
-    'pt': 'pt-BR',  # Portuguese
-    'it': 'it-IT',  # Italian
-    'ru': 'ru-RU',  # Russian
-    'vi': 'vi-VN',  # Vietnamese
-    'th': 'th-TH',  # Thai
+    'ko-KR': 'ko', 'ko': 'ko',
+    'en-US': 'en', 'en': 'en',
 }
 
 
-def get_language_code(lang: str) -> str:
-    """Convert short language code to BCP-47 format."""
+def get_language_code(lang: str) -> Optional[str]:
+    if lang == 'auto':
+        return None
     return LANGUAGE_CODES.get(lang, lang)
 
 
@@ -269,20 +303,26 @@ if __name__ == '__main__':
     load_dotenv()
 
     if len(sys.argv) < 2:
-        print("Usage: python audio_transcription.py <VIDEO_ID> [LANGUAGE_CODE]")
-        print("Example: python audio_transcription.py dQw4w9WgXcQ ko-KR")
+        print("Usage: python audio_transcription.py <VIDEO_ID> [LANGUAGE] [WHISPER_MODEL]")
+        print("Example: python audio_transcription.py dQw4w9WgXcQ ko base")
+        print("\nWhisper models: tiny, base, small, medium, large")
+        print("Languages: ko, en (or 'auto' for auto-detect)")
         sys.exit(1)
 
     video_id = sys.argv[1]
-    lang = sys.argv[2] if len(sys.argv) > 2 else "ko-KR"
+    lang = sys.argv[2] if len(sys.argv) > 2 else None
+    if lang == 'auto':
+        lang = None
+    model = sys.argv[3] if len(sys.argv) > 3 else "medium"
 
-    result = transcribe_video_audio(video_id, lang, cache_dir="./audio_cache")
+    result = transcribe_video_audio(video_id, lang, model, cache_dir="./audio_cache")
 
     print(f"\nSuccess: {result.success}")
+    print(f"Source: {result.source}")
     if result.success:
         print(f"Language: {result.language}")
         print(f"Segments: {len(result.transcript)}")
         full_text = ' '.join(e.text for e in result.transcript)
-        print(f"Full text preview: {full_text[:200]}...")
+        print(f"Full text preview: {full_text[:300]}...")
     else:
         print(f"Error: {result.error}")
