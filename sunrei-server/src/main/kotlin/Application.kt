@@ -1,6 +1,8 @@
 package com.sunrei
 
+import com.sunrei.auth.provider.OAuthProviderFactory
 import com.sunrei.config.DatabaseConfig
+import com.sunrei.plugins.configureAuthentication
 import com.sunrei.config.JwtConfig
 import com.sunrei.service.S3Config
 import com.sunrei.service.S3Service
@@ -56,6 +58,9 @@ fun Application.module() {
 
     // Initialize JWT configuration
     JwtConfig.init(config)
+
+    // Initialize OAuth providers
+    OAuthProviderFactory.initialize(config)
 
     // Initialize S3 service
     val s3Config = S3Config(
@@ -130,6 +135,9 @@ fun Application.module() {
     log.info("Starting $appName v$appVersion")
     log.info("Environment: ${if (isDevelopment) "development" else "production"}")
     log.info("Database: $dbHost:$dbPort/$dbName")
+
+    // Configure authentication
+    configureAuthentication(config)
 
     // Configure routes
     configureRouting(s3Service)

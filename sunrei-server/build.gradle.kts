@@ -35,6 +35,8 @@ dependencies {
     implementation(libs.ktor.serialization.kotlinx.json)
     implementation(libs.ktor.server.cors)
     implementation(libs.ktor.server.call.logging)
+    implementation(libs.ktor.server.auth)
+    implementation(libs.ktor.server.auth.jwt)
     implementation(libs.ktor.server.status.pages)
     implementation(libs.ktor.server.config.yaml)
 
@@ -60,6 +62,11 @@ dependencies {
     // Utilities
     implementation(libs.ulid.creator)
     implementation(libs.java.jwt)
+
+    // Google OAuth
+    implementation("com.google.api-client:google-api-client:2.7.0")
+    implementation("com.google.oauth-client:google-oauth-client:1.36.0")
+    implementation("com.google.http-client:google-http-client-gson:1.45.0")
 
     // AWS SDK
     implementation(libs.aws.s3)
