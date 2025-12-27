@@ -24,7 +24,7 @@ function getYoutubeVideoId(url: string): string | null {
 }
 
 // YouTube 썸네일 URL 생성
-function getYoutubeThumbnail(videoId: string): string {
+function getYoutubeThumbnail(videoId: string) {
   return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
 }
 
@@ -36,43 +36,28 @@ interface Spot {
   images: any[];
   placeId: string;
   placeName: string;
-  placeAddress: string;
-  lat: number;
-  lng: number;
-  sunreiId: string;
   sunreiTitle: string;
 }
 
-interface MobileSunreiCarouselProps {
+interface CarouselViewProps {
   spots: Spot[];
+  loading?: boolean;
+  onSpotClick: (spot: Spot) => void;
   searchQuery: string;
   onSearchChange: (query: string) => void;
-  onSpotClick: (spot: Spot) => void;
-  loading?: boolean;
 }
 
-export const MobileSunreiCarousel: React.FC<MobileSunreiCarouselProps> = ({
+export const CarouselView: React.FC<CarouselViewProps> = ({
   spots,
+  loading,
+  onSpotClick,
   searchQuery,
   onSearchChange,
-  onSpotClick,
-  loading,
 }) => {
-  // 검색 필터링
-  const filteredSpots = searchQuery.trim()
-    ? spots.filter(
-        (spot) =>
-          spot.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          spot.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          spot.sunreiTitle?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          spot.placeName?.toLowerCase().includes(searchQuery.toLowerCase()),
-      )
-    : spots;
-
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg z-10">
-      {/* 검색창 */}
-      <div className="p-3 border-b">
+    <div className="flex flex-col h-full">
+      {/* Header with search */}
+      <div className="p-3 border-b flex-shrink-0">
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <Input
@@ -85,11 +70,10 @@ export const MobileSunreiCarousel: React.FC<MobileSunreiCarouselProps> = ({
         </div>
       </div>
 
-      {/* 가로 스크롤 카드 */}
-      <div className="overflow-x-auto overflow-y-hidden scrollbar-hide">
-        <div className="flex gap-2 p-3 min-w-max">
+      {/* Carousel content */}
+      <div className="overflow-x-auto overflow-y-hidden scrollbar-hide flex-1">
+        <div className="flex gap-2 p-3 min-w-max h-full items-center">
           {loading ? (
-            // 로딩 스켈레톤
             <>
               {[...Array(3)].map((_, i) => (
                 <div
@@ -106,16 +90,14 @@ export const MobileSunreiCarousel: React.FC<MobileSunreiCarouselProps> = ({
                 </div>
               ))}
             </>
-          ) : filteredSpots.length === 0 ? (
+          ) : spots.length === 0 ? (
             <div className="w-full text-center py-8 text-muted-foreground">
               검색 결과가 없습니다
             </div>
           ) : (
-            filteredSpots.map((spot) => {
-              // 썸네일 가져오기
+            spots.map((spot) => {
               let thumbnail: string | null = null;
 
-              // 1. YouTube 썸네일
               if (spot.youtubeLink) {
                 const videoId = getYoutubeVideoId(spot.youtubeLink);
                 if (videoId) {
@@ -123,7 +105,6 @@ export const MobileSunreiCarousel: React.FC<MobileSunreiCarouselProps> = ({
                 }
               }
 
-              // 2. 이미지
               if (!thumbnail && spot.images?.[0]?.images?.[0]?.url) {
                 thumbnail = spot.images[0].images[0].url;
               }
@@ -134,7 +115,6 @@ export const MobileSunreiCarousel: React.FC<MobileSunreiCarouselProps> = ({
                   onClick={() => onSpotClick(spot)}
                   className="w-64 flex-shrink-0 border rounded-lg overflow-hidden bg-white cursor-pointer transition-all hover:border-muted-foreground/50 hover:shadow-md snap-start"
                 >
-                  {/* 썸네일 - 2:1 비율 */}
                   {thumbnail ? (
                     <div className="w-full aspect-[2/1] bg-muted">
                       <img
@@ -149,26 +129,21 @@ export const MobileSunreiCarousel: React.FC<MobileSunreiCarouselProps> = ({
                     </div>
                   )}
 
-                  {/* 정보 */}
                   <div className="p-2 space-y-1">
-                    {/* Sunrei 제목 */}
                     <Badge variant="secondary" className="text-xs h-5">
                       <span className="truncate">{spot.sunreiTitle}</span>
                     </Badge>
 
-                    {/* Spot 제목 */}
                     <h3 className="font-semibold text-sm line-clamp-1 leading-tight">
                       {spot.title}
                     </h3>
 
-                    {/* Description */}
                     {spot.description && (
                       <p className="text-xs text-muted-foreground line-clamp-1 leading-relaxed">
                         {spot.description}
                       </p>
                     )}
 
-                    {/* 장소 */}
                     <div className="flex items-start gap-1 text-xs text-muted-foreground">
                       <MapPin className="w-3 h-3 flex-shrink-0 mt-0.5" />
                       <span className="line-clamp-1">{spot.placeName}</span>
@@ -183,5 +158,3 @@ export const MobileSunreiCarousel: React.FC<MobileSunreiCarouselProps> = ({
     </div>
   );
 };
-
-export default MobileSunreiCarousel;

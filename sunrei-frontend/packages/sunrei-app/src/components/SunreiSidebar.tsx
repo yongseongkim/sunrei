@@ -2,16 +2,9 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Skeleton } from '@/components/ui/skeleton';
-import { ExternalLink, MapPin, Search } from 'lucide-react';
+import { MapPin, Search } from 'lucide-react';
 
 // YouTube video ID 추출 함수
 function getYoutubeVideoId(url: string): string | null {
@@ -129,7 +122,10 @@ export const SunreiSidebar: React.FC<SunreiSidebarProps> = ({
         {loading ? (
           <div className="space-y-2">
             {[...Array(5)].map((_, i) => (
-              <div key={i} className="border rounded-lg overflow-hidden bg-white">
+              <div
+                key={i}
+                className="border rounded-lg overflow-hidden bg-white"
+              >
                 <Skeleton className="w-full aspect-[2/1]" />
                 <div className="p-2 space-y-1">
                   <Skeleton className="h-3 w-2/3" />

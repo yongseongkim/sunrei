@@ -21,6 +21,8 @@ interface UIState {
   modalSpot: ModalSpot | null;
   searchQuery: string;
   selectedPlaceId: string | null;
+  bottomBarDetailSpot: ModalSpot | null;
+  isMobile: boolean;
 
   setSelectedSunrei: (id: string | null) => void;
   setHoveredMarker: (id: string | null) => void;
@@ -28,7 +30,11 @@ interface UIState {
   setSearchQuery: (query: string) => void;
   setSelectedPlaceId: (id: string | null) => void;
   closeModal: () => void;
+  setBottomBarDetailSpot: (spot: ModalSpot | null) => void;
+  setIsMobile: (isMobile: boolean) => void;
 }
+
+const LG_BREAKPOINT = 1024;
 
 export const useUIStore = create<UIState>((set) => ({
   selectedSunrei: null,
@@ -36,6 +42,8 @@ export const useUIStore = create<UIState>((set) => ({
   modalSpot: null,
   searchQuery: '',
   selectedPlaceId: null,
+  bottomBarDetailSpot: null,
+  isMobile: typeof window !== 'undefined' ? window.innerWidth < LG_BREAKPOINT : false,
 
   setSelectedSunrei: (id) => set({ selectedSunrei: id }),
   setHoveredMarker: (id) => set({ hoveredMarker: id }),
@@ -43,4 +51,15 @@ export const useUIStore = create<UIState>((set) => ({
   setSearchQuery: (query) => set({ searchQuery: query }),
   setSelectedPlaceId: (id) => set({ selectedPlaceId: id }),
   closeModal: () => set({ modalSpot: null }),
+  setBottomBarDetailSpot: (spot) => set({ bottomBarDetailSpot: spot }),
+  setIsMobile: (isMobile) => set({ isMobile }),
 }));
+
+// Set up resize listener only on client side
+if (typeof window !== 'undefined') {
+  const handleResize = () => {
+    useUIStore.getState().setIsMobile(window.innerWidth < LG_BREAKPOINT);
+  };
+
+  window.addEventListener('resize', handleResize);
+}

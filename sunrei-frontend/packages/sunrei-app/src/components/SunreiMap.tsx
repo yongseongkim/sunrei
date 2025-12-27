@@ -21,6 +21,7 @@ interface SunreiMapProps {
   groupedMarkers: GroupedMarker[];
   selectedSunrei: string | null;
   onMarkerClick: (marker: GroupedMarker) => void;
+  onMobileMarkerClick?: (marker: GroupedMarker) => void;
   onBoundsChanged: (polygon: string) => void;
 }
 
@@ -28,10 +29,11 @@ export const SunreiMap: React.FC<SunreiMapProps> = ({
   groupedMarkers,
   selectedSunrei,
   onMarkerClick,
+  onMobileMarkerClick,
   onBoundsChanged,
 }) => {
   const { center, zoom, setIsLoaded } = useMapStore();
-  const { selectedPlaceId, setSelectedPlaceId } = useUIStore();
+  const { selectedPlaceId, setSelectedPlaceId, setBottomBarDetailSpot, isMobile, bottomBarDetailSpot } = useUIStore();
 
   const onLoad = useCallback(() => {
     setIsLoaded(true);
@@ -66,7 +68,18 @@ export const SunreiMap: React.FC<SunreiMapProps> = ({
             selectedSunrei &&
             marker.spots.some((s) => s.sunreiId === selectedSunrei);
 
-          if (hasSelectedSunrei) {
+          // 이 Place의 spot이 bottom bar detail에서 선택되었는지 확인
+          const isSelectedSpot =
+            bottomBarDetailSpot &&
+            marker.spots.some((s) => s.id === bottomBarDetailSpot.id);
+
+          // 이 Place가 선택된 장소인지 확인 (mobile에서 SpotSelector 표시 시)
+          const isSelectedPlace = selectedPlaceId === marker.placeId;
+
+          if (isSelectedSpot || isSelectedPlace) {
+            // 선택된 마커 -> Viola (selected)
+            markerState = 'selected';
+          } else if (hasSelectedSunrei) {
             // 선택된 Sunrei에 속한 마커 -> Cornflower Blue
             markerState = 'related';
           } else {
@@ -85,15 +98,23 @@ export const SunreiMap: React.FC<SunreiMapProps> = ({
               markerState={markerState}
               count={spotCount}
               onClick={() => {
-                // InfoWindow만 표시 (Dialog는 열지 않음)
-                setSelectedPlaceId(marker.placeId);
+                if (isMobile) {
+                  // On mobile: use mobile marker click handler
+                  // (it handles setSelectedPlaceId for highlighting)
+                  if (onMobileMarkerClick) {
+                    onMobileMarkerClick(marker);
+                  }
+                } else {
+                  // On desktop: show InfoWindow as before
+                  setSelectedPlaceId(marker.placeId);
+                }
               }}
             />
           );
         })}
 
-        {/* 선택된 장소의 InfoWindow */}
-        {selectedPlaceId &&
+        {/* 선택된 장소의 InfoWindow - desktop only */}
+        {!isMobile && selectedPlaceId &&
           (() => {
             const selectedMarker = groupedMarkers.find(
               (m) => m.placeId === selectedPlaceId,
