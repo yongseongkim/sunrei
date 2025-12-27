@@ -2,7 +2,7 @@
 
 import { Wrapper } from '@googlemaps/react-wrapper';
 import React, { useEffect, useRef, useState } from 'react';
-import { airbnbMapStyle } from '../styles/map-styles';
+import { defaultMapStyle } from '../styles/map-styles';
 
 interface MapProps {
   center: { lat: number; lng: number };
@@ -22,7 +22,14 @@ interface MarkerProps {
 }
 
 // Custom marker component using company design system
-export const Marker: React.FC<MarkerProps> = ({ position, map, title, markerState = 'default', count, onClick }) => {
+export const Marker: React.FC<MarkerProps> = ({
+  position,
+  map,
+  title,
+  markerState = 'default',
+  count,
+  onClick,
+}) => {
   const overlayRef = useRef<google.maps.OverlayView | null>(null);
 
   useEffect(() => {
@@ -42,7 +49,12 @@ export const Marker: React.FC<MarkerProps> = ({ position, map, title, markerStat
       private markerState: 'selected' | 'related' | 'default';
       private count?: number;
 
-      constructor(position: google.maps.LatLng, markerState: 'selected' | 'related' | 'default', count: number | undefined, onClick?: () => void) {
+      constructor(
+        position: google.maps.LatLng,
+        markerState: 'selected' | 'related' | 'default',
+        count: number | undefined,
+        onClick?: () => void,
+      ) {
         super();
         this.position = position;
         this.markerState = markerState;
@@ -56,6 +68,19 @@ export const Marker: React.FC<MarkerProps> = ({ position, map, title, markerStat
         markerContainer.style.width = '28px';
         markerContainer.style.height = '28px';
         markerContainer.style.cursor = 'pointer';
+
+        // z-index: selected markers above others
+        switch (this.markerState) {
+          case 'selected':
+            markerContainer.style.zIndex = '100';
+            break;
+          case 'related':
+            markerContainer.style.zIndex = '50';
+            break;
+          default:
+            markerContainer.style.zIndex = '1';
+            break;
+        }
 
         // 숫자 마커 (count >= 2)
         if (this.count !== undefined && this.count >= 2) {
@@ -213,17 +238,25 @@ export const Marker: React.FC<MarkerProps> = ({ position, map, title, markerStat
 };
 
 // Main Map component
-const MapComponent: React.FC<MapProps> = ({ center, zoom, onMapLoad, onBoundsChanged, children }) => {
+const MapComponent: React.FC<MapProps> = ({
+  center,
+  zoom,
+  onMapLoad,
+  onBoundsChanged,
+  children,
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const [map, setMap] = useState<google.maps.Map | undefined>(undefined);
-  const boundsListenerRef = useRef<google.maps.MapsEventListener | undefined>(undefined);
+  const boundsListenerRef = useRef<google.maps.MapsEventListener | undefined>(
+    undefined,
+  );
 
   useEffect(() => {
     if (ref.current && !map) {
       const newMap = new google.maps.Map(ref.current, {
         center,
         zoom,
-        styles: airbnbMapStyle,
+        styles: defaultMapStyle,
         disableDefaultUI: true,
         zoomControl: true,
         mapTypeControl: false,
@@ -302,13 +335,24 @@ interface GoogleMapProps extends MapProps {
   apiKey: string;
 }
 
-export const GoogleMap: React.FC<GoogleMapProps> = ({ apiKey, ...mapProps }) => {
+export const GoogleMap: React.FC<GoogleMapProps> = ({
+  apiKey,
+  ...mapProps
+}) => {
   const render = (status: any) => {
     switch (status) {
       case 'LOADING':
-        return <div className="flex items-center justify-center h-full">Loading...</div>;
+        return (
+          <div className="flex items-center justify-center h-full">
+            Loading...
+          </div>
+        );
       case 'FAILURE':
-        return <div className="flex items-center justify-center h-full text-red-500">Error loading map</div>;
+        return (
+          <div className="flex items-center justify-center h-full text-red-500">
+            Error loading map
+          </div>
+        );
       case 'SUCCESS':
         return <MapComponent {...mapProps} />;
       default:

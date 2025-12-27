@@ -1,15 +1,15 @@
 'use client';
 
 import { useMapSpots } from '@/hooks/useMapSpots';
-import { useUIStore } from '@/stores/ui-store';
 import { useMapStore } from '@/stores/map-store';
+import { useUIStore } from '@/stores/ui-store';
 import { useMemo, useRef, useState } from 'react';
 import { Header } from '../components/Header';
+import { PlaceDetailDialog } from '../components/PlaceDetailDialog';
 import { SunreiDetailDialog } from '../components/SunreiDetailDialog';
 import { SunreiMap } from '../components/SunreiMap';
 import { SunreiSidebar } from '../components/SunreiSidebar';
-import { MobileSunreiCarousel } from '../components/MobileSunreiCarousel';
-import { PlaceDetailDialog } from '../components/PlaceDetailDialog';
+import { SunreiBottomBar } from '../components/SunreiBottomBar';
 
 export default function Home() {
   // Zustand stores
@@ -19,11 +19,13 @@ export default function Home() {
     modalSpot,
     searchQuery,
     selectedPlaceId,
+    bottomBarDetailSpot,
     setSelectedSunrei,
     setHoveredMarker,
     setModalSpot,
     setSearchQuery,
     setSelectedPlaceId,
+    setBottomBarDetailSpot,
   } = useUIStore();
   const { setCenter, setZoom } = useMapStore();
 
@@ -32,10 +34,12 @@ export default function Home() {
     undefined,
   );
   const [placeDetail, setPlaceDetail] = useState<any>(null);
+  const [selectedPlaceSpots, setSelectedPlaceSpots] = useState<any>(null);
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // React Query - fetch map spots with embedded sunrei info
-  const { data: mapSpots = [], isLoading: loading } = useMapSpots(currentPolygon);
+  const { data: mapSpots = [], isLoading: loading } =
+    useMapSpots(currentPolygon);
 
   // Debounced bounds change handler
   const handleBoundsChanged = (polygon: string) => {
@@ -107,6 +111,24 @@ export default function Home() {
 
   const handleMarkerClick = (marker: any) => {
     setPlaceDetail(marker);
+  };
+
+  // Mobile: handle marker click for bottom bar
+  const handleMobileMarkerClick = (marker: any) => {
+    // Clear previous states
+    setSelectedPlaceSpots(null);
+    setBottomBarDetailSpot(null);
+
+    // Always show SpotSelector (consistent UX)
+    setSelectedPlaceSpots({
+      placeId: marker.placeId,
+      placeName: marker.placeName,
+      placeAddress: marker.placeAddress,
+      spots: marker.spots,
+    });
+
+    // Highlight the clicked marker on the map
+    setSelectedPlaceId(marker.placeId);
   };
 
   const handleShowAllContent = () => {
@@ -205,22 +227,39 @@ export default function Home() {
           groupedMarkers={groupedMarkers}
           selectedSunrei={selectedSunrei}
           onMarkerClick={handleMarkerClick}
+          onMobileMarkerClick={handleMobileMarkerClick}
           onBoundsChanged={handleBoundsChanged}
         />
       </div>
 
-      {/* Mobile Carousel - 모바일만 */}
+      {/* Mobile Bottom Bar - 모바일만 */}
       <div className="lg:hidden">
-        <MobileSunreiCarousel
+        <SunreiBottomBar
           spots={visibleSpots}
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
+          selectedSpot={bottomBarDetailSpot}
+          selectedPlaceSpots={selectedPlaceSpots}
           onSpotClick={(spot) => {
             // 지도를 해당 장소로 이동
             setCenter({ lat: spot.lat, lng: spot.lng });
             setZoom(15); // 더 가까이 확대
-            // InfoWindow 표시
-            setSelectedPlaceId(spot.placeId);
+            // Bottom bar에 detail 표시
+            setBottomBarDetailSpot(spot);
+            setSelectedPlaceSpots(null);
+          }}
+          onCloseDetail={(backToCarousel: boolean) => {
+            setBottomBarDetailSpot(null);
+            if (backToCarousel) {
+              setSelectedPlaceSpots(null);
+              setSelectedPlaceId(null);
+            }
+          }}
+          onCloseSpotSelector={() => {
+            setSelectedPlaceId(null);
+          }}
+          onSpotSelectorOpen={(placeId: string) => {
+            setSelectedPlaceId(placeId);
           }}
           loading={loading}
         />

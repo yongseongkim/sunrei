@@ -304,7 +304,9 @@ export const MarkerInfoWindow: React.FC<MarkerInfoWindowProps> = ({
                 moreSpots.style.lineHeight = '1.4';
                 moreSpots.style.color = secondaryTextColor;
                 moreSpots.style.fontStyle = 'italic';
-                moreSpots.textContent = `  +${sunrei.spots.length - 2} more spots`;
+                moreSpots.textContent = `  +${
+                  sunrei.spots.length - 2
+                } more spots`;
                 spotsContainer.appendChild(moreSpots);
               }
 
