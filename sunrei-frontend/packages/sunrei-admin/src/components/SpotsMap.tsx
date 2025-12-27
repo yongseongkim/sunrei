@@ -15,7 +15,6 @@ interface SpotsMapProps {
 function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const overlaysRef = useRef<google.maps.OverlayView[]>([]);
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   // Initialize map
   useEffect(() => {
@@ -26,6 +25,33 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
       zoom: 12,
       mapTypeControl: false,
       streetViewControl: false,
+      styles: [
+        {
+          elementType: 'labels.icon',
+          stylers: [
+            {
+              visibility: 'off',
+            },
+          ],
+        },
+        {
+          featureType: 'poi',
+          elementType: 'labels.text',
+          stylers: [
+            {
+              visibility: 'simplified',
+            },
+          ],
+        },
+        {
+          featureType: 'poi.business',
+          stylers: [
+            {
+              visibility: 'off',
+            },
+          ],
+        },
+      ],
     });
     setMap(newMap);
   }, [map]);
@@ -64,30 +90,16 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
         private position: google.maps.LatLng;
         private containerDiv: HTMLDivElement | null = null;
         private index: number;
-        private spotTitle: string;
-        private isActive: boolean;
-        private isSelected: boolean;
 
-        constructor(
-          position: google.maps.LatLng,
-          index: number,
-          spotTitle: string,
-          isActive: boolean,
-          isSelected: boolean,
-        ) {
+        constructor(position: google.maps.LatLng, index: number) {
           super();
           this.position = position;
           this.index = index;
-          this.spotTitle = spotTitle;
-          this.isActive = isActive;
-          this.isSelected = isSelected;
         }
 
         onAdd() {
           const container = document.createElement('div');
           container.style.position = 'absolute';
-          container.style.cursor = 'pointer';
-          container.style.zIndex = this.isSelected ? '1000' : '1';
 
           // Point marker (16px circle with number)
           const point = document.createElement('div');
@@ -110,74 +122,6 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
           point.textContent = String(this.index + 1);
 
           container.appendChild(point);
-
-          // Info bubble (speech bubble) - shown when active
-          if (this.isActive) {
-            const bubbleContainer = document.createElement('div');
-            bubbleContainer.style.position = 'absolute';
-            bubbleContainer.style.bottom = '16px'; // Above the point
-            bubbleContainer.style.left = '50%';
-            bubbleContainer.style.transform = 'translateX(-50%)';
-            bubbleContainer.style.filter =
-              'drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.25))';
-            bubbleContainer.style.whiteSpace = 'nowrap';
-
-            // Bubble
-            const bubble = document.createElement('div');
-            bubble.style.boxSizing = 'border-box';
-            bubble.style.display = 'flex';
-            bubble.style.flexDirection = 'column';
-            bubble.style.alignItems = 'center';
-            bubble.style.padding = '8px 12px';
-            bubble.style.background = 'var(--pantone-cornflower-blue)';
-            bubble.style.border = '1px solid rgba(0, 99, 197, 0.2)';
-            bubble.style.borderRadius = '100px';
-            bubble.style.minWidth = '88px';
-
-            // Title
-            const titleText = document.createElement('span');
-            titleText.style.fontFamily = '-apple-system, sans-serif';
-            titleText.style.fontWeight = '700';
-            titleText.style.fontSize = '12px';
-            titleText.style.lineHeight = '16px';
-            titleText.style.color = '#FFFFFF';
-            titleText.textContent = this.spotTitle;
-
-            bubble.appendChild(titleText);
-
-            // Arrow
-            const arrow = document.createElement('div');
-            arrow.style.boxSizing = 'border-box';
-            arrow.style.position = 'absolute';
-            arrow.style.width = '10px';
-            arrow.style.height = '10px';
-            arrow.style.left = '50%';
-            arrow.style.marginLeft = '-5px';
-            arrow.style.bottom = '-4px';
-            arrow.style.background = 'var(--pantone-cornflower-blue)';
-            arrow.style.border = '1px solid rgba(0, 99, 197, 0.2)';
-            arrow.style.transform = 'rotate(45deg)';
-
-            // Blocker
-            const blocker = document.createElement('div');
-            blocker.style.position = 'absolute';
-            blocker.style.width = '7px';
-            blocker.style.height = '1px';
-            blocker.style.left = '50%';
-            blocker.style.marginLeft = '-4px';
-            blocker.style.bottom = '0';
-            blocker.style.background = 'var(--pantone-cornflower-blue)';
-
-            bubbleContainer.appendChild(arrow);
-            bubbleContainer.appendChild(bubble);
-            bubbleContainer.appendChild(blocker);
-            container.appendChild(bubbleContainer);
-          }
-
-          // Click handler
-          container.addEventListener('click', () => {
-            setSelectedIndex(this.index);
-          });
 
           this.containerDiv = container;
           const panes = this.getPanes();
@@ -209,9 +153,6 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
       const overlay = new MarkerOverlay(
         new google.maps.LatLng(position.lat, position.lng),
         index,
-        spot.title,
-        true, // Always show info window
-        selectedIndex === index, // Is selected
       );
       overlay.setMap(map);
       overlaysRef.current.push(overlay);
@@ -237,7 +178,7 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
         overlay.setMap(null);
       });
     };
-  }, [spots, map, selectedIndex]);
+  }, [spots, map]);
 
   return <div id="spots-map" className="w-full h-full rounded-lg" />;
 }

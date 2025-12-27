@@ -39,7 +39,7 @@ export default function DashboardLayout({
   }
 
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={false}>
       <div className="flex h-screen w-full">
         <AppSidebar />
         <main className="flex-1 overflow-auto bg-muted/10">
