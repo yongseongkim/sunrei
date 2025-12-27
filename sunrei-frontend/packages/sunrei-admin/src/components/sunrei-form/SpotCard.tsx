@@ -28,36 +28,40 @@ export default function SpotCard({
   onOpenMap,
 }: SpotCardProps) {
   return (
-    <Card>
-      <CardHeader className="py-3">
+    <Card className="py-0 px-0 rounded-lg gap-0">
+      <CardHeader className="py-1 px-2 gap-0">
         <div className="flex items-center justify-between">
-          <span className="text-sm font-medium">Spot {index + 1}</span>
+          <span className="text-xs font-medium">Spot {index + 1}</span>
           <Button
             type="button"
             onClick={() => onRemove(index)}
             variant="ghost"
             size="sm"
+            className="h-6 w-6 p-0"
           >
-            <Trash2 className="h-4 w-4" />
+            <Trash2 className="h-3 w-3" />
           </Button>
         </div>
       </CardHeader>
-      <CardContent className="space-y-3">
+      <CardContent className="space-y-1.5 px-2 py-0 pt-1.5">
         <Input
           {...register(`spots.${index}.title` as const, {
             required: 'Spot title is required',
           })}
           placeholder="Spot title"
+          className="h-8"
         />
         <Textarea
           {...register(`spots.${index}.description` as const)}
-          rows={2}
+          rows={4}
           placeholder="Spot description"
+          className="text-sm resize-none"
         />
         <Input
           {...register(`spots.${index}.youtubeLink` as const)}
           type="url"
           placeholder="YouTube link"
+          className="h-8"
         />
         <PlaceSection
           spotIndex={index}
@@ -70,6 +74,7 @@ export default function SpotCard({
           onChange={(newImages) => setValue(`spots.${index}.images`, newImages)}
           label="Spot Images"
           maxImages={5}
+          compact
         />
       </CardContent>
     </Card>

@@ -46,7 +46,7 @@ export default function SpotsList({
         </Button>
       </div>
 
-      <div className="space-y-4 overflow-y-auto" style={{ maxHeight: '1000px' }}>
+      <div className="space-y-1.5 overflow-y-auto" style={{ maxHeight: '1000px' }}>
         {spotFields.map((field, index) => (
           <SpotCard
             key={field.id}

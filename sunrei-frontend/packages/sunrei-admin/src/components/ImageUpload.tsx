@@ -25,6 +25,7 @@ interface ImageUploadProps {
   onChange: (images: MultiSizeImageDTO[]) => void;
   maxImages?: number;
   label?: string;
+  compact?: boolean;
 }
 
 interface UploadingImage {
@@ -38,6 +39,7 @@ export default function ImageUpload({
   onChange,
   maxImages = 10,
   label = 'Images',
+  compact = false,
 }: ImageUploadProps) {
   const [uploadingImages, setUploadingImages] = useState<UploadingImage[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -168,10 +170,10 @@ export default function ImageUpload({
   };
 
   return (
-    <div className="space-y-4">
+    <div className={compact ? "space-y-1" : "space-y-4"}>
       <div className="flex items-center justify-between">
-        <Label>{label}</Label>
-        <Badge variant="outline">
+        <Label className={compact ? "text-[10px]" : undefined}>{label}</Label>
+        <Badge variant="outline" className={compact ? "text-[10px] px-1.5 h-4" : undefined}>
           {images.length} / {maxImages} images
         </Badge>
       </div>
@@ -185,21 +187,21 @@ export default function ImageUpload({
 
       {images.length < maxImages && (
         <Tabs defaultValue="file" className="w-full">
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="file">
-              <Upload className="h-4 w-4 mr-2" />
-              Upload File
+          <TabsList className={compact ? "grid w-full grid-cols-2 h-7" : "grid w-full grid-cols-2"}>
+            <TabsTrigger className={compact ? "text-xs h-6" : ""} value="file">
+              <Upload className={compact ? "h-3 w-3 mr-1" : "h-4 w-4 mr-2"} />
+              {compact ? 'File' : 'Upload File'}
             </TabsTrigger>
-            <TabsTrigger value="url">
-              <Link className="h-4 w-4 mr-2" />
-              From URL
+            <TabsTrigger className={compact ? "text-xs h-6" : ""} value="url">
+              <Link className={compact ? "h-3 w-3 mr-1" : "h-4 w-4 mr-2"} />
+              {compact ? 'URL' : 'From URL'}
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="file" className="mt-4">
-            <Card>
-              <CardContent className="pt-6">
-                <div className="space-y-2">
+          <TabsContent value="file" className={compact ? "mt-1" : "mt-4"}>
+            <Card className={compact ? "py-1 px-1" : ""}>
+              <CardContent className={compact ? "pt-2 pb-1 px-1" : "pt-6"}>
+                <div className="space-y-1">
                   <input
                     ref={fileInputRef}
                     type="file"
@@ -212,58 +214,64 @@ export default function ImageUpload({
                   <Button
                     type="button"
                     variant="outline"
-                    className="w-full"
+                    className={compact ? "w-full h-7 text-xs" : "w-full"}
                     onClick={() => fileInputRef.current?.click()}
                     disabled={uploadingImages.length > 0}
                   >
                     {uploadingImages.length > 0 ? (
                       <>
-                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                        <Loader2 className={compact ? "h-3 w-3 mr-1 animate-spin" : "h-4 w-4 mr-2 animate-spin"} />
                         Uploading...
                       </>
                     ) : (
                       <>
-                        <Plus className="h-4 w-4 mr-2" />
+                        <Plus className={compact ? "h-3 w-3 mr-1" : "h-4 w-4 mr-2"} />
                         Choose Images
                       </>
                     )}
                   </Button>
-                  <p className="text-xs text-muted-foreground text-center">
-                    Max file size: 5MB. Supported formats: JPG, PNG, GIF, WebP
-                  </p>
+                  {!compact && (
+                    <p className="text-xs text-muted-foreground text-center">
+                      Max file size: 5MB. Supported formats: JPG, PNG, GIF, WebP
+                    </p>
+                  )}
                 </div>
               </CardContent>
             </Card>
           </TabsContent>
 
-          <TabsContent value="url" className="mt-4">
-            <Card>
-              <CardContent className="pt-6">
-                <div className="space-y-2">
-                  <div className="flex gap-2">
+          <TabsContent value="url" className={compact ? "mt-1" : "mt-4"}>
+            <Card className={compact ? "py-1 px-1" : ""}>
+              <CardContent className={compact ? "pt-2 pb-1 px-1" : "pt-6"}>
+                <div className="space-y-1">
+                  <div className={compact ? "flex gap-1" : "flex gap-2"}>
                     <Input
                       type="url"
                       placeholder="https://example.com/image.jpg"
                       value={urlInput}
                       onChange={(e) => setUrlInput(e.target.value)}
                       disabled={uploadingImages.length > 0}
+                      className={compact ? "h-7 text-xs" : ""}
                     />
                     <Button
                       type="button"
                       onClick={handleUrlAdd}
                       disabled={uploadingImages.length > 0 || !urlInput.trim()}
+                      className={compact ? "h-7 px-2 text-xs" : ""}
                     >
                       {uploadingImages.length > 0 ? (
-                        <Loader2 className="h-4 w-4 animate-spin" />
+                        <Loader2 className={compact ? "h-3 w-3 animate-spin" : "h-4 w-4 animate-spin"} />
                       ) : (
                         'Add'
                       )}
                     </Button>
                   </div>
-                  <p className="text-xs text-muted-foreground">
-                    Enter a direct link to an image. The image will be
-                    downloaded and stored.
-                  </p>
+                  {!compact && (
+                    <p className="text-xs text-muted-foreground">
+                      Enter a direct link to an image. The image will be
+                      downloaded and stored.
+                    </p>
+                  )}
                 </div>
               </CardContent>
             </Card>
@@ -272,10 +280,10 @@ export default function ImageUpload({
       )}
 
       {(images.length > 0 || uploadingImages.length > 0) && (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className={compact ? "grid grid-cols-4 gap-1" : "grid grid-cols-2 md:grid-cols-4 gap-4"}>
           {uploadingImages.map((uploadingImg) => (
             <div key={uploadingImg.id} className="relative">
-              <Card className="overflow-hidden">
+              <Card className={compact ? "overflow-hidden rounded-md" : "overflow-hidden"}>
                 <div className="aspect-square relative">
                   <img
                     src={uploadingImg.preview}
@@ -306,7 +314,7 @@ export default function ImageUpload({
                 key={`${largestImage?.url || index}-${index}`}
                 className="relative group"
               >
-                <Card className="overflow-hidden">
+                <Card className={compact ? "overflow-hidden rounded-md" : "overflow-hidden"}>
                   <div className="aspect-square relative">
                     {largestImage?.url ? (
                       <img
@@ -327,13 +335,15 @@ export default function ImageUpload({
                       type="button"
                       variant="destructive"
                       size="sm"
-                      className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                      className={compact
+                        ? "absolute top-0.5 right-0.5 opacity-0 group-hover:opacity-100 transition-opacity h-4 w-4 p-0"
+                        : "absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"}
                       onClick={() => handleRemoveImage(index)}
                     >
-                      <X className="h-4 w-4" />
+                      <X className={compact ? "h-2.5 w-2.5" : "h-4 w-4"} />
                     </Button>
                   </div>
-                  {largestImage?.width && largestImage?.height && (
+                  {!compact && largestImage?.width && largestImage?.height && (
                     <div className="p-2 text-xs text-muted-foreground text-center">
                       {largestImage.width} × {largestImage.height}
                     </div>
