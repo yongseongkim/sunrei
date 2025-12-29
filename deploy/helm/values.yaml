@@ -1,27 +1,26 @@
 # Default values for sunrei
 # This file will be automatically updated by release.sh script
 
-# Oracle Cloud Container Registry
-registry: yny.ocir.io/axrudau2tcfl/sunrei
+# GitHub Container Registry (public images, no authentication required)
+registry: ghcr.io/yongseongkim/sunrei
 
 # Image tags (automatically updated by release.sh)
 images:
   admin:
-    repository: sunrei-admin
-    tag: v0.0.9
+    repository: admin
+    tag: v0.0.11
     pullPolicy: IfNotPresent
   app:
-    repository: sunrei-app
-    tag: v0.0.9
+    repository: app
+    tag: v0.0.11
     pullPolicy: IfNotPresent
   server:
-    repository: sunrei-server
-    tag: v0.0.9
+    repository: server
+    tag: v0.0.11
     pullPolicy: IfNotPresent
 
-# Image pull secrets for OCI Registry
-imagePullSecrets:
-  - name: oci-registry-secret
+# Image pull secrets (not needed for public GHCR images)
+imagePullSecrets: []
 
 # Sunrei Admin (관리자 웹)
 admin:

@@ -1,0 +1,87 @@
+name: Docker Publish to GHCR
+
+# ARM64-only build optimized for OCI Free Tier (ARM OCPU)
+# k3s cluster runs on Oracle Cloud Infrastructure free tier ARM instance
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_PREFIX: yongseongkim/sunrei
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    strategy:
+      matrix:
+        image:
+          - name: admin
+            dockerfile: deploy/dockerfiles/admin.Dockerfile
+            context: .
+          - name: app
+            dockerfile: deploy/dockerfiles/app.Dockerfile
+            context: .
+          - name: server
+            dockerfile: deploy/dockerfiles/server.Dockerfile
+            context: .
+          - name: migration
+            dockerfile: deploy/dockerfiles/migration.Dockerfile
+            context: .
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ matrix.image.name }}
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ${{ matrix.image.context }}
+          file: ${{ matrix.image.dockerfile }}
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          platforms: linux/arm64
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: false
+
+      # Make the image public (using GitHub CLI)
+      # Package name is "sunrei/{name}" (path after username yongseongkim)
+      - name: Set image visibility to public
+        run: |
+          PACKAGE_NAME="sunrei/${{ matrix.image.name }}"
+          gh api \
+            --method PUT \
+            -H "Accept: application/vnd.github+json" \
+            "/user/packages/container/${PACKAGE_NAME}" \
+            -f visibility='public' || echo "Visibility already set or package not found yet"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
