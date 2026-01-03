@@ -8,7 +8,7 @@ export interface User {
   id: string;
   email: string;
   name: string | null;
-  role: 'user' | 'admin';
+  role: string;
 }
 
 export const auth = {
@@ -21,8 +21,8 @@ export const auth = {
 
     const user: User = response.data.user;
 
-    // Check if user is admin before storing token
-    if (user.role !== 'admin') {
+    // Check if user is admin before storing token (case-insensitive)
+    if (user.role.toUpperCase() !== 'ADMIN') {
       // Redirect to forbidden page immediately
       if (typeof window !== 'undefined') {
         window.location.href = '/forbidden';

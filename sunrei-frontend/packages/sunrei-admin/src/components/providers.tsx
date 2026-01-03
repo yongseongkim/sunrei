@@ -2,28 +2,21 @@
 
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from '@/lib/query-client';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { auth } from '@/lib/auth';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const [isChecking, setIsChecking] = useState(true);
+  const pathname = usePathname();
 
   useEffect(() => {
-    // Check authentication on mount
-    if (!auth.isAuthenticated()) {
-      // Only redirect to login if not already there
-      if (window.location.pathname !== '/login') {
-        router.push('/login');
-      }
+    // Check authentication on mount - redirect to login if not authenticated
+    // Skip redirect if already on login or forbidden page
+    if (!auth.isAuthenticated() && pathname !== '/login' && pathname !== '/forbidden') {
+      router.push('/login');
     }
-    setIsChecking(false);
-  }, [router]);
-
-  if (isChecking) {
-    return null; // or a loading spinner
-  }
+  }, [router, pathname]);
 
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
