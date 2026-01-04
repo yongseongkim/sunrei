@@ -4,6 +4,7 @@ import com.sunrei.auth.models.AuthErrorResponse
 import com.sunrei.auth.models.GoogleAuthRequest
 import com.sunrei.auth.models.GoogleAuthResponse
 import com.sunrei.auth.service.IAuthService
+import com.sunrei.di.injectAuthService
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.log
 import io.ktor.server.auth.authentication
@@ -16,9 +17,10 @@ import io.ktor.server.routing.post
 import io.ktor.server.routing.route
 import com.sunrei.auth.models.OAuthProvider as OAuthProviderEnum
 
-fun Route.authRoutes(authService: IAuthService) {
+fun Route.authRoutes() {
     route("/api/auth") {
         post("/google") {
+            val authService: IAuthService = call.injectAuthService()
             try {
                 val request = call.receive<GoogleAuthRequest>()
                 val (user, _) = authService.authenticateWithOAuth(
@@ -55,6 +57,7 @@ fun Route.authRoutes(authService: IAuthService) {
         }
 
         get("/me") {
+            val authService: IAuthService = call.injectAuthService()
             try {
                 val principal = call.authentication.principal<JWTPrincipal>()
                     ?: return@get call.respond(
