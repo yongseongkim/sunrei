@@ -32,10 +32,11 @@ import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.update
 
-class SunreiService {
+class SunreiService(
+    private val sunreiSpotService: SunreiSpotService,
+    private val placeService: PlaceService
+) {
     private val pageToken = PaginationToken(JwtConfig.getPageTokenSecret())
-    private val sunreiSpotService = SunreiSpotService()
-    private val placeService = PlaceService()
 
     fun list(): List<Sunrei> = transaction {
         val sunreis = Sunreis.select { Sunreis.deletedAt.isNull() }

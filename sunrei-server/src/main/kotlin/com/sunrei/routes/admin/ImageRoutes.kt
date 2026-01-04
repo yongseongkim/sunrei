@@ -1,5 +1,6 @@
 package com.sunrei.routes.admin
 
+import com.sunrei.di.injectS3Service
 import com.sunrei.generated.dto.admin.ImageDTO
 import com.sunrei.generated.dto.admin.MultiSizeImageDTO
 import com.sunrei.generated.dto.admin.UploadImageFromUrlRequest
@@ -20,10 +21,11 @@ import io.ktor.server.routing.route
 import io.ktor.utils.io.readRemaining
 import kotlinx.io.readByteArray
 
-fun Route.imageRoutes(s3Service: S3Service) {
+fun Route.imageRoutes() {
     route("/images") {
         // Upload image file
         post("/upload") {
+            val s3Service: S3Service = call.injectS3Service()
             val multipart = call.receiveMultipart()
             var uploadedFile: PartData.FileItem? = null
 
@@ -90,6 +92,7 @@ fun Route.imageRoutes(s3Service: S3Service) {
 
         // Upload image from URL
         post("/upload-url") {
+            val s3Service: S3Service = call.injectS3Service()
             val request = call.receive<UploadImageFromUrlRequest>()
 
             if (request.url.isBlank()) {

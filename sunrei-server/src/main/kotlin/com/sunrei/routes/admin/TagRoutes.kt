@@ -1,5 +1,6 @@
 package com.sunrei.routes.admin
 
+import com.sunrei.di.injectTagService
 import com.sunrei.generated.dto.admin.CreateTagRequest
 import com.sunrei.generated.dto.admin.UpdateTagRequest
 import com.sunrei.routes.admin.converter.toDTO
@@ -15,11 +16,10 @@ import io.ktor.server.routing.put
 import io.ktor.server.routing.route
 
 fun Route.adminTagRoutes() {
-    val tagService = TagService()
-
     route("/tags") {
         // List all tags with pagination
         get {
+            val tagService: TagService = call.injectTagService()
             val nextToken = call.request.queryParameters["nextToken"]
             val size = call.request.queryParameters["size"]?.toIntOrNull() ?: 20
 
@@ -40,6 +40,7 @@ fun Route.adminTagRoutes() {
 
         // Search tags by name
         get("/search") {
+            val tagService: TagService = call.injectTagService()
             val query = call.request.queryParameters["q"] ?: ""
             val tags = tagService.searchByName(query).map { it.toDTO() }
             call.respond(tags)
@@ -47,6 +48,7 @@ fun Route.adminTagRoutes() {
 
         // Get tag with associated Sunreis
         get("/{id}") {
+            val tagService: TagService = call.injectTagService()
             val id = call.parameters["id"] ?: run {
                 call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
                 return@get
@@ -75,6 +77,7 @@ fun Route.adminTagRoutes() {
 
         // Create new tag
         post {
+            val tagService: TagService = call.injectTagService()
             try {
                 val request = call.receive<CreateTagRequest>()
                 val createdTag = tagService.create(
@@ -89,6 +92,7 @@ fun Route.adminTagRoutes() {
 
         // Update tag
         put("/{id}") {
+            val tagService: TagService = call.injectTagService()
             val id = call.parameters["id"] ?: run {
                 call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
                 return@put
@@ -125,6 +129,7 @@ fun Route.adminTagRoutes() {
 
         // Remove Sunrei from tag
         delete("/{id}/sunreis/{sunreiId}") {
+            val tagService: TagService = call.injectTagService()
             val tagId = call.parameters["id"] ?: run {
                 call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing tag id parameter"))
                 return@delete

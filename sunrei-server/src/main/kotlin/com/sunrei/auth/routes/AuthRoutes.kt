@@ -3,7 +3,7 @@ package com.sunrei.auth.routes
 import com.sunrei.auth.models.AuthErrorResponse
 import com.sunrei.auth.models.GoogleAuthRequest
 import com.sunrei.auth.models.GoogleAuthResponse
-import com.sunrei.auth.service.AuthService
+import com.sunrei.auth.service.IAuthService
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.log
 import io.ktor.server.auth.authentication
@@ -16,7 +16,7 @@ import io.ktor.server.routing.post
 import io.ktor.server.routing.route
 import com.sunrei.auth.models.OAuthProvider as OAuthProviderEnum
 
-fun Route.authRoutes(authService: AuthService) {
+fun Route.authRoutes(authService: IAuthService) {
     route("/api/auth") {
         post("/google") {
             try {
