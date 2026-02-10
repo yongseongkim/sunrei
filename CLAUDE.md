@@ -32,3 +32,35 @@ Backend (Ktor + Exposed + PostgreSQL), Frontend (Next.js + TypeScript + Google M
 #### Image
 
 - 여러 해상도를 대응하기 위해 widh, height 정보도 같이 이용한다.
+
+# YouTube → Sunrei Skills
+
+YouTube 영상에서 장소를 추출하여 Sunrei를 생성하는 CLI 기반 워크플로우. 5개의 스킬로 구성되어 있으며 각 단계마다 사용자 확인을 거침.
+
+## 스킬 목록
+
+| 스킬 | 설명 |
+|------|------|
+| `/youtube-fetch-info [url]` | YouTube 영상/플레이리스트 메타데이터 조회 |
+| `/youtube-extract-transcript` | 자막 추출 및 정리 (youtube-transcript-api, whisper 폴백) |
+| `/youtube-extract-locations` | 영상 컨셉 기반 장소 추출 + Google Maps 지오코딩 |
+| `/youtube-create-sunrei` | 추출된 데이터로 서버 API를 통해 Sunrei 생성 |
+| `/youtube-to-sunrei [url]` | 위 4개 스킬을 순서대로 실행하는 전체 워크플로우 |
+
+## 데이터 흐름
+
+```
+YouTube URL → video_info.json → transcripts.json → locations.json → POST /admin/sunreis
+```
+
+중간 데이터는 `.claude/workspace/youtube/{ID}/`에 저장되어 스킬 간 공유됨.
+
+## API 키 요구사항
+
+`sunrei-worker/.env`에서 로드:
+- `youtube_api_key` — YouTube Data API v3
+- `google_maps_api_key` — Google Maps Places API
+
+## 서버 의존성
+
+`/youtube-create-sunrei`는 sunrei-server가 실행 중이어야 하며 관리자 JWT 토큰이 필요함.

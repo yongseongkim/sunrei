@@ -32,3 +32,21 @@ Backend (Ktor + Exposed + PostgreSQL), Frontend (Next.js + TypeScript + Google M
 #### Image
 
 - 여러 해상도를 대응하기 위해 widh, height 정보도 같이 이용한다.
+
+## Claude Code Skills (YouTube → Sunrei)
+
+관리자 페이지의 서버→RabbitMQ→워커 파이프라인 대신, Claude Code CLI에서 직접 YouTube 영상을 처리하여 Sunrei를 생성하는 대안적 워크플로우.
+
+```
+/youtube-to-sunrei https://www.youtube.com/watch?v=VIDEO_ID
+```
+
+5개의 개별 스킬로 구성되며, 각 단계에서 사용자 확인 후 진행:
+
+1. `/youtube-fetch-info` — 영상 메타데이터 조회 (YouTube Data API v3)
+2. `/youtube-extract-transcript` — 자막 추출 및 한국어 정리
+3. `/youtube-extract-locations` — 영상 컨셉 기반 장소 추출 + 지오코딩
+4. `/youtube-create-sunrei` — 서버 API로 Sunrei 생성
+5. `/youtube-to-sunrei` — 위 4단계를 자동으로 연결
+
+필수 설정: `sunrei-worker/.env`에 `youtube_api_key`, `google_maps_api_key` 설정 필요
