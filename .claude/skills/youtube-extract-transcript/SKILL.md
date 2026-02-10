@@ -25,15 +25,13 @@ If the user provides an ID directly, use that instead.
 For each video, run the transcript extraction script:
 
 ```bash
-cd sunrei-worker && python -m pip install youtube-transcript-api python-dotenv --quiet 2>/dev/null; cd ..
-python .claude/scripts/youtube/extract_transcript.py "{VIDEO_ID}"
+uv run --with youtube-transcript-api --with python-dotenv python .claude/scripts/youtube/extract_transcript.py "{VIDEO_ID}"
 ```
 
 If the result contains `"error": "no_transcript_available"`, fall back to whisper:
 
 ```bash
-cd sunrei-worker && python -m pip install yt-dlp openai-whisper --quiet 2>/dev/null; cd ..
-python .claude/scripts/youtube/whisper_transcribe.py "https://www.youtube.com/watch?v={VIDEO_ID}"
+uv run --with yt-dlp --with openai-whisper python .claude/scripts/youtube/whisper_transcribe.py "https://www.youtube.com/watch?v={VIDEO_ID}"
 ```
 
 **Rate limiting for playlists:** Wait ~60 seconds between videos to avoid YouTube rate limiting. Inform the user of progress.

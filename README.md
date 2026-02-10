@@ -41,4 +41,10 @@ Claude Code CLI에서 직접 YouTube 영상을 처리하여 Sunrei를 생성하�
 4. `/youtube-create-sunrei` — 서버 API로 Sunrei 생성
 5. `/youtube-to-sunrei` — 위 4단계를 자동으로 연결
 
-필수 설정: `sunrei-worker/.env`에 `youtube_api_key`, `google_maps_api_key` 설정 필요
+#### Requirements
+- env
+    - `sunrei-worker/.env`에 `youtube_api_key`, `google_maps_api_key` 설정 필요
+- Admin Server Access
+    - 로컬 서버 실행: `cd sunrei-server && ./gradlew run --args="-config=application-local.conf"` (Docker로 PostgreSQL 필요)
+    - 운영 서버 포트포워딩: `kubectl port-forward svc/sunrei-server 3030:3100`
+
