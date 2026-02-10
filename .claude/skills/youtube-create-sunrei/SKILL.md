@@ -19,6 +19,7 @@ Create a Sunrei entity with SunreiSpots via the server admin API using collected
 ### 1. Load All Data
 
 Read all JSON files from `.claude/workspace/youtube/{ID}/`:
+
 - `video_info.json` — video/playlist metadata
 - `transcripts.json` — cleaned transcripts (optional, for descriptions)
 - `locations.json` — extracted and geocoded locations
@@ -26,6 +27,7 @@ Read all JSON files from `.claude/workspace/youtube/{ID}/`:
 ### 2. Get Server Configuration
 
 Ask the user for:
+
 - **Server URL**: Default `http://localhost:3030`
 - **Access token**: JWT token for admin API authentication
 
@@ -34,12 +36,14 @@ The user can provide these or set them as environment variables (`SUNREI_SERVER_
 ### 3. Compose Sunrei Details
 
 Use AskUserQuestion to confirm/edit:
+
 - **Title**: Suggest based on video/playlist title
 - **Description**: Suggest based on video description and extracted content summary
 - **Link**: YouTube video/playlist URL
 - **Tags**: Ask user to provide tag IDs (or list available tags first)
 
 To list available tags:
+
 ```bash
 curl -s "{SERVER_URL}/admin/tags" \
   -H "Authorization: Bearer {ACCESS_TOKEN}" | jq '.items'
@@ -97,11 +101,13 @@ curl -s -X POST "{SERVER_URL}/admin/sunreis" \
 ### 6. Handle Response
 
 On success (201):
+
 - Display the created Sunrei ID
 - Display summary: title, number of spots created
 - Provide link to view in admin panel
 
 On error:
+
 - Display the error message
 - Offer to retry with corrections
 - Common errors: invalid token (re-authenticate), missing required fields
@@ -109,6 +115,7 @@ On error:
 ### 7. Cleanup (Optional)
 
 Ask the user if they want to keep or clean up the workspace files:
+
 ```bash
 rm -rf .claude/workspace/youtube/{ID}
 ```

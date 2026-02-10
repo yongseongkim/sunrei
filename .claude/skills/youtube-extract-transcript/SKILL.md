@@ -51,6 +51,7 @@ For each transcript, analyze and clean the text:
 ### 4. Present for User Approval
 
 Show the cleaned transcript to the user with:
+
 - Original language detected
 - Transcript source (YouTube captions vs Whisper)
 - Total segment count and duration
@@ -58,6 +59,7 @@ Show the cleaned transcript to the user with:
 - Key sections highlighted that seem to mention locations
 
 Use AskUserQuestion:
+
 - "Approve this transcript"
 - "Request re-edit" (user provides feedback)
 - "Skip this video" (for playlists)
@@ -74,9 +76,7 @@ Save to `.claude/workspace/youtube/{ID}/transcripts.json`:
       "title": "...",
       "language": "ko",
       "source": "youtube_captions",
-      "segments": [
-        {"text": "...", "start": 0.0, "duration": 3.5}
-      ],
+      "segments": [{ "text": "...", "start": 0.0, "duration": 3.5 }],
       "fullText": "...",
       "cleanedText": "...",
       "approved": true

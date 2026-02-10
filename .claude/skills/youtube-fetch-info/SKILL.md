@@ -22,6 +22,7 @@ Store the key for use in subsequent curl calls. If not found, ask the user to pr
 ### 2. Parse URL
 
 Determine if the URL is a video or playlist:
+
 - Video URL contains `watch?v=` or `youtu.be/` → extract video ID
 - Playlist URL contains `list=` → extract playlist ID
 - If URL contains both, ask user whether to process the single video or the full playlist
@@ -37,11 +38,13 @@ curl -s "https://www.googleapis.com/youtube/v3/videos?id={VIDEO_ID}&part=snippet
 **For a playlist:**
 
 First fetch playlist metadata:
+
 ```bash
 curl -s "https://www.googleapis.com/youtube/v3/playlists?id={PLAYLIST_ID}&part=snippet,contentDetails&key={API_KEY}"
 ```
 
 Then fetch all playlist items (paginate with `pageToken` if `nextPageToken` exists):
+
 ```bash
 curl -s "https://www.googleapis.com/youtube/v3/playlistItems?playlistId={PLAYLIST_ID}&part=snippet,contentDetails&maxResults=50&key={API_KEY}"
 ```
@@ -51,6 +54,7 @@ curl -s "https://www.googleapis.com/youtube/v3/playlistItems?playlistId={PLAYLIS
 Present the fetched info clearly:
 
 **For a video:**
+
 - Title
 - Channel name
 - Published date
@@ -59,6 +63,7 @@ Present the fetched info clearly:
 - Thumbnail URL
 
 **For a playlist:**
+
 - Playlist title and description
 - Total video count
 - List all videos with index number, title, channel, and video ID
@@ -66,6 +71,7 @@ Present the fetched info clearly:
 ### 5. User Selection (Playlists)
 
 For playlists, use AskUserQuestion to ask which videos to process:
+
 - Option: "All videos"
 - Option: "Select specific videos" (then ask for comma-separated indices)
 - Option: "First N videos" (then ask for N)
@@ -81,6 +87,7 @@ mkdir -p .claude/workspace/youtube/{ID}
 Save to `.claude/workspace/youtube/{ID}/video_info.json` with this structure:
 
 **Single video:**
+
 ```json
 {
   "type": "video",
@@ -97,6 +104,7 @@ Save to `.claude/workspace/youtube/{ID}/video_info.json` with this structure:
 ```
 
 **Playlist:**
+
 ```json
 {
   "type": "playlist",

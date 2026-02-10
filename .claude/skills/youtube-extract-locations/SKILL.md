@@ -30,6 +30,7 @@ If not found, ask the user to provide it.
 ### 3. Analyze Video Concept
 
 For each video, determine the content concept from title + description:
+
 - What type of content is it? (food tour, travel vlog, attraction guide, etc.)
 - What geographic area does it cover? (city, neighborhood, country)
 - What kind of locations should be extracted? (restaurants, tourist spots, shops, etc.)
@@ -39,6 +40,7 @@ This concept guides which transcript mentions are relevant locations vs just pas
 ### 4. Extract Google Maps Links from Description
 
 Parse the video description for Google Maps links:
+
 - `https://maps.google.com/...`
 - `https://goo.gl/maps/...`
 - `https://maps.app.goo.gl/...`
@@ -48,12 +50,14 @@ These are high-confidence locations explicitly shared by the creator.
 ### 5. Extract Location Mentions from Transcript
 
 Analyze the cleaned transcript to find location references:
+
 - Place names (restaurants, cafes, shops, tourist spots)
 - Addresses or neighborhoods mentioned
 - Descriptions that identify a location (e.g., "this yakitori place near Shibuya station")
 - Note the timestamp where each location is mentioned
 
 Filter by the video concept identified in Step 3. For example:
+
 - A food tour video → extract only food-related venues
 - A general travel vlog → extract tourist spots, restaurants, viewpoints
 - Ignore passing mentions that aren't actual recommendations
@@ -79,12 +83,13 @@ Use area context from the video concept to improve search accuracy (e.g., "시�
 
 Display all extracted locations in a table:
 
-| # | Name | Address | Lat/Lng | Source | Timestamp | Google Maps |
-|---|------|---------|---------|--------|-----------|-------------|
+| #   | Name | Address | Lat/Lng | Source | Timestamp | Google Maps |
+| --- | ---- | ------- | ------- | ------ | --------- | ----------- |
 
 Source: "description_link", "transcript_mention", or "both"
 
 Use AskUserQuestion:
+
 - "Approve all locations"
 - "Edit locations" (user can add/remove/modify)
 - "Re-extract" (with different concept guidance)

@@ -10,6 +10,7 @@ Orchestrate the complete YouTube-to-Sunrei pipeline with interactive checkpoints
 ## Usage
 
 The user provides a YouTube video or playlist URL as an argument. Example:
+
 - `/youtube-to-sunrei https://www.youtube.com/watch?v=VIDEO_ID`
 - `/youtube-to-sunrei https://www.youtube.com/playlist?list=PLAYLIST_ID`
 
@@ -70,6 +71,7 @@ Execute the `/youtube-create-sunrei` skill.
 ## Resuming
 
 If `.claude/workspace/youtube/{ID}/` already contains data from a previous run:
+
 1. Check which JSON files exist
 2. Show the user what's already been done
 3. Ask if they want to continue from where they left off or start fresh
