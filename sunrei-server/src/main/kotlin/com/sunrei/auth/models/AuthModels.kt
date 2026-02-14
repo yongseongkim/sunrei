@@ -86,6 +86,12 @@ data class OAuthCallbackResponse(
 )
 
 @Serializable
+data class GoogleAuthCodeRequest(
+    val code: String,
+    val redirectUri: String
+)
+
+@Serializable
 data class AuthErrorResponse(
     val error: String,
     val message: String? = null

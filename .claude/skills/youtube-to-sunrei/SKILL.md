@@ -25,7 +25,7 @@ Execute the `/youtube-fetch-info` skill with the provided URL.
 - For playlists: let user select which videos to process
 - Save to `.claude/workspace/youtube/{ID}/video_info.json`
 
-**Checkpoint:** Confirm with user before proceeding to transcript extraction.
+Checkpoint: Confirm with user before proceeding to transcript extraction.
 
 ### Step 2: Extract Transcripts
 
@@ -37,7 +37,7 @@ Execute the `/youtube-extract-transcript` skill.
 - User can request re-edits or approve
 - Save to `.claude/workspace/youtube/{ID}/transcripts.json`
 
-**Checkpoint:** All transcripts must be approved before proceeding.
+Checkpoint: All transcripts must be approved before proceeding.
 
 ### Step 3: Extract Locations
 
@@ -50,15 +50,16 @@ Execute the `/youtube-extract-locations` skill.
 - Present locations for user review (add/edit/remove)
 - Save to `.claude/workspace/youtube/{ID}/locations.json`
 
-**Checkpoint:** User must approve location list before Sunrei creation.
+Checkpoint: User must approve location list before Sunrei creation.
 
 ### Step 4: Create Sunrei
 
 Execute the `/youtube-create-sunrei` skill.
 
+- Requires admin authentication: Token must exist at `~/.config/sunrei/admin_token`. If missing, run: `uv run --with requests python .claude/scripts/auth/login.py`
 - Compose Sunrei title, description, and tags (with user input)
 - Build SunreiSpots from extracted locations
-- Create via server admin API
+- Create via server admin API (all requests require `Authorization: Bearer ${TOKEN}` header)
 - Report created Sunrei ID and summary
 
 ## Error Handling

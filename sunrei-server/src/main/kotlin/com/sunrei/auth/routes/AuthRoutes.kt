@@ -1,6 +1,7 @@
 package com.sunrei.auth.routes
 
 import com.sunrei.auth.models.AuthErrorResponse
+import com.sunrei.auth.models.GoogleAuthCodeRequest
 import com.sunrei.auth.models.GoogleAuthRequest
 import com.sunrei.auth.models.GoogleAuthResponse
 import com.sunrei.auth.service.IAuthService
@@ -46,6 +47,40 @@ fun Route.authRoutes() {
                 )
             } catch (e: Exception) {
                 call.application.log.error("Error during Google authentication", e)
+                call.respond(
+                    HttpStatusCode.InternalServerError,
+                    AuthErrorResponse(
+                        error = "internal_error",
+                        message = "Authentication failed"
+                    )
+                )
+            }
+        }
+
+        post("/google/code") {
+            val authService: IAuthService = call.injectAuthService()
+            try {
+                val request = call.receive<GoogleAuthCodeRequest>()
+                val (user, _) = authService.authenticateWithOAuth(
+                    provider = OAuthProviderEnum.GOOGLE,
+                    code = request.code,
+                    redirectUri = request.redirectUri
+                )
+                val jwtToken = authService.generateJWT(user)
+                call.respond(
+                    HttpStatusCode.OK,
+                    GoogleAuthResponse(token = jwtToken, user = user)
+                )
+            } catch (e: IllegalArgumentException) {
+                call.respond(
+                    HttpStatusCode.Unauthorized,
+                    AuthErrorResponse(
+                        error = "invalid_code",
+                        message = e.message ?: "Invalid authorization code"
+                    )
+                )
+            } catch (e: Exception) {
+                call.application.log.error("Error during Google auth code login", e)
                 call.respond(
                     HttpStatusCode.InternalServerError,
                     AuthErrorResponse(

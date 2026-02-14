@@ -12,6 +12,7 @@ Create a Sunrei entity with SunreiSpots via the server admin API using collected
 - `.claude/workspace/youtube/{ID}/video_info.json` must exist
 - `.claude/workspace/youtube/{ID}/locations.json` must exist
 - The sunrei-server must be running
+- Admin authentication token must exist at `~/.config/sunrei/admin_token`. If missing or expired, tell the user to run: `uv run --with requests python .claude/scripts/auth/login.py`
 
 ## Steps
 
@@ -27,7 +28,7 @@ Read all JSON files from `.claude/workspace/youtube/{ID}/`:
 
 Ask the user for:
 
-- **Server URL**: Default `http://localhost:3030`
+- Server URL: Default `http://localhost:3030`, production `https://sunrei-api.yongseongkimm.com`
 
 The user can provide this or set it as an environment variable (`SUNREI_SERVER_URL`).
 
@@ -39,26 +40,35 @@ curl -s http://localhost:3030/health
 
 If the health check fails, ask the user to start the server first.
 
+Read the admin token for authenticated requests:
+
+```bash
+TOKEN=$(cat ~/.config/sunrei/admin_token)
+```
+
+If the token file doesn't exist, tell the user to run the login script first:
+`uv run --with requests python .claude/scripts/auth/login.py`
+
 ### 3. Compose Sunrei Details
 
 First, fetch available tags:
 
 ```bash
-curl -s "{SERVER_URL}/admin/tags" | jq '.data'
+curl -s -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/tags" | jq '.data'
 ```
 
 The response includes `data` (array of tags), `totalSize`, `totalElements`, `nextToken`, and `sunreiCountByTagId`.
 
 Then use AskUserQuestion to confirm/edit:
 
-- **Title**: Suggest based on the **channel name** (`channelTitle` field from `video_info.json`). The channel represents the "content" (like a movie/anime) in the Sunrei model.
-- **Description**: Suggest based on channel description or video descriptions
-- **Link**: YouTube channel or video/playlist URL
-- **Tags**: Present available tags from the fetched list and ask user to select
+- Title: Suggest based on the channel name (`channelTitle` field from `video_info.json`). The channel represents the "content" (like a movie/anime) in the Sunrei model.
+- Description: Suggest based on channel description or video descriptions
+- Link: YouTube channel or video/playlist URL
+- Tags: Present available tags from the fetched list and ask user to select
 
 ### 4. Build SunreiSpots
 
-For each location in `locations.json`, create a spot. The spot **title** is the **video title** (from `video_info.json`), not the location name. If the video title exceeds 128 characters, truncate it. The location name lives only in the Place object.
+For each location in `locations.json`, create a spot. The spot title is the video title (from `video_info.json`), not the location name. If the video title exceeds 128 characters, truncate it. The location name lives only in the Place object.
 
 ```json
 {
@@ -92,6 +102,7 @@ Only send the POST request after the user confirms the spots from step 4.
 ```bash
 curl -s -X POST "{SERVER_URL}/admin/sunreis" \
   -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${TOKEN}" \
   -d '{
     "title": "채널명",
     "description": "채널/영상 기반 설명",

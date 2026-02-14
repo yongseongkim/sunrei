@@ -29,13 +29,13 @@ Determine if the URL is a video or playlist:
 
 ### 3. Fetch Metadata
 
-**For a single video:**
+For a single video:
 
 ```bash
 curl -s "https://www.googleapis.com/youtube/v3/videos?id={VIDEO_ID}&part=snippet,contentDetails&key={API_KEY}"
 ```
 
-**For a playlist:**
+For a playlist:
 
 First fetch playlist metadata:
 
@@ -53,7 +53,7 @@ curl -s "https://www.googleapis.com/youtube/v3/playlistItems?playlistId={PLAYLIS
 
 Present the fetched info clearly:
 
-**For a video:**
+For a video:
 
 - Title
 - Channel name
@@ -62,7 +62,7 @@ Present the fetched info clearly:
 - Description (truncated if very long)
 - Thumbnail URL
 
-**For a playlist:**
+For a playlist:
 
 - Playlist title and description
 - Total video count
@@ -86,7 +86,7 @@ mkdir -p .claude/workspace/youtube/{ID}
 
 Save to `.claude/workspace/youtube/{ID}/video_info.json` with this structure:
 
-**Single video:**
+Single video:
 
 ```json
 {
@@ -103,7 +103,7 @@ Save to `.claude/workspace/youtube/{ID}/video_info.json` with this structure:
 }
 ```
 
-**Playlist:**
+Playlist:
 
 ```json
 {

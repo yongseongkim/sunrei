@@ -34,17 +34,17 @@ If the result contains `"error": "no_transcript_available"`, fall back to whispe
 uv run --with yt-dlp --with openai-whisper python .claude/scripts/youtube/whisper_transcribe.py "https://www.youtube.com/watch?v={VIDEO_ID}"
 ```
 
-**Rate limiting for playlists:** Wait ~60 seconds between videos to avoid YouTube rate limiting. Inform the user of progress.
+Rate limiting for playlists: Wait ~60 seconds between videos to avoid YouTube rate limiting. Inform the user of progress.
 
 ### 3. Audit and Clean Transcript
 
 For each transcript, analyze and clean the text:
 
-1. **Fix Korean auto-generated errors**: Common YouTube auto-caption mistakes in Korean (e.g., misheard words, wrong particles)
-2. **Remove noise**: "[음악]", "[박수]", "[웃음]" markers, repeated filler words
-3. **Fix formatting**: Merge broken sentences, fix punctuation
-4. **Preserve timestamps**: Keep segment timing information intact
-5. **Identify key sections**: Note sections that mention places, restaurants, attractions
+1. Fix Korean auto-generated errors: Common YouTube auto-caption mistakes in Korean (e.g., misheard words, wrong particles)
+2. Remove noise: "[음악]", "[박수]", "[웃음]" markers, repeated filler words
+3. Fix formatting: Merge broken sentences, fix punctuation
+4. Preserve timestamps: Keep segment timing information intact
+5. Identify key sections: Note sections that mention places, restaurants, attractions
 
 ### 4. Present for User Approval
 
