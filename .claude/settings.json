@@ -3,7 +3,13 @@
     "allow": [
       "Bash(uv run:*)",
       "Bash(curl:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(python3:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(API_KEY=*)",
+      "Bash(YOUTUBE_API_KEY=*)",
+      "Bash(GOOGLE_MAPS_API_KEY=*)"
     ]
   }
 }
