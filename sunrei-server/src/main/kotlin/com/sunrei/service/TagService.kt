@@ -1,6 +1,5 @@
 package com.sunrei.service
 
-import com.sunrei.config.JwtConfig
 import com.sunrei.database.SunreiTags
 import com.sunrei.database.Sunreis
 import com.sunrei.database.Tags
@@ -22,8 +21,10 @@ import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.update
 
-class TagService {
-    private val pageToken = PaginationToken(JwtConfig.getPageTokenSecret())
+class TagService(
+    pageTokenSecret: String
+) {
+    private val pageToken = PaginationToken(pageTokenSecret)
 
     fun list(nextToken: String? = null, size: Int = 20): ListTagsResult {
         val tokenData = pageToken.decodeToken(nextToken)

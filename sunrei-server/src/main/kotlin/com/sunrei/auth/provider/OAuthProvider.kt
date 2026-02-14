@@ -3,12 +3,13 @@ package com.sunrei.auth.provider
 import com.sunrei.auth.models.OAuthProvider as OAuthProviderEnum
 import com.sunrei.auth.models.OAuthTokenInfo
 import com.sunrei.auth.models.OAuthUserInfo
+import io.ktor.client.HttpClient
 import io.ktor.server.config.ApplicationConfig
 
 interface IOAuthProvider {
     val provider: OAuthProviderEnum
 
-    fun initialize(config: ApplicationConfig)
+    fun initialize(config: ApplicationConfig, httpClient: HttpClient)
 
     suspend fun verifyToken(tokenInfo: OAuthTokenInfo): OAuthUserInfo
 

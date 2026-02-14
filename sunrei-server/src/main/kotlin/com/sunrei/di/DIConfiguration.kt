@@ -1,5 +1,6 @@
 package com.sunrei.di
 
+import com.sunrei.auth.provider.OAuthProviderFactory
 import com.sunrei.auth.service.AuthRepository
 import com.sunrei.auth.service.AuthService
 import com.sunrei.auth.service.IAuthRepository
@@ -52,12 +53,6 @@ fun Application.configureDI() {
                 }.s3.${config.propertyOrNull("aws.region")?.getString() ?: "ap-northeast-2"}.amazonaws.com"
         )
 
-        // Create leaf services
-        val placeService = PlaceService()
-        val tagService = TagService()
-        val userService = UserService()
-        val authRepository = AuthRepository()
-
         // Create HttpClient with lazy initialization
         val httpClientLazy = lazy {
             HttpClient(CIO) {
@@ -67,17 +62,32 @@ fun Application.configureDI() {
             }
         }
 
+        // Read page token secret from config
+        val pageTokenSecret = config.propertyOrNull("jwt.pageToken.secret")?.getString()
+            ?: "sunrei-page-token-secret-change-in-production"
+
+        // Create leaf services
+        val placeService = PlaceService()
+        val userService = UserService()
+        val tagService = TagService(pageTokenSecret)
+
         // Create S3Service
         val s3Service = S3Service(httpClientLazy.value, s3Config)
 
         // Create SunreiSpotService (depends on PlaceService)
         val sunreiSpotService = SunreiSpotService(placeService)
 
-        // Create SunreiService (depends on SunreiSpotService and PlaceService)
-        val sunreiService = SunreiService(sunreiSpotService, placeService)
+        // Create SunreiService (depends on SunreiSpotService, PlaceService, pageTokenSecret)
+        val sunreiService = SunreiService(sunreiSpotService, placeService, pageTokenSecret)
 
-        // Create AuthService (depends on IAuthRepository)
-        val authService = AuthService(config, authRepository)
+        // Create OAuthProviderFactory (depends on config, httpClient)
+        val oAuthProviderFactory = OAuthProviderFactory(config, httpClientLazy.value)
+
+        // Create AuthRepository (depends on UserService)
+        val authRepository = AuthRepository(userService)
+
+        // Create AuthService (depends on config, AuthRepository, OAuthProviderFactory)
+        val authService = AuthService(config, authRepository, oAuthProviderFactory)
 
         // Store all services in ServiceLocator
         ServiceLocator.httpClient = httpClientLazy

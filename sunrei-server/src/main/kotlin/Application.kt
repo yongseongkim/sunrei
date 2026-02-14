@@ -1,9 +1,7 @@
 package com.sunrei
 
-import com.sunrei.auth.provider.OAuthProviderFactory
 import com.sunrei.config.DatabaseConfig
 import com.sunrei.plugins.configureAuthentication
-import com.sunrei.config.JwtConfig
 import com.sunrei.di.configureDI
 import com.typesafe.config.ConfigFactory
 import io.ktor.http.HttpHeaders
@@ -53,12 +51,6 @@ fun Application.module() {
 
     // Initialize database
     DatabaseConfig.init(config)
-
-    // Initialize JWT configuration
-    JwtConfig.init(config)
-
-    // Initialize OAuth providers
-    OAuthProviderFactory.initialize(config)
 
     // Install DI plugin and configure dependencies
     install(DI)

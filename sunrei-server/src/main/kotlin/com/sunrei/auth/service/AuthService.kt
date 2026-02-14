@@ -7,7 +7,7 @@ import com.sunrei.auth.models.OAuthTokenInfo
 import com.sunrei.auth.models.OAuthUserInfo
 import com.sunrei.auth.provider.OAuthProviderFactory
 import com.sunrei.model.UserRole
-import io.ktor.server.config.*
+import io.ktor.server.config.ApplicationConfig
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -41,14 +41,15 @@ interface IAuthService {
 
 class AuthService(
     private val config: ApplicationConfig,
-    private val authRepository: IAuthRepository = AuthRepository()
+    private val authRepository: IAuthRepository,
+    private val oAuthProviderFactory: OAuthProviderFactory
 ) : IAuthService {
     private val jwtSecret = config.property("auth.jwt.secret").getString()
     private val jwtIssuer = config.property("auth.jwt.issuer").getString()
     private val jwtExpiration = config.property("auth.jwt.expiration").getString().toLong()
 
     override suspend fun verifyOAuthToken(tokenInfo: OAuthTokenInfo): OAuthUserInfo {
-        val provider = OAuthProviderFactory.getProvider(tokenInfo.provider)
+        val provider = oAuthProviderFactory.getProvider(tokenInfo.provider)
             ?: throw IllegalArgumentException("Unsupported OAuth provider: ${tokenInfo.provider}")
 
         return provider.verifyToken(tokenInfo)
@@ -63,7 +64,7 @@ class AuthService(
         redirectUri: String?,
         state: String?
     ): Pair<com.sunrei.model.User, Boolean> {
-        val providerImpl = OAuthProviderFactory.getProvider(provider)
+        val providerImpl = oAuthProviderFactory.getProvider(provider)
             ?: throw IllegalArgumentException("Unsupported OAuth provider: $provider")
 
         // Handle access token (from GIS Token Client)
