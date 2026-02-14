@@ -34,6 +34,15 @@ If the result contains `"error": "no_transcript_available"`, fall back to whispe
 uv run --with yt-dlp --with openai-whisper python .claude/scripts/youtube/whisper_transcribe.py "https://www.youtube.com/watch?v={VIDEO_ID}"
 ```
 
+If Whisper also fails or returns empty, fall back to video OCR:
+
+```bash
+uv run --with easyocr --with opencv-python-headless --with yt-dlp \
+  python .claude/scripts/youtube/extract_onscreen_text.py "https://www.youtube.com/watch?v={VIDEO_ID}"
+```
+
+This extracts burned-in subtitles and on-screen text from video frames using OCR.
+
 Rate limiting for playlists: Wait ~60 seconds between videos to avoid YouTube rate limiting. Inform the user of progress.
 
 ### 3. Audit and Clean Transcript
@@ -73,7 +82,7 @@ Save to `.claude/workspace/youtube/{ID}/transcripts.json`:
       "videoId": "...",
       "title": "...",
       "language": "ko",
-      "source": "youtube_captions",
+      "source": "youtube_captions | whisper | ocr_frames",
       "segments": [{ "text": "...", "start": 0.0, "duration": 3.5 }],
       "fullText": "...",
       "cleanedText": "...",
