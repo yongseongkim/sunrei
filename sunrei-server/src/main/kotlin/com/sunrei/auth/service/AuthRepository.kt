@@ -40,7 +40,7 @@ interface IAuthRepository {
 }
 
 class AuthRepository(
-    private val userService: UserService = UserService()
+    private val userService: UserService
 ) : IAuthRepository {
     override suspend fun findByOAuthProvider(
         provider: String,

@@ -1,5 +1,6 @@
 package com.sunrei.routes.app
 
+import com.sunrei.di.injectSunreiSpotService
 import com.sunrei.database.SunreiTags
 import com.sunrei.database.Sunreis
 import com.sunrei.database.Tags
@@ -19,10 +20,9 @@ import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
 
 fun Route.mapRoutes() {
-    val sunreiSpotService = SunreiSpotService()
-
     route("/map") {
         get {
+            val sunreiSpotService: SunreiSpotService = call.injectSunreiSpotService()
             val polygon = call.request.queryParameters["polygon"]
 
             if (polygon != null) {

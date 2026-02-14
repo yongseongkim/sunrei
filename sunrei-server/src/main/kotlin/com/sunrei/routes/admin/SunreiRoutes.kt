@@ -1,5 +1,6 @@
 package com.sunrei.routes.admin
 
+import com.sunrei.di.injectSunreiService
 import com.sunrei.generated.dto.admin.CreateSunreiRequest
 import com.sunrei.generated.dto.admin.UpdateSunreiRequest
 import com.sunrei.routes.admin.converter.toDTO
@@ -15,10 +16,9 @@ import io.ktor.server.routing.put
 import io.ktor.server.routing.route
 
 fun Route.adminSunreiRoutes() {
-    val sunreiService = SunreiService()
-
     route("/sunreis") {
         get {
+            val sunreiService: SunreiService = call.injectSunreiService()
             val nextToken = call.request.queryParameters["nextToken"]
             val size = call.request.queryParameters["size"]?.toIntOrNull() ?: 20
             val keyword = call.request.queryParameters["keyword"]
@@ -40,6 +40,7 @@ fun Route.adminSunreiRoutes() {
         }
 
         get("/{id}") {
+            val sunreiService: SunreiService = call.injectSunreiService()
             val id = call.parameters["id"] ?: run {
                 call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
                 return@get
@@ -55,6 +56,7 @@ fun Route.adminSunreiRoutes() {
         }
 
         post {
+            val sunreiService: SunreiService = call.injectSunreiService()
             try {
                 val request = call.receive<CreateSunreiRequest>()
                 val created = sunreiService.create(request)
@@ -65,6 +67,7 @@ fun Route.adminSunreiRoutes() {
         }
 
         put("/{id}") {
+            val sunreiService: SunreiService = call.injectSunreiService()
             val id = call.parameters["id"] ?: run {
                 call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
                 return@put
@@ -85,6 +88,7 @@ fun Route.adminSunreiRoutes() {
         }
 
         delete("/{id}") {
+            val sunreiService: SunreiService = call.injectSunreiService()
             val id = call.parameters["id"] ?: run {
                 call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
                 return@delete

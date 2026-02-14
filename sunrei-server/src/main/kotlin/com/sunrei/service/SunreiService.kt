@@ -1,6 +1,5 @@
 package com.sunrei.service
 
-import com.sunrei.config.JwtConfig
 import com.sunrei.database.Places
 import com.sunrei.database.SunreiSpots
 import com.sunrei.database.SunreiTags
@@ -32,10 +31,12 @@ import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.update
 
-class SunreiService {
-    private val pageToken = PaginationToken(JwtConfig.getPageTokenSecret())
-    private val sunreiSpotService = SunreiSpotService()
-    private val placeService = PlaceService()
+class SunreiService(
+    private val sunreiSpotService: SunreiSpotService,
+    private val placeService: PlaceService,
+    pageTokenSecret: String
+) {
+    private val pageToken = PaginationToken(pageTokenSecret)
 
     fun list(): List<Sunrei> = transaction {
         val sunreis = Sunreis.select { Sunreis.deletedAt.isNull() }

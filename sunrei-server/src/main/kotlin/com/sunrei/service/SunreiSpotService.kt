@@ -8,8 +8,9 @@ import org.jetbrains.exposed.sql.and
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
 
-class SunreiSpotService {
-    private val placeService = PlaceService()
+class SunreiSpotService(
+    private val placeService: PlaceService
+) {
 
     fun getById(id: String): SunreiSpot? = transaction {
         (SunreiSpots innerJoin Places)

@@ -1,14 +1,9 @@
 package com.sunrei
 
-import com.sunrei.auth.provider.OAuthProviderFactory
 import com.sunrei.config.DatabaseConfig
 import com.sunrei.plugins.configureAuthentication
-import com.sunrei.config.JwtConfig
-import com.sunrei.service.S3Config
-import com.sunrei.service.S3Service
+import com.sunrei.di.configureDI
 import com.typesafe.config.ConfigFactory
-import io.ktor.client.HttpClient
-import io.ktor.client.engine.cio.CIO
 import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpMethod
 import io.ktor.serialization.kotlinx.json.json
@@ -23,6 +18,7 @@ import io.ktor.server.netty.Netty
 import io.ktor.server.plugins.calllogging.CallLogging
 import io.ktor.server.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.server.plugins.cors.routing.CORS
+import io.ktor.server.plugins.di.DI
 import kotlinx.serialization.json.Json
 import org.slf4j.event.Level
 
@@ -56,31 +52,9 @@ fun Application.module() {
     // Initialize database
     DatabaseConfig.init(config)
 
-    // Initialize JWT configuration
-    JwtConfig.init(config)
-
-    // Initialize OAuth providers
-    OAuthProviderFactory.initialize(config)
-
-    // Initialize S3 service
-    val s3Config = S3Config(
-        region = config.property("aws.region").getString(),
-        bucketName = config.property("aws.s3.bucket").getString(),
-        accessKeyId = config.property("aws.accessKeyId").getString(),
-        secretAccessKey = config.property("aws.secretAccessKey").getString(),
-        publicUrl = config.propertyOrNull("aws.s3.publicUrl")?.getString()
-            ?: "https://${
-                config.propertyOrNull("aws.s3.bucket")?.getString() ?: "sunrei-images"
-            }.s3.${config.propertyOrNull("aws.region")?.getString() ?: "ap-northeast-2"}.amazonaws.com"
-    )
-
-    val httpClient = HttpClient(CIO) {
-        install(io.ktor.client.plugins.contentnegotiation.ContentNegotiation) {
-            json()
-        }
-    }
-
-    val s3Service = S3Service(httpClient, s3Config)
+    // Install DI plugin and configure dependencies
+    install(DI)
+    configureDI()
 
     // Configure serialization
     install(ContentNegotiation) {
@@ -140,5 +114,5 @@ fun Application.module() {
     configureAuthentication(config)
 
     // Configure routes
-    configureRouting(s3Service)
+    configureRouting()
 }

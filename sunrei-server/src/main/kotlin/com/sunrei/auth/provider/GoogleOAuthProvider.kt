@@ -27,9 +27,10 @@ class GoogleOAuthProvider : IOAuthProvider {
     private var clientSecret: String = ""
     private val httpTransport = NetHttpTransport()
     private val jsonFactory = GsonFactory.getDefaultInstance()
-    private val httpClient = HttpClient()
+    private lateinit var httpClient: HttpClient
 
-    override fun initialize(config: ApplicationConfig) {
+    override fun initialize(config: ApplicationConfig, httpClient: HttpClient) {
+        this.httpClient = httpClient
         clientId = config.property("auth.oauth.google.clientId").getString()
         clientSecret = config.property("auth.oauth.google.clientSecret").getString()
         verifier = GoogleIdTokenVerifier.Builder(
