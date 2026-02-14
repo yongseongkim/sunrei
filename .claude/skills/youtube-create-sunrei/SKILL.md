@@ -1,0 +1,139 @@
+---
+name: youtube-create-sunrei
+description: This skill should be used when the user asks to "create a sunrei", "save to sunrei", or wants to finalize the YouTube-to-Sunrei workflow after location extraction.
+---
+
+# Create Sunrei from Extracted YouTube Data
+
+Create a Sunrei entity with SunreiSpots via the server admin API using collected video data.
+
+## Prerequisites
+
+- `.claude/workspace/youtube/{ID}/video_info.json` must exist
+- `.claude/workspace/youtube/{ID}/locations.json` must exist
+- The sunrei-server must be running
+
+## Steps
+
+### 1. Load All Data
+
+Read all JSON files from `.claude/workspace/youtube/{ID}/`:
+
+- `video_info.json` — video/playlist metadata
+- `transcripts.json` — cleaned transcripts (optional, for descriptions)
+- `locations.json` — extracted and geocoded locations
+
+### 2. Get Server Configuration
+
+Ask the user for:
+
+- **Server URL**: Default `http://localhost:3030`
+
+The user can provide this or set it as an environment variable (`SUNREI_SERVER_URL`).
+
+Verify the server is running before proceeding:
+
+```bash
+curl -s http://localhost:3030/health
+```
+
+If the health check fails, ask the user to start the server first.
+
+### 3. Compose Sunrei Details
+
+First, fetch available tags:
+
+```bash
+curl -s "{SERVER_URL}/admin/tags" | jq '.data'
+```
+
+The response includes `data` (array of tags), `totalSize`, `totalElements`, `nextToken`, and `sunreiCountByTagId`.
+
+Then use AskUserQuestion to confirm/edit:
+
+- **Title**: Suggest based on the **channel name** (`channelTitle` field from `video_info.json`). The channel represents the "content" (like a movie/anime) in the Sunrei model.
+- **Description**: Suggest based on channel description or video descriptions
+- **Link**: YouTube channel or video/playlist URL
+- **Tags**: Present available tags from the fetched list and ask user to select
+
+### 4. Build SunreiSpots
+
+For each location in `locations.json`, create a spot. The spot **title** is the **video title** (from `video_info.json`), not the location name. If the video title exceeds 128 characters, truncate it. The location name lives only in the Place object.
+
+```json
+{
+  "title": "시부야의 맛있는 야키토리 맛집 투어",
+  "description": "영상에서 소개된 야키토리 맛집",
+  "images": [],
+  "youtubeLink": "https://youtube.com/watch?v=VIDEO_ID&t=123",
+  "place": {
+    "name": "토리키조쿠 시부야점",
+    "address": "도쿄도 시부야구...",
+    "latitude": 35.123,
+    "longitude": 139.456,
+    "googleMapsId": "ChIJ..."
+  }
+}
+```
+
+- `title` = video title, truncated to 128 chars if needed (each video is a "scene/episode" within the channel)
+- `description` = location-specific context from the video
+- `images` = empty array `[]`
+- `place.name` = the actual location name
+
+If multiple locations are extracted from one video, each gets its own SunreiSpot with the same video title.
+
+Present the full list of spots to the user as a table for review. Wait for user confirmation before proceeding.
+
+### 5. Create Sunrei via API
+
+Only send the POST request after the user confirms the spots from step 4.
+
+```bash
+curl -s -X POST "{SERVER_URL}/admin/sunreis" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "채널명",
+    "description": "채널/영상 기반 설명",
+    "link": "https://youtube.com/...",
+    "images": [],
+    "tagIds": ["..."],
+    "spots": [
+      {
+        "title": "영상 제목 (128자 이내)",
+        "description": "영상에서 소개된 장소 관련 내용",
+        "images": [],
+        "youtubeLink": "https://youtube.com/watch?v=...&t=123",
+        "place": {
+          "name": "장소명",
+          "address": "주소",
+          "latitude": 35.123,
+          "longitude": 139.456,
+          "googleMapsId": "ChIJ..."
+        }
+      }
+    ]
+  }'
+```
+
+### 6. Handle Response
+
+On success (201):
+
+- Display the created Sunrei ID
+- Display summary: title, number of spots created
+- Provide link to view in admin panel
+
+On error:
+
+- Display the error message
+- Offer to retry with corrections
+- Common errors: missing required fields, invalid tag IDs
+
+### 7. Cleanup (Optional)
+
+Ask the user if they want to keep or clean up the workspace files:
+
+```bash
+rm -rf .claude/workspace/youtube/{ID}
+```
