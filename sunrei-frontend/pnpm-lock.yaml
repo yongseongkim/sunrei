@@ -93,6 +93,9 @@ importers:
 
   packages/sunrei-admin:
     dependencies:
+      '@googlemaps/react-wrapper':
+        specifier: ^1.2.0
+        version: 1.2.0(react@19.1.0)
       '@hookform/resolvers':
         specifier: ^5.2.1
         version: 5.2.2(react-hook-form@7.69.0(react@19.1.0))
@@ -127,6 +130,9 @@ importers:
       '@openapitools/openapi-generator-cli':
         specifier: ^2.23.1
         version: 2.26.0(@types/node@20.19.27)
+      '@types/google.maps':
+        specifier: ^3.58.1
+        version: 3.58.1
       '@types/js-cookie':
         specifier: ^3.0.6
         version: 3.0.6
@@ -140,6 +146,9 @@ importers:
       '@openapitools/openapi-generator-cli':
         specifier: ^2.20.2
         version: 2.26.0(@types/node@20.19.27)
+      '@types/google.maps':
+        specifier: ^3.58.1
+        version: 3.58.1
 
 packages:
 

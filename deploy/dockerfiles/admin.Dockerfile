@@ -3,7 +3,8 @@ FROM node:22-alpine AS builder
 WORKDIR /app
 
 # Install build dependencies for native modules
-RUN apk add --no-cache python3 make g++
+RUN apk add --no-cache python3 make g++ && \
+    npm install -g pnpm
 
 # Increase Node.js memory limit for builds
 ENV NODE_OPTIONS=--max-old-space-size=4096
@@ -15,17 +16,23 @@ ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 ENV NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=$NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
 ENV NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID=$NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID
 
-# Copy package files
-COPY sunrei-admin/package*.json ./
+# Copy workspace root files
+COPY sunrei-frontend/package.json ./
+COPY sunrei-frontend/pnpm-workspace.yaml ./
+COPY sunrei-frontend/pnpm-lock.yaml ./
 
-# Install dependencies for build
-RUN npm ci
+# Copy package.json for each workspace package
+COPY sunrei-frontend/packages/sunrei-admin/package.json ./packages/sunrei-admin/
+COPY sunrei-frontend/packages/sunrei-app/package.json ./packages/sunrei-app/
 
-# Copy source files
-COPY sunrei-admin/ ./
+# Install dependencies
+RUN pnpm install --frozen-lockfile
 
-# Build the application
-RUN npm run build
+# Copy admin source files
+COPY sunrei-frontend/packages/sunrei-admin/ ./packages/sunrei-admin/
+
+# Build the admin application
+RUN pnpm --filter sunrei-admin build
 
 # Runner stage
 FROM node:22-alpine AS runner
@@ -33,9 +40,9 @@ WORKDIR /app
 ENV NODE_ENV=production
 
 # Copy standalone output
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
+COPY --from=builder /app/packages/sunrei-admin/.next/standalone ./
+COPY --from=builder /app/packages/sunrei-admin/.next/static ./packages/sunrei-admin/.next/static
+COPY --from=builder /app/packages/sunrei-admin/public ./packages/sunrei-admin/public
 
 # Create a non-root user
 RUN addgroup -g 1001 nodejs && \
@@ -47,4 +54,4 @@ USER nextjs
 EXPOSE 3102
 ENV PORT=3102
 
-CMD ["node", "server.js"]
+CMD ["node", "packages/sunrei-admin/server.js"]

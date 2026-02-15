@@ -100,12 +100,13 @@ update_helm_chart_version() {
 # Update Helm values.yaml image tags
 update_helm_values() {
     local version=$1
+    local image_tag=${version#v}  # strip 'v' prefix: v0.12.0 -> 0.12.0
 
-    log_step "Updating Helm values.yaml image tags to $version..."
+    log_step "Updating Helm values.yaml image tags to $image_tag..."
 
     # Update all image tags in values.yaml
     # Match from 'images:' section to next non-indented line, update all '    tag:' lines
-    sed -i.bak '/^images:/,/^[^ ]/{/^    tag: /s/tag: .*/tag: '"$version"'/;}' deploy/helm/values.yaml
+    sed -i.bak '/^images:/,/^[^ ]/{/^    tag: /s/tag: .*/tag: '"$image_tag"'/;}' deploy/helm/values.yaml
     rm deploy/helm/values.yaml.bak
 
     log_info "values.yaml updated"
