@@ -73,7 +73,7 @@ For each location in `locations.json`, create a spot. The spot title is the vide
 ```json
 {
   "title": "시부야의 맛있는 야키토리 맛집 투어",
-  "description": "영상에서 소개된 야키토리 맛집",
+  "description": "시부야 맛집 투어를 소개하는 영상에서 방문한 야키토리 전문점. 비장탄으로 굽는 것이 특징이며, 특히 쓰쿠네와 레바가 인기 메뉴로 영상에서 극찬을 받았다.",
   "images": [],
   "youtubeLink": "https://youtube.com/watch?v=VIDEO_ID&t=123",
   "place": {
