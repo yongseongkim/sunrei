@@ -43,7 +43,17 @@ uv run --with easyocr --with opencv-python-headless --with yt-dlp \
 
 This extracts burned-in subtitles and on-screen text from video frames using OCR.
 
+OCR language flag: Use `--lang ja,en` for Japanese content. Do NOT use `ko,ja,en` — easyocr throws `"Japanese is only compatible with English"`.
+
+OCR output: yt-dlp download progress logs can mix with JSON stdout. When parsing OCR results, extract the JSON block from potentially mixed output using regex.
+
 Rate limiting for playlists: Wait ~60 seconds between videos to avoid YouTube rate limiting. Inform the user of progress.
+
+Batch processing: For playlists with many videos (>10), create a batch Python script rather than running individual commands. The script should:
+  - Handle rate limiting internally (60s between videos)
+  - Track success/failure per video
+  - Save raw results to `transcripts_raw.json`
+  - Report summary at the end (N success, N failed, N OCR fallback needed)
 
 ### 3. Audit and Clean Transcript
 

@@ -37,6 +37,9 @@ For each video, determine the content concept from title + description:
 
 This concept guides which transcript mentions are relevant locations vs just passing references.
 
+- The concept determines the geographic scope. Locations outside this scope are references, not destinations.
+- Example: A "Japanese architecture travel" video that mentions 압구정 현대아파트 (Seoul) as a comparison → exclude it. Only include locations within the video's target geography (Japan).
+
 ### 4. Extract Google Maps Links from Description
 
 Parse the video description for Google Maps links:
@@ -47,9 +50,16 @@ Parse the video description for Google Maps links:
 
 These are high-confidence locations explicitly shared by the creator.
 
-### 5. Extract Location Mentions from Transcript
+### 5. Extract Location Mentions
 
-Analyze the cleaned transcript to find location references:
+Analyze all available sources to find locations, in priority order:
+
+1. Description chapters with timestamps (highest quality — creator-curated)
+2. Google Maps links in description (from Step 4)
+3. Title/description analysis (main subject buildings/places when no chapters exist)
+4. Transcript mentions (lowest priority — noisy)
+
+For transcript-based extraction, look for:
 
 - Place names (restaurants, cafes, shops, tourist spots)
 - Addresses or neighborhoods mentioned
@@ -61,6 +71,18 @@ Filter by the video concept identified in Step 3. For example:
 - A food tour video → extract only food-related venues
 - A general travel vlog → extract tourist spots, restaurants, viewpoints
 - Ignore passing mentions that aren't actual recommendations
+
+### 5.5. Clean & Filter Locations
+
+Before geocoding, clean and filter the extracted locations:
+
+- Concept-scope filter: Remove locations outside the video's geographic concept (e.g., Korean locations used for comparison in a Japan travel video)
+- Deduplication: If the same `googleMapsId` appears multiple times within one video, keep only the first occurrence (earliest timestamp)
+- Non-place filter: Remove entries that aren't meaningful destinations:
+  - Real estate offices, generic street names ("Walking Street", "Shopping Street")
+  - Overly generic names ("라멘집", "Pedestrian Paradise")
+  - Concepts rather than places
+- Videos without chapters: When a video has no description chapters or Google Maps links, analyze the title and description to identify the main architectural/location subjects. Search for those directly.
 
 ### 6. Geocode Locations via Google Maps Places API
 
@@ -87,6 +109,10 @@ Display all extracted locations in a table:
 | --- | ---- | ------- | ------- | ------ | --------- | ----------- |
 
 Source: "description_link", "transcript_mention", or "both"
+
+- Group results by "videos with locations" and "videos without locations"
+- Flag potential issues: non-concept locations, duplicates, generic entries
+- Offer automated cleanup before manual review
 
 Use AskUserQuestion:
 
