@@ -8,15 +8,15 @@ registry: ghcr.io/yongseongkim/sunrei
 images:
   admin:
     repository: admin
-    tag: v0.0.11
+    tag: v0.12.0
     pullPolicy: IfNotPresent
   app:
     repository: app
-    tag: v0.0.11
+    tag: v0.12.0
     pullPolicy: IfNotPresent
   server:
     repository: server
-    tag: v0.0.11
+    tag: v0.12.0
     pullPolicy: IfNotPresent
 
 # Image pull secrets (not needed for public GHCR images)
