@@ -4,7 +4,7 @@
 Uses yt-dlp + opencv + easyocr to read burned-in subtitles and annotations.
 
 Usage:
-    python extract_onscreen_text.py "<video_id_or_url>" [--lang ko,ja,en] [--interval 0.5]
+    python extract_onscreen_text.py "<video_id_or_url>" [--lang ko,ja,en] [--interval 1.0]
 
 Outputs JSON to stdout.
 """
@@ -214,7 +214,7 @@ def deduplicate_segments(detections: list, interval: float):
     return segments
 
 
-def extract_onscreen_text(video_url: str, langs: list[str] | None = None, interval: float = 0.5):
+def extract_onscreen_text(video_url: str, langs: list[str] | None = None, interval: float = 1.0):
     """Main pipeline: download video, extract frames, OCR, deduplicate."""
     video_id = extract_video_id(video_url)
     if not video_id:
@@ -284,12 +284,12 @@ def extract_onscreen_text(video_url: str, langs: list[str] | None = None, interv
 
 def main():
     if len(sys.argv) < 2:
-        print(json.dumps({"error": "Usage: python extract_onscreen_text.py <video_id_or_url> [--lang ko,ja,en] [--interval 0.5]"}))
+        print(json.dumps({"error": "Usage: python extract_onscreen_text.py <video_id_or_url> [--lang ko,ja,en] [--interval 1.0]"}))
         sys.exit(1)
 
     video_url = sys.argv[1]
     langs = None
-    interval = 0.5
+    interval = 1.0
 
     # Parse optional args
     i = 2
