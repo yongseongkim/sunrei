@@ -1,0 +1,961 @@
+{
+  "videos": [
+    {
+      "videoId": "55L8utAPik8",
+      "title": "(EN) ※역대급 주의※ 이탈리아 NO.1 와인 셀러",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Enoteca Pinchiorri",
+          "displayName": "Enoteca Pinchiorri",
+          "address": "Via Ghibellina, 87, 50122 Firenze FI, 이탈리아",
+          "latitude": 43.769999999999996,
+          "longitude": 11.2622222,
+          "googleMapsId": "ChIJJ9GCOAZUKhMRhWUgMfpfvX4",
+          "googleMapsUri": "https://maps.google.com/?cid=9132561147547903365&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=55L8utAPik8",
+          "description": "이탈리아 최고의 와인 셀러를 소개하는 영상에서 방문한 피렌체 미슐랭 3스타 레스토랑. 역대급 규모의 와인 셀러를 보유하고 있으며, 이탈리아 NO.1으로 꼽히는 와인 컬렉션이 특징이다."
+        }
+      ]
+    },
+    {
+      "videoId": "XiRHPQVB8dg",
+      "title": "꼭꼭 숨겨둔 소믈리에 창고로 들어갔더니..🍾 주문하는 대로 나오는 미지의 공간 [EN]ㅣ Golden View Firenze",
+      "concept": "이탈리아 피렌체 맛집 방문기",
+      "locations": [
+        {
+          "name": "Golden View Firenze",
+          "displayName": "Golden View Firenze",
+          "address": "Via de' Bardi, 58/r, 50125 Firenze FI, 이탈리아",
+          "latitude": 43.7673053,
+          "longitude": 11.2534308,
+          "googleMapsId": "ChIJZaiZ_P9TKhMR7lLPKgvCIjE",
+          "googleMapsUri": "https://maps.google.com/?cid=3540605610285290222&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=XiRHPQVB8dg",
+          "description": "이탈리아 피렌체 맛집을 소개하는 영상에서 방문한 폰테 베키오 뷰 레스토랑. 꼭꼭 숨겨둔 소믈리에 창고가 있으며, 주문하는 대로 나오는 미지의 와인 공간이 인상적인 곳이다."
+        }
+      ]
+    },
+    {
+      "videoId": "F_dIt526c6M",
+      "title": "지역 전통 와인을 곁들인 피렌체식 스테이크🥩 + 파스타🍝 피렌체 현지 찐맛집 TOP3를 소개합니다!",
+      "concept": "이탈리아 피렌체 맛집 방문기",
+      "locations": [
+        {
+          "name": "Osteria Vini e Vecchi Sapori",
+          "displayName": "Vini e Vecchi Sapori",
+          "address": "Via dei Magazzini, 3/r, 50122 Firenze FI, 이탈리아",
+          "latitude": 43.7700901,
+          "longitude": 11.256815699999999,
+          "googleMapsId": "ChIJAfLFIwFUKhMRmv-jS9sjRb8",
+          "googleMapsUri": "https://maps.google.com/?cid=13782461659411120026&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=F_dIt526c6M",
+          "description": "피렌체 현지 찐맛집 TOP3를 소개하는 영상에서 방문한 전통 레스토랑. 지역 전통 와인을 곁들인 피렌체식 스테이크와 파스타가 유명하며, 현지인들이 사랑하는 곳이다."
+        },
+        {
+          "name": "Trattoria L'oriuolo",
+          "displayName": "Trattoria L'Oriuolo",
+          "address": "Via dell' Oriuolo, 58r, 50122 Firenze FI, 이탈리아",
+          "latitude": 43.772140799999995,
+          "longitude": 11.2604252,
+          "googleMapsId": "ChIJSz1K-ANUKhMR5RcLI4IYm7c",
+          "googleMapsUri": "https://maps.google.com/?cid=13230195277543708645&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=F_dIt526c6M",
+          "description": "피렌체 현지 찐맛집 TOP3를 소개하는 영상에서 방문한 전통 토스카나 요리 전문점. 지역 전통 와인과 함께 정통 토스카나 요리를 즐길 수 있는 현지 맛집이다."
+        },
+        {
+          "name": "Trattoria Sostanza",
+          "displayName": "트라토리아 소스탄자",
+          "address": "Via del Porcellana, 25/R, 50123 Firenze FI, 이탈리아",
+          "latitude": 43.7726719,
+          "longitude": 11.2470175,
+          "googleMapsId": "ChIJN60f96tWKhMRiZNBRkS36BM",
+          "googleMapsUri": "https://maps.google.com/?cid=1434597985181864841&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=F_dIt526c6M",
+          "description": "피렌체 현지 찐맛집 TOP3를 소개하는 영상에서 방문한 클래식 이탈리안 레스토랑. 피렌체식 스테이크와 전통 이탈리안 요리를 제대로 맛볼 수 있는 곳으로 추천되었다."
+        }
+      ]
+    },
+    {
+      "videoId": "sHuBxUk2n9w",
+      "title": "베네치아 최고의 식당은 바로 이곳! 150만 원 상당의 고급 와인과 각종 이탈리아 요리 맛보고 왔습니다!!",
+      "concept": "이탈리아 베네치아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Ristorante Glam",
+          "displayName": "Ristorante Glam",
+          "address": "Calle Tron, 1961, 30135 Venezia VE, 이탈리아",
+          "latitude": 45.441379,
+          "longitude": 12.329912,
+          "googleMapsId": "ChIJcypW7sOxfkcRz-086hZfk34",
+          "googleMapsUri": "https://maps.google.com/?cid=9120738222379167183&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=sHuBxUk2n9w",
+          "description": "베네치아 최고의 식당을 소개하는 영상에서 방문한 고급 레스토랑. 150만 원 상당의 고급 와인과 함께 각종 이탈리아 요리를 맛볼 수 있는 곳이다."
+        }
+      ]
+    },
+    {
+      "videoId": "UpknbGKq8MU",
+      "title": "최상급 재료의 음식만 파는 로마 최고의 식당!!🥂 관찰레가 들어간 로마식 까르보나라와 최고 등급 와인리스트를 보유한 로마 찐 맛집 전격 공개!",
+      "concept": "이탈리아 로마 맛집 방문기",
+      "locations": [
+        {
+          "name": "Roscioli",
+          "displayName": "Roscioli Salumeria con Cucina",
+          "address": "Via dei Giubbonari, 21, 00186 Roma RM, 이탈리아",
+          "latitude": 41.894256,
+          "longitude": 12.4742417,
+          "googleMapsId": "ChIJ4T6-zEhgLxMRSa1VL3N0DyY",
+          "googleMapsUri": "https://maps.google.com/?cid=2742538736156126537&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=UpknbGKq8MU",
+          "description": "로마 최고의 식당을 소개하는 영상에서 방문한 살루메리아 겸 레스토랑. 관찰레가 들어간 로마식 까르보나라와 최고 등급의 와인리스트를 보유하고 있으며, 최상급 재료만을 사용하는 것이 특징이다."
+        }
+      ]
+    },
+    {
+      "videoId": "8JN9YyIA-7U",
+      "title": "(EN) 늘 오고 싶게 만드는 가족 식당 | Dal Pescatore",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Dal Pescatore",
+          "displayName": "Ristorante Dal Pescatore Santini",
+          "address": "Via Runate, 15, 46013 Canneto sull'Oglio MN, 이탈리아",
+          "latitude": 45.171066599999996,
+          "longitude": 10.3574144,
+          "googleMapsId": "ChIJEbzybxqzgUcRn1pQZjdmsH0",
+          "googleMapsUri": "https://maps.google.com/?cid=9056851238767843999&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=8JN9YyIA-7U",
+          "description": "이탈리아 1등 레스토랑을 소개하는 영상에서 방문한 미슐랭 3스타 가족 경영 레스토랑. 늘 오고 싶게 만드는 따뜻한 분위기와 정성스러운 요리로, 이탈리아를 대표하는 식당이다."
+        }
+      ]
+    },
+    {
+      "videoId": "IpzLwlrTIFo",
+      "title": "돈까스의 원조, 밀라노 송아지 튀김 요리?🍗 100년 넘은 밀라노 전통 레스토랑을 소개합니다!",
+      "concept": "이탈리아 밀라노 맛집 방문기",
+      "locations": [
+        {
+          "name": "Giacomo Arengario",
+          "displayName": "Giacomo Arengario",
+          "address": "Via Guglielmo Marconi, 1, 20123 Milano MI, 이탈리아",
+          "latitude": 45.463601999999995,
+          "longitude": 9.190309,
+          "googleMapsId": "ChIJwZnUpK7GhkcRoya_ZbIQ_nQ",
+          "googleMapsUri": "https://maps.google.com/?cid=8430193910881396387&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=IpzLwlrTIFo",
+          "description": "밀라노 전통 레스토랑을 소개하는 영상에서 방문한 두오모 뷰 레스토랑. 돈까스의 원조인 밀라노 송아지 튀김 요리(코톨레타)를 맛볼 수 있으며, 100년 넘는 역사를 자랑한다."
+        },
+        {
+          "name": "Solferino",
+          "displayName": "Solferino",
+          "address": "Via Castelfidardo, 2, 20121 Milano MI, 이탈리아",
+          "latitude": 45.478087699999996,
+          "longitude": 9.1883237,
+          "googleMapsId": "ChIJV4j8tcrGhkcRQx-KpTMSvfM",
+          "googleMapsUri": "https://maps.google.com/?cid=17563214134844727107&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=IpzLwlrTIFo",
+          "description": "밀라노 전통 레스토랑을 소개하는 영상에서 방문한 100년 넘은 역사의 레스토랑. 밀라노 송아지 튀김 요리를 포함한 정통 밀라노 요리를 맛볼 수 있는 곳이다."
+        }
+      ]
+    },
+    {
+      "videoId": "MFt1YAsgGrA",
+      "title": "미슐랭 2스타 이탈리아 인생 레스토랑! 농어 구이, 훈제 방어, 이탈리아식 파스타까지..풀 코스 전격 공개합니다",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Santa Elisabetta",
+          "displayName": "Ristorante Santa Elisabetta",
+          "address": "Piazza Sant'Elisabetta, 3, 50122 Firenze FI, 이탈리아",
+          "latitude": 43.7718205,
+          "longitude": 11.255752399999999,
+          "googleMapsId": "ChIJ4ZdxZQFUKhMRWpRqKWv90zI",
+          "googleMapsUri": "https://maps.google.com/?cid=3662549558680523866&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=MFt1YAsgGrA",
+          "description": "이탈리아 인생 레스토랑을 소개하는 영상에서 방문한 피렌체 미슐랭 2스타 레스토랑. 농어 구이, 훈제 방어, 이탈리아식 파스타까지 풀 코스가 인상적이며, 영상에서 인생 레스토랑으로 극찬받았다."
+        }
+      ]
+    },
+    {
+      "videoId": "diHZr8fyZbU",
+      "title": "최근 이탈리아에서 가장 핫한 미슐랭 레스토랑? 어디서도 본 적 없는 퀄리티, 월드베스트 레스토랑으로 떠오르는 곳을 소개합니다!",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Lido 84",
+          "displayName": "Lido 84",
+          "address": "Corso Giuseppe Zanardelli, 196, 25083 Gardone Riviera BS, 이탈리아",
+          "latitude": 45.6251592,
+          "longitude": 10.5755666,
+          "googleMapsId": "ChIJx7BJHCKMgUcRA7aurgztHrQ",
+          "googleMapsUri": "https://maps.google.com/?cid=12979071814854424067&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=diHZr8fyZbU",
+          "description": "이탈리아에서 가장 핫한 미슐랭 레스토랑을 소개하는 영상에서 방문한 가르다 호수변 레스토랑. 어디서도 본 적 없는 퀄리티로 월드베스트 레스토랑으로 떠오르고 있는 곳이다."
+        }
+      ]
+    },
+    {
+      "videoId": "DxB6A5ur9MA",
+      "title": "이탈리아 미슐랭 레스토랑에서 찾은 세계 최고의 와인?🍷 역대급 와인 리스트만 모아놓은 포지타노 레스토랑에 다녀왔습니다!",
+      "concept": "이탈리아 포지타노 맛집 방문기",
+      "locations": [
+        {
+          "name": "Zass",
+          "displayName": "Zass",
+          "address": "Via Laurito, 2, 84017 Positano SA, 이탈리아",
+          "latitude": 40.6231077,
+          "longitude": 14.503753799999998,
+          "googleMapsId": "ChIJTTegVVqXOxMRX4nA4MSAv-I",
+          "googleMapsUri": "https://maps.google.com/?cid=16338919556196108639&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=DxB6A5ur9MA",
+          "description": "이탈리아 포지타노 맛집을 소개하는 영상에서 방문한 미슐랭 레스토랑. 역대급 와인 리스트만 모아놓은 것이 특징이며, 세계 최고의 와인을 포지타노의 절경과 함께 즐길 수 있다."
+        }
+      ]
+    },
+    {
+      "videoId": "YvDTCJhYEJE",
+      "title": "🐟10여 가지 해산물 전채와 날마다 바뀌는 해산물 파스타🍝 베네치아 최고의 가성비 식당에 다녀왔습니다!",
+      "concept": "이탈리아 베네치아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Corte Sconta",
+          "displayName": "Corte Sconta",
+          "address": "Calle del Pestrin, 3886, 30122 Venezia VE, 이탈리아",
+          "latitude": 45.4347585,
+          "longitude": 12.3479577,
+          "googleMapsId": "ChIJb3wPKtmxfkcRkgz0O_Owlv0",
+          "googleMapsUri": "https://maps.google.com/?cid=18272987096831757458&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=YvDTCJhYEJE",
+          "description": "베네치아 해산물 맛집을 소개하는 영상에서 방문한 가성비 레스토랑. 10여 가지 해산물 전채와 날마다 바뀌는 해산물 파스타가 특징이며, 베네치아 최고의 가성비 식당으로 추천되었다."
+        }
+      ]
+    },
+    {
+      "videoId": "LaBQYfe7YqU",
+      "title": "많은 분들을 놀라게 한 수백억짜리 와인 셀러, 다시 찾고 실망한 이유ㅣ에노테카 핀키오리 [EN]",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Enoteca Pinchiorri",
+          "displayName": "Enoteca Pinchiorri",
+          "address": "Via Ghibellina, 87, 50122 Firenze FI, 이탈리아",
+          "latitude": 43.769999999999996,
+          "longitude": 11.2622222,
+          "googleMapsId": "ChIJJ9GCOAZUKhMRhWUgMfpfvX4",
+          "googleMapsUri": "https://maps.google.com/?cid=9132561147547903365&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=LaBQYfe7YqU",
+          "description": "수백억짜리 와인 셀러로 화제가 된 레스토랑을 재방문하는 영상. 다시 찾아 실망한 이유를 솔직하게 다루며, 이전 방문과의 비교가 인상적인 피렌체 미슐랭 3스타 레스토랑이다."
+        }
+      ]
+    },
+    {
+      "videoId": "T73wxsGB4wk",
+      "title": "[EN] 비밀이야 먹뱉 논란? 구글 평점 믿고 간 레스토랑 제대로 당했네요.. | 이탈리아 출장 EP.1 | San Silvestro | Corte Sconta",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Corte Sconta",
+          "displayName": "Corte Sconta",
+          "address": "Calle del Pestrin, 3886, 30122 Venezia VE, 이탈리아",
+          "latitude": 45.4347585,
+          "longitude": 12.3479577,
+          "googleMapsId": "ChIJb3wPKtmxfkcRkgz0O_Owlv0",
+          "googleMapsUri": "https://maps.google.com/?cid=18272987096831757458&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=T73wxsGB4wk",
+          "description": "이탈리아 출장 중 구글 평점을 믿고 방문한 베네치아 레스토랑 투어 영상에서 소개된 해산물 맛집. 이전 방문에서도 극찬을 받은 곳으로, 베네치아 해산물의 진수를 맛볼 수 있다."
+        },
+        {
+          "name": "Ristorante San Silvestro",
+          "displayName": "Ristorante San Silvestro",
+          "address": "Rio Terà S. Silvestro, 1022B, 30125 Venezia VE, 이탈리아",
+          "latitude": 45.4377657,
+          "longitude": 12.3332093,
+          "googleMapsId": "ChIJa6Ogq2OxfkcRGd6I5V4T_Go",
+          "googleMapsUri": "https://maps.google.com/?cid=7709057960450252313&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=T73wxsGB4wk",
+          "description": "이탈리아 출장 중 구글 평점을 믿고 방문한 베네치아 레스토랑. 높은 구글 평점에 비해 기대에 미치지 못했다는 솔직한 후기가 담긴 영상에서 소개되었다."
+        }
+      ]
+    },
+    {
+      "videoId": "sHZMGPDK_ok",
+      "title": "(EN) 사실 체육관 아니고, \"미쉐린 1스타 레스토랑\" | Il Convivio Troiani",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Il Convivio Troiani",
+          "displayName": "Il Convivio Troiani",
+          "address": "Vicolo dei Soldati, 31, 00186 Roma RM, 이탈리아",
+          "latitude": 41.901561,
+          "longitude": 12.472707,
+          "googleMapsId": "ChIJ-aRG9FBgLxMRslFkAD02DNo",
+          "googleMapsUri": "https://maps.google.com/?cid=15711992835616297394&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=sHZMGPDK_ok",
+          "description": "이탈리아 맛집을 소개하는 영상에서 방문한 로마 미쉐린 1스타 레스토랑. 체육관처럼 생긴 외관과 달리 고급스러운 요리를 선보이는 곳으로, 독특한 외관이 인상적이다."
+        }
+      ]
+    },
+    {
+      "videoId": "p25xWRnIkdg",
+      "title": "전 세계에서 꼭 가봐야 할 이탈리아 여행지 1등! 한국인 취향까지 저격해버린 각종 해산물 요리 먹고 왔습니다",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Chez Black",
+          "displayName": "Chez Black",
+          "address": "Via del Brigantino, 19, 84017 Positano SA, 이탈리아",
+          "latitude": 40.6280498,
+          "longitude": 14.4869969,
+          "googleMapsId": "ChIJTVr63miXOxMRKMOIeBJLsIQ",
+          "googleMapsUri": "https://maps.google.com/?cid=9561224551611286312&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=p25xWRnIkdg",
+          "description": "전 세계에서 꼭 가봐야 할 이탈리아 여행지를 소개하는 영상에서 방문한 포지타노 해산물 레스토랑. 한국인 취향을 저격하는 각종 해산물 요리가 유명하며, 포지타노의 멋진 뷰와 함께 즐길 수 있다."
+        }
+      ]
+    },
+    {
+      "videoId": "xMDBOQrtwlw",
+      "title": "피렌체 2kg 스테이크 접수하고 왔습니다🥩(feat. 내장버거) | Paoli 1827, Da Nerbone, Caffè Gilli",
+      "concept": "이탈리아 피렌체 맛집 방문기",
+      "locations": [
+        {
+          "name": "Caffè Gilli",
+          "displayName": "Caffè Gilli",
+          "address": "Via Roma, 1r, 50123 Firenze FI, 이탈리아",
+          "latitude": 43.7718814,
+          "longitude": 11.2541517,
+          "googleMapsId": "ChIJFbiwjwFUKhMRPJ-oDzQyiBU",
+          "googleMapsUri": "https://maps.google.com/?cid=1551545270811533116&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=xMDBOQrtwlw",
+          "description": "피렌체 스테이크와 내장버거를 소개하는 영상에서 방문한 역사적인 카페. 피렌체를 대표하는 클래식 카페로, 오랜 역사와 분위기가 특징이다."
+        },
+        {
+          "name": "Da Nerbone",
+          "displayName": "Da Nerbone",
+          "address": "Piazza del Mercato Centrale, 50123 Firenze FI, 이탈리아",
+          "latitude": 43.7762847,
+          "longitude": 11.2532869,
+          "googleMapsId": "ChIJdXbJxwJUKhMRT0v1L3foRdQ",
+          "googleMapsUri": "https://maps.google.com/?cid=15295887308037114703&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=xMDBOQrtwlw",
+          "description": "피렌체 스테이크와 내장버거를 소개하는 영상에서 방문한 중앙시장 내 맛집. 피렌체 명물 내장버거(람프레도토)로 유명하며, 현지인들이 즐겨 찾는 곳이다."
+        },
+        {
+          "name": "Antico Ristorante Paoli 1827",
+          "displayName": "Antico Ristorante Paoli 1827",
+          "address": "Via dei Tavolini, 12/R, 50122 Firenze FI, 이탈리아",
+          "latitude": 43.7708915,
+          "longitude": 11.2557616,
+          "googleMapsId": "ChIJfYUTEgFUKhMRTkbwYcXHR_M",
+          "googleMapsUri": "https://maps.google.com/?cid=17530199725128566350&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=xMDBOQrtwlw",
+          "description": "피렌체 스테이크와 내장버거를 소개하는 영상에서 방문한 2kg 스테이크 맛집. 1827년에 오픈한 역사적인 레스토랑으로, 거대한 피렌체식 스테이크가 영상에서 큰 화제가 되었다."
+        }
+      ]
+    },
+    {
+      "videoId": "afDn5kAWKzs",
+      "title": "[비밀이야 in 이탈리아] 밀라노 근교 다비토리오(da VittorioOㅣ미쉐린 3스타ㅣ이탈리아 최애 레스토랑ㅣ4년 만에 방문ㅣ역시는 역시!!ㅣ4시간 넘게 식사ㅣ식사 중 졸음ㅋㅣ",
+      "concept": "이탈리아 밀라노 맛집 방문기",
+      "locations": [
+        {
+          "name": "da Vittorio",
+          "displayName": "Da Vittorio",
+          "address": "Via Cantalupa, 17, 24060 Brusaporto BG, 이탈리아",
+          "latitude": 45.676035999999996,
+          "longitude": 9.7695512,
+          "googleMapsId": "ChIJ4Sv3o_9agUcROCSRC0X4C90",
+          "googleMapsUri": "https://maps.google.com/?cid=15928097482556384312&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=afDn5kAWKzs",
+          "description": "밀라노 근교 미쉐린 3스타 레스토랑을 소개하는 영상에서 방문한 이탈리아 최애 레스토랑. 4년 만에 재방문했을 정도로 애정하는 곳이며, 4시간 넘게 이어진 식사가 인상적이다."
+        }
+      ]
+    },
+    {
+      "videoId": "vfLu7DiGD4Y",
+      "title": "같은 년도 끼리 와인 맛은 똑같을까? 빈티지 와인에 대한 이야기 오늘 다 풀어봅니다 ㅣ로칸다 델 필로네",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Locanda del Pilone",
+          "displayName": "Locanda del Pilone",
+          "address": "Strada Della Cicchetta, Località Madonna di Como, 34, 12051 Alba CN, 이탈리아",
+          "latitude": 44.6675632,
+          "longitude": 8.0646374,
+          "googleMapsId": "ChIJvd0i1mW00hIRbiJA_zy0Vwk",
+          "googleMapsUri": "https://maps.google.com/?cid=673204843388609134&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=vfLu7DiGD4Y",
+          "description": "빈티지 와인에 대한 이야기를 풀어낸 영상에서 방문한 알바 지역의 레스토랑. 같은 년도 와인의 맛 차이를 비교하며, 빈티지 와인의 매력을 탐구하는 영상의 배경이 된 곳이다."
+        }
+      ]
+    },
+    {
+      "videoId": "6ISyBIQpcwY",
+      "title": "단돈 5만원짜리 프리미엄 트러플 요리가 있다? 피렌체 가시면 꼭 들려야할 곳ㅣOsteria Tre Panche",
+      "concept": "이탈리아 피렌체 맛집 방문기",
+      "locations": [
+        {
+          "name": "Osteria Tre Panche",
+          "displayName": "Osteria delle Tre Panche - Centro Storico",
+          "address": "Vicolo Marzio, 1, 50122 Firenze FI, 이탈리아",
+          "latitude": 43.7685232,
+          "longitude": 11.253906899999999,
+          "googleMapsId": "ChIJkSF6cBVUKhMRhWz9opGQgZg",
+          "googleMapsUri": "https://maps.google.com/?cid=10989223520939895941&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=6ISyBIQpcwY",
+          "description": "피렌체 가성비 트러플 요리를 소개하는 영상에서 방문한 오스테리아. 단돈 5만 원에 프리미엄 트러플 요리를 맛볼 수 있으며, 피렌체 방문 시 꼭 들러야 할 곳으로 추천되었다."
+        }
+      ]
+    },
+    {
+      "videoId": "KnlYjxsqbZY",
+      "title": "이탈리아 미쉐린 별을 휩쓸고 있는 셰프, 그 이름을 건 식당 (feat. 미소년 서버👨🏻‍🍳)ㅣ엔리코 바르톨리니",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Enrico Bartolini",
+          "displayName": "Enrico Bartolini",
+          "address": "Via Tortona, 56, 20144 Milano MI, 이탈리아",
+          "latitude": 45.4515503,
+          "longitude": 9.1616272,
+          "googleMapsId": "ChIJr54jbebDhkcRlR68yNtO368",
+          "googleMapsUri": "https://maps.google.com/?cid=12672934582316441237&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=KnlYjxsqbZY",
+          "description": "이탈리아 미쉐린 별을 휩쓸고 있는 셰프를 소개하는 영상에서 방문한 밀라노 레스토랑. 셰프 이름을 건 식당답게 수준 높은 요리를 선보이며, 미소년 서버도 화제가 되었다."
+        }
+      ]
+    },
+    {
+      "videoId": "8jjUWH07IK4",
+      "title": "풍미부터 다른 이탈리아 정통 피자의 맛은?🍕 나폴리 부럽지않은 역대급 피자와 최고의 절경 포지타노에서 즐기는 조식까지 제대로 즐겨봤습니다!",
+      "concept": "이탈리아 나폴리 맛집 방문기",
+      "locations": [
+        {
+          "name": "Gabrisa",
+          "displayName": "호텔 빌라 가브리사",
+          "address": "Viale Pasitea, 223, 84017 Positano SA, 이탈리아",
+          "latitude": 40.6284604,
+          "longitude": 14.482842100000001,
+          "googleMapsId": "ChIJe3cWPmaXOxMRLO7R0YtN178",
+          "googleMapsUri": "https://maps.google.com/?cid=13823602844153015852&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=8jjUWH07IK4",
+          "description": "이탈리아 정통 피자를 소개하는 영상에서 방문한 포지타노의 호텔. 나폴리 부럽지 않은 역대급 피자와 최고의 절경 포지타노에서 즐기는 조식이 인상적이었다."
+        },
+        {
+          "name": "Donna Stella",
+          "displayName": "Pizzeria Donna Stella",
+          "address": "Salita d'Ancora, 4, 84011 Amalfi SA, 이탈리아",
+          "latitude": 40.636452399999996,
+          "longitude": 14.6022571,
+          "googleMapsId": "ChIJQZxV162VOxMRGW5ZKZ9MKz8",
+          "googleMapsUri": "https://maps.google.com/?cid=4551816094865255961&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=8jjUWH07IK4",
+          "description": "이탈리아 정통 피자를 소개하는 영상에서 방문한 아말피 피자집. 풍미부터 다른 정통 이탈리아 피자를 맛볼 수 있으며, 나폴리 부럽지 않은 퀄리티로 영상에서 소개되었다."
+        }
+      ]
+    },
+    {
+      "videoId": "BJjP1QVI0-M",
+      "title": "이탈리아 1등 레스토랑은 이곳입니다 | 달 페스카토레",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Dal Pescatore",
+          "displayName": "Ristorante Dal Pescatore Santini",
+          "address": "Via Runate, 15, 46013 Canneto sull'Oglio MN, 이탈리아",
+          "latitude": 45.171066599999996,
+          "longitude": 10.3574144,
+          "googleMapsId": "ChIJEbzybxqzgUcRn1pQZjdmsH0",
+          "googleMapsUri": "https://maps.google.com/?cid=9056851238767843999&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=BJjP1QVI0-M",
+          "description": "이탈리아 1등 레스토랑을 직접 소개하는 영상에서 방문한 미슐랭 3스타 레스토랑. 가족이 경영하는 따뜻한 분위기의 식당으로, 이탈리아를 대표하는 최고의 레스토랑으로 꼽힌다."
+        }
+      ]
+    },
+    {
+      "videoId": "p1sG5mTi1wA",
+      "title": "(EN) 이곳의 타야린은 반드시! 맛보셔야 합니다 | La Piola",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "La Piola",
+          "displayName": "La Piola",
+          "address": "Piazza Risorgimento, 4, 12051 Alba CN, 이탈리아",
+          "latitude": 44.7006186,
+          "longitude": 8.0358792,
+          "googleMapsId": "ChIJSw-GLl2z0hIRo_VcAuRgpZQ",
+          "googleMapsUri": "https://maps.google.com/?cid=10711073821179049379&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=p1sG5mTi1wA",
+          "description": "이탈리아 맛집을 소개하는 영상에서 방문한 알바 지역의 타야린 전문점. 이곳의 타야린은 반드시 맛봐야 한다고 영상에서 강조되었으며, 피에몬테 전통 파스타를 맛볼 수 있다."
+        }
+      ]
+    },
+    {
+      "videoId": "ZfAAbWNHZsg",
+      "title": "(EN) 합스부르크 가문에서 오픈한 레스토랑👑",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "La Giostra",
+          "displayName": "La Giostra",
+          "address": "Borgo Pinti, 16 R, 50121 Firenze FI, 이탈리아",
+          "latitude": 43.7720862,
+          "longitude": 11.2621153,
+          "googleMapsId": "ChIJt9Hy2AVUKhMRfaoxnj4MUDA",
+          "googleMapsUri": "https://maps.google.com/?cid=3481295975038954109&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=ZfAAbWNHZsg",
+          "description": "이탈리아 맛집을 소개하는 영상에서 방문한 피렌체의 독특한 레스토랑. 합스부르크 가문에서 오픈한 곳으로, 왕실의 역사와 전통이 담긴 요리를 맛볼 수 있다."
+        }
+      ]
+    },
+    {
+      "videoId": "DlqcHq9pqts",
+      "title": "밀라노 대표 넘버원? 비싼 가격에 믿기지 않는 서비스 [EN]ㅣ랑고스테리아",
+      "concept": "이탈리아 밀라노 맛집 방문기",
+      "locations": [
+        {
+          "name": "Locanda del Pilone",
+          "displayName": "Locanda del Pilone",
+          "address": "Strada Della Cicchetta, Località Madonna di Como, 34, 12051 Alba CN, 이탈리아",
+          "latitude": 44.6675632,
+          "longitude": 8.0646374,
+          "googleMapsId": "ChIJvd0i1mW00hIRbiJA_zy0Vwk",
+          "googleMapsUri": "https://maps.google.com/?cid=673204843388609134&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=DlqcHq9pqts",
+          "description": "밀라노 대표 넘버원 레스토랑을 소개하는 영상에서 함께 방문한 알바 지역의 레스토랑. 빈티지 와인과 함께 피에몬테 요리를 즐길 수 있는 곳이다."
+        },
+        {
+          "name": "Langosteria",
+          "displayName": "Langosteria",
+          "address": "Via Savona, 10, 20144 Milano MI, 이탈리아",
+          "latitude": 45.4556091,
+          "longitude": 9.1684202,
+          "googleMapsId": "ChIJJ-xSRePDhkcRDJRTjmN-7_o",
+          "googleMapsUri": "https://maps.google.com/?cid=18081809994970534924&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=DlqcHq9pqts",
+          "description": "밀라노 대표 넘버원 해산물 레스토랑을 소개하는 영상에서 방문한 곳. 비싼 가격에 비해 서비스가 기대에 못 미친다는 솔직한 후기가 담겼으며, 밀라노 대표 해산물 레스토랑으로 유명하다."
+        }
+      ]
+    },
+    {
+      "videoId": "bmRVDNxgVBs",
+      "title": "[비밀이야 in 이탈리아] 소렌토 토레 델 사라치노(Torre del Saracino)ㅣ미쉐린 2스타ㅣ바다 뷰ㅣ정말 애정하는 이탈리아 레스토랑ㅣ고기 못 먹어서 살짝 아쉬움",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Torre del Saracino",
+          "displayName": "Torre del Saracino",
+          "address": "Via Torretta, 9, 80069 Vico Equense NA, 이탈리아",
+          "latitude": 40.6605999,
+          "longitude": 14.419622100000002,
+          "googleMapsId": "ChIJEyOciPmYOxMRGiimZJL8YNg",
+          "googleMapsUri": "https://maps.google.com/?cid=15591739615640692762&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=bmRVDNxgVBs",
+          "description": "이탈리아 맛집을 소개하는 영상에서 방문한 소렌토 미쉐린 2스타 레스토랑. 바다 뷰가 인상적이며, 영상 진행자가 정말 애정하는 이탈리아 레스토랑으로 소개되었다."
+        }
+      ]
+    },
+    {
+      "videoId": "265ydJ9Otjc",
+      "title": "화이트 트러플 대축제 🎄다가오는 연말🎄 진하게 생각나는 이탈리아 레스토랑[EN]ㅣVilla Crespi",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Villa Crespi",
+          "displayName": "Villa Crespi",
+          "address": "Via Giuseppe Fava, 18, 28016 Orta San Giulio NO, 이탈리아",
+          "latitude": 45.7964103,
+          "longitude": 8.416053699999999,
+          "googleMapsId": "ChIJCbA4Ku4MhkcRDYaPQYuwaCI",
+          "googleMapsUri": "https://maps.google.com/?cid=2479425707014325773&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=265ydJ9Otjc",
+          "description": "연말에 생각나는 이탈리아 레스토랑을 소개하는 영상에서 방문한 오르타 산 줄리오의 미슐랭 2스타. 화이트 트러플 대축제와 함께 풍성한 요리를 즐길 수 있는 곳이다."
+        }
+      ]
+    },
+    {
+      "videoId": "TRhoUQoHJU0",
+      "title": "[비밀이야 in 이탈리아] 로마 아로마(Aroma)ㅣ미쉐린 1스타ㅣ콜로세움 뷰(feat.시위)ㅣ꼭 연인과 가세요!ㅣ뷰가 다했다",
+      "concept": "이탈리아 로마 맛집 방문기",
+      "locations": [
+        {
+          "name": "Aroma",
+          "displayName": "Aroma",
+          "address": "Via Labicana, 125, 00184 Roma RM, 이탈리아",
+          "latitude": 41.8901781,
+          "longitude": 12.4955196,
+          "googleMapsId": "ChIJ_RzlBblhLxMR11BvqYi8aoQ",
+          "googleMapsUri": "https://maps.google.com/?cid=9541646055682035927&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=TRhoUQoHJU0",
+          "description": "로마 미쉐린 1스타 레스토랑을 소개하는 영상에서 방문한 콜로세움 뷰 레스토랑. 꼭 연인과 함께 가야 할 곳으로 추천되었으며, 뷰가 압도적인 것이 특징이다."
+        }
+      ]
+    },
+    {
+      "videoId": "KKp9RTuA3t4",
+      "title": "궁전에서 마시는 이탈리아 최고의 화이트 와인 | Atto di Vito Mollica",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Atto di Vito Mollica",
+          "displayName": "Atto di Vito Mollica",
+          "address": "Salotto Portinari Bistrot di Vito Mollica, Via del Corso, 6, 50122 Firenze FI, 이탈리아",
+          "latitude": 43.7715125,
+          "longitude": 11.257390400000002,
+          "googleMapsId": "ChIJBZGWxU1VKhMRDdBZosnDJ9E",
+          "googleMapsUri": "https://maps.google.com/?cid=15071229948798291981&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=KKp9RTuA3t4",
+          "description": "이탈리아 맛집을 소개하는 영상에서 방문한 피렌체 궁전 내 레스토랑. 이탈리아 최고의 화이트 와인을 궁전에서 즐길 수 있으며, 격조 높은 분위기가 인상적이다."
+        }
+      ]
+    },
+    {
+      "videoId": "0MyfFFFfdOc",
+      "title": "[EN] 비밀이야가 말아주는 베네치아 꿀팁 총정리🍯| 이탈리아 출장 EP.2 | Trattoria Da Romano",
+      "concept": "이탈리아 로마 맛집 방문기",
+      "locations": [
+        {
+          "name": "Trattoria Da Romano",
+          "displayName": "Trattoria da Romano",
+          "address": "Via San Martino destro, 221, 30142 Venezia VE, 이탈리아",
+          "latitude": 45.4851027,
+          "longitude": 12.418166000000001,
+          "googleMapsId": "ChIJa5wpQlKsfkcRM0QAOw_Caqg",
+          "googleMapsUri": "https://maps.google.com/?cid=12135725516573393971&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=0MyfFFFfdOc",
+          "description": "베네치아 꿀팁을 총정리하는 영상에서 방문한 부라노 섬의 트라토리아. 베네치아 여행 시 꼭 들러야 할 맛집으로, 알록달록한 부라노 섬의 매력과 함께 즐길 수 있다."
+        }
+      ]
+    },
+    {
+      "videoId": "xcoyMO3tQxg",
+      "title": "6년 만에 또간집, 미쉐린 3스타 | Uliassi",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Uliassi",
+          "displayName": "Uliassi",
+          "address": "Banchina di Levante, 6, 60019 Senigallia AN, 이탈리아",
+          "latitude": 43.719463100000006,
+          "longitude": 13.2208132,
+          "googleMapsId": "ChIJcR28_J1zLRMRk_P3vABNEog",
+          "googleMapsUri": "https://maps.google.com/?cid=9804984004304696211&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=xcoyMO3tQxg",
+          "description": "6년 만에 또 찾은 이탈리아 맛집을 소개하는 영상에서 방문한 세니갈리아의 미쉐린 3스타 레스토랑. '또간집'이라 불릴 만큼 매력적인 곳으로, 6년 만의 재방문기가 담겨 있다."
+        }
+      ]
+    },
+    {
+      "videoId": "6b7x8AysySw",
+      "title": "(EN) 전 세계 최연소 미쉐린 3스타 셰프! 하지만 파스타는... | Ristorante Quadri",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Ristorante Quadri",
+          "displayName": "Ristorante Quadri",
+          "address": "P.za San Marco, 123, 30124 Venezia VE, 이탈리아",
+          "latitude": 45.4343356,
+          "longitude": 12.3381504,
+          "googleMapsId": "ChIJFaSvYdexfkcRumqldW76xcE",
+          "googleMapsUri": "https://maps.google.com/?cid=13962841572059212474&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=6b7x8AysySw",
+          "description": "전 세계 최연소 미쉐린 3스타 셰프를 소개하는 영상에서 방문한 베네치아 산마르코 광장의 레스토랑. 최연소 3스타 셰프의 요리를 맛볼 수 있지만, 파스타는 아쉬웠다는 솔직한 후기가 담겨 있다."
+        }
+      ]
+    },
+    {
+      "videoId": "y8TnmVbNtgY",
+      "title": "밀라노의 힙한 성수 브레라!ㅣ와인잔은 넓은게 좋을까? 좁은게 좋을까? [EN]ㅣSette Cucina Urbana",
+      "concept": "이탈리아 밀라노 맛집 방문기",
+      "locations": [
+        {
+          "name": "Sette Cucina Urbana",
+          "displayName": "Bauscia",
+          "address": "Via dell'Orso, 2, 20121 Milano MI, 이탈리아",
+          "latitude": 45.4692242,
+          "longitude": 9.1877512,
+          "googleMapsId": "ChIJ86o_8bLGhkcR4zCyqJjuoBU",
+          "googleMapsUri": "https://maps.google.com/?cid=1558507810502881507&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=y8TnmVbNtgY",
+          "description": "밀라노의 힙한 브레라 지구를 소개하는 영상에서 방문한 트렌디 레스토랑. 와인잔의 넓고 좁음에 따른 차이를 이야기하며, 밀라노의 성수동으로 불리는 브레라의 분위기를 느낄 수 있다."
+        }
+      ]
+    },
+    {
+      "videoId": "CaHQnH6qK7Y",
+      "title": "[비밀이야 in 이탈리아] 나폴리 지노 소르빌로(Gino Sorbillo)ㅣ나폴리 4대 피자(내 맘대로ㅋ)ㅣ퀄리티에 비해 매우 저렴한 가격!ㅣ줄 서기 싫으면 말고 분점으로~",
+      "concept": "이탈리아 나폴리 맛집 방문기",
+      "locations": [
+        {
+          "name": "Gino Sorbillo",
+          "displayName": "Gino e Toto Sorbillo",
+          "address": "Via dei Tribunali, 32, 80138 Napoli NA, 이탈리아",
+          "latitude": 40.8503854,
+          "longitude": 14.255302799999999,
+          "googleMapsId": "ChIJuyXzSEIIOxMR5KQy1mftAr0",
+          "googleMapsUri": "https://maps.google.com/?cid=13619709253352858852&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=CaHQnH6qK7Y",
+          "description": "나폴리 4대 피자를 소개하는 영상에서 방문한 전설적인 피자집. 퀄리티에 비해 매우 저렴한 가격이 특징이며, 줄 서기 싫으면 분점을 이용할 수 있다."
+        }
+      ]
+    },
+    {
+      "videoId": "kj4mA9dxX2s",
+      "title": "광기 어린 셰프님과 그 아들 (feat. 진짜 이탈리아 가정식)ㅣ홀인원, 푸드라이터 [EN]",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Hole in One",
+          "displayName": "Hole In One Drink & Golf (open bar dall’una alle due)",
+          "address": "Via Michelangelo Buonarroti, 19, 20149 Milano MI, 이탈리아",
+          "latitude": 45.4693353,
+          "longitude": 9.1550768,
+          "googleMapsId": "ChIJUfHo62XBhkcRWp3UlYQOlEQ",
+          "googleMapsUri": "https://maps.google.com/?cid=4941590653744487770&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=kj4mA9dxX2s",
+          "description": "광기 어린 셰프와 이탈리아 가정식을 소개하는 영상에서 방문한 밀라노 캐주얼 레스토랑. 독특한 분위기에서 진짜 이탈리아 가정식을 맛볼 수 있는 곳이다."
+        },
+        {
+          "name": "Food Writers",
+          "displayName": "Food Writers",
+          "address": "Via Domenico Millelire, 14, 20147 Milano MI, 이탈리아",
+          "latitude": 45.466687,
+          "longitude": 9.1288214,
+          "googleMapsId": "ChIJZckOtYPBhkcRv1N-SmskCig",
+          "googleMapsUri": "https://maps.google.com/?cid=2885158554514117567&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=kj4mA9dxX2s",
+          "description": "광기 어린 셰프와 이탈리아 가정식을 소개하는 영상에서 방문한 밀라노 레스토랑. 개성 넘치는 셰프가 선보이는 진짜 이탈리아 가정식을 맛볼 수 있는 곳이다."
+        }
+      ]
+    },
+    {
+      "videoId": "zesn608_xzo",
+      "title": "혹평했던 레스토랑인데...직원들이 알아보네요 | Piazza Duomo",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Piazza Duomo",
+          "displayName": "Piazza Duomo",
+          "address": "Piazza Risorgimento, 4, 12051 Alba CN, 이탈리아",
+          "latitude": 44.7005845,
+          "longitude": 8.035860999999999,
+          "googleMapsId": "ChIJSw-GLl2z0hIRX8zyKXltoq8",
+          "googleMapsUri": "https://maps.google.com/?cid=12655798270026763359&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=zesn608_xzo",
+          "description": "이전에 혹평했던 레스토랑을 재방문하는 영상에서 소개된 알바의 미슐랭 3스타 레스토랑. 직원들이 알아볼 정도로 재방문하게 된 곳으로, 이전 혹평과의 변화가 인상적이다."
+        }
+      ]
+    },
+    {
+      "videoId": "GK7tzoJsVPY",
+      "title": "[EN] 그런데 미쉐린 음식에서 이물질이..? 이에 대한 생각 | 이탈리아 출장 EP.3 | Casa Perbellini",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Casa Perbellini",
+          "displayName": "Casa Perbellini 12 Apostoli",
+          "address": "Vicolo Corticella S. Marco, 3, 37121 Verona VR, 이탈리아",
+          "latitude": 45.4426738,
+          "longitude": 10.9961133,
+          "googleMapsId": "ChIJu8s0-1dff0cR-BmaS83pW3U",
+          "googleMapsUri": "https://maps.google.com/?cid=8456609793264196088&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=GK7tzoJsVPY",
+          "description": "이탈리아 출장 중 방문한 베로나의 미쉐린 레스토랑을 소개하는 영상. 미쉐린 음식에서 이물질이 나온 에피소드와 이에 대한 생각이 솔직하게 담겨 있다."
+        }
+      ]
+    },
+    {
+      "videoId": "QBYqR8HoRAU",
+      "title": "제철 음식 챙겨 먹는데 이제 그게 화이트 트러플임🤍 | Il Luogo di Aimo e Nadia",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Il Luogo di Aimo e Nadia",
+          "displayName": "Il Luogo di Aimo e Nadia",
+          "address": "Via Privata Raimondo Montecuccoli, 6, 20147 Milano MI, 이탈리아",
+          "latitude": 45.4584762,
+          "longitude": 9.131244400000002,
+          "googleMapsId": "ChIJ9aorjSvChkcRD0Zd5dxZ2s4",
+          "googleMapsUri": "https://maps.google.com/?cid=14905324722011850255&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=QBYqR8HoRAU",
+          "description": "제철 음식과 화이트 트러플을 소개하는 영상에서 방문한 밀라노 미슐랭 레스토랑. 제철 재료인 화이트 트러플을 아낌없이 사용한 요리가 인상적인 곳이다."
+        }
+      ]
+    },
+    {
+      "videoId": "XrVKKGDTjyg",
+      "title": "이거 꿈인가요? 인생 숙소와 저녁식사 | Forestis Dolomites",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Forestis Dolomites",
+          "displayName": "Forestis Dolomites",
+          "address": "Palmschoß 22, 39042 Bressanone BZ, 이탈리아",
+          "latitude": 46.675755699999996,
+          "longitude": 11.7100308,
+          "googleMapsId": "ChIJUzkj65AQeEcRKXSK0ZN3uS8",
+          "googleMapsUri": "https://maps.google.com/?cid=3438911267233494057&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=XrVKKGDTjyg",
+          "description": "인생 숙소와 저녁식사를 소개하는 영상에서 방문한 돌로미테의 호텔 레스토랑. 꿈같은 숙소와 함께 즐기는 저녁식사가 인상적이며, 돌로미테의 절경을 만끽할 수 있다."
+        }
+      ]
+    },
+    {
+      "videoId": "451vnX351yc",
+      "title": "[비밀이야 in 이탈리아] 피렌체 구찌 오스테리아(Gucci Osteria)ㅣ미쉐린 1스타ㅣ마시모 보투라 셰프ㅣ구찌와 마시모 보투라를 빼면 과연..",
+      "concept": "이탈리아 피렌체 맛집 방문기",
+      "locations": [
+        {
+          "name": "Gucci Osteria",
+          "displayName": "Gucci Osteria da Massimo Bottura",
+          "address": "P.za della Signoria, 10, 50122 Firenze FI, 이탈리아",
+          "latitude": 43.769737,
+          "longitude": 11.2568188,
+          "googleMapsId": "ChIJXWil3wBUKhMRCNkg3KPI-FY",
+          "googleMapsUri": "https://maps.google.com/?cid=6266979487584409864&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=451vnX351yc",
+          "description": "피렌체 미쉐린 1스타 레스토랑을 소개하는 영상에서 방문한 구찌와 마시모 보투라 셰프의 협업 레스토랑. 구찌와 마시모 보투라의 명성을 빼면 어떨지에 대한 솔직한 평가가 담겨 있다."
+        }
+      ]
+    },
+    {
+      "videoId": "qrXzkgYQpSQ",
+      "title": "이탈리아의 '돼지 오줌보 스팀 파스타'를 먹어보다 | Lido84",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Lido 84",
+          "displayName": "Lido 84",
+          "address": "Corso Giuseppe Zanardelli, 196, 25083 Gardone Riviera BS, 이탈리아",
+          "latitude": 45.6251592,
+          "longitude": 10.5755666,
+          "googleMapsId": "ChIJx7BJHCKMgUcRA7aurgztHrQ",
+          "googleMapsUri": "https://maps.google.com/?cid=12979071814854424067&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=qrXzkgYQpSQ",
+          "description": "이탈리아 독특한 요리를 소개하는 영상에서 방문한 가르다 호수변 레스토랑. '돼지 오줌보 스팀 파스타'라는 독특한 메뉴가 화제가 되었으며, 월드베스트 레스토랑으로 주목받는 곳이다."
+        }
+      ]
+    },
+    {
+      "videoId": "nsTJJQaUTBo",
+      "title": "하루 단 20팀? 콜로세움뷰 럭셔리 호텔 후기⭐ | Palazzo Manfredi",
+      "concept": "이탈리아 맛집 방문기",
+      "locations": [
+        {
+          "name": "Palazzo Manfredi",
+          "displayName": "Palazzo Manfredi",
+          "address": "Via Labicana, 125, 00184 Roma RM, 이탈리아",
+          "latitude": 41.8901976,
+          "longitude": 12.495603899999999,
+          "googleMapsId": "ChIJTVNJb7dhLxMRdE-kPPU1f_o",
+          "googleMapsUri": "https://maps.google.com/?cid=18050205158924898164&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "source": "description",
+          "timestamp": null,
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=nsTJJQaUTBo",
+          "description": "로마의 럭셔리 호텔을 소개하는 영상에서 방문한 콜로세움 뷰 호텔. 하루 단 20팀만 받으며, 콜로세움을 바로 앞에서 감상할 수 있는 특별한 숙소이다."
+        }
+      ]
+    }
+  ]
+}

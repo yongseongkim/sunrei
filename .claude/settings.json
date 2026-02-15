@@ -1,15 +1,21 @@
 {
   "permissions": {
     "allow": [
-      "Bash(uv run:*)",
-      "Bash(curl:*)",
-      "Bash(mkdir:*)",
-      "Bash(python3:*)",
-      "Bash(grep:*)",
-      "Bash(ls:*)",
+      "Bash(uv run *)",
+      "Bash(curl *)",
+      "Bash(mkdir *)",
+      "Bash(python3 *)",
+      "Bash(grep *)",
+      "Bash(ls *)",
       "Bash(API_KEY=*)",
       "Bash(YOUTUBE_API_KEY=*)",
-      "Bash(GOOGLE_MAPS_API_KEY=*)"
+      "Bash(GOOGLE_MAPS_API_KEY=*)",
+      "Bash(TOKEN=*)",
+      "Bash(sleep *)",
+      "Bash(wc *)",
+      "Bash(cat *)",
+      "Bash(jq *)",
+      "Bash(cut *)"
     ]
   }
 }
