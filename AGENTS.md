@@ -24,3 +24,16 @@ Sunrei에 속한 개별 장소로, 작품 내 특정 장면이나 에피소드�
 
 실제 위치 정보로 현재는 GoogleMaps 정보를 이용한다.
 여러 작품에 "도쿄역" 이 등장하듯이, 여러 SunreiSpot 이 한 Place 를 가리킬 수 있다.
+
+## Deployment
+
+- Infrastructure: k3s on Oracle Cloud ARM (Chuncheon), ArgoCD (GitOps), Cloudflare Tunnel
+- Registry: GHCR (`ghcr.io/yongseongkim/sunrei`) — public, no auth needed
+- Services: admin(:3102), app(:3101), server(:3100) — all linux/arm64
+- Domains: sunrei.com, admin.sunrei.com, api.sunrei.com
+- Release flow: `scripts/release.sh` → auto-increment version → build/push images → update Helm chart → developer commits, tags, pushes → GitHub Actions builds on `v*.*.*` tag → ArgoCD auto-syncs
+- Version convention: git tags use `v` prefix (`v0.12.0`), image tags and chart `version` strip it (`0.12.0`), chart `appVersion` keeps it (`v0.12.0`)
+- Verify deployment: `kubectl get pods -n sunrei`, `argocd app get sunrei`
+- Common issue: `ImagePullBackOff` — check for `v` prefix mismatch between chart values and actual image tags
+
+자세한 내용은 `deploy/README.md` 참고.
