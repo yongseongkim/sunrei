@@ -40,6 +40,25 @@ This concept guides which transcript mentions are relevant locations vs just pas
 - The concept determines the geographic scope. Locations outside this scope are references, not destinations.
 - Example: A "Japanese architecture travel" video that mentions 압구정 현대아파트 (Seoul) as a comparison → exclude it. Only include locations within the video's target geography (Japan).
 
+#### Concept Examples
+
+**Good (specific):**
+- "싱가포르 현지 맛집 투어 - 바쿠테, 프론미, 하이난 치킨 라이스" — region + theme + key dishes
+- "기후현 야생요리 전문식당" — region + unique content type
+- "랭스 럭셔리 레스토랑 Le Parc Les Crayères, 600종 샴페인" — city + venue name + key feature
+- "삿포로 라멘/수프카레" — city + food type
+- "도쿄 히로오 건축여행 — 오직 히로오에만 존재하는 가게들" — city neighborhood + content type + theme
+
+**Bad (too broad):**
+- "이탈리아 맛집 방문기" → city unknown, food type unknown. Refine to "피렌체 미슐랭 3스타 와인 셀러 레스토랑"
+- "일본 료칸 방문기" → region unknown. Refine to "니세코 미쉐린 설경 료칸"
+- "일본 맛집 방문기" → worst case. No city, no food type
+
+**Rules:**
+1. Be as specific as possible with geography (country → city → neighborhood)
+2. Specify content type (food tour, ryokan, architecture trip, cafe tour, wine restaurant, etc.)
+3. Reflect key keywords from the video title (specific dish names, chef names, Michelin ratings, price range, etc.)
+
 ### 4. Extract Google Maps Links from Description
 
 Parse the video description for Google Maps links:
