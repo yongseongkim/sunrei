@@ -59,6 +59,13 @@ Analyze all available sources to find locations, in priority order:
 3. Title/description analysis (main subject buildings/places when no chapters exist)
 4. Transcript mentions (lowest priority — noisy)
 
+Each location's `description` must be 2-3 sentences that include:
+1. The video's concept/theme (what kind of content this is — e.g., "도쿄 시부야 지역의 숨은 맛집을 소개하는 영상")
+2. What makes this location notable as presented in the video (e.g., specific dishes praised, unique features highlighted, why the creator recommended it)
+
+Bad: "야키토리 맛집" (too short, no context)
+Good: "시부야 맛집 투어를 소개하는 영상에서 방문한 야키토리 전문점. 비장탄으로 굽는 것이 특징이며, 특히 쓰쿠네와 레바가 인기 메뉴로 영상에서 극찬을 받았다."
+
 For transcript-based extraction, look for:
 
 - Place names (restaurants, cafes, shops, tourist spots)
@@ -142,7 +149,7 @@ Save to `.claude/workspace/youtube/{ID}/locations.json`:
           "source": "transcript_mention",
           "timestamp": 125.5,
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=VIDEO_ID&t=125",
-          "description": "영상에서 소개된 시부야의 야키토리 맛집"
+          "description": "시부야 맛집 투어를 소개하는 영상에서 방문한 야키토리 전문점. 비장탄으로 굽는 것이 특징이며, 특히 쓰쿠네와 레바가 인기 메뉴로 영상에서 극찬을 받았다."
         }
       ]
     }
