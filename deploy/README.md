@@ -1,0 +1,163 @@
+# Deployment Guide
+
+## Overview
+
+```
+Code → GitHub Actions → GHCR → ArgoCD → k3s (Oracle ARM)
+```
+
+| Component | Port | Replicas | Domain |
+|-----------|------|----------|--------|
+| admin     | 3102 | 1        | admin.sunrei.com |
+| app       | 3101 | 2        | sunrei.com |
+| server    | 3100 | 2        | api.sunrei.com |
+
+All images are built for linux/arm64. External traffic is routed through Cloudflare Tunnel (no Ingress resource needed).
+
+## Release Process
+
+### 1. Run the release script
+
+```bash
+./scripts/release.sh
+```
+
+The script:
+1. Checks the working directory is clean (excluding `.env` files)
+2. Reads the latest git tag and auto-increments the patch version (e.g. `v0.12.0` → `v0.12.1`)
+3. Builds and pushes Docker images via `scripts/push-images.sh`
+4. Updates `deploy/helm/Chart.yaml` and `deploy/helm/values.yaml` via `scripts/update-chart.sh`
+
+### 2. Commit, tag, and push
+
+After the script completes, manually:
+
+```bash
+git add -A
+git commit -m "Release v0.12.1"
+git tag v0.12.1
+git push origin main --tags
+```
+
+### 3. GitHub Actions
+
+Pushing a tag matching `v*.*.*` triggers the Docker Publish to GHCR workflow (`.github/workflows/docker-publish.yml`). It builds four images in a matrix:
+
+| Image | Dockerfile |
+|-------|-----------|
+| sunrei-admin | `deploy/dockerfiles/admin.Dockerfile` |
+| sunrei-app | `deploy/dockerfiles/app.Dockerfile` |
+| sunrei-server | `deploy/dockerfiles/server.Dockerfile` |
+| sunrei-migration | `deploy/dockerfiles/migration.Dockerfile` |
+
+Each image is pushed to `ghcr.io/yongseongkim/sunrei/<name>` with semantic version tags (e.g. `0.12.1`, `0.12`, `0`, `latest`).
+
+### 4. ArgoCD auto-sync
+
+ArgoCD watches `deploy/helm/` on the `main` branch. Once the chart changes are pushed, ArgoCD detects the diff and auto-syncs the new deployment to the k3s cluster.
+
+## Version Convention
+
+| Location | Format | Example |
+|----------|--------|---------|
+| Git tag | `v` prefix | `v0.12.0` |
+| Chart.yaml `version` | No prefix | `0.12.0` |
+| Chart.yaml `appVersion` | `v` prefix | `v0.12.0` |
+| values.yaml image tags | No prefix | `0.12.0` |
+| GHCR image tags | No prefix | `0.12.0` |
+
+The `v` prefix is stripped by `docker/metadata-action` in the GitHub Actions workflow and by `scripts/update-chart.sh` when updating values.yaml. Mismatching the prefix (e.g. using `v0.12.0` as an image tag) causes `ImagePullBackOff`.
+
+## Helm Chart
+
+```
+deploy/helm/
+├── Chart.yaml          # name, version, appVersion
+├── values.yaml         # image registry/tags, replicas, ports, env, resources
+└── templates/
+    ├── _helpers.tpl     # label and naming helpers
+    ├── deployment.yaml  # Deployments for admin, app, server
+    └── service.yaml     # ClusterIP Services for admin, app, server
+```
+
+- Registry: `ghcr.io/yongseongkim/sunrei` (public — no `imagePullSecrets` needed)
+- Pull policy: `IfNotPresent`
+- Image tags in `values.yaml` are updated by `scripts/update-chart.sh`
+
+## Infrastructure
+
+- Cluster: k3s on Oracle Cloud Free Tier ARM instance (Chuncheon region)
+- GitOps: ArgoCD watches `deploy/helm/` on `main`, auto-syncs on change
+- External access: Cloudflare Tunnel (`cloudflared` runs on the master node) routes traffic from Cloudflare CDN through an encrypted tunnel directly to k3s ClusterIP services
+- Domains: `sunrei.com`, `admin.sunrei.com`, `api.sunrei.com`
+
+## Secrets
+
+Secrets are stored in a manually-created Kubernetes secret:
+
+```
+kubectl -n sunrei get secret sunrei-secrets
+```
+
+Required keys:
+
+| Key | Used by |
+|-----|---------|
+| `google-maps-api-key` | admin, app |
+| `google-maps-map-id` | admin |
+| `google-oauth-client-id` | admin, app, server |
+| `google-oauth-client-secret` | server |
+| `database-host` | server |
+| `database-password` | server |
+| `jwt-page-token-secret` | server |
+| `aws-access-key-id` | server |
+| `aws-secret-access-key` | server |
+| `auth-jwt-secret` | server |
+
+If a key is missing, the pod will fail to start with `CreateContainerConfigError`.
+
+## Troubleshooting
+
+### ImagePullBackOff
+
+The most common cause is a version prefix mismatch. Image tags in GHCR do not have the `v` prefix, but git tags and `appVersion` do.
+
+```bash
+# Check what tag the deployment expects
+kubectl -n sunrei get deployment sunrei-app -o jsonpath='{.spec.template.spec.containers[0].image}'
+
+# Verify the image exists in GHCR
+docker manifest inspect ghcr.io/yongseongkim/sunrei/sunrei-app:0.12.0
+```
+
+Also check that image visibility is set to public in GitHub package settings.
+
+### ArgoCD not syncing
+
+Force a hard refresh:
+
+```bash
+argocd app get sunrei --hard-refresh
+```
+
+Or patch the refresh annotation:
+
+```bash
+kubectl -n argocd patch app sunrei --type merge -p '{"metadata":{"annotations":{"argocd.argoproj.io/refresh":"hard"}}}'
+```
+
+### General verification
+
+```bash
+# Pod status
+kubectl get pods -n sunrei
+
+# Deployment details (image, events)
+kubectl -n sunrei describe deployment sunrei-server
+
+# Pod logs
+kubectl -n sunrei logs -l app=sunrei-server --tail=100
+
+# ArgoCD app status
+argocd app get sunrei
+```
