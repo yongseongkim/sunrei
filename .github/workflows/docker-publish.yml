@@ -89,3 +89,39 @@ jobs:
             -f visibility='public' || echo "Visibility already set or package not found yet"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  update-chart:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          TAG_NAME="${GITHUB_REF#refs/tags/}"
+          VERSION="${TAG_NAME#v}"
+          echo "tag=${TAG_NAME}" >> $GITHUB_OUTPUT
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Update Helm chart
+        run: |
+          sed -i "s/^version: .*/version: ${{ steps.version.outputs.version }}/" deploy/helm/Chart.yaml
+          sed -i "s/^appVersion: .*/appVersion: \"${{ steps.version.outputs.tag }}\"/" deploy/helm/Chart.yaml
+          sed -i '/^images:/,/^[^ ]/{/^    tag: /s/tag: .*/tag: ${{ steps.version.outputs.version }}/;}' deploy/helm/values.yaml
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add deploy/helm/Chart.yaml deploy/helm/values.yaml
+          if git diff --cached --quiet; then
+            echo "No chart changes needed"
+          else
+            git commit -m "chore: update chart to ${{ steps.version.outputs.tag }} [skip ci]"
+            git push origin main
+          fi

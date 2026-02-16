@@ -25,23 +25,13 @@ All images are built for linux/arm64. External traffic is routed through Cloudfl
 The script:
 1. Checks the working directory is clean (excluding `.env` files)
 2. Reads the latest git tag and auto-increments the patch version (e.g. `v0.12.0` → `v0.12.1`)
-3. Builds and pushes Docker images via `scripts/push-images.sh`
-4. Updates `deploy/helm/Chart.yaml` and `deploy/helm/values.yaml` via `scripts/update-chart.sh`
+3. Creates and pushes the new git tag
 
-### 2. Commit, tag, and push
+### 2. GitHub Actions
 
-After the script completes, manually:
+Pushing a tag matching `v*.*.*` triggers the Docker Publish to GHCR workflow (`.github/workflows/docker-publish.yml`):
 
-```bash
-git add -A
-git commit -m "Release v0.12.1"
-git tag v0.12.1
-git push origin main --tags
-```
-
-### 3. GitHub Actions
-
-Pushing a tag matching `v*.*.*` triggers the Docker Publish to GHCR workflow (`.github/workflows/docker-publish.yml`). It builds four images in a matrix:
+1. **build** (matrix): Builds and pushes four images in parallel:
 
 | Image | Dockerfile |
 |-------|-----------|
@@ -52,9 +42,11 @@ Pushing a tag matching `v*.*.*` triggers the Docker Publish to GHCR workflow (`.
 
 Each image is pushed to `ghcr.io/yongseongkim/sunrei/<name>` with semantic version tags (e.g. `0.12.1`, `0.12`, `0`, `latest`).
 
-### 4. ArgoCD auto-sync
+2. **update-chart** (runs after build): Updates `deploy/helm/Chart.yaml` and `deploy/helm/values.yaml` with the new version, then commits and pushes to `main`. This ensures images are available in GHCR before ArgoCD sees the chart change.
 
-ArgoCD watches `deploy/helm/` on the `main` branch. Once the chart changes are pushed, ArgoCD detects the diff and auto-syncs the new deployment to the k3s cluster.
+### 3. ArgoCD auto-sync
+
+ArgoCD watches `deploy/helm/` on the `main` branch. Once the chart commit from GitHub Actions appears, ArgoCD detects the diff and auto-syncs the new deployment to the k3s cluster. Since images were built before the chart update, pods will not hit `ImagePullBackOff`.
 
 ## Version Convention
 
