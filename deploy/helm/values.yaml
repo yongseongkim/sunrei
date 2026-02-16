@@ -31,7 +31,7 @@ admin:
     port: 3102
   env:
     - name: NEXT_PUBLIC_API_URL
-      value: "http://sunrei-server:3100"
+      value: "https://sunrei-api.yongseongkimm.com"
     - name: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
       valueFrom:
         secretKeyRef:
@@ -57,7 +57,7 @@ app:
     port: 3101
   env:
     - name: NEXT_PUBLIC_API_URL
-      value: "http://sunrei-server:3100"
+      value: "https://sunrei-api.yongseongkimm.com"
     - name: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
       valueFrom:
         secretKeyRef:
