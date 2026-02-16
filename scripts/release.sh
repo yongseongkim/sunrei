@@ -47,48 +47,6 @@ check_git_status() {
     log_info "Working directory is clean (excluding environment files)"
 }
 
-# Check required environment configuration files
-check_environment_files() {
-    log_step "Checking required environment files..."
-
-    local has_error=false
-
-    # Check admin .env file
-    if [ ! -f "sunrei-admin/.env" ]; then
-        log_error "sunrei-admin/.env file not found"
-        log_info "This file is required for admin application environment variables"
-        has_error=true
-    else
-        log_info "✓ sunrei-admin/.env exists"
-    fi
-
-    # Check app .env file
-    if [ ! -f "sunrei-app/.env" ]; then
-        log_error "sunrei-app/.env file not found"
-        log_info "This file is required for app application environment variables"
-        has_error=true
-    else
-        log_info "✓ sunrei-app/.env exists"
-    fi
-
-    # Check server application-prod.conf file
-    if [ ! -f "sunrei-server/src/main/resources/application-prod.conf" ]; then
-        log_error "sunrei-server/src/main/resources/application-prod.conf file not found"
-        log_info "This file is required for production server configuration"
-        has_error=true
-    else
-        log_info "✓ sunrei-server/src/main/resources/application-prod.conf exists"
-    fi
-
-    if [ "$has_error" = true ]; then
-        echo ""
-        log_error "Required environment files are missing. Please create them before release."
-        exit 1
-    fi
-
-    log_info "All required environment files exist"
-}
-
 # Get the latest semantic version tag
 get_latest_version() {
     # Get all tags that match semantic version pattern (v1.2.3 or 1.2.3)
@@ -141,21 +99,17 @@ Automated release script for Sunrei project
 
 This script performs the following steps:
   1. Check for uncommitted changes (excluding .env files)
-  2. Check required environment files exist
-  3. Get latest semantic version from git tags
-  4. Increment patch version (v1.2.3 -> v1.2.4)
-  5. Build and push Docker images to OCI registry
-  6. Update Helm chart version and values.yaml
+  2. Get latest semantic version from git tags
+  3. Increment patch version (v1.2.3 -> v1.2.4)
+  4. Create and push the git tag
 
-After running this script, you need to manually:
-  - Review changes in deploy/helm/
-  - Commit and push changes with git tag
-  - ArgoCD will detect and deploy automatically
+After the tag is pushed:
+  - GitHub Actions builds and pushes Docker images
+  - GitHub Actions updates the Helm chart
+  - ArgoCD detects chart changes and deploys
 
 Prerequisites:
-  - Docker installed and logged in to OCI registry
   - Git configured
-  - Environment files (.env, application-prod.conf)
 
 Options:
   -h, --help        Show this help message
@@ -163,10 +117,6 @@ Options:
 Examples:
   # Basic usage
   $0
-
-Setup (one-time):
-  1. Docker login: docker login yny.ocir.io
-  2. Create environment files (see check_environment_files in script)
 
 Version Increment Logic:
   No tags       -> v0.0.1
@@ -186,10 +136,6 @@ main() {
 
     # Check git status
     check_git_status
-    echo ""
-
-    # Check required environment files
-    check_environment_files
     echo ""
 
     # Get latest version
@@ -217,10 +163,13 @@ main() {
 
     # Confirm with user
     log_warn "This will:"
-    echo "  1. Build Docker images with tag: $next_version"
-    echo "  2. Push images to OCI registry"
-    echo "  3. Update Helm chart version to ${next_version#v}"
-    echo "  4. Update values.yaml image tags to $next_version"
+    echo "  1. Create git tag: $next_version"
+    echo "  2. Push the tag to origin"
+    echo ""
+    echo "  GitHub Actions will then:"
+    echo "    - Build and push Docker images to GHCR"
+    echo "    - Update Helm chart version to ${next_version#v}"
+    echo "    - ArgoCD will auto-sync the deployment"
     echo ""
     read -p "Continue? (y/N): " -n 1 -r
     echo ""
@@ -231,30 +180,28 @@ main() {
     fi
     echo ""
 
-    # Build and push Docker images
-    log_step "Building and pushing Docker images..."
-    ./scripts/push-images.sh "$next_version"
-    echo ""
+    # Create and push tag
+    log_step "Creating tag $next_version..."
+    git tag "$next_version"
+    log_info "Tag $next_version created"
 
-    # Update Helm chart using update-chart.sh
-    log_step "Updating Helm chart..."
-    ./scripts/update-chart.sh "$next_version" --skip-verify --yes
+    log_step "Pushing tag to origin..."
+    git push origin "$next_version"
+    log_info "Tag pushed"
     echo ""
 
     log_info "=========================================="
-    log_info "  Release completed successfully!"
+    log_info "  Release initiated successfully!"
     log_info "=========================================="
     log_info "Version: $next_version"
-    log_info "Chart Version: ${next_version#v}"
     log_info ""
-    log_info "Next steps:"
-    log_info "  1. Review changes in deploy/helm/"
-    log_info "  2. Commit and push:"
-    log_info "     git add deploy/helm/"
-    log_info "     git commit -m 'chore: bump version to $next_version'"
-    log_info "     git tag $next_version"
-    log_info "     git push origin main --tags"
-    log_info "  3. ArgoCD will detect changes and deploy"
+    log_info "GitHub Actions will now:"
+    log_info "  1. Build and push Docker images"
+    log_info "  2. Update Helm chart to ${next_version#v}"
+    log_info "  3. ArgoCD will auto-sync the deployment"
+    log_info ""
+    log_info "Monitor progress:"
+    log_info "  https://github.com/yongseongkim/sunrei/actions"
     echo ""
 }
 

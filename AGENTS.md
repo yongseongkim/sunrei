@@ -31,7 +31,7 @@ Sunrei에 속한 개별 장소로, 작품 내 특정 장면이나 에피소드�
 - Registry: GHCR (`ghcr.io/yongseongkim/sunrei`) — public, no auth needed
 - Services: admin(:3102), app(:3101), server(:3100) — all linux/arm64
 - Domains: sunrei.com, admin.sunrei.com, api.sunrei.com
-- Release flow: `scripts/release.sh` → auto-increment version → build/push images → update Helm chart → developer commits, tags, pushes → GitHub Actions builds on `v*.*.*` tag → ArgoCD auto-syncs
+- Release flow: `scripts/release.sh` → auto-increment version → create and push tag → GitHub Actions builds images → GitHub Actions updates Helm chart → ArgoCD auto-syncs
 - Version convention: git tags use `v` prefix (`v0.12.0`), image tags and chart `version` strip it (`0.12.0`), chart `appVersion` keeps it (`v0.12.0`)
 - Verify deployment: `kubectl get pods -n sunrei`, `argocd app get sunrei`
 - Common issue: `ImagePullBackOff` — check for `v` prefix mismatch between chart values and actual image tags
