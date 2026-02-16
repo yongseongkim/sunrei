@@ -106,6 +106,9 @@ build_image() {
         if [ -n "$NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID" ]; then
             build_args="$build_args --build-arg NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID=${NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID}"
         fi
+        if [ -n "$NEXT_PUBLIC_GOOGLE_CLIENT_ID" ]; then
+            build_args="$build_args --build-arg NEXT_PUBLIC_GOOGLE_CLIENT_ID=${NEXT_PUBLIC_GOOGLE_CLIENT_ID}"
+        fi
     fi
 
     # Build with environment variables for ARM64 platform
