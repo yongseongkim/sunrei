@@ -7,13 +7,48 @@ on:
   push:
     tags:
       - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version (e.g. 0.14.0). Leave empty to auto-increment patch.'
+        required: false
+        type: string
 
 env:
   REGISTRY: ghcr.io
   IMAGE_PREFIX: yongseongkim/sunrei
 
 jobs:
+  prepare:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      tag: ${{ steps.version.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine version
+        id: version
+        run: |
+          INPUT_VERSION="${{ github.event.inputs.version }}"
+          if [ -n "$INPUT_VERSION" ]; then
+            VERSION="${INPUT_VERSION#v}"
+          else
+            LATEST_TAG=$(git tag -l 'v*.*.*' | sort -V | tail -1)
+            LATEST_VERSION="${LATEST_TAG#v}"
+            IFS='.' read -r MAJOR MINOR PATCH <<< "${LATEST_VERSION:-0.0.0}"
+            VERSION="${MAJOR}.${MINOR}.$((PATCH + 1))"
+          fi
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "tag=v${VERSION}" >> $GITHUB_OUTPUT
+          echo "Resolved version: ${VERSION} (tag: v${VERSION})"
+
   build:
+    needs: [prepare]
+    if: always() && (needs.prepare.result == 'success' || needs.prepare.result == 'skipped')
     runs-on: ubuntu-24.04-arm
     permissions:
       contents: read
@@ -49,16 +84,24 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Resolve version
+        id: resolve
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "version=${{ needs.prepare.outputs.version }}" >> $GITHUB_OUTPUT
+          else
+            TAG_NAME="${GITHUB_REF#refs/tags/}"
+            echo "version=${TAG_NAME#v}" >> $GITHUB_OUTPUT
+          fi
+
       - name: Extract metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ matrix.image.name }}
           tags: |
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value=${{ steps.resolve.outputs.version }}
+            type=raw,value=latest
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -91,8 +134,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   update-chart:
+    needs: [prepare, build]
+    if: always() && needs.build.result == 'success'
     runs-on: ubuntu-latest
-    needs: build
     permissions:
       contents: write
     steps:
@@ -100,12 +144,17 @@ jobs:
         with:
           ref: main
 
-      - name: Extract version from tag
+      - name: Resolve version
         id: version
         run: |
-          TAG_NAME="${GITHUB_REF#refs/tags/}"
-          VERSION="${TAG_NAME#v}"
-          echo "tag=${TAG_NAME}" >> $GITHUB_OUTPUT
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            VERSION="${{ needs.prepare.outputs.version }}"
+            TAG="v${VERSION}"
+          else
+            TAG="${GITHUB_REF#refs/tags/}"
+            VERSION="${TAG#v}"
+          fi
+          echo "tag=${TAG}" >> $GITHUB_OUTPUT
           echo "version=${VERSION}" >> $GITHUB_OUTPUT
 
       - name: Update Helm chart
@@ -125,3 +174,22 @@ jobs:
             git commit -m "chore: update chart to ${{ steps.version.outputs.tag }} [skip ci]"
             git push origin main
           fi
+
+  create-tag:
+    if: github.event_name == 'workflow_dispatch'
+    needs: [prepare, update-chart]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Create and push tag
+        run: |
+          TAG="${{ needs.prepare.outputs.tag }}"
+          git tag "$TAG"
+          git push origin "$TAG"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
