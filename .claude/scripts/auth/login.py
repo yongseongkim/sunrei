@@ -9,7 +9,7 @@ Usage:
 Options:
     --prod  Use production server (https://sunrei-api.yongseongkimm.com)
 
-Environment variables:
+Environment variables (auto-loaded from .claude/.env if present):
     GOOGLE_OAUTH_CLIENT_ID  - Google OAuth client ID (required)
     SUNREI_SERVER_URL       - Server URL (overrides default and --prod flag)
 """
@@ -24,6 +24,23 @@ import webbrowser
 from pathlib import Path
 
 import requests
+
+
+def _load_dot_env():
+    """Load .claude/.env if GOOGLE_OAUTH_CLIENT_ID is not already set."""
+    env_path = Path(__file__).resolve().parents[2] / ".env"
+    if not env_path.is_file():
+        return
+    for line in env_path.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        if line.startswith("export "):
+            line = line[len("export "):]
+        key, _, value = line.partition("=")
+        if key and key not in os.environ:
+            os.environ[key] = value
+
 
 CALLBACK_PORT = 9876
 REDIRECT_URI = f"http://localhost:{CALLBACK_PORT}/callback"
@@ -70,9 +87,11 @@ class OAuthCallbackHandler(http.server.BaseHTTPRequestHandler):
 
 
 def main():
+    _load_dot_env()
+
     client_id = os.environ.get("GOOGLE_OAUTH_CLIENT_ID")
     if not client_id:
-        print("Error: GOOGLE_OAUTH_CLIENT_ID environment variable is required.")
+        print("Error: GOOGLE_OAUTH_CLIENT_ID is required. Set it in .claude/.env or as an environment variable.")
         sys.exit(1)
 
     if os.environ.get("SUNREI_SERVER_URL"):

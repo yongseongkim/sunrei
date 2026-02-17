@@ -51,7 +51,13 @@ If the token file doesn't exist, tell the user to run the login script first:
 
 ### 3. Compose Sunrei Details
 
-First, fetch available tags:
+Set the following automatically from `video_info.json` — do NOT use AskUserQuestion for these:
+
+- Title: Use `channelName` from `video_info.json` directly
+- Description: Summarize what the channel covers based on the video descriptions in `video_info.json` (the `description` field of each video in `selectedVideos`)
+- Link: Construct the channel URL as `https://www.youtube.com/channel/{channelId}` using `channelId` from `video_info.json`
+
+Then, fetch available tags:
 
 ```bash
 curl -s -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/tags" | jq '.data'
@@ -59,12 +65,8 @@ curl -s -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/tags" | jq '.dat
 
 The response includes `data` (array of tags), `totalSize`, `totalElements`, `nextToken`, and `sunreiCountByTagId`.
 
-Then use AskUserQuestion to confirm/edit:
-
-- Title: Suggest based on the channel name (`channelTitle` field from `video_info.json`). The channel represents the "content" (like a movie/anime) in the Sunrei model.
-- Description: Suggest based on channel description or video descriptions
-- Link: YouTube channel or video/playlist URL
-- Tags: Present available tags from the fetched list and ask user to select
+- If tags exist (`data` is non-empty), use AskUserQuestion to let the user select tags from the list
+- If no tags exist (`data` is empty), skip tag selection and use an empty `tagIds` array
 
 ### 4. Build SunreiSpots
 
@@ -134,6 +136,12 @@ On success (201):
 - Display the created Sunrei ID
 - Display summary: title, number of spots created
 - Provide link to view in admin panel
+
+On conflict (409):
+
+- A Sunrei with the same link already exists
+- Display the `existingId` from the response
+- Ask the user whether to skip creation or update the existing Sunrei
 
 On error:
 
