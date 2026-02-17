@@ -56,7 +56,7 @@ Checkpoint: User must approve location list before Sunrei creation.
 
 Execute the `/youtube-create-sunrei` skill.
 
-- Requires admin authentication: Token must exist at `~/.config/sunrei/admin_token`. If missing, run: `uv run --with requests python .claude/scripts/auth/login.py`
+- Requires admin authentication: `SUNREI_ADMIN_TOKEN` must be set in `.claude/.env`. If missing, run: `uv run --with requests python .claude/scripts/auth/login.py`
 - Auto-set title, description, and link from video_info.json; select tags if available
 - Build SunreiSpots from extracted locations
 - Create via server admin API (all requests require `Authorization: Bearer ${TOKEN}` header)

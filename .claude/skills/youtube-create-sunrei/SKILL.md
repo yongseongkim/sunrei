@@ -12,7 +12,7 @@ Create a Sunrei entity with SunreiSpots via the server admin API using collected
 - `.claude/workspace/youtube/{ID}/video_info.json` must exist
 - `.claude/workspace/youtube/{ID}/locations.json` must exist
 - The sunrei-server must be running
-- Admin authentication token must exist at `~/.config/sunrei/admin_token`. If missing or expired, tell the user to run: `uv run --with requests python .claude/scripts/auth/login.py`
+- `SUNREI_ADMIN_TOKEN` must be set in `.claude/.env`. If missing or expired, tell the user to run: `uv run --with requests python .claude/scripts/auth/login.py`
 
 ## Steps
 
@@ -40,14 +40,13 @@ curl -s http://localhost:3030/health
 
 If the health check fails, ask the user to start the server first.
 
-Read the admin token for authenticated requests:
+Read the admin token from `.claude/.env`:
 
 ```bash
-TOKEN=$(cat ~/.config/sunrei/admin_token)
+TOKEN=$SUNREI_ADMIN_TOKEN
 ```
 
-If the token file doesn't exist, tell the user to run the login script first:
-`uv run --with requests python .claude/scripts/auth/login.py`
+The token is auto-loaded by `_load_dot_env()` from `.claude/.env`. If `SUNREI_ADMIN_TOKEN` is not set, tell the user to run: `uv run --with requests python .claude/scripts/auth/login.py`
 
 ### 3. Compose Sunrei Details
 
