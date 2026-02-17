@@ -1,0 +1,41 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "sunrei.fullname" . }}-migration
+  labels:
+    {{- include "sunrei.componentLabels" (dict "Chart" .Chart "Release" .Release "Values" .Values "component" "migration") | nindent 4 }}
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
+spec:
+  backoffLimit: 3
+  ttlSecondsAfterFinished: 600
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migration
+          image: "{{ .Values.registry }}/migration:{{ .Values.images.server.tag }}"
+          command: ["sh", "-c"]
+          args:
+            - flyway -url="jdbc:postgresql://${DATABASE_HOST}:5432/sunrei" migrate
+          env:
+            - name: DATABASE_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: sunrei-secrets
+                  key: database-host
+            - name: FLYWAY_USER
+              value: "postgres"
+            - name: FLYWAY_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sunrei-secrets
+                  key: database-password
+          resources:
+            limits:
+              cpu: 500m
+              memory: 256Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
