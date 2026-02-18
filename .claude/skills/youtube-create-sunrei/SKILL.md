@@ -11,8 +11,9 @@ Create a Sunrei entity with SunreiSpots via the server admin API using collected
 
 - `.claude/workspace/youtube/{ID}/video_info.json` must exist
 - `.claude/workspace/youtube/{ID}/locations.json` must exist
-- The sunrei-server must be running
+- The sunrei-server must be running (for API calls in Steps 2–5)
 - `SUNREI_ADMIN_TOKEN` must be set in `.claude/.env`. If missing or expired, tell the user to run: `uv run --with requests python .claude/scripts/auth/login.py`
+- `aws-vault` and `aws` CLI must be installed (for S3 registry access in Steps 1.5 and 6)
 
 ## Steps
 
@@ -23,6 +24,37 @@ Read all JSON files from `.claude/workspace/youtube/{ID}/`:
 - `video_info.json` — video/playlist metadata
 - `transcripts.json` — cleaned transcripts (optional, for descriptions)
 - `locations.json` — extracted and geocoded locations
+
+### 1.5. Ask for AWS Vault Profile & Check Channel Registry
+
+After loading data, ask the user which `aws-vault` profile to use (via AskUserQuestion). Store the chosen profile for use in this step and Step 6.
+
+Then check if this channel already has a registry in S3:
+
+```bash
+aws-vault exec {profile} -- aws s3 cp s3://sunrei-resources/youtube/{channelId}.json -
+```
+
+The output (if the file exists) is a per-channel registry with a `sunreis` array:
+
+```json
+{
+  "channelName": "비밀이야 bimirya",
+  "link": "https://www.youtube.com/channel/UC...",
+  "sunreis": [
+    {
+      "sunreiId": "SR...",
+      "createdAt": "2026-02-17T10:06:43Z",
+      "spots": [
+        { "spotId": "SS...", "videoId": "abc123", "videoTitle": "..." }
+      ]
+    }
+  ]
+}
+```
+
+- If the file exists: parse the JSON, display the count of existing sunreis and total spots, then ask the user whether to proceed with creating another Sunrei or abort.
+- If the command fails (exit code 1, file not found): no existing registry, continue normally.
 
 ### 2. Get Server Configuration
 
@@ -135,6 +167,36 @@ On success (201):
 - Display the created Sunrei ID
 - Display summary: title, number of spots created
 - Provide link to view in admin panel
+- Update the channel registry in S3 directly using the `aws-vault` profile chosen in Step 1.5.
+
+  1. Try to download the existing registry:
+     ```bash
+     aws-vault exec {profile} -- aws s3 cp s3://sunrei-resources/youtube/{channelId}.json /tmp/registry.json
+     ```
+  2. If the file exists: parse the JSON and append the new sunrei entry to the `sunreis` array
+  3. If the file doesn't exist (exit code 1): create a fresh registry JSON with `channelName`, `link` from `video_info.json`, and a single-element `sunreis` array
+  4. Upload the updated registry:
+     ```bash
+     aws-vault exec {profile} -- aws s3 cp /tmp/registry.json s3://sunrei-resources/youtube/{channelId}.json --content-type application/json
+     ```
+
+  New sunrei entry format:
+  ```json
+  {
+    "sunreiId": "SR...",
+    "createdAt": "2026-02-18T12:00:00Z",
+    "spots": [
+      { "spotId": "SS...", "videoId": "90FahyHS8dA", "videoTitle": "영상 제목" }
+    ]
+  }
+  ```
+
+  Field sources:
+  - `sunreiId`: from the API response (`id` of the created sunrei)
+  - `createdAt`: current ISO 8601 timestamp
+  - `spots[].spotId`: from the API response (each spot's `id`)
+  - `spots[].videoId`: extract from the `youtubeLink` of each spot in the request payload (the `v` query parameter)
+  - `spots[].videoTitle`: from the corresponding video in `video_info.json` (`selectedVideos[].title`)
 
 On conflict (409):
 
