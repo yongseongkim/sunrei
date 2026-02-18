@@ -17,5 +17,6 @@ fun Route.adminRoutes() {
         adminSunreiRoutes()
         adminTagRoutes()
         imageRoutes()
+        resourceRoutes()
     }
 }

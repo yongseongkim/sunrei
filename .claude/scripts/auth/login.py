@@ -1,7 +1,7 @@
 """
 Sunrei Admin CLI Login
 
-Authenticates via Google OAuth and saves a JWT token for admin API access.
+Authenticates via Google OAuth and saves a JWT token as SUNREI_ADMIN_TOKEN in .claude/.env.
 
 Usage:
     uv run --with requests python .claude/scripts/auth/login.py [--prod]
@@ -9,13 +9,12 @@ Usage:
 Options:
     --prod  Use production server (https://sunrei-api.yongseongkimm.com)
 
-Environment variables:
+Environment variables (auto-loaded from .claude/.env if present):
     GOOGLE_OAUTH_CLIENT_ID  - Google OAuth client ID (required)
     SUNREI_SERVER_URL       - Server URL (overrides default and --prod flag)
 """
 
 import http.server
-import json
 import os
 import sys
 import threading
@@ -25,13 +24,46 @@ from pathlib import Path
 
 import requests
 
+ENV_FILE = Path(__file__).resolve().parents[2] / ".env"
+
+
+def _load_dot_env():
+    """Load .claude/.env if GOOGLE_OAUTH_CLIENT_ID is not already set."""
+    if not ENV_FILE.is_file():
+        return
+    for line in ENV_FILE.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        if line.startswith("export "):
+            line = line[len("export "):]
+        key, _, value = line.partition("=")
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+
+def _set_env_var(key: str, value: str):
+    """Set or update a variable in .claude/.env."""
+    lines: list[str] = []
+    found = False
+    if ENV_FILE.is_file():
+        for line in ENV_FILE.read_text().splitlines():
+            stripped = line.strip()
+            if stripped.startswith(f"{key}=") or stripped.startswith(f"export {key}="):
+                lines.append(f"{key}={value}")
+                found = True
+            else:
+                lines.append(line)
+    if not found:
+        lines.append(f"{key}={value}")
+    ENV_FILE.parent.mkdir(parents=True, exist_ok=True)
+    ENV_FILE.write_text("\n".join(lines) + "\n")
+    ENV_FILE.chmod(0o600)
+
+
 CALLBACK_PORT = 9876
 REDIRECT_URI = f"http://localhost:{CALLBACK_PORT}/callback"
 SCOPES = "openid email profile"
-
-TOKEN_DIR = Path.home() / ".config" / "sunrei"
-TOKEN_FILE = TOKEN_DIR / "admin_token"
-
 
 class OAuthCallbackHandler(http.server.BaseHTTPRequestHandler):
     """Handles the Google OAuth callback to capture the authorization code."""
@@ -70,9 +102,11 @@ class OAuthCallbackHandler(http.server.BaseHTTPRequestHandler):
 
 
 def main():
+    _load_dot_env()
+
     client_id = os.environ.get("GOOGLE_OAUTH_CLIENT_ID")
     if not client_id:
-        print("Error: GOOGLE_OAUTH_CLIENT_ID environment variable is required.")
+        print("Error: GOOGLE_OAUTH_CLIENT_ID is required. Set it in .claude/.env or as an environment variable.")
         sys.exit(1)
 
     if os.environ.get("SUNREI_SERVER_URL"):
@@ -145,13 +179,11 @@ def main():
     token = data["token"]
     user = data["user"]
 
-    # Save token
-    TOKEN_DIR.mkdir(parents=True, exist_ok=True)
-    TOKEN_FILE.write_text(token)
-    TOKEN_FILE.chmod(0o600)
+    # Save token to .claude/.env
+    _set_env_var("SUNREI_ADMIN_TOKEN", token)
 
     print(f"\nLogged in as: {user.get('name', '')} ({user.get('email', '')})")
-    print(f"Token saved to: {TOKEN_FILE}")
+    print(f"Token saved to: {ENV_FILE} as SUNREI_ADMIN_TOKEN")
 
 
 if __name__ == "__main__":
