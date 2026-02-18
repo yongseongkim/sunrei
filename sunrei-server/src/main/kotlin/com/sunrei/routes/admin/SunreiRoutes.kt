@@ -4,6 +4,7 @@ import com.sunrei.di.injectSunreiService
 import com.sunrei.generated.dto.admin.CreateSunreiRequest
 import com.sunrei.generated.dto.admin.UpdateSunreiRequest
 import com.sunrei.routes.admin.converter.toDTO
+import com.sunrei.service.ConflictException
 import com.sunrei.service.SunreiService
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.request.receive
@@ -61,6 +62,8 @@ fun Route.adminSunreiRoutes() {
                 val request = call.receive<CreateSunreiRequest>()
                 val created = sunreiService.create(request)
                 call.respond(HttpStatusCode.Created, created.toDTO())
+            } catch (e: ConflictException) {
+                call.respond(HttpStatusCode.Conflict, mapOf("error" to e.message, "existingId" to e.existingId))
             } catch (e: Exception) {
                 call.respond(HttpStatusCode.BadRequest, mapOf("error" to (e.message ?: "Invalid request")))
             }

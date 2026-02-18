@@ -2,8 +2,11 @@ package com.sunrei.service
 
 import aws.sdk.kotlin.services.s3.S3Client
 import aws.sdk.kotlin.services.s3.model.DeleteObjectRequest
+import aws.sdk.kotlin.services.s3.model.GetObjectRequest
+import aws.sdk.kotlin.services.s3.model.NoSuchKey
 import aws.sdk.kotlin.services.s3.model.PutObjectRequest
 import aws.smithy.kotlin.runtime.content.ByteStream
+import aws.smithy.kotlin.runtime.content.decodeToString
 import com.github.f4b6a3.ulid.UlidCreator
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.timeout
@@ -204,7 +207,7 @@ class S3Service(
                 ""
             }
 
-            val objectKey = "$year/$month/$ulid$dimensionSuffix.$extension"
+            val objectKey = "images/$year/$month/$ulid$dimensionSuffix.$extension"
 
             val putObjectRequest = PutObjectRequest {
                 bucket = config.bucketName
@@ -256,6 +259,36 @@ class S3Service(
         val fileName = url.substringAfterLast('/').substringBefore('?')
 
         return uploadImage(bytes, fileName)
+    }
+
+    /**
+     * Put a JSON string to S3 at the given key
+     */
+    suspend fun putJson(key: String, jsonContent: String) {
+        val putObjectRequest = PutObjectRequest {
+            bucket = config.bucketName
+            this.key = key
+            contentType = "application/json"
+            body = ByteStream.fromBytes(jsonContent.toByteArray(Charsets.UTF_8))
+        }
+        s3Client.putObject(putObjectRequest)
+    }
+
+    /**
+     * Get a JSON string from S3 at the given key, or null if not found
+     */
+    suspend fun getJson(key: String): String? {
+        return try {
+            val getObjectRequest = GetObjectRequest {
+                bucket = config.bucketName
+                this.key = key
+            }
+            s3Client.getObject(getObjectRequest) { response ->
+                response.body?.decodeToString()
+            }
+        } catch (e: NoSuchKey) {
+            null
+        }
     }
 
     /**

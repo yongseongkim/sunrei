@@ -203,6 +203,16 @@ class SunreiService(
     }
 
     fun create(request: CreateSunreiRequest): Sunrei = transaction {
+        // Duplicate check by link
+        if (request.link != null) {
+            val existing = Sunreis.select {
+                (Sunreis.link eq request.link) and (Sunreis.deletedAt.isNull())
+            }.firstOrNull()
+            if (existing != null) {
+                throw ConflictException("Sunrei with this link already exists", existing[Sunreis.id])
+            }
+        }
+
         val sunreiId = Sunreis.insertAndGetId { stmt ->
             stmt[Sunreis.title] = request.title
             stmt[Sunreis.description] = request.description
@@ -342,4 +352,6 @@ class SunreiService(
         }
     }
 }
+
+class ConflictException(message: String, val existingId: String) : RuntimeException(message)
 

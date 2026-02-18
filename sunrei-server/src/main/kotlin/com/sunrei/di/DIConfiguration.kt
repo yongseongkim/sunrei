@@ -49,7 +49,7 @@ fun Application.configureDI() {
             secretAccessKey = config.property("aws.secretAccessKey").getString(),
             publicUrl = config.propertyOrNull("aws.s3.publicUrl")?.getString()
                 ?: "https://${
-                    config.propertyOrNull("aws.s3.bucket")?.getString() ?: "sunrei-images"
+                    config.propertyOrNull("aws.s3.bucket")?.getString() ?: "sunrei-resources"
                 }.s3.${config.propertyOrNull("aws.region")?.getString() ?: "ap-northeast-2"}.amazonaws.com"
         )
 
