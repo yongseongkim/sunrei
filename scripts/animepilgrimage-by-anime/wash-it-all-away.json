@@ -1,0 +1,1045 @@
+{
+  "anime": {
+    "animeId": "QqXeEHTDBJy8XPLbqrrn",
+    "slug": "wash-it-all-away",
+    "title": {
+      "ja": "綺麗にしてもらえますか。",
+      "kr": "깨끗하게 해주시겠어요?",
+      "en": "Wash It All Away"
+    },
+    "author": {
+      "en": [
+        "Mitsuru Hattori"
+      ],
+      "ja": [
+        "はっとりみつる"
+      ],
+      "kr": [
+        "핫토리 미츠루"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Okuruto Noboru"
+      ],
+      "ja": [
+        "オクルトノボル"
+      ]
+    }
+  },
+  "placeCount": 63,
+  "places": [
+    {
+      "placeId": "02309a5e-4974-4d7d-bd8e-32d4ec2d0367",
+      "name": {
+        "en": "Atami Sun Beach",
+        "ja": "熱海サンビーチ",
+        "kr": "아타미 선비치"
+      },
+      "geo": {
+        "latitude": 35.09936,
+        "longitude": 139.07783
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/MxUxwgHSEW2WVd9x5",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "0394a348-60a7-4e96-81d7-6f7f5180be32",
+      "name": {
+        "en": "Atami Ginza Shopping Street",
+        "ja": "熱海銀座商店街",
+        "kr": "아타미 긴자 상점가"
+      },
+      "geo": {
+        "latitude": 35.09639,
+        "longitude": 139.07445
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/FZ8wADjGW9KyrB9LA",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "0a32a715-bdb4-49c6-8371-22845ebee3d2",
+      "name": {
+        "ja": "純喫茶パインツリー",
+        "en": "Cafe Pine tree"
+      },
+      "geo": {
+        "latitude": 35.09667,
+        "longitude": 139.07383
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/bqPWghrnXLk1SaaD7",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "0b42d58a-1a8b-4ce5-b8eb-df2cd1914373",
+      "name": {
+        "ja": "熱海駅前振興会館",
+        "en": "Atami Ekimae Shinko Hall"
+      },
+      "geo": {
+        "latitude": 35.1026,
+        "longitude": 139.07843
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/VWZMATAwoSusRff99",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "131410b4-7984-4834-9037-3155747577de",
+      "name": {
+        "en": "Imamiya-jinja Shrine",
+        "ja": "熱海 今宮神社"
+      },
+      "geo": {
+        "latitude": 35.08819,
+        "longitude": 139.06761
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/kE6Vf9HMmZWAFque7",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "196ee4af-4b10-457c-9db4-9332f753748f",
+      "name": {
+        "ja": "初島アドベンチャー SARUTOBI",
+        "en": "Hatsushima Adventure \"SARUTOBI\""
+      },
+      "geo": {
+        "latitude": 35.03921,
+        "longitude": 139.17183
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/cwRudAMRSejNdcqn8",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "1a277c07-a93b-4fac-9d7a-38d91c84f197",
+      "name": {
+        "en": "COCO OUTDOOR"
+      },
+      "geo": {
+        "latitude": 35.09084,
+        "longitude": 139.07064
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/W9a4czv2fsUrZbnj7",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "1f8faa91-b258-4739-868c-57bdef381d4b",
+      "name": {
+        "en": "Kiunkaku",
+        "kr": "기운카쿠",
+        "ja": "起雲閣"
+      },
+      "geo": {
+        "latitude": 35.09324,
+        "longitude": 139.07108
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/wgsKg3tiAjAnFkQJA",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "1fb5d515-caf5-44dc-a622-97d94dfbb7ad",
+      "name": {
+        "ja": "伊東園ホテル 熱海館",
+        "en": "Itoen Hotel Atami Building"
+      },
+      "geo": {
+        "latitude": 35.10197,
+        "longitude": 139.07661
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/mvjJTutGmGYCfm5a6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "20c6197e-6b52-4e13-994d-55bb62dc0253",
+      "name": {
+        "ja": "熱海 仲見世通り商店街",
+        "en": "Nakamise-dori Shopping Street"
+      },
+      "geo": {
+        "latitude": 35.10213,
+        "longitude": 139.07762
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/cnU5hj23BcXmqiHV7",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "2c19841f-0c8f-4e88-a11a-ffb5efbef960",
+      "name": {
+        "en": "Hashiri-yu",
+        "ja": "走り湯",
+        "kr": "하시리유"
+      },
+      "geo": {
+        "latitude": 35.11103,
+        "longitude": 139.08606
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/wh6Rmntap9z3HN7DA",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "2d1ec01f-9340-4caa-8f80-15438a80fd8b",
+      "name": {
+        "ja": "湯前神社",
+        "en": "Yumae-jinja Shrine"
+      },
+      "geo": {
+        "latitude": 35.09824,
+        "longitude": 139.07122
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/btdywSaFsAobGxW17",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "321d2cc9-9981-48c4-8701-583152d5d183",
+      "name": {
+        "en": "FUTABA DENKI"
+      },
+      "geo": {
+        "latitude": 35.09592,
+        "longitude": 139.07193
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/CSNPwMa5Evn6hUyH6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "3303b0cf-e771-41df-b913-7de609ff5c73",
+      "name": {
+        "ja": "山田湯",
+        "en": "Yamada-yu"
+      },
+      "geo": {
+        "latitude": 35.0907,
+        "longitude": 139.0696
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/81gPETsimkgqtgJf9",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "36f787df-95d0-488b-bbd1-c9a0f1dec1d7",
+      "name": {
+        "en": "Atami Sun Beach",
+        "ja": "熱海サンビーチ",
+        "kr": "아타미 선비치"
+      },
+      "geo": {
+        "latitude": 35.09796,
+        "longitude": 139.07688
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/pu9PdNk3r7DV9aKJA",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "3e972d44-ee22-4c94-aeaf-37ccb5606469",
+      "name": {
+        "ja": "誓欣院",
+        "en": "Seigon-in"
+      },
+      "geo": {
+        "latitude": 35.09744,
+        "longitude": 139.07103
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/DZZFBLqymC8VhQxn6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "3f4dfb2b-b116-4def-8d37-80009ccdafc2",
+      "name": {
+        "en": "Esperanza Resort Atami",
+        "ja": "エスペランサリゾート熱海"
+      },
+      "geo": {
+        "latitude": 35.1063,
+        "longitude": 139.0853
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/ZjgwXcW9vWbYKptD8",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "4139cea5-b3d2-4e53-bd98-a48de06bdcc6",
+      "name": {
+        "kr": "아타미 헤이와도리 상점가",
+        "ja": "熱海駅前平和通り名店街",
+        "en": "Atami Heiwa-dōri Shopping Street"
+      },
+      "geo": {
+        "latitude": 35.10274,
+        "longitude": 139.07751
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/LdtyBsEpDCC8WP4h6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "427e7e09-e694-4d86-9988-31bfb446e8d4",
+      "name": {
+        "ja": "島カフェ",
+        "en": "Shima Café"
+      },
+      "geo": {
+        "latitude": 35.03949,
+        "longitude": 139.17396
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/JmZyr9ggoY4Wu2UQ9",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "44a500f7-412a-445b-b787-5ad11067e0d0",
+      "name": {
+        "en": "New Fujiya Hotel Annex",
+        "ja": "熱海ニューフジヤホテル アネックス"
+      },
+      "geo": {
+        "latitude": 35.09737,
+        "longitude": 139.07194
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/C2NuMNHWX78D8iy16",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "456f0ff9-c023-461b-aa71-82c3af3d5f85",
+      "name": {
+        "ja": "島の湯",
+        "en": "Shima No Yu Hot Spring"
+      },
+      "geo": {
+        "latitude": 35.03924,
+        "longitude": 139.17532
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/2rxGDJSv9frRfaci9",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "45ad74fc-e123-4cd7-b4a8-1a508ab35894",
+      "name": {
+        "en": "Jacket"
+      },
+      "geo": {
+        "latitude": 35.09591,
+        "longitude": 139.07264
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/Hz3pchd6sp62zuXz6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "4891a228-6884-4ddd-a9d0-d61e5c72760d",
+      "name": {
+        "en": "Nakashima Seafood Citizens' Market",
+        "ja": "中島水産市民市場"
+      },
+      "geo": {
+        "latitude": 35.09454,
+        "longitude": 139.0711
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/Tq4YwhYjvGpKshXK8",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "4b644a61-549c-4149-bd22-73c64c4b83b0",
+      "name": {
+        "ja": "熱海駅前郵便局",
+        "en": "Atami Ekimae Post Office"
+      },
+      "geo": {
+        "latitude": 35.1021,
+        "longitude": 139.07676
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/AVw81YSbEGYvj2qU6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "4e2bec73-33d7-4f9a-900b-3bc625d2572a",
+      "name": {
+        "en": "Tokai Dried Fish",
+        "ja": "東海ひもの"
+      },
+      "geo": {
+        "latitude": 35.10125,
+        "longitude": 139.07551
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/oAsaevcbYfp2ticx8",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "4f88e34e-51a3-485e-a7cd-54f4c6279089",
+      "name": {
+        "en": "atami onsen guesthouse nagomi"
+      },
+      "geo": {
+        "latitude": 35.09755,
+        "longitude": 139.06434
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/FK8mvAhdTX7qHGen8",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "53067b15-02a8-4c0c-984a-cf7aeb8aed5b",
+      "name": {
+        "en": "Seafood Rice Bowl × Creative Japanese Cuisine Ren",
+        "ja": "海鮮丼×創作和食 Ren"
+      },
+      "geo": {
+        "latitude": 35.09641,
+        "longitude": 139.07331
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/f2Tzn9zqmjveUj7o7",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "58e94532-1adf-46a4-aac1-105a8a688b74",
+      "name": {
+        "en": "Densuke Chaya",
+        "ja": "海のお食事処 でん助茶屋"
+      },
+      "geo": {
+        "latitude": 35.10029,
+        "longitude": 139.07914
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/YLN96cmzAxvqGJPc7",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "62f2ee45-01ac-41fd-9ec2-455edb72dea8",
+      "name": {
+        "en": "Hanano Yosei",
+        "ja": "Restaurant & Sweets 花の妖精"
+      },
+      "geo": {
+        "latitude": 35.08442,
+        "longitude": 139.07979
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/jnDwqmmhKsjV3i5R9",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "6651cd1b-cb9b-4842-9959-6d0f35cb392b",
+      "name": {
+        "ja": "来宮駅",
+        "kr": "기노미야 역",
+        "en": "Kinomiya Station"
+      },
+      "geo": {
+        "latitude": 35.09856,
+        "longitude": 139.06604
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/zqRUwmAzMsK28jeG7",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "685a7d13-66ab-47c6-ad96-9cac30b28f15",
+      "name": {
+        "ja": "熱海芸妓見番",
+        "en": "Atami Geigi Kenban"
+      },
+      "geo": {
+        "latitude": 35.0947,
+        "longitude": 139.0718
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/sf5UcuasoZwpnhDN6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "68d45fdf-74a1-418e-b8c8-4a26fc71d1ef",
+      "name": {
+        "en": "Kinomiya Station",
+        "kr": "기노미야 역",
+        "ja": "来宮駅"
+      },
+      "geo": {
+        "latitude": 35.09878,
+        "longitude": 139.06539
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/1CT6QZMaftUi7wrR7",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "7264e78a-174f-4fa0-a3b5-5eb0d7ead10f",
+      "name": {
+        "ja": "タイムズ熱海市営来の宮",
+        "en": "Times Atami City-run Kinomiya"
+      },
+      "geo": {
+        "latitude": 35.09812,
+        "longitude": 139.06643
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/8rKQEYD57JbUkjBc6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "732e3c5b-67eb-4164-ab00-5afc633319b1",
+      "name": {
+        "en": "Cafe&Restaurant Nagisa"
+      },
+      "geo": {
+        "latitude": 35.09573,
+        "longitude": 139.07506
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/2gE5dfeyLtAXUNdx9",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "7367a399-f657-4202-9c52-83862939bd78",
+      "name": {
+        "en": "Namiryo Bridge",
+        "ja": "波良橋"
+      },
+      "geo": {
+        "latitude": 35.09351,
+        "longitude": 139.07454
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/LaW9p6aByRBZKjzn8",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "73b6c9ad-a22f-40f5-add5-18fd22645fba",
+      "name": {
+        "ja": "ドラゴン橋",
+        "en": "Dragon Bridge"
+      },
+      "geo": {
+        "latitude": 35.09608,
+        "longitude": 139.07319
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/eG7ynXvzwsAeT2DL8",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "78773c7c-bcae-4a1a-87d3-2c7cfc445614",
+      "name": {
+        "ja": "タイムズカー タイムズ熱海市営第２親水公園",
+        "en": "Times Car Rental Atami City-Operated Second Water Park"
+      },
+      "geo": {
+        "latitude": 35.09458,
+        "longitude": 139.07518
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/7wXcZjCm3BZSNudX6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "78a7f226-7088-4d4b-ab0a-f2d1ef88e2bf",
+      "name": {
+        "ja": "熱海第一交通(株)配車センター",
+        "en": "Atami Daiichi Kotsu Co., Ltd. Dispatch Center"
+      },
+      "geo": {
+        "latitude": 35.09525,
+        "longitude": 139.07272
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/emgwaqVibKFoMZ2t5",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "7b01f1e5-3833-42d2-a854-642b4b0ca4e7",
+      "name": {
+        "ja": "伊豆山港",
+        "en": "Izusan Port"
+      },
+      "geo": {
+        "latitude": 35.11024,
+        "longitude": 139.08636
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/URy5ypcWY2W7U3yt7",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "7b20ca73-371b-48ba-9abd-ea26d3157c79",
+      "name": {
+        "ja": "初島港",
+        "en": "Hatsushima Harbour"
+      },
+      "geo": {
+        "latitude": 35.04255,
+        "longitude": 139.16967
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/7KhKU12bCetv2ZnbA",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "7e1e23c1-dae4-4669-a313-353b1eb6f66a",
+      "name": {
+        "ja": "初島漁協スーパーマーケット",
+        "en": "Hatsushima Fisheries Cooperative Supermarket"
+      },
+      "geo": {
+        "latitude": 35.04224,
+        "longitude": 139.16927
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/6c6qQDSDiVpV8DCx8",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "80ff6d9e-4bee-424c-9a52-ab524e6e356d",
+      "name": {
+        "en": "Sushikan Atami",
+        "ja": "うまい鮨勘 熱海支店"
+      },
+      "geo": {
+        "latitude": 35.09621,
+        "longitude": 139.07223
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/e8m6y7jZbgaPSfzL6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "89cb4e77-5fc5-487b-b569-3b2ad6ab76b6",
+      "name": {
+        "en": "Cafe&Restaurant Nagisa"
+      },
+      "geo": {
+        "latitude": 35.09554,
+        "longitude": 139.07531
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/fJePRQFJgHz5bxQe8",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "94198363-b920-43c1-9a98-28cfa3d67c58",
+      "name": {
+        "en": "Hotel Micuras"
+      },
+      "geo": {
+        "latitude": 35.09791,
+        "longitude": 139.07567
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/HLsMqT55iWWjruAG6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "9b745a30-0394-4787-a4fe-aadaef817fec",
+      "name": {
+        "ja": "熱海シェーブアイスMIYASAKA",
+        "en": "Atami Shave Ice MIYASAKA"
+      },
+      "geo": {
+        "latitude": 35.09867,
+        "longitude": 139.06953
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/x8kbx2SCjPRC36Wh8",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "9df95935-e02f-49dd-bbeb-bca09a291ea6",
+      "name": {
+        "en": "352-2 Nagisacho Parking",
+        "ja": "アットパーク熱海サンビーチ"
+      },
+      "geo": {
+        "latitude": 35.0962,
+        "longitude": 139.07482
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/BJCrDgD7m9SQNo6FA",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "a0e9303d-52fe-4004-9b40-57938ac8ca54",
+      "name": {
+        "en": "Shigemura Guesthouse Inn",
+        "ja": "民宿旅館しげむら"
+      },
+      "geo": {
+        "latitude": 35.09626,
+        "longitude": 139.07601
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/MWbFgRLF8aPxWyLB7",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "a711abe8-b711-49b6-b5cf-48bd279abeb8",
+      "name": {
+        "ja": "宮坂",
+        "en": "Miyasaka"
+      },
+      "geo": {
+        "latitude": 35.09874,
+        "longitude": 139.0693
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/iXkQEzuSx1AjWci56",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "a7fe2106-24c9-4ca8-8be7-f3ea1edda851",
+      "name": {
+        "ja": "糸川橋",
+        "en": "Itokawa Bridge"
+      },
+      "geo": {
+        "latitude": 35.09559,
+        "longitude": 139.07393
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/fNb4eeK5koywvRkEA",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "ab09e11d-3b89-4077-b4fd-b4582b32b8f8",
+      "name": {
+        "ja": "海のプール",
+        "en": "Umi no Pool"
+      },
+      "geo": {
+        "latitude": 35.03876,
+        "longitude": 139.17488
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/35CCK53rpKv3FjqL8",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "b00a2d4d-1538-47a5-adbd-ddc4552f4ac0",
+      "name": {
+        "en": "Shabuyo Atami",
+        "ja": "しゃぶ葉 熱海店"
+      },
+      "geo": {
+        "latitude": 35.09894,
+        "longitude": 139.0685
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/11XykxjSimjjkP6S6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "b00d67fc-7426-45cd-a28b-d5ca9b758bcc",
+      "name": {
+        "en": "Barber Waki-hara",
+        "ja": "理容ワキハラ"
+      },
+      "geo": {
+        "latitude": 35.09406,
+        "longitude": 139.07125
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/ZwaoP3bzLKzxHoUU6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "c6ba3c01-8020-4c55-8f76-f8f3c5662122",
+      "name": {
+        "en": "Aoki Bakery",
+        "ja": "青木パン店"
+      },
+      "geo": {
+        "latitude": 35.09512,
+        "longitude": 139.06895
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/9TAJkmQwXDQpUmeN7",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "cec40c52-a91a-4840-ba80-0d21d90dbb33",
+      "name": {
+        "ja": "初島灯台",
+        "en": "Hatsushima Lighthouse"
+      },
+      "geo": {
+        "latitude": 35.03856,
+        "longitude": 139.17276
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/VfWWZpRztsEZ6VZ19",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "d4f10611-1ad5-429a-ad45-b042c1b0fde0",
+      "name": {
+        "ja": "すぎもと薬局",
+        "en": "Sugimoto Pharmacy"
+      },
+      "geo": {
+        "latitude": 35.09652,
+        "longitude": 139.07406
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/V7LTVEizsr2mMsYq6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "da9cd844-eb07-4962-91aa-daaaf0bca6bc",
+      "name": {
+        "ja": "家康の湯（足湯）",
+        "en": "Ieyasu-no-yu"
+      },
+      "geo": {
+        "latitude": 35.10338,
+        "longitude": 139.07839
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/BA7Jnhw6W7EjUqgm7",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "e53c6eca-ed34-487f-b1a1-3cc65905873d",
+      "name": {
+        "kr": "아타미 친수공원",
+        "ja": "熱海親水公園",
+        "en": "Atami Water Park"
+      },
+      "geo": {
+        "latitude": 35.09617,
+        "longitude": 139.07595
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/bSDzMLZaQNa1B5K6A",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "e74e21db-54d6-4ae2-aca2-05ba21a3ec8d",
+      "name": {
+        "en": "Shin Kado Ya",
+        "kr": "신 카도야",
+        "ja": "新かどや"
+      },
+      "geo": {
+        "latitude": 35.09307,
+        "longitude": 139.06871
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/7UQDQcCtPoBZiJmb8",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "e77f6b30-648f-4ae6-bba3-c4e44538f357",
+      "name": {
+        "en": "Kumayumi Bridge",
+        "ja": "阿由美橋"
+      },
+      "geo": {
+        "latitude": 35.09452,
+        "longitude": 139.07197
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/qCjZnQtd2JAEqVKz7",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "e8546f74-28dd-4746-8d3d-48e96d424240",
+      "name": {
+        "ja": "市外電話創始の地",
+        "en": "The Birthplace of Long-Distance Telephony"
+      },
+      "geo": {
+        "latitude": 35.09771,
+        "longitude": 139.07171
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/i5C4RLdAGmEGbHFf7",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "f1e5c19d-e16e-4956-a225-49a859e28e5e",
+      "name": {
+        "ja": "山治不動産",
+        "en": "Yamaji Estate Agents"
+      },
+      "geo": {
+        "latitude": 35.09421,
+        "longitude": 139.07172
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/WTx8V1sXdTqW7tAg6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "f47919b7-ed19-4ff4-9281-ff910d01d833",
+      "name": {
+        "ja": "上宿橋",
+        "en": "Kamijuku Bridge"
+      },
+      "geo": {
+        "latitude": 35.09814,
+        "longitude": 139.07018
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/gZShaYSQ29UdfBQA9",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    },
+    {
+      "placeId": "f8dc1cdf-eee5-48bf-adcc-09bfc4c3a5c6",
+      "name": {
+        "en": "Izu-Taga Station",
+        "ja": "伊豆多賀駅",
+        "kr": "이즈타가 역"
+      },
+      "geo": {
+        "latitude": 35.05906,
+        "longitude": 139.06711
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-shizuoka-atami",
+      "streetViewUrl": "https://maps.app.goo.gl/aTd5xZUHK4HBzRMA6",
+      "copyright": "©はっとりみつる／SQUARE ENIX・「綺麗にしてもらえますか。」製作委員会"
+    }
+  ]
+}

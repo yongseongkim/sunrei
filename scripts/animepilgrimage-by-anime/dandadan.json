@@ -1,0 +1,132 @@
+{
+  "anime": {
+    "animeId": "wGsUljsg7c7MbgdtzDJD",
+    "slug": "dandadan",
+    "title": {
+      "ja": "ダンダダン",
+      "kr": "단다단",
+      "en": "Dandadan"
+    },
+    "author": {
+      "en": [
+        "Yukinobu Tatsu"
+      ],
+      "ja": [
+        "龍幸伸"
+      ],
+      "kr": [
+        "타츠 유키노부"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "サイエンスSARU"
+      ],
+      "kr": [
+        "사이언스 SARU"
+      ],
+      "en": [
+        "Science SARU"
+      ]
+    }
+  },
+  "placeCount": 6,
+  "places": [
+    {
+      "placeId": "0d0c830d-a6d9-46d1-bab3-8a3ab4f6fc1f",
+      "name": {
+        "ja": "十一屋酒店",
+        "en": "Ju-ichiya Liquor Store"
+      },
+      "geo": {
+        "latitude": 36.49679,
+        "longitude": 138.91616
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4967777,138.9161717,3a,90y,10.17h,85.47t/data=!3m7!1e1!3m5!1syB3Uhf5IjODFMfY9Zz_g-Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D4.52652976597075%26panoid%3DyB3Uhf5IjODFMfY9Zz_g-Q%26yaw%3D10.173060339275708!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©龍幸伸／集英社・ダンダダン製作委員会"
+    },
+    {
+      "placeId": "1e803453-78a1-4a55-86aa-2629bfb7233c",
+      "name": {
+        "ja": "茶房 てまり、てんてまり",
+        "en": "Tentemari"
+      },
+      "geo": {
+        "latitude": 36.4983,
+        "longitude": 138.91669
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4982215,138.9166019,3a,90y,124.97h,92.05t/data=!3m7!1e1!3m5!1sWvz2GweXdrUm9iLtnpNLYw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.0515541898051026%26panoid%3DWvz2GweXdrUm9iLtnpNLYw%26yaw%3D124.96650009137595!7i13312!8i6656?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©龍幸伸／集英社・ダンダダン製作委員会"
+    },
+    {
+      "placeId": "29071207-28c8-4cad-9aac-b2d52ff5f9be",
+      "name": {
+        "en": "Mitsuinoripaku Hannoginzadorichushajo",
+        "ja": "三井のリパーク 飯能銀座通り駐車場"
+      },
+      "geo": {
+        "latitude": 35.8527543,
+        "longitude": 139.3199047
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-hanno",
+      "streetViewUrl": "https://www.google.com/maps/@35.8527543,139.3199047,3a,49.5y,292.96h,94.79t/data=!3m6!1e1!3m4!1snragx1n8saqqX6fHm-MpFA!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©龍幸伸／集英社・ダンダダン製作委員会"
+    },
+    {
+      "placeId": "3f239803-178e-499c-adb5-7cff431eef4c",
+      "name": {
+        "en": "Osaka Ya",
+        "ja": "大坂屋"
+      },
+      "geo": {
+        "latitude": 36.49704,
+        "longitude": 138.91622
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4970241,138.9163133,3a,90y,285.74h,99.03t/data=!3m7!1e1!3m5!1sX1LWQzz_e5svvPxmLO5I4w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.029862502789257%26panoid%3DX1LWQzz_e5svvPxmLO5I4w%26yaw%3D285.7389759632!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©龍幸伸／集英社・ダンダダン製作委員会"
+    },
+    {
+      "placeId": "40fcbdc2-0290-4d7b-9e23-d432cc3520c0",
+      "name": {
+        "ja": "伊香保神社",
+        "en": "Ikaho Shrine"
+      },
+      "geo": {
+        "latitude": 36.49595,
+        "longitude": 138.91597
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.496017,138.9160089,3a,73.9y,176.97h,94.63t/data=!3m7!1e1!3m5!1sLX5IfHvrLsbmCNxhUlgzHQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.626911786505346%26panoid%3DLX5IfHvrLsbmCNxhUlgzHQ%26yaw%3D176.9739954916629!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©龍幸伸／集英社・ダンダダン製作委員会"
+    },
+    {
+      "placeId": "5f5ae75e-7e1d-430b-891d-160036d579ae",
+      "name": {
+        "en": "Ikaho Onsen Stone Steps",
+        "ja": "伊香保温泉石段街"
+      },
+      "geo": {
+        "latitude": 36.49711,
+        "longitude": 138.91624
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4971452,138.9162778,3a,90y,198.6h,115.81t/data=!3m7!1e1!3m5!1s2eL1ag2ZYy-MeAY5-cqtJw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-25.809052677610808%26panoid%3D2eL1ag2ZYy-MeAY5-cqtJw%26yaw%3D198.59678260794666!7i13312!8i6656?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©龍幸伸／集英社・ダンダダン製作委員会"
+    }
+  ]
+}

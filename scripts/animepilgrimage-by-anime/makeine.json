@@ -1,0 +1,826 @@
+{
+  "anime": {
+    "animeId": "tCBIn1QbnKWmGX9Qzqhb",
+    "slug": "makeine",
+    "title": {
+      "ja": "負けヒロインが多すぎる！",
+      "kr": "패배 히로인이 너무 많아!",
+      "en": "Makeine: Too Many Losing Heroines!"
+    },
+    "author": {
+      "en": [
+        "Takibi Amamori"
+      ],
+      "ja": [
+        "雨森たきび"
+      ],
+      "kr": [
+        "아마모리 타키비"
+      ]
+    },
+    "studio": {
+      "en": [
+        "A-1 Pictures"
+      ]
+    }
+  },
+  "placeCount": 49,
+  "places": [
+    {
+      "placeId": "02918cd5-42be-4aee-b263-0af6e25314de",
+      "name": {
+        "ja": "大観覧車",
+        "en": "Ferris Wheel"
+      },
+      "geo": {
+        "latitude": 34.7196782,
+        "longitude": 137.4353264
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/place/Nonhoi+Park,+Amusement+Park+Area/@34.7196782,137.4353264,3a,90y,76.4h,127.61t/data=!3m8!1e1!3m6!1sAF1QipOtWMDZwtLBID58ZhOgOHT1ApxUQOE3Y93bwfrT!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOtWMDZwtLBID58ZhOgOHT1ApxUQOE3Y93bwfrT%3Dw203-h100-k-no-pi0-ya60-ro0-fo100!7i10088!8i5044!4m20!1m10!3m9!1s0x6004d30831cfba93:0x19beb914080edfe5!2z5aSn6Kaz6Kan6LuK!8m2!3d34.7188371!4d137.4349184!10e5!14m1!1BCgIgARICGAI!16s%2Fg%2F11hdz869nf!3m8!1s0x6004d358cb2e50e7:0x69441afed28c0ce6!8m2!3d34.7196784!4d137.4353261!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11g7_77rwm?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "073386d3-0ca0-4722-abda-6b0d9b466c98",
+      "name": {
+        "en": "Nonhoi Park Observation Tower",
+        "ja": "のんほいパーク展望塔"
+      },
+      "geo": {
+        "latitude": 34.7202783,
+        "longitude": 137.434445
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/place/%E3%81%AE%E3%82%93%E3%81%BB%E3%81%84%E3%83%91%E3%83%BC%E3%82%AF%E5%B1%95%E6%9C%9B%E5%A1%94/@34.7202783,137.434445,3a,75y,279.41h,84.75t/data=!3m8!1e1!3m6!1sAF1QipOJulCcfTerylFiVFpfdX0dcIOczbTsOhHKpkyz!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOJulCcfTerylFiVFpfdX0dcIOczbTsOhHKpkyz%3Dw203-h100-k-no-pi-20-ya0-ro-0-fo100!7i5376!8i2688!4m9!3m8!1s0x6004d3592dbfffff:0xbc67fb9211444601!8m2!3d34.720353!4d137.4345634!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11dynvjjn_?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "1293efb2-ae71-46f5-b6b6-636041b61fde",
+      "name": {
+        "en": "Toyohashi Station",
+        "ja": "豊橋駅",
+        "kr": "도요하시 역"
+      },
+      "geo": {
+        "latitude": 34.7632835,
+        "longitude": 137.3826257
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/place/Toyohashi+Station/@34.7632835,137.3826257,3a,90y,56.07h,87.43t/data=!3m8!1e1!3m6!1sAF1QipMHSV2r8koYZ9GhfrQb-1qXl2IZoKBe-qE6T8_c!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMHSV2r8koYZ9GhfrQb-1qXl2IZoKBe-qE6T8_c%3Dw203-h100-k-no-pi-0-ya23.769432-ro-0-fo100!7i10152!8i5076!4m9!3m8!1s0x6004d20f4aac7e1f:0xd5065fcb6efebd0d!8m2!3d34.7629201!4d137.3819213!10e5!14m1!1BCgIgARICCAI!16zL20vMDM2eHNr?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "14d147d4-3764-4864-bccb-2fdb806aec27",
+      "name": {
+        "ja": "豊橋警察署 豊橋駅前交番",
+        "en": "Toyohashi Police Station Toyohashi Ekimae Police Box"
+      },
+      "geo": {
+        "latitude": 34.7628828,
+        "longitude": 137.3832207
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7628828,137.3832207,3a,75y,282.86h,96.72t/data=!3m6!1e1!3m4!1sLVD1Y1598yVbGqBM3RP1xg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "167ee7c1-6260-4565-83ce-bc13d8e475d4",
+      "name": {
+        "ja": "豊橋市 旭校区市民館",
+        "en": "Near the Toyohashi City Asahi School District Civic Hall"
+      },
+      "geo": {
+        "latitude": 34.7667609,
+        "longitude": 137.4042787
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7667609,137.4042787,3a,90y,55.92h,95.83t/data=!3m6!1e1!3m4!1szv6669Rk4jE5pzNt-Otj2Q!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "18a314d0-0658-4e50-b4f9-4bbc4907938b",
+      "name": {
+        "ja": "豊橋市自然史博物館",
+        "en": "Toyohashi Museum of Natural History"
+      },
+      "geo": {
+        "latitude": 34.7211117,
+        "longitude": 137.431945
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/place/Toyohashi+Museum+of+Natural+History/@34.7211117,137.431945,3a,90y,181.08h,102.3t/data=!3m8!1e1!3m6!1sAF1QipNngLkvp5kDdqPZWbGJimgiNtg-9bCGlmP-fJTE!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNngLkvp5kDdqPZWbGJimgiNtg-9bCGlmP-fJTE%3Dw203-h100-k-no-pi-20-ya200-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x6004d35c2a6801df:0x53a52f0b0a7835f2!8m2!3d34.7211104!4d137.4319546!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11g0g4v_76?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "23f6cd3e-f9ba-4da0-a509-8e7f85047bb2",
+      "name": {
+        "ja": "双瀬の川渡り",
+        "en": "Naraze river crossing"
+      },
+      "geo": {
+        "latitude": 35.0164964,
+        "longitude": 137.557753
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-aichi-shinshiro",
+      "streetViewUrl": "https://www.google.com/maps/@35.0164964,137.557753,3a,48.8y,330.03h,94.37t/data=!3m6!1e1!3m4!1slR5VbCLNJiSZNc7OeHxPcg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "255bf9f0-ab6d-4d7e-9916-fceac68c08a5",
+      "name": {
+        "en": "Roadside Station \"Michi-no-Eki\" Toyohashi",
+        "kr": "미치노에키 토요하시",
+        "ja": "道の駅 とよはし"
+      },
+      "geo": {
+        "latitude": 34.6959,
+        "longitude": 137.41451
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.6955174,137.4142971,3a,38.3y,17.42h,92.81t/data=!3m6!1e1!3m4!1sfSslkeal7mX1Gfm61orVog!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "27acf75e-21e8-4ff0-9f1a-a1af21077329",
+      "name": {
+        "ja": "道の駅 もっくる新城",
+        "en": "Roadside Station \"Michi-no-Eki\" Mokkulu Shinshiro"
+      },
+      "geo": {
+        "latitude": 34.9179159,
+        "longitude": 137.5337868
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-aichi-shinshiro",
+      "streetViewUrl": "https://www.google.com/maps/place/Roadside+Station+%22Michi-no-Eki%22+Mokkulu+Shinshiro/@34.9179159,137.5337868,3a,90y,325.84h,96.08t/data=!3m8!1e1!3m6!1sAF1QipOfkF7PRH277J1QnxZMsiEbtxkxdUQRclOJP9GV!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOfkF7PRH277J1QnxZMsiEbtxkxdUQRclOJP9GV%3Dw203-h100-k-no-pi-0-ya62.97572-ro-0-fo100!7i6720!8i3360!4m6!3m5!1s0x601b36a43894d48f:0x1181f03b46cb2a6f!8m2!3d34.9171426!4d137.5333104!16s%2Fg%2F11b75jb23m?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "2e8c271e-16c9-4693-ba16-6cb9ad57cf00",
+      "name": {
+        "en": "Yoshidaju Safety Akihayama Nightlight",
+        "ja": "吉田中安全秋葉山常夜燈"
+      },
+      "geo": {
+        "latitude": 34.7660875,
+        "longitude": 137.3999511
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7660875,137.3999511,3a,75y,92.71h,98.02t/data=!3m6!1e1!3m4!1sx4AaHH_JMJPMKgsR8reZrw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "343347cb-c030-4e71-91f0-59229c7f9548",
+      "name": {
+        "en": "The Legend of Vulcan",
+        "ja": "ヴァルカン伝説"
+      },
+      "geo": {
+        "latitude": 34.7189209,
+        "longitude": 137.434444
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/place/Nonhoi+Park,+Amusement+Park+Area/@34.7196782,137.4353264,3a,54.9y,160.07h,101.17t/data=!3m8!1e1!3m6!1sAF1QipOtWMDZwtLBID58ZhOgOHT1ApxUQOE3Y93bwfrT!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOtWMDZwtLBID58ZhOgOHT1ApxUQOE3Y93bwfrT%3Dw203-h100-k-no-pi0-ya60-ro0-fo100!7i10088!8i5044!4m20!1m10!3m9!1s0x6004d30831cfba93:0x19beb914080edfe5!2z5aSn6Kaz6Kan6LuK!8m2!3d34.7188371!4d137.4349184!10e5!14m1!1BCgIgARICGAI!16s%2Fg%2F11hdz869nf!3m8!1s0x6004d358cb2e50e7:0x69441afed28c0ce6!8m2!3d34.7196784!4d137.4353261!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11g7_77rwm?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "36b58517-c4c3-4e99-8c63-c78897c6bed4",
+      "name": {
+        "en": "Bon Senga",
+        "ja": "パン 生菓子 ボン.千賀"
+      },
+      "geo": {
+        "latitude": 34.7634154,
+        "longitude": 137.3850236
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/place/Bon+Senga/@34.7634154,137.3850236,3a,75y,96.1h,85.41t/data=!3m6!1e1!3m4!1sh4pWj7kBAQObun1ZZcjTCg!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x6004d20ea6c7a309:0x44135030a8ac6dce!2sBon+Senga!8m2!3d34.76348!4d137.385106!16s%2Fg%2F1tg681gb!3m5!1s0x6004d20ea6c7a309:0x44135030a8ac6dce!8m2!3d34.76348!4d137.385106!16s%2Fg%2F1tg681gb?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "3752c4e9-ae32-4c9a-a298-629505928c63",
+      "name": {
+        "en": "Kushikatsu Tanaka Toyohashi",
+        "ja": "串カツ田中 豊橋店",
+        "kr": "꼬치 카츠 다나카toyohashi"
+      },
+      "geo": {
+        "latitude": 34.7653624,
+        "longitude": 137.3835963
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7653624,137.3835963,3a,48.5y,4.12h,93.5t/data=!3m6!1e1!3m4!1s8-gTjmxKgV7CaS34hYkTWw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "3cc2845f-3117-4107-821d-c00eab263bc3",
+      "name": {
+        "ja": "噴水",
+        "en": "Funsui"
+      },
+      "geo": {
+        "latitude": 34.7201522,
+        "longitude": 137.4320628
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7201522,137.4320628,3a,43.9y,55.71h,89.36t/data=!3m8!1e1!3m6!1sAF1QipM4GuldvCnY6HCPxnfP7OvL2FMCX_SrDeeL90pb!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipM4GuldvCnY6HCPxnfP7OvL2FMCX_SrDeeL90pb%3Dw203-h100-k-no-pi0-ya260.6067-ro-0-fo100!7i12302!8i6151?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "3ee4fcdd-2f24-4d8e-a843-a553729a8b22",
+      "name": {
+        "en": "Shiroya Seaside Park",
+        "ja": "白谷海浜公園"
+      },
+      "geo": {
+        "latitude": 34.68643,
+        "longitude": 137.23267
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-aichi-tahara",
+      "streetViewUrl": "https://www.google.com/maps/@34.6868598,137.2331285,3a,75y,29.38h,91.9t/data=!3m8!1e1!3m6!1sAF1QipOAqzjd0geJR9xdn2BuqhXVDZ06fhtds2abW8aY!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOAqzjd0geJR9xdn2BuqhXVDZ06fhtds2abW8aY%3Dw203-h100-k-no-pi-0-ya48.572536-ro-0-fo100!7i3584!8i1792?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "421edc45-c639-4eab-bed6-5bd88b40933f",
+      "name": {
+        "ja": "のんほいパーク 大花壇",
+        "en": "Nohoi Park Large Flower Bed"
+      },
+      "geo": {
+        "latitude": 34.7213883,
+        "longitude": 137.435
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7213883,137.435,3a,90y,14.99h,95.85t/data=!3m8!1e1!3m6!1sAF1QipPxKYrPPvVTd9ACC4nnyeX15XMN_qRODxlACKrx!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPxKYrPPvVTd9ACC4nnyeX15XMN_qRODxlACKrx%3Dw203-h100-k-no-pi-0-ya53.201866-ro-0-fo100!7i5376!8i2688?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "4694773d-bf8b-42de-95ac-2cd2b9d9c3ec",
+      "name": {
+        "en": "Roasting Laboratory",
+        "ja": "焙煎研究所"
+      },
+      "geo": {
+        "latitude": 34.7614084,
+        "longitude": 137.3846823
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7614084,137.3846823,3a,75y,292.73h,97.25t/data=!3m6!1e1!3m4!1sJdNSf-hGpWqQzNRrFj4hQw!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "4922a7c7-ae3c-4d4e-98a8-a39a737b3120",
+      "name": {
+        "ja": "豊橋市視聴覚教育センター",
+        "en": "Toyohashi City Audiovisual Education Center"
+      },
+      "geo": {
+        "latitude": 34.7293281,
+        "longitude": 137.4318818
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7293281,137.4318818,3a,75y,256.65h,98.73t/data=!3m8!1e1!3m6!1sAF1QipP149LbJ2Ue20elq1V5qI5VFck9ui7DlvGL_Zsc!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipP149LbJ2Ue20elq1V5qI5VFck9ui7DlvGL_Zsc%3Dw203-h100-k-no-pi-0-ya182.92487-ro-0-fo100!7i4608!8i2304?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "552f4973-786e-4d10-be40-8b92599742cd",
+      "name": {
+        "en": "QUON CHOCOLATE DEMI-SEC"
+      },
+      "geo": {
+        "latitude": 34.7653857,
+        "longitude": 137.3835843
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7653857,137.3835843,3a,90y,310.75h,102.93t/data=!3m7!1e1!3m5!1sA_Q8G83RfNUmHaDgOXj0IQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DA_Q8G83RfNUmHaDgOXj0IQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D2.501344%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "5e322815-d8a1-4eaf-90d9-32fd7110dd9b",
+      "name": {
+        "ja": "東八町駅",
+        "en": "Higashi Hachicho Station",
+        "kr": "히가시핫초 역"
+      },
+      "geo": {
+        "latitude": 34.7659406,
+        "longitude": 137.4003974
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7659406,137.4003974,3a,75y,155.17h,94.29t/data=!3m7!1e1!3m5!1sjaVlCcMqMHCuQ_xdiSZFsg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DjaVlCcMqMHCuQ_xdiSZFsg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D7.6993604%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "67ac0c98-c5d2-4010-beaa-6a1236ed64d2",
+      "name": {
+        "ja": "駅前大通駅",
+        "en": "Ekimae-odori Station"
+      },
+      "geo": {
+        "latitude": 34.763256,
+        "longitude": 137.385653
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.763256,137.385653,3a,57.8y,123.74h,93.61t/data=!3m6!1e1!3m4!1swSlpQ1OgVC67FlHtMRpZ7w!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "687528eb-7edb-4595-98df-57859b3e9e81",
+      "name": {
+        "en": "Toyohashi City Central Library",
+        "ja": "豊橋市中央図書館",
+        "kr": "도요하시시 중앙도서관"
+      },
+      "geo": {
+        "latitude": 34.7544767,
+        "longitude": 137.375659
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7544767,137.375659,3a,90y,148.68h,104.57t/data=!3m6!1e1!3m4!1sfvVJeQy5fWdH03X3sbtX_g!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "6bbfc7c8-4d09-4e95-858c-39ba978a857e",
+      "name": {
+        "en": "Yamasachikuwa Nishiekiten",
+        "ja": "ヤマサちくわ 西駅店"
+      },
+      "geo": {
+        "latitude": 34.7621443,
+        "longitude": 137.380837
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7621443,137.380837,3a,44.6y,232.98h,90.31t/data=!3m6!1e1!3m4!1sXRkXxyAcWIL4BM47MIRJ3w!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "6c33a002-5399-434d-a7dc-ae1bd29b5470",
+      "name": {
+        "en": "Mogumogu Square",
+        "ja": "もぐもぐひろば"
+      },
+      "geo": {
+        "latitude": 34.717403,
+        "longitude": 137.4279567
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/place/%E3%82%82%E3%81%90%E3%82%82%E3%81%90%E3%81%B2%E3%82%8D%E3%81%B0/@34.717403,137.4279567,3a,75y,30.08h,97.07t/data=!3m8!1e1!3m6!1sAF1QipPDwKOWtgcoU9Ho9YMl4ViGvbxh8Rl4-DQOwsU6!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPDwKOWtgcoU9Ho9YMl4ViGvbxh8Rl4-DQOwsU6%3Dw203-h100-k-no-pi0-ya315.05496-ro0-fo100!7i12286!8i6143!4m6!3m5!1s0x6004d38138505ded:0xf836ee4ac437116d!8m2!3d34.717403!4d137.4279567!16s%2Fg%2F11fqyy4dfn?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "6f83c786-ae8c-42a9-a6b3-9ec380115b4f",
+      "name": {
+        "en": "East Exit Station Square Circle Plaza",
+        "ja": "東口駅前広場 サークルプラザ"
+      },
+      "geo": {
+        "latitude": 34.7631458,
+        "longitude": 137.383153
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7631458,137.383153,3a,75y,348.7h,94.04t/data=!3m7!1e1!3m5!1sldMlIO7Eg7NPQRanq5VflQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DldMlIO7Eg7NPQRanq5VflQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D269.78635%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "715b00d2-95cb-4361-95ce-fe2ba1c27926",
+      "name": {
+        "ja": "駅前",
+        "kr": "에키마에",
+        "en": "Ekimae Station"
+      },
+      "geo": {
+        "latitude": 34.7639187,
+        "longitude": 137.3829939
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7639187,137.3829939,3a,73.1y,44.58h,93.15t/data=!3m7!1e1!3m5!1seZmVVzRE0HcKaDQIVsidaw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DeZmVVzRE0HcKaDQIVsidaw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D42.73195%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "73300f34-7f38-4fc8-95d5-7d2ed2c447fb",
+      "name": {
+        "es": "Cerca de la Yojosha",
+        "id": "Sekitar Yojosha",
+        "kr": "Yojosha 근처",
+        "en": "Near the Yojosha",
+        "ja": "養生舎付近",
+        "de": "In der Nähe des Yojosha"
+      },
+      "geo": {
+        "latitude": 34.7403934,
+        "longitude": 137.3854345
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7403934,137.3854345,3a,67.5y,23.2h,99.94t/data=!3m6!1e1!3m4!1suq7GKBCFKlqXrBpx1W9nBg!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "7af58b9f-8604-4ada-aea2-a5350919c98a",
+      "name": {
+        "ja": "精文館書店 豊橋本店",
+        "en": "Seibunkan Toyohashi Main Store"
+      },
+      "geo": {
+        "latitude": 34.7643372,
+        "longitude": 137.3836753
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/place/Seibunkan/@34.7643372,137.3836753,3a,90y,14.73h,89.14t/data=!3m6!1e1!3m4!1svfr-KSYdNd5NNL5iECXb_Q!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x6004d2093c7f497b:0xd3898a3fd141b42b!2sSeibunkan!8m2!3d34.7645477!4d137.38376!16s%2Fg%2F1tggtg_5!3m5!1s0x6004d2093c7f497b:0xd3898a3fd141b42b!8m2!3d34.7645477!4d137.38376!16s%2Fg%2F1tggtg_5?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "7d82fa4a-eb0d-4b6b-9266-649a9523e00e",
+      "name": {
+        "en": "Toyohashi City Machinaka Library",
+        "kr": "도요하시시 마치나카 도서관",
+        "ja": "豊橋市まちなか図書館"
+      },
+      "geo": {
+        "latitude": 34.7624321,
+        "longitude": 137.3871248
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/place/Toyohashi+City+Machinaka+Library/@34.7624321,137.3871248,3a,75y,125.36h,93.67t/data=!3m8!1e1!3m6!1sAF1QipNQgwz2gw12sbViS2ENFXWPpQbiYR8zxzO4Pxnq!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNQgwz2gw12sbViS2ENFXWPpQbiYR8zxzO4Pxnq%3Dw203-h100-k-no-pi0-ya15.445214-ro-0-fo100!7i12364!8i6182!4m6!3m5!1s0x6004d3065ade1013:0x5044cff97d91b91a!8m2!3d34.7623591!4d137.3872431!16s%2Fg%2F11q96gx2jt?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "8379b4d7-81ce-4e51-8410-bb46be38d897",
+      "name": {
+        "en": "Maehata Station",
+        "ja": "前畑"
+      },
+      "geo": {
+        "latitude": 34.7657908,
+        "longitude": 137.4044236
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7657908,137.4044236,3a,75y,280.47h,100.24t/data=!3m6!1e1!3m4!1snznJBVm2Zbpxnq0Y5H4n0g!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "8b75928a-bfd3-4539-af0d-dc2d878424ff",
+      "name": {
+        "ja": "温室 / 植物園トロピカル館",
+        "en": "Greenhouse"
+      },
+      "geo": {
+        "latitude": 34.7214691,
+        "longitude": 137.4355387
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/place/Greenhouse/@34.7214691,137.4355387,3a,90y,234.58h,71.69t/data=!3m8!1e1!3m6!1sAF1QipMwBlvucLCMSERQYf4eVHgTumBN5iUMO0JHmcUP!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMwBlvucLCMSERQYf4eVHgTumBN5iUMO0JHmcUP%3Dw203-h100-k-no-pi-20-ya200-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x6004d3593dd0684d:0xabd742f2920dacf0!8m2!3d34.7210492!4d137.4353777!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11dynwmc34?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "9a708768-367f-4ca9-8f74-b1abbb39478b",
+      "name": {
+        "ja": "GINYA 豊橋店",
+        "en": "GINYA Toyohashiten"
+      },
+      "geo": {
+        "latitude": 34.7639459,
+        "longitude": 137.3842919
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7639459,137.3842919,3a,42.2y,274.11h,93.1t/data=!3m6!1e1!3m4!1si_JKO2HEFj_u-4M2DUySlA!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "9ac44954-6b95-4ba1-95b7-ee0418faa22e",
+      "name": {
+        "ja": "ベルマートキヨスク豊橋幹線口",
+        "en": "Bell Mart Kiosk Toyohashi Shinkansen Exit"
+      },
+      "geo": {
+        "latitude": 34.7626412,
+        "longitude": 137.3811867
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7626412,137.3811867,3a,75y,233.9h,98.43t/data=!3m8!1e1!3m6!1sAF1QipMskJsfF9-Pe8kRhEuxRLv2GxTFylhe8Cwg6rwK!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMskJsfF9-Pe8kRhEuxRLv2GxTFylhe8Cwg6rwK%3Dw203-h100-k-no-pi-0-ya209.79095-ro-0-fo100!7i8704!8i4352?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "a199a214-05a6-42d2-a59a-41c29afcc5ad",
+      "name": {
+        "en": "Toyohashi City Underground Resources Center",
+        "ja": "豊橋市地下資源館"
+      },
+      "geo": {
+        "latitude": 34.7291489,
+        "longitude": 137.4311829
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/place/Toyohashi+City+Underground+Resources+Center/@34.7291489,137.4311829,3a,90y,325.97h,96.22t/data=!3m8!1e1!3m6!1sAF1QipOovNsd77jf2jZncfm6Y2XzU0gGLst0loai_Azv!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOovNsd77jf2jZncfm6Y2XzU0gGLst0loai_Azv%3Dw203-h100-k-no-pi-20.15297-ya272.86676-ro1.073498-fo100!7i5376!8i2688!4m9!3m8!1s0x6004d34230f0865b:0x202ce86572fa282d!8m2!3d34.7293243!4d137.4315348!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1219y4fn?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "be10871e-b286-4e04-86de-152e9af399c9",
+      "name": {
+        "ja": "ふるさとの雑木林",
+        "en": "Furusato Woodland"
+      },
+      "geo": {
+        "latitude": 34.7219,
+        "longitude": 137.4346
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.721595,137.434863,3a,22.3y,334.61h,99.49t/data=!3m8!1e1!3m6!1sAF1QipOFMLhnQnzwZP4bpsALM47eqJAzH_5lsIxhLOl8!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOFMLhnQnzwZP4bpsALM47eqJAzH_5lsIxhLOl8%3Dw203-h100-k-no-pi0-ya259.82996-ro-0-fo100!7i11264!8i5632?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "c23c5810-1a8d-4686-912f-a8a61f3c1e27",
+      "name": {
+        "en": "Nonhoi Park East Gate",
+        "ja": "のんほいパーク 東門"
+      },
+      "geo": {
+        "latitude": 34.7212809,
+        "longitude": 137.4363034
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7212809,137.4363034,3a,75y,297.79h,99.74t/data=!3m8!1e1!3m6!1sAF1QipP-N9jLH90QKBAVK1ojJWq8qrYdkHOfSOgBtl2D!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipP-N9jLH90QKBAVK1ojJWq8qrYdkHOfSOgBtl2D%3Dw203-h100-k-no-pi-0-ya89.979004-ro-0-fo100!7i10094!8i5047?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "c7eec051-8504-4ba2-b283-f2282de26993",
+      "name": {
+        "ja": "ガスト 豊橋橋良店",
+        "en": "Gusto Toyohashihashira store"
+      },
+      "geo": {
+        "latitude": 34.7478741,
+        "longitude": 137.3808525
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7478741,137.3808525,3a,75y,343.81h,92.24t/data=!3m7!1e1!3m5!1s6GpsckE3SnHkGaBwP5qpZw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D6GpsckE3SnHkGaBwP5qpZw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D331.613%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "cb1ef8e2-6df9-4867-8bf3-f1a16e319147",
+      "name": {
+        "ja": "まるち鈴木米穀店",
+        "en": "Maruchi Suzuki Rice Store"
+      },
+      "geo": {
+        "latitude": 34.7665045,
+        "longitude": 137.3962052
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/place/%E3%81%BE%E3%82%8B%E3%81%A1%E9%88%B4%E6%9C%A8%E7%B1%B3%E7%A9%80%E5%BA%97/@34.7665045,137.3962052,3a,75y,177.05h,96.84t/data=!3m7!1e1!3m5!1sU2Mv-X35xTOTqBeTh00o8w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DU2Mv-X35xTOTqBeTh00o8w%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D177.95714%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m14!1m7!3m6!1s0x6004d271984d543b:0xbebe6a50daf0ec43!2z44G-44KL44Gh6Yi05pyo57Gz56mA5bqX!8m2!3d34.766369!4d137.39621!16s%2Fg%2F1tgywnpd!3m5!1s0x6004d271984d543b:0xbebe6a50daf0ec43!8m2!3d34.766369!4d137.39621!16s%2Fg%2F1tgywnpd?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "cb6bf381-c6b9-4398-9e06-bbb099a85ca1",
+      "name": {
+        "ja": "みやこ",
+        "en": "Miyako"
+      },
+      "geo": {
+        "latitude": 34.7380529,
+        "longitude": 137.3844511
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/place/%E3%81%BF%E3%82%84%E3%81%93/@34.7380529,137.3844511,3a,90y,198.63h,99.97t/data=!3m6!1e1!3m4!1skGUhtIxWQWG7Uyddjee30A!2e0!7i16384!8i8192!4m6!3m5!1s0x6004d23140aa8d6d:0x40fc5eeaed60a6b0!8m2!3d34.7379595!4d137.3844158!16s%2Fg%2F11bbxkg69x?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "ceaf9ecd-054e-4175-a73f-10a5190f2e1f",
+      "name": {
+        "en": "Uno Uno",
+        "ja": "カフェ ウーノ・ウーノ"
+      },
+      "geo": {
+        "latitude": 34.7633962,
+        "longitude": 137.3828469
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7633962,137.3828469,3a,90y,239.67h,97.19t/data=!3m6!1e1!3m4!1sJx_Bif32cIxynm_d0tNJAQ!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "d0bc3628-ac12-4d7c-be70-1796b60ff845",
+      "name": {
+        "en": "Boat Pond",
+        "ja": "ボート池"
+      },
+      "geo": {
+        "latitude": 34.722548,
+        "longitude": 137.4333462
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/place/Boat+Pond/@34.722548,137.4333462,3a,75y,358.97h,93.13t/data=!3m8!1e1!3m6!1sAF1QipMLtvQuTl50mVdBJNYVipSFMP9iKTZj6DxAAg0V!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMLtvQuTl50mVdBJNYVipSFMP9iKTZj6DxAAg0V%3Dw203-h100-k-no-pi0-ya340-ro0-fo100!7i10088!8i5044!4m9!3m8!1s0x6004d34403628205:0x8b63def708a720ee!8m2!3d34.722548!4d137.4333462!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11h49lx8hp?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "dca68b2a-a918-42d8-92b5-0f87b6bc6eb9",
+      "name": {
+        "en": "Ehima yagai center-mae",
+        "ja": "江比間野外センター前"
+      },
+      "geo": {
+        "latitude": 34.6637451,
+        "longitude": 137.1818238
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-aichi-tahara",
+      "streetViewUrl": "https://www.google.com/maps/@34.6637451,137.1818238,3a,75y,37.37h,99.81t/data=!3m6!1e1!3m4!1sxaxmpGyHBUgYN7kUVfyFtQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "e2240aee-386f-44b3-9b47-1e9256f154b3",
+      "name": {
+        "en": "Iwayakoenguchi",
+        "ja": "岩屋公園口"
+      },
+      "geo": {
+        "latitude": 34.7289572,
+        "longitude": 137.4306542
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7289572,137.4306542,3a,48.8y,132.08h,96.04t/data=!3m6!1e1!3m4!1sAVrSi_UVb_I0_VZqHWb8ug!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "e88f975d-e6cf-4957-ad4f-2c8f873efa94",
+      "name": {
+        "kr": "혼나가시노 역",
+        "en": "Hon-Nagashino Station",
+        "ja": "本長篠駅"
+      },
+      "geo": {
+        "latitude": 34.9324026,
+        "longitude": 137.5753422
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-aichi-shinshiro",
+      "streetViewUrl": "https://www.google.com/maps/@34.9324026,137.5753422,3a,44.6y,78.47h,94.33t/data=!3m7!1e1!3m5!1scBbu7EPatVCB4dcWuV0tng!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DcBbu7EPatVCB4dcWuV0tng%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D45.492584%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "ea5a94aa-5304-42ad-a812-e3a504498cde",
+      "name": {
+        "en": "Tosan Civil Engineering Research Society",
+        "ja": "東三土木研究会"
+      },
+      "geo": {
+        "latitude": 34.76657,
+        "longitude": 137.40084
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.766664,137.4008734,3a,64.3y,206.94h,94.38t/data=!3m7!1e1!3m5!1sHMRP2tIcQP4rlSMoO1wIAA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.37786001466749%26panoid%3DHMRP2tIcQP4rlSMoO1wIAA%26yaw%3D206.9422471342092!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDEyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "ef8db21e-c71f-41c4-bdc6-356f3469ee9e",
+      "name": {
+        "ja": "珈琲とカヌレ",
+        "en": "Coffee and Canelé"
+      },
+      "geo": {
+        "latitude": 34.761492,
+        "longitude": 137.3852754
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.761492,137.3852754,3a,75y,48.03h,94.43t/data=!3m6!1e1!3m4!1sqQ7dvmycoSVBoN81erJZjA!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "f4702d41-3f40-44b5-b5fa-0a96446732b6",
+      "name": {
+        "en": "Aichidaigaku-Mae Station",
+        "ja": "愛知大学前駅",
+        "kr": "아이치다이가쿠마에 역"
+      },
+      "geo": {
+        "latitude": 34.7415611,
+        "longitude": 137.3854965
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7415611,137.3854965,3a,48.7y,106.55h,95.91t/data=!3m7!1e1!3m5!1seO2yJMt2wkkqN5TqK53BCg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DeO2yJMt2wkkqN5TqK53BCg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D345.3776%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "f9505b27-b342-425a-bfbe-2855ca6250b5",
+      "name": {
+        "ja": "旭橋",
+        "en": "Asahibashi"
+      },
+      "geo": {
+        "latitude": 34.76649,
+        "longitude": 137.40193
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-aichi-toyohashi",
+      "streetViewUrl": "https://www.google.com/maps/@34.7669358,137.4020713,3a,47.5y,188.59h,94.43t/data=!3m6!1e1!3m4!1si9RX4dwNcYnpdhCQHF3ZBA!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    },
+    {
+      "placeId": "ffb0b051-a92f-4483-810b-44276361186e",
+      "name": {
+        "en": "Suwa Shrine",
+        "ja": "副川諏訪神社"
+      },
+      "geo": {
+        "latitude": 35.0168223,
+        "longitude": 137.5559796
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-aichi-shinshiro",
+      "streetViewUrl": "https://www.google.com/maps/@35.0168223,137.5559796,3a,90y,56.52h,98.5t/data=!3m8!1e1!3m6!1sAF1QipMxvVqJBQTrAfhlj1AFTMGtDW6fbpcbReGVUY7m!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMxvVqJBQTrAfhlj1AFTMGtDW6fbpcbReGVUY7m%3Dw203-h100-k-no-pi-0-ya320.87152-ro-0-fo100!7i11264!8i5632?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©雨森たきび／小学館／マケイン応援委員会"
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "anime": {
+    "animeId": "W6Ty1y47SrpzJsnFIiRq",
+    "slug": "pseudo-harem",
+    "title": {
+      "ja": "疑似ハーレム",
+      "kr": "유사 하렘",
+      "en": "Pseudo Harem"
+    },
+    "author": {
+      "ja": [
+        "斉藤ゆう"
+      ],
+      "en": [
+        "Yu Saito"
+      ],
+      "kr": [
+        "사이토 유우"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "ノーマッド"
+      ],
+      "en": [
+        "NOMAD"
+      ]
+    }
+  },
+  "placeCount": 19,
+  "places": [
+    {
+      "placeId": "0933cba9-05cd-4c5d-a7a8-a7aa555142fb",
+      "name": {
+        "de": "In der Nähe des Rokkun Plaza",
+        "id": "Sekitar Rokkun Plaza",
+        "es": "Cerca de la Rokkun Plaza",
+        "ja": "ろっくんプラザ付近",
+        "en": "Near the Rokkun Plaza"
+      },
+      "geo": {
+        "latitude": 35.0071858,
+        "longitude": 135.7675199
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0071858,135.7675199,3a,90y,319.43h,97.39t/data=!3m6!1e1!3m4!1sGn5Rr1li56gIfxI6ahnFJw!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "174c805f-8915-4982-9be2-69a4079e3a0f",
+      "name": {
+        "en": "Pool WAI",
+        "ja": "プールWAI"
+      },
+      "geo": {
+        "latitude": 35.6234675,
+        "longitude": 139.5204776
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.6234675,139.5204776,3a,75y,29.65h,98.92t/data=!3m6!1e1!3m4!1sPrCQPbR-eWKNMODMJUQ0CA!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "1e230d4f-de7c-4ba7-ad81-d9e2d73a8360",
+      "name": {
+        "en": "AQUA CiTY Odaiba",
+        "ja": "アクアシティ お台場"
+      },
+      "geo": {
+        "latitude": 35.6266787,
+        "longitude": 139.7723508
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6266787,139.7723508,3a,75y,351.66h,102.74t/data=!3m7!1e1!3m5!1sR_gIC7DZE-UR9Vgem-ITww!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DR_gIC7DZE-UR9Vgem-ITww%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D283.5768%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "2ee87135-ff4e-4be5-b1f0-8a93eab387fa",
+      "name": {
+        "en": "Kiyomizu-dera",
+        "ja": "清水寺"
+      },
+      "geo": {
+        "latitude": 34.9946633,
+        "longitude": 135.7849717
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/place/The+Stage+of+Kiyomizu/@34.9946633,135.7849717,3a,90y,315.51h,101.24t/data=!3m8!1e1!3m6!1sAF1QipMAlUj0h1EMl5-BWjVmbJBmScfX3sNKIvvJyeZI!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMAlUj0h1EMl5-BWjVmbJBmScfX3sNKIvvJyeZI%3Dw203-h100-k-no-pi-10-ya260-ro0-fo100!7i5376!8i2688!4m18!1m8!3m7!1s0x600108d385dcfb07:0x62af658650c434ba!2sKiyomizu-dera!8m2!3d34.9946662!4d135.784661!10e5!16zL20vMDJ5bjNn!3m8!1s0x600108d3814b64dd:0xb97aec38badd1523!8m2!3d34.9947118!4d135.7850324!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11g8gyxnr0?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "495396e8-4e35-4249-9d1c-267c9307ede0",
+      "name": {
+        "en": "Kyo no Furusato",
+        "ja": "京のふるさと"
+      },
+      "geo": {
+        "latitude": 35.0070167,
+        "longitude": 135.7672532
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0070167,135.7672532,3a,90y,286.19h,96.41t/data=!3m6!1e1!3m4!1s03fdYo73tnlWagcm1IQpSQ!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "4d379be3-cb94-4344-95a5-d75d48abd8bf",
+      "name": {
+        "ja": "東山慈照寺",
+        "en": "Higashiyama Jisho-ji"
+      },
+      "geo": {
+        "latitude": 35.0264544,
+        "longitude": 135.7983325
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0264544,135.7983325,3a,90y,300.3h,97.71t/data=!3m8!1e1!3m6!1sAF1QipNImhRp70ooZwtcnIKkJ4htX_oCnp_BtRiyulLM!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNImhRp70ooZwtcnIKkJ4htX_oCnp_BtRiyulLM%3Dw203-h100-k-no-pi-0-ya204.29153-ro0-fo100!7i12288!8i5196?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "4ed37129-8a88-4b0b-9ada-e5a4e591b16d",
+      "name": {
+        "ja": "ぎおん徳屋",
+        "en": "Gion Tokuya"
+      },
+      "geo": {
+        "latitude": 35.0024899,
+        "longitude": 135.7748343
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0024899,135.7748343,3a,90y,289.14h,96.71t/data=!3m7!1e1!3m5!1spEJ6Bt9C3MWQL6aiqDDQOw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DpEJ6Bt9C3MWQL6aiqDDQOw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D54.81446%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "67c7dd46-ecc4-48e9-a31f-0dd220bb1689",
+      "name": {
+        "en": "Kyoto Theater",
+        "ja": "京都劇場"
+      },
+      "geo": {
+        "latitude": 34.9860873,
+        "longitude": 135.760319
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9860873,135.760319,2a,75y,129.48h,105.38t/data=!3m6!1e1!3m4!1sbimvtYqWsOeeMAEIE1j0gQ!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "70438701-be2c-4d0f-a35b-7f0d762a4576",
+      "name": {
+        "ja": "おふく本店",
+        "en": "Ofuku Honten"
+      },
+      "geo": {
+        "latitude": 35.0064296,
+        "longitude": 135.7672219
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0064296,135.7672219,3a,90y,72.47h,98.48t/data=!3m7!1e1!3m5!1sP0b5DjxpZtyHCf0vxxmDPQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DP0b5DjxpZtyHCf0vxxmDPQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D344.91245%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "751aca97-04f7-418f-ba35-f78e74e8f55b",
+      "name": {
+        "en": "Odaiba Beach Sports Area",
+        "ja": "お台場ビーチスポーツエリア"
+      },
+      "geo": {
+        "latitude": 35.6306552,
+        "longitude": 139.7757844
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6306552,139.7757844,3a,90y,61.49h,106.71t/data=!3m7!1e1!3m5!1sAF1QipOUArn0SFJCkxJc0Ot23ceSm_RSIBfstJCXfiyU!2e10!3e11!7i3840!8i1920?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "8bd6fe81-2240-4324-9818-cadf1ee1e552",
+      "name": {
+        "ja": "シネマシティ シネマ・ワン",
+        "en": "Cinema One"
+      },
+      "geo": {
+        "latitude": 35.7004223,
+        "longitude": 139.4137037
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-tachikawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.7004223,139.4137037,3a,90y,46.65h,99.26t/data=!3m6!1e1!3m4!1syHlmmVWO7IG_xguQM1qfRQ!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "8bf9f108-df86-426a-bfd3-ff99ffe21934",
+      "name": {
+        "ja": "猫カフェ MOCHA（モカ）立川店",
+        "en": "cat cafe MOCHA Tachikawa Store"
+      },
+      "geo": {
+        "latitude": 35.6996187,
+        "longitude": 139.4148311
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-tachikawa",
+      "streetViewUrl": "https://www.google.com/maps/place/cat+cafe+MOCHA+Tachikawa+Store/@35.6996187,139.4148311,3a,90y,118.73h,88.44t/data=!3m7!1e1!3m5!1sAF1QipPYCnCKYMXgKhJO0LqK1krpgYYRIITHkIRUEc2S!2e10!3e11!7i10664!8i5332!4m9!3m8!1s0x6018e12a8b7f4bf9:0x4d9dc23fdd650e18!8m2!3d35.6997897!4d139.4149141!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11f7nmwz0t?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "8c39c0a8-9eb9-4c15-a9d5-24190d5a94dc",
+      "name": {
+        "ja": "天野屋",
+        "en": "Amanoya"
+      },
+      "geo": {
+        "latitude": 35.7010318,
+        "longitude": 139.7670845
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7010318,139.7670845,3a,90y,354.41h,101.13t/data=!3m6!1e1!3m4!1sZGyLRnaH4xC8EZFadZEQBQ!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "a1bb0de9-edd1-44bf-b4bd-b4502e28989b",
+      "name": {
+        "ja": "蹴上疎水公園",
+        "en": "Keage Sosui Park"
+      },
+      "geo": {
+        "latitude": 35.0077248,
+        "longitude": 135.7908478
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0077248,135.7908478,3a,75y,356.18h,99.77t/data=!3m8!1e1!3m6!1sAF1QipPZQWXsFHFVqDQ8HMTqK_XNYH7-xqn2aSMXtmt6!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPZQWXsFHFVqDQ8HMTqK_XNYH7-xqn2aSMXtmt6%3Dw203-h100-k-no-pi-0.8170138-ya340.93625-ro2.3628125-fo100!7i5376!8i2688?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "b28aba1f-6d5b-45e4-bb39-15e11ac9d61d",
+      "name": {
+        "en": "Kaitorisenmonten Otakaraya Tachikawakitaguchiten",
+        "ja": "買取専門店 おたからや 立川北口店"
+      },
+      "geo": {
+        "latitude": 35.6993865,
+        "longitude": 139.414044
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-tachikawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.6993865,139.414044,3a,64.2y,197.6h,100.31t/data=!3m6!1e1!3m4!1s9On_gFckSggyNCl2I2Cujw!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "d5f08c39-c3f0-401e-b7b2-9b40d4c65de2",
+      "name": {
+        "en": "Myojin Soba KIYARI Kanda Myojin-mae Store",
+        "ja": "明神そば きやり 神田明神前店"
+      },
+      "geo": {
+        "latitude": 35.7012468,
+        "longitude": 139.7672709
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7012468,139.7672709,3a,75y,35.32h,102.62t/data=!3m7!1e1!3m5!1sXJRiruLCHyLGKve1SOZo3A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DXJRiruLCHyLGKve1SOZo3A%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D43.621933%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "e50c574c-265c-43fc-b65d-51d9ebecbf3d",
+      "name": {
+        "ja": "立川駅",
+        "en": "Tachikawa Station"
+      },
+      "geo": {
+        "latitude": 35.6988033,
+        "longitude": 139.4137251
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-tachikawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.6988033,139.4137251,3a,90y,181.14h,99.07t/data=!3m7!1e1!3m5!1sKZwdocLYW0OAHNDeS5xQPQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DKZwdocLYW0OAHNDeS5xQPQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D352.94424%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "f6ffeb3a-98b6-4e86-aa48-303cdb13f895",
+      "name": {
+        "en": "Kyoto Station",
+        "ja": "京都駅"
+      },
+      "geo": {
+        "latitude": 34.9864208,
+        "longitude": 135.7590136
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9864208,135.7590136,3a,75y,176.22h,103.78t/data=!3m6!1e1!3m4!1stiJtJ5AFbhusliUZSY0t9w!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    },
+    {
+      "placeId": "faf75789-4f35-4c51-bda4-aff1a29c2f5c",
+      "name": {
+        "en": "IKEA Tachikawa",
+        "ja": "IKEA立川"
+      },
+      "geo": {
+        "latitude": 35.7053337,
+        "longitude": 139.4111652
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-tachikawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.7053337,139.4111652,3a,41.5y,33.3h,93.58t/data=!3m6!1e1!3m4!1skuVTwtBJMTsq5OyHswUfDA!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©斉藤ゆう／小学館／疑似ハーレム製作委員会"
+    }
+  ]
+}

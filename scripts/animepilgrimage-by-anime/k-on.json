@@ -1,0 +1,378 @@
+{
+  "anime": {
+    "animeId": "nDcjBFyJt97tX0kT9a3i",
+    "slug": "k-on",
+    "title": {
+      "ja": "けいおん!",
+      "kr": "케이온!",
+      "en": "K-On!"
+    },
+    "author": {
+      "ja": [
+        "かきふらい"
+      ],
+      "en": [
+        "Kakifly"
+      ],
+      "kr": [
+        "카키후라이"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Kyoto Animation"
+      ]
+    }
+  },
+  "placeCount": 21,
+  "places": [
+    {
+      "placeId": "01ddf5b7-a47e-43a2-9fcc-e2405fd84dfa",
+      "name": {
+        "ja": "出町の飛び石",
+        "en": "Stepping Stones"
+      },
+      "geo": {
+        "latitude": 35.0294529,
+        "longitude": 135.7718706
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0294529,135.7718706,3a,73.8y,197.93h,89.23t/data=!3m8!1e1!3m6!1sAF1QipPN8p_SGrEo-8y15anT_gk_UwJtSP9AxXZkaDdG!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPN8p_SGrEo-8y15anT_gk_UwJtSP9AxXZkaDdG%3Dw203-h100-k-no-pi0-ya82.35669-ro0-fo100!7i6528!8i3264?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "34188b5f-c95f-42cc-aef5-1ba6612526fb",
+      "name": {
+        "en": "Shugakuin Station",
+        "ja": "修学院駅"
+      },
+      "geo": {
+        "latitude": 35.0505141,
+        "longitude": 135.790685
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0505141,135.790685,3a,75y,219.49h,105.24t/data=!3m6!1e1!3m4!1sLG6vPCQw3Pk24qdgt-f20w!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "39074b95-d33c-4446-bace-20fcd1870640",
+      "name": {
+        "de": "In der Nähe des Yawata drainage pump station",
+        "es": "Cerca de la Yawata drainage pump station",
+        "id": "Sekitar Yawata drainage pump station",
+        "en": "Near the Yawata drainage pump station",
+        "ja": "八幡排水機場付近"
+      },
+      "geo": {
+        "latitude": 34.8821481,
+        "longitude": 135.7108621
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-yawata",
+      "streetViewUrl": "https://www.google.com/maps/@34.8821481,135.7108621,3a,75y,133.39h,101.82t/data=!3m6!1e1!3m4!1sdZ588_RbWYudnotzgPFvBw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "39930b2f-b60a-4289-af07-3bd55e3f6f5e",
+      "name": {
+        "en": "Retro Beaver",
+        "ja": "レトロビーバー"
+      },
+      "geo": {
+        "latitude": 35.0516665,
+        "longitude": 135.7881302
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0516666,135.7881302,3a,75y,345.58h,95.35t/data=!3m6!1e1!3m4!1shgzKg0wViRszkdZmna4QBQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "4593703e-a456-4744-ba13-868c2b0a944b",
+      "name": {
+        "en": "JEUGIA - Sanjo Main Store Stage",
+        "ja": "JEUGIA 三条本店 Stage"
+      },
+      "geo": {
+        "latitude": 35.0087155,
+        "longitude": 135.7676819
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0087156,135.7676819,3a,90y,194.82h,95.7t/data=!3m7!1e1!3m5!1s8Re6L7eM67OaBkpcjNlyvw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D8Re6L7eM67OaBkpcjNlyvw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D228.32364%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "4dff80ba-c36d-419f-af11-30d693bbf0f0",
+      "name": {
+        "en": "Sarasa Nishijin",
+        "ja": "さらさ西陣"
+      },
+      "geo": {
+        "latitude": 35.037702,
+        "longitude": 135.7468456
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/place/Sarasa+Nishijin/@35.037702,135.7468456,3a,75y,163.1h,90t/data=!3m7!1e1!3m5!1sVG98JzXrLhYKS5zJpo7qSw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DVG98JzXrLhYKS5zJpo7qSw%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D163.09988%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m14!1m7!3m6!1s0x600107fb5ad5b30f:0x810cfa5a6ec91ec!2sSarasa+Nishijin!8m2!3d35.0376526!4d135.746866!16s%2Fg%2F1tlz_21k!3m5!1s0x600107fb5ad5b30f:0x810cfa5a6ec91ec!8m2!3d35.0376526!4d135.746866!16s%2Fg%2F1tlz_21k?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "5c9d0690-92ec-4518-acaf-907f2dd4dd54",
+      "name": {
+        "en": "Joukaen",
+        "ja": "乗花園"
+      },
+      "geo": {
+        "latitude": 35.0502052,
+        "longitude": 135.7913217
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0502052,135.7913217,3a,75y,211.68h,94.94t/data=!3m7!1e1!3m5!1sEL3D-Rs3_Yst0xb6k7jGug!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DEL3D-Rs3_Yst0xb6k7jGug%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D224.9403%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "626da981-3cba-482b-bfac-fd9cbe75b75c",
+      "name": {
+        "ja": "京都MOJO",
+        "en": "Kyoto MOJO"
+      },
+      "geo": {
+        "latitude": 35.003736,
+        "longitude": 135.7568472
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/place/Kyoto+MOJO/@35.003736,135.7568472,3a,75y,22.96h,97.75t/data=!3m8!1e1!3m5!1sW2TLDQTjmX7WdzI1GF4e9A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DW2TLDQTjmX7WdzI1GF4e9A%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D9.614055%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!5s0x6001089b7e112813:0x77c48b4848e5996!4m14!1m7!3m6!1s0x6001089b7e1a5101:0x8c220e9b99204f03!2sKyoto+MOJO!8m2!3d35.0038587!4d135.7568824!16s%2Fg%2F1tdh8bm4!3m5!1s0x6001089b7e1a5101:0x8c220e9b99204f03!8m2!3d35.0038587!4d135.7568824!16s%2Fg%2F1tdh8bm4?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "78299bdf-5af5-47b4-8f9a-d03c43446370",
+      "name": {
+        "en": "Family Mart Kyoto Ichijoji store",
+        "ja": "ファミリーマート 京都一乗寺店"
+      },
+      "geo": {
+        "latitude": 35.0437858,
+        "longitude": 135.7918908
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0437858,135.7918908,3a,90y,179.65h,98.27t/data=!3m6!1e1!3m4!1sRbCYQUMQGJu9ZIePcy3H1A!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "78b9af27-f4b2-406a-a3b1-af3fe9b91a8c",
+      "name": {
+        "en": "Demachiyanagi Station",
+        "ja": "出町柳駅"
+      },
+      "geo": {
+        "latitude": 35.0305746,
+        "longitude": 135.7732474
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0305746,135.7732474,3a,75y,202.03h,94.22t/data=!3m8!1e1!3m6!1sAF1QipPawxq6Xi__jSBIjlZMCgFRULW_FnN6WC4_0WPF!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPawxq6Xi__jSBIjlZMCgFRULW_FnN6WC4_0WPF%3Dw203-h100-k-no-pi0-ya94.87401-ro0-fo100!7i6528!8i3264?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "8287df58-28d4-4577-bbc8-556b8e59b0af",
+      "name": {
+        "en": "McDonald's - Kita-Shirakawa",
+        "ja": "マクドナルド 北白川店"
+      },
+      "geo": {
+        "latitude": 35.0419142,
+        "longitude": 135.7918005
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0419142,135.7918006,3a,75y,273.31h,103.46t/data=!3m6!1e1!3m4!1sZpNgmQlUngskeMWAfJeJwA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "903919df-4d42-4c32-8a7c-274cb9c9a8a0",
+      "name": {
+        "ja": "ともひろ付近",
+        "de": "In der Nähe des Tomohiro",
+        "es": "Cerca de la Tomohiro",
+        "en": "Near the Tomohiro",
+        "id": "Sekitar Tomohiro"
+      },
+      "geo": {
+        "latitude": 35.051168,
+        "longitude": 135.7892592
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.051168,135.7892592,3a,90y,163.83h,101.07t/data=!3m6!1e1!3m4!1sL9XgPLakV0d8nLeVLDckWg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "a9a8f741-f63d-4533-8945-efeed3c375b9",
+      "name": {
+        "en": "Imamiya Shrine",
+        "ja": "今宮神社"
+      },
+      "geo": {
+        "latitude": 35.0457787,
+        "longitude": 135.7419867
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0457787,135.7419867,2a,90y,27.12h,93.76t/data=!3m7!1e1!3m5!1s_lh92bEz0AV7vjV1tBX1ig!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D_lh92bEz0AV7vjV1tBX1ig%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D269.1578%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "bb95a403-1c10-44f0-9a0e-3d67f64c9088",
+      "name": {
+        "en": "Matsugasaki Bridge",
+        "ja": "松ヶ﨑橋"
+      },
+      "geo": {
+        "latitude": 35.0513594,
+        "longitude": 135.7890826
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0513594,135.7890826,3a,75y,125.99h,101.55t/data=!3m7!1e1!3m5!1s9qvr5C9bgnkJUybLaHkXSQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D9qvr5C9bgnkJUybLaHkXSQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D114.735245%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "bcc6a5c4-7ac1-456e-8bd0-19403d6d82e7",
+      "name": {
+        "id": "Sekitar Imperial",
+        "ja": "インペリアル付近",
+        "de": "In der Nähe des Imperial",
+        "es": "Cerca de la Imperial",
+        "en": "Near the Imperial"
+      },
+      "geo": {
+        "latitude": 35.0517475,
+        "longitude": 135.7873542
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0517475,135.7873542,3a,90y,354.81h,105.61t/data=!3m6!1e1!3m4!1srJ_kjQBh00nDMbF13pCMxA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "ccca541f-3cd5-4b8f-9806-0f6fd47d82c6",
+      "name": {
+        "ja": "一乗寺下り松町",
+        "en": "Ichijoji Sagarimatsucho"
+      },
+      "geo": {
+        "latitude": 35.0430046,
+        "longitude": 135.7918352
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0430046,135.7918352,3a,90y,86.75h,93.12t/data=!3m6!1e1!3m4!1smGAqWg_u0xgox79pIVIlPg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "d11db72e-7d3c-4050-a126-9e96771df9df",
+      "name": {
+        "en": "Kyo-Kasho Yuzuki - Main Shop",
+        "ja": "京菓匠 游月 本店"
+      },
+      "geo": {
+        "latitude": 35.0501356,
+        "longitude": 135.7916043
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/place/Ky%C5%8D-Kash%C5%8D+Y%C5%ABzuki+-+Main+Shop/@35.0501356,135.7916043,3a,75y,216.35h,95.15t/data=!3m7!1e1!3m5!1s-yGIVL7hox9ofYtYot6nCA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D-yGIVL7hox9ofYtYot6nCA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D305.62064%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m6!3m5!1s0x600109cae92f89db:0xbbd8b8652e9a471e!8m2!3d35.0499547!4d135.7914659!16s%2Fg%2F1tqpz4fd?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "d5f142ac-832c-41f8-8931-fc845afbbbae",
+      "name": {
+        "en": "Suirokaku (Waterway Bridge)",
+        "ja": "水路閣"
+      },
+      "geo": {
+        "latitude": 35.0105769,
+        "longitude": 135.793702
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0105769,135.793702,3a,75y,269.41h,96.63t/data=!3m8!1e1!3m6!1sAF1QipNuLNMyzZQ9GT4ToH70uAk49vwCDotBFFdQq3s5!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNuLNMyzZQ9GT4ToH70uAk49vwCDotBFFdQq3s5%3Dw203-h100-k-no-pi-0-ya19.199627-ro-0-fo100!7i5656!8i2828?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "ed337dcf-5e08-4176-8e55-5d4afaebba98",
+      "name": {
+        "ja": "寺町京極商店街",
+        "en": "Compasso Teramachi Kyogoku South Entrance"
+      },
+      "geo": {
+        "latitude": 35.003645,
+        "longitude": 135.7668902
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.003645,135.7668902,3a,75y,14.9h,101.58t/data=!3m6!1e1!3m4!1sWGfbbi0lkgur7m2n9P8vIA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "f3ee7843-7a95-44bb-b894-88fe9fc9b387",
+      "name": {
+        "en": "The old halls of Toyosato Elementary School",
+        "ja": "豊郷小学校旧校舎群"
+      },
+      "geo": {
+        "latitude": 35.2038064,
+        "longitude": 136.232033
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shiga-toyosato",
+      "streetViewUrl": "https://www.google.com/maps/@35.2038064,136.232033,3a,75y,123.74h,97.21t/data=!3m6!1e1!3m4!1sBK2eAv_WMh6oiIPIN0_4Cw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    },
+    {
+      "placeId": "672b8bb1-c168-41c6-b06c-ad580b657ae9",
+      "name": {
+        "ja": "マツヤデンキ 北山店付近",
+        "es": "Cerca de la Matsuya Denki Kitayama",
+        "en": "Near the Matsuya Denki Kitayama",
+        "de": "In der Nähe des Matsuya Denki Kitayama",
+        "id": "Sekitar Matsuya Denki Kitayama"
+      },
+      "geo": {
+        "latitude": 35.0520959,
+        "longitude": 135.7841831
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0520959,135.7841831,3a,75y,97.37h,98.49t/data=!3m6!1e1!3m4!1saOYcMLZNxutJTPOMN8qcng!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©かきふらい・芳文社／桜高軽音部"
+    }
+  ]
+}

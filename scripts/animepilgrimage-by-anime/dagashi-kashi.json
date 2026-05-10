@@ -1,0 +1,303 @@
+{
+  "anime": {
+    "animeId": "iQWqPKVd1tNdZsl8aRyC",
+    "slug": "dagashi-kashi",
+    "title": {
+      "ja": "だがしかし",
+      "kr": "다가시카시",
+      "en": "Dagashi Kashi"
+    },
+    "author": {
+      "ja": [
+        "コトヤマ"
+      ],
+      "en": [
+        "Kotoyama"
+      ],
+      "kr": [
+        "코토야마"
+      ]
+    },
+    "studio": {
+      "en": [
+        "feel."
+      ]
+    }
+  },
+  "placeCount": 17,
+  "places": [
+    {
+      "placeId": "03bbd167-42a2-4eff-90cd-397821b5ec33",
+      "name": {
+        "ja": "神宮山 延命寺",
+        "en": "Enmeiji"
+      },
+      "geo": {
+        "latitude": 35.20585,
+        "longitude": 139.8423
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-chiba-futtsu",
+      "streetViewUrl": "https://maps.app.goo.gl/Gyv3kPb32hWsDGUD8",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "1293c052-2663-492b-846c-3dab98278d38",
+      "name": {
+        "en": "Sazane",
+        "ja": "さざね"
+      },
+      "geo": {
+        "latitude": 35.11553,
+        "longitude": 139.82784
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-chiba-kyonan",
+      "streetViewUrl": "https://maps.app.goo.gl/13qrgna1ZCuCAeCb9",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "2f102ffc-4ab2-47f7-b82d-c685bd5de63f",
+      "name": {
+        "ja": "ＪＡ安房 鋸南支店",
+        "en": "JA Kyonan"
+      },
+      "geo": {
+        "latitude": 35.11209,
+        "longitude": 139.83402
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-chiba-kyonan",
+      "streetViewUrl": "https://maps.app.goo.gl/ZjuRfx4NHuGNZp9f7",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "39eee2d4-de8b-47fd-a942-d55d89b68b2d",
+      "name": {
+        "en": "Funato, K.K. Katsuyama Aquaculture Farm",
+        "ja": "(株)舟藤 勝山畜養場"
+      },
+      "geo": {
+        "latitude": 35.11353,
+        "longitude": 139.82564
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-chiba-kyonan",
+      "streetViewUrl": "https://maps.app.goo.gl/XTGzrDw8rXDpmqov8",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "402cef8c-cb46-484d-aa15-4acc0af1aa28",
+      "name": {
+        "ja": "さざね",
+        "en": "Sazane"
+      },
+      "geo": {
+        "latitude": 35.1153,
+        "longitude": 139.828
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-chiba-kyonan",
+      "streetViewUrl": "https://maps.app.goo.gl/jw7wT8UJAVSafbwz6",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "41d6ab5b-7018-423f-834a-fbd52b0de8a2",
+      "name": {
+        "ja": "勝山漁港",
+        "en": "Katsuyama fishing port."
+      },
+      "geo": {
+        "latitude": 35.11128,
+        "longitude": 139.82779
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-chiba-kyonan",
+      "streetViewUrl": "https://maps.app.goo.gl/chbsZCyid8qfk9Fb8",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "4409222f-7417-49cc-ba9a-db0a90094e39",
+      "name": {
+        "ja": "レンタルスタジオ VISTA BLUE",
+        "en": "Rental Studio VISTA BLUE"
+      },
+      "geo": {
+        "latitude": 35.21138,
+        "longitude": 139.84903
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-chiba-futtsu",
+      "streetViewUrl": "https://maps.app.goo.gl/hihuYyr1ZndGmU5w5",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "493e37b6-94cb-4dd8-b37e-4d4b2a6aef9d",
+      "name": {
+        "ja": "たけおか薬局",
+        "en": "Takeoka Pharmacy"
+      },
+      "geo": {
+        "latitude": 35.20551,
+        "longitude": 139.84623
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-chiba-futtsu",
+      "streetViewUrl": "https://maps.app.goo.gl/sMvy727wQZeV67XaA",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "799ff43e-4462-4050-837a-0edeec71a2fe",
+      "name": {
+        "en": "Takeoka children's playground",
+        "ja": "竹岡子どもの遊び場"
+      },
+      "geo": {
+        "latitude": 35.20845,
+        "longitude": 139.84502
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-chiba-futtsu",
+      "streetViewUrl": "https://maps.app.goo.gl/thPASFt4nx8GGzug9",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "83531b27-f1d5-4da1-af59-33ab0635b508",
+      "name": {
+        "en": "Matsui Pharmacy",
+        "ja": "松井薬店"
+      },
+      "geo": {
+        "latitude": 35.20599,
+        "longitude": 139.84464
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-chiba-futtsu",
+      "streetViewUrl": "https://maps.app.goo.gl/8bf6kwvvXWoaQSvv7",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "a77d9a86-fed1-406c-9fbc-eef501b9fe8a",
+      "name": {
+        "ja": "石洞山 不動院",
+        "en": "Fudo-in"
+      },
+      "geo": {
+        "latitude": 35.20858,
+        "longitude": 139.8486
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-chiba-futtsu",
+      "streetViewUrl": "https://maps.app.goo.gl/BdDJDBtUNKXFeZSo9",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "a89e40b7-42d8-4727-b81c-c21a7356529e",
+      "name": {
+        "en": "Takeoka Station",
+        "kr": "다케오카 역",
+        "ja": "竹岡駅"
+      },
+      "geo": {
+        "latitude": 35.19785,
+        "longitude": 139.83031
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-chiba-futtsu",
+      "streetViewUrl": "https://maps.app.goo.gl/EzZj64MhRWfjProd9",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "aa24a537-f0ed-430c-9a24-4abea3bad168",
+      "name": {
+        "ja": "天羽漁協本所竹岡支所",
+        "en": "Amaha Fisheries Association Honjo Takeoka Branch"
+      },
+      "geo": {
+        "latitude": 35.20769,
+        "longitude": 139.84273
+      },
+      "ep": 1,
+      "type": "OP",
+      "cityId": "JP-chiba-futtsu",
+      "streetViewUrl": "https://maps.app.goo.gl/RqkKYMwTJrWAM3nP7",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "aab2cbda-6ca4-4f39-834a-0d142e5378b6",
+      "name": {
+        "ja": "竹岡漁港",
+        "en": "Takeoka fishing port"
+      },
+      "geo": {
+        "latitude": 35.20839,
+        "longitude": 139.8444
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-chiba-futtsu",
+      "streetViewUrl": "https://maps.app.goo.gl/L8ZNetbvBNerUdns7",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "bb1056e0-a1ee-4713-ab84-ac68d70da261",
+      "name": {
+        "ja": "食事処 なぶら [勝山漁港直営]",
+        "en": "NABURA Diner"
+      },
+      "geo": {
+        "latitude": 35.11217,
+        "longitude": 139.82775
+      },
+      "ep": 1,
+      "type": "OP",
+      "cityId": "JP-chiba-kyonan",
+      "streetViewUrl": "https://maps.app.goo.gl/H1R7ZSoWMKPAzoXo6",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "e6695a2a-e10e-44ce-a7f5-6e2f0c5ed322",
+      "name": {
+        "en": "Zenshoji",
+        "ja": "善勝寺"
+      },
+      "geo": {
+        "latitude": 35.52779,
+        "longitude": 140.28441
+      },
+      "ep": 1,
+      "type": "OP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://maps.app.goo.gl/Q6bfkx2yMAKdnPmW6",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    },
+    {
+      "placeId": "f7515554-38e6-4b95-8be5-df8f8a935654",
+      "name": {
+        "en": "Amaha Fisheries Association Honjo Takeoka Branch",
+        "ja": "天羽漁協本所竹岡支所"
+      },
+      "geo": {
+        "latitude": 35.20716,
+        "longitude": 139.84265
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-chiba-futtsu",
+      "streetViewUrl": "https://maps.app.goo.gl/xXbaaBUmN8zNP8Z48",
+      "copyright": "©2016 コトヤマ・小学館／シカダ駄菓子"
+    }
+  ]
+}

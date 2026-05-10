@@ -1,0 +1,117 @@
+{
+  "anime": {
+    "animeId": "4h4wxGAFDIAIb7Aip05j",
+    "slug": "dagashi-kashi-2",
+    "title": {
+      "ja": "だがしかし2",
+      "kr": "다가시카시 2",
+      "en": "Dagashi Kashi 2"
+    },
+    "author": {
+      "ja": [
+        "コトヤマ"
+      ],
+      "en": [
+        "Kotoyama"
+      ],
+      "kr": [
+        "코토야마"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Tezuka Productions"
+      ],
+      "ja": [
+        "手塚プロダクション"
+      ],
+      "kr": [
+        "데즈카 프로덕션"
+      ]
+    }
+  },
+  "placeCount": 5,
+  "places": [
+    {
+      "placeId": "45aa04ff-29ec-418e-b541-bdc9aa3cf281",
+      "name": {
+        "ja": "竹岡駅",
+        "en": "Takeoka Station",
+        "kr": "다케오카 역"
+      },
+      "geo": {
+        "latitude": 35.19787,
+        "longitude": 139.83031
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-chiba-futtsu",
+      "streetViewUrl": "https://www.google.com/maps/@35.197796,139.8302685,3a,75y,288.09h,67.58t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICEzdmECw!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HbvMC2xVOsD01myvvx9vCIxUZq9DHivy90fALtq31_MMipliZfbARF_Rdt1nHBjXEbvJ5huY-0o5v0CW-jq-gv4hGa90pXvPKQLF3VEVJWCNbvQZgjkhKXUrb1djBuAJbhhOiCu%3Dw900-h600-k-no-pi22.423794621288394-ya288.0919211325054-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDUwNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 コトヤマ・小学館／シカダ駄菓子2"
+    },
+    {
+      "placeId": "839cd8e2-b03a-48e4-958b-12b0bae06940",
+      "name": {
+        "ja": "食事処 なぶら [勝山漁港直営]",
+        "en": "NABURA Diner"
+      },
+      "geo": {
+        "latitude": 35.11207,
+        "longitude": 139.82777
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-chiba-kyonan",
+      "streetViewUrl": "https://www.google.com/maps/@35.1119687,139.8277794,3a,75y,12.52h,94.65t/data=!3m7!1e1!3m5!1sN9Ut39x3srYlKQs3fuibyA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.651614818538249%26panoid%3DN9Ut39x3srYlKQs3fuibyA%26yaw%3D12.51503993393467!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 コトヤマ・小学館／シカダ駄菓子2"
+    },
+    {
+      "placeId": "de7ffb99-43ce-4dee-b4ca-3dc5b9ca5dd2",
+      "name": {
+        "en": "Zenshoji",
+        "ja": "善勝寺"
+      },
+      "geo": {
+        "latitude": 35.52779,
+        "longitude": 140.28441
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.5278422,140.2844321,3a,75y,202.76h,94.12t/data=!3m6!1e1!3m4!1sie48bGLY1wUgiDywu3gRMA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2018 コトヤマ・小学館／シカダ駄菓子2"
+    },
+    {
+      "placeId": "e8ee1438-629b-41d7-afaa-ee1916c5cb30",
+      "name": {
+        "ja": "三柱神社",
+        "en": "Mihashira Shrine"
+      },
+      "geo": {
+        "latitude": 35.20559,
+        "longitude": 139.84144
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-chiba-futtsu",
+      "streetViewUrl": "https://www.google.com/maps/@35.205555,139.8414567,3a,90y,217.4h,95.74t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDG35resAE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HaurKgxKdGkMKCW5UiAc1fKr8NDkjs1msp0l96YU_o0NPZ47LyoPkXrV3xPTwVDflW_zi-DvyuNIflEhCXcyb9kFpMbKDRDqA3w8qvk37O5q6AH3VsJxdNhbBTxdvg-MX73oD37Ug%3Dw900-h600-k-no-pi-5.736117806267217-ya217.4044151065518-ro0-fo100!7i6080!8i3040?entry=ttu&g_ep=EgoyMDI1MDUwNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 コトヤマ・小学館／シカダ駄菓子2"
+    },
+    {
+      "placeId": "e9d5cbcd-a587-4969-92f3-50d31b508a00",
+      "name": {
+        "ja": "たけおか薬局",
+        "en": "Takeoka Pharmacy"
+      },
+      "geo": {
+        "latitude": 35.20561,
+        "longitude": 139.84611
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-chiba-futtsu",
+      "streetViewUrl": "https://www.google.com/maps/@35.205487,139.8462567,3a,75y,318.83h,94.2t/data=!3m7!1e1!3m5!1scASFGNMA4SHjBgWFWkoFKw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.201513593009722%26panoid%3DcASFGNMA4SHjBgWFWkoFKw%26yaw%3D318.83215402834793!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 コトヤマ・小学館／シカダ駄菓子2"
+    }
+  ]
+}

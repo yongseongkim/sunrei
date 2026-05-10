@@ -1,0 +1,101 @@
+{
+  "anime": {
+    "animeId": "xxMcxs235e04PF89ZQGN",
+    "slug": "sanda",
+    "title": {
+      "en": "SANDA"
+    },
+    "author": {
+      "en": [
+        "Paru Itagaki"
+      ],
+      "ja": [
+        "板垣巴留"
+      ],
+      "kr": [
+        "이타가키 파루"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Science Saru"
+      ],
+      "ja": [
+        "サイエンスSARU"
+      ],
+      "kr": [
+        "사이언스 SARU"
+      ]
+    }
+  },
+  "placeCount": 4,
+  "places": [
+    {
+      "placeId": "07a123c4-14f7-47c2-b2d2-a53641515a83",
+      "name": {
+        "en": "Inokashira Park",
+        "kr": "이노카시라 공원",
+        "ja": "井の頭恩賜公園"
+      },
+      "geo": {
+        "latitude": 35.70058,
+        "longitude": 139.57297
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7006381,139.5729651,3a,90y,89.43h,99.79t/data=!3m7!1e1!3m5!1scKth2rcJdVvPnhbsjMB3NQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.789739362924124%26panoid%3DcKth2rcJdVvPnhbsjMB3NQ%26yaw%3D89.43380671743888!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©板垣巴留（秋田書店）／SANDA製作委員会"
+    },
+    {
+      "placeId": "5bde9a1b-b57d-4ecb-b627-39ab1c26a11f",
+      "name": {
+        "kr": "하나야시키",
+        "en": "Asakusa Hanayashiki",
+        "ja": "浅草花やしき"
+      },
+      "geo": {
+        "latitude": 35.71536,
+        "longitude": 139.79489
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7153985,139.7948372,2a,90y,117.18h,100.56t/data=!3m7!1e1!3m5!1s8SKIUszmHMc3jPToiBF0Fg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.563861815282863%26panoid%3D8SKIUszmHMc3jPToiBF0Fg%26yaw%3D117.1783245506008!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©板垣巴留（秋田書店）／SANDA製作委員会"
+    },
+    {
+      "placeId": "6e082da7-a0bc-435b-aaa9-ef71cc47f28d",
+      "name": {
+        "ja": "市ヶ谷フィッシュセンター",
+        "en": "Ichigaya Fish Center"
+      },
+      "geo": {
+        "latitude": 35.69192,
+        "longitude": 139.73595
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6917524,139.7361766,3a,90y,325.46h,83.12t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID4qfrM1gE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HapWtI2hsZVUfrwee_zpONBNdaHa5pWdlUcNmNki_XFK5ee92rfnhn4UgpUh2B7FUUr1eC-jAor_sHzG_vfmo5F4z6Q3ogNRYmkJfF89RBbbeTOB6yK3gSDkWTiZS8SiLAqVUUnsA%3Dw900-h600-k-no-pi6.876333354513861-ya358.6943370572563-ro0-fo100!7i10240!8i5120?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©板垣巴留（秋田書店）／SANDA製作委員会"
+    },
+    {
+      "placeId": "ffdd6ba8-7d7d-44be-9c38-e56b876109cc",
+      "name": {
+        "en": "Tokyo Tower",
+        "kr": "도쿄 타워",
+        "ja": "東京タワー"
+      },
+      "geo": {
+        "latitude": 35.65848,
+        "longitude": 139.74631
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.658521,139.7463308,2a,90y,271.65h,142.57t/data=!3m7!1e1!3m5!1sa8FtOl0Uy-2LTz7sZsI7Cg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-52.57482018657157%26panoid%3Da8FtOl0Uy-2LTz7sZsI7Cg%26yaw%3D271.6539914959332!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©板垣巴留（秋田書店）／SANDA製作委員会"
+    }
+  ]
+}

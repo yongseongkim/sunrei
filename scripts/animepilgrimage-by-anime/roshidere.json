@@ -1,0 +1,233 @@
+{
+  "anime": {
+    "animeId": "unGiOzgI5kK54nQCTxtm",
+    "slug": "roshidere",
+    "title": {
+      "ja": "時々ボソッとロシア語でデレる隣のアーリャさん",
+      "kr": "가끔씩 툭하고 러시아어로 부끄러워하는 옆자리의 아랴 양",
+      "en": "Alya Sometimes Hides Her Feelings in Russian"
+    },
+    "author": {
+      "ja": [
+        "燦々SUN",
+        "ももこ"
+      ],
+      "en": [
+        "Sunsunsun",
+        "Momoco"
+      ],
+      "kr": [
+        "Sunsunsun",
+        "이승원"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "動画工房"
+      ],
+      "en": [
+        "Doga Kobo"
+      ]
+    }
+  },
+  "placeCount": 12,
+  "places": [
+    {
+      "placeId": "21f014ac-0b8c-4ee9-a7bb-af4805e191c2",
+      "name": {
+        "en": "Minamigawara Park",
+        "kr": "미나미가와라 공원",
+        "ja": "南河原公園"
+      },
+      "geo": {
+        "latitude": 35.53694,
+        "longitude": 139.68885
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/f8tz1tdGEvnrbiC36",
+      "copyright": "©Sunsunsun,Momoco/KADOKAWA/Alya-san Partners"
+    },
+    {
+      "placeId": "66172215-45ba-416d-927c-d6ae5d8035dd",
+      "name": {
+        "kr": "외교관의 집",
+        "en": "Home of a Diplomat",
+        "ja": "外交官の家（旧内田定槌邸）"
+      },
+      "geo": {
+        "latitude": 35.43666,
+        "longitude": 139.64336
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://maps.app.goo.gl/bw6RSoGk7eCY2mbR9",
+      "copyright": "©Sunsunsun,Momoco/KADOKAWA/Alya-san Partners"
+    },
+    {
+      "placeId": "741f0ca5-08cb-4629-a05d-a28786a83a5b",
+      "name": {
+        "ja": "ドトールコーヒーショップ 溝の口駅前店",
+        "en": "Doutor coffee shop Mizonokuchi-ekimae"
+      },
+      "geo": {
+        "latitude": 35.59991,
+        "longitude": 139.61218
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/oXuc94hhkfxXprUP9",
+      "copyright": "©Sunsunsun,Momoco/KADOKAWA/Alya-san Partners"
+    },
+    {
+      "placeId": "912ef2c5-8b7c-4452-8f29-e30dd5eb7be6",
+      "name": {
+        "ja": "ラゾーナ川崎プラザ",
+        "kr": "라조나 카와사키 플라자",
+        "en": "Lazona Kawasaki Plaza"
+      },
+      "geo": {
+        "latitude": 35.53304,
+        "longitude": 139.69514
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/ytFu5ghqGiQ1maix5",
+      "copyright": "©Sunsunsun,Momoco/KADOKAWA/Alya-san Partners"
+    },
+    {
+      "placeId": "a81b4eb3-15a4-4689-9513-ed8a7bd08b20",
+      "name": {
+        "en": "Otsuka-Nichome (Bus)",
+        "ja": "大塚二丁目(バス)"
+      },
+      "geo": {
+        "latitude": 35.71981,
+        "longitude": 139.73341
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://maps.app.goo.gl/rnbGpDqgFwUmFZxx8",
+      "copyright": "©Sunsunsun,Momoco/KADOKAWA/Alya-san Partners"
+    },
+    {
+      "placeId": "b27af81b-e273-463e-bcbb-5ba40adb38d1",
+      "name": {
+        "en": "Saint Marc Cafe - Mizonokuchi",
+        "ja": "サンマルクカフェ 溝の口店"
+      },
+      "geo": {
+        "latitude": 35.59984,
+        "longitude": 139.61269
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/URakcmFfNYwaCvJM7",
+      "copyright": "©Sunsunsun,Momoco/KADOKAWA/Alya-san Partners"
+    },
+    {
+      "placeId": "bb980c6d-b6c0-4e6a-859a-c516056505d7",
+      "name": {
+        "kr": "마리아쥬 프레르 긴자본점",
+        "en": "Mariage Frères Ginza Store",
+        "ja": "マリアージュ フレール 銀座本店"
+      },
+      "geo": {
+        "latitude": 35.67102,
+        "longitude": 139.76401
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://maps.app.goo.gl/oKL39tHafXM8Fog77",
+      "copyright": "©Sunsunsun,Momoco/KADOKAWA/Alya-san Partners"
+    },
+    {
+      "placeId": "bcea8a2b-dda7-4e98-9d0a-a37c7b97d850",
+      "name": {
+        "en": "Minamiazabu FLAT",
+        "ja": "南麻布ＦＬＡＴＳ"
+      },
+      "geo": {
+        "latitude": 35.64951,
+        "longitude": 139.73194
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://maps.app.goo.gl/g7SHM6zjfbjv8Vgm6",
+      "copyright": "©Sunsunsun,Momoco/KADOKAWA/Alya-san Partners"
+    },
+    {
+      "placeId": "ddb5fb00-fef2-4a55-8faf-18d16bd35b33",
+      "name": {
+        "en": "Jakusho-ji Temple",
+        "kr": "와카마츠 절",
+        "ja": "若松寺"
+      },
+      "geo": {
+        "latitude": 35.64884,
+        "longitude": 139.73282
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://maps.app.goo.gl/XX9EGznzVDowFR9Q8",
+      "copyright": "©Sunsunsun,Momoco/KADOKAWA/Alya-san Partners"
+    },
+    {
+      "placeId": "e7bf9d3c-efdd-4a91-a25a-bac8a1dab9ce",
+      "name": {
+        "ja": "テルル溝の口店",
+        "en": "Terurumizonokuchiten"
+      },
+      "geo": {
+        "latitude": 35.59975,
+        "longitude": 139.61309
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/xtgCaN2cyuAQ4Jmz6",
+      "copyright": "©Sunsunsun,Momoco/KADOKAWA/Alya-san Partners"
+    },
+    {
+      "placeId": "ec7be5ca-101a-4614-8141-f88e8b54baff",
+      "name": {
+        "ja": "パラカ 南麻布第３",
+        "en": "Paraca Minamiazabu #3"
+      },
+      "geo": {
+        "latitude": 35.64994,
+        "longitude": 139.73136
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://maps.app.goo.gl/jdPGJb6GpNvw1MHA7",
+      "copyright": "©Sunsunsun,Momoco/KADOKAWA/Alya-san Partners"
+    },
+    {
+      "placeId": "2dd51b59-9a24-44be-9eb3-86fa92d3829b",
+      "name": {
+        "en": "Kirari Deck",
+        "ja": "キラリデッキ"
+      },
+      "geo": {
+        "latitude": 35.59963,
+        "longitude": 139.61135
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/DXea6hWhngzTatSb7",
+      "copyright": "©Sunsunsun,Momoco/KADOKAWA/Alya-san Partners"
+    }
+  ]
+}

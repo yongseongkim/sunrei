@@ -1,0 +1,190 @@
+{
+  "anime": {
+    "animeId": "GvZRe6RQu5McETXnr5eT",
+    "slug": "another",
+    "title": {
+      "en": "Another"
+    },
+    "author": {
+      "kr": [
+        "아야츠지 유키토"
+      ],
+      "en": [
+        "Yukito Ayatsuji"
+      ],
+      "ja": [
+        "綾辻行人"
+      ]
+    },
+    "studio": {
+      "en": [
+        "P.A.WORKS"
+      ]
+    }
+  },
+  "placeCount": 10,
+  "places": [
+    {
+      "placeId": "1cd54e28-7397-4058-9492-c16e8f6e505a",
+      "name": {
+        "en": "Ganjokaku",
+        "ja": "巖浄閣（旧富山県立農学校本館）"
+      },
+      "geo": {
+        "latitude": 36.58853,
+        "longitude": 136.92906
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5883641,136.9290772,3a,65.1y,351.97h,99.91t/data=!3m7!1e1!3m5!1sgnMYCHi3LuuL4sNKM_FvPw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.91198185869564%26panoid%3DgnMYCHi3LuuL4sNKM_FvPw%26yaw%3D351.970351563373!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2012 綾辻行人・角川書店/｢Another｣製作委員会"
+    },
+    {
+      "placeId": "31a9b533-9dc3-492d-b935-32481be8dbc5",
+      "name": {
+        "ja": "洋風お好み焼き よっちゃん",
+        "en": "Western-style okonomiyaki Yotchan"
+      },
+      "geo": {
+        "latitude": 36.6368,
+        "longitude": 136.95145
+      },
+      "ep": null,
+      "type": "OVA",
+      "cityId": "JP-toyama-tonami",
+      "streetViewUrl": "https://www.google.com/maps/@36.6368729,136.9514858,3a,75y,211.2h,98.24t/data=!3m7!1e1!3m5!1s987UvmJVVGMnZxibtlZ_TQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.238994107369948%26panoid%3D987UvmJVVGMnZxibtlZ_TQ%26yaw%3D211.19844012707006!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2012 綾辻行人・角川書店/｢Another｣製作委員会"
+    },
+    {
+      "placeId": "5ecbde92-5ca1-49e8-9505-476acef87daf",
+      "name": {
+        "en": "Cafeteria Gamba! FUKU ",
+        "ja": "食堂ガンバ！福"
+      },
+      "geo": {
+        "latitude": 36.55926,
+        "longitude": 136.87505
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5612641,136.8769348,3a,15y,219.05h,91.85t/data=!3m7!1e1!3m5!1sxICSVp5pg3dO755BMvfo3Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.8534390216580618%26panoid%3DxICSVp5pg3dO755BMvfo3Q%26yaw%3D219.05028680439926!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2012 綾辻行人・角川書店/｢Another｣製作委員会"
+    },
+    {
+      "placeId": "74869b8a-90ee-48d8-9c8b-908a0f6404e1",
+      "name": {
+        "en": "gallery Torato-Fuku",
+        "ja": "gallery とらとふく"
+      },
+      "geo": {
+        "latitude": 36.55775,
+        "longitude": 136.87461
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5589569,136.8746774,3a,90y,83.38h,97.95t/data=!3m7!1e1!3m5!1srinRrTt8uJa3H2H-PvYUUA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.947996989408793%26panoid%3DrinRrTt8uJa3H2H-PvYUUA%26yaw%3D83.3816212734794!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2012 綾辻行人・角川書店/｢Another｣製作委員会"
+    },
+    {
+      "placeId": "77cda1f4-cfff-49d6-9d0d-b2eb3a90da6d",
+      "name": {
+        "en": "Mirage land",
+        "kr": "우오즈소우고우 공원 미라쥬란도",
+        "ja": "ミラージュランド"
+      },
+      "geo": {
+        "latitude": 36.80017,
+        "longitude": 137.38666
+      },
+      "ep": null,
+      "type": "OVA",
+      "cityId": "JP-toyama-uozu",
+      "streetViewUrl": "https://www.google.com/maps/place/Mirage+land/@36.8002405,137.3863272,3a,90y,357.37h,104.5t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICGuriOUw!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZiQMmZ5L0wKlcAOC8SJYkUroavkDjeDPHvjFJLTfldCr1KNpJ7tU9xkPxUH4bwVTTVmFc35bXgpkILfwbq2ki3MGnzYGWdoabEy_iV38bTWMObGyTC6CWkprFXYiZ7a3Jia2nT%3Dw900-h600-k-no-pi-14.500445686481285-ya357.3665956550024-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x5ff7a497ea435051:0xfac54766c4138c96!8m2!3d36.8002405!4d137.3863272!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F120hzg2c?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2012 綾辻行人・角川書店/｢Another｣製作委員会"
+    },
+    {
+      "placeId": "7f0cc97d-a809-4bc6-9374-50aab77f84ab",
+      "name": {
+        "en": "7-Eleven Nihonbashi T-CAT",
+        "ja": "セブン-イレブン 日本橋T-CAT店"
+      },
+      "geo": {
+        "latitude": 35.68137,
+        "longitude": 139.78648
+      },
+      "ep": null,
+      "type": "OVA",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6812159,139.7865885,3a,90y,132.19h,120.87t/data=!3m7!1e1!3m5!1smYjQ-uveJi9O_aYUlpMifQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-30.869102475899155%26panoid%3DmYjQ-uveJi9O_aYUlpMifQ%26yaw%3D132.19237831731334!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2012 綾辻行人・角川書店/｢Another｣製作委員会"
+    },
+    {
+      "placeId": "bd1a5def-28ec-4bc0-a181-d1332ee0ce8b",
+      "name": {
+        "ja": "閑乗寺公園",
+        "en": "Kanjoji Park"
+      },
+      "geo": {
+        "latitude": 36.55949,
+        "longitude": 136.98802
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5592799,136.9878841,3a,20y,23.36h,86.56t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDC_K6ylwE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZbpWYxxEy8PbeHkH2tfznMDz-Hr8WX4V5EtYgX5OcaG6ObPlKPG7910791uTaKYGnlQ32IqpXKjiTc4mbdkW2bABVgfBFqEFZNFqxBml3D8-GtO-NDAJAaEh9aWpoq051gasih%3Dw900-h600-k-no-pi3.444247076854751-ya70.35763715144941-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2012 綾辻行人・角川書店/｢Another｣製作委員会"
+    },
+    {
+      "placeId": "c70f979e-3183-4e5f-bb97-034a6f0d3769",
+      "name": {
+        "en": "Fukuno Station",
+        "kr": "후쿠노 역",
+        "ja": "福野駅"
+      },
+      "geo": {
+        "latitude": 36.58865,
+        "longitude": 136.92315
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5886573,136.9229475,3a,75y,107.58h,99.86t/data=!3m7!1e1!3m5!1sntNT9Jg8nTfTTWN0Offfnw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.860522949294378%26panoid%3DntNT9Jg8nTfTTWN0Offfnw%26yaw%3D107.5776281103913!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2012 綾辻行人・角川書店/｢Another｣製作委員会"
+    },
+    {
+      "placeId": "e1114b1e-9577-4bdd-853c-5dd7dd97e845",
+      "name": {
+        "ja": "八幡宮",
+        "en": "Hachimangu"
+      },
+      "geo": {
+        "latitude": 36.55826,
+        "longitude": 136.87507
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5584824,136.8744096,3a,47y,113.41h,90.69t/data=!3m7!1e1!3m5!1swhMro9RuoN2khIFrILLHxQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.687747906578025%26panoid%3DwhMro9RuoN2khIFrILLHxQ%26yaw%3D113.40905574824608!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2012 綾辻行人・角川書店/｢Another｣製作委員会"
+    },
+    {
+      "placeId": "f0a3e4bb-00d6-4501-b6a6-a227343e92a2",
+      "name": {
+        "en": "Shogawa-Goguchi Dam",
+        "ja": "庄川合口ダム（庄川用水合口ダム）"
+      },
+      "geo": {
+        "latitude": 36.5752,
+        "longitude": 136.99461
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-toyama-tonami",
+      "streetViewUrl": "https://www.google.com/maps/@36.5753235,136.9945077,3a,90y,100.18h,100.43t/data=!3m7!1e1!3m5!1s071s5rVn1eeV1m_5v2tg6A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.427873953100871%26panoid%3D071s5rVn1eeV1m_5v2tg6A%26yaw%3D100.18165957328637!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2012 綾辻行人・角川書店/｢Another｣製作委員会"
+    }
+  ]
+}

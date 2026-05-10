@@ -1,0 +1,190 @@
+{
+  "anime": {
+    "animeId": "PKagB1hxt8p8a39k8MVY",
+    "slug": "bleach-memories-of-nobody",
+    "title": {
+      "kr": "블리치 Memories of Nobody",
+      "en": "Bleach: Memories of Nobody"
+    },
+    "author": {
+      "en": [
+        "Tite Kubo"
+      ],
+      "kr": [
+        "쿠보 타이토"
+      ],
+      "ja": [
+        "久保帯人"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Pierrot"
+      ],
+      "ja": [
+        "ぴえろ"
+      ]
+    }
+  },
+  "placeCount": 10,
+  "places": [
+    {
+      "placeId": "0e5b5290-0ea7-4e88-93db-f73455aac448",
+      "name": {
+        "ja": "三井アウトレットパーク多摩南大沢駐車場",
+        "en": "Mitsui Outlet Park Tamaminamiosawa Parking Lot"
+      },
+      "geo": {
+        "latitude": 35.61499,
+        "longitude": 139.37635
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hachioji",
+      "streetViewUrl": "https://www.google.com/maps/@35.6153596,139.3771812,3a,75y,238.31h,97.26t/data=!3m7!1e1!3m5!1sTyt4pUH6T0huQ1tiaeCKww!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.258208372650429%26panoid%3DTyt4pUH6T0huQ1tiaeCKww%26yaw%3D238.31436083321591!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDEyNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©劇場版BLEACH製作委員会 2006"
+    },
+    {
+      "placeId": "268be3a8-2464-43ce-a285-0ba281af4192",
+      "name": {
+        "en": "Butter"
+      },
+      "geo": {
+        "latitude": 35.6153,
+        "longitude": 139.3789
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hachioji",
+      "streetViewUrl": "https://www.google.com/maps/@35.615204,139.3788187,3a,90y,222.14h,95.49t/data=!3m7!1e1!3m5!1s7QT-xI22BIGNk_iWjyQtwQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.494357605582692%26panoid%3D7QT-xI22BIGNk_iWjyQtwQ%26yaw%3D222.14078937961636!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDEyNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©劇場版BLEACH製作委員会 2006"
+    },
+    {
+      "placeId": "627bd1f4-bedb-48a9-a5dd-a11c2d2fa905",
+      "name": {
+        "en": "Kate Spade"
+      },
+      "geo": {
+        "latitude": 35.61502,
+        "longitude": 139.37881
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hachioji",
+      "streetViewUrl": "https://www.google.com/maps/@35.615204,139.3788187,3a,48.7y,181.69h,93.28t/data=!3m7!1e1!3m5!1s7QT-xI22BIGNk_iWjyQtwQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.2789200892584063%26panoid%3D7QT-xI22BIGNk_iWjyQtwQ%26yaw%3D181.6931697837345!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDEyNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©劇場版BLEACH製作委員会 2006"
+    },
+    {
+      "placeId": "640b0b52-d87d-4096-8069-53a08dc95ca5",
+      "name": {
+        "ja": "ファミリーマート パオレ南大沢店",
+        "en": "FamilyMart Paole Minami-Osawa"
+      },
+      "geo": {
+        "latitude": 35.6144,
+        "longitude": 139.37931
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hachioji",
+      "streetViewUrl": "https://www.google.com/maps/@35.6143724,139.3794409,3a,42.3y,301.65h,97.52t/data=!3m7!1e1!3m5!1skuSEvq_ePdBrSnXsOZG7ZQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.520462144904883%26panoid%3DkuSEvq_ePdBrSnXsOZG7ZQ%26yaw%3D301.6516815164255!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDEyNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©劇場版BLEACH製作委員会 2006"
+    },
+    {
+      "placeId": "6a555831-b46d-44e2-85d5-84640c90c07c",
+      "name": {
+        "en": "Ito-Yokado Minami-Osawa Store",
+        "ja": "イトーヨーカドー 南大沢店"
+      },
+      "geo": {
+        "latitude": 35.61334,
+        "longitude": 139.38019
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hachioji",
+      "streetViewUrl": "https://www.google.com/maps/@35.6133581,139.3801617,3a,75y,239.05h,94.12t/data=!3m7!1e1!3m5!1sI87wTOD_C2k7st61f-1tqg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.122744703149365%26panoid%3DI87wTOD_C2k7st61f-1tqg%26yaw%3D239.0523500238867!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDEyNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©劇場版BLEACH製作委員会 2006"
+    },
+    {
+      "placeId": "7d0503af-82d0-4981-a615-f05a3ef8023b",
+      "name": {
+        "ja": "美容室 Chocolat ショコラ",
+        "en": "Chocolat Chocolat Hair Salon"
+      },
+      "geo": {
+        "latitude": 35.6139,
+        "longitude": 139.38022
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hachioji",
+      "streetViewUrl": "https://www.google.com/maps/@35.6138564,139.3802205,3a,90y,2.89h,121.36t/data=!3m7!1e1!3m5!1shZ5mxImUNCfrXhhhWUHYPQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-31.36357399590608%26panoid%3DhZ5mxImUNCfrXhhhWUHYPQ%26yaw%3D2.88510742532245!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDEyNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©劇場版BLEACH製作委員会 2006"
+    },
+    {
+      "placeId": "a7d6057f-ed4e-4428-8eb8-c33a37094da2",
+      "name": {
+        "en": "Minami-Osawa No. 2 Parking Lot",
+        "ja": "南大沢第２駐車場"
+      },
+      "geo": {
+        "latitude": 35.61232,
+        "longitude": 139.37873
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hachioji",
+      "streetViewUrl": "https://www.google.com/maps/@35.6122702,139.3785942,3a,40.7y,51.29h,92.54t/data=!3m7!1e1!3m5!1ss7DlnpSZ5SeLziPI0Z-1wA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.544073392031379%26panoid%3Ds7DlnpSZ5SeLziPI0Z-1wA%26yaw%3D51.293269679027475!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDEyNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©劇場版BLEACH製作委員会 2006"
+    },
+    {
+      "placeId": "d1ebe0a2-1ece-42d1-b74f-ada68885096f",
+      "name": {
+        "ja": "南大沢警察署 南大沢駅前交番",
+        "en": "Minamiosawa Station Police Box"
+      },
+      "geo": {
+        "latitude": 35.61317,
+        "longitude": 139.38032
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hachioji",
+      "streetViewUrl": "https://www.google.com/maps/@35.6131061,139.3801869,3a,75y,236.88h,98.87t/data=!3m7!1e1!3m5!1s4LKdSSIGkgBQSRrSeKegfg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.866433009400552%26panoid%3D4LKdSSIGkgBQSRrSeKegfg%26yaw%3D236.8795051701044!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDEyNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©劇場版BLEACH製作委員会 2006"
+    },
+    {
+      "placeId": "e6b1f885-da50-47f1-bbb5-a02252cac314",
+      "name": {
+        "en": "Minami-Osawa Station Taxi Stand",
+        "ja": "南大沢駅前タクシー乗り場"
+      },
+      "geo": {
+        "latitude": 35.61383,
+        "longitude": 139.38041
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hachioji",
+      "streetViewUrl": "https://www.google.com/maps/@35.6138811,139.3802715,3a,48.8y,115.46h,119.12t/data=!3m7!1e1!3m5!1swTrDCYmIttRC4-09I9r_aQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-29.124580274138367%26panoid%3DwTrDCYmIttRC4-09I9r_aQ%26yaw%3D115.45782138505562!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDEyNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©劇場版BLEACH製作委員会 2006"
+    },
+    {
+      "placeId": "f060d957-6c1f-45e4-b3e4-4159bf26ec67",
+      "name": {
+        "en": "Galleria Yugidai 2 Bike Locker",
+        "ja": "ガレリア・ユギ第2駐輪場"
+      },
+      "geo": {
+        "latitude": 35.61225,
+        "longitude": 139.37844
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hachioji",
+      "streetViewUrl": "https://www.google.com/maps/@35.6120284,139.3786801,3a,73.2y,320.85h,96.57t/data=!3m7!1e1!3m5!1sp3hxu6vQqT3Bt4M49gLsBQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.571242531626453%26panoid%3Dp3hxu6vQqT3Bt4M49gLsBQ%26yaw%3D320.85217654368256!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDEyNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©劇場版BLEACH製作委員会 2006"
+    }
+  ]
+}

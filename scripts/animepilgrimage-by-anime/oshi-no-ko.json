@@ -1,0 +1,495 @@
+{
+  "anime": {
+    "animeId": "YKzUE2kxQL1P1ur9nflL",
+    "slug": "oshi-no-ko",
+    "title": {
+      "ja": "【推しの子】",
+      "kr": "【최애의 아이】",
+      "en": "Oshi no Ko"
+    },
+    "author": {
+      "ja": [
+        "赤坂アカ",
+        "横槍メンゴ"
+      ],
+      "en": [
+        "Aka Akasaka",
+        "Mengo Yokoyar"
+      ],
+      "kr": [
+        "아카사카 아카",
+        "요코야리 멩고"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "動画工房"
+      ],
+      "en": [
+        "Doga Kobo"
+      ]
+    }
+  },
+  "placeCount": 28,
+  "places": [
+    {
+      "placeId": "0ea92196-2d74-4c52-9e34-2d837623affe",
+      "name": {
+        "kr": "쿠시카츠 타나카 신주쿠산초메점",
+        "ja": "串カツ田中 新宿3丁目店",
+        "en": "Kushikatsu Tanaka Shinjukusanchome"
+      },
+      "geo": {
+        "latitude": 35.69189,
+        "longitude": 139.706
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://maps.app.goo.gl/P6b5NfhBgfqzuA3H8",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "0fa21c0c-37b3-4452-85a5-096f7bb1f8c2",
+      "name": {
+        "en": "Shin-Meguro Tokyu Building",
+        "ja": "新目黒東急ビル"
+      },
+      "geo": {
+        "latitude": 35.63466,
+        "longitude": 139.71423
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/vz93s8eCnZaZ3PPv5",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "2066164d-8924-4c25-9a65-bf8ce352383f",
+      "name": {
+        "en": "Dendo Square Park",
+        "kr": "덴도 광장 공원",
+        "ja": "田道広場公園"
+      },
+      "geo": {
+        "latitude": 35.63662,
+        "longitude": 139.70866
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/tCfXzH7KSpLLaWr29",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "2085e78b-c96d-4998-acb6-e8180588d08e",
+      "name": {
+        "ja": "アランド目黒",
+        "en": "Hotel Aland"
+      },
+      "geo": {
+        "latitude": 35.6365,
+        "longitude": 139.71436
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/6zVMA3FbPVsZRVfZ7",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "2182f05d-b9fa-45bf-807c-9a2104da5c3c",
+      "name": {
+        "en": "SKY STAGE"
+      },
+      "geo": {
+        "latitude": 35.62033,
+        "longitude": 139.77861
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://maps.app.goo.gl/XNVfdyzuXMPmeVAN8",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "31929e63-0f5f-4ab3-922f-5f70b65ce0ca",
+      "name": {
+        "ja": "お台場海浜公園の展望デッキ",
+        "en": "Observation deck at Odaiba Seaside Park"
+      },
+      "geo": {
+        "latitude": 35.62763,
+        "longitude": 139.77114
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://maps.app.goo.gl/sqffxqKNkzuEUigS9",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "3455d128-4bc0-46ff-93aa-b061d764f1d1",
+      "name": {
+        "kr": "스타벅스 시부야 츠타야점",
+        "en": "Starbucks Coffee - Shibuya Tsutaya",
+        "ja": "スターバックス コーヒー SHIBUYA TSUTAYA 2F店"
+      },
+      "geo": {
+        "latitude": 35.659783,
+        "longitude": 139.70034
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/WPL5FUixbKAB1L287",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "3529bc51-c52d-4940-8d41-80121d191ebb",
+      "name": {
+        "kr": "일본 국회도서관",
+        "en": "National Diet Library",
+        "ja": "国立国会図書館"
+      },
+      "geo": {
+        "latitude": 35.67873,
+        "longitude": 139.74431
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/QwXVqmQCzuDstdgs7",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "3ddcca92-072c-467e-a2bd-6ea2176c8010",
+      "name": {
+        "en": "RAWLIFE Jiyugaoka",
+        "ja": "RAWLIFE 自由が丘"
+      },
+      "geo": {
+        "latitude": 35.6066,
+        "longitude": 139.66877
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://maps.app.goo.gl/VYw5MbxW6YXiBofp9",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "40bc845c-bcb4-4177-9255-a1bd79658fb9",
+      "name": {
+        "en": "Ebisuminami-2 Park",
+        "kr": "에비스미나미2 공원",
+        "ja": "恵比寿南二公園"
+      },
+      "geo": {
+        "latitude": 35.64364,
+        "longitude": 139.70844
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/7uk1H5J7aRDDdGVR7",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "426d8a97-e44e-4b9a-97e5-2564d281c0b9",
+      "name": {
+        "en": "Meguro Eki mae (Bus)",
+        "kr": "메구로에키마에 (버스)",
+        "ja": "目黒駅前 (バス)"
+      },
+      "geo": {
+        "latitude": 35.63366,
+        "longitude": 139.71519
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/gj6LFZHSZCxNpq6a6",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "53e09228-3fce-4158-a772-c356b0b0273d",
+      "name": {
+        "en": "Odaiba Aomi Area R Sector",
+        "ja": "青海R地区"
+      },
+      "geo": {
+        "latitude": 35.62348,
+        "longitude": 139.77793
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://maps.app.goo.gl/w9UN8LvRfdT1z1GH9",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "56eda4a4-edc7-4b6b-821e-f6e8a6e893b3",
+      "name": {
+        "en": "atré Akihabara 1",
+        "kr": "아트레 아키하바라 1",
+        "ja": "アトレ秋葉原1"
+      },
+      "geo": {
+        "latitude": 35.69823,
+        "longitude": 139.77227
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/DN1iEXBLZ1z8rokp6",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "62a7c796-5b01-464d-84ad-2bb0e5e5b29a",
+      "name": {
+        "ja": "中目黒小前歩道橋",
+        "en": "Nakamegurokozenhodo Bridge"
+      },
+      "geo": {
+        "latitude": 35.64021,
+        "longitude": 139.69865
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/BWkzDxFwhasuE6Py5",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "74f0528f-42e3-47c3-8ac8-02280d3bc5ae",
+      "name": {
+        "ja": "恵比寿ガーデンプレイス",
+        "kr": "에비스 가든 플레이스",
+        "en": "Yebisu Garden Place"
+      },
+      "geo": {
+        "latitude": 35.64325,
+        "longitude": 139.71363
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/xwRpQXSBgtajWJ1b9",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "791c1765-c029-43eb-8821-c154bd536ee6",
+      "name": {
+        "en": "Cocokara Fine Meguro",
+        "ja": "ココカラファイン薬局目黒店付近"
+      },
+      "geo": {
+        "latitude": 35.63435,
+        "longitude": 139.71122
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/J7w8PV7ieKafewzD8",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "7a3dcbc7-7682-4ae1-8375-5d4df312ee58",
+      "name": {
+        "ja": "焼肉ぽんが目黒本店",
+        "kr": "야키니쿠 폰가 메구로본점",
+        "en": "Yakiniku Ponga Meguro"
+      },
+      "geo": {
+        "latitude": 35.63547,
+        "longitude": 139.71486
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/iJxkgQra9mqmtDeF9",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "800b8eff-c42a-476f-b7e3-78e8120b1187",
+      "name": {
+        "en": "Beer Pub Scent",
+        "ja": "目黒バー BeerPub SCENT"
+      },
+      "geo": {
+        "latitude": 35.63448,
+        "longitude": 139.71156
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/PwHcQdeAsmwAjhak9",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "82db38ef-2ef2-4342-816e-38da44513d57",
+      "name": {
+        "ja": "カラオケ館 自由が丘店",
+        "en": "Karaoke Kan Jiyugaoka"
+      },
+      "geo": {
+        "latitude": 35.60763,
+        "longitude": 139.66741
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/CwxkZ1nMtvsGAAkc7",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "95854a90-8d1b-4c1d-8414-7965589ec010",
+      "name": {
+        "ja": "フジテレビ 湾岸スタジオ",
+        "kr": "후지테레비 완간 스튜디오",
+        "en": "Fuji Television - Wangan Studio"
+      },
+      "geo": {
+        "latitude": 35.62123,
+        "longitude": 139.77888
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://maps.app.goo.gl/9RSCWKxyA2RbKs1o7",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "9a8f937f-46e9-4289-9ea5-1d3570e8ddf5",
+      "name": {
+        "en": "Kichijoji Station North Exit Front Plaza",
+        "ja": "吉祥寺駅北口駅前広場"
+      },
+      "geo": {
+        "latitude": 35.70338,
+        "longitude": 139.58048
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://maps.app.goo.gl/neuVn8RMAkXTqq2q6",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "a2f9cece-03f0-4782-a5dd-0d87a67850bf",
+      "name": {
+        "en": "MFPR Meguro Tower",
+        "ja": "ＭＦＰＲ目黒タワー"
+      },
+      "geo": {
+        "latitude": 35.63519,
+        "longitude": 139.70953
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/W1PotaGTXyZA7WDT6",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "c23d2409-6cac-414f-9196-a606166d7a0f",
+      "name": {
+        "ja": "セダー ザ チョップハウス&バー",
+        "en": "CEDAR THE CHOP HOUSE & BAR"
+      },
+      "geo": {
+        "latitude": 35.66376,
+        "longitude": 139.73142
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://maps.app.goo.gl/hwNz6E74gKRJPVk79",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "cdda35f5-7551-4338-9996-adbc14b8105e",
+      "name": {
+        "ja": "ファミリーマート 渋谷公園通り店",
+        "en": "FamilyMart Shibuya Koen-dori store"
+      },
+      "geo": {
+        "latitude": 35.66297,
+        "longitude": 139.69918
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/LqeCDyGCY41iGT2p9",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "ee6b3a50-7745-4be1-bbbe-e3640cf281e2",
+      "name": {
+        "kr": "다이바시티 도쿄프라자",
+        "ja": "ダイバーシティ東京 プラザ",
+        "en": "DiverCity Tokyo Plaza"
+      },
+      "geo": {
+        "latitude": 35.6243,
+        "longitude": 139.77463
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://maps.app.goo.gl/dZCk3TbFxrokav8N9",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "f54b6340-4876-4613-81ab-30be2ca2df4b",
+      "name": {
+        "ja": "ドエルアルス目黒",
+        "en": "Doel Ars Meguro"
+      },
+      "geo": {
+        "latitude": 35.63409,
+        "longitude": 139.71152
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/aHZmwPQCCpPTept5A",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "f5952a88-1820-432a-82fe-4d0e4fdcb869",
+      "name": {
+        "ja": "秋葉原ZEST",
+        "en": "Akihabara ZEST"
+      },
+      "geo": {
+        "latitude": 35.70036,
+        "longitude": 139.76982
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/BL8MJb8pCXiGRUCH7",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "fd631b0d-61f6-4d1a-9667-572f526f5722",
+      "name": {
+        "ja": "目黒駅前 (バス)",
+        "en": "Meguro Eki mae (Bus)",
+        "kr": "메구로에키마에 (버스)"
+      },
+      "geo": {
+        "latitude": 35.63373,
+        "longitude": 139.71487
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/9nSMypSiV6gYsfyT9",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    }
+  ]
+}

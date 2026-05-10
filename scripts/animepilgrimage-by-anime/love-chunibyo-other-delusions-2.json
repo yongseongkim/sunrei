@@ -1,0 +1,1111 @@
+{
+  "anime": {
+    "animeId": "bYiMGbhWsrGctQyqWXdr",
+    "slug": "love-chunibyo-other-delusions-2",
+    "title": {
+      "ja": "中二病でも恋がしたい！戀",
+      "kr": "중2병이라도 사랑이 하고 싶어! 연",
+      "en": "Love, Chunibyo & Other Delusions: Heart Throb"
+    },
+    "author": {
+      "kr": [
+        "토라코"
+      ],
+      "en": [
+        "Torako"
+      ],
+      "ja": [
+        "虎虎"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Kyoto Animation"
+      ]
+    }
+  },
+  "placeCount": 66,
+  "places": [
+    {
+      "placeId": "01aec2fe-ce44-4f75-bf82-62ed2c8eb6c1",
+      "name": {
+        "ja": "京都水族館",
+        "kr": "교토수족관",
+        "en": "Kyoto Aquarium"
+      },
+      "geo": {
+        "latitude": 34.9876,
+        "longitude": 135.74711
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9875448,135.7470086,2a,90y,45.13h,110.56t/data=!3m7!1e1!3m5!1sNHXp15YOiF8pNyWtYylPgw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-20.560822483718013%26panoid%3DNHXp15YOiF8pNyWtYylPgw%26yaw%3D45.13471775570655!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "04e0ef9d-7ba7-4952-8380-8c6578833a5a",
+      "name": {
+        "ja": "ゆうちょ銀行 鹿児島店",
+        "en": "Japan Post Bank Kagoshima Branch"
+      },
+      "geo": {
+        "latitude": 31.59443,
+        "longitude": 130.55478
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5945109,130.5547083,3a,90y,108.1h,109.39t/data=!3m7!1e1!3m5!1suU3icrd9ofPlzk18sRJtTA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-19.38525162603844%26panoid%3DuU3icrd9ofPlzk18sRJtTA%26yaw%3D108.09973117830332!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "05ae85cc-2012-4c5d-ba68-fffc5b19a665",
+      "name": {
+        "en": "Setahigashi City Center",
+        "ja": "瀬田東市民センター"
+      },
+      "geo": {
+        "latitude": 34.98446,
+        "longitude": 135.93594
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9843885,135.936229,3a,49.6y,275.27h,94.98t/data=!3m7!1e1!3m5!1sm-m5A8WrQdOpiT1Ix4QPhQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.978808925925975%26panoid%3Dm-m5A8WrQdOpiT1Ix4QPhQ%26yaw%3D275.2688313330939!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "08e3df1e-519a-40e2-b026-66cafee6f669",
+      "name": {
+        "ja": "びわこの千松",
+        "en": "Lake Biwa senmatsu"
+      },
+      "geo": {
+        "latitude": 34.99551,
+        "longitude": 135.90969
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-shiga-kusatsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9955427,135.9098813,3a,75y,242.62h,97.05t/data=!3m7!1e1!3m5!1snwwF2qFs00F81o2ClrNbnw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.050371302986335%26panoid%3DnwwF2qFs00F81o2ClrNbnw%26yaw%3D242.6201416465469!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "0d91b709-9d9f-4914-be7c-24f36a739333",
+      "name": {
+        "en": "Toray Engineering West Japan, Inc.",
+        "ja": "東レエンジニアリング西日本株式会社"
+      },
+      "geo": {
+        "latitude": 34.97912,
+        "longitude": 135.88959
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9790616,135.889679,3a,90y,294.7h,98.98t/data=!3m7!1e1!3m5!1sr29h6jrbkRRE6MD5lGsG2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.980845000390445%26panoid%3Dr29h6jrbkRRE6MD5lGsG2A%26yaw%3D294.69675113882687!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "14273d2d-4841-4aac-a5f6-9e5b0f161cda",
+      "name": {
+        "kr": "워터프론트 파크",
+        "ja": "ウォーターフロントパーク",
+        "en": "Waterfront Park"
+      },
+      "geo": {
+        "latitude": 31.59408,
+        "longitude": 130.56376
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5940753,130.5637191,3a,90y,34.61h,105.12t/data=!3m7!1e1!3m5!1sehHhwRsvHWGBgLne-Wlr4A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.121108359457168%26panoid%3DehHhwRsvHWGBgLne-Wlr4A%26yaw%3D34.60944281929147!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "144e4b05-73cc-43c5-9cd7-d232f7816f25",
+      "name": {
+        "en": "Karahashi Park",
+        "ja": "唐橋公園"
+      },
+      "geo": {
+        "latitude": 34.97668,
+        "longitude": 135.90828
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9781101,135.907407,3a,16.1y,152.88h,89.29t/data=!3m7!1e1!3m5!1sPUQINWHm1n3d6uusqUrErg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.7088867813806274%26panoid%3DPUQINWHm1n3d6uusqUrErg%26yaw%3D152.87787250674734!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "18c99b34-d65a-436d-843b-8f8b5709e75a",
+      "name": {
+        "kr": "시로야마공원 전망대",
+        "en": "Shiroyama Park Observation Deck",
+        "ja": "城山公園展望台"
+      },
+      "geo": {
+        "latitude": 31.59636,
+        "longitude": 130.55026
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5964161,130.5502636,3a,90y,55.37h,83.51t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgICE9u3WXA!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZ_dptVN3oosxJPuwp0QKAF3fU4FnCJSIYob4RPJbxE6FP2MKDGrF5Ce_fDM3CaKjzYtyHT1ZeD32cDwW-vCBZOMUUcKwYzSWVXwzTubBPWorLMKqqzImTGFVbu1KGiJmw57VY%3Dw900-h600-k-no-pi6.492435858878181-ya181.068264154571-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "2795571d-1cf5-426d-aa8b-cc16db79aaa3",
+      "name": {
+        "en": "Karahashi Park",
+        "ja": "唐橋公園"
+      },
+      "geo": {
+        "latitude": 34.98005,
+        "longitude": 135.90744
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9803503,135.9074637,3a,90y,185.07h,96.4t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICKjbbhNA!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HbC0yiT82yOz8sL4lTav4Y7SDZBU0uT2QmS9OYniMwpzNbU9y5UBP2Ez3hiSx70hi4S1_kGTWSNIQfEVubwlG6t4g3aai8xihLcokIwHUfj-O2n8QpIud-Z6yIDhoNEIJ1RdW8Z%3Dw900-h600-k-no-pi-6.404557991935434-ya355.0676808684037-ro0-fo100!7i8000!8i4000?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "2abe0212-3982-49b0-a6a3-00edf4385cc8",
+      "name": {
+        "en": "Keihan-Ishiyama Station",
+        "ja": "京阪石山駅",
+        "kr": "게이한이시야마 역"
+      },
+      "geo": {
+        "latitude": 34.97968,
+        "longitude": 135.89914
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/place/Keihan-Ishiyama+Station/@34.9796003,135.8996638,3a,90y,341.1h,92.2t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDRt6fPMA!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HbYVhTVgvNXdSvgLnc0xL7wT1ihoexA01UAALA5VwLTdFmv8dI1P_5ql72IO75nvqitLwrd4TUVk0HHDHVbYqbVWV_MFhVP8YUO8kBIJcdNstE680p9qdrEjohQlPWM5OHpFcw%3Dw900-h600-k-no-pi-2.204684182840154-ya340.10045697237007-ro0-fo100!7i11008!8i5504!4m9!3m8!1s0x60010d53d16341ab:0xda8b036156fa086f!8m2!3d34.9796003!4d135.8996638!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F122n5cg9?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "2daad4b7-b43d-454b-ac54-dfa6a807005d",
+      "name": {
+        "ja": "京都水族館",
+        "en": "Kyoto Aquarium",
+        "kr": "교토수족관"
+      },
+      "geo": {
+        "latitude": 34.98763,
+        "longitude": 135.74851
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/place/Kyoto+Aquarium/@34.9877364,135.7485391,3a,90y,1.2h,105.74t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDEpP73NQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAC9h4nrB4unSQ_Puq96gG8nDbx8LgtolSfU8KaZPzKwtq5WSekWAisNcGDt7kEo62xWQjoZDfqV3zehiZN1FUWHGklQH5jMfxaqZ14PTBb_BhyP5TVqZ-LDq8w8sxcFLYwIprYrCbMki%3Dw900-h600-k-no-pi-15.738136334353882-ya136.20229333587946-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x6001061c0b78dc5d:0x5417da24aac74659!8m2!3d34.987516!4d135.7472123!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F15dqlmlk?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "300bbb5e-a83a-4810-929c-a9b4f3585001",
+      "name": {
+        "kr": "가고시마 중앙공원",
+        "ja": "中央公園",
+        "en": "Chuo Park"
+      },
+      "geo": {
+        "latitude": 31.59445,
+        "longitude": 130.55415
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.594402,130.5542871,3a,90y,282.01h,97.5t/data=!3m7!1e1!3m5!1s3gB8O186J5gy16Qck26DQg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.499279602130343%26panoid%3D3gB8O186J5gy16Qck26DQg%26yaw%3D282.01027923004347!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "3955fecd-59db-4633-8e80-87b3622039a8",
+      "name": {
+        "ja": "西郷隆盛銅像",
+        "en": "Statue of Saigo Takamori",
+        "kr": "사이고 다카모리 동상"
+      },
+      "geo": {
+        "latitude": 31.5951,
+        "longitude": 130.5539
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5951403,130.5538133,3a,64.3y,295.83h,109.53t/data=!3m7!1e1!3m5!1s9aDfSPiuQeyJLKHctuMV9A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-19.52676269573169%26panoid%3D9aDfSPiuQeyJLKHctuMV9A%26yaw%3D295.82959368021505!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "3980edcd-621f-4bbf-ae0c-e32403646eab",
+      "name": {
+        "en": "Yoshinogari Historical Park",
+        "kr": "요시노가리 유적",
+        "ja": "吉野ヶ里歴史公園"
+      },
+      "geo": {
+        "latitude": 33.32389,
+        "longitude": 130.38709
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saga-yoshinogari",
+      "streetViewUrl": "https://www.google.com/maps/@33.3238929,130.3871812,3a,48.7y,319.59h,86.22t/data=!3m7!1e1!3m5!1sXoJkYAbw8cqKotroKh8Rmg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D3.77530842834409%26panoid%3DXoJkYAbw8cqKotroKh8Rmg%26yaw%3D319.585644612666!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "39ca64a7-b20f-4dab-bdfa-8405cf9baaad",
+      "name": {
+        "ja": "南九州調剤薬局",
+        "en": "Minamikyushuchozai Pharmacy"
+      },
+      "geo": {
+        "latitude": 31.59806,
+        "longitude": 130.55859
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5980606,130.558695,3a,90y,129.82h,95.59t/data=!3m7!1e1!3m5!1s2kHzPhNdcfi80I-ewHsc2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.588611277827582%26panoid%3D2kHzPhNdcfi80I-ewHsc2A%26yaw%3D129.81565100515232!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "3a4d2d49-acf2-4ea6-a7b4-296b555180a8",
+      "name": {
+        "ja": "草津市立図書館",
+        "en": "Kusatsushi Public Library"
+      },
+      "geo": {
+        "latitude": 35.01951,
+        "longitude": 135.951
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-shiga-kusatsu",
+      "streetViewUrl": "https://www.google.com/maps/@35.0194661,135.9515859,3a,75y,274.21h,101.11t/data=!3m7!1e1!3m5!1sDjEd5o337-mpGQGnb6344A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.111908071204411%26panoid%3DDjEd5o337-mpGQGnb6344A%26yaw%3D274.21050751915146!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "3c7770dd-a881-4cef-95aa-fd9ea650ba5a",
+      "name": {
+        "ja": "城山公園",
+        "kr": "시로야마 공원",
+        "en": "Shiroyama Park"
+      },
+      "geo": {
+        "latitude": 31.5978,
+        "longitude": 130.55155
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5978677,130.5516448,3a,90y,344.46h,90.2t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICE9r3_Bw!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HbqUn1UeqVIFL8A8h9rDiWEGwTdD87kMgU7rGtI9e0qhwY02XoexCs_FHeFUgmhB4V0m_zewJXaeT2x3p9nosqbVVqIzTQUNyy4Pc9p4wDlvJeLiGnxSnRmPVv7sTQ42uZSFvg5%3Dw900-h600-k-no-pi-0.20162810502414175-ya130.64192905686537-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "43192b72-20ed-4716-a017-fb48d4fe17f2",
+      "name": {
+        "ja": "唐橋公園",
+        "en": "Karahashi Park"
+      },
+      "geo": {
+        "latitude": 34.97986,
+        "longitude": 135.90747
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9803503,135.9074637,3a,90y,189.04h,97.62t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICKjbbhNA!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HbC0yiT82yOz8sL4lTav4Y7SDZBU0uT2QmS9OYniMwpzNbU9y5UBP2Ez3hiSx70hi4S1_kGTWSNIQfEVubwlG6t4g3aai8xihLcokIwHUfj-O2n8QpIud-Z6yIDhoNEIJ1RdW8Z%3Dw900-h600-k-no-pi-7.619313192465782-ya359.0362372782665-ro0-fo100!7i8000!8i4000?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "4bdd976f-8177-4271-bdaa-46ecd77d4c78",
+      "name": {
+        "en": "South inner enclosure, North watchtower",
+        "ja": "南内郭 北物見櫓",
+        "kr": "남내곽 북망루"
+      },
+      "geo": {
+        "latitude": 33.32537,
+        "longitude": 130.38452
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saga-yoshinogari",
+      "streetViewUrl": "https://www.google.com/maps/@33.325274,130.3845695,3a,69.4y,347.34h,108.48t/data=!3m7!1e1!3m5!1slk5hvekxomODpElVArzVBg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.48245006179573%26panoid%3Dlk5hvekxomODpElVArzVBg%26yaw%3D347.3416964879017!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "4c0506db-ea99-471b-9750-bd3ab3660693",
+      "name": {
+        "en": "Kagoshima Medical Center",
+        "ja": "国立病院機構 鹿児島医療センター"
+      },
+      "geo": {
+        "latitude": 31.59898,
+        "longitude": 130.55642
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5989661,130.5564959,3a,90y,305h,100.95t/data=!3m7!1e1!3m5!1sGvV1zEuOsKOtOqYLGSCdSQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.952341712589202%26panoid%3DGvV1zEuOsKOtOqYLGSCdSQ%26yaw%3D304.99948012300297!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "4c4b428c-deb1-4f1a-a264-b9c2f00ab224",
+      "name": {
+        "en": "Houseboat Shiki",
+        "ja": "屋形船 四季"
+      },
+      "geo": {
+        "latitude": 34.97803,
+        "longitude": 135.90609
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9780607,135.9063629,3a,46.4y,270.09h,92.59t/data=!3m7!1e1!3m5!1sfmIZgf4BizXwCpNpoZCsCg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.586563171712143%26panoid%3DfmIZgf4BizXwCpNpoZCsCg%26yaw%3D270.08814935599173!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "4cf8e8c6-bcef-4a06-ab38-0bf963bf6dd6",
+      "name": {
+        "ja": "びわこの千松",
+        "en": "Lake Biwa senmatsu"
+      },
+      "geo": {
+        "latitude": 34.99672,
+        "longitude": 135.90977
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-shiga-kusatsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9967911,135.9098652,3a,90y,216.19h,108.51t/data=!3m7!1e1!3m5!1soK1_8hA5ovVryJODTdlpcw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.514788192175416%26panoid%3DoK1_8hA5ovVryJODTdlpcw%26yaw%3D216.18542599795896!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "4fa10f56-ed73-4d5c-a0e2-b10c572e98db",
+      "name": {
+        "ja": "ファミリーマート 玉野浦店",
+        "en": "FamilyMart Tamanoura"
+      },
+      "geo": {
+        "latitude": 34.98273,
+        "longitude": 135.90823
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9827736,135.9085762,3a,26.8y,259.93h,91.19t/data=!3m7!1e1!3m5!1sPiRa-Rm0peONCjest7jxew!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.1916583062799475%26panoid%3DPiRa-Rm0peONCjest7jxew%26yaw%3D259.9262221430158!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "504c9266-e7cb-4a77-9d87-cc9f2e35b03e",
+      "name": {
+        "kr": "히라카타 파크",
+        "en": "Hirakata Park",
+        "ja": "ひらかたパーク"
+      },
+      "geo": {
+        "latitude": 34.80848,
+        "longitude": 135.63972
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-osaka-hirakata",
+      "streetViewUrl": "https://www.google.com/maps/@34.8085434,135.6397741,3a,90y,199.25h,105.32t/data=!3m7!1e1!3m5!1sivWUB3eCmj7J6avwBDivpg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.321823402537206%26panoid%3DivWUB3eCmj7J6avwBDivpg%26yaw%3D199.2482440330385!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "549778cb-6826-4247-94c3-5d2265364a98",
+      "name": {
+        "en": "Karahashi Park",
+        "ja": "唐橋公園"
+      },
+      "geo": {
+        "latitude": 34.97606,
+        "longitude": 135.90838
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9760889,135.9086671,3a,73y,276.93h,88.63t/data=!3m7!1e1!3m5!1smkoksqE1crrctFoiq_r9Rg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.3663801621116534%26panoid%3DmkoksqE1crrctFoiq_r9Rg%26yaw%3D276.9347399243185!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "549edfba-3834-4fec-80c9-3bc5123944df",
+      "name": {
+        "en": "Karahashi Park",
+        "ja": "唐橋公園"
+      },
+      "geo": {
+        "latitude": 34.97756,
+        "longitude": 135.90836
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9775607,135.9087383,3a,31.8y,267.8h,90.94t/data=!3m7!1e1!3m5!1sk9vct8PEKSfVSWIihcu9JA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.9446234174745598%26panoid%3Dk9vct8PEKSfVSWIihcu9JA%26yaw%3D267.8024484723542!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "5bfc38db-2020-474a-a434-034284d55c12",
+      "name": {
+        "ja": "容輝湯",
+        "en": "Yoki-yu"
+      },
+      "geo": {
+        "latitude": 34.97491,
+        "longitude": 135.90014
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9748916,135.8999414,3a,64.3y,83.06h,93.6t/data=!3m7!1e1!3m5!1sPmRTCZ8w0vcg-yx_rJGn-g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.5992193620348303%26panoid%3DPmRTCZ8w0vcg-yx_rJGn-g%26yaw%3D83.06468687034304!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "602a4659-5f4b-432d-ade5-63a09e94ae53",
+      "name": {
+        "ja": "富士見市民温水プール",
+        "en": "Fujimi Civic Heated Swimming Pool"
+      },
+      "geo": {
+        "latitude": 34.98237,
+        "longitude": 135.8855
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9825017,135.8856098,3a,75y,223.27h,98.65t/data=!3m7!1e1!3m5!1sJ9cgj3vi2Os2xjKeel9VZQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.648893827852817%26panoid%3DJ9cgj3vi2Os2xjKeel9VZQ%26yaw%3D223.26713075289294!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "61731c78-b9dd-4c4c-85bc-8b1fd35e9e31",
+      "name": {
+        "ja": "京阪石山駅",
+        "kr": "게이한이시야마 역",
+        "en": "Keihan-Ishiyama Station"
+      },
+      "geo": {
+        "latitude": 34.97947,
+        "longitude": 135.89998
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9795062,135.90018,3a,49.4y,257.13h,91.54t/data=!3m7!1e1!3m5!1smBqUGcuD0AlZq2YfZ6bUgQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.538724110285301%26panoid%3DmBqUGcuD0AlZq2YfZ6bUgQ%26yaw%3D257.1276686757817!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "651a68be-d956-494c-b10f-14914f34e117",
+      "name": {
+        "en": "Kaigake Elementary School",
+        "ja": "しゃくなげ学校(旧鎌掛小学校)"
+      },
+      "geo": {
+        "latitude": 34.98901,
+        "longitude": 136.26025
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shiga-hino",
+      "streetViewUrl": "https://www.google.com/maps/@34.989056,136.2601941,3a,90y,125.26h,103.33t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDEv8bTxAE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HaDh98uEYs2PSXH-3qi78FW4UO_NWU_BjUGq1d6yfJf4pX3O11FBhqL2EIWog0hMJvdelLKXXvn1QLqk_fv1O6KtQD2x5vPqbrYr9_5VHYnP-UtarmA1Y4orouWJYv9owu6mYyo%3Dw900-h600-k-no-pi-13.325408916790465-ya175.3890505881289-ro0-fo100!7i2508!8i1254?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "6684d4c9-2dff-429f-af56-1f7d07cc94ae",
+      "name": {
+        "kr": "시로야마공원 전망대",
+        "ja": "城山公園展望台",
+        "en": "Shiroyama Park Observation Deck"
+      },
+      "geo": {
+        "latitude": 31.59624,
+        "longitude": 130.55004
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5961931,130.5501531,3a,90y,99.28h,96.81t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICEmYnbtQE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYw3okKjlQaXKyrs_2FDenDEQXm09xGbdEDwxrxFBVqlqi5mIG4-h91X1MX4j315tQzRawQJl5HyiaVXlKSV65Pj0b5pxUBIAdz0OpXH8TRiLQIp_otjQdZ5AS-UQTKjgRA43Lk%3Dw900-h600-k-no-pi-6.8058854974219685-ya2.275396991002964-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "71760edd-76b8-4df3-8782-4c420376f05a",
+      "name": {
+        "ja": "UR 桃山南",
+        "en": "UR Momoyama Minami"
+      },
+      "geo": {
+        "latitude": 34.92389,
+        "longitude": 135.78702
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9238697,135.7870061,3a,90y,57.5h,94.55t/data=!3m7!1e1!3m5!1ssgJ_h00QZyJ9YqFWQ230Og!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.545674653925673%26panoid%3DsgJ_h00QZyJ9YqFWQ230Og%26yaw%3D57.49839336682282!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "7680bbd8-01fa-48a1-906c-0953a2c081bd",
+      "name": {
+        "ja": "富士見市民温水プール",
+        "en": "Fujimi Civic Heated Swimming Pool"
+      },
+      "geo": {
+        "latitude": 34.98242,
+        "longitude": 135.88574
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9824534,135.8855293,3a,35.5y,99.48h,89.3t/data=!3m7!1e1!3m5!1s1j0dX_bR5jGx8qcAJI4MQw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.7006450621850036%26panoid%3D1j0dX_bR5jGx8qcAJI4MQw%26yaw%3D99.48297799658017!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "76f46c1e-0d9d-449a-b8c6-e81d35cd8145",
+      "name": {
+        "en": "Toray Arena",
+        "ja": "東レ アリーナ"
+      },
+      "geo": {
+        "latitude": 34.97815,
+        "longitude": 135.88971
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9782107,135.8897265,3a,90y,209.42h,109.27t/data=!3m7!1e1!3m5!1sgscKc4R9QR2XwfEgQbc28A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-19.272093470330148%26panoid%3DgscKc4R9QR2XwfEgQbc28A%26yaw%3D209.42308518497575!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "77d3af4c-3b25-4cb5-9d30-ef79aee58e2d",
+      "name": {
+        "en": "Waterfront Park",
+        "kr": "워터프론트 파크",
+        "ja": "ウォーターフロントパーク"
+      },
+      "geo": {
+        "latitude": 31.59415,
+        "longitude": 130.56334
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5941327,130.5633184,3a,75y,92.21h,99.59t/data=!3m7!1e1!3m5!1s4-g1asprzZhLzstKNUbF6Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.587700214492088%26panoid%3D4-g1asprzZhLzstKNUbF6Q%26yaw%3D92.21326492194761!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "7a6a604e-2f17-4683-b446-f6ba5d270f8a",
+      "name": {
+        "ja": "穴太駅",
+        "kr": "아노오 역",
+        "en": "Anoo Station"
+      },
+      "geo": {
+        "latitude": 35.05558,
+        "longitude": 135.86476
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@35.0560658,135.8650297,3a,37.1y,201.87h,90.15t/data=!3m7!1e1!3m5!1sam0H_22H_adb-IYrmzI06A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.15043473314277378%26panoid%3Dam0H_22H_adb-IYrmzI06A%26yaw%3D201.87196819572708!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "7e7e79cb-bff4-4083-a0c8-2f3106dba051",
+      "name": {
+        "en": "Kyoto Aquarium",
+        "kr": "교토수족관",
+        "ja": "京都水族館"
+      },
+      "geo": {
+        "latitude": 34.98756,
+        "longitude": 135.74841
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9875536,135.7484382,2a,90y,235.86h,94.71t/data=!3m7!1e1!3m5!1sCvG0Hwf9sdvErq9krrwn6w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.7060795348916145%26panoid%3DCvG0Hwf9sdvErq9krrwn6w%26yaw%3D235.8593581196074!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "7fc2fa23-e1f4-4355-892e-149ef6b74441",
+      "name": {
+        "ja": "ウォーターフロントパーク",
+        "kr": "워터프론트 파크",
+        "en": "Waterfront Park"
+      },
+      "geo": {
+        "latitude": 31.59311,
+        "longitude": 130.56421
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5930529,130.5640982,3a,75y,99.04h,100.83t/data=!3m7!1e1!3m5!1sEE1CZ-dPc3saRAbHPQ5MxA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.833626298241484%26panoid%3DEE1CZ-dPc3saRAbHPQ5MxA%26yaw%3D99.03984197843297!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "8ca0ea0c-78c3-44a0-bf70-38b415dfee03",
+      "name": {
+        "ja": "吉野ヶ里遺跡 北内郭",
+        "kr": "요시노가리 유적 북내곽",
+        "en": "North Inner Enclosure"
+      },
+      "geo": {
+        "latitude": 33.32685,
+        "longitude": 130.38631
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saga-yoshinogari",
+      "streetViewUrl": "https://www.google.com/maps/place/North+Inner+Enclosure/@33.3268013,130.3863219,3a,90y,308.95h,81.13t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID4wvHxDg!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZpjFRJG673qDBaC-A5VAmlJqL1ZcCvo88cKOYxQfUqD1KPl6etdsKfKTsVldSnZ1HEr3bw7U2LqLzuL8QdvTNtEB_DXFEzNJ7-OMtoEElP9Qr8khiUiZ0yKey-9O9hGtV8Y47Z%3Dw900-h600-k-no-pi8.86845495332993-ya174.61830359884675-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x3541b9ff3c98fb5d:0x4fc64cb6508bf2c!8m2!3d33.3268661!4d130.3863403!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1hc2g144p?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "8fdf24dd-386b-44a8-9250-11472cca4d00",
+      "name": {
+        "ja": "ツヴィンガー宮殿",
+        "en": "Zwinger Palace"
+      },
+      "geo": {
+        "latitude": 33.16572,
+        "longitude": 129.90827
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saga-arita",
+      "streetViewUrl": "https://www.google.com/maps/@33.1657381,129.908285,3a,90y,0.55h,140.69t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDB2O7nzQE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZd_5WhlrvtvVz2FF5fXDs3loSObAUcOhWDKZjUaR-rw2s8uGhGcCRxSb7LvCfKf9OUuXdwvgVmZqGFhVQxCl3orAZHTChHc4ntK5IjGylg867pr6ETk0OiCBTds0AuSQgBEAFH8A%3Dw900-h600-k-no-pi-50.68932645598201-ya3.604746179755068-ro0-fo100!7i10000!8i5000?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "97e980a4-a2a7-4083-94ca-81c67f0cc805",
+      "name": {
+        "ja": "県民交流センター前",
+        "en": "Kagoshima Public Access Center",
+        "kr": "겐민코류센타마에"
+      },
+      "geo": {
+        "latitude": 31.59867,
+        "longitude": 130.55707
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5985873,130.5570449,3a,75y,8.98h,97.08t/data=!3m7!1e1!3m5!1s9vTKfp7qSTpaIx4sfHQZjw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.082403474215511%26panoid%3D9vTKfp7qSTpaIx4sfHQZjw%26yaw%3D8.979664736625182!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "a13e23e1-8ce7-412d-92c6-19a6999f906d",
+      "name": {
+        "en": "Tenmonkan Mujaki",
+        "ja": "天文館むじゃき 本店",
+        "kr": "텐몬칸 무쟈키"
+      },
+      "geo": {
+        "latitude": 31.58923,
+        "longitude": 130.55596
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5892991,130.5560502,3a,90y,230.78h,93.37t/data=!3m7!1e1!3m5!1sH-xPNl6sUYOgUpJ3rNNE4A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.37136851555492%26panoid%3DH-xPNl6sUYOgUpJ3rNNE4A%26yaw%3D230.77942492807017!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "a238f99a-4c63-47ae-80fd-0ba151b15ada",
+      "name": {
+        "ja": "唐橋公園",
+        "en": "Karahashi Park"
+      },
+      "geo": {
+        "latitude": 34.97701,
+        "longitude": 135.90813
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.978125,135.9077101,3a,62.4y,152.6h,89.19t/data=!3m7!1e1!3m5!1sQj0Ny6uMaNLpLmVBZxc44Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.8122520342373463%26panoid%3DQj0Ny6uMaNLpLmVBZxc44Q%26yaw%3D152.5988424110368!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "a734a4b4-0508-461b-973a-e41eef72876c",
+      "name": {
+        "ja": "西郷隆盛洞窟",
+        "kr": "사이고 동굴",
+        "en": "Cave of Takamori Saigo (Satsuma Rebellion 1877)"
+      },
+      "geo": {
+        "latitude": 31.5997,
+        "longitude": 130.54987
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5994075,130.5499583,3a,37.8y,348.71h,93.49t/data=!3m7!1e1!3m5!1szBtGVAoBn0-GmBP7jw4OUg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.493310591851426%26panoid%3DzBtGVAoBn0-GmBP7jw4OUg%26yaw%3D348.70650548582637!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "aa5c900a-0b30-477f-9400-582a913dcc02",
+      "name": {
+        "ja": "屋形船 四季",
+        "en": "Houseboat Shiki"
+      },
+      "geo": {
+        "latitude": 34.97803,
+        "longitude": 135.90673
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9775957,135.9069404,3a,90y,350.03h,104.19t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC9pqXwtwE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HalgLehr1RNcYjJXY_pGiMV9sUMXf0vEt2X9rNovtuFmzkcULXe0VyPtenP4GFObI270CPKR5aFbDBbbso-A1wuZ_ZkJ87VuhF6UfaHtqNCbKv8m3LgP1aKI1_YMju_da0uwqF64w%3Dw900-h600-k-no-pi-14.192829582437042-ya15.224949717361824-ro0-fo100!7i5760!8i2880?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "aac792e3-6c7b-4090-b4a4-8c852b400567",
+      "name": {
+        "en": "Fujimi Civic Heated Swimming Pool",
+        "ja": "富士見市民温水プール"
+      },
+      "geo": {
+        "latitude": 34.98253,
+        "longitude": 135.88515
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9822312,135.8850014,3a,49.6y,26.55h,98.07t/data=!3m7!1e1!3m5!1sCFtfDbbagEHuKowTj0-xHw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.071898450949675%26panoid%3DCFtfDbbagEHuKowTj0-xHw%26yaw%3D26.550080228362745!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "b9dfd3ce-7808-41c9-b9cd-53777686d0ab",
+      "name": {
+        "en": "Karahashi Park",
+        "ja": "唐橋公園"
+      },
+      "geo": {
+        "latitude": 34.97814,
+        "longitude": 135.90776
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9784728,135.9079123,3a,90y,277.43h,103.61t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICixofmmAE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYSDNS_jKJie3EOeB5g_dB_4shI0x6pLJZS7S44MZMQVyHaKOqIyfV0gHuykmYggloqYld1HXRldYyqoqskVIatMMEcVa_MPC-2_FdVyDhmHoTQbZw0T4sAKasc8Q3rqfhQnKXHDg%3Dw900-h600-k-no-pi-13.607524758740269-ya278.42889475817447-ro0-fo100!7i11264!8i5632?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "bef419e2-e646-467d-85a7-26c9e73c47c9",
+      "name": {
+        "en": "Hiyama Shrine",
+        "ja": "檜山神社"
+      },
+      "geo": {
+        "latitude": 34.97489,
+        "longitude": 135.91345
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9751972,135.9127178,3a,90y,118.98h,103.29t/data=!3m7!1e1!3m5!1sbHuHk4BHBArPHaNzcZpplQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.288446825022234%26panoid%3DbHuHk4BHBArPHaNzcZpplQ%26yaw%3D118.97587765939765!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "c0cf04e7-9e64-4ba1-9e52-0615db082499",
+      "name": {
+        "en": "Karasuma Takeout Café Reed",
+        "ja": "CAFÉ REED"
+      },
+      "geo": {
+        "latitude": 35.07218,
+        "longitude": 135.93508
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-shiga-kusatsu",
+      "streetViewUrl": "https://www.google.com/maps/@35.0721537,135.9351091,3a,40y,271.02h,92.62t/data=!3m7!1e1!3m5!1sBd_SHbtN4LoWbIqyJLnc9g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.616995097809024%26panoid%3DBd_SHbtN4LoWbIqyJLnc9g%26yaw%3D271.0158054649594!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "c1730147-61c9-4fbf-9b09-cce9b16f0cbf",
+      "name": {
+        "en": "Koganryokuchitsuda - 1 Kita Parking Lot",
+        "ja": "津田江-１北駐車場"
+      },
+      "geo": {
+        "latitude": 35.06354,
+        "longitude": 135.93061
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-shiga-kusatsu",
+      "streetViewUrl": "https://www.google.com/maps/@35.0634365,135.9306445,3a,78.5y,27.67h,99.69t/data=!3m7!1e1!3m5!1sgQQVRtSoshcuybfZki1KDw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.68755885504413%26panoid%3DgQQVRtSoshcuybfZki1KDw%26yaw%3D27.673850104449507!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "c1ecd2ff-5a04-4c33-b059-ae5f4f5ccfe7",
+      "name": {
+        "ja": "しゃくなげ学校(旧鎌掛小学校)",
+        "en": "Kaigake Elementary School"
+      },
+      "geo": {
+        "latitude": 34.98852,
+        "longitude": 136.26006
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shiga-hino",
+      "streetViewUrl": "https://www.google.com/maps/place/Kaigake+Elementary+School/@34.988445,136.25988,3a,90y,204.68h,86.36t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICE9qWowAE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZDHLJaYVB-uqG3cyP1NpLnJE1--nzDjZqf-Js27bnoLZjnCwf3wh9caJ2kmPeoszhEG4JJUgY7qPLuexgyRPB_U46yY6qRL9JWGxB4Uyc17TTBWD4sV6jSr3b98tl5g7wv9i-23g%3Dw900-h600-k-no-pi3.642741365385561-ya204.6793787661632-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x6003e09b86698293:0x4438ce9440021101!8m2!3d34.9888042!4d136.259911!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11b7wbwg6n?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "c9c5e09d-ba98-427e-9506-92d8087033cc",
+      "name": {
+        "ja": "赤野井-1 駐車場",
+        "en": "Akanoi-1 Parking lot"
+      },
+      "geo": {
+        "latitude": 35.07381,
+        "longitude": 135.94586
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-shiga-moriyama",
+      "streetViewUrl": "https://www.google.com/maps/@35.0735677,135.946297,3a,38.5y,302.99h,90.96t/data=!3m7!1e1!3m5!1szLGL6Pxf2NXk0-wO_F_Zww!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.9614472396972644%26panoid%3DzLGL6Pxf2NXk0-wO_F_Zww%26yaw%3D302.9909238656754!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "cc45ac25-7b50-4661-bb7c-b0e1836c6f3a",
+      "name": {
+        "ja": "温泉ホテル中原別荘",
+        "kr": "가고시마시 온센 호텔 나카하라 벳소",
+        "en": "Onsen Hotel Nakahara Bessou"
+      },
+      "geo": {
+        "latitude": 31.59297,
+        "longitude": 130.55357
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5930797,130.5539384,3a,75y,247.84h,104.13t/data=!3m7!1e1!3m5!1s_TgkK_P4G_5GCVWJqNfJpA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.134904253831067%26panoid%3D_TgkK_P4G_5GCVWJqNfJpA%26yaw%3D247.84171272866226!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "d442cabb-7e91-4e6e-b98b-854f7a99843d",
+      "name": {
+        "en": "Fresh and cheap market! Kohata",
+        "ja": "新鮮激安市場！ 木幡店"
+      },
+      "geo": {
+        "latitude": 34.92601,
+        "longitude": 135.79374
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.925938,135.7939614,3a,75y,313.01h,98.51t/data=!3m7!1e1!3m5!1s2xxo_oQFhUSr8NNjie3qvA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.507259529877786%26panoid%3D2xxo_oQFhUSr8NNjie3qvA%26yaw%3D313.00981833830264!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "dafdd795-1bdc-4c87-bfd4-637842bcc892",
+      "name": {
+        "en": "Bazaar Hiraoka",
+        "ja": "バザールヒラオカ"
+      },
+      "geo": {
+        "latitude": 31.59194,
+        "longitude": 130.55613
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5919484,130.556051,3a,90y,42.8h,96.25t/data=!3m7!1e1!3m5!1s1h-dOgSfGOZC4otjCeDHSQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.247227236031449%26panoid%3D1h-dOgSfGOZC4otjCeDHSQ%26yaw%3D42.804034194189455!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "e1c96e83-3c3d-4749-83a0-8731b84729cf",
+      "name": {
+        "en": "Kaigake Elementary School",
+        "ja": "しゃくなげ学校(旧鎌掛小学校)"
+      },
+      "geo": {
+        "latitude": 34.98834,
+        "longitude": 136.25981
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-shiga-hino",
+      "streetViewUrl": "https://www.google.com/maps/@34.988266,136.2597784,3a,90y,22.08h,93.25t/data=!3m7!1e1!3m5!1syK8dnzYf0aOFicsktSYB4w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.2487200074092613%26panoid%3DyK8dnzYf0aOFicsktSYB4w%26yaw%3D22.080897293231676!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "e2492005-0ad5-468c-abac-54d0383a250a",
+      "name": {
+        "en": "McDonald's Ishiyama Station",
+        "ja": "マクドナルド 石山駅前店"
+      },
+      "geo": {
+        "latitude": 34.97921,
+        "longitude": 135.90038
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9793086,135.900354,3a,90y,161.01h,100.1t/data=!3m7!1e1!3m5!1sAJVw1c-IcSiWFl7sQH9u4Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.098439887917777%26panoid%3DAJVw1c-IcSiWFl7sQH9u4Q%26yaw%3D161.00812269828484!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "e25ef804-08a3-44b9-9b56-63b06ffaf955",
+      "name": {
+        "en": "Kyoto Aquarium",
+        "kr": "교토수족관",
+        "ja": "京都水族館"
+      },
+      "geo": {
+        "latitude": 34.98756,
+        "longitude": 135.74829
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9875296,135.7482871,2a,48.7y,245.48h,77.87t/data=!3m7!1e1!3m5!1s07W-hOdO6vVH6mUGA1MvxA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D12.134708572971945%26panoid%3D07W-hOdO6vVH6mUGA1MvxA%26yaw%3D245.48151865685952!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "e59a35d3-4268-4d86-aadf-02e143f7b320",
+      "name": {
+        "ja": "大津市 富士見支所",
+        "en": "Fujimi City Center"
+      },
+      "geo": {
+        "latitude": 34.97944,
+        "longitude": 135.88663
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9793769,135.8866971,3a,90y,337.44h,95.8t/data=!3m7!1e1!3m5!1sfTKv1JHnOfgfnlopeZxo6g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.803724523926093%26panoid%3DfTKv1JHnOfgfnlopeZxo6g%26yaw%3D337.44111254886894!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "e6ecfe5c-0d48-48bb-b71f-bbae132d62e4",
+      "name": {
+        "en": "Kyoto Aquarium",
+        "kr": "교토수족관",
+        "ja": "京都水族館"
+      },
+      "geo": {
+        "latitude": 34.98761,
+        "longitude": 135.74761
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/place/Kyoto+Aquarium/@34.9875169,135.7475184,3a,90y,355.06h,88.2t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDEpP73qgE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYCpdZ7MF5abktL1EUECX4BwyiOa5fYAtXN9gAT2dPZsQUvA8_Hx6LKXmHAo3dt0EWpIkYm3pQOjqiwI21oJy2ErzGklb324f6DJufhCRs240Zw3ZOgNTHiOd0-lzGlgYy91fWTQA%3Dw900-h600-k-no-pi1.7985596971192734-ya355.0592334662201-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x6001061c0b78dc5d:0x5417da24aac74659!8m2!3d34.987516!4d135.7472123!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F15dqlmlk?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "e8db70cf-f316-4683-b981-fb29ffba1f69",
+      "name": {
+        "en": "Fujimi Civic Heated Swimming Pool",
+        "ja": "富士見市民温水プール"
+      },
+      "geo": {
+        "latitude": 34.98275,
+        "longitude": 135.88609
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9830119,135.886307,3a,68.7y,205.28h,97.7t/data=!3m7!1e1!3m5!1sWKMjQ0himKrTKz_5cvKimg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.699099857557584%26panoid%3DWKMjQ0himKrTKz_5cvKimg%26yaw%3D205.2820773204205!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "ebb15c4f-1a03-4044-9538-3a5f8b1a0bfe",
+      "name": {
+        "en": "Beniya"
+      },
+      "geo": {
+        "latitude": 34.97936,
+        "longitude": 135.902
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9792725,135.9019605,3a,75y,44.69h,95.39t/data=!3m7!1e1!3m5!1sLQd_FUw9gYruzD3WlpcyQg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.391056782383558%26panoid%3DLQd_FUw9gYruzD3WlpcyQg%26yaw%3D44.69323558581921!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "f41cc205-75e9-4e53-b697-052da39b2537",
+      "name": {
+        "en": "Satsuma Retainers Monument",
+        "ja": "薩摩義士碑"
+      },
+      "geo": {
+        "latitude": 31.59961,
+        "longitude": 130.55497
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5995923,130.5551604,3a,90y,276.26h,99.54t/data=!3m7!1e1!3m5!1siW_hoYJJSuzX-AmD2Fc2BA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.539992150098797%26panoid%3DiW_hoYJJSuzX-AmD2Fc2BA%26yaw%3D276.26134606651834!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "f8865645-99d1-4a20-8994-48ad9ae9b167",
+      "name": {
+        "en": "Kyoto Aquarium",
+        "ja": "京都水族館",
+        "kr": "교토수족관"
+      },
+      "geo": {
+        "latitude": 34.9874,
+        "longitude": 135.74725
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9874185,135.747244,2a,90y,53.78h,89.43t/data=!3m7!1e1!3m5!1sj7_PnTOT2SXwzAcQcluwmw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.5685648138320545%26panoid%3Dj7_PnTOT2SXwzAcQcluwmw%26yaw%3D53.78178519717501!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "fb0b04b6-abe4-4571-876c-807e7a197b97",
+      "name": {
+        "ja": "温泉ホテル中原別荘",
+        "kr": "가고시마시 온센 호텔 나카하라 벳소",
+        "en": "Onsen Hotel Nakahara Bessou"
+      },
+      "geo": {
+        "latitude": 31.59304,
+        "longitude": 130.55343
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kagoshima-kagoshima",
+      "streetViewUrl": "https://www.google.com/maps/@31.5931833,130.5533697,3a,47.9y,197.11h,93.62t/data=!3m7!1e1!3m5!1sL1tH1MM0id4pLbyLX9yItQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.622089758186135%26panoid%3DL1tH1MM0id4pLbyLX9yItQ%26yaw%3D197.1085753063307!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "fbb1d707-c54a-4b08-8b2c-0117fc360887",
+      "name": {
+        "ja": "瀬田東市民センター",
+        "en": "Setahigashi City Center"
+      },
+      "geo": {
+        "latitude": 34.98486,
+        "longitude": 135.93503
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.9843609,135.9346094,3a,75y,24.87h,96.02t/data=!3m7!1e1!3m5!1sI9-Zj6Et8NezWtDnzYjQcA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.020447245371301%26panoid%3DI9-Zj6Et8NezWtDnzYjQcA%26yaw%3D24.86692193740875!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    }
+  ]
+}

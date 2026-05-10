@@ -1,0 +1,692 @@
+{
+  "anime": {
+    "animeId": "1IcHGFHi8jBaDrG3fSQo",
+    "slug": "wonder-egg-priority",
+    "title": {
+      "ja": "ワンダーエッグ・プライオリティ",
+      "kr": "원더 에그 프라이어리티",
+      "en": "Wonder Egg Priority"
+    },
+    "author": {
+      "ja": [
+        "野島伸司"
+      ],
+      "en": [
+        "Shinji Nojima"
+      ],
+      "kr": [
+        "노지마 신지"
+      ]
+    },
+    "studio": {
+      "en": [
+        "CloverWorks"
+      ]
+    }
+  },
+  "placeCount": 39,
+  "places": [
+    {
+      "placeId": "01b94d2f-cb69-438b-ad4d-eaa0504c246d",
+      "name": {
+        "ja": "千葉県立 北総花の丘公園 Ｂゾーン",
+        "en": "Chiba Prefectural Hokuso Flower Hill Park B Zone"
+      },
+      "geo": {
+        "latitude": 35.7997709,
+        "longitude": 140.1237857
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.7997709,140.1237857,3a,75y,114.6h,94.66t/data=!3m8!1e1!3m6!1sAF1QipM-SiP5qqF7W9ip9zGoAxVJ3Ce9l2_DJ1PBx7d0!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipM-SiP5qqF7W9ip9zGoAxVJ3Ce9l2_DJ1PBx7d0%3Dw203-h100-k-no-pi-0-ya58.86975-ro-0-fo100!7i6080!8i3040?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "10739f60-2d9e-4a3a-b899-419ad3f7083e",
+      "name": {
+        "de": "In der Nähe des Zone B Toll Parking Lot",
+        "id": "Sekitar Zone B Toll Parking Lot",
+        "ja": "都市の景ゾーン有料駐車場付近",
+        "es": "Cerca de la Zone B Toll Parking Lot",
+        "en": "Near the Zone B Toll Parking Lot"
+      },
+      "geo": {
+        "latitude": 35.7986883,
+        "longitude": 140.1258721
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.7986883,140.1258721,3a,74.1y,307.21h,100.47t/data=!3m6!1e1!3m4!1so1hhvyRih3wBFhmbve1Dmg!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "161dccc2-6979-4adf-b6a7-e97a234ef122",
+      "name": {
+        "es": "Cerca de la Leaf Pharmacy",
+        "ja": "リーフ薬局付近",
+        "id": "Sekitar Leaf Pharmacy",
+        "en": "Near the Leaf Pharmacy",
+        "de": "In der Nähe des Leaf Pharmacy"
+      },
+      "geo": {
+        "latitude": 35.7942373,
+        "longitude": 140.1192418
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.7942373,140.1192418,3a,48.8y,359.45h,96.54t/data=!3m6!1e1!3m4!1sxClMoZJdPfad__XWNs9AQw!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "1b08cb78-bff9-4064-ac28-6435060f4e4d",
+      "name": {
+        "ja": "小倉台図書館",
+        "en": "Oguradai Library"
+      },
+      "geo": {
+        "latitude": 35.8056099,
+        "longitude": 140.1126099
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.8056099,140.1126099,3a,75y,116.59h,88.36t/data=!3m7!1e1!3m5!1snOK6SB2AllEKqkjymW26fA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DnOK6SB2AllEKqkjymW26fA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D234.32753%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "1cda302e-222a-4167-a1f6-61d8f588fd0f",
+      "name": {
+        "ja": "印西市 高花学校給食センター付近",
+        "en": "Near the Inzai City Takahana School Lunch Center",
+        "es": "Cerca de la Inzai City Takahana School Lunch Center",
+        "de": "In der Nähe des Inzai City Takahana School Lunch Center",
+        "id": "Sekitar Inzai City Takahana School Lunch Center"
+      },
+      "geo": {
+        "latitude": 35.7966102,
+        "longitude": 140.1315682
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.7966102,140.1315682,3a,75y,156.72h,94.27t/data=!3m6!1e1!3m4!1s9RmuelEYnGlaVcunii9emw!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "24cf5b67-7af4-46ff-a68a-8912de4a4a53",
+      "name": {
+        "ja": "東京電力パワーグリッド(株) 千葉NT変電所付近",
+        "es": "Cerca de la TEPCO Power Grid Chiba NT Substation",
+        "en": "Near the TEPCO Power Grid Chiba NT Substation",
+        "de": "In der Nähe des TEPCO Power Grid Chiba NT Substation",
+        "id": "Sekitar TEPCO Power Grid Chiba NT Substation"
+      },
+      "geo": {
+        "latitude": 35.8045725,
+        "longitude": 140.1317555
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.8045725,140.1317555,3a,75y,150.29h,98.7t/data=!3m6!1e1!3m4!1skhUAh3tS5rbLaJD8Jo5egA!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "270b3436-fc06-460f-8217-88b765bbda2d",
+      "name": {
+        "es": "Cerca de la Kechienji",
+        "en": "Near the Kechienji",
+        "id": "Sekitar Kechienji",
+        "de": "In der Nähe des Kechienji",
+        "ja": "結縁寺付近"
+      },
+      "geo": {
+        "latitude": 35.789737,
+        "longitude": 140.1347455
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.789737,140.1347455,3a,75y,84.22h,93.87t/data=!3m6!1e1!3m4!1spe3WZRaekbsx2zelsmBGDQ!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "2f425d32-212f-4735-bf95-92e5f5b92d36",
+      "name": {
+        "de": "In der Nähe des East Japan Tourist Bus Co., Ltd.",
+        "ja": "有限会社 東日本観光バス付近",
+        "en": "Near the East Japan Tourist Bus Co., Ltd.",
+        "id": "Sekitar East Japan Tourist Bus Co., Ltd.",
+        "es": "Cerca de la East Japan Tourist Bus Co., Ltd."
+      },
+      "geo": {
+        "latitude": 35.7973819,
+        "longitude": 140.1672402
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.7973819,140.1672402,3a,90y,335.75h,101.66t/data=!3m7!1e1!3m5!1sgZg4WnEBr_RT51WzHp5-EA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DgZg4WnEBr_RT51WzHp5-EA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D39.503296%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "2f6e1b53-39e4-4689-8a70-b72afd74b7b7",
+      "name": {
+        "ja": "サーティワンアイスクリーム イオンモール千葉ニュータウン店",
+        "en": "Baskin Robbins, Aeon Mall Chiba New Town"
+      },
+      "geo": {
+        "latitude": 35.8019236,
+        "longitude": 140.1136084
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.8019236,140.1136084,3a,46.1y,294.32h,121.37t/data=!3m7!1e1!3m5!1syM3C2lXe_Iy5UjLCCeU20Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DyM3C2lXe_Iy5UjLCCeU20Q%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D7.1688538%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "30b9f552-4b74-4306-8b77-e1d03d77856f",
+      "name": {
+        "en": "Newtown Ohashi Bridge",
+        "ja": "ニュータウン大橋"
+      },
+      "geo": {
+        "latitude": 35.7985665,
+        "longitude": 140.1211987
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.7984144,140.1207018,3a,75y,161.95h,96.01t/data=!3m7!1e1!3m5!1sYzeWW-gQvIqeA6r8_92DqQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DYzeWW-gQvIqeA6r8_92DqQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D88.24291%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "3c339519-f2dd-4db3-8359-4ebe4096e1e3",
+      "name": {
+        "ja": "修景池",
+        "en": "Shukei Pond"
+      },
+      "geo": {
+        "latitude": 35.800271,
+        "longitude": 140.1243177
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.800271,140.1243177,3a,90y,352.37h,98.47t/data=!3m8!1e1!3m6!1sAF1QipMYwkNZVLI2qQnCuwQDARFdqmuqFchfCZk0SENl!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMYwkNZVLI2qQnCuwQDARFdqmuqFchfCZk0SENl%3Dw203-h100-k-no-pi-0-ya341.81464-ro-0-fo100!7i8704!8i4352?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "43e20585-0e13-4619-a90b-0cde1dd4e20d",
+      "name": {
+        "ja": "栄橋",
+        "en": "Sakae Bridge"
+      },
+      "geo": {
+        "latitude": 35.8545056,
+        "longitude": 140.1368969
+      },
+      "ep": 0,
+      "type": "SP",
+      "cityId": "JP-chiba-abiko",
+      "streetViewUrl": "https://www.google.com/maps/@35.8545056,140.1368969,3a,39.9y,91.43h,94.26t/data=!3m7!1e1!3m5!1sTdu-NeiNDj2IBF3d_7ThXw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DTdu-NeiNDj2IBF3d_7ThXw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D50.324993%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "487d5628-b05f-40e6-860d-5ba41310fc63",
+      "name": {
+        "ja": "大塚前公園",
+        "en": "Otsukamae Park"
+      },
+      "geo": {
+        "latitude": 35.8043542,
+        "longitude": 140.1118645
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.8043542,140.1118645,3a,70y,107.98h,103.83t/data=!3m6!1e1!3m4!1s4MQJGj9TX7a7SO3x6VZ_wA!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "53e197f6-9d69-4676-b4d5-ea1e74f96eb9",
+      "name": {
+        "en": "Frances Church",
+        "ja": "フランセス教会"
+      },
+      "geo": {
+        "latitude": 35.6524936,
+        "longitude": 139.313782
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-hachioji",
+      "streetViewUrl": "https://www.google.com/maps/@35.6524936,139.313782,3a,90y,146.81h,100.16t/data=!3m7!1e1!3m5!1spBAzkcSq94qitqtFcHMAuQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DpBAzkcSq94qitqtFcHMAuQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D59.886013%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "546e9b89-6ced-4e55-bc6e-1d898ed20e87",
+      "name": {
+        "en": "Sakurai Syoten（Pentel）",
+        "ja": "櫻井商店"
+      },
+      "geo": {
+        "latitude": 35.7944313,
+        "longitude": 140.1331913
+      },
+      "ep": 0,
+      "type": "SP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.7944313,140.1331913,3a,75y,122.98h,95.59t/data=!3m6!1e1!3m4!1s8EFFQE_a3AzD5AUUC_HTUA!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "58a506a9-9cee-46ec-943b-87cd5e9e2e9b",
+      "name": {
+        "ja": "高橋クリーニング店本店",
+        "en": "Takahashi Cleaning Store Main Branch"
+      },
+      "geo": {
+        "latitude": 35.7972899,
+        "longitude": 140.0715863
+      },
+      "ep": 0,
+      "type": "SP",
+      "cityId": "JP-chiba-funabashi",
+      "streetViewUrl": "https://www.google.com/maps/@35.7972899,140.0715863,3a,90y,170.48h,90.57t/data=!3m6!1e1!3m4!1sN7HHftbjojsOEeevVzF1oA!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "660ccc83-3200-43b3-adf8-768216d2e962",
+      "name": {
+        "en": "Charcoal Roast Coffee RIN Main Store",
+        "ja": "炭火焙煎珈琲.凛 銀座4丁目本店"
+      },
+      "geo": {
+        "latitude": 35.6719466,
+        "longitude": 139.7650527
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6719466,139.7650527,3a,90y,283.87h,94.15t/data=!3m7!1e1!3m5!1sjQALhUn-o21_IbPfUOly7Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DjQALhUn-o21_IbPfUOly7Q%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D281.24203%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "672cf7a6-7f0e-4d4e-aafd-66f2cefaee07",
+      "name": {
+        "en": "Chiba New Town Chuo Station",
+        "ja": "千葉ニュータウン中央駅"
+      },
+      "geo": {
+        "latitude": 35.8000992,
+        "longitude": 140.1168254
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.8000992,140.1168254,3a,51.1y,357.8h,96.72t/data=!3m6!1e1!3m4!1sKxNVDgmMoQo-42vZX9ws_A!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "753b99a0-e7a8-41cc-8aa7-2f58e7232f6c",
+      "name": {
+        "ja": "千葉ろうさい病院",
+        "en": "Chiba Rosai Hospital"
+      },
+      "geo": {
+        "latitude": 35.520853,
+        "longitude": 140.1581009
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-chiba-ichihara",
+      "streetViewUrl": "https://www.google.com/maps/@35.520853,140.1581009,3a,48.7y,165.77h,95.41t/data=!3m7!1e1!3m5!1sUFiuwSVaju9nc3KOpNUGdA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DUFiuwSVaju9nc3KOpNUGdA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D114.03243%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "756aeaac-6310-4be1-a2ed-170533b23ebf",
+      "name": {
+        "de": "In der Nähe des Rocky Bouldering Gym Inzai",
+        "en": "Near the Rocky Bouldering Gym Inzai",
+        "id": "Sekitar Rocky Bouldering Gym Inzai",
+        "ja": "Rockyボルダリングジム 印西店付近",
+        "es": "Cerca de la Rocky Bouldering Gym Inzai"
+      },
+      "geo": {
+        "latitude": 35.803136,
+        "longitude": 140.1633925
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.803136,140.1633925,3a,41.5y,162.35h,93.23t/data=!3m8!1e1!3m6!1sAF1QipMI91CrDisSTH0lMKp54TDkacww4yR-TrXB2GV7!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMI91CrDisSTH0lMKp54TDkacww4yR-TrXB2GV7%3Dw203-h100-k-no-pi-0-ya119.19913-ro-0-fo100!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "8112985b-4fd6-4258-9b37-3c8d4ecbe109",
+      "name": {
+        "en": "Irumairai★INZAI - A zone of harmony between city and nature",
+        "ja": "イルミライ★INZAI 都市と自然の調和ゾーン"
+      },
+      "geo": {
+        "latitude": 35.8011589,
+        "longitude": 140.1155974
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.8011589,140.1155974,3a,44.6y,191.68h,95.63t/data=!3m6!1e1!3m4!1sKVMoFNXvVDSDMEdjq_hpYQ!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "916cdcf4-a104-4e59-abaa-9a786c1ba4fb",
+      "name": {
+        "en": "Hokuso Flower Hill BBQ Garden",
+        "ja": "北総花の丘バーベキューガーデン"
+      },
+      "geo": {
+        "latitude": 35.8000774,
+        "longitude": 140.1232046
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.8000774,140.1232046,3a,75y,315.34h,90.27t/data=!3m8!1e1!3m6!1sAF1QipO2YMSYlzWcROsFxBPZZVszyeJHv_7Tpbh6JuuB!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipO2YMSYlzWcROsFxBPZZVszyeJHv_7Tpbh6JuuB%3Dw203-h100-k-no-pi0-ya303.0332-ro-0-fo100!7i6080!8i3040?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "91a1fd21-1824-47ba-8acb-771a09a67fc4",
+      "name": {
+        "ja": "千葉ニュータウンルミナス高花付近",
+        "en": "Near the Chiba New Town Luminous Takahana",
+        "id": "Sekitar Chiba New Town Luminous Takahana",
+        "es": "Cerca de la Chiba New Town Luminous Takahana",
+        "de": "In der Nähe des Chiba New Town Luminous Takahana"
+      },
+      "geo": {
+        "latitude": 35.7973893,
+        "longitude": 140.1374138
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.7973893,140.1374138,3a,90y,156.37h,119.66t/data=!3m6!1e1!3m4!1sdLgmE3xQQ6nHeQ2Vbs_Y_A!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "920a97b1-6cbf-47ca-823d-d8f89ebbff3a",
+      "name": {
+        "ja": "鳴神山遺跡",
+        "en": "Narukamiyama Ruins"
+      },
+      "geo": {
+        "latitude": 35.7929157,
+        "longitude": 140.1190961
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.7929157,140.1190961,3a,75y,354.54h,98.07t/data=!3m6!1e1!3m4!1sPjEzDSiw3JHlnKTVnEMMNg!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "9c4b41dc-5f55-40d8-8063-3837c221accd",
+      "name": {
+        "de": "In der Nähe des Inzai Oguradai Post Office",
+        "id": "Sekitar Inzai Oguradai Post Office",
+        "en": "Near the Inzai Oguradai Post Office",
+        "es": "Cerca de la Inzai Oguradai Post Office",
+        "ja": "印西小倉台郵便局付近"
+      },
+      "geo": {
+        "latitude": 35.8073462,
+        "longitude": 140.1115327
+      },
+      "ep": 0,
+      "type": "SP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.8073462,140.1115327,3a,75y,309.22h,88.92t/data=!3m7!1e1!3m5!1scyUYJJ-7j_UciO23jHgqaA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DcyUYJJ-7j_UciO23jHgqaA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D244.35823%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "aaae6468-cfeb-4212-853a-1a65f449b7ac",
+      "name": {
+        "en": "6 Chome Takabana",
+        "ja": "高花6丁目"
+      },
+      "geo": {
+        "latitude": 35.7926503,
+        "longitude": 140.1374587
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.7926503,140.1374587,3a,75y,254.79h,96.84t/data=!3m7!1e1!3m5!1ss9aDKIzQGNKP-qwNigEm_w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Ds9aDKIzQGNKP-qwNigEm_w%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D267.25192%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "ab6605e4-29db-457d-8f92-71f9d6d99c65",
+      "name": {
+        "ja": "有限会社 八千代技研 千葉付近",
+        "es": "Cerca de la Yachiyo Giken Co., Ltd. Chiba",
+        "id": "Sekitar Yachiyo Giken Co., Ltd. Chiba",
+        "de": "In der Nähe des Yachiyo Giken Co., Ltd. Chiba",
+        "en": "Near the Yachiyo Giken Co., Ltd. Chiba"
+      },
+      "geo": {
+        "latitude": 35.7934964,
+        "longitude": 140.1385737
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.7934964,140.1385737,3a,41.4y,229.67h,92.33t/data=!3m7!1e1!3m5!1spJFD2Ly5FMA35qElquLekw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DpJFD2Ly5FMA35qElquLekw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D359.05136%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "b7d11d0b-7d31-47b8-a854-73c8e9c55daa",
+      "name": {
+        "ja": "セブン-イレブン 印西中央南１丁目店",
+        "en": "Seven-Eleven Inzai Chuo Minami 1-chome store"
+      },
+      "geo": {
+        "latitude": 35.798586,
+        "longitude": 140.1151373
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.798586,140.1151373,3a,48.8y,156.43h,95.53t/data=!3m7!1e1!3m5!1s7C8diOqX8B4G9OZPYfBh7A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D7C8diOqX8B4G9OZPYfBh7A%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D340.08167%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "be86ec82-d3e2-4923-a800-ccadafc5b03c",
+      "name": {
+        "ja": "ビッグウッド 印西店",
+        "en": "Big Wood Inzai"
+      },
+      "geo": {
+        "latitude": 35.8030662,
+        "longitude": 140.1637061
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.8030662,140.1637061,3a,75y,15.46h,94.3t/data=!3m8!1e1!3m6!1sAF1QipO0cYibjtlBZhytMfp38CJAoXoRrDcr0sqSVGU!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipO0cYibjtlBZhytMfp38CJAoXoRrDcr0sqSVGU%3Dw203-h100-k-no-pi-0-ya242.2385-ro0-fo100!7i8704!8i4352?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "c2492c06-7fe8-4798-8fc0-54064a3755a4",
+      "name": {
+        "en": "WEST VILLE"
+      },
+      "geo": {
+        "latitude": 35.8586608,
+        "longitude": 140.0236717
+      },
+      "ep": 0,
+      "type": "SP",
+      "cityId": "JP-chiba-kashiwa",
+      "streetViewUrl": "https://www.google.com/maps/@35.8586608,140.0236717,3a,75y,15.43h,91.54t/data=!3m7!1e1!3m5!1sAF1QipPlA_ux6yFZSAVTmfirDq-bNUY-meRiwcHa0oMh!2e10!3e11!7i5760!8i2880?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "c2509c92-3f2f-485e-bf21-d4e3b8cb8e5f",
+      "name": {
+        "en": "Observation Mountain shaped like an ancient burial mound",
+        "ja": "古墳型展望山"
+      },
+      "geo": {
+        "latitude": 35.8093154,
+        "longitude": 140.1708584
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.8093154,140.1708584,3a,68y,70.51h,97.18t/data=!3m8!1e1!3m6!1sAF1QipN9iy4xfkPZFLUnOkP9cKXbJOBi12XNtxt0e5Kw!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipN9iy4xfkPZFLUnOkP9cKXbJOBi12XNtxt0e5Kw%3Dw203-h100-k-no-pi-0-ya273.59982-ro0-fo100!7i10000!8i5000?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "cd45e4fc-c3be-49b4-a576-63db7ba2eadc",
+      "name": {
+        "id": "Sekitar UNIQLO Echika Fit Tokyo Marunouchi Line Paid Area Shop",
+        "ja": "ユニクロ Echika fit 東京店付近",
+        "de": "In der Nähe des UNIQLO Echika Fit Tokyo Marunouchi Line Paid Area Shop",
+        "es": "Cerca de la UNIQLO Echika Fit Tokyo Marunouchi Line Paid Area Shop",
+        "en": "Near the UNIQLO Echika Fit Tokyo Marunouchi Line Paid Area Shop"
+      },
+      "geo": {
+        "latitude": 35.6819553,
+        "longitude": 139.7646949
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6819553,139.7646949,2a,47.8y,18.24h,91.17t/data=!3m6!1e1!3m4!1s7T8-vksyY1SzGHMD-ogZVw!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "d2c31adb-e618-4a14-8a77-87767c35fba6",
+      "name": {
+        "en": "Harayamakitagaiku Park",
+        "ja": "原山北街区公園"
+      },
+      "geo": {
+        "latitude": 35.8009727,
+        "longitude": 140.1290526
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.8009727,140.1290526,3a,75y,254.74h,94.74t/data=!3m7!1e1!3m5!1s-L0WPdRzDXnhN2w2k0yLCw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D-L0WPdRzDXnhN2w2k0yLCw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D314.866%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "d4d3fa95-ed06-400c-87a6-a56fb69abd94",
+      "name": {
+        "ja": "海浜幕張駅南口広場",
+        "en": "Kaihinmakuhari Station Square"
+      },
+      "geo": {
+        "latitude": 35.6482253,
+        "longitude": 140.0412858
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6482253,140.0412858,2a,47.9y,130.11h,94.23t/data=!3m7!1e1!3m5!1sf2PTz3ATN9rd2OXaQdkJCQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Df2PTz3ATN9rd2OXaQdkJCQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D136.53761%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "d8d3c6a8-d88c-4646-aa8a-71d21e2033f0",
+      "name": {
+        "de": "In der Nähe des Chiba New Town Harayama Second Management Service Office",
+        "id": "Sekitar Chiba New Town Harayama Second Management Service Office",
+        "en": "Near the Chiba New Town Harayama Second Management Service Office",
+        "ja": "千葉ニュータウン 原山第二管理サービス事務所付近",
+        "es": "Cerca de la Chiba New Town Harayama Second Management Service Office"
+      },
+      "geo": {
+        "latitude": 35.8007308,
+        "longitude": 140.1291095
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.8007308,140.1291095,3a,68.8y,9.07h,106.96t/data=!3m6!1e1!3m4!1s1bMjTWrX6-lC8IBDximmFw!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "e635b457-8f9c-4477-97b9-42c1d7f64f84",
+      "name": {
+        "ja": "千葉県立幕張海浜公園Aブロック",
+        "en": "Chiba Prefectural Makuhari Seaside Park A Block"
+      },
+      "geo": {
+        "latitude": 35.6494834,
+        "longitude": 140.046581
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6494834,140.046581,2a,48y,314.19h,89.76t/data=!3m7!1e1!3m5!1sNBA4KHsrj96PXDx6BRYNYQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DNBA4KHsrj96PXDx6BRYNYQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D165.51277%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "f19544f7-35c5-4223-89b9-27d5d0bbff89",
+      "name": {
+        "en": "Kosumosuo Bridge",
+        "ja": "こすもす大橋"
+      },
+      "geo": {
+        "latitude": 35.8008132,
+        "longitude": 140.1185209
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.8008132,140.1185209,3a,90y,229.76h,100.4t/data=!3m6!1e1!3m4!1sAFMHmfj7MJATrA9FGOLwqw!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "f38146c4-8296-4cf3-a298-6376ead3e4a0",
+      "name": {
+        "en": "Honda Cars Ichikawa Chiba Newtown Chuo",
+        "ja": "Honda Cars 市川 千葉ニュータウン中央店"
+      },
+      "geo": {
+        "latitude": 35.7984678,
+        "longitude": 140.1372925
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.7984678,140.1372925,3a,45.5y,208.15h,99.76t/data=!3m6!1e1!3m4!1sp8i-Am83PkrlOGpBV5hQFw!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    },
+    {
+      "placeId": "fa8166f4-a2bf-4834-b9fe-b581aae3bdfa",
+      "name": {
+        "ja": "印西市立内野小学校付近",
+        "es": "Cerca de la Uchino Elementary School",
+        "id": "Sekitar Uchino Elementary School",
+        "de": "In der Nähe des Uchino Elementary School",
+        "en": "Near the Uchino Elementary School"
+      },
+      "geo": {
+        "latitude": 35.7985729,
+        "longitude": 140.1259052
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-chiba-inzai",
+      "streetViewUrl": "https://www.google.com/maps/@35.7985729,140.1259052,3a,63.4y,176.51h,89.96t/data=!3m7!1e1!3m5!1s4_7GzD4SvZ5wId4_2YO6mg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D4_7GzD4SvZ5wId4_2YO6mg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D314.71808%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©WEP PROJECT"
+    }
+  ]
+}

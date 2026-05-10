@@ -1,0 +1,279 @@
+{
+  "anime": {
+    "animeId": "uxyUCyjBZrFMfOdbXCMN",
+    "slug": "you-are-ms-servant",
+    "title": {
+      "ja": "君は冥土様。",
+      "kr": "당신은 저승님",
+      "en": "You Are Ms. Servant."
+    },
+    "author": {
+      "en": [
+        "Shotan"
+      ],
+      "ja": [
+        "しょたん"
+      ],
+      "kr": [
+        "쇼탄"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Felix Film"
+      ]
+    }
+  },
+  "placeCount": 15,
+  "places": [
+    {
+      "placeId": "014b7fb9-97ab-4be8-9d7c-90d9af862c6d",
+      "name": {
+        "de": "In der Nähe des White Oak Parking",
+        "ja": "White Oakパーキング付近",
+        "id": "Sekitar White Oak Parking",
+        "kr": "White Oak Parking 근처",
+        "en": "Near the White Oak Parking",
+        "es": "Cerca de la White Oak Parking"
+      },
+      "geo": {
+        "latitude": 35.69941,
+        "longitude": 139.58174
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.6993385,139.5818628,3a,90y,270.42h,95.04t/data=!3m7!1e1!3m5!1sUHXtCwiGtuGN6wPb0K_Q0g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.0418141149153115%26panoid%3DUHXtCwiGtuGN6wPb0K_Q0g%26yaw%3D270.4211466123969!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    },
+    {
+      "placeId": "213768b5-2d21-4089-ac3c-ff1f24b42f12",
+      "name": {
+        "en": "Ogikubo Hachiman Shrine",
+        "ja": "荻窪八幡神社"
+      },
+      "geo": {
+        "latitude": 35.71059,
+        "longitude": 139.60679
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7105224,139.606755,3a,85.9y,99.32h,98.4t/data=!3m8!1e1!3m6!1sAF1QipNivgahWZuBykTdekJgulY4N3n7Ecr-h4eBjhIh!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNivgahWZuBykTdekJgulY4N3n7Ecr-h4eBjhIh%3Dw900-h600-k-no-pi-8.402066074972169-ya189.31684970908032-ro0-fo100!7i11264!8i5632?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    },
+    {
+      "placeId": "38036a4a-9af5-4e94-b8da-da231c7a3dda",
+      "name": {
+        "en": "Yonekawadobutsu Clinics",
+        "ja": "米川動物病院"
+      },
+      "geo": {
+        "latitude": 35.69687,
+        "longitude": 139.62409
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6967946,139.6235056,3a,31.8y,76.43h,90.04t/data=!3m7!1e1!3m5!1sZxdXtte-tNVpgJozFjzxNQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.03755206963089108%26panoid%3DZxdXtte-tNVpgJozFjzxNQ%26yaw%3D76.43103190820315!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    },
+    {
+      "placeId": "43402a88-1c07-4ef0-8d74-fbd06bc82a55",
+      "name": {
+        "ja": "イエイエ",
+        "en": "Ieie"
+      },
+      "geo": {
+        "latitude": 35.7037,
+        "longitude": 139.6161
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7037662,139.6160905,3a,90y,143.4h,94.78t/data=!3m7!1e1!3m5!1sZ213pGq5LWxuBv2oWRUeng!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.780337335031078%26panoid%3DZ213pGq5LWxuBv2oWRUeng%26yaw%3D143.39990110038613!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    },
+    {
+      "placeId": "434709d1-b159-4cc3-b1d6-af49107e2c6d",
+      "name": {
+        "kr": "패밀리마트 오기쿠보역북점",
+        "ja": "ファミリーマート 荻窪駅北店",
+        "en": "FamilyMart Ogikubo Station North Store"
+      },
+      "geo": {
+        "latitude": 35.70527,
+        "longitude": 139.62018
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.705298,139.6202379,3a,90y,343.12h,116.05t/data=!3m7!1e1!3m5!1slGln4S7_Tkx9d6Bfww9Neg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-26.049310892718623%26panoid%3DlGln4S7_Tkx9d6Bfww9Neg%26yaw%3D343.1221288310276!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    },
+    {
+      "placeId": "4ffb30fc-a9cc-4359-ab47-9d88f25a0d2d",
+      "name": {
+        "ja": "善福寺川緑地",
+        "en": "Zenpuku-ji River Green Space"
+      },
+      "geo": {
+        "latitude": 35.69055,
+        "longitude": 139.63287
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6905274,139.6325658,3a,48.8y,110.61h,90.55t/data=!3m7!1e1!3m5!1sFF6GfXHoCJvyJHKoz3NAyw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.5538217242139467%26panoid%3DFF6GfXHoCJvyJHKoz3NAyw%26yaw%3D110.6101319658018!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    },
+    {
+      "placeId": "5429b546-342f-43ec-87d0-dff583013390",
+      "name": {
+        "ja": "らんふぁ",
+        "en": "Ranfa"
+      },
+      "geo": {
+        "latitude": 35.69978,
+        "longitude": 139.63754
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6997539,139.6375835,3a,90y,324.55h,113.23t/data=!3m7!1e1!3m5!1sDgTrjebLm8iVixQo3H-GMQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-23.22574879856964%26panoid%3DDgTrjebLm8iVixQo3H-GMQ%26yaw%3D324.5532527709597!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    },
+    {
+      "placeId": "5d36a1f1-9635-42a6-958e-dd876c55872e",
+      "name": {
+        "ja": "荻窪タウンセブン",
+        "en": "Ogikubo Town Seven"
+      },
+      "geo": {
+        "latitude": 35.7054,
+        "longitude": 139.61976
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7056077,139.6198596,3a,90y,178.43h,122.75t/data=!3m7!1e1!3m5!1seUveH4LmmAVVM9PXmUx8_w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-32.75471529671148%26panoid%3DeUveH4LmmAVVM9PXmUx8_w%26yaw%3D178.4279002934425!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    },
+    {
+      "placeId": "5e6aab8e-5cec-41f4-8723-702e42640ed3",
+      "name": {
+        "en": "OZEKI Kikukawa store",
+        "ja": "オオゼキ菊川店"
+      },
+      "geo": {
+        "latitude": 35.68898,
+        "longitude": 139.80828
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-sumida-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6890402,139.808356,3a,90y,230.97h,107.34t/data=!3m7!1e1!3m5!1skl-_obzUDiK-HzlFjQZZXA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-17.335816457872625%26panoid%3Dkl-_obzUDiK-HzlFjQZZXA%26yaw%3D230.97072746745297!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    },
+    {
+      "placeId": "8ee1bbd4-a5c2-476c-b09d-bdccfdafade1",
+      "name": {
+        "kr": "하루키야 오기쿠보본점",
+        "ja": "春木屋 荻窪本店",
+        "en": "Harukiya Ogikubo"
+      },
+      "geo": {
+        "latitude": 35.7051,
+        "longitude": 139.6224
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7052605,139.6222062,3a,37.8y,132.87h,92.67t/data=!3m7!1e1!3m5!1sla6N7GXBZrXFdTAtFukP6A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.672941060835086%26panoid%3Dla6N7GXBZrXFdTAtFukP6A%26yaw%3D132.87326480894944!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    },
+    {
+      "placeId": "d65b6fc0-5072-4615-bacb-bd325a0f4752",
+      "name": {
+        "en": "Yodobashi Camera Multimedia Kichijoji Store",
+        "ja": "ヨドバシカメラ マルチメディア 吉祥寺",
+        "kr": "요도바시 멀티미디어 기치조지"
+      },
+      "geo": {
+        "latitude": 35.70476,
+        "longitude": 139.58135
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7044665,139.5809217,3a,90y,71.61h,125.2t/data=!3m7!1e1!3m5!1s0AdIpW0irgepfqLWHvG8_A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-35.201615092182934%26panoid%3D0AdIpW0irgepfqLWHvG8_A%26yaw%3D71.60752520676823!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    },
+    {
+      "placeId": "f1312758-2bbe-435c-a8ed-7fd6656a9d14",
+      "name": {
+        "en": "Starbucks Coffee - Lumine Ogikubo",
+        "ja": "スターバックスコーヒー ルミネ荻窪店",
+        "kr": "스타벅스 커피 루미네 오기쿠보점"
+      },
+      "geo": {
+        "latitude": 35.70476,
+        "longitude": 139.61923
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7048171,139.6190759,3a,90y,135.07h,99.68t/data=!3m7!1e1!3m5!1sfKkWuh4gXhjquh4MASNUlw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.681249999811996%26panoid%3DfKkWuh4gXhjquh4MASNUlw%26yaw%3D135.06592169611372!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    },
+    {
+      "placeId": "f2b094a8-94c0-47c5-9650-045e10b25eed",
+      "name": {
+        "ja": "ココカラファイン薬局 荻窪天沼店",
+        "en": "Kokokarafainyakkyoku Ogikuboamanumaten"
+      },
+      "geo": {
+        "latitude": 35.70551,
+        "longitude": 139.62025
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7054446,139.620258,3a,90y,359.41h,96.89t/data=!3m7!1e1!3m5!1sOqlWBGNPSA3npt4Jbyl6jQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.888260695917822%26panoid%3DOqlWBGNPSA3npt4Jbyl6jQ%26yaw%3D359.4083229149763!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    },
+    {
+      "placeId": "f9baedf1-26e8-41e0-8348-93ee76f4ef61",
+      "name": {
+        "en": "Timaketto Jikurefu Asagayaten",
+        "ja": "ティーマーケット ジークレフ 阿佐ヶ谷店"
+      },
+      "geo": {
+        "latitude": 35.70179,
+        "longitude": 139.63663
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7018808,139.6364903,3a,71.4y,108.61h,95.06t/data=!3m7!1e1!3m5!1s15GEhRte5q1vSw2PsNnQfg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.055709837565004%26panoid%3D15GEhRte5q1vSw2PsNnQfg%26yaw%3D108.60643696786924!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    },
+    {
+      "placeId": "ff4ae114-0c4c-4457-9dd0-22735d618e69",
+      "name": {
+        "ja": "セブン-イレブン 杉並阿佐谷南１丁目店",
+        "kr": "세븐일레븐 스기나미아사다니미나미1초메점",
+        "en": "7-Eleven Suginami Asagayaminami 1-chome store"
+      },
+      "geo": {
+        "latitude": 35.70358,
+        "longitude": 139.6369
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7034548,139.6368829,3a,75y,357.83h,105.46t/data=!3m7!1e1!3m5!1s7RPrAiiwLYJULZmII2SKjQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.463172998351027%26panoid%3D7RPrAiiwLYJULZmII2SKjQ%26yaw%3D357.83112823208853!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© しょたん／小学館／君は冥土様。製作委員会"
+    }
+  ]
+}

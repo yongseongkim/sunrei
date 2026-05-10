@@ -1,0 +1,196 @@
+{
+  "anime": {
+    "animeId": "X7iF240giFDBUnldbUVY",
+    "slug": "amagi-brilliant-park",
+    "title": {
+      "ja": "甘城ブリリアントパーク",
+      "kr": "아마기 브릴리언트 파크",
+      "en": "Amagi Brilliant Park"
+    },
+    "author": {
+      "en": [
+        "Shoji Gatoh",
+        "Yuka Nakajima"
+      ],
+      "ja": [
+        "賀東招二",
+        "なかじまゆか"
+      ],
+      "kr": [
+        "가토 쇼지",
+        "나카지마 유카"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Kyoto Animation"
+      ]
+    }
+  },
+  "placeCount": 10,
+  "places": [
+    {
+      "placeId": "0acc0a77-4c89-40d4-befa-9e22630f6f5a",
+      "name": {
+        "ja": "大和橋(バス)",
+        "en": "Yamato bashi(Bus)"
+      },
+      "geo": {
+        "latitude": 35.65518,
+        "longitude": 139.63795
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6554571,139.6379191,3a,40.7y,170.76h,93.47t/data=!3m7!1e1!3m5!1spWG2L-j010k1zzRCeARIag!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.4738611980043856%26panoid%3DpWG2L-j010k1zzRCeARIag%26yaw%3D170.76041540260198!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©賀東招二・なかじまゆか/甘ブリ再生委員会"
+    },
+    {
+      "placeId": "17eabf36-44da-4ba9-bf9b-ee7d6a1e203a",
+      "name": {
+        "ja": "稲城駅",
+        "en": "Inagi Station",
+        "kr": "이나기 역"
+      },
+      "geo": {
+        "latitude": 35.63604,
+        "longitude": 139.50035
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-inagi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6359972,139.5003798,3a,75y,7.03h,97.83t/data=!3m7!1e1!3m5!1s_s1FgZEfUkX21gLwt5Rm6A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.832415232567357%26panoid%3D_s1FgZEfUkX21gLwt5Rm6A%26yaw%3D7.030617280864608!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©賀東招二・なかじまゆか/甘ブリ再生委員会"
+    },
+    {
+      "placeId": "18690b7e-bebc-49c6-84af-7c236183430a",
+      "name": {
+        "en": "Odakyu OX Kyodo",
+        "ja": "Odakyu OX 経堂店"
+      },
+      "geo": {
+        "latitude": 35.65167,
+        "longitude": 139.6363
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6517547,139.6363461,3a,75y,216.95h,98.39t/data=!3m7!1e1!3m5!1sc0ty3Z5kiZThluOEn20bCg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.385730752471687%26panoid%3Dc0ty3Z5kiZThluOEn20bCg%26yaw%3D216.95346087253526!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©賀東招二・なかじまゆか/甘ブリ再生委員会"
+    },
+    {
+      "placeId": "1a9ff373-bd7b-4b15-805a-28df2fae347d",
+      "name": {
+        "en": "Kokata Park",
+        "kr": "코카타 공원",
+        "ja": "幸方(こうかた)公園"
+      },
+      "geo": {
+        "latitude": 35.63696,
+        "longitude": 139.50974
+      },
+      "ep": 1,
+      "type": "OP",
+      "cityId": "JP-tokyo-inagi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6368943,139.5095276,3a,75y,76.49h,101.7t/data=!3m7!1e1!3m5!1suGZvYWs-FdS8AJauCio0KA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.700217904392801%26panoid%3DuGZvYWs-FdS8AJauCio0KA%26yaw%3D76.48600676870696!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©賀東招二・なかじまゆか/甘ブリ再生委員会"
+    },
+    {
+      "placeId": "330c146e-af7e-4216-b2f1-1c524464b289",
+      "name": {
+        "en": "Kyodo Suzuran Shopping Street",
+        "ja": "経堂すずらん商店街"
+      },
+      "geo": {
+        "latitude": 35.65184,
+        "longitude": 139.63712
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6517868,139.6371684,3a,90y,310.69h,108.41t/data=!3m7!1e1!3m5!1s_ClzxDGpH1omKZtny34Ocg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.406241264998513%26panoid%3D_ClzxDGpH1omKZtny34Ocg%26yaw%3D310.690480151416!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©賀東招二・なかじまゆか/甘ブリ再生委員会"
+    },
+    {
+      "placeId": "4598e58e-95c1-45e6-a845-92522a804a09",
+      "name": {
+        "ja": "桜ヶ丘カントリークラブ（バス）",
+        "en": "Sakuragaoka Country Club(Bus)"
+      },
+      "geo": {
+        "latitude": 35.64132,
+        "longitude": 139.46629
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://www.google.com/maps/@35.6412605,139.4663412,3a,90y,173.53h,109.48t/data=!3m7!1e1!3m5!1sS8Vb-iWLm0ne6BO4TU3ssQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-19.4842076543177%26panoid%3DS8Vb-iWLm0ne6BO4TU3ssQ%26yaw%3D173.53460181499017!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©賀東招二・なかじまゆか/甘ブリ再生委員会"
+    },
+    {
+      "placeId": "b9bb6866-0897-4bf6-8ab9-c86a3421c39e",
+      "name": {
+        "en": "Hashiba Sushi",
+        "ja": "はしば寿司"
+      },
+      "geo": {
+        "latitude": 35.63524,
+        "longitude": 139.51723
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-inagi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6351786,139.5171725,3a,75y,11.13h,100.23t/data=!3m7!1e1!3m5!1sTxm2WOab2_HS3A3nM_k3aA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.230784361485362%26panoid%3DTxm2WOab2_HS3A3nM_k3aA%26yaw%3D11.132761095023662!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©賀東招二・なかじまゆか/甘ブリ再生委員会"
+    },
+    {
+      "placeId": "cd82494b-2fec-4353-abce-8cacefa4795f",
+      "name": {
+        "ja": "ケンタッキーフライドチキン経堂店",
+        "en": "KFC Kyodo"
+      },
+      "geo": {
+        "latitude": 35.65187,
+        "longitude": 139.63634
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.651841,139.6363844,3a,90y,358.53h,101.03t/data=!3m7!1e1!3m5!1svgVIJRoYBU-gcsWVBWWnTA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.034446064002239%26panoid%3DvgVIJRoYBU-gcsWVBWWnTA%26yaw%3D358.53185192817716!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©賀東招二・なかじまゆか/甘ブリ再生委員会"
+    },
+    {
+      "placeId": "dfcd3ba2-cad3-4979-8fc5-754222b63e62",
+      "name": {
+        "en": "Sakuragaoka Country Club",
+        "ja": "桜ヶ丘カントリークラブ"
+      },
+      "geo": {
+        "latitude": 35.64059,
+        "longitude": 139.46495
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://www.google.com/maps/@35.6405775,139.4648618,3a,90y,34.17h,105.01t/data=!3m7!1e1!3m5!1sdqnPubcBEXa3pQeLqADkxg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.013694735573907%26panoid%3DdqnPubcBEXa3pQeLqADkxg%26yaw%3D34.171448469885895!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©賀東招二・なかじまゆか/甘ブリ再生委員会"
+    },
+    {
+      "placeId": "e184e3ba-3252-484b-bf9a-7075aae7ebcb",
+      "name": {
+        "en": "Keio-yomiuri-land Station",
+        "ja": "京王よみうりランド駅",
+        "kr": "게이오요미우리랜드 역"
+      },
+      "geo": {
+        "latitude": 35.63288,
+        "longitude": 139.51732
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-inagi",
+      "streetViewUrl": "https://www.google.com/maps/@35.632712,139.5173669,3a,90y,180.86h,114.84t/data=!3m7!1e1!3m5!1s3t58Icky5fQei3cDO2vuQw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-24.838741747800327%26panoid%3D3t58Icky5fQei3cDO2vuQw%26yaw%3D180.8596841123291!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©賀東招二・なかじまゆか/甘ブリ再生委員会"
+    }
+  ]
+}

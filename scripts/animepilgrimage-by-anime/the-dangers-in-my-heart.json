@@ -1,0 +1,434 @@
+{
+  "anime": {
+    "animeId": "ixBmE5zoDtYosQdmGw6J",
+    "slug": "the-dangers-in-my-heart",
+    "title": {
+      "ja": "僕の心のヤバイやつ",
+      "kr": "내 마음의 위험한 녀석",
+      "en": "The Dangers in My Heart"
+    },
+    "author": {
+      "ja": [
+        "桜井のりお"
+      ],
+      "en": [
+        "Norio Sakurai"
+      ],
+      "kr": [
+        "사쿠라이 노리오"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Shin-Ei Animation"
+      ]
+    }
+  },
+  "placeCount": 25,
+  "places": [
+    {
+      "placeId": "02648dcd-b089-4257-9575-d62a29152bcd",
+      "name": {
+        "kr": "메구로 역",
+        "en": "Meguro Station",
+        "ja": "目黒駅"
+      },
+      "geo": {
+        "latitude": 35.63246,
+        "longitude": 139.71586
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/29MwimQWr9QcDQ2e6",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "174b9651-eb05-4d5e-ba2d-7f49a46cf709",
+      "name": {
+        "en": "Glendale Senzoku",
+        "ja": "グレンデール洗足"
+      },
+      "geo": {
+        "latitude": 35.61076,
+        "longitude": 139.69615
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/XBjEC7kXMFvQVPko9",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "17b1d8c8-6872-4709-b424-68c7d60cd1bc",
+      "name": {
+        "ja": "ガスト 大岡山駅前店",
+        "en": "Gusto Ookayama-Ekimae Store",
+        "kr": "가스토 오오오카야마역앞점"
+      },
+      "geo": {
+        "latitude": 35.6081,
+        "longitude": 139.68541
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://maps.app.goo.gl/YvzpY2WfAf1vWXg87",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "1a8e13d8-f4d5-4cf2-9493-e94192ab555d",
+      "name": {
+        "en": "Lululemon Shibuya"
+      },
+      "geo": {
+        "latitude": 35.66004,
+        "longitude": 139.70085
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/4xAaTWrwQteXKa879",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "1c102480-490a-44da-ba57-a9b90dd54eda",
+      "name": {
+        "ja": "目黒不動尊",
+        "en": "Meguro Fudoson"
+      },
+      "geo": {
+        "latitude": 35.62799,
+        "longitude": 139.70829
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/kE9Bcnvrzvv4y15M9",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "31dbf79c-3b0a-4c9d-a3dc-263ef93b65f7",
+      "name": {
+        "en": "Books Tama - Ozaku",
+        "ja": "ブックスタマ 小作店"
+      },
+      "geo": {
+        "latitude": 35.77573,
+        "longitude": 139.30565
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-hamura",
+      "streetViewUrl": "https://maps.app.goo.gl/U15sSiPfh6We83Gw9",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "407237d0-e94a-4869-a28b-c66f93b19cd7",
+      "name": {
+        "kr": "센조쿠 역",
+        "ja": "洗足駅",
+        "en": "Senzoku Sta."
+      },
+      "geo": {
+        "latitude": 35.61051,
+        "longitude": 139.6945
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/6aNexvzHxnJu9D9x7",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "43025735-5ebf-4549-babf-e0215b53d278",
+      "name": {
+        "en": "Tomod's Senzoku Ekimae Store",
+        "ja": "トモズ 洗足駅前店"
+      },
+      "geo": {
+        "latitude": 35.61063,
+        "longitude": 139.69455
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/sZwER2gRra7JCyUn8",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "498b7574-c885-4cd6-b4d7-3c1de7e8b30f",
+      "name": {
+        "en": "/ Pierrot Hatanodaiten Coin Laundry",
+        "ja": "コインランドリー/ピエロ 旗の台店"
+      },
+      "geo": {
+        "latitude": 35.61023,
+        "longitude": 139.70135
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/LD57E43MEwXhaBgN8",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "4f901195-47ae-4c7c-b7ab-11e68fd1a895",
+      "name": {
+        "ja": "㈱秋田書店 本社",
+        "en": "Akita Shoten Headquarters Sales Section"
+      },
+      "geo": {
+        "latitude": 35.70051,
+        "longitude": 139.74886
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/PWcRrfMZYB3FRYgE7",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "69fe7074-56f9-48d7-bb18-8a4388f369b6",
+      "name": {
+        "ja": "楽天モバイル 渋谷公園通り店",
+        "en": "Rakuten Mobile Shibuya Koen-dori Store"
+      },
+      "geo": {
+        "latitude": 35.6616,
+        "longitude": 139.70012
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/FSAPGxT4ZxNBRuMk7",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "701c36da-6719-4839-b710-63080e4f3dda",
+      "name": {
+        "ja": "フラワーズ リトフォス",
+        "en": "Zu Ritofosu Flowers"
+      },
+      "geo": {
+        "latitude": 35.61068,
+        "longitude": 139.69544
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/ecYfHXDU3aWjExCo6",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "8942f9fb-f62a-423a-9484-381fc0c48f45",
+      "name": {
+        "ja": "荏原警察署 洗足駐在所",
+        "en": "Senzoku Police Box"
+      },
+      "geo": {
+        "latitude": 35.6097,
+        "longitude": 139.69737
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/1eYEU73HxXvekrE36",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "8c695cf5-fbff-46d9-a416-291a1745404b",
+      "name": {
+        "en": "Maison Grissin SENZOKU",
+        "ja": "メゾングリシーヌSENZOKU"
+      },
+      "geo": {
+        "latitude": 35.60888,
+        "longitude": 139.69814
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/tEsrzG76mH2qaMdd7",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "9420190d-d5fb-43db-b4a1-a845c8720957",
+      "name": {
+        "en": "McDonald's Musashi Koyama Branch",
+        "ja": "マクドナルド 武蔵小山店"
+      },
+      "geo": {
+        "latitude": 35.61893,
+        "longitude": 139.70512
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/ADEQxsPmSsbrYnqF9",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "962d1990-89be-47a3-98bd-11338c02dd8e",
+      "name": {
+        "en": "Grandma's GEORGES"
+      },
+      "geo": {
+        "latitude": 35.66214,
+        "longitude": 139.69951
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/dRUmW3H7VX53Gu7T9",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "a31d14c1-87d7-4fe9-a1be-9696bcd8cc68",
+      "name": {
+        "ja": "ファミリーマート 原町二丁目店",
+        "en": "FamilyMart Haramachi 2-chome store"
+      },
+      "geo": {
+        "latitude": 35.61397,
+        "longitude": 139.69164
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/FvdPtaAovuv69kL4A",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "b4f0382a-8f25-4763-acb1-d7d0ac9fd258",
+      "name": {
+        "kr": "유니클로 시부야 도겐자카점",
+        "en": "UNIQLO Shibuya Dogenzaka",
+        "ja": "ユニクロ 渋谷道玄坂店"
+      },
+      "geo": {
+        "latitude": 35.65925,
+        "longitude": 139.69821
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/zhpArSfv8kFg8ybY8",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "b8b01af2-bdbf-4d25-b6ad-96f764bb39cd",
+      "name": {
+        "ja": "いちょう通り歯科医院",
+        "en": "Ginkgo Street Dental Clinic"
+      },
+      "geo": {
+        "latitude": 35.60965,
+        "longitude": 139.69614
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/rfZ9hHKtcb6roLRWA",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "b9402507-67fd-48b2-9cb1-f8dbbab3e32b",
+      "name": {
+        "ja": "目黒不動尊",
+        "en": "Meguro Fudoson"
+      },
+      "geo": {
+        "latitude": 35.62846,
+        "longitude": 139.70813
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/mcn4dXxvfVfn5s2G7",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "ba234d5f-7d6d-41c4-a554-8f7b2f03d9e8",
+      "name": {
+        "en": "Senzoku Police Box",
+        "ja": "荏原警察署 洗足駐在所"
+      },
+      "geo": {
+        "latitude": 35.60979,
+        "longitude": 139.69934
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/oqjii8WgVmcPjE3e8",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "d43f9289-8015-44a9-b790-86c1730b984c",
+      "name": {
+        "en": "Meguro Shinkin Bank Senzoku Branch",
+        "ja": "目黒信用金庫 洗足支店"
+      },
+      "geo": {
+        "latitude": 35.60963,
+        "longitude": 139.69567
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/VeJjJDeBPyRjTZGY9",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "d4948677-d10c-42a6-8777-f80f49928310",
+      "name": {
+        "ja": "ハチ公前広場",
+        "en": "Hachiko Square",
+        "kr": "하치코앞 광장"
+      },
+      "geo": {
+        "latitude": 35.65902,
+        "longitude": 139.70072
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/1gqy8jvRnaz8xBHa9",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "e9311d10-c446-4b5a-8c78-6ad5fedb3afc",
+      "name": {
+        "en": "Haramachi Police Box",
+        "ja": "碑文谷警察署 原町交番"
+      },
+      "geo": {
+        "latitude": 35.61517,
+        "longitude": 139.6916
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/H1daJss7DQnzh9C98",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "f9b9e1a4-d101-4994-b665-6812adb091de",
+      "name": {
+        "ja": "目黒駅",
+        "kr": "메구로 역",
+        "en": "Meguro Station"
+      },
+      "geo": {
+        "latitude": 35.63267,
+        "longitude": 139.71575
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/CQYoe6PQxaVQA8UA9",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    }
+  ]
+}

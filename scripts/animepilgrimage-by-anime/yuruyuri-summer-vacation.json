@@ -1,0 +1,437 @@
+{
+  "anime": {
+    "animeId": "KHL2EcBmiHS2xQGNpVB4",
+    "slug": "yuruyuri-summer-vacation",
+    "title": {
+      "ja": "ゆるゆり なちゅやちゅみ！",
+      "kr": "유루유리 나츄야츄미!",
+      "en": "YuruYuri Summer Vacation!"
+    },
+    "author": {
+      "kr": [
+        "나모리"
+      ],
+      "en": [
+        "Namori"
+      ],
+      "ja": [
+        "なもり"
+      ]
+    },
+    "studio": {
+      "en": [
+        "TYO Animations"
+      ],
+      "ja": [
+        "TYOアニメーションズ"
+      ]
+    }
+  },
+  "placeCount": 25,
+  "places": [
+    {
+      "placeId": "0189d471-6811-4a20-88fe-7281bf7fb266",
+      "name": {
+        "ja": "散居村展望広場",
+        "en": "Sankyoson observation plaza"
+      },
+      "geo": {
+        "latitude": 36.55946,
+        "longitude": 136.98795
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5592799,136.9878841,3a,90y,306.77h,99.33t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDC_K6ylwE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYmySLZPnRYqewb0Oum3Kg14540dtP0qvk9FMk2WkIdYfx-htqT5-EYGtbDTqtCD8pmjCWvLtK6MQdreocNhbcC_heoSRPxayUTV0ft2XTMVd1mRX9ZgdiCInL_6Un1n67MY0sH%3Dw900-h600-k-no-pi-9.328977780083733-ya353.77337055736945-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "2e94a5f6-35cd-45c2-97dc-ff8f23a747cc",
+      "name": {
+        "ja": "八百屋おぐら",
+        "en": "Grocery store Ogura"
+      },
+      "geo": {
+        "latitude": 36.56127,
+        "longitude": 136.97203
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5613447,136.9719916,3a,65.2y,154.02h,95.2t/data=!3m7!1e1!3m5!1saZUJYtvM0dJGgl4We2LgXg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.203722579762811%26panoid%3DaZUJYtvM0dJGgl4We2LgXg%26yaw%3D154.0156393814709!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "3ef5b3ad-31b1-47b0-a796-973f7da59382",
+      "name": {
+        "ja": "富山岩黒配水池",
+        "en": "Toyama Iwakuro Water Distribution Pond"
+      },
+      "geo": {
+        "latitude": 36.56033,
+        "longitude": 136.9795
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5603559,136.9795438,3a,90y,289.46h,98.51t/data=!3m7!1e1!3m5!1sHB9tr16peusBU_aHhmvILQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.511371346114089%26panoid%3DHB9tr16peusBU_aHhmvILQ%26yaw%3D289.46104648046975!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "43ab3592-a805-4180-951d-31a89c3ef641",
+      "name": {
+        "ja": "喫茶らんぶる",
+        "en": "coffee shop rambling"
+      },
+      "geo": {
+        "latitude": 36.73851,
+        "longitude": 137.0162
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.738594,137.0160516,3a,75y,139.17h,98.41t/data=!3m7!1e1!3m5!1sZMBZfUYnSooYVPsRZbagGQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.410472746505803%26panoid%3DZMBZfUYnSooYVPsRZbagGQ%26yaw%3D139.1745393980932!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "46ef6826-a735-4395-ade5-13852292dc15",
+      "name": {
+        "ja": "散居村展望広場",
+        "en": "Sankyoson observation plaza"
+      },
+      "geo": {
+        "latitude": 36.55898,
+        "longitude": 136.98692
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5582617,136.98742,3a,22.1y,112.73h,84.66t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDE6eDYbw!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZBFZuP3Nx1eH1GfI0yjxJ36KOkLNuW-tK7wSIhhZzzn_ILh84mb7bMLD3dYjb5baUlbpd7fd_HHcOEZYDDHft6PS2hVVr_sLoh7ktSb5ordtgZrmxKfxK6-NxMHpdgCorsQEDZ%3Dw900-h600-k-no-pi5.33703787158386-ya112.727432913184-ro0-fo100!7i8000!8i4000?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "5646c59a-9001-4629-ae7f-23b80e76ce15",
+      "name": {
+        "ja": "閑乗寺公園 駐車場",
+        "en": "Kanjoji Park Parking Lot"
+      },
+      "geo": {
+        "latitude": 36.56051,
+        "longitude": 136.98456
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5609477,136.9852416,3a,20y,229.3h,89.59t/data=!3m7!1e1!3m5!1sj1RMPyYmHeaBOw9_-CgCyQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.4139080354854201%26panoid%3Dj1RMPyYmHeaBOw9_-CgCyQ%26yaw%3D229.29507054637162!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "575ae3b9-91b3-4c3b-8ddb-5305a0c0a4cb",
+      "name": {
+        "en": "Takaoka Station",
+        "ja": "高岡駅",
+        "kr": "다카오카 역"
+      },
+      "geo": {
+        "latitude": 36.74131,
+        "longitude": 137.01561
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7412848,137.0155905,3a,75y,344.44h,99.64t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgICc7LyfDg!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZsDJFXNdxO17qJSEsDMaSD5LHH_nCUPg3hqo4yHEigMTyh9vTTbqVs-epTkzljBUeGsrIhwUB0l8GxLWvbjktaR9jTrhR9kiFSnzY20mvMjtY9qg7uAfTRVuF77VicP7WYCeQY%3Dw900-h600-k-no-pi-9.641165374650228-ya125.84119367357854-ro0-fo100!7i11958!8i5979?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "84aee657-48cd-4851-9135-a57ae41ea7df",
+      "name": {
+        "ja": "東町公民館",
+        "en": "Higashimachi Community Center"
+      },
+      "geo": {
+        "latitude": 36.56143,
+        "longitude": 136.97583
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.56141,136.975922,3a,64.3y,113.09h,99.93t/data=!3m7!1e1!3m5!1sO1z07RqRPkMtNKbAFcfiXg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.928101000008155%26panoid%3DO1z07RqRPkMtNKbAFcfiXg%26yaw%3D113.09268950578189!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "85984381-fe56-4a52-a9a1-e46caf338783",
+      "name": {
+        "en": "Kanjoji Koen Dai 1 Camping Ground",
+        "ja": "閑乗寺公園 第1キャンプ場"
+      },
+      "geo": {
+        "latitude": 36.56016,
+        "longitude": 136.98565
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/place/Kanjoji+Koen+Dai+1+Camping+Ground/@36.56003,136.985195,3a,22.9y,104.66h,88.84t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDE6ajeoAE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HblVVJTlTYb91TY2XUmKI_nFmRAjkbZufPq0RtuvOnsYPLaqQicPNMEQThtMLp-IeyadIasBl7bCmsfmlQq3T43973Wrz4ifhECl4TUNYkb8GcwaRnuVj3mWXWqo7xMvkkxcbDVyw%3Dw900-h600-k-no-pi1.1593878287333155-ya104.66177576710791-ro0-fo100!7i8000!8i4000!4m13!3m12!1s0x5ff8268ce1548da7:0x55e03b2bd3c55165!5m3!1s2025-06-16!4m1!1i2!8m2!3d36.5596353!4d136.9845135!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F119tpy5t4?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "8e50a8f6-d29d-40b4-be0c-4df812d023b2",
+      "name": {
+        "ja": "砺波駅北口タクシー乗り場",
+        "en": "Tonami Station North Exit Taxi Stand"
+      },
+      "geo": {
+        "latitude": 36.63687,
+        "longitude": 136.95316
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-tonami",
+      "streetViewUrl": "https://www.google.com/maps/@36.6368693,136.9532439,3a,63.4y,218.62h,88.26t/data=!3m7!1e1!3m5!1sY9bFSNkvkPfV992hGiqiHA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.737773527119927%26panoid%3DY9bFSNkvkPfV992hGiqiHA%26yaw%3D218.61541483421408!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "98762e7b-42c8-4ac9-9c2b-a76e3d3a24c8",
+      "name": {
+        "en": "Konishi Estate Agents",
+        "ja": "小西不動産(株)"
+      },
+      "geo": {
+        "latitude": 36.56022,
+        "longitude": 136.97153
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5601599,136.9714493,3a,75y,42.24h,96.33t/data=!3m7!1e1!3m5!1sQQNQM0G5Q2Mnr2JbDCgsEQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.33480704019081%26panoid%3DQQNQM0G5Q2Mnr2JbDCgsEQ%26yaw%3D42.243950012525175!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "a4d3ca09-be43-4790-84a0-e8c2d48a77d1",
+      "name": {
+        "ja": "道の駅 井波",
+        "en": "Roadside station Inami"
+      },
+      "geo": {
+        "latitude": 36.56144,
+        "longitude": 136.97751
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5616042,136.9772122,3a,34.5y,135.01h,99.44t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDmyPmC4wE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6Hah7VOIXw4RTCr2rOCFX1TY0oePvIAYTElUlUlNS7-l1EXh5aDKgz9j6HdCNYzG3uIbB5iQPEriqh7Adx1LPsFW94eD-1p3W-SblMPHFXB4LSvkeiwfXKX8cq-aGpjpC8BPazJUKQ%3Dw900-h600-k-no-pi-9.435669261649494-ya120.00652656976902-ro0-fo100!7i11264!8i5632?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "a98f6fa0-fa5d-44d0-adf8-8561c7d9112e",
+      "name": {
+        "kr": "다카오카 역",
+        "ja": "高岡駅",
+        "en": "Takaoka Station"
+      },
+      "geo": {
+        "latitude": 36.74125,
+        "longitude": 137.01573
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7412654,137.0155798,3a,75y,61.34h,95.48t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgIDc7ZKpVQ!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HY5Ti9OcuoWuB_EYJGLVdmBbmWIdunvZOEoGg2Tbm-cWBhxPJ7SsVJXq30wtVgBBlM6SqjkK_FgEBALtSmkSf1lTPSY6V4xSiqMoCIDI1Rua-3hQFlZZgOWiL9B4erAUB1PNhSW%3Dw900-h600-k-no-pi-5.481367309122646-ya250.93742450615332-ro0-fo100!7i11962!8i5981?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "ae3c3979-569a-4d40-875f-28240a282bf5",
+      "name": {
+        "ja": "道の駅 井波",
+        "en": "Roadside station Inami"
+      },
+      "geo": {
+        "latitude": 36.56111,
+        "longitude": 136.97768
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5609397,136.9773947,3a,19.9y,64.41h,90.33t/data=!3m7!1e1!3m5!1sFve3pqBpl2eAsGHFzxTcHg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.32685478732614115%26panoid%3DFve3pqBpl2eAsGHFzxTcHg%26yaw%3D64.41403014327159!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "b33b78ea-13de-4a7f-b3d1-6d22c7cc6c2a",
+      "name": {
+        "ja": "富山岩黒配水池",
+        "en": "Toyama Iwakuro Water Distribution Pond"
+      },
+      "geo": {
+        "latitude": 36.56037,
+        "longitude": 136.98087
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5603347,136.9808509,3a,90y,96.86h,101.51t/data=!3m7!1e1!3m5!1slGE1Jy2FqAgDbS2Ws_iEAA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.510740330982884%26panoid%3DlGE1Jy2FqAgDbS2Ws_iEAA%26yaw%3D96.86005132889531!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "bc225b8f-a2bb-4025-840a-983ba3f14bf2",
+      "name": {
+        "en": "Tonami Station North Exit Taxi Stand",
+        "ja": "砺波駅北口タクシー乗り場"
+      },
+      "geo": {
+        "latitude": 36.63683,
+        "longitude": 136.95301
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-tonami",
+      "streetViewUrl": "https://www.google.com/maps/@36.6368674,136.9529424,3a,48.8y,106.87h,92.97t/data=!3m7!1e1!3m5!1sHBGU4Iu6EFKNCIyG90tZ9w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.9679363509811054%26panoid%3DHBGU4Iu6EFKNCIyG90tZ9w%26yaw%3D106.87189221855944!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "c7e1f083-4d79-4149-a510-0b7e032e1b1e",
+      "name": {
+        "ja": "八百屋おぐら",
+        "en": "Grocery store Ogura"
+      },
+      "geo": {
+        "latitude": 36.56135,
+        "longitude": 136.97202
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5613447,136.9719916,3a,63.4y,28.09h,98.21t/data=!3m7!1e1!3m5!1saZUJYtvM0dJGgl4We2LgXg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.213161603461273%26panoid%3DaZUJYtvM0dJGgl4We2LgXg%26yaw%3D28.091106312158566!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "cb0f0d91-8365-4ec5-8850-0240adb552f7",
+      "name": {
+        "ja": "閑乗寺公園 駐車場",
+        "en": "Kanjoji Park Parking Lot"
+      },
+      "geo": {
+        "latitude": 36.5607,
+        "longitude": 136.98477
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5607401,136.9846791,3a,64.3y,154.71h,99.25t/data=!3m7!1e1!3m5!1su1HWzBgGoSJiNwsXVVjKbw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.254654107489031%26panoid%3Du1HWzBgGoSJiNwsXVVjKbw%26yaw%3D154.7140759854541!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "d6490c5a-4cf4-46ca-834f-247665a72084",
+      "name": {
+        "en": "Tonami Station",
+        "ja": "砺波駅"
+      },
+      "geo": {
+        "latitude": 36.63654,
+        "longitude": 136.95367
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-tonami",
+      "streetViewUrl": "https://www.google.com/maps/@36.6365297,136.9537298,3a,90y,110.37h,100.28t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDEgNuePQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZC-sve_AVTrekb6142VQiKpsIAzHVYQFSOH7WL207JJBRsJmuQWT7zIqHLrFs4IxuJKK3tAVeJFz8v1ouB3uzniBbOSYpADZYejPk0zhcdKuZm7N8frafmKpQRIC7b3ohhsxrV%3Dw900-h600-k-no-pi-10.277457539346713-ya312.87158332597966-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "e5e9bd64-256d-436b-8fc6-868fb59824df",
+      "name": {
+        "ja": "高岡駅",
+        "en": "Takaoka Station",
+        "kr": "다카오카 역"
+      },
+      "geo": {
+        "latitude": 36.74128,
+        "longitude": 137.01557
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7412848,137.0155905,3a,73.2y,238.02h,98.87t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgICc7LyfDg!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZsDJFXNdxO17qJSEsDMaSD5LHH_nCUPg3hqo4yHEigMTyh9vTTbqVs-epTkzljBUeGsrIhwUB0l8GxLWvbjktaR9jTrhR9kiFSnzY20mvMjtY9qg7uAfTRVuF77VicP7WYCeQY%3Dw900-h600-k-no-pi-8.8651868297125-ya19.4238096506231-ro0-fo100!7i11958!8i5979?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "e67352e8-4724-41a8-a29c-12b8e035f6be",
+      "name": {
+        "ja": "よしむら",
+        "en": "Yoshimura"
+      },
+      "geo": {
+        "latitude": 36.56174,
+        "longitude": 136.97207
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5617757,136.9720381,3a,90y,267.71h,93.96t/data=!3m7!1e1!3m5!1sF1UfmEazEUCiIXB9QMjsHg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.956884892408681%26panoid%3DF1UfmEazEUCiIXB9QMjsHg%26yaw%3D267.71450095465644!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "ea622d2f-52ce-4cc0-a256-be4963447126",
+      "name": {
+        "en": "Toyama Iwakuro Water Distribution Pond",
+        "ja": "富山岩黒配水池"
+      },
+      "geo": {
+        "latitude": 36.56015,
+        "longitude": 136.98029
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5601873,136.9802818,3a,75y,153.81h,85.54t/data=!3m7!1e1!3m5!1sjxlkmKsAbHffTMqyylzPdQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D4.463741729933545%26panoid%3DjxlkmKsAbHffTMqyylzPdQ%26yaw%3D153.81191720868924!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "fdb8d692-a900-43da-8875-345370ea081b",
+      "name": {
+        "ja": "高岡駅",
+        "en": "Takaoka Station",
+        "kr": "다카오카 역"
+      },
+      "geo": {
+        "latitude": 36.74088,
+        "longitude": 137.01499
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7416672,137.0152939,3a,90y,46.19h,93.56t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDc-6PwlgE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HbjuTXhXDk0OCI8gFiDps3oA4QHZiPa9P2ONf9C6tEgP4HI3U4qlAo0_RhnrGXPwIRzEIkIjVHEjYu3pPwzZ-HKgWoqKToM5OyDxmly-r58G77tshLAoWcOOeoN59ZzNXbc-D4N%3Dw900-h600-k-no-pi-3.5615381663384085-ya326.1904325563819-ro0-fo100!7i4096!8i2048?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "fdd03fff-192b-4723-bd70-df9141fd0a05",
+      "name": {
+        "ja": "米田理容院",
+        "en": "Yoneda Barber Shop"
+      },
+      "geo": {
+        "latitude": 36.63426,
+        "longitude": 136.95301
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-tonami",
+      "streetViewUrl": "https://www.google.com/maps/@36.6344966,136.953212,3a,48.7y,215.25h,96.91t/data=!3m7!1e1!3m5!1sOh_MkfTGUpQ--fK7jEtAag!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.9091208302887%26panoid%3DOh_MkfTGUpQ--fK7jEtAag%26yaw%3D215.25274245694763!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "ff793ce7-591b-4fa6-8b36-ee4126115bc0",
+      "name": {
+        "en": "Wakimoto Fresh Fish Store",
+        "ja": "脇本鮮魚店"
+      },
+      "geo": {
+        "latitude": 36.56094,
+        "longitude": 136.972
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-nanto",
+      "streetViewUrl": "https://www.google.com/maps/@36.5609467,136.9719917,3a,75y,90.83h,93.79t/data=!3m7!1e1!3m5!1s6aUfSCtF1cVz_j5WPj1qDQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.7946155283594436%26panoid%3D6aUfSCtF1cVz_j5WPj1qDQ%26yaw%3D90.82578838182303!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2014 なもり/一迅社・七森中ごらく部"
+    }
+  ]
+}

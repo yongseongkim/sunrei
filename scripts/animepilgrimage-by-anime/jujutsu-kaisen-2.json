@@ -1,0 +1,1297 @@
+{
+  "anime": {
+    "animeId": "UrP8DF1mot4eA2YfzSJk",
+    "slug": "jujutsu-kaisen-2",
+    "title": {
+      "kr": "주술회전 2기",
+      "en": "Jujutsu Kaisen 2",
+      "ja": "呪術廻戦 2期"
+    },
+    "author": {
+      "ja": [
+        "芥見下々"
+      ],
+      "en": [
+        "Gege Akutami"
+      ],
+      "kr": [
+        "아쿠타미 게게"
+      ]
+    },
+    "studio": {
+      "en": [
+        "MAPPA"
+      ]
+    }
+  },
+  "placeCount": 77,
+  "places": [
+    {
+      "placeId": "03ec3dae-ffc1-4480-9c7e-071420926c60",
+      "name": {
+        "en": "B3F Shibuya Hikarie",
+        "ja": "B3F 渋谷ヒカリエ",
+        "kr": "B3F 시부야 히카리에"
+      },
+      "geo": {
+        "latitude": 35.65898,
+        "longitude": 139.70302
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6587801,139.7028365,2a,75y,38.32h,98.91t,0r/data=!3m6!1e1!3m4!1sjOCqqB_ihkMMDWNTkFxrkw!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "063d698e-6ac0-4b6b-b729-df058365dda5",
+      "name": {
+        "ja": "バンコクナイト渋谷",
+        "en": "Bangkok Night Shibuya"
+      },
+      "geo": {
+        "latitude": 35.6626,
+        "longitude": 139.69711
+      },
+      "ep": 6,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6625743,139.6970943,3a,90y,33.68h,105.13t/data=!3m7!1e1!3m5!1sl6XO6XDoTe1VJxtTIPSxow!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.133365074220166%26panoid%3Dl6XO6XDoTe1VJxtTIPSxow%26yaw%3D33.681017039855256!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "0a802527-dcda-48ff-a260-44ed6fd1927a",
+      "name": {
+        "en": "Tsukuda Ohashi Bridge",
+        "ja": "佃大橋"
+      },
+      "geo": {
+        "latitude": 35.66777,
+        "longitude": 139.78114
+      },
+      "ep": 23,
+      "type": "EP",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6678018,139.7811814,3a,90y,225.56h,100.81t/data=!3m7!1e1!3m5!1s-lbQiqEU_SZKjNIA_0m-vw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.813705251670825%26panoid%3D-lbQiqEU_SZKjNIA_0m-vw%26yaw%3D225.55914746450767!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "0d7a36be-58bb-4e70-9130-b69030abd088",
+      "name": {
+        "en": "Meitetsu Kyosho Parking Shibuya 12th Yoyogi 1-chome Bicycle Parking Lot",
+        "ja": "名鉄協商パーキング渋谷第１２代々木１丁目駐輪場"
+      },
+      "geo": {
+        "latitude": 35.680292,
+        "longitude": 139.702453
+      },
+      "ep": 1,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/53Ca7rBFYpQCLjAJA",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "0de297e2-88f2-4e01-bfc1-7519381e096c",
+      "name": {
+        "kr": "Luke's Lobster 시부야 파크 스트리트",
+        "en": "Luke's Lobster Shibuya Park Street Shop",
+        "ja": "LUKE'S LOBSTER 渋谷ParkStreet店"
+      },
+      "geo": {
+        "latitude": 35.66345,
+        "longitude": 139.6995
+      },
+      "ep": 6,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6634455,139.6994547,3a,63.5y,52.67h,89.98t/data=!3m7!1e1!3m5!1sWN67ae78EIq_Drw3Vco08Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.02400645449148442%26panoid%3DWN67ae78EIq_Drw3Vco08Q%26yaw%3D52.665904257999806!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "1243d9f3-e3eb-435a-bffa-85340600814e",
+      "name": {
+        "en": "Miyashita Daiichi Pedestrian Bridge",
+        "ja": "宮下第1歩道橋"
+      },
+      "geo": {
+        "latitude": 35.66145,
+        "longitude": 139.70225
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6614361,139.702142,3a,75y,85.46h,92.4t/data=!3m7!1e1!3m5!1s2EIASsLeOnVkLowBBW_TVg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.396828309939295%26panoid%3D2EIASsLeOnVkLowBBW_TVg%26yaw%3D85.45697019188825!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "1688fc65-f3fb-46bc-b0f1-1bbef8696183",
+      "name": {
+        "en": "Shibuya Station, Denentoshi Line, Platform 1",
+        "ja": "渋谷駅 田園都市線 1番線"
+      },
+      "geo": {
+        "latitude": 35.6594507,
+        "longitude": 139.7003243
+      },
+      "ep": 20,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6594507,139.7003243,2a,90y,298.23h,96.95t/data=!3m6!1e1!3m4!1sg268_oP8xenjQzS6u3Yv1A!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "16d9f32c-25d9-4ca7-a4b8-f1d80e3995d2",
+      "name": {
+        "ja": "「LOUVERS OF MIRROR」ヴィト・アコンチ",
+        "en": "LOUVERS OF MIRROR"
+      },
+      "geo": {
+        "latitude": 35.6575914,
+        "longitude": 139.696725
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6575914,139.696725,3a,75y,262.46h,94.11t/data=!3m8!1e1!3m6!1sAF1QipNGyCer3UjvghLus3WE-CR5BOWlj4B7WCvVWtiq!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNGyCer3UjvghLus3WE-CR5BOWlj4B7WCvVWtiq%3Dw203-h100-k-no-pi-0-ya40.55827-ro-0-fo100!7i6000!8i3000?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "16decf4d-5be3-42b8-9737-3d1736757198",
+      "name": {
+        "ja": "ミスターミニット東京メトロ 明治神宮前",
+        "en": "Misutaminittotokyometoro Meijijingumae"
+      },
+      "geo": {
+        "latitude": 35.6693,
+        "longitude": 139.70375
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6693397,139.7036829,2a,48.2y,123.99h,89.94t/data=!3m7!1e1!3m5!1syyWIer8-qbYUKLVgddBXWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.06139905102581622%26panoid%3DyyWIer8-qbYUKLVgddBXWg%26yaw%3D123.99477483912204!7i13312!8i6656?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "186f6457-d2e4-4bb0-a611-a78a4218e1e5",
+      "name": {
+        "kr": "패밀리마트 시부야109앞점",
+        "ja": "ファミリーマート 渋谷１０９前店",
+        "en": "FamilyMart Shibuya 109-mae store"
+      },
+      "geo": {
+        "latitude": 35.65983,
+        "longitude": 139.69878
+      },
+      "ep": 17,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6598776,139.6986398,3a,48.7y,116.2h,98.58t/data=!3m7!1e1!3m5!1sA9ULDe_4eHsn_Pw0GbIhtw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.580675280034981%26panoid%3DA9ULDe_4eHsn_Pw0GbIhtw%26yaw%3D116.19566346777778!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "1b3c9244-f371-4525-bad4-7e681b9b2515",
+      "name": {
+        "en": "RELX VAPE &NEWS STAND"
+      },
+      "geo": {
+        "latitude": 35.6588,
+        "longitude": 139.70024
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6589024,139.700193,3a,90y,331.51h,101.85t/data=!3m7!1e1!3m5!1sK3sTh0Dsy0u3ybW_X_spSg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.848104847280254%26panoid%3DK3sTh0Dsy0u3ybW_X_spSg%26yaw%3D331.51441729854196!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "1ba6d6b9-12d9-4e69-91ab-734d250e3341",
+      "name": {
+        "en": "Boat Race Tamagawa",
+        "ja": "BOAT RACE 多摩川(多摩川ボートレース場)"
+      },
+      "geo": {
+        "latitude": 35.6579,
+        "longitude": 139.4962
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-fuchu",
+      "streetViewUrl": "https://www.google.com/maps/@35.6580556,139.4969444,3a,40.7y,95.05h,77.81t/data=!3m8!1e1!3m6!1sAF1QipMP597WlKJZtH18JtECwjRqte386duMm_kih6fc!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMP597WlKJZtH18JtECwjRqte386duMm_kih6fc%3Dw203-h100-k-no-pi0-ya128.09534-ro0-fo100!7i14400!8i7200?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "1d6dc338-4858-42a7-8e93-32da34e09aa1",
+      "name": {
+        "kr": "메이지진구마에 역 도쿄 메트로 부도심선 3・4번 홈",
+        "ja": "明治神宮前（原宿）駅 東京メトロ副都心線3・4番線ホーム",
+        "en": "Meiji-Jingumae (Harajuku) Station Tokyo Metro Fukutoshin Line Platforms 3 and 4"
+      },
+      "geo": {
+        "latitude": 35.667871,
+        "longitude": 139.7049723
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.667871,139.7049723,2a,44.6y,13.67h,87.29t/data=!3m7!1e1!3m5!1sTlRYOUjQcmdZPFKSta5oiA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.7069942468015995%26panoid%3DTlRYOUjQcmdZPFKSta5oiA%26yaw%3D13.670582527892186!7i13312!8i6656?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "20efda1b-384e-4e2a-b32e-ea8ced3fd68e",
+      "name": {
+        "en": "Naha International Airport",
+        "ja": "那覇空港"
+      },
+      "geo": {
+        "latitude": 26.20683,
+        "longitude": 127.65101
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-okinawa-naha",
+      "streetViewUrl": "https://www.google.com/maps/@26.1867185,127.6462712,3a,75y,357.54h,94.79t/data=!3m8!1e1!3m6!1sAF1QipPsvvPN919DnvbEKQHpf3UFGCqPylockZHHzIyK!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPsvvPN919DnvbEKQHpf3UFGCqPylockZHHzIyK%3Dw203-h100-k-no-pi-0-ya139.12033-ro-0-fo100!7i5656!8i2828?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "24d39827-c576-4578-856a-c9d52ca0ef2b",
+      "name": {
+        "ja": "桑実商店",
+        "en": "Kuwanomi store"
+      },
+      "geo": {
+        "latitude": 35.6580315,
+        "longitude": 139.4995855
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-fuchu",
+      "streetViewUrl": "https://www.google.com/maps/@35.6580782,139.4995708,3a,90y,93.08h,97.16t/data=!3m7!1e1!3m5!1sWU-A6Wz7rdy4DXRKuMua2Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.157034776019103%26panoid%3DWU-A6Wz7rdy4DXRKuMua2Q%26yaw%3D93.08385526321408!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "2784c285-7e46-4c9b-88f7-352e7bfddad5",
+      "name": {
+        "ja": "B2F 文化村通り 3a出口",
+        "en": "B2F Bunkamura Street Exit 3a"
+      },
+      "geo": {
+        "latitude": 35.65958,
+        "longitude": 139.69919
+      },
+      "ep": 20,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6595574,139.6992326,2a,90y,109.01h,88.13t/data=!3m7!1e1!3m5!1s5R_Lmg12fNBanW3yUkyRsQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.8690815295347534%26panoid%3D5R_Lmg12fNBanW3yUkyRsQ%26yaw%3D109.00641848419001!7i13312!8i6656?hl=en&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "2c1d0b66-0f31-4fb3-8f00-0afc5b5b9942",
+      "name": {
+        "ja": "沖縄美ら海水族館",
+        "kr": "추라우미 수족관",
+        "en": "Okinawa Churaumi Aquarium"
+      },
+      "geo": {
+        "latitude": 26.6944331,
+        "longitude": 127.8781758
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-okinawa-motobu",
+      "streetViewUrl": "https://www.google.com/maps/@26.6944331,127.8781758,3a,90y,118.69h,98.75t/data=!3m6!1e1!3m4!1sAF1QipPRb1cletGmbeQhpIydED_rZuVG5cDR31ow6JeY!2e10!7i13000!8i6500?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "2c3133b0-0264-423b-a5c6-65e28c7d2ccb",
+      "name": {
+        "ja": "インド定食ターリー屋 立川北口店",
+        "en": "Indoteishokutariya Tachikawakitaguchiten"
+      },
+      "geo": {
+        "latitude": 35.69965,
+        "longitude": 139.41419
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-tachikawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.6996993,139.4143058,3a,90y,284.08h,92.33t/data=!3m7!1e1!3m5!1s_c6oeEoxUIE9fzFSy5_KFw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.3302112362289336%26panoid%3D_c6oeEoxUIE9fzFSy5_KFw%26yaw%3D284.0783911315814!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "2d7ca26f-dec4-466f-9be8-364c15fcaed9",
+      "name": {
+        "ja": "ビーフラット・コミュニティパーク宇田川町駐車場",
+        "en": "B Flat Community Park Udagawacho"
+      },
+      "geo": {
+        "latitude": 35.661576,
+        "longitude": 139.6967404
+      },
+      "ep": 1,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.661576,139.6967404,3a,75y,171.61h,82.16t/data=!3m6!1e1!3m4!1sYOvCnosJ9O-vD58a0mCJNw!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "30a55beb-81ac-4ff9-9dc8-ff7d29c6cd6d",
+      "name": {
+        "en": "Yakiniku Moumokukuu",
+        "ja": "焼肉 もうもうくうくう 渋谷店",
+        "kr": "야키니쿠 모우모우쿠우쿠우 시부야점"
+      },
+      "geo": {
+        "latitude": 35.65978,
+        "longitude": 139.69775
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6597892,139.6977585,3a,90y,352.83h,94.83t/data=!3m7!1e1!3m5!1snVj3I4AN8cHHF1e3BmlbuA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.829260647969534%26panoid%3DnVj3I4AN8cHHF1e3BmlbuA%26yaw%3D352.82557652003675!7i16384!8i8192?hl=en&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "363f82bc-1d5b-4f16-9511-f7b369288910",
+      "name": {
+        "en": "Street garden \"butterfly effect\""
+      },
+      "geo": {
+        "latitude": 35.6624451,
+        "longitude": 139.6992892
+      },
+      "ep": 6,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6624451,139.6992892,3a,90y,65.84h,93.62t/data=!3m6!1e1!3m4!1szuNufFOlmjNosq801-uuNQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "3ba0ef18-f842-41d6-ae52-cbf778510cc1",
+      "name": {
+        "ja": "渋谷駅西口歩道橋",
+        "en": "Shibuya Station West Exit Pedestrian Bridge"
+      },
+      "geo": {
+        "latitude": 35.6575,
+        "longitude": 139.70187
+      },
+      "ep": 6,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6574979,139.7017191,3a,48.7y,90.04h,88.35t/data=!3m7!1e1!3m5!1swBEyt-zlG0s4hDLHVVrdlw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.6528326256272692%26panoid%3DwBEyt-zlG0s4hDLHVVrdlw%26yaw%3D90.0356349431763!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "40ec3ff9-56b6-472c-b8a5-7186c8d7b068",
+      "name": {
+        "en": "Hands Shibuya",
+        "ja": "ハンズ渋谷店",
+        "kr": "핸즈 시부야점"
+      },
+      "geo": {
+        "latitude": 35.66219,
+        "longitude": 139.69747
+      },
+      "ep": 6,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6621184,139.6974002,3a,70.2y,51.95h,104.8t/data=!3m7!1e1!3m5!1sDN-S5Ry3XoXvNgJ3RZWv2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.80130569995164%26panoid%3DDN-S5Ry3XoXvNgJ3RZWv2A%26yaw%3D51.95138813620993!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "417ccddd-053a-46e7-893e-2a481777c4d9",
+      "name": {
+        "en": "Myth of Tomorrow",
+        "ja": "岡本太郎「明日の神話」"
+      },
+      "geo": {
+        "latitude": 35.6587713,
+        "longitude": 139.7002641
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6588296,139.7001883,2a,49.6y,149.73h,91.02t/data=!3m8!1e1!3m6!1sIZ_c7RZ4cvnJ9FroBHMZig!2e0!3e2!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.0218632213658765%26panoid%3DIZ_c7RZ4cvnJ9FroBHMZig%26yaw%3D149.732813723996!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "41bf1afe-e638-4e6c-9531-089378814ec9",
+      "name": {
+        "kr": "도큐햣카텐혼텐마에(버스)",
+        "en": "Tokyu-Hyakkaten-Honten(Bus)",
+        "ja": "東急百貨店本店前(バス)"
+      },
+      "geo": {
+        "latitude": 35.6601241,
+        "longitude": 139.6957658
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6601241,139.6957658,3a,75y,66.17h,96.76t/data=!3m7!1e1!3m5!1s77-SJH1JhSKWVi9jmPT-Fw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D77-SJH1JhSKWVi9jmPT-Fw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D298.9337%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "4ef48553-3a55-403c-9263-fc9cc9095a4a",
+      "name": {
+        "ja": "ウェンディーズ・ファーストキッチン 立川フロム中武店",
+        "en": "Wendy’s First Kitchen - Tachikawa From Chubu"
+      },
+      "geo": {
+        "latitude": 35.69978,
+        "longitude": 139.41456
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-tachikawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.6996243,139.4143786,3a,27.3y,54.33h,90.7t/data=!3m7!1e1!3m5!1s2pK2aX9-cPXn7c4VqMY1Tw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.6999828726157205%26panoid%3D2pK2aX9-cPXn7c4VqMY1Tw%26yaw%3D54.329958126169096!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "4f2d915a-4d15-4b6d-9b98-959702f60382",
+      "name": {
+        "ja": "ハチ公改札",
+        "en": "Hachiko gate"
+      },
+      "geo": {
+        "latitude": 35.6595513,
+        "longitude": 139.7002689
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6595472,139.7003921,2a,47.9y,271.12h,89.66t/data=!3m7!1e1!3m5!1stmzoRHTu8-Coaar7fwh99g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.34363318780906127%26panoid%3DtmzoRHTu8-Coaar7fwh99g%26yaw%3D271.1173473955279!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "50c5b5f3-5151-48c5-9b8d-e50c0ec363f7",
+      "name": {
+        "en": "2F Avenue Gate",
+        "ja": "2F アベニューゲート"
+      },
+      "geo": {
+        "latitude": 35.6583124,
+        "longitude": 139.6984803
+      },
+      "ep": 14,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6583124,139.6984803,2a,75y,101.47h,96.02t/data=!3m6!1e1!3m4!1sUL82vTRY-LKqcq0ITdMdrw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "5132dff1-3e69-4422-90d6-237308563d08",
+      "name": {
+        "en": "Tachikawa Station",
+        "ja": "立川駅"
+      },
+      "geo": {
+        "latitude": 35.69857,
+        "longitude": 139.4139
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-tachikawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.6986931,139.4138491,3a,90y,358.01h,103.07t/data=!3m7!1e1!3m5!1sPAbG6arl7DQ5HI9e2PuDhw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.071766925408298%26panoid%3DPAbG6arl7DQ5HI9e2PuDhw%26yaw%3D358.012813385084!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "528764a5-05c8-4801-8ef5-020072ed4a41",
+      "name": {
+        "ja": "B2F 明治神宮前〈原宿〉駅",
+        "kr": "B2F 메이지진구마에 역",
+        "en": "B2F Meiji Jingumae (Harajuku) Station"
+      },
+      "geo": {
+        "latitude": 35.66917,
+        "longitude": 139.70402
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6691299,139.704111,2a,75y,297.37h,95.02t/data=!3m6!1e1!3m4!1sBWQAM-EbOkz_Asqc7TFO9A!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "539d3618-5aa7-40c8-a5d1-f2abb29afe5d",
+      "name": {
+        "ja": "渋谷駅東口（バス）",
+        "kr": "시부야에키히가시구치(버스)",
+        "en": "Shibuya Eki Higashiguchi (Bus)"
+      },
+      "geo": {
+        "latitude": 35.65834,
+        "longitude": 139.70313
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6584172,139.7030162,3a,75y,108.13h,100.37t/data=!3m7!1e1!3m5!1sJeTEiJkF0aWI6kEnR4GNbQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DJeTEiJkF0aWI6kEnR4GNbQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D152.04475%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "5642c8e7-c852-40ac-83e4-1134c38be6e9",
+      "name": {
+        "ja": "水の階段（海洋博公園）",
+        "en": "Water Stairs (Kaiyohaku Park)"
+      },
+      "geo": {
+        "latitude": 26.6916625,
+        "longitude": 127.8770213
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-okinawa-motobu",
+      "streetViewUrl": "https://www.google.com/maps/@26.6916625,127.8770213,2a,90y,292.98h,98.11t/data=!3m6!1e1!3m4!1shfN4ZZJLfjqwg5BuIoef8g!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "579a9349-966a-4a80-be25-582caebdb25e",
+      "name": {
+        "en": "Shibuya Stream Hall",
+        "kr": "시부야 스트림 홀",
+        "ja": "渋谷ストリーム ホール"
+      },
+      "geo": {
+        "latitude": 35.6573109,
+        "longitude": 139.7025406
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6573109,139.7025406,3a,75y,31.21h,121.62t/data=!3m7!1e1!3m5!1saOTyrbBdUQKgiA9Xv_Tp0Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DaOTyrbBdUQKgiA9Xv_Tp0Q%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D112.98657%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "5b7c2705-b1de-416e-ac21-e34033e6396e",
+      "name": {
+        "ja": "B1F プライム出口1",
+        "en": "B1F Prime Exit 1"
+      },
+      "geo": {
+        "latitude": 35.6593367,
+        "longitude": 139.6987315
+      },
+      "ep": 19,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6593367,139.6987315,2a,75y,251.46h,95.23t/data=!3m6!1e1!3m4!1sLvweYFFgjI5l0maRgFrdRQ!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "5fbbe553-c06b-41e5-b94f-01f5dfd352b6",
+      "name": {
+        "ja": "渋谷料金所",
+        "en": "Shibuya Toll Gate"
+      },
+      "geo": {
+        "latitude": 35.6557818,
+        "longitude": 139.6950531
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6557818,139.6950531,3a,90y,232.34h,99.73t/data=!3m7!1e1!3m5!1s1PeopaF2WqZ4oiws9rr7Fg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D1PeopaF2WqZ4oiws9rr7Fg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D239.27235%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "6310fea3-d6b2-4a6b-8cdc-79e759676eb8",
+      "name": {
+        "ja": "久我山駅",
+        "en": "Kugayama Station",
+        "kr": "구가야마역"
+      },
+      "geo": {
+        "latitude": 35.6883648,
+        "longitude": 139.5989436
+      },
+      "ep": 1,
+      "type": "ED",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6883648,139.5989436,2a,75y,308.07h,91.76t/data=!3m6!1e1!3m4!1sYU4mZ696f7Lc_ra37JMfrg!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "63380a7a-229e-43e3-bc8c-e243d1888fe6",
+      "name": {
+        "ja": "B3F 田園都市線ホーム",
+        "en": "B3F Denentoshi Line platform"
+      },
+      "geo": {
+        "latitude": 35.65946,
+        "longitude": 139.70101
+      },
+      "ep": 22,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6595026,139.7010244,2a,90y,226.53h,87.07t/data=!3m7!1e1!3m5!1s7ZIMVMUQ8d95qpOLB8pifw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.9314378784724937%26panoid%3D7ZIMVMUQ8d95qpOLB8pifw%26yaw%3D226.5257553325035!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "6590dd2d-8a86-422d-aa0b-7205d08d3833",
+      "name": {
+        "en": "Starbucks Coffee Shibuya Stream Store",
+        "ja": "スターバックスコーヒー 渋谷ストリーム店",
+        "kr": "스타벅스 시부야스트림점"
+      },
+      "geo": {
+        "latitude": 35.65746,
+        "longitude": 139.7026
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6575563,139.7026384,2a,75y,177.91h,100.62t/data=!3m6!1e1!3m4!1s0zsc_CxGqoCxDym-hjWEDg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "65e426f5-d2e6-4fde-a92f-1fe459973312",
+      "name": {
+        "ja": "飯田橋駅",
+        "kr": "이다바시역",
+        "en": "Iidabashi Station"
+      },
+      "geo": {
+        "latitude": 35.70001,
+        "longitude": 139.74356
+      },
+      "ep": 23,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7000308,139.7436388,3a,90y,29.49h,104.31t/data=!3m7!1e1!3m5!1sOSbfS89Nv9DGg3I_l9bATQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.313436186444704%26panoid%3DOSbfS89Nv9DGg3I_l9bATQ%26yaw%3D29.487484135128295!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "66333ee9-904b-4697-9361-5b26753c9f2a",
+      "name": {
+        "en": "B1F Bunkamura Street Exit 3a"
+      },
+      "geo": {
+        "latitude": 35.65955,
+        "longitude": 139.6993
+      },
+      "ep": 19,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6595295,139.6992941,2a,90y,39.59h,88.12t/data=!3m6!1e1!3m4!1sbUNxEy2N8O5d541iigesmQ!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "670906ba-ae30-4005-a0ba-e8f8df564395",
+      "name": {
+        "en": "2nd Street Shibuya Jinnan Store",
+        "ja": "セカンドストリート渋谷神南店"
+      },
+      "geo": {
+        "latitude": 35.6615258,
+        "longitude": 139.7007873
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6615258,139.7007873,3a,75y,134.57h,125.86t/data=!3m7!1e1!3m5!1sM3vuPnGKlItfeEfB4fmKEA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DM3vuPnGKlItfeEfB4fmKEA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D140.62308%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "7599e297-9ba5-432a-8223-3ea4a599a812",
+      "name": {
+        "en": "SHIBUYA Friends Animal Clinic",
+        "ja": "SHIBUYAフレンズ動物病院"
+      },
+      "geo": {
+        "latitude": 35.65673,
+        "longitude": 139.7047
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6568189,139.704719,3a,90y,56.37h,92.76t/data=!3m7!1e1!3m5!1stouyxQykzGzVxlYrWkZi_Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DtouyxQykzGzVxlYrWkZi_Q%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D195.92679%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "7a1d81c5-7785-4de3-a98c-fb4038062fae",
+      "name": {
+        "en": "Shibuya Tokyu REI Hotel",
+        "kr": "시부야 도큐 레이 호텔",
+        "ja": "渋谷東急REIホテル"
+      },
+      "geo": {
+        "latitude": 35.66025,
+        "longitude": 139.70219
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6604987,139.7022594,3a,90y,231.84h,103.46t/data=!3m6!1e1!3m4!1sblUI-VfiVUXaVvw5WblYuQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "7a1ef25e-c49f-4bf5-8cb3-82be7a2882fc",
+      "name": {
+        "ja": "京都駅",
+        "kr": "교토 역",
+        "en": "Kyoto Station"
+      },
+      "geo": {
+        "latitude": 34.98601,
+        "longitude": 135.75889
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9860376,135.7588824,2a,90y,143.84h,100.33t/data=!3m6!1e1!3m4!1siFkvp66vlVQ62aZmBZ-zgw!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "8018d86e-1d35-4a18-8ed0-81f95d03d74a",
+      "name": {
+        "ja": "池湖 渋谷",
+        "en": "Ikeko"
+      },
+      "geo": {
+        "latitude": 35.6594424,
+        "longitude": 139.6954747
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6594424,139.6954747,3a,75y,15.84h,97.38t/data=!3m6!1e1!3m4!1sAwt08dhPiX6ZASSm0EJ_-g!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "857336d1-94de-43a1-9d72-ad0fdfe17f61",
+      "name": {
+        "en": "Dogenzaka gate B2F",
+        "ja": "道玄坂改札 B2F"
+      },
+      "geo": {
+        "latitude": 35.65949,
+        "longitude": 139.69959
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6594899,139.6996325,2a,90y,68.46h,91.25t/data=!3m7!1e1!3m5!1spwM7DhR3NMgpq3wDCRZhQA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.2453547569588892%26panoid%3DpwM7DhR3NMgpq3wDCRZhQA%26yaw%3D68.45863098976902!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "8645fd14-6755-4617-acb7-26dc1e55927a",
+      "name": {
+        "en": "Shibuya scramble crossing",
+        "ja": "渋谷スクランブル交差点"
+      },
+      "geo": {
+        "latitude": 35.65953,
+        "longitude": 139.70049
+      },
+      "ep": 17,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6595543,139.7004253,3a,90y,29.13h,120.37t/data=!3m7!1e1!3m5!1sR8mfJBBtsPqvk6QvugtvpQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-30.367502527696928%26panoid%3DR8mfJBBtsPqvk6QvugtvpQ%26yaw%3D29.125730647667645!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "8a801fed-2db3-4a4f-b259-1f9d6ace5c79",
+      "name": {
+        "ja": "ケンタッキーフライドチキン新宿西口店",
+        "en": "KFC Nishi-Shinjuku"
+      },
+      "geo": {
+        "latitude": 35.69297,
+        "longitude": 139.69934
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6930034,139.699184,3a,75y,86.81h,91.49t/data=!3m7!1e1!3m5!1s0Ydes7DZoHy3ukpYTN5PIw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D0Ydes7DZoHy3ukpYTN5PIw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D195.4453%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "8b13f062-3520-495f-b2a7-1b0baa057980",
+      "name": {
+        "en": "FamilyMart Shibuya-Dogenzaka Plaza Street",
+        "kr": "패밀리마트 시부야 도겐자카 플라자도리점",
+        "ja": "ファミリーマート 渋谷道玄坂プラザ通り店"
+      },
+      "geo": {
+        "latitude": 35.6577,
+        "longitude": 139.69965
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6577771,139.6995635,3a,25.3y,136.5h,91.14t/data=!3m6!1e1!3m4!1spEZnt6n6dSDMkUKTfLB9Ew!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "96f8b6b7-8ca2-4142-82e7-55a0772220bd",
+      "name": {
+        "ja": "CONA 渋谷宇田川町店",
+        "en": "CONA"
+      },
+      "geo": {
+        "latitude": 35.6625,
+        "longitude": 139.69706
+      },
+      "ep": 6,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6625049,139.6970705,3a,90y,285.22h,78.32t/data=!3m7!1e1!3m5!1siaXEZiUUi4O6Gq3_J9HTRw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D11.676219773141113%26panoid%3DiaXEZiUUi4O6Gq3_J9HTRw%26yaw%3D285.2206208025664!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "9a9bae7b-6e89-40e6-a08f-c326befcf787",
+      "name": {
+        "kr": "시부야에키(버스)",
+        "ja": "渋谷駅（バス）",
+        "en": "Shibuya Eki(Bus)"
+      },
+      "geo": {
+        "latitude": 35.6567805,
+        "longitude": 139.6994801
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6567805,139.6994801,3a,75y,79.51h,95.94t/data=!3m6!1e1!3m4!1suAg21anIC_ebReh7UAJKcQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "9b07ff27-c29c-49fa-ae66-8e72eb546917",
+      "name": {
+        "ja": "スターバックス コーヒー 渋谷文化村通り店",
+        "en": "Starbucks Coffee - Shibuya Bunkamura-dori Street"
+      },
+      "geo": {
+        "latitude": 35.66037,
+        "longitude": 139.69666
+      },
+      "ep": 19,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6604352,139.6966114,3a,88.1y,167.2h,97.12t/data=!3m7!1e1!3m5!1sd3rwIFictuzQN0LLOBrFSA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.119925457176706%26panoid%3Dd3rwIFictuzQN0LLOBrFSA%26yaw%3D167.20442307853054!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "9d78da3c-7cb6-4a37-94b8-980f2e1b4f58",
+      "name": {
+        "kr": "시부야 파르코",
+        "en": "Shibuya PARCO",
+        "ja": "渋谷PARCO"
+      },
+      "geo": {
+        "latitude": 35.6619145,
+        "longitude": 139.6992841
+      },
+      "ep": 6,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6619145,139.6992841,3a,75y,356.39h,94.81t/data=!3m7!1e1!3m5!1sS7uQ6NGvSWgJXJLVKY8shA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DS7uQ6NGvSWgJXJLVKY8shA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D133.98666%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "a035b83f-fb7f-45eb-bfe0-d03fc6dfc14b",
+      "name": {
+        "ja": "B4F 神宮前交差点方面改札",
+        "en": " B4F Jingumae Crossing Gate"
+      },
+      "geo": {
+        "latitude": 35.6683,
+        "longitude": 139.70536
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6683206,139.7054007,2a,90y,292.97h,93.44t/data=!3m7!1e1!3m5!1sYiXfaN2IYbg0ktPgxFAXcA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.4371693462700676%26panoid%3DYiXfaN2IYbg0ktPgxFAXcA%26yaw%3D292.97056058694085!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "a1ed0276-5ec3-4d05-a0f6-5058525cb285",
+      "name": {
+        "kr": "마츠모토키요시 시부야 2호점",
+        "ja": "薬 マツモトキヨシ SHIBUYA DOGENZAKA FLAG",
+        "en": "Matsumoto Kiyoshi Shibuya Dogenzaka Flag"
+      },
+      "geo": {
+        "latitude": 35.65967,
+        "longitude": 139.69937
+      },
+      "ep": 17,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6596047,139.6992882,3a,90y,34.91h,97.73t/data=!3m7!1e1!3m5!1sgtUNzMLuwqZuYSDeJMtb0Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.72722762577402%26panoid%3DgtUNzMLuwqZuYSDeJMtb0Q%26yaw%3D34.909120346688276!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "a5bc1442-210b-4a57-9101-449a0c09e199",
+      "name": {
+        "en": "Mothership"
+      },
+      "geo": {
+        "latitude": 35.66934,
+        "longitude": 139.70278
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6694312,139.7028111,3a,90y,5.26h,101.34t/data=!3m7!1e1!3m5!1sK9C7656Jdol4US02WrabiQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DK9C7656Jdol4US02WrabiQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D291.6438%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "aba88bf4-5681-4aef-9ebf-fc1c21a11b12",
+      "name": {
+        "ja": "日本橋",
+        "kr": "니혼바시",
+        "en": "Nihonbashi Bridge"
+      },
+      "geo": {
+        "latitude": 35.684056,
+        "longitude": 139.774598
+      },
+      "ep": 1,
+      "type": "ED",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6840609,139.7745372,3a,90y,98.32h,90.28t/data=!3m7!1e1!3m5!1sqOM8ot5Qg1bX_ZK0buMX7w!2e0!5s20220901T000000!7i16384!8i8192?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "ad9cd52d-4fc1-4436-b7c3-fd3aeb8e80de",
+      "name": {
+        "kr": "유니클로 시부야 도겐자카점",
+        "ja": "ユニクロ 渋谷道玄坂店",
+        "en": "UNIQLO Shibuya Dogenzaka"
+      },
+      "geo": {
+        "latitude": 35.6592697,
+        "longitude": 139.6986495
+      },
+      "ep": 19,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6592697,139.6986495,3a,70.3y,304.82h,100.09t/data=!3m7!1e1!3m5!1sTp7rrJQZMq6Y19DJ7OiVaw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DTp7rrJQZMq6Y19DJ7OiVaw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D1.4410864%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "b288c5ff-78dd-466d-b6b1-48d4af33d99e",
+      "name": {
+        "es": "Cerca de la B4F Miyamasu-zaka East Gate",
+        "en": "Near the B4F Miyamasu-zaka East Gate",
+        "id": "Sekitar B4F Miyamasu-zaka East Gate",
+        "de": "In der Nähe des B4F Miyamasu-zaka East Gate",
+        "kr": "B4F 미야마쓰자카동 개찰구 근처",
+        "ja": "B4F 宮益坂東改札付近"
+      },
+      "geo": {
+        "latitude": 35.6599949,
+        "longitude": 139.7022886
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6599949,139.7022886,2a,75y,355.99h,92.19t/data=!3m6!1e1!3m4!1sHoI9RjUq8AQr26iB7AZhBA!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "b41c0512-713f-421d-befa-fe9dc3dded64",
+      "name": {
+        "kr": "하카타 텐진 시부야미나미구치점",
+        "en": "Hakata Tenjin Shibuya South Exit Store",
+        "ja": "博多天神 渋谷南口店"
+      },
+      "geo": {
+        "latitude": 35.65782,
+        "longitude": 139.6995
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.657788,139.6995846,3a,63.5y,305.23h,95.39t/data=!3m7!1e1!3m5!1sYJ626M9EaUzD6SeN2SNZqQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.392962721659174%26panoid%3DYJ626M9EaUzD6SeN2SNZqQ%26yaw%3D305.23300970037405!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "c87d9dc0-a028-4987-8f96-c0e1ae371d88",
+      "name": {
+        "ja": "中渋谷ガード駐輪場",
+        "en": "Nakashibuya Gard"
+      },
+      "geo": {
+        "latitude": 35.6603507,
+        "longitude": 139.7014408
+      },
+      "ep": 6,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6603585,139.7013909,3a,26.9y,279.76h,88.99t/data=!3m7!1e1!3m5!1snq3tkBIgP7B05T1bCMmhkg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.0142769266325615%26panoid%3Dnq3tkBIgP7B05T1bCMmhkg%26yaw%3D279.75520344425587!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "cc289d28-2fd2-46e2-b7ae-b57194d8051e",
+      "name": {
+        "en": "Shibuya Station Tokyo Metro Fukutoshin Line Platforms 5 and 6",
+        "ja": "渋谷駅 東京メトロ副都心線 5・6番線"
+      },
+      "geo": {
+        "latitude": 35.6585834,
+        "longitude": 139.7026089
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6585834,139.7026089,2a,75y,343.02h,99t/data=!3m6!1e1!3m4!1s1hcXqc5zaOuzVQOlmj_yiA!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "cd57671d-fd85-4058-8850-68f60a08dce7",
+      "name": {
+        "ja": "宝くじロトハウス 渋谷駅井の頭口店",
+        "en": "Lottery Lotto House Shibuya Station Inokashira Exit Store"
+      },
+      "geo": {
+        "latitude": 35.65904,
+        "longitude": 139.69983
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6591199,139.6997669,3a,90y,129.03h,90.46t/data=!3m7!1e1!3m5!1sQehR0Vx_qqMMu7MAXtIa9g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.45658140424474425%26panoid%3DQehR0Vx_qqMMu7MAXtIa9g%26yaw%3D129.02676607002468!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "d06d7c7d-4ea4-459c-a2d7-85a16a1fa9fa",
+      "name": {
+        "kr": "하라주쿠역",
+        "ja": "原宿駅",
+        "en": "Harajuku station"
+      },
+      "geo": {
+        "latitude": 35.67004,
+        "longitude": 139.70269
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6700054,139.7028264,3a,75y,278.65h,96.28t/data=!3m6!1e1!3m4!1s0LbwAxswT3YGIXlZWliD4g!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "d679ac41-57bd-4a89-8f3b-8a582449a38a",
+      "name": {
+        "ja": "ファミリーマート 渋谷一丁目店",
+        "en": "FamilyMart Shibuya 1-chome",
+        "kr": "패밀리마트 시부야 잇쵸메점"
+      },
+      "geo": {
+        "latitude": 35.6607839,
+        "longitude": 139.7022416
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6607839,139.7022416,3a,75y,267.32h,95.31t/data=!3m7!1e1!3m5!1sCuI9X0rr1uIv1FjuTk4wZQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DCuI9X0rr1uIv1FjuTk4wZQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D359.6325%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "de6aadcd-dae4-4a56-8397-6c6aa572f102",
+      "name": {
+        "en": "Shibuya Bridge 21",
+        "ja": "ブリッジ渋谷21"
+      },
+      "geo": {
+        "latitude": 35.65659,
+        "longitude": 139.699
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6567035,139.6990966,3a,90y,32.86h,102.32t/data=!3m7!1e1!3m5!1sf9gz65R6qu_OZhwO34oNdA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.32415999436516%26panoid%3Df9gz65R6qu_OZhwO34oNdA%26yaw%3D32.86187915584741!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "e4ff784d-b67b-4ca5-b1d4-1355234add1e",
+      "name": {
+        "ja": "俺流塩らーめん 東急本店前店",
+        "en": "Oreryu Shio-Ramen Tokyu Main Store Front",
+        "kr": "오레류시오라멘 도큐 본점 앞점"
+      },
+      "geo": {
+        "latitude": 35.66032,
+        "longitude": 139.69636
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6603298,139.6963393,3a,75y,155.45h,97.16t/data=!3m7!1e1!3m5!1sRmSyiNanfbsTgmKSllJrsw!2e0!5s20210501T000000!7i16384!8i8192?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "e518e714-9236-4ea9-ad4a-f34e126e48e5",
+      "name": {
+        "es": "Cerca de la B4F Shibuya Hikarie 1 gate",
+        "de": "In der Nähe des B4F Shibuya Hikarie 1 gate",
+        "kr": "B4F 시부야 히카리에 1 게이트 근처",
+        "id": "Sekitar B4F Shibuya Hikarie 1 gate",
+        "ja": "B4F 渋谷ヒカリエ1改札付近",
+        "en": "Near the B4F Shibuya Hikarie 1 gate"
+      },
+      "geo": {
+        "latitude": 35.6591,
+        "longitude": 139.70256
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6590782,139.702489,2a,90y,307.41h,90.17t/data=!3m7!1e1!3m5!1s1T3Ih54qZc0O445h9J5N9g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.16514673805042435%26panoid%3D1T3Ih54qZc0O445h9J5N9g%26yaw%3D307.4091449156936!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "e698edae-1f82-47c7-b5d7-d2d5473925b1",
+      "name": {
+        "en": "Shibuya MODI",
+        "kr": "시부야 모디",
+        "ja": "渋谷モディ"
+      },
+      "geo": {
+        "latitude": 35.6612396,
+        "longitude": 139.7007869
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6612396,139.7007869,3a,75y,305.4h,109.95t/data=!3m6!1e1!3m4!1s_so-4WuHlC93nm6wArTQ3g!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "eb91997b-d352-4052-9a42-99d0e2307e4f",
+      "name": {
+        "en": "Caffè Veloce - Shibuya Station New South Entrance",
+        "ja": "カフェ・ベローチェ 渋谷駅新南口店"
+      },
+      "geo": {
+        "latitude": 35.65578,
+        "longitude": 139.70423
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6559383,139.7041321,3a,75y,136.65h,94.85t/data=!3m7!1e1!3m5!1svAQV289-b9IO_Bd3pVLI7w!2e0!5s20210501T000000!7i16384!8i8192?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "ecde0613-96c3-46c1-b5d7-9a9cccaf971e",
+      "name": {
+        "en": "FamilyMart Ginza Kobikicho Street Store",
+        "ja": "ファミリーマート 銀座木挽町通り店",
+        "kr": "훼미리마트 긴자 키노미치마치도리점"
+      },
+      "geo": {
+        "latitude": 35.66875,
+        "longitude": 139.76761
+      },
+      "ep": 23,
+      "type": "EP",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6686567,139.7674321,3a,90y,70.46h,101.5t/data=!3m7!1e1!3m5!1st4wJY7Abrzmk-KFiIeiANQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.499992333656053%26panoid%3Dt4wJY7Abrzmk-KFiIeiANQ%26yaw%3D70.46138984292236!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "f42ab189-c9db-414d-ac54-c502426df5c0",
+      "name": {
+        "ja": "よへなあじさい園",
+        "kr": "요해나 수국원",
+        "en": "Hydrangea Garden Yohena"
+      },
+      "geo": {
+        "latitude": 26.6471287,
+        "longitude": 127.9452095
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-okinawa-motobu",
+      "streetViewUrl": "https://www.google.com/maps/@26.6471287,127.9452095,3a,90y,128.57h,105.5t/data=!3m8!1e1!3m6!1sAF1QipMA6wqS_soMsj5KFeleFDlCe_MnoP7DY8E8Wqm1!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMA6wqS_soMsj5KFeleFDlCe_MnoP7DY8E8Wqm1%3Dw203-h100-k-no-pi0-ya335.7202-ro-0-fo100!7i7680!8i3840?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "f7eb7874-43e6-4a53-8eee-d79374a981ad",
+      "name": {
+        "ja": "JR新宿駅 東口駅前広場",
+        "kr": "JR신주쿠역 동쪽출구 역앞광장",
+        "en": "JR Shinjuku East Exit Station Square"
+      },
+      "geo": {
+        "latitude": 35.69227,
+        "longitude": 139.7009
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6922656,139.7009368,3a,90y,272.57h,93.77t/data=!3m7!1e1!3m5!1s0Ad3f4Fb5jBxRQu_BRIqDg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.7695916271847665%26panoid%3D0Ad3f4Fb5jBxRQu_BRIqDg%26yaw%3D272.57420771694626!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "f8d53454-0500-4fa6-9c8b-87ae15330eac",
+      "name": {
+        "en": "Baskin-Robbins - Shibuya",
+        "kr": "베스킨 라빈스 31 시부야점",
+        "ja": "サーティワンアイスクリーム 渋谷店"
+      },
+      "geo": {
+        "latitude": 35.65977,
+        "longitude": 139.69892
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6597951,139.6988517,3a,62.4y,252.99h,103.15t/data=!3m7!1e1!3m5!1s5lUnwpRMe061JX1bVbhTZA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.147294737672226%26panoid%3D5lUnwpRMe061JX1bVbhTZA%26yaw%3D252.9867364908806!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "f8f8af9b-6de9-4787-8053-f9855a06da30",
+      "name": {
+        "ja": "生焼きホルモン元家 別邸",
+        "en": "Motoya Annex"
+      },
+      "geo": {
+        "latitude": 35.66249,
+        "longitude": 139.69744
+      },
+      "ep": 6,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/place/HICOLLECT+%E6%B8%8B%E8%B0%B7%E5%BA%97/@35.6625514,139.6975031,3a,75y,217.36h,92.08t/data=!3m6!1e1!3m4!1sS8a81rz8Y3G8j06L_kSNWg!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x60188da5951d3dd3:0xd861d5d018b01077!2zSElDT0xMRUNUIOa4i-iwt-W6lw!8m2!3d35.6625791!4d139.6976583!16s%2Fg%2F11tjs7b78s!3m5!1s0x60188da5951d3dd3:0xd861d5d018b01077!8m2!3d35.6625791!4d139.6976583!16s%2Fg%2F11tjs7b78s?coh=205409&entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "ff921e2f-9305-47d9-a68a-0b8068ddf1a3",
+      "name": {
+        "ja": "荒川中洲南端",
+        "en": "The southernmost tip of Arakawa River island"
+      },
+      "geo": {
+        "latitude": 35.661976,
+        "longitude": 139.849086
+      },
+      "ep": 1,
+      "type": "ED",
+      "cityId": "JP-tokyo-edogawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6619552,139.8488244,3a,75y,153.81h,101.03t/data=!3m6!1e1!3m4!1sAF1QipNeSezvaCojS8XvVULRVG-mCIJ8jaiRwiH9CKr7!2e10!7i5376!8i2688?entry=ttu",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    },
+    {
+      "placeId": "34700437-c248-4463-81ba-9d0bd8b06b2a",
+      "name": {
+        "ja": "三井住友信託銀行 立川支店",
+        "en": "SMBC Trust Bank Tachikawa Branch"
+      },
+      "geo": {
+        "latitude": 35.69905,
+        "longitude": 139.41357
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-tachikawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.6990245,139.413478,3a,90y,77.55h,95.08t/data=!3m7!1e1!3m5!1sjsAV3HX4NTwY0UGkpUmu6Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.082993607838844%26panoid%3DjsAV3HX4NTwY0UGkpUmu6Q%26yaw%3D77.54992580089021!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©芥見下々／集英社・呪術廻戦製作委員会"
+    }
+  ]
+}

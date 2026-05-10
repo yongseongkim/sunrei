@@ -1,0 +1,429 @@
+{
+  "anime": {
+    "animeId": "AxyoCcQwwFmQNp75ST6m",
+    "slug": "turkey",
+    "title": {
+      "en": "Turkey!"
+    },
+    "author": {
+      "ja": [
+        "BAKKEN RECORD",
+        "ポニーキャニオン"
+      ],
+      "en": [
+        "BAKKEN RECORD",
+        "PONY CANYON INC."
+      ]
+    },
+    "studio": {
+      "en": [
+        "BAKKEN RECORD"
+      ]
+    }
+  },
+  "placeCount": 25,
+  "places": [
+    {
+      "placeId": "01f260e3-b5af-46c6-94b6-59f0bce8246e",
+      "name": {
+        "en": "Chikuma-shi Joyama Historical Park",
+        "ja": "千曲市城山史跡公園"
+      },
+      "geo": {
+        "latitude": 36.47947,
+        "longitude": 138.13664
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.4795339,138.1367186,3a,90y,78.33h,104.09t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICc2PDxJA!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZnhWvm1uVHNrIAg2ICj0acgkwBCJjXvhZN-YlZcNrcD4-MZAzMpIf8eOrMMkXqGZfMlI6TeWQaU_rD1jV65SWa22fUX8s37Sy-HahJaCefaSU_gIEvoaDnCnQVcWNY-pmRc642%3Dw900-h600-k-no-pi-14.090331379961384-ya321.33089223003174-ro0-fo100!7i8192!8i4096?entry=ttu&g_ep=EgoyMDI1MDkxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "03316791-e0f2-4e6e-82d1-2e6720104729",
+      "name": {
+        "en": "Oyaki Nanafuku Honten",
+        "ja": "おやき七福本店"
+      },
+      "geo": {
+        "latitude": 36.48094,
+        "longitude": 138.14034
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.4808916,138.140341,3a,90y,357.47h,95.92t/data=!3m7!1e1!3m5!1s2X44NH4pRvGppQwD5kZNDw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.918295144519661%26panoid%3D2X44NH4pRvGppQwD5kZNDw%26yaw%3D357.46982262253937!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "0be9c0f9-0a0a-45bd-b6db-7c3910942a25",
+      "name": {
+        "en": "Obasute Station",
+        "kr": "오바스테 역",
+        "ja": "姨捨駅"
+      },
+      "geo": {
+        "latitude": 36.50263,
+        "longitude": 138.09348
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/place/Obasute+Station/@36.5026131,138.0935516,3a,90y,133.46h,95.65t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID4p_mZiQE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6Ha9aqrub9n7EIb5r0FtAAWMp5ZGQ9ZTcG-O-9XUs9InB-XwC-hUpovUlqMGnrUT1Kdj5fXaiLJUy_Hkw9SNLEGbJwtN8-nWp7etXA06k6S4BaeAERxFoSRoACvHOGW5EXfxu4l7%3Dw900-h600-k-no-pi-5.653428788609318-ya136.4585799565692-ro0-fo100!7i7168!8i3584!4m9!3m8!1s0x601d9d445d413427:0x1daa4177c4634859!8m2!3d36.502685!4d138.0932379!10e5!14m1!1BCgIgARICCAI!16s%2Fm%2F03mb0nc?entry=ttu&g_ep=EgoyMDI1MDcxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "0cf0d8f5-2272-47cb-8770-0b2a655b3736",
+      "name": {
+        "ja": "名月堂",
+        "en": "Meigetsudo"
+      },
+      "geo": {
+        "latitude": 36.47853,
+        "longitude": 138.15513
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.4785867,138.155138,3a,90y,187.87h,96.9t/data=!3m7!1e1!3m5!1syv67BaVfw8rek51W9VYs9A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.901694112061577%26panoid%3Dyv67BaVfw8rek51W9VYs9A%26yaw%3D187.8701992778151!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "109683a3-b0cd-4c77-a054-473480cc3ad1",
+      "name": {
+        "en": "Wakamiya Higashi(Bus)",
+        "ja": "若宮東(バス)"
+      },
+      "geo": {
+        "latitude": 36.48848,
+        "longitude": 138.14145
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.4884116,138.1414164,3a,89.3y,4.71h,94.64t/data=!3m7!1e1!3m5!1suHaPgE1RJz-5FLwT77k0LQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.636299786217009%26panoid%3DuHaPgE1RJz-5FLwT77k0LQ%26yaw%3D4.705806424379273!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "23779e6d-7f0f-4c01-b0ff-cffdc1ae5770",
+      "name": {
+        "ja": "姨捨棚田駐車場",
+        "en": "Obasutetanada Parking Lot"
+      },
+      "geo": {
+        "latitude": 36.49996,
+        "longitude": 138.09739
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.5000203,138.0974401,3a,90y,226.22h,99.45t/data=!3m7!1e1!3m5!1siRZ2r4NVxm0DzQP9oJpg7A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.44882678888348%26panoid%3DiRZ2r4NVxm0DzQP9oJpg7A%26yaw%3D226.21587703604735!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "2444c42b-614a-4128-a139-b2c1f36a7760",
+      "name": {
+        "en": "Tenmanten Shrine",
+        "ja": "天満天神社"
+      },
+      "geo": {
+        "latitude": 36.41474,
+        "longitude": 138.20115
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nagano-ueda",
+      "streetViewUrl": "https://www.google.com/maps/@36.4147029,138.2012051,3a,52.2y,323.56h,91.88t/data=!3m7!1e1!3m5!1sEIuHotppiMI_Wm2hMGb6ug!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.8841551323029506%26panoid%3DEIuHotppiMI_Wm2hMGb6ug%26yaw%3D323.55901549003994!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "2be4a503-2f6f-4d82-acac-e188fd3eb648",
+      "name": {
+        "en": "Kamiyamada Central Park",
+        "ja": "上山田中央公園"
+      },
+      "geo": {
+        "latitude": 36.47907,
+        "longitude": 138.14244
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.479144,138.1424862,3a,90y,226.78h,95.09t/data=!3m7!1e1!3m5!1suetG6i4SOZz9Wb8UxM5B8Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.0860876409611535%26panoid%3DuetG6i4SOZz9Wb8UxM5B8Q%26yaw%3D226.78150350434976!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "2cff1e22-c462-44fa-a88a-c521bd2c0f24",
+      "name": {
+        "ja": "武水別神社",
+        "en": "Takemizuwake Shrine"
+      },
+      "geo": {
+        "latitude": 36.5174,
+        "longitude": 138.10281
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.5169154,138.1027495,3a,74.7y,6.43h,97.3t/data=!3m7!1e1!3m5!1ssg8a5wR6TW-TwTUP-zeNkA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.296157536600987%26panoid%3Dsg8a5wR6TW-TwTUP-zeNkA%26yaw%3D6.432598991160604!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "3d5892d2-7c15-4abf-b93c-7b1e4984ce87",
+      "name": {
+        "ja": "道祖神",
+        "en": "Dosojin"
+      },
+      "geo": {
+        "latitude": 36.51824,
+        "longitude": 138.12722
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.5182568,138.1272159,3a,90y,189.78h,97.38t/data=!3m7!1e1!3m5!1s7X69dCWyKwQ2hF18I6tc0g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.379600647142723%26panoid%3D7X69dCWyKwQ2hF18I6tc0g%26yaw%3D189.78132782988237!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "3e0d9fea-ecf0-41a4-81ba-67943c81cfc1",
+      "name": {
+        "ja": "石井瓦工業㈱",
+        "en": "Ishii Tile Industry Co."
+      },
+      "geo": {
+        "latitude": 36.50368,
+        "longitude": 138.12847
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.5036341,138.1286603,3a,75y,285.73h,93.24t/data=!3m7!1e1!3m5!1sRa2AEfJ814lpizwkn9PFyQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.243435215286638%26panoid%3DRa2AEfJ814lpizwkn9PFyQ%26yaw%3D285.73479218996926!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "411b2f74-604c-4919-a8c7-bdcaed169811",
+      "name": {
+        "en": "Hotel Riverside Uedakan",
+        "ja": "リバーサイド上田館"
+      },
+      "geo": {
+        "latitude": 36.48362,
+        "longitude": 138.14356
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.4838201,138.1434914,3a,72.5y,164.02h,96.84t/data=!3m7!1e1!3m5!1sGEDOzGaTzCzkB8nFCVCzRg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.838365461029667%26panoid%3DGEDOzGaTzCzkB8nFCVCzRg%26yaw%3D164.01845705275701!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "5c58b769-fafa-44f7-b6a6-620470aa69ef",
+      "name": {
+        "ja": "アピナボウル長野篠ノ井店",
+        "en": "Apina Bowl Nagano Shinonoiai"
+      },
+      "geo": {
+        "latitude": 36.57346,
+        "longitude": 138.14328
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagano-nagano",
+      "streetViewUrl": "https://www.google.com/maps/@36.5733829,138.1429532,3a,90y,81.94h,100.61t/data=!3m7!1e1!3m5!1siBPAR6XtjQexnqsbz4UTag!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.609437481372709%26panoid%3DiBPAR6XtjQexnqsbz4UTag%26yaw%3D81.94454279751055!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "64c5dbb4-904d-47b3-98f0-8cf1fd59aba0",
+      "name": {
+        "kr": "오바스테 역",
+        "en": "Obasute Station",
+        "ja": "姨捨駅"
+      },
+      "geo": {
+        "latitude": 36.50252,
+        "longitude": 138.09326
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.5025591,138.0931807,3a,90y,71.78h,101.7t/data=!3m7!1e1!3m5!1ssZrz-8IwZ85L8YOwhLFSMA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.699114894129053%26panoid%3DsZrz-8IwZ85L8YOwhLFSMA%26yaw%3D71.78477598269598!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "7e895d7d-1ddd-47c5-b55e-e09da3985a53",
+      "name": {
+        "ja": "昭和レトロの民泊 正直屋 駐車場",
+        "en": "Showa Retro Nominpaku Shojikiya Parking Lot"
+      },
+      "geo": {
+        "latitude": 36.48467,
+        "longitude": 138.14314
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.484356,138.1432747,3a,54.7y,333.41h,93.28t/data=!3m7!1e1!3m5!1sYcfChqh4lxdYPWmCM70XLQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.280463370060275%26panoid%3DYcfChqh4lxdYPWmCM70XLQ%26yaw%3D333.406735593529!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "876ef827-e4f8-48eb-a4e9-7bd89083935b",
+      "name": {
+        "ja": "千曲市さらしなの里歴史資料館",
+        "en": "Chikuma City Sarashina no Sato Historical Museum"
+      },
+      "geo": {
+        "latitude": 36.50017,
+        "longitude": 138.11367
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.4999845,138.1135564,3a,46.2y,18.24h,90.83t/data=!3m7!1e1!3m5!1sOHa1_9ltIhp_5QHPkMswbA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.8307787072687347%26panoid%3DOHa1_9ltIhp_5QHPkMswbA%26yaw%3D18.240032495354296!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "93bc4f18-1f2d-44c6-baa4-9fab01083d8a",
+      "name": {
+        "ja": "リバーサイド上田館",
+        "en": "Hotel Riverside Uedakan"
+      },
+      "geo": {
+        "latitude": 36.48382,
+        "longitude": 138.14455
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.483832,138.1444704,3a,90y,63.22h,93.38t/data=!3m7!1e1!3m5!1sv5Q91L4tkYFjX_koUy7Dqg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.3750449344083506%26panoid%3Dv5Q91L4tkYFjX_koUy7Dqg%26yaw%3D63.22332941718792!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "a66d9d5f-525d-43a7-9121-ecc01d78e162",
+      "name": {
+        "en": "Togura Chikuma River Green Park",
+        "ja": "戸倉千曲川緑地公園"
+      },
+      "geo": {
+        "latitude": 36.48129,
+        "longitude": 138.14455
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.4814464,138.1444584,3a,90y,156.08h,101.16t/data=!3m7!1e1!3m5!1sRRv7ZAPJDEdTS5BGMvpgrA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.15990407613701%26panoid%3DRRv7ZAPJDEdTS5BGMvpgrA%26yaw%3D156.08369783802874!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "bed51e37-d397-45cd-9ad2-ed1b3ff17103",
+      "name": {
+        "en": "Unatake",
+        "ja": "うな竹"
+      },
+      "geo": {
+        "latitude": 36.48062,
+        "longitude": 138.14266
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.4805518,138.1425622,3a,90y,51.05h,95.98t/data=!3m7!1e1!3m5!1sfem97FCV73aSAXZirHamTA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.97670740213843%26panoid%3Dfem97FCV73aSAXZirHamTA%26yaw%3D51.04553932579539!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "d1512414-f1f0-437f-9085-ec0faee100e4",
+      "name": {
+        "ja": "須坂神社",
+        "en": "Suzaka Shrine"
+      },
+      "geo": {
+        "latitude": 36.50199,
+        "longitude": 138.11702
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.501957,138.1168998,3a,70.9y,87.51h,95.1t/data=!3m7!1e1!3m5!1sZ_Y5AR83UZ2Eh6QvyWLMQA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.104047048428384%26panoid%3DZ_Y5AR83UZ2Eh6QvyWLMQA%26yaw%3D87.50683449695251!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "d4d0773f-d3c3-4197-b384-e55d6b494f0c",
+      "name": {
+        "en": "Obasute Rice Terraces",
+        "ja": "姨捨の棚田"
+      },
+      "geo": {
+        "latitude": 36.50327,
+        "longitude": 138.0983
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/place/Obasute+Rice+Terraces/@36.5035851,138.0984066,3a,90y,138.28h,71.32t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICH_IatFw!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HaqI2sr_ohLmeM2NUJAZip6VoBh0FpvOx1fQ4Azu2os6C_AIVVJqocqn5umOl-K53zy7-84-nLRlJ4BNXRhhUO_CDUGhfU37-TMriIpNFAFltPP_D-0o8hKGkpDMp19sFBN0AE%3Dw900-h600-k-no-pi18.675990889794747-ya138.27945262749466-ro0-fo100!7i14400!8i7200!4m9!3m8!1s0x601d9dc4faadfced:0x6e4fd53ce7b42243!8m2!3d36.5035851!4d138.0984066!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11dxcgcd7r?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "e7f56ae6-386a-4999-b91c-0b4c77d96d94",
+      "name": {
+        "en": "Togura Chikuma River Green Park",
+        "ja": "戸倉千曲川緑地公園"
+      },
+      "geo": {
+        "latitude": 36.48167,
+        "longitude": 138.14515
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.4791612,138.1472341,3a,15y,319.8h,91.07t/data=!3m7!1e1!3m5!1sI2vQGtAnbgHq_gS6k5TPJw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.07247728710918%26panoid%3DI2vQGtAnbgHq_gS6k5TPJw%26yaw%3D319.7999202913007!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "f26b5e0a-0164-40d8-8d5a-78e511623f25",
+      "name": {
+        "ja": "大正橋",
+        "en": "Taisho Bridge"
+      },
+      "geo": {
+        "latitude": 36.48805,
+        "longitude": 138.14627
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.4879771,138.1460182,3a,90y,8.23h,90.09t/data=!3m7!1e1!3m5!1s1htfk7Jw1O8Gm7LKsH-yig!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.09270328903478742%26panoid%3D1htfk7Jw1O8Gm7LKsH-yig%26yaw%3D8.234606084418441!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "f9b617e6-84dd-4d2e-95fd-dee37accd8e7",
+      "name": {
+        "ja": "武水別神社",
+        "en": "Takemizuwake Shrine"
+      },
+      "geo": {
+        "latitude": 36.51935,
+        "longitude": 138.10293
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/place/Takemizuwake+Shrine/@36.5192983,138.1028873,3a,90y,50.88h,99.77t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC4y4Wn8AE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HaGMuipiNeKxqfdjTP0aZdz3z2AYHeCIjg07xkCK1f_PbzJc0vZklrJOwEimYVEf9BvfdxtalSFp-e1OMjxhc42rFhL01Z4DWz0__M61KDUxO8nCw8vzCejcbVvkumz6RLpcB4t2w%3Dw900-h600-k-no-pi-9.765515886651343-ya323.63050159543684-ro0-fo100!7i6434!8i3217!4m9!3m8!1s0x601d82cb2f4c883d:0x17e4744866b02674!8m2!3d36.5191697!4d138.1029736!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1229w5br?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    },
+    {
+      "placeId": "fea57dd7-5b7d-4bfd-9946-3eb10d59718b",
+      "name": {
+        "en": "7-Eleven Togura Uchikawa",
+        "ja": "セブン-イレブン 戸倉内川店"
+      },
+      "geo": {
+        "latitude": 36.50679,
+        "longitude": 138.13529
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-nagano-chikuma",
+      "streetViewUrl": "https://www.google.com/maps/@36.5068415,138.1352535,3a,90y,232.86h,97.24t/data=!3m7!1e1!3m5!1sVbwPQFwfx6-sgUVgw7Llsg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.244938001979378%26panoid%3DVbwPQFwfx6-sgUVgw7Llsg%26yaw%3D232.8565220293527!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BAKKEN RECORD･PONY CANYON INC.／「Turkey!」製作委員会"
+    }
+  ]
+}

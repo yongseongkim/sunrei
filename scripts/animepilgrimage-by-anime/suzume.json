@@ -1,0 +1,615 @@
+{
+  "anime": {
+    "animeId": "owwojmBeyqQxduqOgajN",
+    "slug": "suzume",
+    "title": {
+      "ja": "すずめの戸締まり",
+      "kr": "스즈메의 문단속",
+      "en": "Suzume"
+    },
+    "author": {
+      "ja": [
+        "新海誠"
+      ],
+      "en": [
+        "Makoto Shinkai"
+      ],
+      "kr": [
+        "신카이 마코토"
+      ]
+    },
+    "studio": {
+      "en": [
+        "CWF"
+      ]
+    }
+  },
+  "placeCount": 35,
+  "places": [
+    {
+      "placeId": "00bca767-e4e4-47ff-8d5b-9f4beea7d751",
+      "name": {
+        "en": "Tokyo Station Chuo Line platforms 1 and 2",
+        "ja": "東京駅中央線1・2番ホーム"
+      },
+      "geo": {
+        "latitude": 35.68149,
+        "longitude": 139.76635
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6815329,139.7663436,2a,90y,171.41h,95.6t/data=!3m7!1e1!3m5!1sPo4DNniHj2HsgbpuA_lQKA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.602276318302685%26panoid%3DPo4DNniHj2HsgbpuA_lQKA%26yaw%3D171.41155212300345!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "0a98d16e-45f7-4de7-984c-09623c085819",
+      "name": {
+        "ja": "麴町署 千鳥ケ淵警備派出所",
+        "kr": "고지마치경찰서 지도리가후치경비파출소",
+        "en": "Chidorigafuchi Police Box"
+      },
+      "geo": {
+        "latitude": 35.68834,
+        "longitude": 139.74535
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6882993,139.7453077,3a,60.8y,279.65h,118.45t/data=!3m7!1e1!3m5!1sLPwN-c05RzVQwTOohDLa6A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-28.45338494170292%26panoid%3DLPwN-c05RzVQwTOohDLa6A%26yaw%3D279.6472310733631!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "1f48b09e-3873-410a-8237-3528e8534a71",
+      "name": {
+        "ja": "新神戸駅",
+        "en": "Shin-Kobe Station",
+        "kr": "신코베 역"
+      },
+      "geo": {
+        "latitude": 34.70629,
+        "longitude": 135.19576
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hyogo-kobe",
+      "streetViewUrl": "https://www.google.com/maps/@34.7062722,135.1957735,3a,90y,330.41h,90.89t/data=!3m7!1e1!3m5!1sguD_OY4_bRMrrLdb8PzW1w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.8941583470789141%26panoid%3DguD_OY4_bRMrrLdb8PzW1w%26yaw%3D330.411461350309!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "1fdcc0e4-9ee8-4049-82ef-9bcee7c4ea0b",
+      "name": {
+        "ja": "大谷池",
+        "en": "Oya Pond"
+      },
+      "geo": {
+        "latitude": 33.8886141,
+        "longitude": 133.0989591
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-ehime-saijo",
+      "streetViewUrl": "https://www.google.com/maps/@33.8886141,133.0989591,3a,75y,202.46h,104.43t/data=!3m6!1e1!3m4!1sotfq1m_2TO_o4tzy1POzVg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "22b59516-a279-4cda-be0f-229bb072df46",
+      "name": {
+        "ja": "道の駅 大谷海岸",
+        "en": "Road Station Oya Kaigan"
+      },
+      "geo": {
+        "latitude": 38.8151173,
+        "longitude": 141.5623345
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-miyagi-kesennuma",
+      "streetViewUrl": "https://www.google.com/maps/@38.8151173,141.5623345,3a,44.7y,171.55h,94.33t/data=!3m7!1e1!3m5!1sO_6aW1uoCmwgoK-yQSyKQg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DO_6aW1uoCmwgoK-yQSyKQg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D239.25443%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "327dd666-0e43-471e-92f8-98ea1f2cb289",
+      "name": {
+        "ja": "神戸おとぎの国",
+        "kr": "고베 오토기노쿠니",
+        "en": "Kobe Otogi no Kuni"
+      },
+      "geo": {
+        "latitude": 34.84984,
+        "longitude": 135.19194
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hyogo-kobe",
+      "streetViewUrl": "https://www.google.com/maps/@34.8496406,135.1919198,3a,90y,218.89h,127.72t/data=!3m8!1e1!3m6!1sAF1QipNiwsaRLnlCCzew8erYq5gaeyJbu_esgg8xoC89!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNiwsaRLnlCCzew8erYq5gaeyJbu_esgg8xoC89%3Dw900-h600-k-no-pi-37.71674647233556-ya218.88871801885492-ro0-fo100!7i5376!8i2688?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "379e5d94-d13d-4132-b74d-d6a255f410ad",
+      "name": {
+        "ja": "東山商店街 広場（休憩エリア）",
+        "en": "Higashiyama Shopping Street Square"
+      },
+      "geo": {
+        "latitude": 34.6833056,
+        "longitude": 135.1640334
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hyogo-kobe",
+      "streetViewUrl": "https://www.google.com/maps/@34.6832287,135.1639902,3a,90y,208.49h,113.24t/data=!3m7!1e1!3m5!1sdgStnKHV4MW-BdB3JbxlFA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-23.24457184180808%26panoid%3DdgStnKHV4MW-BdB3JbxlFA%26yaw%3D208.48638016436547!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "3d80306d-ed0c-4018-b759-d0df30f52422",
+      "name": {
+        "en": "Kobe Seiai Church",
+        "ja": "日本基督教団 神戸聖愛教会"
+      },
+      "geo": {
+        "latitude": 34.70362,
+        "longitude": 135.19722
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hyogo-kobe",
+      "streetViewUrl": "https://www.google.com/maps/@34.7037135,135.1971607,3a,90y,238.27h,102.33t/data=!3m7!1e1!3m5!1sPUpcNxW-_wKRLyYLjenkpw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.331598899001108%26panoid%3DPUpcNxW-_wKRLyYLjenkpw%26yaw%3D238.26887635854385!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "46bfae6a-cbfc-417f-b942-699e01f4a638",
+      "name": {
+        "en": "Suzume road",
+        "ja": "すずめの道"
+      },
+      "geo": {
+        "latitude": 34.4432889,
+        "longitude": 133.7967163
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okayama-kurashiki",
+      "streetViewUrl": "https://www.google.com/maps/@34.4432889,133.7967163,3a,75y,31.05h,96.45t/data=!3m7!1e1!3m5!1soFgxFrytUA4fJ875n5RZHA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DoFgxFrytUA4fJ875n5RZHA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D161.64528%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "4de9ef22-1024-42d0-8f53-cb09993846be",
+      "name": {
+        "kr": "도쿄역",
+        "en": "Tokyo Station",
+        "ja": "東京駅"
+      },
+      "geo": {
+        "latitude": 35.68027,
+        "longitude": 139.7671545
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.68027,139.7671545,2a,90y,327.01h,90.7t/data=!3m6!1e1!3m4!1s--yJGDCe4F2hMzLTlnoPug!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "69f4ae43-9a88-4944-9e0e-542dded8621e",
+      "name": {
+        "en": "Wakinosawa Numata fishing port",
+        "ja": "脇之沢漁港"
+      },
+      "geo": {
+        "latitude": 39.0066749,
+        "longitude": 141.6519027
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-iwate-rikuzentakata",
+      "streetViewUrl": "https://www.google.com/maps/@39.0066749,141.6519027,3a,75y,106h,97.08t/data=!3m6!1e1!3m4!1sNtNLqgey5mZZCSfzMlG1Gg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "76c813a5-cc69-44b8-8d65-d130cca357fd",
+      "name": {
+        "de": "In der Nähe des Usuki High School",
+        "kr": "Usuki High School 근처",
+        "ja": "大分県立臼杵高等学校付近",
+        "es": "Cerca de la Usuki High School",
+        "en": "Near the Usuki High School",
+        "id": "Sekitar Usuki High School"
+      },
+      "geo": {
+        "latitude": 33.11747,
+        "longitude": 131.80547
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-oita-usuki",
+      "streetViewUrl": "https://www.google.com/maps/@33.1174161,131.8056369,3a,64.3y,293.57h,98.37t/data=!3m6!1e1!3m4!1s-5ljLJoh-fmFaj8nwT65ww!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "84840025-4ce7-432e-b0c8-8a2750ce3bfc",
+      "name": {
+        "ja": "二宮市場",
+        "en": "Ninomiya market"
+      },
+      "geo": {
+        "latitude": 34.6972298,
+        "longitude": 135.1954876
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hyogo-kobe",
+      "streetViewUrl": "https://www.google.com/maps/@34.6972298,135.1954876,3a,75y,59.34h,93.39t/data=!3m6!1e1!3m4!1sYBIzCnBr90q32tWIwyn86g!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "84fcefb1-8598-4d3d-acf1-be9aa2a1b5a7",
+      "name": {
+        "en": "Apollo Station Saganoseki",
+        "ja": "apollostation 佐賀関SS (狭間石油)"
+      },
+      "geo": {
+        "latitude": 33.24865,
+        "longitude": 131.87519
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-oita-oita",
+      "streetViewUrl": "https://www.google.com/maps/@33.2486727,131.8752255,3a,90y,252.46h,95.47t/data=!3m7!1e1!3m5!1sXaq-OVwfDI4OUMHY7apf0w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.465474353870036%26panoid%3DXaq-OVwfDI4OUMHY7apf0w%26yaw%3D252.45651861211948!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "859c4edd-224c-4a52-8afb-bcc9ead310fc",
+      "name": {
+        "ja": "マクドナルド ２号線須磨店",
+        "en": "McDonald's Route 2 Suma",
+        "kr": "맥도날드 2호선스마점"
+      },
+      "geo": {
+        "latitude": 34.648064,
+        "longitude": 135.1352226
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hyogo-kobe",
+      "streetViewUrl": "https://www.google.com/maps/@34.648064,135.1352226,3a,75y,48.77h,99.68t/data=!3m6!1e1!3m4!1souM2jEwgaispB3KFz8PPxg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "8914aaf3-d4b8-45c7-9b1e-1599732f185a",
+      "name": {
+        "en": "JF Oita Saganoseki Branch",
+        "ja": "JF おおいた 佐賀関支店"
+      },
+      "geo": {
+        "latitude": 33.24467,
+        "longitude": 131.87753
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": null,
+      "streetViewUrl": "https://www.google.com/maps/@33.2448165,131.8770135,3a,75y,21.87h,101.47t/data=!3m6!1e1!3m4!1sbkJgwTK2HB-qxlMFJ_52vw!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "9a9357e8-22a7-45df-93d0-a2fa5802eca2",
+      "name": {
+        "ja": "RAMEN CLUB 東京駅店",
+        "en": "RAMEN CLUB Tokyo Station"
+      },
+      "geo": {
+        "latitude": 35.68057,
+        "longitude": 139.76605
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6805413,139.7660844,2a,90y,349.1h,91.31t/data=!3m7!1e1!3m5!1sHwGQSOb8lkFz0Ypyyb3VQA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.3112471199084155%26panoid%3DHwGQSOb8lkFz0Ypyyb3VQA%26yaw%3D349.1006529490732!7i13312!8i6656?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "a246e227-7f49-42ed-bf55-e01bde6670c6",
+      "name": {
+        "ja": "八幡浜駅",
+        "en": "Yawatahama Station",
+        "kr": "야와타하마 역"
+      },
+      "geo": {
+        "latitude": 33.45816,
+        "longitude": 132.43602
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-ehime-yawatahama",
+      "streetViewUrl": "https://www.google.com/maps/place/%EC%95%BC%EC%99%80%ED%83%80%ED%95%98%EB%A7%88+%EC%97%AD/@33.4581551,132.4360228,3a,90y,271.88h,98.31t/data=!3m8!1e1!3m6!1sAF1QipPqX7yAIQrsNBKNieLdsvDUkIv05euktVkDX56O!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPqX7yAIQrsNBKNieLdsvDUkIv05euktVkDX56O%3Dw900-h600-k-no-pi-8.308854419320028-ya271.881126141546-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x354583808c94d21f:0xde9beedbd90c8cfc!8m2!3d33.4581628!4d132.4360282!10e5!14m1!1BCgIgARICCAI!16s%2Fm%2F04jk9n0?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "a3ff2a10-5902-4e75-aabe-1da50b025989",
+      "name": {
+        "ja": "順天堂大学",
+        "kr": "준텐도 대학",
+        "en": "Juntendo University"
+      },
+      "geo": {
+        "latitude": 35.70201,
+        "longitude": 139.7608
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7019652,139.7577953,3a,75y,67.72h,105.05t/data=!3m7!1e1!3m5!1svhj6LoBne_PmlKZTthkKWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dvhj6LoBne_PmlKZTthkKWg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D316.2118%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "aaf31f00-c2d4-4c83-903c-b2ee7d485932",
+      "name": {
+        "kr": "쇼와 다이이치 고등학교 근처",
+        "ja": "昭和第一高等学校付近",
+        "en": "Near the Showa Daiichi High School",
+        "de": "In der Nähe des Showa Daiichi High School",
+        "id": "Sekitar Showa Daiichi High School",
+        "es": "Cerca de la Showa Daiichi High School"
+      },
+      "geo": {
+        "latitude": 35.7027811,
+        "longitude": 139.757694
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7027811,139.757694,3a,75y,182.46h,84.87t/data=!3m6!1e1!3m4!1s9Z0_JxbU7_Pi60KE82GCLw!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "af161214-006c-4b39-b404-09aba7e12921",
+      "name": {
+        "kr": "히지리바시",
+        "en": "Hijiri Bridge",
+        "ja": "聖橋"
+      },
+      "geo": {
+        "latitude": 35.69975,
+        "longitude": 139.76558
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6995507,139.7663764,3a,75y,207.42h,87.24t/data=!3m8!1e1!3m6!1sAF1QipMjavTbLidLZ-d1hfKytEZPi2UDqq9H1co0DWjT!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMjavTbLidLZ-d1hfKytEZPi2UDqq9H1co0DWjT%3Dw203-h100-k-no-pi-0-ya288.97864-ro0-fo100!7i8704!8i4352?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "b850f8b7-a3a6-4b5d-99e5-216525b14e57",
+      "name": {
+        "ja": "お茶の水橋",
+        "en": "Ochanomizu Bridge"
+      },
+      "geo": {
+        "latitude": 35.69986,
+        "longitude": 139.76344
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7001277,139.7634609,3a,78.6y,189.96h,107.25t/data=!3m7!1e1!3m5!1sRLnO2_73jG2L58l-SL6STg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-17.254888552643123%26panoid%3DRLnO2_73jG2L58l-SL6STg%26yaw%3D189.9599668398853!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "b96b15cd-28bb-4b22-9586-80737d6143bf",
+      "name": {
+        "ja": "八幡浜港",
+        "en": "Yawatahama Port"
+      },
+      "geo": {
+        "latitude": 33.4574987,
+        "longitude": 132.4184688
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-ehime-yawatahama",
+      "streetViewUrl": "https://www.google.com/maps/@33.4574987,132.4184688,3a,75y,271.95h,98.13t/data=!3m6!1e1!3m4!1sW9EM_OiIWQw_QrcMcfs2Kg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "bc1f6ac3-6e88-401c-bf6e-0f143f948655",
+      "name": {
+        "de": "In der Nähe des Ishidatami no eki TSURUYA",
+        "kr": "Ishidatami no eki TSURUYA 근처",
+        "es": "Cerca de la Ishidatami no eki TSURUYA",
+        "ja": "石畳の驛 つるや付近",
+        "id": "Sekitar Ishidatami no eki TSURUYA",
+        "en": "Near the Ishidatami no eki TSURUYA"
+      },
+      "geo": {
+        "latitude": 33.1936726,
+        "longitude": 131.3264595
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-oita-yufu",
+      "streetViewUrl": "https://www.google.com/maps/@33.1936726,131.3264595,3a,75y,220.68h,100.15t/data=!3m6!1e1!3m4!1s9hvwdcvglwUkwDWoXJpQTw!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "d50c40c5-415e-4cf7-8a32-f4abbb690dfc",
+      "name": {
+        "en": "Anotobira",
+        "ja": "あの扉"
+      },
+      "geo": {
+        "latitude": 39.5836041,
+        "longitude": 141.9496405
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-iwate-miyako",
+      "streetViewUrl": "https://www.google.com/maps/@39.5836041,141.9496405,3a,47.9y,172.78h,91.98t/data=!3m7!1e1!3m5!1sgc0I0lzLw8a-vUeQEuCqBQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dgc0I0lzLw8a-vUeQEuCqBQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D200.0095%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "d89105e7-a722-4ed1-9ba5-2f2847406c29",
+      "name": {
+        "en": "Orikasa Station",
+        "kr": "오리카사 역",
+        "ja": "織笠駅"
+      },
+      "geo": {
+        "latitude": 39.4538537,
+        "longitude": 141.9555025
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-iwate-yamada",
+      "streetViewUrl": "https://www.google.com/maps/@39.4538537,141.9555025,3a,75y,308.62h,97.79t/data=!3m7!1e1!3m5!1skVGpsz9nLhxZ5jjeWl7zRw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DkVGpsz9nLhxZ5jjeWl7zRw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D182.51584%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "de30e861-c151-4a54-a3fc-7169be4f5661",
+      "name": {
+        "kr": "세키가와 역",
+        "ja": "関川駅",
+        "en": "Sekigawa Station"
+      },
+      "geo": {
+        "latitude": 33.95566,
+        "longitude": 133.39275
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-ehime-shikokuchuo",
+      "streetViewUrl": "https://www.google.com/maps/@33.9555835,133.3930445,3a,37.1y,291.33h,88.49t/data=!3m7!1e1!3m5!1sqbE1h8quRvrsDeYvzjXyxg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.511171829538597%26panoid%3DqbE1h8quRvrsDeYvzjXyxg%26yaw%3D291.32934018885294!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "e3e9ae6d-6be4-41b3-941f-394975e7989f",
+      "name": {
+        "ja": "予讃線 肱川橋梁",
+        "en": "Yosan Line Hijigawa Bridge"
+      },
+      "geo": {
+        "latitude": 33.5156233,
+        "longitude": 132.5389884
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-ehime-ozu",
+      "streetViewUrl": "https://www.google.com/maps/@33.5156233,132.5389884,3a,75y,162.51h,98.11t/data=!3m6!1e1!3m4!1sOdtrvJ623ETFn2wFUDFRDA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "ec69d4c6-5ffe-4f49-934b-0b30e4a0a8da",
+      "name": {
+        "ja": "聖橋(バス)",
+        "en": "Hijiribashi(Bus)",
+        "kr": "Hijiribashi(버스)"
+      },
+      "geo": {
+        "latitude": 35.70026,
+        "longitude": 139.76534
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7003509,139.7653381,3a,87.8y,177.49h,87.9t/data=!3m7!1e1!3m5!1sZHNZtKl3l4_Pok72t_6lyQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.1049057580307675%26panoid%3DZHNZtKl3l4_Pok72t_6lyQ%26yaw%3D177.48535336628208!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "f157d305-5500-4a2d-be04-95502eb5d085",
+      "name": {
+        "ja": "下倉楽器 お茶の水本店",
+        "en": "Shimokura Musical Instruments"
+      },
+      "geo": {
+        "latitude": 35.69891,
+        "longitude": 139.76293
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6989197,139.7628532,3a,48.8y,83.88h,106.31t/data=!3m7!1e1!3m5!1so254s9uB1KCTjubc4RYuDg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-16.313324287282%26panoid%3Do254s9uB1KCTjubc4RYuDg%26yaw%3D83.87852061254789!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "f60ba3c3-8511-49e2-a69a-4d8d8e9c2ee1",
+      "name": {
+        "ja": "堂の前",
+        "en": "Donomae Yonesakicho"
+      },
+      "geo": {
+        "latitude": 39.0069842,
+        "longitude": 141.6701831
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-iwate-rikuzentakata",
+      "streetViewUrl": "https://www.google.com/maps/@39.0069842,141.6701831,3a,63.7y,126.98h,99.53t/data=!3m6!1e1!3m4!1sFaeWLevTaV9EV6V7JgGNeQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "f62c4c66-02c3-4a55-80d0-bbc045d58f0b",
+      "name": {
+        "kr": "오차노미즈 역",
+        "ja": "御茶ノ水駅",
+        "en": "Ochanomizu Station"
+      },
+      "geo": {
+        "latitude": 35.69933,
+        "longitude": 139.76614
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/AzKBLPdK8ERhM7re9",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "f9da9ea3-07c7-432e-a613-da66fb52b460",
+      "name": {
+        "ja": "ふじ屋衣料品店",
+        "en": "Fujiya clothing store"
+      },
+      "geo": {
+        "latitude": 33.2480741,
+        "longitude": 131.8757904
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-oita-oita",
+      "streetViewUrl": "https://www.google.com/maps/@33.2480741,131.8757904,3a,90y,134.49h,96t/data=!3m7!1e1!3m5!1sLOx5qo0w6qyAgSs3qEVphQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DLOx5qo0w6qyAgSs3qEVphQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D10.773946%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "f9f84f7a-72b2-4f83-a98f-64539e8551d8",
+      "name": {
+        "en": "Kiyosu Park",
+        "ja": "清洲公園"
+      },
+      "geo": {
+        "latitude": 35.21642,
+        "longitude": 136.84131
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aichi-kiyosu",
+      "streetViewUrl": "https://www.google.com/maps/@35.2161426,136.8408371,3a,75y,76.79h,99.06t/data=!3m7!1e1!3m5!1sVTAkzTqJU_jKN3atw6xR5Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.061979433447817%26panoid%3DVTAkzTqJU_jKN3atw6xR5Q%26yaw%3D76.79120612393211!7i13312!8i6656?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    },
+    {
+      "placeId": "faaeeb62-3129-425d-9404-6aac60f61d43",
+      "name": {
+        "ja": "旧豊後森機関庫",
+        "en": "Bungo Mori Roundhouse",
+        "kr": "분고모리 기관고"
+      },
+      "geo": {
+        "latitude": 33.281337,
+        "longitude": 131.1582638
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-oita-kusu",
+      "streetViewUrl": "https://www.google.com/maps/@33.281337,131.1582638,3a,90y,167.21h,100.44t/data=!3m8!1e1!3m6!1sAF1QipOzQIaMO8GBnaAS5Zz9Lk8qUQkRM9QfhgXQes1-!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOzQIaMO8GBnaAS5Zz9Lk8qUQkRM9QfhgXQes1-%3Dw203-h100-k-no-pi-0-ya24.046337-ro-0-fo100!7i8192!8i4096?entry=ttu",
+      "copyright": "©2022「すずめの戸締まり」製作委員会"
+    }
+  ]
+}

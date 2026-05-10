@@ -1,0 +1,232 @@
+{
+  "anime": {
+    "animeId": "ioOXlHX29aVhPwnrSHCM",
+    "slug": "grand-blue-dreaming",
+    "title": {
+      "ja": "ぐらんぶる",
+      "kr": "그랑블루",
+      "en": "Grand Blue Dreaming"
+    },
+    "author": {
+      "ja": [
+        "井上堅二",
+        "吉岡公威"
+      ],
+      "en": [
+        "Kenji Inoue",
+        "Kimitake Yoshioka"
+      ],
+      "kr": [
+        "이노우에 켄지",
+        "요시오카 키미타케"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "ゼロジー"
+      ],
+      "en": [
+        "ZERO-G"
+      ]
+    }
+  },
+  "placeCount": 12,
+  "places": [
+    {
+      "placeId": "0abf3bbd-8966-44ae-8c72-8ccdcbe3341a",
+      "name": {
+        "kr": "후나우사기바나타",
+        "ja": "フナウサギバナタ",
+        "en": "Funausagibanata"
+      },
+      "geo": {
+        "latitude": 24.86125,
+        "longitude": 125.17799
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-okinawa-miyakojima",
+      "streetViewUrl": "https://www.google.com/maps/@24.8613883,125.178055,3a,90y,21.72h,106.49t/data=!3m8!1e1!3m6!1sAF1QipPXgDvla6RbTfFsmRydH2Y5v8H1OAmVxTGeceCQ!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPXgDvla6RbTfFsmRydH2Y5v8H1OAmVxTGeceCQ%3Dw203-h100-k-no-pi-0-ya81.61011-ro-0-fo100!7i5376!8i2688?entry=ttu",
+      "copyright": "© 井上堅二・吉岡公威・講談社／ぐらんぶる製作委員会"
+    },
+    {
+      "placeId": "1ae1a4d4-292b-4ed9-96b3-fa4bc4c02ab7",
+      "name": {
+        "en": "Kawana east Breakwater Lighthouse",
+        "ja": "川奈東防波堤灯台"
+      },
+      "geo": {
+        "latitude": 34.95237,
+        "longitude": 139.13517
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-itō",
+      "streetViewUrl": "https://www.google.com/maps/@34.9526586,139.136379,3a,90y,278.38h,95.97t/data=!3m7!1e1!3m5!1ssOfz_18Au2WTnPEbEUv3Pg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.97170699852181%26panoid%3DsOfz_18Au2WTnPEbEUv3Pg%26yaw%3D278.38239573881305!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 井上堅二・吉岡公威・講談社／ぐらんぶる製作委員会"
+    },
+    {
+      "placeId": "59819897-007a-489d-8663-2b9d2f5ce4b5",
+      "name": {
+        "en": "Cape Higashi-Hennazaki",
+        "ja": "東平安名崎",
+        "kr": "히가시헨나 곶"
+      },
+      "geo": {
+        "latitude": 24.72011,
+        "longitude": 125.46795
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-okinawa-miyakojima",
+      "streetViewUrl": "https://www.google.com/maps/@24.7199667,125.4682239,2a,75y,142.27h,101.58t/data=!3m6!1e1!3m4!1sjr-wp5H3ByupxA3jmJ3qaQ!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "© 井上堅二・吉岡公威・講談社／ぐらんぶる製作委員会"
+    },
+    {
+      "placeId": "86271e17-ec96-401c-8c4f-836fa72fa30b",
+      "name": {
+        "en": "ORIX Rental Car Miyakojima",
+        "ja": "オリックスレンタカー宮古島空港店"
+      },
+      "geo": {
+        "latitude": 24.7896,
+        "longitude": 125.30448
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-okinawa-miyakojima",
+      "streetViewUrl": "https://www.google.com/maps/@24.7897587,125.3045066,3a,73.9y,200.28h,99.92t/data=!3m7!1e1!3m5!1sZ1Fslec8kTaokrVbqfF-tw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.917299446047963%26panoid%3DZ1Fslec8kTaokrVbqfF-tw%26yaw%3D200.2805948944423!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 井上堅二・吉岡公威・講談社／ぐらんぶる製作委員会"
+    },
+    {
+      "placeId": "8910c0c8-6401-4414-ab87-d0b77abc30ee",
+      "name": {
+        "en": "Kawana Station",
+        "kr": "가와나 역",
+        "ja": "川奈駅"
+      },
+      "geo": {
+        "latitude": 34.95119,
+        "longitude": 139.12345
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-shizuoka-itō",
+      "streetViewUrl": "https://www.google.com/maps/@34.9511721,139.1234461,3a,90y,106.98h,111.68t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDSs5KUBg!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZbAHRbLHgYrfzFqEZgaWmF1-9j7FNYs-3-lkLBtsBi4Fu7jFfM_RbOq-GJ-rvilQO93vPxsAUIxHOQcWCThG55lCwo35ioa4eOh-kk0CsQuRRb4Ly759idiV6k7zWq1PqZlVcs%3Dw900-h600-k-no-pi-21.676947897663084-ya358.77971263088256-ro0-fo100!7i6720!8i3360?entry=ttu&g_ep=EgoyMDI1MDkxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 井上堅二・吉岡公威・講談社／ぐらんぶる製作委員会"
+    },
+    {
+      "placeId": "8bcb9f76-5376-4afe-bc84-5f67a4e3c62f",
+      "name": {
+        "en": "COVE KAWANA"
+      },
+      "geo": {
+        "latitude": 34.95258,
+        "longitude": 139.13626
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-itō",
+      "streetViewUrl": "https://www.google.com/maps/@34.9526586,139.136379,3a,90y,229.06h,99.96t/data=!3m7!1e1!3m5!1ssOfz_18Au2WTnPEbEUv3Pg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.964430472664588%26panoid%3DsOfz_18Au2WTnPEbEUv3Pg%26yaw%3D229.06028539854825!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 井上堅二・吉岡公威・講談社／ぐらんぶる製作委員会"
+    },
+    {
+      "placeId": "8d199748-9efd-4f47-b11e-e2030175625b",
+      "name": {
+        "en": "uminosachi direct sales store",
+        "ja": "海の幸直売店"
+      },
+      "geo": {
+        "latitude": 24.80432,
+        "longitude": 125.27325
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-okinawa-miyakojima",
+      "streetViewUrl": "https://www.google.com/maps/@24.8042853,125.2731315,3a,90y,93.22h,90.4t/data=!3m6!1e1!3m4!1sB9Hm8UK6djhS0cT9gQ5Yhg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 井上堅二・吉岡公威・講談社／ぐらんぶる製作委員会"
+    },
+    {
+      "placeId": "9b7e6bc5-bdc0-4a78-9c76-41c437e44124",
+      "name": {
+        "ja": "川奈区民会館",
+        "en": "Kawana Kumin Hall"
+      },
+      "geo": {
+        "latitude": 34.9521,
+        "longitude": 139.13239
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-shizuoka-itō",
+      "streetViewUrl": "https://www.google.com/maps/@34.9521337,139.1322201,3a,90y,109.5h,95.22t/data=!3m7!1e1!3m5!1sFVum5n2q__jsxUarqb7oaw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.219034324026751%26panoid%3DFVum5n2q__jsxUarqb7oaw%26yaw%3D109.49720128670917!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 井上堅二・吉岡公威・講談社／ぐらんぶる製作委員会"
+    },
+    {
+      "placeId": "a707b30a-d36e-4907-a03b-723d756368e8",
+      "name": {
+        "ja": "与那覇前浜",
+        "en": "Yonaha Beach"
+      },
+      "geo": {
+        "latitude": 24.73487,
+        "longitude": 125.2631
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-okinawa-miyakojima",
+      "streetViewUrl": "https://www.google.com/maps/@24.7348811,125.2628888,2a,90y,140.54h,95.87t/data=!3m7!1e1!3m5!1sHE3HPXmAtMDhrABis7tchA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DHE3HPXmAtMDhrABis7tchA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D111.95592%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?entry=ttu",
+      "copyright": "© 井上堅二・吉岡公威・講談社／ぐらんぶる製作委員会"
+    },
+    {
+      "placeId": "af2ca517-d19e-4c86-9d20-b3445626634c",
+      "name": {
+        "kr": "미야코 공항",
+        "en": "Miyako Airport",
+        "ja": "宮古空港"
+      },
+      "geo": {
+        "latitude": 24.77953,
+        "longitude": 125.29783
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-okinawa-miyakojima",
+      "streetViewUrl": "https://www.google.com/maps/@24.7795304,125.2980074,3a,62.7y,278.13h,99.39t/data=!3m6!1e1!3m4!1sqDVHpHtIUpHurRorbQ1bdg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 井上堅二・吉岡公威・講談社／ぐらんぶる製作委員会"
+    },
+    {
+      "placeId": "bab7a2ab-cec4-4f4a-8d1d-080585ff39d6",
+      "name": {
+        "ja": "ビーチサイドハウス",
+        "en": "Beach side House"
+      },
+      "geo": {
+        "latitude": 24.83205,
+        "longitude": 125.27888
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-okinawa-miyakojima",
+      "streetViewUrl": "https://www.google.com/maps/@24.8322703,125.278788,3a,63.5y,155.61h,94.8t/data=!3m7!1e1!3m5!1shZd2i9pmY5-C0wYc_dVNGQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.796577980722034%26panoid%3DhZd2i9pmY5-C0wYc_dVNGQ%26yaw%3D155.61080596244443!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 井上堅二・吉岡公威・講談社／ぐらんぶる製作委員会"
+    },
+    {
+      "placeId": "da83745c-c119-4c95-8a55-2fdabe85de96",
+      "name": {
+        "kr": "나하 공항",
+        "ja": "那覇空港",
+        "en": "Naha International Airport"
+      },
+      "geo": {
+        "latitude": 26.206,
+        "longitude": 127.65128
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-okinawa-naha",
+      "streetViewUrl": "https://www.google.com/maps/@26.2060191,127.6512512,3a,90y,70.04h,106.93t/data=!3m6!1e1!3m4!1seATdkSaYBIeQL4lNHuJYcw!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 井上堅二・吉岡公威・講談社／ぐらんぶる製作委員会"
+    }
+  ]
+}

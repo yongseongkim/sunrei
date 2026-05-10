@@ -1,0 +1,161 @@
+{
+  "anime": {
+    "animeId": "n3hNkoBAE9Wr2XL65zWD",
+    "slug": "komi-cant-communicate-2",
+    "title": {
+      "ja": "古見さんは、コミュ症です。2",
+      "kr": "코미 양은 커뮤증입니다 2기",
+      "en": "Komi Can't Communicate 2"
+    },
+    "author": {
+      "ja": [
+        "オダトモヒト"
+      ],
+      "en": [
+        "Tomohito Oda"
+      ],
+      "kr": [
+        "오다 토모히토"
+      ]
+    },
+    "studio": {
+      "en": [
+        "OLM"
+      ]
+    }
+  },
+  "placeCount": 8,
+  "places": [
+    {
+      "placeId": "2f11fe94-4f3e-4389-b6ae-5920d91265a2",
+      "name": {
+        "en": "Shin-Yokohama Station",
+        "ja": "新横浜駅"
+      },
+      "geo": {
+        "latitude": 35.5077806,
+        "longitude": 139.6171724
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.5077806,139.6171724,3a,75y,137.21h,88.08t/data=!3m8!1e1!3m6!1sAF1QipOL5PN_PSP_tV75nygu_cAmJEukE8MWVXZr2YsZ!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOL5PN_PSP_tV75nygu_cAmJEukE8MWVXZr2YsZ%3Dw203-h100-k-no-pi0-ya287.51123-ro-0-fo100!7i5376!8i2688?coh=205409&entry=ttu",
+      "copyright": "©オダトモヒト・小学館／私立伊旦高校"
+    },
+    {
+      "placeId": "4ab3f455-930a-49a4-9153-33926407d89e",
+      "name": {
+        "ja": "フォーティセカンド・ストリート・スタジオ ～グリーティング・ギャラリー",
+        "en": "42nd Street Studio: Greeting Gallery"
+      },
+      "geo": {
+        "latitude": 34.6641946,
+        "longitude": 135.433318
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-osaka-osaka",
+      "streetViewUrl": "https://www.google.com/maps/@34.6641946,135.433318,3a,75y,99.31h,105.67t/data=!3m7!1e1!3m5!1sAF1QipMFOT1oicYOx85VQFUzNjL9-rtUhGMFrJfJNCo9!2e10!3e11!7i5376!8i2688?coh=205409&entry=ttu",
+      "copyright": "©オダトモヒト・小学館／私立伊旦高校"
+    },
+    {
+      "placeId": "729f5493-b74d-4eb8-91e1-293b06c6a77c",
+      "name": {
+        "ja": "清水寺",
+        "en": "Kiyomizu-dera"
+      },
+      "geo": {
+        "latitude": 34.9946819,
+        "longitude": 135.7851231
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9946819,135.7851231,3a,75y,276.54h,98.95t/data=!3m8!1e1!3m6!1sAF1QipNFpAMhaPNz2wHulEuYbCg7zynvB-uFa0jUZpmt!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNFpAMhaPNz2wHulEuYbCg7zynvB-uFa0jUZpmt%3Dw203-h100-k-no-pi-0-ya284.80493-ro0-fo100!7i12348!8i6174?coh=205409&entry=ttu",
+      "copyright": "©オダトモヒト・小学館／私立伊旦高校"
+    },
+    {
+      "placeId": "734254ff-7858-4c34-91fc-7beb773d0cfe",
+      "name": {
+        "en": "Near the Matsugaoka Daini Park",
+        "id": "Sekitar Matsugaoka Daini Park",
+        "ja": "松が丘第二公園付近",
+        "es": "Cerca de la Matsugaoka Daini Park",
+        "de": "In der Nähe des Matsugaoka Daini Park"
+      },
+      "geo": {
+        "latitude": 35.327411,
+        "longitude": 139.4235523
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-chigasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.327411,139.4235523,3a,65.7y,43.63h,101.51t/data=!3m6!1e1!3m4!1sQbU4psZfXvG2MoAP6fYobw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©オダトモヒト・小学館／私立伊旦高校"
+    },
+    {
+      "placeId": "d9945ac8-57a7-4cba-8c6b-e6481dcb22df",
+      "name": {
+        "ja": "龍安寺",
+        "en": "Ryoan-ji"
+      },
+      "geo": {
+        "latitude": 35.0344788,
+        "longitude": 135.7182141
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0344788,135.7182141,2a,41.3y,252.22h,88.84t/data=!3m6!1e1!3m4!1saXbdnZqMc2WMXJXVC0c1IQ!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©オダトモヒト・小学館／私立伊旦高校"
+    },
+    {
+      "placeId": "df623ea7-0c68-44bf-9073-ea52e4936fba",
+      "name": {
+        "ja": "横浜赤レンガ倉庫",
+        "en": "Yokohama Red Brick Warehouse"
+      },
+      "geo": {
+        "latitude": 35.4521354,
+        "longitude": 139.6424755
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4521354,139.6424755,2a,75y,69.14h,100.5t/data=!3m6!1e1!3m4!1smb3pyggnX1TkPLKQuVweiA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©オダトモヒト・小学館／私立伊旦高校"
+    },
+    {
+      "placeId": "e0028b3f-efb4-422a-aaa4-1f3ac967bab8",
+      "name": {
+        "en": "Honeydukes",
+        "ja": "ハニーデュークス"
+      },
+      "geo": {
+        "latitude": 34.6675275,
+        "longitude": 135.4313623
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-osaka-osaka",
+      "streetViewUrl": "https://www.google.com/maps/@34.6675275,135.4313623,3a,75y,265.76h,98.49t/data=!3m8!1e1!3m6!1sAF1QipMcHMwDP82en77LXWAfCjrLPZUia8r5TIdT8pSZ!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMcHMwDP82en77LXWAfCjrLPZUia8r5TIdT8pSZ%3Dw203-h100-k-no-pi-1.7378715-ya139.7841-ro8.26013-fo100!7i5376!8i2688?coh=205409&entry=ttu",
+      "copyright": "©オダトモヒト・小学館／私立伊旦高校"
+    },
+    {
+      "placeId": "e0505083-db28-4fb9-a220-42765877daa5",
+      "name": {
+        "en": "Toei Kyoto Studio Park",
+        "ja": "東映太秦映画村"
+      },
+      "geo": {
+        "latitude": 35.0166165,
+        "longitude": 135.7082367
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0166165,135.7082367,3a,90y,345.2h,98.6t/data=!3m6!1e1!3m4!1sW31GMH87XWoRWbX_bDbGvA!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©オダトモヒト・小学館／私立伊旦高校"
+    }
+  ]
+}

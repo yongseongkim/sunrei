@@ -1,0 +1,84 @@
+{
+  "anime": {
+    "animeId": "Abq0KH3lFo26R6IyQUh1",
+    "slug": "evangelion-3-1-thrice-upon-a-time",
+    "title": {
+      "ja": "シン・エヴァンゲリオン劇場版:||",
+      "kr": "신 에반게리온 극장판 𝄇",
+      "en": "Evangelion: 3.0+1.0 Thrice Upon a Time"
+    },
+    "author": {
+      "ja": [
+        "庵野秀明"
+      ],
+      "en": [
+        "Hideaki Anno"
+      ],
+      "kr": [
+        "안노 히데아키"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "カラー"
+      ],
+      "en": [
+        "Khara"
+      ]
+    }
+  },
+  "placeCount": 3,
+  "places": [
+    {
+      "placeId": "2fe42e45-d728-428f-880e-75dab7dffc1a",
+      "name": {
+        "en": "Tenryu Futamata Station Turn Table & Rail Museum",
+        "ja": "天竜浜名湖鉄道 車両基地"
+      },
+      "geo": {
+        "latitude": 34.8584621,
+        "longitude": 137.8225928
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shizuoka-hamamatsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.8584621,137.8225928,3a,42.4y,10.78h,97.62t/data=!3m8!1e1!3m6!1sAF1QipOHPzK05xVgnZlRpLJoQIX_KkhtWS_wN3EuzH4v!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOHPzK05xVgnZlRpLJoQIX_KkhtWS_wN3EuzH4v%3Dw203-h100-k-no-pi-0-ya68.74834-ro-0-fo100!7i4608!8i2304?entry=ttu",
+      "copyright": "©カラー／Project Eva."
+    },
+    {
+      "placeId": "67480a4b-d7be-4fd3-9b38-2bfb9dd091e8",
+      "name": {
+        "en": "Ubeshinkawa Station",
+        "ja": "宇部新川駅"
+      },
+      "geo": {
+        "latitude": 33.9586144,
+        "longitude": 131.2427481
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamaguchi-ube",
+      "streetViewUrl": "https://www.google.com/maps/@33.9586144,131.2427481,3a,90y,293.32h,93.07t/data=!3m8!1e1!3m6!1sAF1QipN3EZOtvNLCa7Se11sPOpygVMgrf8kky7ImtnG8!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipN3EZOtvNLCa7Se11sPOpygVMgrf8kky7ImtnG8%3Dw203-h100-k-no-pi-0-ya233.05196-ro0-fo100!7i8192!8i4096?entry=ttu",
+      "copyright": "©カラー／Project Eva."
+    },
+    {
+      "placeId": "e03de8b9-3c4c-402d-b6f2-7617cadc78bb",
+      "name": {
+        "en": "Near the @Park Kamakura Komachi Komachi Fumikirimae",
+        "id": "Sekitar @Park Kamakura Komachi Komachi Fumikirimae",
+        "ja": "アットパーク 鎌倉小町 小町踏切前付近",
+        "es": "Cerca de la @Park Kamakura Komachi Komachi Fumikirimae",
+        "de": "In der Nähe des @Park Kamakura Komachi Komachi Fumikirimae"
+      },
+      "geo": {
+        "latitude": 35.320644,
+        "longitude": 139.5505504
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kamakura",
+      "streetViewUrl": "https://www.google.com/maps/@35.320644,139.5505504,3a,75y,184h,94.2t/data=!3m7!1e1!3m5!1sA97Wb-GZynvcdGGp00TOcA!2e0!5s20220601T000000!7i16384!8i8192?entry=ttu",
+      "copyright": "©カラー／Project Eva."
+    }
+  ]
+}

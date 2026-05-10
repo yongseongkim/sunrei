@@ -1,0 +1,566 @@
+{
+  "anime": {
+    "animeId": "bfmIPuWLk9usCZzBUOgC",
+    "slug": "initial-d-legend-3",
+    "title": {
+      "ja": "新劇場版「頭文字D」Legend3 夢現",
+      "kr": "신극장판 이니셜D 레전드 3 몽현",
+      "en": "Initial D Legend 3 Mugen"
+    },
+    "author": {
+      "ja": [
+        "しげの秀一"
+      ],
+      "kr": [
+        "시게노 슈이치"
+      ],
+      "en": [
+        "Shuichi Shigeno"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Sanzigen",
+        "Liden Films"
+      ],
+      "ja": [
+        "サンジゲン",
+        "ライデンフィルム"
+      ]
+    }
+  },
+  "placeCount": 32,
+  "places": [
+    {
+      "placeId": "2e0fecaf-20c4-4782-9a82-bd388bd68bdc",
+      "name": {
+        "ja": "石段アルウィン公園西駐車場(P2)",
+        "en": "Shibukawa Municipal Ishidan Al Wynn Park West Parking Lot"
+      },
+      "geo": {
+        "latitude": 36.49929,
+        "longitude": 138.91616
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4991611,138.9159961,3a,73.2y,62.8h,91.5t/data=!3m7!1e1!3m5!1sCq91NJhBiV5XimwAlX_0bQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.5040667008492505%26panoid%3DCq91NJhBiV5XimwAlX_0bQ%26yaw%3D62.79617904784824!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "3f8ab309-ba5f-417e-987e-73f2765adbb5",
+      "name": {
+        "en": "the Yaseone Pass",
+        "kr": "야세오네토게",
+        "ja": "ヤセオネ峠"
+      },
+      "geo": {
+        "latitude": 36.48264,
+        "longitude": 138.89645
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4829787,138.89652,3a,54y,189.8h,90.51t/data=!3m7!1e1!3m5!1ssoddE3U26ZLyVBK0apSHJA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.514947092271484%26panoid%3DsoddE3U26ZLyVBK0apSHJA%26yaw%3D189.7960207755621!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "49f6cfa6-1614-498c-88f5-d537271c87df",
+      "name": {
+        "en": "Curve 24",
+        "kr": "곡선 24",
+        "ja": "カーブ 24"
+      },
+      "geo": {
+        "latitude": 36.48939,
+        "longitude": 138.8997
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4892906,138.8998334,3a,90y,321.4h,103.64t/data=!3m7!1e1!3m5!1sT8PkVmovQ2GAkV_eai29kQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.641763837305717%26panoid%3DT8PkVmovQ2GAkV_eai29kQ%26yaw%3D321.39894706493135!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "4a55e5d0-dc87-4908-bbde-fb96755d414a",
+      "name": {
+        "en": "Lake Haruna Boat landing",
+        "ja": "榛名湖ボート乗り場"
+      },
+      "geo": {
+        "latitude": 36.4708,
+        "longitude": 138.87314
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-takasaki",
+      "streetViewUrl": "https://www.google.com/maps/@36.4709634,138.8730859,3a,34.3y,157.84h,97.66t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICEzoqaEA!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu0I8ashVkxHm2LQ4FeIb_mvtk3YLQKYh58VJXC4k91axCA6vlJUMaAY0kiPU9qJLlojX1Wimv8bp7QkX4WHWZETWqNWeoOgdawvfXNvWGTzTAOeBw7uKwdEmlcuTu1tiTLgV2VV%3Dw900-h600-k-no-pi-7.664444686778793-ya247.84095187424577-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "4ebf64a9-6fe5-44c7-85f0-f121215a25b7",
+      "name": {
+        "en": "Curve 12",
+        "ja": "カーブ 12",
+        "kr": "곡선 12"
+      },
+      "geo": {
+        "latitude": 36.49832,
+        "longitude": 138.90454
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.497915,138.9044985,3a,49.6y,355.13h,92.4t/data=!3m7!1e1!3m5!1sHdtJ0b5UrQBsye8Haxgeaw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.3969557561626686%26panoid%3DHdtJ0b5UrQBsye8Haxgeaw%26yaw%3D355.12756754215565!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "5943ee40-fb88-4957-97b9-b48977bbdecb",
+      "name": {
+        "ja": "カーブ 14",
+        "en": "Curve 14",
+        "kr": "곡선 14"
+      },
+      "geo": {
+        "latitude": 36.49808,
+        "longitude": 138.90411
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4979709,138.9042781,3a,75y,298.83h,101.1t/data=!3m7!1e1!3m5!1scBGBXssj0NwSlxFZCb8-ww!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.10442934826257%26panoid%3DcBGBXssj0NwSlxFZCb8-ww%26yaw%3D298.82517261469087!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "5e85754a-02e9-43d8-9ae5-b3573c0a705a",
+      "name": {
+        "en": "Curve 16",
+        "kr": "곡선 16",
+        "ja": "カーブ 16"
+      },
+      "geo": {
+        "latitude": 36.49347,
+        "longitude": 138.90796
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4934766,138.9077982,3a,90y,82.2h,93.86t/data=!3m7!1e1!3m5!1sUZC4MF8pWPPd2Wyhrx_ZSA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.85736650816456%26panoid%3DUZC4MF8pWPPd2Wyhrx_ZSA%26yaw%3D82.20239877678392!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "60e89273-0ed2-4a56-9e65-27cef225e961",
+      "name": {
+        "ja": "カーブ 30",
+        "kr": "곡선 30",
+        "en": "Curve 30"
+      },
+      "geo": {
+        "latitude": 36.48594,
+        "longitude": 138.89791
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4860199,138.8978943,3a,75y,172.71h,95.68t/data=!3m7!1e1!3m5!1sIN57E781R6qFa1cn4g9Iyg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.679936294694869%26panoid%3DIN57E781R6qFa1cn4g9Iyg%26yaw%3D172.7063517974231!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "6936784c-9fa6-45b1-9a3d-d575146aff43",
+      "name": {
+        "ja": "県立榛名公園",
+        "en": "Haruna Prefectural Park"
+      },
+      "geo": {
+        "latitude": 36.47033,
+        "longitude": 138.87352
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-takasaki",
+      "streetViewUrl": "https://www.google.com/maps/@36.4704115,138.8733545,3a,64.3y,177.47h,99.91t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC4x8GbngE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu2QhzPf-hTiDBEniPrgVcAHJThgyk4wqCUsLmDn32Kefs56uCQkuIoLGVVrATDjVk56jI7y3dZJJ0ZmxAY9qtdsy9oVwhPs--5CUgLQ7jwdBKk_GHM92m-jR12RqsyNCtjJytJa%3Dw900-h600-k-no-pi-9.906010403512141-ya38.47376212934549-ro0-fo100!7i10240!8i3434?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "6a0e37c9-2700-4117-a972-7919c4529c68",
+      "name": {
+        "ja": "伊香保温泉石段街",
+        "en": "Ikaho Onsen Stone Steps"
+      },
+      "geo": {
+        "latitude": 36.49813,
+        "longitude": 138.91656
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.49808,138.9165542,3a,75y,27.09h,74.44t/data=!3m7!1e1!3m5!1s7DED0DBGdUhV4L1x08h5Ng!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D15.555466252472868%26panoid%3D7DED0DBGdUhV4L1x08h5Ng%26yaw%3D27.09152855196324!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "838ae31a-f33a-46dd-b650-d47515cc0e5d",
+      "name": {
+        "en": "Osakaya",
+        "ja": "大坂屋"
+      },
+      "geo": {
+        "latitude": 36.49712,
+        "longitude": 138.91625
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4971205,138.9162721,3a,75y,215.71h,97.08t/data=!3m7!1e1!3m5!1scNLi2NEfaboGXrDJwzBW4A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.075173637285815%26panoid%3DcNLi2NEfaboGXrDJwzBW4A%26yaw%3D215.70698043753993!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "8831998d-8bae-477b-a46a-ec83704c3e8b",
+      "name": {
+        "en": "Curve 28",
+        "kr": "곡선 28",
+        "ja": "カーブ 28"
+      },
+      "geo": {
+        "latitude": 36.48651,
+        "longitude": 138.89878
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4861902,138.8988234,3a,75y,351.44h,102.17t/data=!3m7!1e1!3m5!1s5CS6cys38W2s_kbLO8h-dQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.17385879751673%26panoid%3D5CS6cys38W2s_kbLO8h-dQ%26yaw%3D351.43979215798885!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "8e981e31-b903-4988-b25a-5ccd295b3d9a",
+      "name": {
+        "ja": "apollostation オアシス高源地SS",
+        "en": "Gunmashoji Oasis Kogenchi Filling Station"
+      },
+      "geo": {
+        "latitude": 36.4922,
+        "longitude": 138.99667
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4922009,138.9965315,3a,68.7y,92.24h,92.85t/data=!3m7!1e1!3m5!1sm8TFbFKG08kPr1IRTwKhYw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.8501888615263766%26panoid%3Dm8TFbFKG08kPr1IRTwKhYw%26yaw%3D92.24228220917216!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "98791894-4810-41f2-9aea-61f599c14de2",
+      "name": {
+        "kr": "곡선 6",
+        "ja": "カーブ 6",
+        "en": "Curve 6"
+      },
+      "geo": {
+        "latitude": 36.50056,
+        "longitude": 138.9103
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5002515,138.910305,3a,75y,0.44h,101.84t/data=!3m7!1e1!3m5!1sfelUVWRROUfogt5o-otMAQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.837293915114685%26panoid%3DfelUVWRROUfogt5o-otMAQ%26yaw%3D0.4358113803823471!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "a6bbe2f9-7d4d-4301-a34f-271292f26c29",
+      "name": {
+        "ja": "ときめきデッキ",
+        "en": "crush deck"
+      },
+      "geo": {
+        "latitude": 36.49182,
+        "longitude": 138.92308
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4919486,138.9230364,3a,48.8y,64.67h,99.71t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDq3febbw!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu0D2ffFx2R1vGPDxgXJOPyEq6kOaOmwVuPfIZUO0TSy6J9DXWJ2oVSbLVDJgGUKU4To2xNAtnc_EGz_DJ7gmjBIbEpHu5qtfvpqGjonJ8Eh70bzsZ6walOZgiIMRVM6qo5mC-zg%3Dw900-h600-k-no-pi-9.70958495468821-ya183.6671345839403-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "a98b4b4e-2c28-4b31-b919-dd674593880a",
+      "name": {
+        "kr": "곡선 7",
+        "en": "Curve 7",
+        "ja": "カーブ 7"
+      },
+      "geo": {
+        "latitude": 36.50113,
+        "longitude": 138.90532
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5013541,138.905676,3a,52.5y,246.82h,95.56t/data=!3m7!1e1!3m5!1sbm0QCtsHezEF1wKzbNtMCw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.563940564843605%26panoid%3Dbm0QCtsHezEF1wKzbNtMCw%26yaw%3D246.8234527435356!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "ab98dacc-990f-454c-9a3f-7a5bfb402064",
+      "name": {
+        "ja": "群馬銀行 伊香保出張所",
+        "en": "Gunma Bank Ikaho"
+      },
+      "geo": {
+        "latitude": 36.49964,
+        "longitude": 138.91907
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4996415,138.9195231,3a,75y,273.34h,97.94t/data=!3m7!1e1!3m5!1sPI9e_ajHikG7RPHtHxQIjg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.944733746185818%26panoid%3DPI9e_ajHikG7RPHtHxQIjg%26yaw%3D273.3439989926135!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "b0875085-3127-4e6f-bcf1-d436f62e5cd8",
+      "name": {
+        "en": "Ryokan Fukuzen",
+        "ja": "伊香保温泉 大衆旅館ふくぜん"
+      },
+      "geo": {
+        "latitude": 36.50013,
+        "longitude": 138.92504
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5000482,138.9248851,3a,48.7y,54.6h,92.72t/data=!3m7!1e1!3m5!1s2qBYnPEg-y8eSW9-Ii7nAg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.7217388513511764%26panoid%3D2qBYnPEg-y8eSW9-Ii7nAg%26yaw%3D54.596746960674764!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "b321cd8b-2a61-4fa1-8e01-8a113b316eda",
+      "name": {
+        "kr": "이카호신린시젠코엔마에",
+        "en": "Ikaho forest Park",
+        "ja": "伊香保森林自然公園前"
+      },
+      "geo": {
+        "latitude": 36.49153,
+        "longitude": 138.90342
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4913696,138.90334,3a,87.9y,17.49h,101.38t/data=!3m7!1e1!3m5!1slDovWW8rW5KMZP4TsjqrGQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.37957159393683%26panoid%3DlDovWW8rW5KMZP4TsjqrGQ%26yaw%3D17.486795862919298!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "b78c433c-bc23-4d86-a518-a1c45da80976",
+      "name": {
+        "en": "Curve 27",
+        "ja": "カーブ 27",
+        "kr": "곡선 27"
+      },
+      "geo": {
+        "latitude": 36.48606,
+        "longitude": 138.89892
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4861902,138.8988234,3a,75y,151.14h,88.18t/data=!3m7!1e1!3m5!1s5CS6cys38W2s_kbLO8h-dQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.8195222038613537%26panoid%3D5CS6cys38W2s_kbLO8h-dQ%26yaw%3D151.14496359551993!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "bb9d551f-6565-49d2-869a-f37154157869",
+      "name": {
+        "ja": "カーブ 29",
+        "en": "Curve 29",
+        "kr": "곡선 29"
+      },
+      "geo": {
+        "latitude": 36.48891,
+        "longitude": 138.89678
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4887494,138.8967507,3a,75y,343.57h,99.32t/data=!3m7!1e1!3m5!1sktAFRhll2Sooukxj7wFSjQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.318626537895298%26panoid%3DktAFRhll2Sooukxj7wFSjQ%26yaw%3D343.5728740915235!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "c295a45a-3185-4007-98de-81075a0a6c06",
+      "name": {
+        "ja": "カーブ 8",
+        "en": "Curve 8",
+        "kr": "곡선 8"
+      },
+      "geo": {
+        "latitude": 36.50054,
+        "longitude": 138.90736
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5006063,138.9072625,3a,75y,155h,95.15t/data=!3m7!1e1!3m5!1sfewY1gs2Nd4nab4y_sah-w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.153642693800691%26panoid%3DfewY1gs2Nd4nab4y_sah-w%26yaw%3D154.99756657348738!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "c8993949-ec89-4855-82aa-e47ab71411dc",
+      "name": {
+        "ja": "カーブ 10",
+        "kr": "곡선 10",
+        "en": "Curve 10"
+      },
+      "geo": {
+        "latitude": 36.49964,
+        "longitude": 138.90593
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4992199,138.9058842,3a,33y,4.94h,96.96t/data=!3m7!1e1!3m5!1sAUi45eMu-wEPy3gJ0j-DYg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.963617516361694%26panoid%3DAUi45eMu-wEPy3gJ0j-DYg%26yaw%3D4.937441981186453!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "c8e2df90-c0b4-46b5-904c-a3c62bd8b6d8",
+      "name": {
+        "ja": "カーブ 23",
+        "en": "Curve 23",
+        "kr": "곡선 23"
+      },
+      "geo": {
+        "latitude": 36.49254,
+        "longitude": 138.90582
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4925373,138.9058269,3a,90y,185.55h,97.28t/data=!3m7!1e1!3m5!1s18NOXNRie8B0O4RK8rJE7w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.28400426917915%26panoid%3D18NOXNRie8B0O4RK8rJE7w%26yaw%3D185.54976344307047!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "cd3c8ec6-6175-46a7-a08b-70a6e2a5800b",
+      "name": {
+        "ja": "カーブ 3",
+        "en": "Curve 3",
+        "kr": "곡선 3"
+      },
+      "geo": {
+        "latitude": 36.49776,
+        "longitude": 138.91304
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.49788,138.9131276,3a,63.4y,240.8h,96.61t/data=!3m7!1e1!3m5!1shN-vgi9BtElplWfU4_hdxQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.607580320376897%26panoid%3DhN-vgi9BtElplWfU4_hdxQ%26yaw%3D240.8004430429647!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "ceca908f-d479-43d1-9fd7-1d08a4b1ebb7",
+      "name": {
+        "en": "Shibukawa Municipal Tokutomiroka Memorial Literary Hall Parking Lot",
+        "ja": "徳冨蘆花記念文学館駐車場(P1)"
+      },
+      "geo": {
+        "latitude": 36.49852,
+        "longitude": 138.91449
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4986071,138.9144574,3a,75y,159.79h,96.69t/data=!3m7!1e1!3m5!1s4xyA8W409uVRef10BnQIxQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.694879235016174%26panoid%3D4xyA8W409uVRef10BnQIxQ%26yaw%3D159.7949999219427!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "e2023211-8a81-4e4d-82c5-9d2e2ffd34d4",
+      "name": {
+        "en": "Takane Observation Deck",
+        "ja": "高根展望台"
+      },
+      "geo": {
+        "latitude": 36.49266,
+        "longitude": 138.9058
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4925373,138.9058269,3a,40.7y,345.65h,90.96t/data=!3m7!1e1!3m5!1s18NOXNRie8B0O4RK8rJE7w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.9595646595954435%26panoid%3D18NOXNRie8B0O4RK8rJE7w%26yaw%3D345.6523545722552!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "e2fe7a13-e70c-4e5b-93db-cf7296af75c6",
+      "name": {
+        "kr": "곡선 13",
+        "ja": "カーブ 13",
+        "en": "Curve 13"
+      },
+      "geo": {
+        "latitude": 36.49738,
+        "longitude": 138.90438
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4974154,138.9043485,3a,63.4y,101.2h,91.13t/data=!3m7!1e1!3m5!1sBvzxIrq10vjRJ7pQCcsdEw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.1259604798577243%26panoid%3DBvzxIrq10vjRJ7pQCcsdEw%26yaw%3D101.20490800206564!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "e809dd34-70e0-4dcc-9b88-50d476ee3dfc",
+      "name": {
+        "ja": "ホテルきむら",
+        "en": "Hotel Kimura"
+      },
+      "geo": {
+        "latitude": 36.49745,
+        "longitude": 138.9209
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4974043,138.9207826,3a,75y,61.66h,106.43t/data=!3m7!1e1!3m5!1sDzfsli9Ny-t-SCMI7jsO0w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-16.43219138964261%26panoid%3DDzfsli9Ny-t-SCMI7jsO0w%26yaw%3D61.662523866967284!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "ec75e8f2-c456-4868-aca7-727f2b7b0e43",
+      "name": {
+        "kr": "곡선 11",
+        "ja": "カーブ 11",
+        "en": "Curve 11"
+      },
+      "geo": {
+        "latitude": 36.49769,
+        "longitude": 138.90502
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.497737,138.9048954,3a,75y,102.75h,93.31t/data=!3m7!1e1!3m5!1sUZc_fatG3kICPHjXylXPRA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.3061615141410527%26panoid%3DUZc_fatG3kICPHjXylXPRA%26yaw%3D102.74796647099862!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "ed8bc964-06bc-476b-b988-c6657edff369",
+      "name": {
+        "ja": "カーブ 17",
+        "en": "Curve 17",
+        "kr": "곡선 17"
+      },
+      "geo": {
+        "latitude": 36.49261,
+        "longitude": 138.89965
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-shibukawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4925257,138.8996228,3a,90y,20.72h,95.43t/data=!3m7!1e1!3m5!1sJAFFAtLzmm5-DiIvDaGtug!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.428121296585843%26panoid%3DJAFFAtLzmm5-DiIvDaGtug%26yaw%3D20.716934979661474!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    },
+    {
+      "placeId": "f98dbbc0-2892-425d-9c79-f7508187433a",
+      "name": {
+        "ja": "FEELGOOD CANOE TOURS榛名湖",
+        "en": "FEELGOOD CANOE TOURS Lake Haruna"
+      },
+      "geo": {
+        "latitude": 36.47159,
+        "longitude": 138.87293
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gunma-takasaki",
+      "streetViewUrl": "https://www.google.com/maps/@36.4711835,138.8731908,3a,43y,323.14h,99.47t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDExLrRJA!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu1m3Sy0Jh1R9XFKlPf5fmGuY5oJxhoKoT0L9Wwd9RM3-9Y0IyEFcV1_AsGfQZj7Xnw83kxuhvdv0dPunI10Qn4DJRgee0vq9soq5xrOqL8-IccNQ-W_wfAJaMKNPnMntYP89t4%3Dw900-h600-k-no-pi-9.470912708707871-ya293.1407969565845-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©しげの秀一／講談社・2016新劇場版「頭文字D」L3製作委員会"
+    }
+  ]
+}

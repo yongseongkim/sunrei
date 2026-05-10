@@ -1,0 +1,364 @@
+{
+  "anime": {
+    "animeId": "nIzGnqp4XULg32euiQJb",
+    "slug": "this-monster-wants-to-eat-me",
+    "title": {
+      "ja": "私を喰べたい、ひとでなし",
+      "kr": "나를 먹고 싶은, 괴물",
+      "en": "This Monster Wants to Eat Me"
+    },
+    "author": {
+      "ja": [
+        "苗川采"
+      ],
+      "en": [
+        "Sai Naekawa"
+      ],
+      "kr": [
+        "나에카와 사이"
+      ]
+    },
+    "studio": {
+      "en": [
+        "STUDIO LINGS"
+      ],
+      "ja": [
+        "スタジオリングス"
+      ]
+    }
+  },
+  "placeCount": 20,
+  "places": [
+    {
+      "placeId": "0952d083-2ce4-49bd-bfca-12beaf9bd9d8",
+      "name": {
+        "en": "Popai Parking Lot",
+        "ja": "ポパイ駐車場"
+      },
+      "geo": {
+        "latitude": 33.68436,
+        "longitude": 132.6335
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-ehime-iyo",
+      "streetViewUrl": "https://maps.app.goo.gl/H2s7jKLaguL3MDjF8",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "19933b7e-5b01-44e0-a384-6386b93eec8b",
+      "name": {
+        "en": "Dogo Tourist Information Center",
+        "kr": "도고 관광안내소",
+        "ja": "道後観光案内所"
+      },
+      "geo": {
+        "latitude": 33.85084,
+        "longitude": 132.78526
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-ehime-matsuyama",
+      "streetViewUrl": "https://maps.app.goo.gl/SKTQaXZCvA1kCkms7",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "1f08faf4-cec6-4fa7-bed4-5d4d0ba05d5b",
+      "name": {
+        "en": "Nadacho Pocket Park",
+        "ja": "灘町ポケットパーク"
+      },
+      "geo": {
+        "latitude": 33.7578,
+        "longitude": 132.7014
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-ehime-iyo",
+      "streetViewUrl": "https://maps.app.goo.gl/mz6Ht9bA3q7fZfGB8",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "2a7b6120-30a9-42c3-aefc-a5bf1a4af98b",
+      "name": {
+        "kr": "이요시 역",
+        "ja": "伊予市駅",
+        "en": "Iyoshi Station"
+      },
+      "geo": {
+        "latitude": 33.75549,
+        "longitude": 132.70227
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-ehime-iyo",
+      "streetViewUrl": "https://maps.app.goo.gl/TSCmy7bNPUKDDCUU6",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "4c49ed8c-c17d-420c-82b8-8a926ad9be6b",
+      "name": {
+        "ja": "塩美橋",
+        "en": "Shiobi Bridge"
+      },
+      "geo": {
+        "latitude": 33.79556,
+        "longitude": 132.69303
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-ehime-masaki",
+      "streetViewUrl": "https://www.google.com/maps/@33.7956398,132.692987,3a,90y,88.03h,95.12t/data=!3m7!1e1!3m5!1sSo35eIIHKrjtzTRnDtOJPw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.118265910234996%26panoid%3DSo35eIIHKrjtzTRnDtOJPw%26yaw%3D88.03267338551034!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "5253444b-e0b7-40c0-9b7e-bf808c21d5ee",
+      "name": {
+        "ja": "えひめ果実倶楽部みかんの木",
+        "en": "Ehime Fruit Club Mikan Trees"
+      },
+      "geo": {
+        "latitude": 33.85205,
+        "longitude": 132.78553
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-ehime-matsuyama",
+      "streetViewUrl": "https://maps.app.goo.gl/1GFdZYGP7k3g4b5SA",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "6062bb20-0be1-4147-bc04-0131f4b1754d",
+      "name": {
+        "en": "Iyo-Kaminada Station",
+        "kr": "이요카미나다 역",
+        "ja": "伊予上灘駅"
+      },
+      "geo": {
+        "latitude": 33.68394,
+        "longitude": 132.63309
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-ehime-iyo",
+      "streetViewUrl": "https://maps.app.goo.gl/T1DKtudvVyfsSaPf7",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "6b7d118a-a078-48ec-b7d6-d1d9dfba254a",
+      "name": {
+        "en": "Botchan Karakuri Clock",
+        "ja": "坊っちゃんカラクリ時計",
+        "kr": "봇짱 카라쿠리 시계"
+      },
+      "geo": {
+        "latitude": 33.85064,
+        "longitude": 132.78546
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-ehime-matsuyama",
+      "streetViewUrl": "https://maps.app.goo.gl/6SWdvT5qmhvEHFmc7",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "785239cc-b16a-42ec-8442-992130930fa1",
+      "name": {
+        "kr": "코카타 공원",
+        "ja": "五色浜",
+        "en": "Goshikihama"
+      },
+      "geo": {
+        "latitude": 33.75593,
+        "longitude": 132.69374
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-ehime-iyo",
+      "streetViewUrl": "https://www.google.com/maps/place/Goshikihama+(swimming+beach)/@33.7552628,132.6939135,3a,75.7y,303.72h,95.36t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID4_sCAuwE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6Ha1JbdPCiM3Jgz9B8meGcZ0KsyY6cTIrd_efxoUbGPLETNgo1yiSgcmTKJxPhXEyN4b0GSr7PCsuS-0eAMIPOnlmbtMOQYDwC1VnoDsUyV7Z24oqaQelNCWQB7YVssSIkenltFK_g%3Dw900-h600-k-no-pi-5.361992064650607-ya49.4323027749833-ro0-fo100!7i9448!8i4724!4m18!1m8!3m7!1s0x354ff274d5cbea69:0xbb8254bf4be9965d!2sIyo+Agricultural+High+School!8m2!3d33.764828!4d132.705032!10e5!16s%2Fg%2F122sm8x3!3m8!1s0x354ff263ec1114f5:0xad15d35a1d87f7b7!8m2!3d33.7552628!4d132.6939135!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11cn7n6z0z?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "7c8f082b-098b-4188-b266-33a6f676513f",
+      "name": {
+        "en": "Roadside rest area Futami.",
+        "ja": "道の駅 ふたみ",
+        "kr": "미치노에키 후타미"
+      },
+      "geo": {
+        "latitude": 33.6858,
+        "longitude": 132.6348
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-ehime-iyo",
+      "streetViewUrl": "https://maps.app.goo.gl/jXY4nmWzGBYCtWfUA",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "a79b525f-4e4a-456e-a815-a2722d6ce5b1",
+      "name": {
+        "en": "Dogo Yunomachi Jyugo Mangoku MASARU",
+        "ja": "道後湯之町 十五万石 MASARU"
+      },
+      "geo": {
+        "latitude": 33.85209,
+        "longitude": 132.78541
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-ehime-matsuyama",
+      "streetViewUrl": "https://maps.app.goo.gl/4z7K3zHfEufTLz6h9",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "c2052eaf-54b2-460a-b5a8-85b2fa2f2dad",
+      "name": {
+        "ja": "椿の湯の中庭",
+        "en": "Dogo Onsen Annex Asukano Yusen"
+      },
+      "geo": {
+        "latitude": 33.85219,
+        "longitude": 132.78485
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-ehime-matsuyama",
+      "streetViewUrl": "https://maps.app.goo.gl/dDJpHsaWSxZuAJ4n6",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "c77c29d8-3106-40ec-8f27-7b6d76411146",
+      "name": {
+        "ja": "道の駅 ふたみ",
+        "kr": "미치노에키 후타미",
+        "en": "Roadside rest area Futami."
+      },
+      "geo": {
+        "latitude": 33.68549,
+        "longitude": 132.63431
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-ehime-iyo",
+      "streetViewUrl": "https://maps.app.goo.gl/VRppW7ifdaed2ff6A",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "d022aa6d-44c5-43d8-8462-819e286b107b",
+      "name": {
+        "kr": "미치노에키 후타미",
+        "en": "Roadside rest area Futami.",
+        "ja": "道の駅 ふたみ"
+      },
+      "geo": {
+        "latitude": 33.68485,
+        "longitude": 132.63311
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-ehime-iyo",
+      "streetViewUrl": "https://maps.app.goo.gl/TrLMBaXJknnk3XNCA",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "da3a9f73-6a1f-469b-ae3d-581ee6d9faf6",
+      "name": {
+        "ja": "道後温泉駅",
+        "en": "Dogo Onsen Station",
+        "kr": "도고온센 역"
+      },
+      "geo": {
+        "latitude": 33.85047,
+        "longitude": 132.78503
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-ehime-matsuyama",
+      "streetViewUrl": "https://maps.app.goo.gl/91f7DR7BJCSLDfrf7",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "e38e4698-bfb9-44b6-a8fd-31868ddf800e",
+      "name": {
+        "ja": "㈱谷本蒲鉾店 松山道後店",
+        "en": "Tanimoto Kamaboko Co., Ltd. Matsuyama Dogo"
+      },
+      "geo": {
+        "latitude": 33.85222,
+        "longitude": 132.78604
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-ehime-matsuyama",
+      "streetViewUrl": "https://maps.app.goo.gl/f2Sj2KKjPftTmFFH8",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "f1502f60-f82a-48e6-a7a1-3bdfa2484f52",
+      "name": {
+        "en": "Tobe Zoological Park",
+        "kr": "도베 동물원",
+        "ja": "とべ動物園"
+      },
+      "geo": {
+        "latitude": 33.76267,
+        "longitude": 132.79175
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-ehime-tobe",
+      "streetViewUrl": "https://maps.app.goo.gl/m1adiQqhguS5PM9q7",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "fb0ce439-7075-416c-ba35-ee2475dfcdef",
+      "name": {
+        "en": "Popai Parking Lot",
+        "ja": "ポパイ駐車場"
+      },
+      "geo": {
+        "latitude": 33.68442,
+        "longitude": 132.63355
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-ehime-iyo",
+      "streetViewUrl": "https://maps.app.goo.gl/CQ22gZM6Jz4Ymqre8",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "fb2243a6-5111-4c4b-a1af-19219abe3358",
+      "name": {
+        "en": "Tobe Zoological Park",
+        "kr": "도베 동물원",
+        "ja": "とべ動物園"
+      },
+      "geo": {
+        "latitude": 33.76316,
+        "longitude": 132.79197
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-ehime-tobe",
+      "streetViewUrl": "https://maps.app.goo.gl/xiPPSPqSKEYNqU7w5",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    },
+    {
+      "placeId": "78df0620-440e-4502-937b-686965c1e0de",
+      "name": {
+        "ja": "五色浜",
+        "en": "Goshikihama"
+      },
+      "geo": {
+        "latitude": 33.75528,
+        "longitude": 132.69449
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-ehime-iyo",
+      "streetViewUrl": "https://maps.app.goo.gl/H9FjMcADSd1hkfYN9",
+      "copyright": "©2024 苗川 采/KADOKAWA/わたたべ製作委員会"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "anime": {
+    "animeId": "XdDmRhPxTsVDwlmnjOqZ",
+    "slug": "kaguya-sama-the-first-kiss-that-never-ends",
+    "title": {
+      "ja": "かぐや様は告らせたい ファーストキッスは終わらない",
+      "kr": "카구야 님은 고백받고 싶어 첫 키스는 끝나지 않아",
+      "en": "Kaguya-sama: Love is War The First Kiss That Never Ends"
+    },
+    "author": {
+      "en": [
+        "Aka Akasaka"
+      ],
+      "ja": [
+        "赤坂アカ"
+      ],
+      "kr": [
+        "아카사카 아카"
+      ]
+    },
+    "studio": {
+      "en": [
+        "A-1 Pictures"
+      ]
+    }
+  },
+  "placeCount": 7,
+  "places": [
+    {
+      "placeId": "43403807-944a-4333-8828-8a6c9dfb8c82",
+      "name": {
+        "en": "Vina Parterre",
+        "ja": "ヴィーナ・パルテール"
+      },
+      "geo": {
+        "latitude": 35.66296,
+        "longitude": 139.6877
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6632463,139.68761,3a,90y,163.75h,111.53t/data=!3m7!1e1!3m5!1s-XsYbCa7t8RAzeqtsKI_9w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-21.53354276519856%26panoid%3D-XsYbCa7t8RAzeqtsKI_9w%26yaw%3D163.75193459761925!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©赤坂アカ／集英社・かぐや様は告らせたい製作委員会"
+    },
+    {
+      "placeId": "50639bbd-982b-4976-9b5d-acae06949159",
+      "name": {
+        "en": "Love Sign Odaiba",
+        "ja": "LOVEのオブジェ",
+        "kr": "LOVE 오브제"
+      },
+      "geo": {
+        "latitude": 35.62744,
+        "longitude": 139.77219
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6273718,139.7721682,3a,90y,16.61h,92.66t/data=!3m7!1e1!3m5!1sro6jc8-OCcuAgkegB7uoTg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.6558070560580944%26panoid%3Dro6jc8-OCcuAgkegB7uoTg%26yaw%3D16.612126537969843!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©赤坂アカ／集英社・かぐや様は告らせたい製作委員会"
+    },
+    {
+      "placeId": "729c6fe7-64a7-4210-b835-c07a3bc199fd",
+      "name": {
+        "en": "KING OF THE PIRATES"
+      },
+      "geo": {
+        "latitude": 35.62771,
+        "longitude": 139.77277
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/place/KING+OF+THE+PIRATES/@35.6276417,139.7726415,3a,90y,317.87h,97.84t/data=!3m8!1e1!3m6!1sAF1QipMi-vPuA95WXe6HOZnDo5z3bUT8r-km1vPAsrs!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipMi-vPuA95WXe6HOZnDo5z3bUT8r-km1vPAsrs%3Dw900-h600-k-no-pi-7.839810703235912-ya355.89553183858396-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x601889f63b5bc72f:0x7b47e3db0e8ca9de!8m2!3d35.6275478!4d139.7728242!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1tgtfgxs?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©赤坂アカ／集英社・かぐや様は告らせたい製作委員会"
+    },
+    {
+      "placeId": "83b781a5-c5cb-496f-8f02-245fe90d5131",
+      "name": {
+        "kr": "케이오 중등부",
+        "ja": "慶應義塾中等部",
+        "en": "Keio Chutobu Junior High School"
+      },
+      "geo": {
+        "latitude": 35.64941,
+        "longitude": 139.7405
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6493925,139.7407199,3a,90y,261.91h,97.89t/data=!3m7!1e1!3m5!1sDLyd8hg-r7BxPkh7YZXRCw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.886670906595171%26panoid%3DDLyd8hg-r7BxPkh7YZXRCw%26yaw%3D261.9090761930545!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©赤坂アカ／集英社・かぐや様は告らせたい製作委員会"
+    },
+    {
+      "placeId": "896504c7-82a8-43c1-afae-706d44ef2c53",
+      "name": {
+        "en": "Mita Tsunamachi Children's Playground",
+        "kr": "미타츠나마치 아동놀이터",
+        "ja": "三田綱町児童遊園"
+      },
+      "geo": {
+        "latitude": 35.649565,
+        "longitude": 139.73946
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://maps.app.goo.gl/DdZQBDjnVGtnzg3Q6",
+      "copyright": "©赤坂アカ／集英社・かぐや様は告らせたい製作委員会"
+    },
+    {
+      "placeId": "a0fa44ac-bf32-4f27-b37b-0eb69b367577",
+      "name": {
+        "ja": "富ヶ谷公園",
+        "en": "Tomigaya Park",
+        "kr": "토미가야 공원"
+      },
+      "geo": {
+        "latitude": 35.66318,
+        "longitude": 139.68673
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6632071,139.6867173,3a,90y,180.36h,80.01t/data=!3m7!1e1!3m5!1szBoA5CxFlFDviOsNW847cQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D9.986612463738822%26panoid%3DzBoA5CxFlFDviOsNW847cQ%26yaw%3D180.35565803766931!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©赤坂アカ／集英社・かぐや様は告らせたい製作委員会"
+    },
+    {
+      "placeId": "e9684973-0972-4f59-a972-ebd5e63e2738",
+      "name": {
+        "en": "MAX Parking Kamiyamacho",
+        "ja": "マックスパーキング 神山町"
+      },
+      "geo": {
+        "latitude": 35.66468,
+        "longitude": 139.691377
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6646448,139.6913032,3a,75y,57.39h,91.7t/data=!3m7!1e1!3m5!1sJkb3jIbAr1VoB2XFZ5UWtw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.7010174115318932%26panoid%3DJkb3jIbAr1VoB2XFZ5UWtw%26yaw%3D57.389626870659335!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©赤坂アカ／集英社・かぐや様は告らせたい製作委員会"
+    }
+  ]
+}

@@ -1,0 +1,674 @@
+{
+  "anime": {
+    "slug": "chitose-ramune",
+    "title": {
+      "ja": "千歳くんはラムネ瓶のなか",
+      "kr": "치토세 군은 라무네 병 속에",
+      "en": "Chitose Is in the Ramune Bottle"
+    }
+  },
+  "placeCount": 41,
+  "places": [
+    {
+      "placeId": "060c2240-969f-4fb2-91a2-1fa8dacc8a6a",
+      "name": {
+        "en": "Fukuiginkosakuradori Shiten",
+        "ja": "福井銀行さくら通り支店"
+      },
+      "geo": {
+        "latitude": 36.06418,
+        "longitude": 136.23744
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://www.google.com/maps/@36.0640066,136.2374363,3a,76.3y,9.46h,98.57t/data=!3m7!1e1!3m5!1sgL1I_pF0DVkEuqcT5Hvzcw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.56959663426153%26panoid%3DgL1I_pF0DVkEuqcT5Hvzcw%26yaw%3D9.464998440839336!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "08ef18e6-7fea-49f0-98fc-f50204fba335",
+      "name": {
+        "en": "sumu"
+      },
+      "geo": {
+        "latitude": 36.06113,
+        "longitude": 136.22099
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/R8TGnEouknehr5UT6",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "0cea9a35-a599-4e4d-8384-9484263bd707",
+      "name": {
+        "en": "Owadacho (Bus)",
+        "kr": "오와다초 (버스)",
+        "ja": "大和田町 (バス)"
+      },
+      "geo": {
+        "latitude": 36.09416,
+        "longitude": 136.25658
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://www.google.com/maps/@36.0940745,136.2575323,3a,78y,273.96h,93.86t/data=!3m7!1e1!3m5!1ssJrYhWp2WP18W_DWjrDDeA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.8627713772893486%26panoid%3DsJrYhWp2WP18W_DWjrDDeA%26yaw%3D273.96144871059056!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "109ccf9b-dc08-4e87-b528-4650802f3474",
+      "name": {
+        "ja": "フクイレジャーランド ワイプラザ店・福井あそびマーレ",
+        "en": "Fukuirejarando Waipurazaten"
+      },
+      "geo": {
+        "latitude": 36.08709,
+        "longitude": 136.2493
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/qeTsCGUS74smkstr7",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "27b611ba-10dc-409d-9e27-4fecfe43f6f8",
+      "name": {
+        "ja": "スターバックス コーヒー フェアモール福井店",
+        "en": "Starbucks Coffee - Fairmall Fukui"
+      },
+      "geo": {
+        "latitude": 36.09661,
+        "longitude": 136.25183
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://www.google.com/maps/@36.0967237,136.2520909,3a,47.1y,244.67h,92.64t/data=!3m7!1e1!3m5!1shKoVmJk_1MCANt7dKAKO8g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.6386563508584686%26panoid%3DhKoVmJk_1MCANt7dKAKO8g%26yaw%3D244.6659123404334!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "303420ed-9a9f-45b7-9fa0-933c202756da",
+      "name": {
+        "ja": "泉橋",
+        "en": "IZUMI・BASHI bridge"
+      },
+      "geo": {
+        "latitude": 36.05846,
+        "longitude": 136.21638
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/eMCst4FCAoRvyjgx5",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "304bd22d-2d9b-4299-a144-77ad6f544923",
+      "name": {
+        "kr": "호코타 공원",
+        "en": "Hokota Park",
+        "ja": "鉾田公園"
+      },
+      "geo": {
+        "latitude": 36.08197,
+        "longitude": 136.25172
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://www.google.com/maps/@36.0821873,136.2514575,3a,73.2y,130.41h,94.3t/data=!3m7!1e1!3m5!1sqIbMsEQjqlQVHCkJjRlK8A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.302340812429108%26panoid%3DqIbMsEQjqlQVHCkJjRlK8A%26yaw%3D130.405516448684!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "4013edb8-f32a-4648-afc1-4ad7fb5feb31",
+      "name": {
+        "en": "IZUMI・BASHI bridge",
+        "ja": "泉橋"
+      },
+      "geo": {
+        "latitude": 36.0569,
+        "longitude": 136.21906
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/xo5F7hjYMkvdp6zv7",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "41866c99-bf78-430c-a9cf-8784c836bf36",
+      "name": {
+        "en": "Itagaki Bridge - fireworks",
+        "ja": "板垣橋"
+      },
+      "geo": {
+        "latitude": 36.04906,
+        "longitude": 136.23263
+      },
+      "ep": 2,
+      "type": "OP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://www.google.com/maps/@36.0491276,136.2321026,3a,76.7y,111.73h,96.8t/data=!3m7!1e1!3m5!1sDYPsBREdgpPPEfZq2S3vZQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.804289295316053%26panoid%3DDYPsBREdgpPPEfZq2S3vZQ%26yaw%3D111.7309742821267!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "433d0079-31ab-4dce-8d01-cf174a447749",
+      "name": {
+        "en": "IZUMI・BASHI bridge",
+        "ja": "泉橋"
+      },
+      "geo": {
+        "latitude": 36.0577,
+        "longitude": 136.21814
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/e91XmQ1529LaWWMw5",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "44dc7e58-9a6d-4c3b-8e86-f0c0a9cf8713",
+      "name": {
+        "en": "Wanaruka Oozeki 16th Warning Station Building",
+        "ja": "鳴鹿大堰第16警報局舎"
+      },
+      "geo": {
+        "latitude": 36.11132,
+        "longitude": 136.19048
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/ejkAX8b9nqfYYqTc8",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "4beca81b-b80d-4302-8a35-813c32e0e4a4",
+      "name": {
+        "en": "Fukui Castle Inner Moat",
+        "ja": "福井城 本丸堀"
+      },
+      "geo": {
+        "latitude": 36.06621,
+        "longitude": 136.22135
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/gsitDEuBonJqARP18",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "4fd1fabe-3a70-4daf-a1a6-cf2f11d526a8",
+      "name": {
+        "ja": "フェアモール福井",
+        "en": "Fairmall Fukui"
+      },
+      "geo": {
+        "latitude": 36.09623,
+        "longitude": 136.25082
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://www.google.com/maps/@36.0961361,136.2518371,3a,40.7y,276.67h,92.92t/data=!3m7!1e1!3m5!1sQH3Dpxctf0fozP2LO0E04w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.915293052208682%26panoid%3DQH3Dpxctf0fozP2LO0E04w%26yaw%3D276.6722394235163!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "503ac54e-afbe-4f11-9f9f-ec11d0574261",
+      "name": {
+        "ja": "板垣神社",
+        "en": "Itagaki Shrine"
+      },
+      "geo": {
+        "latitude": 36.05075,
+        "longitude": 136.23183
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/9ge78KCSAJFT3J6A6",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "5684ff70-55cb-4b15-96dc-255502444461",
+      "name": {
+        "ja": "ガレリアポケット公園",
+        "en": "Galleria Pocket Park"
+      },
+      "geo": {
+        "latitude": 36.0612,
+        "longitude": 136.22083
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/J64JeGUgX3kZP9Fs7",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "5cab143b-7d26-4a1e-aa40-615ecaaf3630",
+      "name": {
+        "en": "Saizeriya Fukui Ekimae",
+        "ja": "サイゼリヤ 福井駅前店"
+      },
+      "geo": {
+        "latitude": 36.06204,
+        "longitude": 136.22174
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/s5jb756h5UQiJUxG6",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "617e98e6-97a6-47a9-b123-0772f3999ab5",
+      "name": {
+        "en": "Washizukaharibara Station",
+        "kr": "와시즈카하리바라 역",
+        "ja": "鷲塚針原駅"
+      },
+      "geo": {
+        "latitude": 36.12058,
+        "longitude": 136.20473
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/XT3bQAqCH1xV1E9y5",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "6710b683-142c-4147-b3c6-0b9525814466",
+      "name": {
+        "en": "Hachiban Ramen - Miyuki",
+        "ja": "8番らーめん 御幸店"
+      },
+      "geo": {
+        "latitude": 36.05437,
+        "longitude": 136.23718
+      },
+      "ep": 2,
+      "type": "OP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://www.google.com/maps/@36.0541793,136.2369429,3a,90y,60.1h,101.42t/data=!3m7!1e1!3m5!1sPO840xmz4JkS_Cuyfx978A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.41887709840222%26panoid%3DPO840xmz4JkS_Cuyfx978A%26yaw%3D60.1046513332101!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "67de7cfd-377d-4e47-8bc6-b3bfa9512281",
+      "name": {
+        "ja": "坂口農園",
+        "en": "Sakaguchi Farm"
+      },
+      "geo": {
+        "latitude": 36.0956,
+        "longitude": 136.25746
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/RFQTQHHjwkb9cdA86",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "7716b10e-3d61-4bda-8a1e-9a06677de0c6",
+      "name": {
+        "en": "Katsumi Park",
+        "ja": "勝見公園"
+      },
+      "geo": {
+        "latitude": 36.05469,
+        "longitude": 136.23308
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/QCBaEryFvhqMQYqb8",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "87677702-cb42-43af-826b-435c27255efa",
+      "name": {
+        "en": "Europe-ken Toyoshima",
+        "ja": "ヨーロッパ軒 豊島分店"
+      },
+      "geo": {
+        "latitude": 36.05761,
+        "longitude": 136.22254
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/v7VyfFTVJFA19r359",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "8fddd86f-31f3-42d0-a245-e71a633764ac",
+      "name": {
+        "ja": "東公園",
+        "en": "Higashi Park",
+        "kr": "동공원"
+      },
+      "geo": {
+        "latitude": 36.05623,
+        "longitude": 136.22394
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://www.google.com/maps/@36.0562822,136.2241159,3a,42.1y,235.79h,90.93t/data=!3m7!1e1!3m5!1sSdiZchoghdHVe7p3ZF5e_A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.9270231425347788%26panoid%3DSdiZchoghdHVe7p3ZF5e_A%26yaw%3D235.79241400184532!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "a1923f20-d1d0-4063-ad9c-f6701ff67ea2",
+      "name": {
+        "ja": "荒川湯",
+        "en": "Arakawayu"
+      },
+      "geo": {
+        "latitude": 36.06319,
+        "longitude": 136.23729
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://www.google.com/maps/@36.0629966,136.2369097,3a,59.8y,59.32h,94.85t/data=!3m7!1e1!3m5!1s3GbStkiuj3wocKHWh7mCEA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.853165880625397%26panoid%3D3GbStkiuj3wocKHWh7mCEA%26yaw%3D59.32082953944944!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "a4c83d26-fd8f-494a-b17e-f6b62f38138a",
+      "name": {
+        "ja": "福井県民生活協同組合 ハーツ恐竜",
+        "en": "Fukui Prefectural Consumers' Cooperative Hearts Dinosaur"
+      },
+      "geo": {
+        "latitude": 36.06081,
+        "longitude": 136.22972
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/r1cBzmsaMbyuBfQJ9",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "a7d28a69-042b-40da-af8d-3aa7b694c422",
+      "name": {
+        "ja": "板垣神社",
+        "en": "Itagaki Shrine"
+      },
+      "geo": {
+        "latitude": 36.05091,
+        "longitude": 136.23052
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/A8dpixymdk7nG4vm8",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "a82d2a5e-ede8-4a39-957c-81da2f7c0c9f",
+      "name": {
+        "en": "Yuri Kimimasa Plaza",
+        "ja": "由利公正広場"
+      },
+      "geo": {
+        "latitude": 36.05915,
+        "longitude": 136.21629
+      },
+      "ep": 2,
+      "type": "OP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://www.google.com/maps/@36.0591592,136.2162886,3a,86.7y,249.03h,89.78t/data=!3m7!1e1!3m5!1sCRooIqqxPYh9ISXLZi8VRg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.2235304030348999%26panoid%3DCRooIqqxPYh9ISXLZi8VRg%26yaw%3D249.03167044426652!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "b07bb272-8efe-4327-86d9-4203f0a9918b",
+      "name": {
+        "ja": "勝見公園",
+        "en": "Katsumi Park"
+      },
+      "geo": {
+        "latitude": 36.05437,
+        "longitude": 136.23323
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/P4ApJY99ffHX25vK7",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "b354e9b6-afdc-4ed5-80fb-2eab5d5385ba",
+      "name": {
+        "en": "Kida Bridge",
+        "ja": "木田橋"
+      },
+      "geo": {
+        "latitude": 36.05525,
+        "longitude": 136.22027
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/kv7eWfVzprDC8N5E9",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "ba156814-471a-4888-b76a-3915b9372f8f",
+      "name": {
+        "ja": "杉杜白髭神社",
+        "en": "Sugimori Shirohige Shrine"
+      },
+      "geo": {
+        "latitude": 36.05674,
+        "longitude": 136.22769
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/krTnB53YnFb3Af7NA",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "bd352a8b-309a-43d6-970d-8f8d30c07bff",
+      "name": {
+        "en": "JA Kinesha Aisaikan",
+        "ja": "ＪＡ福井県 喜ね舎 愛菜館"
+      },
+      "geo": {
+        "latitude": 36.06497,
+        "longitude": 136.25952
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://www.google.com/maps/@36.0654022,136.2595259,3a,45.3y,181.29h,95.72t/data=!3m7!1e1!3m5!1sU2LflDb-7NWhTtF9beEraA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.72020263091413%26panoid%3DU2LflDb-7NWhTtF9beEraA%26yaw%3D181.2914690320488!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "c7f92b77-3898-4d86-8b9e-57bfde2f7989",
+      "name": {
+        "en": "Fukui Kuzuryu Land Improvement District Memorial Tower",
+        "ja": "福井九頭竜土地改良区記念塔"
+      },
+      "geo": {
+        "latitude": 36.09146,
+        "longitude": 136.26096
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/mGCtvMtuESYphEdr6",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "ca6b1c1c-2e14-4ea9-b113-e5ddd167f944",
+      "name": {
+        "kr": "도미인 프리미엄 후쿠이",
+        "en": "Dormy Inn PREMIUM Fukui",
+        "ja": "ドーミーインPREMIUM福井"
+      },
+      "geo": {
+        "latitude": 36.06125,
+        "longitude": 136.21773
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/PiHRjaYWbRKZ29fp9",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "cc360af6-901d-426e-92fa-c7b092be981c",
+      "name": {
+        "en": "Arakawayu",
+        "ja": "荒川湯"
+      },
+      "geo": {
+        "latitude": 36.06312,
+        "longitude": 136.23687
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://www.google.com/maps/@36.0629161,136.2369187,3a,66.2y,348.52h,97.47t/data=!3m7!1e1!3m5!1sag9BpL0wlsGksd-lO9eAjw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.466706118611455%26panoid%3Dag9BpL0wlsGksd-lO9eAjw%26yaw%3D348.5192037120354!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "d05994ab-93e4-4aa7-84ef-86d8df98b7fd",
+      "name": {
+        "ja": "勝見公園",
+        "en": "Katsumi Park"
+      },
+      "geo": {
+        "latitude": 36.0546,
+        "longitude": 136.23321
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/a6PY8LfFSA8P8NDj7",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "d49e4ae0-0228-45d4-895d-e44362743d74",
+      "name": {
+        "ja": "白山神社（堂島白山神社 西ノ宮）",
+        "en": "Hakusan Shrine (Dojima Hakusan Shrine Nishinomiya)"
+      },
+      "geo": {
+        "latitude": 36.09822,
+        "longitude": 136.26157
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/JuMkV29gYM6Do5AQ7",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "d7d2b645-d15c-4ff7-a6f3-96e9d50bd773",
+      "name": {
+        "en": "Fruits Umeda Fukui-Ekimae Main Store",
+        "ja": "フルーツのウメダ 福井駅前本店"
+      },
+      "geo": {
+        "latitude": 36.06206,
+        "longitude": 136.21974
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://www.google.com/maps/@36.0620647,136.2197464,3a,90y,14.49h,93.64t/data=!3m7!1e1!3m5!1s3fGeEw-dqRLlS1s8Gu0HcQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.639622889882176%26panoid%3D3fGeEw-dqRLlS1s8Gu0HcQ%26yaw%3D14.485254208595745!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "ed91c32a-807d-4f10-b27a-88491e9fbd5c",
+      "name": {
+        "kr": "다와라마치 (버스)",
+        "ja": "田原町 (バス)",
+        "en": "Tawaramachi (Bus)"
+      },
+      "geo": {
+        "latitude": 36.07475,
+        "longitude": 136.21834
+      },
+      "ep": 2,
+      "type": "ED",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/qNbE5zNgkMovRoCJA",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "f0ba446b-595d-4496-a6cb-12a258172d93",
+      "name": {
+        "en": "I Wai Nursing Home",
+        "ja": "特別養護老人ホーム あるば・あい"
+      },
+      "geo": {
+        "latitude": 36.06111,
+        "longitude": 136.23033
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/k9wqkUzHVgaPfnv17",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "f1f7b42d-8e02-4174-b570-560ac1431ed2",
+      "name": {
+        "ja": "板垣橋",
+        "en": "Itagaki Bridge"
+      },
+      "geo": {
+        "latitude": 36.0499,
+        "longitude": 136.23322
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/BdB8aRqjMcXwe4bh6",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "f22c0657-6487-4173-b198-32012725eba2",
+      "name": {
+        "ja": "福井スタジアム",
+        "en": "Fukui Stadium"
+      },
+      "geo": {
+        "latitude": 36.08396,
+        "longitude": 136.25802
+      },
+      "ep": 2,
+      "type": "OP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://www.google.com/maps/@36.0837209,136.258072,3a,90y,24.68h,97.49t/data=!3m7!1e1!3m5!1sB1lDTW0HtvMkGZmLmUCUCw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.489999999999995%26panoid%3DB1lDTW0HtvMkGZmLmUCUCw%26yaw%3D24.68!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    },
+    {
+      "placeId": "f759f6b3-0677-4212-8f4b-a510a9b8612e",
+      "name": {
+        "en": "Fukui Prefectural Library",
+        "ja": "福井県立図書館"
+      },
+      "geo": {
+        "latitude": 36.0365,
+        "longitude": 136.2429
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-fukui-fukui",
+      "streetViewUrl": "https://maps.app.goo.gl/kRAM9cybTqAEreCC9",
+      "copyright": "©裕夢／小学館／チラムネ製作委員会"
+    }
+  ]
+}

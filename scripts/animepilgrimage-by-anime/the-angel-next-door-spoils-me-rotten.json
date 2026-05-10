@@ -1,0 +1,163 @@
+{
+  "anime": {
+    "animeId": "RPnFHigPkhOePBI3ZpP7",
+    "slug": "the-angel-next-door-spoils-me-rotten",
+    "title": {
+      "ja": "お隣の天使様にいつの間にか駄目人間にされていた件",
+      "kr": "옆집 천사님 때문에 어느샌가 인간적으로 타락한 사연",
+      "en": "The Angel Next Door Spoils Me Rotten"
+    },
+    "author": {
+      "ja": [
+        "佐伯さん"
+      ],
+      "en": [
+        "Saekisan"
+      ],
+      "kr": [
+        "사에키상"
+      ]
+    },
+    "studio": {
+      "en": [
+        "project No.9"
+      ]
+    }
+  },
+  "placeCount": 8,
+  "places": [
+    {
+      "placeId": "05fa6ccb-c1fc-424a-9784-3e7b5fe8add5",
+      "name": {
+        "ja": "府中市馬場東公園",
+        "en": "Baba East Park",
+        "kr": "바바히가시 공원"
+      },
+      "geo": {
+        "latitude": 35.67477,
+        "longitude": 139.48112
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-fuchu",
+      "streetViewUrl": "https://maps.app.goo.gl/swS17bTcNM1ZR4UH9",
+      "copyright": "©佐伯さん・SBクリエイティブ／アニメ「お隣の天使様」製作委員会"
+    },
+    {
+      "placeId": "18428a6e-2bc2-48u0-268f-112c926w1e8b",
+      "name": {
+        "en": "Okunitama Jinja",
+        "ja": "大國魂神社"
+      },
+      "geo": {
+        "latitude": 35.66786,
+        "longitude": 139.47895
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-fuchu",
+      "streetViewUrl": "https://maps.app.goo.gl/vxiKfYixcfBfDWzG7",
+      "copyright": "©佐伯さん・SBクリエイティブ／アニメ「お隣の天使様」製作委員会"
+    },
+    {
+      "placeId": "1febf0f7-7c6d-4619-9b84-717f8b065678",
+      "name": {
+        "en": "Okunitama Jinja",
+        "ja": "大國魂神社"
+      },
+      "geo": {
+        "latitude": 35.66943,
+        "longitude": 139.47906
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-fuchu",
+      "streetViewUrl": "https://maps.app.goo.gl/6EvHgcZ7cKhZDqk8A",
+      "copyright": "©佐伯さん・SBクリエイティブ／アニメ「お隣の天使様」製作委員会"
+    },
+    {
+      "placeId": "29728a6e-2ac2-48d0-968f-112c572f1e8b",
+      "name": {
+        "ja": "立飛駅",
+        "kr": "다치히 역",
+        "en": "Tachihi Station"
+      },
+      "geo": {
+        "latitude": 35.71417,
+        "longitude": 139.41704
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-tachikawa",
+      "streetViewUrl": "https://maps.app.goo.gl/UsKWyrDS5ijLoNtr6",
+      "copyright": "©佐伯さん・SBクリエイティブ／アニメ「お隣の天使様」製作委員会"
+    },
+    {
+      "placeId": "4d2ef845-d9c6-43fc-8cbb-ac3a7cee0029",
+      "name": {
+        "en": "Fuchu Park",
+        "kr": "후추 공원",
+        "ja": "府中公園"
+      },
+      "geo": {
+        "latitude": 35.67659,
+        "longitude": 139.48259
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-fuchu",
+      "streetViewUrl": "https://maps.app.goo.gl/U2QwiwXg568EApUk8",
+      "copyright": "©佐伯さん・SBクリエイティブ／アニメ「お隣の天使様」製作委員会"
+    },
+    {
+      "placeId": "6c0ce788-cbfa-414c-a8fb-0f1b2f8e2e1f",
+      "name": {
+        "en": "Kyodonomori Park Barbecue Field",
+        "ja": "郷土の森公園 バーベキュー場",
+        "kr": "향토의 숲 공원 바비큐장"
+      },
+      "geo": {
+        "latitude": 35.65423,
+        "longitude": 139.47811
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-fuchu",
+      "streetViewUrl": "https://maps.app.goo.gl/izZwxKBNSt2oFHFN9",
+      "copyright": "©佐伯さん・SBクリエイティブ／アニメ「お隣の天使様」製作委員会"
+    },
+    {
+      "placeId": "bcc60ea4-7e2d-4944-a037-6fd501e8bf22",
+      "name": {
+        "en": "LaLaport Tachikawa Tachihi",
+        "kr": "라라포트 다치카와 다치히",
+        "ja": "ららぽーと立川立飛"
+      },
+      "geo": {
+        "latitude": 35.71286,
+        "longitude": 139.41846
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-tachikawa",
+      "streetViewUrl": "https://maps.app.goo.gl/ZJcY1LnmUTDRsKxJA",
+      "copyright": "©佐伯さん・SBクリエイティブ／アニメ「お隣の天使様」製作委員会"
+    },
+    {
+      "placeId": "ea1c5baf-1c0a-489f-9828-e1b3b5b6f8fe",
+      "name": {
+        "ja": "シェトスヤマザキ 府中店",
+        "en": "CHETOS Yamazaki Fuchu Shop"
+      },
+      "geo": {
+        "latitude": 35.67405,
+        "longitude": 139.47908
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-tokyo-fuchu",
+      "streetViewUrl": "https://maps.app.goo.gl/f8DY63GeannMbMY16",
+      "copyright": "©佐伯さん・SBクリエイティブ／アニメ「お隣の天使様」製作委員会"
+    }
+  ]
+}

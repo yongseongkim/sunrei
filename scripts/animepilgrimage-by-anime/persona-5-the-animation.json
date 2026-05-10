@@ -1,0 +1,207 @@
+{
+  "anime": {
+    "animeId": "HiZmwfyeRVKgeXXv2605",
+    "slug": "persona-5-the-animation",
+    "title": {
+      "kr": "페르소나 5 the Animation",
+      "en": "PERSONA 5 the Animation"
+    },
+    "author": {
+      "ja": [
+        "アトラス"
+      ],
+      "en": [
+        "Atlus"
+      ]
+    },
+    "studio": {
+      "en": [
+        "CloverWorks"
+      ]
+    }
+  },
+  "placeCount": 11,
+  "places": [
+    {
+      "placeId": "15cb45a9-99a0-4152-afe6-3d3545099256",
+      "name": {
+        "ja": "市ヶ谷フィッシュセンター",
+        "en": "Ichigaya Fish Center"
+      },
+      "geo": {
+        "latitude": 35.6920318,
+        "longitude": 139.7357076
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6920318,139.7357076,3a,90y,258.88h,93.94t/data=!3m8!1e1!3m6!1sAF1QipPQTpKawjqVx0m9ZJiXZOyh-y3u-48p-a-PXRbq!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPQTpKawjqVx0m9ZJiXZOyh-y3u-48p-a-PXRbq%3Dw203-h100-k-no-pi-0-ya87.8948-ro-0-fo100!7i6912!8i3456?entry=ttu",
+      "copyright": "©ATLUS ©SEGA/PERSONA5 the Animation Project"
+    },
+    {
+      "placeId": "1c0dfc45-6ab8-44db-91c7-62e704e08441",
+      "name": {
+        "en": "Miyashita Park"
+      },
+      "geo": {
+        "latitude": 35.6617783,
+        "longitude": 139.7017902
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6617783,139.7017902,2a,75y,274.66h,90.78t/data=!3m6!1e1!3m4!1s_qZS3qaOjQvjiL6afIx2Wg!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©ATLUS ©SEGA/PERSONA5 the Animation Project"
+    },
+    {
+      "placeId": "411bd82a-3ec8-44fb-967e-32361e5f3601",
+      "name": {
+        "id": "Sekitar Curves Asakusa Kaminarimon",
+        "es": "Cerca de la Curves Asakusa Kaminarimon",
+        "en": "Near the Curves Asakusa Kaminarimon",
+        "ja": "カーブス 浅草雷門付近",
+        "de": "In der Nähe des Curves Asakusa Kaminarimon"
+      },
+      "geo": {
+        "latitude": 35.7101624,
+        "longitude": 139.7967867
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Curves+Asakusa+Kaminarimon/@35.7101624,139.7967867,3a,90y,124.81h,93.4t/data=!3m8!1e1!3m5!1sHUI8IiF-hJxh2jWzLowm-w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DHUI8IiF-hJxh2jWzLowm-w%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D135.64148%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!5s0x60188ec6f43a01a1:0xe81d81cbe7544a20!4m14!1m7!3m6!1s0x60188ec6f506e00d:0x56818c1e3a761b3f!2sCurves+Asakusa+Kaminarimon!8m2!3d35.7101009!4d139.7968638!16s%2Fg%2F12hp7400c!3m5!1s0x60188ec6f506e00d:0x56818c1e3a761b3f!8m2!3d35.7101009!4d139.7968638!16s%2Fg%2F12hp7400c?entry=ttu",
+      "copyright": "©ATLUS ©SEGA/PERSONA5 the Animation Project"
+    },
+    {
+      "placeId": "43fa4a75-70c2-4a5a-8640-aded80dac8a1",
+      "name": {
+        "ja": "千代の湯",
+        "en": "Chiyonoyu"
+      },
+      "geo": {
+        "latitude": 35.6427508,
+        "longitude": 139.6694427
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Chiyonoyu/@35.6427508,139.6694427,3a,90y,77.57h,89.53t/data=!3m6!1e1!3m4!1sVlOVqX6UGJZlMMGG9BrIvQ!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x6018f49f4ab51c69:0x151d20ee9e5abcb5!2sChiyonoyu!8m2!3d35.6426314!4d139.6695154!16s%2Fg%2F11btwqjl5f!3m5!1s0x6018f49f4ab51c69:0x151d20ee9e5abcb5!8m2!3d35.6426314!4d139.6695154!16s%2Fg%2F11btwqjl5f?entry=ttu",
+      "copyright": "©ATLUS ©SEGA/PERSONA5 the Animation Project"
+    },
+    {
+      "placeId": "602c085b-0a64-4d48-a3f0-0b8e4265ef8b",
+      "name": {
+        "ja": "肉のハナマサ 三軒茶屋店",
+        "en": "Niku no Hanamasa Sangenjaya"
+      },
+      "geo": {
+        "latitude": 35.6429993,
+        "longitude": 139.6689661
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Niku+no+Hanamasa+Sangenjaya/@35.6429993,139.6689661,3a,90y,98.08h,93.71t/data=!3m6!1e1!3m4!1sn7KYf0zLs9_77PbAZapgjQ!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x6018f49f30c37d2f:0x25373c9d2e11de!2sNiku+no+Hanamasa+Sangenjaya!8m2!3d35.6429161!4d139.6690017!16s%2Fg%2F1tl4d1vn!3m5!1s0x6018f49f30c37d2f:0x25373c9d2e11de!8m2!3d35.6429161!4d139.6690017!16s%2Fg%2F1tl4d1vn?entry=ttu",
+      "copyright": "©ATLUS ©SEGA/PERSONA5 the Animation Project"
+    },
+    {
+      "placeId": "774442bc-6c1f-431e-92ed-27142e64dec1",
+      "name": {
+        "ja": "スナック ニューマリーナ",
+        "en": "New Marina"
+      },
+      "geo": {
+        "latitude": 35.6426748,
+        "longitude": 139.6694087
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/place/New+Marina/@35.6426748,139.6694087,3a,75y,0.25h,85.5t/data=!3m6!1e1!3m4!1szp3jS7o9eBo-5SN3ecN4cQ!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x6018f49f359347c3:0x714b920efaa0063a!2sNew+Marina!8m2!3d35.6427875!4d139.6693895!16s%2Fg%2F11c2kgx7_4!3m5!1s0x6018f49f359347c3:0x714b920efaa0063a!8m2!3d35.6427875!4d139.6693895!16s%2Fg%2F11c2kgx7_4?entry=ttu",
+      "copyright": "©ATLUS ©SEGA/PERSONA5 the Animation Project"
+    },
+    {
+      "placeId": "8289b998-ea80-4f1a-87fe-b336fc738710",
+      "name": {
+        "en": "Taiseido Book Store Shibuya",
+        "ja": "大盛堂書店"
+      },
+      "geo": {
+        "latitude": 35.6599587,
+        "longitude": 139.6999967
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6599587,139.6999967,3a,75y,142.09h,97.42t/data=!3m6!1e1!3m4!1sb5_yJHALKcrsUNPhSXNT2A!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©ATLUS ©SEGA/PERSONA5 the Animation Project"
+    },
+    {
+      "placeId": "8524bf23-a4c4-4435-8813-5002d5adf64f",
+      "name": {
+        "en": "Myth of Tomorrow",
+        "ja": "岡本太郎「明日の神話」"
+      },
+      "geo": {
+        "latitude": 35.6587235,
+        "longitude": 139.7002511
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6587235,139.7002511,2a,75y,348.2h,107.08t/data=!3m7!1e1!3m5!1slMTJjXTbW8RF4n4GPXnxuw!2e0!3e2!7i16384!8i8192?entry=ttu",
+      "copyright": "©ATLUS ©SEGA/PERSONA5 the Animation Project"
+    },
+    {
+      "placeId": "a1de112b-126b-408c-bc44-beff73922cb8",
+      "name": {
+        "en": "Shibuya Station",
+        "ja": "渋谷駅"
+      },
+      "geo": {
+        "latitude": 35.6589732,
+        "longitude": 139.7010417
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6589732,139.7010417,3a,90y,354.08h,93.95t/data=!3m8!1e1!3m6!1sAF1QipM2nKt8GLtOIyhG1ZAYMWg78y4oIn0p1qF1mDf9!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipM2nKt8GLtOIyhG1ZAYMWg78y4oIn0p1qF1mDf9%3Dw203-h100-k-no-pi-0-ya345.23633-ro-0-fo100!7i5760!8i2880?entry=ttu",
+      "copyright": "©ATLUS ©SEGA/PERSONA5 the Animation Project"
+    },
+    {
+      "placeId": "b4c05b50-3249-4867-afe3-a4b6488ecebc",
+      "name": {
+        "de": "In der Nähe des Nissay Theatre",
+        "es": "Cerca de la Nissay Theatre",
+        "en": "Near the Nissay Theatre",
+        "id": "Sekitar Nissay Theatre",
+        "ja": "日生劇場付近"
+      },
+      "geo": {
+        "latitude": 35.6726196,
+        "longitude": 139.7591238
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6726196,139.7591238,3a,75y,287.99h,99.73t/data=!3m6!1e1!3m4!1swQfSpH8CM9LUBhFxTnzNGQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©ATLUS ©SEGA/PERSONA5 the Animation Project"
+    },
+    {
+      "placeId": "bb8374fc-cc97-49f0-bdab-fd033cb88207",
+      "name": {
+        "en": "Aoyama Building",
+        "ja": "青山ビル"
+      },
+      "geo": {
+        "latitude": 35.6729815,
+        "longitude": 139.7238541
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6729815,139.7238541,3a,90y,228.2h,84.51t/data=!3m6!1e1!3m4!1svrXmW214NW4OTOSVlOTIzw!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©ATLUS ©SEGA/PERSONA5 the Animation Project"
+    }
+  ]
+}

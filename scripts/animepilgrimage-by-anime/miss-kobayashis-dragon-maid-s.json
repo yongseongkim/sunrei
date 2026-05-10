@@ -1,0 +1,706 @@
+{
+  "anime": {
+    "animeId": "hauIqGQ1sDCVeCPDckoq",
+    "slug": "miss-kobayashis-dragon-maid-s",
+    "title": {
+      "ja": "小林さんちのメイドラゴン S",
+      "kr": "코바야시네 메이드래곤 S",
+      "en": "Miss Kobayashi's Dragon Maid S"
+    },
+    "author": {
+      "kr": [
+        "쿨교신자"
+      ],
+      "en": [
+        "Coolkyousinnjya"
+      ],
+      "ja": [
+        "クール教信者"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Kyoto Animation"
+      ]
+    }
+  },
+  "placeCount": 42,
+  "places": [
+    {
+      "placeId": "0209d633-999c-47a5-8492-1a8298fb03c2",
+      "name": {
+        "ja": "勧進帳の弁慶像",
+        "en": "Benkei from “Kanjincho”"
+      },
+      "geo": {
+        "latitude": 35.68638,
+        "longitude": 139.78592
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6863867,139.7859639,3a,90y,252.16h,95.66t/data=!3m7!1e1!3m5!1s1kbGcL1pLKqKWOeD-T1IeA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.658335082823967%26panoid%3D1kbGcL1pLKqKWOeD-T1IeA%26yaw%3D252.16290578668605!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "02807702-cd00-46b3-9b0b-d5cc07811f84",
+      "name": {
+        "en": "Higashikoshigaya Nanachome Shiinoki Park",
+        "ja": "東越谷七丁目しいの木公園"
+      },
+      "geo": {
+        "latitude": 35.89065,
+        "longitude": 139.80056
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8906769,139.8005668,3a,90y,340.8h,93.64t/data=!3m7!1e1!3m5!1soKsDC8tssA17GE3Zv_apFQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.6400664182961435%26panoid%3DoKsDC8tssA17GE3Zv_apFQ%26yaw%3D340.80107104706633!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "13cefbd5-c4be-4547-a3db-0dbe709d70a7",
+      "name": {
+        "ja": "チキンプレイスロティサリｰズ 東日本橋店",
+        "en": "Rotisseries"
+      },
+      "geo": {
+        "latitude": 35.69026,
+        "longitude": 139.78462
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6903798,139.7847115,3a,75y,210.16h,99.16t/data=!3m7!1e1!3m5!1svWZw3QP904BmOj_wss_e5Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.16261574636421%26panoid%3DvWZw3QP904BmOj_wss_e5Q%26yaw%3D210.1631399273552!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "28fee79b-2b3f-4301-8b0d-a964a3c31ae6",
+      "name": {
+        "en": "Saitama Resona Bank Koshigaya",
+        "ja": "埼玉りそな銀行 越谷支店"
+      },
+      "geo": {
+        "latitude": 35.88914,
+        "longitude": 139.78843
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.889103,139.7885853,3a,75y,288.4h,100.33t/data=!3m7!1e1!3m5!1sWTDhSh6OXfYVY0osPhFnFA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.331210400833143%26panoid%3DWTDhSh6OXfYVY0osPhFnFA%26yaw%3D288.4002501960923!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "2b9857ec-a77b-42ce-bd73-a3af02a83a7b",
+      "name": {
+        "en": "Kappou Hakata Japanese Cuisine Koshigaya",
+        "ja": "割烹 博多 和食 越谷"
+      },
+      "geo": {
+        "latitude": 35.88745,
+        "longitude": 139.79062
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8874303,139.7905391,3a,90y,232.26h,95.35t/data=!3m7!1e1!3m5!1sxr6SsQBuBUSI_P6f8gLNMA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.345726324910558%26panoid%3Dxr6SsQBuBUSI_P6f8gLNMA%26yaw%3D232.26382081261679!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "2e9be0f6-a07e-4cab-be45-f920e3786386",
+      "name": {
+        "ja": "サニーハイツA棟",
+        "en": "Sunny Heights A"
+      },
+      "geo": {
+        "latitude": 35.88915,
+        "longitude": 139.79843
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8891643,139.7984618,3a,90y,320.35h,89.64t/data=!3m7!1e1!3m5!1sOXRvvPBhXnU9fYW5Ehmfyg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.35829078742295906%26panoid%3DOXRvvPBhXnU9fYW5Ehmfyg%26yaw%3D320.34684028282095!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "2edfe939-ae91-4795-95e7-58abf32c5cce",
+      "name": {
+        "en": "Onishiya Western Goods Store",
+        "ja": "大西屋洋品店"
+      },
+      "geo": {
+        "latitude": 35.8878,
+        "longitude": 139.79525
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8877941,139.7950775,3a,75y,120.67h,93.93t/data=!3m7!1e1!3m5!1s1o5r4WhPGAnN5JP1eTgaqA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.925748277746578%26panoid%3D1o5r4WhPGAnN5JP1eTgaqA%26yaw%3D120.66785413522082!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "31d26bd4-41ff-41e3-9296-ff31b084fcd5",
+      "name": {
+        "en": "Tanifurutashusuiguchi Park",
+        "ja": "谷古田取水口公園"
+      },
+      "geo": {
+        "latitude": 35.88675,
+        "longitude": 139.79659
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8865534,139.7965384,3a,73.5y,7.7h,96.34t/data=!3m7!1e1!3m5!1sm3x61XYT8zKRTtVwg2pROA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.342166544470146%26panoid%3Dm3x61XYT8zKRTtVwg2pROA%26yaw%3D7.700441044187777!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "3333ed47-09ac-4597-877f-e17828dda8dc",
+      "name": {
+        "ja": "越谷市 中央市民会館",
+        "en": "Koshigayashi Central City Hall"
+      },
+      "geo": {
+        "latitude": 35.89056,
+        "longitude": 139.79181
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8906013,139.7919299,3a,73.9y,245.36h,98.71t/data=!3m7!1e1!3m5!1sLfrXoH4LgX8yyRPhNo_Ciw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.705897449166358%26panoid%3DLfrXoH4LgX8yyRPhNo_Ciw%26yaw%3D245.3630645705576!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "4fff88ca-b4fb-4409-969e-954963ad59f1",
+      "name": {
+        "en": "noodle art gallery Ryota Tezuka"
+      },
+      "geo": {
+        "latitude": 35.68531,
+        "longitude": 139.78549
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6853293,139.7855383,3a,90y,239.82h,99.2t/data=!3m7!1e1!3m5!1sOIFuwFvwXXbrlj-GLW75og!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.204416635893836%26panoid%3DOIFuwFvwXXbrlj-GLW75og%26yaw%3D239.82391603630526!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "51c77c39-c0a7-462f-84b1-45732606509d",
+      "name": {
+        "en": "Toshimaen Memories Corner",
+        "ja": "としまえん 思い出コーナー"
+      },
+      "geo": {
+        "latitude": 35.7434,
+        "longitude": 139.64713
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.742983,139.647725,3a,48.7y,311.06h,94.59t/data=!3m7!1e1!3m5!1s-VvK892KWMqCKDIduuR5_w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.590344786819031%26panoid%3D-VvK892KWMqCKDIduuR5_w%26yaw%3D311.0622820379155!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "5b3dacc5-2516-4555-9446-e0d09fd001a7",
+      "name": {
+        "ja": "北越谷桜堤",
+        "en": "Kitakoshigaya Sakurazutsumi"
+      },
+      "geo": {
+        "latitude": 35.89844,
+        "longitude": 139.77283
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8984948,139.7728518,3a,75y,326.35h,96.55t/data=!3m8!1e1!3m6!1sAF1QipObbtMhuJo_pO-oanbtAs9aBLyV8HsEAgFUMSyC!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipObbtMhuJo_pO-oanbtAs9aBLyV8HsEAgFUMSyC%3Dw900-h600-k-no-pi-6.553059654515792-ya9.831137984583506-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "61b31f60-7361-45df-acbc-aed236e1d62c",
+      "name": {
+        "kr": "세븐일레븐 고시가야 신메이초 2초메점",
+        "ja": "セブン-イレブン 越谷神明町２丁目店",
+        "en": "7-Eleven Koshigaya Shinmeicho 2-chome"
+      },
+      "geo": {
+        "latitude": 35.89842,
+        "longitude": 139.77221
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8984628,139.7722012,3a,75y,304.48h,102.6t/data=!3m8!1e1!3m6!1sAF1QipMM2mqhm8pzOvRjL2r2EtpSSvkJGQHitDhqf8Dw!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipMM2mqhm8pzOvRjL2r2EtpSSvkJGQHitDhqf8Dw%3Dw900-h600-k-no-pi-12.601042362632114-ya9.25093540592303-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "67313672-2232-476f-a2f4-0d8968404e3f",
+      "name": {
+        "en": "KOSHIGAYA STATION",
+        "ja": "越谷駅",
+        "kr": "고시가야 역"
+      },
+      "geo": {
+        "latitude": 35.88889,
+        "longitude": 139.78644
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8890792,139.7861644,3a,34.3y,136.93h,90.23t/data=!3m7!1e1!3m5!1sJlLGezHGFBBoVXM0F45p3w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.22894027257186167%26panoid%3DJlLGezHGFBBoVXM0F45p3w%26yaw%3D136.93457219924508!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "6998af6b-44ca-48c2-b039-c198bfddd242",
+      "name": {
+        "en": "Shirakobato Institute",
+        "ja": "しらこばと学院"
+      },
+      "geo": {
+        "latitude": 35.88745,
+        "longitude": 139.79761
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8875193,139.7977519,3a,75y,251.27h,98.09t/data=!3m7!1e1!3m5!1sMLlOy5Qm897mp2aJ0H6iSg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.094204850240999%26panoid%3DMLlOy5Qm897mp2aJ0H6iSg%26yaw%3D251.2666962642861!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "747c2e2f-3b02-4586-a1c0-ce1bf3242b68",
+      "name": {
+        "ja": "KIMONO 京扇 越谷店",
+        "en": "KIMONO KYOSEN Koshigaya"
+      },
+      "geo": {
+        "latitude": 35.88963,
+        "longitude": 139.78982
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8894998,139.7897467,3a,90y,123.26h,100.95t/data=!3m7!1e1!3m5!1s7aGi1xFtIdwEeOOo6_LnAQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.948610662386159%26panoid%3D7aGi1xFtIdwEeOOo6_LnAQ%26yaw%3D123.26184160101671!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "74b017a8-7730-4102-8d11-42f0896b53d3",
+      "name": {
+        "en": "Hamacho Park",
+        "kr": "하마초 공원",
+        "ja": "浜町公園"
+      },
+      "geo": {
+        "latitude": 35.68844,
+        "longitude": 139.78933
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6884852,139.7894315,3a,75y,248.81h,88.11t/data=!3m7!1e1!3m5!1sDDHxhhRb5RBdqGy-6If9_Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.8912599203984684%26panoid%3DDDHxhhRb5RBdqGy-6If9_Q%26yaw%3D248.80543145602005!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "74f8ae2a-9745-48c4-ad0f-fdb03e19cabd",
+      "name": {
+        "en": "Hair Salon Ishizuka"
+      },
+      "geo": {
+        "latitude": 35.88726,
+        "longitude": 139.79843
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8873301,139.7985044,3a,75y,251.75h,99.98t/data=!3m7!1e1!3m5!1sMpvGOHRKz1mdfDKUeKvXJQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.977187901582965%26panoid%3DMpvGOHRKz1mdfDKUeKvXJQ%26yaw%3D251.74744426421796!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "78e73737-e778-4edb-8955-c2029098abee",
+      "name": {
+        "en": "Shimizu Parking",
+        "ja": "清水パーキング"
+      },
+      "geo": {
+        "latitude": 35.88933,
+        "longitude": 139.79897
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8893106,139.7989305,3a,75y,271.26h,107.18t/data=!3m7!1e1!3m5!1s7P3bHd2i9ZASu31VLJ76pA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-17.17925005788743%26panoid%3D7P3bHd2i9ZASu31VLJ76pA%26yaw%3D271.260642071882!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "7ac1f404-b58e-4fd2-93de-fc01e97e4f76",
+      "name": {
+        "en": "SPS Koshigaya Dai 1 Dai 2 Parking Lot",
+        "ja": "SPS越谷第１・第２駐車場"
+      },
+      "geo": {
+        "latitude": 35.88667,
+        "longitude": 139.78962
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8866685,139.7896688,3a,90y,312.74h,96.35t/data=!3m7!1e1!3m5!1sv7fFzxtLT1TJMJRG8yequQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.353500558978496%26panoid%3Dv7fFzxtLT1TJMJRG8yequQ%26yaw%3D312.7428777101427!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "7e75e77f-b9fc-408c-b995-ffc3aaae85e1",
+      "name": {
+        "en": "Tachibana Inari Shrine",
+        "ja": "橘稲荷神社",
+        "kr": "타치바나 이나리 신사"
+      },
+      "geo": {
+        "latitude": 35.68674,
+        "longitude": 139.78274
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6867415,139.7827978,3a,90y,312.08h,91.43t/data=!3m7!1e1!3m5!1sJHV3DatgAVw48rTt7pCOFg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.4286612435082588%26panoid%3DJHV3DatgAVw48rTt7pCOFg%26yaw%3D312.0822579170693!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "85a6185e-c1ab-4eee-a338-8a436464906d",
+      "name": {
+        "ja": "藤だな通り",
+        "en": "wisteria arcade"
+      },
+      "geo": {
+        "latitude": 35.89138,
+        "longitude": 139.79128
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8913217,139.7913283,3a,75y,341.74h,97.69t/data=!3m8!1e1!3m6!1sAF1QipPHcGTEY6fv4m4Dbb40gMEaAe8K4Z3mYcBWx1G7!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipPHcGTEY6fv4m4Dbb40gMEaAe8K4Z3mYcBWx1G7%3Dw900-h600-k-no-pi-7.693451148729054-ya341.7416211671481-ro0-fo100!7i6080!8i3040?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "878e0214-cad2-42c8-8c73-ff5523a938d3",
+      "name": {
+        "ja": "北島駐車場",
+        "en": "Kitajima Parking Lot"
+      },
+      "geo": {
+        "latitude": 35.89273,
+        "longitude": 139.79264
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8927459,139.7926929,3a,57.4y,184.26h,98.22t/data=!3m7!1e1!3m5!1sBGwPJUd-rGZCAeMhHERhPg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.221322344860639%26panoid%3DBGwPJUd-rGZCAeMhHERhPg%26yaw%3D184.2645340196067!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "93310af1-8162-4f82-b8bc-cacdcd06fcf0",
+      "name": {
+        "en": "Tobu Blueprint Kogeisha Ltd.",
+        "ja": "（有）東武青写真工芸社"
+      },
+      "geo": {
+        "latitude": 35.89361,
+        "longitude": 139.79251
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8936586,139.79257,3a,90y,97.94h,109.26t/data=!3m7!1e1!3m5!1sp95HBS56g7Wm6tX0c2at6Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-19.256403488303405%26panoid%3Dp95HBS56g7Wm6tX0c2at6Q%26yaw%3D97.93583404429941!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "9b05f936-91d6-45d0-916f-8d0389932548",
+      "name": {
+        "ja": "おかげさま越谷店",
+        "en": "Okagesama Koshigaya Store"
+      },
+      "geo": {
+        "latitude": 35.89462,
+        "longitude": 139.79126
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8948869,139.7911446,3a,75y,189.1h,96.93t/data=!3m8!1e1!3m6!1sAF1QipOtbXshtL_qiMwE3ZJEXnqadaByiwwYkDczn1Mo!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipOtbXshtL_qiMwE3ZJEXnqadaByiwwYkDczn1Mo%3Dw900-h600-k-no-pi-6.925461341393785-ya189.1037292768087-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "9bcfab72-1737-437e-91e4-71d0c0ecc84e",
+      "name": {
+        "ja": "ベルドゥムール越谷神明町",
+        "en": "Verdemur Koshigaya Shinmeicho"
+      },
+      "geo": {
+        "latitude": 35.89671,
+        "longitude": 139.77447
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8963758,139.7754204,3a,43.8y,296.24h,95.92t/data=!3m8!1e1!3m6!1sAF1QipPkQbZ6MTb1Nqh7POFpu6vWL0rmQBEdAn4epwYo!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipPkQbZ6MTb1Nqh7POFpu6vWL0rmQBEdAn4epwYo%3Dw900-h600-k-no-pi-5.9221941626448995-ya6.257479758389138-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "9c08ce08-0083-4311-8157-f9e7b6f3bf37",
+      "name": {
+        "ja": "ヘアーサロンアライ",
+        "en": "Hair Salon Alai"
+      },
+      "geo": {
+        "latitude": 35.88723,
+        "longitude": 139.83469
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8866325,139.8357631,3a,33.7y,306.62h,94.02t/data=!3m7!1e1!3m5!1sWlhjYWITblmV9ubPviyPLQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.022752511746944%26panoid%3DWlhjYWITblmV9ubPviyPLQ%26yaw%3D306.61506932102793!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "9ca7a13e-026f-4d02-81d7-93632ed6a33c",
+      "name": {
+        "en": "Yoshikawa Bridge",
+        "ja": "吉川橋"
+      },
+      "geo": {
+        "latitude": 35.88647,
+        "longitude": 139.83616
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8867277,139.8358519,3a,75y,102.8h,96.41t/data=!3m7!1e1!3m5!1secxcBQLF_dV4WitpypPS3A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.409959783692841%26panoid%3DecxcBQLF_dV4WitpypPS3A%26yaw%3D102.79822710836518!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "a73fffee-b7ee-4a48-ad90-b0c992b0eeee",
+      "name": {
+        "en": "Heiwa Bridge",
+        "ja": "平和橋"
+      },
+      "geo": {
+        "latitude": 35.89127,
+        "longitude": 139.79197
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8910917,139.7918783,3a,90y,317.53h,103.86t/data=!3m8!1e1!3m6!1sAF1QipNawhWJzFG-giaU5mrFxj5ihbaNuHiPXQ5bEo1-!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipNawhWJzFG-giaU5mrFxj5ihbaNuHiPXQ5bEo1-%3Dw900-h600-k-no-pi-13.86168487264284-ya317.530578808154-ro0-fo100!7i6080!8i3040?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "ab3d18f5-cf76-47bd-88a3-0b1a5cfd1055",
+      "name": {
+        "en": "Koshoin",
+        "ja": "迎攝院"
+      },
+      "geo": {
+        "latitude": 35.89508,
+        "longitude": 139.77807
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8951599,139.7779323,3a,90y,182.72h,96.81t/data=!3m8!1e1!3m6!1sAF1QipM-IDAmROhtbUYCX9j9sS4JFnLGI1Z1V61otXkJ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipM-IDAmROhtbUYCX9j9sS4JFnLGI1Z1V61otXkJ%3Dw900-h600-k-no-pi-6.805247426123486-ya265.8218562193062-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "b217d2a6-8e89-4243-bebf-26661e2c8cd4",
+      "name": {
+        "kr": "닌교초 역",
+        "ja": "人形町駅",
+        "en": "Ningyocho Station"
+      },
+      "geo": {
+        "latitude": 35.68632,
+        "longitude": 139.78216
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6862986,139.782122,2a,75y,75.1h,97.92t/data=!3m7!1e1!3m5!1shRroN-GEN0jF9Da-NJhRqQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.916184877248497%26panoid%3DhRroN-GEN0jF9Da-NJhRqQ%26yaw%3D75.10257048236032!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "b799252f-26d1-44a5-97e1-e5d747f0fed5",
+      "name": {
+        "ja": "セブン-イレブン 日本橋久松町店",
+        "kr": "세븐일레븐 니혼바시히사마츠쵸점",
+        "en": "7-ELEVEN Nihonbashi Hisamatsucho Store"
+      },
+      "geo": {
+        "latitude": 35.68964,
+        "longitude": 139.78503
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6895031,139.7848381,3a,64.3y,47.54h,95.55t/data=!3m7!1e1!3m5!1s-fzfU0WkvePhOSml-xkqrg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.546321924566826%26panoid%3D-fzfU0WkvePhOSml-xkqrg%26yaw%3D47.5416407860383!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "bfc02f1c-c26d-4436-9f7b-71a8efdd48ac",
+      "name": {
+        "en": "Hatsukoshigayaekihigashiguchiten Dry Cleaners",
+        "ja": "クリーニングハーツ越谷駅東口店"
+      },
+      "geo": {
+        "latitude": 35.88874,
+        "longitude": 139.78692
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8886718,139.786734,3a,49.6y,72.13h,92.96t/data=!3m7!1e1!3m5!1sKgEISeD3Z7znWuJocYubPg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.962324829785743%26panoid%3DKgEISeD3Z7znWuJocYubPg%26yaw%3D72.12950376993133!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "c4f70dc2-9681-4d7d-8483-8e131d905ecd",
+      "name": {
+        "en": "Musashino Bank, Koshigaya Branch",
+        "ja": "武蔵野銀行 越谷支店"
+      },
+      "geo": {
+        "latitude": 35.88861,
+        "longitude": 139.78707
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8885946,139.7868929,3a,48.7y,76.59h,95.28t/data=!3m7!1e1!3m5!1sAPK5oYTidLIdYDEiUcRKnw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.280480437389016%26panoid%3DAPK5oYTidLIdYDEiUcRKnw%26yaw%3D76.58575047544385!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "c8d5989f-e9e6-4f4b-9f26-66ffe5cf6f1d",
+      "name": {
+        "en": "MaaS Car Nishikata 1-chome station",
+        "ja": "カーシェアのMaaS Car 西方1丁目ステーション"
+      },
+      "geo": {
+        "latitude": 35.88476,
+        "longitude": 139.79518
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8849441,139.7951596,3a,45.4y,174.88h,93.6t/data=!3m7!1e1!3m5!1sx0OuU-Lr0ND-283KnJLY0Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.604271722438753%26panoid%3Dx0OuU-Lr0ND-283KnJLY0Q%26yaw%3D174.88116828558665!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "d046f201-93c6-494b-88f8-dbcf11316b9f",
+      "name": {
+        "ja": "メープル薬局 越谷店",
+        "en": "Maple Pharmacy Koshigaya"
+      },
+      "geo": {
+        "latitude": 35.88806,
+        "longitude": 139.79437
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8879646,139.7945149,3a,73.2y,298.65h,96.82t/data=!3m7!1e1!3m5!1sc3uiIE8v4F327Ly70kFAjA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.815249277496392%26panoid%3Dc3uiIE8v4F327Ly70kFAjA%26yaw%3D298.6485366637138!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "da3a2bb1-3d98-4e02-960a-61107ba44ca9",
+      "name": {
+        "en": "camior",
+        "ja": "カミオール"
+      },
+      "geo": {
+        "latitude": 35.8964,
+        "longitude": 139.77669
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.896513,139.7767535,3a,90y,209.38h,94.03t/data=!3m7!1e1!3m5!1shznxDhaUwF8A96seNSxbpw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.031900863570684%26panoid%3DhznxDhaUwF8A96seNSxbpw%26yaw%3D209.38075165096325!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "dce4f079-bf2d-419f-adaa-1069e3a942f1",
+      "name": {
+        "en": "Yamaichi Motor Co.",
+        "ja": "（株）山一自動車"
+      },
+      "geo": {
+        "latitude": 35.88669,
+        "longitude": 139.79742
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8867047,139.7974495,3a,90y,153.16h,111.44t/data=!3m7!1e1!3m5!1soFZHvjLla8xxIdxvT2gDNQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-21.438862828554562%26panoid%3DoFZHvjLla8xxIdxvT2gDNQ%26yaw%3D153.15931541079368!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "dde1cd5a-2310-4ac6-a6bd-a001d1597473",
+      "name": {
+        "en": "Hajime",
+        "ja": "一（はじめ）"
+      },
+      "geo": {
+        "latitude": 35.68509,
+        "longitude": 139.78536
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6851808,139.7853164,3a,75y,165.68h,94.54t/data=!3m7!1e1!3m5!1sMYmMGc1wuChDz-4_nw63XQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.536880832884535%26panoid%3DMYmMGc1wuChDz-4_nw63XQ%26yaw%3D165.68179079918247!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "e758fe5a-c4e6-441e-8ec3-0e8f67c5426d",
+      "name": {
+        "en": "Times Koshigaya 2-chome",
+        "ja": "タイムズ越ヶ谷２丁目"
+      },
+      "geo": {
+        "latitude": 35.88974,
+        "longitude": 139.79005
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8896926,139.789992,3a,75y,42.98h,93.85t/data=!3m7!1e1!3m5!1scybNl2G_bbViw2qhI9lwvw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.8452439109019565%26panoid%3DcybNl2G_bbViw2qhI9lwvw%26yaw%3D42.98291536950009!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "edb1ab22-7cb4-44c4-bfe1-35bea460ac2f",
+      "name": {
+        "ja": "越谷駅前広場",
+        "en": "Koshigaya Station Square"
+      },
+      "geo": {
+        "latitude": 35.88906,
+        "longitude": 139.78632
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8890792,139.7861644,3a,90y,353.74h,99.47t/data=!3m7!1e1!3m5!1sJlLGezHGFBBoVXM0F45p3w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.465684973681107%26panoid%3DJlLGezHGFBBoVXM0F45p3w%26yaw%3D353.7412763712413!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    },
+    {
+      "placeId": "f5c415f9-9a5e-4f01-a925-26ce5b111a85",
+      "name": {
+        "en": "Shirakobato Bridge Masei",
+        "ja": "白小鳩橋めいせい"
+      },
+      "geo": {
+        "latitude": 35.88778,
+        "longitude": 139.79841
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-saitama-koshigaya",
+      "streetViewUrl": "https://www.google.com/maps/@35.8879094,139.7985049,3a,75y,197.09h,96.58t/data=!3m7!1e1!3m5!1s__SMgxk_vH0_MYYhkXEpyw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.576884612623047%26panoid%3D__SMgxk_vH0_MYYhkXEpyw%26yaw%3D197.09355671405925!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©クール教信者・双葉社／ドラゴン生活向上委員会"
+    }
+  ]
+}

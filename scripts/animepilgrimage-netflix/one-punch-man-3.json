@@ -1,0 +1,147 @@
+{
+  "anime": {
+    "animeId": "rC0dQzDQaWadoKRSENAl",
+    "slug": "one-punch-man-3",
+    "title": {
+      "de": "One Punch Man Staffel 3",
+      "ja": "ワンパンマン 3期",
+      "kr": "원펀맨 3기",
+      "en": "One Punch Man Season 3",
+      "id": "One Punch Man Musim 3",
+      "es": "One Punch Man Temporada 3"
+    },
+    "author": {
+      "en": [
+        "ONE",
+        "Yusuke Murata"
+      ],
+      "ja": [
+        "ONE",
+        "村田雄介"
+      ],
+      "kr": [
+        "ONE",
+        "무라타 유스케"
+      ]
+    },
+    "studio": {
+      "en": [
+        "J.C.STAFF"
+      ]
+    }
+  },
+  "placeCount": 7,
+  "places": [
+    {
+      "placeId": "189c9a4c-db35-4b88-85b3-51dd09ab406c",
+      "name": {
+        "ja": "渋谷スクランブル交差点",
+        "en": "Shibuya Scramble Crossing"
+      },
+      "geo": {
+        "latitude": 35.65933,
+        "longitude": 139.70046
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/AEjFSCa6QYYdMUEB6",
+      "copyright": "©ONE・村田雄介／集英社・ヒーロー協会本部"
+    },
+    {
+      "placeId": "3e135d1d-da02-4f49-85f6-92a22e45b54a",
+      "name": {
+        "ja": "松原一丁目会館",
+        "en": "Matsubara Itchome Hall"
+      },
+      "geo": {
+        "latitude": 35.67004,
+        "longitude": 139.65388
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://maps.app.goo.gl/8Rx7CodxTLCW7DdB6",
+      "copyright": "©ONE・村田雄介／集英社・ヒーロー協会本部"
+    },
+    {
+      "placeId": "63578a05-4aed-482d-af18-8d2cba629496",
+      "name": {
+        "en": "Inokashira Kaido Monument",
+        "ja": "井の頭街道碑"
+      },
+      "geo": {
+        "latitude": 35.67093,
+        "longitude": 139.65269
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://maps.app.goo.gl/KXQHZoJZTg4pemRw9",
+      "copyright": "©ONE・村田雄介／集英社・ヒーロー協会本部"
+    },
+    {
+      "placeId": "77456ecc-f732-4679-9e8b-1776e22ad44d",
+      "name": {
+        "ja": "三井のリパーク 松原１丁目第２ 駐車場",
+        "en": "Repark Matsubara 1-Chome #2"
+      },
+      "geo": {
+        "latitude": 35.67027,
+        "longitude": 139.65172
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://maps.app.goo.gl/KQTLPi1dThYHsC65A",
+      "copyright": "©ONE・村田雄介／集英社・ヒーロー協会本部"
+    },
+    {
+      "placeId": "97230dd5-13a7-402c-aa4b-f0d843347798",
+      "name": {
+        "ja": "肉汁餃子のダンダダン 明大前店",
+        "en": "Dandadan Meidaimae"
+      },
+      "geo": {
+        "latitude": 35.66877,
+        "longitude": 139.65101
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://maps.app.goo.gl/2vuWFWAV73GEzmGv8",
+      "copyright": "©ONE・村田雄介／集英社・ヒーロー協会本部"
+    },
+    {
+      "placeId": "ac3d656e-b0e7-467b-87eb-b302424a9d90",
+      "name": {
+        "en": "Glicina Meidaimae"
+      },
+      "geo": {
+        "latitude": 35.67061,
+        "longitude": 139.65498
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://maps.app.goo.gl/S2iRu74G9Stge8z36",
+      "copyright": "©ONE・村田雄介／集英社・ヒーロー協会本部"
+    },
+    {
+      "placeId": "f3effd4e-a318-49ee-806d-4895772cc406",
+      "name": {
+        "en": "House Studio Planear Meidaimae",
+        "ja": "プラネアール明大前スタジオ"
+      },
+      "geo": {
+        "latitude": 35.66964,
+        "longitude": 139.65491
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://maps.app.goo.gl/REVYUZm2CfmHpWo77",
+      "copyright": "©ONE・村田雄介／集英社・ヒーロー協会本部"
+    }
+  ]
+}

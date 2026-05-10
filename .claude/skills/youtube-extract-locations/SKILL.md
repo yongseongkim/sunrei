@@ -176,6 +176,63 @@ Save to `.claude/workspace/youtube/{ID}/locations.json`:
 }
 ```
 
-### 9. Confirm
+### 9. Assemble `sunrei.json` for Step 3
 
-Tell the user locations have been saved and ask if they want to proceed to Sunrei creation.
+After `locations.json` is finalized, also write `.claude/workspace/youtube/{ID}/sunrei.json` — the unified input consumed by the shared `/create-sunrei` skill (Step 3).
+
+Compose it as follows:
+
+- `title` = `channelName` from `video_info.json` (truncate to 128 chars)
+- `description` = a 2-3 sentence summary of what the channel covers, derived from the video descriptions in `video_info.json` (`selectedVideos[].description`)
+- `link` = `https://www.youtube.com/channel/{channelId}` from `video_info.json`
+- `tagIds` = `[]` (the helper resolves tags from `_source.tagCandidates`)
+- `images` = `[]`
+- `spots[]` — flatten all `videos[].locations[]`. For each location:
+  - `title` = the parent video's title (truncated to 128 chars; each video is a "scene" within the channel)
+  - `description` = the location's `description` field (the 2-3 sentence context written in Step 5)
+  - `youtubeLink` = `https://www.youtube.com/watch?v={videoId}&t={timestamp}` (omit `&t=` if no timestamp)
+  - `place` = `{name, address, latitude, longitude, googleMapsId}` from the geocoded location
+  - `images` = `[]`
+- `_source`:
+  - `type: "youtube"`
+  - `tagCandidates`: 3-5 tag names extracted from the channel/video content. Pick a mix of:
+    - 1 broad category from the channel concept (e.g. `"맛집"`, `"여행"`, `"건축"`, `"료칸"`)
+    - 1-2 region/geography tags (city or prefecture, e.g. `"도쿄"`, `"홋카이도"`)
+    - 1-2 theme/specifics tags (e.g. `"미슐랭"`, `"카페"`, `"라멘"`, `"야경"`)
+  - `registryKey: "youtube/{channelId}.json"` — channel-scoped registry
+  - `registryInit: {channelName, link}` from `video_info.json` (used only when the registry doesn't yet exist)
+  - `summary: {channelId}` — merged into the new sunrei entry in the registry
+  - `spotMetadata: [{videoId, videoTitle}, ...]` — parallel to `spots[]`, merged into each registry spot
+
+Example final `sunrei.json`:
+
+```json
+{
+  "title": "비밀이야 bimirya",
+  "description": "도쿄와 일본 각지의 미슐랭/료칸/숨은 맛집을 소개하는 채널.",
+  "link": "https://www.youtube.com/channel/UC...",
+  "tagIds": [],
+  "spots": [
+    {
+      "title": "1박에 500만 원짜리 료칸 밥은 뭐가 나올까?",
+      "description": "프리미엄 료칸 투어를 소개하는 영상에서 방문한 홋카이도의 고급 가이세키 료칸 ...",
+      "youtubeLink": "https://www.youtube.com/watch?v=90FahyHS8dA&t=125",
+      "place": {"name": "SONEKA", "address": "...", "latitude": 43.123, "longitude": 141.987, "googleMapsId": "ChIJ..."},
+      "images": []
+    }
+  ],
+  "images": [],
+  "_source": {
+    "type": "youtube",
+    "tagCandidates": ["맛집", "료칸", "홋카이도", "도쿄", "미슐랭"],
+    "registryKey": "youtube/UC.json",
+    "registryInit": {"channelName": "비밀이야 bimirya", "link": "https://www.youtube.com/channel/UC..."},
+    "summary": {"channelId": "UC..."},
+    "spotMetadata": [{"videoId": "90FahyHS8dA", "videoTitle": "1박에 500만 원..."}]
+  }
+}
+```
+
+### 10. Confirm
+
+Tell the user `locations.json` and `sunrei.json` have been saved and ask if they want to proceed to `/create-sunrei` (Step 3).

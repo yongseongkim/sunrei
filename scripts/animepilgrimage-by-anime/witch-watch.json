@@ -1,0 +1,418 @@
+{
+  "anime": {
+    "animeId": "eTYFt3lapy3A9mc0TLED",
+    "slug": "witch-watch",
+    "title": {
+      "ja": "ウィッチウォッチ",
+      "kr": "위치 워치",
+      "en": "Witch Watch"
+    },
+    "author": {
+      "en": [
+        "Kenta Shinohara"
+      ],
+      "ja": [
+        "篠原健太"
+      ],
+      "kr": [
+        "시노하라 켄타"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Bibury Animation Studios"
+      ]
+    }
+  },
+  "placeCount": 24,
+  "places": [
+    {
+      "placeId": "0ac0f4f9-b77b-4def-aadb-7a211430ac91",
+      "name": {
+        "kr": "기치조지 역",
+        "ja": "吉祥寺駅",
+        "en": "Kichijoji Station"
+      },
+      "geo": {
+        "latitude": 35.70363,
+        "longitude": 139.57987
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7036629,139.5798963,3a,90y,171.27h,105.93t/data=!3m7!1e1!3m5!1st1k18DIKfnTpEQhkgK11DA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.930280862494598%26panoid%3Dt1k18DIKfnTpEQhkgK11DA%26yaw%3D171.2666816642058!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "20548ef3-bea3-41f0-9c24-42a34b5b3486",
+      "name": {
+        "kr": "무사시노 하치만궁",
+        "en": "Musashino Hachimangu",
+        "ja": "武蔵野八幡宮"
+      },
+      "geo": {
+        "latitude": 35.70762,
+        "longitude": 139.58012
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7076276,139.5801441,3a,90y,43.18h,92.32t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC41cP4vAE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZmGBucTlL0EPl07DFKbcupAMKJKK3b5KKmNc6LgeQvfGItS_r4qnDSysa2u3nZvShCMqI4INLyxIw5JJjNKlMQpyUP1uiJb0XrOHlrDCF5u0CTHbtnnwx7BvNrzucE_oKmb-hxwg%3Dw900-h600-k-no-pi-2.316531863977147-ya357.17830121679816-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "26401105-0a8a-4f72-a7a3-2fcf43b8432b",
+      "name": {
+        "en": "Kohnan Mitaka",
+        "ja": "コーナン三鷹店"
+      },
+      "geo": {
+        "latitude": 35.68173,
+        "longitude": 139.54432
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-mitaka",
+      "streetViewUrl": "https://www.google.com/maps/@35.681677,139.5444636,3a,75y,303.49h,99.93t/data=!3m7!1e1!3m5!1sm2tkvfNFYSHSbh4d6vwAVg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.928698775086943%26panoid%3Dm2tkvfNFYSHSbh4d6vwAVg%26yaw%3D303.48741195166485!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "305b7627-b1a5-4a03-9bfa-92899ed8f873",
+      "name": {
+        "en": "Kichijoji Tokyu REI Hotel",
+        "kr": "기치조지 도큐 레이 호텔",
+        "ja": "吉祥寺東急REIホテル"
+      },
+      "geo": {
+        "latitude": 35.70204,
+        "longitude": 139.58035
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.702098,139.5802925,3a,90y,174.62h,120.78t/data=!3m7!1e1!3m5!1sGJMxSi6achpvqpoowd4zwg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-30.776515278522538%26panoid%3DGJMxSi6achpvqpoowd4zwg%26yaw%3D174.61739515479445!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "3374a0c3-adf7-4fde-9a07-de0f15f014f4",
+      "name": {
+        "ja": "ベーカリー＆カフェ ルパ 吉祥寺店",
+        "en": "Le repas Kichijoji"
+      },
+      "geo": {
+        "latitude": 35.7027,
+        "longitude": 139.57969
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7026526,139.5797208,3a,49y,85.3h,89.59t/data=!3m7!1e1!3m5!1sUidkvRtcJtXLishkOkb1Gw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.40503147806417417%26panoid%3DUidkvRtcJtXLishkOkb1Gw%26yaw%3D85.30196957838515!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "3b25bfa2-c198-433e-a528-0bf2b6378246",
+      "name": {
+        "en": "Kichijoji Parco",
+        "ja": "吉祥寺PARCO"
+      },
+      "geo": {
+        "latitude": 35.70352,
+        "longitude": 139.5776
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7035061,139.5776389,3a,90y,117.45h,93.61t/data=!3m8!1e1!3m6!1s9OmKwmetmCB91cJXCK-TCA!2e0!5s20240701T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.608937027193761%26panoid%3D9OmKwmetmCB91cJXCK-TCA%26yaw%3D117.44836626266232!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "3df0b705-0f5b-4743-8ffe-f86c5ec53d83",
+      "name": {
+        "en": "NEW YORK PIZZA TONY'S"
+      },
+      "geo": {
+        "latitude": 35.70126,
+        "longitude": 139.5811
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7012886,139.5811197,3a,90y,191.22h,98.07t/data=!3m7!1e1!3m5!1sZjcehyKlUcEEoJu4g50gkQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.068967878616604%26panoid%3DZjcehyKlUcEEoJu4g50gkQ%26yaw%3D191.21821936309632!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "41b31380-1725-4cf4-bdfa-c46a4b9f2ef9",
+      "name": {
+        "kr": "도쿄빅사이트 (도쿄국제전시장)",
+        "ja": "東京ビッグサイト",
+        "en": "Tokyo Big Sight"
+      },
+      "geo": {
+        "latitude": 35.6311,
+        "longitude": 139.79302
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6311292,139.7930002,3a,90y,156.18h,95.15t/data=!3m7!1e1!3m5!1s5lCORZlNyTGxJnLD-mw2hQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.148118270261861%26panoid%3D5lCORZlNyTGxJnLD-mw2hQ%26yaw%3D156.18126107732698!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "4950f32d-cbb1-4c8a-acca-b7d5a9d45637",
+      "name": {
+        "en": "Kanda River Left Bank Walkway (Inokashira Park)",
+        "ja": "神田川左岸遊歩道(井の頭公園)"
+      },
+      "geo": {
+        "latitude": 35.69801,
+        "longitude": 139.58242
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-mitaka",
+      "streetViewUrl": "https://www.google.com/maps/@35.6979764,139.5825168,2a,75y,301.56h,98.13t/data=!3m7!1e1!3m5!1sZhGQsU20xsnxFDakJFX1Hw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.127169419592363%26panoid%3DZhGQsU20xsnxFDakJFX1Hw%26yaw%3D301.56205807882344!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "4aa38339-ecff-4b6c-ab7d-d9cb515fd628",
+      "name": {
+        "en": "Sunmoon Flower Essence Cafe"
+      },
+      "geo": {
+        "latitude": 35.70523,
+        "longitude": 139.58124
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.705211,139.5813193,3a,90y,80.71h,105.97t/data=!3m7!1e1!3m5!1sLwl3kMWEvCEily3CqTo_wQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.96922587972422%26panoid%3DLwl3kMWEvCEily3CqTo_wQ%26yaw%3D80.70891808883108!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "51923334-59a9-4a23-b312-47b3ff097063",
+      "name": {
+        "en": "Shuna & Bani",
+        "ja": "シュナ＆バニ"
+      },
+      "geo": {
+        "latitude": 35.70082,
+        "longitude": 139.57835
+      },
+      "ep": 24,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.700825,139.5783376,3a,90y,20.49h,108.13t/data=!3m7!1e1!3m5!1sIPmvUx4NU8m47Hjj8nPIOw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.129999999999995%26panoid%3DIPmvUx4NU8m47Hjj8nPIOw%26yaw%3D20.49!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "52f475b3-8900-443d-9d2d-a84d1a010875",
+      "name": {
+        "ja": "吉祥寺駅",
+        "kr": "기치조지 역",
+        "en": "Kichijoji Station"
+      },
+      "geo": {
+        "latitude": 35.70329,
+        "longitude": 139.57995
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7034065,139.5799122,3a,68.2y,161.13h,93.98t/data=!3m7!1e1!3m5!1s_oES0b9GVPHFCNxasIQCdQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.9781727368984434%26panoid%3D_oES0b9GVPHFCNxasIQCdQ%26yaw%3D161.1268686427364!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "887a05a5-1386-468b-bb22-e508e7d617b7",
+      "name": {
+        "kr": "기치조지 선로드 상점가",
+        "ja": "吉祥寺サンロード商店街",
+        "en": "Kichijoji SUNROAD shopping district"
+      },
+      "geo": {
+        "latitude": 35.70375,
+        "longitude": 139.57981
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7034812,139.5796456,3a,75y,26.57h,91.72t/data=!3m7!1e1!3m5!1sEELyvmuqin9Rxesf4SlxeA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.718150162156249%26panoid%3DEELyvmuqin9Rxesf4SlxeA%26yaw%3D26.572393190066887!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "914242b9-c8a1-4a2c-9b4d-b80066843397",
+      "name": {
+        "en": "NEW YORK JOE EXCHANGE"
+      },
+      "geo": {
+        "latitude": 35.70103,
+        "longitude": 139.57842
+      },
+      "ep": 24,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7009945,139.5784191,3a,90y,9.98h,90.1t/data=!3m7!1e1!3m5!1sho6NUyyqUP0j7RYiCFP0qA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.10367518056141023%26panoid%3Dho6NUyyqUP0j7RYiCFP0qA%26yaw%3D9.976781059059816!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "938ee661-bfc1-42cf-b2b4-26ee60492dfa",
+      "name": {
+        "ja": "アシックスウォーキング 吉祥寺通",
+        "en": "Asics Walking Kichijoji Dori"
+      },
+      "geo": {
+        "latitude": 35.70395,
+        "longitude": 139.57778
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7038292,139.5776636,3a,30.3y,45.51h,92.35t/data=!3m7!1e1!3m5!1si8-qLqdJFpWRiIgI2IkqZw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.349243578121161%26panoid%3Di8-qLqdJFpWRiIgI2IkqZw%26yaw%3D45.51416679096035!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "a4ae7628-98f8-4946-9f42-c42d9682561c",
+      "name": {
+        "ja": "アトレ吉祥寺",
+        "en": "atré Kichijoji"
+      },
+      "geo": {
+        "latitude": 35.70349,
+        "longitude": 139.58033
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7036512,139.5802963,3a,59y,176.44h,96.85t/data=!3m7!1e1!3m5!1sZvksDK7yLZAIIRPhmxJLeA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.85217200897192%26panoid%3DZvksDK7yLZAIIRPhmxJLeA%26yaw%3D176.4353894175124!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "bc7a0a6d-e61a-49fe-8681-3315f43a53bd",
+      "name": {
+        "en": "Iwaya Yonehachi Main Store",
+        "ja": "祝や米八 本店"
+      },
+      "geo": {
+        "latitude": 35.70035,
+        "longitude": 139.57881
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7004651,139.5788612,3a,47.9y,199.8h,93.77t/data=!3m7!1e1!3m5!1s-QcuMSfpmLMOOvzzGj5lhA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.7667343943141276%26panoid%3D-QcuMSfpmLMOOvzzGj5lhA%26yaw%3D199.8036800485883!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "c2ea8286-67c3-4f0b-9e5d-8254a0492d24",
+      "name": {
+        "en": "BEAUTY&YOUTH UNITED ARROWS KICHIJOJI",
+        "ja": "ビューティー＆ユース ユナイテッドアローズ 吉祥寺店"
+      },
+      "geo": {
+        "latitude": 35.70452,
+        "longitude": 139.57926
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7045212,139.5792273,3a,73.9y,49.88h,100.04t/data=!3m7!1e1!3m5!1s5306nt2OHUaV_fpDgoBtEg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.03838704660798%26panoid%3D5306nt2OHUaV_fpDgoBtEg%26yaw%3D49.88267551953747!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "caf22562-2351-48ee-b108-015225377193",
+      "name": {
+        "en": "Tokyo Big Sight",
+        "ja": "東京ビッグサイト",
+        "kr": "도쿄빅사이트 (도쿄국제전시장)"
+      },
+      "geo": {
+        "latitude": 35.62995,
+        "longitude": 139.7944
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6299708,139.7941958,3a,90y,38.34h,98.14t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICkwvLx-wE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HbV_ZM3Q7vwzdiqMId91WnTQmkUlQ_CtGZHNtW9du4tt1fIiCgUzO5o1VOz0mUUjUeYM7YHS1N0dEk-Kq8SW59RN4WybFOAQvR0Qt9Ev6swi28IWTk9zvs_1YnYC48OXvy4niwdUQ%3Dw900-h600-k-no-pi-8.140524768562528-ya359.5246345726952-ro0-fo100!7i5792!8i2896?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "cdc729db-f303-434f-b508-d5ccc9a2d593",
+      "name": {
+        "ja": "ドトールコーヒーショップ 吉祥寺元町通り店",
+        "en": "Doutor Coffee Shop Kichijoji Motomachidori"
+      },
+      "geo": {
+        "latitude": 35.70481,
+        "longitude": 139.57824
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7045264,139.5780553,3a,19.3y,32.46h,92.46t/data=!3m7!1e1!3m5!1sTIIiujp6T4XpTRARp1tzLA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.4584015774468924%26panoid%3DTIIiujp6T4XpTRARp1tzLA%26yaw%3D32.46190661738535!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "db5fc054-f65c-487f-b852-2d48a2e65ef4",
+      "name": {
+        "en": "Doutor Coffee Shop Kichijoji Park Exit",
+        "ja": "ドトールコーヒーショップ 吉祥寺公園口店"
+      },
+      "geo": {
+        "latitude": 35.7019,
+        "longitude": 139.57885
+      },
+      "ep": 24,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7018577,139.5788703,3a,88.8y,327.23h,94.89t/data=!3m7!1e1!3m5!1s0uFO6EQXAnHSKq7kF3cqZg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.891515601381698%26panoid%3D0uFO6EQXAnHSKq7kF3cqZg%26yaw%3D327.2336626643468!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "df2070d1-4015-4543-89c5-e2d2dfbebf61",
+      "name": {
+        "ja": "三井のリパーク 吉祥寺南町１丁目第４駐車場",
+        "en": "Mitsui Repark Kichijoji Minami-cho 1-chome No. 4 Parking Lot"
+      },
+      "geo": {
+        "latitude": 35.70061,
+        "longitude": 139.57894
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7005834,139.5789227,3a,75y,66.47h,93.07t/data=!3m7!1e1!3m5!1sFqVuTZb-qpzU5lMjCnvzZQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.0688357182200434%26panoid%3DFqVuTZb-qpzU5lMjCnvzZQ%26yaw%3D66.47238021625868!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "f05130c1-93dc-4137-893a-d1dfc9d33183",
+      "name": {
+        "en": "Kichijoji Theatre",
+        "ja": "吉祥寺シアター"
+      },
+      "geo": {
+        "latitude": 35.70376,
+        "longitude": 139.5833
+      },
+      "ep": 24,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7036867,139.5834641,3a,58.8y,306.11h,93.99t/data=!3m7!1e1!3m5!1sJ7xQew6FUr1elo9XnDyUVg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.985440170672831%26panoid%3DJ7xQew6FUr1elo9XnDyUVg%26yaw%3D306.1124845699836!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    },
+    {
+      "placeId": "f7a74e40-a9d0-47e2-99b1-46aa93534ff4",
+      "name": {
+        "en": "Kichijoji Odeon",
+        "ja": "吉祥寺オデヲン"
+      },
+      "geo": {
+        "latitude": 35.70291,
+        "longitude": 139.58084
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7029995,139.5808163,3a,75y,154.76h,104.63t/data=!3m7!1e1!3m5!1sHbCmxYwzKenM0dDr48iNiA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.633316188085786%26panoid%3DHbCmxYwzKenM0dDr48iNiA%26yaw%3D154.76132164886153!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©篠原健太／集英社・ウィッチウォッチ製作委員会・MBS"
+    }
+  ]
+}

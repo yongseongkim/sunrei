@@ -1,0 +1,226 @@
+{
+  "anime": {
+    "animeId": "p0GIxz7n8zoq1SbFbrQo",
+    "slug": "ya-boy-kongming",
+    "title": {
+      "ja": "パリピ孔明",
+      "kr": "파티피플 공명",
+      "en": "Ya Boy Kongming!"
+    },
+    "author": {
+      "kr": [
+        "요츠바 유토",
+        "오가와 료"
+      ],
+      "en": [
+        "Yuto Yotsuba",
+        "Ryo Ogawa"
+      ],
+      "ja": [
+        "四葉夕卜",
+        "小川亮"
+      ]
+    },
+    "studio": {
+      "en": [
+        "P.A. Works"
+      ]
+    }
+  },
+  "placeCount": 12,
+  "places": [
+    {
+      "placeId": "066767fa-6c0f-4a5a-9a5d-11599c22969a",
+      "name": {
+        "en": "Atom Tokyo"
+      },
+      "geo": {
+        "latitude": 35.6584978,
+        "longitude": 139.6956239
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6584978,139.6956239,3a,75y,210.64h,95.02t/data=!3m7!1e1!3m5!1sPkaQBGhusmw5KwoIpqMUuQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DPkaQBGhusmw5KwoIpqMUuQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D131.43604%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©四葉夕卜・小川亮・講談社／「パリピ孔明」製作委員会"
+    },
+    {
+      "placeId": "1851f185-4a5f-41a5-a6e2-0e9f5785ea45",
+      "name": {
+        "en": "Boutique Takenoko",
+        "ja": "ブティック 竹の子"
+      },
+      "geo": {
+        "latitude": 35.6711481,
+        "longitude": 139.7049539
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/place/Boutique+Takenoko/@35.6711481,139.7049539,3a,75y,78.75h,97.83t/data=!3m6!1e1!3m4!1sMnTlj4lGmKhZOrWfx5WFjg!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x60188cbb3778f297:0x6be56cad334d723d!2sBoutique+Takenoko!8m2!3d35.6711707!4d139.7050177!16s%2Fg%2F1tfk4f85!3m5!1s0x60188cbb3778f297:0x6be56cad334d723d!8m2!3d35.6711707!4d139.7050177!16s%2Fg%2F1tfk4f85?entry=ttu",
+      "copyright": "©四葉夕卜・小川亮・講談社／「パリピ孔明」製作委員会"
+    },
+    {
+      "placeId": "3065a4c2-41f4-4d94-aeae-5e91eb264be8",
+      "name": {
+        "ja": "宇田川カフェ本店",
+        "en": "Udagawa Cafe"
+      },
+      "geo": {
+        "latitude": 35.6608717,
+        "longitude": 139.6992065
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6608717,139.6992065,3a,75y,112.53h,89.5t/data=!3m6!1e1!3m4!1sg2-jyGJr2_xIVTBEkGQDKQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©四葉夕卜・小川亮・講談社／「パリピ孔明」製作委員会"
+    },
+    {
+      "placeId": "40871400-e1cf-466f-8bd6-d702ebf2f28b",
+      "name": {
+        "en": "Yoyogi Park",
+        "ja": "代々木公園"
+      },
+      "geo": {
+        "latitude": 35.6704313,
+        "longitude": 139.6956394
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6704313,139.6956394,2a,90y,331.9h,97.3t/data=!3m7!1e1!3m5!1s1rxj2uHPy-wZN8P_Ldv5UA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D1rxj2uHPy-wZN8P_Ldv5UA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D138.74228%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?entry=ttu",
+      "copyright": "©四葉夕卜・小川亮・講談社／「パリピ孔明」製作委員会"
+    },
+    {
+      "placeId": "5accbf90-c3f8-499d-882e-de7ff1431b18",
+      "name": {
+        "en": "Shibuya Center-Gai",
+        "ja": "渋谷センター街"
+      },
+      "geo": {
+        "latitude": 35.6597249,
+        "longitude": 139.7002544
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6597249,139.7002544,3a,75y,320.07h,98.54t/data=!3m6!1e1!3m4!1sUq0nbiw-OlYW8pUw0GruOA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©四葉夕卜・小川亮・講談社／「パリピ孔明」製作委員会"
+    },
+    {
+      "placeId": "62876681-b5bd-43b2-a10c-a9fc3c9a816c",
+      "name": {
+        "en": "NEVERLAND TOKYO"
+      },
+      "geo": {
+        "latitude": 35.6588779,
+        "longitude": 139.6953637
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6588779,139.6953637,3a,75y,68.95h,97.31t/data=!3m6!1e1!3m4!1s6ffzcqPYf_ISPbLyZax6TA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©四葉夕卜・小川亮・講談社／「パリピ孔明」製作委員会"
+    },
+    {
+      "placeId": "71691f59-691e-457e-84bb-b72d1954685a",
+      "name": {
+        "ja": "串焼BISTRO福みみ 渋谷店",
+        "en": "Kushiyaki Bistro Fukumimi"
+      },
+      "geo": {
+        "latitude": 35.6596226,
+        "longitude": 139.6977749
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6596226,139.6977749,3a,75y,353.88h,91.43t/data=!3m7!1e1!3m5!1s1mgEXTw__1IWaPfNLGwKog!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D1mgEXTw__1IWaPfNLGwKog%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D165.7839%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©四葉夕卜・小川亮・講談社／「パリピ孔明」製作委員会"
+    },
+    {
+      "placeId": "b2298ca8-109b-46d8-9e8b-5f9014aaa5fb",
+      "name": {
+        "en": "Tenkaippin - Shibuya",
+        "ja": "天下一品 渋谷店"
+      },
+      "geo": {
+        "latitude": 35.6606749,
+        "longitude": 139.6979021
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6606749,139.6979021,3a,75y,111.03h,96.11t/data=!3m7!1e1!3m5!1sxP_wGR0cljLyaj_ws1EkYA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DxP_wGR0cljLyaj_ws1EkYA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D298.27396%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©四葉夕卜・小川亮・講談社／「パリピ孔明」製作委員会"
+    },
+    {
+      "placeId": "bf54b08b-84fa-483a-a536-0b23697708ae",
+      "name": {
+        "en": "Gochiton（Vegetable Pork Miso Soup)",
+        "ja": "ごちとん 代々木本店"
+      },
+      "geo": {
+        "latitude": 35.682675,
+        "longitude": 139.7022764
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.682675,139.7022764,3a,75y,136.15h,99.04t/data=!3m7!1e1!3m5!1sxjCMNCiUwiJIPq5R4-uQxQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DxjCMNCiUwiJIPq5R4-uQxQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D342.25388%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©四葉夕卜・小川亮・講談社／「パリピ孔明」製作委員会"
+    },
+    {
+      "placeId": "d16389a2-0c63-4c9c-924a-b848ce61a830",
+      "name": {
+        "es": "Cerca de la FIGHTCLUB Shibuya",
+        "en": "Near the FIGHTCLUB Shibuya",
+        "ja": "FIGHTCLUB Shibuya付近",
+        "id": "Sekitar FIGHTCLUB Shibuya",
+        "de": "In der Nähe des FIGHTCLUB Shibuya"
+      },
+      "geo": {
+        "latitude": 35.6593453,
+        "longitude": 139.6976718
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6593453,139.6976718,3a,75y,257.25h,101.07t/data=!3m7!1e1!3m5!1scJVkVdTgJVvIgrsn2DtRzQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DcJVkVdTgJVvIgrsn2DtRzQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D228.81743%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©四葉夕卜・小川亮・講談社／「パリピ孔明」製作委員会"
+    },
+    {
+      "placeId": "d60fcdc9-4cd3-4414-93e8-2e9b86b1b485",
+      "name": {
+        "en": "Yoyogi Park Outdoor Stage",
+        "ja": "代々木公園野外ステージ"
+      },
+      "geo": {
+        "latitude": 35.6670364,
+        "longitude": 139.6965141
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6670364,139.6965141,2a,90y,36.63h,94.33t/data=!3m6!1e1!3m4!1sf1Hjio8BqtkjXRs4qLKb4w!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©四葉夕卜・小川亮・講談社／「パリピ孔明」製作委員会"
+    },
+    {
+      "placeId": "d89d1466-272e-4159-b855-eead466b3bfa",
+      "name": {
+        "en": "Karaoke Kan Shibuya",
+        "ja": "カラオケ館 渋谷店"
+      },
+      "geo": {
+        "latitude": 35.6609251,
+        "longitude": 139.6981644
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6609251,139.6981644,3a,75y,84.29h,93.31t/data=!3m6!1e1!3m4!1sMpQml1lzJQgCjS6pdm_fGA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©四葉夕卜・小川亮・講談社／「パリピ孔明」製作委員会"
+    }
+  ]
+}

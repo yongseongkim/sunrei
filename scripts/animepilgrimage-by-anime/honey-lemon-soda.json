@@ -1,0 +1,415 @@
+{
+  "anime": {
+    "animeId": "EBgnvTrAN9hUEHZPOFpi",
+    "slug": "honey-lemon-soda",
+    "title": {
+      "ja": "ハニーレモンソーダ",
+      "kr": "허니 레몬 소다",
+      "en": "Honey Lemon Soda"
+    },
+    "author": {
+      "en": [
+        "Mayu Murata"
+      ],
+      "ja": [
+        "村田真優"
+      ],
+      "kr": [
+        "무라타 마유"
+      ]
+    },
+    "studio": {
+      "en": [
+        "J.C.STAFF"
+      ]
+    }
+  },
+  "placeCount": 24,
+  "places": [
+    {
+      "placeId": "01bafa31-b56c-4aa6-b054-f42952b8dd3f",
+      "name": {
+        "en": "Times Shoto #2",
+        "ja": "タイムズ松濤第２"
+      },
+      "geo": {
+        "latitude": 35.6593,
+        "longitude": 139.69389
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6593261,139.693901,3a,90y,1h,98.56t/data=!3m7!1e1!3m5!1sb6lr-QsqVkBBN_v05eqbdA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.555102186398045%26panoid%3Db6lr-QsqVkBBN_v05eqbdA%26yaw%3D1.0024845895657108!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "03b31d49-a980-4fa9-b332-c5c391e1f67d",
+      "name": {
+        "en": "Karaoke Kan Shibuya",
+        "ja": "カラオケ館 渋谷店"
+      },
+      "geo": {
+        "latitude": 35.66092,
+        "longitude": 139.69819
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6609454,139.698215,3a,90y,207.42h,124.5t/data=!3m7!1e1!3m5!1sD6wuGUBXfXCJLlplIpfllg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-34.49915813352537%26panoid%3DD6wuGUBXfXCJLlplIpfllg%26yaw%3D207.41769622199814!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "1bdc89ad-a934-43af-b725-d58b90d0e630",
+      "name": {
+        "ja": "ランバン コレクション 表参道店",
+        "en": "LANVIN Collection Omotesando"
+      },
+      "geo": {
+        "latitude": 35.66739,
+        "longitude": 139.70659
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6673868,139.706558,3a,75y,64.05h,97.77t/data=!3m7!1e1!3m5!1sxqR9UWcm1Q6gGWpzvjtb7w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.773850730548659%26panoid%3DxqR9UWcm1Q6gGWpzvjtb7w%26yaw%3D64.05237370493488!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "2ccde187-2a89-424e-a4a6-c849efa3ace1",
+      "name": {
+        "en": "Undefeated"
+      },
+      "geo": {
+        "latitude": 35.66414,
+        "longitude": 139.7029
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6641261,139.7028992,3a,75y,41.95h,101.63t/data=!3m7!1e1!3m5!1sqAxkPb5TQSdxiTxQZB5YCg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.631068080910339%26panoid%3DqAxkPb5TQSdxiTxQZB5YCg%26yaw%3D41.952847633380635!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "3e26c873-1b60-4822-a0dd-0ca1b4628a53",
+      "name": {
+        "kr": "시부야 캣 스트리트",
+        "en": "Cat Street",
+        "ja": "キャットストリート"
+      },
+      "geo": {
+        "latitude": 35.66708,
+        "longitude": 139.70635
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6670074,139.7063317,3a,75y,357.29h,94.55t/data=!3m7!1e1!3m5!1skqHgLT6kD6PGw37SsR_9Dw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.550777519725699%26panoid%3DkqHgLT6kD6PGw37SsR_9Dw%26yaw%3D357.2853468576167!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "444d5522-e851-444a-8b07-471de532c6ab",
+      "name": {
+        "en": "Le RESTAURANT"
+      },
+      "geo": {
+        "latitude": 35.30821,
+        "longitude": 139.48872
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3080049,139.4888048,2a,90y,4.38h,98.44t/data=!3m7!1e1!3m5!1sL2rWnPGBM4enk-gA-7-1VQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.442323443493791%26panoid%3DL2rWnPGBM4enk-gA-7-1VQ%26yaw%3D4.384246305097349!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "46eb5afd-8711-4b6c-86f0-848e2dcc01ec",
+      "name": {
+        "en": "SHIBUYA Hyakkendana",
+        "ja": "しぶや百軒店"
+      },
+      "geo": {
+        "latitude": 35.65882,
+        "longitude": 139.6972
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6587906,139.6972492,3a,90y,313.87h,138.16t/data=!3m7!1e1!3m5!1spQdcibRycfKI1zB-90wTrg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-48.162481723705014%26panoid%3DpQdcibRycfKI1zB-90wTrg%26yaw%3D313.873040283014!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "56079d3e-a595-4dc0-846e-96f1a4a02c52",
+      "name": {
+        "en": "VANS STORE HARAJUKU"
+      },
+      "geo": {
+        "latitude": 35.66777,
+        "longitude": 139.70502
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6678518,139.7049671,3a,75y,156.08h,92.28t/data=!3m7!1e1!3m5!1scjZQ9CLngKA2KIJ7Dc6NDA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.283067861359413%26panoid%3DcjZQ9CLngKA2KIJ7Dc6NDA%26yaw%3D156.07904818741085!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "5f25e811-9e43-4cda-acb8-238229114824",
+      "name": {
+        "en": "Seitoku Memorial Picture Gallery, Unicorn Statue",
+        "ja": "聖徳記念絵画館 ユニコーン像"
+      },
+      "geo": {
+        "latitude": 35.6778,
+        "longitude": 139.7181
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6778889,139.7180417,3a,75y,211.1h,102.12t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDztbjFPg!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu3CAh8EWIrGL63HMFZL1FrGZHp84uVVPcQx3c0HnlJUAlds7ctldQPVwj6ReO_5HNDMRIH2Vb8aKS7cVrWJ0S3h8g3njDP8sOMAnfPtbuI_dNdAhGysdQ9wB5JYdXBWU0P6nzVp%3Dw900-h600-k-no-pi-12.124836612980431-ya185.0961221728019-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "6434a1a3-7329-4b79-957d-702d4ea5bb09",
+      "name": {
+        "ja": "片瀬東浜海水浴場",
+        "en": "Katase Higashihama Beach"
+      },
+      "geo": {
+        "latitude": 35.30785,
+        "longitude": 139.48778
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3075296,139.4877258,2a,75y,344.77h,101.11t/data=!3m7!1e1!3m5!1sSkXuT02DXtIbMTdfDjmETQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.110265472158517%26panoid%3DSkXuT02DXtIbMTdfDjmETQ%26yaw%3D344.7739661987469!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "6d6fa84a-e8d1-40f8-9cd1-a85bb3834cc7",
+      "name": {
+        "ja": "PRONTO 渋谷宮下公園店",
+        "en": "PRONTO - Shibuya Miyashita Park"
+      },
+      "geo": {
+        "latitude": 35.6616,
+        "longitude": 139.70236
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6616371,139.7023727,3a,90y,177.95h,97.7t/data=!3m7!1e1!3m5!1skddt1HyN1Ha4MGvAPPJJMQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.702057685202064%26panoid%3Dkddt1HyN1Ha4MGvAPPJJMQ%26yaw%3D177.94675532278862!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "7992fc4c-668b-41ed-9595-e21ad2b856aa",
+      "name": {
+        "en": "Burger King Shibuya Center Street",
+        "ja": "バーガーキング 渋谷センター街店"
+      },
+      "geo": {
+        "latitude": 35.66026,
+        "longitude": 139.6989
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6602691,139.6989749,3a,75y,343.93h,104.91t/data=!3m7!1e1!3m5!1se74F6965ZgyR43ZOqx4qGw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.912877204164246%26panoid%3De74F6965ZgyR43ZOqx4qGw%26yaw%3D343.9314486451956!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "7fcc1570-871e-414a-b358-8baeafac3997",
+      "name": {
+        "ja": "サッカーショップKAMO 渋谷店",
+        "en": "Soccer Shop Kamo"
+      },
+      "geo": {
+        "latitude": 35.6623,
+        "longitude": 139.69859
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6623676,139.6985689,3a,90y,358.14h,95.02t/data=!3m7!1e1!3m5!1sctnHOlILCRleCFJaTlbJAQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.01547753062934%26panoid%3DctnHOlILCRleCFJaTlbJAQ%26yaw%3D358.1426855603545!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "874ddfdf-4b22-4ce9-9f0e-f46b31f74eeb",
+      "name": {
+        "en": "GU Shibuya",
+        "kr": "GU 시부야",
+        "ja": "ジーユー 渋谷店"
+      },
+      "geo": {
+        "latitude": 35.66107,
+        "longitude": 139.6978
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6610369,139.6979133,3a,90y,295.36h,99.87t/data=!3m7!1e1!3m5!1s_t97bJ6Thw1cY-NtbAq_MQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.868525884659121%26panoid%3D_t97bJ6Thw1cY-NtbAq_MQ%26yaw%3D295.36314031836105!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "976fc09f-fe26-4b2d-a322-72761ea50ab2",
+      "name": {
+        "en": "Café Marly"
+      },
+      "geo": {
+        "latitude": 35.66232,
+        "longitude": 139.69885
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6623478,139.6988205,3a,64.3y,156.11h,93.19t/data=!3m7!1e1!3m5!1sXAFb4zIrSQcjk5v1jtY-Tg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.1852904036652347%26panoid%3DXAFb4zIrSQcjk5v1jtY-Tg%26yaw%3D156.10642552025234!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "a56073ef-0a31-4ace-98e7-09d5f67adc84",
+      "name": {
+        "en": "FamilyMart Shibuya Cat Street Store",
+        "ja": "ファミリーマート 渋谷キャットストリート店",
+        "kr": "패밀리마트 시부야 캣스트리트점"
+      },
+      "geo": {
+        "latitude": 35.66314,
+        "longitude": 139.70247
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6630948,139.7025082,3a,75y,325.16h,93.6t/data=!3m7!1e1!3m5!1sTPVvIdHJZxGXfQSKyu_Lbg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.6006426918295915%26panoid%3DTPVvIdHJZxGXfQSKyu_Lbg%26yaw%3D325.1594201665473!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "a6ec6299-f2fb-4891-bce3-02ee80b452ac",
+      "name": {
+        "en": "Shibuya Parco",
+        "kr": "시부야 파르코",
+        "ja": "渋谷PARCO"
+      },
+      "geo": {
+        "latitude": 35.6621,
+        "longitude": 139.69933
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6621202,139.699405,3a,74y,253.54h,98.49t/data=!3m7!1e1!3m5!1sm8qAgfOqtJnYIFie_cH-JQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.487568094517272%26panoid%3Dm8qAgfOqtJnYIFie_cH-JQ%26yaw%3D253.53903190394482!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "a9e2ac79-5a2d-48bd-9c42-0269a4cdcccc",
+      "name": {
+        "ja": "明治神宮野球場",
+        "kr": "메이지 진구 야구장",
+        "en": "Meiji Jingu Baseball Stadium"
+      },
+      "geo": {
+        "latitude": 35.67343,
+        "longitude": 139.71625
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6735279,139.7162353,3a,90y,252.9h,98.64t/data=!3m7!1e1!3m5!1sz8zeTpHG61I_ga_9cxfdFw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.636448254747009%26panoid%3Dz8zeTpHG61I_ga_9cxfdFw%26yaw%3D252.9019508318897!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "bc753237-eca2-4428-a2c6-67116ba2c9d2",
+      "name": {
+        "en": "Ruins of Sando Bridge",
+        "ja": "参道橋跡"
+      },
+      "geo": {
+        "latitude": 35.66794,
+        "longitude": 139.70693
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6678395,139.7069319,3a,75y,14.83h,90.83t/data=!3m7!1e1!3m5!1sIFmYB9S4aJGiYwLVcsoMKA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.8266774809351745%26panoid%3DIFmYB9S4aJGiYwLVcsoMKA%26yaw%3D14.829050898895314!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "c03324ff-a49a-4d6a-a2a1-900795a98173",
+      "name": {
+        "en": "OVERRIDE Jingumae",
+        "ja": "OVERRIDE 神宮前"
+      },
+      "geo": {
+        "latitude": 35.66482,
+        "longitude": 139.7028
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6649462,139.7027607,3a,90y,147.3h,96.4t/data=!3m7!1e1!3m5!1skIhP35s3yyo2f2a9QR570w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.395273624717063%26panoid%3DkIhP35s3yyo2f2a9QR570w%26yaw%3D147.29826052467237!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "dfadf78d-256d-4b54-8ac2-852b322ad881",
+      "name": {
+        "en": "Hands Shibuya",
+        "ja": "ハンズ渋谷店",
+        "kr": "핸즈 시부야점"
+      },
+      "geo": {
+        "latitude": 35.66225,
+        "longitude": 139.69804
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.662335,139.698289,3a,40y,248.46h,93.82t/data=!3m7!1e1!3m5!1shsHlmPNO2a0XqchR--6WIA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.822157007553514%26panoid%3DhsHlmPNO2a0XqchR--6WIA%26yaw%3D248.4560626187091!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "e57906fe-a1e6-497a-8a92-a244159590e4",
+      "name": {
+        "en": "Nagayama Honten Shibuya Miyashita Koen",
+        "ja": "永山本店 渋谷宮下公園店"
+      },
+      "geo": {
+        "latitude": 35.6613,
+        "longitude": 139.70212
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6614539,139.7022362,3a,75y,218.01h,81.74t/data=!3m7!1e1!3m5!1s3oyBUfIG_TaDnrchY9EgmQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D8.257489088308802%26panoid%3D3oyBUfIG_TaDnrchY9EgmQ%26yaw%3D218.01129904032248!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "eb6a2b7a-b989-4d9d-86fa-63dda0183773",
+      "name": {
+        "en": "Nakano",
+        "ja": "奈加野"
+      },
+      "geo": {
+        "latitude": 35.66139,
+        "longitude": 139.69793
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6614705,139.6979299,3a,90y,167.6h,105.16t/data=!3m7!1e1!3m5!1s_W_8cW7uG_J8_z2ziu6PrQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.159783762704706%26panoid%3D_W_8cW7uG_J8_z2ziu6PrQ%26yaw%3D167.60058437095594!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    },
+    {
+      "placeId": "f420cec0-18c9-4b21-8e65-2ad925bdc302",
+      "name": {
+        "en": "Kith -Tokyo"
+      },
+      "geo": {
+        "latitude": 35.66299,
+        "longitude": 139.70204
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.662941,139.7020861,3a,90y,270.74h,90.56t/data=!3m7!1e1!3m5!1suK8rmH8DYDXetmVRMWRRMw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.5558018371087456%26panoid%3DuK8rmH8DYDXetmVRMWRRMw%26yaw%3D270.7422658832856!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©村田真優／集英社・ハニーレモンソーダ製作委員会"
+    }
+  ]
+}

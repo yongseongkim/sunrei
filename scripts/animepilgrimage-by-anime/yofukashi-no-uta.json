@@ -1,0 +1,869 @@
+{
+  "anime": {
+    "animeId": "Elw6prO9MD1CCudCkxzj",
+    "slug": "yofukashi-no-uta",
+    "title": {
+      "ja": "よふかしのうた",
+      "kr": "철야의 노래",
+      "en": "Yofukashi no Uta"
+    },
+    "author": {
+      "en": [
+        "Kotoyama"
+      ],
+      "ja": [
+        "コトヤマ"
+      ],
+      "kr": [
+        "코토야마"
+      ]
+    },
+    "studio": {
+      "en": [
+        "LIDENFILMS"
+      ],
+      "ja": [
+        "ライデンフィルム"
+      ]
+    }
+  },
+  "placeCount": 52,
+  "places": [
+    {
+      "placeId": "0764cd84-d825-4729-bc05-30778a73646a",
+      "name": {
+        "ja": "三宅耳鼻咽喉科医院",
+        "en": "Miyake Ear"
+      },
+      "geo": {
+        "latitude": 35.84061,
+        "longitude": 139.63063
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8406525,139.6305695,3a,90y,268.42h,91.28t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID-w9X3nAE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZ99KMslI_8p55TqDh0Cw1UJthlwutd5suhflRpWZ83hCre3e9X2x6oyDxSoFSFAlObwd3xlCzgJLC6RhkQCfpuf1vUj2pdbBty-CLNfMhbUMJaLgEjQrBfWhrpjkfBbn60YIqXyg%3Dw900-h600-k-no-pi-1.2809532336353016-ya268.41796112422116-ro0-fo100!7i5376!8i2688?hl=ko&entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "0a81c7fe-07e8-4a6d-9a3b-4974c0e15673",
+      "name": {
+        "en": "Minamiurawaminami Dai 1 Bicycle Parking",
+        "ja": "南浦和南第１自転車駐車場"
+      },
+      "geo": {
+        "latitude": 35.8483,
+        "longitude": 139.66987
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8482739,139.6698206,3a,90y,57.97h,98.32t/data=!3m7!1e1!3m5!1sVGfLiZP2IbwvbT3xRjDKNw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.31923353132305%26panoid%3DVGfLiZP2IbwvbT3xRjDKNw%26yaw%3D57.974897063565066!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "12132f0e-16a6-4237-aa61-db132f8e0146",
+      "name": {
+        "en": "Italian Dining DONA Musashiuwa Store",
+        "ja": "イタリアンダイニングDONA 武蔵浦和店"
+      },
+      "geo": {
+        "latitude": 35.84532,
+        "longitude": 139.64728
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8453646,139.6473478,3a,90y,233.02h,91.54t/data=!3m7!1e1!3m5!1sTJRMLPsKf9HiZaZd3vhT6g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.5447049856376367%26panoid%3DTJRMLPsKf9HiZaZd3vhT6g%26yaw%3D233.02068096866776!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "1372fcca-2f99-4a7d-be38-de42fd3ba394",
+      "name": {
+        "ja": "株式会社ニッケンコーポレーション 武蔵浦和店",
+        "en": "Nikkken Corporation Musashi-Urawa Branch"
+      },
+      "geo": {
+        "latitude": 35.84485,
+        "longitude": 139.64524
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8447989,139.6451954,3a,90y,258h,93.64t/data=!3m7!1e1!3m5!1sFTF65j4E2Z-fuDtrkine5A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.638696900846952%26panoid%3DFTF65j4E2Z-fuDtrkine5A%26yaw%3D258.0039412388786!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "192d2a5f-b53b-44b8-bc91-e6a0d8e1b9fc",
+      "name": {
+        "ja": "武蔵浦和駅西口タクシー乗り場",
+        "en": "Musashi-Urawa Station West Exit Taxi Stand"
+      },
+      "geo": {
+        "latitude": 35.8454,
+        "longitude": 139.6462
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8454242,139.6462284,2a,90y,277.2h,97.14t/data=!3m7!1e1!3m5!1ss781j2FYVfx2iDvnIp-uFw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.135914499172273%26panoid%3Ds781j2FYVfx2iDvnIp-uFw%26yaw%3D277.195461080476!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "1c8d2d99-c2ae-43e7-a3f9-0718fb076111",
+      "name": {
+        "ja": "武蔵浦和大栄駐車場",
+        "en": "Musashiura Daiei Parking Lot"
+      },
+      "geo": {
+        "latitude": 35.84487,
+        "longitude": 139.64462
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8449184,139.6447993,3a,49.5y,243.75h,93.48t/data=!3m7!1e1!3m5!1sPXFNbd3XqU4zVBS0oOVc-w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.476977980043344%26panoid%3DPXFNbd3XqU4zVBS0oOVc-w%26yaw%3D243.75238994974353!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "21eef481-17bb-430a-8c24-3e2bd5914ad7",
+      "name": {
+        "ja": "山下公園",
+        "kr": "야마시타 공원",
+        "en": "Yamashita Park"
+      },
+      "geo": {
+        "latitude": 35.44533,
+        "longitude": 139.64947
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4453519,139.6494617,3a,82.6y,206.59h,107.68t/data=!3m7!1e1!3m5!1sUkdzf6NKlt870-vR0zOdDg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-17.682392629011986%26panoid%3DUkdzf6NKlt870-vR0zOdDg%26yaw%3D206.59180226334212!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "2a8b570b-b7c5-44a0-901c-375e9357a977",
+      "name": {
+        "en": "Numakagejichi Hall",
+        "ja": "沼影自治会館"
+      },
+      "geo": {
+        "latitude": 35.84438,
+        "longitude": 139.64314
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8444428,139.6430935,3a,90y,154.67h,97.03t/data=!3m7!1e1!3m5!1sOzIGVkatHLbGtBzFXM4O2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.0339079578853045%26panoid%3DOzIGVkatHLbGtBzFXM4O2A%26yaw%3D154.673163585386!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "348c011b-2c28-4265-b6c1-35880fd2f8be",
+      "name": {
+        "en": "Yaoko Musashiurawa",
+        "ja": "ヤオコー 武蔵浦和店"
+      },
+      "geo": {
+        "latitude": 35.84455,
+        "longitude": 139.64655
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8444896,139.6462519,3a,90y,73.61h,95.35t/data=!3m7!1e1!3m5!1sJcpOCK_ybGL9kfLFxK4kSA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.349540403182232%26panoid%3DJcpOCK_ybGL9kfLFxK4kSA%26yaw%3D73.6054546800795!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "398b2d72-891c-440b-9d22-c9685c471b45",
+      "name": {
+        "en": "Lotte Keyaki House",
+        "ja": "ロッテけやきハウス"
+      },
+      "geo": {
+        "latitude": 35.83619,
+        "longitude": 139.64806
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8362026,139.6480615,3a,90y,163.21h,93.93t/data=!3m7!1e1!3m5!1sfcvDQ84t1Mcvlrck5QOuxg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.92714616248594%26panoid%3DfcvDQ84t1Mcvlrck5QOuxg%26yaw%3D163.2138940672578!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "3a212470-1587-4de4-a30c-7637ae2c0d10",
+      "name": {
+        "en": "Musashi-Urawa SKY&GARDEN",
+        "ja": "武蔵浦和SKY&GARDEN"
+      },
+      "geo": {
+        "latitude": 35.84374,
+        "longitude": 139.64762
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8437791,139.6475171,3a,63.4y,122.58h,120.97t/data=!3m7!1e1!3m5!1s0iE4x-ks0_ImjyIVX_6sQA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-30.97250109279875%26panoid%3D0iE4x-ks0_ImjyIVX_6sQA%26yaw%3D122.58278456878011!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "3d4e0ee4-d4b0-4a64-8fab-397149146a2b",
+      "name": {
+        "en": "Musashi-Urawa Station West Exit Plaza",
+        "ja": "武蔵浦和駅西口広場"
+      },
+      "geo": {
+        "latitude": 35.84459,
+        "longitude": 139.64545
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8446976,139.6455084,3a,90y,248.84h,87.74t/data=!3m7!1e1!3m5!1syvQKIFAs3-iH-Ry0iaphqA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.2552071775592992%26panoid%3DyvQKIFAs3-iH-Ry0iaphqA%26yaw%3D248.83853968763702!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "3eb9a897-cf73-4460-964f-a2375f481460",
+      "name": {
+        "en": "Tajimahigashi Park",
+        "ja": "田島東公園"
+      },
+      "geo": {
+        "latitude": 35.8456,
+        "longitude": 139.63479
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8455656,139.6346238,3a,75y,76.08h,89.74t/data=!3m7!1e1!3m5!1s5vEk8HiQwwxOqlsKjoVxIQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.2585536049519135%26panoid%3D5vEk8HiQwwxOqlsKjoVxIQ%26yaw%3D76.07676439198441!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "3ebb9a44-a99c-4b22-a826-775a014f8fe9",
+      "name": {
+        "en": "Dining Bar non no"
+      },
+      "geo": {
+        "latitude": 35.84141,
+        "longitude": 139.63193
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8413663,139.631929,3a,90y,355.94h,95.89t/data=!3m7!1e1!3m5!1s7CF_BwyTaHQqUJsMRytyqg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.88867810708831%26panoid%3D7CF_BwyTaHQqUJsMRytyqg%26yaw%3D355.9410488220335!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "3f0f7340-b2d7-468b-a626-1c53f342c3c2",
+      "name": {
+        "ja": "福山駅前シネマモード１・２",
+        "en": "Fukuyama Station Cinema mode 1 and 2"
+      },
+      "geo": {
+        "latitude": 34.48815,
+        "longitude": 133.36403
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-hiroshima-fukuyama",
+      "streetViewUrl": "https://www.google.com/maps/@34.4881144,133.3640919,3a,90y,326.4h,98.08t/data=!3m7!1e1!3m5!1shy2S-cAJYIcDUGji_jeMzg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.07523022715641%26panoid%3Dhy2S-cAJYIcDUGji_jeMzg%26yaw%3D326.3986831849662!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "47be77f8-2c53-4abc-90c3-6b2bdbc3ab71",
+      "name": {
+        "en": "Mahora Park",
+        "ja": "まほら公園"
+      },
+      "geo": {
+        "latitude": 35.84824,
+        "longitude": 139.64341
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8481468,139.6433223,3a,90y,45.33h,102.5t/data=!3m7!1e1!3m5!1ssHE-cNXCKqyin5EsTgsh_Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.501570961745145%26panoid%3DsHE-cNXCKqyin5EsTgsh_Q%26yaw%3D45.332494188987035!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "534aa1a7-75ac-4409-aeba-d8abc5786917",
+      "name": {
+        "ja": "山下公園",
+        "en": "Yamashita Park",
+        "kr": "야마시타 공원"
+      },
+      "geo": {
+        "latitude": 35.44555,
+        "longitude": 139.64971
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4454931,139.6497994,3a,90y,309.78h,95.72t/data=!3m7!1e1!3m5!1sBbTlT5945dCtth4vFWB8gQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.724795431178734%26panoid%3DBbTlT5945dCtth4vFWB8gQ%26yaw%3D309.7801928323015!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "539205d0-22ca-4c0e-b6e6-b91798e68855",
+      "name": {
+        "en": "Taisei 1 Chomeminami Park",
+        "ja": "大成1丁目南公園"
+      },
+      "geo": {
+        "latitude": 35.90737,
+        "longitude": 139.61617
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.907306,139.6161831,3a,90y,346.59h,93.15t/data=!3m7!1e1!3m5!1stAZD3PjNPZ1aZqxhnPsAZQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.149587291511807%26panoid%3DtAZD3PjNPZ1aZqxhnPsAZQ%26yaw%3D346.5906636950188!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "55c5ffdf-4cd3-4db3-8d55-e45fe5e09e83",
+      "name": {
+        "ja": "魚民 武蔵浦和駅前店",
+        "en": "Genuine Izakaya Diner \"Uotami\" Musashi-Urawa Station",
+        "kr": "우오타미(이자카야) 무사시 우라와 역앞점"
+      },
+      "geo": {
+        "latitude": 35.84473,
+        "longitude": 139.64662
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8446692,139.6466953,3a,90y,327.27h,95.91t/data=!3m7!1e1!3m5!1szFWXHFEzc6s-q9Wb5oPnGA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.905524396559684%26panoid%3DzFWXHFEzc6s-q9Wb5oPnGA%26yaw%3D327.27169858404255!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "55f45be8-f0f4-4daf-8c06-92414f1b329d",
+      "name": {
+        "ja": "鹿手袋さくら公園",
+        "en": "Shikatebukurosakura Park"
+      },
+      "geo": {
+        "latitude": 35.8456,
+        "longitude": 139.63879
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8455917,139.6387507,3a,90y,23.26h,96.1t/data=!3m7!1e1!3m5!1sKXc8yvCEq1ChrMNicKjxIg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.104895195197827%26panoid%3DKXc8yvCEq1ChrMNicKjxIg%26yaw%3D23.257509961306837!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "57a8a9f1-5236-4942-b400-a055db48b353",
+      "name": {
+        "ja": "御嶽神社",
+        "en": "Mitake Shrine"
+      },
+      "geo": {
+        "latitude": 35.84706,
+        "longitude": 139.6333
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8467484,139.6334338,3a,90y,343.83h,96.69t/data=!3m7!1e1!3m5!1sPZxHHPJ_GpytE6h7QgN6AA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.685236156851914%26panoid%3DPZxHHPJ_GpytE6h7QgN6AA%26yaw%3D343.8296526860536!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "5a62234d-b256-4fb7-b256-ae946e0508ba",
+      "name": {
+        "en": "Kannon Children's Playground",
+        "ja": "かんのん児童遊園"
+      },
+      "geo": {
+        "latitude": 35.84367,
+        "longitude": 139.64369
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8435398,139.6435677,3a,73.2y,22.24h,94.78t/data=!3m7!1e1!3m5!1skjrq_BH8IuBVOYdlypcvLw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.7791522179694965%26panoid%3Dkjrq_BH8IuBVOYdlypcvLw%26yaw%3D22.241767078170238!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "6538e182-84ac-469e-86ca-9f3b0670cd58",
+      "name": {
+        "ja": "餃子の王将 武蔵浦和駅前店",
+        "en": "Gyoza no Ohsho - Musashi-Urawa Station"
+      },
+      "geo": {
+        "latitude": 35.84604,
+        "longitude": 139.64776
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8460565,139.6476768,3a,90y,90.32h,92.11t/data=!3m7!1e1!3m5!1spmWElpNYgI7hDkcO2pheUA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.1136027037565555%26panoid%3DpmWElpNYgI7hDkcO2pheUA%26yaw%3D90.3246457018433!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "65bab027-1903-4a1b-acf7-3f77ecc9fc95",
+      "name": {
+        "en": "Saitama City Minami Ward Office",
+        "ja": "さいたま市 南区役所"
+      },
+      "geo": {
+        "latitude": 35.84499,
+        "longitude": 139.64513
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.845029,139.6452138,3a,90y,268.54h,94.18t/data=!3m7!1e1!3m5!1sFPXcdZrP7JjPIkq3kgtOLw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.175948935627503%26panoid%3DFPXcdZrP7JjPIkq3kgtOLw%26yaw%3D268.5444543113976!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "70da7bc3-57cb-48c4-916d-8b54a456ccff",
+      "name": {
+        "en": "Tajimahigashi Park",
+        "ja": "田島東公園"
+      },
+      "geo": {
+        "latitude": 35.84546,
+        "longitude": 139.63425
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8455095,139.634408,3a,75y,255.61h,97.54t/data=!3m7!1e1!3m5!1sDT0HRz-RMu2bMjM5QB1-_w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.541738658013728%26panoid%3DDT0HRz-RMu2bMjM5QB1-_w%26yaw%3D255.61256209008405!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "7440e3ea-f4f1-47e6-afda-c20552a8c089",
+      "name": {
+        "ja": "笹目川放流口",
+        "en": "Sasame River Outflow Point"
+      },
+      "geo": {
+        "latitude": 35.83672,
+        "longitude": 139.65196
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8365395,139.6520672,3a,90y,333.57h,96.99t/data=!3m7!1e1!3m5!1sPGq69ISWhmaBfaWjMBDrzg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.985574881554271%26panoid%3DPGq69ISWhmaBfaWjMBDrzg%26yaw%3D333.5675659958591!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "7473f684-99a6-4a3f-af9b-0e8759e7d7eb",
+      "name": {
+        "en": "ENEOS EneJet Self-Smile Saitama Tajima (Kashimaya)",
+        "ja": "ENEOS EneJetセルフスマイルさいたま田島（鹿島屋）"
+      },
+      "geo": {
+        "latitude": 35.83936,
+        "longitude": 139.62878
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8394321,139.6286096,3a,90y,116.52h,99.01t/data=!3m7!1e1!3m5!1sDwpTTksefl4Oa9JY5D8AfQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.013263079684975%26panoid%3DDwpTTksefl4Oa9JY5D8AfQ%26yaw%3D116.52449978447453!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "7e3fa7a7-0031-4ac1-bfb1-cae6ab32df12",
+      "name": {
+        "ja": "日進湯",
+        "en": "Nisshin-yu"
+      },
+      "geo": {
+        "latitude": 35.90747,
+        "longitude": 139.61677
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9074698,139.6168261,3a,90y,252.39h,92.79t/data=!3m7!1e1!3m5!1sK2q0GzibGGUCRbXenXuPqw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.7944840554221457%26panoid%3DK2q0GzibGGUCRbXenXuPqw%26yaw%3D252.3889807423212!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "87710b4b-4505-4f18-9410-c2dd2fe80273",
+      "name": {
+        "ja": "南浦和東岸町パーキング S-Park",
+        "en": "Minami-Urawa Higashigashicho Parking S-Park"
+      },
+      "geo": {
+        "latitude": 35.85107,
+        "longitude": 139.66589
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.851183,139.6658366,3a,90y,161.62h,99.77t/data=!3m7!1e1!3m5!1s-kUAB3sDVEu5IUQbX263_g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.76572039072073%26panoid%3D-kUAB3sDVEu5IUQbX263_g%26yaw%3D161.61509232049568!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "8dc4858f-a0f7-4554-be81-c75dd1d00013",
+      "name": {
+        "ja": "マクドナルド 武蔵浦和店",
+        "en": "McDonald's Musashi Urawa"
+      },
+      "geo": {
+        "latitude": 35.84488,
+        "longitude": 139.64732
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8448366,139.6470978,3a,90y,106.17h,97.6t/data=!3m7!1e1!3m5!1sNAD0R-7SZxf0WISw-4uV5w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.595299033711839%26panoid%3DNAD0R-7SZxf0WISw-4uV5w%26yaw%3D106.17312194608512!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "908da4de-d386-4595-b360-b38a983f34ee",
+      "name": {
+        "en": "Musashi Urawa Eki Nishiguchi(Bus)",
+        "ja": "武蔵浦和駅西口（バス）",
+        "kr": "무사시우라와에키니시구치(버스)"
+      },
+      "geo": {
+        "latitude": 35.8453,
+        "longitude": 139.64621
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8453388,139.6464695,3a,90y,258.39h,98.1t/data=!3m7!1e1!3m5!1sNndsssshhUJyHCZzyKL-iA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.098112986081219%26panoid%3DNndsssshhUJyHCZzyKL-iA%26yaw%3D258.389643584437!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "92d50836-9edc-4a13-a2f3-36be058a0b5e",
+      "name": {
+        "en": "Beans Musashi-Urawa",
+        "ja": "ビーンズ 武蔵浦和"
+      },
+      "geo": {
+        "latitude": 35.84485,
+        "longitude": 139.6469
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8447631,139.6469203,3a,90y,333.49h,93.24t/data=!3m7!1e1!3m5!1s7mPkPjvG9eSchH_15uYvMw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.2395557614219967%26panoid%3D7mPkPjvG9eSchH_15uYvMw%26yaw%3D333.49372125252046!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "9b3e6996-e6fe-478c-97c7-57ded383c266",
+      "name": {
+        "en": "FamilyMart Musashi Urawa Marks",
+        "ja": "ファミリーマート 武蔵浦和マークス店"
+      },
+      "geo": {
+        "latitude": 35.84576,
+        "longitude": 139.64561
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8457502,139.6458001,3a,90y,293.22h,97.99t/data=!3m7!1e1!3m5!1sEDCkwIMDfck3KlP80YaBJA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.9893133964857554%26panoid%3DEDCkwIMDfck3KlP80YaBJA%26yaw%3D293.22006182200016!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "9cf14437-71b8-4cac-a996-c8953bef1199",
+      "name": {
+        "ja": "(株)ロッテ 浦和工場",
+        "en": "Lotte Co., Ltd. Urawa Factory"
+      },
+      "geo": {
+        "latitude": 35.84129,
+        "longitude": 139.64654
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8412869,139.6464684,3a,90y,71.7h,93.96t/data=!3m7!1e1!3m5!1sR61juxg-Zou4_DPgGlJCMA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.957906728199987%26panoid%3DR61juxg-Zou4_DPgGlJCMA%26yaw%3D71.70447467423041!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "9d18769a-0b54-49c3-93fc-b6009f44f538",
+      "name": {
+        "en": "Yotsuya Park",
+        "ja": "四谷公園"
+      },
+      "geo": {
+        "latitude": 35.84231,
+        "longitude": 139.63635
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8423676,139.63647,3a,90y,229.13h,91.71t/data=!3m7!1e1!3m5!1sINXsNJ5LJxxpje_LN4G4Lg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.7101186684130028%26panoid%3DINXsNJ5LJxxpje_LN4G4Lg%26yaw%3D229.1289686600119!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "9dac42de-d4ef-420e-a660-5223c1f9ffda",
+      "name": {
+        "ja": "メーデルランド",
+        "en": "Meedelland"
+      },
+      "geo": {
+        "latitude": 35.84407,
+        "longitude": 139.64263
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8439959,139.6425252,3a,90y,52.8h,96.91t/data=!3m7!1e1!3m5!1sRXiJBoVNkEwAMHbY_lD2dQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.913181848436523%26panoid%3DRXiJBoVNkEwAMHbY_lD2dQ%26yaw%3D52.80260380338301!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "a2b4b29e-15ec-4108-8572-3ffb7ec2f355",
+      "name": {
+        "en": "Live Tower Musashi-Urawa",
+        "ja": "ライブタワー武蔵浦和"
+      },
+      "geo": {
+        "latitude": 35.8451,
+        "longitude": 139.64767
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8450538,139.6476487,3a,90y,2.21h,122.81t/data=!3m7!1e1!3m5!1sGiLWqVWRJmyhQmG901GAAQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-32.80641133959735%26panoid%3DGiLWqVWRJmyhQmG901GAAQ%26yaw%3D2.2064389243468083!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "a62e9eee-a4e2-4274-9ce0-9de2a998dcac",
+      "name": {
+        "ja": "浦和田島郵便局",
+        "en": "Urawa-Tajima Post Office"
+      },
+      "geo": {
+        "latitude": 35.84162,
+        "longitude": 139.63017
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8416481,139.630249,3a,90y,156.1h,97.24t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID-w9WZzQE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYNLVEdA9yhJfuGHCEWa58lPg-IS_WkHSCfINNlp5RVSticbS8s0EKXlwaghW82ANtYi5hbNMRHF6E80KSK2BkOo5EVHyKlYWt63oni9oH59Hr3AGlM8fdLdL4DMaXvhkF7VJko2g%3Dw900-h600-k-no-pi-7.244220370647156-ya156.10097235699774-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "a81a5d88-d676-4d73-8ed1-8afcd75efe3a",
+      "name": {
+        "en": "Shomidori Clinics",
+        "ja": "聖みどり病院"
+      },
+      "geo": {
+        "latitude": 35.84522,
+        "longitude": 139.64814
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8453053,139.6482411,3a,90y,332.06h,105.23t/data=!3m7!1e1!3m5!1sWdkwNfOKm0HLbpO7Yq-Cow!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.227904501715031%26panoid%3DWdkwNfOKm0HLbpO7Yq-Cow%26yaw%3D332.05884001080256!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "aa290ff7-2a64-46cf-9ada-7b08797ab3aa",
+      "name": {
+        "en": "Musashi Residence",
+        "ja": "武蔵レジデンス"
+      },
+      "geo": {
+        "latitude": 35.84415,
+        "longitude": 139.63576
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8441808,139.6357447,3a,90y,148.22h,93.22t/data=!3m7!1e1!3m5!1s0TQKlDgwd7mEfbbqdKAkhA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.216714395282878%26panoid%3D0TQKlDgwd7mEfbbqdKAkhA%26yaw%3D148.22395215502806!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "bd2f1931-36c4-4e86-af0d-3786b37b0f7b",
+      "name": {
+        "ja": "松屋 南浦和店",
+        "en": "Matsuya Minami-Urawa Store"
+      },
+      "geo": {
+        "latitude": 35.84799,
+        "longitude": 139.66974
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.847952,139.6697264,3a,90y,36.06h,99.31t/data=!3m7!1e1!3m5!1sOf1IjAq6YO5Cxeep_89xdA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.314224541456028%26panoid%3DOf1IjAq6YO5Cxeep_89xdA%26yaw%3D36.063653288691135!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "c1e1032c-dfa0-4fe0-9644-5035970f5c48",
+      "name": {
+        "ja": "parkingin武蔵浦和駅東口",
+        "en": "Parking in Musashi-Urawa Station East Exit"
+      },
+      "geo": {
+        "latitude": 35.84635,
+        "longitude": 139.64639
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8462818,139.6464203,3a,90y,338.75h,97.38t/data=!3m7!1e1!3m5!1sTrbb-mQgFWVqmTljjboelA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.380050002276846%26panoid%3DTrbb-mQgFWVqmTljjboelA%26yaw%3D338.7505372866793!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "c268a369-6a8d-47f3-a295-cede1c2122fb",
+      "name": {
+        "ja": "田島東公園",
+        "en": "Tajimahigashi Park"
+      },
+      "geo": {
+        "latitude": 35.8459,
+        "longitude": 139.63414
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8458223,139.633905,3a,63.5y,64.92h,92.68t/data=!3m7!1e1!3m5!1sErRXTKt7NsCogA0VsTC7fA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.68338170575673%26panoid%3DErRXTKt7NsCogA0VsTC7fA%26yaw%3D64.92044477184051!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "c6ab7733-ea28-44bd-a2c1-a52d691c6a23",
+      "name": {
+        "en": "FamilyMart Musashiurawa Station East Branch",
+        "ja": "ファミリーマート 武蔵浦和駅東店"
+      },
+      "geo": {
+        "latitude": 35.84656,
+        "longitude": 139.64752
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8465621,139.6475585,3a,90y,278.83h,91.62t/data=!3m7!1e1!3m5!1siC2Hiksr-pTnavUKVh3V2w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.6232299015681377%26panoid%3DiC2Hiksr-pTnavUKVh3V2w%26yaw%3D278.8276086311056!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "da289fdf-1d7f-4dee-9149-d2a26d816c4d",
+      "name": {
+        "ja": "南浦和駅",
+        "en": "Minami-Urawa Station",
+        "kr": "미나미우라와 역"
+      },
+      "geo": {
+        "latitude": 35.84801,
+        "longitude": 139.66937
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8481317,139.669551,3a,69y,226.57h,93.01t/data=!3m7!1e1!3m5!1sA3HHBoVK7ZyJyKHWZV51yw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.0125302643060223%26panoid%3DA3HHBoVK7ZyJyKHWZV51yw%26yaw%3D226.56737895037566!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "dea5f46c-7699-488c-a8bc-593d0d1b1f63",
+      "name": {
+        "en": "Serafina NEW YORK SAITAMASHINTOSHIN",
+        "ja": "Serafina NEW YORKさいたま新都心店"
+      },
+      "geo": {
+        "latitude": 35.89332,
+        "longitude": 139.63096
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8928429,139.6310914,2a,90y,342.49h,104.28t/data=!3m7!1e1!3m5!1seqQYUjpoFkec4p8d9bjSWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.28234586530391%26panoid%3DeqQYUjpoFkec4p8d9bjSWg%26yaw%3D342.48735340888055!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "f104a873-fc39-446c-b74e-4c0f10f57924",
+      "name": {
+        "en": "Nishi-Urawa Sky Mansion",
+        "ja": "西浦和スカイマンション"
+      },
+      "geo": {
+        "latitude": 35.84081,
+        "longitude": 139.63216
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8407009,139.632235,3a,83.9y,345.2h,99.46t/data=!3m7!1e1!3m5!1sv__s-RgOI1UXB5LA38h1Wg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.462111425565197%26panoid%3Dv__s-RgOI1UXB5LA38h1Wg%26yaw%3D345.2012161692175!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "f48298d7-1cc9-4d0a-a0cb-f5f2fe86f686",
+      "name": {
+        "en": "Sandi Nishiurawaten",
+        "ja": "サンディ 西浦和店"
+      },
+      "geo": {
+        "latitude": 35.84189,
+        "longitude": 139.63077
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8420544,139.6306628,3a,90y,143.18h,98.46t/data=!3m7!1e1!3m5!1smSq75r_us0suoDi6_OLSbA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.46127218930124%26panoid%3DmSq75r_us0suoDi6_OLSbA%26yaw%3D143.18167958120426!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "f6f51c26-38e4-42a9-98c5-d3d7b9f2280f",
+      "name": {
+        "en": "Time Parking UR Tajima No. 1",
+        "ja": "タイムパーキングUR田島第1"
+      },
+      "geo": {
+        "latitude": 35.83972,
+        "longitude": 139.62978
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8397887,139.6299942,3a,90y,250h,98.43t/data=!3m7!1e1!3m5!1saml7J2p0BWdiaqq7mzb45w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.431385880272728%26panoid%3Daml7J2p0BWdiaqq7mzb45w%26yaw%3D250.00281484066204!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "fc7eec2b-dc47-4df7-89fb-08a723cfcea5",
+      "name": {
+        "ja": "ダイアパレス武蔵浦和３",
+        "en": "Dia Palace Musashi-Urawa 3"
+      },
+      "geo": {
+        "latitude": 35.84139,
+        "longitude": 139.65105
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.84127,139.6510684,3a,90y,359.08h,100.67t/data=!3m7!1e1!3m5!1sHLNUasNnU0VFJpzEtBl-MA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.674217182771713%26panoid%3DHLNUasNnU0VFJpzEtBl-MA%26yaw%3D359.0758121189211!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "1fe11f5c-1d22-4ce2-9d55-b3f730380047",
+      "name": {
+        "en": "Akigase Bridge",
+        "ja": "秋ヶ瀬橋"
+      },
+      "geo": {
+        "latitude": 35.8371,
+        "longitude": 139.60987
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.837582,139.6110029,3a,48.7y,266.14h,93.89t/data=!3m7!1e1!3m5!1sNxUS0iW7cz9RNyNh3DMl1A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.8886268812139946%26panoid%3DNxUS0iW7cz9RNyNh3DMl1A%26yaw%3D266.13653745081774!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "6e465dcd-ea6b-45bd-9403-e7d5c4c16463",
+      "name": {
+        "en": "Saitama Shiei Musashiurawaminami Bicycle Parking",
+        "ja": "さいたま市営武蔵浦和南自転車駐車場"
+      },
+      "geo": {
+        "latitude": 35.84468,
+        "longitude": 139.64685
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8446692,139.6466953,3a,90y,106.54h,91.41t/data=!3m7!1e1!3m5!1szFWXHFEzc6s-q9Wb5oPnGA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.405263157894737%26panoid%3DzFWXHFEzc6s-q9Wb5oPnGA%26yaw%3D106.54209127129388!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ2022コトヤマ・小学館／「よふかしのうた」製作委員会"
+    }
+  ]
+}

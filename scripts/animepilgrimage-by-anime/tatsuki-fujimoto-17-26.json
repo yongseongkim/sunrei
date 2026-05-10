@@ -1,0 +1,91 @@
+{
+  "anime": {
+    "animeId": "jI8hvq8XTfmHUScW0hkW",
+    "slug": "tatsuki-fujimoto-17-26",
+    "title": {
+      "ja": "藤本タツキ 17-26",
+      "kr": "후지모토 타츠키 17-26",
+      "en": "Tatsuki Fujimoto 17-26"
+    },
+    "author": {
+      "ja": [
+        "藤本タツキ"
+      ],
+      "kr": [
+        "후지모토 타츠키"
+      ],
+      "en": [
+        "Tatsuki Fujimoto"
+      ]
+    },
+    "studio": {
+      "en": [
+        "ZEXCS",
+        "Lapin Track",
+        "GRAPH77",
+        "100studio",
+        "Studio Kafka",
+        "P.A.WORKS"
+      ],
+      "ja": [
+        "ZEXCS",
+        "ラパントラック",
+        "GRAPH77",
+        "100studio",
+        "スタジオカフカ",
+        "P.A.WORKS"
+      ]
+    }
+  },
+  "placeCount": 3,
+  "places": [
+    {
+      "placeId": "22457724-e0ea-45cc-a21c-d6d255da530e",
+      "name": {
+        "en": "Mitarai Clinics",
+        "ja": "御手洗病院"
+      },
+      "geo": {
+        "latitude": 32.79766,
+        "longitude": 131.9271
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-oita-saiki",
+      "streetViewUrl": "https://maps.app.goo.gl/Fzq7BXY7mHKVSzABA",
+      "copyright": "©藤本タツキ／集英社・「藤本タツキ 17-26」製作委員会"
+    },
+    {
+      "placeId": "5de5333d-bb4d-4e4c-bdc0-5257e9255d7d",
+      "name": {
+        "en": "Shibuya Crossing",
+        "ja": "渋谷区交差点"
+      },
+      "geo": {
+        "latitude": 35.65945,
+        "longitude": 139.70069
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/sNrwBCdb1kduJiKUA",
+      "copyright": "©藤本タツキ／集英社・「藤本タツキ 17-26」製作委員会"
+    },
+    {
+      "placeId": "61627dbe-2f9d-4381-b8d8-bceea5fa5740",
+      "name": {
+        "ja": "道の駅 かまえ",
+        "en": "Kamae Road Station"
+      },
+      "geo": {
+        "latitude": 32.80141,
+        "longitude": 131.92456
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-oita-saiki",
+      "streetViewUrl": "https://maps.app.goo.gl/NhhXLxqqsFmWw9AF8",
+      "copyright": "©藤本タツキ／集英社・「藤本タツキ 17-26」製作委員会"
+    }
+  ]
+}

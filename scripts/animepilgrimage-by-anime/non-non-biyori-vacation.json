@@ -1,0 +1,321 @@
+{
+  "anime": {
+    "animeId": "wJXvwG078NOgmusJqTU9",
+    "slug": "non-non-biyori-vacation",
+    "title": {
+      "ja": "劇場版 のんのんびより ばけーしょん",
+      "kr": "극장판 논논비요리: 베케이션",
+      "en": "Non Non Biyori Movie: Vacation"
+    },
+    "author": {
+      "kr": [
+        "앗토"
+      ],
+      "en": [
+        "Attoi"
+      ],
+      "ja": [
+        "あっと"
+      ]
+    },
+    "studio": {
+      "en": [
+        "SILVER LINK."
+      ]
+    }
+  },
+  "placeCount": 18,
+  "places": [
+    {
+      "placeId": "02a02a85-e8d8-4b15-b9e3-a64dfa8cb1bb",
+      "name": {
+        "en": "Yutaka Parlor"
+      },
+      "geo": {
+        "latitude": 24.32524,
+        "longitude": 124.07726
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.3252987,124.0774469,3a,90y,291.84h,101.13t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDcvebSSQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6Hb0wIS1_UFFJuu1earI-SsSMaAk8gSGPGxd5VZ5vAu9vxJtWkSgLR692hxIA1rq02wLDfNt4oo8rPqWvhQii6eNWC78NPvgbjKDHgOvS7nVp_mTNEt4bx0_T3iHHd8vtFb9koeB%3Dw900-h600-k-no-pi-11.12870792555539-ya295.83881204545105-ro0-fo100!7i10240!8i5120?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "04727ed7-3124-49ea-bd43-e6aacd8ffd7a",
+      "name": {
+        "ja": "新石垣空港 (南ぬ島 石垣空港)",
+        "kr": "파이누시마 이시가키 공항",
+        "en": "Ishigaki Airport"
+      },
+      "geo": {
+        "latitude": 24.39104,
+        "longitude": 124.24653
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-ishigaki",
+      "streetViewUrl": "https://www.google.com/maps/@24.3909618,124.2464813,3a,90y,257.07h,101.83t/data=!3m7!1e1!3m5!1svA4ucGvwIu4GklmekOGjQw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.832489162970276%26panoid%3DvA4ucGvwIu4GklmekOGjQw%26yaw%3D257.0717904011687!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "0b716581-c55f-4d39-bce1-c05f7b44fe88",
+      "name": {
+        "en": "Summa Shah (Western Settlement)",
+        "ja": "スンマシャー（西集落）"
+      },
+      "geo": {
+        "latitude": 24.33109,
+        "longitude": 124.08284
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.3310944,124.0828306,3a,90y,99.44h,98.57t/data=!3m7!1e1!3m5!1spBDfnTIUGLTnE3fZnXd9nA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.572497579630124%26panoid%3DpBDfnTIUGLTnE3fZnXd9nA%26yaw%3D99.43831600416925!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "0c6d1129-13cd-40a1-9ae3-a1a5a5bdcf2f",
+      "name": {
+        "kr": "나고미의 탑",
+        "ja": "なごみの塔",
+        "en": "Nagomi Tower"
+      },
+      "geo": {
+        "latitude": 24.33063,
+        "longitude": 124.0855
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.3306534,124.0854384,3a,64.3y,21.4h,109.22t/data=!3m7!1e1!3m5!1sovDcWVfFX5H6uPTOpQJmAQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-19.22380294154523%26panoid%3DovDcWVfFX5H6uPTOpQJmAQ%26yaw%3D21.399033782469605!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "31ab747f-5276-4db8-a425-58576a66e797",
+      "name": {
+        "ja": "カイジ浜 (皆治浜)",
+        "kr": "가이지 해변",
+        "en": "Kaiji Beach"
+      },
+      "geo": {
+        "latitude": 24.32025,
+        "longitude": 124.07686
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.3201888,124.0767886,3a,90y,241.55h,93.82t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDE1LiwEQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HY-Red77AWrRZjmY2B-YqotyvYyu8aCE0JggejTziIgHz3bsPoAyiH8jlH1NO94mXSrATeUrupaO5Xmzg6oJYIhcxbJu3NXZzrA91N5eiNAEq2La5PDew8dCPWNL627IysqdrBK%3Dw900-h600-k-no-pi-3.8205062754783228-ya347.54641797688237-ro0-fo100!7i10240!8i5120?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "39363f86-538b-4a35-8a62-acfb3b45060b",
+      "name": {
+        "en": "Yadoya Takenoko",
+        "ja": "やど家 たけのこ ＜竹富島＞"
+      },
+      "geo": {
+        "latitude": 24.33128,
+        "longitude": 124.08187
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.331231,124.0818562,3a,90y,355.28h,98.5t/data=!3m7!1e1!3m5!1srN--uFOsWfb3bE9I8aIn6A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.4966720385667%26panoid%3DrN--uFOsWfb3bE9I8aIn6A%26yaw%3D355.28196111713606!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "497da43a-a48d-42ad-9f3a-1b84a1179ba9",
+      "name": {
+        "kr": "곤도이 비치",
+        "en": "Kondoi Beach",
+        "ja": "コンドイ浜"
+      },
+      "geo": {
+        "latitude": 24.32533,
+        "longitude": 124.07705
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.3254917,124.0769362,3a,76.5y,200.35h,98.11t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICEt4Ho8gE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HaZMHmFB9CB_Xd22wigm5_M_EXLvwzmL5agpKpYKhoNbK2-O5RExbQuzNMmY-V0uDjpgjkBQ47EeSz3q2RxQ4-5RJjTlJe_Jqyuw6U8n23CGwy7d0oKHoQr10Po9jWv54hXrPdprw%3Dw900-h600-k-no-pi-8.108593000457205-ya200.34666384987133-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "4e39abf6-224d-48fe-abf2-ac81d0408aae",
+      "name": {
+        "en": "Chura Tower",
+        "ja": "ちゅらの塔"
+      },
+      "geo": {
+        "latitude": 24.32962,
+        "longitude": 124.08768
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.3296371,124.0877065,3a,90y,33.28h,103.51t/data=!3m7!1e1!3m5!1suILcaOuczNyCQEr_QDJybA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.513361156014298%26panoid%3DuILcaOuczNyCQEr_QDJybA%26yaw%3D33.27629238110223!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "51501eb7-bbef-4075-a133-f85a188b9132",
+      "name": {
+        "ja": "竹富島フェリーターミナル",
+        "en": "Taketomi Island Ferry Terminal"
+      },
+      "geo": {
+        "latitude": 24.33611,
+        "longitude": 124.09343
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.3362145,124.0933274,3a,90y,161.21h,96.41t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDk69T6Bg!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HbzNF5FVF1fr0BCpnExU6SnabZA54aP9PjvagCu7cz8tEAyTGEyA2QfXGYmxP1mW_jlWelopwoQbSZetG6Z37MruH2tuEVY6gaqs4Zvivynn0RujXseYUvJIjPC1HZ_OTlX43M%3Dw900-h600-k-no-pi-6.413594872365223-ya161.2117854782966-ro0-fo100!7i6080!8i3040?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "687b2f85-0db0-4037-849b-b5a7d44ac5c9",
+      "name": {
+        "en": "Kondoi Beach Bicycle lot",
+        "ja": "コンドイビーチ駐輪場"
+      },
+      "geo": {
+        "latitude": 24.32535,
+        "longitude": 124.0783
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.3253537,124.0782142,3a,49.6y,99.5h,98.33t/data=!3m7!1e1!3m5!1sHeO2Cykk0Wr9j05BUbfVTw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.330466901609071%26panoid%3DHeO2Cykk0Wr9j05BUbfVTw%26yaw%3D99.49733109463838!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "77c0ca10-7195-4bf3-b813-cedc3569497c",
+      "name": {
+        "ja": "カイジ浜 駐輪場・駐車場",
+        "en": "Kaijihama Bicycle parking lot and parking lot"
+      },
+      "geo": {
+        "latitude": 24.32021,
+        "longitude": 124.07703
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.3201694,124.0768661,3a,56.5y,66.36h,105.07t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDEz4_T3wE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HaaQgd15bmikCbSpUZJHVXkC9nLb40FCOl505_mzCA4pnmthGNFB438ymh42fc7I-3XuAzCxlYsTd44_rJc_QDmWVKBOiR-X9Q4g1gajp7PF5T9Prr8ECQipTqWPBHzC6nP9ZD9%3Dw900-h600-k-no-pi-15.073867468647123-ya183.36042973804012-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "79d95425-131b-4cad-bef2-839752ecb96c",
+      "name": {
+        "ja": "平和の鍾",
+        "en": "Bell of Peace"
+      },
+      "geo": {
+        "latitude": 24.33009,
+        "longitude": 124.08635
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.3300136,124.086458,3a,48.7y,322.78h,92.89t/data=!3m7!1e1!3m5!1sjAVKTruVRSgvMkvDG1-4ng!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.8905165870988867%26panoid%3DjAVKTruVRSgvMkvDG1-4ng%26yaw%3D322.7832120965973!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "86371308-922b-47f0-a192-a96150973f89",
+      "name": {
+        "ja": "竹富郵便局",
+        "en": "Taketomi Post Office"
+      },
+      "geo": {
+        "latitude": 24.32977,
+        "longitude": 124.08791
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.3297058,124.0880616,3a,41.5y,304.09h,92.14t/data=!3m7!1e1!3m5!1sH6jcUZuidCApvrnNLQJFWQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.1443256343357575%26panoid%3DH6jcUZuidCApvrnNLQJFWQ%26yaw%3D304.08575464010204!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "96b3568e-4a78-48e2-bf6d-8f4c6aac311d",
+      "name": {
+        "en": "HaaYa nagomi-cafe"
+      },
+      "geo": {
+        "latitude": 24.33092,
+        "longitude": 124.08545
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.3309098,124.0855081,3a,63.6y,334.24h,109.14t/data=!3m7!1e1!3m5!1sUiuxoMRW4AQ2cTQQ8S-szg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-19.136538867521367%26panoid%3DUiuxoMRW4AQ2cTQQ8S-szg%26yaw%3D334.23797673286754!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "aa3bbd03-756b-46a2-a8ae-75c9ec3f9938",
+      "name": {
+        "kr": "피나이사라 폭포",
+        "ja": "ピナイサーラの滝",
+        "en": "Pinaisara Falls"
+      },
+      "geo": {
+        "latitude": 24.38202,
+        "longitude": 123.82056
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.3824069,123.8207026,3a,90y,203.3h,107.61t/data=!3m7!1e1!3m5!1s0gJJMLSqqSbIWbi3qpgcVg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-17.608015865576334%26panoid%3D0gJJMLSqqSbIWbi3qpgcVg%26yaw%3D203.29576888669325!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "b49c4b59-5c1a-47f3-b9a4-9871bdb34809",
+      "name": {
+        "ja": "茶屋 たかにゃ",
+        "en": "Chaya Takanya"
+      },
+      "geo": {
+        "latitude": 24.32957,
+        "longitude": 124.08807
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/@24.3294441,124.0880094,3a,63.5y,29.84h,96.21t/data=!3m7!1e1!3m5!1s9rFEzWIOrtRGTZQzqn_Ohw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.213602879908336%26panoid%3D9rFEzWIOrtRGTZQzqn_Ohw%26yaw%3D29.843779397046276!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "c5c38806-d32b-4be5-96d4-e37d22452d77",
+      "name": {
+        "ja": "平久保崎灯台",
+        "en": "Hirakubozaki Lighthouse",
+        "kr": "히라쿠보 등대"
+      },
+      "geo": {
+        "latitude": 24.61007,
+        "longitude": 124.3161
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-ishigaki",
+      "streetViewUrl": "https://www.google.com/maps/@24.6100309,124.3161181,3a,90y,336.63h,93.66t/data=!3m7!1e1!3m5!1skecJfr0i60RJA4cdFpiOUw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.6637389152233766%26panoid%3DkecJfr0i60RJA4cdFpiOUw%26yaw%3D336.62852709906895!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    },
+    {
+      "placeId": "c8421e5f-9069-45e6-899a-51e8c51f0df8",
+      "name": {
+        "en": "HaaYa nagomi-cafe"
+      },
+      "geo": {
+        "latitude": 24.33101,
+        "longitude": 124.08542
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okinawa-taketomi",
+      "streetViewUrl": "https://www.google.com/maps/place/HaaYa+nagomi-cafe/@24.3310776,124.0854416,3a,90y,171.09h,72.57t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC4yp-Wcg!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAC9h4np4FzvyxtB-94UiMtwJ6pGNi6Q5Z0KvQnEIfM03lXTaWkGX_e64AOFTebe8fnuR18nfo1gO9_9SryQKEt9itBSdq9K_YycEk87jVTg-wiyfcHKyAY0uORI2ekohmGn8lwa4zgyK%3Dw900-h600-k-no-pi17.426870731329572-ya171.0911502638567-ro0-fo100!7i7744!8i3872!4m9!3m8!1s0x346075c9f1c28319:0xb9409ebcc933ae41!8m2!3d24.3309848!4d124.0854223!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1tjgmb4x?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2018 あっと・KADOKAWA刊/旭丘分校管理組合劇場"
+    }
+  ]
+}

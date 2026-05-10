@@ -1,0 +1,604 @@
+{
+  "anime": {
+    "animeId": "VIQzdK6tzpH3rImWUzQ6",
+    "slug": "my-dress-up-darling",
+    "title": {
+      "ja": "その着せ替え人形は恋をする",
+      "kr": "그 비스크 돌은 사랑을 한다",
+      "en": "My Dress-Up Darling"
+    },
+    "author": {
+      "ja": [
+        "福田晋一"
+      ],
+      "en": [
+        "Shinichi Fukuda"
+      ],
+      "kr": [
+        "후쿠다 신이치"
+      ]
+    },
+    "studio": {
+      "en": [
+        "CloverWorks"
+      ]
+    }
+  },
+  "placeCount": 35,
+  "places": [
+    {
+      "placeId": "00280558-fca8-4a1e-979d-185e7b15029e",
+      "name": {
+        "en": "Atago Shrine",
+        "ja": "愛宕神社"
+      },
+      "geo": {
+        "latitude": 35.95214,
+        "longitude": 139.69564
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9520893,139.6956688,3a,90y,2.81h,97.43t/data=!3m6!1e1!3m4!1sorxW6NlRtgw9PbXtvbBFAQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "17bab99a-b005-456c-ad2a-257bb4a261b1",
+      "name": {
+        "ja": "スケッチャーズ 渋谷",
+        "en": "Skechers Shibuya store"
+      },
+      "geo": {
+        "latitude": 35.6607,
+        "longitude": 139.69889
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.660733,139.6989423,3a,90y,197.26h,97.45t/data=!3m6!1e1!3m4!1s51Sv0bSBWe-yFbUxPUHNkA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "1acbc953-064a-4a17-bfd7-b211714782e8",
+      "name": {
+        "ja": "増田屋",
+        "en": "Masudaya"
+      },
+      "geo": {
+        "latitude": 35.84613,
+        "longitude": 139.8408
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-yashio",
+      "streetViewUrl": "https://www.google.com/maps/@35.8453742,139.8408554,3a,77.4y,174.4h,93.69t/data=!3m7!1e1!3m5!1s0gKkZt1B0hzuyIXOlZp37Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.693056355884025%26panoid%3D0gKkZt1B0hzuyIXOlZp37Q%26yaw%3D174.39781387931748!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "1bb638ac-9155-4d82-98ee-5a0b0304ea95",
+      "name": {
+        "en": "Kashiwanoha Dental Clinic",
+        "ja": "柏の葉デンタルクリニック"
+      },
+      "geo": {
+        "latitude": 35.89095,
+        "longitude": 139.94462
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-chiba-kashiwa",
+      "streetViewUrl": "https://www.google.com/maps/@35.8908551,139.9445912,3a,75y,32.75h,93.34t/data=!3m7!1e1!3m5!1sFHH4J9nUrY12_d02Y07_1w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.337003619925909%26panoid%3DFHH4J9nUrY12_d02Y07_1w%26yaw%3D32.7519432049818!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "1e5f02e5-df6b-483e-9f78-073f5b15cfb7",
+      "name": {
+        "ja": "バーガーキング 渋谷センター街店",
+        "en": "Burger King Shibuya Center Street"
+      },
+      "geo": {
+        "latitude": 35.66029,
+        "longitude": 139.69888
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.660308,139.6988385,3a,90y,85.87h,95.3t/data=!3m7!1e1!3m5!1splzBlwyMzpHH86fZyi9z6w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.300850930336168%26panoid%3DplzBlwyMzpHH86fZyi9z6w%26yaw%3D85.87404708211834!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "2b5ca389-8bb2-4c3d-8054-d06757b884bd",
+      "name": {
+        "kr": "선샤인시티",
+        "ja": "サンシャインシティ",
+        "en": "Sunshine City"
+      },
+      "geo": {
+        "latitude": 35.72925,
+        "longitude": 139.71936
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7292885,139.7193249,3a,90y,126.35h,93.71t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC4j5zSQQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAPRy3c9xOo9LX0V4veqvAAK9D5LXRzthgqh9uZ1lASvuAffhz0PtL6w4lpl3PtjuY8jvxTsqxln3lf_YlWZPf9xw456fdcsgZ_LjycHi75DJqZUyYRpVG6z4UvyufaUsYUjwN8478DWO%3Dw900-h600-k-no-pi-3.7052469906541603-ya181.23018737557067-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "36f93518-6ee1-420d-b2eb-59d6b8e3a1b8",
+      "name": {
+        "en": "Hair & Makeup Breeze",
+        "ja": "ヘアメイク ブリーズ"
+      },
+      "geo": {
+        "latitude": 35.9505,
+        "longitude": 139.69409
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9504524,139.6941481,3a,74.2y,333.4h,93.14t/data=!3m7!1e1!3m5!1seWmhtFU8lS92yyh6B8K_LQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.135671789063622%26panoid%3DeWmhtFU8lS92yyh6B8K_LQ%26yaw%3D333.39825090232483!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "394c3a64-81a8-47df-945f-e8f21fa098a9",
+      "name": {
+        "en": "Chichibu Shrine",
+        "ja": "秩父神社",
+        "kr": "지치부신사"
+      },
+      "geo": {
+        "latitude": 35.99662,
+        "longitude": 139.08412
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9965632,139.084188,3a,90y,343h,92.41t/data=!3m7!1e1!3m5!1sucUyIFfWr6-WxT37qWw2rw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.409056287508619%26panoid%3DucUyIFfWr6-WxT37qWw2rw%26yaw%3D342.99739000370903!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "3ead6cd5-6c4b-4c5a-91d9-993628af5b17",
+      "name": {
+        "en": "Swallowtail Ikebukuro",
+        "ja": "Swallowtail 池袋店"
+      },
+      "geo": {
+        "latitude": 35.73167,
+        "longitude": 139.71856
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7317775,139.7184375,3a,90y,95.07h,94.53t/data=!3m7!1e1!3m5!1sCX_XZ6cqKSHwLJN4obrhcQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.525565905873066%26panoid%3DCX_XZ6cqKSHwLJN4obrhcQ%26yaw%3D95.06574897836236!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "40ea65a4-e9d7-41f1-9de4-b0c0c8cfa935",
+      "name": {
+        "ja": "豊島区立中池袋公園",
+        "kr": "나카이케부쿠로 공원",
+        "en": "Naka-ikebukuro Park"
+      },
+      "geo": {
+        "latitude": 35.73152,
+        "longitude": 139.71524
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7315571,139.715301,3a,90y,263.91h,98.45t/data=!3m7!1e1!3m5!1sZltNfg18kow6ACw0kWpUbg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.453533692051295%26panoid%3DZltNfg18kow6ACw0kWpUbg%26yaw%3D263.91132361000547!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "42a3f08c-7d13-44ce-9aac-a05bdd7959ae",
+      "name": {
+        "en": "Seibu Realty Solutions",
+        "ja": "㈱西武不動産"
+      },
+      "geo": {
+        "latitude": 35.72696,
+        "longitude": 139.71077
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7269923,139.7107916,3a,90y,196.12h,98.18t/data=!3m7!1e1!3m5!1sTA__DV4zqaKJhHr-h8VKiQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.176662380992568%26panoid%3DTA__DV4zqaKJhHr-h8VKiQ%26yaw%3D196.11505794118648!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "42f2fb9a-78bc-4926-8158-9210b90cd5e4",
+      "name": {
+        "ja": "金太郎 岩槻店",
+        "en": "Kintaro Iwatsuki store"
+      },
+      "geo": {
+        "latitude": 35.95094,
+        "longitude": 139.69451
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9507767,139.6944199,3a,75y,17.7h,93.66t/data=!3m7!1e1!3m5!1seYUDEPtcREdcTBMnZWvKiQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.659232371247583%26panoid%3DeYUDEPtcREdcTBMnZWvKiQ%26yaw%3D17.704673896689513!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "505926bf-313b-4b6e-8d23-7bd703779e95",
+      "name": {
+        "en": "Mitsuinoripaku Minamiikebukuro 1-chome",
+        "ja": "三井のリパーク 南池袋１丁目 駐車場"
+      },
+      "geo": {
+        "latitude": 35.7242,
+        "longitude": 139.7101
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7241937,139.7101271,3a,90y,121.4h,100.62t/data=!3m6!1e1!3m4!1styOoPiWAzX1EaSqFQifz3Q!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "534da1d9-fb69-4461-ab42-fded3450e2eb",
+      "name": {
+        "kr": "이와쓰키 역",
+        "en": "Iwatsuki Station",
+        "ja": "岩槻駅"
+      },
+      "geo": {
+        "latitude": 35.95012,
+        "longitude": 139.69294
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9501408,139.6930011,3a,60.3y,212.15h,85.16t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDiyIaoZg!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAPRy3c9IR1Kf2AgSjvHf-0jy3iBnlDkOK12nW2jgi05Gv4QCA8Yq623zfVBKfP2Po7R7B1liipC5TqUcu8jr8QiG16Ou9X-nSscak_mjJm5RAbgntnM7bt0lio88rPNCO-nocXSZLeE%3Dw900-h600-k-no-pi4.839720414428172-ya332.00271525571384-ro0-fo100!7i6080!8i3040?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "6445dfad-42d2-401b-b8d6-9d8139a747c3",
+      "name": {
+        "ja": "ユザワヤ WACCA池袋店",
+        "en": "Yuzawaya WACCA Ikebukuro Store"
+      },
+      "geo": {
+        "latitude": 35.73152,
+        "longitude": 139.71458
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7315774,139.7146007,2a,90y,1.04h,91.88t/data=!3m7!1e1!3m5!1srh-25dhy19nzTp8LRQCBzA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.8809911770252654%26panoid%3Drh-25dhy19nzTp8LRQCBzA%26yaw%3D1.0370217817396754!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "65b04292-5fff-4f7f-a796-37c8ea8b0ef6",
+      "name": {
+        "ja": "メゾン クレープリー渋谷宇田川町店",
+        "en": "Maison Creperie"
+      },
+      "geo": {
+        "latitude": 35.66136,
+        "longitude": 139.69806
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.661331,139.6980311,3a,90y,29.43h,98.04t/data=!3m7!1e1!3m5!1seb8eP6-158-Gu1wvfgRPpg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.036784592976105%26panoid%3Deb8eP6-158-Gu1wvfgRPpg%26yaw%3D29.432637237928795!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "661a58cb-b57b-497b-8b62-c44eaeb62592",
+      "name": {
+        "ja": "渋谷センター街",
+        "kr": "시부야 센터가이",
+        "en": "Shibuya Center-Gai Street"
+      },
+      "geo": {
+        "latitude": 35.66002,
+        "longitude": 139.69986
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6600657,139.6997846,3a,90y,122.95h,90.66t/data=!3m7!1e1!3m5!1sclR9O2N4mXHl18tUPrg8-Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.6614446387495434%26panoid%3DclR9O2N4mXHl18tUPrg8-Q%26yaw%3D122.95417697890076!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "6916dbab-3256-4732-83a2-360403a447e8",
+      "name": {
+        "kr": "신미사토 역",
+        "ja": "新三郷駅",
+        "en": "Shim-Misato Station"
+      },
+      "geo": {
+        "latitude": 35.85876,
+        "longitude": 139.86902
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-misato",
+      "streetViewUrl": "https://www.google.com/maps/@35.858674,139.8688401,3a,77.4y,52.62h,98.51t/data=!3m6!1e1!3m4!1sHhXI4F2OcXTJfiSvmBNZuA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "70be8104-cc3f-4d13-ba29-1d22eb3de64a",
+      "name": {
+        "en": "Chakottoomiyaten",
+        "ja": "チャコット大宮店"
+      },
+      "geo": {
+        "latitude": 35.90462,
+        "longitude": 139.61995
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9046168,139.6199518,3a,75y,68.82h,95.55t/data=!3m7!1e1!3m5!1sL0YF5lGJ_3NX7haznxYXdA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.547733815078374%26panoid%3DL0YF5lGJ_3NX7haznxYXdA%26yaw%3D68.81807006651901!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "757e57f8-b18c-40d2-add9-8ed22322f9f4",
+      "name": {
+        "ja": "サンシャインシティ",
+        "en": "Sunshine City",
+        "kr": "선샤인시티"
+      },
+      "geo": {
+        "latitude": 35.72909,
+        "longitude": 139.71944
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7290416,139.7194856,3a,63.4y,125.51h,93.53t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC4j5zc5wE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAPRy3c8FKMk57qNq304LDEADWuc5EUF4wmqhIJAbvEtWfkfEaDdpp62jCgStJ3lYeKtbhRXMynotuwcGLgkDNbhzJyh0sCJd62ITTAPVgNzw4lcABU9m7pn5XKe-vXcYqqecRsqwXrux%3Dw900-h600-k-no-pi-3.52814114721194-ya179.26255332884526-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "77263f90-e3c1-40c4-81de-d6276dab0de7",
+      "name": {
+        "ja": "タイ料理 バンコクムーカタウ",
+        "en": "Bangkok Mookataw"
+      },
+      "geo": {
+        "latitude": 35.72505,
+        "longitude": 139.70969
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7250289,139.7097074,3a,90y,163.57h,97.76t/data=!3m7!1e1!3m5!1sF1--3bar6C9wN_TR9WzorA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.762182740284899%26panoid%3DF1--3bar6C9wN_TR9WzorA%26yaw%3D163.57303474859472!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "77f1be34-52c9-4d76-bc27-460570d347cc",
+      "name": {
+        "ja": "アニメイト 池袋本店",
+        "en": "animate Ikebukuro main store",
+        "kr": "애니메이트 이케부쿠로본점"
+      },
+      "geo": {
+        "latitude": 35.73111,
+        "longitude": 139.71552
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7311051,139.7153195,3a,90y,79.15h,112t/data=!3m7!1e1!3m5!1syoEsIs77pxu17puZooSixw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-21.995219114268025%26panoid%3DyoEsIs77pxu17puZooSixw%26yaw%3D79.15492037362866!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "7ee6c506-9db7-42cd-b968-1b41ec582afc",
+      "name": {
+        "en": "East Ikebukuro Central Park",
+        "ja": "豊島区立東池袋中央公園",
+        "kr": "히가시 이케부쿠로 중앙공원"
+      },
+      "geo": {
+        "latitude": 35.73026,
+        "longitude": 139.71875
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7301803,139.7186639,3a,75y,37.84h,93t/data=!3m7!1e1!3m5!1sEVwpx82LDbCZXdQdTcj5vw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.997611753075418%26panoid%3DEVwpx82LDbCZXdQdTcj5vw%26yaw%3D37.84014854904238!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "890061a4-a893-4504-ae30-96f5b64498ed",
+      "name": {
+        "kr": "이케부쿠로에키히가시구치(버스)",
+        "ja": "池袋駅東口(バス)",
+        "en": "Ikebukuro Eki Higashiguchi (Bus)"
+      },
+      "geo": {
+        "latitude": 35.73025,
+        "longitude": 139.71242
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7301232,139.7124237,3a,48.7y,359.46h,94t/data=!3m7!1e1!3m5!1stRxtiiqFiafQkQRVyJfFlA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.999416779560079%26panoid%3DtRxtiiqFiafQkQRVyJfFlA%26yaw%3D359.4644450562228!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "9a4ddb7a-ac48-4f75-8018-2134ebf5db2e",
+      "name": {
+        "kr": "타워 레코드 시부야점",
+        "ja": "タワーレコード 渋谷店",
+        "en": "Tower Records Shibuya"
+      },
+      "geo": {
+        "latitude": 35.66207,
+        "longitude": 139.70093
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6620751,139.700775,3a,75y,94.23h,96.13t/data=!3m7!1e1!3m5!1s-IKkFSrJeuk2f-bQi-8Q2g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D-IKkFSrJeuk2f-bQi-8Q2g%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D31.815828%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "a1ee9a68-4a88-4570-bcd9-b8a302815e0b",
+      "name": {
+        "ja": "八月の鯨",
+        "en": "Hachigatsu no Kujira"
+      },
+      "geo": {
+        "latitude": 35.66056,
+        "longitude": 139.69819
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6605498,139.6982616,3a,90y,266.92h,99.37t/data=!3m7!1e1!3m5!1sdtku-mM8leDvZIWC9nkdHg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.37429809076454%26panoid%3Ddtku-mM8leDvZIWC9nkdHg%26yaw%3D266.92386183228604!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "a49b5fae-4f09-45bf-9a8a-0b1c22ad7f63",
+      "name": {
+        "en": "Hotel 0 (Zero)",
+        "ja": "ホテルゼロ"
+      },
+      "geo": {
+        "latitude": 35.86168,
+        "longitude": 139.65584
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8616775,139.6558737,3a,90y,237.27h,95.85t/data=!3m7!1e1!3m5!1sHzxVC7HXi3JkYh7HWmRuJw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DHzxVC7HXi3JkYh7HWmRuJw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D47.322876%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "a771e0c6-b9b5-433f-832f-5542732bc937",
+      "name": {
+        "kr": "나카이케부쿠로 공원",
+        "ja": "豊島区立中池袋公園",
+        "en": "Naka-ikebukuro Park"
+      },
+      "geo": {
+        "latitude": 35.73142,
+        "longitude": 139.71496
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7315237,139.7149266,3a,70y,151.26h,92.47t/data=!3m6!1e1!3m4!1s34cGcLG010q8r5Jalv3bCQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "bef22ed1-7e56-41c7-80dd-9b5fe7afb20f",
+      "name": {
+        "ja": "浮浪雲",
+        "en": "Haguregumo"
+      },
+      "geo": {
+        "latitude": 35.72406,
+        "longitude": 139.71187
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/place/%E6%B5%AE%E6%B5%AA%E9%9B%B2/@35.7241022,139.7118422,3a,90y,181.21h,93.55t/data=!3m8!1e1!3m5!1skbId4KpmuyTVbiY5q9j6aQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DkbId4KpmuyTVbiY5q9j6aQ%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D204.21335%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!5s0x60188d69fe5582e1:0x7a0755879498f1df!4m14!1m7!3m6!1s0x60188d69ff1c8c15:0xdb19fbdc9183f672!2z5rWu5rWq6Zuy!8m2!3d35.7239705!4d139.7117694!16s%2Fg%2F11c1s0pdsj!3m5!1s0x60188d69ff1c8c15:0xdb19fbdc9183f672!8m2!3d35.7239705!4d139.7117694!16s%2Fg%2F11c1s0pdsj?entry=ttu",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "c6efd695-1697-4542-b658-9e835d345965",
+      "name": {
+        "kr": "선샤인시티",
+        "en": "Sunshine City",
+        "ja": "サンシャインシティ"
+      },
+      "geo": {
+        "latitude": 35.72923,
+        "longitude": 139.71922
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7292549,139.7188463,3a,75y,98.27h,91.09t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgIC7opHNHg!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAPRy3c90SUE6yDJjpqobvww-m0CFcfruNaTRqbY9Ywfm0ETkdhZZUI5p-ZuxCExbM-jxq1MKh6V5i3WywIQ9QKe_OOQ_DAxEyISykNb_GWvVdwDcLsvpATbxH3p-_rU7oce_xLzehyv2%3Dw900-h600-k-no-pi-1.0932669027667856-ya139.65720609389575-ro0-fo100!7i5760!8i2880?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "cba1bf8d-494d-4d81-9eed-010ed24d87ef",
+      "name": {
+        "en": "Koji Ningyo",
+        "ja": "(株)公司人形"
+      },
+      "geo": {
+        "latitude": 35.95493,
+        "longitude": 139.69586
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9549016,139.6958566,3a,90y,23.29h,109.12t/data=!3m7!1e1!3m5!1sAYV-MUptueesZxFZQYMg2g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-19.115656473970986%26panoid%3DAYV-MUptueesZxFZQYMg2g%26yaw%3D23.286643083801756!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "cfe866b4-3275-48e3-b6df-7920d1b3c55c",
+      "name": {
+        "ja": "アトリエカシュカシュ",
+        "en": "Atelier Cache Cache"
+      },
+      "geo": {
+        "latitude": 35.94853,
+        "longitude": 139.69662
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9486816,139.6963763,3a,42.3y,143.53h,92.7t/data=!3m7!1e1!3m5!1seKpkBvfbRzHK9UF8qIsQOw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.6976638105176676%26panoid%3DeKpkBvfbRzHK9UF8qIsQOw%26yaw%3D143.5301134624537!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "d52f981e-b861-496e-99b6-a09d568b9bea",
+      "name": {
+        "en": "Tenkaippin - Shibuya",
+        "ja": "天下一品 渋谷店"
+      },
+      "geo": {
+        "latitude": 35.66066,
+        "longitude": 139.69801
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6606465,139.6980428,3a,90y,351.85h,96.63t/data=!3m7!1e1!3m5!1s5eaKEbaICK8hn8yb9IOv9g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.631108218517312%26panoid%3D5eaKEbaICK8hn8yb9IOv9g%26yaw%3D351.849598114602!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "e7d9cbbc-d6a6-458d-a04b-909f726ca9e2",
+      "name": {
+        "en": "Hachiko Statue",
+        "kr": "하치코 동상",
+        "ja": "忠犬ハチ公像"
+      },
+      "geo": {
+        "latitude": 35.65906,
+        "longitude": 139.70066
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/place/Hachiko+Statue/@35.6590581,139.7005927,3a,90y,183.86h,93.66t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC4gvb1wAE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAPRy3c_sXzogeuUBbNnSYPWtmEUOU7Fw4C33lpce-sOENUWUpSc9Hscu5S_XBGHylt_dBY8m6MnRgmKQ65NErQLrqatAu8FkACpubIvHlV7PTmrQLU62OM9GYwb67q6mdfyuHgapPS2mbQ%3Dw900-h600-k-no-pi-3.664688782074137-ya183.85854749342712-ro0-fo100!7i6912!8i3456!4m9!3m8!1s0x60188b57efbd57c7:0x217e9d9fe306fba!8m2!3d35.6590579!4d139.7006293!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F122cnh70?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    },
+    {
+      "placeId": "f327e6c2-6710-4076-ae7c-02ffc6e72d12",
+      "name": {
+        "en": "Katase Higashihama Beach",
+        "ja": "片瀬東浜海水浴場"
+      },
+      "geo": {
+        "latitude": 35.30752,
+        "longitude": 139.48675
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3074102,139.4868788,2a,90y,213.96h,96.91t/data=!3m7!1e1!3m5!1sVbR3d97sqs7faesLXeQNOA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.907781833669134%26panoid%3DVbR3d97sqs7faesLXeQNOA%26yaw%3D213.95523717224225!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©福田晋一/SQUARE ENIX·「着せ恋」製作委員会"
+    }
+  ]
+}

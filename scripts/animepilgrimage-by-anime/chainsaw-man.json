@@ -1,0 +1,96 @@
+{
+  "anime": {
+    "animeId": "XVRPGfPRg2w1rhg6LbJq",
+    "slug": "chainsaw-man",
+    "title": {
+      "ja": "チェンソーマン",
+      "kr": "체인소 맨",
+      "en": "Chainsaw Man"
+    },
+    "author": {
+      "ja": [
+        "藤本タツキ"
+      ],
+      "en": [
+        "Tatsuki Fujimoto"
+      ],
+      "kr": [
+        "후지모토 타츠키"
+      ]
+    },
+    "studio": {
+      "en": [
+        "MAPPA"
+      ]
+    }
+  },
+  "placeCount": 4,
+  "places": [
+    {
+      "placeId": "2419c5ed-3275-4769-8fd4-70bb981b734c",
+      "name": {
+        "ja": "ピタットハウス 練馬駅前店",
+        "en": "Pitattohausu Nerimaekimaeten"
+      },
+      "geo": {
+        "latitude": 35.73759,
+        "longitude": 139.65498
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://maps.app.goo.gl/JKYVZCm8VLV6iSHz9",
+      "copyright": "©藤本タツキ／集英社・ＭＡＰＰＡ"
+    },
+    {
+      "placeId": "46092af4-fd68-4941-b494-3fadd8ae8a26",
+      "name": {
+        "en": "Koyamacho (Bus)",
+        "ja": "向山町 (バス)"
+      },
+      "geo": {
+        "latitude": 35.73863,
+        "longitude": 139.6422
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://maps.app.goo.gl/vwFvgpMUiBRrjRjB8",
+      "copyright": "©藤本タツキ／集英社・ＭＡＰＰＡ"
+    },
+    {
+      "placeId": "81c00482-93db-4575-8732-cc97a65f0a07",
+      "name": {
+        "ja": "練馬駅",
+        "kr": "네리마 역",
+        "en": "Nerima Station"
+      },
+      "geo": {
+        "latitude": 35.73767,
+        "longitude": 139.65458
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://maps.app.goo.gl/RZaGsCuZtN5FpRvr8",
+      "copyright": "©藤本タツキ／集英社・ＭＡＰＰＡ"
+    },
+    {
+      "placeId": "88154acd-ffeb-4e59-8d02-2eb4dbd9f1e0",
+      "name": {
+        "kr": "오미와 신사",
+        "ja": "大和国一宮 大神神社（三輪明神）",
+        "en": "Omiwa Jinja"
+      },
+      "geo": {
+        "latitude": 34.52879,
+        "longitude": 135.85323
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-nara-sakurai",
+      "streetViewUrl": "https://maps.app.goo.gl/wyEMpq4ekis6YaBA8",
+      "copyright": "©藤本タツキ／集英社・ＭＡＰＰＡ"
+    }
+  ]
+}

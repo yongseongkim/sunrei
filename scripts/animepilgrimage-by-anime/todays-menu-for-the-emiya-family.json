@@ -1,0 +1,429 @@
+{
+  "anime": {
+    "animeId": "rgtPM7QxaNfCUZQHchHW",
+    "slug": "todays-menu-for-the-emiya-family",
+    "title": {
+      "ja": "衛宮さんちの今日のごはん",
+      "kr": "에미야 씨네 오늘의 밥상",
+      "en": "Today's Menu for the Emiya Family"
+    },
+    "author": {
+      "en": [
+        "TAa",
+        "TYPE-MOON"
+      ]
+    },
+    "studio": {
+      "en": [
+        "ufotable"
+      ]
+    }
+  },
+  "placeCount": 25,
+  "places": [
+    {
+      "placeId": "10ecf88d-1206-4648-9ad7-305365f30ecf",
+      "name": {
+        "ja": "ペットショップ・ウメヤシキ",
+        "en": "Pet Shop Ume-Yashiki"
+      },
+      "geo": {
+        "latitude": 35.5681,
+        "longitude": 139.72412
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://maps.app.goo.gl/VvYC9vutEAgNEdy98",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "1c566bf8-998c-4c3c-aa73-9e3c62bff75a",
+      "name": {
+        "ja": "鶴渡公園",
+        "en": "Tsuruwatari Park"
+      },
+      "geo": {
+        "latitude": 35.56856,
+        "longitude": 139.72458
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://maps.app.goo.gl/zX5psDA3QswPmgPd8",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "3c370dae-b9c4-4e0b-99f6-ac788bf8205b",
+      "name": {
+        "ja": "千葉県立幕張海浜公園",
+        "en": "Makuhari Seaside Park",
+        "kr": "지바현립 마쿠하리 해변공원"
+      },
+      "geo": {
+        "latitude": 35.64495,
+        "longitude": 140.04393
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://maps.app.goo.gl/WVuTwf4YiAE9nCEu7",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "44623cd9-5840-46d4-a249-a671c61914ee",
+      "name": {
+        "en": "Asahi Sushi",
+        "ja": "旭鮨総本店 桜ヶ丘本館"
+      },
+      "geo": {
+        "latitude": 35.64733,
+        "longitude": 139.44693
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://maps.app.goo.gl/rgjAZJzPkYMp64NcA",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "47dee406-5520-4618-97c1-11cccd2f1aea",
+      "name": {
+        "en": "Hotel Sakuragaoka",
+        "ja": "ホテル桜ヶ丘"
+      },
+      "geo": {
+        "latitude": 35.64759,
+        "longitude": 139.4463
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://maps.app.goo.gl/HFukmNTunsstF83J6",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "49cde9ac-f867-4989-b8bb-702913bb139a",
+      "name": {
+        "ja": "ファミリーマート 高円寺純情商店街店",
+        "en": "FamilyMart Koenji Junjo Shopping Street"
+      },
+      "geo": {
+        "latitude": 35.70711,
+        "longitude": 139.64986
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://maps.app.goo.gl/ZGjhdq8w3nSPrZe36",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "59c480c0-1bd5-47d4-8063-0983664884ef",
+      "name": {
+        "ja": "生鮮市場アキダイ 中村橋店",
+        "en": "Akidai Nakamurabashi"
+      },
+      "geo": {
+        "latitude": 35.7384,
+        "longitude": 139.63758
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://maps.app.goo.gl/eLi8yQSvgYg4RN896",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "63c8f889-448b-434c-969e-823442148c61",
+      "name": {
+        "ja": "錦盛青果",
+        "en": "Nishikimori Fruits and Vegetables"
+      },
+      "geo": {
+        "latitude": 35.56815,
+        "longitude": 139.72405
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://maps.app.goo.gl/aYewsfs2wi2MzNJk6",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "751acb48-4290-4792-9104-605debb0fc51",
+      "name": {
+        "ja": "多摩十三仏霊場 1瑠璃光山 観蔵院",
+        "en": "Tamajusanbutsureijo 1 Rurikozan Kanzoin"
+      },
+      "geo": {
+        "latitude": 35.64745,
+        "longitude": 139.44562
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://maps.app.goo.gl/H6y3NDPAxexTHr6T9",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "7f7d5699-ee7a-4c49-881c-461f15fbbbf1",
+      "name": {
+        "en": "Santoku Shimoigusa",
+        "kr": "산토쿠 시모이구사점",
+        "ja": "三徳 下井草店"
+      },
+      "geo": {
+        "latitude": 35.72426,
+        "longitude": 139.62407
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://maps.app.goo.gl/aBo1EEvndHZdw9zd8",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "82b878a7-ddde-4b14-8dcb-bd0d7a724065",
+      "name": {
+        "en": "FamilyMart Ota Umeyashiki",
+        "ja": "ファミリーマート 大田梅屋敷店"
+      },
+      "geo": {
+        "latitude": 35.56684,
+        "longitude": 139.72945
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://maps.app.goo.gl/ZrDPBXKmFUATEhiJ6",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "872c3d38-18f2-42c3-9886-aeb5d786d5c8",
+      "name": {
+        "ja": "橋本屋",
+        "en": "Hashimoto-ya"
+      },
+      "geo": {
+        "latitude": 35.56708,
+        "longitude": 139.7289
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://maps.app.goo.gl/GirSmJWRxWzkLoHw9",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "92865607-92ab-4cef-91cd-fa8fde6591e9",
+      "name": {
+        "ja": "無印良品 自由が丘",
+        "en": "MUJI Jiyugaoka"
+      },
+      "geo": {
+        "latitude": 35.6066,
+        "longitude": 139.66893
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://maps.app.goo.gl/MksxgX7CYos1hgu98",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "9cf9a001-53a5-425f-93af-590e42e304b7",
+      "name": {
+        "ja": "浄水場前 (バス)",
+        "en": "Josuijo (Bus)"
+      },
+      "geo": {
+        "latitude": 35.64328,
+        "longitude": 139.44378
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://maps.app.goo.gl/EkqbtsAznsttTZLf7",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "a210a282-4d37-4bb4-a9cc-8abb883e104e",
+      "name": {
+        "en": "Tamajusanbutsureijo 1 Rurikozan Kanzoin",
+        "ja": "多摩十三仏霊場 1瑠璃光山 観蔵院"
+      },
+      "geo": {
+        "latitude": 35.64752,
+        "longitude": 139.44597
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://maps.app.goo.gl/XK52BGYDtfi82bAp9",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "b046f246-ae43-4dc7-a205-a2072be10e39",
+      "name": {
+        "ja": "オーケー文具",
+        "en": "OK Bungu"
+      },
+      "geo": {
+        "latitude": 35.56801,
+        "longitude": 139.72454
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://maps.app.goo.gl/HQZEwCmcPgDHej3z8",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "b5c4ed01-e366-45b6-85ae-94f41751cb56",
+      "name": {
+        "ja": "レ・アル かきぬま",
+        "en": "Lee Hallee Kakinuma"
+      },
+      "geo": {
+        "latitude": 35.5682,
+        "longitude": 139.72511
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://maps.app.goo.gl/uuHELR4TP6QUn1qj6",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "ba3447f0-f94d-4962-9858-2fb81aa6fa40",
+      "name": {
+        "en": "Fashion House Tiger",
+        "ja": "ファッションハウスタイガー"
+      },
+      "geo": {
+        "latitude": 35.7382,
+        "longitude": 139.63759
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://maps.app.goo.gl/KQ97QJ4KVKFymPUQ7",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "cbb7e401-5c3c-4fd3-9e06-62acd03a65d2",
+      "name": {
+        "en": "ufotable Cafe Osaka / Machiasobi CAFE Osaka",
+        "ja": "ufotable Cafe Osaka / マチ★アソビCAFE大阪"
+      },
+      "geo": {
+        "latitude": 34.661,
+        "longitude": 135.50749
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-osaka-osaka",
+      "streetViewUrl": "https://maps.app.goo.gl/nhJ5YcGq85Shc4mN7",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "d084526b-0d62-49ff-8469-943d41cc9b47",
+      "name": {
+        "ja": "浄水場前(バス)",
+        "en": "Josuijo (Bus)"
+      },
+      "geo": {
+        "latitude": 35.64322,
+        "longitude": 139.44398
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://maps.app.goo.gl/3EXdYXkstGmQZMuZ9",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "d857dcb3-ebcb-4aea-a7d5-f6cecdd2632b",
+      "name": {
+        "ja": "東京サマーランド",
+        "kr": "도쿄 썸머랜드",
+        "en": "Tokyo Summerland"
+      },
+      "geo": {
+        "latitude": 35.71737,
+        "longitude": 139.27716
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-akiruno",
+      "streetViewUrl": "https://maps.app.goo.gl/WJtQyAxNWownn6749",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "da237076-af5c-4596-b282-33af44aed1e0",
+      "name": {
+        "ja": "魚福",
+        "en": "Uofuku"
+      },
+      "geo": {
+        "latitude": 35.72321,
+        "longitude": 139.64405
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-nakano-city",
+      "streetViewUrl": "https://maps.app.goo.gl/jjCXgxGSKehTzTNa7",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "deefd435-f480-4988-9145-fd23b8ff6fec",
+      "name": {
+        "kr": "후지사와산 쇼조코지 (유교지)",
+        "ja": "清浄光寺（遊行寺）",
+        "en": "Yugyo-ji"
+      },
+      "geo": {
+        "latitude": 35.34819,
+        "longitude": 139.48831
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://maps.app.goo.gl/hJUE5Uui7Txb8KL37",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "e9e6393a-acc4-4374-ad32-494436065217",
+      "name": {
+        "en": "Jump Koenji Main Store",
+        "ja": "ジャンプ 高円寺本店"
+      },
+      "geo": {
+        "latitude": 35.70735,
+        "longitude": 139.64958
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://maps.app.goo.gl/d91zbwgdcmX1GjCu9",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    },
+    {
+      "placeId": "ff9d50ff-05c6-4d44-97e4-7601d75f8fb3",
+      "name": {
+        "ja": "鳥平ちゃん 高円寺店",
+        "en": "Torihira-chan Koenji"
+      },
+      "geo": {
+        "latitude": 35.70725,
+        "longitude": 139.64988
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://maps.app.goo.gl/pBsWqWeADPnHJNnG9",
+      "copyright": "©TAa・KADOKAWA・TYPE-MOON / 「衛宮さんちの今日のごはん」製作委員会"
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "anime": {
+    "animeId": "pwIwjuNHiexM3H66AQM9",
+    "slug": "shikimoris-not-just-a-cutie",
+    "title": {
+      "ja": "可愛いだけじゃない式守さん",
+      "kr": "귀엽기만 한 게 아닌 시키모리 양",
+      "en": "Shikimori's Not Just a Cutie"
+    },
+    "author": {
+      "ja": [
+        "真木蛍五"
+      ],
+      "en": [
+        "Keigo Maki"
+      ],
+      "kr": [
+        "마키 케이고"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "動画工房"
+      ],
+      "en": [
+        "Doga Kobo"
+      ]
+    }
+  },
+  "placeCount": 14,
+  "places": [
+    {
+      "placeId": "12cfa992-e8fa-4e07-85da-ca3b30b0b1e7",
+      "name": {
+        "id": "Sekitar Yoyogi Individual Guidance Academy Hino School",
+        "en": "Near the Yoyogi Individual Guidance Academy Hino School",
+        "es": "Cerca de la Yoyogi Individual Guidance Academy Hino School",
+        "ja": "代々木個別指導学院 日野校付近",
+        "de": "In der Nähe des Yoyogi Individual Guidance Academy Hino School"
+      },
+      "geo": {
+        "latitude": 35.6782059,
+        "longitude": 139.3929454
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hino",
+      "streetViewUrl": "https://www.google.com/maps/@35.6782059,139.3929454,3a,48.3y,5.88h,91.08t/data=!3m6!1e1!3m4!1sbg95-kZALRQ3GJIUUjDHtg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©︎真木蛍五・講談社／式守さん製作委員会"
+    },
+    {
+      "placeId": "14868a98-61d0-48b7-8069-0813e92cd69a",
+      "name": {
+        "ja": "日野駅",
+        "en": "Hino Station"
+      },
+      "geo": {
+        "latitude": 35.6794835,
+        "longitude": 139.3943502
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hino",
+      "streetViewUrl": "https://www.google.com/maps/@35.6794835,139.3943502,3a,75y,237.39h,98.85t/data=!3m7!1e1!3m5!1sFJAipLsJA0gXKZE_23BuqQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DFJAipLsJA0gXKZE_23BuqQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D50.43668%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©︎真木蛍五・講談社／式守さん製作委員会"
+    },
+    {
+      "placeId": "30e28c51-197e-4a66-94fa-b489c0c08e1e",
+      "name": {
+        "ja": "調布市民プール",
+        "en": "Chofu City Swimming Pool"
+      },
+      "geo": {
+        "latitude": 35.6406571,
+        "longitude": 139.5472597
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chofu",
+      "streetViewUrl": "https://www.google.com/maps/@35.6406571,139.5472597,3a,43.9y,156.38h,93.89t/data=!3m7!1e1!3m5!1s3I571kgWXyY5BCPsR1Eh9g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D3I571kgWXyY5BCPsR1Eh9g%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D329.5383%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©︎真木蛍五・講談社／式守さん製作委員会"
+    },
+    {
+      "placeId": "32deea5c-2920-4fd5-a555-284fb79aa910",
+      "name": {
+        "ja": "新奥多摩街道入口",
+        "en": "Shinokutamakaido Entrance"
+      },
+      "geo": {
+        "latitude": 35.6774928,
+        "longitude": 139.4027377
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hino",
+      "streetViewUrl": "https://www.google.com/maps/@35.6774928,139.4027377,3a,75y,136.66h,99.49t/data=!3m7!1e1!3m5!1szx6A09FVP3xPUJZW_brMbw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dzx6A09FVP3xPUJZW_brMbw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D345.62067%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©︎真木蛍五・講談社／式守さん製作委員会"
+    },
+    {
+      "placeId": "59a99b14-8f93-4420-95f0-fadaf7d5e12e",
+      "name": {
+        "en": "Tachikawa Station",
+        "ja": "立川駅"
+      },
+      "geo": {
+        "latitude": 35.698711,
+        "longitude": 139.4139358
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-tachikawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.698711,139.4139358,2a,75y,178.48h,96.9t/data=!3m6!1e1!3m4!1s2JnpJLtqGtLjDrEGnYvgTA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©︎真木蛍五・講談社／式守さん製作委員会"
+    },
+    {
+      "placeId": "a4d93519-5a1e-43ba-9039-e44bf8f8a619",
+      "name": {
+        "en": "Hayashiya clothing store",
+        "ja": "はやしや洋品店"
+      },
+      "geo": {
+        "latitude": 35.6781215,
+        "longitude": 139.4010356
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hino",
+      "streetViewUrl": "https://www.google.com/maps/@35.6781215,139.4010356,3a,75y,20.56h,97.69t/data=!3m7!1e1!3m5!1solIAGMhIaoaPagalp3RHvA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DolIAGMhIaoaPagalp3RHvA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D327.29337%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©︎真木蛍五・講談社／式守さん製作委員会"
+    },
+    {
+      "placeId": "b0f9d796-8925-45f9-bb0b-88f6d3f08281",
+      "name": {
+        "en": "Neno Shrine",
+        "ja": "子之神社"
+      },
+      "geo": {
+        "latitude": 35.6275438,
+        "longitude": 139.5339323
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.6275438,139.5339323,3a,75y,291.28h,99.64t/data=!3m8!1e1!3m6!1sAF1QipN4CYHXYdBUsTnNiv4Ape18hVLMMvJY9_HtBunK!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipN4CYHXYdBUsTnNiv4Ape18hVLMMvJY9_HtBunK%3Dw203-h100-k-no-pi-0-ya176.76035-ro0-fo100!7i2508!8i1254?entry=ttu",
+      "copyright": "©︎真木蛍五・講談社／式守さん製作委員会"
+    },
+    {
+      "placeId": "bd32f51d-c916-44d4-ab3a-2a399418e7ee",
+      "name": {
+        "en": "Kashinoki Pharmacy",
+        "ja": "かしのき薬局"
+      },
+      "geo": {
+        "latitude": 35.6774875,
+        "longitude": 139.3923487
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hino",
+      "streetViewUrl": "https://www.google.com/maps/@35.6774875,139.3923487,3a,75y,116.88h,92.48t/data=!3m6!1e1!3m4!1se_Tn6JaZ8eY_6PeCgrAzpA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©︎真木蛍五・講談社／式守さん製作委員会"
+    },
+    {
+      "placeId": "d2a75853-fab4-41ea-9495-22b2931a01e1",
+      "name": {
+        "en": "Chochin-tei",
+        "ja": "ちょうちん亭"
+      },
+      "geo": {
+        "latitude": 35.6176836,
+        "longitude": 139.5719195
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.6176836,139.5719195,3a,48.9y,63.83h,91.53t/data=!3m6!1e1!3m4!1sJF3dO0JHn2QoTpyce5ZwDA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©︎真木蛍五・講談社／式守さん製作委員会"
+    },
+    {
+      "placeId": "d3276cba-b8c7-46de-9713-030974fe4e1f",
+      "name": {
+        "en": "Higashi-Takane forest park",
+        "ja": "東高根森林公園"
+      },
+      "geo": {
+        "latitude": 35.6041603,
+        "longitude": 139.5855323
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.6041603,139.5855323,3a,75y,14.55h,100.13t/data=!3m8!1e1!3m6!1sAF1QipMq05n9bdKly6JUTGzLcrWb4i5T9wR4OEKyR5Sd!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMq05n9bdKly6JUTGzLcrWb4i5T9wR4OEKyR5Sd%3Dw203-h100-k-no-pi-0-ya140.92711-ro-0-fo100!7i10240!8i5120?entry=ttu",
+      "copyright": "©︎真木蛍五・講談社／式守さん製作委員会"
+    },
+    {
+      "placeId": "ea81e248-07da-4ce3-8f41-662b0fdf93e3",
+      "name": {
+        "en": "Suge Nakayoshi Park",
+        "ja": "菅なかよし公園"
+      },
+      "geo": {
+        "latitude": 35.630724,
+        "longitude": 139.540712
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.630724,139.540712,3a,90y,213.78h,100.7t/data=!3m6!1e1!3m4!1sb35OzSuJ7ANeUE-P-XLvxw!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©︎真木蛍五・講談社／式守さん製作委員会"
+    },
+    {
+      "placeId": "eadd94eb-5575-473c-ba4c-2de6c2e211cd",
+      "name": {
+        "en": "SAP Hino Bowl",
+        "ja": "SAP日野ボウル"
+      },
+      "geo": {
+        "latitude": 35.6762636,
+        "longitude": 139.3708327
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hachioji",
+      "streetViewUrl": "https://www.google.com/maps/@35.6762636,139.3708327,3a,75y,128.26h,108.77t/data=!3m6!1e1!3m4!1sI0SX1Jcu95hatJ3EXsF21A!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©︎真木蛍五・講談社／式守さん製作委員会"
+    },
+    {
+      "placeId": "f28a8d21-a353-40c7-a521-f3f6484b73d7",
+      "name": {
+        "es": "Cerca de la Tendaishuhosenji",
+        "id": "Sekitar Tendaishuhosenji",
+        "de": "In der Nähe des Tendaishuhosenji",
+        "ja": "法泉寺付近",
+        "en": "Near the Tendaishuhosenji"
+      },
+      "geo": {
+        "latitude": 35.6282081,
+        "longitude": 139.5350455
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.6282081,139.5350455,3a,75y,223.63h,102.15t/data=!3m7!1e1!3m5!1sQv82MAWdcBqjB81z9A3rOA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DQv82MAWdcBqjB81z9A3rOA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D274.88754%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©︎真木蛍五・講談社／式守さん製作委員会"
+    },
+    {
+      "placeId": "2ae2d5a9-26ec-4bac-a1df-15ed30d32207",
+      "name": {
+        "ja": "自立学習塾RED 日野教室",
+        "en": "Jiritsugakushujuku RED Hinokyoshitsu"
+      },
+      "geo": {
+        "latitude": 35.6775099,
+        "longitude": 139.4047041
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hino",
+      "streetViewUrl": "https://www.google.com/maps/@35.6775099,139.4047041,3a,90y,16.92h,104.42t/data=!3m6!1e1!3m4!1sYhiGJyNI6pCJ-iVv0pP4iQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©︎真木蛍五・講談社／式守さん製作委員会"
+    }
+  ]
+}

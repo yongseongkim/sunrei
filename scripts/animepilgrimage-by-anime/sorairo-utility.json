@@ -1,0 +1,281 @@
+{
+  "anime": {
+    "animeId": "wNW5AkQ0ZTo4EW3YGois",
+    "slug": "sorairo-utility",
+    "title": {
+      "ja": "空色ユーティリティ",
+      "kr": "하늘색 유틸리티",
+      "en": "Sorairo Utility"
+    },
+    "author": {
+      "en": [
+        "Yostar Pictures"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Yostar Pictures"
+      ]
+    }
+  },
+  "placeCount": 16,
+  "places": [
+    {
+      "placeId": "048f95bf-9b7e-49e8-8423-cc2c59f893bb",
+      "name": {
+        "ja": "七里ヶ浜",
+        "en": "Shichirigahama Beach"
+      },
+      "geo": {
+        "latitude": 35.30457,
+        "longitude": 139.5129
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-kanagawa-kamakura",
+      "streetViewUrl": "https://www.google.com/maps/@35.304564,139.5121527,3a,22.2y,109.83h,94.01t/data=!3m8!1e1!3m6!1sAF1QipNdaJVmvZylUePCyqrOKSjH7LIC1ebDxztQM12S!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipNdaJVmvZylUePCyqrOKSjH7LIC1ebDxztQM12S%3Dw900-h600-k-no-pi-4.011334627883244-ya230.834583704005-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "23d436be-b627-46c0-90e6-d66b13e2d921",
+      "name": {
+        "en": "Times GDO Chigasaki Golf Links No. 1",
+        "ja": "タイムズＧＤＯ茅ヶ崎ゴルフリンクス第１"
+      },
+      "geo": {
+        "latitude": 35.31922,
+        "longitude": 139.41999
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-kanagawa-chigasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.3192159,139.4195614,3a,48.7y,64.36h,97.09t/data=!3m7!1e1!3m5!1sXrdnU7qI0Zgx-D22ugTB2w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.088760876371211%26panoid%3DXrdnU7qI0Zgx-D22ugTB2w%26yaw%3D64.35991593157298!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "2b08ea5c-ea37-46bf-81ed-7f25b70815dd",
+      "name": {
+        "en": "ROOFTOP Sauna"
+      },
+      "geo": {
+        "latitude": 35.7035,
+        "longitude": 139.60086
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7033894,139.6011843,3a,90y,298.74h,107.33t/data=!3m7!1e1!3m5!1svFkvPBMSCJDcmM7OIm6CcA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-17.334649858275768%26panoid%3DvFkvPBMSCJDcmM7OIm6CcA%26yaw%3D298.7437518263184!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "32516bd3-699d-4005-add8-9d66cb15b653",
+      "name": {
+        "en": "FamilyMart Hoyacho 5-chome",
+        "ja": "ファミリーマート 保谷町五丁目店"
+      },
+      "geo": {
+        "latitude": 35.73168,
+        "longitude": 139.54795
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-nishitokyo",
+      "streetViewUrl": "https://www.google.com/maps/@35.7317015,139.5480318,3a,90y,285.35h,100.42t/data=!3m7!1e1!3m5!1sWN4ikze1Q2TIe--A8CHsxw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.422473551372278%26panoid%3DWN4ikze1Q2TIe--A8CHsxw%26yaw%3D285.34967199140624!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "41a60296-58df-4c96-8cc8-c4a1e50fc6dd",
+      "name": {
+        "ja": "保谷ゴルフセンター",
+        "en": "Hoya Golf Center"
+      },
+      "geo": {
+        "latitude": 35.73445,
+        "longitude": 139.54798
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-nishitokyo",
+      "streetViewUrl": "https://www.google.com/maps/@35.7344645,139.5481067,3a,44.6y,264.42h,87.47t/data=!3m7!1e1!3m5!1shvdm_IU-jH9D-aISvkjKlQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.5341295279930165%26panoid%3Dhvdm_IU-jH9D-aISvkjKlQ%26yaw%3D264.4183735512501!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "4ef28882-8a8f-476a-bb00-30947348e25d",
+      "name": {
+        "en": "Nishiura Kitamukai Jizoson",
+        "ja": "西浦北向地蔵尊"
+      },
+      "geo": {
+        "latitude": 35.73439,
+        "longitude": 139.54851
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-nishitokyo",
+      "streetViewUrl": "https://www.google.com/maps/@35.7344795,139.548583,3a,48.8y,206.06h,93.21t/data=!3m7!1e1!3m5!1sWniagqH7ZhGEbJV5ivuQAA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.2062544827460044%26panoid%3DWniagqH7ZhGEbJV5ivuQAA%26yaw%3D206.0642924569033!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "7272900f-62e9-4592-9dbc-94c76d5becfd",
+      "name": {
+        "en": "Chigasaki Golf Club",
+        "ja": "GDO茅ヶ崎ゴルフリンクス"
+      },
+      "geo": {
+        "latitude": 35.31964,
+        "longitude": 139.41977
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-kanagawa-chigasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.3197798,139.4197259,3a,90y,148.55h,94.96t/data=!3m7!1e1!3m5!1ssdzLPEEXX_ndz1rvCCfqgw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.964399823792448%26panoid%3DsdzLPEEXX_ndz1rvCCfqgw%26yaw%3D148.55114349431824!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "7ac5b266-05de-4742-8690-492d9d836309",
+      "name": {
+        "ja": "東宝調布スポーツパーク",
+        "en": "Toho Chofu Sports Park"
+      },
+      "geo": {
+        "latitude": 35.64894,
+        "longitude": 139.52717
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-chofu",
+      "streetViewUrl": "https://www.google.com/maps/@35.6490795,139.5272299,3a,74.7y,204.63h,99.44t/data=!3m7!1e1!3m5!1sCJIewlKXywo-qAtFBpmyDw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.435452015531695%26panoid%3DCJIewlKXywo-qAtFBpmyDw%26yaw%3D204.62652592738814!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "9eb22f17-9894-4c8e-a07f-fd935662d65e",
+      "name": {
+        "ja": "出張バーベキュー 五ろ引網 BBQ太郎",
+        "en": "Onsite barbecue Gorohiki Net BBQ Taro"
+      },
+      "geo": {
+        "latitude": 35.3182,
+        "longitude": 139.45376
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3182069,139.4531476,3a,36.4y,354.81h,97.39t/data=!3m8!1e1!3m6!1sAF1QipOOlCHWRzB0T7NVgR2PTllMQsPj00FgDXFrIOnP!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipOOlCHWRzB0T7NVgR2PTllMQsPj00FgDXFrIOnP%3Dw900-h600-k-no-pi-7.3870873746851515-ya164.81163048998405-ro0-fo100!7i3584!8i1792?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "a31a346c-be52-40b6-8718-3844c862c963",
+      "name": {
+        "en": "Pacific DRIVE-IN"
+      },
+      "geo": {
+        "latitude": 35.30437,
+        "longitude": 139.5135
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-kanagawa-kamakura",
+      "streetViewUrl": "https://www.google.com/maps/place/Pacific+DRIVE-IN/@35.3043501,139.5138162,3a,49.6y,340.47h,99.89t/data=!3m8!1e1!3m6!1sAF1QipOP9Cd82gUOPKoYDB5qrqEAZrv9zdzmRFvh-80-!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipOP9Cd82gUOPKoYDB5qrqEAZrv9zdzmRFvh-80-%3Dw900-h600-k-no-pi-9.892359876258354-ya132.4713705724921-ro0-fo100!7i8704!8i4352!4m9!3m8!1s0x60184f43f0c3df35:0x6174ee930e5a084a!8m2!3d35.3044277!4d139.5135768!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11dxr_85fq?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "ad959ba9-6909-43ca-9fa8-7597cd10ddf6",
+      "name": {
+        "en": "Tsujido Beach Resort",
+        "ja": "辻堂海水浴場"
+      },
+      "geo": {
+        "latitude": 35.31799,
+        "longitude": 139.4544
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3182069,139.4531476,3a,36.4y,140.01h,91.31t/data=!3m8!1e1!3m6!1sAF1QipOOlCHWRzB0T7NVgR2PTllMQsPj00FgDXFrIOnP!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipOOlCHWRzB0T7NVgR2PTllMQsPj00FgDXFrIOnP%3Dw900-h600-k-no-pi-1.3060753647783656-ya310.00833387432647-ro0-fo100!7i3584!8i1792?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "b3fa95d3-cefd-4470-a3ee-bdf2b3cf873f",
+      "name": {
+        "en": "Victoria Golf Setagaya Store",
+        "ja": "ヴィクトリアゴルフ 世田谷店"
+      },
+      "geo": {
+        "latitude": 35.66861,
+        "longitude": 139.61346
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.668533,139.6133722,3a,48.7y,48.75h,93.23t/data=!3m7!1e1!3m5!1s2zUt3DXhQDhlgmV6c79gnQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.232203963346123%26panoid%3D2zUt3DXhQDhlgmV6c79gnQ%26yaw%3D48.753872358405445!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "e0599fbb-22ea-4a20-84b4-1e96e741e3e7",
+      "name": {
+        "en": "Liquor Mountain Nishitokyotanashi",
+        "ja": "リカーマウンテン 西東京田無店",
+        "kr": "리커 마운틴 니시토우쿄우타나시"
+      },
+      "geo": {
+        "latitude": 35.7353,
+        "longitude": 139.52983
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-nishitokyo",
+      "streetViewUrl": "https://www.google.com/maps/@35.7353209,139.529724,3a,90y,105.06h,103.73t/data=!3m7!1e1!3m5!1soP9ULMbWYu-av1kPP0Opew!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.73300983584761%26panoid%3DoP9ULMbWYu-av1kPP0Opew%26yaw%3D105.06307347074922!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "eb4a08d3-d6f0-4ae5-ae5f-2d9ebb6b62c7",
+      "name": {
+        "ja": "西武柳沢駅",
+        "kr": "세이부야기사와 역",
+        "en": "Seibu-Yagisawa Station"
+      },
+      "geo": {
+        "latitude": 35.72852,
+        "longitude": 139.55299
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-nishitokyo",
+      "streetViewUrl": "https://www.google.com/maps/@35.7282528,139.5530737,3a,66.6y,352.02h,97.51t/data=!3m7!1e1!3m5!1sygezyIL81s6JQLTDxbWP0w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.509428760854362%26panoid%3DygezyIL81s6JQLTDxbWP0w%26yaw%3D352.0197833255529!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "ebc46830-29a3-4236-b935-854938a9805e",
+      "name": {
+        "en": "Yotsukaido Golf Club",
+        "ja": "四街道ゴルフ倶楽部"
+      },
+      "geo": {
+        "latitude": 35.65447,
+        "longitude": 140.18068
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-chiba-yotsukaido",
+      "streetViewUrl": "https://www.google.com/maps/place/Yotsukaido+Golf+Club/@35.6545505,140.1805844,3a,90y,30.02h,94.94t/data=!3m7!1e1!3m5!1sAF1QipNcW4eOBNzsXi2XVWRiG8R9y4hM3qEp-fHLjtpr!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipNcW4eOBNzsXi2XVWRiG8R9y4hM3qEp-fHLjtpr%3Dw900-h600-k-no-pi-4.944917052307105-ya78.57788444523953-ro0-fo100!7i12098!8i6049!4m9!3m8!1s0x602285624b253541:0x52a9a5fce56fdeb5!8m2!3d35.6544339!4d140.1807032!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1whdjgmz?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    },
+    {
+      "placeId": "fcc6650e-9fda-45e0-b571-9e83a20d5def",
+      "name": {
+        "kr": "브리스톨 힐 골프 클럽",
+        "en": "Bristol Hill Golf Club",
+        "ja": "ブリストルヒル ゴルフクラブ"
+      },
+      "geo": {
+        "latitude": 35.27736,
+        "longitude": 139.9001
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-chiba-futtsu",
+      "streetViewUrl": "https://www.google.com/maps/place/Bristol+Hill+Golf+Club/@35.2770384,139.8995064,3a,75y,176.4h,101.56t/data=!3m8!1e1!3m6!1sAF1QipONcrH96U4BuxLrteg6TpgMctpiqENWvNu_YEfB!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipONcrH96U4BuxLrteg6TpgMctpiqENWvNu_YEfB%3Dw900-h600-k-no-pi-11.557801542164185-ya186.39680386110396-ro0-fo100!7i6912!8i3456!4m9!3m8!1s0x60180ef48f611583:0xb74847a1768d11a0!8m2!3d35.2770384!4d139.8995064!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1tf7mj70?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©空色ユーティリティ"
+    }
+  ]
+}

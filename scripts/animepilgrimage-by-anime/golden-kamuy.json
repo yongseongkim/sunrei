@@ -1,0 +1,161 @@
+{
+  "anime": {
+    "animeId": "BAaQbAhyA2wlhHJvqvGi",
+    "slug": "golden-kamuy",
+    "title": {
+      "ja": "ゴールデンカムイ",
+      "kr": "골든 카무이",
+      "en": "Golden Kamuy"
+    },
+    "author": {
+      "ja": [
+        "野田サトル"
+      ],
+      "en": [
+        "Satoru Noda"
+      ],
+      "kr": [
+        "노다 사토루"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "ジェノスタジオ"
+      ],
+      "en": [
+        "Geno Studio"
+      ]
+    }
+  },
+  "placeCount": 8,
+  "places": [
+    {
+      "placeId": "143909f3-6765-4e79-916b-962a4a7d7c0c",
+      "name": {
+        "en": "Matsuhashi Family Residence",
+        "ja": "旧松橋家住宅"
+      },
+      "geo": {
+        "latitude": 43.0477376,
+        "longitude": 141.4991485
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://www.google.com/maps/@43.0477376,141.4991485,2a,90y,232.62h,99.75t/data=!3m7!1e1!3m5!1sdTxX5viTHmiBwpueHt8h4g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DdTxX5viTHmiBwpueHt8h4g%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D33.684715%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?entry=ttu",
+      "copyright": "©野田サトル／集英社・ゴールデンカムイ製作委員会"
+    },
+    {
+      "placeId": "7c03df8d-3cc0-4f0c-8e1b-0baab440ffb3",
+      "name": {
+        "en": "Urakawa Subprefactual Government Building",
+        "ja": "旧浦河支庁庁舎"
+      },
+      "geo": {
+        "latitude": 43.0480627,
+        "longitude": 141.4981552
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://www.google.com/maps/@43.0480627,141.4981552,2a,90y,131.59h,99.38t/data=!3m7!1e1!3m5!1sPlKYcHXf8OspF25sxuvaTg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DPlKYcHXf8OspF25sxuvaTg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D288.5891%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?entry=ttu",
+      "copyright": "©野田サトル／集英社・ゴールデンカムイ製作委員会"
+    },
+    {
+      "placeId": "83fc72f8-6353-4d06-8659-c2913b63ba16",
+      "name": {
+        "ja": "旧青山家漁家住宅",
+        "en": "Aoyama Family Structures for Herring Fishing"
+      },
+      "geo": {
+        "latitude": 43.0468855,
+        "longitude": 141.50052
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://www.google.com/maps/@43.0468855,141.50052,2a,75y,14.05h,104.21t/data=!3m6!1e1!3m4!1sBRZ3Ay4MQa4H-5wNXTujEg!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©野田サトル／集英社・ゴールデンカムイ製作委員会"
+    },
+    {
+      "placeId": "8bd9b04b-a7e5-4775-9650-0c00dd07627d",
+      "name": {
+        "en": "Takei Sake Brewery",
+        "ja": "旧武井商店酒造部"
+      },
+      "geo": {
+        "latitude": 43.0472259,
+        "longitude": 141.4985729
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://www.google.com/maps/@43.0472259,141.4985729,2a,90y,273.45h,104.6t/data=!3m6!1e1!3m4!1sQCaAD5b0KZzCm272OwXN_g!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©野田サトル／集英社・ゴールデンカムイ製作委員会"
+    },
+    {
+      "placeId": "9dedd207-2e2d-49ed-8bed-069137af962f",
+      "name": {
+        "ja": "旧山本理髪店",
+        "en": "Yamamoto Barbar Shop"
+      },
+      "geo": {
+        "latitude": 43.0467261,
+        "longitude": 141.4993474
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://www.google.com/maps/@43.0467261,141.4993474,2a,90y,37.17h,103.56t/data=!3m6!1e1!3m4!1sw5iUTL7hyMLIAuvSycTtFw!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©野田サトル／集英社・ゴールデンカムイ製作委員会"
+    },
+    {
+      "placeId": "9dfc0468-2ca3-490e-878b-613a91403c4c",
+      "name": {
+        "ja": "旧三〼河本そば屋",
+        "en": "Sanmasu Kawamoto Soba Noodle Shop"
+      },
+      "geo": {
+        "latitude": 43.0475355,
+        "longitude": 141.4982322
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://www.google.com/maps/@43.0475355,141.4982322,2a,90y,251.17h,105.48t/data=!3m7!1e1!3m5!1sKm-6qfOlUWkJBHgxg38OMw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DKm-6qfOlUWkJBHgxg38OMw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D354.65228%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?entry=ttu",
+      "copyright": "©野田サトル／集英社・ゴールデンカムイ製作委員会"
+    },
+    {
+      "placeId": "a4f9c57e-09ca-4f6b-91db-0b06604bdc0f",
+      "name": {
+        "en": "Kondo Clinic",
+        "ja": "旧近藤医院"
+      },
+      "geo": {
+        "latitude": 43.0471449,
+        "longitude": 141.498663
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://www.google.com/maps/@43.0471449,141.498663,2a,90y,231.15h,97.34t/data=!3m7!1e1!3m5!1sxuK2fHQL0PanOlfNkBIVnA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DxuK2fHQL0PanOlfNkBIVnA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D11.128364%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?entry=ttu",
+      "copyright": "©野田サトル／集英社・ゴールデンカムイ製作委員会"
+    },
+    {
+      "placeId": "d1fd73da-cb40-46f6-a711-61a20bea77cc",
+      "name": {
+        "en": "Farmer-soldier’s House in Osamunai",
+        "ja": "旧納内屯田兵屋"
+      },
+      "geo": {
+        "latitude": 43.044189,
+        "longitude": 141.498933
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://www.google.com/maps/@43.044189,141.498933,2a,90y,4.68h,99.32t,359.55r/data=!3m6!1e1!3m4!1suxIEkLMFwNOtnxSQAj5tsA!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©野田サトル／集英社・ゴールデンカムイ製作委員会"
+    }
+  ]
+}

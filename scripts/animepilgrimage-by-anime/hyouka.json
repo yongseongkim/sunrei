@@ -1,0 +1,873 @@
+{
+  "anime": {
+    "animeId": "EOXrs8aYwsclgT0TcA91",
+    "slug": "hyouka",
+    "title": {
+      "ja": "氷菓",
+      "kr": "빙과",
+      "en": "Hyouka"
+    },
+    "author": {
+      "ja": [
+        "米澤穂信"
+      ],
+      "en": [
+        "Honobu Yonezawa"
+      ],
+      "kr": [
+        "요네자와 호노부"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Kyoto Animation"
+      ]
+    }
+  },
+  "placeCount": 52,
+  "places": [
+    {
+      "placeId": "236f4d13-05ea-41a6-9df6-b2e94566ed11",
+      "name": {
+        "ja": "二四三屋 鍛冶橋店",
+        "en": "Fujimiya"
+      },
+      "geo": {
+        "latitude": 36.14312,
+        "longitude": 137.25759
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1430428,137.2577168,3a,60.4y,298.8h,90.05t/data=!3m7!1e1!3m5!1s_yELkNKLgQb7siWNTX8hXA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.05285969309595373%26panoid%3D_yELkNKLgQb7siWNTX8hXA%26yaw%3D298.80329733249664!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "28e1b93e-707d-40ee-aa53-50f8df35fa82",
+      "name": {
+        "ja": "斐太高校前(バス)",
+        "en": "Hida High School (Bus)"
+      },
+      "geo": {
+        "latitude": 36.1566,
+        "longitude": 137.2569
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1565468,137.2568727,3a,90y,226.05h,98.05t/data=!3m7!1e1!3m5!1sTKfpzfo7QGUJd_gjxJPwaA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.045758412806094%26panoid%3DTKfpzfo7QGUJd_gjxJPwaA%26yaw%3D226.05416117335463!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "3e27997d-0e33-412c-9cb8-8863e39dea6d",
+      "name": {
+        "ja": "飛驒一宮水無神社",
+        "kr": "미나시 신사",
+        "en": "Minashi Shrine"
+      },
+      "geo": {
+        "latitude": 36.08601,
+        "longitude": 137.25075
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.0860894,137.2507964,3a,90y,208.65h,93.1t/data=!3m7!1e1!3m5!1snjYgcfMCRwvAdiIojzqfJA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.0961243705641266%26panoid%3DnjYgcfMCRwvAdiIojzqfJA%26yaw%3D208.65362710522356!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "4dec105e-da5d-47fb-8312-1e71924f9d2a",
+      "name": {
+        "en": "Shioya Liquor Store",
+        "ja": "塩谷酒店"
+      },
+      "geo": {
+        "latitude": 36.1397,
+        "longitude": 137.26608
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1395905,137.2661677,3a,90y,333.64h,102.43t/data=!3m7!1e1!3m5!1swOhehkpCNSpty_r4orJfrA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.434408824175023%26panoid%3DwOhehkpCNSpty_r4orJfrA%26yaw%3D333.64420826133573!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "50b104a5-2c47-4ca1-aacb-22a96e2e6c6d",
+      "name": {
+        "en": "Hidasoja",
+        "ja": "飛騨総社"
+      },
+      "geo": {
+        "latitude": 36.14833,
+        "longitude": 137.25517
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1483618,137.2549219,3a,75y,107.22h,101.15t/data=!3m7!1e1!3m5!1sZHRPiUTGxZousiyUDCBc-g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.150596259867228%26panoid%3DZHRPiUTGxZousiyUDCBc-g%26yaw%3D107.22484789233233!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "53eba7e9-5621-4afe-8a24-7be6ccf76f7c",
+      "name": {
+        "en": "Hie Shrine",
+        "ja": "飛騨山王宮 日枝神社",
+        "kr": "히에 신사"
+      },
+      "geo": {
+        "latitude": 36.13369,
+        "longitude": 137.25913
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/place/Hie+Shrine/@36.1337197,137.259106,3a,90y,141.17h,99.58t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgIDcgLPenAE!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAPRy3c-counY_ojSawxZdNZzGBrQxXz2vUqj-8qLq9DPWjzq0Ux-8WMCafqOQXtw0s3im5J2C0fNqB64Lcyld07WAB7yrZ2UTwmt80seks-gsDIE3OUqxYAp-0zmVpPJIqpoeE5e93_9Aw%3Dw900-h600-k-no-pi-9.584126507426063-ya8.188287301314176-ro0-fo100!7i7776!8i3888!4m9!3m8!1s0x6002bae7b3383249:0x3480a6cf64c8ae6c!8m2!3d36.1331788!4d137.2613871!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F122qmhmv?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "550fce57-33bf-443c-9fc0-62bce9010abe",
+      "name": {
+        "ja": "飛驒一宮水無神社",
+        "en": "Minashi Shrine",
+        "kr": "미나시 신사"
+      },
+      "geo": {
+        "latitude": 36.08541,
+        "longitude": 137.25175
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.085324,137.2518631,3a,90y,2.93h,93.46t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICE5d2OvgE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAPRy3c_nS2qpUJs8n1TziNg8GpQnQT_ujhPiUpafXMisMRqqVHTHXISlcbzqApDRROZ9lpyydB8Kmf2awrsFaXM5WWsN5fJtGNPEtOyF-6KmGJUNo7kInRufHy6qE6wR4t05paPoFhh2kw%3Dw900-h600-k-no-pi-3.4602394189519856-ya2.9293387111893257-ro0-fo100!7i6080!8i3040?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "5b32b624-f0b8-4c22-a336-357c62672e2e",
+      "name": {
+        "ja": "ｙａｋｉｎｉｋｕ楓",
+        "en": "Yakiniku Kaede"
+      },
+      "geo": {
+        "latitude": 36.14221,
+        "longitude": 137.25782
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1422698,137.257868,3a,90y,212.02h,95.28t/data=!3m7!1e1!3m5!1sNdhsESOguv34okSk5IQQhw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.281410384332972%26panoid%3DNdhsESOguv34okSk5IQQhw%26yaw%3D212.0171905123406!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "604e48c9-03ac-44c9-90e8-bf06dc81f291",
+      "name": {
+        "ja": "二四三屋 鍛冶橋店",
+        "en": "Fujimiya"
+      },
+      "geo": {
+        "latitude": 36.14308,
+        "longitude": 137.25765
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1430089,137.2576234,3a,90y,15.09h,93.75t/data=!3m7!1e1!3m5!1sTXUM0ekRAqN5HbI1epTuxA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.7488108874736668%26panoid%3DTXUM0ekRAqN5HbI1epTuxA%26yaw%3D15.093285021145348!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "633e4dba-15fc-46da-894f-9e120adce8f9",
+      "name": {
+        "en": "Ashinaga Statue",
+        "kr": "아시나가 동상",
+        "ja": "手長足長像"
+      },
+      "geo": {
+        "latitude": 36.14308,
+        "longitude": 137.25795
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1421243,137.2583116,3a,41.7y,344.57h,94.35t/data=!3m7!1e1!3m5!1sAtZpUUfIgHJ6PKHTxkCWVA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.345779107183816%26panoid%3DAtZpUUfIgHJ6PKHTxkCWVA%26yaw%3D344.56724331282453!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "6415730e-69c6-4fca-8292-678b19d6294f",
+      "name": {
+        "en": "Akiha Shrine",
+        "ja": "秋葉神社(行神台組)"
+      },
+      "geo": {
+        "latitude": 36.14494,
+        "longitude": 137.25788
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1449187,137.257926,3a,90y,311.76h,88.92t/data=!3m7!1e1!3m5!1sqfAtwJ-0mVOex0dXqhPO3Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.076765332958061%26panoid%3DqfAtwJ-0mVOex0dXqhPO3Q%26yaw%3D311.7621767629135!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "70c7bf9c-1151-421a-b4f7-7d5ed6368461",
+      "name": {
+        "en": "Chidori Bridge",
+        "ja": "千鳥橋"
+      },
+      "geo": {
+        "latitude": 36.14614,
+        "longitude": 137.25776
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1460809,137.2577793,3a,90y,84.45h,95.67t/data=!3m7!1e1!3m5!1sP5K6iTtppdkcm542wekLTA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.665045242789489%26panoid%3DP5K6iTtppdkcm542wekLTA%26yaw%3D84.45006322664128!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "768be9bb-278a-45ad-b8aa-5a3a2d376372",
+      "name": {
+        "ja": "諏訪神社",
+        "en": "Suwa Shrine"
+      },
+      "geo": {
+        "latitude": 36.13337,
+        "longitude": 137.27675
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1326727,137.2764735,3a,90y,155.77h,108.97t/data=!3m7!1e1!3m5!1s6302Ibu1e8dpjyclump49g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.968251848807753%26panoid%3D6302Ibu1e8dpjyclump49g%26yaw%3D155.76693641721417!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "76bb8a7b-1643-47a4-95c9-5809ecf2e9fe",
+      "name": {
+        "ja": "秋葉神社 本町4丁目",
+        "en": "Akiba Shrine Honmachi 4-chome"
+      },
+      "geo": {
+        "latitude": 36.14542,
+        "longitude": 137.25741
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1454421,137.257861,3a,48.7y,257.53h,88.38t/data=!3m7!1e1!3m5!1sWituy5PR7O3RL91EOj6dhw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.6169485450640764%26panoid%3DWituy5PR7O3RL91EOj6dhw%26yaw%3D257.5268407032722!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "7799f9ef-a307-45ff-9186-98b12ad27e8f",
+      "name": {
+        "en": "Ararate",
+        "ja": "あららて"
+      },
+      "geo": {
+        "latitude": 36.14227,
+        "longitude": 137.2579
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1421587,137.2579124,3a,90y,24.57h,93.1t/data=!3m7!1e1!3m5!1sIDs3wdmj5_7R2Xsbv15OQw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.0998332410922274%26panoid%3DIDs3wdmj5_7R2Xsbv15OQw%26yaw%3D24.571427723707647!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "77eba31b-3e84-4dca-86b9-5560ca71f2ba",
+      "name": {
+        "ja": "鷹の湯第3駐車場",
+        "en": "Takanoyudai 3 Parking Lot"
+      },
+      "geo": {
+        "latitude": 36.1412,
+        "longitude": 137.26541
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1411902,137.2654278,3a,90y,57.06h,93.43t/data=!3m7!1e1!3m5!1ss5Lggr2c5IDfuGIl7t5x2g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.434262607100507%26panoid%3Ds5Lggr2c5IDfuGIl7t5x2g%26yaw%3D57.05624921935467!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "792998a7-afd2-4493-a6de-65b0e78b2cd8",
+      "name": {
+        "ja": "スギ薬局 高山本町店",
+        "kr": "스기 약국 다카야마 혼마치점",
+        "en": "Sugi Pharmacy Takayama Honmachi Store"
+      },
+      "geo": {
+        "latitude": 36.14297,
+        "longitude": 137.25767
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1430089,137.2576234,3a,90y,134.76h,93.02t/data=!3m7!1e1!3m5!1sTXUM0ekRAqN5HbI1epTuxA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.0229736824175717%26panoid%3DTXUM0ekRAqN5HbI1epTuxA%26yaw%3D134.7626830832105!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "79a5b63a-2a44-4485-9262-3ba4694148e6",
+      "name": {
+        "ja": "千鳥橋",
+        "en": "Chidori Bridge"
+      },
+      "geo": {
+        "latitude": 36.14627,
+        "longitude": 137.25779
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1462399,137.257606,3a,73.2y,89.04h,95.94t/data=!3m7!1e1!3m5!1shNTviuIMqviAKiOGQnAoxg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.938506052727632%26panoid%3DhNTviuIMqviAKiOGQnAoxg%26yaw%3D89.0385782212516!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "7b721488-0565-49b0-9c5e-51fd34705eff",
+      "name": {
+        "en": "Bar Thumbs Up!"
+      },
+      "geo": {
+        "latitude": 36.14595,
+        "longitude": 137.25672
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1459376,137.2566731,3a,90y,73.31h,91.67t/data=!3m7!1e1!3m5!1sW1DT7wdpnJPL-pzuXuq1qQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DW1DT7wdpnJPL-pzuXuq1qQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D289.9843%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "7fcba18a-1c10-4676-bd8b-1c6fd55cff14",
+      "name": {
+        "ja": "臥龍桜",
+        "en": "Garyuzakura"
+      },
+      "geo": {
+        "latitude": 36.08895,
+        "longitude": 137.24786
+      },
+      "ep": 22,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.0885741,137.2475351,3a,75y,28.66h,103.93t/data=!3m6!1e1!3m4!1sOYZDkqq0uL4dN_R3p997Vw!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "83ac9ab7-252a-4c30-8427-f118c574f6a6",
+      "name": {
+        "ja": "飛騨高山宮川朝市",
+        "en": "Miyagawa Morning Markets",
+        "kr": "미야가와 아침시장"
+      },
+      "geo": {
+        "latitude": 36.14392,
+        "longitude": 137.25805
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.144149,137.258024,3a,75y,176.3h,96.39t/data=!3m7!1e1!3m5!1szGO9lCwMSKwm3New4z0BpQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.392529689889798%26panoid%3DzGO9lCwMSKwm3New4z0BpQ%26yaw%3D176.30230149139345!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "8b594980-1d36-4fb3-876a-770b4d96c95d",
+      "name": {
+        "ja": "高山厚生病院前(バス)",
+        "en": "Takayama Kosei Hospital (Bus)"
+      },
+      "geo": {
+        "latitude": 36.13423,
+        "longitude": 137.28752
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1341973,137.2873997,3a,90y,80.74h,99.06t/data=!3m7!1e1!3m5!1s1MVQ3Xt2fPkwAEwYKEz7cw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.057348347196225%26panoid%3D1MVQ3Xt2fPkwAEwYKEz7cw%26yaw%3D80.73782033321929!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "8cae7376-9d43-47e8-b30c-8122a2859d02",
+      "name": {
+        "ja": "寿々や",
+        "en": "Suzuya Restaurant"
+      },
+      "geo": {
+        "latitude": 36.14239,
+        "longitude": 137.25563
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1422685,137.2556543,3a,75y,357.03h,97.56t/data=!3m7!1e1!3m5!1sY_S1Kqrx7way2xsolcpELw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.557281744361745%26panoid%3DY_S1Kqrx7way2xsolcpELw%26yaw%3D357.0268600835801!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "8cb63f25-ea28-4a6f-bd42-f60aff1ce152",
+      "name": {
+        "ja": "アルプス街道平湯",
+        "kr": "알프스가이도 히라유(상점&식당)",
+        "en": "Alps Kaido Hirayu"
+      },
+      "geo": {
+        "latitude": 36.19095,
+        "longitude": 137.55154
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1907764,137.5513709,3a,38.7y,41.8h,96.09t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID0y5jWpgE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAPRy3c-t77VHtea21mbrvK54tqRz24baAzWUAyj8LfN8_wQVl6pcJcRgbKp0MPjB6fPSEiLBu63SlSL1c9rOD3-_Mw-l_qTtLLdUwQ-wsDj-ObrvV9w8PRN5ZdGqqNciNsdKPgpc6-xROg%3Dw900-h600-k-no-pi-6.092072723363316-ya342.80086989940577-ro0-fo100!7i9728!8i4076?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "9256c1db-33a1-4d88-b567-ac76c61ac54a",
+      "name": {
+        "en": "Tronchi",
+        "ja": "トロンチ"
+      },
+      "geo": {
+        "latitude": 35.44404,
+        "longitude": 136.77471
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.443993,136.774647,3a,90y,61.91h,99.52t/data=!3m7!1e1!3m5!1svgMGrY9ZizqomBtO6SM0sw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.519826751149452%26panoid%3DvgMGrY9ZizqomBtO6SM0sw%26yaw%3D61.90603391243196!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "92f48739-8e8d-4a16-a61d-59acb7c3f706",
+      "name": {
+        "kr": "미나시 신사",
+        "en": "Minashi Shrine",
+        "ja": "飛驒一宮水無神社"
+      },
+      "geo": {
+        "latitude": 36.08621,
+        "longitude": 137.25179
+      },
+      "ep": 22,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.0863628,137.251592,3a,48.8y,133.76h,97.14t/data=!3m7!1e1!3m5!1sveICa_oGD7MDSavKCiRgxw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.140991842131683%26panoid%3DveICa_oGD7MDSavKCiRgxw%26yaw%3D133.7564607439175!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "99ceefa7-2818-4082-9957-002c8ea25451",
+      "name": {
+        "ja": "鮨匠",
+        "en": "Sushi Sho"
+      },
+      "geo": {
+        "latitude": 36.13856,
+        "longitude": 137.25599
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1385772,137.2559414,3a,75y,24.71h,91.15t/data=!3m7!1e1!3m5!1sYbpSr7ZqypgP3a8EchApxA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.1548560239993293%26panoid%3DYbpSr7ZqypgP3a8EchApxA%26yaw%3D24.705757654509245!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "9a1569b9-1869-4c16-81b3-4f36548fad75",
+      "name": {
+        "en": "Takayama City Main Library",
+        "ja": "高山市図書館 煥章館(本館)"
+      },
+      "geo": {
+        "latitude": 36.14337,
+        "longitude": 137.26248
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1429289,137.2627874,3a,48.8y,335.07h,93.83t/data=!3m7!1e1!3m5!1s9OyOnLa9QWqHflCl2lMj1w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.829661537125361%26panoid%3D9OyOnLa9QWqHflCl2lMj1w%26yaw%3D335.07366328300463!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "9b55371c-497c-43b5-8216-fd337d99a136",
+      "name": {
+        "ja": "飛騨山王宮 日枝神社",
+        "kr": "히에 신사",
+        "en": "Hie Shrine"
+      },
+      "geo": {
+        "latitude": 36.13391,
+        "longitude": 137.25892
+      },
+      "ep": 20,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1338662,137.2589072,3a,90y,73.94h,92.04t/data=!3m7!1e1!3m5!1sMIvbNRcQllTRuduF-OHIMA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.0414562914032643%26panoid%3DMIvbNRcQllTRuduF-OHIMA%26yaw%3D73.93822967586044!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "9d7093a8-6697-4a67-b6df-472fe50a03df",
+      "name": {
+        "en": "Hanazatokosen Bridge",
+        "ja": "花里跨線橋"
+      },
+      "geo": {
+        "latitude": 36.13841,
+        "longitude": 137.25157
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1383992,137.2517939,3a,75y,265.63h,99.14t/data=!3m7!1e1!3m5!1sZ86D4QksyQcFEcrkW5fc1g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DZ86D4QksyQcFEcrkW5fc1g%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D349.05783%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "a0809fa8-f5ba-4a29-a036-91797d94316f",
+      "name": {
+        "en": "Hie Shrine",
+        "kr": "히에 신사",
+        "ja": "飛騨山王宮 日枝神社"
+      },
+      "geo": {
+        "latitude": 36.13282,
+        "longitude": 137.26111
+      },
+      "ep": 20,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/place/Hie+Shrine/@36.1327933,137.261056,3a,90y,106.98h,104.42t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgIDcgLOdaw!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAPRy3c-3WBkjtIkVnzHPRzxGCAigaYT13bTQLn_lOjR5DEM7kW2sqj_ebLbi3Uv7F6e7Bn32Nrs_Agqs0XQft85UwPGlxXiUqa7HSKHgwFXsFGAiXUlXYVglwULQSHPnfxmwvGsIKdf0%3Dw900-h600-k-no-pi-14.4236603777331-ya58.51862233956078-ro0-fo100!7i7776!8i3888!4m9!3m8!1s0x6002bae7b3383249:0x3480a6cf64c8ae6c!8m2!3d36.1331788!4d137.2613871!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F122qmhmv?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "a973ed4c-a82f-4c34-9870-66e218f48d4b",
+      "name": {
+        "en": "COREO"
+      },
+      "geo": {
+        "latitude": 36.14133,
+        "longitude": 137.25824
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1413443,137.258214,3a,90y,60.77h,94.36t/data=!3m7!1e1!3m5!1sK73cmUhn0_CZpefTXUex9w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.359243001794127%26panoid%3DK73cmUhn0_CZpefTXUex9w%26yaw%3D60.7747755406589!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "aebe27b2-2e39-42d7-a5c6-7a3f3fb111ab",
+      "name": {
+        "ja": "高山市民プール",
+        "en": "Takayama City Swimming Pool"
+      },
+      "geo": {
+        "latitude": 36.15827,
+        "longitude": 137.23207
+      },
+      "ep": null,
+      "type": "OVA",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1583692,137.2318331,3a,75y,351.63h,93.31t/data=!3m7!1e1!3m5!1sIlSyrkwB7nFSf4Jpf7L_aA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.3126278022158715%26panoid%3DIlSyrkwB7nFSf4Jpf7L_aA%26yaw%3D351.63476163733986!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "af0f2ca1-4a3c-424c-83ae-ff49ab1b2b38",
+      "name": {
+        "en": "Takayama Shiyakusho Kajibashi Parking Lot",
+        "ja": "市営 かじ橋駐車場"
+      },
+      "geo": {
+        "latitude": 36.14361,
+        "longitude": 137.25745
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1435621,137.2573933,3a,75y,41.91h,88.8t/data=!3m6!1e1!3m4!1sb4vNpQXdQgSc9d3zt6KRFQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "af74501f-b289-4de2-903f-8071a0273a58",
+      "name": {
+        "ja": "糀屋柴田春次商店 朝市店",
+        "en": "Koujiya Shibata Haruji Shoten"
+      },
+      "geo": {
+        "latitude": 36.14543,
+        "longitude": 137.25784
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1454421,137.257861,3a,90y,305.98h,93.36t/data=!3m7!1e1!3m5!1sWituy5PR7O3RL91EOj6dhw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.364227905358021%26panoid%3DWituy5PR7O3RL91EOj6dhw%26yaw%3D305.9779825047167!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "b03a4e2a-1535-48fa-87b3-98f202fee56c",
+      "name": {
+        "en": "Shimojima Produce Store",
+        "ja": "下嶋青果店"
+      },
+      "geo": {
+        "latitude": 36.1458,
+        "longitude": 137.25678
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.145782,137.2567254,3a,90y,210.1h,93.01t/data=!3m7!1e1!3m5!1saK0SdL1q8XMR2yqgvMkYUQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.010403507998305%26panoid%3DaK0SdL1q8XMR2yqgvMkYUQ%26yaw%3D210.10449700185174!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "b838e7c5-b374-475c-b5f9-d67729ee2ad5",
+      "name": {
+        "en": "Kissako Katsute",
+        "ja": "喫茶去かつて"
+      },
+      "geo": {
+        "latitude": 36.14159,
+        "longitude": 137.25956
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1415903,137.2595414,3a,90y,112.47h,89.12t/data=!3m7!1e1!3m5!1snzW-eQv7lZ1h7dgIEvzNaQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.8809690085801094%26panoid%3DnzW-eQv7lZ1h7dgIEvzNaQ%26yaw%3D112.47058143059819!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "bf7749d2-ac16-4cfe-8562-12576d96332b",
+      "name": {
+        "en": "Hirayu Shrine",
+        "ja": "平湯神社"
+      },
+      "geo": {
+        "latitude": 36.19201,
+        "longitude": 137.55394
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1920987,137.5539167,3a,75y,128.32h,96.71t/data=!3m7!1e1!3m5!1sXtIGjhlCIw0VJ638bi1sZA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.7123781791570565%26panoid%3DXtIGjhlCIw0VJ638bi1sZA%26yaw%3D128.32043949612037!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "c36e56b0-3f9b-445b-9878-bcdf3014a373",
+      "name": {
+        "en": "Hirayu-no-Yu",
+        "ja": "平湯の湯"
+      },
+      "geo": {
+        "latitude": 36.19174,
+        "longitude": 137.55452
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1917783,137.5545083,3a,90y,14.89h,102.07t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC4u6aSew!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAPRy3c_y8rX0yoEPtJqmyieovBjP9bPBiH3zxdg4O2sugw1duT1b0M0v2c6GuRRZdYlAFHVSqecGInDfQb2IogRKeH__mLdGuJvJviaKxouVZWedSzossaSnNmhO5PKfb9nEUgH0gRvN%3Dw900-h600-k-no-pi-12.065055598975064-ya14.88696992627655-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "c9950f65-d233-4fb1-a8e1-7837e5fa923a",
+      "name": {
+        "en": "Yayoisoba Kado",
+        "ja": "やよいそば 角店"
+      },
+      "geo": {
+        "latitude": 36.1462,
+        "longitude": 137.2567
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1461413,137.2566438,3a,90y,25.15h,95.62t/data=!3m7!1e1!3m5!1slKBBH0J0Caefnwl6MAzOPw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.6173109529235745%26panoid%3DlKBBH0J0Caefnwl6MAzOPw%26yaw%3D25.149617607376598!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "d264f084-f563-4df2-99ce-f38f6d6b6b06",
+      "name": {
+        "ja": "櫻ケ岡八幡神社",
+        "en": "Sakuragaokahachiman Shrine"
+      },
+      "geo": {
+        "latitude": 36.13346,
+        "longitude": 137.29831
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1333325,137.2981201,3a,90y,45.48h,96.47t/data=!3m7!1e1!3m5!1smwwhyzixFBXC8EjRItUhFQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.47376087507385%26panoid%3DmwwhyzixFBXC8EjRItUhFQ%26yaw%3D45.47717071854831!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "d27ada66-7f49-497e-a91a-e70869fce4c0",
+      "name": {
+        "ja": "宮川朝市コーヒー屋",
+        "en": "Miyagawa Morning Market Coffee Shop"
+      },
+      "geo": {
+        "latitude": 36.14434,
+        "longitude": 137.25802
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1443876,137.2579871,3a,90y,133.57h,89.6t/data=!3m7!1e1!3m5!1smlGx1lvwnqocEZgk5mQTmg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.3958201527662766%26panoid%3DmlGx1lvwnqocEZgk5mQTmg%26yaw%3D133.5717625791539!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "d4d59f95-cc9a-41ed-a419-dd3aa583843d",
+      "name": {
+        "en": "Kawara Shunkai Studio",
+        "ja": "川原春慶工房"
+      },
+      "geo": {
+        "latitude": 36.13788,
+        "longitude": 137.26825
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1378922,137.2682612,3a,90y,72.33h,92.47t/data=!3m7!1e1!3m5!1sqRf_qtTwY1UwaTdC_drAag!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.472614391916096%26panoid%3DqRf_qtTwY1UwaTdC_drAag%26yaw%3D72.32502916980397!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "de3bdd1d-2aa4-4adc-9080-162464debe73",
+      "name": {
+        "en": "Yayoi Bridge",
+        "ja": "弥生橋"
+      },
+      "geo": {
+        "latitude": 36.14637,
+        "longitude": 137.25762
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1464323,137.2577539,3a,90y,241.29h,82.33t/data=!3m7!1e1!3m5!1sywrPt0NChYwkuhp9uPjtlQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D7.671894860310488%26panoid%3DywrPt0NChYwkuhp9uPjtlQ%26yaw%3D241.28531747229147!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "e22f8cbe-2f3e-4dbc-b14b-64a059642242",
+      "name": {
+        "kr": "백파이프",
+        "ja": "バグ・パイプ",
+        "en": "Bagpipe"
+      },
+      "geo": {
+        "latitude": 36.14113,
+        "longitude": 137.25906
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1412125,137.2590737,3a,75y,168h,93.39t/data=!3m7!1e1!3m5!1s8M89PpcfVyjTYLa3S38uuA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D8M89PpcfVyjTYLa3S38uuA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D304.48367%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "eb094253-3479-4ef5-ba99-90c328b43d97",
+      "name": {
+        "en": "Ipponsugi Hakusan Shrine",
+        "ja": "一本杉白山神社"
+      },
+      "geo": {
+        "latitude": 36.138,
+        "longitude": 137.25617
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1379694,137.2561411,3a,90y,83.03h,98.4t/data=!3m7!1e1!3m5!1sLfRObiF70gf2kLraxkvoxg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.397939556959145%26panoid%3DLfRObiF70gf2kLraxkvoxg%26yaw%3D83.02582279615014!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "ebfdb4eb-3761-4102-bd9f-8bf172009cc4",
+      "name": {
+        "kr": "스기 약국 다카야마 혼마치점",
+        "ja": "スギ薬局 高山本町店",
+        "en": "Sugi Pharmacy Takayama Honmachi Store"
+      },
+      "geo": {
+        "latitude": 36.14291,
+        "longitude": 137.25765
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1429357,137.2576112,3a,90y,127.73h,99.31t/data=!3m7!1e1!3m5!1syTtZDQYRy2jqCxt19iK1CA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.314924596787677%26panoid%3DyTtZDQYRy2jqCxt19iK1CA%26yaw%3D127.73274935940165!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "ec18f837-4074-4577-b0cb-6f32b072a876",
+      "name": {
+        "en": "Kamoso Kachoen Garden Park",
+        "ja": "加茂荘花鳥園"
+      },
+      "geo": {
+        "latitude": 34.82652,
+        "longitude": 137.96486
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-shizuoka-kakegawa",
+      "streetViewUrl": "https://www.google.com/maps/@34.8264902,137.9648121,3a,90y,80.7h,98.83t/data=!3m7!1e1!3m5!1sdAt12PG1YzXJg7jIUZpfwQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.832400757049015%26panoid%3DdAt12PG1YzXJg7jIUZpfwQ%26yaw%3D80.69745492659655!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "f34eae07-3f42-45a0-b25b-7894b70c25f7",
+      "name": {
+        "en": "Sanso Yunosato",
+        "ja": "山荘 湯乃里"
+      },
+      "geo": {
+        "latitude": 36.19241,
+        "longitude": 137.55423
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1924284,137.5542115,3a,90y,274.3h,93.32t/data=!3m7!1e1!3m5!1s3hchk-rxiKNo7Aj87TRRLQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.3234303662437696%26panoid%3D3hchk-rxiKNo7Aj87TRRLQ%26yaw%3D274.2958397852438!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "f8488a5f-ff34-4ad9-b0fd-6bb958bd6404",
+      "name": {
+        "ja": "川沿いの貸切一軒宿 SORAMACHI",
+        "en": "SORAMACHI: A private inn by the river"
+      },
+      "geo": {
+        "latitude": 36.14088,
+        "longitude": 137.26536
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1409373,137.2653445,3a,75y,164.97h,102.63t/data=!3m6!1e1!3m4!1sGulDcX0_qD1HphQaph-E-w!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "fcfd5d77-aa9f-4b0b-83f4-beafba563c77",
+      "name": {
+        "en": "Fudo Bridge",
+        "ja": "不動橋"
+      },
+      "geo": {
+        "latitude": 36.14884,
+        "longitude": 137.25677
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.1488346,137.2563645,3a,75y,92.44h,95.99t/data=!3m7!1e1!3m5!1sP7cMdOc1GQS653nhRkd2Tg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.992418632696484%26panoid%3DP7cMdOc1GQS653nhRkd2Tg%26yaw%3D92.4360317044205!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    },
+    {
+      "placeId": "212b4fdc-aaa9-4738-b8db-f9b07fbcf0be",
+      "name": {
+        "ja": "飛驒一宮水無神社",
+        "en": "Minashi Shrine",
+        "kr": "미나시 신사"
+      },
+      "geo": {
+        "latitude": 36.0861,
+        "longitude": 137.25126
+      },
+      "ep": 22,
+      "type": "EP",
+      "cityId": "JP-gifu-takayama",
+      "streetViewUrl": "https://www.google.com/maps/@36.0862033,137.2508776,3a,41.6y,108.31h,96.91t/data=!3m7!1e1!3m5!1sQRiOqbACSEt0IQ7ussyd2w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.914858047949551%26panoid%3DQRiOqbACSEt0IQ7ussyd2w%26yaw%3D108.30994699771142!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・角川書店／神山高校古典部OB会"
+    }
+  ]
+}

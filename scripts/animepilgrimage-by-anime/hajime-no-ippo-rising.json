@@ -1,0 +1,181 @@
+{
+  "anime": {
+    "animeId": "xixXlFp2hrN1lZJu7sSv",
+    "slug": "hajime-no-ippo-rising",
+    "title": {
+      "ja": "はじめの一歩 Rising",
+      "kr": "더 파이팅 Rising",
+      "en": "Hajime no Ippo Rising"
+    },
+    "author": {
+      "en": [
+        "George Morikawa"
+      ],
+      "ja": [
+        "森川ジョージ"
+      ],
+      "kr": [
+        "모리카와 조지"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Madhouse",
+        "MAPPA"
+      ],
+      "ja": [
+        "マッドハウス",
+        "MAPPA"
+      ]
+    }
+  },
+  "placeCount": 9,
+  "places": [
+    {
+      "placeId": "28d2d35b-a7a0-471e-823b-58162b0b4104",
+      "name": {
+        "en": "25 CHICKEN"
+      },
+      "geo": {
+        "latitude": 35.70644,
+        "longitude": 139.75236
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.706454,139.7524066,2a,90y,292.67h,101.29t/data=!3m7!1e1!3m5!1sn2LlPOoRx3I4XNkKqpbzog!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.288040343317618%26panoid%3Dn2LlPOoRx3I4XNkKqpbzog%26yaw%3D292.67435005401217!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©森川ジョージ／講談社・VAP・NTV"
+    },
+    {
+      "placeId": "3b017fee-b45f-4235-a6fb-66f05ef5411b",
+      "name": {
+        "kr": "요코하마 아레나",
+        "ja": "横浜アリーナ",
+        "en": "Yokohama Arena"
+      },
+      "geo": {
+        "latitude": 35.51227,
+        "longitude": 139.62017
+      },
+      "ep": 17,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.5121513,139.6200193,2a,90y,50.8h,99.86t/data=!3m7!1e1!3m5!1sc50xkMBjAPvSRhkao2Lf-g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.855451518398866%26panoid%3Dc50xkMBjAPvSRhkao2Lf-g%26yaw%3D50.796115216749484!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©森川ジョージ／講談社・VAP・NTV"
+    },
+    {
+      "placeId": "60d90bf1-10c5-419f-9dd3-6606a7a705a6",
+      "name": {
+        "ja": "パラカ横浜アリーナ前第3",
+        "en": "Parakayokohamaarinamaedai 3"
+      },
+      "geo": {
+        "latitude": 35.5118,
+        "longitude": 139.6196
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.5116466,139.6195464,3a,48.7y,22.13h,92.43t/data=!3m7!1e1!3m5!1spftkcqncXnCWYy8jq80bug!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.4298886948539717%26panoid%3DpftkcqncXnCWYy8jq80bug%26yaw%3D22.127668106095843!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©森川ジョージ／講談社・VAP・NTV"
+    },
+    {
+      "placeId": "684b14e8-5844-4994-9c7e-7e3a9f6303eb",
+      "name": {
+        "ja": "三井のリパーク 東京ドーム駐車場",
+        "en": "Mitsuinoripaku Tokyo Dome Chushajo"
+      },
+      "geo": {
+        "latitude": 35.70568,
+        "longitude": 139.75376
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.705603,139.7540891,3a,49.6y,291.73h,94.69t/data=!3m7!1e1!3m5!1scQOEpp6C4Jc3rYtAAmZ2Xw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.693224728934311%26panoid%3DcQOEpp6C4Jc3rYtAAmZ2Xw%26yaw%3D291.72954147462485!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©森川ジョージ／講談社・VAP・NTV"
+    },
+    {
+      "placeId": "7c7e8bd5-39a6-4453-9338-431f1fa6b761",
+      "name": {
+        "kr": "료고쿠 국기관",
+        "en": "Ryogoku Kokugikan National Sumo Arena",
+        "ja": "両国国技館"
+      },
+      "geo": {
+        "latitude": 35.69697,
+        "longitude": 139.79327
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-sumida-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6967068,139.7934202,2a,75y,14.15h,74.31t/data=!3m8!1e1!3m6!1sjhBtOwkV9L_kxYQ9gSp7QA!2e0!3e2!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D15.685154707083157%26panoid%3DjhBtOwkV9L_kxYQ9gSp7QA%26yaw%3D14.145914440074838!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©森川ジョージ／講談社・VAP・NTV"
+    },
+    {
+      "placeId": "8fbc49d1-41ad-4235-a706-23bd31730f21",
+      "name": {
+        "en": "Edion Arena Osaka",
+        "kr": "오사카부립 체육회관 EDION Arena Osaka",
+        "ja": "エディオンアリーナ大阪（大阪府立体育会館）"
+      },
+      "geo": {
+        "latitude": 34.66263,
+        "longitude": 135.49909
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-osaka-osaka",
+      "streetViewUrl": "https://www.google.com/maps/@34.6625212,135.4991772,2a,90y,330.94h,96.12t/data=!3m7!1e1!3m5!1s_jUfmy1H3jYMeUFxE6NYDg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.11793145744825%26panoid%3D_jUfmy1H3jYMeUFxE6NYDg%26yaw%3D330.94229162176475!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©森川ジョージ／講談社・VAP・NTV"
+    },
+    {
+      "placeId": "be040c90-73f1-48bb-b38e-26a43f3e9b2e",
+      "name": {
+        "en": "Korakuen Hall",
+        "ja": "後楽園ホール"
+      },
+      "geo": {
+        "latitude": 35.70424,
+        "longitude": 139.7523
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7042473,139.7522967,3a,90y,278.59h,91.08t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDElrGE1AE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu3U3Yt4_SwZuzVjtPmOEMIqjkJ0RfxLAZDy_aLF2atvXQlRCEj8ACRjZOJDmxG_Jsxpm0v-4FQWeu8Zx4h27EP6pV0u9B_x9fZUu1WYltEUXCw1mDnP8z4Mpab58dL4ITyZPJ9yUA%3Dw900-h600-k-no-pi-1.0768153181039821-ya4.087703277079584-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©森川ジョージ／講談社・VAP・NTV"
+    },
+    {
+      "placeId": "d918f3e5-7acd-4197-a6c8-c7cbd29777d5",
+      "name": {
+        "en": "Nagashima Gate",
+        "ja": "長嶋ゲート"
+      },
+      "geo": {
+        "latitude": 35.70456,
+        "longitude": 139.75236
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7046228,139.7523039,2a,75y,137.17h,90.2t/data=!3m7!1e1!3m5!1s11yYUsRQpObRmkwq1Lm5NQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.20202584231867604%26panoid%3D11yYUsRQpObRmkwq1Lm5NQ%26yaw%3D137.17359289329576!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©森川ジョージ／講談社・VAP・NTV"
+    },
+    {
+      "placeId": "0789d60c-6b6a-4e01-8303-f3d3395c93d0",
+      "name": {
+        "en": "Tokyo Dome City Chance Center",
+        "ja": "東京ドームシティチャンスセンター"
+      },
+      "geo": {
+        "latitude": 35.70391,
+        "longitude": 139.75233
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.703914,139.7523403,3a,90y,351.38h,92.14t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDqrcSBaQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu31jJvalCi8SfenxMYhP_u3vGKsn5Oc5vZ9eQZS0m-WyVbaHVI7B4cIJAez5pbq7WIhkoSXcqhKhHWkxUMPMfPfOEgp1nL6maTLCTN3oSD5iy2X-fIZqK-gLCjOuuQC6HMzZ4kx%3Dw900-h600-k-no-pi-2.1414310063191095-ya351.3786534264481-ro0-fo100!7i6080!8i3040?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©森川ジョージ／講談社・VAP・NTV"
+    }
+  ]
+}

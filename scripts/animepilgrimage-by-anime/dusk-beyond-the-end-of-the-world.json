@@ -1,0 +1,483 @@
+{
+  "anime": {
+    "animeId": "LRAmMCCVn4JZPWGhvTdP",
+    "slug": "dusk-beyond-the-end-of-the-world",
+    "title": {
+      "en": "Dusk Beyond the End of the World",
+      "ja": "永久のユウグレ",
+      "kr": "영원한 황혼"
+    },
+    "author": {
+      "en": [
+        "Project FT"
+      ]
+    },
+    "studio": {
+      "en": [
+        "P.A.WORKS"
+      ]
+    }
+  },
+  "placeCount": 28,
+  "places": [
+    {
+      "placeId": "00ef135f-1ee3-42e0-a98b-ad493d87498d",
+      "name": {
+        "ja": "日本赤十字社 函館赤十字病院",
+        "kr": "하코다테 적십자병원",
+        "en": "Japanese Red Cross Hakodate Hospital"
+      },
+      "geo": {
+        "latitude": 41.77833,
+        "longitude": 140.74128
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-hokkaido-hakodate",
+      "streetViewUrl": "https://www.google.com/maps/@41.7782589,140.741346,3a,76y,297.32h,102.66t/data=!3m7!1e1!3m5!1shaeYee-awHgqgCDfqmfAow!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.65849485692219%26panoid%3DhaeYee-awHgqgCDfqmfAow%26yaw%3D297.32448921858463!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "048a5f1a-5ddd-443e-b5bb-877cbeb355cf",
+      "name": {
+        "ja": "聖蹟桜ヶ丘駅(バス)",
+        "en": "Seiseki-sakuragaoka Sta. (Bus)"
+      },
+      "geo": {
+        "latitude": 35.65153,
+        "longitude": 139.447
+      },
+      "ep": 0,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://www.google.com/maps/@35.6514093,139.4465555,3a,74y,62.74h,92.99t/data=!3m7!1e1!3m5!1slGRfaypXYiCxA_uIBdmp1A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.9881653133248705%26panoid%3DlGRfaypXYiCxA_uIBdmp1A%26yaw%3D62.73729752665369!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "2dd11e92-b578-4c69-add9-4acfb6920640",
+      "name": {
+        "ja": "東京都水道局 桜ヶ丘配水所",
+        "en": "Sakuragaoka Water Distribution Station"
+      },
+      "geo": {
+        "latitude": 35.64386,
+        "longitude": 139.4448
+      },
+      "ep": 0,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://www.google.com/maps/@35.6439246,139.4447314,3a,53.3y,171.94h,89.92t/data=!3m7!1e1!3m5!1sM2DyJ4loo3Wn-is2pfvrXw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.08309597404475255%26panoid%3DM2DyJ4loo3Wn-is2pfvrXw%26yaw%3D171.9357173839101!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "2fb1631a-50c9-4df7-aec6-cfd2c3b0f4b3",
+      "name": {
+        "ja": "函館山展望台",
+        "kr": "하코다테 산 전망대",
+        "en": "Mt. Hakodate Observatory"
+      },
+      "geo": {
+        "latitude": 41.75907,
+        "longitude": 140.70488
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-hokkaido-hakodate",
+      "streetViewUrl": "https://www.google.com/maps/@41.7589606,140.704937,3a,90y,47.88h,90.6t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDEm7GE2gE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYF3gpaOvAgnK3aMDdklKOoiIOzSYRP13J-wLJInoocTIPLrOBGrxBFXhzI6TNA667_rmtwTw6JR5OW905QGelJYAX_UmIDi8r1mw_Z_xjHnTUlpSQaTdEN8hW9rO40CnObwmUe%3Dw900-h600-k-no-pi-0.5999999999999943-ya91.41701782226562-ro0-fo100!7i7776!8i3888?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "451853b4-0d8b-461c-bad1-bc3e333bb211",
+      "name": {
+        "en": "Spadium Japon",
+        "ja": "スパジアム ジャポン"
+      },
+      "geo": {
+        "latitude": 35.77294,
+        "longitude": 139.54448
+      },
+      "ep": 0,
+      "type": "EP",
+      "cityId": "JP-tokyo-higashikurume",
+      "streetViewUrl": "https://www.google.com/maps/@35.7725138,139.5444474,3a,69.2y,19h,102.1t/data=!3m7!1e1!3m5!1sNvBZJtEpXmn0LEDJRPYPQQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.098959117709484%26panoid%3DNvBZJtEpXmn0LEDJRPYPQQ%26yaw%3D19.00254362945544!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "4ebaed0d-3cb4-4d3d-8764-131334a7f6a6",
+      "name": {
+        "ja": "五稜郭タワー",
+        "en": "Goryokaku Tower",
+        "kr": "고료카쿠 타워"
+      },
+      "geo": {
+        "latitude": 41.79472,
+        "longitude": 140.75398
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-hokkaido-hakodate",
+      "streetViewUrl": "https://www.google.com/maps/place/Gory%C5%8Dkaku+Tower/@41.794845,140.7539998,3a,90y,11.36h,73.93t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICih_rrLg!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HY26bQwg01sbDyiItOQ0t1YmkeKGR0Im1cudkPHX1TZHYS4h_vHyzQYd1WsNlSDvs9JE_Z1XxIfNdjuFiBFZmjqKqmuoucuUG6h3naUKgiRYDyJ9TcOifX7-mY8lIb6kw-U_6A%3Dw900-h600-k-no-pi16.069999999999993-ya11.36-ro0-fo100!7i6080!8i3040!4m9!3m8!1s0x5f9ef46bb53c0eb3:0x75f5f82028f1a89e!8m2!3d41.7946699!4d140.75402!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F120kngn6?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "605983f4-6e0b-43ea-b6fc-85fc5c90a203",
+      "name": {
+        "en": "VITA MALL SEISEKI"
+      },
+      "geo": {
+        "latitude": 35.65007,
+        "longitude": 139.44675
+      },
+      "ep": 0,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://www.google.com/maps/@35.6499821,139.4465426,3a,89.1y,51.93h,93.39t/data=!3m7!1e1!3m5!1sp1UnvAVDnAsOVk8X6B5TJg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.393048746023993%26panoid%3Dp1UnvAVDnAsOVk8X6B5TJg%26yaw%3D51.93468559001603!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "777f2d56-4b75-451b-bc70-a46a36fb20d7",
+      "name": {
+        "en": "Goryokaku",
+        "ja": "五稜郭跡",
+        "kr": "고료카쿠"
+      },
+      "geo": {
+        "latitude": 41.79626,
+        "longitude": 140.75633
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-hokkaido-hakodate",
+      "streetViewUrl": "https://www.google.com/maps/@41.796231,140.7563669,3a,90y,241.97h,99.6t/data=!3m7!1e1!3m5!1sIbOuYI60ykThwj5P7AL7Mg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.59529394412148%26panoid%3DIbOuYI60ykThwj5P7AL7Mg%26yaw%3D241.9728710727556!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "7deb56b6-f324-4e61-8221-3029a888e21e",
+      "name": {
+        "en": "Equestrian Statue of Date Masamune",
+        "kr": "다테 마사무네 기마상",
+        "ja": "伊達政宗公騎馬像"
+      },
+      "geo": {
+        "latitude": 38.25335,
+        "longitude": 140.85684
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-miyagi-sendai",
+      "streetViewUrl": "https://maps.app.goo.gl/wPJZVmxcS1MQYEHv7",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "80c1e263-0103-4328-b40c-b171d1e1ef8d",
+      "name": {
+        "en": "Progress Seiseki Sakuragaoka shop",
+        "ja": "PROGRESS 聖蹟桜ヶ丘店"
+      },
+      "geo": {
+        "latitude": 35.64952,
+        "longitude": 139.44633
+      },
+      "ep": 0,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://www.google.com/maps/@35.6495787,139.4463951,3a,90y,189.85h,99.49t/data=!3m7!1e1!3m5!1sn8JaVecAIS17g1Zzzh_uRA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.488118984707924%26panoid%3Dn8JaVecAIS17g1Zzzh_uRA%26yaw%3D189.845570298405!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "844236f5-2cfd-4d33-ac62-0d145b87aa7c",
+      "name": {
+        "en": "Iroha-zaka Slope",
+        "ja": "桜ヶ丘いろは坂"
+      },
+      "geo": {
+        "latitude": 35.64493,
+        "longitude": 139.44488
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://maps.app.goo.gl/snj42infkQbwn94s8",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "93dcd5aa-2905-4717-a165-d8e626f82f67",
+      "name": {
+        "en": "Times Fuchu Honmachi #2",
+        "ja": "三井のリパーク 府中市本町２丁目 駐車場"
+      },
+      "geo": {
+        "latitude": 35.66765,
+        "longitude": 139.47629
+      },
+      "ep": 0,
+      "type": "EP",
+      "cityId": "JP-tokyo-fuchu",
+      "streetViewUrl": "https://www.google.com/maps/@35.6676339,139.4762802,3a,90y,33.31h,90.59t/data=!3m7!1e1!3m5!1sic2RMpIGZil89rzxEuFhYQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.5900723757633841%26panoid%3Dic2RMpIGZil89rzxEuFhYQ%26yaw%3D33.309104237927755!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "96ec4711-5ae7-4f19-8ece-a9fda88ae6d6",
+      "name": {
+        "kr": "세이부엔 유원지",
+        "en": "Seibuen Amusement Park",
+        "ja": "西武園ゆうえんち"
+      },
+      "geo": {
+        "latitude": 35.76949,
+        "longitude": 139.44124
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-saitama-tokorozawa",
+      "streetViewUrl": "https://maps.app.goo.gl/2fibvAeCMJoCbymm7",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "97ecbb7c-383c-4558-8939-9a96ed7e4568",
+      "name": {
+        "ja": "旭鮨総本店 桜ヶ丘本館",
+        "en": "Asahi Sushi"
+      },
+      "geo": {
+        "latitude": 35.64738,
+        "longitude": 139.44661
+      },
+      "ep": 0,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://www.google.com/maps/@35.6472816,139.4466515,3a,87.8y,346.1h,95.79t/data=!3m7!1e1!3m5!1sj0g0RNBEiV2MxewwmH8oow!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.785636622948871%26panoid%3Dj0g0RNBEiV2MxewwmH8oow%26yaw%3D346.1000741509239!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "986af9e8-ab22-47ec-b759-b24606daed77",
+      "name": {
+        "ja": "三井のリパーク 府中市本町２丁目 駐車場",
+        "en": "Times Fuchu Honmachi #2"
+      },
+      "geo": {
+        "latitude": 35.66752,
+        "longitude": 139.476
+      },
+      "ep": 0,
+      "type": "EP",
+      "cityId": "JP-tokyo-fuchu",
+      "streetViewUrl": "https://www.google.com/maps/@35.6675328,139.4758997,3a,73.9y,94.59h,96.51t/data=!3m7!1e1!3m5!1shr875DC196PCFp_BRbdOfw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.509614145905445%26panoid%3Dhr875DC196PCFp_BRbdOfw%26yaw%3D94.58773199850668!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "9ea17c41-21d2-4e71-9de9-42f8073060d4",
+      "name": {
+        "ja": "村山下ダム",
+        "en": "Murayamashita Dam"
+      },
+      "geo": {
+        "latitude": 35.76297,
+        "longitude": 139.44023
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-higashiyamato",
+      "streetViewUrl": "https://maps.app.goo.gl/bicdth3n9yqDMJBHA",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "a2b7b937-fa81-47dc-84ac-fa70eb104982",
+      "name": {
+        "ja": "五稜郭駅前郵便局",
+        "en": "Goryokaku-Ekimae Post Office"
+      },
+      "geo": {
+        "latitude": 41.80064,
+        "longitude": 140.73362
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-hokkaido-hakodate",
+      "streetViewUrl": "https://www.google.com/maps/@41.8006055,140.7341345,3a,90y,281.52h,95.2t/data=!3m7!1e1!3m5!1sBdkcV-QkfeSViMXSPGBkSg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.203000066388341%26panoid%3DBdkcV-QkfeSViMXSPGBkSg%26yaw%3D281.5196112791233!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "addfcf9a-a6a2-433d-9a6b-29f633b49482",
+      "name": {
+        "ja": "金比羅宮",
+        "en": "Konpiragu"
+      },
+      "geo": {
+        "latitude": 35.64462,
+        "longitude": 139.44524
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://maps.app.goo.gl/gU28U5YxbjdtdAoU7",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "b3910901-c4c0-48c5-8e0b-90d907cd856e",
+      "name": {
+        "en": "Saitama Super Arena",
+        "kr": "사이타마 슈퍼 아레나",
+        "ja": "さいたまスーパーアリーナ"
+      },
+      "geo": {
+        "latitude": 35.89372,
+        "longitude": 139.63053
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/Q52eMdTA59h1GS9U9",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "b85e3447-c47c-45a1-89b9-d584b1dfd223",
+      "name": {
+        "en": "Aomori Prefecture Tourism Information Center ASPAM",
+        "ja": "青森県観光物産館アスパム",
+        "kr": "아오모리현 관광물산관 아스팜"
+      },
+      "geo": {
+        "latitude": 40.8295,
+        "longitude": 140.74173
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-aomori-aomori",
+      "streetViewUrl": "https://www.google.com/maps/@40.8291787,140.742287,3a,82.8y,310.1h,99.7t/data=!3m7!1e1!3m5!1sWfPj-A8rsP4k3hdIHkqw1w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.699001730360024%26panoid%3DWfPj-A8rsP4k3hdIHkqw1w%26yaw%3D310.1020533387748!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "c38f88b1-cc89-4e0c-ad85-3c1ec47535a4",
+      "name": {
+        "ja": "親子地蔵尊の湯（足湯）",
+        "en": "Oyako Jjizo Foot Bath"
+      },
+      "geo": {
+        "latitude": 37.30338,
+        "longitude": 139.89565
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-fukushima-shimogo",
+      "streetViewUrl": "https://maps.app.goo.gl/eYkYfNKkF2uuaihv7",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "c65b62f7-de4c-4103-8e04-39657a54e511",
+      "name": {
+        "kr": "웨스틴 호텔 센다이",
+        "en": "The Westin Sendai",
+        "ja": "ウェスティンホテル仙台"
+      },
+      "geo": {
+        "latitude": 38.25619,
+        "longitude": 140.8767
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-miyagi-sendai",
+      "streetViewUrl": "https://maps.app.goo.gl/tfoEYLjYtPULPyDdA",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "c78748db-5303-486e-a022-fdf1c96627e0",
+      "name": {
+        "kr": "타마 동물공원",
+        "en": "Tama Zoological Park",
+        "ja": "多摩動物公園"
+      },
+      "geo": {
+        "latitude": 35.64958,
+        "longitude": 139.40336
+      },
+      "ep": 0,
+      "type": "EP",
+      "cityId": "JP-tokyo-hino",
+      "streetViewUrl": "https://www.google.com/maps/@35.6492875,139.403988,3a,45.2y,299.86h,93.81t/data=!3m7!1e1!3m5!1sZmcSnH6Bav3EasJBRt1oWA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.8113764457239228%26panoid%3DZmcSnH6Bav3EasJBRt1oWA%26yaw%3D299.8562783221445!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "e7ab41ce-5245-46de-b791-2c0c843e6362",
+      "name": {
+        "en": "Fuchuhommachi Station",
+        "kr": "후추혼마치 역",
+        "ja": "府中本町駅"
+      },
+      "geo": {
+        "latitude": 35.6668,
+        "longitude": 139.47648
+      },
+      "ep": 0,
+      "type": "EP",
+      "cityId": "JP-tokyo-fuchu",
+      "streetViewUrl": "https://www.google.com/maps/@35.6673588,139.4762128,3a,45.9y,158.19h,97.73t/data=!3m7!1e1!3m5!1sV8-IpFnI2hJQsIWwvR15ww!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.7342959147203345%26panoid%3DV8-IpFnI2hJQsIWwvR15ww%26yaw%3D158.1921240809713!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "ed990fae-7505-4617-91c8-78c556237f05",
+      "name": {
+        "en": "Showa Bridge",
+        "ja": "昭和橋(亀田川)"
+      },
+      "geo": {
+        "latitude": 41.77727,
+        "longitude": 140.73997
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-hokkaido-hakodate",
+      "streetViewUrl": "https://www.google.com/maps/@41.777098,140.7398974,3a,74.6y,350.79h,92.94t/data=!3m7!1e1!3m5!1sCXJmRNIFqVpibVOtowa1Yg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.9393353476577033%26panoid%3DCXJmRNIFqVpibVOtowa1Yg%26yaw%3D350.7907634450002!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "f2dc2fbd-92c5-454e-a320-44eb4bea810b",
+      "name": {
+        "en": "Shinjuku Station",
+        "kr": "신주쿠 역",
+        "ja": "新宿駅"
+      },
+      "geo": {
+        "latitude": 35.68905,
+        "longitude": 139.69962
+      },
+      "ep": 0,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6888684,139.6994396,3a,61.5y,36.87h,95.83t/data=!3m7!1e1!3m5!1s4xveH7VFjQsYyahRShvpIg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.831520595252272%26panoid%3D4xveH7VFjQsYyahRShvpIg%26yaw%3D36.868982311817554!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "f4a5ee93-8f0e-46d8-8a37-1f61ada9a5c9",
+      "name": {
+        "kr": "다치히 역",
+        "en": "Tachihi Station",
+        "ja": "立飛駅"
+      },
+      "geo": {
+        "latitude": 35.71397,
+        "longitude": 139.41708
+      },
+      "ep": 0,
+      "type": "EP",
+      "cityId": "JP-tokyo-tachikawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.7139393,139.4171475,2a,90y,275.85h,92.86t/data=!3m7!1e1!3m5!1sqlCU3I5ZyHHOrM8jFNji9Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.85538118206145%26panoid%3DqlCU3I5ZyHHOrM8jFNji9Q%26yaw%3D275.8456715233494!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    },
+    {
+      "placeId": "f8606dac-4e9a-43cf-bc3a-e0229827acd2",
+      "name": {
+        "en": "Studio Ghibli Character Goods"
+      },
+      "geo": {
+        "latitude": 35.62637,
+        "longitude": 134.81232
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-hyogo-toyooka",
+      "streetViewUrl": "https://maps.app.goo.gl/Z2NS9U2GF94g7zh4A",
+      "copyright": "©Project FT／永久のユウグレ製作委員会・MBS"
+    }
+  ]
+}

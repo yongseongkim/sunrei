@@ -1,0 +1,1074 @@
+{
+  "anime": {
+    "animeId": "gHpRNAYSCHIMongJ2V81",
+    "slug": "yuruyuri-3",
+    "title": {
+      "ja": "ゆるゆり さん☆ハイ！",
+      "kr": "유루유리 산☆하이!",
+      "en": "YuruYuri San☆Hai!"
+    },
+    "author": {
+      "kr": [
+        "나모리"
+      ],
+      "en": [
+        "Namori"
+      ],
+      "ja": [
+        "なもり"
+      ]
+    },
+    "studio": {
+      "en": [
+        "TYO Animations"
+      ],
+      "ja": [
+        "TYOアニメーションズ"
+      ]
+    }
+  },
+  "placeCount": 65,
+  "places": [
+    {
+      "placeId": "030ce454-0c27-462e-83a9-739b1a31ba7c",
+      "name": {
+        "en": "Game Spot 207",
+        "ja": "ゲームスポット２０７"
+      },
+      "geo": {
+        "latitude": 36.73235,
+        "longitude": 137.00245
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7324692,137.0028057,3a,90y,266.82h,102.99t/data=!3m7!1e1!3m5!1s39T8s5rEWJGUAwjd_Mn8ww!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.988205962273526%26panoid%3D39T8s5rEWJGUAwjd_Mn8ww%26yaw%3D266.82307382882107!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "054d4f56-0b92-4666-8c6c-f9a49bad02cd",
+      "name": {
+        "en": "Toshinaga Maeda on horseback",
+        "ja": "前田利長騎馬像"
+      },
+      "geo": {
+        "latitude": 36.75005,
+        "longitude": 137.02075
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7500757,137.0208344,3a,90y,209.33h,93.55t/data=!3m7!1e1!3m5!1sEf74LdmBbU6ZsN3upKTuYw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.5549113677340642%26panoid%3DEf74LdmBbU6ZsN3upKTuYw%26yaw%3D209.33249214929626!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "08741fbc-89ed-47c5-ab0d-ca667e37eeed",
+      "name": {
+        "ja": "三光鍍金工業",
+        "en": "Sanko Plating Industry"
+      },
+      "geo": {
+        "latitude": 36.74264,
+        "longitude": 136.99991
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.742644,136.9997955,3a,75y,78.59h,99.88t/data=!3m7!1e1!3m5!1ssfwM63A0d45mD3Eaflh2hA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.878010650418474%26panoid%3DsfwM63A0d45mD3Eaflh2hA%26yaw%3D78.59364017605633!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "0aea7fc6-9bee-423c-979c-c06e84055e6c",
+      "name": {
+        "en": "Hayashi Planer",
+        "ja": "林プレーナー"
+      },
+      "geo": {
+        "latitude": 36.74213,
+        "longitude": 136.99664
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7419962,136.9965852,3a,77.4y,5.04h,100.95t/data=!3m7!1e1!3m5!1sRm-9q3zRu8bhFKygDcqBYQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.951952635973214%26panoid%3DRm-9q3zRu8bhFKygDcqBYQ%26yaw%3D5.039893890189896!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "0f838515-09b6-4ebd-8ed5-4ae7e6ac9736",
+      "name": {
+        "ja": "トランクルーム高岡市駅南二丁目",
+        "en": "Trunk room Ekinan 2-chome, Takaoka-shi"
+      },
+      "geo": {
+        "latitude": 36.73865,
+        "longitude": 137.02001
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7387014,137.0205603,3a,50.8y,268.35h,98.15t/data=!3m7!1e1!3m5!1s9r2rKAl6qaPm53IFspNJ2Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.145657134977455%26panoid%3D9r2rKAl6qaPm53IFspNJ2Q%26yaw%3D268.353948770783!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "14283c7e-a47a-4c30-9c30-4da8debc6e18",
+      "name": {
+        "en": "Sports Club Akutosu Will Takaoka",
+        "ja": "スポーツクラブ アクトスWill高岡"
+      },
+      "geo": {
+        "latitude": 36.74035,
+        "longitude": 137.00088
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7403956,137.0008993,3a,44.6y,346.9h,93.81t/data=!3m7!1e1!3m5!1s5st_5-7FnrAgDyzzBMZ7ww!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.8115765361850436%26panoid%3D5st_5-7FnrAgDyzzBMZ7ww%26yaw%3D346.90020675026085!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "19ddd9da-751e-49f6-be9b-ab3894c89f5b",
+      "name": {
+        "en": "Sports Club Akutosu Will Takaoka",
+        "ja": "スポーツクラブ アクトスWill高岡"
+      },
+      "geo": {
+        "latitude": 36.74043,
+        "longitude": 137.00096
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7404195,137.0009271,3a,75y,266.67h,94.34t/data=!3m7!1e1!3m5!1s3m0DVsaz4SFuvUKzkSYp4A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.341416396691287%26panoid%3D3m0DVsaz4SFuvUKzkSYp4A%26yaw%3D266.668232768522!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "1bdd2c24-97e7-45e5-8d3b-459c52e43838",
+      "name": {
+        "en": "Kizu Elementary School",
+        "ja": "高岡市立木津小学校"
+      },
+      "geo": {
+        "latitude": 36.73931,
+        "longitude": 136.99546
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7393666,136.9954356,3a,39.2y,151.5h,89.1t/data=!3m7!1e1!3m5!1sAxkXEB7F8K4QXDiMg7zCog!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.8955181066753823%26panoid%3DAxkXEB7F8K4QXDiMg7zCog%26yaw%3D151.50353589113794!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "204f4255-436a-4bef-ae8b-8e5b9f74a0b6",
+      "name": {
+        "ja": "駅前広場緑地",
+        "en": "Ekimae Hiroba Ryokuchi Park"
+      },
+      "geo": {
+        "latitude": 36.74195,
+        "longitude": 137.01514
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7420333,137.0151997,3a,49.6y,143.92h,99.86t/data=!3m7!1e1!3m5!1sAaI_SAZUHbhtp0SR-8yeog!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.862086131156573%26panoid%3DAaI_SAZUHbhtp0SR-8yeog%26yaw%3D143.91709029434648!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "208ae921-08b1-40f5-8a40-07068fa4a4e5",
+      "name": {
+        "en": "Sports Club Akutosu Will Takaoka",
+        "ja": "スポーツクラブ アクトスWill高岡"
+      },
+      "geo": {
+        "latitude": 36.74044,
+        "longitude": 137.00086
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7403956,137.0008993,3a,75y,321.3h,89.16t/data=!3m7!1e1!3m5!1s5st_5-7FnrAgDyzzBMZ7ww!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.8431031631069885%26panoid%3D5st_5-7FnrAgDyzzBMZ7ww%26yaw%3D321.30245964011976!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "2a012c79-f5a0-4080-b26a-6fd8d519c04b",
+      "name": {
+        "ja": "観音寺（曹洞宗）",
+        "en": "Kanonji"
+      },
+      "geo": {
+        "latitude": 36.74083,
+        "longitude": 137.01093
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7408212,137.0109472,3a,75y,324.68h,94.63t/data=!3m7!1e1!3m5!1skyOVFNicj1CEdTkc6WSMuQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.632810403627374%26panoid%3DkyOVFNicj1CEdTkc6WSMuQ%26yaw%3D324.68010301572855!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "2af84025-b185-4eb8-9b05-166d7d3486e7",
+      "name": {
+        "ja": "高岡市水道局住吉ポンプ場",
+        "en": "Sumiyoshi Pumping Station, Takaoka City Waterworks Bureau"
+      },
+      "geo": {
+        "latitude": 36.74556,
+        "longitude": 137.00121
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7455388,137.0012044,3a,90y,152.71h,94.56t/data=!3m7!1e1!3m5!1sW0zm1zHvO0BbHAB2A0A9mQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.558564367762742%26panoid%3DW0zm1zHvO0BbHAB2A0A9mQ%26yaw%3D152.7119330448225!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "356c72ea-34cd-48ea-aaa9-eb053c953cb4",
+      "name": {
+        "en": "Nagata Printing",
+        "ja": "長田印刷"
+      },
+      "geo": {
+        "latitude": 36.74119,
+        "longitude": 136.99906
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7411743,136.9990896,3a,90y,258.6h,96.77t/data=!3m7!1e1!3m5!1sfgu76aD-Ycc6HzNVlhoFdQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.771842063354981%26panoid%3Dfgu76aD-Ycc6HzNVlhoFdQ%26yaw%3D258.59807400868476!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "35f2795b-e5ec-4303-9bb5-62a9b6c34c19",
+      "name": {
+        "ja": "三の丸茶屋·公園案内所",
+        "en": "Sanomaru Teahouse - Park Information Center"
+      },
+      "geo": {
+        "latitude": 36.74914,
+        "longitude": 137.0232
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7491477,137.0231017,3a,49.6y,84.76h,91.3t/data=!3m7!1e1!3m5!1sGOoX_w1iVAjT6mia-yRbjw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.304836713739462%26panoid%3DGOoX_w1iVAjT6mia-yRbjw%26yaw%3D84.75742452179873!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "3ee328d5-f2d8-4ea7-be3b-e1d9a285c606",
+      "name": {
+        "en": "Choyo Bridge",
+        "ja": "朝陽橋"
+      },
+      "geo": {
+        "latitude": 36.74934,
+        "longitude": 137.02203
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7495113,137.0216994,3a,75y,116.13h,90.21t/data=!3m7!1e1!3m5!1sxy0rMz1PTFOCVaaI70bprw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.20848468226944306%26panoid%3Dxy0rMz1PTFOCVaaI70bprw%26yaw%3D116.13341368471487!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "4248ebf3-5c6b-423d-9ba0-88f875601a29",
+      "name": {
+        "ja": "高岡市立木津公民館",
+        "en": "Takaoka Shiritsu Kizu Community Center"
+      },
+      "geo": {
+        "latitude": 36.73826,
+        "longitude": 136.99684
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7382537,136.996849,3a,75y,290.31h,90.8t/data=!3m7!1e1!3m5!1s4IrQNE50sgFaPVmBzqpBTQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.8034487037364073%26panoid%3D4IrQNE50sgFaPVmBzqpBTQ%26yaw%3D290.31033689088235!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "45de1306-6d7a-4118-b92f-f1aabdab4359",
+      "name": {
+        "ja": "木津公園",
+        "en": "Kizu Park"
+      },
+      "geo": {
+        "latitude": 36.73786,
+        "longitude": 136.99736
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7380003,136.9971778,3a,44.6y,121.68h,91.47t/data=!3m7!1e1!3m5!1s-lp_h0p9zdsuJDQm3Gh_UA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.4713132160745204%26panoid%3D-lp_h0p9zdsuJDQm3Gh_UA%26yaw%3D121.68221009732771!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "473916d8-c6ea-4500-86f0-dd00e6226f06",
+      "name": {
+        "en": "Odake Yabu Plaza",
+        "ja": "小竹藪広場"
+      },
+      "geo": {
+        "latitude": 36.75075,
+        "longitude": 137.02272
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7507414,137.0226822,3a,90y,358.58h,101.2t/data=!3m7!1e1!3m5!1s3bwKuaqfFwd64yNhANdT4Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.2041938493917%26panoid%3D3bwKuaqfFwd64yNhANdT4Q%26yaw%3D358.5788514667906!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "4a4ecb3c-328a-4bfb-8fb3-185d74738168",
+      "name": {
+        "en": "Kanonji",
+        "ja": "観音寺（曹洞宗）"
+      },
+      "geo": {
+        "latitude": 36.74094,
+        "longitude": 137.01089
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7410397,137.0108634,3a,49.6y,186.1h,91.11t/data=!3m7!1e1!3m5!1ssUyB9H6lzRotfZK7rSvIKw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.111852361706994%26panoid%3DsUyB9H6lzRotfZK7rSvIKw%26yaw%3D186.10014399103093!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "4dde2d85-4faa-4b6b-b452-89370335ecb3",
+      "name": {
+        "ja": "ココス 高岡駅南店",
+        "en": "Cocos Takaoka Ekiminami"
+      },
+      "geo": {
+        "latitude": 36.73857,
+        "longitude": 137.01814
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7386364,137.0182719,3a,43y,233.56h,94.98t/data=!3m7!1e1!3m5!1se0WGvKCQrsIHHrH7_plsmw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.979044271462655%26panoid%3De0WGvKCQrsIHHrH7_plsmw%26yaw%3D233.55558599067612!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "4fdc4d80-afbf-4f20-a578-93e84ec8b041",
+      "name": {
+        "ja": "レオパレスBigハート",
+        "en": "Leopalace Big Heart"
+      },
+      "geo": {
+        "latitude": 36.73852,
+        "longitude": 136.99657
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7384533,136.996593,3a,49.2y,6.66h,88.03t/data=!3m7!1e1!3m5!1shDccuFQcH_uFHk8o26ip-g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9671319602644104%26panoid%3DhDccuFQcH_uFHk8o26ip-g%26yaw%3D6.65912792338266!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "5291d3e4-e9a1-449c-a4c7-fd59b63d8384",
+      "name": {
+        "ja": "高岡駅北口タクシー乗り場",
+        "en": "Takaoka Station north exit taxi stand"
+      },
+      "geo": {
+        "latitude": 36.74169,
+        "longitude": 137.01522
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7417876,137.0151714,3a,55.6y,121.81h,96.69t/data=!3m7!1e1!3m5!1sjC52y1HomOqb2CUXqg1xXw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.688622459367494%26panoid%3DjC52y1HomOqb2CUXqg1xXw%26yaw%3D121.81153226133559!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "5572c43f-1ea2-480b-8be1-e63214e6fb83",
+      "name": {
+        "ja": "アミング 高岡店",
+        "en": "Aming Takaoka"
+      },
+      "geo": {
+        "latitude": 36.73081,
+        "longitude": 137.01655
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7306557,137.0166317,3a,49.6y,38.94h,96.14t/data=!3m7!1e1!3m5!1s9mQzzx-iZYGygCz9wzUU0A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.1381597391336555%26panoid%3D9mQzzx-iZYGygCz9wzUU0A%26yaw%3D38.93929308402064!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "561370a0-32ea-4305-84bd-90b3c6d7bb62",
+      "name": {
+        "en": "7-Eleven; Curun Takaoka",
+        "ja": "セブン-イレブン クルン高岡店"
+      },
+      "geo": {
+        "latitude": 36.74172,
+        "longitude": 137.01553
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7417737,137.0154783,3a,32.5y,340.91h,90.06t/data=!3m7!1e1!3m5!1s-wv6Ezr4XUo1GlW1H-gYQQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.06461169708923364%26panoid%3D-wv6Ezr4XUo1GlW1H-gYQQ%26yaw%3D340.90584621317555!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "5c66accf-2e89-4215-90e1-2c32aaa5fb69",
+      "name": {
+        "en": "SEKAI HOTEL Takaoka"
+      },
+      "geo": {
+        "latitude": 36.74352,
+        "longitude": 137.01441
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7436121,137.0141581,3a,75y,98.97h,94.45t/data=!3m7!1e1!3m5!1sb2eEzibvZEi2x_k1YfdVaw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.448491474167923%26panoid%3Db2eEzibvZEi2x_k1YfdVaw%26yaw%3D98.96511909844745!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "60a683db-f8df-4941-a969-7e93db4a7775",
+      "name": {
+        "ja": "赤祖父公民館",
+        "en": "Akasofu Community Center"
+      },
+      "geo": {
+        "latitude": 36.73108,
+        "longitude": 137.02075
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7311137,137.0208284,3a,75y,176.58h,95.09t/data=!3m7!1e1!3m5!1s8CWfxr-oRf0tE5SVw1ub1w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.092289350515415%26panoid%3D8CWfxr-oRf0tE5SVw1ub1w%26yaw%3D176.58133031075255!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "610befce-1d31-4721-9c1a-2c35ee7a3bfe",
+      "name": {
+        "ja": "富山大橋",
+        "en": "Toyamao Bridge"
+      },
+      "geo": {
+        "latitude": 36.69386,
+        "longitude": 137.19947
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-toyama-toyama",
+      "streetViewUrl": "https://www.google.com/maps/@36.6938802,137.1994048,3a,75y,216.22h,100.23t/data=!3m7!1e1!3m5!1snS9iz29F_I2DDo-6WMRD3A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.230539243604412%26panoid%3DnS9iz29F_I2DDo-6WMRD3A%26yaw%3D216.2156677862411!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "6d10014e-a543-41e4-8c03-190764e59f42",
+      "name": {
+        "en": "Ekimae Hiroba Ryokuchi Park",
+        "ja": "駅前広場緑地"
+      },
+      "geo": {
+        "latitude": 36.74203,
+        "longitude": 137.01559
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7418178,137.0153712,3a,75y,50.24h,96.14t/data=!3m7!1e1!3m5!1sA2Pv2pe1bNEndEAbkFu1dw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.14478425003999%26panoid%3DA2Pv2pe1bNEndEAbkFu1dw%26yaw%3D50.236714962346234!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "701d4282-d654-4304-8aa5-07b1924a254f",
+      "name": {
+        "ja": "セブン-イレブン ハートインＪＲ富山駅店",
+        "en": "7-Eleven+Heart-in JR Toyama Station"
+      },
+      "geo": {
+        "latitude": 36.70146,
+        "longitude": 137.21273
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-toyama-toyama",
+      "streetViewUrl": "https://www.google.com/maps/@36.7014667,137.2126154,3a,90y,105.49h,97.58t/data=!3m7!1e1!3m5!1sMS6Dvmr694iHcombBh7nXA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.5794672471590445%26panoid%3DMS6Dvmr694iHcombBh7nXA%26yaw%3D105.49446389079891!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "7aecf5ca-fab0-4e17-ab67-c2ce023c7cb8",
+      "name": {
+        "en": "Yamaya Takaoka",
+        "ja": "やまや 高岡店"
+      },
+      "geo": {
+        "latitude": 36.73169,
+        "longitude": 137.0202
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7317739,137.0201985,3a,43.8y,150.61h,93.54t/data=!3m7!1e1!3m5!1sp5I6Av72GcaIjSuSNoavMA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.540908196879627%26panoid%3Dp5I6Av72GcaIjSuSNoavMA%26yaw%3D150.60855599991072!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "82258430-8d48-4604-921c-e2a33598b937",
+      "name": {
+        "ja": "問屋町緑地",
+        "en": "Tonyamachi Ryokuchi Park"
+      },
+      "geo": {
+        "latitude": 36.73047,
+        "longitude": 137.0268
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7304236,137.0266108,3a,33.7y,89.08h,92.39t/data=!3m7!1e1!3m5!1sn9PIx4pPsxgk4uIGinIsCA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.39111407957634%26panoid%3Dn9PIx4pPsxgk4uIGinIsCA%26yaw%3D89.07579143298582!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "8587e31b-f4f7-4081-bd82-c30d098d7e6b",
+      "name": {
+        "en": "Zashiki Cuisine Miyaichi",
+        "ja": "座敷料理 宮一"
+      },
+      "geo": {
+        "latitude": 36.73918,
+        "longitude": 137.00273
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7391788,137.0027005,3a,49.6y,36.87h,91.54t/data=!3m7!1e1!3m5!1scDQEiBaoWOy1cjD1VSbB3w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.5361691462624947%26panoid%3DcDQEiBaoWOy1cjD1VSbB3w%26yaw%3D36.86846845225019!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "88294e43-529f-426b-a9e0-f1cf00139452",
+      "name": {
+        "en": "Takaokaseishikaibyoin Parking Lot",
+        "ja": "高岡整志会病院 駐車場"
+      },
+      "geo": {
+        "latitude": 36.74601,
+        "longitude": 137.01997
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7461019,137.020038,3a,64.3y,197.49h,93.83t/data=!3m7!1e1!3m5!1s4Jd3iQbwX_ElkhLY0eEaPg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.8329536918134863%26panoid%3D4Jd3iQbwX_ElkhLY0eEaPg%26yaw%3D197.4932165989969!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "8916ab1a-0ab8-4ed5-a753-6d8757b93228",
+      "name": {
+        "en": "Valor Takaoka Kizu Store",
+        "ja": "スーパーマーケットバロー高岡木津店"
+      },
+      "geo": {
+        "latitude": 36.73902,
+        "longitude": 137.00111
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7391153,137.0010878,3a,90y,339.26h,94.26t/data=!3m7!1e1!3m5!1s5k8ym6Txd7CaVIBfd1CFuA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.259828438654452%26panoid%3D5k8ym6Txd7CaVIBfd1CFuA%26yaw%3D339.2584442445283!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "8a923d6c-cbdb-437b-b3f9-bf02b7725e7c",
+      "name": {
+        "en": "Beniran Ramen",
+        "ja": "らーめん 紅蘭"
+      },
+      "geo": {
+        "latitude": 36.73911,
+        "longitude": 137.00266
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7390988,137.0025677,3a,63.4y,172.96h,93.39t/data=!3m7!1e1!3m5!1sLjL3EwobNVNEaY7Wjkdc-A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.392576097540015%26panoid%3DLjL3EwobNVNEaY7Wjkdc-A%26yaw%3D172.96099249472158!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "8c2b64d8-cc1a-4041-9bc9-43ab9a0446a9",
+      "name": {
+        "en": "Kizu Compact House",
+        "ja": "木津コンパクトハウス"
+      },
+      "geo": {
+        "latitude": 36.74038,
+        "longitude": 136.99589
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.740256,136.9958232,3a,42.2y,24.51h,94.4t/data=!3m7!1e1!3m5!1sWGCYvarO3BfnndZDmw-69w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.4030826658699596%26panoid%3DWGCYvarO3BfnndZDmw-69w%26yaw%3D24.509556316552516!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "8c6a53b4-37b1-4d50-a9b0-0070011570a2",
+      "name": {
+        "ja": "Ｖ・drug 高岡木津店",
+        "en": "V-drug Takaoka Kizu Store"
+      },
+      "geo": {
+        "latitude": 36.7391,
+        "longitude": 137.00097
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7391076,137.0009375,3a,40.7y,119.65h,93.6t/data=!3m7!1e1!3m5!1sGOM95wUk6KkDtdXnDHBzSA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.6013694800697778%26panoid%3DGOM95wUk6KkDtdXnDHBzSA%26yaw%3D119.65377618553!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "8ec8fe25-a5b4-4971-b413-1713d1fd7e81",
+      "name": {
+        "en": "Daifukuin",
+        "ja": "大福院"
+      },
+      "geo": {
+        "latitude": 36.74144,
+        "longitude": 136.99523
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.741443,136.9952545,3a,48.8y,227.41h,91.81t/data=!3m7!1e1!3m5!1sMP90YcgwUwvkT94sRO3YOQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.8140352270751379%26panoid%3DMP90YcgwUwvkT94sRO3YOQ%26yaw%3D227.41388162105278!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "988f6875-d272-476a-9dbf-5f73438052e7",
+      "name": {
+        "en": "Takaoka Station north exit taxi stand",
+        "ja": "高岡駅北口タクシー乗り場"
+      },
+      "geo": {
+        "latitude": 36.7417,
+        "longitude": 137.01515
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7417915,137.015069,3a,46.3y,129.58h,91.4t/data=!3m7!1e1!3m5!1snoszfR6Y0XV8Z_EvAQUgAA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.3979757004947828%26panoid%3DnoszfR6Y0XV8Z_EvAQUgAA%26yaw%3D129.5772232111854!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "9ac5e88c-31a9-4144-8583-c878d93e25f3",
+      "name": {
+        "ja": "二月と八月",
+        "en": "February and August"
+      },
+      "geo": {
+        "latitude": 36.73884,
+        "longitude": 136.9962
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7388627,136.9962075,3a,50.8y,150.52h,94.51t/data=!3m7!1e1!3m5!1sOXF3lTGBkXzrjiRqy8gx3Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.514651527170088%26panoid%3DOXF3lTGBkXzrjiRqy8gx3Q%26yaw%3D150.51564869899715!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "9d3ea100-c83b-4c97-b078-051a3bdfdf02",
+      "name": {
+        "ja": "セブン-イレブン ハートインあいの風鉄道富山駅店",
+        "en": "7-Eleven+Heart-in Ainokaze Toyama Railway Station"
+      },
+      "geo": {
+        "latitude": 36.70157,
+        "longitude": 137.21336
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-toyama-toyama",
+      "streetViewUrl": "https://www.google.com/maps/@36.7015839,137.2131499,3a,64.3y,102.5h,74.32t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID4w4zC6QE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYMxjFTEBZjVe7we4fRZX4HF1bISE5L19Uyl70RNyBxykIeVPAgaCCZO2SWJ2xdM56RfVwEXvN4N2Du4cL2ZLG4m9HOqMRBs4z8j0jkDwQy3SV2uPSfU9bgRsBaoSEsAPaAQzXwAw%3Dw900-h600-k-no-pi15.677862104388154-ya293.49890272130324-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "a41b7716-a477-42c6-a3fc-7d4e328d8b91",
+      "name": {
+        "ja": "朝陽橋",
+        "en": "Choyo Bridge"
+      },
+      "geo": {
+        "latitude": 36.74938,
+        "longitude": 137.02222
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7494022,137.0222505,3a,90y,31.9h,92.91t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICkuMCUNQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6Hb-CbGzjzCyNx3GRGul1YMhtUKlOT04Wfd38a6ZVtqV6uamK55kUyQtvqhcnv3Dbpe1x_jcfM-9aZzcqub6qNffMO80eNLLAWYIqe3X34NeXd1Tl5zD_cPbs6Aea3Mltejz1Gug%3Dw900-h600-k-no-pi-2.905263157894737-ya159.25722438533586-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "a89de80e-7bcf-45e7-adc6-755bd94df4e3",
+      "name": {
+        "en": "Kida Office",
+        "ja": "木田事務所"
+      },
+      "geo": {
+        "latitude": 36.73693,
+        "longitude": 137.00529
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.736716,137.0058714,3a,43y,294.15h,93.32t/data=!3m7!1e1!3m5!1sIOaWJse2y0TSc3CiQH0uhA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.315371698335909%26panoid%3DIOaWJse2y0TSc3CiQH0uhA%26yaw%3D294.1458855644212!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "ac501bfb-9471-4371-a9fb-45ebdebf9c17",
+      "name": {
+        "ja": "赤祖父神社",
+        "en": "Akasofu Shrine"
+      },
+      "geo": {
+        "latitude": 36.73104,
+        "longitude": 137.02088
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7309937,137.0208134,3a,90y,68.67h,99.96t/data=!3m7!1e1!3m5!1sEi8tA9YXiA7n6PtcJT-2BQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.960058910205944%26panoid%3DEi8tA9YXiA7n6PtcJT-2BQ%26yaw%3D68.66590662139805!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "affe4240-a286-46fa-83e4-9b56484470ff",
+      "name": {
+        "ja": "駅南緑の丘公園",
+        "en": "Ekinanmidorinooka Park"
+      },
+      "geo": {
+        "latitude": 36.73177,
+        "longitude": 137.01901
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.731875,137.0189833,3a,85.2y,152.57h,92.4t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC4trrOBQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZBObX9eQvYPYgOAeignBE36CB2yL3mU4ampU-ZcgixB8fist0gor27a6Zk4N05_FXXI-5ynDE6c475GG9Bm9gntcOkCeWqHWYHdRhkrya3moAxBdxpFSFoDoqrtfLT-zWOPLRe%3Dw900-h600-k-no-pi-2.4020008513102766-ya265.0686244887087-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "b2e74eb0-93f0-4764-99b3-46158f3c903f",
+      "name": {
+        "kr": "도야마 역",
+        "ja": "富山駅",
+        "en": "TOYAMA STATION"
+      },
+      "geo": {
+        "latitude": 36.70163,
+        "longitude": 137.2134
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-toyama-toyama",
+      "streetViewUrl": "https://www.google.com/maps/place/TOYAMA+STATION/@36.7017097,137.2129517,3a,90y,352.49h,95.98t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID4g-eevgE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HY49BqhcsBcKWSPEqi-twK4HQvqXTqYO3k6xU27u3JaAtTzROizfYimeqclXpgAN22Twt0DNmjsOx1_oNqvpNEsXf3tGXrJKmrZBFL9AHnMbQSo97d93PPFRc5sNmf9L5UshKEP3Q%3Dw900-h600-k-no-pi-5.984193550105033-ya9.390237302304058-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x5ff7909c5b203e79:0xfd2e8dbcd4fdb276!8m2!3d36.7018268!4d137.2126258!10e5!14m1!1BCgIgARICCAI!16s%2Fm%2F025zfy3?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "b331b96b-8d29-437d-86d1-cb81b2fb58e1",
+      "name": {
+        "en": "Cafe Gallery Silver Wheel",
+        "ja": "カフェギャラリー 銀の車輪"
+      },
+      "geo": {
+        "latitude": 36.73821,
+        "longitude": 136.99782
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7385084,136.9983674,3a,15y,233.08h,91.08t/data=!3m7!1e1!3m5!1sfyVZ1V4Z4yCxmNaLX3tISw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.0827533503505151%26panoid%3DfyVZ1V4Z4yCxmNaLX3tISw%26yaw%3D233.08209208352238!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUxMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "b4fd8895-9033-46bb-9c93-150e9ff93144",
+      "name": {
+        "en": "Yakiniku Kamuru",
+        "ja": "焼肉かむる"
+      },
+      "geo": {
+        "latitude": 36.74476,
+        "longitude": 137.0134
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7446313,137.0133128,3a,90y,32.09h,98.83t/data=!3m7!1e1!3m5!1sTDI9vMgBHFxYAdPJ4B0U1w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.831332857943693%26panoid%3DTDI9vMgBHFxYAdPJ4B0U1w%26yaw%3D32.085947714558245!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "c4379ad8-ae62-4d5f-ad88-cc35c8059e2c",
+      "name": {
+        "en": "NAMERA Corporation",
+        "ja": "株式会社名免良"
+      },
+      "geo": {
+        "latitude": 36.74087,
+        "longitude": 136.99616
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.740934,136.9961505,3a,48.7y,167.66h,93.96t/data=!3m7!1e1!3m5!1sm-jH09IqhAgoUbCqNwMtkA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.955368982342918%26panoid%3Dm-jH09IqhAgoUbCqNwMtkA%26yaw%3D167.65634065082318!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "c534c3a9-0a14-42c2-9bb6-9b1d1e7ec498",
+      "name": {
+        "en": "Best Partners Tax Corporation Murakami Office",
+        "ja": "ベストパートナーズ税理士法人 村上事務所"
+      },
+      "geo": {
+        "latitude": 36.74264,
+        "longitude": 136.99967
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.742654,136.9996446,3a,90y,43.77h,91.23t/data=!3m7!1e1!3m5!1srZV1tnH8yxNmuz2rQ6x5Ug!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.2290213838868027%26panoid%3DrZV1tnH8yxNmuz2rQ6x5Ug%26yaw%3D43.77215923645466!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "c560ef83-0cb5-4aba-a578-8f31d80784b8",
+      "name": {
+        "ja": "中の島",
+        "en": "middle of an island"
+      },
+      "geo": {
+        "latitude": 36.75018,
+        "longitude": 137.02211
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7502099,137.0221635,3a,75y,228.78h,95.81t/data=!3m7!1e1!3m5!1sc6apCW6TA1J8m_gRXf8_CQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.809373119302421%26panoid%3Dc6apCW6TA1J8m_gRXf8_CQ%26yaw%3D228.77795998360534!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "c71a3061-6858-4c22-b9a0-98aa4debd1a7",
+      "name": {
+        "en": "Odake Yabu Plaza",
+        "ja": "小竹藪広場"
+      },
+      "geo": {
+        "latitude": 36.75013,
+        "longitude": 137.0234
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7501941,137.0236399,3a,90y,220.72h,91.92t/data=!3m7!1e1!3m5!1sZHCKOJErx6KfNKELERjQEg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.9152855713214052%26panoid%3DZHCKOJErx6KfNKELERjQEg%26yaw%3D220.7244034782404!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "c74339d0-9aaf-4d88-bace-7785530fbcc3",
+      "name": {
+        "ja": "指物畳店",
+        "en": "Sashimono Tatami Shop"
+      },
+      "geo": {
+        "latitude": 36.74094,
+        "longitude": 137.0103
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.741046,137.0102493,3a,42.2y,150.38h,92.31t/data=!3m7!1e1!3m5!1sZmdsg60jUPlWJ5YDIVkrCA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.3051971066007013%26panoid%3DZmdsg60jUPlWJ5YDIVkrCA%26yaw%3D150.37701699939922!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "cd1ea29f-0508-4ead-a6b5-5d4b3b920ee2",
+      "name": {
+        "en": "Senbogawa boardwalk",
+        "ja": "千保川遊歩道"
+      },
+      "geo": {
+        "latitude": 36.74102,
+        "longitude": 137.00058
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7410577,137.0005192,3a,90y,134.12h,98.67t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgIC4trrKLg!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZPfQQ_iBnVYXrhbFtRBD8uet2UGRrB2s57pVdZf5IRRHvoGPZcET-0p3syST0yZJdEcnzxH8gQd92F7nGzkd6rUa9JnNtC7PZckQaI9iC9bKVAoaXMoi1OnInOHOiAfzwqQWC7%3Dw900-h600-k-no-pi-8.673484548516427-ya359.12218334882533-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "ce0eebdb-60db-4bb6-8637-128c28ab7fe6",
+      "name": {
+        "en": "Hayashi Planer",
+        "ja": "林プレーナー"
+      },
+      "geo": {
+        "latitude": 36.74186,
+        "longitude": 136.9965
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7418364,136.9965018,3a,33.5y,216.42h,92.01t/data=!3m7!1e1!3m5!1sOAPoN9RVltgiRi2HiXfcKw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.0102671274500636%26panoid%3DOAPoN9RVltgiRi2HiXfcKw%26yaw%3D216.41553833563722!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "d23b8a83-87a1-4406-affa-3f099d04874f",
+      "name": {
+        "en": "Ueno Trading",
+        "ja": "上野通商"
+      },
+      "geo": {
+        "latitude": 36.74079,
+        "longitude": 136.99443
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7407099,136.9943719,3a,31y,42.85h,92.52t/data=!3m7!1e1!3m5!1seH6dQHvuTV9JCBdQE753Lg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.52405432671236%26panoid%3DeH6dQHvuTV9JCBdQE753Lg%26yaw%3D42.85071207731563!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "d2eb25b1-8fcb-47a2-b2e6-7ccedfceec2b",
+      "name": {
+        "en": "Nagata Printing",
+        "ja": "長田印刷"
+      },
+      "geo": {
+        "latitude": 36.74104,
+        "longitude": 136.99882
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7410594,136.99887,3a,75y,265.3h,94.46t/data=!3m7!1e1!3m5!1sjDiUvsXYwqx9cxf-N7Z0yw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.463960939038856%26panoid%3DjDiUvsXYwqx9cxf-N7Z0yw%26yaw%3D265.3011828583586!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "d7ae1719-02a5-4a43-a6c4-cb108d1d45fc",
+      "name": {
+        "en": "Okihakusansha",
+        "ja": "大木白山社"
+      },
+      "geo": {
+        "latitude": 36.74118,
+        "longitude": 137.01016
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.741201,137.0101705,3a,90y,235h,86.31t/data=!3m7!1e1!3m5!1szYtKXYHyzHgJuz1XIf4-DA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D3.6922391574095457%26panoid%3DzYtKXYHyzHgJuz1XIf4-DA%26yaw%3D234.99537529142793!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "db97cc5b-5139-4ae9-bbcf-b2836788aa9e",
+      "name": {
+        "ja": "大木白山社",
+        "en": "Okihakusansha"
+      },
+      "geo": {
+        "latitude": 36.74118,
+        "longitude": 137.01043
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7414444,137.0104515,3a,54y,182.8h,93.01t/data=!3m7!1e1!3m5!1syH2JbRGJHOM2Tpq0NIqjgg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.0089655609151436%26panoid%3DyH2JbRGJHOM2Tpq0NIqjgg%26yaw%3D182.80312115179836!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "dcfa988a-33a7-47d7-97d9-c96211d28504",
+      "name": {
+        "ja": "高岡市立木津小学校",
+        "en": "Kizu Elementary School"
+      },
+      "geo": {
+        "latitude": 36.73947,
+        "longitude": 136.9954
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7395255,136.9954487,3a,90y,204.72h,98.92t/data=!3m7!1e1!3m5!1s_ubpZhQceqBy3Yks8bdZMA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.916507749193045%26panoid%3D_ubpZhQceqBy3Yks8bdZMA%26yaw%3D204.7222920654503!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "e3564923-3fde-4116-9306-2ecf5243131f",
+      "name": {
+        "en": "Ueno Shokuryohinten",
+        "ja": "フレッシュフルーツ 上野商店"
+      },
+      "geo": {
+        "latitude": 36.74281,
+        "longitude": 136.99667
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7428279,136.9967038,3a,90y,181.14h,93.62t/data=!3m7!1e1!3m5!1si1-yQrwxDV7-w5k-MYBiHQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.61510121607499%26panoid%3Di1-yQrwxDV7-w5k-MYBiHQ%26yaw%3D181.14317177140683!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "ea58ad9a-c20e-404f-a784-f3c2772582a2",
+      "name": {
+        "en": "Takaoka Castle Ruins of the main entrance",
+        "ja": "高岡城 大手口跡"
+      },
+      "geo": {
+        "latitude": 36.74612,
+        "longitude": 137.02009
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7460704,137.020067,3a,57.9y,37.28h,96.89t/data=!3m7!1e1!3m5!1s3oVX6CAUzWj-Z2VQt0k7KA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.889257593063135%26panoid%3D3oVX6CAUzWj-Z2VQt0k7KA%26yaw%3D37.275114801402026!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "f2670571-6b61-423b-89b1-b0bc6aa6244d",
+      "name": {
+        "ja": "上野通商",
+        "en": "Ueno Trading"
+      },
+      "geo": {
+        "latitude": 36.74086,
+        "longitude": 136.99452
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7408585,136.9945469,3a,90y,280.6h,86.4t/data=!3m7!1e1!3m5!1sPKC75dw7JmeK7zi2tOCnkQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D3.601848779777967%26panoid%3DPKC75dw7JmeK7zi2tOCnkQ%26yaw%3D280.5961506222767!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "f7916943-4a0f-4e54-9a33-3da2ceb72831",
+      "name": {
+        "ja": "指物畳店",
+        "en": "Sashimono Tatami Shop"
+      },
+      "geo": {
+        "latitude": 36.74078,
+        "longitude": 137.01036
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7406583,137.0103945,3a,75y,356.28h,93.19t/data=!3m7!1e1!3m5!1sZIRedpVmJPCYoZ_vkFHVZw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.1945573354545047%26panoid%3DZIRedpVmJPCYoZ_vkFHVZw%26yaw%3D356.27861927462743!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "97d3ab20-1464-414b-9b15-c45f51dfa440",
+      "name": {
+        "en": "Aeon Mall Takaoka",
+        "kr": "이온몰 타카오카",
+        "ja": "イオンモール高岡"
+      },
+      "geo": {
+        "latitude": 36.72391,
+        "longitude": 137.01628
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7241283,137.0156194,3a,90y,218.25h,91.15t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDE9bvjhgE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HbHLzwdLud2egyGXKSpZC2Y-bPO0vHXovxihhVSpTCK33tJEV4-akoNN3WKSwqliNr7Q37rQzq04KeHQyzxk-EscBkqPqyCZFoXHPiDNSIVfTCNprn1-9tnqA4x7S0Qvr8e0x5xPg%3Dw900-h600-k-no-pi-1.1499479797809187-ya128.2471942878983-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2015 なもり/一迅社・七森中ごらく部"
+    }
+  ]
+}

@@ -1,0 +1,343 @@
+{
+  "anime": {
+    "animeId": "eYYabtope1MjwWUbzTSm",
+    "slug": "wolf-children",
+    "title": {
+      "ja": "おおかみこどもの雨と雪",
+      "kr": "늑대아이",
+      "en": "Wolf Children"
+    },
+    "author": {
+      "ja": [
+        "細田守"
+      ],
+      "en": [
+        "Mamoru Hosoda"
+      ],
+      "kr": [
+        "호소다 마모루"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "スタジオ地図"
+      ],
+      "en": [
+        "Studio Chizu"
+      ],
+      "kr": [
+        "스튜디오 지즈"
+      ]
+    }
+  },
+  "placeCount": 19,
+  "places": [
+    {
+      "placeId": "246486b3-4d73-499d-8afb-d2e8d76618ed",
+      "name": {
+        "ja": "井の頭恩賜公園",
+        "kr": "이노카시라 공원",
+        "en": "Inokashira Park"
+      },
+      "geo": {
+        "latitude": 35.69878,
+        "longitude": 139.57882
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-mitaka",
+      "streetViewUrl": "https://maps.app.goo.gl/RLzyK9NpDCnqmNFZ9",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "26616595-17e0-43b8-ab28-a3016c496724",
+      "name": {
+        "en": "Koganei Park",
+        "kr": "도쿄도립 고가네이 공원",
+        "ja": "小金井公園"
+      },
+      "geo": {
+        "latitude": 35.71603,
+        "longitude": 139.51917
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-koganei",
+      "streetViewUrl": "https://maps.app.goo.gl/7zcWy26YGy4DibHX9",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "29f47b77-a351-4b63-8548-a33917ec488e",
+      "name": {
+        "ja": "焼肉亭いなみ",
+        "en": "Yakiniku Restaurant Inami"
+      },
+      "geo": {
+        "latitude": 35.69775,
+        "longitude": 139.44647
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-kunitachi",
+      "streetViewUrl": "https://maps.app.goo.gl/McvjmicCLv1pb7SW6",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "37b5798e-0c77-43cd-b065-6c81ca22e926",
+      "name": {
+        "ja": "ガスト 国立駅前店",
+        "en": "Gusto Kunitachi Ekimae store"
+      },
+      "geo": {
+        "latitude": 35.69594,
+        "longitude": 139.44655
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-kunitachi",
+      "streetViewUrl": "https://maps.app.goo.gl/dBprorBbxYDr9GgZ9",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "492ab22d-ad80-4cc4-ac9b-c4f1aa2cbdd5",
+      "name": {
+        "en": "Hokennomadoguchi Kunitachiten",
+        "ja": "ほけんの窓口 国立店"
+      },
+      "geo": {
+        "latitude": 35.69792,
+        "longitude": 139.44764
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-kunitachi",
+      "streetViewUrl": "https://maps.app.goo.gl/UnxmJfJzu1z2iRZR8",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "4e6023ef-7b9e-40a5-85cb-1867e3b86300",
+      "name": {
+        "en": "Wolf Children's Hana's House",
+        "ja": "おおかみこどもの花の家"
+      },
+      "geo": {
+        "latitude": 36.65999,
+        "longitude": 137.40573
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-kamiichi",
+      "streetViewUrl": "https://maps.app.goo.gl/MXt8K6tkJ92jm58q7",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "6742032a-68e8-4c5f-8757-7d70ab58c048",
+      "name": {
+        "en": "Yoshizawachozai Pharmacy",
+        "ja": "吉沢調剤薬局"
+      },
+      "geo": {
+        "latitude": 35.70849,
+        "longitude": 139.60401
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://maps.app.goo.gl/EDTZabiAdTDBQcGs5",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "678d61bb-a1a6-456d-8772-5fda5e3ae12f",
+      "name": {
+        "ja": "ガネーシャガル 西荻窪",
+        "en": "Ganesha Ghar Indian Cuisine"
+      },
+      "geo": {
+        "latitude": 35.70806,
+        "longitude": 139.60189
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://maps.app.goo.gl/3zoEmwJwB5k4eh5j6",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "713f622b-9d00-4a25-8dee-e90d80039ab0",
+      "name": {
+        "en": "Nishiogi Animal Clinic",
+        "ja": "西荻動物病院"
+      },
+      "geo": {
+        "latitude": 35.70715,
+        "longitude": 139.59579
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://maps.app.goo.gl/NsmBR4Y913EgNB9J9",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "9d6ba82e-dbc4-45b3-95b2-3b303938915b",
+      "name": {
+        "ja": "一橋大学",
+        "en": "Hitotsubashi University",
+        "kr": "히토츠바시 대학"
+      },
+      "geo": {
+        "latitude": 35.69502,
+        "longitude": 139.44657
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-kunitachi",
+      "streetViewUrl": "https://maps.app.goo.gl/oQ9yc2qbyVgPssBW8",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "b1319353-cd44-4996-adcf-d7aa571f71e2",
+      "name": {
+        "ja": "三本松公園",
+        "en": "Sanbonmatsu Park"
+      },
+      "geo": {
+        "latitude": 35.70033,
+        "longitude": 139.44949
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-kunitachi",
+      "streetViewUrl": "https://maps.app.goo.gl/6zxgwL9RtYPbNwGQ6",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "b67a3b01-63ac-4dd1-b6a5-fb69809948d5",
+      "name": {
+        "en": "Mikuriga-ike Pond",
+        "ja": "みくりが池"
+      },
+      "geo": {
+        "latitude": 36.58128,
+        "longitude": 137.596
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-tateyama",
+      "streetViewUrl": "https://maps.app.goo.gl/7Y7WzBwtjRDaeZKU9",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "bcb892fe-63f5-4e2b-bfeb-919e0882ec14",
+      "name": {
+        "en": "Suginami Rehabilitation Hospital",
+        "ja": "杉並リハビリテーション病院"
+      },
+      "geo": {
+        "latitude": 35.70421,
+        "longitude": 139.60217
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://maps.app.goo.gl/WULzWLj4L8YVeK768",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "bdc04fd5-bcf2-4635-b4ec-e586e83c738c",
+      "name": {
+        "en": "Sanbonmatsu Park",
+        "ja": "三本松公園"
+      },
+      "geo": {
+        "latitude": 35.70037,
+        "longitude": 139.44972
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-kokubunji",
+      "streetViewUrl": "https://maps.app.goo.gl/Se6rFDEQsvKhrD6s9",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "ce7d5867-2a4a-40b6-9d3c-25014deee73c",
+      "name": {
+        "ja": "（株）竹島骨材プラント",
+        "en": "Takeshima Aggregate Plant Co., Ltd."
+      },
+      "geo": {
+        "latitude": 36.69366,
+        "longitude": 137.39576
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-kamiichi",
+      "streetViewUrl": "https://maps.app.goo.gl/GL9WMXSrgcc2z8nX8",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "cfb4049b-73f2-4f7e-a17b-cb682723c82c",
+      "name": {
+        "en": "Shomyo Waterfall",
+        "ja": "称名滝"
+      },
+      "geo": {
+        "latitude": 36.58004,
+        "longitude": 137.50699
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-tateyama",
+      "streetViewUrl": "https://maps.app.goo.gl/dbeFsRMD8yFkN2JC7",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "d5edf360-a404-40b7-a35e-8823d886efed",
+      "name": {
+        "en": "Nobu Hironumaen",
+        "ja": "ノーブ平沼園"
+      },
+      "geo": {
+        "latitude": 35.70306,
+        "longitude": 139.56662
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://maps.app.goo.gl/tWV4MiHZnKAGb2us8",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "e654cdae-2273-4533-a9bc-b3353faca537",
+      "name": {
+        "ja": "横浜自然観察の森",
+        "en": "Yokohama Nature Observation Forest"
+      },
+      "geo": {
+        "latitude": 35.33888,
+        "longitude": 139.58585
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://maps.app.goo.gl/9EfZFM1RVzXVxWLj7",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    },
+    {
+      "placeId": "f1d03b5c-cf16-4383-979e-a67c84b9566e",
+      "name": {
+        "en": "Kaisen Sushi Misaki Kunitachi",
+        "ja": "回転寿司みさき 国立店"
+      },
+      "geo": {
+        "latitude": 35.69752,
+        "longitude": 139.44695
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-kunitachi",
+      "streetViewUrl": "https://maps.app.goo.gl/y41AJVxwKwkQzWnA8",
+      "copyright": "©2012「おおかみこどもの雨と雪」製作委員会"
+    }
+  ]
+}

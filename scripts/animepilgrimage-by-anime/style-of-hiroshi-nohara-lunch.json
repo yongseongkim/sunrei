@@ -1,0 +1,163 @@
+{
+  "anime": {
+    "animeId": "TjkYh2MXRiFE4rlWLMtb",
+    "slug": "style-of-hiroshi-nohara-lunch",
+    "title": {
+      "ja": "野原ひろし 昼メシの流儀",
+      "kr": "짱구아빠 노하라 히로시의 점심",
+      "en": "Style of Hiroshi Nohara's Lunch"
+    },
+    "author": {
+      "en": [
+        "Yoshito Usui",
+        "Yoichi Tsukahara"
+      ],
+      "ja": [
+        "臼井儀人",
+        "塚原洋一"
+      ],
+      "kr": [
+        "우스이 요시토",
+        "츠카하라 요이치"
+      ]
+    },
+    "studio": {
+      "en": [
+        "DLE"
+      ]
+    }
+  },
+  "placeCount": 8,
+  "places": [
+    {
+      "placeId": "22902f82-153f-4b79-943f-8a49fe0996eb",
+      "name": {
+        "en": "Koda",
+        "ja": "こうだ"
+      },
+      "geo": {
+        "latitude": 35.67405,
+        "longitude": 139.68646
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6740762,139.6864918,3a,89.8y,221.67h,89.01t/data=!3m7!1e1!3m5!1sqsUHdb2HfOUVj8j444n4bA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.9870567678661786%26panoid%3DqsUHdb2HfOUVj8j444n4bA%26yaw%3D221.66689715204893!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©臼井儀人・塚原洋一／「野原ひろし 昼メシの流儀」製作委員会"
+    },
+    {
+      "placeId": "494892a6-69d6-4453-95c8-a29657de1554",
+      "name": {
+        "en": "Sukiya Yoyogi 1-Chome Shop",
+        "ja": "すき家 代々木一丁目店"
+      },
+      "geo": {
+        "latitude": 35.68353,
+        "longitude": 139.70133
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6834739,139.7012601,3a,90y,48.8h,94.37t/data=!3m7!1e1!3m5!1sj47cv2hEkjjTx1eN3BCl4Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.3736842105263065%26panoid%3Dj47cv2hEkjjTx1eN3BCl4Q%26yaw%3D48.79789473684211!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©臼井儀人・塚原洋一／「野原ひろし 昼メシの流儀」製作委員会"
+    },
+    {
+      "placeId": "5028c785-77a8-4c41-a0fd-a8a15b493439",
+      "name": {
+        "en": "Bua de Thai",
+        "ja": "タイレストラン ブア·デ·タイ"
+      },
+      "geo": {
+        "latitude": 35.66452,
+        "longitude": 139.7579
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6645551,139.7578372,3a,90y,116.08h,94.31t/data=!3m8!1e1!3m6!1sOz9cd-dDL7caYVsZezcvlg!2e0!5s20220901T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.309018193310067%26panoid%3DOz9cd-dDL7caYVsZezcvlg%26yaw%3D116.07583021338367!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©臼井儀人・塚原洋一／「野原ひろし 昼メシの流儀」製作委員会"
+    },
+    {
+      "placeId": "7970630f-0365-4ea6-894f-9fd545856363",
+      "name": {
+        "en": "Teketeke Yoyogi",
+        "ja": "てけてけ 代々木店"
+      },
+      "geo": {
+        "latitude": 35.68261,
+        "longitude": 139.70232
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6826803,139.7022509,3a,90y,136.03h,93.16t/data=!3m7!1e1!3m5!1sv2sZJxnEIr84WEVxZ9cFWA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.162081709207982%26panoid%3Dv2sZJxnEIr84WEVxZ9cFWA%26yaw%3D136.02710463810905!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©臼井儀人・塚原洋一／「野原ひろし 昼メシの流儀」製作委員会"
+    },
+    {
+      "placeId": "83a2e94c-6572-4299-a3ab-430852618ad6",
+      "name": {
+        "kr": "신세카이",
+        "ja": "新世界",
+        "en": "Shinsekai"
+      },
+      "geo": {
+        "latitude": 34.65112,
+        "longitude": 135.50579
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-osaka-osaka",
+      "streetViewUrl": "https://maps.app.goo.gl/eRL8k5RasRpnSMhd9",
+      "copyright": "©臼井儀人・塚原洋一／「野原ひろし 昼メシの流儀」製作委員会"
+    },
+    {
+      "placeId": "b8b2994a-ad29-41e2-bb59-d3830a456e2d",
+      "name": {
+        "kr": "아미시로 공원",
+        "en": "Amishiro Park",
+        "ja": "網代公園"
+      },
+      "geo": {
+        "latitude": 35.65458,
+        "longitude": 139.73569
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6545346,139.7357413,3a,90y,281.65h,88.57t/data=!3m7!1e1!3m5!1s4T288UeoEOjynaNx1q7XoA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.4300028834997107%26panoid%3D4T288UeoEOjynaNx1q7XoA%26yaw%3D281.6521789332843!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©臼井儀人・塚原洋一／「野原ひろし 昼メシの流儀」製作委員会"
+    },
+    {
+      "placeId": "b9ed629c-510e-4d6e-8837-e7e4591ffc2a",
+      "name": {
+        "ja": "原宿警察署 代々木駅前交番",
+        "en": "Yoyogi Ekimae Police Box"
+      },
+      "geo": {
+        "latitude": 35.6826,
+        "longitude": 139.7019
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6824372,139.7018286,3a,49.6y,28.51h,92.47t/data=!3m7!1e1!3m5!1svePhG6vCb4y56gNs03qB4A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.468302661016878%26panoid%3DvePhG6vCb4y56gNs03qB4A%26yaw%3D28.509800896236335!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©臼井儀人・塚原洋一／「野原ひろし 昼メシの流儀」製作委員会"
+    },
+    {
+      "placeId": "fda9ebdd-d070-4999-863b-84dd8ae5ff5b",
+      "name": {
+        "ja": "midダイニング",
+        "en": "mid. Dining"
+      },
+      "geo": {
+        "latitude": 35.67325,
+        "longitude": 139.68791
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.673287,139.6878105,3a,90y,271.26h,109.46t/data=!3m7!1e1!3m5!1swqaDbIA_bP0ahdIHyJ4YOw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-19.455102519671797%26panoid%3DwqaDbIA_bP0ahdIHyJ4YOw%26yaw%3D271.2619595556542!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©臼井儀人・塚原洋一／「野原ひろし 昼メシの流儀」製作委員会"
+    }
+  ]
+}

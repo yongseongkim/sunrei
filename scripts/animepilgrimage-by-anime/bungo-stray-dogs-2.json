@@ -1,0 +1,445 @@
+{
+  "anime": {
+    "animeId": "BrwQNQDWky56Fnmdpz09",
+    "slug": "bungo-stray-dogs-2",
+    "title": {
+      "ja": "文豪ストレイドッグス2",
+      "kr": "문호 스트레이 독스 2",
+      "en": "Bungo Stray Dogs 2"
+    },
+    "author": {
+      "en": [
+        "Kafka Asagiri",
+        "Sango Harukawa"
+      ],
+      "ja": [
+        "朝霧カフカ",
+        "春河35"
+      ],
+      "kr": [
+        "아사기리 카프카",
+        "하루카와35"
+      ]
+    },
+    "studio": {
+      "en": [
+        "bones"
+      ],
+      "ja": [
+        "ボンズ "
+      ]
+    }
+  },
+  "placeCount": 25,
+  "places": [
+    {
+      "placeId": "08b91972-43ec-49e0-8af6-ab3d34259b09",
+      "name": {
+        "ja": "大桟橋ふ頭",
+        "en": "Osanbashi Wharf"
+      },
+      "geo": {
+        "latitude": 35.45188,
+        "longitude": 139.648
+      },
+      "ep": 5,
+      "type": "ED",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4512865,139.6476475,3a,90y,193.8h,99.01t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID49-DBpwE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu2bmQfuTdFTlsVOX0IlruZ8hV-oJst4jnkmAuRlJAAERDftCQ_1xA5wLniwJGt2XvGgUi3ElfM1QExWG8YQZGAV7wmB1MyHcM1yj8oNVwlEpKdEHuKyYhTHWkVmQ0ivSTwHS5PY%3Dw900-h600-k-no-pi-9.007811933192372-ya155.94456368358604-ro0-fo100!7i4096!8i2048?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "0b537f08-48cc-43ca-84c1-1996e63014bb",
+      "name": {
+        "ja": "横浜中華街 北京飯店",
+        "en": "Beijing Fandian"
+      },
+      "geo": {
+        "latitude": 35.44415,
+        "longitude": 139.64793
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4442325,139.6478249,3a,90y,131.08h,116.66t/data=!3m7!1e1!3m5!1sc33ykcgmCf8oBrDcED3dXA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-26.660010435092545%26panoid%3Dc33ykcgmCf8oBrDcED3dXA%26yaw%3D131.08330426490116!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "0fad56ae-ed47-47ea-ae3e-30d916d206cb",
+      "name": {
+        "en": "Yamashita Park",
+        "kr": "야마시타 공원",
+        "ja": "山下公園"
+      },
+      "geo": {
+        "latitude": 35.44563,
+        "longitude": 139.64998
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4456724,139.6499609,3a,90y,157.49h,98.17t/data=!3m7!1e1!3m5!1sWRXg8PQpxz_7IOhycD3Ypg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.16853056744209%26panoid%3DWRXg8PQpxz_7IOhycD3Ypg%26yaw%3D157.48877500161996!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "10697045-7dfd-463e-8995-42c2d5fe7cfc",
+      "name": {
+        "ja": "湘南海岸公園",
+        "en": "Kanagawa Prefectural Shonan Coast Park",
+        "kr": "쇼난 해안공원"
+      },
+      "geo": {
+        "latitude": 35.31099,
+        "longitude": 139.47803
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3087668,139.4802952,3a,75y,186.61h,96.42t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID9jNb4-AE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu0Uy5ImL4hCHHg9ae5X6Y7E8-oMLobzo_gXyqaQdyzVedV2q96lrtAlEd6GkwZjQy1xZo-S43l93rFUJ_TvrYT0471x7LPOOoTKoF_0x935i4FYUffDjG8k0Xm76Kguq-6qLHLlbQ%3Dw900-h600-k-no-pi-6.419328613901428-ya239.10881347893564-ro0-fo100!7i5760!8i2880?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "273ca22e-ecee-42c4-800e-f7ec69877db6",
+      "name": {
+        "en": "America Yama Park",
+        "kr": "아메리카야마 공원",
+        "ja": "アメリカ山公園"
+      },
+      "geo": {
+        "latitude": 35.44108,
+        "longitude": 139.65149
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4410973,139.6514724,3a,90y,135.73h,96.82t/data=!3m7!1e1!3m5!1smyz8cGpClAzz84zTQscqNw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.8236888863210226%26panoid%3Dmyz8cGpClAzz84zTQscqNw%26yaw%3D135.73378503664637!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "29b13f85-4b89-4d7a-b3c8-999c189091ac",
+      "name": {
+        "ja": "横浜地方裁判所",
+        "en": "Yokohama District Court"
+      },
+      "geo": {
+        "latitude": 35.44628,
+        "longitude": 139.64192
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.446227,139.6420101,3a,90y,336.11h,118.25t/data=!3m7!1e1!3m5!1sRP5S9eOP3n7SyXawVLQwug!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-28.24640689083168%26panoid%3DRP5S9eOP3n7SyXawVLQwug%26yaw%3D336.11146703804155!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "2f29ea79-e5cf-412c-ba66-c747ae8275b1",
+      "name": {
+        "en": "Canton Hanten",
+        "ja": "廣東飯店"
+      },
+      "geo": {
+        "latitude": 35.44315,
+        "longitude": 139.64464
+      },
+      "ep": 5,
+      "type": "OP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4432147,139.6447641,3a,75y,260.14h,99.9t/data=!3m7!1e1!3m5!1sFeJ2v7ZEmztrZFFITdaizQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.900660668139025%26panoid%3DFeJ2v7ZEmztrZFFITdaizQ%26yaw%3D260.1396467612864!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "31751205-260e-4810-a9dc-d2aefc9b03c5",
+      "name": {
+        "en": "Grand Mall Park",
+        "kr": "그랜드몰 공원",
+        "ja": "グランモール公園"
+      },
+      "geo": {
+        "latitude": 35.4571,
+        "longitude": 139.63106
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4572569,139.631307,3a,75y,234.9h,95.17t/data=!3m7!1e1!3m5!1sIvGf6cBQBkRvFICAgI6tZw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.16945465957096%26panoid%3DIvGf6cBQBkRvFICAgI6tZw%26yaw%3D234.8967109873466!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "4bd27a68-43de-4d59-aec4-c7baa08acccc",
+      "name": {
+        "en": "Shinko Bridge",
+        "ja": "新港橋梁"
+      },
+      "geo": {
+        "latitude": 35.45087,
+        "longitude": 139.64259
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4508598,139.6425068,3a,90y,70.1h,92.75t/data=!3m7!1e1!3m5!1sAnZwlz6bQFEOru7I9sy0tA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.7497021340970775%26panoid%3DAnZwlz6bQFEOru7I9sy0tA%26yaw%3D70.10188540031524!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "5319cc4e-0910-4fc2-a3b4-ed70c70fc191",
+      "name": {
+        "ja": "元町・中華街駅",
+        "kr": "모토마치･주카가이 역",
+        "en": "Motomachi-Chukagai Station"
+      },
+      "geo": {
+        "latitude": 35.44204,
+        "longitude": 139.65111
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4420186,139.6511832,2a,90y,139.06h,93.9t/data=!3m7!1e1!3m5!1sk6UkZdzl9a9e1y-wp-73LA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.8993547248371954%26panoid%3Dk6UkZdzl9a9e1y-wp-73LA%26yaw%3D139.05740440381334!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "56f17662-d554-409b-a226-6416dd5bee74",
+      "name": {
+        "ja": "ルパン",
+        "en": "Bar Lupin",
+        "kr": "루팡"
+      },
+      "geo": {
+        "latitude": 35.67104,
+        "longitude": 139.76331
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6709426,139.7631654,3a,75y,32.47h,95.26t/data=!3m7!1e1!3m5!1s4UFgkfYKLyliL4kKw0VmgQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.257344712634421%26panoid%3D4UFgkfYKLyliL4kKw0VmgQ%26yaw%3D32.46762480110855!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "59ecf1e5-3659-45be-a5f6-aef22712d27f",
+      "name": {
+        "en": "Windmills in the French Mountains",
+        "ja": "フランス山の風車"
+      },
+      "geo": {
+        "latitude": 35.44131,
+        "longitude": 139.65345
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4414721,139.6532809,3a,63.4y,34.42h,102.24t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICEh6mgmAE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu3AJW6RfEMHVRo8SYGpQilO5VUKTcyYoNKJN11AfDxJ_H6ukQGeetd0OI-xlkw0shFsEQ6Jgm7vSINnDkBdT1hCZlbIBkkQ1t6TwdWrC7wh-KclfifZ-cwMYEcQKB0VsZWxaVWWmg%3Dw900-h600-k-no-pi-12.240620134969348-ya34.417572076020605-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "626a8996-dd01-49b1-891d-bcd5fc12e44e",
+      "name": {
+        "ja": "赤い靴はいていた女の子像",
+        "en": "Statue of the Girl with Red Shoes"
+      },
+      "geo": {
+        "latitude": 35.44718,
+        "longitude": 139.64814
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4470312,139.6480948,3a,63.7y,13.1h,89.78t/data=!3m7!1e1!3m5!1srrBcNH9RlYSD6y1A47i8qg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.22139954385353633%26panoid%3DrrBcNH9RlYSD6y1A47i8qg%26yaw%3D13.10242100604477!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "8384d481-d221-42b7-bb57-6f9010f9afc1",
+      "name": {
+        "ja": "ニューヤマザキデイリーストア 元町中華街駅店",
+        "en": "Daily Yamazaki Motomachi Chukagai Station"
+      },
+      "geo": {
+        "latitude": 35.44171,
+        "longitude": 139.65146
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4417399,139.6514988,2a,90y,221.52h,93.19t/data=!3m7!1e1!3m5!1sOVFHxACYaFx7kqqRTXaoUw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.19407166126355%26panoid%3DOVFHxACYaFx7kqqRTXaoUw%26yaw%3D221.5215171701409!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "8eea1d36-27de-4442-a359-ea5f32c63f78",
+      "name": {
+        "en": "Starbucks Coffee - Yokohama Motomachi",
+        "ja": "スターバックス コーヒー 横浜元町店"
+      },
+      "geo": {
+        "latitude": 35.44161,
+        "longitude": 139.65087
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4416074,139.6508748,3a,75y,261.29h,102.66t/data=!3m7!1e1!3m5!1sfhywo7TSZLsypvL3CjgzQQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.656950834432124%26panoid%3Dfhywo7TSZLsypvL3CjgzQQ%26yaw%3D261.29320538187415!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "9548fd9b-10ea-4918-a256-ee0eb32eb796",
+      "name": {
+        "ja": "タイムズステーション横浜山下町",
+        "en": "Times station Yokohama Yamashita-cho"
+      },
+      "geo": {
+        "latitude": 35.44435,
+        "longitude": 139.64761
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4443744,139.6475842,3a,90y,74.79h,117.17t/data=!3m7!1e1!3m5!1so77hcbErdLSMqZF7BmKTSA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-27.16602272217949%26panoid%3Do77hcbErdLSMqZF7BmKTSA%26yaw%3D74.79380128586962!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "a18f5a85-02c8-4e01-80ea-7844eff690ce",
+      "name": {
+        "en": "MARK IS Minatomirai",
+        "kr": "MARK IS 미나토미라이",
+        "ja": "MARK IS みなとみらい"
+      },
+      "geo": {
+        "latitude": 35.45688,
+        "longitude": 139.63274
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.456736,139.6325959,3a,90y,255.61h,101.36t/data=!3m7!1e1!3m5!1svcV7NrtOooJASrtoAAUF5Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.355635972183592%26panoid%3DvcV7NrtOooJASrtoAAUF5Q%26yaw%3D255.60851782955478!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "b0556fac-1e8b-4b84-b2e9-669a80c2b053",
+      "name": {
+        "ja": "港三号橋梁 (旧大岡川橋梁)",
+        "en": "Port No. 3 Bridge"
+      },
+      "geo": {
+        "latitude": 35.45311,
+        "longitude": 139.63763
+      },
+      "ep": 5,
+      "type": "ED",
+      "cityId": null,
+      "streetViewUrl": "https://www.google.com/maps/@35.4531099,139.6376252,3a,90y,355.58h,101.17t/data=!3m7!1e1!3m5!1sBpOGa4wkYeQ6khF3hpcFvA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.165533261675222%26panoid%3DBpOGa4wkYeQ6khF3hpcFvA%26yaw%3D355.57976505222257!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "b0f20c9b-7281-4f87-93e1-e25105f4aa86",
+      "name": {
+        "ja": "No.1 Dock トップゲート(扉船)",
+        "en": "No.1 Dock Top Gate"
+      },
+      "geo": {
+        "latitude": 35.45453,
+        "longitude": 139.63288
+      },
+      "ep": 5,
+      "type": "OP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4545213,139.6329127,3a,90y,58.19h,94.04t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDO_Mn9fQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu3hjOukaU5n8LIZemePHFaTKiqJESdnH-NokZ27sQjx9TxQA_AP3nVgV3fRGsEZo0elXyoyRfpOPLKeAbeH90FtWj_fHfpnD4T9lykCKRMf0Dglrx5YPduM7O4xLiGo0VD6nxlx%3Dw900-h600-k-no-pi-4.035788275188196-ya28.18272649601732-ro0-fo100!7i5760!8i2880?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "b4b075e3-71a4-471a-b657-d818ab4b6eac",
+      "name": {
+        "en": "Ichiba dori",
+        "ja": "市場通り"
+      },
+      "geo": {
+        "latitude": 35.44302,
+        "longitude": 139.6462
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4429987,139.6462187,3a,90y,348.14h,102.84t/data=!3m7!1e1!3m5!1sNa0h5cfhkY1ZU0LB8PxDcg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.842015708773246%26panoid%3DNa0h5cfhkY1ZU0LB8PxDcg%26yaw%3D348.13970082875005!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "c8996e40-6527-4627-9b87-c481ab666c69",
+      "name": {
+        "en": "Yamashita Rinko Line Promenade",
+        "ja": "山下臨港線プロムナード"
+      },
+      "geo": {
+        "latitude": 35.44866,
+        "longitude": 139.64398
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4486426,139.6440017,3a,90y,22.89h,94.59t/data=!3m7!1e1!3m5!1saQs_t1cXRuRETAW1PgxOvw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.5875783300950275%26panoid%3DaQs_t1cXRuRETAW1PgxOvw%26yaw%3D22.894086510732635!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "d5eed6fe-5273-4535-81ee-75aaced53e01",
+      "name": {
+        "kr": "요코하마 미술관",
+        "en": "Yokohama Museum of Art",
+        "ja": "横浜美術館"
+      },
+      "geo": {
+        "latitude": 35.45718,
+        "longitude": 139.63074
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/place/Yokohama+Museum+of+Art/@35.4572232,139.6304563,3a,75y,44.35h,95.64t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDc067Q6gE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu24dEeTHVkhH7hP5tT-HBTUe4yMq6Id5557Xg1UcDvVNr1Br-oO813OEGKYM_F3GXR1TxX7OrLVlRbOro5kqh8xYKIVhQMlc2pnJt3jmpieyQlGQo8HVSndgiIQ5Lo7bbS7Uy6s3w%3Dw900-h600-k-no-pi-5.64298881905269-ya78.34900949633357-ro0-fo100!7i8192!8i4096!4m9!3m8!1s0x60185c5d4d114559:0xe74cafa40a78ac06!8m2!3d35.4569619!4d139.6306475!10e5!14m1!1BCgIgARICCAI!16s%2Fm%2F03w9zz4?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "d7217807-da2a-4d7b-a5aa-448c83958fbf",
+      "name": {
+        "ja": "鵠沼橋",
+        "en": "Kugenuma Bridge"
+      },
+      "geo": {
+        "latitude": 35.31708,
+        "longitude": 139.46726
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3170827,139.4672319,3a,90y,159.19h,99.93t/data=!3m7!1e1!3m5!1s7q2YBRuHVyl_CradVuZEyA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.927128146434654%26panoid%3D7q2YBRuHVyl_CradVuZEyA%26yaw%3D159.19440620946366!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "eb57ae7e-a704-4b66-b74b-5b55a685422c",
+      "name": {
+        "ja": "アイプリモ 横浜元町店",
+        "en": "Aipurimo Yokohamamotomachiten"
+      },
+      "geo": {
+        "latitude": 35.44189,
+        "longitude": 139.6514
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4418875,139.6512223,3a,48.7y,97.18h,94t/data=!3m7!1e1!3m5!1sz-tP8xM4o_cjmRldu_DMZg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.001546772670807%26panoid%3Dz-tP8xM4o_cjmRldu_DMZg%26yaw%3D97.17619274037513!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    },
+    {
+      "placeId": "f2b7a9ab-a55b-4c00-861a-3c6a89735387",
+      "name": {
+        "kr": "로손 야마시타초 혼초도리",
+        "ja": "ローソン 山下町本町通店",
+        "en": "Lawson Yamashitacho Honmachi Dori store"
+      },
+      "geo": {
+        "latitude": 35.44538,
+        "longitude": 139.64523
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4453739,139.6452082,3a,90y,112.35h,112.98t/data=!3m7!1e1!3m5!1sb88Q-VubtL9PdZJewBkxPA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-22.97996730125996%26panoid%3Db88Q-VubtL9PdZJewBkxPA%26yaw%3D112.35277249648091!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2016 朝霧カフカ・春河35/ＫＡＤＯＫＡＷＡ/文豪ストレイドッグス製作委員会"
+    }
+  ]
+}

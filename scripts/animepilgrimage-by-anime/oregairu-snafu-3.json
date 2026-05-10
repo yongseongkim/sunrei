@@ -1,0 +1,514 @@
+{
+  "anime": {
+    "animeId": "5vE1eznAXty26eatfkUr",
+    "slug": "oregairu-snafu-3",
+    "title": {
+      "ja": "やはり俺の青春ラブコメはまちがっている。完",
+      "kr": "역시 내 청춘의 러브 코미디는 잘못됐다. 완",
+      "en": "My Teen Romantic Comedy SNAFU Climax!"
+    },
+    "author": {
+      "en": [
+        "Wataru Watari"
+      ],
+      "kr": [
+        "와타리 와타루"
+      ],
+      "ja": [
+        "渡航"
+      ]
+    },
+    "studio": {
+      "en": [
+        "feel."
+      ]
+    }
+  },
+  "placeCount": 30,
+  "places": [
+    {
+      "placeId": "07f00562-d7ea-465a-8638-7ac8837f3796",
+      "name": {
+        "ja": "葛西臨海水族園",
+        "en": "Tokyo Sea Life Park"
+      },
+      "geo": {
+        "latitude": 35.63971,
+        "longitude": 139.86231
+      },
+      "ep": null,
+      "type": "OVA",
+      "cityId": "JP-tokyo-edogawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6398822,139.8622504,2a,75y,159.5h,89.78t/data=!3m7!1e1!3m5!1sbfNUBLErkfJ2k2X-0ALAEA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.21811789470393705%26panoid%3DbfNUBLErkfJ2k2X-0ALAEA%26yaw%3D159.50340141417558!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "11f8015e-a38d-43ef-a510-5358b83a851e",
+      "name": {
+        "en": "Inage Beach",
+        "ja": "いなげの浜"
+      },
+      "geo": {
+        "latitude": 35.613,
+        "longitude": 140.06596
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6132851,140.0657196,3a,73.2y,238.97h,91.19t/data=!3m8!1e1!3m6!1sAF1QipM7jOxq0kUWrRz8LjLtLyRKe8Htn8lMYxzwk3TZ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipM7jOxq0kUWrRz8LjLtLyRKe8Htn8lMYxzwk3TZ%3Dw900-h600-k-no-pi-1.1904793991528066-ya238.96944616741843-ro0-fo100!7i9276!8i4638?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "17d61ede-5a02-4ad0-a460-679ea853cd75",
+      "name": {
+        "ja": "展望レストハウス クリスタルビュー",
+        "en": "Crystal View Rest House"
+      },
+      "geo": {
+        "latitude": 35.64068,
+        "longitude": 139.85942
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-edogawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.640726,139.8594506,3a,90y,207.72h,97.37t/data=!3m7!1e1!3m5!1schWDZ1-G19WxOjiyJuVOQg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.371299412801946%26panoid%3DchWDZ1-G19WxOjiyJuVOQg%26yaw%3D207.72230906030222!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "273f5ebc-c30b-4b8a-a782-1279624f0421",
+      "name": {
+        "ja": "千葉銀行 新稲毛支店",
+        "en": "Chiba Bank Shin-Inage"
+      },
+      "geo": {
+        "latitude": 35.62846,
+        "longitude": 140.07247
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6285107,140.0725484,3a,75y,223.23h,95.08t/data=!3m7!1e1!3m5!1sBc1sILvms7OOA8gwFEQUxw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.078133461587058%26panoid%3DBc1sILvms7OOA8gwFEQUxw%26yaw%3D223.23068686254413!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "2cc9090f-4564-4481-aaa5-93a5e3dfc584",
+      "name": {
+        "kr": "라라포트 TOKYO-BAY",
+        "en": "LaLaport TOKYO-BAY",
+        "ja": "ららぽーとTOKYO-BAY"
+      },
+      "geo": {
+        "latitude": 35.68702,
+        "longitude": 139.99104
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-chiba-funabashi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6870068,139.9909966,2a,90y,292.45h,92.83t/data=!3m7!1e1!3m5!1seXm8yXe1VfFllWCX_5r9gQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.8284711787691066%26panoid%3DeXm8yXe1VfFllWCX_5r9gQ%26yaw%3D292.44546867725035!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "2cff05ea-0967-4958-9754-95cc8d18508c",
+      "name": {
+        "kr": "도쿄도립 고가네이 공원",
+        "en": "Koganei Park",
+        "ja": "小金井公園"
+      },
+      "geo": {
+        "latitude": 35.71473,
+        "longitude": 139.51236
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-koganei",
+      "streetViewUrl": "https://www.google.com/maps/@35.7145666,139.5124864,3a,31.8y,325.14h,92.63t/data=!3m8!1e1!3m6!1sAF1QipMqrsJ9YvbPCdLgkZD_emgLWVDwZkcTLvJMhtif!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipMqrsJ9YvbPCdLgkZD_emgLWVDwZkcTLvJMhtif%3Dw900-h600-k-no-pi-2.6275678467839043-ya324.1415391082044-ro0-fo100!7i14080!8i7040?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "2f60f9fb-c01b-43e3-967d-baa8e9d35720",
+      "name": {
+        "en": "Accessible Restrooms",
+        "ja": "ラバトリー(公衆トイレ)"
+      },
+      "geo": {
+        "latitude": 35.64262,
+        "longitude": 139.8577
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-edogawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6426118,139.857953,3a,75y,275.59h,100.46t/data=!3m7!1e1!3m5!1sHxa89mp_HCiCaBQAE9tLPg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.458332533848733%26panoid%3DHxa89mp_HCiCaBQAE9tLPg%26yaw%3D275.5918535186744!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "3124f1c5-2885-4592-a197-8eda5a86b9ce",
+      "name": {
+        "en": "Sports Wave Tetsuwan 24 Hamano Store",
+        "ja": "スポーツウェーブ鉃腕24 浜野店"
+      },
+      "geo": {
+        "latitude": 35.55414,
+        "longitude": 140.12578
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.5546391,140.1255594,3a,63.4y,164.65h,102.36t/data=!3m7!1e1!3m5!1sr28sgYyPAQfxBdTYySe5xQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.355570143565075%26panoid%3Dr28sgYyPAQfxBdTYySe5xQ%26yaw%3D164.65118425849502!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "31d7c048-0413-477c-bcbc-9ac501a13c30",
+      "name": {
+        "ja": "稲毛海岸駅",
+        "en": "Inagekaigan Station",
+        "kr": "이나게카이간 역"
+      },
+      "geo": {
+        "latitude": 35.62936,
+        "longitude": 140.07326
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6290845,140.073341,3a,90y,162.46h,128.97t/data=!3m7!1e1!3m5!1sTL_FSg-BKg92cdFD9VrcUg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-38.9706893647824%26panoid%3DTL_FSg-BKg92cdFD9VrcUg%26yaw%3D162.46152611647875!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "35e1d784-4423-494a-ac88-17a772f96438",
+      "name": {
+        "ja": "センシティ広場",
+        "en": "Sen City Plaza"
+      },
+      "geo": {
+        "latitude": 35.61149,
+        "longitude": 140.11355
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6114161,140.1134672,3a,90y,293.94h,101.11t/data=!3m8!1e1!3m6!1sAF1QipP8xYz-Sp1KpnXS4NM0McMZ_Fl29LlSZCSFKN0a!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipP8xYz-Sp1KpnXS4NM0McMZ_Fl29LlSZCSFKN0a%3Dw900-h600-k-no-pi-11.106250066663364-ya293.93640304113984-ro0-fo100!7i8192!8i4096?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "3effc2e1-c067-4655-9bc0-bc8cfe05f631",
+      "name": {
+        "en": "Inage Overpass",
+        "ja": "稲毛陸橋"
+      },
+      "geo": {
+        "latitude": 35.63199,
+        "longitude": 140.08475
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6320384,140.0843805,3a,90y,106.53h,102.06t/data=!3m7!1e1!3m5!1s9RbXCLovnl_ktP_Zk5npfA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.06424237262496%26panoid%3D9RbXCLovnl_ktP_Zk5npfA%26yaw%3D106.52879963663223!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "49ecbdeb-4863-4598-bdfc-929247eb1ae2",
+      "name": {
+        "ja": "中高浜公園",
+        "en": "Nakatakahama Park"
+      },
+      "geo": {
+        "latitude": 35.62179,
+        "longitude": 140.06801
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6218378,140.0679064,3a,75y,111.49h,99.58t/data=!3m7!1e1!3m5!1stOQ9YtQERwsT28lvTKO9gA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.575458112586531%26panoid%3DtOQ9YtQERwsT28lvTKO9gA%26yaw%3D111.48826803456657!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "5165df74-36c8-4f05-92f9-e3125efbd9fb",
+      "name": {
+        "en": "St.Marc Cafe Marinpia Inage Kaigan",
+        "ja": "サンマルクカフェ マリンピア稲毛海岸店"
+      },
+      "geo": {
+        "latitude": 35.62862,
+        "longitude": 140.07277
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6287181,140.0728071,3a,75y,180.99h,95.43t/data=!3m7!1e1!3m5!1sTHtlczQXAzuQhdm2xr3tsQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.4275524218526385%26panoid%3DTHtlczQXAzuQhdm2xr3tsQ%26yaw%3D180.99034140274873!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "527ec703-8914-43f7-917a-c3fad6ab2fc5",
+      "name": {
+        "en": "Kaikatsu CLUB Higashikurume Takiyama",
+        "ja": "快活CLUB 東久留米滝山店"
+      },
+      "geo": {
+        "latitude": 35.74455,
+        "longitude": 139.50347
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-higashikurume",
+      "streetViewUrl": "https://www.google.com/maps/@35.7445387,139.5032929,3a,90y,60.8h,109.66t/data=!3m7!1e1!3m5!1sjQ9d7mziaBiQbxh4Gu_-lA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-19.657150620095365%26panoid%3DjQ9d7mziaBiQbxh4Gu_-lA%26yaw%3D60.8044478716112!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "54aaf39e-c271-470c-b8da-a6fdb4023134",
+      "name": {
+        "ja": "時計塔広場",
+        "en": "Clock Tower Plaza"
+      },
+      "geo": {
+        "latitude": 35.64218,
+        "longitude": 139.86025
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-edogawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6421492,139.8602354,3a,90y,9.75h,101.62t/data=!3m7!1e1!3m5!1sivYeOkiqAnQuQsmABkcdAA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.620133604452704%26panoid%3DivYeOkiqAnQuQsmABkcdAA%26yaw%3D9.751148523359852!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "5d1ff6b4-2556-4950-a7dd-5030af63cd80",
+      "name": {
+        "en": "Lalaport TOKYO-BAY Boat Plaza",
+        "ja": "ららぽーとTOKYO-BAY 船の広場"
+      },
+      "geo": {
+        "latitude": 35.68789,
+        "longitude": 139.98831
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-chiba-funabashi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6878647,139.9885252,3a,48.6y,276.93h,92.39t/data=!3m7!1e1!3m5!1sz-wH-MXwXw4et7m8cpzaGA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.385475286632314%26panoid%3Dz-wH-MXwXw4et7m8cpzaGA%26yaw%3D276.93079206627493!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "687e8644-c9df-476f-8384-2c6a7ebf3394",
+      "name": {
+        "ja": "ザ・サーフ オーシャンテラス",
+        "en": "The Surf Ocean Terrace"
+      },
+      "geo": {
+        "latitude": 35.62525,
+        "longitude": 140.05312
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6253751,140.0535028,3a,75y,242.97h,106.65t/data=!3m8!1e1!3m6!1sAF1QipPk_emQ1ywA-6mUaE3tPzW2YCZ0yy8F1YVKTFzV!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipPk_emQ1ywA-6mUaE3tPzW2YCZ0yy8F1YVKTFzV%3Dw900-h600-k-no-pi-16.650201520473132-ya126.96947398982141-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "6f6be6a5-3165-47db-b622-cedebc61dcd4",
+      "name": {
+        "ja": "UR都市機構 パティオス7番街",
+        "en": "Patios Block 7"
+      },
+      "geo": {
+        "latitude": 35.64162,
+        "longitude": 140.04732
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6416608,140.0472691,3a,48.7y,26.29h,103.52t/data=!3m7!1e1!3m5!1syVQ3b8LGTThyEoKTRSm0Hw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.517818177237885%26panoid%3DyVQ3b8LGTThyEoKTRSm0Hw%26yaw%3D26.290880034032238!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "702260f0-8344-499b-b48c-cb7243a0bfb6",
+      "name": {
+        "en": "Tokyo Sea Life Park tatin-feelin",
+        "ja": "葛西臨海水族園 タッチンフィーリン"
+      },
+      "geo": {
+        "latitude": 35.64034,
+        "longitude": 139.86258
+      },
+      "ep": null,
+      "type": "OVA",
+      "cityId": "JP-tokyo-edogawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6402285,139.8629153,2a,75y,295.02h,91.75t/data=!3m7!1e1!3m5!1sy_6g5kq6dazu8Mi0sTAWeQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.7511104304812903%26panoid%3Dy_6g5kq6dazu8Mi0sTAWeQ%26yaw%3D295.0177317565962!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "7ebed5b3-ae1f-4196-8613-9a9436acc275",
+      "name": {
+        "en": "Cherry blossoms in Kasai Rinkai Park",
+        "ja": "葛西臨海公園の桜"
+      },
+      "geo": {
+        "latitude": 35.64235,
+        "longitude": 139.85826
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-edogawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6422887,139.8585739,3a,49.6y,257.06h,97.96t/data=!3m8!1e1!3m6!1sAF1QipNPRYMbBJZvagD0wdJwEohWirO0HK_33sdIR8NF!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipNPRYMbBJZvagD0wdJwEohWirO0HK_33sdIR8NF%3Dw900-h600-k-no-pi-7.9645615636327705-ya85.0572289889032-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "89e95a73-9bd3-440e-87f6-48a6486aecbc",
+      "name": {
+        "en": "communal house",
+        "ja": "ふれあいの家"
+      },
+      "geo": {
+        "latitude": 35.62143,
+        "longitude": 140.06822
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6214961,140.0683199,3a,50.8y,243.67h,95.2t/data=!3m7!1e1!3m5!1skvnRA6Vtxh5CeMwRb4MHkg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.196255647784312%26panoid%3DkvnRA6Vtxh5CeMwRb4MHkg%26yaw%3D243.66619342230513!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "8b99c661-be0f-4e8d-a75e-f47b6981e728",
+      "name": {
+        "ja": "珈琲や 東小金井工房",
+        "en": "Coffee-ya Higashi Koganei Kobo"
+      },
+      "geo": {
+        "latitude": 35.70171,
+        "longitude": 139.52653
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-koganei",
+      "streetViewUrl": "https://www.google.com/maps/@35.7017348,139.5267224,3a,86.2y,211.24h,96.01t/data=!3m7!1e1!3m5!1svikGKCwtfDvOCTbPbsuawQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.011783758811475%26panoid%3DvikGKCwtfDvOCTbPbsuawQ%26yaw%3D211.24275929929138!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "b95340fd-634c-48f7-8762-8528cc874d33",
+      "name": {
+        "en": "Central Park East F",
+        "ja": "セントラルパーク イーストＦ棟"
+      },
+      "geo": {
+        "latitude": 35.64298,
+        "longitude": 140.04591
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6428995,140.0459708,3a,90y,341.19h,93.49t/data=!3m7!1e1!3m5!1siEOCLsnJV5CfUruzinTF9Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.4883669126567582%26panoid%3DiEOCLsnJV5CfUruzinTF9Q%26yaw%3D341.19441490039287!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "be01b65d-ce64-41ff-a82e-ad243c4ae6a6",
+      "name": {
+        "en": "Kasai-Rinkai Park Station",
+        "ja": "葛西臨海公園駅",
+        "kr": "가사이 린카이코엔 역"
+      },
+      "geo": {
+        "latitude": 35.64414,
+        "longitude": 139.86179
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-edogawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6441399,139.8618425,2a,90y,295.56h,101.92t/data=!3m7!1e1!3m5!1sz5aN1_INTDIgx0NaZF1GYg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.921404630412354%26panoid%3Dz5aN1_INTDIgx0NaZF1GYg%26yaw%3D295.55574610615037!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "caefc39f-b584-431d-af46-b2e48061cce9",
+      "name": {
+        "ja": "ピザハット 美浜高洲店",
+        "en": "Pizza Hut Mihama Takasu"
+      },
+      "geo": {
+        "latitude": 35.62584,
+        "longitude": 140.07023
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6260066,140.0701434,3a,90y,71.98h,92.53t/data=!3m7!1e1!3m5!1s58FdqtkjD-e4-s5zX8Z-4w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.5274071209426126%26panoid%3D58FdqtkjD-e4-s5zX8Z-4w%26yaw%3D71.98144073685393!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "d52131e4-58df-49fe-ad8f-d06d8780c948",
+      "name": {
+        "ja": "サイゼリヤ 新座栗原店",
+        "en": "Saizeriya Niiza Kurihara"
+      },
+      "geo": {
+        "latitude": 35.76128,
+        "longitude": 139.55002
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-niiza",
+      "streetViewUrl": "https://www.google.com/maps/@35.7610648,139.5501026,3a,73.7y,359.86h,92.88t/data=!3m7!1e1!3m5!1so6I86ZLRhcdOUZ3oO9CI1A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.884977581231027%26panoid%3Do6I86ZLRhcdOUZ3oO9CI1A%26yaw%3D359.8603736514217!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "df73c42c-1985-49e8-ab54-59ad52258b9e",
+      "name": {
+        "en": "Brioche Dorée by THE SURF OCEAN TERRACE",
+        "ja": "Brioche Dorée ブリオッシュ ドーレ バイ ザ・サーフ オーシャンテラス"
+      },
+      "geo": {
+        "latitude": 35.62474,
+        "longitude": 140.0532
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6247371,140.0533197,3a,47.9y,227.06h,97.19t/data=!3m8!1e1!3m6!1sAF1QipMpdVo2ciI_rE63qitJCxJP4sWJRbjgMk2oaPPx!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipMpdVo2ciI_rE63qitJCxJP4sWJRbjgMk2oaPPx%3Dw900-h600-k-no-pi-7.191450997302169-ya93.06035447131657-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "e3f0ed28-44d8-4488-b7f9-248a73b3b391",
+      "name": {
+        "ja": "稲毛海岸駅第８自転車駐車場",
+        "en": "Inagekaiganeki Dai 8 Bicycle Parking"
+      },
+      "geo": {
+        "latitude": 35.62927,
+        "longitude": 140.07304
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6293217,140.0731783,3a,40.7y,234.59h,65.35t/data=!3m8!1e1!3m6!1sAF1QipNPpPWU9wL84H8xMGESLyWRfePB73PvtmcbU13I!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipNPpPWU9wL84H8xMGESLyWRfePB73PvtmcbU13I%3Dw900-h600-k-no-pi24.654267332870674-ya234.58515274279222-ro0-fo100!7i8000!8i4000?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "efefdc00-e511-4f52-ab65-fcf52229452f",
+      "name": {
+        "ja": "千葉市 高洲コミュニティセンター",
+        "en": "Chibashi Takasu Community Center"
+      },
+      "geo": {
+        "latitude": 35.62716,
+        "longitude": 140.07078
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6272097,140.0707899,3a,90y,200.01h,99.02t/data=!3m7!1e1!3m5!1sAE7_D4YRe4temYc_ia0j8Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.015970730740577%26panoid%3DAE7_D4YRe4temYc_ia0j8Q%26yaw%3D200.0103164047188!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    },
+    {
+      "placeId": "c22a0a75-8966-4f5d-9c81-b8f94392c869",
+      "name": {
+        "en": "Tokyo Sea Life Park Penguin Area",
+        "ja": "葛西臨海水族園 ペンギンエリア"
+      },
+      "geo": {
+        "latitude": 35.64007,
+        "longitude": 139.86299
+      },
+      "ep": null,
+      "type": "OVA",
+      "cityId": "JP-tokyo-edogawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.640055,139.8630735,2a,90y,58.09h,91.01t/data=!3m7!1e1!3m5!1srDACOm-PSRmwI7fjwBLOhg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.009794477505892%26panoid%3DrDACOm-PSRmwI7fjwBLOhg%26yaw%3D58.09430444078812!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©渡 航、小学館／やはりこの製作委員会はまちがっている。完"
+    }
+  ]
+}

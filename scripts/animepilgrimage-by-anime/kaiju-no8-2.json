@@ -1,0 +1,489 @@
+{
+  "anime": {
+    "animeId": "H0Kp9SKcNRbV2Z7CoAE5",
+    "slug": "kaiju-no8-2",
+    "title": {
+      "de": "Kaiju No. 8 Staffel 2",
+      "ja": "怪獣8号 第2期",
+      "kr": "괴수 8호 2기",
+      "en": "Kaiju No. 8 Season 2",
+      "id": "Kaiju No. 8 Musim 2",
+      "es": "Kaiju No. 8 Temporada 2"
+    },
+    "author": {
+      "en": [
+        "Naoya Matsumoto"
+      ],
+      "ja": [
+        "松本直也"
+      ],
+      "kr": [
+        "마츠모토 나오야"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Production I.G"
+      ]
+    }
+  },
+  "placeCount": 28,
+  "places": [
+    {
+      "placeId": "09c681fa-718d-455a-afe5-861b2ff33510",
+      "name": {
+        "en": "Machida Tokyu Twins",
+        "ja": "町田東急ツインズ"
+      },
+      "geo": {
+        "latitude": 35.54258,
+        "longitude": 139.44621
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-machida",
+      "streetViewUrl": "https://www.google.com/maps/@35.5425987,139.4463126,3a,90y,55.49h,114.5t/data=!3m7!1e1!3m5!1sc1qOamtJOkU7xIyDCjGx0w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-24.499489511419654%26panoid%3Dc1qOamtJOkU7xIyDCjGx0w%26yaw%3D55.49288625186104!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "29143ce6-a797-43fd-a179-ea3bac9d827b",
+      "name": {
+        "ja": "ふれあいガーデン「和」",
+        "en": "Courtyard “Nagomi (Relaxation)”"
+      },
+      "geo": {
+        "latitude": 35.63217,
+        "longitude": 139.7257
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6323485,139.7258693,3a,90y,209.22h,107.1t/data=!3m7!1e1!3m5!1syQ52J0UUhkRgt5BuMQebng!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-17.100941657800846%26panoid%3DyQ52J0UUhkRgt5BuMQebng%26yaw%3D209.22292587302724!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "2c4ed301-8ee9-41e9-bce0-7ebd37955484",
+      "name": {
+        "en": "Sushiro Gotanda Store",
+        "kr": "스시로 고탄다점",
+        "ja": "スシロー 五反田店"
+      },
+      "geo": {
+        "latitude": 35.62549,
+        "longitude": 139.72189
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6254993,139.7217914,3a,90y,104.97h,101.17t/data=!3m7!1e1!3m5!1sH6UmH_9_UMkyvGQurdP4Ow!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.17173778954482%26panoid%3DH6UmH_9_UMkyvGQurdP4Ow%26yaw%3D104.9668380487843!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "383100c1-65ad-4b3f-b069-3e7588d54a6d",
+      "name": {
+        "en": "Yours Parking Toyomachi No. 1 Parking Lot",
+        "ja": "ユアーズ・パーキング 豊町第１ 駐車場"
+      },
+      "geo": {
+        "latitude": 35.60895,
+        "longitude": 139.72326
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6089644,139.7231726,3a,90y,97.69h,109.33t/data=!3m7!1e1!3m5!1syQfc-tRrAZj-nzMBIcqqQA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-19.325380180702226%26panoid%3DyQfc-tRrAZj-nzMBIcqqQA%26yaw%3D97.68718978590829!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "45bd54b6-a4c5-43f8-9980-6d3c787d9a31",
+      "name": {
+        "en": "Yakitori King Shinjuku",
+        "ja": "焼き鳥キング 新宿店"
+      },
+      "geo": {
+        "latitude": 35.69498,
+        "longitude": 139.70155
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6949452,139.7014859,3a,90y,194.21h,98.39t/data=!3m7!1e1!3m5!1spSKTgnWlEm5mTx-sbLKAhQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.392400158333842%26panoid%3DpSKTgnWlEm5mTx-sbLKAhQ%26yaw%3D194.2104503229654!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "4dc38eca-6b09-4235-8044-a0ef49a5509a",
+      "name": {
+        "ja": "松本城",
+        "kr": "마쓰모토 성",
+        "en": "Matsumoto-jo Castle"
+      },
+      "geo": {
+        "latitude": 36.23948,
+        "longitude": 137.96786
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagano-matsumoto",
+      "streetViewUrl": "https://www.google.com/maps/@36.2394468,137.9678132,3a,90y,137.56h,101.23t/data=!3m7!1e1!3m5!1sdJF7XDvV2GodRK_YgAY3jQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.22733994372507%26panoid%3DdJF7XDvV2GodRK_YgAY3jQ%26yaw%3D137.5623143437341!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "5d6233c8-900d-4338-b6d6-ed42090e336e",
+      "name": {
+        "ja": "唐揚げ専門 さくら商店",
+        "en": "Sakurashoten"
+      },
+      "geo": {
+        "latitude": 35.61155,
+        "longitude": 139.74727
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6114176,139.7473304,3a,90y,330.99h,132.07t/data=!3m7!1e1!3m5!1sJqtxcankkT-bq_dGvRVDog!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-42.07049372636911%26panoid%3DJqtxcankkT-bq_dGvRVDog%26yaw%3D330.98986447445367!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "5ea3d2b4-6b4b-4924-aef2-3743371d73b4",
+      "name": {
+        "ja": "そば切り うちば",
+        "en": "Sobakiri Uchiba"
+      },
+      "geo": {
+        "latitude": 35.61129,
+        "longitude": 139.7464
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6112455,139.7464306,3a,90y,257.23h,116.56t/data=!3m7!1e1!3m5!1sTtjdXsuMzxLT4btF502m0A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-26.56373069353137%26panoid%3DTtjdXsuMzxLT4btF502m0A%26yaw%3D257.22763901151126!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "7051d9c5-8600-498d-aa5e-908ff2c741da",
+      "name": {
+        "ja": "品川インターシティ",
+        "en": "Shinagawa Intercity",
+        "kr": "시나가와 인터시티"
+      },
+      "geo": {
+        "latitude": 35.62712,
+        "longitude": 139.74173
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6272919,139.7417099,3a,90y,171.74h,98.1t/data=!3m7!1e1!3m5!1svNmm-D9n8R3mo51_FafNWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.096345331067056%26panoid%3DvNmm-D9n8R3mo51_FafNWg%26yaw%3D171.7438604110094!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "863d554c-7ca3-47bb-b7b5-039447d01817",
+      "name": {
+        "ja": "国会議事堂",
+        "kr": "국회의사당",
+        "en": "National Diet Building"
+      },
+      "geo": {
+        "latitude": 35.67631,
+        "longitude": 139.74712
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.676381,139.7470344,3a,78.7y,90.46h,105.41t/data=!3m7!1e1!3m5!1sto5KkTjLNlNV7RDRmnm-BA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.411362020293765%26panoid%3Dto5KkTjLNlNV7RDRmnm-BA%26yaw%3D90.46369283040559!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "87dcbff7-7dd3-40b3-87b2-036d387577ec",
+      "name": {
+        "en": "The Diet Front Park",
+        "ja": "国会前庭 北地区"
+      },
+      "geo": {
+        "latitude": 35.67682,
+        "longitude": 139.74932
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6768235,139.7492681,3a,66.6y,58.18h,94.06t/data=!3m7!1e1!3m5!1sb7mc4fQ6905N1GdEPJXkhg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.06183650954182%26panoid%3Db7mc4fQ6905N1GdEPJXkhg%26yaw%3D58.183049042880576!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "88a60a63-78da-44bd-95fa-e68efce2e286",
+      "name": {
+        "en": "Okuma",
+        "ja": "中華料理おおくま"
+      },
+      "geo": {
+        "latitude": 35.61189,
+        "longitude": 139.7475
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6119219,139.7475246,3a,90y,346.07h,116.68t/data=!3m7!1e1!3m5!1sLBbZHrEbxXDVQ3i2mfZdng!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-26.6798845149478%26panoid%3DLBbZHrEbxXDVQ3i2mfZdng%26yaw%3D346.06769038806664!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "8cfa9b8d-829b-47b1-adc3-a449357d6c80",
+      "name": {
+        "ja": "大泉氷川神社",
+        "en": "Oizumi Hikawa Shrine"
+      },
+      "geo": {
+        "latitude": 35.75811,
+        "longitude": 139.59479
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7580513,139.5949087,3a,90y,294.91h,95.54t/data=!3m7!1e1!3m5!1srKJcnXwwC_-P-lEuYh8gZA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.544594930301983%26panoid%3DrKJcnXwwC_-P-lEuYh8gZA%26yaw%3D294.9090396187335!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "90501c0b-1937-4052-8bf0-1a41d12db51a",
+      "name": {
+        "en": "Michael Kors Ginza Store",
+        "ja": "Michael Kors 銀座店"
+      },
+      "geo": {
+        "latitude": 35.67182,
+        "longitude": 139.76572
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6718058,139.765732,3a,90y,311.82h,93.78t/data=!3m7!1e1!3m5!1ssEsPvtYZP1xCsks0BtySQQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.77560036577583%26panoid%3DsEsPvtYZP1xCsks0BtySQQ%26yaw%3D311.81994634708974!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "930917cd-77f4-4a12-b0d3-649e9897d7bf",
+      "name": {
+        "en": "Gym Ohizumi",
+        "ja": "練馬区立大泉学園町体育館"
+      },
+      "geo": {
+        "latitude": 35.76555,
+        "longitude": 139.58463
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7656352,139.5845036,3a,60.6y,125.97h,88.91t/data=!3m7!1e1!3m5!1sX2qPXLQM_J3hqCfoOWUCug!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.0911265370703944%26panoid%3DX2qPXLQM_J3hqCfoOWUCug%26yaw%3D125.96937243234831!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "9517d04d-2084-4064-a763-84f5ba3dd2c4",
+      "name": {
+        "kr": "메구로 역",
+        "en": "Meguro Station",
+        "ja": "目黒駅"
+      },
+      "geo": {
+        "latitude": 35.63374,
+        "longitude": 139.71521
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6337695,139.715036,3a,90y,101.02h,108.74t/data=!3m7!1e1!3m5!1sL5HAW9dsHe864c5Cv5NQmQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.73564791628705%26panoid%3DL5HAW9dsHe864c5Cv5NQmQ%26yaw%3D101.02254109888851!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "9b7c96c3-096d-484a-9131-5601002d60a1",
+      "name": {
+        "en": "Fukuda Shoten Co., Ltd.",
+        "ja": "有限会社福田商店"
+      },
+      "geo": {
+        "latitude": 35.71094,
+        "longitude": 139.81077
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-sumida-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7109105,139.8107519,3a,90y,175.36h,108.78t/data=!3m7!1e1!3m5!1snSRTemnnO0Z2qIpLobD2gg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.78%26panoid%3DnSRTemnnO0Z2qIpLobD2gg%26yaw%3D175.36!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "a15435f1-e989-4cd4-9214-a5e7687c8833",
+      "name": {
+        "ja": "大泉学園駅前広場",
+        "en": "Oizumigakuen Station Front Plaza"
+      },
+      "geo": {
+        "latitude": 35.74943,
+        "longitude": 139.58589
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7494172,139.5860157,3a,87.6y,258.48h,99.84t/data=!3m7!1e1!3m5!1sRZPkuHP0Q5FtKeDqRV7AdA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.837679663952983%26panoid%3DRZPkuHP0Q5FtKeDqRV7AdA%26yaw%3D258.47680078970626!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "a2068c42-f351-45c5-b30f-dcfa686c2fb6",
+      "name": {
+        "ja": "横浜港大さん橋国際客船ターミナル",
+        "en": "Yokohama Intl Passenger Terminal"
+      },
+      "geo": {
+        "latitude": 35.44971,
+        "longitude": 139.6461
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4497195,139.6461723,3a,90y,141.51h,99.88t/data=!3m7!1e1!3m5!1sG8L5Im_v0evwqMIRIZFgyA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.877393832360397%26panoid%3DG8L5Im_v0evwqMIRIZFgyA%26yaw%3D141.51070399833603!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "abf90c01-d412-4670-a89a-efe7de2b4a6d",
+      "name": {
+        "kr": "쿠레하시 공원",
+        "en": "Nerima Kuritsu Kitaoizumikurehashi Park",
+        "ja": "練馬区立 北大泉くれはし公園"
+      },
+      "geo": {
+        "latitude": 35.76177,
+        "longitude": 139.59368
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7617802,139.5936455,3a,90y,255.19h,93.67t/data=!3m7!1e1!3m5!1sb9P8TdZJ4vCGV95_ETt9Yw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.6721446094221477%26panoid%3Db9P8TdZJ4vCGV95_ETt9Yw%26yaw%3D255.19002057761472!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "cf0db7b5-f79f-4b77-9081-663de80b5bcb",
+      "name": {
+        "ja": "立川駅",
+        "en": "Tachikawa Station"
+      },
+      "geo": {
+        "latitude": 35.69881,
+        "longitude": 139.41408
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-tachikawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.6990065,139.4142028,3a,41.5y,217.01h,107.32t/data=!3m7!1e1!3m5!1sS-NIwi4Y3BuP8OUW-nLGCA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-17.317117067758517%26panoid%3DS-NIwi4Y3BuP8OUW-nLGCA%26yaw%3D217.00896075222656!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "d6e3bcea-5d54-4f4d-8bd1-7f4e11336b2b",
+      "name": {
+        "en": "Domino's Pizza Shinbamba Ekimae Store",
+        "ja": "ドミノ・ピザ新馬場駅前店"
+      },
+      "geo": {
+        "latitude": 35.6182,
+        "longitude": 139.74088
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6180601,139.740813,3a,90y,51.43h,110.1t/data=!3m7!1e1!3m5!1slFUtIO4oyIrOS0y6QSrDfQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-20.104296350214184%26panoid%3DlFUtIO4oyIrOS0y6QSrDfQ%26yaw%3D51.43396663997143!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "df076cd8-e5ab-4b86-9935-92b659e91151",
+      "name": {
+        "en": "Excellent Flats Shinagawa",
+        "ja": "エクセレントフラッツ品川"
+      },
+      "geo": {
+        "latitude": 35.60878,
+        "longitude": 139.72396
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6087537,139.7240064,3a,90y,1.29h,102.37t/data=!3m7!1e1!3m5!1sIn7252SDdPql1KYhz_OkCQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.371620845681036%26panoid%3DIn7252SDdPql1KYhz_OkCQ%26yaw%3D1.293700884919298!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "e146d3e5-9d8d-4593-9078-6d6f474e6e28",
+      "name": {
+        "kr": "히라츠카바시노 비석",
+        "en": "Monument of Hiratsuka Bridge",
+        "ja": "平塚橋の碑"
+      },
+      "geo": {
+        "latitude": 35.61578,
+        "longitude": 139.70916
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6155795,139.708916,3a,75y,44.55h,102.33t/data=!3m7!1e1!3m5!1sz-yKI-udlmycYLGsMSvE-A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.332904698804%26panoid%3Dz-yKI-udlmycYLGsMSvE-A%26yaw%3D44.55259326691148!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "e6dec43e-fd20-42d1-bc06-0db10a3773c8",
+      "name": {
+        "en": "Oyokogawa Shinsui Park",
+        "ja": "大横川親水公園"
+      },
+      "geo": {
+        "latitude": 35.70912,
+        "longitude": 139.80781
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-sumida-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7089671,139.8077722,3a,53.8y,14.46h,101.27t/data=!3m7!1e1!3m5!1sDKPPBvj85BB3_0bViC1ybg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.269341649586622%26panoid%3DDKPPBvj85BB3_0bViC1ybg%26yaw%3D14.462323279688198!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "f649f801-5add-47b0-b675-44487f262868",
+      "name": {
+        "ja": "コインランドリー武蔵小山",
+        "en": "Musashikoyama Coin Laundry"
+      },
+      "geo": {
+        "latitude": 35.61295,
+        "longitude": 139.70715
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6129124,139.7071756,3a,90y,297.87h,93.28t/data=!3m7!1e1!3m5!1sy4eclbiScflUs4L4cD6LrQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.284475597859455%26panoid%3Dy4eclbiScflUs4L4cD6LrQ%26yaw%3D297.8699809694637!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "f6dbf48b-aa57-421a-a0d6-4ffb942bdf7c",
+      "name": {
+        "kr": "미쓰코시 긴자점",
+        "en": "Mitsukoshi Ginza",
+        "ja": "銀座三越"
+      },
+      "geo": {
+        "latitude": 35.67121,
+        "longitude": 139.76506
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6712117,139.7650992,3a,90y,81.45h,100.37t/data=!3m7!1e1!3m5!1snAnsxZfka14WDTTjCMjufg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.369928132907944%26panoid%3DnAnsxZfka14WDTTjCMjufg%26yaw%3D81.44734979804481!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgwNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    },
+    {
+      "placeId": "f04ce372-ae28-44df-969f-f500531a6223",
+      "name": {
+        "en": "Machidashi Shobo-Dan Dai 1 Branch Dai 1 Section 2 Platoon",
+        "ja": "町田市消防団 第1分団第1部2小隊"
+      },
+      "geo": {
+        "latitude": 35.54388,
+        "longitude": 139.44827
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-machida",
+      "streetViewUrl": "https://www.google.com/maps/@35.5440302,139.4484829,3a,90y,233.36h,108.3t/data=!3m7!1e1!3m5!1sWwl_r5XE_dt1-bllQm8bGA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.296613872138963%26panoid%3DWwl_r5XE_dt1-bllQm8bGA%26yaw%3D233.35890192756693!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©防衛隊第3部隊 ©松本直也／集英社"
+    }
+  ]
+}

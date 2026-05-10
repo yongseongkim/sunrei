@@ -1,0 +1,480 @@
+{
+  "anime": {
+    "animeId": "BbOGxPV5ltaIJGgljwj5",
+    "slug": "the-summer-hikaru-died",
+    "title": {
+      "ja": "光が死んだ夏",
+      "kr": "히카루가 죽은 여름",
+      "en": "The Summer Hikaru Died"
+    },
+    "author": {
+      "en": [
+        "Mokumokuren"
+      ],
+      "ja": [
+        "モクモクれん"
+      ],
+      "kr": [
+        "모쿠모쿠 렌"
+      ]
+    },
+    "studio": {
+      "en": [
+        "CygamesPictures"
+      ]
+    }
+  },
+  "placeCount": 28,
+  "places": [
+    {
+      "placeId": "143c7afb-66d7-49e4-94ce-0d1a37e7e83d",
+      "name": {
+        "en": "Mikisato Station",
+        "ja": "三木里駅",
+        "kr": "미키사토 역"
+      },
+      "geo": {
+        "latitude": 34.00144,
+        "longitude": 136.20235
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-mie-owase",
+      "streetViewUrl": "https://www.google.com/maps/place/Mikisato+Station/@34.0015057,136.2030476,3a,73.2y,278.72h,93.04t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDH94mC9AE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6Ha_tRSmOAbAfBKyQaxooZjdL1xe7ccoCcppZe4ZSBt0sRBPp5w8ZiBTEA6AAEZx9OtHDkUj2_sd2_fmJue1OpOENUegHCfDArrhBjLzZHRFdyvATSap4rjaa4ufvDRC_7hxFgS-%3Dw900-h600-k-no-pi-3.040139256285528-ya278.72091562786824-ro0-fo100!7i11904!8i5952!4m9!3m8!1s0x60067886eb286407:0x93c37826d623c2d2!8m2!3d34.0015057!4d136.2030476!10e5!14m1!1BCgIgARICCAI!16s%2Fm%2F04631jh?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "149337d2-60c4-4461-a395-958f557d517e",
+      "name": {
+        "en": "Bunten",
+        "ja": "ぶんてん お食事処・弁当配達"
+      },
+      "geo": {
+        "latitude": 34.62438,
+        "longitude": 136.3158
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-mie-tsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.6245698,136.3157129,3a,48.7y,149.33h,92.18t/data=!3m7!1e1!3m5!1shkvLgzI0p4Mx_dkpgMu8AA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.1777867367013357%26panoid%3DhkvLgzI0p4Mx_dkpgMu8AA%26yaw%3D149.32574590531743!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "15f70f8a-a1fa-481e-ae4b-321d70d45544",
+      "name": {
+        "ja": "御杖神社",
+        "en": "Mitsue Shrine"
+      },
+      "geo": {
+        "latitude": 34.49455,
+        "longitude": 136.19488
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-nara-mitsue",
+      "streetViewUrl": "https://www.google.com/maps/@34.4943687,136.1948874,3a,90y,13.51h,92.18t/data=!3m7!1e1!3m5!1sbB3ujrfoxmmYBHHpMlsw4A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.17603452683953%26panoid%3DbB3ujrfoxmmYBHHpMlsw4A%26yaw%3D13.506919509638351!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "2db00d44-38d7-4239-a383-544b93dc73b9",
+      "name": {
+        "en": "Monument of \"Ise Hon Kaido\"",
+        "ja": "「伊勢本街道」の碑"
+      },
+      "geo": {
+        "latitude": 34.50666,
+        "longitude": 136.20023
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nara-mitsue",
+      "streetViewUrl": "https://www.google.com/maps/@34.5065861,136.2001816,3a,90y,27.66h,95.9t/data=!3m7!1e1!3m5!1s09dETi2XPCK7iLy6IuSouA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.90336975273641%26panoid%3D09dETi2XPCK7iLy6IuSouA%26yaw%3D27.658833766417644!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDcwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "3d30a3ac-33b4-4a18-b1e1-2a7c3fc85b73",
+      "name": {
+        "en": "Mitsue Shrine",
+        "ja": "御杖神社"
+      },
+      "geo": {
+        "latitude": 34.49413,
+        "longitude": 136.19478
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-nara-mitsue",
+      "streetViewUrl": "https://www.google.com/maps/place/Mitsue+Shrine/@34.4942504,136.1945457,3a,90y,93.55h,86.02t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICW4_KL8wE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HaGFnw_WlRP4gvMjKYXghLxv5Gt8wYqankDaJI0SMAtOMDNdNEU6F9X4KhJc81eM-g1x4978dW4A-QGDDrNLvlGyjA00OiPDI0pdPT0LN0DUhNsdS64bxWKjw6N3GGMvcqUvpd84Q%3Dw900-h600-k-no-pi3.978061209007862-ya138.54943086346708-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x6006a77403927961:0xc7eebcf123191eb!8m2!3d34.4941971!4d136.1946225!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11f54k67nh?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "43503963-4e04-4023-bd99-2e2843503996",
+      "name": {
+        "en": "Misugi Resort Hotel Annex",
+        "ja": "美杉リゾート ホテル アネックス"
+      },
+      "geo": {
+        "latitude": 34.55941,
+        "longitude": 136.26844
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-mie-tsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.559432,136.2684796,3a,90y,230.28h,93.73t/data=!3m7!1e1!3m5!1syN4Syq5BVGri_3jVQy_Kug!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.7316443428589423%26panoid%3DyN4Syq5BVGri_3jVQy_Kug%26yaw%3D230.2821772675128!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "4e974ccc-3c76-4d49-88b0-59c5ada6c19d",
+      "name": {
+        "en": "Sakurai Police Station Mitsue Substation",
+        "ja": "桜井警察署 御杖駐在所"
+      },
+      "geo": {
+        "latitude": 34.4927,
+        "longitude": 136.17188
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nara-mitsue",
+      "streetViewUrl": "https://www.google.com/maps/@34.4929696,136.171735,3a,24.7y,150.58h,92.62t/data=!3m7!1e1!3m5!1s22zMBGSdLrX4FMXlVnSJ9Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.622022797800682%26panoid%3D22zMBGSdLrX4FMXlVnSJ9Q%26yaw%3D150.57623573803144!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "54dcc08b-a92b-489e-bf35-ef61b9b6bc5f",
+      "name": {
+        "ja": "丸山公園",
+        "en": "Maruyama Park"
+      },
+      "geo": {
+        "latitude": 34.51007,
+        "longitude": 136.2129
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nara-mitsue",
+      "streetViewUrl": "https://www.google.com/maps/@34.510072,136.2129173,3a,90y,293.36h,103.1t/data=!3m7!1e1!3m5!1sy9foCgr4CCGRApWFkaOJug!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.10439738035916%26panoid%3Dy9foCgr4CCGRApWFkaOJug%26yaw%3D293.35909041396656!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "7bcf52ea-423f-4075-abb4-8fc5ebe42a0a",
+      "name": {
+        "ja": "和田堀公園調節池",
+        "en": "Wadabori Park Regulation Reservoir"
+      },
+      "geo": {
+        "latitude": 35.68869,
+        "longitude": 139.64492
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6886525,139.6449604,3a,90y,322.55h,97.12t/data=!3m7!1e1!3m5!1swzV0mg6MpMUKMGAAHrYXYg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.117803241427126%26panoid%3DwzV0mg6MpMUKMGAAHrYXYg%26yaw%3D322.55470812215646!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "85cc903b-9d10-43e0-a2cf-bc97e02a366b",
+      "name": {
+        "ja": "万代 名張店",
+        "en": "Mandai Nabari"
+      },
+      "geo": {
+        "latitude": 34.61208,
+        "longitude": 136.08928
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-mie-nabari",
+      "streetViewUrl": "https://www.google.com/maps/@34.6119932,136.0891367,3a,75y,53.97h,97.11t/data=!3m7!1e1!3m5!1sBg4cphsgR7MSb75vWr1pew!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.1121059012885866%26panoid%3DBg4cphsgR7MSb75vWr1pew%26yaw%3D53.97307247304649!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "8f3da59c-fb37-4423-8a0c-79766d4f00bb",
+      "name": {
+        "ja": "御杖村森林組合間伐材加工センター 牛峠工場",
+        "en": "Mitsue Village Forestry Cooperative Thinning Wood Processing Center Ushitoge Factory"
+      },
+      "geo": {
+        "latitude": 34.49572,
+        "longitude": 136.18969
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-nara-mitsue",
+      "streetViewUrl": "https://www.google.com/maps/@34.4957061,136.1896308,3a,90y,305.41h,105.02t/data=!3m7!1e1!3m5!1sGOfefvLIY60Bo70O2hmnLg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.020434706691972%26panoid%3DGOfefvLIY60Bo70O2hmnLg%26yaw%3D305.40520825944304!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "9c3fc5d9-64a5-49a7-9684-898f08aefcd0",
+      "name": {
+        "en": "Shikatsu Community Center",
+        "ja": "敷津集会所"
+      },
+      "geo": {
+        "latitude": 34.50912,
+        "longitude": 136.20335
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-nara-mitsue",
+      "streetViewUrl": "https://www.google.com/maps/@34.5090959,136.2032056,3a,90y,70.59h,96.06t/data=!3m7!1e1!3m5!1sqgLXt3hdd4ZyjNnnP8bcfQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.0595249851249235%26panoid%3DqgLXt3hdd4ZyjNnnP8bcfQ%26yaw%3D70.58588700804991!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "a02ce3d8-0401-428e-9b06-11d1fba840b3",
+      "name": {
+        "en": "Mikisato Beach",
+        "ja": "三木里ビーチ"
+      },
+      "geo": {
+        "latitude": 34.00123,
+        "longitude": 136.21439
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-mie-owase",
+      "streetViewUrl": "https://www.google.com/maps/place/Mikisato+Beach/@34.0015458,136.2146612,3a,75y,180h,100t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDGpaT3BA!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAG0ilSxIzVG9Xr7duDBEGc9Oc7Sa7TG3Nu5siDks2KCjq-h8-SCzZtporEdNIs1SNHduXpvuI_MekYdoqauzDvPE7WC438BKn7rZYAxPj_A9ta8U5OM7dRCPz4PLN-bqJ3ibeOKJ0Dst%3Dw900-h600-k-no-pi-10-ya173-ro0-fo100!7i4608!8i2304!4m9!3m8!1s0x6005d79d81da5df3:0x1f2427f4a3c02e2b!8m2!3d34.0013304!4d136.214365!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11q8408vw0?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "a40bec82-aa57-4fcd-b910-bab25889a08d",
+      "name": {
+        "ja": "セブン-イレブン 津市久居駅前店",
+        "en": "7-Eleven Tsu Hisai Ekimae Store"
+      },
+      "geo": {
+        "latitude": 34.67458,
+        "longitude": 136.47587
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-mie-tsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.6745201,136.4759437,3a,90y,296.7h,95.18t/data=!3m8!1e1!3m6!1sog_aFqfIUATooeEH6tuO7g!2e0!5s20221101T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.176482710457108%26panoid%3Dog_aFqfIUATooeEH6tuO7g%26yaw%3D296.69634627308847!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "a676fc48-91c3-4333-9ade-6b7aaa9c793d",
+      "name": {
+        "ja": "三木里ビーチ",
+        "en": "Mikisato Beach"
+      },
+      "geo": {
+        "latitude": 34.00167,
+        "longitude": 136.21357
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-mie-owase",
+      "streetViewUrl": "https://www.google.com/maps/@34.0022914,136.2132758,3a,15y,159.41h,87.89t/data=!3m7!1e1!3m5!1s4iWjojwg0kZnq9eAdrXq4w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.1094159209513066%26panoid%3D4iWjojwg0kZnq9eAdrXq4w%26yaw%3D159.4130040246141!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "a91de9a0-ff2b-415c-81b2-b7a985ab8715",
+      "name": {
+        "en": "Tsujimoto Shoten",
+        "ja": "辻本商店"
+      },
+      "geo": {
+        "latitude": 34.50247,
+        "longitude": 136.19358
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nara-mitsue",
+      "streetViewUrl": "https://www.google.com/maps/@34.5023757,136.193645,3a,75y,331.64h,93.72t/data=!3m7!1e1!3m5!1strYBTuKqrvFJqwgoch6DdA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.7153124351315228%26panoid%3DtrYBTuKqrvFJqwgoch6DdA%26yaw%3D331.63785294515475!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "b7890b0b-40ad-42d7-ab57-9407546ada74",
+      "name": {
+        "en": "Sakaguchi Shoten",
+        "ja": "阪口商店"
+      },
+      "geo": {
+        "latitude": 34.50986,
+        "longitude": 136.19983
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nara-mitsue",
+      "streetViewUrl": "https://www.google.com/maps/@34.5099488,136.1996876,3a,90y,129.48h,95.99t/data=!3m7!1e1!3m5!1shghVVmgRClNRStqkqvYhjw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.986157001406227%26panoid%3DhghVVmgRClNRStqkqvYhjw%26yaw%3D129.47659782142588!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "cfaa51f4-b0c9-47d1-a2ff-d4b371bace31",
+      "name": {
+        "en": "Shiei Hisaieki Higashiguchi Parking Lot",
+        "ja": "市営久居駅 東口駐車場"
+      },
+      "geo": {
+        "latitude": 34.67424,
+        "longitude": 136.47694
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-mie-tsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.6742493,136.4767927,3a,90y,114.98h,96.5t/data=!3m7!1e1!3m5!1sLq2IB7hGHb6PQ9Q1AnCAZQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.497740309017303%26panoid%3DLq2IB7hGHb6PQ9Q1AnCAZQ%26yaw%3D114.98294362897911!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "d1cd61af-d4bd-4f94-928d-90815055f7a5",
+      "name": {
+        "ja": "松ノ木中央公園",
+        "en": "Suginami Kuritsu Matsunoki Central Park"
+      },
+      "geo": {
+        "latitude": 35.69101,
+        "longitude": 139.64354
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6910066,139.6435797,3a,89.6y,235.89h,90.54t/data=!3m7!1e1!3m5!1s3fcXoFnnQAWPZk8hK9QEDw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.5369181765847912%26panoid%3D3fcXoFnnQAWPZk8hK9QEDw%26yaw%3D235.88647948867245!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "db7cf94b-61c2-43ae-81fe-5ee37338e2c6",
+      "name": {
+        "ja": "住友電装 津製作所",
+        "en": "Sumitomo Electric Industries, Ltd. Tsu Plant"
+      },
+      "geo": {
+        "latitude": 34.64872,
+        "longitude": 136.48052
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-mie-tsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.6493099,136.4805876,3a,90y,166.62h,101.11t/data=!3m7!1e1!3m5!1sFydE7jT1gqk31P3WRSvxvw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.105412320902573%26panoid%3DFydE7jT1gqk31P3WRSvxvw%26yaw%3D166.61897666817168!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "dbb34371-da60-4549-af1c-780a88cd54fe",
+      "name": {
+        "ja": "サイゼリヤ 久居インターガーデン店",
+        "en": "Saizeriya Hisai Inter Garden Store"
+      },
+      "geo": {
+        "latitude": 34.68346,
+        "longitude": 136.46551
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-mie-tsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.684324,136.4655735,3a,15y,182.24h,90.76t/data=!3m7!1e1!3m5!1sn_xWAsGHpvvEERk-NAGQkQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.7616728675655082%26panoid%3Dn_xWAsGHpvvEERk-NAGQkQ%26yaw%3D182.23622790415592!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "de75390e-b86c-4c5f-8dac-6ab3e9101c92",
+      "name": {
+        "en": "Sakurai Police Station Mitsue Substation",
+        "ja": "桜井警察署 御杖駐在所"
+      },
+      "geo": {
+        "latitude": 34.49306,
+        "longitude": 136.17173
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-nara-mitsue",
+      "streetViewUrl": "https://www.google.com/maps/@34.4929742,136.1716283,3a,90y,34.17h,109.06t/data=!3m7!1e1!3m5!1s2VFYynHS2e5krk42rIKcEQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-19.06169120338204%26panoid%3D2VFYynHS2e5krk42rIKcEQ%26yaw%3D34.1731418771637!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "df5f3a06-986f-4b1f-a2e0-3bd974f8ea46",
+      "name": {
+        "ja": "月見岩",
+        "en": "tsukimi rock"
+      },
+      "geo": {
+        "latitude": 34.51056,
+        "longitude": 136.20693
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nara-mitsue",
+      "streetViewUrl": "https://www.google.com/maps/@34.5105742,136.206861,3a,90y,100.16h,99.09t/data=!3m7!1e1!3m5!1scDi2Ord8CubYPAfR3HKjyA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.091949520864077%26panoid%3DcDi2Ord8CubYPAfR3HKjyA%26yaw%3D100.16195074961826!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "e47d58f9-c9dd-49e4-b0ea-3f6d4670e904",
+      "name": {
+        "ja": "杉並区立成田図書館",
+        "en": "Narita Library"
+      },
+      "geo": {
+        "latitude": 35.6951,
+        "longitude": 139.63729
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6950533,139.6372359,3a,90y,54.79h,99.06t/data=!3m7!1e1!3m5!1sfXXZTKuYQ8T-CGreT8YR4A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.063309854477268%26panoid%3DfXXZTKuYQ8T-CGreT8YR4A%26yaw%3D54.79447272234974!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "e7b683e6-03d4-4e15-aa86-25e265baec49",
+      "name": {
+        "ja": "喜多自然山野草園",
+        "en": "Kita Nature Mountain Herb Garden"
+      },
+      "geo": {
+        "latitude": 34.50571,
+        "longitude": 136.19989
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-nara-mitsue",
+      "streetViewUrl": "https://www.google.com/maps/@34.5057081,136.1998861,3a,73.9y,18.97h,94.34t/data=!3m7!1e1!3m5!1s9vqR6WlaLICt-XCwpTv70g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.3441083543981165%26panoid%3D9vqR6WlaLICt-XCwpTv70g%26yaw%3D18.97073264559328!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "f6d536e9-d061-48e5-8382-bd42f721ff69",
+      "name": {
+        "ja": "イオン久居店",
+        "en": "AEON Hisai Store"
+      },
+      "geo": {
+        "latitude": 34.6828,
+        "longitude": 136.46406
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-mie-tsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.6832023,136.4642684,3a,47.9y,213.11h,95.1t/data=!3m7!1e1!3m5!1sKplMN-VmbfijaZ93pF49ug!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.104811012569371%26panoid%3DKplMN-VmbfijaZ93pF49ug%26yaw%3D213.10851319619104!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "f9e00822-9f0c-43fd-80e4-0ebebee3ac33",
+      "name": {
+        "kr": "히사이 역",
+        "en": "Hisai Station",
+        "ja": "久居駅"
+      },
+      "geo": {
+        "latitude": 34.67611,
+        "longitude": 136.4783
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-mie-tsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.6767975,136.4786768,3a,27.3y,204.58h,92.16t/data=!3m7!1e1!3m5!1sXXCI9TKn3twQ6oLY8EAByg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.1580976964585403%26panoid%3DXXCI9TKn3twQ6oLY8EAByg%26yaw%3D204.58413535562508!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    },
+    {
+      "placeId": "feda6834-13af-46a6-b094-32953c72cabd",
+      "name": {
+        "en": "Mikisato Beach",
+        "ja": "三木里ビーチ"
+      },
+      "geo": {
+        "latitude": 34.00115,
+        "longitude": 136.21392
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-mie-owase",
+      "streetViewUrl": "https://www.google.com/maps/place/Mikisato+Beach/@34.0005925,136.2139335,3a,48.7y,30.1h,96.75t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDGpdCr-AE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAPRy3c97ua8BPot5oA5NuDvzvlBR-0hYZIIp4se_nuwbmVWRSQonEd9Nyor57vn9_Vl3MrTMKvUttxssVy_54PHt5-BkRspp2nUgbuk8K8xxYhYcsoNzu_spXnLL5-JzxWPYj_L8R3RveA%3Dw900-h600-k-no-pi-6.749921311396022-ya37.10007627887933-ro0-fo100!7i4608!8i2304!4m9!3m8!1s0x6005d79d81da5df3:0x1f2427f4a3c02e2b!8m2!3d34.0013304!4d136.214365!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11q8408vw0?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©モクモクれん／KADOKAWA・「光が死んだ夏」製作委員会"
+    }
+  ]
+}

@@ -1,0 +1,938 @@
+{
+  "anime": {
+    "animeId": "uNXQN8oaA3SNspSVoc2A",
+    "slug": "rascal-does-not-dream-of-bunny-girl-senpai",
+    "title": {
+      "ja": "青春ブタ野郎はバニーガール先輩の夢を見ない",
+      "kr": "청춘 돼지는 바니걸 선배의 꿈을 꾸지 않는다",
+      "en": "Rascal Does Not Dream of Bunny Girl Senpai"
+    },
+    "author": {
+      "ja": [
+        "鴨志田 一"
+      ],
+      "en": [
+        "Hajime Kamoshida"
+      ],
+      "kr": [
+        "카모시다 하지메"
+      ]
+    },
+    "studio": {
+      "en": [
+        "CloverWorks"
+      ]
+    }
+  },
+  "placeCount": 56,
+  "places": [
+    {
+      "placeId": "03568f89-1069-4ca3-b2f0-16a787856499",
+      "name": {
+        "en": "Kinchoen Sohonke Ogaki Station Main Store",
+        "ja": "金蝶園総本家 大垣駅前本店"
+      },
+      "geo": {
+        "latitude": 35.3659513,
+        "longitude": 136.6177015
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gifu-ogaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.3659513,136.6177015,3a,90y,186h,96.14t/data=!3m7!1e1!3m5!1sRwKwPdx72cL_lxGfS26QFA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DRwKwPdx72cL_lxGfS26QFA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D20.026669%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "056f6598-d2e4-440f-a60b-1021e521a7d6",
+      "name": {
+        "en": "Shichirigahama Station",
+        "ja": "七里ヶ浜駅"
+      },
+      "geo": {
+        "latitude": 35.306247,
+        "longitude": 139.509997
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kamakura",
+      "streetViewUrl": "https://www.google.com/maps/place/Shichirigahama+Station/@35.306247,139.509997,3a,90y,8.43h,96.37t/data=!3m8!1e1!3m6!1sAF1QipOUOvBYkm3oAM9Wd-U_n8df9Ba3Fy-rEdHPBhKo!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOUOvBYkm3oAM9Wd-U_n8df9Ba3Fy-rEdHPBhKo%3Dw203-h100-k-no-pi-10-ya140-ro-0-fo100!7i6432!8i3216!4m9!3m8!1s0x60184f403584d2f7:0xb049a943a1009c4b!8m2!3d35.3062403!4d139.5101511!10e5!14m1!1BCgIgARICCAI!16s%2Fm%2F02vnkkx?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "0ae4b064-a30f-41e3-bad9-3edf9dd69905",
+      "name": {
+        "ja": "藤沢駅",
+        "en": "Fujisawa Station"
+      },
+      "geo": {
+        "latitude": 35.3395249,
+        "longitude": 139.4877117
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3395249,139.4877117,3a,35.6y,190.46h,93.06t/data=!3m6!1e1!3m4!1sm4XxGyWUIEDECuygGrr0xQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "11218e90-6726-4767-bafc-560da9a1b102",
+      "name": {
+        "ja": "ハイブリット",
+        "en": "Haiburitto"
+      },
+      "geo": {
+        "latitude": 35.3062088,
+        "longitude": 139.5106853
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kamakura",
+      "streetViewUrl": "https://www.google.com/maps/place/Haiburitto/@35.3062088,139.5106853,3a,75y,282.67h,90.62t/data=!3m6!1e1!3m4!1sT36vU-5bHgSnNNH9b2MbbQ!2e0!7i16384!8i8192!4m6!3m5!1s0x60184f41b67a45f5:0xee789cdef2711a98!8m2!3d35.3062956!4d139.5105422!16s%2Fg%2F1trvld9d?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "19f14545-b69d-44b7-983c-c95ed1a008d7",
+      "name": {
+        "en": "Nishiki In front of the station",
+        "ja": "駅前にしき"
+      },
+      "geo": {
+        "latitude": 35.3657534,
+        "longitude": 136.6175385
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gifu-ogaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.3657534,136.6175385,3a,73.8y,97.49h,95.13t/data=!3m7!1e1!3m5!1sxk77gmVIotuw-UW7pMmZFg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dxk77gmVIotuw-UW7pMmZFg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D160.79173%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "2116e70e-17bb-4271-bd0f-4e6ab51d8e17",
+      "name": {
+        "en": "Fujisawa Gate Park",
+        "ja": "藤沢ゲートパーク"
+      },
+      "geo": {
+        "latitude": 35.3401913,
+        "longitude": 139.4906199
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/place/%E8%97%A4%E6%B2%A2%E3%82%B2%E3%83%BC%E3%83%88%E3%83%91%E3%83%BC%E3%82%AF/@35.3401913,139.4906199,3a,48.8y,267.28h,101.53t/data=!3m6!1e1!3m4!1sl6-5xpjlgIfb0ffmahUMnQ!2e0!7i16384!8i8192!4m6!3m5!1s0x60184fcb8454b355:0xdf2e03fe114e11d2!8m2!3d35.3404005!4d139.4903055!16s%2Fg%2F11c4d8kjks?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "24ae1945-9465-4d9a-b7aa-3999a269bf98",
+      "name": {
+        "en": "Fujigaoka 1 (bus)",
+        "ja": "藤が岡１号（バス）"
+      },
+      "geo": {
+        "latitude": 35.3444219,
+        "longitude": 139.4940395
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3444219,139.4940395,3a,75y,70.27h,95.65t/data=!3m7!1e1!3m5!1sKUmkYMgC58TdtJ7KU8K_PQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DKUmkYMgC58TdtJ7KU8K_PQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D45.953968%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "26b627a9-e249-4564-92e3-098b49ea8b0b",
+      "name": {
+        "ja": "金沢駅",
+        "en": "Kanazawa Station"
+      },
+      "geo": {
+        "latitude": 36.5780503,
+        "longitude": 136.648509
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5780503,136.648509,2a,90y,345.43h,100.68t/data=!3m6!1e1!3m4!1sKdqIjbkYdz-GKu9SdpQZBw!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "2af57181-0d59-42ee-8205-0210b7585c00",
+      "name": {
+        "ja": "鵠沼海岸駅",
+        "en": "Kugenuma-Kaigan Station"
+      },
+      "geo": {
+        "latitude": 35.3206579,
+        "longitude": 139.4710386
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3206579,139.4710386,3a,48.8y,320.01h,89.51t/data=!3m7!1e1!3m5!1sdOYwpnLtWi2q1P3YcRwPPA!2e0!5s20240701T000000!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "3375be6a-6bf2-4ea3-896f-0ded15b48783",
+      "name": {
+        "ja": "ファミリーマート アスティ大垣店",
+        "en": "FamilyMart; Asty Ogaki"
+      },
+      "geo": {
+        "latitude": 35.3665404,
+        "longitude": 136.6180381
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gifu-ogaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.3665404,136.6180381,3a,75y,12.04h,96.67t/data=!3m6!1e1!3m4!1sKuEbvcNlhhVuFrt3kH0mtg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "35ae93c5-7bd0-40e5-be2f-5b560c85f492",
+      "name": {
+        "en": "Katase-Enoshima Station",
+        "ja": "片瀬江ノ島駅"
+      },
+      "geo": {
+        "latitude": 35.3086765,
+        "longitude": 139.4836789
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3086765,139.4836789,3a,90y,318.33h,98.47t/data=!3m6!1e1!3m4!1sBBQmy8A4NkEZfzoAdiD_VQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "36fdfe5b-f019-43d9-ad37-c14c29eefaff",
+      "name": {
+        "en": "Lawson Fujisawa-Yanagidori",
+        "ja": "ローソン 藤沢柳通り店"
+      },
+      "geo": {
+        "latitude": 35.3401122,
+        "longitude": 139.4882652
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3401122,139.4882652,3a,76.1y,81.5h,91.43t/data=!3m6!1e1!3m4!1s3ikVfeTQocVY9GxknuxwpQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "37a55a63-d2ec-4965-b6eb-6d8192715928",
+      "name": {
+        "en": "Seven-Eleven Fujisawa Asahicho Store",
+        "ja": "セブンイレブン 藤沢朝日町店"
+      },
+      "geo": {
+        "latitude": 35.3403997,
+        "longitude": 139.4926694
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3403997,139.4926694,3a,75y,330.59h,101.91t/data=!3m6!1e1!3m4!1sPyanmsHPZ6LHS-3qpTdiKA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "3c3e7d1a-0188-4fe4-b267-3b5d4788bfe1",
+      "name": {
+        "ja": "みずほ銀行 藤沢支店",
+        "en": "Mizuho Bank Fujisawa Branch"
+      },
+      "geo": {
+        "latitude": 35.340068,
+        "longitude": 139.4889306
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.340068,139.4889306,3a,90y,244.47h,95.63t/data=!3m6!1e1!3m4!1sPhUhtMiUdWcnBiSGKLC-cQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "3c79797b-fdda-49ab-9571-6cea8fa1f091",
+      "name": {
+        "ja": "御所ヶ谷公園",
+        "en": "Goshogaya Park"
+      },
+      "geo": {
+        "latitude": 35.3432747,
+        "longitude": 139.4933041
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3432747,139.4933041,3a,75y,130.65h,98.85t/data=!3m7!1e1!3m5!1sC6sWlBpkgOuKuwETn7OKtw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DC6sWlBpkgOuKuwETn7OKtw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D137.31865%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "3e65dfa7-57a2-41ce-bd79-d2e500645f71",
+      "name": {
+        "en": "Near the Ocean Shop ",
+        "ja": "オッターショップ付近",
+        "es": "Cerca de la Ocean Shop ",
+        "id": "Sekitar Ocean Shop ",
+        "de": "In der Nähe des Ocean Shop "
+      },
+      "geo": {
+        "latitude": 35.3098036,
+        "longitude": 139.4794477
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3098036,139.4794477,2a,47.9y,186.39h,94.99t/data=!3m6!1e1!3m4!1snxlcdkeg_clZdc2FZjStSg!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "4ae14461-235a-4a83-99f3-5473aec57344",
+      "name": {
+        "ja": "弁財天童子石像",
+        "en": "Benzaiten child stone statue"
+      },
+      "geo": {
+        "latitude": 35.3004637,
+        "longitude": 139.480107
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3004637,139.480107,2a,90y,219.26h,94.02t/data=!3m7!1e1!3m5!1sWQ33wpyzShsQmTaHK2Nucw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DWQ33wpyzShsQmTaHK2Nucw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D288.61832%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "59602e2a-a70a-4bcb-bb9d-75de5ea8fd5d",
+      "name": {
+        "ja": "しらす問屋とびっちょ 江の島弁財天仲見世通り店",
+        "en": "Tobiccho"
+      },
+      "geo": {
+        "latitude": 35.3020134,
+        "longitude": 139.4810134
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3020134,139.4810134,3a,43.7y,207.73h,95.86t/data=!3m6!1e1!3m4!1sL41o4O_lsk5UFy04rYgRlQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "5e33cb3e-1739-47dc-b9b6-dc7d049f69d4",
+      "name": {
+        "ja": "新江ノ島水族館",
+        "en": "Enoshima Aquarium"
+      },
+      "geo": {
+        "latitude": 35.3096341,
+        "longitude": 139.4798589
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3096341,139.4798589,2a,39.2y,137.82h,83.51t/data=!3m6!1e1!3m4!1sCQ0eUHfXMNyVUf1k0R8hvQ!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "6a08a609-a8d3-4af8-80d1-59a89aa0c64a",
+      "name": {
+        "ja": "ビックカメラ 藤沢店",
+        "en": "Bic Camera Fujisawa store"
+      },
+      "geo": {
+        "latitude": 35.3395714,
+        "longitude": 139.4879196
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3395714,139.4879196,3a,90y,93.44h,93.34t/data=!3m6!1e1!3m4!1slDcgZ5oGmLzxPXlVwnTTFQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "6bf347f6-5d7b-4b17-872c-cc17ef644d0e",
+      "name": {
+        "en": "Honkugenuma Station",
+        "ja": "本鵠沼駅"
+      },
+      "geo": {
+        "latitude": 35.3306637,
+        "longitude": 139.4746109
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3306637,139.4746109,3a,49.7y,57.6h,95.24t/data=!3m6!1e1!3m4!1sdc5jsJ2qmX6-2UNDyMEjwQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "6d6f2bf6-1f0a-4538-a2d7-e1c547968220",
+      "name": {
+        "ja": "One Story Craftsman House付近",
+        "id": "Sekitar One Story Craftsman House",
+        "en": "Near the One Story Craftsman House",
+        "es": "Cerca de la One Story Craftsman House",
+        "de": "In der Nähe des One Story Craftsman House"
+      },
+      "geo": {
+        "latitude": 35.3066554,
+        "longitude": 139.4964931
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kamakura",
+      "streetViewUrl": "https://www.google.com/maps/@35.3066554,139.4964931,3a,48.9y,271.99h,98.72t/data=!3m6!1e1!3m4!1s4KRqlh93JiffqzyibpxSzA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "6f8a6dbc-6d5d-409b-be78-f98696cbcd2d",
+      "name": {
+        "en": "Katase Nishihama beaches",
+        "ja": "片瀬西浜・鵠沼海水浴場"
+      },
+      "geo": {
+        "latitude": 35.3091007,
+        "longitude": 139.4796149
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3091007,139.4796149,3a,75y,191.16h,96.17t/data=!3m7!1e1!3m5!1sAF1QipM_k5Mb7x9RDysy5TGUJWBahvsrsBaybZ1Nk2E!2e10!3e11!7i5500!8i2750?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "716a2e66-6041-466b-b77f-234fb215f532",
+      "name": {
+        "en": "Ueno Zoological Gardens",
+        "ja": "恩賜上野動物園"
+      },
+      "geo": {
+        "latitude": 35.7158087,
+        "longitude": 139.7730344
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7158087,139.7730344,3a,90y,299.04h,102.63t/data=!3m6!1e1!3m4!1sZ1OoKJzJiD-cxaNNXw13-Q!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "798b8a8b-d895-4be3-93c3-08bdbba15bfe",
+      "name": {
+        "en": "Karaoke Best 10 Fujisawa",
+        "ja": "カラオケベスト10 藤沢店"
+      },
+      "geo": {
+        "latitude": 35.3402479,
+        "longitude": 139.4879274
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3402479,139.4879274,2a,75y,134.37h,94.16t/data=!3m6!1e1!3m4!1sN3KoKWfoDLjkvh6skrFFuQ!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "7e938dc4-92ef-45aa-9550-4a33f2c45168",
+      "name": {
+        "ja": "コンフォール藤沢C-2",
+        "en": "Confort Fujisawa C-2"
+      },
+      "geo": {
+        "latitude": 35.3445419,
+        "longitude": 139.4927832
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3445419,139.4927832,3a,19.2y,221.01h,92.55t/data=!3m6!1e1!3m4!1sX16oDig3fbrZ0hgVDrcTFw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "820863cd-6e1c-4d7a-86f8-7e39a80371f3",
+      "name": {
+        "ja": "藤沢市総合市民図書館",
+        "en": "Fujisawa City Main Library"
+      },
+      "geo": {
+        "latitude": 35.3955183,
+        "longitude": 139.473481
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/place/Fujisawa+City+Main+Library/@35.3955183,139.473481,3a,75y,275.66h,99.24t/data=!3m8!1e1!3m5!1s1qAFe0r0P7GUe4nF8OPMuA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D1qAFe0r0P7GUe4nF8OPMuA%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D288.2801%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!5s0x6018511199208f31:0x695a4432a4cb741!4m14!1m7!3m6!1s0x601851119e957cb9:0xe22b5e29d4acfb71!2sFujisawa+City+Main+Library!8m2!3d35.395646!4d139.4730288!16s%2Fg%2F11ftgxq39d!3m5!1s0x601851119e957cb9:0xe22b5e29d4acfb71!8m2!3d35.395646!4d139.4730288!16s%2Fg%2F11ftgxq39d?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "828e38c0-be03-428e-b422-49281807fa34",
+      "name": {
+        "ja": "江島神社 辺津宮",
+        "en": "Enoshima Shrine - Hetsumiya"
+      },
+      "geo": {
+        "latitude": 35.3004042,
+        "longitude": 139.4798027
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3004042,139.4798027,2a,90y,254.14h,99.09t/data=!3m6!1e1!3m4!1sigpNFRMi8jWvPPV9Ri8G0A!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "82c845ce-22a4-4f44-9498-8c767cda2b9d",
+      "name": {
+        "en": "Fujisawa Station North Exit Grass Square",
+        "ja": "藤沢駅北口 芝生広場"
+      },
+      "geo": {
+        "latitude": 35.3396812,
+        "longitude": 139.4878611
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3396812,139.4878611,3a,63.5y,272.05h,93.29t/data=!3m7!1e1!3m5!1s3IDR8v2rlqm_YfDq1hJmZA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D3IDR8v2rlqm_YfDq1hJmZA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D271.52106%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "85c8aa30-a787-4698-ace0-502bce57536f",
+      "name": {
+        "en": "Kamakurakoko-Mae Station",
+        "ja": "鎌倉高校前駅"
+      },
+      "geo": {
+        "latitude": 35.3065879,
+        "longitude": 139.5004683
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kamakura",
+      "streetViewUrl": "https://www.google.com/maps/@35.3065879,139.5004683,3a,75y,358.87h,91.17t/data=!3m6!1e1!3m4!1svpPIcgYsiWPfmewDLCVx5w!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "887a38a8-fe79-481a-9e86-f192833be8a4",
+      "name": {
+        "en": "Ema Rack",
+        "ja": "むすびの樹"
+      },
+      "geo": {
+        "latitude": 35.3001735,
+        "longitude": 139.479992
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3001735,139.479992,2a,75y,35.03h,89.82t/data=!3m6!1e1!3m4!1sJWtjydCFNm2Hgl0RzQQ54g!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "888ce2ac-ab53-46df-ac46-14f7d1bc3f56",
+      "name": {
+        "en": "Shichirigahama Pump Plant",
+        "ja": "七里ガ浜ポンプ場"
+      },
+      "geo": {
+        "latitude": 35.3062019,
+        "longitude": 139.5107834
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kamakura",
+      "streetViewUrl": "https://www.google.com/maps/@35.3062019,139.5107834,3a,90y,203.99h,108.03t/data=!3m6!1e1!3m4!1s3nOnoWl84s2dZCoGbTRo3g!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "8b43cbfd-4fc5-4601-a62e-9e2efc2f5aac",
+      "name": {
+        "ja": "鶴屋",
+        "en": "TSURUYA"
+      },
+      "geo": {
+        "latitude": 35.3008794,
+        "longitude": 139.4804319
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/place/TSURUYA/@35.3008794,139.4804319,3a,90y,288.27h,90.24t/data=!3m6!1e1!3m4!1sG3SKm43TE_mjXKmJIuOpEg!2e0!7i16384!8i8192!4m6!3m5!1s0x60184fb9205acbe3:0xa7dc8d9ae67c3303!8m2!3d35.300861!4d139.4803506!16s%2Fg%2F11pcv3xxwx?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "9267cf37-8387-4baa-afef-8de78a65cbbd",
+      "name": {
+        "de": "In der Nähe des Union Monthly Fujisawa 2",
+        "en": "Near the Union Monthly Fujisawa 2",
+        "ja": "ユニオンマンスリー藤沢２付近",
+        "id": "Sekitar Union Monthly Fujisawa 2",
+        "es": "Cerca de la Union Monthly Fujisawa 2"
+      },
+      "geo": {
+        "latitude": 35.3421763,
+        "longitude": 139.4930129
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3421763,139.4930129,3a,75y,190.78h,95.62t/data=!3m6!1e1!3m4!1sAguwEDZmMDiv-gC4MZrXhA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "9ee9e63d-20bb-4fb5-b53b-2ae7c84ff7c4",
+      "name": {
+        "ja": "JR藤沢駅 改札外コインロッカー",
+        "en": "Coin lockers outside the ticket gates at JR Fujisawa Station"
+      },
+      "geo": {
+        "latitude": 35.3387668,
+        "longitude": 139.4876978
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/place/Fujisawa+Station/@35.3387668,139.4876978,3a,68.7y,184.47h,93.98t/data=!3m8!1e1!3m6!1sAF1QipNmNaQZHAl5EFyulX3SeTDcVLDhdI84iR5Yp_6H!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNmNaQZHAl5EFyulX3SeTDcVLDhdI84iR5Yp_6H%3Dw203-h100-k-no-pi-0-ya172-ro-0-fo100!7i8704!8i4352!4m9!3m8!1s0x60184fcad532942d:0x83bd847775c8252d!8m2!3d35.3389164!4d139.4874922!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1tdw808c?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "ad6c6874-ffdc-4c9e-85de-ab2f1effe16b",
+      "name": {
+        "en": "Enoshima Glass HOOK Benzaiten Nakamise Street Store",
+        "ja": "江の島ガラスHOOK 弁財天仲見世通り店"
+      },
+      "geo": {
+        "latitude": 35.3016111,
+        "longitude": 139.4807745
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3016111,139.4807745,3a,75y,63.79h,85.6t/data=!3m7!1e1!3m5!1sggcZY5XHm9IBk4Dez8TRnQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DggcZY5XHm9IBk4Dez8TRnQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D32.498127%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "b489475f-d5a0-408a-985b-2d7ff2ed6ee3",
+      "name": {
+        "en": "Denny's Fujisawa North Exit",
+        "ja": "デニーズ 藤沢北口店"
+      },
+      "geo": {
+        "latitude": 35.3413897,
+        "longitude": 139.4836983
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3413897,139.4836983,3a,75y,357.6h,97.87t/data=!3m6!1e1!3m4!1s65hY2CJr1U4tdXn_REo2pQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "bf411a94-c91e-4274-ad15-023b00e018fd",
+      "name": {
+        "ja": "ＫＣ藤が岡",
+        "en": "KC Fujigaoka"
+      },
+      "geo": {
+        "latitude": 35.3450886,
+        "longitude": 139.4953897
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3450886,139.4953897,3a,75y,226.38h,102.39t/data=!3m7!1e1!3m5!1sTsQ2kuAYyM_zhdH86i0M3Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DTsQ2kuAYyM_zhdH86i0M3Q%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D76.4485%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "bf51fa7f-a730-4367-ad38-08635c91136d",
+      "name": {
+        "ja": "片瀬東浜海水浴場",
+        "en": "Katase Higashihama Beach"
+      },
+      "geo": {
+        "latitude": 35.3066852,
+        "longitude": 139.4846396
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3066852,139.4846396,2a,75y,352.76h,101.36t/data=!3m6!1e1!3m4!1seoqjQIxwo6DxoXP0tnb8Jw!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "c3c873e4-feef-4266-af79-0a5f3e114c74",
+      "name": {
+        "ja": "御幣公園",
+        "en": "Onbe Park"
+      },
+      "geo": {
+        "latitude": 35.3455096,
+        "longitude": 139.4924087
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3455096,139.4924087,3a,90y,46.38h,97.04t/data=!3m6!1e1!3m4!1sg3bPwt_ife4Fd8rVCE7ENw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "cdc4df12-12a1-4db9-8553-84c0b009c363",
+      "name": {
+        "en": "Utatsuyama Park",
+        "ja": "卯辰山公園"
+      },
+      "geo": {
+        "latitude": 36.570968,
+        "longitude": 136.6779826
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.570968,136.6779826,3a,90y,347.76h,95.74t/data=!3m8!1e1!3m6!1sAF1QipORQXA0ZR2Kxy5deO8hokfy9yL1E0pqEyCavrXX!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipORQXA0ZR2Kxy5deO8hokfy9yL1E0pqEyCavrXX%3Dw203-h100-k-no-pi-0-ya22.003826-ro-0-fo100!7i8338!8i4169?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "ceef48f9-520d-4f23-a090-b5861eab0e42",
+      "name": {
+        "en": "Yukiai Bridge",
+        "ja": "行合橋"
+      },
+      "geo": {
+        "latitude": 35.3052572,
+        "longitude": 139.5106912
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kamakura",
+      "streetViewUrl": "https://www.google.com/maps/@35.3052572,139.5106912,3a,90y,228.8h,94.68t/data=!3m6!1e1!3m4!1scXUFFNm0ADA764TRHCBTag!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "cf96e3ef-2e0d-4cb9-b7ec-a94d37564fb0",
+      "name": {
+        "ja": "セブン-イレブン 藤沢駅北口店",
+        "en": "Seven-Eleven Fujisawa Station North Exit"
+      },
+      "geo": {
+        "latitude": 35.3398559,
+        "longitude": 139.4863254
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3398559,139.4863254,3a,75y,315.1h,99.93t/data=!3m7!1e1!3m5!1sso1eOc8BgtutDQ9VKBk4tA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dso1eOc8BgtutDQ9VKBk4tA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D98.27703%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "d012d531-7490-4bba-bdb3-efeabfb24a35",
+      "name": {
+        "ja": "アットパーク藤沢朝日町",
+        "en": "@Park Fujisawa Asahicho"
+      },
+      "geo": {
+        "latitude": 35.3409709,
+        "longitude": 139.4925711
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3409709,139.4925711,3a,40.7y,18.35h,96.17t/data=!3m6!1e1!3m4!1s073Fc_4rbnbJIEP_fO5gcg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "d2180b90-0c6c-4476-8707-55ab0a82cb52",
+      "name": {
+        "en": "Taisho Bridge",
+        "ja": "大正橋"
+      },
+      "geo": {
+        "latitude": 35.3434435,
+        "longitude": 139.4881869
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3434435,139.4881869,3a,48.7y,63.56h,96.34t/data=!3m7!1e1!3m5!1sdR-mPdqdCZY60t2LOueR_A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DdR-mPdqdCZY60t2LOueR_A%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D128.8891%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "d3227e73-6d2d-4009-8b81-40de1e53da20",
+      "name": {
+        "ja": "蔵まえ３４付近",
+        "en": "Near the Kuramae 34",
+        "id": "Sekitar Kuramae 34",
+        "de": "In der Nähe des Kuramae 34",
+        "es": "Cerca de la Kuramae 34"
+      },
+      "geo": {
+        "latitude": 35.3429394,
+        "longitude": 139.4874293
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3429394,139.4874293,3a,75y,154.68h,96.8t/data=!3m6!1e1!3m4!1sjy9oV8G4A1XtmHNq7I4fLA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "def4b85b-5a69-4a01-ab2d-acf04de37d8d",
+      "name": {
+        "ja": "江の島弁天橋",
+        "en": "Enoshima Benten Bridge"
+      },
+      "geo": {
+        "latitude": 35.3049706,
+        "longitude": 139.4824315
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3049706,139.4824315,2a,90y,202.31h,102.84t/data=!3m6!1e1!3m4!1sKo0bX2Js09REV8GfJBHmLg!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "e51fafcd-cb3a-43bb-a43e-67e69310893d",
+      "name": {
+        "ja": "江の島シーキャンドル",
+        "en": "Enoshima Sea Candle"
+      },
+      "geo": {
+        "latitude": 35.2997441,
+        "longitude": 139.4786595
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.2997441,139.4786595,2a,90y,304.24h,117.66t/data=!3m6!1e1!3m4!1svEsfW0kRKfPJo0wJrza0dg!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "e546f76d-03b9-4255-86c7-a353c4a20b18",
+      "name": {
+        "en": "Shichirigahama",
+        "ja": "七里ヶ浜"
+      },
+      "geo": {
+        "latitude": 35.3065797,
+        "longitude": 139.5010201
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kamakura",
+      "streetViewUrl": "https://www.google.com/maps/@35.3065797,139.5010201,3a,45.6y,249.13h,94.99t/data=!3m7!1e1!3m5!1sEJv2QU1PFL6rdRCUTWvGZQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DEJv2QU1PFL6rdRCUTWvGZQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D124.44709%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "e84fe6df-495b-4461-8b53-6286bc7bae4a",
+      "name": {
+        "ja": "御所ヶ谷橋",
+        "en": "Goshogatani Bridge"
+      },
+      "geo": {
+        "latitude": 35.3417038,
+        "longitude": 139.4929074
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3417038,139.4929074,3a,75.5y,209.38h,101.18t/data=!3m6!1e1!3m4!1s-bVjn-y0xHXWHbmrb_PZEw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "e86956d1-3044-4186-b729-5ede3677d50e",
+      "name": {
+        "ja": "藤沢警察署 藤沢駅北口交番",
+        "en": "Fujisawa Police Station Fujisawaekikitaguchi Police Box"
+      },
+      "geo": {
+        "latitude": 35.3393008,
+        "longitude": 139.4877796
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3393008,139.4877796,3a,38.6y,142.29h,93.09t/data=!3m6!1e1!3m4!1sC_TUc0PKDOxk1Tw2EzEAAQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "eb88fc80-41db-4ef7-a60c-0791fdfd48b7",
+      "name": {
+        "ja": "展望台広場ウッドデッキ",
+        "en": "Observatory Square Wood Deck"
+      },
+      "geo": {
+        "latitude": 35.2995162,
+        "longitude": 139.4806893
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.2995162,139.4806893,2a,75y,65.78h,97.64t/data=!3m7!1e1!3m5!1soXYigo6UWjHJALAMMoUkug!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DoXYigo6UWjHJALAMMoUkug%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D4.366911%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "eca65070-47ae-45af-b6b9-f6f237da4ed8",
+      "name": {
+        "en": "Enoshima Electric Railway Fujisawa Station",
+        "ja": "江ノ島電鉄線藤沢駅"
+      },
+      "geo": {
+        "latitude": 35.3375411,
+        "longitude": 139.4874236
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/place/Odakyu+Shonan+Gate/@35.3375411,139.4874236,3a,90y,259.47h,92.17t/data=!3m7!1e1!3m5!1sAF1QipPAOzSIBF4CjkjX2AaCe0zFCnG7oVFgc14BY7k!2e10!3e11!7i2508!8i1254!4m20!1m10!3m9!1s0x60184f7fbc5965c3:0xbd57b987354c81e7!2sEnoshima+Electric+Railway+Fujisawa+Station!8m2!3d35.337065!4d139.4872234!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11s8z1wfkk!3m8!1s0x60184fcad5f8860d:0x18b4c6da77a1741f!8m2!3d35.337434!4d139.4875986!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1tj5l38y?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "ef31e177-531b-4667-ba8c-9bc121dc0fe1",
+      "name": {
+        "ja": "大垣駅",
+        "en": "Ogaki Station"
+      },
+      "geo": {
+        "latitude": 35.3668807,
+        "longitude": 136.6175517
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-gifu-ogaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.3668807,136.6175517,3a,63.4y,248.89h,95.57t/data=!3m8!1e1!3m6!1sAF1QipOohlnyJbKSr931f9hnKL8sAi27Gou3fIpTEC4t!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOohlnyJbKSr931f9hnKL8sAi27Gou3fIpTEC4t%3Dw203-h100-k-no-pi-2.785084-ya131.32877-ro-3.0117142-fo100!7i5376!8i2688?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "f5bdcb26-18dd-4690-a67e-d9b341f635a4",
+      "name": {
+        "ja": "ハッピージーフジサワ",
+        "en": "HAPPY G・FUJISAWA"
+      },
+      "geo": {
+        "latitude": 35.3401164,
+        "longitude": 139.4882141
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3401164,139.4882141,3a,75y,347.54h,102.23t/data=!3m6!1e1!3m4!1sEyY0cLu-YLuNopZvI78Jqw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    },
+    {
+      "placeId": "fc276998-8f1e-4d94-a72a-d5cad1f3b7b2",
+      "name": {
+        "ja": "アニヴェルセルカフェ みなとみらい横浜",
+        "en": "Anniversaire Cafe"
+      },
+      "geo": {
+        "latitude": 35.4542535,
+        "longitude": 139.6361217
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4542535,139.6361217,3a,90y,250.53h,100.92t/data=!3m8!1e1!3m6!1sAF1QipOgerxAVr_1q8kSmk9V-wPV-20TGQ4qhqWHE98w!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOgerxAVr_1q8kSmk9V-wPV-20TGQ4qhqWHE98w%3Dw203-h100-k-no-pi1.3363514-ya160.3576-ro2.5549355-fo100!7i5760!8i2880?coh=205409&entry=ttu",
+      "copyright": "©2018 鴨志田 一／KADOKAWA アスキー・メディアワークス／青ブタ Project"
+    }
+  ]
+}

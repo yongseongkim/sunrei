@@ -1,0 +1,221 @@
+{
+  "anime": {
+    "animeId": "Dmm38vQWI8Dn0oNd1P5v",
+    "slug": "blue-archive",
+    "title": {
+      "ja": "ブルーアーカイブ The Animation",
+      "kr": "블루 아카이브 The Animation",
+      "en": "Blue Archive The Animation"
+    },
+    "author": {
+      "en": [
+        "NEXON Games"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Yostar Pictures",
+        "studio CANDY BOX"
+      ]
+    }
+  },
+  "placeCount": 12,
+  "places": [
+    {
+      "placeId": "37b98dc2-f417-4223-b2d1-c4443d6cb60b",
+      "name": {
+        "kr": "소프맙 어뮤즈먼트 관",
+        "en": "Sofmap Amusement",
+        "ja": "ソフマップ AKIBA アミューズメント館"
+      },
+      "geo": {
+        "latitude": 35.6988793,
+        "longitude": 139.7712326
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6988793,139.7712326,3a,90y,293.84h,107.67t/data=!3m6!1e1!3m4!1scBj5ThPhuybJXI2VbInX1w!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© NEXON Games／アビドス商店街"
+    },
+    {
+      "placeId": "41c59024-e7b7-40c2-943a-42a9ddae51a4",
+      "name": {
+        "kr": "하루키야 오기쿠보본점",
+        "en": "Harukiya Ogikubo",
+        "ja": "春木屋 荻窪本店"
+      },
+      "geo": {
+        "latitude": 35.705142,
+        "longitude": 139.622393
+      },
+      "ep": 2,
+      "type": "ED",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7052572,139.6223087,3a,43.9y,144.57h,94.28t/data=!3m6!1e1!3m4!1smC-f5BPoyz7r-5rLB59lHA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© NEXON Games／アビドス商店街"
+    },
+    {
+      "placeId": "4200aa4f-7d8d-42f4-a326-08f355302214",
+      "name": {
+        "kr": "빅 카메라 아키바",
+        "en": "BicCamera AKIBA Store",
+        "ja": "ビックカメラ AKIBA"
+      },
+      "geo": {
+        "latitude": 35.69959,
+        "longitude": 139.77136
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6994904,139.7712885,3a,90y,7.09h,116.78t/data=!3m7!1e1!3m5!1sWtnynGEC7R1C_eC2yXur-A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-26.782641306651982%26panoid%3DWtnynGEC7R1C_eC2yXur-A%26yaw%3D7.0946062900606846!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© NEXON Games／アビドス商店街"
+    },
+    {
+      "placeId": "571b3f14-bb50-48bc-bd2b-047bb1507625",
+      "name": {
+        "ja": "コインパーク ラトラーム荻窪",
+        "en": "Coin Park Ratoramu Ogikubo"
+      },
+      "geo": {
+        "latitude": 35.7064365,
+        "longitude": 139.6229385
+      },
+      "ep": 2,
+      "type": "ED",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Coin+Park+Ratoramu+Ogikubo/@35.7064365,139.6229385,3a,42.1y,172.61h,90.41t/data=!3m6!1e1!3m4!1smsznCXn0O4MyUSidlZGojw!2e0!7i16384!8i8192!4m6!3m5!1s0x6018edf6cd30023b:0xf7a3d1d1ab2fde01!8m2!3d35.706432!4d139.623015!16s%2Fg%2F1hc1wwzzc?coh=205409&entry=ttu",
+      "copyright": "© NEXON Games／アビドス商店街"
+    },
+    {
+      "placeId": "77a565f6-37ff-4059-8c35-360b8e69854e",
+      "name": {
+        "en": "Docomo Shop Ogikubo",
+        "ja": "ドコモショップ荻窪店"
+      },
+      "geo": {
+        "latitude": 35.7051667,
+        "longitude": 139.6226631
+      },
+      "ep": 2,
+      "type": "ED",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7051667,139.6226631,3a,90y,38.66h,97.22t/data=!3m6!1e1!3m4!1sa8DkcIX_MeyJBDnWyErs0A!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© NEXON Games／アビドス商店街"
+    },
+    {
+      "placeId": "7efff493-58af-4892-81f1-25ec0a324d6c",
+      "name": {
+        "en": "TOP 1 Ogikuboten",
+        "ja": "TOP1荻窪店"
+      },
+      "geo": {
+        "latitude": 35.7054832,
+        "longitude": 139.6201115
+      },
+      "ep": 2,
+      "type": "ED",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7054832,139.6201115,3a,44.8y,264.93h,101.78t/data=!3m7!1e1!3m5!1sQo5dIXULNanNWgyAaJEODQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DQo5dIXULNanNWgyAaJEODQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D85.309616%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© NEXON Games／アビドス商店街"
+    },
+    {
+      "placeId": "8acd55d1-5c2d-4575-8299-b2bc56cf0b1b",
+      "name": {
+        "en": "La Copier Ogikubo",
+        "ja": "ラ・コピエ荻窪"
+      },
+      "geo": {
+        "latitude": 35.7039276,
+        "longitude": 139.6249717
+      },
+      "ep": 2,
+      "type": "ED",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7039276,139.6249717,3a,37.7y,21.34h,95.52t/data=!3m7!1e1!3m5!1slFjdcP633Pu6VQ21VfeBJg!2e0!5s20230201T000000!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© NEXON Games／アビドス商店街"
+    },
+    {
+      "placeId": "9fe0c60f-5ff0-4e41-a282-628d1797125d",
+      "name": {
+        "ja": "マルツ秋葉原営業所（秋葉原本店）",
+        "en": "Marutsu Akihabara Honten"
+      },
+      "geo": {
+        "latitude": 35.70087,
+        "longitude": 139.77084
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7008574,139.770855,3a,90y,339.25h,92.64t/data=!3m7!1e1!3m5!1su7l8ASOW1ey8CJ-fnCvOsQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.6427466482970345%26panoid%3Du7l8ASOW1ey8CJ-fnCvOsQ%26yaw%3D339.2466270748073!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© NEXON Games／アビドス商店街"
+    },
+    {
+      "placeId": "db7ad5e6-298b-49b4-bd3a-67e32827b37c",
+      "name": {
+        "ja": "薬 マツモトキヨシ アキバ店",
+        "en": "Matsumoto Kiyoshi Akiba"
+      },
+      "geo": {
+        "latitude": 35.69851,
+        "longitude": 139.77123
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6985477,139.7714089,3a,73y,255.01h,102.81t/data=!3m7!1e1!3m5!1spLExemGLyQ_NUFQnq3wEbQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.811322729621779%26panoid%3DpLExemGLyQ_NUFQnq3wEbQ%26yaw%3D255.0141834863665!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© NEXON Games／アビドス商店街"
+    },
+    {
+      "placeId": "e6de9003-6230-4e07-b1af-3e1368b89ad0",
+      "name": {
+        "kr": "로바타 이시쿠라",
+        "ja": "炉ばた 石くら 居酒屋 秋葉原",
+        "en": "Robata Ishikura"
+      },
+      "geo": {
+        "latitude": 35.69994,
+        "longitude": 139.77038
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6999177,139.7703966,3a,90y,188.59h,123.27t/data=!3m7!1e1!3m5!1sH0No04lb2vP4qIUM2giouA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-33.27117912864229%26panoid%3DH0No04lb2vP4qIUM2giouA%26yaw%3D188.59296250283353!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© NEXON Games／アビドス商店街"
+    },
+    {
+      "placeId": "f3b9ac84-c9c1-4e3a-a951-87e64099b862",
+      "name": {
+        "en": "Coin Laundry Sunrise",
+        "ja": "コインランドリーサンライズ"
+      },
+      "geo": {
+        "latitude": 35.7108808,
+        "longitude": 139.614865
+      },
+      "ep": 2,
+      "type": "ED",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7108808,139.614865,3a,75y,54.62h,98.31t/data=!3m6!1e1!3m4!1sBsu8qBDizSUy3v2SsLxBeA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© NEXON Games／アビドス商店街"
+    },
+    {
+      "placeId": "ff6a4355-b751-4956-8f5c-261b5f314315",
+      "name": {
+        "ja": "友美堂",
+        "en": "Yuubidou"
+      },
+      "geo": {
+        "latitude": 35.705132,
+        "longitude": 139.6232486
+      },
+      "ep": 2,
+      "type": "ED",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.705132,139.6232486,3a,45.8y,169.81h,95.27t/data=!3m6!1e1!3m4!1sSRIvv2fI-3C0nwHRhKoL5w!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© NEXON Games／アビドス商店街"
+    }
+  ]
+}

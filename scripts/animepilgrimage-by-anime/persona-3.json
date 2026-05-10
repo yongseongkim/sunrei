@@ -1,0 +1,175 @@
+{
+  "anime": {
+    "animeId": "eOFDk1EdVZaxVlVPQHWZ",
+    "slug": "persona-3",
+    "title": {
+      "ja": "劇場版ペルソナ3",
+      "kr": "페르소나 3 THE MOVIE",
+      "en": "PERSONA 3 the Movie"
+    },
+    "author": {
+      "ja": [
+        "アトラス"
+      ],
+      "en": [
+        "Atlus"
+      ]
+    },
+    "studio": {
+      "en": [
+        "AIC ASTA",
+        "A-1 Pictures"
+      ]
+    }
+  },
+  "placeCount": 9,
+  "places": [
+    {
+      "placeId": "007812b7-d041-469a-ba96-6a1ef0e5c1a9",
+      "name": {
+        "de": "In der Nähe des Sanjo Ohashi Bridge",
+        "en": "Near the Sanjo Ohashi Bridge",
+        "es": "Cerca de la Sanjo Ohashi Bridge",
+        "ja": "三条大橋付近",
+        "id": "Sekitar Sanjo Ohashi Bridge"
+      },
+      "geo": {
+        "latitude": 35.0075396,
+        "longitude": 135.7715143
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0075396,135.7715143,3a,90y,163.16h,90.28t/data=!3m8!1e1!3m6!1sAF1QipMgKuSLtI3StYpHoZT4DlJ5g0M9-yEKDcsnmVRo!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMgKuSLtI3StYpHoZT4DlJ5g0M9-yEKDcsnmVRo%3Dw203-h100-k-no-pi-0-ya118.418365-ro-0-fo100!7i6080!8i3040?entry=ttu",
+      "copyright": "©ATLUS ©SEGA／劇場版「ペルソナ３」製作委員会"
+    },
+    {
+      "placeId": "5d588c1e-e8dc-42cd-9f41-93edc75db97d",
+      "name": {
+        "en": "Sannenzaka",
+        "ja": "産寧坂（三年坂）"
+      },
+      "geo": {
+        "latitude": 34.9969544,
+        "longitude": 135.7810221
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9969544,135.7810221,3a,75y,173.71h,89.16t/data=!3m7!1e1!3m5!1sq0uh4_NgR6AVBCFqmYsYOA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dq0uh4_NgR6AVBCFqmYsYOA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D86.00328%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©ATLUS ©SEGA／劇場版「ペルソナ３」製作委員会"
+    },
+    {
+      "placeId": "6b6c1536-0c2d-4c28-a270-e354e8219d13",
+      "name": {
+        "en": "Rokuon-ji Kinkaku",
+        "ja": "鹿苑寺金閣"
+      },
+      "geo": {
+        "latitude": 35.0386791,
+        "longitude": 135.7285615
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0386791,135.7285615,3a,90y,34.58h,93.64t/data=!3m6!1e1!3m4!1sAF1QipOs71nqVckefY3zjlyUyD1zNGNbxam38wkgIe13!2e10!7i5376!8i2688?entry=ttu",
+      "copyright": "©ATLUS ©SEGA／劇場版「ペルソナ３」製作委員会"
+    },
+    {
+      "placeId": "723f98a6-c40e-4a9e-bbaf-0f00983a2c0f",
+      "name": {
+        "ja": "ウエストプロムナード",
+        "en": "West Promenade"
+      },
+      "geo": {
+        "latitude": 35.6274066,
+        "longitude": 139.7715881
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6274066,139.7715881,3a,90y,326.91h,99.88t/data=!3m6!1e1!3m4!1sD36gflpR_G2dZ2ljGrfafg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©ATLUS ©SEGA／劇場版「ペルソナ３」製作委員会"
+    },
+    {
+      "placeId": "8b8a3748-3de4-4f5d-ba00-c91fbbe3ac3d",
+      "name": {
+        "ja": "清水寺",
+        "en": "Kiyomizu-dera"
+      },
+      "geo": {
+        "latitude": 34.9945557,
+        "longitude": 135.7854098
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9945557,135.7854098,2a,90y,276.85h,97.71t/data=!3m6!1e1!3m4!1sgJ4v3pcnF-_mNjG8Q84g0Q!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©ATLUS ©SEGA／劇場版「ペルソナ３」製作委員会"
+    },
+    {
+      "placeId": "8bd1c033-4923-4ebf-b7e9-ccc03dc281db",
+      "name": {
+        "en": "IMMERSIVE FORT TOKYO",
+        "ja": "イマーシブ・フォート東京"
+      },
+      "geo": {
+        "latitude": 35.6248764,
+        "longitude": 139.7799022
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6248764,139.7799022,2a,90y,179.26h,111.56t/data=!3m6!1e1!3m4!1srkAuhf1iNQDbAeu0ta4mFA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©ATLUS ©SEGA／劇場版「ペルソナ３」製作委員会"
+    },
+    {
+      "placeId": "a51c9722-c3f9-45e8-a874-52eb7ad72513",
+      "name": {
+        "ja": "レインボーブリッジ",
+        "en": "Rainbow Bridge"
+      },
+      "geo": {
+        "latitude": 35.6379334,
+        "longitude": 139.7591544
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6379334,139.7591544,3a,90y,108.48h,102.16t/data=!3m6!1e1!3m4!1sjesR8stIL7qPrwzGMKwO4A!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©ATLUS ©SEGA／劇場版「ペルソナ３」製作委員会"
+    },
+    {
+      "placeId": "a5ac9175-61bb-4a56-9b0a-5f847c49aa0e",
+      "name": {
+        "ja": "新橋駅",
+        "en": "Shimbashi Station"
+      },
+      "geo": {
+        "latitude": 35.666115,
+        "longitude": 139.7587461
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.666115,139.7587461,3a,90y,176.49h,102.49t/data=!3m8!1e1!3m6!1sAF1QipNDVOqVdk8touMsWuKSmgeN5vc4QOxYtCC4_cnf!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNDVOqVdk8touMsWuKSmgeN5vc4QOxYtCC4_cnf%3Dw203-h100-k-no-pi0-ya104.72986-ro0-fo100!7i11586!8i5793?entry=ttu",
+      "copyright": "©ATLUS ©SEGA／劇場版「ペルソナ３」製作委員会"
+    },
+    {
+      "placeId": "ed6f9162-5eb1-4305-b046-ba99686252eb",
+      "name": {
+        "ja": "廣度院",
+        "en": "Kodo-in"
+      },
+      "geo": {
+        "latitude": 35.6575502,
+        "longitude": 139.7508443
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/place/K%C5%8Ddo-in/@35.6575502,139.7508443,3a,75y,95.03h,104.31t/data=!3m6!1e1!3m4!1sCBb07Ar7pS-D_jor2frvqA!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x60188bbf36e2d027:0x72517e4c86682fab!2zS8WNZG8taW4!8m2!3d35.657404!4d139.75093!16s%2Fg%2F1tfrrxj2!3m5!1s0x60188bbf36e2d027:0x72517e4c86682fab!8m2!3d35.657404!4d139.75093!16s%2Fg%2F1tfrrxj2?entry=ttu",
+      "copyright": "©ATLUS ©SEGA／劇場版「ペルソナ３」製作委員会"
+    }
+  ]
+}

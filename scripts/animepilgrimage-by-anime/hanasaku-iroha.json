@@ -1,0 +1,806 @@
+{
+  "anime": {
+    "animeId": "85RF5tAgykz6goUkarZI",
+    "slug": "hanasaku-iroha",
+    "title": {
+      "ja": "花咲くいろは",
+      "kr": "꽃이 피는 첫걸음",
+      "en": "Hanasaku Iroha"
+    },
+    "author": {
+      "en": [
+        "P.A. Works"
+      ]
+    },
+    "studio": {
+      "en": [
+        "P.A. Works"
+      ]
+    }
+  },
+  "placeCount": 48,
+  "places": [
+    {
+      "placeId": "00b3ba48-6f5c-4feb-af12-f41189d35ef1",
+      "name": {
+        "en": "Shisha Cafe&Bar CHIMNEY",
+        "ja": "シーシャカフェ バー チムニー"
+      },
+      "geo": {
+        "latitude": 36.56122,
+        "longitude": 136.65398
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5611982,136.6540132,3a,75y,251.62h,94.39t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDE1aXQbQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu3ZsjW_n2pycDVZ8r8CCXCzrdHPq9gXxBho1dI42JX98T0aTxoQmobIDHKfwcQfs-IzFS2CYdEsQ14j9AfSWAi4qgU1oBB8WchgOhzxZToEpmFWRzyyQ40OWPuKnSIJkVW1cvz9%3Dw900-h600-k-no-pi-4.390798742655704-ya133.70305279300277-ro0-fo100!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "05d1e800-a8ed-4e25-bd82-5da93c5c5953",
+      "name": {
+        "en": "Saigawa-Ohashi Bridge",
+        "ja": "犀川大橋"
+      },
+      "geo": {
+        "latitude": 36.55861,
+        "longitude": 136.65063
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5587097,136.6508133,3a,90y,239.76h,101.92t/data=!3m7!1e1!3m5!1sNF0qvOeP4_mLWuG7gbDyWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.921144086739531%26panoid%3DNF0qvOeP4_mLWuG7gbDyWg%26yaw%3D239.75614520036518!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "05febfc6-a436-4bb6-ae21-c8d7aac02128",
+      "name": {
+        "ja": "ジュンク堂書店 池袋本店",
+        "en": "JUNKUDO Ikebukuro",
+        "kr": "준쿠도서점 이케부쿠로 본점"
+      },
+      "geo": {
+        "latitude": 35.72684,
+        "longitude": 139.7122
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7270336,139.7120122,3a,75y,126.69h,114.83t/data=!3m7!1e1!3m5!1smWQO5z3xx3HaO7gdqo_dXQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-24.8274000238672%26panoid%3DmWQO5z3xx3HaO7gdqo_dXQ%26yaw%3D126.69294969704879!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "06f2c961-8800-427c-9b5d-e569674679fa",
+      "name": {
+        "en": "Grass Matinee Kanazawa",
+        "ja": "グラスマティネ金沢"
+      },
+      "geo": {
+        "latitude": 36.5769,
+        "longitude": 136.65375
+      },
+      "ep": 26,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5767543,136.6537691,3a,75y,0.09h,94.25t/data=!3m7!1e1!3m5!1sHOkDuAyve070pxHEyRQnTA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.2496047367976075%26panoid%3DHOkDuAyve070pxHEyRQnTA%26yaw%3D0.08721719637588876!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "2242a8f2-835f-4635-b5cc-6dbbe435d759",
+      "name": {
+        "ja": "松屋 国分寺北口店",
+        "en": "Matsuya Kokubunji Kitaguchi"
+      },
+      "geo": {
+        "latitude": 35.70084,
+        "longitude": 139.4815
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-kokubunji",
+      "streetViewUrl": "https://www.google.com/maps/@35.7008709,139.48151,3a,90y,231.89h,104.88t/data=!3m7!1e1!3m5!1s324kkawATlxYxNEUYF079A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.879031277376%26panoid%3D324kkawATlxYxNEUYF079A%26yaw%3D231.8860025737193!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "2a1e4ec2-cd8a-4158-996f-cbc17f296806",
+      "name": {
+        "ja": "NTTドコモ代々木ビル",
+        "kr": "NTT 도코모 요요기 빌딩",
+        "en": "Docomo Tower"
+      },
+      "geo": {
+        "latitude": 35.68443,
+        "longitude": 139.70266
+      },
+      "ep": 24,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6844526,139.7026898,3a,90y,75.13h,98.19t/data=!3m7!1e1!3m5!1sNn0cLJh_YZ2Rf0DgexZAVw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.194688631245427%26panoid%3DNn0cLJh_YZ2Rf0DgexZAVw%26yaw%3D75.12668837064956!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "2b52cebc-848d-44e7-87de-3d1f034ee991",
+      "name": {
+        "ja": "ココカラファイン くすりセイジョー一橋学園駅前店",
+        "en": "Drug SEIJO Hitotsubashi-Gakuen Station Front Shop"
+      },
+      "geo": {
+        "latitude": 35.72345,
+        "longitude": 139.48009
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-kodaira",
+      "streetViewUrl": "https://www.google.com/maps/@35.7234341,139.4800905,3a,90y,78.02h,97.6t/data=!3m7!1e1!3m5!1sk81rYrd9rv3lUW7T6M89mQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.597635952436534%26panoid%3Dk81rYrd9rv3lUW7T6M89mQ%26yaw%3D78.02087840322446!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "2b82c841-955e-4f7c-8dfd-9a7f51d9e128",
+      "name": {
+        "ja": "金沢駅",
+        "kr": "가나자와 역",
+        "en": "Kanazawa Station"
+      },
+      "geo": {
+        "latitude": 36.5789,
+        "longitude": 136.64713
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5789231,136.6469792,3a,75y,100.45h,105.21t/data=!3m7!1e1!3m5!1sjFD6-Ds8ksIYno9akbnDEQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.207237791629439%26panoid%3DjFD6-Ds8ksIYno9akbnDEQ%26yaw%3D100.45021853596452!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "2d1309cc-3b97-4a9a-8fb9-2a693576a8a1",
+      "name": {
+        "en": "Gyokusenko (Yuwaku Onsen)",
+        "ja": "玉泉湖（湯涌温泉）"
+      },
+      "geo": {
+        "latitude": 36.48268,
+        "longitude": 136.75823
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4832885,136.7570318,3a,90y,101.56h,94.07t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID497a4eQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu2D9rtRI39WPrwB4TUreiwnqG7okira1gzqO-nKOsb8v3fjTvX4vURh7gN1beX7DaxrSPKvZr2BFb7h3eKE0zNadpOKTMhIr131MTLsFT6evIN3IvP-JRcj7HHmfO40qaph0vBv%3Dw900-h600-k-no-pi-4.069067925586268-ya67.55778546586913-ro0-fo100!7i7680!8i3840?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "2f0669fb-7cf8-4ac8-b52f-7bd145798331",
+      "name": {
+        "en": "Yuwaku Post Office",
+        "ja": "湯涌郵便局"
+      },
+      "geo": {
+        "latitude": 36.48752,
+        "longitude": 136.7562
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4876706,136.7560966,3a,65.9y,150.06h,97.3t/data=!3m7!1e1!3m5!1spedL5-2A46ZWLdKGGz53Zw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.299121874461008%26panoid%3DpedL5-2A46ZWLdKGGz53Zw%26yaw%3D150.05692684517305!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "37d3e65b-0657-4494-918b-a019ac3a8c12",
+      "name": {
+        "en": "Tokyo Business Hotel",
+        "ja": "東京ビジネスホテル"
+      },
+      "geo": {
+        "latitude": 35.69342,
+        "longitude": 139.71046
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6933156,139.7103602,3a,90y,44.54h,115.69t/data=!3m7!1e1!3m5!1ssNeV-fnNPrnB5TTnzYoGdg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-25.688711157290882%26panoid%3DsNeV-fnNPrnB5TTnzYoGdg%26yaw%3D44.542597303944504!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "399fe2e3-19a0-4af9-893c-5bb620dbdb9e",
+      "name": {
+        "ja": "ラ・フェルマータ",
+        "en": "La fermata"
+      },
+      "geo": {
+        "latitude": 36.48833,
+        "longitude": 136.75573
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4882636,136.7557622,3a,90y,72.95h,93.81t/data=!3m7!1e1!3m5!1sZlaO04VSI9gXXW2kMY2T7Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.8085942769597807%26panoid%3DZlaO04VSI9gXXW2kMY2T7Q%26yaw%3D72.94568774968914!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "3e2368b4-1544-4af1-a26c-5587b7125bea",
+      "name": {
+        "ja": "中野駅",
+        "en": "Nakano Station",
+        "kr": "나카노 역"
+      },
+      "geo": {
+        "latitude": 35.70604,
+        "longitude": 139.66603
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-nakano-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7062268,139.6660414,3a,41.5y,323.46h,104.07t/data=!3m7!1e1!3m5!1ssjFsYxoCQ3QTnoMTNM15ew!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.068539730819538%26panoid%3DsjFsYxoCQ3QTnoMTNM15ew%26yaw%3D323.4556769469442!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "3f492aff-b68c-4b45-9dad-a8c599f488d4",
+      "name": {
+        "kr": "노도나카지마 역",
+        "ja": "能登中島駅",
+        "en": "Noto-Nakajima Station"
+      },
+      "geo": {
+        "latitude": 37.10916,
+        "longitude": 136.85325
+      },
+      "ep": 19,
+      "type": "EP",
+      "cityId": "JP-ishikawa-nanao",
+      "streetViewUrl": "https://www.google.com/maps/@37.1092353,136.8530843,3a,75y,115.91h,91.62t/data=!3m7!1e1!3m5!1sTBymMXyq0Ww3SzSLYlMG7A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.6224928982205284%26panoid%3DTBymMXyq0Ww3SzSLYlMG7A%26yaw%3D115.91218662944266!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "40c2d53c-7e4a-43dd-b383-900e59780659",
+      "name": {
+        "ja": "プレーゴ",
+        "en": "PREGO"
+      },
+      "geo": {
+        "latitude": 36.56132,
+        "longitude": 136.65344
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5613567,136.6533906,3a,90y,113.92h,100.23t/data=!3m7!1e1!3m5!1smI0pMSr5LMX818L5DGSjyw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.232831161165024%26panoid%3DmI0pMSr5LMX818L5DGSjyw%26yaw%3D113.92411449798281!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "423c33fb-42e5-464b-a4b0-06be8fbf19a2",
+      "name": {
+        "ja": "金沢中警察署 犀川大橋交番",
+        "en": "Saikawa Bridge Police Box"
+      },
+      "geo": {
+        "latitude": 36.5583,
+        "longitude": 136.65014
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5581321,136.6499719,3a,48.6y,39.15h,94.56t/data=!3m7!1e1!3m5!1soJkjYAgOL3jX-2idp7SJng!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.560029496088788%26panoid%3DoJkjYAgOL3jX-2idp7SJng%26yaw%3D39.15349039337925!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "4b594136-504f-4161-a7f7-5dae15300e13",
+      "name": {
+        "en": "Shuhokaku",
+        "ja": "百楽荘 彩心"
+      },
+      "geo": {
+        "latitude": 36.48998,
+        "longitude": 136.75614
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4897956,136.7561321,3a,48.8y,339.33h,95.45t/data=!3m7!1e1!3m5!1scAqLNyx8PUSqn-neIhPpxQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.445124961470327%26panoid%3DcAqLNyx8PUSqn-neIhPpxQ%26yaw%3D339.33095793799816!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "5294faa4-6485-4816-a368-bf84ba15189d",
+      "name": {
+        "ja": "玉泉工房",
+        "en": "Gyokusen Kobo"
+      },
+      "geo": {
+        "latitude": 36.4882,
+        "longitude": 136.75572
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4881529,136.7558243,3a,48.7y,290.07h,87.18t/data=!3m7!1e1!3m5!1smsSpL96VjTkKFmfZt3DSSw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.8199766326723505%26panoid%3DmsSpL96VjTkKFmfZt3DSSw%26yaw%3D290.07154775390967!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "55dce1f4-d0c7-402e-8afc-f17edebb00d1",
+      "name": {
+        "en": "ITALIAN RESORT PERTICA"
+      },
+      "geo": {
+        "latitude": 35.73063,
+        "longitude": 139.47791
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-kodaira",
+      "streetViewUrl": "https://www.google.com/maps/@35.7305145,139.4779268,3a,90y,358.87h,101.36t/data=!3m7!1e1!3m5!1sffS_-cZ0zEWqUdHPeqjUWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.355785560129817%26panoid%3DffS_-cZ0zEWqUdHPeqjUWg%26yaw%3D358.8747328340039!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "5890586b-2aad-455b-8a82-8ff191732a72",
+      "name": {
+        "kr": "도쿄 타워",
+        "ja": "東京タワー",
+        "en": "Tokyo Tower"
+      },
+      "geo": {
+        "latitude": 35.65861,
+        "longitude": 139.74545
+      },
+      "ep": 17,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Tokyo+Tower/@35.6586932,139.7454888,2a,48.7y,116.69h,91.58t/data=!3m7!1e1!3m5!1s6jv5pBNgCs2cPAA_kMBGgw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.5772468420295667%26panoid%3D6jv5pBNgCs2cPAA_kMBGgw%26yaw%3D116.68578848739!7i13312!8i6656!4m9!3m8!1s0x60188bbd9009ec09:0x481a93f0d2a409dd!8m2!3d35.6585805!4d139.7454329!10e5!14m1!1BCgIgARICCAI!16zL20vMDEzMl94?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "592379db-1dee-49d5-ba34-a950167bfd41",
+      "name": {
+        "ja": "西岸郵便局",
+        "en": "Nishigishi Post Office"
+      },
+      "geo": {
+        "latitude": 37.1475,
+        "longitude": 136.8747
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-ishikawa-nanao",
+      "streetViewUrl": "https://www.google.com/maps/@37.1474694,136.8747322,3a,90y,318.67h,98.4t/data=!3m7!1e1!3m5!1siJQ-q2IibImn73YTQCL-NA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.400765318711123%26panoid%3DiJQ-q2IibImn73YTQCL-NA%26yaw%3D318.66506503534373!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "61b14383-57c8-4bed-ba26-5c91cb4c29b2",
+      "name": {
+        "ja": "チャンカレダイナー",
+        "en": "CHAMPION'S CURRY DINER"
+      },
+      "geo": {
+        "latitude": 36.56032,
+        "longitude": 136.65382
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5601912,136.653883,3a,90y,344.15h,102.02t/data=!3m7!1e1!3m5!1sln3P0pNYXOYrF3pbybgtAQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.018949167424054%26panoid%3Dln3P0pNYXOYrF3pbybgtAQ%26yaw%3D344.1478732090571!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "6255d68f-7779-4a1f-ad5c-775b365378c6",
+      "name": {
+        "kr": "니시기시 역",
+        "en": "Nishigishi Station",
+        "ja": "西岸駅"
+      },
+      "geo": {
+        "latitude": 37.14798,
+        "longitude": 136.87467
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-ishikawa-nanao",
+      "streetViewUrl": "https://www.google.com/maps/place/Nishigishi+Station/@37.147908,136.8746591,3a,63.4y,319.83h,91.91t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICksJz2Ng!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu13SSCHIdImjcDRCey5ids46Z1RWu7U6WoRuwWdJwTLxpojURrdSXOIMiQoYEzoEe1IontJ0EwzDHMUm2OikaCAXzOQck1--cxZLRr7XIEcTMDfMExelC6kgI-qwj4PEYSOJ7A%3Dw900-h600-k-no-pi-1.9090954169571148-ya359.82872862215373-ro0-fo100!7i8704!8i4352!4m9!3m8!1s0x5ff72fecfeb4ab2b:0xc512782a56cb89e9!8m2!3d37.1476345!4d136.8741251!10e5!14m1!1BCgIgARICCAI!16s%2Fm%2F05f4wgj?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "62b1330a-1fd1-4855-b3bc-b2fc2cce61bf",
+      "name": {
+        "ja": "有磯海 サービスエリア (上り)",
+        "en": "Arisoumi Service Area (Southbound)"
+      },
+      "geo": {
+        "latitude": 36.77026,
+        "longitude": 137.40009
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-toyama-namerikawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.7702689,137.3999963,3a,75y,102.61h,97.64t/data=!3m7!1e1!3m5!1sFkCc0ysMK7uT4Mu2E98GhA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.639668670410444%26panoid%3DFkCc0ysMK7uT4Mu2E98GhA%26yaw%3D102.61044852165892!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "66de57dc-07b1-4053-9bc0-13a47c1c2409",
+      "name": {
+        "en": "Omotesando Illumination",
+        "ja": "表参道イルミネーション"
+      },
+      "geo": {
+        "latitude": 35.66727,
+        "longitude": 139.70809
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6672895,139.7080984,3a,90y,190.14h,99.87t/data=!3m7!1e1!3m5!1sxvBlNk_q9VeMtng2CQB37Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.865200005853481%26panoid%3DxvBlNk_q9VeMtng2CQB37Q%26yaw%3D190.14279576786217!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "69d3ab12-27e9-4f63-ad04-ff1f25f51432",
+      "name": {
+        "en": "Nishi-Ogikubo Station",
+        "kr": "니시오기쿠보 역",
+        "ja": "西荻窪駅"
+      },
+      "geo": {
+        "latitude": 35.70372,
+        "longitude": 139.59855
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Nishi-Ogikubo+Station/@35.7036554,139.5989896,3a,74.7y,62.82h,92.43t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID43s2u3gE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAB5caB9JqbVd58facLlPOyHoaoDAYoy2qPNZxNw7K7MoJ-dY1l3ZrH5oyWQmU8AOUIyj2f232mySfnhUGgOxMvFuGwlq4gBAIx0B-_JGCr46r0Q0oNZWYbWaB1mOxURE38L82xXQu9uzSQ%3Dw900-h600-k-no-pi-2.431148733922214-ya76.81890643056698-ro0-fo100!7i8704!8i4352!4m9!3m8!1s0x6018ee0e2abaa187:0xbd1133cfdad5045b!8m2!3d35.7038328!4d139.5994955!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11bc5hkmm7?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "6af90aaf-3a54-489e-a3c8-67542fd33441",
+      "name": {
+        "ja": "湯涌稲荷神社",
+        "en": "Yuwakuinari Shrine"
+      },
+      "geo": {
+        "latitude": 36.4859,
+        "longitude": 136.75822
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4858705,136.7582011,3a,90y,31.23h,96.34t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgID40tTMkwE!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu2NMCtMsjGqQQEjrcJYbGs9q6mt1KZ9uJzMvin9SG2tGd3RZuWSz4HdCr9P9-XpqYPp2kquNwPDmmjm3tqtadvuDDH8D4o2OvboYskcWMDctHDdqkmFbhREP4GcYlhuGd_P_IDV3w%3Dw900-h600-k-no-pi-6.344220321368638-ya4.753159825337651-ro0-fo100!7i8640!8i4320?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "72b08145-7dbe-4418-be47-1b0b4d335330",
+      "name": {
+        "en": "Aiku Gakuen",
+        "ja": "愛育学園"
+      },
+      "geo": {
+        "latitude": 36.50225,
+        "longitude": 136.73305
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.502558,136.7326241,3a,47.1y,324.91h,96.38t/data=!3m7!1e1!3m5!1s90wBP7wFU9BhYhnrulrjgQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.382837774680723%26panoid%3D90wBP7wFU9BhYhnrulrjgQ%26yaw%3D324.90772514543454!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "78c27291-a537-4d3b-a556-8a82745a3008",
+      "name": {
+        "en": "Kokarian",
+        "ja": "古香里庵"
+      },
+      "geo": {
+        "latitude": 36.48655,
+        "longitude": 136.75681
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4867062,136.7566895,3a,48.8y,153.23h,94.65t/data=!3m7!1e1!3m5!1soH18_fU5UUZJNpK7PuiafA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.651037241453082%26panoid%3DoH18_fU5UUZJNpK7PuiafA%26yaw%3D153.2325046016614!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "824fe366-6750-4b8a-889d-2b462471f748",
+      "name": {
+        "en": "Kanazawashi Yuwaku Community Center",
+        "ja": "金沢市 湯涌公民館"
+      },
+      "geo": {
+        "latitude": 36.49192,
+        "longitude": 136.75001
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4920549,136.7498738,3a,48.7y,125h,95.69t/data=!3m7!1e1!3m5!1sYpm11rIsPA3PbrFi9Ef6IA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.694339361437045%26panoid%3DYpm11rIsPA3PbrFi9Ef6IA%26yaw%3D124.99508688571058!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "8271fdd3-648d-495f-881c-4ab342fa2d76",
+      "name": {
+        "kr": "오미초 시장",
+        "en": "Omicho Market",
+        "ja": "近江町市場"
+      },
+      "geo": {
+        "latitude": 36.57119,
+        "longitude": 136.65617
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5712898,136.6562108,3a,90y,203.27h,102t/data=!3m7!1e1!3m5!1sqCwnaXnftuY4as2flCDAHA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.997653632429191%26panoid%3DqCwnaXnftuY4as2flCDAHA%26yaw%3D203.26843801818384!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "86607cc4-b496-4a38-9043-a008ca122d0f",
+      "name": {
+        "ja": "ファーストホテル金沢",
+        "en": "First Hotel Kanazawa"
+      },
+      "geo": {
+        "latitude": 36.56206,
+        "longitude": 136.6578
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5619613,136.657811,3a,90y,7.05h,106.26t/data=!3m7!1e1!3m5!1seDLJO1QwoQH9uScs05mMgg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-16.26053654009631%26panoid%3DeDLJO1QwoQH9uScs05mMgg%26yaw%3D7.046868740250706!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "9a577577-8f38-482f-a6e2-33ed5f0cf55a",
+      "name": {
+        "en": "Tokyo Station",
+        "kr": "도쿄 역",
+        "ja": "東京駅"
+      },
+      "geo": {
+        "latitude": 35.6805,
+        "longitude": 139.7657
+      },
+      "ep": 23,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.680512,139.7657337,2a,90y,198.29h,109.68t/data=!3m7!1e1!3m5!1skhujqB1mZErRXsnUsPmBBA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-19.682514784505642%26panoid%3DkhujqB1mZErRXsnUsPmBBA%26yaw%3D198.29000737604048!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "aaa1bb85-beed-457d-808a-0cc0499bff3a",
+      "name": {
+        "en": "Welcia",
+        "ja": "ウエルシアO-GUARD新宿店"
+      },
+      "geo": {
+        "latitude": 35.69369,
+        "longitude": 139.69897
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6937518,139.6991508,3a,43y,88.6h,96.07t/data=!3m7!1e1!3m5!1sOvOIxEIJwGa_mjmOUNjfAQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.069054327385132%26panoid%3DOvOIxEIJwGa_mjmOUNjfAQ%26yaw%3D88.59938727515332!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "aaf036ec-ecec-4214-a9f7-533de8ab905a",
+      "name": {
+        "ja": "本吉食料品店",
+        "en": "Motoyoshi Shokuryohinten"
+      },
+      "geo": {
+        "latitude": 36.48614,
+        "longitude": 136.75706
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4860553,136.7571144,3a,75y,333h,93.43t/data=!3m7!1e1!3m5!1sXD1lmYorePEumDU1ewhCGA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.4308680505490656%26panoid%3DXD1lmYorePEumDU1ewhCGA%26yaw%3D333.0036601153197!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "ab824ced-5258-4ce2-9f2e-537726c56053",
+      "name": {
+        "en": "Roppongi Hills",
+        "ja": "六本木ヒルズ",
+        "kr": "롯폰기 힐스"
+      },
+      "geo": {
+        "latitude": 35.66107,
+        "longitude": 139.72954
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.661013,139.729235,2a,75y,69.79h,94.95t/data=!3m7!1e1!3m5!1stwqZQEpRVNAY_l8FOj40QA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.9533497938175515%26panoid%3DtwqZQEpRVNAY_l8FOj40QA%26yaw%3D69.79249301648943!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "b6ebd934-c31a-43eb-ac95-c6635b103411",
+      "name": {
+        "en": "Shiinoki Cultural Complex",
+        "kr": "이시카와 현정 기념 시이노키 영빈관",
+        "ja": "石川県政記念しいのき迎賓館"
+      },
+      "geo": {
+        "latitude": 36.56225,
+        "longitude": 136.6584
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5622516,136.6586411,3a,90y,289.62h,105.36t/data=!3m7!1e1!3m5!1sDDJMfWuZEAswVNnAyQkZaw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.358425221767803%26panoid%3DDDJMfWuZEAswVNnAyQkZaw%26yaw%3D289.6166672608417!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "b85cacd5-c72f-43fb-be9d-554f06a40127",
+      "name": {
+        "ja": "弥生橋",
+        "en": "Yayoi Bridge",
+        "kr": "야요이다리"
+      },
+      "geo": {
+        "latitude": 31.80313,
+        "longitude": 131.47148
+      },
+      "ep": 14,
+      "type": "EP",
+      "cityId": "JP-miyazaki-miyazaki",
+      "streetViewUrl": "https://www.google.com/maps/@31.8030955,131.4714929,3a,75y,69.96h,92.43t/data=!3m7!1e1!3m5!1sBA31bfS2UZgG-jWPHwBQgA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.4335667879797427%26panoid%3DBA31bfS2UZgG-jWPHwBQgA%26yaw%3D69.96452434696508!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "c4b27fac-4f7d-4f23-8895-a6f09567086b",
+      "name": {
+        "ja": "ルキーナ金沢",
+        "en": "Lukina Kanazawa"
+      },
+      "geo": {
+        "latitude": 36.57658,
+        "longitude": 136.65147
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5766296,136.6512254,3a,75y,133.92h,102.76t/data=!3m7!1e1!3m5!1s0cC66iEWEzFEfA8443QUYg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.761439963700624%26panoid%3D0cC66iEWEzFEfA8443QUYg%26yaw%3D133.92048790004986!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "c5c28f38-96f8-4e26-9f2b-c385cee753e6",
+      "name": {
+        "en": "Sunshine City",
+        "ja": "サンシャインシティ",
+        "kr": "선샤인시티"
+      },
+      "geo": {
+        "latitude": 35.72931,
+        "longitude": 139.7193
+      },
+      "ep": 23,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7293244,139.7192548,3a,90y,276.46h,140.48t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC4j-yOBg!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu2VftmgtJTI_YW0AIoLP2-jdkVysl1raz23641UE7jmLk7ssdyzt9pfAycdb0u0X9nCYzwRWt9WDIUFNELKd6uEiYuyLGX0-4m_T4zkHefx-S10EmcdRm71cl4bbTP9l_hQGJoP%3Dw900-h600-k-no-pi-50.47873984444578-ya330.7310617135391-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "c91a5843-3586-4957-82b1-77b1ac78de2b",
+      "name": {
+        "en": "Biblio.Classic",
+        "ja": "ビブリオ. クラシック"
+      },
+      "geo": {
+        "latitude": 35.72084,
+        "longitude": 139.71286
+      },
+      "ep": 23,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7208431,139.7129041,3a,90y,250.94h,111.39t/data=!3m7!1e1!3m5!1sFqjfK53SFc619Mv6B6V4PA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-21.38650382676687%26panoid%3DFqjfK53SFc619Mv6B6V4PA%26yaw%3D250.9445965389452!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "d4c8b70d-78ec-4e47-8697-f88a214a8df0",
+      "name": {
+        "en": "Fukujin Bridge",
+        "ja": "福神橋"
+      },
+      "geo": {
+        "latitude": 36.48854,
+        "longitude": 136.75555
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4886438,136.7555463,3a,75y,148.65h,93.59t/data=!3m7!1e1!3m5!1snJP9StYznZupa6DHK6ztdQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.5862494251770585%26panoid%3DnJP9StYznZupa6DHK6ztdQ%26yaw%3D148.6453904112922!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "d5994310-cd04-4f19-bc4a-bed97bba934b",
+      "name": {
+        "ja": "マクドナルド 下丸子店",
+        "kr": "맥도날드 시모마루코점",
+        "en": "McDonald's Shimo-maruko"
+      },
+      "geo": {
+        "latitude": 35.57103,
+        "longitude": 139.68593
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.5710588,139.6858672,3a,90y,130h,107.52t/data=!3m7!1e1!3m5!1sj3jPmNt5VyhmoZA_j54UCw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-17.52295229540549%26panoid%3Dj3jPmNt5VyhmoZA_j54UCw%26yaw%3D130.0024156991972!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "f13e9d95-b04d-46ae-b506-f7e6d3855104",
+      "name": {
+        "en": "Siii",
+        "ja": "Siii(シー)"
+      },
+      "geo": {
+        "latitude": 36.51128,
+        "longitude": 136.71273
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.5114339,136.7130123,3a,48.3y,233.03h,90.9t/data=!3m7!1e1!3m5!1sX1oi-x2nO1cc1ebfWmZEIw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.9029179169048405%26panoid%3DX1oi-x2nO1cc1ebfWmZEIw%26yaw%3D233.0252932659617!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "f22a133f-063d-4f20-a2d9-b2cd8915eb3d",
+      "name": {
+        "ja": "金沢湯涌夢二館",
+        "en": "Kanazawa Yuwaku Yumeji-kan"
+      },
+      "geo": {
+        "latitude": 36.48574,
+        "longitude": 136.75757
+      },
+      "ep": 26,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4857643,136.7573071,3a,75y,106.49h,97.66t/data=!3m7!1e1!3m5!1sum6oxMJICZP2ndaZkvvwzQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.655626292932098%26panoid%3Dum6oxMJICZP2ndaZkvvwzQ%26yaw%3D106.49408008164963!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "f8d30524-8acd-4a42-a1b7-6df31eed9905",
+      "name": {
+        "en": "StudioFragaria"
+      },
+      "geo": {
+        "latitude": 31.91023,
+        "longitude": 131.42212
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-miyazaki-miyazaki",
+      "streetViewUrl": "https://www.google.com/maps/@31.9100657,131.4221195,3a,48.7y,3.85h,97.41t/data=!3m7!1e1!3m5!1sNXwNKyY0iDFs76A0a3qCyA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.408862006632901%26panoid%3DNXwNKyY0iDFs76A0a3qCyA%26yaw%3D3.8468098988284964!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "f99cc349-e7fa-4865-ba80-09149bab5747",
+      "name": {
+        "ja": "やました",
+        "en": "Yamashita"
+      },
+      "geo": {
+        "latitude": 36.48533,
+        "longitude": 136.75764
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.4852522,136.7576519,3a,75y,347.86h,92.83t/data=!3m7!1e1!3m5!1sBPADUcYJ5Xq0Wf46XnrQcg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.832676150256347%26panoid%3DBPADUcYJ5Xq0Wf46XnrQcg%26yaw%3D347.8578198654717!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    },
+    {
+      "placeId": "d6b1a7b4-d952-44ce-80dc-daef0ec93926",
+      "name": {
+        "ja": "ANA ホリデイ・イン リゾート 宮崎",
+        "kr": "ANA 홀리데이 인 리조트 미야자키",
+        "en": "Holiday Inn Resort Miyazaki by IHG"
+      },
+      "geo": {
+        "latitude": 31.80661,
+        "longitude": 131.46252
+      },
+      "ep": 14,
+      "type": "EP",
+      "cityId": "JP-miyazaki-miyazaki",
+      "streetViewUrl": "https://www.google.com/maps/@31.8063526,131.4632406,3a,60y,274.12h,103.46t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDqi-__YA!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu0fIrE0xqtGyOHfzSZlTdEhay3q8J_47tGMuYhH3-sjANE9I5dYN-aKPyz4vmsRmTP08ACkxS7AE0auxCfPxsctpGYzH62-Xz1nlKSykLnmiwK0CPjAmyjhMDVP5xuhoyf2Cirn%3Dw900-h600-k-no-pi-13.457785972257142-ya149.11585569250832-ro0-fo100!7i8192!8i4096?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©花いろ旅館組合"
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "anime": {
+    "animeId": "zpeuh4ic4dDDneypMAZp",
+    "slug": "zombie-land-saga",
+    "title": {
+      "ja": "ゾンビランドサガ",
+      "kr": "좀비 랜드 사가",
+      "en": "Zombie Land Saga"
+    },
+    "author": {
+      "ja": [
+        "広報広聴課ゾンビ係"
+      ],
+      "en": [
+        "Zombie Section, Public Relations Division"
+      ],
+      "kr": [
+        "홍보홍청과 좀비계"
+      ]
+    },
+    "studio": {
+      "en": [
+        "MAPPA"
+      ]
+    }
+  },
+  "placeCount": 21,
+  "places": [
+    {
+      "placeId": "0b7effdf-1d5e-44c0-beab-a33ecbf1f98c",
+      "name": {
+        "ja": "舞鶴橋",
+        "en": "Maizuru Bridge"
+      },
+      "geo": {
+        "latitude": 33.4515616,
+        "longitude": 129.9797031
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-karatsu",
+      "streetViewUrl": "https://www.google.com/maps/@33.4515616,129.9797031,3a,90y,344.15h,97.45t/data=!3m6!1e1!3m4!1sh-qK7tqt_OC2QmLLkg6obA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "0f2b6e66-288c-4274-840e-f0cbef1f2196",
+      "name": {
+        "ja": "嬉野橋",
+        "en": "Ureshino Bridge"
+      },
+      "geo": {
+        "latitude": 33.0963988,
+        "longitude": 129.9854644
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-ureshino",
+      "streetViewUrl": "https://www.google.com/maps/@33.0963988,129.9854644,3a,90y,104.15h,95.74t/data=!3m7!1e1!3m5!1shoS0sbNsAyJUnvoFBbXiEA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DhoS0sbNsAyJUnvoFBbXiEA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D82.91771%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "185a2a24-28d9-4720-a871-8d79b00f4575",
+      "name": {
+        "en": "Toyotamahime Shrine",
+        "ja": "豊玉姫神社"
+      },
+      "geo": {
+        "latitude": 33.0972314,
+        "longitude": 129.9826623
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-ureshino",
+      "streetViewUrl": "https://www.google.com/maps/@33.0972314,129.9826623,3a,75y,341.86h,94.9t/data=!3m8!1e1!3m6!1sAF1QipP79D9el-B8oeNmjW0AqbdqEAEbVLUNpYnt7x-u!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipP79D9el-B8oeNmjW0AqbdqEAEbVLUNpYnt7x-u%3Dw203-h100-k-no-pi-0-ya199.06635-ro-0-fo100!7i8192!8i4096?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "1d0c219c-028c-4e62-b4e3-eead8b316a19",
+      "name": {
+        "ja": "風月堂",
+        "en": "Fugetsudo"
+      },
+      "geo": {
+        "latitude": 33.0980431,
+        "longitude": 129.983591
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-ureshino",
+      "streetViewUrl": "https://www.google.com/maps/@33.0980431,129.983591,3a,90y,206.64h,99.84t/data=!3m6!1e1!3m4!1soOY92wYXeawLLkMzCUPaqw!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "32534c2d-11f7-4213-8d0e-93e7d8a7672f",
+      "name": {
+        "en": "Ureshino Public Hot Spring",
+        "ja": "嬉野温泉公衆浴場 シーボルトの湯"
+      },
+      "geo": {
+        "latitude": 33.0964046,
+        "longitude": 129.9852131
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-ureshino",
+      "streetViewUrl": "https://www.google.com/maps/@33.0964046,129.9852131,3a,75y,60.97h,103.39t/data=!3m6!1e1!3m4!1sGwq05uS1n5OnmEXwg-3mVg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "3c6aa8f2-e0de-415c-aef7-6c512dbd411e",
+      "name": {
+        "ja": "佐賀県立佐賀城本丸歴史館",
+        "en": "Saga Castle History Museum"
+      },
+      "geo": {
+        "latitude": 33.2456751,
+        "longitude": 130.303265
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-saga",
+      "streetViewUrl": "https://www.google.com/maps/@33.2456751,130.303265,3a,75y,266.27h,93.56t/data=!3m8!1e1!3m6!1sAF1QipOzeqFvri0VuXwmyITwvHH8WmEPt16DZlvH1vwn!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOzeqFvri0VuXwmyITwvHH8WmEPt16DZlvH1vwn%3Dw203-h100-k-no-pi-0-ya220.25446-ro0-fo100!7i10240!8i5120?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "3cbb009d-a2d2-40ca-b068-d7ac76260298",
+      "name": {
+        "en": "Near the Nishishinkomachi Jido Park",
+        "id": "Sekitar Nishishinkomachi Jido Park",
+        "de": "In der Nähe des Nishishinkomachi Jido Park",
+        "ja": "西新興町児童公園付近",
+        "es": "Cerca de la Nishishinkomachi Jido Park"
+      },
+      "geo": {
+        "latitude": 33.4443631,
+        "longitude": 129.9656992
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-karatsu",
+      "streetViewUrl": "https://www.google.com/maps/@33.4443631,129.9656992,3a,75y,250.25h,93.91t/data=!3m7!1e1!3m5!1spQcMD4Lm7hELF-JajesGrg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DpQcMD4Lm7hELF-JajesGrg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D147.1409%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "3e8f1d2c-8b7b-41ac-a059-e33635d07b7d",
+      "name": {
+        "en": "Ureshino Onsen Park",
+        "ja": "嬉野温泉公園"
+      },
+      "geo": {
+        "latitude": 33.0963571,
+        "longitude": 129.9865591
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-ureshino",
+      "streetViewUrl": "https://www.google.com/maps/@33.0963571,129.9865591,3a,90y,149.78h,100.01t/data=!3m8!1e1!3m6!1sAF1QipPpU0bQR7ItchZRnEYsdFcXakdeJ-iFYxJD_VfI!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPpU0bQR7ItchZRnEYsdFcXakdeJ-iFYxJD_VfI%3Dw203-h100-k-no-pi-0-ya170.89853-ro-0-fo100!7i8000!8i4000?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "3eb3c665-ddc7-44e8-a626-55066adc14c4",
+      "name": {
+        "en": "Mt. Kagamiyama Observation Deck",
+        "ja": "鏡山展望台"
+      },
+      "geo": {
+        "latitude": 33.4307583,
+        "longitude": 130.0179417
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-karatsu",
+      "streetViewUrl": "https://www.google.com/maps/@33.4307583,130.0179417,3a,90y,358.82h,93.71t/data=!3m8!1e1!3m6!1sAF1QipMvi1PENOoW3-8T06smkWfSWAgwsjOi_CJRFYwd!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMvi1PENOoW3-8T06smkWfSWAgwsjOi_CJRFYwd%3Dw203-h100-k-no-pi-0-ya56.829124-ro-0-fo100!7i5376!8i2688?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "5a7a5b72-b178-4e73-8a0e-eadd6c7c1b15",
+      "name": {
+        "ja": "千代田橋",
+        "en": "Chiyoda Bridge"
+      },
+      "geo": {
+        "latitude": 33.45088,
+        "longitude": 129.9743395
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-karatsu",
+      "streetViewUrl": "https://www.google.com/maps/@33.45088,129.9743395,3a,90y,41.36h,104.18t/data=!3m7!1e1!3m5!1sfrjbaOxcKDoM0zABefp4CQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DfrjbaOxcKDoM0zABefp4CQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D262.4489%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "63157f1f-f923-4f23-83f8-d0aa56b7805a",
+      "name": {
+        "ja": "Live House 佐賀GEILS",
+        "en": "GEILS / SPIRITS"
+      },
+      "geo": {
+        "latitude": 33.267246,
+        "longitude": 130.2978717
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-saga",
+      "streetViewUrl": "https://www.google.com/maps/@33.267246,130.2978717,3a,75y,169.09h,94.6t/data=!3m7!1e1!3m5!1sqTZW0DAshL3w3Q2yX-_W1Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DqTZW0DAshL3w3Q2yX-_W1Q%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D234.06204%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "6b0e32f6-d219-47c0-897a-7598e2867a0c",
+      "name": {
+        "en": "Karatsu City Museum of History & Folklore",
+        "ja": "唐津市歴史民俗資料館"
+      },
+      "geo": {
+        "latitude": 33.4705905,
+        "longitude": 129.9537033
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-karatsu",
+      "streetViewUrl": "https://www.google.com/maps/@33.4705905,129.9537033,3a,90y,24.55h,97.59t/data=!3m7!1e1!3m5!1sugWVzUe7nn5F501NQVLa4w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DugWVzUe7nn5F501NQVLa4w%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D71.42916%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "738af5d2-2337-4ffb-b12a-55bd9ff88e9f",
+      "name": {
+        "ja": "ドライブイン鳥 伊万里本店",
+        "en": "Drive-in Tori"
+      },
+      "geo": {
+        "latitude": 33.2869964,
+        "longitude": 129.9023199
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-imari",
+      "streetViewUrl": "https://www.google.com/maps/@33.2869964,129.9023199,3a,75y,298.79h,95.21t/data=!3m6!1e1!3m4!1saXo9WdpqPIxM1QocqXdumA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "7b3d768d-9044-4e52-ae4e-0ca66bab2d42",
+      "name": {
+        "ja": "大名小路児童公園",
+        "en": "Daimyokoji Jido Park"
+      },
+      "geo": {
+        "latitude": 33.4501155,
+        "longitude": 129.9702817
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-karatsu",
+      "streetViewUrl": "https://www.google.com/maps/@33.4501155,129.9702817,3a,75y,106.3h,97.45t/data=!3m7!1e1!3m5!1s3Xyf7HqDTZEZGt8F5-cRhg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D3Xyf7HqDTZEZGt8F5-cRhg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D256.6681%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "815dc6ac-c8d8-4907-95f7-71141ca8a87a",
+      "name": {
+        "ja": "喫茶 笹屋",
+        "en": "Cafe Sasaya"
+      },
+      "geo": {
+        "latitude": 33.09663,
+        "longitude": 129.9850515
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-ureshino",
+      "streetViewUrl": "https://www.google.com/maps/@33.09663,129.9850515,3a,90y,220.46h,87.54t/data=!3m6!1e1!3m4!1sLXYktKRfS44_QOpeD3O7qQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "81be9dab-828e-4ebf-86c5-38e1f5aa12c7",
+      "name": {
+        "en": "Moca",
+        "ja": "カフェ モカ"
+      },
+      "geo": {
+        "latitude": 33.0971882,
+        "longitude": 129.9848033
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-ureshino",
+      "streetViewUrl": "https://www.google.com/maps/@33.0971882,129.9848033,3a,90y,218.82h,94.43t/data=!3m6!1e1!3m4!1swwjOIFpkVH66sKP6Rki6_A!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "a98a1703-5dcd-43aa-88e2-b67e78d14108",
+      "name": {
+        "en": "Plaza 656",
+        "ja": "656広場(むつごろう広場)"
+      },
+      "geo": {
+        "latitude": 33.2538072,
+        "longitude": 130.3038023
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-saga",
+      "streetViewUrl": "https://www.google.com/maps/@33.2538072,130.3038023,3a,90y,323.85h,101.71t/data=!3m7!1e1!3m5!1s7VdjdC1JYSdFKm9rPYdwaQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D7VdjdC1JYSdFKm9rPYdwaQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D82.947876%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "c0abca6c-956d-470b-91b7-d9237bb98d86",
+      "name": {
+        "ja": "ホテル華翠苑",
+        "en": "Hotel Kasuien"
+      },
+      "geo": {
+        "latitude": 33.0935927,
+        "longitude": 129.982377
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-ureshino",
+      "streetViewUrl": "https://www.google.com/maps/@33.0935927,129.982377,3a,90y,279.63h,97.06t/data=!3m6!1e1!3m4!1sqKLvZWoS3hwMzYsRRPr8WQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "c4ac9b28-d802-461f-849c-62ed184232aa",
+      "name": {
+        "en": "Karatsu Station",
+        "ja": "唐津駅"
+      },
+      "geo": {
+        "latitude": 33.4467445,
+        "longitude": 129.9680343
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-karatsu",
+      "streetViewUrl": "https://www.google.com/maps/@33.4467445,129.9680343,3a,75y,203.9h,91.07t/data=!3m7!1e1!3m5!1ste6-3KTdsG4tWSne596Pow!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dte6-3KTdsG4tWSne596Pow%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D281.01758%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "d503ba33-3552-4a89-9c33-2464ea70d5b1",
+      "name": {
+        "ja": "文具のナカシマ",
+        "en": "Nakashima Stationery Store"
+      },
+      "geo": {
+        "latitude": 33.4438037,
+        "longitude": 129.9654779
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-karatsu",
+      "streetViewUrl": "https://www.google.com/maps/@33.4438037,129.9654779,3a,90y,301.84h,100.76t/data=!3m7!1e1!3m5!1sa0x_zlamAxyJxT7wl5hB8g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Da0x_zlamAxyJxT7wl5hB8g%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D92.07229%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    },
+    {
+      "placeId": "ed430487-7e00-48cb-8387-1bf4c85f84ea",
+      "name": {
+        "ja": "嬉野温泉 湯宿広場",
+        "en": "Yushuku Hiroba"
+      },
+      "geo": {
+        "latitude": 33.0966642,
+        "longitude": 129.983638
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saga-ureshino",
+      "streetViewUrl": "https://www.google.com/maps/@33.0966642,129.983638,3a,90y,59.17h,89.76t/data=!3m7!1e1!3m5!1s70wBTRAJyq7Rv9RDi917bg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D70wBTRAJyq7Rv9RDi917bg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D23.407972%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©ゾンビランドサガ製作委員会"
+    }
+  ]
+}

@@ -1,0 +1,856 @@
+{
+  "anime": {
+    "animeId": "g2gEzS0je4xmz8DFES7D",
+    "slug": "bocchi-the-rock",
+    "title": {
+      "ja": "ぼっち・ざ・ろっく！",
+      "kr": "봇치 더 록!",
+      "en": "Bocchi The Rock!"
+    },
+    "author": {
+      "kr": [
+        "하마지 아키"
+      ],
+      "en": [
+        "Aki Hamaji"
+      ],
+      "ja": [
+        "はまじあき"
+      ]
+    },
+    "studio": {
+      "en": [
+        "CloverWorks"
+      ]
+    }
+  },
+  "placeCount": 50,
+  "places": [
+    {
+      "placeId": "08f6ca1b-fd50-4ae9-8968-3055e61fba19",
+      "name": {
+        "ja": "金沢シーサイドライン下広場",
+        "en": "Kanazawa Seaside Line Shimohiroba"
+      },
+      "geo": {
+        "latitude": 35.33027,
+        "longitude": 139.62315
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.3302049,139.6230653,3a,75y,52.44h,90.01t/data=!3m7!1e1!3m5!1sfVfQpfsSW7w7tlzSRaG0WA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.005960077169859801%26panoid%3DfVfQpfsSW7w7tlzSRaG0WA%26yaw%3D52.438665454791526!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "10b036b7-3a2b-4eff-9786-1605233f4230",
+      "name": {
+        "ja": "クロサワ楽器 お茶の水駅前店",
+        "en": "KUROSAWA MUSIC Ochanomizu Station Front"
+      },
+      "geo": {
+        "latitude": 35.69927,
+        "longitude": 139.7632
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6992231,139.7630161,3a,39.2y,71.08h,91.31t/data=!3m6!1e1!3m4!1sJanzbxnyKJDKQci3yeggeA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "1b35879b-27ee-4bb4-a0fe-bb238ca45d4f",
+      "name": {
+        "en": "Yakiniku Dining Taijuen Shimokitazawa",
+        "kr": "Yakiniku Dining Taijuen 시모키타자와점",
+        "ja": "焼肉ダイニング 太樹苑 下北沢店"
+      },
+      "geo": {
+        "latitude": 35.66263,
+        "longitude": 139.66933
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6626389,139.6693102,3a,90y,179.87h,81.62t/data=!3m7!1e1!3m5!1s1I6CjAt-sMqe1n9i4_iyFQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D8.37688600439752%26panoid%3D1I6CjAt-sMqe1n9i4_iyFQ%26yaw%3D179.87246999912318!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "1c62e633-42c3-40f0-a16b-a878c0cdde2e",
+      "name": {
+        "en": "Spice Curry & Cafe SHANTi",
+        "ja": "Spice Curry & Cafe SHANTi 下北店",
+        "kr": "Spice Curry & Cafe SHANTi 시모키타점"
+      },
+      "geo": {
+        "latitude": 35.6624769,
+        "longitude": 139.6680066
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6624769,139.6680066,3a,90y,312.61h,94.21t/data=!3m7!1e1!3m5!1scxNhCggSg-1soMoMW265tQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DcxNhCggSg-1soMoMW265tQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D61.335644%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "1d4151ce-f694-494c-9d6f-c55f222774fa",
+      "name": {
+        "en": "Times Daizawa No. 5",
+        "ja": "タイムズ代沢第５"
+      },
+      "geo": {
+        "latitude": 35.6588591,
+        "longitude": 139.6690487
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6588591,139.6690487,3a,75y,2.18h,79.26t/data=!3m6!1e1!3m4!1snBHjdn4-1UoW3CHeuvaH4w!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "2a95c2d6-9796-4054-8df1-b136f9a30288",
+      "name": {
+        "en": "Burger King - Shimo-Kitazawa Station South Entrance",
+        "ja": "バーガーキング 下北沢駅南口店"
+      },
+      "geo": {
+        "latitude": 35.66066,
+        "longitude": 139.66754
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6607482,139.6675379,3a,48.7y,174.69h,99.46t/data=!3m7!1e1!3m5!1sohdiOvQQ_wiju9mCTMdOLQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.461526027462554%26panoid%3DohdiOvQQ_wiju9mCTMdOLQ%26yaw%3D174.68569440707674!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "2fdc3824-ecc3-4b9c-b1eb-90495d3e4baa",
+      "name": {
+        "ja": "下北沢パーキング",
+        "en": "Shimokitazawa Parking Lot"
+      },
+      "geo": {
+        "latitude": 35.66272,
+        "longitude": 139.66909
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6628353,139.6690012,3a,75y,136h,94.2t/data=!3m7!1e1!3m5!1suYXKwwiWs7ArBTGI9aSnzQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DuYXKwwiWs7ArBTGI9aSnzQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D18.76595%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "39039e09-7d41-42be-9ae1-d2df16ea16d3",
+      "name": {
+        "kr": "가타세에노시마 역",
+        "ja": "片瀬江ノ島駅",
+        "en": "Katase-Enoshima Station"
+      },
+      "geo": {
+        "latitude": 35.3086765,
+        "longitude": 139.4836789
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3086765,139.4836789,3a,75y,314.44h,98.68t/data=!3m7!1e1!3m5!1sBBQmy8A4NkEZfzoAdiD_VQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DBBQmy8A4NkEZfzoAdiD_VQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D56.376423%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "3fc52352-4ec3-4a0c-9c70-2588448ce093",
+      "name": {
+        "en": "Couple Stairs Enoshima"
+      },
+      "geo": {
+        "latitude": 35.30715,
+        "longitude": 139.48446
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3071037,139.4843809,2a,47.7y,31.68h,96.4t/data=!3m7!1e1!3m5!1s5Qfy_alylNAoOwr4AHz9QQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.402856021385674%26panoid%3D5Qfy_alylNAoOwr4AHz9QQ%26yaw%3D31.677770938274648!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "40c23071-55b3-4edb-b6fa-720329deac1f",
+      "name": {
+        "ja": "江の島エスカー3区終点",
+        "en": "Enoshima esker 3rd section end point"
+      },
+      "geo": {
+        "latitude": 35.29903,
+        "longitude": 139.48026
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.2990714,139.4801824,2a,40y,90.72h,95.91t/data=!3m7!1e1!3m5!1s-Vn2AzrMTzUBL3a5s6bApg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.908022790247898%26panoid%3D-Vn2AzrMTzUBL3a5s6bApg%26yaw%3D90.7158163506862!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "424d5677-2a90-48a7-9eb3-491dd590c226",
+      "name": {
+        "en": "Village Vanguard Shimokitazawa",
+        "kr": "Village Vanguard 시모키타자와점",
+        "ja": "ヴィレッジヴァンガード下北沢店"
+      },
+      "geo": {
+        "latitude": 35.66182,
+        "longitude": 139.66857
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6618019,139.6686471,3a,90y,172.48h,99.2t/data=!3m6!1e1!3m4!1szgTe5RZOrrsscgI4dLnNtg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "4deed5af-bc64-436a-b9d5-c819776c0dcc",
+      "name": {
+        "ja": "奉安殿",
+        "en": "Eshima Shrine Hoanden"
+      },
+      "geo": {
+        "latitude": 35.3002174,
+        "longitude": 139.4798357
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3002174,139.4798357,2a,75y,216.81h,99.76t/data=!3m7!1e1!3m5!1siJ96dkIEeUBPUqwgd-_6lQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DiJ96dkIEeUBPUqwgd-_6lQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D39.740845%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "50100dbf-45f2-49a3-8605-a2e62028e9f2",
+      "name": {
+        "ja": "中華 丸長",
+        "en": "Marucho"
+      },
+      "geo": {
+        "latitude": 35.6554,
+        "longitude": 139.66738
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6553593,139.6674298,3a,47.9y,318.33h,91.91t/data=!3m7!1e1!3m5!1svWbPlfRqpz2p0lO89elm4g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.9133665177132428%26panoid%3DvWbPlfRqpz2p0lO89elm4g%26yaw%3D318.32555053362756!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "590359a4-d2d8-4e06-b3b0-02543ec36899",
+      "name": {
+        "en": "Near the Cuore Forte",
+        "id": "Sekitar Cuore Forte",
+        "de": "In der Nähe des Cuore Forte",
+        "es": "Cerca de la Cuore Forte",
+        "kr": "Cuore Forte 근처",
+        "ja": "クオーレ・フォルテ付近"
+      },
+      "geo": {
+        "latitude": 35.6632103,
+        "longitude": 139.6691819
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6632103,139.6691819,3a,90y,195.37h,95.86t/data=!3m7!1e1!3m5!1sinbAMhn6EiudtFrIsaquqA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DinbAMhn6EiudtFrIsaquqA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D139.71529%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "60739348-f2bb-4dec-a0b6-98b058a87863",
+      "name": {
+        "kr": "아사히 본점",
+        "en": "Asahi Honten",
+        "ja": "あさひ本店"
+      },
+      "geo": {
+        "latitude": 35.3010499,
+        "longitude": 139.4805098
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/place/Asahi+Honten/@35.3010499,139.4805098,3a,75y,147.01h,92.55t/data=!3m6!1e1!3m4!1sULbTYvpplAZVe1jxea61vw!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x60184ee43ed1b7d1:0xbc583a6373dc1c3e!2sAsahi+Honten!8m2!3d35.3009448!4d139.4805447!16s%2Fg%2F1ttywq2f!3m5!1s0x60184ee43ed1b7d1:0xbc583a6373dc1c3e!8m2!3d35.3009448!4d139.4805447!16s%2Fg%2F1ttywq2f?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "64c0d13c-39c4-4ce6-a0cc-df03595a84eb",
+      "name": {
+        "kr": "Trust Park Daizawa 2-Chome 근처",
+        "ja": "トラストパーク 代沢2丁目付近",
+        "de": "In der Nähe des Trust Park Daizawa 2-Chome",
+        "en": "Near the Trust Park Daizawa 2-Chome",
+        "id": "Sekitar Trust Park Daizawa 2-Chome",
+        "es": "Cerca de la Trust Park Daizawa 2-Chome"
+      },
+      "geo": {
+        "latitude": 35.66004,
+        "longitude": 139.66914
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6600981,139.6690446,3a,90y,107.56h,103.74t/data=!3m6!1e1!3m4!1s0cebOG_KNSH9tgukZVbpWg!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "6b9681e7-a03b-4d67-80ad-bff20855f880",
+      "name": {
+        "en": "Shimokita Senrogai Open Space",
+        "ja": "下北線路街 空き地"
+      },
+      "geo": {
+        "latitude": 35.66294,
+        "longitude": 139.66933
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6627222,139.6691109,3a,43.2y,32.62h,89.26t/data=!3m7!1e1!3m5!1sQAno3FLil8FhS0eHLwvXbw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.7437017224713429%26panoid%3DQAno3FLil8FhS0eHLwvXbw%26yaw%3D32.62103504350123!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "6f0d43ba-dd29-46b1-baee-b4d6b8fa90f2",
+      "name": {
+        "en": "Ishibashi Music - Ochanomizu Main Shop",
+        "ja": "イシバシ楽器 御茶ノ水本店"
+      },
+      "geo": {
+        "latitude": 35.69912,
+        "longitude": 139.76317
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6992231,139.7630161,3a,38.5y,114.32h,91.36t/data=!3m7!1e1!3m5!1sJanzbxnyKJDKQci3yeggeA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.3605393277408524%26panoid%3DJanzbxnyKJDKQci3yeggeA%26yaw%3D114.31897240161744!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "71401cb6-c692-45be-b034-4b529346989d",
+      "name": {
+        "ja": "どんぐりひろば公園",
+        "kr": "돈구리 히로바 공원",
+        "en": "Donguri Hiroba Park"
+      },
+      "geo": {
+        "latitude": 35.6643368,
+        "longitude": 139.668609
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6643368,139.668609,3a,68y,108.52h,94.66t/data=!3m8!1e1!3m6!1sAF1QipN-c4reAZus9WpigbQYH0GVmWkkGl7TfNcMxEJk!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipN-c4reAZus9WpigbQYH0GVmWkkGl7TfNcMxEJk%3Dw203-h100-k-no-pi-0-ya155.80865-ro0-fo100!7i7680!8i3840?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "794f1730-95e4-46f6-8157-d175f1df1dd6",
+      "name": {
+        "kr": "에노시마카이간",
+        "en": "Enoshima Kaigan",
+        "ja": "江ノ島海岸（バス）"
+      },
+      "geo": {
+        "latitude": 35.30675,
+        "longitude": 139.48392
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3067696,139.4839178,2a,41.5y,30.15h,97.69t/data=!3m7!1e1!3m5!1sMb80VJEfxp46w2uWPT9w9A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.690204805864852%26panoid%3DMb80VJEfxp46w2uWPT9w9A%26yaw%3D30.15147787818181!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "8c8a0391-d39d-46f1-84cf-ca85e71d3509",
+      "name": {
+        "en": "Grand Torii of Enoshima Jinja Shrine",
+        "ja": "江島神社 朱の鳥居(大鳥居)"
+      },
+      "geo": {
+        "latitude": 35.30063,
+        "longitude": 139.48026
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3006534,139.4803057,2a,90y,307.53h,86.63t/data=!3m7!1e1!3m5!1s9yHh1XybS6k2b1vybBprUg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D3.3704863543864008%26panoid%3D9yHh1XybS6k2b1vybBprUg%26yaw%3D307.5292201841845!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "93500acf-ab8b-4f18-ac4c-19b8e7867d45",
+      "name": {
+        "en": "JET SET Shimokitazawa",
+        "ja": "ジェットセット 下北沢店",
+        "kr": "JET SET시모키타자와점"
+      },
+      "geo": {
+        "latitude": 35.66309,
+        "longitude": 139.66923
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/place/JET+SET+Shimokitazawa/@35.6631004,139.6692424,2a,90y,18.42h,90.05t/data=!3m7!1e1!3m5!1soD1ZLl7dwLAmxkskuQNzwA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.053295365396394345%26panoid%3DoD1ZLl7dwLAmxkskuQNzwA%26yaw%3D18.415203737200972!7i13312!8i6656!4m9!3m8!1s0x6018f36a5f6cf6cf:0x125b0944386fb5c1!8m2!3d35.663097!4d139.669232!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1tgq6pg8?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "9918c43b-a527-44d3-aba0-7da783cc052d",
+      "name": {
+        "kr": "시모키타자와 역",
+        "ja": "下北沢駅",
+        "en": "Shimo-Kitazawa Station"
+      },
+      "geo": {
+        "latitude": 35.66157,
+        "longitude": 139.66759
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6616019,139.667695,3a,75y,243.3h,93.04t/data=!3m6!1e1!3m4!1sc89T3EBEj2xyEpG19-QsGQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "a22d0887-95cb-4341-a606-de78befdf920",
+      "name": {
+        "en": "Street Performance Space",
+        "ja": "大道芸広場"
+      },
+      "geo": {
+        "latitude": 35.29907,
+        "longitude": 139.4798
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.2990913,139.4798638,2a,75y,279.61h,69.25t/data=!3m7!1e1!3m5!1s42sPyX7O_MMBLqNDsRWDEQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D20.750369420831007%26panoid%3D42sPyX7O_MMBLqNDsRWDEQ%26yaw%3D279.61496302533106!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "ad7be890-f8a2-4dc4-a43c-207267e4da89",
+      "name": {
+        "ja": "春巳屋",
+        "en": "Harumiya"
+      },
+      "geo": {
+        "latitude": 35.30072,
+        "longitude": 139.48038
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3007462,139.480382,3a,48.8y,129.89h,93.99t/data=!3m7!1e1!3m5!1s1ilFvdnJezXlS6t0CbZKhg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.9909321374565536%26panoid%3D1ilFvdnJezXlS6t0CbZKhg%26yaw%3D129.89478322167034!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "aea1eac8-e4eb-45b4-936f-b5061d31a9ad",
+      "name": {
+        "ja": "劇・小劇場付近",
+        "en": "Near the Geki ko gekijo",
+        "id": "Sekitar Geki ko gekijo",
+        "de": "In der Nähe des Geki ko gekijo",
+        "es": "Cerca de la Geki ko gekijo",
+        "kr": "Geki ko gekijo 근처"
+      },
+      "geo": {
+        "latitude": 35.6616575,
+        "longitude": 139.6691569
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6616575,139.6691569,3a,90y,345.61h,86.21t/data=!3m7!1e1!3m5!1sCMlIFZnhdmCKF8bej6To6w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DCMlIFZnhdmCKF8bej6To6w%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D103.98392%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "af617a57-ab8e-4d28-bcc9-f93f913e86e6",
+      "name": {
+        "en": "Yakiniku Restaurant YAZAWA Shimokitazawa",
+        "ja": "焼肉屋YAZAWA 下北沢店"
+      },
+      "geo": {
+        "latitude": 35.66192,
+        "longitude": 139.66835
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.661922,139.6683896,3a,90y,248.59h,95.44t/data=!3m7!1e1!3m5!1sERc54gDlhHbZ45cm6tWCqg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.43908539270744%26panoid%3DERc54gDlhHbZ45cm6tWCqg%26yaw%3D248.58934074448368!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "afc24fd8-8a01-4885-8eba-7421eb5d9889",
+      "name": {
+        "ja": "下北沢SHELTER",
+        "en": "Shelter Shimokitazawa"
+      },
+      "geo": {
+        "latitude": 35.6615463,
+        "longitude": 139.6695566
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6615463,139.6695564,3a,75y,270.5h,102.42t/data=!3m6!1e1!3m4!1s0OjoBqeJEAQ09FYvwx3o2A!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "bfa4549b-d140-478e-bdb6-fe208ab0c20f",
+      "name": {
+        "ja": "江島神社 辺津宮（へつのみや）",
+        "en": "Enoshima Shrine - Hetsunomiya",
+        "kr": "에노시마 신사"
+      },
+      "geo": {
+        "latitude": 35.30035,
+        "longitude": 139.47978
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3004571,139.4799577,2a,42.2y,259.05h,111.52t/data=!3m7!1e1!3m5!1swJlqdtnJcx0HNKBF-ZBBKA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-21.524892054212415%26panoid%3DwJlqdtnJcx0HNKBF-ZBBKA%26yaw%3D259.0472023987825!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "c14cfef2-f0d4-4f90-aab7-28cc6e1c989c",
+      "name": {
+        "ja": "金沢八景駅自転車駐車場",
+        "en": "Kanazawahakkeieki Bicycle Parking"
+      },
+      "geo": {
+        "latitude": 35.33021,
+        "longitude": 139.62287
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.3302524,139.6229772,3a,75y,224.29h,96.48t/data=!3m7!1e1!3m5!1sbnWjn4c1Yv5j6Q-cd70B6g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DbnWjn4c1Yv5j6Q-cd70B6g%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D302.4546%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "c2934e03-7402-47d6-8d4b-2a484a0a4c6c",
+      "name": {
+        "kr": "Karaagekappofukunokara 시모키타자와점",
+        "en": "Karaagekappofukunokara Shimokitazawaten",
+        "ja": "福のから 下北沢店"
+      },
+      "geo": {
+        "latitude": 35.66172,
+        "longitude": 139.66891
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6617343,139.6688875,3a,64.3y,111.08h,90.53t/data=!3m8!1e1!3m6!1s6gcaJzFY1wxuY4xTB3Txow!2e0!5s20220901T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.5337521779237591%26panoid%3D6gcaJzFY1wxuY4xTB3Txow%26yaw%3D111.07887064658536!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "c2fee4b6-ffbe-41de-aab0-aa31f9b0f537",
+      "name": {
+        "ja": "八景橋",
+        "en": "Hakkei Bridge"
+      },
+      "geo": {
+        "latitude": 35.32875,
+        "longitude": 139.6251
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.3286998,139.6249979,3a,47.2y,59.01h,94.61t/data=!3m7!1e1!3m5!1s2VL4eE1-Sd1VVKvGVX2ukw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.606862611875869%26panoid%3D2VL4eE1-Sd1VVKvGVX2ukw%26yaw%3D59.00529818472386!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "c4d0a407-fbea-4b6b-a769-333bb56a18b3",
+      "name": {
+        "en": "ADRIFT"
+      },
+      "geo": {
+        "latitude": 35.6639453,
+        "longitude": 139.6709172
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6639453,139.6709172,3a,45.5y,223.14h,91.14t/data=!3m7!1e1!3m5!1sAF1QipPytoEf6wPXv-uaA-7Uok4FuwsF9OYxmnFYWtvM!2e10!3e11!7i6720!8i3360?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "c99cadcb-e057-4e5a-911b-b471dfc07e40",
+      "name": {
+        "ja": "CREA BASE 下北沢店",
+        "en": "CREA BASE Shimokitazawa",
+        "kr": "CREA BASE 시모키타자와점"
+      },
+      "geo": {
+        "latitude": 35.66053,
+        "longitude": 139.66953
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6604278,139.6696042,3a,90y,343.55h,97.57t/data=!3m7!1e1!3m5!1sIMzD_FnPqNGmdlhMWcA20Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.567806280802714%26panoid%3DIMzD_FnPqNGmdlhMWcA20Q%26yaw%3D343.54991657785547!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "cac6bdbe-09b9-4f77-9c93-3bb3f05be040",
+      "name": {
+        "ja": "ヒロセフォトショップ",
+        "en": "Hirose Photo Shop"
+      },
+      "geo": {
+        "latitude": 35.66162,
+        "longitude": 139.66929
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6616239,139.6692924,3a,49.3y,287.3h,97.12t/data=!3m7!1e1!3m5!1sLR5OJHoQGMnxjnehxIwyHg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.115787084634164%26panoid%3DLR5OJHoQGMnxjnehxIwyHg%26yaw%3D287.30379271314825!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "cc101007-a8b9-4f09-b5e5-89ca9844d3e4",
+      "name": {
+        "ja": "新宿LOFT",
+        "kr": "신주쿠 LOFT",
+        "en": "Shinjuku LOFT"
+      },
+      "geo": {
+        "latitude": 35.69534,
+        "longitude": 139.70266
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6955186,139.7024915,3a,90y,130.13h,96.82t/data=!3m7!1e1!3m5!1sXHIZDN1rIUV70le1YpYpGA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.820357690929683%26panoid%3DXHIZDN1rIUV70le1YpYpGA%26yaw%3D130.1265304052243!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "cd7b5634-a7a3-4b22-bc3c-c889c1b57a8a",
+      "name": {
+        "ja": "江の島シーキャンドル",
+        "en": "Enoshima Sea Candle",
+        "kr": "에노시마 시 캔들"
+      },
+      "geo": {
+        "latitude": 35.299818,
+        "longitude": 139.4784833
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.2997579,139.478442,2a,90y,52.6h,94.17t/data=!3m7!1e1!3m5!1svOd8fM1aLH6xWxdxdLj0Uw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.174444540920817%26panoid%3DvOd8fM1aLH6xWxdxdLj0Uw%26yaw%3D52.604019168568236!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "ce2b1531-0600-4497-9071-b762cec3fba4",
+      "name": {
+        "ja": "フォーカス",
+        "en": "Focus"
+      },
+      "geo": {
+        "latitude": 35.6638999,
+        "longitude": 139.6680733
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6638999,139.6680733,3a,90y,157.51h,95.52t/data=!3m6!1e1!3m4!1sYGjhhkWu3WOrTuupeNzB3w!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "d11d7d0b-3dbc-4241-b6fc-c6e6c7ed021d",
+      "name": {
+        "ja": "琵琶島神社",
+        "kr": "비와지마 신사",
+        "en": "Biwajima Shrine"
+      },
+      "geo": {
+        "latitude": 35.33195,
+        "longitude": 139.62228
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/place/Biwajima+Shrine/@35.3315033,139.6224867,3a,75y,359.26h,94.82t/data=!3m8!1e1!3m6!1sAF1QipMxJKrRBJvbs3BWz-QWyXXOoRbghlXW9MTVR1Ic!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMxJKrRBJvbs3BWz-QWyXXOoRbghlXW9MTVR1Ic%3Dw900-h600-k-no-pi-4.816260131662418-ya359.25521100969263-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x6018415906050001:0xd8d90c2529776195!8m2!3d35.3313433!4d139.6225533!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1yg4f92l9?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "d300e67d-e2e2-4388-93c5-121953173f56",
+      "name": {
+        "en": "46ma"
+      },
+      "geo": {
+        "latitude": 35.6617085,
+        "longitude": 139.6694657
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/place/46ma/@35.6617085,139.6694657,3a,90y,308.53h,91.66t/data=!3m8!1e1!3m6!1sAF1QipMfTV-WgmqTcRX7LNDE2wjXBBF8vFlIXk4NnJlo!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMfTV-WgmqTcRX7LNDE2wjXBBF8vFlIXk4NnJlo%3Dw203-h100-k-no-pi-0-ya226.0282-ro-0-fo100!7i8000!8i4000!4m7!3m6!1s0x6018f36a17d2da19:0x4bc03d8aa3019f2f!8m2!3d35.6616939!4d139.6694452!10e5!16s%2Fg%2F1hcb5zphd?coh=205409&entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "d4aab715-793b-47bd-9d77-b0c99427549b",
+      "name": {
+        "en": "Kokera",
+        "ja": "こけら",
+        "kr": "코케라"
+      },
+      "geo": {
+        "latitude": 35.6598648,
+        "longitude": 139.668555
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6598648,139.668555,3a,90y,18.99h,93.73t/data=!3m7!1e1!3m5!1sCSk7bbMN49OtMNizbcX6jQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.7315661725123874%26panoid%3DCSk7bbMN49OtMNizbcX6jQ%26yaw%3D18.9874330961976!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "d4c680e5-0aa6-41c6-a5b1-32d33a622efb",
+      "name": {
+        "ja": "下北沢北自転車等置場",
+        "en": "Shimokitazawa North Bicycle Parking Lot"
+      },
+      "geo": {
+        "latitude": 35.66179,
+        "longitude": 139.66677
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6618627,139.6666772,3a,73.9y,116.66h,93.28t/data=!3m6!1e1!3m4!1s8X6whIx6fQclbqgCzvzTzA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "d58280bf-e266-404e-a935-ef1ee7bae0b2",
+      "name": {
+        "kr": "가나자와핫케이",
+        "ja": "金沢八景駅",
+        "en": "Kanazawa-Hakkei Station"
+      },
+      "geo": {
+        "latitude": 35.33134,
+        "longitude": 139.62074
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.3312327,139.6207594,3a,90y,309.52h,103.73t/data=!3m6!1e1!3m4!1sct1AkHZ3nUN3ZhAwD7hG1Q!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "d759b065-f1ad-4547-af40-de638368b1fa",
+      "name": {
+        "en": "Hakkei Florist",
+        "ja": "八景生花店"
+      },
+      "geo": {
+        "latitude": 35.33113,
+        "longitude": 139.62066
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.3312327,139.6207594,3a,90y,203.87h,99.04t/data=!3m7!1e1!3m5!1sct1AkHZ3nUN3ZhAwD7hG1Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dct1AkHZ3nUN3ZhAwD7hG1Q%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D277.265%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "de101152-9425-4627-baad-bc8703a6045d",
+      "name": {
+        "ja": "とりよし",
+        "en": "Toriyoshi"
+      },
+      "geo": {
+        "latitude": 35.32967,
+        "longitude": 139.62393
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.3295659,139.6239868,3a,48.7y,321.62h,93.61t/data=!3m7!1e1!3m5!1sPfwxwcEb4ynYK_9EDbMo8Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.614744862056952%26panoid%3DPfwxwcEb4ynYK_9EDbMo8Q%26yaw%3D321.62324970257464!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "e69b5cd7-fd2c-45d9-a01c-8d7849411bd8",
+      "name": {
+        "en": "Mos Burger Shimo-Kitazawa Kitaguchi",
+        "ja": "モスバーガー下北沢北口店"
+      },
+      "geo": {
+        "latitude": 35.66288,
+        "longitude": 139.66847
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6629421,139.6684848,3a,75y,195.69h,96t/data=!3m7!1e1!3m5!1sOvaAukOv4yZRxe15WwGY8Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DOvaAukOv4yZRxe15WwGY8Q%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D17.480564%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "ece90374-5a29-4041-b7dc-7c58606740a3",
+      "name": {
+        "en": "Sukiya (Shimokitazawa)",
+        "ja": "すき家 下北沢店"
+      },
+      "geo": {
+        "latitude": 35.66108,
+        "longitude": 139.66763
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6609985,139.6675932,3a,90y,84.41h,88.8t/data=!3m7!1e1!3m5!1stG8_Wylrk4dX2SnOFroSrA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.1977894943470346%26panoid%3DtG8_Wylrk4dX2SnOFroSrA%26yaw%3D84.41378906540518!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "f37b1236-2782-420a-84bf-7969d02b1145",
+      "name": {
+        "ja": "柳町町内会館",
+        "en": "Yanagi Chonai Kaikan"
+      },
+      "geo": {
+        "latitude": 35.32648,
+        "longitude": 139.6247
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.326377,139.6246237,3a,39.2y,23.16h,94.41t/data=!3m7!1e1!3m5!1sEKDx7UJkfDWwZPuvz0btjw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.407454842593253%26panoid%3DEKDx7UJkfDWwZPuvz0btjw%26yaw%3D23.15928717912052!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "f828fd07-618a-463a-a101-8f30fcc5a381",
+      "name": {
+        "ja": "タイムズ下北沢第８",
+        "en": "Times Shimo-Kitazawa No.8 Car Park"
+      },
+      "geo": {
+        "latitude": 35.6625,
+        "longitude": 139.66902
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6624673,139.6689633,3a,75y,62.02h,86.24t/data=!3m8!1e1!3m6!1sAF1QipM8Iwjz6RtDl_6T4OnfUlKCDYG4bs3GLGZ7RnIH!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipM8Iwjz6RtDl_6T4OnfUlKCDYG4bs3GLGZ7RnIH%3Dw900-h600-k-no-pi3.7592078501960486-ya158.57543163796018-ro0-fo100!7i7700!8i3850?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    },
+    {
+      "placeId": "fd26451c-8666-4338-9623-d38ec51969b6",
+      "name": {
+        "en": "Suginami Ward Matsunoki Children's Park",
+        "ja": "松ノ木児童遊園"
+      },
+      "geo": {
+        "latitude": 35.69487,
+        "longitude": 139.64661
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6949642,139.6467996,3a,75y,246.21h,99.99t/data=!3m6!1e1!3m4!1sMLs3wuy0SSpyDXz8LzOPbQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©はまじあき／芳文社・アニプレックス"
+    }
+  ]
+}

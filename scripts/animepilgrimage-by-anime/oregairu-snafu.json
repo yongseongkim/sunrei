@@ -1,0 +1,289 @@
+{
+  "anime": {
+    "animeId": "DBdW9GogqQh4X5Jz5YJ1",
+    "slug": "oregairu-snafu",
+    "title": {
+      "ja": "やはり俺の青春ラブコメはまちがっている。",
+      "kr": "역시 내 청춘 러브코메디는 잘못됐다.",
+      "en": "My Teen Romantic Comedy SNAFU"
+    },
+    "author": {
+      "en": [
+        "Wataru Watari"
+      ],
+      "ja": [
+        "渡航"
+      ],
+      "kr": [
+        "와타리 와타루"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "ブレインズ・ベース"
+      ],
+      "en": [
+        "Brain's Base"
+      ]
+    }
+  },
+  "placeCount": 16,
+  "places": [
+    {
+      "placeId": "0646ee38-2aee-4118-a324-65692f3c3f44",
+      "name": {
+        "ja": "ホテルニューオータニ幕張",
+        "en": "Hotel New Otani Makuhari"
+      },
+      "geo": {
+        "latitude": 35.64589,
+        "longitude": 140.03906
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6459708,140.0392743,3a,90y,247.82h,131.37t/data=!3m7!1e1!3m5!1swiG6BpH1Hye041E11stB2w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-41.37174709633143%26panoid%3DwiG6BpH1Hye041E11stB2w%26yaw%3D247.82460247765832!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "07ed2c7a-1853-4c36-887a-cb61cb6564ac",
+      "name": {
+        "ja": "イオン マリンピアショッピングセンター 本館",
+        "en": "AEON MARINPIA SHOPPING CENTER MAIN BUILDING"
+      },
+      "geo": {
+        "latitude": 35.6291,
+        "longitude": 140.07328
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6290845,140.073341,3a,90y,170.72h,125.86t/data=!3m7!1e1!3m5!1sTL_FSg-BKg92cdFD9VrcUg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-35.86094416363697%26panoid%3DTL_FSg-BKg92cdFD9VrcUg%26yaw%3D170.72050709328533!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "162e086f-b078-4c34-8abe-15bc42c8dafc",
+      "name": {
+        "en": "Fujitsu [Chibashi Mihamaku]",
+        "ja": "富士通［千葉市美浜区］（バス）"
+      },
+      "geo": {
+        "latitude": 35.65298,
+        "longitude": 140.03772
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6530998,140.0378678,3a,90y,214h,78.88t/data=!3m8!1e1!3m6!1sAF1QipMbzc01KUYeP8bc29YsbU56z6DhOb-7ADAN5crB!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMbzc01KUYeP8bc29YsbU56z6DhOb-7ADAN5crB%3Dw900-h600-k-no-pi11.124292333934278-ya214.00255280848373-ro0-fo100!7i6080!8i3040?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "17ea771d-2a13-4281-a559-1248162f9091",
+      "name": {
+        "ja": "友好広場（フレンドシップスクエア）",
+        "en": "Friendship Square"
+      },
+      "geo": {
+        "latitude": 35.65118,
+        "longitude": 140.03919
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6511441,140.0391593,3a,90y,139.17h,94.36t/data=!3m7!1e1!3m5!1sepvRwSP4teIDwP7JVplLrA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.36237994737472%26panoid%3DepvRwSP4teIDwP7JVplLrA%26yaw%3D139.16975392469067!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "2f9f877a-6bb0-462a-b1a2-494c393d9ab7",
+      "name": {
+        "en": "Inage High School (bus)",
+        "ja": "稲毛高校（バス）"
+      },
+      "geo": {
+        "latitude": 35.6207,
+        "longitude": 140.06932
+      },
+      "ep": 0,
+      "type": "ED",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6206695,140.0693005,3a,90y,80.84h,90.64t/data=!3m7!1e1!3m5!1sTTsU9c1C1Rxy035EzbYkoA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.6395072471411112%26panoid%3DTTsU9c1C1Rxy035EzbYkoA%26yaw%3D80.8418641235785!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "3fc82a69-d7d0-4999-939a-87932fda5f18",
+      "name": {
+        "ja": "千葉ポートパーク",
+        "en": "Chiba Port Park"
+      },
+      "geo": {
+        "latitude": 35.59833,
+        "longitude": 140.09937
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.5982533,140.0994528,3a,90y,326.42h,94.36t/data=!3m8!1e1!3m6!1sAF1QipMOSaHc0wjetLcL-AGMTu9qoGAx1hk0LcIuJ-R-!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMOSaHc0wjetLcL-AGMTu9qoGAx1hk0LcIuJ-R-%3Dw900-h600-k-no-pi-4.35790206315427-ya326.4230438804632-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "62fa8d18-1ba8-48a0-aef9-da884b187f30",
+      "name": {
+        "ja": "めぐみ幼稚園",
+        "en": "Megumi Kindergarten"
+      },
+      "geo": {
+        "latitude": 35.62041,
+        "longitude": 140.06687
+      },
+      "ep": 0,
+      "type": "ED",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6205358,140.0669349,3a,73.3y,185.36h,98.68t/data=!3m7!1e1!3m5!1sRY2Qg_VFShOzlrxwaDjq3g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.681839137520058%26panoid%3DRY2Qg_VFShOzlrxwaDjq3g%26yaw%3D185.35536892563877!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "6a23404d-36e2-4c56-98a4-55908aae256d",
+      "name": {
+        "en": "\"Untitled” Kazuo Kenmochi",
+        "ja": "「無題」剣持和夫"
+      },
+      "geo": {
+        "latitude": 35.64929,
+        "longitude": 140.04152
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6493719,140.0414767,2a,75y,39.67h,91.57t/data=!3m7!1e1!3m5!1sYE-ChCCZ2M3lMzZZYmGfOg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.570706459899867%26panoid%3DYE-ChCCZ2M3lMzZZYmGfOg%26yaw%3D39.66976067054958!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "6e08c9f0-1ea1-4ec3-a2a2-4e23900a95d4",
+      "name": {
+        "en": "LaLaport TOKYO-BAY",
+        "ja": "ららぽーとTOKYO-BAY"
+      },
+      "geo": {
+        "latitude": 35.68462,
+        "longitude": 139.99214
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-chiba-funabashi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6845126,139.9922381,2a,90y,235.43h,93.95t/data=!3m7!1e1!3m5!1sZX0z6CzDnkqaKz883pJAKA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.9520037609552645%26panoid%3DZX0z6CzDnkqaKz883pJAKA%26yaw%3D235.4307854067653!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "813b27b8-485e-466e-93c4-f74baae39e7b",
+      "name": {
+        "en": "Inage H. S.",
+        "ja": "稲毛高校前"
+      },
+      "geo": {
+        "latitude": 35.62039,
+        "longitude": 140.06972
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6201836,140.069665,3a,77.4y,37.98h,96.92t/data=!3m7!1e1!3m5!1sElN_w544v-3XR4ifowOKuA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.9179305813290455%26panoid%3DElN_w544v-3XR4ifowOKuA%26yaw%3D37.98100297871318!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "83acda16-acad-4e56-ab01-0bb5babd2420",
+      "name": {
+        "en": "Inagekaigan Station",
+        "ja": "稲毛海岸駅"
+      },
+      "geo": {
+        "latitude": 35.62953,
+        "longitude": 140.07369
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.629149,140.0727298,3a,38.7y,59.97h,95.46t/data=!3m7!1e1!3m5!1s5QtQrRpRxG4ftoYW0P98mA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.459461814927124%26panoid%3D5QtQrRpRxG4ftoYW0P98mA%26yaw%3D59.96698189708313!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "c15ba0dc-98d6-4fe2-b1eb-676687577100",
+      "name": {
+        "ja": "千葉中央郵便局",
+        "en": "Chiba Chuo Japan Post"
+      },
+      "geo": {
+        "latitude": 35.60259,
+        "longitude": 140.10144
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6024779,140.1013651,3a,90y,33.69h,95.39t/data=!3m7!1e1!3m5!1s_If2ql6oc1Xmt9-3eVScGw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.388645556641379%26panoid%3D_If2ql6oc1Xmt9-3eVScGw%26yaw%3D33.6928440480378!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "c223eafd-899b-4354-be70-a808026fd946",
+      "name": {
+        "ja": "富士通幕張システムラボラトリ",
+        "en": "Fujitsu Makuhari System Laboratory"
+      },
+      "geo": {
+        "latitude": 35.65309,
+        "longitude": 140.03795
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6530998,140.0378678,3a,90y,117.08h,98.88t/data=!3m8!1e1!3m6!1sAF1QipMbzc01KUYeP8bc29YsbU56z6DhOb-7ADAN5crB!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMbzc01KUYeP8bc29YsbU56z6DhOb-7ADAN5crB%3Dw900-h600-k-no-pi-8.879260285919983-ya117.08356316154305-ro0-fo100!7i6080!8i3040?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "d702c69e-46b3-4199-9fa6-91471252e801",
+      "name": {
+        "en": "Gap Store Lalaport - TOKYO-BAY",
+        "ja": "Gapストア ららぽーとTOKYO-BAY店"
+      },
+      "geo": {
+        "latitude": 35.6868,
+        "longitude": 139.98987
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-chiba-funabashi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6868463,139.9899098,2a,90y,201.15h,96.07t/data=!3m7!1e1!3m5!1sozdvH_t-7XkAQxaAmLIG7Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.073782135647818%26panoid%3DozdvH_t-7XkAQxaAmLIG7Q%26yaw%3D201.1473738824857!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "db9f9524-a114-48c3-ace9-4ad04ff54804",
+      "name": {
+        "en": "Chiba Eki",
+        "ja": "千葉駅"
+      },
+      "geo": {
+        "latitude": 35.61199,
+        "longitude": 140.115
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6118945,140.115305,3a,73.9y,318.85h,99.7t/data=!3m7!1e1!3m5!1sfQ6bM4KY6XMQp_0mSNMkmg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.701097941127472%26panoid%3DfQ6bM4KY6XMQp_0mSNMkmg%26yaw%3D318.85310343109455!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    },
+    {
+      "placeId": "e237679d-8067-436f-86ca-2c2e87191a4a",
+      "name": {
+        "en": "M Bay Point Makuhari Building",
+        "ja": "エム・ベイポイント幕張ビル"
+      },
+      "geo": {
+        "latitude": 35.65202,
+        "longitude": 140.03891
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.651593,140.0391124,3a,90y,357.44h,116.5t/data=!3m7!1e1!3m5!1sc9kHto89rA-wbBujdvMXSA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-26.502597118553666%26panoid%3Dc9kHto89rA-wbBujdvMXSA%26yaw%3D357.4398207211323!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2013渡 航、小学館／やはりこの製作委員会はまちがっている。"
+    }
+  ]
+}

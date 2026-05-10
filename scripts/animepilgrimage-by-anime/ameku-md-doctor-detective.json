@@ -1,0 +1,164 @@
+{
+  "anime": {
+    "animeId": "z30sfzlqpJpiCAeoUi8h",
+    "slug": "ameku-md-doctor-detective",
+    "title": {
+      "ja": "天久鷹央の推理カルテ",
+      "kr": "아메쿠 타카오의 추리 카르테",
+      "en": "Ameku M.D.: Doctor Detective"
+    },
+    "author": {
+      "en": [
+        "Mikito Chinen",
+        "Noizi Ito"
+      ],
+      "ja": [
+        "知念実希人",
+        "いとうのいぢ"
+      ],
+      "kr": [
+        "치넨 미키토",
+        "이토 노이지"
+      ]
+    },
+    "studio": {
+      "en": [
+        "project No.9"
+      ]
+    }
+  },
+  "placeCount": 8,
+  "places": [
+    {
+      "placeId": "10cec123-632c-4f27-99a8-2205760857f8",
+      "name": {
+        "ja": "ファミリーマート 小金井桜町三丁目店",
+        "kr": "패밀리마트 코가네이사쿠라쵸3쵸메점",
+        "en": "FamilyMart Koganei Sakura-cho 3-chome"
+      },
+      "geo": {
+        "latitude": 35.71282,
+        "longitude": 139.51204
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-koganei",
+      "streetViewUrl": "https://www.google.com/maps/@35.7126974,139.5119599,3a,90y,22.2h,101.04t/data=!3m7!1e1!3m5!1siblCC9zGr4J6_hoYeZF2mw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.043734526744217%26panoid%3DiblCC9zGr4J6_hoYeZF2mw%26yaw%3D22.20067081064469!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©知念実希人・いとうのいぢ／ストレートエッジ・天久鷹央の推理カルテ製作委員会"
+    },
+    {
+      "placeId": "4a298436-4814-4ba6-a006-7aa42b87dac1",
+      "name": {
+        "kr": "오타니 미술관",
+        "en": "Otani Museum",
+        "ja": "旧古河邸 大谷美術館"
+      },
+      "geo": {
+        "latitude": 35.74328,
+        "longitude": 139.74596
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-kita-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7433433,139.7459302,3a,75y,159.58h,103.24t/data=!3m7!1e1!3m5!1spOk3CDu8B4qJ6eyiWn0r5Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.23635453631077%26panoid%3DpOk3CDu8B4qJ6eyiWn0r5Q%26yaw%3D159.58163320994336!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©知念実希人・いとうのいぢ／ストレートエッジ・天久鷹央の推理カルテ製作委員会"
+    },
+    {
+      "placeId": "7c9512e9-38ad-4664-ad4f-20dbe56b8de3",
+      "name": {
+        "en": "Tanashi Police Station",
+        "ja": "警視庁 田無警察署"
+      },
+      "geo": {
+        "latitude": 35.72982,
+        "longitude": 139.53895
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-nishitokyo",
+      "streetViewUrl": "https://www.google.com/maps/@35.7298125,139.5388373,3a,42.2y,91.87h,92.91t/data=!3m7!1e1!3m5!1smfdOyx4Az5Tm0KDFwaYmyA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.913433963935077%26panoid%3DmfdOyx4Az5Tm0KDFwaYmyA%26yaw%3D91.87422111227059!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©知念実希人・いとうのいぢ／ストレートエッジ・天久鷹央の推理カルテ製作委員会"
+    },
+    {
+      "placeId": "82271e6b-874e-4dfb-acf7-dbcdb5834f37",
+      "name": {
+        "ja": "デニーズ 中村橋店",
+        "en": "Denny's Nakamurabashi Branch"
+      },
+      "geo": {
+        "latitude": 35.73722,
+        "longitude": 139.64725
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7373468,139.6474076,3a,90y,233.1h,111.01t/data=!3m7!1e1!3m5!1sheiolBuuHNarEPounx4jSw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-21.00616546563387%26panoid%3DheiolBuuHNarEPounx4jSw%26yaw%3D233.09509886991012!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©知念実希人・いとうのいぢ／ストレートエッジ・天久鷹央の推理カルテ製作委員会"
+    },
+    {
+      "placeId": "887770ab-cf5e-4039-bace-2c81300c723a",
+      "name": {
+        "kr": "도쿄도립 고가네이 공원",
+        "ja": "小金井公園",
+        "en": "Koganei Park"
+      },
+      "geo": {
+        "latitude": 35.71468,
+        "longitude": 139.51855
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-koganei",
+      "streetViewUrl": "https://www.google.com/maps/@35.7144496,139.5182977,3a,48.7y,36.75h,93.79t/data=!3m7!1e1!3m5!1s2GCGoP4fT1mvgft1Zkx2FA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.7946848798743815%26panoid%3D2GCGoP4fT1mvgft1Zkx2FA%26yaw%3D36.7545615587035!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©知念実希人・いとうのいぢ／ストレートエッジ・天久鷹央の推理カルテ製作委員会"
+    },
+    {
+      "placeId": "a399825d-eb81-4252-8cab-3000ec4f95d1",
+      "name": {
+        "ja": "アイン薬局 清瀬店",
+        "en": "Ein Pharmacy Kiyose Store"
+      },
+      "geo": {
+        "latitude": 35.76907,
+        "longitude": 139.50683
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-kiyose",
+      "streetViewUrl": "https://www.google.com/maps/@35.7691221,139.506944,3a,75y,244.94h,94.29t/data=!3m7!1e1!3m5!1sQDLxwfMRmht_9NRNHUOXCA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.288267812119486%26panoid%3DQDLxwfMRmht_9NRNHUOXCA%26yaw%3D244.9369882322585!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDEyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©知念実希人・いとうのいぢ／ストレートエッジ・天久鷹央の推理カルテ製作委員会"
+    },
+    {
+      "placeId": "c4ee2f00-7e44-4c87-8230-1fe1188d58bb",
+      "name": {
+        "en": "Koganei Koen-mae (bus)",
+        "ja": "小金井公園前(バス)"
+      },
+      "geo": {
+        "latitude": 35.71279,
+        "longitude": 139.51806
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-koganei",
+      "streetViewUrl": "https://www.google.com/maps/@35.7127421,139.5178613,3a,68.6y,47.63h,95.85t/data=!3m7!1e1!3m5!1sgD_Ggx3MKr4uvFwEcPmjkw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.853298317744574%26panoid%3DgD_Ggx3MKr4uvFwEcPmjkw%26yaw%3D47.63191419560827!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©知念実希人・いとうのいぢ／ストレートエッジ・天久鷹央の推理カルテ製作委員会"
+    },
+    {
+      "placeId": "9b263281-b626-4f1a-a987-553707265044",
+      "name": {
+        "en": "Sagamihara Aquarium",
+        "ja": "相模川ふれあい科学館 アクアリウムさがみはら"
+      },
+      "geo": {
+        "latitude": 35.54749,
+        "longitude": 139.32877
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-kanagawa-sagamihara",
+      "streetViewUrl": "https://www.google.com/maps/place/Sagamihara+Aquarium/@35.547418,139.328915,3a,90y,208.38h,89.91t/data=!3m8!1e1!3m6!1sAF1QipM_ii21xc6588aCt6Vc-O2UIjKhkS9fEGbZOVZU!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipM_ii21xc6588aCt6Vc-O2UIjKhkS9fEGbZOVZU%3Dw900-h600-k-no-pi0.09013391510929125-ya275.88118296055865-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x601902ff3c1d6d49:0xc83d9d939c1d2b86!8m2!3d35.5474198!4d139.3289159!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F122hv6l_?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©知念実希人・いとうのいぢ／ストレートエッジ・天久鷹央の推理カルテ製作委員会"
+    }
+  ]
+}

@@ -1,0 +1,351 @@
+{
+  "anime": {
+    "animeId": "UcdcmZWDPCZiUdYZ6j7t",
+    "slug": "barakamon",
+    "title": {
+      "ja": "ばらかもん",
+      "kr": "바라카몬",
+      "en": "Barakamon"
+    },
+    "author": {
+      "kr": [
+        "요시노 사츠키"
+      ],
+      "ja": [
+        "ヨシノサツキ"
+      ],
+      "en": [
+        "Satsuki Yoshino"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Kinema Citrus"
+      ]
+    }
+  },
+  "placeCount": 20,
+  "places": [
+    {
+      "placeId": "19c86b2a-a8f3-4682-a424-1119187c6f1b",
+      "name": {
+        "en": "Tomiemachitake District Cemetery",
+        "ja": "富江町岳地区の墓地"
+      },
+      "geo": {
+        "latitude": 32.58751,
+        "longitude": 128.76301
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.5874545,128.7632676,3a,75y,285.54h,98.61t/data=!3m7!1e1!3m5!1san1JQ_5JvOd9oTXz6lgwvg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.606868535086932%26panoid%3Dan1JQ_5JvOd9oTXz6lgwvg%26yaw%3D285.5405700630373!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "1c9d7854-f343-49d3-b4c5-486b7b9633fd",
+      "name": {
+        "ja": "五島市消防署福江空港出張所",
+        "en": "Gotoshi Fire Department Fukue Airport Branch"
+      },
+      "geo": {
+        "latitude": 32.66943,
+        "longitude": 128.83721
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.6693028,128.837438,3a,75y,311.23h,97.7t/data=!3m7!1e1!3m5!1sE-B81Ps733EdqMpf15YsiA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.699393301892755%26panoid%3DE-B81Ps733EdqMpf15YsiA%26yaw%3D311.2345394146123!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "1f77d260-e3d1-451d-8d1d-9d3b3776203f",
+      "name": {
+        "en": "Phu Quang Elementary School Old Take Branch Prospectus",
+        "ja": "富江小学校旧岳分校跡"
+      },
+      "geo": {
+        "latitude": 32.58997,
+        "longitude": 128.76684
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.5898684,128.766869,3a,90y,309.78h,90.39t/data=!3m7!1e1!3m5!1s_jQU0nkOmjWUZGn0baJJog!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.38792847556800325%26panoid%3D_jQU0nkOmjWUZGn0baJJog%26yaw%3D309.783438382789!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "2e354d82-f5f0-4c4c-859e-1e7a76a16f26",
+      "name": {
+        "ja": "多郎島海水浴場",
+        "en": "Taroujima Beach"
+      },
+      "geo": {
+        "latitude": 32.61079,
+        "longitude": 128.78308
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.6110004,128.7817247,3a,75y,93.95h,95.24t/data=!3m7!1e1!3m5!1sZsPMOFd1yIVAUKO7i2Wpow!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.243050633839758%26panoid%3DZsPMOFd1yIVAUKO7i2Wpow%26yaw%3D93.9521634314433!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "35319ae2-e27f-44bb-b140-92feb7327542",
+      "name": {
+        "ja": "山下簡易郵便局",
+        "en": "Yamashita Post Office"
+      },
+      "geo": {
+        "latitude": 32.5893,
+        "longitude": 128.75606
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.5893922,128.7561547,3a,64.3y,232.72h,96.56t/data=!3m7!1e1!3m5!1sQJHSDUoy7aiaXf9i9WotzA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.559634823402291%26panoid%3DQJHSDUoy7aiaXf9i9WotzA%26yaw%3D232.71619110844432!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "3d006ad8-742d-41fe-ad27-99d437231389",
+      "name": {
+        "ja": "きくちゃん農園",
+        "en": "Kiku-chan Farm"
+      },
+      "geo": {
+        "latitude": 32.58773,
+        "longitude": 128.78286
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.5878581,128.7825103,3a,48.7y,131.66h,94.91t/data=!3m7!1e1!3m5!1sf4185NDeXWNanvrcK5WBtQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.908290506815277%26panoid%3Df4185NDeXWNanvrcK5WBtQ%26yaw%3D131.66329306902315!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "6007fa19-08a4-42e2-bd73-7c3ea1f15c11",
+      "name": {
+        "en": "STAND SUNNY"
+      },
+      "geo": {
+        "latitude": 32.61547,
+        "longitude": 128.76722
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.6155439,128.7673469,3a,75y,249.42h,98.04t/data=!3m7!1e1!3m5!1soCBZJDZYVaze74Wahe0vjg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.039463106607442%26panoid%3DoCBZJDZYVaze74Wahe0vjg%26yaw%3D249.41812005200762!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "6cbcaf0f-a41b-436c-a794-c958c506248a",
+      "name": {
+        "en": "Fukue Airport",
+        "ja": "福江空港",
+        "kr": "후쿠에 공항"
+      },
+      "geo": {
+        "latitude": 32.66837,
+        "longitude": 128.83767
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.6682021,128.8377241,3a,90y,314.27h,103.31t/data=!3m7!1e1!3m5!1sr-FfSqKrAAPPOjgT89UcWA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.314426296193716%26panoid%3Dr-FfSqKrAAPPOjgT89UcWA%26yaw%3D314.27087794475966!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "741afcbd-2c0c-43d1-bd92-955436a5eca1",
+      "name": {
+        "en": "Tomie Pharmacy",
+        "ja": "富江薬局"
+      },
+      "geo": {
+        "latitude": 32.61565,
+        "longitude": 128.76769
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.6155946,128.7678388,3a,35.7y,300.5h,89.62t/data=!3m7!1e1!3m5!1si_dYbQDZpAey_WDNZ8OYeA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.38301474928715606%26panoid%3Di_dYbQDZpAey_WDNZ8OYeA%26yaw%3D300.4978481632692!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "7ff8b192-51af-46e9-8926-fc7c9e003aa3",
+      "name": {
+        "ja": "太宰府神社",
+        "en": "Dazaifu Shrine"
+      },
+      "geo": {
+        "latitude": 32.58836,
+        "longitude": 128.76698
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.5883142,128.766976,3a,90y,51.87h,103.56t/data=!3m7!1e1!3m5!1spF2YIP_hynr82VlcUAc-3A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.559757065512528%26panoid%3DpF2YIP_hynr82VlcUAc-3A%26yaw%3D51.867968837069256!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "87ece234-de15-4403-93d1-59dc7ebcb9e5",
+      "name": {
+        "en": "Seishuu's house",
+        "ja": "清舟の家"
+      },
+      "geo": {
+        "latitude": 32.5852,
+        "longitude": 128.76615
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.5851393,128.7662087,3a,78y,157.87h,91.04t/data=!3m7!1e1!3m5!1stTDSJRyV3LG8hgyY38wIEQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.0354956708328729%26panoid%3DtTDSJRyV3LG8hgyY38wIEQ%26yaw%3D157.8749740881179!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "99328f2f-dc15-44ef-b6bc-7fd80cd27283",
+      "name": {
+        "ja": "岳営農研修施設",
+        "en": "Take Agricultural Training Facility"
+      },
+      "geo": {
+        "latitude": 32.58858,
+        "longitude": 128.76687
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.5884925,128.7668129,3a,90y,304.71h,92.19t/data=!3m7!1e1!3m5!1smHTEEYfY4w-zWBC1eAf1FA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.190004001327054%26panoid%3DmHTEEYfY4w-zWBC1eAf1FA%26yaw%3D304.70783849046353!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "a125e1ff-cdae-40af-abdf-3870caccba91",
+      "name": {
+        "ja": "富江(バス)",
+        "en": "Tomie(Bus)"
+      },
+      "geo": {
+        "latitude": 32.61437,
+        "longitude": 128.76753
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.6144044,128.7675564,3a,90y,215.93h,99.23t/data=!3m7!1e1!3m5!1sHz54OLi9DrZbXsh4vxiTBQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.227568730675358%26panoid%3DHz54OLi9DrZbXsh4vxiTBQ%26yaw%3D215.92652860171302!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "aebb97bd-17fa-4633-a1ca-a04db43770fb",
+      "name": {
+        "ja": "牛瀬・馬瀬",
+        "en": "Ushise and Umase"
+      },
+      "geo": {
+        "latitude": 32.64318,
+        "longitude": 128.76851
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.6435923,128.7688741,3a,90y,145.26h,105.82t/data=!3m7!1e1!3m5!1sjHr8gS1R-dupec8QF2KMIA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.823687475389576%26panoid%3DjHr8gS1R-dupec8QF2KMIA%26yaw%3D145.26388421404965!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "bf1c1e60-7bc8-4fe9-b099-b33590a58a7a",
+      "name": {
+        "ja": "有川鮮魚店",
+        "en": "Arikawa Fish Shop"
+      },
+      "geo": {
+        "latitude": 32.61856,
+        "longitude": 128.76688
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.618614,128.7675677,3a,65.1y,274.13h,92.89t/data=!3m7!1e1!3m5!1sXcFceVR127LbrVZ6hW-KuQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.8911585875155765%26panoid%3DXcFceVR127LbrVZ6hW-KuQ%26yaw%3D274.13229789224886!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "c06ddd61-09a2-4271-9f2c-11dc7fdf9d3d",
+      "name": {
+        "kr": "신주쿠 역",
+        "ja": "新宿駅",
+        "en": "Shinjuku Station"
+      },
+      "geo": {
+        "latitude": 35.69028,
+        "longitude": 139.7001
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.690261,139.7000712,2a,90y,85.44h,89.89t/data=!3m7!1e1!3m5!1sCxjOkVbgstTBmVtykgmH-Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.10765918941008579%26panoid%3DCxjOkVbgstTBmVtykgmH-Q%26yaw%3D85.44187297104634!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "c7145ee0-9549-4870-b8ba-840a55e05e43",
+      "name": {
+        "ja": "倭寇漁港",
+        "en": "Wako Fishing Port"
+      },
+      "geo": {
+        "latitude": 32.57832,
+        "longitude": 128.77498
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.5784142,128.774951,3a,90y,170.72h,89.91t/data=!3m7!1e1!3m5!1sI58Bl0Ohdk2WWmSwRiYjXQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.09133257753286728%26panoid%3DI58Bl0Ohdk2WWmSwRiYjXQ%26yaw%3D170.71702828363982!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "d985b720-df11-4059-a558-a5151c5db828",
+      "name": {
+        "en": "Kasayamazaki Daiba",
+        "ja": "笠山崎台場"
+      },
+      "geo": {
+        "latitude": 32.57659,
+        "longitude": 128.77375
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.5775438,128.7742199,3a,75y,168.32h,99.45t/data=!3m7!1e1!3m5!1sjuP_3WD_6vy5OawtmLLSVA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.452368588204266%26panoid%3DjuP_3WD_6vy5OawtmLLSVA%26yaw%3D168.32014900628786!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "f44c747d-b82a-49d6-9f32-c989e7795175",
+      "name": {
+        "en": "Roads in Tomiemachitake district",
+        "ja": "富江町岳地区の道路"
+      },
+      "geo": {
+        "latitude": 32.588775,
+        "longitude": 128.76719
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.5888559,128.7671311,3a,90y,167.45h,95.33t/data=!3m7!1e1!3m5!1sVgl7mN3boc-MBPUXvN4rbA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.328005726284758%26panoid%3DVgl7mN3boc-MBPUXvN4rbA%26yaw%3D167.44588434657362!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    },
+    {
+      "placeId": "594e949a-e118-4993-8e27-5d79ec709888",
+      "name": {
+        "en": "Tomie Branch Office, Goto City Council of Social Welfare",
+        "ja": "五島市社会福祉協議会富江支所"
+      },
+      "geo": {
+        "latitude": 32.61276,
+        "longitude": 128.76333
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-nagasaki-goto",
+      "streetViewUrl": "https://www.google.com/maps/@32.6126565,128.7636164,3a,37.1y,298.49h,92.97t/data=!3m7!1e1!3m5!1sygHVZpUYMqqcp7vpYAXnvg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.9743964656798596%26panoid%3DygHVZpUYMqqcp7vpYAXnvg%26yaw%3D298.4922850000523!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©ヨシノサツキ／スクウェアエニックス・「ばらかもん」製作委員会"
+    }
+  ]
+}

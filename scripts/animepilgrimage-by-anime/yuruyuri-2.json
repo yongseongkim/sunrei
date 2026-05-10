@@ -1,0 +1,326 @@
+{
+  "anime": {
+    "animeId": "iLiYixvGMH8yz6t05Pq4",
+    "slug": "yuruyuri-2",
+    "title": {
+      "ja": "ゆるゆり♪♪",
+      "kr": "유루유리♪♪",
+      "en": "YuruYuri ♪♪"
+    },
+    "author": {
+      "en": [
+        "Namori"
+      ],
+      "ja": [
+        "なもり"
+      ],
+      "kr": [
+        "나모리"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Doga Kobo"
+      ],
+      "ja": [
+        "動画工房"
+      ]
+    }
+  },
+  "placeCount": 18,
+  "places": [
+    {
+      "placeId": "031e55c7-703c-42ff-88c7-a01d0adeb9a7",
+      "name": {
+        "ja": "つじ商店",
+        "en": "Tsuji store"
+      },
+      "geo": {
+        "latitude": 35.39899,
+        "longitude": 140.14219
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-chiba-ichihara",
+      "streetViewUrl": "https://www.google.com/maps/@35.3989845,140.1421723,3a,90y,139.3h,99.18t/data=!3m7!1e1!3m5!1sN7xuiVp8FsDskoHwy637Rw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.180929291774731%26panoid%3DN7xuiVp8FsDskoHwy637Rw%26yaw%3D139.30324353995778!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "139d0d0b-8606-4763-885b-a6cdc07da2e6",
+      "name": {
+        "en": "Otaya Serio",
+        "ja": "御旅屋セリオ"
+      },
+      "geo": {
+        "latitude": 36.74493,
+        "longitude": 137.0134
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7448414,137.0133403,3a,90y,36.49h,113.02t/data=!3m7!1e1!3m5!1sEI0kRbSku4ClqW8c2LPiqw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-23.017600650703386%26panoid%3DEI0kRbSku4ClqW8c2LPiqw%26yaw%3D36.49197484391289!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "1a9975e7-bd92-4c0c-867f-4b5c85e4f6dd",
+      "name": {
+        "ja": "吉祥寺駅中央口",
+        "en": "Kichijoji Station/Central"
+      },
+      "geo": {
+        "latitude": 35.70301,
+        "longitude": 139.58087
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7029765,139.5808496,3a,73.2y,356.09h,97.76t/data=!3m7!1e1!3m5!1s9AwWmwYD24d96mvDq74BeQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.7625261631651625%26panoid%3D9AwWmwYD24d96mvDq74BeQ%26yaw%3D356.0882283877798!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "2b2a7bf9-c75a-4dff-b1a1-154d91c7ff88",
+      "name": {
+        "ja": "ソライエテラス ウエスト",
+        "en": "Solaie Terrace West"
+      },
+      "geo": {
+        "latitude": 35.84486,
+        "longitude": 139.79096
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-saitama-sōka",
+      "streetViewUrl": "https://www.google.com/maps/@35.8448786,139.7909141,3a,90y,109.58h,100.45t/data=!3m7!1e1!3m5!1skdv0H5UuHFFE0JzfGIzSFA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.453017860791377%26panoid%3Dkdv0H5UuHFFE0JzfGIzSFA%26yaw%3D109.57503975917726!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "3ba7031f-f171-4e21-adfe-8bc476ecfd70",
+      "name": {
+        "en": "Sotetsu Fresa Inn Yokohama-Sakuragicho",
+        "ja": "相鉄フレッサイン 横浜桜木町",
+        "kr": "소테츠 프레사 인 요코하마 사쿠라기초"
+      },
+      "geo": {
+        "latitude": 35.4497,
+        "longitude": 139.6362
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4497738,139.6360258,3a,90y,126.95h,100.26t/data=!3m7!1e1!3m5!1skji8pYnx2TKS8yi_3CQHhg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.258251232458008%26panoid%3Dkji8pYnx2TKS8yi_3CQHhg%26yaw%3D126.95055726541631!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "442092ac-12e5-4d7c-8126-ed34a7623994",
+      "name": {
+        "en": "Kichijoji Odeon",
+        "ja": "吉祥寺オデヲン"
+      },
+      "geo": {
+        "latitude": 35.70293,
+        "longitude": 139.58088
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7029995,139.5808164,3a,75y,145.91h,97.64t/data=!3m7!1e1!3m5!1sHbCmxYwzKenM0dDr48iNiA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.638936040189478%26panoid%3DHbCmxYwzKenM0dDr48iNiA%26yaw%3D145.91346347610562!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "473db5d8-b5cc-412c-9538-17c4c1fba96d",
+      "name": {
+        "ja": "富山市民プール",
+        "en": "Toyama City Swimming Pool"
+      },
+      "geo": {
+        "latitude": 36.69394,
+        "longitude": 137.24738
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-toyama-toyama",
+      "streetViewUrl": "https://www.google.com/maps/@36.6938256,137.2468105,3a,25.9y,61.72h,97.59t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDE0I65Zw!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZ8jTjkMS3NNawFDt54lM5Wyk0nP2Iso1KhAFwLTIjF4G84bZmYLn9cdusqBuGSMJQiWSip2Wq8cjGG4tK41svEscgZXDbJwTUj_YgOzDNU_cIRSRKeE9a4Yk9hwViQus9RbqA8%3Dw900-h600-k-no-pi-7.592590343074036-ya58.7190192114059-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "4b0c66bd-4954-4460-a1b1-e52da5970ed8",
+      "name": {
+        "en": "Gusto Kichijoji",
+        "ja": "ガスト 吉祥寺店"
+      },
+      "geo": {
+        "latitude": 35.70435,
+        "longitude": 139.5811
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7043589,139.5808691,3a,63.4y,75.95h,98.16t/data=!3m7!1e1!3m5!1swTtBX2D_0Zwb5lBpQMTlFg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.160201869183041%26panoid%3DwTtBX2D_0Zwb5lBpQMTlFg%26yaw%3D75.95022730142823!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "7012dcb7-db86-455a-b81f-0db3ef38162d",
+      "name": {
+        "en": "Kiyomizu-Dera Otowanotaki Falls",
+        "kr": "오토와노타키",
+        "ja": "音羽の滝"
+      },
+      "geo": {
+        "latitude": 34.99447,
+        "longitude": 135.78521
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9944858,135.7852361,2a,90y,146.39h,97.9t/data=!3m7!1e1!3m5!1s-5yTSJTLYhniNkHJ2jo8eQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.901079053465011%26panoid%3D-5yTSJTLYhniNkHJ2jo8eQ%26yaw%3D146.38924308248315!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "70c3efc1-a796-4b71-a331-48a10c2de32a",
+      "name": {
+        "ja": "BOOKSルーエ",
+        "en": "Books Ruhe"
+      },
+      "geo": {
+        "latitude": 35.70467,
+        "longitude": 139.58036
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7047379,139.580325,3a,90y,149.68h,105.86t/data=!3m7!1e1!3m5!1sTe4REr1TDnnUMPmzrmgP-w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.861571142157999%26panoid%3DTe4REr1TDnnUMPmzrmgP-w%26yaw%3D149.6834329172364!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "82b66c65-cf5d-4a3a-a400-0c10dc04b9e1",
+      "name": {
+        "ja": "ふじつ温泉",
+        "en": "Fujitsu Onsen"
+      },
+      "geo": {
+        "latitude": 35.44863,
+        "longitude": 135.27902
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-kyoto-maizuru",
+      "streetViewUrl": "https://www.google.com/maps/@35.4489725,135.2790381,3a,39.2y,188.96h,100t/data=!3m7!1e1!3m5!1sjN-0jl6HQEUx4OLYqLHDoA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.998090222020792%26panoid%3DjN-0jl6HQEUx4OLYqLHDoA%26yaw%3D188.95694462709483!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "906aae7e-f0a3-4c64-bc42-b1762dc469ee",
+      "name": {
+        "ja": "戎ビアホール 吉祥寺",
+        "en": "Ebisu Beer Hall Kichijoji"
+      },
+      "geo": {
+        "latitude": 35.70388,
+        "longitude": 139.58055
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7038953,139.5806772,3a,49.6y,262.8h,93.94t/data=!3m7!1e1!3m5!1skFtajzcv-gQEuhs4MHuKQA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.9353764345714524%26panoid%3DkFtajzcv-gQEuhs4MHuKQA%26yaw%3D262.79649922331026!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "b14acc53-230d-47cc-94d5-65a630ef5ef8",
+      "name": {
+        "en": "Wendy’s First Kitchen Kichijoji",
+        "ja": "ウェンディーズ・ファーストキッチン 吉祥寺店"
+      },
+      "geo": {
+        "latitude": 35.70456,
+        "longitude": 139.57904
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7045611,139.5790994,3a,90y,251.92h,106.12t/data=!3m7!1e1!3m5!1sIIMjoIhF5bCFtRjAfE48Gw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-16.115671643478024%26panoid%3DIIMjoIhF5bCFtRjAfE48Gw%26yaw%3D251.91694490707698!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "cfb33a69-ec69-4432-835b-f61cfdb39f52",
+      "name": {
+        "ja": "東京ビッグサイト",
+        "en": "Tokyo Big Sight",
+        "kr": "도쿄빅사이트 (도쿄국제전시장)"
+      },
+      "geo": {
+        "latitude": 35.63063,
+        "longitude": 139.79367
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6305589,139.7936927,3a,90y,150.78h,115.8t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDEvOaJaw!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HY8oI62PRPkDjpfKqXmfFu4xwlp_qIOEpcs-3_RVvDk0veTOHstsZnV5H6UsUOdnhge6FzYOpdC9q3O7NmQDqY-8pd2X2D1Je8RjjZRD7mit5IgKOxbrfa3njmITzopd7kPI4ny%3Dw900-h600-k-no-pi-25.795461259723908-ya175.78249172055897-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "d2aa9a1f-d2f8-4b4d-a66a-3e42c56e2ac1",
+      "name": {
+        "ja": "上総牛久駅",
+        "en": "Kazusa-Ushiku Station",
+        "kr": "가즈사우시쿠 역"
+      },
+      "geo": {
+        "latitude": 35.40011,
+        "longitude": 140.14229
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-chiba-ichihara",
+      "streetViewUrl": "https://www.google.com/maps/place/Kazusa-Ushiku+Station/@35.4000452,140.1422676,3a,90y,47.85h,85.68t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC4z73BjwE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HY9K6usMjAxtpr-YE73uCF1ibBqvCkZ_OHx85Jo5o-0mplgR3V33QsfT-J06VztBNvZJKv_QCjqwLAR5tqod5RmfvqWEHwnHP9pZuJWjdveEjTveocne0wg55GKZjJ0hEr_lwJzCw%3Dw900-h600-k-no-pi4.323361885939931-ya85.84941681919247-ro0-fo100!7i8704!8i4352!4m9!3m8!1s0x6022a378805ec931:0x343ff9260be9fdf1!8m2!3d35.400098!4d140.1422447!10e5!14m1!1BCgIgARICCAI!16s%2Fm%2F0gh8x_z?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "e210a88c-5dcf-4633-8ff1-336bb8a3ef49",
+      "name": {
+        "kr": "기요미즈데라 농지당",
+        "en": "Kiyomizudera Takinodo",
+        "ja": "滝之堂"
+      },
+      "geo": {
+        "latitude": 34.99454,
+        "longitude": 135.78514
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9945224,135.7851041,2a,90y,84.83h,97.46t/data=!3m7!1e1!3m5!1sOPYn2db_B_Js4ij-Wcmkpw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.460640235473136%26panoid%3DOPYn2db_B_Js4ij-Wcmkpw%26yaw%3D84.83208072028178!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "e69b7bdc-bc14-4c72-86ff-10503efe8078",
+      "name": {
+        "ja": "千葉信用金庫 牛久支店",
+        "en": "Chiba Shinkin Bank Ushiku"
+      },
+      "geo": {
+        "latitude": 35.39942,
+        "longitude": 140.14223
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-chiba-ichihara",
+      "streetViewUrl": "https://www.google.com/maps/@35.3993342,140.1422293,3a,75y,1.6h,100.66t/data=!3m7!1e1!3m5!1sD3U-c7gaQ9bM5Kifsv5Skg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.66107759694053%26panoid%3DD3U-c7gaQ9bM5Kifsv5Skg%26yaw%3D1.6014948990066538!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    },
+    {
+      "placeId": "27698c12-70ef-4c9a-a80f-440f895a8ca5",
+      "name": {
+        "ja": "モガール洋菓子店",
+        "en": "Mogul Confectionery"
+      },
+      "geo": {
+        "latitude": 35.77333,
+        "longitude": 139.87155
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-katsushika-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7732093,139.871666,3a,48.7y,324.7h,91.29t/data=!3m7!1e1!3m5!1sRd-0ws0lCiRbx9-2otkH8A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.285373963122339%26panoid%3DRd-0ws0lCiRbx9-2otkH8A%26yaw%3D324.69879164437594!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©なもり/一迅社・七森中ごらく部"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "anime": {
+    "animeId": "pUYxGiC62sTphT2JvNO7",
+    "slug": "fate-zero",
+    "title": {
+      "en": "Fate/Zero"
+    },
+    "author": {
+      "ja": [
+        "虚淵玄",
+        "TYPE-MOON"
+      ],
+      "en": [
+        "Gen Urobuchi",
+        "TYPE-MOON"
+      ],
+      "kr": [
+        "우로부치 겐",
+        "TYPE-MOON"
+      ]
+    },
+    "studio": {
+      "en": [
+        "ufotable"
+      ]
+    }
+  },
+  "placeCount": 14,
+  "places": [
+    {
+      "placeId": "059975b6-bc57-4088-a300-579528691731",
+      "name": {
+        "en": "Yokohama Foreign General Cemetery",
+        "ja": "横浜外国人墓地"
+      },
+      "geo": {
+        "latitude": 35.4394619,
+        "longitude": 139.6525264
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4394619,139.6525264,3a,75y,200.97h,101.78t/data=!3m7!1e1!3m5!1szcp_7eu0pFKCu-mSD3ghdg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dzcp_7eu0pFKCu-mSD3ghdg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D24.87068%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©Nitroplus／TYPE-MOON・ufotable・FZPC"
+    },
+    {
+      "placeId": "11510ef0-ef12-4ac8-b8b4-1a58bdc4e7c7",
+      "name": {
+        "en": "Imperial Hotel Lobby and Front Entrance",
+        "ja": "帝国ホテル中央玄関"
+      },
+      "geo": {
+        "latitude": 35.3471931,
+        "longitude": 136.98875
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aichi-inuyama",
+      "streetViewUrl": "https://www.google.com/maps/@35.3471931,136.98875,3a,90y,331.31h,93.35t/data=!3m8!1e1!3m6!1sAF1QipPhoPDbe4Ixw41ft66qB6cYjATwHm-VWRXViw2f!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPhoPDbe4Ixw41ft66qB6cYjATwHm-VWRXViw2f%3Dw203-h100-k-no-pi0-ya18.630898-ro-0-fo100!7i8704!8i4352?entry=ttu",
+      "copyright": "©Nitroplus／TYPE-MOON・ufotable・FZPC"
+    },
+    {
+      "placeId": "17aaac8f-0f6c-4550-9995-d0f5433ab864",
+      "name": {
+        "en": "St. Francis Xavier's Cathedral",
+        "ja": "聖ザビエル天主堂"
+      },
+      "geo": {
+        "latitude": 35.345506,
+        "longitude": 136.9896355
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aichi-inuyama",
+      "streetViewUrl": "https://www.google.com/maps/@35.345506,136.9896355,3a,90y,274.45h,100.21t/data=!3m8!1e1!3m6!1sAF1QipMhjmvw3VrTWnnMUxZSpo7PqI50YuymxbMUPStW!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMhjmvw3VrTWnnMUxZSpo7PqI50YuymxbMUPStW%3Dw203-h100-k-no-pi-0-ya187.52708-ro0-fo100!7i8704!8i4352?entry=ttu",
+      "copyright": "©Nitroplus／TYPE-MOON・ufotable・FZPC"
+    },
+    {
+      "placeId": "2a1f5636-66b6-4b2f-b949-a39fa364cc73",
+      "name": {
+        "es": "Cerca de la Nakano Sunplaza Bowl",
+        "ja": "中野サンプラザボウル付近",
+        "id": "Sekitar Nakano Sunplaza Bowl",
+        "en": "Near the Nakano Sunplaza Bowl",
+        "de": "In der Nähe des Nakano Sunplaza Bowl"
+      },
+      "geo": {
+        "latitude": 35.7069201,
+        "longitude": 139.6651441
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-nakano-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7069201,139.6651441,3a,90y,68.82h,96.95t/data=!3m6!1e1!3m4!1s1RQEXQYs9FpY2HbN06hO7A!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©Nitroplus／TYPE-MOON・ufotable・FZPC"
+    },
+    {
+      "placeId": "2a813ef3-5c87-4f41-9061-99535c8e78c2",
+      "name": {
+        "ja": "織田家長屋門",
+        "en": "Oda house Nagayamon"
+      },
+      "geo": {
+        "latitude": 34.6502795,
+        "longitude": 134.9887412
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hyogo-akashi",
+      "streetViewUrl": "https://www.google.com/maps/place/Oda+house+Nagayamon/@34.6502795,134.9887412,3a,90y,222.05h,98.46t/data=!3m7!1e1!3m5!1shODtpMRF-3t_bncXo56veA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DhODtpMRF-3t_bncXo56veA%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D230.49248%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m14!1m7!3m6!1s0x3554d4b8557f8945:0x9323c75a94b47271!2sOda+house+Nagayamon!8m2!3d34.6501738!4d134.9886106!16s%2Fg%2F11b88ktd69!3m5!1s0x3554d4b8557f8945:0x9323c75a94b47271!8m2!3d34.6501738!4d134.9886106!16s%2Fg%2F11b88ktd69?entry=ttu",
+      "copyright": "©Nitroplus／TYPE-MOON・ufotable・FZPC"
+    },
+    {
+      "placeId": "2b8c784b-4ebb-43c4-b4bb-193cb2126219",
+      "name": {
+        "ja": "世田谷美術館",
+        "en": "Setagaya Art Museum"
+      },
+      "geo": {
+        "latitude": 35.631382,
+        "longitude": 139.6219635
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.631382,139.6219635,3a,90y,79.98h,96.95t/data=!3m8!1e1!3m6!1sAF1QipPXD_fER63vthPFj1MkAumwtXXAKs7TumsdIfqp!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPXD_fER63vthPFj1MkAumwtXXAKs7TumsdIfqp%3Dw203-h100-k-no-pi-0-ya351.96048-ro-0-fo100!7i10240!8i5120?entry=ttu",
+      "copyright": "©Nitroplus／TYPE-MOON・ufotable・FZPC"
+    },
+    {
+      "placeId": "30130c59-6edd-4d52-9ee4-fe67c82a01f6",
+      "name": {
+        "ja": "清浄光寺（遊行寺）",
+        "en": "Yugyo-ji"
+      },
+      "geo": {
+        "latitude": 35.3480708,
+        "longitude": 139.4883642
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3480708,139.4883642,3a,90y,31.35h,100.38t/data=!3m7!1e1!3m5!1sgS2idg6NA7fjYcF2cE7hzQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DgS2idg6NA7fjYcF2cE7hzQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D173.65164%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?entry=ttu",
+      "copyright": "©Nitroplus／TYPE-MOON・ufotable・FZPC"
+    },
+    {
+      "placeId": "44eb757b-d93b-4d3e-8484-b637cf0bc98e",
+      "name": {
+        "ja": "ユナイテッド・シネマ幕張",
+        "en": "United Cinemas Makuhari"
+      },
+      "geo": {
+        "latitude": 35.6496656,
+        "longitude": 140.0417854
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6496656,140.0417854,2a,90y,219.98h,100.58t/data=!3m6!1e1!3m4!1sGRjBqfpw0drcoQXOrhq5fA!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©Nitroplus／TYPE-MOON・ufotable・FZPC"
+    },
+    {
+      "placeId": "60fd05bd-c4db-4ede-bfe8-ae5e24d64d86",
+      "name": {
+        "ja": "パークス砧梅園前店",
+        "en": "Parks Kinutabaen-mae store"
+      },
+      "geo": {
+        "latitude": 35.6299566,
+        "longitude": 139.6233491
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6299566,139.6233491,3a,75y,211.43h,92.49t/data=!3m6!1e1!3m4!1seWiN1hlVPKxwG5qAdfRgBA!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©Nitroplus／TYPE-MOON・ufotable・FZPC"
+    },
+    {
+      "placeId": "8e0bfc83-0709-4c15-be29-edae077c5fd2",
+      "name": {
+        "en": "Near the Torisan (Bird) Park",
+        "ja": "とりさん公園付近",
+        "de": "In der Nähe des Torisan (Bird) Park",
+        "id": "Sekitar Torisan (Bird) Park",
+        "es": "Cerca de la Torisan (Bird) Park"
+      },
+      "geo": {
+        "latitude": 35.6421188,
+        "longitude": 139.4966461
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-inagi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6421188,139.4966461,3a,90y,93.18h,99.93t/data=!3m6!1e1!3m4!1sBSUPLSqvLVB8Ew-qrg4rrA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©Nitroplus／TYPE-MOON・ufotable・FZPC"
+    },
+    {
+      "placeId": "a281fa66-31d9-4672-9a17-d6818060cb85",
+      "name": {
+        "en": "Sapporo Concert Hall 'Kitara'",
+        "ja": "札幌コンサートホールKitara(キタラ)"
+      },
+      "geo": {
+        "latitude": 43.0448622,
+        "longitude": 141.3530792
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://www.google.com/maps/@43.0448622,141.3530792,3a,90y,213.36h,113.33t/data=!3m6!1e1!3m4!1sOtwSnLmbj6ILwDLbULbjxQ!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©Nitroplus／TYPE-MOON・ufotable・FZPC"
+    },
+    {
+      "placeId": "b3787c83-68cc-4e51-8baa-a337f8bf4682",
+      "name": {
+        "ja": "風見鶏の館",
+        "en": "Weathercock House"
+      },
+      "geo": {
+        "latitude": 34.7014401,
+        "longitude": 135.1898075
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hyogo-kobe",
+      "streetViewUrl": "https://www.google.com/maps/@34.7014401,135.1898075,3a,90y,250.32h,107.57t/data=!3m7!1e1!3m5!1s5zUnKcHouXuR1ArcBHufJg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D5zUnKcHouXuR1ArcBHufJg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D38.412754%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©Nitroplus／TYPE-MOON・ufotable・FZPC"
+    },
+    {
+      "placeId": "bdfb568a-9300-4c4a-9620-f009fe77204f",
+      "name": {
+        "ja": "海浜幕張駅南口広場",
+        "en": "Kaihimmakuhari Station Square"
+      },
+      "geo": {
+        "latitude": 35.6480491,
+        "longitude": 140.0412435
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6480491,140.0412435,2a,90y,222.33h,97.73t/data=!3m6!1e1!3m4!1sKqT6iklWQAPIFILHiq0_TA!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©Nitroplus／TYPE-MOON・ufotable・FZPC"
+    },
+    {
+      "placeId": "f4756021-dd99-41a3-8f4e-c03d2ddbaa54",
+      "name": {
+        "ja": "ポートアイランド 北公園",
+        "en": "Port Island Kita Park"
+      },
+      "geo": {
+        "latitude": 34.6774888,
+        "longitude": 135.2053824
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hyogo-kobe",
+      "streetViewUrl": "https://www.google.com/maps/@34.6774888,135.2053824,3a,90y,282.54h,115.58t/data=!3m8!1e1!3m6!1sAF1QipOE-NfFVCgXDJcAAR_7FR1mIywDXf2ZO65stR1E!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOE-NfFVCgXDJcAAR_7FR1mIywDXf2ZO65stR1E%3Dw203-h100-k-no-pi-0-ya147.66634-ro-0-fo100!7i8704!8i4352?entry=ttu",
+      "copyright": "©Nitroplus／TYPE-MOON・ufotable・FZPC"
+    }
+  ]
+}

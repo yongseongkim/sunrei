@@ -1,0 +1,446 @@
+{
+  "anime": {
+    "animeId": "97Fqg7Hq6Y4AIjA1WvNb",
+    "slug": "sound-euphonium-our-promise-a-brand-new-day",
+    "title": {
+      "ja": "響け！ユーフォニアム〜誓いのフィナーレ〜",
+      "kr": "극장판 울려라! 유포니엄: 맹세의 피날레",
+      "en": "Sound! Euphonium: Our Promise: A Brand New Day"
+    },
+    "author": {
+      "en": [
+        "Ayano Takeda"
+      ],
+      "ja": [
+        "武田綾乃"
+      ],
+      "kr": [
+        "타케다 아야노"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Kyoto Animation"
+      ]
+    }
+  },
+  "placeCount": 26,
+  "places": [
+    {
+      "placeId": "0219b21e-bea7-44ea-a7c1-2db734edb022",
+      "name": {
+        "ja": "宇治橋",
+        "en": "Uji Bridge"
+      },
+      "geo": {
+        "latitude": 34.89274,
+        "longitude": 135.80611
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.8928172,135.8060961,3a,75y,161.27h,97.59t/data=!3m8!1e1!3m6!1spZFa5G8juaVT6dxXzGNK7w!2e0!5s20221001T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.58681811430516%26panoid%3DpZFa5G8juaVT6dxXzGNK7w%26yaw%3D161.2705589394491!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "149c39c7-1fd0-46ce-aaa8-3ed59fc860be",
+      "name": {
+        "ja": "六地蔵駅",
+        "en": "Rokujizo Station"
+      },
+      "geo": {
+        "latitude": 34.93196,
+        "longitude": 135.79343
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/place/Rokujizo+Station/@34.9320069,135.7933502,3a,73.1y,333.21h,80.59t/data=!3m8!1e1!3m6!1sAF1QipPSAvZw5ajiLBJonWeKcplXFptoiAyhQ1724i0f!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPSAvZw5ajiLBJonWeKcplXFptoiAyhQ1724i0f%3Dw900-h600-k-no-pi9.40571087753608-ya333.20522722066585-ro0-fo100!7i6080!8i3040!4m9!3m8!1s0x60010e2db7588ea1:0x298446a365f0023c!8m2!3d34.932007!4d135.7934183!10e5!14m1!1BCgIgARICCAI!16zL20vMDljNWxf?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "203551c2-a019-4e68-94d4-35818b013090",
+      "name": {
+        "ja": "太陽が丘 陸上競技場",
+        "en": "Taiyogaoka Athletic Stadium"
+      },
+      "geo": {
+        "latitude": 34.87035,
+        "longitude": 135.80496
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.8702566,135.8041618,3a,90y,247.61h,98.06t/data=!3m8!1e1!3m6!1sAF1QipOpCQIS2Rq1mr_USFxgoF5sT1dd0U4FENTyF7qc!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOpCQIS2Rq1mr_USFxgoF5sT1dd0U4FENTyF7qc%3Dw900-h600-k-no-pi-8.059586179781064-ya247.61414362411273-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "3fbc73fd-a81e-42da-94a9-69f6d3151393",
+      "name": {
+        "en": "Daikichiyama Observation Deck",
+        "ja": "大吉山展望台"
+      },
+      "geo": {
+        "latitude": 34.8929,
+        "longitude": 135.81281
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.8928984,135.8127998,3a,90y,84.86h,94.83t/data=!3m8!1e1!3m6!1sAF1QipO5WmSphpDKGtrAmeA37ZMjSslNOkeq37nGM5kA!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipO5WmSphpDKGtrAmeA37ZMjSslNOkeq37nGM5kA%3Dw900-h600-k-no-pi-4.834001464702013-ya2.1720726791309204-ro0-fo100!7i10000!8i5000?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "4b03cb28-818c-4d3e-b59b-9371b948b75f",
+      "name": {
+        "en": "Rome Theater Kyoto Maine Hall",
+        "ja": "ロームシアター京都 メインホール"
+      },
+      "geo": {
+        "latitude": 35.01462,
+        "longitude": 135.78066
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/place/ROHM+Theatre+Kyoto/@35.0143836,135.780667,3a,90y,121.43h,83.4t/data=!3m8!1e1!3m6!1sAF1QipMrYKL8V62RIwlmPtZofhLcOt4viAgTpHOr1Kqv!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMrYKL8V62RIwlmPtZofhLcOt4viAgTpHOr1Kqv%3Dw900-h600-k-no-pi6.601341429256792-ya121.43494622710611-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x600108e59bdf819d:0xd3ab5cdf5084c984!8m2!3d35.0143836!4d135.780667!10e5!14m1!1BCgIgARICCAI!16s%2Fm%2F03cs5mw?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "60aaf21a-43e6-4347-a6a5-44184fbd57d6",
+      "name": {
+        "ja": "泉園銘茶本舗・平等院表参道本店",
+        "en": "Izumien"
+      },
+      "geo": {
+        "latitude": 34.89102,
+        "longitude": 135.8065
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.8911863,135.8063994,3a,73.2y,338.04h,95.38t/data=!3m7!1e1!3m5!1sP0Nz-OXNj3hYMssJm-uSsg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.378009227612708%26panoid%3DP0Nz-OXNj3hYMssJm-uSsg%26yaw%3D338.0355981293297!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "62e51168-8f66-4c0f-9cd0-487311d0db8d",
+      "name": {
+        "ja": "羽戸山２丁目（バス）",
+        "en": "Hatoyama 2 Chome (Bus)"
+      },
+      "geo": {
+        "latitude": 34.90735,
+        "longitude": 135.8107
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.9074021,135.8106367,3a,90y,117.97h,105.93t/data=!3m7!1e1!3m5!1sXgyVu2-COnkTq2mgo0pOZg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.932412313739889%26panoid%3DXgyVu2-COnkTq2mgo0pOZg%26yaw%3D117.96697511496671!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "690f6e7d-d96e-49e6-bafe-49780cd6c4a9",
+      "name": {
+        "en": "2 Chome Hatoyama",
+        "ja": "羽戸山 2丁目"
+      },
+      "geo": {
+        "latitude": 34.905874,
+        "longitude": 135.813626
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.9059802,135.8140419,3a,45.7y,255.13h,88.2t/data=!3m7!1e1!3m5!1ss4C5ons8J_UYOB9wCyQ5nA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.8043788657994924%26panoid%3Ds4C5ons8J_UYOB9wCyQ5nA%26yaw%3D255.126868723744!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "73506fd5-5747-4624-a07d-5c8f8d9c5110",
+      "name": {
+        "en": "Bistro D",
+        "ja": "びすとろD"
+      },
+      "geo": {
+        "latitude": 34.89006,
+        "longitude": 135.80238
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.8901307,135.8023035,3a,75y,125.99h,95.85t/data=!3m7!1e1!3m5!1sTUZxGyv4q19UdbHU6swfgA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.847459522255306%26panoid%3DTUZxGyv4q19UdbHU6swfgA%26yaw%3D125.98549895913119!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "75ef4ddb-a29d-4b5a-84cf-70693e5ffb10",
+      "name": {
+        "en": "Kisen Bridge",
+        "ja": "喜撰橋"
+      },
+      "geo": {
+        "latitude": 34.88817,
+        "longitude": 135.80993
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.888031,135.8097789,3a,67.2y,37.37h,94.03t/data=!3m7!1e1!3m5!1sb-ZNw2NBT9ZKrPr8T6TcaQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.032850696976524%26panoid%3Db-ZNw2NBT9ZKrPr8T6TcaQ%26yaw%3D37.36611468959689!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "7c02b852-7317-49ad-8218-9022b2d5ff3f",
+      "name": {
+        "ja": "羽戸山第2児童公園",
+        "en": "Hatoyamadai 2 Jido Park"
+      },
+      "geo": {
+        "latitude": 34.90736,
+        "longitude": 135.81223
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.9073872,135.8123045,3a,90y,251.19h,93.65t/data=!3m7!1e1!3m5!1s8-zRsWe0j8LHIueBVERWsw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.6530539581747945%26panoid%3D8-zRsWe0j8LHIueBVERWsw%26yaw%3D251.18853061914695!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "8791741e-c246-40e4-a2f8-971c9da0f10f",
+      "name": {
+        "en": "Todo Koko",
+        "ja": "莵道高校（バス）"
+      },
+      "geo": {
+        "latitude": 34.90831,
+        "longitude": 135.81547
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.9083973,135.8154726,3a,75y,199.24h,89.56t/data=!3m7!1e1!3m5!1s37QvuIhIYVhI9srluf1kzw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.44400186573167844%26panoid%3D37QvuIhIYVhI9srluf1kzw%26yaw%3D199.2448422127539!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "a39a0eeb-6cae-4bb8-b833-10b45b894da3",
+      "name": {
+        "ja": "福寿園 宇治茶亭",
+        "en": "Fukujuen Café Uji"
+      },
+      "geo": {
+        "latitude": 34.88931,
+        "longitude": 135.80845
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.8894093,135.8084277,3a,75y,172.47h,95.33t/data=!3m7!1e1!3m5!1seUkFSETY3eRjHpHRz2NgIw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.330712985510431%26panoid%3DeUkFSETY3eRjHpHRz2NgIw%26yaw%3D172.46776301926346!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "a5bffb74-4ea9-4037-8fa9-c8dd3de42b5f",
+      "name": {
+        "en": "Morioka Tatami Shop",
+        "ja": "もりおか畳店"
+      },
+      "geo": {
+        "latitude": 34.88978,
+        "longitude": 135.8056
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.8897912,135.8056342,3a,90y,301.28h,94.85t/data=!3m7!1e1!3m5!1sTtep8X5Ic-Y98RuvKAizWQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.850551933266516%26panoid%3DTtep8X5Ic-Y98RuvKAizWQ%26yaw%3D301.28066439089804!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "a67d3770-fa58-47a2-8a55-df24d245d71f",
+      "name": {
+        "en": "ROHM Theatre Kyoto",
+        "ja": "ロームシアター京都（京都会館）"
+      },
+      "geo": {
+        "latitude": 35.01406,
+        "longitude": 135.78087
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0141618,135.7809651,3a,75y,220.94h,93.61t/data=!3m8!1e1!3m6!1sAF1QipPxMSFNnmHtxMDjfJIFgkClPsA-C3a8elyxz3vL!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPxMSFNnmHtxMDjfJIFgkClPsA-C3a8elyxz3vL%3Dw900-h600-k-no-pi-3.606819046760336-ya209.94341241156883-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "af8d725a-2450-4359-9d85-c6151ef9ff9a",
+      "name": {
+        "ja": "宇治日の出園",
+        "en": "Uji Hinode En"
+      },
+      "geo": {
+        "latitude": 34.88797,
+        "longitude": 135.80886
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.8880777,135.8087448,3a,90y,160.11h,105.44t/data=!3m7!1e1!3m5!1sirw8D6Uu7SLwH6o2jMlvVQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.442057423212532%26panoid%3Dirw8D6Uu7SLwH6o2jMlvVQ%26yaw%3D160.11324344648773!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "b268e23f-9ea3-47fa-9e45-a8706aed41af",
+      "name": {
+        "ja": "京都宇治茶房 山本甚次郎",
+        "en": "Jinjiro Tea Shop"
+      },
+      "geo": {
+        "latitude": 34.89103,
+        "longitude": 135.80394
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.8910559,135.8039181,3a,90y,145.99h,93.18t/data=!3m8!1e1!3m6!1syNww6kEnjRyyBuT4t8dWHw!2e0!5s20180701T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.1770810379228323%26panoid%3DyNww6kEnjRyyBuT4t8dWHw%26yaw%3D145.98629772505805!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "b64b614f-e15f-4551-a175-9ac6036ac762",
+      "name": {
+        "en": "Kisen Chaya",
+        "ja": "喜撰茶屋"
+      },
+      "geo": {
+        "latitude": 34.88802,
+        "longitude": 135.80962
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.8880281,135.8095271,3a,48.7y,100.79h,87.18t/data=!3m7!1e1!3m5!1sMe0oO7yoWJYQE8HoB75xEQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.8201454474510683%26panoid%3DMe0oO7yoWJYQE8HoB75xEQ%26yaw%3D100.78692622294128!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "b837c77b-03ab-4989-876a-cae385c76443",
+      "name": {
+        "ja": "宇治川水管橋",
+        "en": "Ujigawa Suikan Bridge"
+      },
+      "geo": {
+        "latitude": 34.9005,
+        "longitude": 135.80159
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.9004982,135.8015671,3a,90y,61.46h,116.02t/data=!3m8!1e1!3m6!1sAF1QipMt68goP_V64r9eqdOrzokswIoeyxZ_RF9k-3sD!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMt68goP_V64r9eqdOrzokswIoeyxZ_RF9k-3sD%3Dw900-h600-k-no-pi-26.016928564834217-ya177.12923399961485-ro0-fo100!7i12000!8i6000?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "b8e9bed3-c8e4-4515-bf86-d6cc4dc021c8",
+      "name": {
+        "ja": "川東公園",
+        "en": "Kawahigashi Park"
+      },
+      "geo": {
+        "latitude": 34.89403,
+        "longitude": 135.81062
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.8939751,135.8108119,3a,90y,273.83h,93.99t/data=!3m7!1e1!3m5!1syxaW8a0P8oHP9rH4DzLfhw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.987017928396284%26panoid%3DyxaW8a0P8oHP9rH4DzLfhw%26yaw%3D273.83398723068944!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "c27dce67-3a75-4d2e-80be-e9d41bb829fd",
+      "name": {
+        "ja": "久美子ベンチ",
+        "en": "Kumiko Bench"
+      },
+      "geo": {
+        "latitude": 34.88961,
+        "longitude": 135.80839
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.8896486,135.8082349,3a,70.2y,114.01h,85.35t/data=!3m8!1e1!3m6!1sUOtbjyTrPDUyIE8wjZP6ag!2e0!5s20170501T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D4.652827840844068%26panoid%3DUOtbjyTrPDUyIE8wjZP6ag%26yaw%3D114.01220495398783!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "cc4bd68d-2bc0-40a0-8fd8-4eb30010005c",
+      "name": {
+        "ja": "宇治神社",
+        "en": "Uji Shrine"
+      },
+      "geo": {
+        "latitude": 34.89059,
+        "longitude": 135.8099
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.8905585,135.8099183,3a,75y,4.94h,95.25t/data=!3m7!1e1!3m5!1ssyhvtbz-6ZXkHXghyiaacQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.252645089454376%26panoid%3Dsyhvtbz-6ZXkHXghyiaacQ%26yaw%3D4.943008618090172!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "cda45446-5064-4cc7-93d7-330258374a30",
+      "name": {
+        "ja": "京阪六地蔵（バス）",
+        "en": "Keihan Rokujizo"
+      },
+      "geo": {
+        "latitude": 34.93192,
+        "longitude": 135.79379
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9320209,135.7936949,3a,73.9y,139.61h,102.71t/data=!3m7!1e1!3m5!1sJQzcJMsXzLhHgmqA-o5qYA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.712603325973504%26panoid%3DJQzcJMsXzLhHgmqA-o5qYA%26yaw%3D139.60663289952643!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "d94de103-d829-4265-9f34-1ecf2346c2e6",
+      "name": {
+        "ja": "ファミリーマート ロームシアター京都店",
+        "en": "FamilyMart - Rohm Theatre Kyoto"
+      },
+      "geo": {
+        "latitude": 35.01393,
+        "longitude": 135.781
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/place/ROHM+Theatre+Kyoto/@35.0143836,135.780667,3a,90y,219.6h,108.17t/data=!3m8!1e1!3m6!1sAF1QipM5cH1ysbaMi92Bnj6w04lXsxdY0T5WMh7x1VKd!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipM5cH1ysbaMi92Bnj6w04lXsxdY0T5WMh7x1VKd%3Dw900-h600-k-no-pi-18.167970783011967-ya219.5970679792072-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x600108e59bdf819d:0xd3ab5cdf5084c984!8m2!3d35.0143836!4d135.780667!10e5!14m1!1BCgIgARICCAI!16s%2Fm%2F03cs5mw?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "f6f3272e-f588-4cda-bbc1-996080166bbf",
+      "name": {
+        "en": "Yuko Tree",
+        "ja": "優子の樹"
+      },
+      "geo": {
+        "latitude": 35.01416,
+        "longitude": 135.7817
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0141381,135.7816732,3a,90y,35.77h,106.91t/data=!3m8!1e1!3m6!1sAF1QipPZeyFLEjcKdrDgjdwl-TnbnmkvRyB2i2fOzPbC!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPZeyFLEjcKdrDgjdwl-TnbnmkvRyB2i2fOzPbC%3Dw900-h600-k-no-pi-16.908717874443752-ya113.53328390077363-ro0-fo100!7i12332!8i6166?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    },
+    {
+      "placeId": "ff44dba3-131b-47dc-8e90-07e8ce8e83e7",
+      "name": {
+        "ja": "サイゼリヤ 宇治里尻店",
+        "en": "Saizeriya - Uji Satojiri"
+      },
+      "geo": {
+        "latitude": 34.89246,
+        "longitude": 135.80478
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.8923556,135.8048303,3a,75y,353.19h,104.82t/data=!3m7!1e1!3m5!1s2W5RFMwtObTvLW6JFRXJPw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.819530517920185%26panoid%3D2W5RFMwtObTvLW6JFRXJPw%26yaw%3D353.1928482054495!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©武田綾乃・宝島社／『響け！』製作委員会"
+    }
+  ]
+}

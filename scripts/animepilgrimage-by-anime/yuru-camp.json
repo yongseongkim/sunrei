@@ -1,0 +1,870 @@
+{
+  "anime": {
+    "animeId": "uhXFJjbIXDatAdC4MNHj",
+    "slug": "yuru-camp",
+    "title": {
+      "ja": "ゆるキャン△",
+      "kr": "유루캠△",
+      "en": "Yuru Camp△"
+    },
+    "author": {
+      "ja": [
+        "あfろ"
+      ],
+      "en": [
+        "Afro"
+      ],
+      "kr": [
+        "아f로"
+      ]
+    },
+    "studio": {
+      "en": [
+        "C-Station"
+      ]
+    }
+  },
+  "placeCount": 52,
+  "places": [
+    {
+      "placeId": "07463f88-66eb-4ff2-9cbf-3ded805b22c3",
+      "name": {
+        "ja": "夜叉神ヒュッテ",
+        "en": "Yashajin Hutte"
+      },
+      "geo": {
+        "latitude": 35.6355096,
+        "longitude": 138.3450937
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minami-alps",
+      "streetViewUrl": "vhttps://www.google.com/maps/@35.6355096,138.3450937,3a,90y,162.34h,99.84t/data=!3m6!1e1!3m4!1sxbo9zXuNZWzEpbdEXXqS0w!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "133923b7-2fd0-4bcb-b4ce-deac17abab6d",
+      "name": {
+        "ja": "新日本三大夜景 展望広場",
+        "en": "New Japan's Top Three Night Views Observation Plaza"
+      },
+      "geo": {
+        "latitude": 35.7045901,
+        "longitude": 138.6628202
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-yamanashi",
+      "streetViewUrl": "https://www.google.com/maps/@35.7045901,138.6628202,3a,75y,153.97h,100.29t/data=!3m7!1e1!3m5!1sCuewillSw9cW36hnDf0JXQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DCuewillSw9cW36hnDf0JXQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D245.28714%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "169ee268-6236-493b-9f28-76f4d2538dc0",
+      "name": {
+        "ja": "しなのや",
+        "en": "Shinanoya"
+      },
+      "geo": {
+        "latitude": 35.4452326,
+        "longitude": 138.4777528
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minobu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4452326,138.4777528,3a,44.5y,93.23h,94.01t/data=!3m7!1e1!3m5!1sxx0IDiA5GBjkoQgY_5CZuw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dxx0IDiA5GBjkoQgY_5CZuw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D90.96127%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "16cb7ce7-9d10-43da-9f15-acdca7d15ed2",
+      "name": {
+        "ja": "栄昇堂",
+        "en": "Eishodo"
+      },
+      "geo": {
+        "latitude": 35.3615539,
+        "longitude": 138.4524415
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minobu",
+      "streetViewUrl": "https://www.google.com/maps/@35.3615539,138.4524415,3a,75y,274.9h,95.91t/data=!3m7!1e1!3m5!1s_j1hszktPcj8Unnnr8DVKg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D_j1hszktPcj8Unnnr8DVKg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D23.464466%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "1dcaa887-feb3-4639-b79f-e1ce0781983b",
+      "name": {
+        "en": "No.8: Ozaki Ryuo's stone monument",
+        "ja": "第八番 尾崎龍王の石碑"
+      },
+      "geo": {
+        "latitude": 35.530055,
+        "longitude": 138.5151817
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-ichikawamisato",
+      "streetViewUrl": "https://www.google.com/maps/@35.530055,138.5151817,3a,90y,98.54h,99.81t/data=!3m8!1e1!3m6!1sAF1QipM5BOpsLMNdH7W-BtuUNC1rebR9_hdRQJ-spEu_!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipM5BOpsLMNdH7W-BtuUNC1rebR9_hdRQJ-spEu_%3Dw203-h100-k-no-pi-0-ya315.71976-ro-0-fo100!7i4000!8i2000?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "297c4eee-7a4a-40f5-9f04-799e7e41b6d8",
+      "name": {
+        "en": "Fumotoppara Campground",
+        "ja": "ふもとっぱら(キャンプサイト)"
+      },
+      "geo": {
+        "latitude": 35.4006421,
+        "longitude": 138.5615495
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shizuoka-fujinomiya",
+      "streetViewUrl": "https://www.google.com/maps/@35.4006421,138.5615495,3a,90y,102.34h,105.35t/data=!3m8!1e1!3m6!1sAF1QipMl8v2r01hIBK7QxM2cCPj-ymTEmyjJ7o_MztRd!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMl8v2r01hIBK7QxM2cCPj-ymTEmyjJ7o_MztRd%3Dw203-h100-k-no-pi-0-ya221.15681-ro-0-fo100!7i8704!8i4352?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "29dcd439-547d-430a-a9f6-94a6a49a46a7",
+      "name": {
+        "en": "Yamanashishi Station",
+        "ja": "山梨市駅"
+      },
+      "geo": {
+        "latitude": 35.6853213,
+        "longitude": 138.6831258
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-yamanashi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6853213,138.6831258,3a,75y,146.46h,98.57t/data=!3m7!1e1!3m5!1spcPlcOXurkHiopBVXOTSPA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DpcPlcOXurkHiopBVXOTSPA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D116.952415%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "3c9c228c-5294-447f-ae7c-46fdb0d47719",
+      "name": {
+        "en": "Jinbagatayama Campground",
+        "ja": "陣馬形山キャンプ場"
+      },
+      "geo": {
+        "latitude": 35.6727809,
+        "longitude": 137.9832739
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-nakagawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.6727809,137.9832739,3a,90y,349.27h,88.72t/data=!3m8!1e1!3m6!1sAF1QipMcfKVnriwJkcLJ7bQkagykKMuqeb8aCfzFPJhD!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMcfKVnriwJkcLJ7bQkagykKMuqeb8aCfzFPJhD%3Dw203-h100-k-no-pi3.296832-ya77.36772-ro5.8623657-fo100!7i5376!8i2688?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "43099ae2-431b-481a-b92a-819a88116b74",
+      "name": {
+        "en": "Minobu-Manju Bench",
+        "ja": "身延饅頭ベンチ"
+      },
+      "geo": {
+        "latitude": 35.3619588,
+        "longitude": 138.452496
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minobu",
+      "streetViewUrl": "https://www.google.com/maps/@35.3619588,138.452496,3a,44.5y,274.06h,93.25t/data=!3m6!1e1!3m4!1s2uee-ci_39DrqwLL92Z5PA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "47af7abe-2a5d-475c-a2be-39fc427b4fd5",
+      "name": {
+        "en": "Ice cream factory and direct sales store",
+        "ja": "道の駅 朝霧高原 アイス工房"
+      },
+      "geo": {
+        "latitude": 35.4136212,
+        "longitude": 138.5908548
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shizuoka-fujinomiya",
+      "streetViewUrl": "https://www.google.com/maps/@35.4136212,138.5908548,3a,90y,116.92h,107.07t/data=!3m6!1e1!3m4!1sBXHuhfxZ9SxPAeKMbFX3HA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "47ecd5d3-d853-4238-9dab-2f10f03290e8",
+      "name": {
+        "en": "Nezu Bridge",
+        "ja": "根津橋"
+      },
+      "geo": {
+        "latitude": 35.6863559,
+        "longitude": 138.6791241
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-yamanashi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6863559,138.6791241,3a,75y,115.09h,107.83t/data=!3m6!1e1!3m4!1syAwMDPGxvuPnzEVvWOBSVQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "4c96829b-db14-4459-8328-08846d8a69a5",
+      "name": {
+        "ja": "高ボッチ高原",
+        "en": "Takabotchi Highlands"
+      },
+      "geo": {
+        "latitude": 36.1337558,
+        "longitude": 138.0352069
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-shiojiri",
+      "streetViewUrl": "https://www.google.com/maps/@36.1337558,138.0352069,3a,75y,253.63h,96.6t/data=!3m8!1e1!3m6!1sAF1QipN1nXkAcOfR1dGpzwzvFPa3MuNkHKrFS0FSRR7R!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipN1nXkAcOfR1dGpzwzvFPa3MuNkHKrFS0FSRR7R%3Dw203-h100-k-no-pi-0-ya148.45218-ro-0-fo100!7i4030!8i1949?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "55250864-5f24-4f0c-ba2d-dfdcb3d268fb",
+      "name": {
+        "en": "Near the Tire Garden Nambu",
+        "de": "In der Nähe des Tire Garden Nambu",
+        "ja": "タイヤガーデン 南部店付近",
+        "id": "Sekitar Tire Garden Nambu",
+        "es": "Cerca de la Tire Garden Nambu"
+      },
+      "geo": {
+        "latitude": 35.282473,
+        "longitude": 138.4565552
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-nambu",
+      "streetViewUrl": "https://www.google.com/maps/@35.282473,138.4565552,3a,75y,245.84h,100.59t/data=!3m6!1e1!3m4!1sA_m6EiByAtDM_E05i7j4IQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "57ec405d-4a99-4c1e-aa9a-4b358e53f509",
+      "name": {
+        "ja": "富士山YMCA グローバル・エコ・ヴィレッジ",
+        "en": "Mount Fuji YMCA Global Eco Village"
+      },
+      "geo": {
+        "latitude": 35.3414282,
+        "longitude": 138.5834816
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shizuoka-fujinomiya",
+      "streetViewUrl": "https://www.google.com/maps/place/Mount+Fuji+YMCA+Global+Eco+Village/@35.3414282,138.5834816,3a,75y,146.47h,97.01t/data=!3m8!1e1!3m6!1sAF1QipPk557Wl3HC3qDmHF3RlYu6ExaBsZg0KdYljp3y!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPk557Wl3HC3qDmHF3RlYu6ExaBsZg0KdYljp3y%3Dw203-h100-k-no-pi3.0701895-ya330.95914-ro1.4751217-fo100!7i5376!8i2688!4m10!3m9!1s0x601bdb65de5e6325:0xffff5ea3eddfbd53!5m3!1s2024-07-08!4m1!1i2!8m2!3d35.3414282!4d138.5834816!16s%2Fg%2F1tgdj1mf?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "58d3966c-4660-4322-97fe-b863e24cf10f",
+      "name": {
+        "ja": "早太郎温泉 こまくさの湯",
+        "en": "Hayataro Onsen Komakusa-no-yu Hot Spring"
+      },
+      "geo": {
+        "latitude": 35.7433132,
+        "longitude": 137.88823
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-komagane",
+      "streetViewUrl": "https://www.google.com/maps/@35.7433132,137.88823,3a,90y,333.17h,105.14t/data=!3m7!1e1!3m5!1smLOuIWadwQtGF86yCJMVYQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DmLOuIWadwQtGF86yCJMVYQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D15.4440775%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "5c14fe7a-f262-446b-b884-942bf89b1c23",
+      "name": {
+        "en": "Nagisabashi",
+        "ja": "渚橋"
+      },
+      "geo": {
+        "latitude": 34.6955511,
+        "longitude": 137.6070373
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shizuoka-hamamatsu",
+      "streetViewUrl": "https://www.google.com/maps/@34.6955511,137.6070373,3a,74.7y,85.85h,104.45t/data=!3m7!1e1!3m5!1sh7nS2OiVwdRj_v9nwNVLNA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dh7nS2OiVwdRj_v9nwNVLNA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D271.39468%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "5f1cd1b0-96d2-41a2-87b0-29fad8b26f92",
+      "name": {
+        "ja": "新・洗濯生活身延",
+        "en": "New Laundry Life Minobu"
+      },
+      "geo": {
+        "latitude": 35.3628509,
+        "longitude": 138.4527137
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minobu",
+      "streetViewUrl": "https://www.google.com/maps/@35.3628509,138.4527137,3a,44.2y,350.7h,98.07t/data=!3m6!1e1!3m4!1sgSOwreNcGPQ7do6naiMIBw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "5fd49d84-7984-43cc-ad3f-e3d4c7310223",
+      "name": {
+        "ja": "高ボッチ高原国定公園の碑",
+        "en": "Monument at Takabocchi Kogen Quasi-National Park"
+      },
+      "geo": {
+        "latitude": 36.0939162,
+        "longitude": 138.0144994
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-shiojiri",
+      "streetViewUrl": "https://www.google.com/maps/@36.0939162,138.0144994,3a,40.8y,35.11h,100.76t/data=!3m6!1e1!3m4!1sL-Tbazj2v3OFuhWLbgky2A!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "64248bde-6a70-4228-ac22-2236cee92eb2",
+      "name": {
+        "ja": "アルプス連峰パノラマ展望台",
+        "en": "Panoramic Observation Deck of the Alps"
+      },
+      "geo": {
+        "latitude": 36.135285,
+        "longitude": 138.0372958
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-shiojiri",
+      "streetViewUrl": "https://www.google.com/maps/@36.135285,138.0372958,3a,90y,112.56h,101t/data=!3m7!1e1!3m5!1sAF1QipNktZ8SlLWtfvTzdreogEcMz1jlUUSLSUEcO8Qf!2e10!3e11!7i4014!8i1950?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "68f940ac-bab5-431e-8575-36fdd21a0043",
+      "name": {
+        "en": "Shinko Shokai",
+        "ja": "新光商会"
+      },
+      "geo": {
+        "latitude": 35.9596639,
+        "longitude": 138.226597
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-hara",
+      "streetViewUrl": "https://www.google.com/maps/@35.9596639,138.226597,3a,47.8y,303.29h,95.48t/data=!3m7!1e1!3m5!1smSXFEnv0Rrc2WHBTI4eF7w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DmSXFEnv0Rrc2WHBTI4eF7w%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D34.47715%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "6f290ff2-30e5-473f-a5a9-f5e7a4c8ea98",
+      "name": {
+        "en": "Takabocchi Mountain",
+        "ja": "高ボッチ山"
+      },
+      "geo": {
+        "latitude": 36.132125,
+        "longitude": 138.0403389
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-okaya",
+      "streetViewUrl": "https://www.google.com/maps/@36.132125,138.0403389,3a,90y,43.27h,105t/data=!3m8!1e1!3m6!1sAF1QipOJSy_KUe65ectnSSEoxu8QGRokp8h2Ah1bPj3N!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOJSy_KUe65ectnSSEoxu8QGRokp8h2Ah1bPj3N%3Dw203-h100-k-no-pi-0-ya242.45741-ro-0-fo100!7i4050!8i1922?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "7276b17d-5245-4009-9694-9dad00392cf2",
+      "name": {
+        "en": "Fruit Square",
+        "ja": "くだもの広場"
+      },
+      "geo": {
+        "latitude": 35.7012999,
+        "longitude": 138.6667108
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-yamanashi",
+      "streetViewUrl": "https://www.google.com/maps/@35.7012999,138.6667108,3a,48.7y,306.64h,101.04t/data=!3m6!1e1!3m4!1sxU9LSTOL9b_i2Q2Nq_UUuQ!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "74724723-6957-4b1e-9332-232fcf4df2a9",
+      "name": {
+        "en": "Tsuetsuki Pass Observation Cafe Kaze no Uta",
+        "ja": "展望喫茶 風の詩"
+      },
+      "geo": {
+        "latitude": 35.9769692,
+        "longitude": 138.1298604
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-chino",
+      "streetViewUrl": "https://www.google.com/maps/@35.9769692,138.1298604,3a,69.5y,164.3h,121.63t/data=!3m8!1e1!3m6!1sAF1QipOLTGoN15XnvTkMCDEoFNL2zhFfv5ekMsqNP73v!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOLTGoN15XnvTkMCDEoFNL2zhFfv5ekMsqNP73v%3Dw203-h100-k-no-pi-0-ya99.88045-ro-0-fo100!7i10240!8i5120?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "78d569df-ff22-4ffe-bedf-40bb2b504efc",
+      "name": {
+        "ja": "A・コープファーマーズ ピアみどり店",
+        "en": "A-Co-op Farmers Pier Midori Store"
+      },
+      "geo": {
+        "latitude": 36.0203945,
+        "longitude": 138.2053924
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-chino",
+      "streetViewUrl": "https://www.google.com/maps/@36.0203945,138.2053924,3a,75y,307.89h,104.38t/data=!3m6!1e1!3m4!1sWJeqML3XFDGeImm6SkFWjg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "7bbb64e9-032b-412a-8352-c223eb1c800e",
+      "name": {
+        "ja": "四尾連湖 水明荘",
+        "en": "Shibireko Suimeisou"
+      },
+      "geo": {
+        "latitude": 35.5303035,
+        "longitude": 138.5185399
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-ichikawamisato",
+      "streetViewUrl": "https://www.google.com/maps/@35.5303035,138.5185399,3a,75y,47.53h,106.29t/data=!3m8!1e1!3m6!1sAF1QipPPGkJSCOXs12Lbek7y6Yn3f54gG0y60sIKrC3O!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPPGkJSCOXs12Lbek7y6Yn3f54gG0y60sIKrC3O%3Dw203-h100-k-no-pi-0-ya86.00768-ro-0-fo100!7i8704!8i4352?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "8374a966-8929-4f08-9ddf-d7aab00b1767",
+      "name": {
+        "ja": "ローソン 南アルプス街道店",
+        "en": "Lawson Minami Alps Kaido Shop"
+      },
+      "geo": {
+        "latitude": 35.6611478,
+        "longitude": 138.4405166
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minami-alps",
+      "streetViewUrl": "https://www.google.com/maps/place/Lawson+Minami+Alps+Kaido+Shop/@35.6611478,138.4405166,3a,90y,230.62h,103.18t/data=!3m7!1e1!3m5!1slnHe4PFkRp17u89HO24iQQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DlnHe4PFkRp17u89HO24iQQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D246.31894%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m6!3m5!1s0x601c0a7d3e5e9f8b:0x5344d79e65d4e15a!8m2!3d35.6610837!4d138.4402605!16s%2Fg%2F1wn33r94?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "8816e835-fded-419c-aaaa-3ebe7f5e7c77",
+      "name": {
+        "en": "Hoshakuzan Kozenji Temple",
+        "ja": "光前寺"
+      },
+      "geo": {
+        "latitude": 35.7360565,
+        "longitude": 137.89831
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-komagane",
+      "streetViewUrl": "https://www.google.com/maps/@35.7360565,137.89831,3a,62.6y,239.55h,100.65t/data=!3m7!1e1!3m5!1skyrVTJP9TIB_V9XIvzeGNg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DkyrVTJP9TIB_V9XIvzeGNg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D133.32692%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "884581ad-2489-4fe0-b702-cda4dfcc125c",
+      "name": {
+        "en": "Koan Main Building Central Lodge",
+        "ja": "浩庵本館セントラルロッジ"
+      },
+      "geo": {
+        "latitude": 35.4734798,
+        "longitude": 138.5734344
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minobu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4734798,138.5734344,3a,75y,10.1h,105.46t/data=!3m7!1e1!3m5!1s59QvuvwxsROWZV3uSQKJng!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D59QvuvwxsROWZV3uSQKJng%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D34.179035%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "9265487a-9776-4dd6-8f3d-d03479a112ef",
+      "name": {
+        "ja": "入口広場",
+        "en": "Entrance Square"
+      },
+      "geo": {
+        "latitude": 35.7014997,
+        "longitude": 138.6665061
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-yamanashi",
+      "streetViewUrl": "https://www.google.com/maps/@35.7014997,138.6665061,3a,48.9y,128h,100.14t/data=!3m6!1e1!3m4!1suVjfFGcMRXzRv5C1wuUu1g!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "95304c54-22a1-4d0a-998d-314c3bc5d458",
+      "name": {
+        "ja": "ころぼっくるひゅって",
+        "en": "Korobokkuru Hutte"
+      },
+      "geo": {
+        "latitude": 36.1048047,
+        "longitude": 138.1878906
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-suwa",
+      "streetViewUrl": "https://www.google.com/maps/@36.1048047,138.1878906,3a,90y,3.01h,98.94t/data=!3m8!1e1!3m6!1sAF1QipMIRN2LiN72-ZSzAPXl0XybiqbQi7VJr1WoK8WB!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMIRN2LiN72-ZSzAPXl0XybiqbQi7VJr1WoK8WB%3Dw203-h100-k-no-pi-0-ya147.6782-ro-0-fo100!7i5376!8i2688?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "9ad66d76-ef84-4c3e-a079-30a1eecd81b8",
+      "name": {
+        "ja": "金山テラス",
+        "en": "Kanayama Terrace"
+      },
+      "geo": {
+        "latitude": 35.4008898,
+        "longitude": 138.5606756
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shizuoka-fujinomiya",
+      "streetViewUrl": "https://www.google.com/maps/@35.4008898,138.5606756,3a,48.2y,152.26h,92.97t/data=!3m8!1e1!3m6!1sAF1QipNPIXgQhnsqsUi_nFHEYmDALpqyw8nciUPfLgmE!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNPIXgQhnsqsUi_nFHEYmDALpqyw8nciUPfLgmE%3Dw203-h100-k-no-pi0-ya40.546764-ro-0-fo100!7i8704!8i4352?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "a14c020b-4e59-4769-a157-9a0844bceffd",
+      "name": {
+        "ja": "峡南橋",
+        "en": "Kyonan Bridge"
+      },
+      "geo": {
+        "latitude": 35.4843807,
+        "longitude": 138.4554388
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-ichikawamisato",
+      "streetViewUrl": "https://www.google.com/maps/@35.4843807,138.4554388,3a,51.4y,114.97h,100.82t/data=!3m6!1e1!3m4!1sSP79YuBe_WICgR3iScMnEg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "a15eeab6-9e39-4351-8b0d-a3f063aa0eaa",
+      "name": {
+        "ja": "南部橋",
+        "en": "Nanbu Bridge"
+      },
+      "geo": {
+        "latitude": 35.2819781,
+        "longitude": 138.4590384
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-nambu",
+      "streetViewUrl": "https://www.google.com/maps/@35.2819781,138.4590384,3a,90y,341.12h,98.33t/data=!3m6!1e1!3m4!1sDWXpXcZ8C_ZCnVoE-SobQg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "a1d34e10-c486-4626-b2a5-9d43c6261115",
+      "name": {
+        "en": "Motosuko Observation Park",
+        "ja": "本栖湖展望公園"
+      },
+      "geo": {
+        "latitude": 35.4743107,
+        "longitude": 138.5757592
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minobu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4743107,138.5757592,3a,90y,140.42h,100.29t/data=!3m7!1e1!3m5!1sLXj4M8APJcoyx8rXE12_gA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DLXj4M8APJcoyx8rXE12_gA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D236.56116%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "a8dcc4a3-c350-4866-a4eb-114b09801ec8",
+      "name": {
+        "ja": "ほったらかし温泉",
+        "en": "Hottarakashi Onsen"
+      },
+      "geo": {
+        "latitude": 35.7065217,
+        "longitude": 138.6520294
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-yamanashi",
+      "streetViewUrl": "https://www.google.com/maps/@35.7065217,138.6520294,3a,75y,210.05h,96.71t/data=!3m8!1e1!3m6!1sAF1QipM2IpWryZKLIT_1jHmtHjk00FAeTEFbAmmROUIi!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipM2IpWryZKLIT_1jHmtHjk00FAeTEFbAmmROUIi%3Dw203-h100-k-no-pi0.21040772-ya65.11448-ro-0.45357415-fo100!7i5376!8i2688?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "b245f9ec-5e6a-4f79-a0c8-4159adfca484",
+      "name": {
+        "en": "Free Parking Lot Fuji View"
+      },
+      "geo": {
+        "latitude": 35.4741285,
+        "longitude": 138.574123
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minobu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4741285,138.574123,3a,90y,297.33h,94.57t/data=!3m7!1e1!3m5!1spEiS0N03-Vg5n-rOYIvOLA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DpEiS0N03-Vg5n-rOYIvOLA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D213.38074%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "b406505d-25a7-4d6b-91f8-45632479e342",
+      "name": {
+        "en": "Koan Camping Ground",
+        "ja": "浩庵キャンプ場"
+      },
+      "geo": {
+        "latitude": 35.4724738,
+        "longitude": 138.575271
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minobu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4724738,138.575271,3a,90y,230.29h,103.49t/data=!3m8!1e1!3m6!1sAF1QipPqsIhAyQp-xCbpIjm8kacCxlRxlDW5CVbgSwjT!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPqsIhAyQp-xCbpIjm8kacCxlRxlDW5CVbgSwjT%3Dw203-h100-k-no-pi-0-ya329.43942-ro0-fo100!7i6080!8i3040?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "b4a007af-8773-48eb-9603-687979c94dbb",
+      "name": {
+        "id": "Sekitar Cosmo Nambu SS",
+        "en": "Near the Cosmo Nambu SS",
+        "es": "Cerca de la Cosmo Nambu SS",
+        "ja": "コスモ石油 / (有)稲葉石油 南部SS付近",
+        "de": "In der Nähe des Cosmo Nambu SS"
+      },
+      "geo": {
+        "latitude": 35.2821852,
+        "longitude": 138.4564365
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-nambu",
+      "streetViewUrl": "https://www.google.com/maps/@35.2821852,138.4564365,3a,44.6y,189.34h,95.64t/data=!3m6!1e1!3m4!1sF8qEsd6oYqrSHKVIM_8s3g!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "b5c8a670-bc1a-431c-9d5c-576f812aa646",
+      "name": {
+        "ja": "正風軒食堂",
+        "en": "Seifuken Restaurant"
+      },
+      "geo": {
+        "latitude": 35.4459732,
+        "longitude": 138.4784867
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minobu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4459732,138.4784867,3a,65.4y,10.91h,97.21t/data=!3m6!1e1!3m4!1s5q1S5OHH2NSjuHVeYVxCuA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "bace7771-de5a-44c1-9492-ad78cc79493e",
+      "name": {
+        "ja": "ゆたか屋",
+        "en": "Former Yutakaya"
+      },
+      "geo": {
+        "latitude": 35.3610641,
+        "longitude": 138.4523821
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minobu",
+      "streetViewUrl": "https://www.google.com/maps/place/%E5%85%83+%E3%82%86%E3%81%9F%E3%81%8B%E5%B1%8B/@35.3610641,138.4523821,3a,75y,294.5h,94.36t/data=!3m7!1e1!3m5!1s3sNMFEOhRRx6tIEhwRpCXw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D3sNMFEOhRRx6tIEhwRpCXw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D143.07465%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m6!3m5!1s0x601bc1002987b7fd:0x4242cda61eb162a4!8m2!3d35.3610949!4d138.4521467!16s%2Fg%2F11w3psj6r0?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "bd356856-b7e6-483a-8f41-1d3372feb152",
+      "name": {
+        "en": "Old build. Shimobe ES & JHS (Motosu HS)",
+        "ja": "下部小・中学校跡"
+      },
+      "geo": {
+        "latitude": 35.447496,
+        "longitude": 138.480609
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minobu",
+      "streetViewUrl": "https://www.google.com/maps/@35.447496,138.480609,3a,48.8y,40.49h,95.98t/data=!3m6!1e1!3m4!1sIYsZJWwfvktFboJsgiIoqg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "cd2b98d9-02eb-4bdf-bbb9-0ebd6fac9a63",
+      "name": {
+        "en": "Makaino Farm",
+        "ja": "まかいの牧場"
+      },
+      "geo": {
+        "latitude": 35.3364773,
+        "longitude": 138.5846758
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shizuoka-fujinomiya",
+      "streetViewUrl": "https://www.google.com/maps/@35.3364773,138.5846758,3a,90y,115.01h,98.27t/data=!3m7!1e1!3m5!1s-GpHDFTSNbtt9xmeoUNUTQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D-GpHDFTSNbtt9xmeoUNUTQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D317.91757%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "d2ac91b5-3977-4494-8ee1-d2849f595b27",
+      "name": {
+        "en": "Kurumayamakata Parking Lot",
+        "ja": "車山肩駐車場"
+      },
+      "geo": {
+        "latitude": 36.1038121,
+        "longitude": 138.1878964
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-suwa",
+      "streetViewUrl": "https://www.google.com/maps/@36.1038121,138.1878964,3a,47.8y,304.68h,94.27t/data=!3m6!1e1!3m4!1sLCDh3PCJ5hZd559pnjmP2w!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "d5435f89-b0ac-440c-92bc-4724f87eb32c",
+      "name": {
+        "en": "Selva Minobu",
+        "ja": "セルバ みのぶ店"
+      },
+      "geo": {
+        "latitude": 35.4328856,
+        "longitude": 138.4417957
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minobu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4328856,138.4417957,3a,47.9y,287.66h,98.31t/data=!3m6!1e1!3m4!1soAvaRLASSS2G03oXq-DzMw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "d9c984b3-4b7f-46ee-9b09-b7b976c479d8",
+      "name": {
+        "ja": "内船駅",
+        "en": "Utsubuna Station"
+      },
+      "geo": {
+        "latitude": 35.2814892,
+        "longitude": 138.4648218
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-nambu",
+      "streetViewUrl": "https://www.google.com/maps/@35.2814892,138.4648218,3a,75y,39.42h,96.32t/data=!3m6!1e1!3m4!1sRD3fOBhaOzJdV3m30au4mg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "da637045-ecdf-489d-a7b6-8c288e89a1f8",
+      "name": {
+        "ja": "名前のない展望台付近",
+        "es": "Cerca de la Unnamed Observatory",
+        "de": "In der Nähe des Unnamed Observatory",
+        "id": "Sekitar Unnamed Observatory",
+        "en": "Near the Unnamed Observatory"
+      },
+      "geo": {
+        "latitude": 35.6977897,
+        "longitude": 138.6672059
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-yamanashi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6977897,138.6672059,3a,48.8y,128.41h,90.31t/data=!3m6!1e1!3m4!1sbU3vzvkAH8B_Jq3at7OgUg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "dae93f99-a661-4f7a-8d24-df865d2d0888",
+      "name": {
+        "en": "Nakanokura Tunnel",
+        "ja": "中之倉トンネル"
+      },
+      "geo": {
+        "latitude": 35.476922,
+        "longitude": 138.5689311
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minobu",
+      "streetViewUrl": "https://www.google.com/maps/@35.476922,138.5689311,3a,49.7y,115.43h,97.85t/data=!3m6!1e1!3m4!1s5cAdU1zb17LYYTtUkhHVjg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "e78f30d2-09cf-4c24-9870-00e7d1925f10",
+      "name": {
+        "en": "Takashima Castle",
+        "ja": "高島城"
+      },
+      "geo": {
+        "latitude": 36.0397996,
+        "longitude": 138.1130511
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-suwa",
+      "streetViewUrl": "https://www.google.com/maps/@36.0397996,138.1130511,3a,75y,261.3h,102.86t/data=!3m6!1e1!3m4!1sSQNLCKuijda-XLbQOvYSug!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "e7e34487-58f8-492b-bd12-ba733b730995",
+      "name": {
+        "en": "Ashiyasu Dam Selected Civil Engineering Heritage Observation Deck",
+        "ja": "芦安堰堤 選奨土木遺産 展望台"
+      },
+      "geo": {
+        "latitude": 35.635586,
+        "longitude": 138.3711079
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-minami-alps",
+      "streetViewUrl": "https://www.google.com/maps/@35.635586,138.3711079,3a,75y,68.54h,96.39t/data=!3m6!1e1!3m4!1sHriePDtHueqmZmKXbnSTPQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "f830f171-b05f-4fe5-8229-f5ca6a481e79",
+      "name": {
+        "ja": "霧ヶ峰ビーナス",
+        "en": "Kirigamine Venus"
+      },
+      "geo": {
+        "latitude": 36.0972356,
+        "longitude": 138.168082
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-suwa",
+      "streetViewUrl": "https://www.google.com/maps/@36.0972356,138.168082,3a,63.7y,293.24h,100.95t/data=!3m6!1e1!3m4!1sq-D43GKnMhjoIWisIz-njQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "f92b7c3a-0295-4635-87a9-7b0e4d646aea",
+      "name": {
+        "en": "Marumo Machinery Yatsugatake Store",
+        "ja": "マルモ機械 八ヶ岳店"
+      },
+      "geo": {
+        "latitude": 35.9462882,
+        "longitude": 138.2426539
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nagano-hara",
+      "streetViewUrl": "https://www.google.com/maps/@35.9462882,138.2426539,3a,73.1y,325.84h,95.26t/data=!3m6!1e1!3m4!1sG5gndRyZA6UuimnWn0eUew!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    },
+    {
+      "placeId": "f9506125-baa9-42bd-b59f-7482eedd7529",
+      "name": {
+        "en": "Yamada Farm Fruit Farm",
+        "ja": "山田農園フルーツファーム"
+      },
+      "geo": {
+        "latitude": 35.6985275,
+        "longitude": 138.6662883
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-yamanashi-yamanashi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6985275,138.6662883,3a,75y,309.81h,104.17t/data=!3m7!1e1!3m5!1suE77KS3aiH_mSbo5z51L_Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DuE77KS3aiH_mSbo5z51L_Q%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D32.953365%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© あfろ・芳文社／野外活動プロジェクト"
+    }
+  ]
+}

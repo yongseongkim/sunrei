@@ -1,0 +1,1269 @@
+{
+  "anime": {
+    "animeId": "RawAH4VbfP7uT0pSXQv9",
+    "slug": "iroduku",
+    "title": {
+      "ja": "色づく世界の明日から",
+      "kr": "물드는 세계의 내일로부터",
+      "en": "Iroduku: The World in Colors"
+    },
+    "author": {
+      "en": [
+        "Natsuka Yashio"
+      ],
+      "ja": [
+        "ヤシオ・ナツカ"
+      ],
+      "kr": [
+        "야시오 나츠카"
+      ]
+    },
+    "studio": {
+      "en": [
+        "P.A.WORKS"
+      ]
+    }
+  },
+  "placeCount": 76,
+  "places": [
+    {
+      "placeId": "00408669-a828-4e53-966d-a084425c0b6d",
+      "name": {
+        "en": "Glover Sky Road Inclined Elevator",
+        "ja": "グラバースカイロード 斜行エレベーター"
+      },
+      "geo": {
+        "latitude": 32.73339,
+        "longitude": 129.87203
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/heZyVaEaH6MjDv317",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "00e76ce5-8221-487d-9d9c-91067242a1b3",
+      "name": {
+        "en": "Former Mitsubishi No.2 Dock House",
+        "kr": "구 미쓰비시 제 2독 하우스",
+        "ja": "旧三菱第2ドックハウス"
+      },
+      "geo": {
+        "latitude": 32.73256,
+        "longitude": 129.86991
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/mKcpRbgghL2TyC9C8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "04c49edb-cc2a-4c90-952f-ed4160e16307",
+      "name": {
+        "kr": "이시바시 역",
+        "ja": "石橋駅",
+        "en": "Ishibashi Station"
+      },
+      "geo": {
+        "latitude": 32.73433,
+        "longitude": 129.87235
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/8secDmokcvdDennr6",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "05224920-23d0-4ed9-ab70-5a2fc01198ad",
+      "name": {
+        "ja": "南山手パーキング",
+        "en": "Minamiyamate Parking Lot"
+      },
+      "geo": {
+        "latitude": 32.7326,
+        "longitude": 129.86829
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/jMCu6oaDXU2WtNXz5",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "07cc94eb-0f10-47c9-b5fd-422ced6b2a76",
+      "name": {
+        "en": "Glover Garden",
+        "ja": "グラバー園",
+        "kr": "글로버 가든"
+      },
+      "geo": {
+        "latitude": 32.73367,
+        "longitude": 129.86884
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/C58b5YDCUCuNj5gU7",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "0861bc8b-fb40-4dca-b349-8add9b03fb10",
+      "name": {
+        "ja": "グラバースカイロード 斜行エレベーター",
+        "en": "Glover Sky Road Inclined Elevator"
+      },
+      "geo": {
+        "latitude": 32.73321,
+        "longitude": 129.87207
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/pT6H1bot8AQ3XgfJ7",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "0bda28eb-7af0-401a-a4f7-8485ecfd8b67",
+      "name": {
+        "en": "Hotta Apartments",
+        "ja": "コーポ堀田"
+      },
+      "geo": {
+        "latitude": 32.73337,
+        "longitude": 129.87673
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/8jSAXrL7Azdc92kx6",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "0e49159f-3233-4758-9b15-74e83b1caf77",
+      "name": {
+        "en": "Ouratenbo Park",
+        "kr": "오우라 전망공원",
+        "ja": "大浦展望公園"
+      },
+      "geo": {
+        "latitude": 32.73349,
+        "longitude": 129.87047
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/vnPqKCSVPJSo7BLz6",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "0ffac94c-f5ff-46ad-b7b4-f03f5e43d3a5",
+      "name": {
+        "kr": "오우라 전망공원",
+        "ja": "大浦展望公園",
+        "en": "Ouratenbo Park"
+      },
+      "geo": {
+        "latitude": 32.73344,
+        "longitude": 129.8707
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/g8z14Zq1JDK6Ym7J9",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "158a864a-c501-40bb-9f98-0a3da91ad883",
+      "name": {
+        "en": "Glover Skyroad Vertical Elevator",
+        "ja": "グラバースカイロード 垂直エレベーター"
+      },
+      "geo": {
+        "latitude": 32.73281,
+        "longitude": 129.87026
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/wpiVyETuRz35izzy5",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "175bb3a6-3ed6-4a27-a47d-73a91ff0e21c",
+      "name": {
+        "en": "Glover Skyroad Vertical Elevator",
+        "ja": "グラバースカイロード 垂直エレベーター"
+      },
+      "geo": {
+        "latitude": 32.73247,
+        "longitude": 129.87062
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/589Cgn26AGsxLWsA8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "1a1ccc9b-5416-4eb2-807b-496447c22e61",
+      "name": {
+        "en": "Kiyasu Shokudo",
+        "ja": "きやす食堂"
+      },
+      "geo": {
+        "latitude": 32.7334,
+        "longitude": 129.88512
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/nEvqGdTNmvyrqLWcA",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "1f72fbbd-9644-4721-8186-58d2ee34f50f",
+      "name": {
+        "en": "Leopalace Terrace Kamikojima",
+        "ja": "レオパレス テラス上小島"
+      },
+      "geo": {
+        "latitude": 32.73825,
+        "longitude": 129.88239
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/TN1y9R8GexxF3ewk6",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "2191f34b-0ef2-4463-9e01-bd21cd3fb404",
+      "name": {
+        "en": "Higashi Yamate 13 House",
+        "ja": "東山手甲十三番館"
+      },
+      "geo": {
+        "latitude": 32.73821,
+        "longitude": 129.87307
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/Kq5QseyEV3zUBLEa8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "2400d944-bd4e-4c8d-a5d4-14d633fbcfec",
+      "name": {
+        "kr": "글로버 가든",
+        "ja": "グラバー園",
+        "en": "Glover Garden"
+      },
+      "geo": {
+        "latitude": 32.73437,
+        "longitude": 129.86926
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/K6DvQjNTPjqnXwSx9",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "24acc416-96a8-4d80-86e4-203d709d4feb",
+      "name": {
+        "en": "Maruo Shrine",
+        "ja": "丸尾神社"
+      },
+      "geo": {
+        "latitude": 32.73054,
+        "longitude": 129.87957
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/YUNoKyM4UJxtkTVA7",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "24be0f2f-358b-45b7-a38e-38f7345032e2",
+      "name": {
+        "ja": "カフェルクス 水辺の森店",
+        "en": "Cafe lx"
+      },
+      "geo": {
+        "latitude": 32.74062,
+        "longitude": 129.87217
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/aHKokQkMCfRT2gep7",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "2f3490fe-a55b-4b27-ba28-ca08736498c8",
+      "name": {
+        "ja": "西浜町駅",
+        "kr": "니시하마노마치 역",
+        "en": "Nishi-Hamanomachi Station"
+      },
+      "geo": {
+        "latitude": 32.74378,
+        "longitude": 129.87614
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/QziYfWrj82YKjQ4QA",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "304f6780-7d00-454c-b360-c4560d00c492",
+      "name": {
+        "en": "Izumokinrin Park",
+        "ja": "出雲近隣公園"
+      },
+      "geo": {
+        "latitude": 32.72899,
+        "longitude": 129.87438
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/RL6gf8ATyf57mGAb6",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "3097408d-d783-4c2b-b0d8-a160fbdc76f1",
+      "name": {
+        "en": "Higashiyama Park",
+        "ja": "東山公園"
+      },
+      "geo": {
+        "latitude": 32.73438,
+        "longitude": 129.8754
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/PMfThv2C3qURca148",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "32c316b7-07cf-4587-ada9-f60d50d3fbd8",
+      "name": {
+        "ja": "女神大橋",
+        "en": "Megami Ohashi Bridge.",
+        "kr": "메가미 대교"
+      },
+      "geo": {
+        "latitude": 32.71888,
+        "longitude": 129.85612
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/r84SUqJpZrr5vp8P9",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "339c98f5-befc-4da7-a06c-6b97c909ed61",
+      "name": {
+        "en": "Iwasugi-jinja shrine",
+        "ja": "岩杉神社"
+      },
+      "geo": {
+        "latitude": 32.76085,
+        "longitude": 129.87668
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/JPeKXGb4U4VSL9sq7",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "39c2190d-c5d6-4eb6-9c94-6879272b01b7",
+      "name": {
+        "en": "Wakamiya Inari Shrine",
+        "ja": "若宮稲荷神社",
+        "kr": "와카미야 이나리 신사"
+      },
+      "geo": {
+        "latitude": 32.74907,
+        "longitude": 129.88773
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/QFR9HKxDqMdv8wRh7",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "3d716112-0d11-4e83-97b9-0b0c7d693e41",
+      "name": {
+        "kr": "나가사키 지방 기상대",
+        "ja": "長崎地方気象台",
+        "en": "Nagasaki Local Meteorological Observatory"
+      },
+      "geo": {
+        "latitude": 32.73399,
+        "longitude": 129.86842
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/jTDpG2TeLbpgHcxX8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "3d984fb6-15e3-43d1-ba77-be1bab41fd19",
+      "name": {
+        "ja": "出雲近隣公園",
+        "en": "Izumokinrin Park"
+      },
+      "geo": {
+        "latitude": 32.72914,
+        "longitude": 129.87414
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/5sfoZtL7Xxq3MDneA",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "41b7e086-1f2e-4bc8-9778-ff5ba5a5ecaf",
+      "name": {
+        "ja": "崇福寺駅",
+        "en": "Sofukuji Temple Station"
+      },
+      "geo": {
+        "latitude": 32.74131,
+        "longitude": 129.88241
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/NXAHF53j6bw3qq4cA",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "485384a0-12f3-46e8-9ece-bd0bf4c0ca07",
+      "name": {
+        "en": "Hiramatsu Market",
+        "ja": "平松市場"
+      },
+      "geo": {
+        "latitude": 32.73208,
+        "longitude": 129.88463
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/ocTvmeX7KTfZiPXq8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "4f4ca09d-4a9f-43f7-a290-4dc2ce41979e",
+      "name": {
+        "en": "Yamazaki Hair Salon",
+        "ja": "山崎美容室"
+      },
+      "geo": {
+        "latitude": 32.73858,
+        "longitude": 129.88101
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/DgqHY3ZF4N3vT23SA",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "5a2be80f-6269-44ed-aee7-49e7107b45fa",
+      "name": {
+        "en": "Oranda Bridge",
+        "ja": "おらんだ橋"
+      },
+      "geo": {
+        "latitude": 32.74272,
+        "longitude": 129.87477
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/18aSNR3fgVMpNES16",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "5fd6c31b-cb7a-4cfd-bbf0-990c61d0acc2",
+      "name": {
+        "en": "FamilyMart Nagasaki Glover Ave.",
+        "ja": "ファミリーマート 長崎グラバー通り店"
+      },
+      "geo": {
+        "latitude": 32.7359,
+        "longitude": 129.86945
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/hRbPG8cvJh1Q3qK56",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "60709211-20c7-4184-abf9-b30a4d7855c9",
+      "name": {
+        "en": "Takooka Heights",
+        "ja": "高丘ハイツ"
+      },
+      "geo": {
+        "latitude": 32.73107,
+        "longitude": 129.88362
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/FH4bvTLnBvefydRh8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "609e4c64-8bd7-4ba8-b261-50cb9951a577",
+      "name": {
+        "en": "Higashiyama Park",
+        "ja": "東山公園"
+      },
+      "geo": {
+        "latitude": 32.73367,
+        "longitude": 129.87642
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/NJ4i92UcqKjm93yi8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "6633f418-f4ab-4552-8e90-711ee9a467de",
+      "name": {
+        "en": "Ioujima Prayer Rock",
+        "ja": "伊王島祈りの岩"
+      },
+      "geo": {
+        "latitude": 32.71288,
+        "longitude": 129.76838
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/gzbEfbUuq7nL38cAA",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "6c183545-eec3-4dee-ada6-a149e7786489",
+      "name": {
+        "ja": "旧スチイル記念学校",
+        "en": "Former Steele Memorial Academy",
+        "kr": "구 스테일기념학교"
+      },
+      "geo": {
+        "latitude": 32.73203,
+        "longitude": 129.8684
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/RSdPKKo3YNnycCSe7",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "6c5da3c0-643c-4901-a3a7-2e5ba239c41d",
+      "name": {
+        "ja": "南山手レストハウス",
+        "kr": "미나미야마테 레스토하우스",
+        "en": "South Yamate Rest House"
+      },
+      "geo": {
+        "latitude": 32.73321,
+        "longitude": 129.87056
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/ZKKdNFh7C5bTsvNk7",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "71cb4098-7cb0-45b4-9805-dda8a0fbd117",
+      "name": {
+        "en": "Showakai Clinics",
+        "ja": "昭和会病院",
+        "kr": "쇼와카이 병원"
+      },
+      "geo": {
+        "latitude": 32.73675,
+        "longitude": 129.87329
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/h7RMmMGHgpT6eDfm8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "7255665a-e453-4ca4-8df1-51a670ed7e81",
+      "name": {
+        "kr": "메가네바시",
+        "ja": "眼鏡橋",
+        "en": "Megane Bridge"
+      },
+      "geo": {
+        "latitude": 32.74711,
+        "longitude": 129.88016
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/CJ6cxCRxy3Xg4KVF8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "72815783-372d-4d52-b5cf-53af51c71076",
+      "name": {
+        "ja": "東山手洋風住宅群",
+        "en": "Higashi-yamate Western-style Houses"
+      },
+      "geo": {
+        "latitude": 32.73559,
+        "longitude": 129.87345
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/zAyco35iiyTpxQvW7",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "72dc96d1-fad1-4bce-8cf7-3a7262b4d69b",
+      "name": {
+        "en": "Nagasaki Customs",
+        "ja": "長崎税関"
+      },
+      "geo": {
+        "latitude": 32.74267,
+        "longitude": 129.87194
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/CQn75iWxA1hQkL1b6",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "74cbf1b3-754d-4b75-8ec9-42a9b395f4ca",
+      "name": {
+        "ja": "聖徳院",
+        "en": "Seitokuin"
+      },
+      "geo": {
+        "latitude": 32.72953,
+        "longitude": 129.8697
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/Yp6gWdN5VTCn8chr8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "78b2f0cd-7cae-4cc8-8f33-53ec650b4e7b",
+      "name": {
+        "ja": "長崎の猫雑貨",
+        "kr": "나가사키노 네코",
+        "en": "nagasaki-no neco"
+      },
+      "geo": {
+        "latitude": 32.74762,
+        "longitude": 129.87942
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/brPWJwL3kvN1Jfd19",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "79c8fdc3-b222-4326-b8bd-7b1048efc8e7",
+      "name": {
+        "ja": "自由亭 喫茶室",
+        "kr": "지유테이 찻집",
+        "en": "Jiyu-tei Cafe and Teahouse"
+      },
+      "geo": {
+        "latitude": 32.7338,
+        "longitude": 129.86941
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/WMAFDE58rADx4tfTA",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "7a75ae38-ebe3-48b6-bf06-8ffb891bdc08",
+      "name": {
+        "ja": "六角堂",
+        "en": "Rokkakudo"
+      },
+      "geo": {
+        "latitude": 32.75449,
+        "longitude": 129.88075
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/HuPGCDh9Bn4xYNcm8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "7b5a39a9-6e92-4847-9029-6e457e2bc28c",
+      "name": {
+        "ja": "グラバー園",
+        "en": "Glover Garden",
+        "kr": "글로버 가든"
+      },
+      "geo": {
+        "latitude": 32.73314,
+        "longitude": 129.86957
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/pfyey7BZR8B5h4EP9",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "81dce718-98d4-41fc-b213-94f153bf47f7",
+      "name": {
+        "en": "Kazagashira Park",
+        "ja": "風頭公園展望台"
+      },
+      "geo": {
+        "latitude": 32.74612,
+        "longitude": 129.88601
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/VtV57VhtNehXvXbdA",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "8399493b-33f8-4b05-aa54-c7761a8b9050",
+      "name": {
+        "en": "Nagasaki Seaside Park",
+        "ja": "長崎水辺の森公園"
+      },
+      "geo": {
+        "latitude": 32.74044,
+        "longitude": 129.86922
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/ytzs8hd7hmYta2Ax8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "8d6c37be-729a-4034-8c8b-6d0cdbfa3a80",
+      "name": {
+        "ja": "ジョイア",
+        "en": "Gioia"
+      },
+      "geo": {
+        "latitude": 32.74255,
+        "longitude": 129.87385
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/7wDTAS3H2jDnhZTv8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "913bd6db-77be-4d42-8231-6d7ad9ff350c",
+      "name": {
+        "en": "Nagasaki Seaside Park",
+        "ja": "長崎水辺の森公園"
+      },
+      "geo": {
+        "latitude": 32.74019,
+        "longitude": 129.8683
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/BvHZ1KPh16pBNLiy6",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "921cf59d-c0fa-40d0-8918-d2294dc523e1",
+      "name": {
+        "en": "Costa del Sol Ioujima Beach",
+        "ja": "コスタデルソル伊王島海水浴場"
+      },
+      "geo": {
+        "latitude": 32.71037,
+        "longitude": 129.76845
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/ZxS2FTmqehGbL9nj7",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "95d8745e-813e-421e-ac6e-61150183b607",
+      "name": {
+        "en": "Glover Skyroad Vertical Elevator",
+        "ja": "グラバースカイロード 垂直エレベーター"
+      },
+      "geo": {
+        "latitude": 32.73182,
+        "longitude": 129.87096
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/ykogzKgdL4ciTYFr7",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "973d1df6-f63b-418e-bfb1-f65fedcc556c",
+      "name": {
+        "en": "Meganebashi Bridge Station",
+        "kr": "메가네바시 역",
+        "ja": "めがね橋駅"
+      },
+      "geo": {
+        "latitude": 32.74707,
+        "longitude": 129.87858
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/vfrZCnMFJc2Y1gDd6",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "97a40146-80ec-4893-93a7-2888677327f1",
+      "name": {
+        "en": "Kamikoshimashimizu Park",
+        "ja": "上小島清水公園"
+      },
+      "geo": {
+        "latitude": 32.73088,
+        "longitude": 129.88682
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/yiJYu9ACvmDRTNW56",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "98c0c5f0-ccef-4614-baea-046a570704a8",
+      "name": {
+        "en": "Glover Skyroad Vertical Elevator",
+        "ja": "グラバースカイロード 垂直エレベーター"
+      },
+      "geo": {
+        "latitude": 32.73277,
+        "longitude": 129.87028
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/NfCjeminKGdb4Ztp6",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "a2cfc5ee-5a9a-465e-bb9c-ee5db1c2d22b",
+      "name": {
+        "en": "Minamikomae (Bus)",
+        "ja": "南高前 (バス)"
+      },
+      "geo": {
+        "latitude": 32.73133,
+        "longitude": 129.88592
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/779aBGDV4hXgPHCu9",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "a7b6b6d3-25bf-47a1-86de-6ec354ae65a3",
+      "name": {
+        "ja": "長崎水辺の森公園",
+        "en": "Nagasaki Seaside Park"
+      },
+      "geo": {
+        "latitude": 32.73985,
+        "longitude": 129.86872
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/3t1nsSthBnS9Cy2t5",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "a9dd584d-ad08-4b8b-88ef-0a87ab16ee44",
+      "name": {
+        "en": "Nagasaki Prefectural Art Museum",
+        "ja": "長崎県美術館",
+        "kr": "나가사키현 미술관"
+      },
+      "geo": {
+        "latitude": 32.7412,
+        "longitude": 129.87118
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/H6Jy2ecVNL684fwZ9",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "abede92c-c11b-4ec8-97f2-3a924fca2691",
+      "name": {
+        "en": "Kanetchi Honpo Co., Ltd.",
+        "ja": "（有）カネチ本舗"
+      },
+      "geo": {
+        "latitude": 32.73152,
+        "longitude": 129.88495
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/3HBa9gGh4BacnmYa9",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "bc762851-e556-4c82-94e4-8f19f963765b",
+      "name": {
+        "en": "Satsuki Hair Salon",
+        "ja": "さつき美容室"
+      },
+      "geo": {
+        "latitude": 32.73386,
+        "longitude": 129.87423
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/LiNm2y4jBx73CQMR9",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "beb20375-14a9-4a0e-8f46-f869fa6414ff",
+      "name": {
+        "en": "Megami Ohashi Bridge.",
+        "kr": "메가미 대교",
+        "ja": "女神大橋"
+      },
+      "geo": {
+        "latitude": 32.72095,
+        "longitude": 129.85088
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": null,
+      "streetViewUrl": "https://maps.app.goo.gl/jVaFjttrMgPMvY8H8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "bf59fe9c-5296-4550-ad6b-713b9218079f",
+      "name": {
+        "en": "Higashi-yamate No 12 Building",
+        "ja": "東山手十二番館"
+      },
+      "geo": {
+        "latitude": 32.73811,
+        "longitude": 129.87373
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/vsgxQtUh358WoReTA",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "c65108e8-4196-4d3b-91ee-e8e22d4279e8",
+      "name": {
+        "ja": "袋町橋",
+        "en": "Fukuromachi Bridge"
+      },
+      "geo": {
+        "latitude": 32.74697,
+        "longitude": 129.87972
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/792DZnUGyZ3X6vdz7",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "c9fa1333-be89-4193-8b56-c9f48be0f59b",
+      "name": {
+        "kr": "구 미쓰비시 제 2독 하우스",
+        "ja": "旧三菱第2ドックハウス",
+        "en": "Former Mitsubishi No.2 Dock House"
+      },
+      "geo": {
+        "latitude": 32.73205,
+        "longitude": 129.87006
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/eEE89sLX8xQWWbMR9",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "d0726aac-b546-49c2-a4b4-12f082cca4b0",
+      "name": {
+        "ja": "森の魔女カフェ",
+        "en": "Forest Witch Cafe"
+      },
+      "geo": {
+        "latitude": 32.86881,
+        "longitude": 129.767
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/L1ZQfwPKb3s1pYSD8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "d1885944-c2e3-45c8-a5ff-73bf89efccc8",
+      "name": {
+        "ja": "祈念坂",
+        "en": "Prayer Slope"
+      },
+      "geo": {
+        "latitude": 32.73438,
+        "longitude": 129.87061
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/rJrLJxT5Edg15XNHA",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "d4228985-9fd7-427b-b853-731d65791d29",
+      "name": {
+        "ja": "栗の浦浜",
+        "en": "Kurinoura Beach"
+      },
+      "geo": {
+        "latitude": 32.69006,
+        "longitude": 129.79303
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/xgTTPAwxWYq5XpSG6",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "d7767c44-b00f-4999-acdd-a30662362220",
+      "name": {
+        "ja": "東山公園",
+        "en": "Higashiyama Park"
+      },
+      "geo": {
+        "latitude": 32.73427,
+        "longitude": 129.8757
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/JeqTuESpprL87oDD8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "d99f11b5-2833-4607-8e1d-bb48381a2943",
+      "name": {
+        "ja": "祈念坂",
+        "en": "Prayer Slope"
+      },
+      "geo": {
+        "latitude": 32.73386,
+        "longitude": 129.87036
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/cqCrx639bMj63aLU8",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "dccad973-0c3a-41b8-a85d-20a6974e1271",
+      "name": {
+        "en": "Holland Zaka",
+        "ja": "オランダ坂"
+      },
+      "geo": {
+        "latitude": 32.73767,
+        "longitude": 129.87329
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/CSwByvjCHGsVUNrY6",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "e4a2a51d-6ecf-40ba-b381-74799f5ac908",
+      "name": {
+        "ja": "東山公園",
+        "en": "Higashiyama Park"
+      },
+      "geo": {
+        "latitude": 32.73434,
+        "longitude": 129.87562
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/75gXxUbcywbVjbjUA",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "e7802358-973d-4de2-a0b6-cc508efa9036",
+      "name": {
+        "kr": "천주당이 보이는 언덕",
+        "ja": "天主堂の見える丘",
+        "en": "Hill Overlooking the Cathedral"
+      },
+      "geo": {
+        "latitude": 32.77696,
+        "longitude": 129.86464
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/wMU38D4F4CwnC9558",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "eb82c341-f7ed-4cde-a523-78c84bc5d26c",
+      "name": {
+        "ja": "長崎水辺の森公園",
+        "en": "Nagasaki Seaside Park"
+      },
+      "geo": {
+        "latitude": 32.7418,
+        "longitude": 129.8696
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/Ei8vVi2q6R3Vw4aKA",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "ece01d6e-9e70-4a9b-90d5-56a098f497ee",
+      "name": {
+        "kr": "나베칸무리야마 전망대",
+        "en": "Mt. Nabekammuri Observatory",
+        "ja": "鍋冠山展望台"
+      },
+      "geo": {
+        "latitude": 32.72943,
+        "longitude": 129.86887
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/QqdUguhzQUFLYeVm7",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "ed5a2106-199d-4340-ba3b-e90a233d8b13",
+      "name": {
+        "en": "Maruojinjashita (Bus)",
+        "ja": "丸尾神社下 (バス)"
+      },
+      "geo": {
+        "latitude": 32.7315,
+        "longitude": 129.87977
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/aUVKXC5zjDCuCa5J9",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "ee4337a8-5208-438e-9c15-d0ded25051d8",
+      "name": {
+        "en": "Nagasakishi Matsugaecho Parking Lot",
+        "ja": "長崎市松が枝町駐車場"
+      },
+      "geo": {
+        "latitude": 32.73607,
+        "longitude": 129.86951
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/Dk7JLEUpKuw2qEX66",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "eef40f31-1569-4a7d-acb3-898648d10142",
+      "name": {
+        "ja": "日の出町 (バス)",
+        "en": "Hinodemachi (Bus)"
+      },
+      "geo": {
+        "latitude": 32.73057,
+        "longitude": 129.87621
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/KVzi8oSxV2tUyzoUA",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    },
+    {
+      "placeId": "f943f37a-66c5-44ea-b10a-0192b050ccb1",
+      "name": {
+        "ja": "東山公園",
+        "en": "Higashiyama Park"
+      },
+      "geo": {
+        "latitude": 32.73454,
+        "longitude": 129.87505
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-nagasaki-nagasaki",
+      "streetViewUrl": "https://maps.app.goo.gl/iTi3w3UKTFTF5YhV6",
+      "copyright": "© 色づく世界の明日から製作委員会"
+    }
+  ]
+}

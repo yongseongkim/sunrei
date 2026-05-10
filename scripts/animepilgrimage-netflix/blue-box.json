@@ -1,0 +1,527 @@
+{
+  "anime": {
+    "animeId": "9ZIN8PmoDf4FEvUSDUQB",
+    "slug": "blue-box",
+    "title": {
+      "ja": "アオのハコ",
+      "kr": "푸른 상자",
+      "en": "Blue Box"
+    },
+    "author": {
+      "en": [
+        "Kouji Miura"
+      ],
+      "ja": [
+        "三浦糀"
+      ],
+      "kr": [
+        "미우라 코지"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Telecom Animation Film"
+      ]
+    }
+  },
+  "placeCount": 30,
+  "places": [
+    {
+      "placeId": "0053510d-8928-4fd0-971b-e79cdf195bbf",
+      "name": {
+        "en": "Oyama station platform 2",
+        "ja": "大山駅２番線",
+        "kr": "오야마 역 2번 플랫폼"
+      },
+      "geo": {
+        "latitude": 35.74815,
+        "longitude": 139.70318
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7481577,139.7031679,2a,90y,125.81h,95.76t/data=!3m7!1e1!3m5!1sZuJPVDmR2i4R21ePK9JMdA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.764690224247005%26panoid%3DZuJPVDmR2i4R21ePK9JMdA%26yaw%3D125.80580128577134!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDEwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "0fd034bf-0857-4fc1-b0c6-7b38455ec7ae",
+      "name": {
+        "en": "Ageo Sports Park Gym",
+        "ja": "上尾運動公園体育館"
+      },
+      "geo": {
+        "latitude": 35.96797,
+        "longitude": 139.60336
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-ageo",
+      "streetViewUrl": "https://www.google.com/maps/@35.9680414,139.6039255,3a,37.8y,261.86h,91.87t/data=!3m7!1e1!3m5!1spi1QkBrlyoWxBSZLt8HUFw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.8710234519815856%26panoid%3Dpi1QkBrlyoWxBSZLt8HUFw%26yaw%3D261.8560582201435!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "214ed151-2446-4bba-be36-d7cc3fddda88",
+      "name": {
+        "ja": "箱根ﾚｲｸﾎﾃﾙ前",
+        "en": "Hakone Lake Hotel-mae",
+        "kr": "하코네 레이크 호텔 마에"
+      },
+      "geo": {
+        "latitude": 35.23974,
+        "longitude": 138.9934
+      },
+      "ep": 23,
+      "type": "EP",
+      "cityId": "JP-kanagawa-hakone",
+      "streetViewUrl": "https://www.google.com/maps/@35.2397262,138.9935209,3a,79.9y,333.37h,98.61t/data=!3m7!1e1!3m5!1sV2j3OpeeDU4vVCWWaIeNUQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.605012384153483%26panoid%3DV2j3OpeeDU4vVCWWaIeNUQ%26yaw%3D333.3678365322419!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "3c7c0bef-f092-4a36-8eb1-5a1cd04dd401",
+      "name": {
+        "en": "Fukushin",
+        "ja": "福しん 大山駅前店"
+      },
+      "geo": {
+        "latitude": 35.7482397,
+        "longitude": 139.7021312
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7482397,139.7021312,3a,47.5y,181.86h,94.07t/data=!3m6!1e1!3m4!1s4beRrdhlz3nrnrny-o_O0Q!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "3f74d694-3f19-4fba-bd10-8f693e000184",
+      "name": {
+        "ja": "白百合台園地",
+        "en": "Shirayuri-daienchi Park"
+      },
+      "geo": {
+        "latitude": 35.24047,
+        "longitude": 138.9934
+      },
+      "ep": 23,
+      "type": "EP",
+      "cityId": "JP-kanagawa-hakone",
+      "streetViewUrl": "https://www.google.com/maps/@35.2404974,138.9933428,3a,63.4y,122.72h,87.39t/data=!3m7!1e1!3m5!1svnQPC_NGPgOvaDg2anlLcw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.6145799450260085%26panoid%3DvnQPC_NGPgOvaDg2anlLcw%26yaw%3D122.72023664725276!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "4259e989-1456-4967-8c64-c1581db26665",
+      "name": {
+        "en": "Yamato Civic Gymnasium Maebashi",
+        "ja": "ヤマト市民体育館前橋"
+      },
+      "geo": {
+        "latitude": 36.36494,
+        "longitude": 139.08017
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-gunma-maebashi",
+      "streetViewUrl": "https://www.google.com/maps/@36.3649565,139.0805496,3a,75.8y,277.43h,101.31t/data=!3m8!1e1!3m6!1sAF1QipOBUlUF8buxGtDCk1Whlw3haie_Z5Q2FhKtazho!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOBUlUF8buxGtDCk1Whlw3haie_Z5Q2FhKtazho%3Dw900-h600-k-no-pi-11.312033246296721-ya30.428809082602186-ro0-fo100!7i8192!8i4096?entry=ttu&g_ep=EgoyMDI1MDEwNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "4921cc5d-c8f0-4508-8f7e-be44d0570e0c",
+      "name": {
+        "ja": "（株）村井靴店",
+        "en": "Murai Shoes"
+      },
+      "geo": {
+        "latitude": 35.7488441,
+        "longitude": 139.6987382
+      },
+      "ep": 1,
+      "type": "OP",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7488441,139.6987382,3a,90y,285.13h,93.62t/data=!3m6!1e1!3m4!1spUhyAVru6pamkcssUuBHkQ!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "4aa7f0ca-dbec-4716-bb05-cb641335f0b9",
+      "name": {
+        "ja": "スーパーみらべる 大山店",
+        "en": "supermarket Mirabelle"
+      },
+      "geo": {
+        "latitude": 35.74918,
+        "longitude": 139.70037
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7491311,139.7003276,3a,90y,36.81h,97.14t/data=!3m7!1e1!3m5!1spemYr4iTtdPtxS4uEYMnGw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.14143647182938%26panoid%3DpemYr4iTtdPtxS4uEYMnGw%26yaw%3D36.80508057885158!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "4affa268-cfab-4245-a8cd-31992f5489ab",
+      "name": {
+        "en": "Enpa Oyama Store",
+        "ja": "えんぱ 大山店"
+      },
+      "geo": {
+        "latitude": 35.74899,
+        "longitude": 139.69989
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7490439,139.6998854,3a,90y,161.44h,91.51t/data=!3m7!1e1!3m5!1sf1Jbivbav3q4vFYZhoD84A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.5115943154809912%26panoid%3Df1Jbivbav3q4vFYZhoD84A%26yaw%3D161.43959950636057!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "5860d01c-f491-4e53-b397-87a7b4f0aaa5",
+      "name": {
+        "en": "Ishikawaen Tea Stall",
+        "ja": "石川園茶舗"
+      },
+      "geo": {
+        "latitude": 35.749054,
+        "longitude": 139.7003753
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.749054,139.7003753,3a,90y,215.72h,96.8t/data=!3m7!1e1!3m5!1sghqXhQ2FCNLo2rkelyuhaA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DghqXhQ2FCNLo2rkelyuhaA%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D224.74144%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "5bbb7e7b-1a1e-450b-8d2f-177e42fd7596",
+      "name": {
+        "kr": "도코로자와시민체육관",
+        "en": "Tokorozawa Citizen Gymnasium",
+        "ja": "所沢市民体育館"
+      },
+      "geo": {
+        "latitude": 35.8106117,
+        "longitude": 139.4636538
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-saitama-tokorozawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.8106117,139.4636538,3a,75y,196.15h,97.7t/data=!3m6!1e1!3m4!1sDQJL4AwnXVhj3oI4lZJyqQ!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "631ad44b-4acf-4c1f-b633-e8170765c8b7",
+      "name": {
+        "ja": "子易神社",
+        "en": "Koyasu Shrine",
+        "kr": "코야스 신사"
+      },
+      "geo": {
+        "latitude": 35.747858,
+        "longitude": 139.7090151
+      },
+      "ep": 1,
+      "type": "OP",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Koyasu+Shrine/@35.747858,139.7090151,3a,47.8y,115.06h,92.12t/data=!3m8!1e1!3m6!1sAF1QipNkZ8LGKIP7g_RbHMCCTdMSHXPhOj11Q8CFBoeN!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNkZ8LGKIP7g_RbHMCCTdMSHXPhOj11Q8CFBoeN%3Dw203-h100-k-no-pi-20-ya3.9999945-ro-0-fo100!7i8704!8i4352!4m9!3m8!1s0x601892bd006ebb31:0x2bf04b80155fb1a0!8m2!3d35.7478067!4d139.7094142!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1th873pk?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "6bb3db5b-4010-465b-b39f-cf2e0e0fd8b0",
+      "name": {
+        "ja": "サンシャイン水族館",
+        "kr": "선샤인 수족관",
+        "en": "Sunshine Aquarium"
+      },
+      "geo": {
+        "latitude": 35.7288022,
+        "longitude": 139.7200341
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7288022,139.7200341,2a,90y,126.26h,95.54t/data=!3m6!1e1!3m4!1saE7nAuU98PWhsOFhoqPlCw!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "81ecea8a-9357-4ff1-a715-9820a5081c55",
+      "name": {
+        "kr": "선샤인 수족관 하늘의 펭귄",
+        "en": "Sunshine Aquarium - Penguins in the Sky",
+        "ja": "サンシャイン水族館 天空のペンギン"
+      },
+      "geo": {
+        "latitude": 35.7293,
+        "longitude": 139.72026
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Sunshine+Aquarium/@35.7289254,139.7201573,3a,90y,19.4h,71.11t/data=!3m8!1e1!3m6!1sAF1QipP1SkQfzXAIGMQv_EabIj0Il4FeFiy6N82A6q9l!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipP1SkQfzXAIGMQv_EabIj0Il4FeFiy6N82A6q9l%3Dw900-h600-k-no-pi18.890826587778164-ya19.398958630138747-ro0-fo100!7i6528!8i3264!4m9!3m8!1s0x60188d6f41f03f85:0xe25bfe624782e3c9!8m2!3d35.7289254!4d139.7201573!10e5!14m1!1BCgIgARICCAI!16s%2Fm%2F0nbfb7k?entry=ttu&g_ep=EgoyMDI1MDEyOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "8207d87b-e0e1-447e-806a-a60c0c6a1f72",
+      "name": {
+        "ja": "文京区立目白台一丁目遊び場",
+        "en": "Mejiro-dai 1-chome Playground"
+      },
+      "geo": {
+        "latitude": 35.7163542,
+        "longitude": 139.7183852
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Mejiro-dai+1-chome+Playground/@35.7163542,139.7183852,3a,90y,238.21h,95.8t/data=!3m8!1e1!3m6!1sAF1QipNDkLrL006db2j_0fJuqPrLVbZbBc2AkoBsvrgO!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNDkLrL006db2j_0fJuqPrLVbZbBc2AkoBsvrgO%3Dw203-h100-k-no-pi-10-ya232-ro0-fo100!7i10240!8i5120!4m9!3m8!1s0x60188d116dea3a4b:0xc509457fc008e057!8m2!3d35.7163869!4d139.7183872!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11cl_j_1zd?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNy4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "aefa6535-ed44-4849-8dd6-d05aab44edb8",
+      "name": {
+        "en": "Nebukawa Station",
+        "kr": "네부카와 역",
+        "ja": "根府川駅"
+      },
+      "geo": {
+        "latitude": 35.20281,
+        "longitude": 139.13843
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-kanagawa-odawara",
+      "streetViewUrl": "https://www.google.com/maps/@35.2028839,139.1382972,3a,67.4y,126.64h,95.35t/data=!3m7!1e1!3m5!1suT051u4f0a50nQuViU9ZTw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.352994442346059%26panoid%3DuT051u4f0a50nQuViU9ZTw%26yaw%3D126.64226945909095!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI1MDEyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "b7964c7a-39fc-441a-b24d-bbcbc3afb1f8",
+      "name": {
+        "en": "Near the Mamashita Bridge",
+        "de": "In der Nähe des Mamashita Bridge",
+        "es": "Cerca de la Mamashita Bridge",
+        "id": "Sekitar Mamashita Bridge",
+        "ja": "間々下橋付近",
+        "kr": "Mamashita Bridge 근처"
+      },
+      "geo": {
+        "latitude": 35.7562626,
+        "longitude": 139.6920349
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7562626,139.6920349,3a,75y,30.17h,98.64t/data=!3m7!1e1!3m5!1sKEY6iEKxRgeFtgwXnZY0vQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DKEY6iEKxRgeFtgwXnZY0vQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D23.550774%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "b8f1e662-9021-4c4e-a925-faf928b956f5",
+      "name": {
+        "ja": "メルモ 大山店",
+        "en": "Merumo"
+      },
+      "geo": {
+        "latitude": 35.7479609,
+        "longitude": 139.7021298
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7479609,139.7021298,3a,90y,359.99h,89.72t/data=!3m7!1e1!3m5!1s5hBn841GDyi3n87I3B5SFg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.2778627281299322%26panoid%3D5hBn841GDyi3n87I3B5SFg%26yaw%3D359.99298342296333!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "bd027dc3-e573-499a-8055-c538c621a407",
+      "name": {
+        "ja": "サンシャイン水族館 サンシャインラグーン",
+        "kr": "선샤인 수족관 선샤인 라군",
+        "en": "Sunshine Aquarium - Sunshine Lagoon"
+      },
+      "geo": {
+        "latitude": 35.7285417,
+        "longitude": 139.7196722
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7285417,139.7196722,2a,90y,80.83h,87.72t/data=!3m7!1e1!3m5!1se_4BoZGNoGk6PLDaCAGTpA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3De_4BoZGNoGk6PLDaCAGTpA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D166.60573%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "c46f0f30-a1b0-402a-97a1-81f72352082f",
+      "name": {
+        "en": "Takase",
+        "ja": "タカセ 池袋本店"
+      },
+      "geo": {
+        "latitude": 35.72999,
+        "longitude": 139.71307
+      },
+      "ep": 25,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7299038,139.7128966,3a,75y,67.01h,96.29t/data=!3m7!1e1!3m5!1sDrAkwYXrO86wuHZn-4-XZQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.288575575566156%26panoid%3DDrAkwYXrO86wuHZn-4-XZQ%26yaw%3D67.01285158272123!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "cc637fcc-9c09-48a8-ae2e-c804118b338b",
+      "name": {
+        "en": "Ito Kampo Pharmaceutical Store",
+        "ja": "伊藤漢方薬店"
+      },
+      "geo": {
+        "latitude": 35.75363,
+        "longitude": 139.69813
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7536151,139.6980779,3a,90y,91.95h,97.64t/data=!3m7!1e1!3m5!1sWubZ0bDHdMrk_sKluFFZww!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.642341935126268%26panoid%3DWubZ0bDHdMrk_sKluFFZww%26yaw%3D91.95290684530067!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "d1914558-4a4f-4a09-87b2-9843c7928b5a",
+      "name": {
+        "kr": "세븐일레븐 이타바시나카쵸점",
+        "en": "Seven-Eleven Itabashi Nakamachi store",
+        "ja": "セブン-イレブン 板橋仲町店"
+      },
+      "geo": {
+        "latitude": 35.7539819,
+        "longitude": 139.6969376
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7538209,139.6970088,3a,75y,336.93h,92.37t/data=!3m7!1e1!3m5!1sm4zE3WwOprM6cC3-YKn6Vw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.367518908472107%26panoid%3Dm4zE3WwOprM6cC3-YKn6Vw%26yaw%3D336.9341644944227!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "d62145ad-43cc-43c8-99fe-1ba7cbc15ea0",
+      "name": {
+        "kr": "히가시코가네이 역",
+        "en": "Higashi-Koganei Station",
+        "ja": "東小金井駅"
+      },
+      "geo": {
+        "latitude": 35.7016243,
+        "longitude": 139.5236028
+      },
+      "ep": 1,
+      "type": "OP",
+      "cityId": "JP-tokyo-koganei",
+      "streetViewUrl": "https://www.google.com/maps/place/Higashi-Koganei+Station/@35.7016243,139.5236028,3a,40.7y,94.02h,92.37t/data=!3m8!1e1!3m6!1sAF1QipPg-_wFtgglhmAnNNIf4RFHSCf7qs1MIhCdvw3F!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPg-_wFtgglhmAnNNIf4RFHSCf7qs1MIhCdvw3F%3Dw203-h100-k-no-pi-10-ya41-ro-0-fo100!7i8704!8i4352!4m9!3m8!1s0x6018e5810556eee3:0x202b5d3119bd9430!8m2!3d35.7015507!4d139.5239042!10e5!14m1!1BCgIgARICCAI!16zL20vMGRfdm1o?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "d7bd0c2d-a675-42ce-94c2-5cf532dc1d2f",
+      "name": {
+        "en": "Café&Bar RAGE ST"
+      },
+      "geo": {
+        "latitude": 35.7307277,
+        "longitude": 139.7127024
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7307277,139.7127024,3a,87.5y,237.5h,98.62t/data=!3m6!1e1!3m4!1syzY3Lf9V6HH_jrtJ7TJreg!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "db88e6bc-6326-4113-a6ec-ed08e2e012c7",
+      "name": {
+        "en": "Oyama Station",
+        "ja": "大山駅",
+        "kr": "오야마 역"
+      },
+      "geo": {
+        "latitude": 35.7485584,
+        "longitude": 139.7022221
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7485584,139.7022221,2a,90y,125.69h,94.68t/data=!3m6!1e1!3m4!1s6YtE3kf2OCl_abFkpm-w-Q!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "e07331ff-e95e-4ca5-b28d-1a46a204e9a0",
+      "name": {
+        "en": "Sunshine Aquarium - Coral Reef Ocean",
+        "ja": "サンシャイン水族館 サンゴ礁の海",
+        "kr": "선샤인 수족관 산호초의 바다"
+      },
+      "geo": {
+        "latitude": 35.7284303,
+        "longitude": 139.7199033
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7284303,139.7199033,2a,90y,219.49h,100.51t/data=!3m6!1e1!3m4!1stvNHpqnTZFc5Cfd5ZsDcwA!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "e7268a0b-7462-453a-83c2-9c1308adb2f2",
+      "name": {
+        "en": "Gonbei",
+        "ja": "ごん平"
+      },
+      "geo": {
+        "latitude": 35.74896,
+        "longitude": 139.69975
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7489922,139.699753,3a,90y,155.05h,95.28t/data=!3m7!1e1!3m5!1smKXTslOG-52qPe3kViZ2Ww!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.283122736644017%26panoid%3DmKXTslOG-52qPe3kViZ2Ww%26yaw%3D155.04847063746803!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "f09b462f-6d83-4e27-80ff-b2c5c8c17011",
+      "name": {
+        "en": "Hojo Beach",
+        "ja": "北条海水浴場"
+      },
+      "geo": {
+        "latitude": 34.99855,
+        "longitude": 139.85832
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-chiba-tateyama",
+      "streetViewUrl": "https://www.google.com/maps/@34.9985212,139.8583997,3a,90y,59.96h,99.78t/data=!3m7!1e1!3m5!1sAF1QipNFk_2p_6AV8f-vj0iTFVJq23BESa4bI2g2o1IO!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipNFk_2p_6AV8f-vj0iTFVJq23BESa4bI2g2o1IO%3Dw900-h600-k-no-pi-9.784091082192887-ya171.14110514635107-ro0-fo100!7i6080!8i3040?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "f153141e-968b-4ded-af55-c026c23ea5ee",
+      "name": {
+        "ja": "箱根高原ホテル",
+        "en": "Hakone Kogen Hotel",
+        "kr": "하코네 코겐 호텔"
+      },
+      "geo": {
+        "latitude": 35.24128,
+        "longitude": 138.99207
+      },
+      "ep": 23,
+      "type": "EP",
+      "cityId": "JP-kanagawa-hakone",
+      "streetViewUrl": "https://www.google.com/maps/@35.2413661,138.9920964,3a,75y,202.13h,93.33t/data=!3m7!1e1!3m5!1sLq2iTp6kuOL_wlKk8SzKCw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.3344623310429%26panoid%3DLq2iTp6kuOL_wlKk8SzKCw%26yaw%3D202.13089634069814!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    },
+    {
+      "placeId": "f8d67283-74f9-4200-9102-539a4c853744",
+      "name": {
+        "kr": "이케부쿠로 역",
+        "en": "Ikebukuro Station",
+        "ja": "池袋駅"
+      },
+      "geo": {
+        "latitude": 35.731,
+        "longitude": 139.71007
+      },
+      "ep": 25,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7310175,139.7100032,3a,90y,124.29h,98.88t/data=!3m7!1e1!3m5!1sp3Z0vj64bhQM4De7PB1whA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.883603044283646%26panoid%3Dp3Z0vj64bhQM4De7PB1whA%26yaw%3D124.28964512137593!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©三浦糀／集英社・「アオのハコ」製作委員会"
+    }
+  ]
+}

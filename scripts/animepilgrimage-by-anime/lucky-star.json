@@ -1,0 +1,939 @@
+{
+  "anime": {
+    "animeId": "4xqBX6umqSEPcn2i8zGp",
+    "slug": "lucky-star",
+    "title": {
+      "ja": "らき☆すた",
+      "kr": "러키☆스타",
+      "en": "Lucky☆Star"
+    },
+    "author": {
+      "en": [
+        "Kagami Yoshimizu"
+      ],
+      "ja": [
+        "美水かがみ"
+      ],
+      "kr": [
+        "요시미즈 카가미"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Kyoto Animation"
+      ]
+    }
+  },
+  "placeCount": 55,
+  "places": [
+    {
+      "placeId": "023fa332-d56a-463c-885d-25f863e60476",
+      "name": {
+        "ja": "春日部居酒屋|まぐろやモンキー春日部店",
+        "en": "Maguroyamonkikasukabeten"
+      },
+      "geo": {
+        "latitude": 35.97958,
+        "longitude": 139.7501
+      },
+      "ep": 17,
+      "type": "EP",
+      "cityId": "JP-saitama-kasukabe",
+      "streetViewUrl": "https://www.google.com/maps/@35.9795698,139.7501363,3a,90y,48.99h,108.3t/data=!3m7!1e1!3m5!1ss6qrfkz7NKRpIKPwxfWHVQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.303488560548104%26panoid%3Ds6qrfkz7NKRpIKPwxfWHVQ%26yaw%3D48.987633024960516!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "030cdf0c-82fe-4928-8043-6f3d2a552be1",
+      "name": {
+        "en": "Lawson Tokyo Big Sight Entrance",
+        "ja": "ローソン 東京ビッグサイトエントランス店"
+      },
+      "geo": {
+        "latitude": 35.63031,
+        "longitude": 139.79514
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6304083,139.7950417,3a,90y,110.94h,93.06t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICmrNeBmQE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6Hb2RB8pBRa_TSdBdDMhHkBxb0Vp9XuOjPqhOm4KOn0RVnvqCWvgGxKWS497sOZj5eu8LMHVO1lE6fFb_j3qX0E1rzuLg7nzktfuk7gLwh1vIBTEVZLDTD6pxyYFUpfC80hmiQaGDw%3Dw900-h600-k-no-pi-3.0643076117604124-ya325.7437265512489-ro0-fo100!7i6720!8i3360?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "0a525377-d7ae-43b5-80a6-e478f9f1b90b",
+      "name": {
+        "kr": "아키하바라 게이머즈 본점",
+        "en": "Akihabara Gamers",
+        "ja": "AKIHABARAゲーマーズ本店"
+      },
+      "geo": {
+        "latitude": 35.69825,
+        "longitude": 139.77166
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6981843,139.7716334,3a,90y,29.42h,96.36t/data=!3m7!1e1!3m5!1sakuFZUn3Zjn4CKn-cXGl9w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.364586564568896%26panoid%3DakuFZUn3Zjn4CKn-cXGl9w%26yaw%3D29.41789049671844!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "10021f2c-9e31-4e82-9a07-89b88347d60f",
+      "name": {
+        "en": "Koto Koto",
+        "ja": "ことこと"
+      },
+      "geo": {
+        "latitude": 36.08756,
+        "longitude": 139.72511
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-saitama-satte",
+      "streetViewUrl": "https://www.google.com/maps/@36.0875167,139.7250967,3a,90y,8.06h,102.91t/data=!3m7!1e1!3m5!1sUGXcasBB6kSYVZ7i3KtNIg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.909084417158468%26panoid%3DUGXcasBB6kSYVZ7i3KtNIg%26yaw%3D8.057107883167294!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "16e70f23-bfd4-4efe-9fff-9672660a3dbf",
+      "name": {
+        "kr": "교토 역",
+        "en": "Kyoto Station",
+        "ja": "京都駅"
+      },
+      "geo": {
+        "latitude": 34.98592,
+        "longitude": 135.759
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9860046,135.7589932,2a,90y,173.39h,104.43t/data=!3m7!1e1!3m5!1se4-M9uyCtHEGrFofZpAM1A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.429058855874686%26panoid%3De4-M9uyCtHEGrFofZpAM1A%26yaw%3D173.39281856611407!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "269b81fd-7377-45f0-a271-49a0e2e2f8bc",
+      "name": {
+        "kr": "고와타 역",
+        "ja": "木幡駅（京阪）",
+        "en": "Kowata Station"
+      },
+      "geo": {
+        "latitude": 34.92567,
+        "longitude": 135.79613
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.9256222,135.7960337,3a,63.5y,63.39h,95.36t/data=!3m7!1e1!3m5!1sE7WFp9PVmlrq2Kz9iArTqQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.355639250366849%26panoid%3DE7WFp9PVmlrq2Kz9iArTqQ%26yaw%3D63.39148408069339!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "27c53daa-1fec-4085-a840-a0aa96dea98f",
+      "name": {
+        "en": "Kyoto Animation Co. Ltd.",
+        "kr": "교토애니메이션 본사",
+        "ja": "株式会社京都アニメーション 本社"
+      },
+      "geo": {
+        "latitude": 34.92479,
+        "longitude": 135.79869
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.924809,135.7987116,3a,90y,242.97h,107.98t/data=!3m7!1e1!3m5!1sMKhGuEy9I4CCIwpJLvonKw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-17.975896590794818%26panoid%3DMKhGuEy9I4CCIwpJLvonKw%26yaw%3D242.9693929419542!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "2b4313a2-4d3e-472f-a4e1-731e45c3b95c",
+      "name": {
+        "en": "Satte Pharmacy",
+        "ja": "幸手薬局"
+      },
+      "geo": {
+        "latitude": 36.07792,
+        "longitude": 139.71961
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-saitama-satte",
+      "streetViewUrl": "https://www.google.com/maps/@36.0779385,139.719647,3a,90y,102.88h,96.37t/data=!3m7!1e1!3m5!1sPVgWEGwmHymh8ZTRSph5NQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.372282597018355%26panoid%3DPVgWEGwmHymh8ZTRSph5NQ%26yaw%3D102.87794021885209!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "2e3d2d7e-dbad-4db9-abf2-ee50fdd0db00",
+      "name": {
+        "ja": "ソニックシティ",
+        "en": "SONIC CITY",
+        "kr": "소닉 시티"
+      },
+      "geo": {
+        "latitude": 35.90529,
+        "longitude": 139.62156
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9052485,139.6216891,3a,75y,282.19h,112.98t/data=!3m7!1e1!3m5!1smZxIFNakwjQRi6n0kU4qJg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-22.977728917198263%26panoid%3DmZxIFNakwjQRi6n0kU4qJg%26yaw%3D282.1948556609964!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "35a36bd8-584d-4475-93f9-b1352a1d6292",
+      "name": {
+        "ja": "春日部共栄前（バス）",
+        "en": "Kasukabe Kyoei-mae (bus)"
+      },
+      "geo": {
+        "latitude": 35.96034,
+        "longitude": 139.74263
+      },
+      "ep": 14,
+      "type": "EP",
+      "cityId": "JP-saitama-kasukabe",
+      "streetViewUrl": "https://www.google.com/maps/@35.960208,139.742788,3a,48.7y,328.23h,95.12t/data=!3m7!1e1!3m5!1srupkW1qc-oj5MgUIQWK_kQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.120350787886807%26panoid%3DrupkW1qc-oj5MgUIQWK_kQ%26yaw%3D328.22639253272905!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "3af4f130-6913-49fa-85ec-3f929f470099",
+      "name": {
+        "kr": "애니메이트 아키하바라",
+        "ja": "アニメイト秋葉原",
+        "en": "Animate Akihabara"
+      },
+      "geo": {
+        "latitude": 35.70052,
+        "longitude": 139.77164
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7004204,139.7714058,3a,75y,75.28h,96.47t/data=!3m7!1e1!3m5!1sOAqKy4EwpantBZXp74mdJQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.466453846310699%26panoid%3DOAqKy4EwpantBZXp74mdJQ%26yaw%3D75.27569388957541!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "3fb0cfb3-e8a2-443b-826f-37ae75f70ef3",
+      "name": {
+        "en": "Maruyama Park",
+        "kr": "마루야마 공원 (원산 공원)",
+        "ja": "円山公園"
+      },
+      "geo": {
+        "latitude": 35.0034,
+        "longitude": 135.78051
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0035002,135.7804693,3a,61.1y,162.7h,93.6t/data=!3m7!1e1!3m5!1sOqSsUAdg28_nSrBarsTisA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.604616805806657%26panoid%3DOqSsUAdg28_nSrBarsTisA%26yaw%3D162.70110883359416!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "49b91c2a-25e4-41b4-9f52-ee299f54cdf5",
+      "name": {
+        "en": "Mizuho Bank Kasukabe Branch",
+        "ja": "みずほ銀行 春日部支店"
+      },
+      "geo": {
+        "latitude": 35.97961,
+        "longitude": 139.75201
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-kasukabe",
+      "streetViewUrl": "https://www.google.com/maps/@35.9795669,139.752006,3a,90y,352.48h,113.56t/data=!3m7!1e1!3m5!1sJ-JmUHuEOWKS-L-YJl6j7g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-23.56341286146953%26panoid%3DJ-JmUHuEOWKS-L-YJl6j7g%26yaw%3D352.4800744090282!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "4cf96ef9-d900-4206-abf2-d3f77fcb8a6a",
+      "name": {
+        "ja": "東大寺",
+        "en": "Todai-ji",
+        "kr": "도다이지"
+      },
+      "geo": {
+        "latitude": 34.68883,
+        "longitude": 135.83972
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-nara-nara",
+      "streetViewUrl": "https://www.google.com/maps/@34.6887825,135.839569,3a,90y,50.77h,106.89t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgIDN_sbI2gE!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HapHQou-hxYRRYqy5KKvscT39RUpHDgenmC2OBpvXy9UYUvVd8WbIc-xYTz9Ojy2DIvgjJ6mRmvldOrRPJ1AdZCz_dQj8PTgiarfGgQqBdzmcf2bFYnbsgFiO6bwh72ub9SXlFstg%3Dw900-h600-k-no-pi-16.89094892681034-ya213.9509853253428-ro0-fo100!7i6528!8i3264?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "5551ed42-3c49-462f-b2c4-8028a92c6bf2",
+      "name": {
+        "ja": "宮前橋",
+        "en": "Miyamae Bridge"
+      },
+      "geo": {
+        "latitude": 36.09935,
+        "longitude": 139.65651
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-kuki",
+      "streetViewUrl": "https://www.google.com/maps/@36.09922,139.6565118,3a,49.6y,0.06h,94.23t/data=!3m7!1e1!3m5!1sFhu9NRyiZyFeWNPGfOzaAg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.225481937198069%26panoid%3DFhu9NRyiZyFeWNPGfOzaAg%26yaw%3D0.06464389099977552!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "569e7dd6-7525-48e1-83da-909578b2fb9f",
+      "name": {
+        "kr": "야사카 신사",
+        "en": "Yasaka Shrine",
+        "ja": "八坂神社"
+      },
+      "geo": {
+        "latitude": 35.00343,
+        "longitude": 135.77824
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0034429,135.7781352,3a,90y,265.2h,98.44t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDj9eeD_QE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZ-1UlAivjE_XR41cJGtuMpl-Fu28K8QXhViYaGz5d5cA7AUJy9MB9weujwJU_jwsr8J3g_o5erRbF_ViW79Bvz7EpTdFg5FeikAUqocsoduaXLjzgQ6G8U3myi-uPGaIzSxSgv%3Dw900-h600-k-no-pi-8.443171291722138-ya265.1995196484591-ro0-fo100!7i6528!8i3264?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "57178392-d520-4dc3-919b-2309b80baf65",
+      "name": {
+        "kr": "고후쿠지",
+        "ja": "興福寺",
+        "en": "Kofuku-ji"
+      },
+      "geo": {
+        "latitude": 34.68254,
+        "longitude": 135.83166
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-nara-nara",
+      "streetViewUrl": "https://www.google.com/maps/@34.6824775,135.8316951,3a,75y,73.12h,95.95t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC9tZO69gE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYzUNJ0qCyWDa_V7dBK8U1F-07BBWD5yMe4eb2d4kDu0y8jzTlropZCmmPMC_1RmFFD-Wt3zP4yvcKx178gWEfkcd-9ojZ0dCuzfLK7L86pG7n-Xe1jml0OeDUxIgf9SSZtf02c%3Dw900-h600-k-no-pi-5.9476093588599355-ya73.11624886741382-ro0-fo100!7i6528!8i3264?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "5776fda1-ccb2-42eb-864b-a6abbad503b6",
+      "name": {
+        "ja": "日高屋 大宮西口店",
+        "en": "Hidakaya Omiya Nishiguchi"
+      },
+      "geo": {
+        "latitude": 35.90446,
+        "longitude": 139.62324
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.904455,139.6232114,3a,90y,7.43h,93.65t/data=!3m7!1e1!3m5!1stTcyTBp13aHn5aKE4oKiEg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.6540422056464195%26panoid%3DtTcyTBp13aHn5aKE4oKiEg%26yaw%3D7.433666238389208!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "5da5be8f-9738-4341-a592-b8f3f3b2d644",
+      "name": {
+        "en": "NewDays Omiya West ticket gate",
+        "ja": "NewDays 大宮西改札口"
+      },
+      "geo": {
+        "latitude": 35.90594,
+        "longitude": 139.62281
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9059451,139.6228019,3a,90y,193.99h,94.23t/data=!3m7!1e1!3m5!1sgtphEwqxoPfCkKpLPOTECw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.234408702810981%26panoid%3DgtphEwqxoPfCkKpLPOTECw%26yaw%3D193.99059033541675!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "5dae1b2a-61e9-4aa6-818d-273f7bafdd84",
+      "name": {
+        "en": "Animate Kyoto",
+        "ja": "アニメイト京都",
+        "kr": "애니메이트 교토점"
+      },
+      "geo": {
+        "latitude": 35.00535,
+        "longitude": 135.76717
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0053748,135.7671867,3a,90y,6.41h,108.18t/data=!3m7!1e1!3m5!1sEJCnSlhsA22PB1i3Qq7Pjw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.176612899857076%26panoid%3DEJCnSlhsA22PB1i3Qq7Pjw%26yaw%3D6.407347008309964!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "6439317b-c283-409e-8e6b-9667221a3e1f",
+      "name": {
+        "en": "SOGO Omiya Store",
+        "ja": "そごう大宮店",
+        "kr": "소고 오미야점"
+      },
+      "geo": {
+        "latitude": 35.90518,
+        "longitude": 139.62225
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.905277,139.6222732,3a,90y,175.56h,96.27t/data=!3m7!1e1!3m5!1sQaxXE37tUE5mcgxY2nwdqw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.265999092653914%26panoid%3DQaxXE37tUE5mcgxY2nwdqw%26yaw%3D175.5594131702374!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "6cdb5ff5-ae61-4e2f-98b4-b1680008cde6",
+      "name": {
+        "en": "Otori Chaya Den-Den",
+        "ja": "大酉茶屋 田々"
+      },
+      "geo": {
+        "latitude": 36.10021,
+        "longitude": 139.6568
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-saitama-kuki",
+      "streetViewUrl": "https://www.google.com/maps/@36.1002366,139.6569925,3a,75y,268.35h,93.98t/data=!3m7!1e1!3m5!1sygouwqyLgQwDwZDE-tmV8Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.977128425022684%26panoid%3DygouwqyLgQwDwZDE-tmV8Q%26yaw%3D268.3477634938094!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "718712c6-d87e-46dc-b1d5-40d6c3b639f8",
+      "name": {
+        "en": "Sanjo Ohashi Bridge",
+        "ja": "三条大橋"
+      },
+      "geo": {
+        "latitude": 35.00906,
+        "longitude": 135.77129
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0090085,135.7712378,3a,75y,36.08h,96.71t/data=!3m7!1e1!3m5!1sMrp9kC5VilX5hH4azw6i3Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.714321901918922%26panoid%3DMrp9kC5VilX5hH4azw6i3Q%26yaw%3D36.07894307728256!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "7fd7fb75-7ec8-4e9e-b3ab-ac4fb1e5b6a0",
+      "name": {
+        "en": "Beauty House Angel",
+        "ja": "ビューティハウス エンジェル"
+      },
+      "geo": {
+        "latitude": 35.9792,
+        "longitude": 139.75102
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-saitama-kasukabe",
+      "streetViewUrl": "https://www.google.com/maps/@35.9792215,139.7510453,3a,90y,185.51h,93.33t/data=!3m7!1e1!3m5!1sX8Fb6hPkJS1VtrNLUgU0VA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.3304759792952154%26panoid%3DX8Fb6hPkJS1VtrNLUgU0VA%26yaw%3D185.50574993150602!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "823144d8-0a8e-4ea8-a9b4-4c7b2ede5af6",
+      "name": {
+        "ja": "東武動物公園駅",
+        "en": "Tobu-Dobutsukoen Station",
+        "kr": "도부도부쓰코엔 역"
+      },
+      "geo": {
+        "latitude": 36.02454,
+        "longitude": 139.72738
+      },
+      "ep": 20,
+      "type": "EP",
+      "cityId": "JP-saitama-miyashiro",
+      "streetViewUrl": "https://www.google.com/maps/@36.0245029,139.7274265,2a,90y,299.82h,93.93t/data=!3m7!1e1!3m5!1sfzCCwV4JXQhk5WSi-WXOng!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.928289501416245%26panoid%3DfzCCwV4JXQhk5WSi-WXOng%26yaw%3D299.8160795872059!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "8271e864-9884-4864-b1b0-e6e44d68e90a",
+      "name": {
+        "ja": "鷲宮神社",
+        "en": "Washinomiya Shrine",
+        "kr": "와시노미야 신사"
+      },
+      "geo": {
+        "latitude": 36.09981,
+        "longitude": 139.65507
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-kuki",
+      "streetViewUrl": "https://www.google.com/maps/@36.0998981,139.6549397,3a,90y,72.75h,96.44t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC41Z3R1QE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HY5QnqDf2A1gl0cIiP-DCBVKZqzwOm88T98LL553rShE4zpqmeW-PZoNlnGvDmma5zls7PLrPTb6PDjBsn2ESW7psMV82BGBX7p2UkbaKWbVv0z-f82ciPkIpK7ytdwBgt3YccBUg%3Dw900-h600-k-no-pi-6.441687223882724-ya100.75444727077604-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "82aa1a39-921a-466b-ab4a-7655ff0df694",
+      "name": {
+        "en": "Gongendo Tsutsumi",
+        "ja": "権現堂堤"
+      },
+      "geo": {
+        "latitude": 36.0924,
+        "longitude": 139.72288
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-saitama-satte",
+      "streetViewUrl": "https://www.google.com/maps/@36.0923697,139.7229231,3a,90y,324.93h,101.02t/data=!3m7!1e1!3m5!1sk2Jp40NuDKqm6D97KehNKg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.024447098670137%26panoid%3Dk2Jp40NuDKqm6D97KehNKg%26yaw%3D324.92804210811!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "84f14684-b5eb-4521-8f23-3abd4b9f882c",
+      "name": {
+        "ja": "サーティワンアイスクリーム 春日部駅西口店",
+        "en": "Baskin-Robbins Kasukabe Station West Exit"
+      },
+      "geo": {
+        "latitude": 35.97973,
+        "longitude": 139.75215
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-saitama-kasukabe",
+      "streetViewUrl": "https://www.google.com/maps/@35.9796971,139.7521087,3a,90y,79.91h,101.26t/data=!3m7!1e1!3m5!1sQJHXDSAc2IB00j1T1KELAw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.26287030103073%26panoid%3DQJHXDSAc2IB00j1T1KELAw%26yaw%3D79.90513402944501!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "8c8ef51c-0c73-454c-a9de-2244c57a4b20",
+      "name": {
+        "ja": "東京ビッグサイト屋上展示場",
+        "en": "Tokyo Big Sight Rooftop Exhibition Area"
+      },
+      "geo": {
+        "latitude": 35.62852,
+        "longitude": 139.79423
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6281719,139.7943123,3a,90y,316.99h,94.34t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC4n-X1Jw!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZ2WLRxyatDyYWC12MJFeZ4Gne0NEvMJ_gW8ihtP4UXhB-5IMs35tZNTAoGcYJzeUSZxRikrn7Gm8e2_HsxcuLywulVvKXkIgGggK-et60L4YEWRa7FhWUDHXxBnxVWI6H9iIZj%3Dw900-h600-k-no-pi-4.339246777308915-ya340.99249147635487-ro0-fo100!7i10240!8i5120?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "92529947-37bc-40fa-bc1c-806b7254a0e0",
+      "name": {
+        "en": "Technical Park Sakuragi Parking Lot",
+        "ja": "大宮桜木２丁目パーキング"
+      },
+      "geo": {
+        "latitude": 35.90651,
+        "longitude": 139.61875
+      },
+      "ep": 14,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9064203,139.6188095,3a,90y,342.24h,107.04t/data=!3m7!1e1!3m5!1s3D2ld9jnBautY58Vj36_2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-17.04445939527747%26panoid%3D3D2ld9jnBautY58Vj36_2A%26yaw%3D342.24274909223533!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "92c372d3-c4eb-4f4a-a1f2-66e0afde45f1",
+      "name": {
+        "kr": "본능사 호텔",
+        "ja": "ホテル本能寺",
+        "en": "Hotel Honnoji"
+      },
+      "geo": {
+        "latitude": 35.01076,
+        "longitude": 135.76846
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0108678,135.7683214,3a,90y,136.7h,95.35t/data=!3m7!1e1!3m5!1s17m-i7jWF8hgrn2hkeotKg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.346007237072513%26panoid%3D17m-i7jWF8hgrn2hkeotKg%26yaw%3D136.69915845873362!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "985d0ffa-0e02-4a55-95be-2fed2a92140f",
+      "name": {
+        "en": "Senso-ji",
+        "ja": "浅草寺",
+        "kr": "센소지"
+      },
+      "geo": {
+        "latitude": 35.71454,
+        "longitude": 139.79671
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.714466,139.7965855,2a,90y,81.54h,104.99t/data=!3m7!1e1!3m5!1sLABr3DhUdag6tG2OjOXKjA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.986666677470467%26panoid%3DLABr3DhUdag6tG2OjOXKjA%26yaw%3D81.54138230885151!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "9c315f0b-589a-4e5d-abe4-1f901a863755",
+      "name": {
+        "en": "Kenroku-en",
+        "ja": "兼六園",
+        "kr": "겐로쿠엔"
+      },
+      "geo": {
+        "latitude": 36.56336,
+        "longitude": 136.66285
+      },
+      "ep": 22,
+      "type": "EP",
+      "cityId": "JP-ishikawa-kanazawa",
+      "streetViewUrl": "https://www.google.com/maps/@36.563394,136.6628552,2a,49.6y,200.94h,93.22t/data=!3m7!1e1!3m5!1s_-c_dyLB2g2poKzIPKzCaw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.2164157883687636%26panoid%3D_-c_dyLB2g2poKzIPKzCaw%26yaw%3D200.9353304430989!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "a7301eb0-9698-45b3-aa85-5ac2ee5feda2",
+      "name": {
+        "kr": "산넨자카",
+        "en": "Sannenzaka",
+        "ja": "産寧坂（三年坂）"
+      },
+      "geo": {
+        "latitude": 34.99659,
+        "longitude": 135.78098
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9966026,135.7809944,3a,90y,199.63h,107.6t/data=!3m7!1e1!3m5!1sKjdsoar_a-jPFtg-QGxBCg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-17.602827044756992%26panoid%3DKjdsoar_a-jPFtg-QGxBCg%26yaw%3D199.6293628334609!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "aa2e76f6-c2cd-4aaa-aa24-3bcbc9ec02aa",
+      "name": {
+        "ja": "興福寺 南円堂",
+        "kr": "흥복사 남원당",
+        "en": "Kofuku-ji Nan-endo (Southern Round Hall)"
+      },
+      "geo": {
+        "latitude": 34.68253,
+        "longitude": 135.8308
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-nara-nara",
+      "streetViewUrl": "https://www.google.com/maps/@34.6825674,135.8311628,3a,48.7y,91.04h,95.07t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC9tcPKeA!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HbS1OURa1zx6UokRNegxg6UR-Rko1mH0omsrgAtVwryMnIqLInc-5e8b0UBAwZSLCygwJKsiN3AkKUaFoMjePrb-MaiyR7JczUuBY1nuZLj1ioKX-aAiz4PjCtWmcromiG1_gg%3Dw900-h600-k-no-pi-5.070597962472789-ya91.03950962668017-ro0-fo100!7i6528!8i3264?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "b19fe713-2d34-4855-a646-ee633179d14d",
+      "name": {
+        "ja": "THE ALLEY ルミネ大宮店",
+        "en": "The Alley - Lumine Omiya"
+      },
+      "geo": {
+        "latitude": 35.90643,
+        "longitude": 139.62252
+      },
+      "ep": 14,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9063585,139.6225682,3a,90y,187.6h,102.29t/data=!3m7!1e1!3m5!1szAgPRMlpKwL30R4k3yWa2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.28507182577792%26panoid%3DzAgPRMlpKwL30R4k3yWa2A%26yaw%3D187.602392258682!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "b2c05577-3e22-40c8-bbeb-a88f5989142c",
+      "name": {
+        "en": "Married Trees of Akiba-Jinja",
+        "ja": "秋葉神社の夫婦松",
+        "kr": "아키바신사의 부부소나무"
+      },
+      "geo": {
+        "latitude": 35.97948,
+        "longitude": 139.75248
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-saitama-kasukabe",
+      "streetViewUrl": "https://www.google.com/maps/@35.9794525,139.7524324,3a,90y,175.47h,104.38t/data=!3m7!1e1!3m5!1s2ArY0Vvl59RPsBjUKvLSyQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.376764902574934%26panoid%3D2ArY0Vvl59RPsBjUKvLSyQ%26yaw%3D175.46706854306993!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "c0e0936e-fbfb-45e3-ae3e-20d3d2e42c6b",
+      "name": {
+        "ja": "恋占いの石",
+        "en": "Love Fortune Stone",
+        "kr": "연점의 돌"
+      },
+      "geo": {
+        "latitude": 34.99514,
+        "longitude": 135.78503
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9951323,135.7849881,2a,90y,144.67h,102.28t/data=!3m7!1e1!3m5!1sKjio5gV9KDbpjiC0u9zo-w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.283207904341907%26panoid%3DKjio5gV9KDbpjiC0u9zo-w%26yaw%3D144.6662559373164!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "c64f811f-e2c6-439c-a3d0-0654dc94131e",
+      "name": {
+        "en": "FamilyMart Omiya Station West Entrance Store",
+        "ja": "ファミリーマート 大宮駅西口店"
+      },
+      "geo": {
+        "latitude": 35.90445,
+        "longitude": 139.62284
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9045928,139.6227768,3a,75y,118.96h,98.05t/data=!3m7!1e1!3m5!1s2TYKRg5T5WcBZkF-53veOw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.048618369252381%26panoid%3D2TYKRg5T5WcBZkF-53veOw%26yaw%3D118.96324087906335!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "c9714f34-7f85-4d6d-9608-1b5e505084f1",
+      "name": {
+        "en": "Animate Omiya Comic Kan",
+        "ja": "アニメイト大宮2号館"
+      },
+      "geo": {
+        "latitude": 35.9045,
+        "longitude": 139.6234
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9044759,139.6233562,3a,90y,258.7h,95.54t/data=!3m7!1e1!3m5!1sSXbUENtUiShA7kidJHrJ3w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.54147063887676%26panoid%3DSXbUENtUiShA7kidJHrJ3w%26yaw%3D258.6957660496737!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "c9d5b349-743b-493c-ad88-6127f850e2eb",
+      "name": {
+        "en": "Kiyomizu-dera",
+        "ja": "清水寺",
+        "kr": "기요미즈데라"
+      },
+      "geo": {
+        "latitude": 34.99481,
+        "longitude": 135.78476
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9948124,135.7848261,3a,90y,174.43h,88.32t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDXm7-ZHQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HbMKfTZaXfKabwiM_3AywORyGGD7-5bixESgBHLvkMeFrmUzMW4Xu_jKqw2qtSAAb91hQV7kw8s4nqpxna9Lc1nGh1mbh_lwKrMxXcImexaAYne2f_zEIJzBs0-rJE3Ju11jrox%3Dw900-h600-k-no-pi1.6756446471970463-ya174.42752476831308-ro0-fo100!7i11904!8i5952?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "cae603ca-06cf-4144-a50a-407e6b9e15a1",
+      "name": {
+        "ja": "エブリデイ薬局",
+        "en": "Eburidei Pharmacy"
+      },
+      "geo": {
+        "latitude": 34.92566,
+        "longitude": 135.79555
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://www.google.com/maps/@34.9257005,135.7956768,3a,47.9y,250.68h,100.75t/data=!3m7!1e1!3m5!1s_OrrzcCLc2VLGS1wwdOmgw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.747375650513206%26panoid%3D_OrrzcCLc2VLGS1wwdOmgw%26yaw%3D250.68494077768727!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "cd3f5897-e4cd-4310-baf8-fc9db87dac1d",
+      "name": {
+        "ja": "プリクラショップ 京都オリンピア",
+        "en": "Photo booth shop Kyoto Olympia"
+      },
+      "geo": {
+        "latitude": 35.00593,
+        "longitude": 135.76715
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0059554,135.7671411,3a,90y,318.22h,101.32t/data=!3m7!1e1!3m5!1ss0XEA7l3kaGzGdmwahGq-w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.320068260493414%26panoid%3Ds0XEA7l3kaGzGdmwahGq-w%26yaw%3D318.21666439026245!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "cdaa2af1-2ee9-48e2-937d-7a55bc452631",
+      "name": {
+        "kr": "지쇼지",
+        "ja": "東山慈照寺",
+        "en": "Higashiyama Jisho-ji"
+      },
+      "geo": {
+        "latitude": 35.02663,
+        "longitude": 135.79813
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.02665,135.7981717,3a,90y,234.76h,102.16t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICBxr74qwE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYgk9QmlIrBt1URkpVZ4MW6wQjjc3fA0264OFqE1H7C9oJ0ocdfdPqofG7Hmfq_dzAZZ-o4imNGbKnZsjZ8rUKtyO3PWgBeDqilK9yNB7KHCkbJXO6tQ_YhNWvXO7aURhcNp7pAKw%3Dw900-h600-k-no-pi-12.16328857341614-ya151.2046725866746-ro0-fo100!7i8000!8i4000?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "ce79f436-e840-4987-a30f-378c03435011",
+      "name": {
+        "kr": "가스카베 역",
+        "en": "Kasukabe Station",
+        "ja": "春日部駅"
+      },
+      "geo": {
+        "latitude": 35.98027,
+        "longitude": 139.75198
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-saitama-kasukabe",
+      "streetViewUrl": "https://www.google.com/maps/@35.9802858,139.7519678,2a,90y,23.98h,94.19t/data=!3m7!1e1!3m5!1sQaQyHLkkg5MAZIcS0fcO9g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.193268100439639%26panoid%3DQaQyHLkkg5MAZIcS0fcO9g%26yaw%3D23.981098738331937!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "d4c57da4-ad7a-4d7e-9b0c-e94015e242f2",
+      "name": {
+        "en": "Akihabara Station",
+        "kr": "아키하바라 역",
+        "ja": "秋葉原駅"
+      },
+      "geo": {
+        "latitude": 35.69825,
+        "longitude": 139.7725
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6981491,139.7724922,3a,87.5y,359.6h,101.31t/data=!3m7!1e1!3m5!1s3n5EzNbs-bZpkxjOAaBouQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.314212371237105%26panoid%3D3n5EzNbs-bZpkxjOAaBouQ%26yaw%3D359.5981418377473!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "d51f9089-5804-483d-abca-6f1e6cf8e5ca",
+      "name": {
+        "ja": "春日部駅西口（バス）",
+        "en": "Kasukabe Station West Exit (bus)"
+      },
+      "geo": {
+        "latitude": 35.97943,
+        "longitude": 139.75196
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-kasukabe",
+      "streetViewUrl": "https://www.google.com/maps/@35.9793607,139.7521284,3a,43.8y,302.07h,92.16t/data=!3m7!1e1!3m5!1sOQwNSona10SYlB98NxpSQg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.1566890678455195%26panoid%3DOQwNSona10SYlB98NxpSQg%26yaw%3D302.0737872944882!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "d523bebf-b5e7-414c-8455-3aa3d5b0af37",
+      "name": {
+        "en": "Satte Station",
+        "kr": "삿테 역",
+        "ja": "幸手駅"
+      },
+      "geo": {
+        "latitude": 36.07479,
+        "longitude": 139.71529
+      },
+      "ep": 20,
+      "type": "EP",
+      "cityId": "JP-saitama-satte",
+      "streetViewUrl": "https://www.google.com/maps/@36.0748931,139.7154504,3a,75y,231.41h,93.97t/data=!3m7!1e1!3m5!1swGwKWe_fieNLQYHEsvSJXA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.96894033353513%26panoid%3DwGwKWe_fieNLQYHEsvSJXA%26yaw%3D231.40665221150647!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "e08c7f61-ce93-45c4-a0db-4cb0638affd2",
+      "name": {
+        "en": "Kyoto Shiyakusho mae [Daimonjicho]",
+        "ja": "京都市役所前",
+        "kr": "교토시야쿠쇼마에 [다이몬지초]"
+      },
+      "geo": {
+        "latitude": 35.01074,
+        "longitude": 135.76799
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.010856,135.7680283,3a,48.8y,216.55h,92.25t/data=!3m7!1e1!3m5!1sTtsrMZzC1sFAkhYjjQIJXw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.252514101875363%26panoid%3DTtsrMZzC1sFAkhYjjQIJXw%26yaw%3D216.5515189613156!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "e20bb413-c2f6-4101-b074-ac508c9b55c3",
+      "name": {
+        "en": "Rairaiken Omiya Nishiguchi Branch",
+        "ja": "来来軒 大宮西口店"
+      },
+      "geo": {
+        "latitude": 35.90583,
+        "longitude": 139.62085
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9058906,139.6208364,3a,90y,20.17h,94.77t/data=!3m7!1e1!3m5!1sWpL0Y5HpOapkD2Kf1Iq1jQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.765752866053006%26panoid%3DWpL0Y5HpOapkD2Kf1Iq1jQ%26yaw%3D20.169807704359133!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "efc85e1a-b98a-4331-9a52-001503d84696",
+      "name": {
+        "kr": "사카나요로즈",
+        "ja": "魚萬",
+        "en": "Uoman"
+      },
+      "geo": {
+        "latitude": 35.1816,
+        "longitude": 139.65409
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kanagawa-miura",
+      "streetViewUrl": "https://www.google.com/maps/@35.1815919,139.6541277,3a,90y,262.96h,105.27t/data=!3m7!1e1!3m5!1sdP_rjHFptIXwaVN22hJzKg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.265968348052667%26panoid%3DdP_rjHFptIXwaVN22hJzKg%26yaw%3D262.9601229418896!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "efdef14d-a9c5-4a07-bd7d-5c2b2f138589",
+      "name": {
+        "ja": "セイムス 大宮西口薬局",
+        "en": "Seimusu Omiya Nishiguchi Pharmacy"
+      },
+      "geo": {
+        "latitude": 35.9044,
+        "longitude": 139.62283
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.904474,139.6228111,3a,90y,165.75h,97.28t/data=!3m7!1e1!3m5!1skmyrHwrp7NZQVtSdj-0-HQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.281212004071463%26panoid%3DkmyrHwrp7NZQVtSdj-0-HQ%26yaw%3D165.7474446957362!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "f007d77c-b942-40e4-bee1-13750425d56a",
+      "name": {
+        "ja": "杉戸高野台駅",
+        "en": "Sugito-Takanodai Station",
+        "kr": "스기토타카노다이 역"
+      },
+      "geo": {
+        "latitude": 36.05129,
+        "longitude": 139.71456
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-saitama-sugito",
+      "streetViewUrl": "https://www.google.com/maps/@36.051153,139.7144521,3a,75y,68.59h,99.43t/data=!3m7!1e1!3m5!1sU1EqOKgB758PwoxQFyycRQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.42827144268881%26panoid%3DU1EqOKgB758PwoxQFyycRQ%26yaw%3D68.58701829669862!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "fcf11f15-0cbe-4d98-8a40-e313bb10716d",
+      "name": {
+        "ja": "川崎市民広場",
+        "en": "Kawasaki city Recreation Ground"
+      },
+      "geo": {
+        "latitude": 35.52639,
+        "longitude": 139.71019
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.5263568,139.7101262,3a,48.7y,85.3h,96.61t/data=!3m7!1e1!3m5!1s5I_5taqVMzYJ_JMpwhTXMA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.608679937122503%26panoid%3D5I_5taqVMzYJ_JMpwhTXMA%26yaw%3D85.3023179233556!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    },
+    {
+      "placeId": "fe1d301c-8d8e-409a-b940-c4d7aabb1a18",
+      "name": {
+        "ja": "東京ビッグサイト 東展示棟",
+        "en": "Tokyo Big Sight East Halls"
+      },
+      "geo": {
+        "latitude": 35.63108,
+        "longitude": 139.79667
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6311894,139.7966899,3a,90y,251.72h,108.73t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICeybWcwQE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HatNaLHrIxrTj3-P-HzuyE10ALSNGelrkvvx5rS-kB8Yt9-aGk1KPorBn9pEPfV7Zayu2zc03LhAXdTgQS2R4LcQbVeqwOsKFIx1BJL8hjCAdL64Abdxk3hL5jWzdAHjSH8h59PGw%3Dw900-h600-k-no-pi-18.731624658489338-ya65.12426674738933-ro0-fo100!7i6720!8i3360?entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©美水かがみ／らっきー☆ぱらだいす"
+    }
+  ]
+}

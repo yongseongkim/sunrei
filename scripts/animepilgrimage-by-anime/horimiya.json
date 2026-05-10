@@ -1,0 +1,194 @@
+{
+  "anime": {
+    "animeId": "wRJJ3i3avQIUeZ6PL6ej",
+    "slug": "horimiya",
+    "title": {
+      "ja": "ホリミヤ",
+      "kr": "호리미야",
+      "en": "Horimiya"
+    },
+    "author": {
+      "ja": [
+        "HERO",
+        "萩原ダイスケ"
+      ],
+      "en": [
+        "HERO",
+        "Daisuke Hagiwara"
+      ],
+      "kr": [
+        "HERO",
+        "하기와라 다이스케"
+      ]
+    },
+    "studio": {
+      "en": [
+        "CloverWorks"
+      ]
+    }
+  },
+  "placeCount": 10,
+  "places": [
+    {
+      "placeId": "00732d9d-6733-4733-a9c5-e587c37c0cc7",
+      "name": {
+        "ja": "三ネドラッグ",
+        "en": "Mine Pharmacy"
+      },
+      "geo": {
+        "latitude": 35.7042686,
+        "longitude": 139.598992
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7042686,139.598992,3a,75y,112.45h,99.18t/data=!3m6!1e1!3m4!1sZCQNfXQalHcb1Ls1gVMTeg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©HERO・萩原ダイスケ／SQUARE ENIX・「ホリミヤ」製作委員会"
+    },
+    {
+      "placeId": "5d86061a-c7f6-4ef8-9961-079a281bdc22",
+      "name": {
+        "en": "Pigrone",
+        "ja": "ピグローネ"
+      },
+      "geo": {
+        "latitude": 35.7036097,
+        "longitude": 139.6224528
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7036097,139.6224528,3a,68y,80.66h,96.11t/data=!3m7!1e1!3m5!1sGR9B0TJJELUKlFPv3vGODw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DGR9B0TJJELUKlFPv3vGODw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D46.659348%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©HERO・萩原ダイスケ／SQUARE ENIX・「ホリミヤ」製作委員会"
+    },
+    {
+      "placeId": "6396f740-8ca1-4a63-8df6-38c6a18a08f4",
+      "name": {
+        "en": "Near the Suginami Nursery",
+        "id": "Sekitar Suginami Nursery",
+        "ja": "杉並保育園付近",
+        "es": "Cerca de la Suginami Nursery",
+        "de": "In der Nähe des Suginami Nursery"
+      },
+      "geo": {
+        "latitude": 35.6965977,
+        "longitude": 139.6417684
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6965977,139.6417684,3a,75y,58.49h,94.36t/data=!3m7!1e1!3m5!1s2iKv0ah2ozOHP0_MFetskw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D2iKv0ah2ozOHP0_MFetskw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D267.83777%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©HERO・萩原ダイスケ／SQUARE ENIX・「ホリミヤ」製作委員会"
+    },
+    {
+      "placeId": "8d1ff3bb-6e37-4973-8289-eefc8ebd92e2",
+      "name": {
+        "en": "Umezato Central Park",
+        "ja": "梅里中央公園"
+      },
+      "geo": {
+        "latitude": 35.6963455,
+        "longitude": 139.6409401
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6963455,139.6409401,3a,90y,168.62h,92.59t/data=!3m7!1e1!3m5!1s_KX02payPmsmoRt6m8n57w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D_KX02payPmsmoRt6m8n57w%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D313.46893%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©HERO・萩原ダイスケ／SQUARE ENIX・「ホリミヤ」製作委員会"
+    },
+    {
+      "placeId": "a61b36cd-208c-4050-9526-66cc980fc013",
+      "name": {
+        "en": "Gigo Machida",
+        "ja": "GiGO 町田"
+      },
+      "geo": {
+        "latitude": 35.5437904,
+        "longitude": 139.4468676
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-machida",
+      "streetViewUrl": "https://www.google.com/maps/@35.5437904,139.4468676,3a,75y,135.29h,94.11t/data=!3m7!1e1!3m5!1sTvBeHROECQdFG7flobd8Qg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DTvBeHROECQdFG7flobd8Qg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D332.52826%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©HERO・萩原ダイスケ／SQUARE ENIX・「ホリミヤ」製作委員会"
+    },
+    {
+      "placeId": "c65f7c84-1c46-4d4d-be74-4b3fafa238e0",
+      "name": {
+        "en": "AURUM",
+        "ja": "美容院 オーラム ヘア デザイン(AURUM Hair Design)"
+      },
+      "geo": {
+        "latitude": 35.7030355,
+        "longitude": 139.6203749
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7030355,139.6203749,3a,90y,229.17h,96.04t/data=!3m7!1e1!3m5!1suxGKs0wM1o2AwKqZHVkGjg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DuxGKs0wM1o2AwKqZHVkGjg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D57.17633%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©HERO・萩原ダイスケ／SQUARE ENIX・「ホリミヤ」製作委員会"
+    },
+    {
+      "placeId": "d16dadda-47ce-4740-840f-6741a23eeb6e",
+      "name": {
+        "en": "Sands"
+      },
+      "geo": {
+        "latitude": 35.7052108,
+        "longitude": 139.5973228
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7052108,139.5973228,3a,90y,258.68h,94.32t/data=!3m7!1e1!3m5!1syPJhJwdRdTD0Szj2LwXZow!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DyPJhJwdRdTD0Szj2LwXZow%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D336.77274%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©HERO・萩原ダイスケ／SQUARE ENIX・「ホリミヤ」製作委員会"
+    },
+    {
+      "placeId": "ec56203c-b6fc-4960-a217-0a02ab43804f",
+      "name": {
+        "en": "The Old Arrow"
+      },
+      "geo": {
+        "latitude": 35.7047704,
+        "longitude": 139.5979053
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7047704,139.5979053,3a,90y,25.45h,89.78t/data=!3m7!1e1!3m5!1sUygMGGmaXRK3nW8ZHH10Sg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DUygMGGmaXRK3nW8ZHH10Sg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D6.9094124%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©HERO・萩原ダイスケ／SQUARE ENIX・「ホリミヤ」製作委員会"
+    },
+    {
+      "placeId": "ed555981-241f-4f28-9234-a5f0d288e6f7",
+      "name": {
+        "en": "Tully's Coffee Seibu Shinkin Ogikubo",
+        "ja": "タリーズコーヒー 西武しんきん荻窪店"
+      },
+      "geo": {
+        "latitude": 35.703564,
+        "longitude": 139.6209997
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.703564,139.6209997,3a,67.4y,2.91h,99.06t/data=!3m7!1e1!3m5!1svWqaPPKSgouzXvzrd5O1Hg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DvWqaPPKSgouzXvzrd5O1Hg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D24.290945%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©HERO・萩原ダイスケ／SQUARE ENIX・「ホリミヤ」製作委員会"
+    },
+    {
+      "placeId": "f104a6e4-204d-4786-8af9-33a833a6483d",
+      "name": {
+        "ja": "豚山 町田店",
+        "en": "Ramen BUTAYAMA Machida"
+      },
+      "geo": {
+        "latitude": 35.5437619,
+        "longitude": 139.4479338
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-machida",
+      "streetViewUrl": "https://www.google.com/maps/@35.5437619,139.4479338,3a,75y,29.18h,103.36t/data=!3m6!1e1!3m4!1s0wjgv_0ssyxp1JpHSfQ8Ow!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©HERO・萩原ダイスケ／SQUARE ENIX・「ホリミヤ」製作委員会"
+    }
+  ]
+}

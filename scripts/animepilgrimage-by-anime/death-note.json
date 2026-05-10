@@ -1,0 +1,431 @@
+{
+  "anime": {
+    "animeId": "6tJB3K9VJZUzMkqcnP70",
+    "slug": "death-note",
+    "title": {
+      "en": "DEATH NOTE"
+    },
+    "author": {
+      "kr": [
+        "오오바 츠구미",
+        "오바타 다케시"
+      ],
+      "en": [
+        "Tsugumi Ohba",
+        "Takeshi Obata"
+      ],
+      "ja": [
+        "大場つぐみ",
+        "小畑健"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "マッドハウス"
+      ],
+      "en": [
+        "Madhouse"
+      ]
+    }
+  },
+  "placeCount": 24,
+  "places": [
+    {
+      "placeId": "05264a41-fa82-4d67-8558-0cdc8fca226e",
+      "name": {
+        "ja": "渋谷スクランブル交差点",
+        "en": "Shibuya Scramble Crossing"
+      },
+      "geo": {
+        "latitude": 35.6594,
+        "longitude": 139.70017
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6594754,139.7004902,3a,49.6y,256.94h,97.76t/data=!3m7!1e1!3m5!1svD349-41i1RPehOAG_j74Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.7603563972666905%26panoid%3DvD349-41i1RPehOAG_j74Q%26yaw%3D256.9385381654919!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "11993769-4454-4777-b5d0-bdf9ab3d32fd",
+      "name": {
+        "ja": "外務省",
+        "kr": "일본 외무성",
+        "en": "Ministry of Foreign Affairs of Japan (MOFA)"
+      },
+      "geo": {
+        "latitude": 35.67375,
+        "longitude": 139.75069
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6736331,139.7507244,3a,47.7y,343.81h,98.56t/data=!3m7!1e1!3m5!1s1QtVANGCgzrvhGPopHMBOw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.559381912528579%26panoid%3D1QtVANGCgzrvhGPopHMBOw%26yaw%3D343.8068825369747!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "13a81a24-256c-43ab-bbc6-6bd15ecdee3d",
+      "name": {
+        "ja": "渋谷スクランブル交差点",
+        "en": "Shibuya Scramble Crossing"
+      },
+      "geo": {
+        "latitude": 35.65943,
+        "longitude": 139.70058
+      },
+      "ep": 25,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6594137,139.7005955,3a,63.4y,311.09h,109.18t/data=!3m7!1e1!3m5!1snLvWqMGAqrC6MoJ_GoAAcQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-19.18400618093554%26panoid%3DnLvWqMGAqrC6MoJ_GoAAcQ%26yaw%3D311.0917400910007!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "20f118df-dc13-48a7-8ee7-df55fed5f277",
+      "name": {
+        "en": "Kyoto District Public Prosecutors Office",
+        "kr": "교토지방검찰청",
+        "ja": "京都地方検察庁"
+      },
+      "geo": {
+        "latitude": 35.02151,
+        "longitude": 135.75663
+      },
+      "ep": 32,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0214927,135.7565499,3a,73.2y,55.07h,94.12t/data=!3m7!1e1!3m5!1sXwxiSuzqN3QoagLcUHiNcg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.116927759966956%26panoid%3DXwxiSuzqN3QoagLcUHiNcg%26yaw%3D55.069937827601024!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "460ae580-d094-46eb-8fd9-cc7f62879842",
+      "name": {
+        "en": "Takeshita Street Entrance Arch (Harajuku Station side)",
+        "ja": "竹下通り 入口アーチ（原宿駅側）"
+      },
+      "geo": {
+        "latitude": 35.67155,
+        "longitude": 139.70323
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6715392,139.7033567,3a,90y,280.93h,123.25t/data=!3m7!1e1!3m5!1s-LQVrstzH45sNPk1Pz6xZg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-33.248341486844936%26panoid%3D-LQVrstzH45sNPk1Pz6xZg%26yaw%3D280.9312961254803!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "46cc980c-c7f3-4307-a5e6-408afa2404e4",
+      "name": {
+        "ja": "日本武道館",
+        "kr": "일본 무도관",
+        "en": "Nippon Budokan"
+      },
+      "geo": {
+        "latitude": 35.69333,
+        "longitude": 139.7497
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Nippon+Budokan/@35.6934981,139.7497318,3a,90y,354.5h,78.28t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID4uO6RlQE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HaQOgdfVeLYRZmOdbd8VxFcEtqI_cr59Yhd7oDP6oslNlyu6abaObEkKFASHzK-Ay-5zKOMviQeD3Zmq_b7ycA8fdpe0YlkT-AGy1q4a-6plAeWF8_sI1X0vD_S-uVBSVRaQyvefA%3Dw900-h600-k-no-pi11.718538086484827-ya354.49686768654135-ro0-fo100!7i6080!8i3040!4m9!3m8!1s0x60188c6b802bf413:0x215b5c71c9657188!8m2!3d35.69333!4d139.7497076!10e5!14m1!1BCgIgARICCAI!16zL20vMDFuMjc1?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "4cbb9701-17e7-4fc4-9bed-b7a5a27236da",
+      "name": {
+        "en": "Kasumigaseki-zaka",
+        "ja": "霞が関坂"
+      },
+      "geo": {
+        "latitude": 35.67479,
+        "longitude": 139.75135
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6747102,139.7514111,3a,90y,327.79h,99.23t/data=!3m7!1e1!3m5!1sWMdbBfTHozYWFg7MosMzIg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.231768720226313%26panoid%3DWMdbBfTHozYWFg7MosMzIg%26yaw%3D327.7881994053807!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "6147231f-3069-49a1-8cec-71edc2582e9d",
+      "name": {
+        "ja": "外務省",
+        "kr": "일본 외무성",
+        "en": "Ministry of Foreign Affairs of Japan (MOFA)"
+      },
+      "geo": {
+        "latitude": 35.67331,
+        "longitude": 139.75041
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6732081,139.7506518,3a,40y,302.48h,93.5t/data=!3m7!1e1!3m5!1s4hlgB_8JFXp9FhXYm9Kswg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.496697452081051%26panoid%3D4hlgB_8JFXp9FhXYm9Kswg%26yaw%3D302.4763990528504!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "66432bd7-37fc-4462-94ca-b03896782e3d",
+      "name": {
+        "ja": "メゾン ド ミュゼ 表参道",
+        "en": "Maison de Musee Omotesando"
+      },
+      "geo": {
+        "latitude": 35.65928,
+        "longitude": 139.71305
+      },
+      "ep": 33,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6593985,139.7130265,3a,90y,213.46h,102.24t/data=!3m7!1e1!3m5!1sr9yV3PtnXJv0yhMIvkvTnA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.243787498041385%26panoid%3Dr9yV3PtnXJv0yhMIvkvTnA%26yaw%3D213.458002029547!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "6fa25f1f-354f-4565-955f-9548630285dc",
+      "name": {
+        "kr": "도쿄 대학",
+        "ja": "東京大学",
+        "en": "The University of Tokyo"
+      },
+      "geo": {
+        "latitude": 35.7132,
+        "longitude": 139.761
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7131743,139.7609327,3a,63.5y,80.61h,101.52t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDqheCIMg!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HaU7AVqueBLLp4onSKLetRhgfLkUULzu-6FEzAxGpxr3CRssYIytNOELnE6bb7v9cDFmEH6M03hUCYZCNZa_pD8PC3xJZ9Y5PdhIGkb3O2cRlvfHBEtcxWr2FHuv02oKaUoPow%3Dw900-h600-k-no-pi-11.521840795787853-ya358.61493446281355-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "72292a60-0cba-4b8d-8636-b35bda2108b9",
+      "name": {
+        "kr": "국가 공안 위원회",
+        "ja": "国家公安委員会",
+        "en": "National Public Safety Commission"
+      },
+      "geo": {
+        "latitude": 35.67535,
+        "longitude": 139.75164
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6754192,139.7518649,3a,43y,268.31h,93.79t/data=!3m7!1e1!3m5!1s6kOdo6iIB5htleJcyz1VGg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.787528086792733%26panoid%3D6kOdo6iIB5htleJcyz1VGg%26yaw%3D268.3066443181513!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "77067ef7-6a26-466b-8151-40c06b2163c3",
+      "name": {
+        "en": "MO・MON",
+        "ja": "モモン原宿店"
+      },
+      "geo": {
+        "latitude": 35.67132,
+        "longitude": 139.70444
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6712842,139.704525,3a,48.8y,311.99h,101.57t/data=!3m7!1e1!3m5!1shl_7zRpXzuV95yuFNnjaFQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.569532011819874%26panoid%3Dhl_7zRpXzuV95yuFNnjaFQ%26yaw%3D311.9880389698851!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "7ccfc9ef-da3a-445e-a475-2551a8996be5",
+      "name": {
+        "en": "Mizuho Bank Shibuya Central Branch",
+        "ja": "みずほ銀行 渋谷中央支店"
+      },
+      "geo": {
+        "latitude": 35.65962,
+        "longitude": 139.69942
+      },
+      "ep": 25,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6595837,139.699289,3a,64.3y,61.31h,95.19t/data=!3m7!1e1!3m5!1sT2r-631vveQUCf0ZSJSIzQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.188773138252671%26panoid%3DT2r-631vveQUCf0ZSJSIzQ%26yaw%3D61.30857686835626!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "92b7482f-0026-49f1-b929-2bde48385daf",
+      "name": {
+        "ja": "QB HOUSE 新宿南口店",
+        "en": "QB HOUSE (Shinjuku South Exit)"
+      },
+      "geo": {
+        "latitude": 35.68815,
+        "longitude": 139.69801
+      },
+      "ep": 23,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6880872,139.6978146,3a,90y,240.99h,103.3t/data=!3m7!1e1!3m5!1sO75xv5NVsjYNc28lt6Rqjw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.296808054814619%26panoid%3DO75xv5NVsjYNc28lt6Rqjw%26yaw%3D240.9892830101704!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "981f8405-e851-4c30-ada2-19d9af552cc3",
+      "name": {
+        "ja": "東京大学",
+        "en": "The University of Tokyo",
+        "kr": "도쿄 대학"
+      },
+      "geo": {
+        "latitude": 35.7111,
+        "longitude": 139.76037
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7110423,139.7603024,3a,90y,64.21h,100.61t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDEo6-aygE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYBApBaWF1-2s6ZXqIL0H0w4kBU5TPGprwW9U9HyPh6Fn3SjdpNKIvCoo7Qec6CIBIP7YOwAEl2zxhO90xb5UtKtwRAVcwqjkLyOFph7tFZEI9N9zW1LZKKuPCnmEppofF_TIO5%3Dw900-h600-k-no-pi-10.60594868492943-ya64.21155861916985-ro0-fo100!7i6080!8i3040?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "a052134c-5561-49a5-b10c-e65ade2abce9",
+      "name": {
+        "en": "Seagull Square",
+        "ja": "かもめの広場"
+      },
+      "geo": {
+        "latitude": 35.6723,
+        "longitude": 139.75347
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6723142,139.7535025,2a,90y,218.82h,95.63t/data=!3m7!1e1!3m5!1sqiMGah_8BB-gtMxPO-h1fQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.634152977748101%26panoid%3DqiMGah_8BB-gtMxPO-h1fQ%26yaw%3D218.824552701759!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "a32d6c41-0868-4e85-b9c9-75d653bdce55",
+      "name": {
+        "ja": "玉川上水旧水路緑道",
+        "en": "Tamagawa Josui Greenway"
+      },
+      "geo": {
+        "latitude": 35.67978,
+        "longitude": 139.68388
+      },
+      "ep": 23,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6798835,139.6841865,3a,38.2y,257.88h,95.59t/data=!3m7!1e1!3m5!1sTIT_FAzI5nztDWrCKRvwYQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.587452969690446%26panoid%3DTIT_FAzI5nztDWrCKRvwYQ%26yaw%3D257.88253290371324!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "a33363bc-c9ce-4830-9cbf-ce016afd25f1",
+      "name": {
+        "kr": "농림수산성",
+        "ja": "農林水産省",
+        "en": "Ministry of Agriculture, Forestry and Fisheries"
+      },
+      "geo": {
+        "latitude": 35.67299,
+        "longitude": 139.75105
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.672981,139.7508214,3a,51.6y,95.29h,94.84t/data=!3m7!1e1!3m5!1sF2rAthbFdY75C1iBvGRR9g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.838105908011428%26panoid%3DF2rAthbFdY75C1iBvGRR9g%26yaw%3D95.2854736025848!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "ae96d27e-1229-41cd-9419-d5e045fff71d",
+      "name": {
+        "en": "Aoyama Gakuin University - Aoyama Campus",
+        "kr": "아오야마 가쿠인 대학",
+        "ja": "青山学院大学 青山キャンパス"
+      },
+      "geo": {
+        "latitude": 35.6614,
+        "longitude": 139.7091
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6614966,139.7091064,3a,86.2y,156.04h,94.96t/data=!3m7!1e1!3m5!1sFNsNNDs-cQ3KC9Aj9N_BQw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.958467563413407%26panoid%3DFNsNNDs-cQ3KC9Aj9N_BQw%26yaw%3D156.03753917466454!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "d49e4b45-276b-478a-8968-71a0929cc193",
+      "name": {
+        "kr": "임페리얼 호텔 도쿄",
+        "ja": "帝国ホテル 東京",
+        "en": "Imperial Hotel Tokyo"
+      },
+      "geo": {
+        "latitude": 35.67249,
+        "longitude": 139.7577
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Imperial+Hotel+Tokyo/@35.6727216,139.7577202,3a,63.6y,176.51h,97.17t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDEoYC9hwE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYaPANWBwRUahD8_vinK_OtD9EP_rPGiOnIFq90DyTwkFZlZ6sWFgdO0GbEVcAFav4fQP6bi9RLMyVyMZjzWkOYoCmxm520kz410DFO5DjGe0Ak4WOLWHQHaoXhHwpSCg-xHpNFGg%3Dw900-h600-k-no-pi-7.174876363645325-ya288.4703849989518-ro0-fo100!7i10832!8i5416!4m13!3m12!1s0x60188bee5d15bc4f:0xc637562b5aac0ea6!5m3!1s2025-07-11!4m1!1i2!8m2!3d35.672454!4d139.7579015!10e5!14m1!1BCgIgARICCAI!16zL20vMGc0MHlq?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "e8a517dc-d637-4339-9775-c446b4650bb0",
+      "name": {
+        "ja": "経済産業省前",
+        "en": "Keizaisangyo-Sho",
+        "kr": "가스미가세키"
+      },
+      "geo": {
+        "latitude": 35.67254,
+        "longitude": 139.75218
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6724511,139.7521492,3a,56.5y,324.69h,93.54t/data=!3m7!1e1!3m5!1smPJ2N4s1zrSvGT2R5aGeSA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.540027691836727%26panoid%3DmPJ2N4s1zrSvGT2R5aGeSA%26yaw%3D324.6860705033402!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "ed35be79-fac2-45dd-a6cf-b72aa43d2c39",
+      "name": {
+        "kr": "패밀리마트 오다큐 에이스",
+        "en": "FamilyMart Odakyu Ace",
+        "ja": "ファミリーマート 小田急エース店"
+      },
+      "geo": {
+        "latitude": 35.69016,
+        "longitude": 139.69877
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6900069,139.6990141,2a,33.4y,271.96h,89.24t/data=!3m7!1e1!3m5!1soGN9SqAqftOOQFPquDgUcA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.7597127412623337%26panoid%3DoGN9SqAqftOOQFPquDgUcA%26yaw%3D271.95829942598476!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "ef614d6d-2793-45a1-b3c0-497058162ac4",
+      "name": {
+        "kr": "하치코앞 광장",
+        "ja": "ハチ公前広場",
+        "en": "Hachiko Square"
+      },
+      "geo": {
+        "latitude": 35.65941,
+        "longitude": 139.70072
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6594844,139.7008001,3a,85.2y,194.22h,99.9t/data=!3m7!1e1!3m5!1sXVJVifnGo2nWMynwQxUtJg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.899721043511178%26panoid%3DXVJVifnGo2nWMynwQxUtJg%26yaw%3D194.22341846134364!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    },
+    {
+      "placeId": "fff3c28c-89b7-47b5-8609-5f3223fb1ffc",
+      "name": {
+        "en": "Main Gate of Tokyo University",
+        "ja": "東大正門"
+      },
+      "geo": {
+        "latitude": 35.7129,
+        "longitude": 139.75953
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7129102,139.7594168,3a,75y,83.58h,94.33t/data=!3m7!1e1!3m5!1s4h1_pknJMSiufmF4rsg0ng!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.326507307362462%26panoid%3D4h1_pknJMSiufmF4rsg0ng%26yaw%3D83.57998838673392!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©大場つぐみ・小畑健／集英社・VAP・マッドハウス・NTV・D.N.ドリームパートナーズ"
+    }
+  ]
+}

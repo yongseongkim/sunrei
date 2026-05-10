@@ -1,0 +1,330 @@
+{
+  "anime": {
+    "animeId": "dfteHvtxljaQQWkj7Kdy",
+    "slug": "her-blue-sky",
+    "title": {
+      "ja": "空の青さを知る人",
+      "kr": "하늘의 푸르름을 아는 사람이여",
+      "en": "Her Blue Sky"
+    },
+    "author": {
+      "ja": [
+        "超平和バスターズ"
+      ],
+      "en": [
+        "Super Peace Busters"
+      ],
+      "kr": [
+        "초평화 버스터즈"
+      ]
+    },
+    "studio": {
+      "en": [
+        "CloverWorks"
+      ]
+    }
+  },
+  "placeCount": 18,
+  "places": [
+    {
+      "placeId": "321ecc97-2e5e-4f35-bfbb-b9dbe3453d3d",
+      "name": {
+        "en": "Near the sugina",
+        "es": "Cerca de la sugina",
+        "de": "In der Nähe des sugina",
+        "id": "Sekitar sugina",
+        "ja": "展望の宿 すぎな付近"
+      },
+      "geo": {
+        "latitude": 35.9830495,
+        "longitude": 139.0495182
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9830495,139.0495182,3a,90y,103.31h,92.7t/data=!3m6!1e1!3m4!1sQZ-t-UQB9J7KWHZhWCj_kQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "34b8c882-131d-4552-8db2-979b71d7471b",
+      "name": {
+        "ja": "花ハス園観光トイレ",
+        "en": "Hana hasu-en tourist toilet"
+      },
+      "geo": {
+        "latitude": 35.9513739,
+        "longitude": 139.0176103
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9513739,139.0176103,3a,75y,350.85h,87.87t/data=!3m6!1e1!3m4!1sO4YC8FZ28mwGpIf_8LXOJA!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "3e6a1cd8-cdc7-4051-bb12-965d5feba5c2",
+      "name": {
+        "ja": "西武秩父駅",
+        "en": "Seibu-Chichibu Station"
+      },
+      "geo": {
+        "latitude": 35.9896428,
+        "longitude": 139.0834223
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9896428,139.0834223,2a,90y,106.69h,86.87t/data=!3m6!1e1!3m4!1smZO5Yzg95MxYbbnWfcMtYQ!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "54905035-f5cc-461b-be17-d962d3fee821",
+      "name": {
+        "ja": "野外ステージ",
+        "en": "outdoor stage"
+      },
+      "geo": {
+        "latitude": 35.9966124,
+        "longitude": 139.0552462
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9966124,139.0552462,3a,75y,70.22h,92.35t/data=!3m8!1e1!3m6!1sAF1QipPn0RQya1jEPTVoT91FBwset1Ha9aQtKCXkTK4P!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPn0RQya1jEPTVoT91FBwset1Ha9aQtKCXkTK4P%3Dw203-h100-k-no-pi0-ya28.48367-ro-0-fo100!7i7680!8i3840?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "61f63470-85b9-4b0d-9f58-ff31cb28cab4",
+      "name": {
+        "ja": "セブン-イレブン 秩父宮側町店",
+        "en": "7-Eleven Chichibu Miyakawacho"
+      },
+      "geo": {
+        "latitude": 35.9986251,
+        "longitude": 139.0834461
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9986251,139.0834461,3a,75y,113.36h,89.99t/data=!3m7!1e1!3m5!1snH6NIkkDl7VCDpE4mMKJPA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DnH6NIkkDl7VCDpE4mMKJPA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D182.2115%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "69e01ff1-eeeb-4666-9f22-8c597239b909",
+      "name": {
+        "ja": "佐久良橋",
+        "en": "Sakura Bridge"
+      },
+      "geo": {
+        "latitude": 35.9951651,
+        "longitude": 139.0694474
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9951651,139.0694474,3a,90y,2.07h,96.03t/data=!3m6!1e1!3m4!1sgiOBxcfj0DifM-Rt2aba-A!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "6b1627b6-ef38-40b0-af87-dc01989462a5",
+      "name": {
+        "ja": "音楽堂",
+        "en": "music hall"
+      },
+      "geo": {
+        "latitude": 35.996588,
+        "longitude": 139.0553743
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.996588,139.0553743,3a,75y,124.01h,95.15t/data=!3m8!1e1!3m6!1sAF1QipPqgi6GxNIWySAVCAVc4pGtTlIpyaqbgVygtMx4!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPqgi6GxNIWySAVCAVc4pGtTlIpyaqbgVygtMx4%3Dw203-h100-k-no-pi-0-ya130.22282-ro-0-fo100!7i5760!8i2880?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "7113717a-1c18-4fad-8f4d-3829db34d779",
+      "name": {
+        "ja": "ミューズパーク入口",
+        "en": "Muse Park Entrance"
+      },
+      "geo": {
+        "latitude": 35.9821677,
+        "longitude": 139.0541427
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9821677,139.0541427,3a,75y,353.05h,100.96t/data=!3m6!1e1!3m4!1s3LW6eqF-PZbxLDBjrGgCpg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "8264bc5c-ae36-4197-85e1-0f1467b8c9c3",
+      "name": {
+        "ja": "ちちぶ朝市@上町付近",
+        "de": "In der Nähe des Chichibu morning market @Kamimachi",
+        "es": "Cerca de la Chichibu morning market @Kamimachi",
+        "id": "Sekitar Chichibu morning market @Kamimachi",
+        "en": "Near the Chichibu morning market @Kamimachi"
+      },
+      "geo": {
+        "latitude": 35.9932704,
+        "longitude": 139.0794863
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9932704,139.0794863,3a,90y,32.16h,89.24t/data=!3m6!1e1!3m4!1swPS7UUs9SUogJ_wzdxKehw!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "89472de3-c6c9-449f-87ed-1c578f2e872b",
+      "name": {
+        "en": "Kurihara Ward Public Hall",
+        "ja": "栗原区公会堂"
+      },
+      "geo": {
+        "latitude": 35.9717199,
+        "longitude": 139.0504429
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9717199,139.0504429,3a,90y,131.33h,92.01t/data=!3m6!1e1!3m4!1sIt040aXZRHM6Vte3hwbe6g!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "a442baa5-1744-452b-a195-23b8ba2f2bd4",
+      "name": {
+        "en": "Chichibu City Hall",
+        "ja": "秩父市役所"
+      },
+      "geo": {
+        "latitude": 35.9908187,
+        "longitude": 139.0848874
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9908187,139.0848874,3a,90y,25.23h,99.47t/data=!3m7!1e1!3m5!1sA320GPC1mQrcoc4u_H4TkA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DA320GPC1mQrcoc4u_H4TkA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D79.77349%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "b5af5673-9fc3-4bc5-a683-a44dcb76145f",
+      "name": {
+        "en": "Tomoegawa Bridge",
+        "ja": "巴川橋"
+      },
+      "geo": {
+        "latitude": 35.9818481,
+        "longitude": 139.06055
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9818481,139.06055,3a,90y,290.67h,109.3t/data=!3m6!1e1!3m4!1skEyHTyRr6gb-Nv9uXkqZ2A!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "bd75ecaa-024f-4fd2-8a70-fe06ce168ae8",
+      "name": {
+        "en": "Old Chichibu Bridge",
+        "ja": "旧秩父橋"
+      },
+      "geo": {
+        "latitude": 36.0186444,
+        "longitude": 139.0865583
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@36.0186444,139.0865583,3a,75y,286.07h,98.12t/data=!3m7!1e1!3m5!1sAF1QipPQEF0UUat2uoL0Fzx-VcfwBge6uMpYF5hnZ03j!2e10!3e11!7i7680!8i3840?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "c4d4da23-b540-4aaf-95a7-113de67bd501",
+      "name": {
+        "es": "Cerca de la Tenichiguu",
+        "de": "In der Nähe des Tenichiguu",
+        "ja": "天一宮付近",
+        "en": "Near the Tenichiguu",
+        "id": "Sekitar Tenichiguu"
+      },
+      "geo": {
+        "latitude": 35.9825531,
+        "longitude": 139.0531403
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9825531,139.0531403,3a,90y,220.37h,109.83t/data=!3m6!1e1!3m4!1sFwLhC5FaZRQrGe3gSLlFRA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "c5e26056-f62e-418a-92e2-1abb939b6c2e",
+      "name": {
+        "ja": "弁財天碑",
+        "en": "benzaiten monument"
+      },
+      "geo": {
+        "latitude": 35.9970498,
+        "longitude": 139.0648805
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9970498,139.0648805,3a,90y,32.58h,90.41t/data=!3m7!1e1!3m5!1szPG9RqXw5jsnvxZY3leZRw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DzPG9RqXw5jsnvxZY3leZRw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D106.446%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "ceeff3c8-12d6-4be9-a4c0-a2e4a7eeced4",
+      "name": {
+        "ja": "市営皆谷原住宅付近",
+        "en": "Near the Municipal Minayahara Housing",
+        "es": "Cerca de la Municipal Minayahara Housing",
+        "de": "In der Nähe des Municipal Minayahara Housing",
+        "id": "Sekitar Municipal Minayahara Housing"
+      },
+      "geo": {
+        "latitude": 35.9530015,
+        "longitude": 139.0162813
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9530015,139.0162813,3a,90y,33.72h,94.38t/data=!3m6!1e1!3m4!1s3lKLUL11bHek5KveLCQS6A!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "d390a2af-a89f-44c6-92ff-2678a7f9b22b",
+      "name": {
+        "ja": "高砂ホルモン",
+        "en": "Horumon Takasago"
+      },
+      "geo": {
+        "latitude": 35.9920706,
+        "longitude": 139.0825316
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9920706,139.0825316,3a,63.5y,262.83h,99.19t/data=!3m7!1e1!3m5!1sbUHZQoS1O6T8td8moKYzhQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DbUHZQoS1O6T8td8moKYzhQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D92.33666%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    },
+    {
+      "placeId": "f02e6831-ecd5-42e2-bfee-a2a3f59f9aac",
+      "name": {
+        "ja": "矢尾百貨店",
+        "en": "Yao Department"
+      },
+      "geo": {
+        "latitude": 35.9926435,
+        "longitude": 139.0799425
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@35.9926435,139.0799425,3a,90y,288.26h,85.73t/data=!3m6!1e1!3m4!1szPP2GsENpoYIShYWga8S8Q!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2019 SORAAO PROJECT"
+    }
+  ]
+}

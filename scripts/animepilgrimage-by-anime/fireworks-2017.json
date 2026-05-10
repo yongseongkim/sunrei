@@ -1,0 +1,154 @@
+{
+  "anime": {
+    "animeId": "7i2GVSJGLkEIJoAzrntM",
+    "slug": "fireworks-2017",
+    "title": {
+      "ja": "打ち上げ花火、下から見るか? 横から見るか?",
+      "kr": "쏘아올린 불꽃, 밑에서 볼까? 옆에서 볼까?",
+      "en": "Fireworks 2017"
+    },
+    "author": {
+      "ja": [
+        "岩井俊二"
+      ],
+      "en": [
+        "Shunji Iwai"
+      ],
+      "kr": [
+        "이와이 슌지"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "シャフト"
+      ],
+      "en": [
+        "Shaft"
+      ]
+    }
+  },
+  "placeCount": 7,
+  "places": [
+    {
+      "placeId": "288e4f12-5e2b-4678-97ec-a601d68ba59c",
+      "name": {
+        "en": "Inubosaki Lighthouse",
+        "ja": "犬吠埼灯台"
+      },
+      "geo": {
+        "latitude": 35.7076811,
+        "longitude": 140.868176
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-chiba-choshi",
+      "streetViewUrl": "https://www.google.com/maps/@35.7076811,140.868176,3a,90y,49.02h,101.99t/data=!3m7!1e1!3m5!1sAF1QipPj_0iepgcjHVa1uM6S-0pTS2NJ7DKDX_YjWaDE!2e10!3e11!7i5376!8i2688?entry=ttu",
+      "copyright": "©2017「打ち上げ花火、下から見るか？横から見るか？」製作委員会"
+    },
+    {
+      "placeId": "37bac6cc-c6e4-4019-a6a3-dfd75ff44efa",
+      "name": {
+        "es": "Cerca de la Nishimiya Shrine",
+        "ja": "西宮神社(銚子市)付近",
+        "id": "Sekitar Nishimiya Shrine",
+        "de": "In der Nähe des Nishimiya Shrine",
+        "en": "Near the Nishimiya Shrine"
+      },
+      "geo": {
+        "latitude": 35.6952249,
+        "longitude": 140.8611845
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-chiba-choshi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6952249,140.8611845,3a,90y,59.8h,101.48t/data=!3m6!1e1!3m4!1sCoWGL2JJe0UUleoBv13PMw!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2017「打ち上げ花火、下から見るか？横から見るか？」製作委員会"
+    },
+    {
+      "placeId": "5dbe6887-76dd-46c7-9021-7506f6afcafb",
+      "name": {
+        "en": "Wind Power Kamisu No.1 Offshore Wind Farm",
+        "ja": "ウィンド・パワーかみす第1洋上風力発電所"
+      },
+      "geo": {
+        "latitude": 35.8896188,
+        "longitude": 140.7302879
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-ibaraki-kamisu",
+      "streetViewUrl": "https://www.google.com/maps/@35.8896188,140.7302879,3a,90y,319.73h,102.91t/data=!3m6!1e1!3m4!1sOXumtru5oes6oqzBqL_A2A!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2017「打ち上げ花火、下から見るか？横から見るか？」製作委員会"
+    },
+    {
+      "placeId": "7dcc4014-a4f6-4c6e-831d-1f5a3bcf2a9a",
+      "name": {
+        "ja": "外川駅",
+        "en": "Tokawa Station"
+      },
+      "geo": {
+        "latitude": 35.6991809,
+        "longitude": 140.8568883
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-chiba-choshi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6991809,140.8568883,3a,75y,123.09h,96.21t/data=!3m7!1e1!3m5!1sUgJ4HLW397CiK3NL4UYZWw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DUgJ4HLW397CiK3NL4UYZWw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D201.845%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©2017「打ち上げ花火、下から見るか？横から見るか？」製作委員会"
+    },
+    {
+      "placeId": "bc456c68-cdd5-4bb3-ad2c-1c4c4995b794",
+      "name": {
+        "id": "Sekitar 7-Eleven Asahi Iioka Tani",
+        "de": "In der Nähe des 7-Eleven Asahi Iioka Tani",
+        "es": "Cerca de la 7-Eleven Asahi Iioka Tani",
+        "ja": "セブンイレブン 旭市飯岡谷店付近",
+        "en": "Near the 7-Eleven Asahi Iioka Tani"
+      },
+      "geo": {
+        "latitude": 35.7012967,
+        "longitude": 140.7281622
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-chiba-asahi",
+      "streetViewUrl": "https://www.google.com/maps/@35.7012967,140.7281622,3a,75y,271.6h,107.25t/data=!3m7!1e1!3m5!1sXToE-guuXpOfTVItQeidOg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DXToE-guuXpOfTVItQeidOg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D264.00937%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©2017「打ち上げ花火、下から見るか？横から見るか？」製作委員会"
+    },
+    {
+      "placeId": "c68bd1b2-add4-4ac1-9f4b-a6089006b1b8",
+      "name": {
+        "ja": "歌津駅",
+        "en": "Utatsu Station"
+      },
+      "geo": {
+        "latitude": 38.7167055,
+        "longitude": 141.5190813
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-miyagi-minamisanriku",
+      "streetViewUrl": "https://www.google.com/maps/@38.7167055,141.5190813,3a,90y,335.37h,106.87t/data=!3m6!1e1!3m4!1sZ0hv1rNrN5WIa6xMmHYtIQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2017「打ち上げ花火、下から見るか？横から見るか？」製作委員会"
+    },
+    {
+      "placeId": "7c6c146f-19dc-400f-9a58-feadb518bbd8",
+      "name": {
+        "es": "Cerca de la Izumiya",
+        "ja": "漁村一棟貸宿「和泉屋」付近",
+        "de": "In der Nähe des Izumiya",
+        "id": "Sekitar Izumiya",
+        "en": "Near the Izumiya"
+      },
+      "geo": {
+        "latitude": 35.6987601,
+        "longitude": 140.8531505
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-chiba-choshi",
+      "streetViewUrl": "https://www.google.com/maps/@35.6987601,140.8531505,3a,90y,272.69h,108.45t/data=!3m6!1e1!3m4!1s7IcnIE5ukVtYxlt4f1Cq1A!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2017「打ち上げ花火、下から見るか？横から見るか？」製作委員会"
+    }
+  ]
+}

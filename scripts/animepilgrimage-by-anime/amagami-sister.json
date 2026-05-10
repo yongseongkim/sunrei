@@ -1,0 +1,845 @@
+{
+  "anime": {
+    "animeId": "41qdCtiQIC4yNwpe8kWk",
+    "slug": "amagami-sister",
+    "title": {
+      "ja": "甘神さんちの縁結び",
+      "kr": "아마가미 씨네 인연 맺기",
+      "en": "Tying the Knot with an Amagami Sister"
+    },
+    "author": {
+      "ja": [
+        "内藤マーシー"
+      ],
+      "en": [
+        "Marcey Naito"
+      ],
+      "kr": [
+        "나이토 마시"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Drive"
+      ],
+      "ja": [
+        "ドライブ"
+      ]
+    }
+  },
+  "placeCount": 49,
+  "places": [
+    {
+      "placeId": "05fdd777-4606-4fd2-992c-17de2bebc5eb",
+      "name": {
+        "kr": "고월정",
+        "ja": "皐月亭",
+        "en": "Satsuki-tei"
+      },
+      "geo": {
+        "latitude": 34.995124,
+        "longitude": 135.7829165
+      },
+      "ep": 2,
+      "type": "OP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.995124,135.7829165,2a,85.1y,294.84h,91.03t/data=!3m6!1e1!3m4!1seoWt77euBXZj7boiwoVbSw!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "06c472d1-02eb-46ed-8c85-08267cfdf8ca",
+      "name": {
+        "en": "Philosopher's Path",
+        "ja": "哲学の道",
+        "kr": "철학의 길"
+      },
+      "geo": {
+        "latitude": 35.02072,
+        "longitude": 135.79399
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0205348,135.7939609,3a,90y,18.56h,101.33t/data=!3m7!1e1!3m5!1spCMS4K9Z0oDfw42n4ib7yQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.332459626575854%26panoid%3DpCMS4K9Z0oDfw42n4ib7yQ%26yaw%3D18.559083663697937!7i13312!8i6656?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "0fc7ea29-5cb1-423a-b3d7-fd34288bbe28",
+      "name": {
+        "ja": "賀茂大橋",
+        "kr": "가모 대교",
+        "en": "Kamo Ohashi Bridge"
+      },
+      "geo": {
+        "latitude": 35.02906,
+        "longitude": 135.77115
+      },
+      "ep": 14,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0291007,135.7708945,3a,75y,99.6h,102.47t/data=!3m7!1e1!3m5!1sD5hxNtX0rYRmhTDn1d5xGQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.468960515771244%26panoid%3DD5hxNtX0rYRmhTDn1d5xGQ%26yaw%3D99.60062477843847!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "100026c5-3eca-4e2e-a80b-0008f3cef89c",
+      "name": {
+        "ja": "伏見神宝神社口",
+        "en": "Fushimi Kanada Shrine Exit"
+      },
+      "geo": {
+        "latitude": 34.9668567,
+        "longitude": 135.7754832
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/place/Neagarimatsu+(High+Price+Pine)/@34.9668567,135.7754832,3a,90y,107.14h,104.59t/data=!3m8!1e1!3m6!1sAF1QipNFecNhhkBjJbIK8Eoc-KWcE5dC2g2MOJjr-V7f!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNFecNhhkBjJbIK8Eoc-KWcE5dC2g2MOJjr-V7f%3Dw203-h100-k-no-pi-7.202572-ya2.3633413-ro-0-fo100!7i4608!8i2304!4m9!3m8!1s0x60010f14239d35d7:0xdbf728bf83c6113!8m2!3d34.9669348!4d135.7753475!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11dylxnhm_?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "182be246-b42d-4fb0-81da-57bbd1412375",
+      "name": {
+        "ja": "おもかる石",
+        "kr": "오모카루이시",
+        "en": "Omokaru Stone"
+      },
+      "geo": {
+        "latitude": 34.9664743,
+        "longitude": 135.7756392
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9664743,135.7756392,3a,90y,71.29h,95.56t/data=!3m6!1e1!3m4!1smtmWKUixQgrYbu37fkFKug!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "1e80324b-fe4f-4bba-91e6-c0512c8035a5",
+      "name": {
+        "ja": "京都霊山護國神社",
+        "kr": "교토 료잔 호국신사",
+        "en": "Kyoto Ryozen Gokoku-jinja Shrine"
+      },
+      "geo": {
+        "latitude": 34.9994216,
+        "longitude": 135.782717
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9994216,135.782717,3a,75y,55.78h,102.26t/data=!3m7!1e1!3m5!1sFsSISydR-TBtC0qX6x9vPw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DFsSISydR-TBtC0qX6x9vPw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D2.580414%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "2bebf658-f75b-4223-89fd-61116f1daf3c",
+      "name": {
+        "en": "Fluffy's cafe"
+      },
+      "geo": {
+        "latitude": 35.0058828,
+        "longitude": 135.7681987
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0058828,135.7681987,3a,90y,46.85h,129.48t/data=!3m7!1e1!3m5!1sR3pfKK8QVkt9iHzC7xsnkw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DR3pfKK8QVkt9iHzC7xsnkw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D169.16707%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "2de82bd2-49ea-4d50-b994-77370d662092",
+      "name": {
+        "ja": "石鳥居",
+        "en": "Kyoto Ryozen Gokoku-jinja Torii Gate"
+      },
+      "geo": {
+        "latitude": 34.999274,
+        "longitude": 135.780986
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9992748,135.7809955,3a,75y,289.77h,86.32t/data=!3m7!1e1!3m5!1sbVpWsfzhfhJO0l56PXXrJg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D3.679098819938062%26panoid%3DbVpWsfzhfhJO0l56PXXrJg%26yaw%3D289.7737820521378!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "3542443b-0d7d-4813-8f70-1d9c4fcb17f4",
+      "name": {
+        "en": "Minami-Shingu Store",
+        "ja": "南神具"
+      },
+      "geo": {
+        "latitude": 34.9674535,
+        "longitude": 135.7724014
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9674535,135.7724014,3a,90y,283.66h,100.62t/data=!3m7!1e1!3m5!1sW2WrVgKFIW7sXiu6LT2ehA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DW2WrVgKFIW7sXiu6LT2ehA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D94.763725%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "39301d64-a07f-415e-9a24-35a2d3bc113a",
+      "name": {
+        "ja": "京都精華学園中学校･高等学校",
+        "kr": "교토화정학원 중•고등학교",
+        "en": "Kyoto Seika Gakuen Junior & Senior High School"
+      },
+      "geo": {
+        "latitude": 35.0246499,
+        "longitude": 135.7722107
+      },
+      "ep": 1,
+      "type": "ED",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0246499,135.7722107,3a,48.7y,142.55h,105.21t/data=!3m6!1e1!3m4!1soD6vK9pPPib5cVVugWETvg!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "46063486-12c8-4b41-94bf-b7656b84bca9",
+      "name": {
+        "en": "Higashiyama Mount Peak Park Observatory",
+        "kr": "히가시야마 산정공원 전망대",
+        "ja": "東山山頂公園 展望台"
+      },
+      "geo": {
+        "latitude": 35.0001944,
+        "longitude": 135.7876667
+      },
+      "ep": 2,
+      "type": "OP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0001944,135.7876667,3a,75y,249.94h,90.54t/data=!3m8!1e1!3m6!1sAF1QipOL287SMVz2iuKN81sM66wR7k5P9ofyOmAaZpC_!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOL287SMVz2iuKN81sM66wR7k5P9ofyOmAaZpC_%3Dw203-h100-k-no-pi-0-ya330.5635-ro0-fo100!7i6080!8i3040?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "4a7e975c-e9ad-4178-bda5-7201f5762e33",
+      "name": {
+        "ja": "宝が池",
+        "kr": "다카라가이케",
+        "en": "Takaragaike Pond"
+      },
+      "geo": {
+        "latitude": 35.05784,
+        "longitude": 135.77845
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0577562,135.7781896,3a,48.7y,52.75h,98.17t/data=!3m8!1e1!3m6!1sAF1QipOT-MkAsosCnmNmixen29i1HOWzEJw9-MdrEN1M!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipOT-MkAsosCnmNmixen29i1HOWzEJw9-MdrEN1M%3Dw900-h600-k-no-pi-8.169198648929623-ya345.7478773231986-ro0-fo100!7i11264!8i5632?entry=ttu&g_ep=EgoyMDI1MDEyNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "4a8532be-1827-44ad-afbc-8935f77ea9f4",
+      "name": {
+        "en": "FANTASISTA"
+      },
+      "geo": {
+        "latitude": 35.0078811,
+        "longitude": 135.7704815
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0078811,135.7704815,3a,90y,318.31h,99.91t/data=!3m7!1e1!3m5!1sa3aQkjLwPFg9VqNV-zxf8Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.907680303589643%26panoid%3Da3aQkjLwPFg9VqNV-zxf8Q%26yaw%3D318.31053497226475!7i16384!8i8192?coh=205410&entry=ttu&g_ep=EgoyMDI0MTAyNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "57a5e66b-28ff-4291-bccb-523da2e55246",
+      "name": {
+        "kr": "다카라가이케 공원",
+        "en": "Takaragaike Park",
+        "ja": "宝が池公園"
+      },
+      "geo": {
+        "latitude": 35.05749,
+        "longitude": 135.77847
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0573021,135.7785478,3a,86.2y,350.52h,101.46t/data=!3m8!1e1!3m6!1sAF1QipPEqEYlxNp1nzpe1Mo_UCuPHj3xY1tCdThXVbel!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipPEqEYlxNp1nzpe1Mo_UCuPHj3xY1tCdThXVbel%3Dw900-h600-k-no-pi-11.459256557191509-ya196.52040184175928-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDEyNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "5b69165e-8825-47e5-bfbb-a87ed430e631",
+      "name": {
+        "en": "Fushimi Inari Shrine Tower Gate",
+        "ja": "楼門"
+      },
+      "geo": {
+        "latitude": 34.9671,
+        "longitude": 135.77227
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9670705,135.7720541,3a,90y,88.54h,105.07t/data=!3m7!1e1!3m5!1sQX04EoNMJpiLo0J-Lj6DVg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.072893077024048%26panoid%3DQX04EoNMJpiLo0J-Lj6DVg%26yaw%3D88.54129122439156!7i13312!8i6656?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "6901a4d3-c6eb-4cd1-8ef7-e11cb235b0ac",
+      "name": {
+        "en": "Oiwa Shrine",
+        "ja": "大岩神社"
+      },
+      "geo": {
+        "latitude": 34.95067,
+        "longitude": 135.79075
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9505997,135.7906223,3a,90y,123.11h,116.02t/data=!3m8!1e1!3m6!1sAF1QipOuNDSf6ovyxaa5ZzDg2Wc96smdyJ6sxsBPVe9h!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipOuNDSf6ovyxaa5ZzDg2Wc96smdyJ6sxsBPVe9h%3Dw900-h600-k-no-pi-26.019989322495803-ya4.543977851945655-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "740dfded-8cbe-4402-ba9a-4edefc7f3554",
+      "name": {
+        "en": "Nakanoshima Bridge",
+        "ja": "中ノ島橋"
+      },
+      "geo": {
+        "latitude": 35.01194,
+        "longitude": 135.68018
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0118786,135.6803169,3a,90y,306.92h,96.12t/data=!3m8!1e1!3m6!1sAF1QipNuk4oHfBlYptn0a7AUZ8QSs9SB504mnIJMQbAi!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNuk4oHfBlYptn0a7AUZ8QSs9SB504mnIJMQbAi%3Dw900-h600-k-no-pi-6.1164261418875725-ya37.42643024847797-ro0-fo100!7i7680!8i3840?entry=ttu&g_ep=EgoyMDI0MTExOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "754982e7-e234-484d-bbb0-8155186b35de",
+      "name": {
+        "ja": "松尾大社",
+        "en": "Matsunoo-taisha",
+        "kr": "마쓰오 대사"
+      },
+      "geo": {
+        "latitude": 35.000271,
+        "longitude": 135.685317
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0002284,135.6850922,2a,40.7y,85.46h,89.45t/data=!3m7!1e1!3m5!1sEbRvYIclEbPN2Aw6avZTmA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.5456127916241655%26panoid%3DEbRvYIclEbPN2Aw6avZTmA%26yaw%3D85.45996879803248!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTExMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "7955d343-7c00-40fc-a9cf-2230f62c9b5d",
+      "name": {
+        "ja": "円山公園",
+        "kr": "마루야마 공원 (원산 공원)",
+        "en": "Maruyama Park"
+      },
+      "geo": {
+        "latitude": 35.0035,
+        "longitude": 135.78052
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0037041,135.7805176,3a,62.6y,217.25h,107.48t/data=!3m8!1e1!3m6!1sAF1QipOgQc1tKp2mlovjt3llN4oA_aWC6coL1VWBG4TP!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOgQc1tKp2mlovjt3llN4oA_aWC6coL1VWBG4TP%3Dw900-h600-k-no-pi-17.477414855367087-ya290.252375509285-ro0-fo100!7i8704!8i4352?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "829556c9-7a8b-4b37-a2f3-7c839df2842e",
+      "name": {
+        "ja": "紙屋橋",
+        "en": "Kamiya Bridge"
+      },
+      "geo": {
+        "latitude": 35.0052917,
+        "longitude": 135.7705172
+      },
+      "ep": 2,
+      "type": "OP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0052917,135.7705172,3a,90y,332.02h,101.49t/data=!3m7!1e1!3m5!1sGGCPa3G559GZ-e0eXr-Pdw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DGGCPa3G559GZ-e0eXr-Pdw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D141.74767%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "89336003-1aa6-4a52-8c76-f96acab31bd8",
+      "name": {
+        "ja": "厳島社",
+        "en": "Itsukushima Shrine",
+        "kr": "이쓰쿠시마 사"
+      },
+      "geo": {
+        "latitude": 35.00419,
+        "longitude": 135.77862
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0041762,135.7785376,3a,90y,53.62h,96.76t/data=!3m7!1e1!3m5!1sshbVqUcZqDRezKNyrrGJbQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.760182834091523%26panoid%3DshbVqUcZqDRezKNyrrGJbQ%26yaw%3D53.621275446102146!7i13312!8i6656?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "894d4bfb-a940-4aea-9d8c-135954a290c8",
+      "name": {
+        "en": "Pontocho Park",
+        "ja": "先斗町公園"
+      },
+      "geo": {
+        "latitude": 35.00654,
+        "longitude": 135.77111
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0065474,135.7710667,3a,75y,92.17h,94.28t/data=!3m7!1e1!3m5!1sh9evy6RPg2jXGHR11eNGJA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.275039464233743%26panoid%3Dh9evy6RPg2jXGHR11eNGJA%26yaw%3D92.16809540827533!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "8b9bc7a4-e966-43a8-a164-1161b1732117",
+      "name": {
+        "en": "Funahashiya",
+        "ja": "船はし屋"
+      },
+      "geo": {
+        "latitude": 35.00232,
+        "longitude": 135.76683
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0023699,135.7668863,3a,90y,232.04h,96.08t/data=!3m7!1e1!3m5!1ss4ZW8aqevjhM2SrZ3CfESA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.076637096985493%26panoid%3Ds4ZW8aqevjhM2SrZ3CfESA%26yaw%3D232.04076659540334!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "8c225a1b-2232-43b0-b447-1b985d96bfae",
+      "name": {
+        "ja": "高山彦九郎 皇居望拝之像",
+        "en": "Statue of Takayama Hikokuro"
+      },
+      "geo": {
+        "latitude": 35.00894,
+        "longitude": 135.77256
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0091474,135.7726961,3a,69.1y,222.9h,97t/data=!3m7!1e1!3m5!1smQwKoagwN7KvoOKqaUJj0Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.004948559875771%26panoid%3DmQwKoagwN7KvoOKqaUJj0Q%26yaw%3D222.89668908847972!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIwMS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "8d9901a0-690d-4cb2-aa3f-38acd22f2804",
+      "name": {
+        "ja": "嵐山公園 中之島地区",
+        "en": "Arashiyama Park Nakanoshima Area",
+        "kr": "아라시야마 공원"
+      },
+      "geo": {
+        "latitude": 35.01225,
+        "longitude": 135.6782
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0122043,135.6786454,2a,90y,292.24h,101.11t/data=!3m7!1e1!3m5!1sY27Y7OjTCkJMYmlRkdj4Sg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.109728844240252%26panoid%3DY27Y7OjTCkJMYmlRkdj4Sg%26yaw%3D292.2373068495149!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MTExOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "8f6c33eb-9711-4281-ab40-5d70fb0510d7",
+      "name": {
+        "ja": "そらドラ",
+        "en": "Soradora"
+      },
+      "geo": {
+        "latitude": 34.99046,
+        "longitude": 135.78613
+      },
+      "ep": 19,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9905511,135.7861136,3a,90y,241.85h,96.81t/data=!3m7!1e1!3m5!1sBQum6nMYI7i0wTmXRh0vQQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.813550161165352%26panoid%3DBQum6nMYI7i0wTmXRh0vQQ%26yaw%3D241.85143861407008!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "9268007f-14d4-4582-8e5b-72ea2dcd7dbf",
+      "name": {
+        "en": "Matsunoo Taisya Shrine Rōmon Gate",
+        "kr": "마쓰오 대사 누문",
+        "ja": "楼門"
+      },
+      "geo": {
+        "latitude": 35.0001378,
+        "longitude": 135.6856866
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0002107,135.6857064,3a,90y,354.44h,97.41t/data=!3m8!1e1!3m6!1sAF1QipPg7vzaapt8IQJtomKBgelxpgtrnnVv5G_keJRf!2e10!3e11!6s%2F%2Flh5.ggpht.com%2Fp%2FAF1QipPg7vzaapt8IQJtomKBgelxpgtrnnVv5G_keJRf%3Dw900-h600-k-no-pi-7.414047273137882-ya354.43789787999646-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI0MTExMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "93cbbee1-95c8-4be8-a5d9-4660fd94ab20",
+      "name": {
+        "en": "The Flower Corridor",
+        "ja": "花の回廊"
+      },
+      "geo": {
+        "latitude": 35.0088343,
+        "longitude": 135.772019
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0088343,135.772019,3a,90y,354.09h,100.49t/data=!3m8!1e1!3m6!1sAF1QipPfhmwRNGRFRF03KGBeG2wwORSu3qQbIU4haP89!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPfhmwRNGRFRF03KGBeG2wwORSu3qQbIU4haP89%3Dw203-h100-k-no-pi-0.09789654-ya21.186312-ro-0.1174843-fo100!7i7680!8i3840?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "95a80635-42c5-496b-a651-b3d8f9d359cf",
+      "name": {
+        "en": "Sanjo Ohashi Bridge",
+        "ja": "三条大橋"
+      },
+      "geo": {
+        "latitude": 35.0090515,
+        "longitude": 135.7719489
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0090515,135.7719489,3a,63.4y,237.55h,101.32t/data=!3m6!1e1!3m4!1sw7YvAmiCWTnzbdywaI1faQ!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "9f924643-def4-4ba0-bc60-fac767cca979",
+      "name": {
+        "kr": "간리키샤",
+        "en": "Ganrikisha",
+        "ja": "眼力社"
+      },
+      "geo": {
+        "latitude": 34.9691826,
+        "longitude": 135.7833549
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9691826,135.7833549,3a,90y,12.6h,108.15t/data=!3m8!1e1!3m6!1sAF1QipNZIhyF2UGFRZ2nmr_oBhAgbTg45HRCgB8vzxPr!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNZIhyF2UGFRZ2nmr_oBhAgbTg45HRCgB8vzxPr%3Dw203-h100-k-no-pi-0-ya52.244995-ro-0-fo100!7i5376!8i2688?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "a3a366d3-8d29-4b1f-8b44-fb87c7eec5bf",
+      "name": {
+        "ja": "松尾大社駅",
+        "kr": "마쓰오타이샤",
+        "en": "Matsuo-Taisha Station"
+      },
+      "geo": {
+        "latitude": 35.00083,
+        "longitude": 135.68799
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0008873,135.6880181,3a,47.9y,190.67h,92.2t/data=!3m7!1e1!3m5!1sPbyzzpyRQrezbJKmZ0HMGQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.1961558122456495%26panoid%3DPbyzzpyRQrezbJKmZ0HMGQ%26yaw%3D190.674198322354!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "addefbc8-24c6-43dc-b25e-73e3faa50628",
+      "name": {
+        "ja": "丹波島橋",
+        "en": "Tambajima Bridge"
+      },
+      "geo": {
+        "latitude": 36.62642,
+        "longitude": 138.18296
+      },
+      "ep": 14,
+      "type": "EP",
+      "cityId": "JP-nagano-nagano",
+      "streetViewUrl": "https://www.google.com/maps/@36.6263651,138.1829592,3a,74.4y,34.78h,98.51t/data=!3m7!1e1!3m5!1s2kUM-f8H6YtpRMsuXnbT6w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.51038081089689%26panoid%3D2kUM-f8H6YtpRMsuXnbT6w%26yaw%3D34.78230107038071!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "b29159d3-e472-44ec-8a2f-9d80ae599a16",
+      "name": {
+        "kr": "기후네 신사 중궁",
+        "en": "Kifune-jinja Shrine - Yui no Yashiro",
+        "ja": "貴船神社 結社"
+      },
+      "geo": {
+        "latitude": 35.1256679,
+        "longitude": 135.7637993
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/place/Kifune-jinja+Shrine+-+Yui+no+Yashiro+(Nakamiya+%5BMiddle+Shrine%5D)/@35.1256679,135.7637993,3a,90y,324.45h,106.39t/data=!3m8!1e1!3m6!1sAF1QipNhyCsGSHYMhgGA_Y_OZUMxYUp4kHu03OEsjWdl!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNhyCsGSHYMhgGA_Y_OZUMxYUp4kHu03OEsjWdl%3Dw203-h100-k-no-pi-0-ya40-ro-0-fo100!7i7296!8i3648!4m9!3m8!1s0x6001a5e26053ffff:0x53c5179d519f943c!8m2!3d35.125685!4d135.7640131!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11bxf5ddvb?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "bb83e080-2778-4f6b-8e9b-a58bef11360a",
+      "name": {
+        "en": "Commuter Ticket Office, Kyoto Station, Kyoto Municipal Transportation Bureau",
+        "ja": "京都市交通局 京都駅前定期券発売所"
+      },
+      "geo": {
+        "latitude": 34.98639,
+        "longitude": 135.75898
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9864262,135.7590673,3a,75y,359.46h,99.22t/data=!3m7!1e1!3m5!1sT4A4MzmPy708BelL4hV7Xg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.216141781842865%26panoid%3DT4A4MzmPy708BelL4hV7Xg%26yaw%3D359.45558219870856!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "bcdadbd7-96fb-44fb-8947-2887f34ce97c",
+      "name": {
+        "en": "Kyoto Arashiyama Onsen Kadensho",
+        "kr": "교토 아라시야마온센 카덴쇼",
+        "ja": "京都 嵐山温泉 花伝抄"
+      },
+      "geo": {
+        "latitude": 35.01052,
+        "longitude": 135.68102
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0102588,135.6812141,3a,47.9y,322.66h,97.66t/data=!3m7!1e1!3m5!1sZQTPP0R-USZgDcWLfKY7Yg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.664524937529947%26panoid%3DZQTPP0R-USZgDcWLfKY7Yg%26yaw%3D322.6565262135489!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "c65cba10-d158-4f32-8415-1d49cf4143de",
+      "name": {
+        "ja": "渡月橋",
+        "kr": "도게츠 교",
+        "en": "Togetsukyo Bridge"
+      },
+      "geo": {
+        "latitude": 35.013687,
+        "longitude": 135.677891
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0137041,135.6779467,3a,73.2y,200.67h,98.04t/data=!3m7!1e1!3m5!1sFXkkPAAXgbcCKc5-dVz3Sw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.040106031006715%26panoid%3DFXkkPAAXgbcCKc5-dVz3Sw%26yaw%3D200.6745180196488!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "c8c94373-a9c2-49b0-9d92-d3512c639651",
+      "name": {
+        "kr": "후시미이나리 미쓰쓰지",
+        "ja": "三ツ辻",
+        "en": "Mitsutsuji"
+      },
+      "geo": {
+        "latitude": 34.9701495,
+        "longitude": 135.7787645
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9701495,135.7787645,3a,90y,208.35h,100.98t/data=!3m8!1e1!3m6!1sAF1QipNbE2kmzP_JwjvTuqa6gDoUcqjAmWWcf5RwOnw2!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNbE2kmzP_JwjvTuqa6gDoUcqjAmWWcf5RwOnw2%3Dw203-h100-k-no-pi-0-ya28.435785-ro-0-fo100!7i8704!8i4352?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "ce54527e-a82c-430a-b1ab-51630acbb673",
+      "name": {
+        "en": "Stepping Stones",
+        "ja": "出町の飛び石"
+      },
+      "geo": {
+        "latitude": 35.0290805,
+        "longitude": 135.7717117
+      },
+      "ep": 2,
+      "type": "OP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/place/Kamo+%C5%8Chashi+Bridge/@35.0290805,135.7717117,3a,75y,219.07h,92.3t/data=!3m8!1e1!3m6!1sAF1QipPCGKrnbmtD9dN6_FhwmMhJtlNM__FE76CpdnwM!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPCGKrnbmtD9dN6_FhwmMhJtlNM__FE76CpdnwM%3Dw203-h100-k-no-pi-20-ya200-ro0-fo100!7i5376!8i2688!4m17!1m7!3m6!1s0x60010989f4256807:0x92f6f6fde7568837!2sStepping+Stones!8m2!3d35.0294678!4d135.771746!16s%2Fg%2F11fqpbcjwb!3m8!1s0x6001085d6591176b:0x3d5e12524358f59c!8m2!3d35.0289983!4d135.7715984!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11bzzyqrhb?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "d072bf12-286a-452e-b6bd-44e5f6f15f9f",
+      "name": {
+        "en": "Kibune Tourism Association",
+        "kr": "귀부네 관광협회",
+        "ja": "貴船観光会"
+      },
+      "geo": {
+        "latitude": 35.1217881,
+        "longitude": 135.762935
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.1217881,135.762935,2a,75y,177.32h,98.03t/data=!3m6!1e1!3m4!1sHfOorHg0lmM_a4YZ7Sh2xg!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "d09bc4fe-3531-4aec-85f6-f687264c1a68",
+      "name": {
+        "kr": "아라시야마 치쿠린",
+        "ja": "嵐山竹林の小径",
+        "en": "Arashiyama Bamboo Forest"
+      },
+      "geo": {
+        "latitude": 35.01652,
+        "longitude": 135.67038
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0165107,135.6703654,3a,75y,285.21h,98.67t/data=!3m7!1e1!3m5!1sW1TYe3QY5DJfIvj5hJ9vGg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.67323982261486%26panoid%3DW1TYe3QY5DJfIvj5hJ9vGg%26yaw%3D285.20536693150984!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "d9b6ae8b-6bc9-4e09-9f4b-1995a974fd80",
+      "name": {
+        "kr": "CAFETEL Kyoto Sanjo for Ladies 근처",
+        "es": "Cerca de la CAFETEL Kyoto Sanjo for Ladies",
+        "de": "In der Nähe des CAFETEL Kyoto Sanjo for Ladies",
+        "ja": "CAFETEL 京都三条 for Ladies付近",
+        "en": "Near the CAFETEL Kyoto Sanjo for Ladies",
+        "id": "Sekitar CAFETEL Kyoto Sanjo for Ladies"
+      },
+      "geo": {
+        "latitude": 35.0077192,
+        "longitude": 135.7720624
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0077192,135.7720624,3a,90y,172.12h,102.47t/data=!3m7!1e1!3m5!1sAF1QipPZZWPtJq4v2hRbdZUnv49bL2nacYR1gmXLyYFC!2e10!3e11!7i7680!8i3840?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "db33afa0-b6b5-4d0d-af59-dfc93ddd41e3",
+      "name": {
+        "en": "Sky Hop Bus Kyoto station"
+      },
+      "geo": {
+        "latitude": 34.9864455,
+        "longitude": 135.7581999
+      },
+      "ep": 2,
+      "type": "OP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9864455,135.7581999,3a,75y,46.25h,107.64t/data=!3m6!1e1!3m4!1s_lJCIU2kdf2kFx4jjsUt7Q!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "dff410a9-b892-4e4c-a1eb-cc33716706cd",
+      "name": {
+        "kr": "다마야마이나리 사",
+        "en": "Tamayama Inari Shrine",
+        "ja": "玉山稲荷社"
+      },
+      "geo": {
+        "latitude": 34.96748,
+        "longitude": 135.77375
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9675295,135.7738097,3a,90y,201.92h,100.81t/data=!3m7!1e1!3m5!1sHIGSTaSNxEWD2Nr6ukv7Wg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.807508090379557%26panoid%3DHIGSTaSNxEWD2Nr6ukv7Wg%26yaw%3D201.9191799678508!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "e2eeddaa-ed52-4393-b949-a8a8bbd376e8",
+      "name": {
+        "en": "Bamboo walkway",
+        "ja": "竹林遊歩道"
+      },
+      "geo": {
+        "latitude": 35.0174908,
+        "longitude": 135.6745079
+      },
+      "ep": 2,
+      "type": "OP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0174908,135.6745079,3a,75y,160.79h,97.81t/data=!3m7!1e1!3m5!1sHSx_2jv5plRovnECAHnOrQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DHSx_2jv5plRovnECAHnOrQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D108.329025%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "e79b3e25-be50-4edc-bc1b-affe50589c78",
+      "name": {
+        "ja": "貴船神社",
+        "kr": "기후네 신사",
+        "en": "Kifune Shrine"
+      },
+      "geo": {
+        "latitude": 35.1217705,
+        "longitude": 135.7629828
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.1217705,135.7629828,2a,90y,330.99h,103.77t/data=!3m6!1e1!3m4!1sukbyglWavXx67V6U-twDjw!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "ea860a01-56f5-460d-a43c-da59ad4435e2",
+      "name": {
+        "kr": "산넨자카",
+        "ja": "産寧坂（三年坂）",
+        "en": "Sannenzaka"
+      },
+      "geo": {
+        "latitude": 34.9966618,
+        "longitude": 135.7810339
+      },
+      "ep": 2,
+      "type": "OP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9966618,135.7810339,3a,75y,207.57h,105.8t/data=!3m6!1e1!3m4!1sI14ZCf28Qwzb8IJrmwTSrw!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAwNS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "ebb486b3-87c8-4580-afbb-a035470fccca",
+      "name": {
+        "kr": "스타벅스 커피 교토 산조 오하시점",
+        "ja": "スターバックス コーヒー 京都三条大橋店",
+        "en": "Starbucks Coffee - Kyoto Sanjo-ohashi Bridge"
+      },
+      "geo": {
+        "latitude": 35.00914,
+        "longitude": 135.77155
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0092977,135.7715555,3a,90y,210.2h,102.52t/data=!3m8!1e1!3m6!1sAF1QipNxGxxyd5ZpDt5MKSiwtXlN4aqU9LwiLqJl-_EK!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNxGxxyd5ZpDt5MKSiwtXlN4aqU9LwiLqJl-_EK%3Dw900-h600-k-no-pi-12.51602038938637-ya119.20007301713801-ro0-fo100!7i9728!8i4864?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "f563fc85-5958-40dc-92b2-1b043e65ee77",
+      "name": {
+        "ja": "ニュータコヤクシ",
+        "en": "New Takoyakushi"
+      },
+      "geo": {
+        "latitude": 35.00618,
+        "longitude": 135.76029
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0061488,135.7602343,3a,90y,43.81h,94.86t/data=!3m7!1e1!3m5!1s-0W5Lh3refZh20nOltefLA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.859297812390878%26panoid%3D-0W5Lh3refZh20nOltefLA%26yaw%3D43.80663332408633!7i16384!8i8192?hl=ko&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    },
+    {
+      "placeId": "dab7916d-3ba4-41da-8f0e-1124b6748f39",
+      "name": {
+        "en": "Togetsutei Annex Shofukaku",
+        "ja": "渡月亭別館・松風閣",
+        "kr": "도게츠테이 별관 쇼후카쿠"
+      },
+      "geo": {
+        "latitude": 35.01209,
+        "longitude": 135.67706
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0121436,135.6776567,3a,49.6y,265.99h,92.75t/data=!3m7!1e1!3m5!1scSzD9vNAgzk3SbCw-whlcA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.7455124082649576%26panoid%3DcSzD9vNAgzk3SbCw-whlcA%26yaw%3D265.99337361608735!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©内藤マーシー・講談社／「甘神さんちの縁結び」製作委員会"
+    }
+  ]
+}

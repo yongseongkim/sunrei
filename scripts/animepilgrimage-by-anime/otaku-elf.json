@@ -1,0 +1,273 @@
+{
+  "anime": {
+    "animeId": "tidwKFuBkmHvw52kmMPD",
+    "slug": "otaku-elf",
+    "title": {
+      "ja": "江戸前エルフ",
+      "kr": "오타쿠 엘프",
+      "en": "Otaku Elf"
+    },
+    "author": {
+      "ja": [
+        "樋口彰彦"
+      ],
+      "en": [
+        "Akihiko Higuchi"
+      ],
+      "kr": [
+        "히구치 아키히코"
+      ]
+    },
+    "studio": {
+      "en": [
+        "C2C"
+      ]
+    }
+  },
+  "placeCount": 15,
+  "places": [
+    {
+      "placeId": "00e07e8e-e244-48fb-94dd-3ef72ef52bcf",
+      "name": {
+        "ja": "月島三丁目児童遊園内 公衆便所付近",
+        "id": "Sekitar Public toilet in Tsukishima 3-chome Children's Park",
+        "en": "Near the Public toilet in Tsukishima 3-chome Children's Park",
+        "de": "In der Nähe des Public toilet in Tsukishima 3-chome Children's Park",
+        "es": "Cerca de la Public toilet in Tsukishima 3-chome Children's Park"
+      },
+      "geo": {
+        "latitude": 35.6643815,
+        "longitude": 139.7806009
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6643815,139.7806009,3a,75y,316.31h,94.05t/data=!3m7!1e1!3m5!1sm0f1Y1g3LIPpU4FhPY9DoA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dm0f1Y1g3LIPpU4FhPY9DoA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D82.618515%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    },
+    {
+      "placeId": "16d30a67-c41d-496e-a887-b9b933bb3022",
+      "name": {
+        "en": "Monkichi",
+        "ja": "路地裏もんじゃ もん吉 月島本店"
+      },
+      "geo": {
+        "latitude": 35.6631541,
+        "longitude": 139.7811516
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6631541,139.7811516,3a,90y,137.37h,98.9t/data=!3m7!1e1!3m5!1sJxolCbVLBZlsezYC0cjnfQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DJxolCbVLBZlsezYC0cjnfQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D117.40089%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    },
+    {
+      "placeId": "2b753937-a971-42a3-b72b-1cdb1a682162",
+      "name": {
+        "en": "Stationery of Daikokuya",
+        "ja": "文具の大黒屋"
+      },
+      "geo": {
+        "latitude": 35.6631357,
+        "longitude": 139.7809245
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Stationery+of+Daikokuya/@35.6631357,139.7809245,3a,90y,196.1h,94.97t/data=!3m6!1e1!3m4!1sz9Oha_0sMfgw6IDto44aAA!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x6018897ae6d16d29:0x10750e0a25019759!2sStationery+of+Daikokuya!8m2!3d35.6631043!4d139.7808957!16s%2Fg%2F1tkc6nvz!3m5!1s0x6018897ae6d16d29:0x10750e0a25019759!8m2!3d35.6631043!4d139.7808957!16s%2Fg%2F1tkc6nvz?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    },
+    {
+      "placeId": "2f311a8a-9157-4a0e-a37d-03b8defbdf32",
+      "name": {
+        "en": "Sumiyoshi Jinja",
+        "ja": "住吉神社（佃）"
+      },
+      "geo": {
+        "latitude": 35.6680996,
+        "longitude": 139.7829542
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6680996,139.7829542,3a,75y,200.1h,102.84t/data=!3m6!1e1!3m4!1sZgoKtXDC_PNxefOJy0pXkg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    },
+    {
+      "placeId": "331af38f-dc84-4d0d-b3ab-210dbd07ec41",
+      "name": {
+        "en": "Tsukishima 3-Chome Children's Playground",
+        "ja": "中央区立月島三丁目児童遊園"
+      },
+      "geo": {
+        "latitude": 35.6646888,
+        "longitude": 139.7803124
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6646888,139.7803124,3a,90y,17.65h,104.03t/data=!3m8!1e1!3m6!1sAF1QipOk0AQMKkH0kPUDAIqJOFF8pKx9f_D_tDqzXizw!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOk0AQMKkH0kPUDAIqJOFF8pKx9f_D_tDqzXizw%3Dw203-h100-k-no-pi0-ya81.43988-ro0-fo100!7i8330!8i3750?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    },
+    {
+      "placeId": "4f296bf0-3186-4644-b94f-02d64e14d463",
+      "name": {
+        "en": "ENEOS Tsukudaohashi Service Station",
+        "ja": "ENEOS 佃大橋SS"
+      },
+      "geo": {
+        "latitude": 35.6642089,
+        "longitude": 139.78435
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6642089,139.78435,3a,90y,47.45h,98.68t/data=!3m7!1e1!3m5!1skdn61qVa83NFS_W28osbLw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dkdn61qVa83NFS_W28osbLw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D83.83454%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    },
+    {
+      "placeId": "75c698c8-d062-4663-b392-88601fce917d",
+      "name": {
+        "en": "Takenoko",
+        "ja": "もんじゃ 竹の子"
+      },
+      "geo": {
+        "latitude": 35.6647804,
+        "longitude": 139.783129
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6647804,139.783129,3a,76.1y,119.08h,104.05t/data=!3m6!1e1!3m4!1s2xa-bISwNftxCVLsdMBkUw!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    },
+    {
+      "placeId": "8c5a385b-5157-4515-9744-99b4a622a980",
+      "name": {
+        "en": "Kura.",
+        "ja": "もんじゃ 蔵"
+      },
+      "geo": {
+        "latitude": 35.6635406,
+        "longitude": 139.7814121
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6635406,139.7814121,3a,90y,183.23h,97.28t/data=!3m7!1e1!3m5!1sT1BGRtUr94C0xKP8JQMrQg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DT1BGRtUr94C0xKP8JQMrQg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D208.80927%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    },
+    {
+      "placeId": "8f59bb13-b723-4845-8078-e8863f27b7f9",
+      "name": {
+        "ja": "めし屋",
+        "en": "Meshiya"
+      },
+      "geo": {
+        "latitude": 35.6634257,
+        "longitude": 139.7833655
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6634257,139.7833655,3a,75y,323.11h,99.87t/data=!3m6!1e1!3m4!1sMTatH-EIBHbm9nx6-Ysd4Q!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    },
+    {
+      "placeId": "8fd938b4-020b-4982-9a00-9f8373fa9962",
+      "name": {
+        "en": "Tokyo Skytree",
+        "ja": "東京スカイツリー"
+      },
+      "geo": {
+        "latitude": 35.7099893,
+        "longitude": 139.8105871
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-sumida-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7099893,139.8105871,3a,90y,321.97h,92.86t/data=!3m6!1e1!3m4!1sAF1QipMDxi5O1t-voXBkiS8gABhWaw6S_X5Y-i95cYVe!2e10!7i6720!8i3360?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    },
+    {
+      "placeId": "ae4d9e38-85e0-4cad-8140-0d7c9943dbad",
+      "name": {
+        "en": "Paraca Tsukishima #3",
+        "ja": "パラカ 月島第３"
+      },
+      "geo": {
+        "latitude": 35.6656998,
+        "longitude": 139.7826872
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6656998,139.7826872,3a,90y,315.05h,96.32t/data=!3m6!1e1!3m4!1s_ZGN9IR-cR6TASXJrvUSKw!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    },
+    {
+      "placeId": "c144d100-cbc8-4d49-bc29-929f8d8a5bb7",
+      "name": {
+        "en": "Tsukishima Nishinaka-dori 4th Avenue",
+        "ja": "月島西仲通り商店街"
+      },
+      "geo": {
+        "latitude": 35.6621312,
+        "longitude": 139.7794564
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6621312,139.7794564,3a,90y,241.08h,94.7t/data=!3m6!1e1!3m4!1svk2lf7d1OBQVISeRtQ0WpA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    },
+    {
+      "placeId": "cac7c30f-8389-4168-89b2-02ef46187e73",
+      "name": {
+        "en": "Shinei Real Estate",
+        "ja": "株式会社新栄不動産"
+      },
+      "geo": {
+        "latitude": 35.664489,
+        "longitude": 139.7827264
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.664489,139.7827264,3a,75y,314.47h,88.63t/data=!3m7!1e1!3m5!1s60tQnWzvJQaO8Jh9QYqVzw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D60tQnWzvJQaO8Jh9QYqVzw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D226.11674%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    },
+    {
+      "placeId": "d2fadca6-ae31-431f-9837-aa006dd00fab",
+      "name": {
+        "ja": "中央区立佃ニ丁目西公園",
+        "en": "Chuo Kuritsu Tsukudanichomenishi Park"
+      },
+      "geo": {
+        "latitude": 35.6662399,
+        "longitude": 139.7831933
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6662399,139.7831933,3a,75y,114.37h,95.17t/data=!3m7!1e1!3m5!1sszomg2hYeCpumJ9W0Ik5oQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dszomg2hYeCpumJ9W0Ik5oQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D93.90328%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    },
+    {
+      "placeId": "f09d033c-74df-4928-9589-dff95434b484",
+      "name": {
+        "ja": "月島 牡蠣入レ時",
+        "en": "Kakiiredoki"
+      },
+      "geo": {
+        "latitude": 35.6629041,
+        "longitude": 139.7804305
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chuo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6629041,139.7804305,3a,90y,135.14h,101.74t/data=!3m7!1e1!3m5!1sJg2Q_6a_B3G8E76lty6_-A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DJg2Q_6a_B3G8E76lty6_-A%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D86.00359%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©樋口彰彦・講談社／「江戸前エルフ」製作委員会"
+    }
+  ]
+}

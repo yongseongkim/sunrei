@@ -1,0 +1,493 @@
+{
+  "anime": {
+    "animeId": "f8AAZWCp5tY6ZpCmYqht",
+    "slug": "tokyo-revengers-2",
+    "title": {
+      "ja": "東京リベンジャーズ 聖夜決戦編",
+      "kr": "도쿄 리벤저스 성야결전편",
+      "en": "Tokyo Revengers: Christmas Showdown"
+    },
+    "author": {
+      "ja": [
+        "和久井健"
+      ],
+      "kr": [
+        "와쿠이 켄"
+      ],
+      "en": [
+        "Ken Wakui"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "ライデンフィルム"
+      ],
+      "en": [
+        "LIDENFILMS"
+      ]
+    }
+  },
+  "placeCount": 28,
+  "places": [
+    {
+      "placeId": "17019631-1242-402d-9704-94830c959e65",
+      "name": {
+        "en": "SHIBUYA REX",
+        "kr": "시부야 렉스"
+      },
+      "geo": {
+        "latitude": 35.65733,
+        "longitude": 139.69695
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6573304,139.6969821,3a,90y,326.85h,95.43t/data=!3m7!1e1!3m5!1sin6OKufXEf53N5rRR2XnlQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.432970899577981%26panoid%3Din6OKufXEf53N5rRR2XnlQ%26yaw%3D326.85495095893003!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "201b3cbc-7c72-4afc-9738-74a807c997a7",
+      "name": {
+        "en": "Umihotaru PA",
+        "ja": "海ほたるPA",
+        "kr": "도쿄만 아쿠아라인 우미호타루"
+      },
+      "geo": {
+        "latitude": 35.46395,
+        "longitude": 139.87473
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-chiba-kisarazu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4633395,139.8752092,3a,48.7y,333.45h,113.37t/data=!3m7!1e1!3m5!1sidziM1xjIqAsVm5O09so8A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-23.371061741829223%26panoid%3DidziM1xjIqAsVm5O09so8A%26yaw%3D333.44755615612223!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "2bd9a239-10f6-41d0-b1f5-0432381a2e81",
+      "name": {
+        "ja": "渋谷橋",
+        "en": "Shibuya Brdg."
+      },
+      "geo": {
+        "latitude": 35.64903,
+        "longitude": 139.71133
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6490151,139.7113236,3a,90y,35.99h,90.38t/data=!3m7!1e1!3m5!1sHdZi7yac2y027M83YbiN1A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.3765230776855617%26panoid%3DHdZi7yac2y027M83YbiN1A%26yaw%3D35.99018228424223!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "380e9d89-c9a9-40d8-836b-3d0d526926a8",
+      "name": {
+        "ja": "国際連合大学",
+        "en": "United Nations University",
+        "kr": "유엔 대학교"
+      },
+      "geo": {
+        "latitude": 35.66184,
+        "longitude": 139.70846
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6619228,139.7085553,3a,75y,214.87h,97.68t/data=!3m7!1e1!3m5!1sRJRP2CxyJS9EMpz8WlJclw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.675186456792318%26panoid%3DRJRP2CxyJS9EMpz8WlJclw%26yaw%3D214.8665449182715!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "45115076-4be3-4efa-bba6-60d2c4cb5ba3",
+      "name": {
+        "kr": "에비스 가든 플레이스",
+        "ja": "恵比寿ガーデンプレイス",
+        "en": "Yebisu Garden Place"
+      },
+      "geo": {
+        "latitude": 35.643,
+        "longitude": 139.71318
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6430334,139.7131177,2a,90y,123.11h,107.63t/data=!3m7!1e1!3m5!1swDCdSeeAgr3M6dj5rZxh8g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-17.626849516287876%26panoid%3DwDCdSeeAgr3M6dj5rZxh8g%26yaw%3D123.10762654431402!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "47dcd942-133a-4400-8327-5330ede9bab5",
+      "name": {
+        "ja": "山下公園",
+        "en": "Yamashita Park",
+        "kr": "야마시타 공원"
+      },
+      "geo": {
+        "latitude": 35.4463,
+        "longitude": 139.6497
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4463268,139.6497122,3a,75y,200.9h,99.22t/data=!3m7!1e1!3m5!1s8-zWe4d8avVudJ-29hXZjg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.222174678776213%26panoid%3D8-zWe4d8avVudJ-29hXZjg%26yaw%3D200.90366284866357!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "49d666a3-48ba-4721-b12f-449a080f9ac6",
+      "name": {
+        "en": "Jungumae Court"
+      },
+      "geo": {
+        "latitude": 35.66957,
+        "longitude": 139.70876
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6694971,139.7087358,3a,90y,17.03h,92.18t/data=!3m7!1e1!3m5!1sWi3ia6o3WZq36MlH4wfccw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.178172487898536%26panoid%3DWi3ia6o3WZq36MlH4wfccw%26yaw%3D17.02765214275781!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "52c78cf9-91d9-459d-bb73-60476345c1ec",
+      "name": {
+        "kr": "노기 신사",
+        "en": "Nogi Shrine",
+        "ja": "乃木神社"
+      },
+      "geo": {
+        "latitude": 35.66875,
+        "longitude": 139.72797
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6686683,139.7280053,3a,75y,355.78h,97.86t/data=!3m8!1e1!3m6!1sAF1QipPrBIp9Mn9NuabDw1O_rCyaIG6M1Owl3Mr-cbKh!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipPrBIp9Mn9NuabDw1O_rCyaIG6M1Owl3Mr-cbKh%3Dw900-h600-k-no-pi-7.864104329488455-ya1.7776836675173513-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "54a978d8-bad3-4843-ba2e-34af96761384",
+      "name": {
+        "ja": "月山",
+        "en": "Tsukiyama"
+      },
+      "geo": {
+        "latitude": 35.87974,
+        "longitude": 139.45791
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-kawagoe",
+      "streetViewUrl": "https://www.google.com/maps/@35.8798221,139.4577687,3a,47.9y,117.47h,94.92t/data=!3m7!1e1!3m5!1sw0rAFDALGmOL6kQE5HmGKw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.91900714221353%26panoid%3Dw0rAFDALGmOL6kQE5HmGKw%26yaw%3D117.47163195770796!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "5908b147-dba6-4a25-8189-ff3a5f46a44a",
+      "name": {
+        "en": "FabCafe Tokyo"
+      },
+      "geo": {
+        "latitude": 35.65604,
+        "longitude": 139.69562
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.656171,139.6957353,3a,90y,218.09h,93.5t/data=!3m7!1e1!3m5!1seY1WgRcRUASkyvRQ4fBhpA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.5005254547643148%26panoid%3DeY1WgRcRUASkyvRQ4fBhpA%26yaw%3D218.09491849107718!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "5c8603a0-42ad-4145-b397-bb05a43b7ecf",
+      "name": {
+        "ja": "おかき処 寺子屋本舗 川崎大師店",
+        "en": "Terakoya"
+      },
+      "geo": {
+        "latitude": 35.53457,
+        "longitude": 139.73074
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.5345167,139.7307033,3a,90y,199.74h,93.36t/data=!3m8!1e1!3m6!1sAF1QipM_qAOwCdDBp_zrr51hhlxLk_IDpE7KSRtcxrRL!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipM_qAOwCdDBp_zrr51hhlxLk_IDpE7KSRtcxrRL%3Dw900-h600-k-no-pi-3.3589388600380943-ya199.74413421292311-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "675ced9f-71f1-4800-97f9-fdc8967662e3",
+      "name": {
+        "ja": "江東区立 竪川河川敷公園",
+        "en": "Tatekawa Kasenjiki Park",
+        "kr": "고토구립 다테카와 둔치공원"
+      },
+      "geo": {
+        "latitude": 35.69423,
+        "longitude": 139.83638
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6943707,139.836292,3a,40.7y,159.11h,95.58t/data=!3m7!1e1!3m5!1s4iZ2yg8o281HYLD7D8FNQg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.5849546590363275%26panoid%3D4iZ2yg8o281HYLD7D8FNQg%26yaw%3D159.11211693079122!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "7307d060-e36f-4245-873f-7128f7fb3bd2",
+      "name": {
+        "en": "Hinokicho Park",
+        "kr": "히노키초 공원",
+        "ja": "檜町公園"
+      },
+      "geo": {
+        "latitude": 35.66736,
+        "longitude": 139.73265
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6673674,139.7326688,3a,90y,192.27h,103.51t/data=!3m7!1e1!3m5!1s2BVlwBpLKJbIvj6q1LhoJQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.51446100013392%26panoid%3D2BVlwBpLKJbIvj6q1LhoJQ%26yaw%3D192.27429696980016!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "7767633c-ac40-4899-b083-1094eee1a09e",
+      "name": {
+        "kr": "노기 공원",
+        "ja": "乃木公園",
+        "en": "Nogi Park"
+      },
+      "geo": {
+        "latitude": 35.66807,
+        "longitude": 139.72766
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6681086,139.7276947,3a,90y,221.1h,95.37t/data=!3m7!1e1!3m5!1sVONMetjki5YgCamP95N-Jg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.36562909654883%26panoid%3DVONMetjki5YgCamP95N-Jg%26yaw%3D221.10388719292155!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "77ba178c-578f-495a-9066-6d3afd0522cd",
+      "name": {
+        "kr": "가와사키 다이시",
+        "en": "Kawasaki Daishi",
+        "ja": "川崎大師 平間寺"
+      },
+      "geo": {
+        "latitude": 35.53472,
+        "longitude": 139.72984
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.5346582,139.7297806,3a,90y,23.69h,94.45t/data=!3m8!1e1!3m6!1sAF1QipOFo6GwVkKDHm1Tg5bRDWUZg_LUI4rXdzqNZrza!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipOFo6GwVkKDHm1Tg5bRDWUZg_LUI4rXdzqNZrza%3Dw900-h600-k-no-pi-4.445686731800876-ya106.69108197863014-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "7d7cc2ee-1843-46c0-a5b7-a08239c7b01c",
+      "name": {
+        "ja": "臨港パーク南口トイレ",
+        "en": "Multipurpose Restroom"
+      },
+      "geo": {
+        "latitude": 35.46028,
+        "longitude": 139.63727
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4603015,139.6372472,3a,90y,209.94h,93.52t/data=!3m7!1e1!3m5!1sYhLI4MMWC2k66HY_vnVpAw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.519029439997965%26panoid%3DYhLI4MMWC2k66HY_vnVpAw%26yaw%3D209.94483374607074!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "8d5c23f5-85f8-4d7b-8331-8a0e95c4791f",
+      "name": {
+        "en": "FamilyMart Shibuya Dogenzaka",
+        "ja": "ファミリーマート 渋谷道玄坂店",
+        "kr": "패밀리마트 시부야 도겐자카점"
+      },
+      "geo": {
+        "latitude": 35.65691,
+        "longitude": 139.69585
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6570118,139.6958252,3a,38.5y,170.96h,94.93t/data=!3m7!1e1!3m5!1sWowL3aqepN4V19eeScmdvg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.9318886436221305%26panoid%3DWowL3aqepN4V19eeScmdvg%26yaw%3D170.9648525064625!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "93e932d2-337c-40cf-b524-53b0f9660fcd",
+      "name": {
+        "en": "Yoshinoya Harajuku Takeshita Exit",
+        "ja": "吉野家 原宿竹下口店"
+      },
+      "geo": {
+        "latitude": 35.67158,
+        "longitude": 139.70309
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6716144,139.7030471,3a,90y,116.54h,90.17t/data=!3m7!1e1!3m5!1sDf9hd0bC0vOtxWvgYkEmfQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.17369595097852653%26panoid%3DDf9hd0bC0vOtxWvgYkEmfQ%26yaw%3D116.5446852912191!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "95ca3ca1-1beb-44e6-8c21-e7d3cf0a41e4",
+      "name": {
+        "kr": "시부야 센타가이",
+        "ja": "渋谷センター街",
+        "en": "Shibuya Center-Gai"
+      },
+      "geo": {
+        "latitude": 35.6602,
+        "longitude": 139.69915
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.660192,139.6992062,3a,90y,296.96h,96.13t/data=!3m7!1e1!3m5!1s00ImPOorSlemgSE6K1v5Dg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.132646233578811%26panoid%3D00ImPOorSlemgSE6K1v5Dg%26yaw%3D296.96373504248004!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "99c21fe1-6b32-4c60-b469-f094de427d6a",
+      "name": {
+        "ja": "パシフィコ横浜 バス・大型車駐車場",
+        "en": "Bus/Large Vehicle Parking Lot"
+      },
+      "geo": {
+        "latitude": 35.46286,
+        "longitude": 139.63529
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4628351,139.6352187,3a,49.6y,88.94h,95.86t/data=!3m7!1e1!3m5!1s02Wzy5pBCfw6aBQ1yCl70g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.85678728285238%26panoid%3D02Wzy5pBCfw6aBQ1yCl70g%26yaw%3D88.94070382756719!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "a10a8f82-be94-4e4c-8f67-4b6d9486b8a1",
+      "name": {
+        "en": "Denny's Shibuya Koen-dori",
+        "ja": "デニーズ渋谷公園通り店"
+      },
+      "geo": {
+        "latitude": 35.66304,
+        "longitude": 139.69949
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6629403,139.6992961,3a,90y,52.08h,110.16t/data=!3m7!1e1!3m5!1sK25UGiunL2SgSnTNmR3hzg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-20.16239795975642%26panoid%3DK25UGiunL2SgSnTNmR3hzg%26yaw%3D52.075188901577945!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "a8f9fd3e-a583-42f1-9e69-4caa9b3c69e6",
+      "name": {
+        "en": "Kanda Ekidai 2 Bicycle",
+        "ja": "神田駅第2駐輪場"
+      },
+      "geo": {
+        "latitude": 35.69326,
+        "longitude": 139.77156
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6932168,139.7713045,3a,67.2y,76.44h,95.17t/data=!3m7!1e1!3m5!1spmlhXUD2U0u95-QvTfxxag!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.172244104795396%26panoid%3DpmlhXUD2U0u95-QvTfxxag%26yaw%3D76.43820818457974!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "c0256821-16d6-4622-a750-e7c7745f9255",
+      "name": {
+        "en": "Mitsugi Park",
+        "kr": "미츠기 공원",
+        "ja": "見次公園"
+      },
+      "geo": {
+        "latitude": 35.7721,
+        "longitude": 139.69343
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7721626,139.6934126,3a,75y,263.9h,94.58t/data=!3m7!1e1!3m5!1sBLATJO502ibQo0U-TK2TCA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.576046989134113%26panoid%3DBLATJO502ibQo0U-TK2TCA%26yaw%3D263.89936760860326!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "c332b5f9-93d7-4541-9449-90493dffb158",
+      "name": {
+        "ja": "珈琲専門館 伯爵 池袋東口店",
+        "en": "Hakushaku Ikebukuro East Exit"
+      },
+      "geo": {
+        "latitude": 35.72732,
+        "longitude": 139.71176
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Hakushaku+Ikebukuro+East+Exit/@35.7273051,139.7117494,2a,90y,132.97h,96.55t/data=!3m8!1e1!3m6!1sHViIn14FmSLlQdsNM8cYZQ!2e0!3e11!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.554077901037942%26panoid%3DHViIn14FmSLlQdsNM8cYZQ%26yaw%3D132.97228793337763!7i13312!8i6656!4m9!3m8!1s0x60188d682018e6f5:0xf65b267f44a97e89!8m2!3d35.7273224!4d139.7117642!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1tkv9rxm?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "dbc88dbd-ea01-4dbe-83ed-ee8cb5e43599",
+      "name": {
+        "en": "Maruko Bridge",
+        "ja": "丸子橋",
+        "kr": "마루코바시"
+      },
+      "geo": {
+        "latitude": 35.58568,
+        "longitude": 139.66963
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.5856769,139.6696426,3a,90y,149.29h,101.16t/data=!3m7!1e1!3m5!1sAF1QipPDGAIw9ZC-uwh5nQNkGDzGA8NZZIKz65qw8wVz!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipPDGAIw9ZC-uwh5nQNkGDzGA8NZZIKz65qw8wVz%3Dw900-h600-k-no-pi-11.15617199560019-ya182.48130627793935-ro0-fo100!7i5760!8i2880?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "e1ea401a-f12d-4e6a-89e0-5e1e0aea31f4",
+      "name": {
+        "en": "Daisanmon Gate",
+        "ja": "大山門"
+      },
+      "geo": {
+        "latitude": 35.5346,
+        "longitude": 139.73014
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.5345849,139.7299606,3a,75y,88.36h,102.9t/data=!3m7!1e1!3m5!1sAF1QipNqGgpsPAwZ1pm9a8uDanspVmt3jMqXnF350dec!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipNqGgpsPAwZ1pm9a8uDanspVmt3jMqXnF350dec%3Dw900-h600-k-no-pi-12.897909956790173-ya173.42763681633417-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "f4c8f5ee-83f2-4d32-b842-148ade75ae76",
+      "name": {
+        "en": "Tofu Shokudou",
+        "ja": "豆富食堂"
+      },
+      "geo": {
+        "latitude": 35.64926,
+        "longitude": 139.70853
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6492678,139.7084376,3a,75y,86.29h,96.8t/data=!3m7!1e1!3m5!1sVdek3dNlK2F131LN3ZV7ng!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.804020506647461%26panoid%3DVdek3dNlK2F131LN3ZV7ng%26yaw%3D86.29234556618344!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    },
+    {
+      "placeId": "fb2f3472-cd58-457f-9bf6-3c48028890f9",
+      "name": {
+        "kr": "GU 시부야",
+        "ja": "ジーユー 渋谷店",
+        "en": "GU Shibuya"
+      },
+      "geo": {
+        "latitude": 35.66083,
+        "longitude": 139.69753
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6608557,139.697499,3a,90y,115.81h,99.21t/data=!3m7!1e1!3m5!1sDZZwSZeDSFR4u2K9nTIaXQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.207849452420433%26panoid%3DDZZwSZeDSFR4u2K9nTIaXQ%26yaw%3D115.80766961006563!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "Ⓒ和久井健・講談社／アニメ「東京リベンジャーズ」製作委員会"
+    }
+  ]
+}

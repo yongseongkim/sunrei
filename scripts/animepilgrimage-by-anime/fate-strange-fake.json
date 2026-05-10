@@ -1,0 +1,232 @@
+{
+  "anime": {
+    "animeId": "nlFMm5beeDxjMv1c7pI0",
+    "slug": "fate-strange-fake",
+    "title": {
+      "en": "Fate/strange Fake"
+    },
+    "author": {
+      "en": [
+        "Ryougo Narita",
+        "Type-Moon"
+      ],
+      "ja": [
+        "成田良悟",
+        "Type-Moon"
+      ]
+    },
+    "studio": {
+      "en": [
+        "A-1 Pictures"
+      ]
+    }
+  },
+  "placeCount": 13,
+  "places": [
+    {
+      "placeId": "110684e0-0523-4981-831d-ed53851174cf",
+      "name": {
+        "en": "The Blackstone"
+      },
+      "geo": {
+        "latitude": 34.04224,
+        "longitude": -118.25627
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "US-california-los-angeles",
+      "streetViewUrl": "https://maps.app.goo.gl/gMXDZgsZnn5YcfrR9",
+      "copyright": "©成田良悟・TYPE-MOON/KADOKAWA/FSFPC"
+    },
+    {
+      "placeId": "32524962-2769-4f56-98f1-d96e88bebc67",
+      "name": {
+        "en": "Luxurious Cosmopolitan 1BD & 2BD Suites"
+      },
+      "geo": {
+        "latitude": 34.05102,
+        "longitude": -118.25856
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "US-california-los-angeles",
+      "streetViewUrl": "https://maps.app.goo.gl/m3gExYkz1UEidzwm6",
+      "copyright": "©成田良悟・TYPE-MOON/KADOKAWA/FSFPC"
+    },
+    {
+      "placeId": "4b5149cc-0529-4ffd-a019-7a7e214132fa",
+      "name": {
+        "ja": "旧岩崎邸庭園",
+        "kr": "구 이와사키 저택 정원",
+        "en": "Kyu-Iwasaki-tei Gardens"
+      },
+      "geo": {
+        "latitude": 35.70972,
+        "longitude": 139.76725
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-taito-taito",
+      "streetViewUrl": "https://maps.app.goo.gl/jEJdFsTtkoRGtkzB7",
+      "copyright": "©成田良悟・TYPE-MOON/KADOKAWA/FSFPC"
+    },
+    {
+      "placeId": "6974b622-485b-41e8-ba2e-1ee59e94f61e",
+      "name": {
+        "en": "City National Bank ATM"
+      },
+      "geo": {
+        "latitude": 34.05089,
+        "longitude": -118.25835
+      },
+      "ep": 2,
+      "type": "OP",
+      "cityId": "US-california-los-angeles",
+      "streetViewUrl": "https://maps.app.goo.gl/yGN2w4dRjegqskmG6",
+      "copyright": "©成田良悟・TYPE-MOON/KADOKAWA/FSFPC"
+    },
+    {
+      "placeId": "6a01ccca-b19d-4066-a54b-d64ae7d28540",
+      "name": {
+        "en": "St. Andrew Catholic Church"
+      },
+      "geo": {
+        "latitude": 34.15066,
+        "longitude": -118.14906
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "US-california-pasadena",
+      "streetViewUrl": "https://maps.app.goo.gl/gUn6nv9FGp4s8t4s6",
+      "copyright": "©成田良悟・TYPE-MOON/KADOKAWA/FSFPC"
+    },
+    {
+      "placeId": "798063ec-aa1b-49d9-aba9-04e7c8e3ccd5",
+      "name": {
+        "ja": "黒教会",
+        "en": "The Black Church"
+      },
+      "geo": {
+        "latitude": 45.64017,
+        "longitude": 25.58815
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "RO-brașov-brasov",
+      "streetViewUrl": "https://maps.app.goo.gl/As5K9x4jnugknqHv7",
+      "copyright": "©成田良悟・TYPE-MOON/KADOKAWA/FSFPC"
+    },
+    {
+      "placeId": "9245a188-08b2-4068-be18-5f7424596012",
+      "name": {
+        "ja": "ロサンゼルス市庁舎",
+        "kr": "엘에이시티홀",
+        "en": "Los Angeles City Hall"
+      },
+      "geo": {
+        "latitude": 34.05404,
+        "longitude": -118.24331
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "US-california-los-angeles",
+      "streetViewUrl": "https://maps.app.goo.gl/jyE9yMSLFZKK2EeT6",
+      "copyright": "©成田良悟・TYPE-MOON/KADOKAWA/FSFPC"
+    },
+    {
+      "placeId": "a091d92f-5d6e-4bdb-903a-4bc77b31e9ef",
+      "name": {
+        "ja": "ベラージオ・ホテル & カジノ",
+        "kr": "벨라지오호텔",
+        "en": "Bellagio Hotel & Casino"
+      },
+      "geo": {
+        "latitude": 36.11198,
+        "longitude": -115.1754
+      },
+      "ep": 2,
+      "type": "OP",
+      "cityId": "US-nevada-paradise",
+      "streetViewUrl": "https://maps.app.goo.gl/HBrjrxECcyVkdp9t8",
+      "copyright": "©成田良悟・TYPE-MOON/KADOKAWA/FSFPC"
+    },
+    {
+      "placeId": "b2d752ad-a266-4f23-80ce-624e1e458ad0",
+      "name": {
+        "ja": "ベラージオの噴水",
+        "kr": "벨라지오 분수",
+        "en": "Fountains of Bellagio"
+      },
+      "geo": {
+        "latitude": 36.11293,
+        "longitude": -115.17324
+      },
+      "ep": 5,
+      "type": "ED",
+      "cityId": "US-nevada-paradise",
+      "streetViewUrl": "https://maps.app.goo.gl/8vSHYoiPKyuETjkN9",
+      "copyright": "©成田良悟・TYPE-MOON/KADOKAWA/FSFPC"
+    },
+    {
+      "placeId": "bd9b155d-471d-4b3c-b10c-bdb4cb5bd24f",
+      "name": {
+        "ja": "ウィスキー・ア・ゴーゴー",
+        "en": "Whisky a Go Go"
+      },
+      "geo": {
+        "latitude": 34.09084,
+        "longitude": -118.38576
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "US-california-west-hollywood",
+      "streetViewUrl": "https://maps.app.goo.gl/8bZYtA3ux3TKyCrv5",
+      "copyright": "©成田良悟・TYPE-MOON/KADOKAWA/FSFPC"
+    },
+    {
+      "placeId": "f49e3642-5038-4aa3-b5f1-27fb5a02f3dd",
+      "name": {
+        "en": "Pool a Paris"
+      },
+      "geo": {
+        "latitude": 36.11249,
+        "longitude": -115.17148
+      },
+      "ep": 5,
+      "type": "ED",
+      "cityId": "US-nevada-paradise",
+      "streetViewUrl": "https://maps.app.goo.gl/6LHSky1JJ461GZcv8",
+      "copyright": "©成田良悟・TYPE-MOON/KADOKAWA/FSFPC"
+    },
+    {
+      "placeId": "fe87ee12-3140-4f31-891e-4c3f4a3e6f99",
+      "name": {
+        "en": "STILE Downtown Los Angeles"
+      },
+      "geo": {
+        "latitude": 34.04173,
+        "longitude": -118.25682
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "US-california-los-angeles",
+      "streetViewUrl": "https://maps.app.goo.gl/NTRpAcyLSfo3AtCk7",
+      "copyright": "©成田良悟・TYPE-MOON/KADOKAWA/FSFPC"
+    },
+    {
+      "placeId": "d6a64bbd-e1a6-4274-98ee-8e822f06c918",
+      "name": {
+        "en": "Silver Lake Community Church"
+      },
+      "geo": {
+        "latitude": 34.10982,
+        "longitude": -118.27057
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "US-california-los-angeles",
+      "streetViewUrl": "https://maps.app.goo.gl/KeaxD7TzzSce77oK6",
+      "copyright": "©成田良悟・TYPE-MOON/KADOKAWA/FSFPC"
+    }
+  ]
+}

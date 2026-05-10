@@ -1,0 +1,183 @@
+{
+  "anime": {
+    "animeId": "nuuX3MVLDUkL5Gu82Nn7",
+    "slug": "teasing-master-takagi-san",
+    "title": {
+      "ja": "からかい上手の高木さん",
+      "kr": "장난을 잘 치는 타카기 양",
+      "en": "Teasing Master Takagi-san"
+    },
+    "author": {
+      "ja": [
+        "山本崇一朗"
+      ],
+      "en": [
+        "Soichiro Yamamoto"
+      ],
+      "kr": [
+        "야마모토 소이치로"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Shin-Ei Animation"
+      ]
+    }
+  },
+  "placeCount": 9,
+  "places": [
+    {
+      "placeId": "0095029c-a976-45c0-bf34-b16166f45a94",
+      "name": {
+        "en": "Yanagi tunnel",
+        "ja": "柳トンネル"
+      },
+      "geo": {
+        "latitude": 34.4670045,
+        "longitude": 134.1641762
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4670045,134.1641762,3a,75y,224.09h,102.09t/data=!3m7!1e1!3m5!1sOz36tQPdMiRx06m0x_CKog!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DOz36tQPdMiRx06m0x_CKog%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D227.21979%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©2018 山本崇一朗・小学館／からかい上手の高木さん製作委員会"
+    },
+    {
+      "placeId": "30d3c699-69d2-4058-a6ce-1892b6259f62",
+      "name": {
+        "id": "Sekitar house K&K",
+        "es": "Cerca de la house K&K",
+        "de": "In der Nähe des house K&K",
+        "ja": "house K&K付近",
+        "en": "Near the house K&K"
+      },
+      "geo": {
+        "latitude": 34.4888021,
+        "longitude": 134.1845688
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4888021,134.1845688,3a,90y,313.99h,97.91t/data=!3m6!1e1!3m4!1sVMOZWfMoSA7y03PKK-tZ6w!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2018 山本崇一朗・小学館／からかい上手の高木さん製作委員会"
+    },
+    {
+      "placeId": "355a6125-72d2-4fac-8361-904fce754eb5",
+      "name": {
+        "en": "Kashimamyo Shrine",
+        "ja": "鹿島明神社"
+      },
+      "geo": {
+        "latitude": 34.4739214,
+        "longitude": 134.1700454
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4739214,134.1700454,3a,75y,176.29h,92.62t/data=!3m8!1e1!3m6!1sAF1QipMzuP_vIRpZ46cLuAmzqDAualqN6YbqGwieg81u!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMzuP_vIRpZ46cLuAmzqDAualqN6YbqGwieg81u%3Dw203-h100-k-no-pi-0-ya99.54952-ro-0-fo100!7i3840!8i1920?entry=ttu",
+      "copyright": "©2018 山本崇一朗・小学館／からかい上手の高木さん製作委員会"
+    },
+    {
+      "placeId": "383883c2-fdea-4796-9523-7c87d48e6427",
+      "name": {
+        "de": "In der Nähe des Shodoshima Healthyland Co., Ltd.Head office.",
+        "en": "Near the Shodoshima Healthyland Co., Ltd.Head office.",
+        "es": "Cerca de la Shodoshima Healthyland Co., Ltd.Head office.",
+        "id": "Sekitar Shodoshima Healthyland Co., Ltd.Head office.",
+        "ja": "小豆島ヘルシーランド(株)本社付近"
+      },
+      "geo": {
+        "latitude": 34.466141,
+        "longitude": 134.1632586
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.466141,134.1632586,3a,75y,198.47h,90.8t/data=!3m6!1e1!3m4!1s6irWvfJcgfyz61Z40JtuPg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2018 山本崇一朗・小学館／からかい上手の高木さん製作委員会"
+    },
+    {
+      "placeId": "8301db4c-eb36-4fc1-8664-1424811f98ca",
+      "name": {
+        "en": "Angel Road",
+        "ja": "エンジェルロード"
+      },
+      "geo": {
+        "latitude": 34.4772434,
+        "longitude": 134.188621
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4772434,134.188621,3a,90y,166.82h,102.06t/data=!3m8!1e1!3m6!1sAF1QipPXice2RZ7P1CYFP1HcS6zO0Zsfrjzs-BUzuamV!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPXice2RZ7P1CYFP1HcS6zO0Zsfrjzs-BUzuamV%3Dw203-h100-k-no-pi-0-ya242.51645-ro0-fo100!7i5376!8i2688?entry=ttu",
+      "copyright": "©2018 山本崇一朗・小学館／からかい上手の高木さん製作委員会"
+    },
+    {
+      "placeId": "91351657-6338-4f86-a038-339c2f766de5",
+      "name": {
+        "de": "In der Nähe des Beauty House Nishiguchi",
+        "ja": "ビューティーハウスにしぐち付近",
+        "es": "Cerca de la Beauty House Nishiguchi",
+        "en": "Near the Beauty House Nishiguchi",
+        "id": "Sekitar Beauty House Nishiguchi"
+      },
+      "geo": {
+        "latitude": 34.4879629,
+        "longitude": 134.1911436
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4879629,134.1911436,3a,75y,332.87h,97.1t/data=!3m6!1e1!3m4!1sbW1HCg166pTgHAd2fntYkg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2018 山本崇一朗・小学館／からかい上手の高木さん製作委員会"
+    },
+    {
+      "placeId": "b40b861d-2526-4a16-abce-f8893491b4f9",
+      "name": {
+        "en": "Tonosho Central Library Hontopia",
+        "ja": "土庄町立中央図書館(ほんとぴあ)"
+      },
+      "geo": {
+        "latitude": 34.4862794,
+        "longitude": 134.1897604
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4862794,134.1897604,3a,75y,246.24h,97.09t/data=!3m6!1e1!3m4!1sxQnk6Tr0459L39AEjeikzQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©2018 山本崇一朗・小学館／からかい上手の高木さん製作委員会"
+    },
+    {
+      "placeId": "bfc795b8-b044-4a4d-88e2-7fa676682819",
+      "name": {
+        "ja": "ブックスことぶき",
+        "en": "Books Kotobuki"
+      },
+      "geo": {
+        "latitude": 34.4818097,
+        "longitude": 134.1888077
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4818097,134.1888077,3a,75y,337.43h,106.45t/data=!3m7!1e1!3m5!1s2tXTyUCsYfz-2ifpnsPOPA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D2tXTyUCsYfz-2ifpnsPOPA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D21.863977%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©2018 山本崇一朗・小学館／からかい上手の高木さん製作委員会"
+    },
+    {
+      "placeId": "d9453d4b-cee7-4992-85e7-d071b3dacb11",
+      "name": {
+        "en": "pensée",
+        "ja": "パンセ"
+      },
+      "geo": {
+        "latitude": 34.4738166,
+        "longitude": 134.1711419
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4738166,134.1711419,3a,90y,25.5h,100.71t/data=!3m7!1e1!3m5!1sygkrhDR1gKx5Rk3V-PRasg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DygkrhDR1gKx5Rk3V-PRasg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D122.189224%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©2018 山本崇一朗・小学館／からかい上手の高木さん製作委員会"
+    }
+  ]
+}

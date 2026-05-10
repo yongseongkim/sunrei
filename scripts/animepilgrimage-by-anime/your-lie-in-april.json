@@ -1,0 +1,611 @@
+{
+  "anime": {
+    "animeId": "SxVDZdqsWoda64YFSB5I",
+    "slug": "your-lie-in-april",
+    "title": {
+      "ja": "四月は君の噓",
+      "kr": "4월은 너의 거짓말",
+      "en": "Your lie in April"
+    },
+    "author": {
+      "ja": [
+        "新川直司"
+      ],
+      "en": [
+        "Naoshi Arakawa"
+      ],
+      "kr": [
+        "아라카와 나오시"
+      ]
+    },
+    "studio": {
+      "en": [
+        "A-1 Pictures"
+      ]
+    }
+  },
+  "placeCount": 36,
+  "places": [
+    {
+      "placeId": "04996e84-04ed-48e1-ae9d-79f92ca3e2b9",
+      "name": {
+        "ja": "練馬区立東中前の森緑地",
+        "en": "Nerima Ward Higashinakamae Forest Green Space"
+      },
+      "geo": {
+        "latitude": 35.74801,
+        "longitude": 139.57435
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7479617,139.5743408,3a,75y,20.85h,97.19t/data=!3m7!1e1!3m5!1sQ8pk5MrTG-vgQgaarXdHrQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.1949946842152315%26panoid%3DQ8pk5MrTG-vgQgaarXdHrQ%26yaw%3D20.850072724626873!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "04f3d380-b2bf-4b8b-b0d5-a8331a4df54d",
+      "name": {
+        "kr": "도쿄 도립 샤쿠지이 공원",
+        "ja": "石神井公園",
+        "en": "Shakujii Park"
+      },
+      "geo": {
+        "latitude": 35.73913,
+        "longitude": 139.59752
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7391398,139.5974655,3a,90y,135.72h,94.22t/data=!3m6!1e1!3m4!1silrwtOHQFexBxYgXP1URwQ!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "19ab0dfe-6ef2-4912-b270-fc7a9e5b40ac",
+      "name": {
+        "en": "Welcome Park Higashioizumi 7-chome No. 2",
+        "ja": "ウェルカムパーク東大泉7丁目第2"
+      },
+      "geo": {
+        "latitude": 35.74956,
+        "longitude": 139.58112
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7495028,139.5812581,3a,65.1y,303.68h,94.45t/data=!3m6!1e1!3m4!1sMucdbVXkShZlKo76vMBHlg!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "276b6c52-6948-4014-8c61-a9ce4951f9b1",
+      "name": {
+        "ja": "タイムパーキング 東大泉",
+        "en": "Time Parking Higashioizumi"
+      },
+      "geo": {
+        "latitude": 35.74982,
+        "longitude": 139.5826
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7499156,139.5826067,3a,90y,178.96h,101.7t/data=!3m7!1e1!3m5!1sN5zDsdw5qf28HJX9YnZcaA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DN5zDsdw5qf28HJX9YnZcaA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D355.05783%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "32d5df2d-424a-4dcb-bd9c-e0bf88492ceb",
+      "name": {
+        "ja": "リパーク 上石神井４丁目第４",
+        "en": "Repark Kamishakujii 4-Chome #4"
+      },
+      "geo": {
+        "latitude": 35.7269,
+        "longitude": 139.5861
+      },
+      "ep": 22,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7269252,139.5860906,3a,63.4y,169.63h,95.73t/data=!3m6!1e1!3m4!1s-4gWgyqOcLk8rmsRi00JRQ!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "385af07d-184b-479c-8295-4e78f896729b",
+      "name": {
+        "en": "Ohayo Children's Playground",
+        "ja": "練馬区立おはよう児童遊園"
+      },
+      "geo": {
+        "latitude": 35.7402,
+        "longitude": 139.5873
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7401164,139.5873422,3a,73.2y,346.86h,98.07t/data=!3m7!1e1!3m5!1sLYD3j3sPLVcXee0vndw7vw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DLYD3j3sPLVcXee0vndw7vw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D199.42096%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "425486cc-ab60-4ca3-a01f-3ff54b5ce72d",
+      "name": {
+        "ja": "不動寺",
+        "en": "Sayama-fudoji Temple"
+      },
+      "geo": {
+        "latitude": 35.77019,
+        "longitude": 139.41691
+      },
+      "ep": 16,
+      "type": "EP",
+      "cityId": "JP-saitama-tokorozawa",
+      "streetViewUrl": "https://www.google.com/maps/place/%E6%97%A7%E5%8F%B0%E5%BE%B3%E9%99%A2%E9%9C%8A%E5%BB%9F%E5%8B%85%E9%A1%8D%E9%96%80/@35.7701597,139.4168537,3a,86.1y,289.71h,114.62t/data=!3m8!1e1!3m6!1sAF1QipM5IcyaaQ_yrDHRxlUxcmsNfEeoPK7Z8AEk87ek!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipM5IcyaaQ_yrDHRxlUxcmsNfEeoPK7Z8AEk87ek%3Dw203-h100-k-no-pi-0-ya51.99998-ro-0-fo100!7i8704!8i4352!4m17!1m7!3m6!1s0x6018de2f5fc9cf3d:0xa79fc80f56445217!2sSayama-fudoji+Temple!8m2!3d35.7702957!4d139.4159658!16s%2Fg%2F1tmgcg25!3m8!1s0x6018de25efbba483:0xde361b809ad3a0b3!8m2!3d35.7702056!4d139.4168554!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11g9nm8k7k?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "451eb255-366d-4e4d-bcf9-1ceb19d98556",
+      "name": {
+        "ja": "ワイン＆リキュール ハヤシ",
+        "en": "Wine & Liqueur Hayashi"
+      },
+      "geo": {
+        "latitude": 35.71957,
+        "longitude": 139.61903
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.719482,139.6190294,3a,48.7y,22.51h,97.79t/data=!3m7!1e1!3m5!1sUZtRUl5vQEPNjqs2xjjBpA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.790205568433095%26panoid%3DUZtRUl5vQEPNjqs2xjjBpA%26yaw%3D22.507348902600654!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "4c6eb4c5-e23c-419c-b329-90249539164c",
+      "name": {
+        "ja": "久保田産婦人科病院",
+        "en": "Kubota Hospital"
+      },
+      "geo": {
+        "latitude": 35.75254,
+        "longitude": 139.58593
+      },
+      "ep": 20,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7528165,139.5860142,3a,90y,274.49h,99.4t/data=!3m6!1e1!3m4!1sqNxINiJyM-peuovD_zss0w!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "539f7ca3-141b-4181-964c-eb9d1d614ac8",
+      "name": {
+        "en": "Ekoda Sengen Shrine",
+        "ja": "江古田浅間神社",
+        "kr": "에코다 센겐 신사"
+      },
+      "geo": {
+        "latitude": 35.73821,
+        "longitude": 139.67235
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7381961,139.6723012,3a,75y,79.3h,96.53t/data=!3m6!1e1!3m4!1seYiQ4f9vn9mNNY1cpVUuJA!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "5cf3e5f4-18c4-4ada-bf7e-5c01b0d1c5b0",
+      "name": {
+        "en": "Butcher's Table",
+        "ja": "ブッチャーズテーブル"
+      },
+      "geo": {
+        "latitude": 35.75172,
+        "longitude": 139.59381
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7517422,139.5936685,3a,75y,83.3h,96.85t/data=!3m7!1e1!3m5!1ssKJ2q-Ouv92eOAljpyU5zg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DsKJ2q-Ouv92eOAljpyU5zg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D33.875404%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "5ddd02f8-717a-4073-9dd5-2c1433990e10",
+      "name": {
+        "en": "Barber Oyamatsu",
+        "ja": "理容オヤマツ"
+      },
+      "geo": {
+        "latitude": 35.74882,
+        "longitude": 139.57268
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7488279,139.5726273,3a,75y,92.8h,94.98t/data=!3m7!1e1!3m5!1s-j5D5OVWxJhhPDLSQ3F6bg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.981666683820677%26panoid%3D-j5D5OVWxJhhPDLSQ3F6bg%26yaw%3D92.7982418839992!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "6720fa9f-d46a-4f1c-a088-25f4a1711799",
+      "name": {
+        "en": "Rune Kodaira",
+        "ja": "ルネこだいら"
+      },
+      "geo": {
+        "latitude": 35.73529,
+        "longitude": 139.48774
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-kodaira",
+      "streetViewUrl": "https://www.google.com/maps/@35.7353539,139.4879204,3a,81.5y,231.29h,100.66t/data=!3m6!1e1!3m4!1sy7FUk6TGgmJ03u5LJGhFhg!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "6b4c7670-4729-49cb-8e70-517eee92f793",
+      "name": {
+        "en": "LIP hair design"
+      },
+      "geo": {
+        "latitude": 35.74704,
+        "longitude": 139.56649
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-nishitokyo",
+      "streetViewUrl": "https://www.google.com/maps/place/LIP+hair+design/@35.7470863,139.5666921,3a,90y,301.95h,88.4t/data=!3m8!1e1!3m6!1sAF1QipOOuowKEmJ-FuSjiZ8BbH_1RnJ-vRBDAm4t1eqe!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOOuowKEmJ-FuSjiZ8BbH_1RnJ-vRBDAm4t1eqe%3Dw203-h100-k-no-pi-0-ya120.00001-ro-0-fo100!7i8000!8i4000!4m9!3m8!1s0x6018ef299bf3fe7b:0xb6f15da80e6421e4!8m2!3d35.7470613!4d139.5666521!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11cjk55hbg?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "7a29d221-4c46-4344-b985-e2855ac7cc64",
+      "name": {
+        "en": "Toei Minami-Tanaka Apartment Children's Amusement Park",
+        "ja": "都営南田中アパート 児童遊園"
+      },
+      "geo": {
+        "latitude": 35.73933,
+        "longitude": 139.61709
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.739257,139.6172824,3a,55.6y,347.63h,92.36t/data=!3m7!1e1!3m5!1sOOBaay0_WCoqp6kTOWictQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DOOBaay0_WCoqp6kTOWictQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D30.600206%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "81563c78-117c-4783-bf3f-52899163662b",
+      "name": {
+        "ja": "是政ソフトボール場Ｂ面",
+        "en": "Koremasa softball field B side"
+      },
+      "geo": {
+        "latitude": 35.65522,
+        "longitude": 139.49434
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-fuchu",
+      "streetViewUrl": "https://www.google.com/maps/@35.6548444,139.4963209,3a,75.8y,265.43h,103.63t/data=!3m7!1e1!3m5!1sAF1QipNB_FkZvU_v4JTmyVckoMdLek161qIsC-j6N8Ad!2e10!3e11!7i5760!8i2880?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "86ccbd7b-27c2-469e-913e-2fe04a72d7c1",
+      "name": {
+        "ja": "ラ・プリムール",
+        "en": "La Primeur"
+      },
+      "geo": {
+        "latitude": 35.73845,
+        "longitude": 139.58862
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.738361,139.5885307,3a,74y,37.64h,96.92t/data=!3m7!1e1!3m5!1sjFRSKmhVH21jB4dMhs5FSA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DjFRSKmhVH21jB4dMhs5FSA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D39.230675%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "88fb9d41-f7ad-4d94-8c37-0ceac720831e",
+      "name": {
+        "en": "Koenji North Park",
+        "ja": "高円寺北公園"
+      },
+      "geo": {
+        "latitude": 35.70704,
+        "longitude": 139.649
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7070382,139.6489895,3a,90y,260.82h,98.32t/data=!3m7!1e1!3m5!1s0D_5-bxgI6hOMFHdKhT3eg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D0D_5-bxgI6hOMFHdKhT3eg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D287.1988%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "8fc4fbae-4023-47ae-afbc-bedbb567babb",
+      "name": {
+        "ja": "セブン-イレブン 練馬石神井台８丁目店",
+        "en": "7-Eleven Nerima Shakujiidai 8-chome store"
+      },
+      "geo": {
+        "latitude": 35.73734,
+        "longitude": 139.58157
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7372738,139.5811785,3a,70.9y,87.59h,98.17t/data=!3m7!1e1!3m5!1sf1ejyvuQpGyMWGa5zZx7Yw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Df1ejyvuQpGyMWGa5zZx7Yw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D119.28497%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "914dfd09-3254-42fc-8b43-86a7f558808e",
+      "name": {
+        "ja": "夢のたまご",
+        "en": "dream egg"
+      },
+      "geo": {
+        "latitude": 35.72151,
+        "longitude": 139.62077
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7213469,139.6208148,3a,48.7y,345.74h,96.19t/data=!3m7!1e1!3m5!1skJI9DVPZ-6I4HIHSjvQAig!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.191570086961065%26panoid%3DkJI9DVPZ-6I4HIHSjvQAig%26yaw%3D345.736390148635!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "96d085ab-0403-4b95-9e9d-cfa8c3e09c7c",
+      "name": {
+        "ja": "練馬いちょう並木緑地",
+        "en": "Nerima Icho Namiki Green Space"
+      },
+      "geo": {
+        "latitude": 35.73987,
+        "longitude": 139.65277
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://google.com/maps/@35.7398834,139.6528206,3a,75y,148.73h,97.12t/data=!3m7!1e1!3m5!1sfi5DNqSp99ZPETBPSr1oWg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dfi5DNqSp99ZPETBPSr1oWg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D311.50928%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "9d628e38-c8f8-4aa3-a7c9-f4295fecc6db",
+      "name": {
+        "en": "Maedori Bridge",
+        "ja": "前通り橋"
+      },
+      "geo": {
+        "latitude": 35.76652,
+        "longitude": 139.5511
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-saitama-niiza",
+      "streetViewUrl": "https://www.google.com/maps/@35.7667134,139.5512175,3a,61.9y,210.11h,94.36t/data=!3m7!1e1!3m5!1su90J3xxUBCxPSJrEryHw8A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Du90J3xxUBCxPSJrEryHw8A%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D238.78918%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "a06b3e56-94f1-478a-80dc-6bcecc08d2a7",
+      "name": {
+        "en": "Inamuragasaki Park",
+        "ja": "鎌倉海浜公園稲村ヶ崎地区"
+      },
+      "geo": {
+        "latitude": 35.30335,
+        "longitude": 139.52166
+      },
+      "ep": 14,
+      "type": "EP",
+      "cityId": "JP-kanagawa-kamakura",
+      "streetViewUrl": "https://www.google.com/maps/@35.3033384,139.5190907,3a,76.7y,112.26h,92.48t/data=!3m6!1e1!3m4!1shqPvRZa4hf6VuDuJVVWVxg!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "a81e4617-96f9-4818-88ae-392b5ecc25ce",
+      "name": {
+        "kr": "히가시오오이즈미코부시 공원",
+        "en": "Nerima City Izumikobushi Park",
+        "ja": "練馬区立泉こぶし公園"
+      },
+      "geo": {
+        "latitude": 35.74877,
+        "longitude": 139.58983
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7487001,139.589751,3a,90y,14.89h,99.5t/data=!3m6!1e1!3m4!1scWBKmzVq0HGdzZJm9XbMtA!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "a9ee9729-9412-4a82-a7ec-7c24ac5f9179",
+      "name": {
+        "en": "Baseball Field A",
+        "ja": "石神井公園 Ａ地区野球場"
+      },
+      "geo": {
+        "latitude": 35.73904,
+        "longitude": 139.59716
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7390466,139.5971501,3a,75y,182.94h,97.97t/data=!3m7!1e1!3m5!1sf4dC3-DAub4DrDmR8cbFSA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.969841893738604%26panoid%3Df4dC3-DAub4DrDmR8cbFSA%26yaw%3D182.93813009309685!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "abdd3793-3b7b-462d-9dbd-9a9a6be8805d",
+      "name": {
+        "en": "Kawaguchi Lilia",
+        "ja": "川口総合文化センター・リリア"
+      },
+      "geo": {
+        "latitude": 35.80093,
+        "longitude": 139.71671
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-saitama-kawaguchi",
+      "streetViewUrl": "https://www.google.com/maps/place/Kawaguchi+Lilia/@35.8011659,139.716852,3a,90y,115.39h,94.44t/data=!3m8!1e1!3m6!1sAF1QipORJUHO2g9vsINP0irMgGhac0FNuWuph6KFxnZo!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipORJUHO2g9vsINP0irMgGhac0FNuWuph6KFxnZo%3Dw203-h100-k-no-pi-20-ya66.00001-ro-0-fo100!7i8704!8i4352!4m9!3m8!1s0x6018936ed2b85063:0x47768fdac593b49c!8m2!3d35.80093!4d139.716719!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F12257sfd?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "bc90867d-c5b6-4fb9-84b4-dc336e48bb6c",
+      "name": {
+        "en": "Kuriningunowako Nakajimabashiten",
+        "ja": "クリーニングの和光 大泉学園店"
+      },
+      "geo": {
+        "latitude": 35.7521,
+        "longitude": 139.58577
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7519708,139.585817,3a,81.3y,319.18h,93.87t/data=!3m7!1e1!3m5!1s7SkMBtpj3f18ns-IoioeIw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D7SkMBtpj3f18ns-IoioeIw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D16.919352%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "c4bbf9c3-fd7a-4588-852a-dcc3eabe78a6",
+      "name": {
+        "ja": "cinq Terrace",
+        "en": "cinq Terrace"
+      },
+      "geo": {
+        "latitude": 35.7393198,
+        "longitude": 139.5998414
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7393198,139.5998414,3a,90y,332.51h,96.7t/data=!3m6!1e1!3m4!1s_7d0mxCxXBAG9ORQYoLqtw!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "c7b9f40c-f448-4932-a9fd-ce2910d6dc65",
+      "name": {
+        "ja": "新宿区立落合公園",
+        "kr": "오치아이 공원",
+        "en": "Ochiai Park"
+      },
+      "geo": {
+        "latitude": 35.715,
+        "longitude": 139.68064
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7148758,139.6805839,3a,67.3y,197.28h,89.44t/data=!3m6!1e1!3m4!1s8AI47-Af9OW_yJyzb1DlqQ!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "cdfffc71-748f-4d87-bb67-c79a9c9c9ad5",
+      "name": {
+        "ja": "レックインドアテニススクール 上石神井",
+        "en": "REC Indoor Tennis School"
+      },
+      "geo": {
+        "latitude": 35.72676,
+        "longitude": 139.58752
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.726769,139.5874269,3a,44.6y,96.54h,92.01t/data=!3m6!1e1!3m4!1sbRLZoLKUDS_sIt1Rlk2mIw!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "d0ed7f89-94bc-4f35-96d0-652201293a5b",
+      "name": {
+        "ja": "ローソン・スリーエフ 台東谷中三丁目店",
+        "en": "Lawson + Three-F - Taito Tanaka 3-chome",
+        "kr": "로손 LTF 타이토 야나카 산쵸메점"
+      },
+      "geo": {
+        "latitude": 35.72582,
+        "longitude": 139.7643
+      },
+      "ep": 20,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7257812,139.7643156,3a,75y,316.87h,91.11t/data=!3m7!1e1!3m5!1sg-boKMzNLOSXiDPWDzjmqw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dg-boKMzNLOSXiDPWDzjmqw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D132.30196%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "e621ecf8-d23c-4717-81f4-03043db31ae3",
+      "name": {
+        "en": "Bike Storage Nishi Oizumi P3, Nerima-ku, Tokyo",
+        "ja": "バイクストレージ練馬区西大泉Ｐ３"
+      },
+      "geo": {
+        "latitude": 35.75681,
+        "longitude": 139.56926
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7568422,139.569251,3a,90y,241.54h,93.83t/data=!3m7!1e1!3m5!1sfmuO8j0zmoIr5bSzoYCFXQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DfmuO8j0zmoIr5bSzoYCFXQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D165.45029%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "e85b646c-0fc4-4fc7-836a-6fae43b9a1df",
+      "name": {
+        "ja": "にしかつ整体 arbre",
+        "en": "Nishikatsu Seitai arbre"
+      },
+      "geo": {
+        "latitude": 35.75331,
+        "longitude": 139.58623
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7531473,139.5861362,3a,75y,36.37h,99.43t/data=!3m6!1e1!3m4!1sgXG0J14eqoBIIzTPGMcCrQ!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "eab55aeb-b24e-458c-860d-2dd7108e4c3b",
+      "name": {
+        "en": "Heisei Tsutsuji Park",
+        "ja": "練馬区立平成つつじ公園"
+      },
+      "geo": {
+        "latitude": 35.7388,
+        "longitude": 139.65344
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7389253,139.6534518,3a,73.9y,217.65h,94.64t/data=!3m7!1e1!3m5!1s3zRMR504JdERQOpbc23EdA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D3zRMR504JdERQOpbc23EdA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D109.08926%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "f328b904-348a-4be3-a738-8929ef24c822",
+      "name": {
+        "en": "croir",
+        "ja": "クロワール"
+      },
+      "geo": {
+        "latitude": 35.74793,
+        "longitude": 139.57335
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7479412,139.5733375,3a,75y,109.7h,96.37t/data=!3m7!1e1!3m5!1sybz8_HyGg-uCx4l-Ki_mNQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.366371348132262%26panoid%3Dybz8_HyGg-uCx4l-Ki_mNQ%26yaw%3D109.70084418616847!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    },
+    {
+      "placeId": "fbdb884c-0008-4dc7-b6b7-4a8cfc217228",
+      "name": {
+        "kr": "네리마 구립 네리마 문화센터",
+        "ja": "練馬区立練馬文化センター",
+        "en": "Nerima Culture Center"
+      },
+      "geo": {
+        "latitude": 35.7394,
+        "longitude": 139.65388
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Nerima+Culture+Center/@35.7391954,139.6539084,3a,74.7y,44.17h,87.75t/data=!3m6!1e1!3m4!1sAF1QipO53wZ_CX74PtNL4nWLtHuhbkDGsl9sdfbKbGTp!2e10!7i8192!8i4096!4m9!3m8!1s0x6018ed091dea0967:0x6d5bf3a74cbbfaa!8m2!3d35.7391523!4d139.6539729!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F120q6zg9?coh=205409&entry=ttu&g_ep=EgoyMDI0MTAxNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©新川直司・講談社／「四月は君の嘘」製作委員会"
+    }
+  ]
+}

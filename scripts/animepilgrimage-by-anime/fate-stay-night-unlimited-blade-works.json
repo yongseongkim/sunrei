@@ -1,0 +1,264 @@
+{
+  "anime": {
+    "animeId": "7Mb8EsEXGlzHao3g6w6M",
+    "slug": "fate-stay-night-unlimited-blade-works",
+    "title": {
+      "en": "Fate/stay night: Unlimited Blade Works"
+    },
+    "author": {
+      "ja": [
+        "奈須きのこ",
+        "TYPE-MOON"
+      ],
+      "en": [
+        "Kinoko Nasu",
+        "TYPE-MOON"
+      ],
+      "kr": [
+        "나스 키노코",
+        "TYPE-MOON"
+      ]
+    },
+    "studio": {
+      "en": [
+        "ufotable"
+      ]
+    }
+  },
+  "placeCount": 14,
+  "places": [
+    {
+      "placeId": "0558c327-5a83-492d-8d37-24e292d8f552",
+      "name": {
+        "ja": "いろは坂桜公園付近",
+        "de": "In der Nähe des Irohazaka Sakura Park",
+        "en": "Near the Irohazaka Sakura Park",
+        "id": "Sekitar Irohazaka Sakura Park",
+        "es": "Cerca de la Irohazaka Sakura Park"
+      },
+      "geo": {
+        "latitude": 35.6456408,
+        "longitude": 139.4450411
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://www.google.com/maps/@35.6456408,139.4450411,3a,75y,38.65h,96.5t/data=!3m6!1e1!3m4!1sGASr4ois_WrGzfoDE1n-TQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©TYPE-MOON・ufotable・FSNPC"
+    },
+    {
+      "placeId": "0883d018-05a2-4fe0-8bb1-affd808f0e25",
+      "name": {
+        "en": "MAST Jiyugaoka",
+        "ja": "MAST自由が丘"
+      },
+      "geo": {
+        "latitude": 35.6069457,
+        "longitude": 139.6696403
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6069457,139.6696403,3a,90y,152.88h,100.34t/data=!3m6!1e1!3m4!1s2cGFmka2Qr0SdWfuneOZFQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©TYPE-MOON・ufotable・FSNPC"
+    },
+    {
+      "placeId": "09d56f7d-5e90-46fd-a6fc-725b9f57b53b",
+      "name": {
+        "de": "In der Nähe des Sakuragaoka Nichome",
+        "en": "Near the Sakuragaoka Nichome",
+        "ja": "桜ヶ丘二丁目付近",
+        "es": "Cerca de la Sakuragaoka Nichome",
+        "id": "Sekitar Sakuragaoka Nichome"
+      },
+      "geo": {
+        "latitude": 35.6376494,
+        "longitude": 139.439717
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://www.google.com/maps/@35.6376494,139.439717,3a,90y,70.92h,96.41t/data=!3m6!1e1!3m4!1sNwVqn2f9LXVT9t8ah1qzgg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©TYPE-MOON・ufotable・FSNPC"
+    },
+    {
+      "placeId": "0e4584c4-e15f-45f1-ad60-6878fc1d7c4d",
+      "name": {
+        "ja": "海浜幕張駅南口広場",
+        "en": "Kaihimmakuhari Station Square"
+      },
+      "geo": {
+        "latitude": 35.6484973,
+        "longitude": 140.0410838
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6484973,140.0410838,3a,90y,214.89h,95.93t/data=!3m7!1e1!3m5!1sxjb2XESXouKlK_p-Cp0CXA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dxjb2XESXouKlK_p-Cp0CXA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D24.816378%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©TYPE-MOON・ufotable・FSNPC"
+    },
+    {
+      "placeId": "21b5b8f3-f046-4a1d-9adf-1b4961233fe3",
+      "name": {
+        "ja": "カフェ・アンセーニュ・ダングル 自由が丘店",
+        "en": "Cafe Ansenyu-dangle Jiyugaoka"
+      },
+      "geo": {
+        "latitude": 35.6079569,
+        "longitude": 139.6702644
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Cafe+Ansenyu-dangle+Jiyugaoka/@35.6079569,139.6702644,2a,90y,1.42h,92.93t/data=!3m7!1e1!3m5!1sLI945iJ37pUyDUdJcrThdg!2e0!3e13!7i13312!8i6656!4m14!1m7!3m6!1s0x6018f51f7ba9fcc5:0xad888978187fdd4c!2sCafe+Ansenyu-dangle+Jiyugaoka!8m2!3d35.6080454!4d139.6702603!16s%2Fg%2F1tfls19c!3m5!1s0x6018f51f7ba9fcc5:0xad888978187fdd4c!8m2!3d35.6080454!4d139.6702603!16s%2Fg%2F1tfls19c?entry=ttu",
+      "copyright": "©TYPE-MOON・ufotable・FSNPC"
+    },
+    {
+      "placeId": "48bf3553-539f-49c8-9c4a-c9f8ef27f6f3",
+      "name": {
+        "ja": "B-COMPANY 吉祥寺店",
+        "en": "B-COMPANY Kichijoji store"
+      },
+      "geo": {
+        "latitude": 35.7037202,
+        "longitude": 139.5767948
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/@35.7037202,139.5767948,3a,90y,74.18h,97.01t/data=!3m7!1e1!3m5!1srJvqhSIGkg77LkA0gTcGrg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DrJvqhSIGkg77LkA0gTcGrg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D62.115852%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©TYPE-MOON・ufotable・FSNPC"
+    },
+    {
+      "placeId": "6074b1bb-5fce-477a-969d-5d2e6488b116",
+      "name": {
+        "ja": "茶乃子",
+        "en": "Chanoko"
+      },
+      "geo": {
+        "latitude": 35.6068327,
+        "longitude": 139.6693346
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Chanoko/@35.6068327,139.6693346,3a,90y,149.25h,98.71t/data=!3m6!1e1!3m4!1sceBmZZxgnMJZhXBNPlVoQg!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x6018f51f47431a8d:0x247be72150f0fe46!2sChanoko!8m2!3d35.6067114!4d139.6694164!16s%2Fg%2F1vlzbdkb!3m5!1s0x6018f51f47431a8d:0x247be72150f0fe46!8m2!3d35.6067114!4d139.6694164!16s%2Fg%2F1vlzbdkb?entry=ttu",
+      "copyright": "©TYPE-MOON・ufotable・FSNPC"
+    },
+    {
+      "placeId": "6b615749-0c45-4088-aa9e-b605c06549f7",
+      "name": {
+        "ja": "織田家長屋門",
+        "en": "Oda house Nagayamon"
+      },
+      "geo": {
+        "latitude": 34.6502795,
+        "longitude": 134.9887412
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hyogo-akashi",
+      "streetViewUrl": "https://www.google.com/maps/place/Oda+house+Nagayamon/@34.6502795,134.9887412,3a,90y,222.21h,101.65t/data=!3m7!1e1!3m5!1shODtpMRF-3t_bncXo56veA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DhODtpMRF-3t_bncXo56veA%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D230.49248%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m14!1m7!3m6!1s0x3554d4b8557f8945:0x9323c75a94b47271!2sOda+house+Nagayamon!8m2!3d34.6501738!4d134.9886106!16s%2Fg%2F11b88ktd69!3m5!1s0x3554d4b8557f8945:0x9323c75a94b47271!8m2!3d34.6501738!4d134.9886106!16s%2Fg%2F11b88ktd69?entry=ttu",
+      "copyright": "©TYPE-MOON・ufotable・FSNPC"
+    },
+    {
+      "placeId": "75770ddc-6228-494d-9250-e6c961cecc56",
+      "name": {
+        "ja": "東寺方三丁目",
+        "en": "Higashi-terakata 3"
+      },
+      "geo": {
+        "latitude": 35.6374735,
+        "longitude": 139.4388144
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://www.google.com/maps/@35.6374735,139.4388144,3a,90y,346.15h,96.1t/data=!3m6!1e1!3m4!1s1itE917_1SduiRCR7XcpZQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "©TYPE-MOON・ufotable・FSNPC"
+    },
+    {
+      "placeId": "851be42b-c64f-4db0-b27f-82f1408d40af",
+      "name": {
+        "en": "Yugyo-ji",
+        "ja": "清浄光寺（遊行寺）"
+      },
+      "geo": {
+        "latitude": 35.3479408,
+        "longitude": 139.4882625
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-fujisawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.3479408,139.4882625,3a,75y,31.81h,96.9t/data=!3m6!1e1!3m4!1s4TUkZW7VoXq-Ec8LFIfHFw!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "©TYPE-MOON・ufotable・FSNPC"
+    },
+    {
+      "placeId": "8c2b9b34-5f97-4f30-aaec-d44250ed5f7f",
+      "name": {
+        "en": "Rinko Park",
+        "ja": "臨港パーク"
+      },
+      "geo": {
+        "latitude": 35.4622483,
+        "longitude": 139.6377409
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4622483,139.6377409,3a,75y,269.33h,100.92t/data=!3m7!1e1!3m5!1ssRruKFf73_OQhleaopc-mA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DsRruKFf73_OQhleaopc-mA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D0.094403215%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?entry=ttu",
+      "copyright": "©TYPE-MOON・ufotable・FSNPC"
+    },
+    {
+      "placeId": "c4be1de2-a991-4d18-acfc-f0771418f91b",
+      "name": {
+        "en": "Kaihimmakuhari Sta.",
+        "ja": "海浜幕張駅"
+      },
+      "geo": {
+        "latitude": 35.6499221,
+        "longitude": 140.0414659
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-chiba-chiba",
+      "streetViewUrl": "https://www.google.com/maps/@35.6499221,140.0414659,2a,75y,302.15h,103.35t/data=!3m7!1e1!3m5!1szV815mUVJS0Y8H96cICk_w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DzV815mUVJS0Y8H96cICk_w%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D68.305855%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?entry=ttu",
+      "copyright": "©TYPE-MOON・ufotable・FSNPC"
+    },
+    {
+      "placeId": "c5f6a60c-e12a-4438-8dc9-ddf897ec3687",
+      "name": {
+        "ja": "桜ヶ丘1丁目緑地付近",
+        "en": "Near the Sakuragaoka 1-chome Green Space",
+        "de": "In der Nähe des Sakuragaoka 1-chome Green Space",
+        "id": "Sekitar Sakuragaoka 1-chome Green Space",
+        "es": "Cerca de la Sakuragaoka 1-chome Green Space"
+      },
+      "geo": {
+        "latitude": 35.6475243,
+        "longitude": 139.4484023
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-tama",
+      "streetViewUrl": "https://www.google.com/maps/@35.6475243,139.4484023,3a,75y,267.19h,85.14t/data=!3m7!1e1!3m5!1sfC3MwRXTDFXRgmNuARhrKg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DfC3MwRXTDFXRgmNuARhrKg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D129.5369%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "©TYPE-MOON・ufotable・FSNPC"
+    },
+    {
+      "placeId": "d9804904-b41d-4dbe-8feb-7f6360b668b6",
+      "name": {
+        "ja": "エクセルシオール カフェ 吉祥寺南口駅前店",
+        "en": "Excelsior Caffé Kichijoji South Exit Station Store"
+      },
+      "geo": {
+        "latitude": 35.702725,
+        "longitude": 139.5793059
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.com/maps/place/Excelsior+Caff%C3%A9/@35.702725,139.5793059,3a,75y,125.79h,93.48t/data=!3m8!1e1!3m5!1sQhZISE9m0QKI5am2lq52oQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DQhZISE9m0QKI5am2lq52oQ%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D140.49023%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!5s0x6018ee3807157f87:0x41059fbe6badabf3!4m14!1m7!3m6!1s0x6018ee380777deb3:0x473fddd6c08d1a83!2sExcelsior+Caff%C3%A9!8m2!3d35.7026423!4d139.579365!16s%2Fg%2F11cpfbr82l!3m5!1s0x6018ee380777deb3:0x473fddd6c08d1a83!8m2!3d35.7026423!4d139.579365!16s%2Fg%2F11cpfbr82l?entry=ttu",
+      "copyright": "©TYPE-MOON・ufotable・FSNPC"
+    }
+  ]
+}

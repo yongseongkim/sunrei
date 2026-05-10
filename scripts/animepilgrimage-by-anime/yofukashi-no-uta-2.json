@@ -1,0 +1,801 @@
+{
+  "anime": {
+    "animeId": "DOBudmYUGamzQcwLtadk",
+    "slug": "yofukashi-no-uta-2",
+    "title": {
+      "de": "Yofukashi no Uta Staffel 2",
+      "ja": "よふかしのうた Season 2",
+      "kr": "철야의 노래 2기",
+      "en": "Yofukashi no Uta Season 2",
+      "id": "Yofukashi no Uta Musim 2",
+      "es": "Yofukashi no Uta Temporada 2"
+    },
+    "author": {
+      "ja": [
+        "コトヤマ"
+      ],
+      "en": [
+        "Kotoyama"
+      ],
+      "kr": [
+        "코토야마"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "ライデンフィルム"
+      ],
+      "en": [
+        "LIDENFILMS"
+      ]
+    }
+  },
+  "placeCount": 47,
+  "places": [
+    {
+      "placeId": "0a541d1b-e459-4c8c-88e6-cf57c9dce4ed",
+      "name": {
+        "ja": "ファミリーマート さいたま松本店",
+        "en": "FamilyMart Matsumoto 1-chome"
+      },
+      "geo": {
+        "latitude": 35.83916,
+        "longitude": 139.6283
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8391208,139.6281481,3a,90y,70.79h,108.45t/data=!3m7!1e1!3m5!1sFwIzxJ8fLrqjB811oNlJfg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.452161760012075%26panoid%3DFwIzxJ8fLrqjB811oNlJfg%26yaw%3D70.7899389995965!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "103d9c4b-4e67-4cec-8928-d7397cd66128",
+      "name": {
+        "en": "Nakamachi Street",
+        "ja": "仲町通り"
+      },
+      "geo": {
+        "latitude": 35.70936,
+        "longitude": 139.77246
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7093653,139.7724317,3a,90y,78.44h,96.19t/data=!3m7!1e1!3m5!1sAOeP1eKWTbSlt9r7CFAsfg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.18804512279678%26panoid%3DAOeP1eKWTbSlt9r7CFAsfg%26yaw%3D78.4364843776221!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "181f4365-e51d-44a2-8bd5-2a15bed54add",
+      "name": {
+        "ja": "四谷公園",
+        "en": "Yotsuya Park"
+      },
+      "geo": {
+        "latitude": 35.84232,
+        "longitude": 139.63633
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8423676,139.63647,3a,63.4y,233.35h,95.12t/data=!3m7!1e1!3m5!1sINXsNJ5LJxxpje_LN4G4Lg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.1226381751081504%26panoid%3DINXsNJ5LJxxpje_LN4G4Lg%26yaw%3D233.346690315722!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "185a81df-1433-4f94-b8b7-604a939ed5cb",
+      "name": {
+        "en": "Bar & Kitchen Sawada",
+        "ja": "Bar & Kitchen 澤田"
+      },
+      "geo": {
+        "latitude": 35.85392,
+        "longitude": 139.63782
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8537539,139.6380511,3a,63.4y,309.6h,94.43t/data=!3m7!1e1!3m5!1s6y6xu0hkhN0sjabVM8oqBA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.428366319699805%26panoid%3D6y6xu0hkhN0sjabVM8oqBA%26yaw%3D309.59653007552106!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "1b206a0f-c708-4049-bb81-c987e83953ce",
+      "name": {
+        "en": "Akihabara Radio Center",
+        "kr": "아키하바라 라디오 센터",
+        "ja": "ラジオセンター"
+      },
+      "geo": {
+        "latitude": 35.69842,
+        "longitude": 139.77181
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Akihabara+Radio+Center/@35.6983921,139.7715103,3a,90y,78.31h,94.94t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDf6-evyAE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYR-Y2CKmDyQTbsSh6yTD5e9PzbpA4nKCBs7tQ4tyKJ49GP96ci3eFHjYcoZLValxDDXez6b1BWLZQDV0Kk4HcYMYAdReRtFDH_mkMFYWTi0t14pzJlZCvJdaCJ9PtJScr4KbVTjw%3Dw900-h600-k-no-pi-4.941033755307714-ya78.30916122919716-ro0-fo100!7i11904!8i5952!4m9!3m8!1s0x60188c1d406b5cef:0xbe25b7e28198e911!8m2!3d35.6983921!4d139.7715103!10e5!14m1!1BCgIgARICCAI!16s%2Fm%2F0nbdcz8?entry=ttu&g_ep=EgoyMDI1MDgxMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "1b35eba3-0401-45f4-9c7d-3a97f8aa406f",
+      "name": {
+        "en": "apollostation Self-Service Omiya Hongo SS",
+        "ja": "apollostation セルフ大宮本郷SS"
+      },
+      "geo": {
+        "latitude": 35.93928,
+        "longitude": 139.63068
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9393006,139.6307362,3a,90y,282.35h,100.24t/data=!3m7!1e1!3m5!1sD54zbwYS0-9a5qS5llnGyg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.241177701609686%26panoid%3DD54zbwYS0-9a5qS5llnGyg%26yaw%3D282.3452109261724!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "2797d829-4e3c-4b2f-8bc6-2a33f9645378",
+      "name": {
+        "en": "Karaoke Pasela Akihabara Showa-dori",
+        "ja": "カラオケパセラ秋葉原昭和通り館"
+      },
+      "geo": {
+        "latitude": 35.69805,
+        "longitude": 139.77613
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6980555,139.7761144,3a,90y,184.14h,124.53t/data=!3m7!1e1!3m5!1srB1Bc-iQF8C0d6nd4ftpsQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-34.52593317648841%26panoid%3DrB1Bc-iQF8C0d6nd4ftpsQ%26yaw%3D184.14416057336845!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "2babe741-8367-4e24-b17a-eda32aa1eb62",
+      "name": {
+        "ja": "武蔵浦和コミュニティセンター",
+        "en": "Musashi-Urawa Community Center"
+      },
+      "geo": {
+        "latitude": 35.84485,
+        "longitude": 139.64521
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8446859,139.6452258,3a,90y,347.07h,105.98t/data=!3m7!1e1!3m5!1saiG5nrfDYberV0B8TlUCVQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.983343259901531%26panoid%3DaiG5nrfDYberV0B8TlUCVQ%26yaw%3D347.06651292373965!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "3c7bad7e-3b1e-44d5-8c7a-d2ebaa617226",
+      "name": {
+        "ja": "上野動物園",
+        "en": "Ueno Zoo",
+        "kr": "우에노 동물원"
+      },
+      "geo": {
+        "latitude": 35.7162,
+        "longitude": 139.77146
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7161815,139.7714172,3a,90y,266.88h,100.06t/data=!3m7!1e1!3m5!1suzvMps6cit9DPfr28Hwp6w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.06088553762892%26panoid%3DuzvMps6cit9DPfr28Hwp6w%26yaw%3D266.8788794367803!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "3e5cdb5c-ccf4-4aa8-8875-008d26791558",
+      "name": {
+        "en": "Mizuho Bank, Omiya Branch, Omiya Station Front Branch Office",
+        "ja": "みずほ銀行 大宮支店 大宮駅前出張所"
+      },
+      "geo": {
+        "latitude": 35.90713,
+        "longitude": 139.62527
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9070864,139.6252105,3a,64.4y,54.33h,97.23t/data=!3m7!1e1!3m5!1sHLWkmZ89zz_Hudg6wDQdew!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.225326539146451%26panoid%3DHLWkmZ89zz_Hudg6wDQdew%26yaw%3D54.33398079922398!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "3e61f65b-bdfc-453c-96a2-9e979020be32",
+      "name": {
+        "en": "7-Eleven Omiya Station Ginza Street Store",
+        "ja": "セブン-イレブン 大宮駅銀座通り店"
+      },
+      "geo": {
+        "latitude": 35.9081,
+        "longitude": 139.62479
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9081258,139.6248437,3a,90y,246.6h,96.93t/data=!3m7!1e1!3m5!1swz-bkB6U5EC2LyyubuOksA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.925486740708777%26panoid%3Dwz-bkB6U5EC2LyyubuOksA%26yaw%3D246.59730089830416!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "41429925-f5f1-4c34-9bd7-9ddd632afc2a",
+      "name": {
+        "ja": "日進湯",
+        "en": "Nisshin Yu"
+      },
+      "geo": {
+        "latitude": 35.90748,
+        "longitude": 139.61679
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9075841,139.6167728,3a,90y,194.66h,104.61t/data=!3m7!1e1!3m5!1sU_dWpMu7uf-sza83pwZ7Hg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.613552040012948%26panoid%3DU_dWpMu7uf-sza83pwZ7Hg%26yaw%3D194.6554162928877!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "42205614-8460-4f9a-a558-77b530df0d02",
+      "name": {
+        "kr": "우에노 동물원",
+        "en": "Ueno Zoo",
+        "ja": "上野動物園"
+      },
+      "geo": {
+        "latitude": 35.71595,
+        "longitude": 139.77172
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7159289,139.7716401,3a,90y,139.31h,106.12t/data=!3m7!1e1!3m5!1sEPVdWztB-QBM5TcerwwNLg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-16.11845573778099%26panoid%3DEPVdWztB-QBM5TcerwwNLg%26yaw%3D139.31355185579227!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "4f5b14cf-c00f-42e9-906f-cdd192b76c21",
+      "name": {
+        "ja": "博多天神 新橋1号店",
+        "en": "Hakata Tenjin Shinbashi 1",
+        "kr": "하카타텐진 신바시1호점"
+      },
+      "geo": {
+        "latitude": 35.66724,
+        "longitude": 139.75622
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6672423,139.7562232,3a,90y,41.5h,97.66t/data=!3m7!1e1!3m5!1sZkhhwSWEWPqnneeQUhBNJA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.662176890247423%26panoid%3DZkhhwSWEWPqnneeQUhBNJA%26yaw%3D41.49730408439189!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgwNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "5cc06d5b-9d9d-4381-b5f9-20404f7353d9",
+      "name": {
+        "en": "Crossfit",
+        "ja": "クロスフィット浦和"
+      },
+      "geo": {
+        "latitude": 35.84734,
+        "longitude": 139.6453
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8473664,139.6452591,3a,90y,98.66h,105.95t/data=!3m7!1e1!3m5!1sFMOw2T21b9bNj9eJ8YgCsQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.947843138377394%26panoid%3DFMOw2T21b9bNj9eJ8YgCsQ%26yaw%3D98.66415684079412!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "6577328e-60c6-40ce-a7f6-4d7f8d5df110",
+      "name": {
+        "ja": "近畿日本ツーリスト 大宮店",
+        "en": "Kinki Nippon Tourist Omiya Store"
+      },
+      "geo": {
+        "latitude": 35.90833,
+        "longitude": 139.62468
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9083188,139.6247546,3a,90y,72.55h,93.9t/data=!3m7!1e1!3m5!1sG7m_PpSOLWiVWOMMzyyY6g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.896240981202496%26panoid%3DG7m_PpSOLWiVWOMMzyyY6g%26yaw%3D72.54898447476336!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "6725418b-2712-405d-a541-f04d635903b8",
+      "name": {
+        "en": "National Museum of Nature and Science",
+        "ja": "国立科学博物館",
+        "kr": "국립과학박물관"
+      },
+      "geo": {
+        "latitude": 35.71667,
+        "longitude": 139.77645
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7165699,139.7763828,3a,90y,28.36h,100.7t/data=!3m7!1e1!3m5!1sCIABIhAIN0uG5TlP7mfv1noACAUH!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HbExgJD6d4dG7msknDst3G6h9KKN1Jvp8iDzcMpKR65Dambhcgj-fjOuew3gcXxibaNhqe4Uk0aOgWzJZYZI5snRHjjZY2_7Am92nDPvTvMb48P1-90EvfN2qX7JTYKREGku6JVNKEJvjt_%3Dw900-h600-k-no-pi-10.6996662876697-ya209.04960625224703-ro0-fo100!7i7680!8i3840?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "83efcc93-1051-47aa-ae01-9f677181dffa",
+      "name": {
+        "en": "Musashi-Urawa Community Center",
+        "ja": "武蔵浦和コミュニティセンター"
+      },
+      "geo": {
+        "latitude": 35.84503,
+        "longitude": 139.64512
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8448976,139.6451611,3a,74y,325.7h,93.38t/data=!3m7!1e1!3m5!1sP7UruHHDKT28Xf3xVMw9ZA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.3761652103932533%26panoid%3DP7UruHHDKT28Xf3xVMw9ZA%26yaw%3D325.69908322937346!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "8789d856-23a0-419f-827e-f045e1236bf7",
+      "name": {
+        "en": "Lawson Saitama Bessho 7-chome Store",
+        "ja": "ローソン さいたま別所七丁目店"
+      },
+      "geo": {
+        "latitude": 35.84598,
+        "longitude": 139.64463
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8459976,139.6446013,3a,50.6y,153.8h,89.99t/data=!3m7!1e1!3m5!1sOGxdgMURb13vXwPm-SqqTA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.005199045207277209%26panoid%3DOGxdgMURb13vXwPm-SqqTA%26yaw%3D153.80273749812196!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "8b649af2-d768-44a5-b804-2ddc0d115d9b",
+      "name": {
+        "en": "Ikkenme Sakaba Omiya East Exit Branch",
+        "ja": "一軒め酒場 大宮東口店"
+      },
+      "geo": {
+        "latitude": 35.90819,
+        "longitude": 139.62486
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9081649,139.6248254,3a,90y,70.67h,92.7t/data=!3m7!1e1!3m5!1sfx468sFZnjHStpI7zg0xQg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.6991161175446763%26panoid%3Dfx468sFZnjHStpI7zg0xQg%26yaw%3D70.67040372246298!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "95ad1ccd-eaba-4f99-aa75-b1f02f6df972",
+      "name": {
+        "en": "Katei Ryori Kawaji",
+        "ja": "家庭料理 かわじ"
+      },
+      "geo": {
+        "latitude": 35.84685,
+        "longitude": 139.64586
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8468872,139.6458081,3a,90y,138.58h,94.73t/data=!3m7!1e1!3m5!1sVwB5ZpMurj00ihuYaM4ktQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.72835803407699%26panoid%3DVwB5ZpMurj00ihuYaM4ktQ%26yaw%3D138.57856013981475!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "9993af4c-e9aa-4aa0-8dd6-f2227fc323ec",
+      "name": {
+        "ja": "ドトールコーヒーショップ 大宮ラクーン店",
+        "kr": "도토루 오미야 라쿤점",
+        "en": "Doutor Omiya RAKUUN"
+      },
+      "geo": {
+        "latitude": 35.90773,
+        "longitude": 139.62498
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9077006,139.6250183,3a,90y,339.69h,99.87t/data=!3m7!1e1!3m5!1sb5sVTrWWR_YKn689hn0_Eg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.872710852184369%26panoid%3Db5sVTrWWR_YKn689hn0_Eg%26yaw%3D339.6922067957147!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "9cc9aa53-87fe-403a-9b95-6f5705bbc41c",
+      "name": {
+        "kr": "우에노 역",
+        "ja": "上野駅",
+        "en": "Ueno Station"
+      },
+      "geo": {
+        "latitude": 35.7117,
+        "longitude": 139.77569
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7117672,139.7755021,2a,90y,250.15h,99.9t/data=!3m7!1e1!3m5!1sTDyUD0vMlw1olQms8LwI-g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.90116872934604%26panoid%3DTDyUD0vMlw1olQms8LwI-g%26yaw%3D250.15054758995706!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "a227bd2b-4607-4878-8caa-40a4f33b158c",
+      "name": {
+        "kr": "우에노 동물원",
+        "ja": "上野動物園",
+        "en": "Ueno Zoo"
+      },
+      "geo": {
+        "latitude": 35.71815,
+        "longitude": 139.77103
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7181486,139.7710754,3a,90y,265.93h,95.88t/data=!3m7!1e1!3m5!1sbB4JR-RHVBi6qXfDOH08mg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.875357889654083%26panoid%3DbB4JR-RHVBi6qXfDOH08mg%26yaw%3D265.92663219292524!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "a490ecef-94f2-463b-b571-9b1a835303cf",
+      "name": {
+        "ja": "上野動物園",
+        "en": "Ueno Zoo",
+        "kr": "우에노 동물원"
+      },
+      "geo": {
+        "latitude": 35.71251,
+        "longitude": 139.77231
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7123922,139.772403,3a,90y,346.06h,98.85t/data=!3m7!1e1!3m5!1smBc4N2S7FQjdN0ZCrKGGHw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.85375672322077%26panoid%3DmBc4N2S7FQjdN0ZCrKGGHw%26yaw%3D346.06058140956037!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "a78361b1-3c29-47a6-b5f5-aa976b69f248",
+      "name": {
+        "en": "Tajima Housing Complex 1st Ground",
+        "ja": "田島団地1グラウンド"
+      },
+      "geo": {
+        "latitude": 35.8427,
+        "longitude": 139.62951
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8424683,139.6295471,3a,50.1y,342.17h,95.83t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID-w42LqwE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6Hbph35TO0xtqLNBd3ztLLd45Q6_gy2a598pbDqd1AIFopYuCOACjfPNOBiZatf_92AC0GYD4fJx-qCObufbX5FmG6SHfnVQJCzfDaXB816TvXw-Bd7yZBqNHuTU7znWXMFaYIUMfw%3Dw900-h600-k-no-pi-5.8335485994058445-ya342.1721063629891-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "aa51b3cb-1f07-4db6-8966-7560cfb68222",
+      "name": {
+        "ja": "さいたま市立岸中学校",
+        "en": "Kishi Junior High School"
+      },
+      "geo": {
+        "latitude": 35.85091,
+        "longitude": 139.6659
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8511447,139.6658441,3a,90y,188.96h,99.62t/data=!3m7!1e1!3m5!1s7nBfuV0ItyepBtsR38-3lg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.619718471618427%26panoid%3D7nBfuV0ItyepBtsR38-3lg%26yaw%3D188.95779815952028!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "aa62a17c-6a8a-4318-bf2d-31efa64d5ced",
+      "name": {
+        "en": "Musashi-Urawa Station West Exit Square",
+        "ja": "武蔵浦和駅西口広場"
+      },
+      "geo": {
+        "latitude": 35.84456,
+        "longitude": 139.64546
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8446859,139.6452258,3a,25.4y,105.8h,89.2t/data=!3m7!1e1!3m5!1saiG5nrfDYberV0B8TlUCVQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.8009712013405732%26panoid%3DaiG5nrfDYberV0B8TlUCVQ%26yaw%3D105.79581855124118!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgwNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "abab80c4-3f05-440b-ba13-826fea5cdfa8",
+      "name": {
+        "en": "Plaza Hotel Urawa",
+        "ja": "プラザホテル浦和"
+      },
+      "geo": {
+        "latitude": 35.85302,
+        "longitude": 139.6383
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.85316,139.6384936,3a,75y,223.3h,103t/data=!3m7!1e1!3m5!1snF4cbUcNYS_U040b5PX5bw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.99744953401705%26panoid%3DnF4cbUcNYS_U040b5PX5bw%26yaw%3D223.29525260541433!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "b397313e-69fb-43f8-b61e-544395cf2295",
+      "name": {
+        "en": "Akihabara Radio Kaikan",
+        "ja": "秋葉原ラジオ会館",
+        "kr": "아키하바라 라디오회관"
+      },
+      "geo": {
+        "latitude": 35.69819,
+        "longitude": 139.77167
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6981834,139.7715103,3a,90y,92.2h,106.24t/data=!3m7!1e1!3m5!1snN8DjsyAU3-XjynSiLpFjQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-16.238319570720336%26panoid%3DnN8DjsyAU3-XjynSiLpFjQ%26yaw%3D92.19611406960793!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "b7d892b9-b18e-418b-b41f-0b30a165124d",
+      "name": {
+        "en": "Ueno Zoo",
+        "ja": "上野動物園",
+        "kr": "우에노 동물원"
+      },
+      "geo": {
+        "latitude": 35.7163,
+        "longitude": 139.77074
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7162839,139.7707728,3a,90y,346.71h,96.64t/data=!3m7!1e1!3m5!1sUq0Piup6lg_OoQL7Uoq2pw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.644255342952405%26panoid%3DUq0Piup6lg_OoQL7Uoq2pw%26yaw%3D346.7149647256859!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "bf826f77-e23c-4bfb-a50e-e2d6645bad73",
+      "name": {
+        "en": "Tokyo Star Bank Omiya Branch",
+        "ja": "東京スター銀行 大宮支店"
+      },
+      "geo": {
+        "latitude": 35.90595,
+        "longitude": 139.62122
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.905744,139.621302,3a,40.7y,339.89h,93.94t/data=!3m7!1e1!3m5!1s65LAgdu1CUqRPJY75Ma9Ug!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.938305659164726%26panoid%3D65LAgdu1CUqRPJY75Ma9Ug%26yaw%3D339.88851129197934!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "c16e676b-b37d-4b95-98b7-0337fd5c9243",
+      "name": {
+        "ja": "秩父ミューズパーク",
+        "en": "Chichibu Muse Park"
+      },
+      "geo": {
+        "latitude": 36.00349,
+        "longitude": 139.06037
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/@36.0034669,139.0606553,3a,41.5y,274.29h,104.72t/data=!3m7!1e1!3m5!1srHVJuDsFReaAx_TJNG-99g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.723879671243992%26panoid%3DrHVJuDsFReaAx_TJNG-99g%26yaw%3D274.28762448075935!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "ce080762-b448-4578-a866-2c2a7d385ce9",
+      "name": {
+        "en": "Land Axis Tower"
+      },
+      "geo": {
+        "latitude": 35.89321,
+        "longitude": 139.63343
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8931694,139.6332976,3a,90y,73.6h,97.55t/data=!3m7!1e1!3m5!1sMkzFZ_-2BlOQ7t3T3QQQrQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.552083568345793%26panoid%3DMkzFZ_-2BlOQ7t3T3QQQrQ%26yaw%3D73.60265715889057!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "ced378b6-b1a5-49b7-abf6-a9637124a50f",
+      "name": {
+        "en": "HUB Omiya East Exit",
+        "ja": "HUB大宮東口店"
+      },
+      "geo": {
+        "latitude": 35.90899,
+        "longitude": 139.62465
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9089678,139.6245825,3a,90y,257.96h,91.25t/data=!3m7!1e1!3m5!1sj7NnqAqOVlDbyq22oZedIQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.248242000908462%26panoid%3Dj7NnqAqOVlDbyq22oZedIQ%26yaw%3D257.9561386644424!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "d00430ee-c24f-4d30-b9c0-359229d4b94b",
+      "name": {
+        "ja": "三宅耳鼻咽喉科医院",
+        "en": "Miyake Ear"
+      },
+      "geo": {
+        "latitude": 35.84048,
+        "longitude": 139.63048
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8406525,139.6305695,3a,90y,218.13h,93.6t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID-w9X3nAE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HbQvAUMzo80XMDkMclYDmW7Xkl0LF11_Jm27yUazPnc8DATVzPzlMJOpPdU9F4cPuxPOAwEI3gojgLxpXE4CvwggW1VFy77kIR5ITwk_tjCVe5j64xXzf6Zvx7ihS6FGLlTgBRt-w%3Dw900-h600-k-no-pi-3.595221186723336-ya218.1343511734263-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDcxNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "d3055d35-58cf-4e76-bee2-2778da9a3460",
+      "name": {
+        "ja": "天丼てんや 大宮東店",
+        "en": "Tendon Tenya Omiyahigashi"
+      },
+      "geo": {
+        "latitude": 35.90817,
+        "longitude": 139.62466
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.9081513,139.6245712,3a,50.2y,73.92h,97.72t/data=!3m7!1e1!3m5!1skBltQd25HbZUV7Fug14HRA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.722587088264845%26panoid%3DkBltQd25HbZUV7Fug14HRA%26yaw%3D73.9219044084911!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "d585a186-6120-48fd-8563-9f323bed2088",
+      "name": {
+        "ja": "セブン-イレブン さいたま田島１丁目店",
+        "en": "7-Eleven Saitama Tajima 1-chome"
+      },
+      "geo": {
+        "latitude": 35.84036,
+        "longitude": 139.6322
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8402743,139.6320391,3a,90y,61.54h,99.73t/data=!3m7!1e1!3m5!1sSjTeYJumNGNmy2AAubtrOg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.733335942434508%26panoid%3DSjTeYJumNGNmy2AAubtrOg%26yaw%3D61.542454566195595!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcxNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "df8562b3-a17e-45e6-b389-d3747d3affd2",
+      "name": {
+        "ja": "有職組紐 道明",
+        "en": "Domyo",
+        "kr": "도묘"
+      },
+      "geo": {
+        "latitude": 35.70913,
+        "longitude": 139.7714
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7091329,139.7713939,3a,90y,255.63h,106.68t/data=!3m7!1e1!3m5!1snX9aHRRpzoVdzerrUIvd0w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-16.677230813546714%26panoid%3DnX9aHRRpzoVdzerrUIvd0w%26yaw%3D255.62839577867106!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "e0bcf46d-a348-4438-ba99-9f6f67049020",
+      "name": {
+        "ja": "タイムズ武蔵浦和駅前第３",
+        "en": "Times Musashi-Urawa Ekimae Building No. 3"
+      },
+      "geo": {
+        "latitude": 35.84638,
+        "longitude": 139.64441
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8464431,139.6444753,3a,90y,215.51h,97.53t/data=!3m7!1e1!3m5!1sKOyWKTKK1CiwXBNbQ6-1sw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.529834192760205%26panoid%3DKOyWKTKK1CiwXBNbQ6-1sw%26yaw%3D215.5142015748544!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "e7871592-7290-4e64-a011-f03b9c98c747",
+      "name": {
+        "en": "Okudo-san",
+        "ja": "おくどさん"
+      },
+      "geo": {
+        "latitude": 35.84412,
+        "longitude": 139.64551
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8440781,139.6454628,3a,90y,65.4h,95.67t/data=!3m7!1e1!3m5!1sfRPCIDJr0ZuWXUx8LrCDGA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.674630214894506%26panoid%3DfRPCIDJr0ZuWXUx8LrCDGA%26yaw%3D65.39840246023931!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "f4a928f5-d62f-48be-8a89-d511fb96f242",
+      "name": {
+        "en": "Ueno Zoo",
+        "kr": "우에노 동물원",
+        "ja": "上野動物園"
+      },
+      "geo": {
+        "latitude": 35.71759,
+        "longitude": 139.77228
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7176019,139.7722726,3a,90y,198.1h,94.3t/data=!3m7!1e1!3m5!1sOVl3gAnt5Gcszdz13AMFIg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.302810488472119%26panoid%3DOVl3gAnt5Gcszdz13AMFIg%26yaw%3D198.0969546479925!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "fa9fe9b1-f992-4721-b0dd-d0d578eafe39",
+      "name": {
+        "ja": "Serafina NEW YORKさいたま新都心",
+        "en": "Serafina NEW YORK SAITAMASHINTOSHIN"
+      },
+      "geo": {
+        "latitude": 35.89335,
+        "longitude": 139.63095
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8928624,139.631152,2a,89.9y,335.9h,107.67t/data=!3m7!1e1!3m5!1sTtMBCqNSxGRHgdWIVezWGg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-17.672615126562008%26panoid%3DTtMBCqNSxGRHgdWIVezWGg%26yaw%3D335.89798619662577!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "fd3f104f-2bfb-45c7-aa7e-8c4f7cd2b58f",
+      "name": {
+        "en": "Sandi Nishiurawaten",
+        "ja": "サンディ 西浦和店"
+      },
+      "geo": {
+        "latitude": 35.84203,
+        "longitude": 139.6312
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8421757,139.6311449,3a,16.8y,150.38h,90.12t/data=!3m7!1e1!3m5!1se4Z-jKiiZr-7SngQ57m3gQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.1230438958535558%26panoid%3De4Z-jKiiZr-7SngQ57m3gQ%26yaw%3D150.3759657081634!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "fd4e3982-e212-41c8-8306-90a2b5d13093",
+      "name": {
+        "kr": "우에노 동물원",
+        "en": "Ueno Zoo",
+        "ja": "上野動物園"
+      },
+      "geo": {
+        "latitude": 35.71424,
+        "longitude": 139.77078
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7143151,139.7707958,3a,90y,189.44h,104.07t/data=!3m7!1e1!3m5!1sIp2tejPI_WPMWsgyNpd5Rw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.06667227147993%26panoid%3DIp2tejPI_WPMWsgyNpd5Rw%26yaw%3D189.4369393271402!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "ffb87a96-2001-4dd8-b9df-bc8b7f6fd969",
+      "name": {
+        "ja": "茶の君野園 東京",
+        "en": "Kiminoen Tea Garden"
+      },
+      "geo": {
+        "latitude": 35.7101,
+        "longitude": 139.77453
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7102444,139.7745705,3a,90y,191.22h,103.98t/data=!3m7!1e1!3m5!1serR8sHOQvzvl1PixazBf3g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.982030029617846%26panoid%3DerR8sHOQvzvl1PixazBf3g%26yaw%3D191.22029916684343!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    },
+    {
+      "placeId": "31139036-97e2-4968-a117-51213a3286dd",
+      "name": {
+        "ja": "浦和田島郵便局",
+        "en": "Urawa-Tajima Post Office"
+      },
+      "geo": {
+        "latitude": 35.84162,
+        "longitude": 139.63023
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://www.google.com/maps/@35.8416481,139.630249,3a,90y,165.43h,101.06t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID-w9WZzQE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYGZejg6g6Qjdbqo2nnaOkydT0JNKf5UXOh8faUeFDBKBLXUjhvGZm0uJE2I1wZ7PyXEMT24FvyQJdgqUCzCta09-Ny4L2gKrFmpqN_GX-C_VY0I3GJkV8W4mleIwgb-9T-J5Eq3A%3Dw900-h600-k-no-pi-11.061135000878949-ya165.42631720928262-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025コトヤマ・小学館／「よふかしのうた」製作委員会"
+    }
+  ]
+}

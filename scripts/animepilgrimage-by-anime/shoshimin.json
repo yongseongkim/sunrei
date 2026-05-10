@@ -1,0 +1,962 @@
+{
+  "anime": {
+    "animeId": "QG989BWllZZQ1ZeuErVx",
+    "slug": "shoshimin",
+    "title": {
+      "ja": "小市民シリーズ",
+      "kr": "소시민 시리즈",
+      "en": "Shoshimin Series"
+    },
+    "author": {
+      "ja": [
+        "米澤穂信"
+      ],
+      "en": [
+        "Honobu Yonezawa"
+      ],
+      "kr": [
+        "요네자와 호노부"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "ラパントラック"
+      ],
+      "en": [
+        "Lapin Track"
+      ]
+    }
+  },
+  "placeCount": 58,
+  "places": [
+    {
+      "placeId": "000296f8-714f-4161-a874-93a27a3058a5",
+      "name": {
+        "en": "Ishigure Coffee",
+        "ja": "いしぐれ珈琲"
+      },
+      "geo": {
+        "latitude": 35.41881,
+        "longitude": 136.75917
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/place/Ishigure+Coffee/@35.4188678,136.7591925,3a,88y,222.82h,95.53t/data=!3m8!1e1!3m6!1sAF1QipM0I9-IMM2D94ZbujMj5h2HLHWRVqLz_5FKF7FB!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipM0I9-IMM2D94ZbujMj5h2HLHWRVqLz_5FKF7FB%3Dw203-h100-k-no-pi-0-ya94.377335-ro-0-fo100!7i7680!8i3840!4m9!3m8!1s0x6003a945f05e8495:0x3dfbd3a9bb062593!8m2!3d35.4188391!4d136.7592435!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F12qfmn64g?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "003346d2-c9ee-49ec-ad4f-97180dd78c1f",
+      "name": {
+        "ja": "タカハシ理容院",
+        "en": "Takahashi Barber Shop"
+      },
+      "geo": {
+        "latitude": 35.42811,
+        "longitude": 136.75123
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4281224,136.7513435,3a,75y,271.82h,97.28t/data=!3m6!1e1!3m4!1sA2SAmj8F_zZG1OpznwvzUw!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "016c0ddb-09d2-428c-91ad-45c091f399cc",
+      "name": {
+        "en": "Inaba Shrine",
+        "kr": "이나바 신사",
+        "ja": "伊奈波神社"
+      },
+      "geo": {
+        "latitude": 35.42743,
+        "longitude": 136.76948
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4275376,136.7694362,3a,75y,172.6h,98.38t/data=!3m7!1e1!3m5!1s1djbQbLoopLyjltzfS7sQQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D1djbQbLoopLyjltzfS7sQQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D144.39307%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "023efeda-0c4c-4021-9f72-8a2582da6649",
+      "name": {
+        "kr": "긴카잔전망대",
+        "en": "Kinkazan Observatory",
+        "ja": "金華山展望台"
+      },
+      "geo": {
+        "latitude": 35.43246,
+        "longitude": 136.78063
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4323925,136.7806755,3a,75y,323.04h,91.41t/data=!3m8!1e1!3m6!1sAF1QipOTmuXZw9AKNTh4QDgXOvKFQtLd6tYgDDLnssXU!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOTmuXZw9AKNTh4QDgXOvKFQtLd6tYgDDLnssXU%3Dw203-h100-k-no-pi-8.616957-ya124.33802-ro-10.857007-fo100!7i5376!8i2688?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "0334b37d-bb17-4281-ab66-c9ed3a6ae1c9",
+      "name": {
+        "en": "Near the Labo Party Nagara Classroom",
+        "ja": "子ども英語Labo Party 長良教室"
+      },
+      "geo": {
+        "latitude": 35.45418,
+        "longitude": 136.78831
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4541872,136.7883468,3a,75y,251.73h,97.67t/data=!3m6!1e1!3m4!1sq1x_sheFcAHD0L6rQ7uqPQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "0688497d-d1c9-4e89-a896-7c2c7782f2ca",
+      "name": {
+        "en": "Chusetsu Bridge",
+        "ja": "忠節橋"
+      },
+      "geo": {
+        "latitude": 35.4293,
+        "longitude": 136.75044
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.429057,136.7501171,3a,38.6y,34.17h,83.16t/data=!3m6!1e1!3m4!1sziklUcientiQvzLensrFLg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "081c31e5-59b1-42d8-9d67-930ebbe2e425",
+      "name": {
+        "en": "Nobunaga Plaza of Dreams",
+        "ja": "信長ゆめ広場",
+        "kr": "노부나가 꿈의 광장"
+      },
+      "geo": {
+        "latitude": 35.4101,
+        "longitude": 136.757
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.409792,136.7569075,3a,73.2y,14.13h,86.64t/data=!3m6!1e1!3m4!1s8supoJLMJKcDfh8pLD945w!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "1134eb0c-3254-4cc3-ac32-0c18ea85fdce",
+      "name": {
+        "en": "Ogakikyoritsuginko Noritake Shiten",
+        "ja": "（株）大垣共立銀行 則武支店"
+      },
+      "geo": {
+        "latitude": 35.44195,
+        "longitude": 136.74642
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4419152,136.7463974,3a,75y,282.31h,101.17t/data=!3m6!1e1!3m4!1sWR3iGHPsTv920kzG-jj0QA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "11e0bb31-ced8-4d1d-9c86-9313208fd536",
+      "name": {
+        "en": "Chusetsu-bashi(Bus)",
+        "ja": "忠節橋(バス)"
+      },
+      "geo": {
+        "latitude": 35.4316,
+        "longitude": 136.74958
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4316452,136.7496351,3a,75y,200.62h,114.99t/data=!3m7!1e1!3m5!1sinavy7KPedgB4VDyHPIqgQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dinavy7KPedgB4VDyHPIqgQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D359.5695%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "1376d5ab-5773-44da-b391-d6faff1464c5",
+      "name": {
+        "en": "Hinomaru Taxi Stand (Nagara Bridge)",
+        "ja": "日の丸タクシーのりば（長良橋）"
+      },
+      "geo": {
+        "latitude": 35.43629,
+        "longitude": 136.77319
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4363001,136.7732534,3a,90y,77.82h,102.89t/data=!3m7!1e1!3m5!1s2DCXUafPyZLIX5Bf_Ml50w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D2DCXUafPyZLIX5Bf_Ml50w%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D256.1356%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "20b79853-a002-4b86-a8e9-c9d966aeafef",
+      "name": {
+        "en": "Princess Branche Pâtisserie KURA"
+      },
+      "geo": {
+        "latitude": 35.44125,
+        "longitude": 136.74926
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/place/Princess+Branche+P%C3%A2tisserie+KURA/@35.4413447,136.7492351,3a,75y,172.44h,95.41t/data=!3m7!1e1!3m5!1siWrcJ-Ey2oyc7yrkkLdasw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DiWrcJ-Ey2oyc7yrkkLdasw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D110.57741%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m6!3m5!1s0x6003ab8b5ab75a29:0x42775b7f6f817673!8m2!3d35.4412531!4d136.7492615!16s%2Fg%2F11s7jv4jbj?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "27dc9075-be7b-4b4a-b997-d97724f93087",
+      "name": {
+        "ja": "柳ヶ瀬日ノ出町商店街",
+        "en": "Yanagase Hinodecho Shopping Street"
+      },
+      "geo": {
+        "latitude": 35.41863,
+        "longitude": 136.75913
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4186261,136.7593143,3a,38.5y,273.37h,93.75t/data=!3m7!1e1!3m5!1sF2K6MxOtREHgsurVr27AMg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DF2K6MxOtREHgsurVr27AMg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D285.2639%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "2a8ec927-9ea8-4033-a633-bfad1271efe1",
+      "name": {
+        "en": "Kobo-mae",
+        "ja": "弘法前"
+      },
+      "geo": {
+        "latitude": 35.47493,
+        "longitude": 136.78696
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.474844,136.7871112,3a,75y,317.72h,93.36t/data=!3m6!1e1!3m4!1swZU7bcwz5HhSoZbkcYDnSQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "2fdbe931-9597-4457-8162-053556ed98f9",
+      "name": {
+        "en": "Nagara Bridge",
+        "ja": "長良橋"
+      },
+      "geo": {
+        "latitude": 35.43825,
+        "longitude": 136.77327
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4382552,136.7730904,3a,75y,92.31h,93.84t/data=!3m7!1e1!3m5!1sSncPMnnwQ5mTP1Ffgf90fw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DSncPMnnwQ5mTP1Ffgf90fw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D326.84863%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "39642b64-4582-46f8-9294-ca493b5d5d20",
+      "name": {
+        "en": "AND LADY"
+      },
+      "geo": {
+        "latitude": 35.42726,
+        "longitude": 136.76484
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/place/AND+LADY/@35.427293,136.764802,3a,90y,107.92h,92.33t/data=!3m7!1e1!3m5!1sVaIaI1BDvGSdG-1gZcWFqA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DVaIaI1BDvGSdG-1gZcWFqA%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D126.80014%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m14!1m7!3m6!1s0x6003a95dab76f13b:0xc5004b1070f6dfdc!2sAND+LADY!8m2!3d35.4272636!4d136.7648463!16s%2Fg%2F1tm12jvw!3m5!1s0x6003a95dab76f13b:0xc5004b1070f6dfdc!8m2!3d35.4272636!4d136.7648463!16s%2Fg%2F1tm12jvw?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "40f3ef03-780e-4761-b21e-a110955d78be",
+      "name": {
+        "en": "Da Babbo",
+        "ja": "ピッツェリア ダ・バッボ"
+      },
+      "geo": {
+        "latitude": 35.41725,
+        "longitude": 136.75712
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4172937,136.7569454,3a,75y,124.09h,103.88t/data=!3m7!1e1!3m5!1sCLKzDjpQDy15X_pJgiMEYQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DCLKzDjpQDy15X_pJgiMEYQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D352.43277%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "48e35655-cfc5-4d4e-ba6a-78398b62e3e4",
+      "name": {
+        "ja": "岐阜タンメン 長良店",
+        "en": "Gifu Tanmen Nagara"
+      },
+      "geo": {
+        "latitude": 35.45431,
+        "longitude": 136.75555
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4541577,136.7556046,3a,75y,343.74h,102.67t/data=!3m6!1e1!3m4!1sNdvtRZqI21zjPRcWiLkNCw!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "563f6ce4-f135-4cc9-8a38-5db6ade6da6b",
+      "name": {
+        "en": "Near the Nagararyutocho-nichome",
+        "ja": "長良竜東町2丁目"
+      },
+      "geo": {
+        "latitude": 35.45354,
+        "longitude": 136.78506
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4535912,136.784954,3a,75y,113.95h,99.49t/data=!3m7!1e1!3m5!1sEJXClqDPtUbyambTyPx3Aw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DEJXClqDPtUbyambTyPx3Aw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D335.21738%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "5ce5a0fe-5445-4790-b7f9-33ce4bb61a8d",
+      "name": {
+        "en": "Cinex",
+        "ja": "岐阜柳ヶ瀬 CINEX"
+      },
+      "geo": {
+        "latitude": 35.41854,
+        "longitude": 136.75834
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/place/Cinex/@35.4184805,136.7581765,3a,90y,99.79h,94.94t/data=!3m8!1e1!3m5!1sLet9m-Ng6Jv3DxcIdYabuA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DLet9m-Ng6Jv3DxcIdYabuA%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D68.59785%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656!5s0x6003a9459352e5a7:0x9ce2df5d0bc0c3f5!4m14!1m7!3m6!1s0x6003a9459346e7e5:0x8720315dc08a9d4c!2sCinex!8m2!3d35.4185435!4d136.7583747!16s%2Fg%2F12pgd33jj!3m5!1s0x6003a9459346e7e5:0x8720315dc08a9d4c!8m2!3d35.4185435!4d136.7583747!16s%2Fg%2F12pgd33jj?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "5d5bb14f-bd67-47a4-b87f-e34c04aadcf1",
+      "name": {
+        "en": "Kawaramachi Club La Luna Piena",
+        "ja": "川原町倶楽部 ラ・ルーナ ピエーナ"
+      },
+      "geo": {
+        "latitude": 35.43642,
+        "longitude": 136.7708
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.436407,136.770765,3a,90y,109.01h,94.07t/data=!3m7!1e1!3m5!1swLn9PyicTgPyrbz85uZwIQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DwLn9PyicTgPyrbz85uZwIQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D238.99362%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "5ec8ab32-a619-44ba-a0b7-8bb01958c54a",
+      "name": {
+        "ja": "ナチュラルカフェ",
+        "en": "Natural Cafe"
+      },
+      "geo": {
+        "latitude": 35.43222,
+        "longitude": 136.76719
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/place/Natural+Cafe/@35.4322482,136.7671708,3a,90y,7.07h,89.11t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgICMxoOZdA!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu2g2ICzqE0_2Z78LmalB1vG1COiCuz57KNxKHViGS62xW4wAhSHXGCNIWVaw58ozCJcVnBL8obhDoI1QDAvMvr4QtNkLEHbdmZlQmNx9kwJ5Hull6BcdpiQULnZCFOgC2_CM_lN%3Dw900-h600-k-no-pi0.8881648365036909-ya11.342950909741603-ro0-fo100!7i13864!8i6932!4m9!3m8!1s0x60036a645c7b9a6d:0xc8c7d93c9dc20137!8m2!3d35.4322229!4d136.7671955!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1tffd3xj?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "6181c844-ee7f-4c5d-81b5-87594d2d7deb",
+      "name": {
+        "ja": "（株）北川商店",
+        "en": "Kitagawa Shoten Co., Ltd."
+      },
+      "geo": {
+        "latitude": 35.41192,
+        "longitude": 136.75627
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4119108,136.7563017,3a,75y,302.29h,95.17t/data=!3m6!1e1!3m4!1sAF1QipMLcHdlClHNFvrG_UFl_KUVfun_nuHaPtpQ9CcF!2e10!7i5376!8i2688?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "62b41942-ca19-4057-bba9-50422a9364f0",
+      "name": {
+        "ja": "岐阜中警察署 駅前交番",
+        "en": "Gifu Naka Police Station Station Police Box"
+      },
+      "geo": {
+        "latitude": 35.4107,
+        "longitude": 136.75631
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4106443,136.756323,3a,75y,168.04h,95.48t/data=!3m6!1e1!3m4!1sSU4daY4Qj6bnrb51C-GHoA!2e0!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "66d08dd4-6581-4430-8573-42a6bd76189b",
+      "name": {
+        "ja": "三田洞自動車学校",
+        "en": "Mitahora Driving School"
+      },
+      "geo": {
+        "latitude": 35.47943,
+        "longitude": 136.79662
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/place/Mitahora+Driving+School/@35.4794561,136.7966693,3a,63.4y,155.37h,92.84t/data=!3m6!1e1!3m4!1sAF1QipPWKZ39gnXyELDfZ-Ut62H0BHsB8QfisseBm3Qc!2e10!7i13312!8i6656!4m6!3m5!1s0x6003aa59fbb4748f:0xb764c8a9ee4133c7!8m2!3d35.479477!4d136.79666!16s%2Fg%2F11h5mkvgym?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "6a724fd0-465b-49a5-afed-a5461983daf5",
+      "name": {
+        "en": "PC Cielge Gifu store",
+        "ja": "パソコンシェルジュ岐阜店"
+      },
+      "geo": {
+        "latitude": 35.43235,
+        "longitude": 136.7497
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4324607,136.7495826,3a,75y,69.75h,95.53t/data=!3m6!1e1!3m4!1spTRDublM5VEZmS9EmnEuCg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "6e707059-508c-4ad9-9f46-855acbfe42a6",
+      "name": {
+        "ja": "グレース・モリ",
+        "en": "Grace Mori"
+      },
+      "geo": {
+        "latitude": 35.41128,
+        "longitude": 136.75612
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4112816,136.7559967,3a,75y,112.7h,92.55t/data=!3m7!1e1!3m5!1sAF1QipNgSHgUWFXqAszgffLaxILyEcRIUIK361-fKvZt!2e10!3e11!7i5376!8i2688?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "77267d6a-2f24-41ff-b4d8-0600647ea2cb",
+      "name": {
+        "en": "Bincho Irori-an",
+        "ja": "備長いろり庵"
+      },
+      "geo": {
+        "latitude": 35.41925,
+        "longitude": 136.75831
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4192405,136.758325,3a,90y,10.07h,100.59t/data=!3m7!1e1!3m5!1svUjmEGepRsprWc2WkZfz3Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DvUjmEGepRsprWc2WkZfz3Q%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D78.84133%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "77639f0f-6f27-4acf-8999-add82245b870",
+      "name": {
+        "ja": "粕森公園",
+        "en": "Kashimori Park"
+      },
+      "geo": {
+        "latitude": 35.41904,
+        "longitude": 136.7646
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4189383,136.764695,3a,90y,172.6h,112.41t/data=!3m8!1e1!3m6!1sAF1QipO0BZo0pk3eq_exLmyN48simd1Sjhnrxf_5BVGs!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipO0BZo0pk3eq_exLmyN48simd1Sjhnrxf_5BVGs%3Dw203-h100-k-no-pi0-ya271.73196-ro0-fo100!7i4096!8i2048?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "79d992b9-444f-43ce-85b3-aeab238e6402",
+      "name": {
+        "en": "Nobunaga's Garden",
+        "ja": "信長の庭"
+      },
+      "geo": {
+        "latitude": 35.43465,
+        "longitude": 136.77443
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.434749,136.774392,3a,75y,139.6h,91.06t/data=!3m6!1e1!3m4!1sV7lmG4ssl31lBsxD0lbQJA!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "86c6a37a-1436-4fc8-b2e2-5fade2b2edbf",
+      "name": {
+        "ja": "材木町陸閘",
+        "en": "Zaimokucho Rikuzaka"
+      },
+      "geo": {
+        "latitude": 35.43552,
+        "longitude": 136.76948
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4355185,136.769498,3a,75y,269.85h,96.99t/data=!3m7!1e1!3m5!1sfO80EJXwFKpUqGPmxpG77w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DfO80EJXwFKpUqGPmxpG77w%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D282.2533%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "89a2d491-f611-4fa5-9f3b-8721368ab21b",
+      "name": {
+        "en": "Daihatsu Nagara",
+        "ja": "岐阜ダイハツ販売 長良店"
+      },
+      "geo": {
+        "latitude": 35.45194,
+        "longitude": 136.78259
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4521236,136.7821284,3a,90y,192.17h,100.35t/data=!3m6!1e1!3m4!1s8Z78-n4hmj2vrPnnL1UUTw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "8addef23-2e08-47bc-812c-e05af6c4692b",
+      "name": {
+        "en": "Happy End"
+      },
+      "geo": {
+        "latitude": 35.45438,
+        "longitude": 136.78841
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4543099,136.7883759,3a,75y,7.04h,83.22t/data=!3m6!1e1!3m4!1sYMVd6UaRFq9-h7lToSu2_g!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "92297680-6b68-47e4-affd-5d1962a35266",
+      "name": {
+        "ja": "安楽寺",
+        "en": "Anrakuji"
+      },
+      "geo": {
+        "latitude": 35.42834,
+        "longitude": 136.76731
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4284351,136.7676552,3a,45.3y,254.25h,93t/data=!3m6!1e1!3m4!1siOtP7Q42zhG5w_wYNzJmuA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "977c1afd-4e0d-4329-a74a-6e668d210c18",
+      "name": {
+        "en": "Warattoko NEO Yanagase",
+        "ja": "わらっとこNEO柳ヶ瀬"
+      },
+      "geo": {
+        "latitude": 35.41822,
+        "longitude": 136.75911
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4182674,136.7591141,3a,90y,233.24h,96.54t/data=!3m6!1e1!3m4!1sNgq9nSDS3SjJIz6RtS2K4Q!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "9970241d-5698-4d35-b4db-bffa759ca402",
+      "name": {
+        "ja": "忠節（南）",
+        "en": "Chusetsu-minami"
+      },
+      "geo": {
+        "latitude": 35.43345,
+        "longitude": 136.74751
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/place/Chusetsu-minami/@35.4334908,136.7475302,3a,90y,190.39h,90.03t/data=!3m7!1e1!3m5!1sTVrSfsvn0upW0umlB_XXUw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DTVrSfsvn0upW0umlB_XXUw%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D189.99246%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m14!1m7!3m6!1s0x6003ac078e678c89:0xf5f3e1783ad7d073!2sChusetsu-minami!8m2!3d35.4334545!4d136.7475124!16s%2Fg%2F11k3821ssf!3m5!1s0x6003ac078e678c89:0xf5f3e1783ad7d073!8m2!3d35.4334545!4d136.7475124!16s%2Fg%2F11k3821ssf?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "998b28c4-2bd0-43b6-9fd3-d132a9a1bc31",
+      "name": {
+        "ja": "岐阜市南部スポーツセンター",
+        "en": "Gifu City South Sports Center"
+      },
+      "geo": {
+        "latitude": 35.37281,
+        "longitude": 136.73108
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.3726419,136.7310405,3a,75y,43.08h,99.55t/data=!3m7!1e1!3m5!1s7oIcefJK4BvEKTu-BO2SKA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D7oIcefJK4BvEKTu-BO2SKA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D44.768684%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "9a16b30f-7137-45f4-98ff-a755af8a9bb4",
+      "name": {
+        "en": "MLIT Kiso River Upstream Office",
+        "ja": "国土交通省 木曽川上流河川事務所"
+      },
+      "geo": {
+        "latitude": 35.42907,
+        "longitude": 136.74927
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4288635,136.7494501,3a,68y,338.52h,85.75t/data=!3m6!1e1!3m4!1sANBkLqY5n8hba-uL8yyNfg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "9f7a35fd-d6eb-4ffc-9514-ea7a32240a8f",
+      "name": {
+        "en": "ITTO Individual Instruction Academy Nagara School",
+        "ja": "ITTO個別指導学院 長良校"
+      },
+      "geo": {
+        "latitude": 35.45157,
+        "longitude": 136.78455
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.451842,136.784582,3a,43y,188.65h,93.47t/data=!3m7!1e1!3m5!1sLljZ5r34rVLfPv2m5riM1g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DLljZ5r34rVLfPv2m5riM1g%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D14.540265%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "b09577d2-e6a9-4ef4-9642-5810e35762dc",
+      "name": {
+        "ja": "セブン-イレブン 岐阜明徳町店",
+        "en": "7-Eleven Gifu Meitokucho"
+      },
+      "geo": {
+        "latitude": 35.42343,
+        "longitude": 136.75839
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4234301,136.7582648,3a,75y,105.22h,95.5t/data=!3m6!1e1!3m4!1sXGDErRfz35tF6Vcwa1Awkw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "b21b6e1d-c442-4819-828c-494dcdd57813",
+      "name": {
+        "ja": "若き日の織田信長像",
+        "en": "Statue of Young Oda Nobunaga"
+      },
+      "geo": {
+        "latitude": 35.43559,
+        "longitude": 136.77316
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4356476,136.77307,3a,75y,108.69h,96.56t/data=!3m6!1e1!3m4!1sy-lGhbbbvu0NepvnWntnDw!2e0!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "b5b6a208-87b0-4a1f-82dc-b385fdb47499",
+      "name": {
+        "en": "Inaba Shrine Approach",
+        "ja": "伊奈波神社 参道"
+      },
+      "geo": {
+        "latitude": 35.42813,
+        "longitude": 136.76795
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4280148,136.7680741,3a,48.8y,304.48h,88.46t/data=!3m7!1e1!3m5!1sXxjVm4nU3buC4VRsd6b29Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DXxjVm4nU3buC4VRsd6b29Q%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D306.8736%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "beba95ce-0f75-4874-b7c2-6c2476d3c0e4",
+      "name": {
+        "en": "Nanaya",
+        "ja": "ななや"
+      },
+      "geo": {
+        "latitude": 35.41958,
+        "longitude": 136.75965
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4191148,136.7593836,3a,85.6y,97.96h,99.57t/data=!3m7!1e1!3m5!1sXhURgzW222T9In7LUb7Ptw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DXhURgzW222T9In7LUb7Ptw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D293.24124%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "bf2c2402-1f84-49bd-8adf-ce2f67dde276",
+      "name": {
+        "ja": "岐阜城 楽市楽座",
+        "en": "Gifu Castle Rakuichi Rakuza"
+      },
+      "geo": {
+        "latitude": 35.43557,
+        "longitude": 136.77375
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4355591,136.7738341,3a,90y,280.41h,96.33t/data=!3m7!1e1!3m5!1s53QJKDu-NNwpakEe6DiUSQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D53QJKDu-NNwpakEe6DiUSQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D160.44751%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "c1cee230-20ce-4315-a1ca-1b6cf746feb6",
+      "name": {
+        "ja": "松月堂 柳ヶ瀬本店",
+        "en": "Shogetsudo Yanagase Main Store"
+      },
+      "geo": {
+        "latitude": 35.41923,
+        "longitude": 136.75843
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4192304,136.758481,3a,75y,222.75h,99.01t/data=!3m7!1e1!3m5!1skmkTjib8g7TCYncoegC8pQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DkmkTjib8g7TCYncoegC8pQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D26.113628%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "cefa752d-6244-4242-8593-25f6cf292c26",
+      "name": {
+        "en": "Goto Residence",
+        "ja": "後藤邸"
+      },
+      "geo": {
+        "latitude": 35.43564,
+        "longitude": 136.7695
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.43562,136.7692114,3a,59.9y,87.39h,101.47t/data=!3m7!1e1!3m5!1shwEuR-wHyYwV0Uvn1DYjuQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DhwEuR-wHyYwV0Uvn1DYjuQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D261.69833%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "d4ee871b-e968-4086-b208-853bb9ed3747",
+      "name": {
+        "ja": "琴平神社",
+        "en": "Kotohira Shrine"
+      },
+      "geo": {
+        "latitude": 35.41921,
+        "longitude": 136.76408
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4192957,136.7637221,3a,20y,108.53h,94.66t/data=!3m6!1e1!3m4!1sJG7DmwTvFbJ3kNsvgPqQdg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "d536d1d9-316a-4a35-8939-4319ba8a0ed0",
+      "name": {
+        "ja": "岐阜市医師会",
+        "en": "Gifu City Medical Association"
+      },
+      "geo": {
+        "latitude": 35.42754,
+        "longitude": 136.7478
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4275875,136.7477734,3a,90y,145.57h,98.06t/data=!3m6!1e1!3m4!1sekhNBXBR8GBfgYYF8_9TFw!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "d57c3bcf-f383-4beb-82fb-55e7e16b535a",
+      "name": {
+        "ja": "丸幸水産よしまる",
+        "en": "Yoshimaru"
+      },
+      "geo": {
+        "latitude": 35.4174,
+        "longitude": 136.75997
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/place/Yoshimaru/@35.4174208,136.7600103,3a,90y,287.08h,93.8t/data=!3m7!1e1!3m5!1souJlJgsc2KV9VoV9MG9VCQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DouJlJgsc2KV9VoV9MG9VCQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D104.47254%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m6!3m5!1s0x6003a946894dbf4f:0xdcda7c95d780830b!8m2!3d35.4174213!4d136.7602289!16s%2Fg%2F11b7h48gpn?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "ddb1fb53-998d-467f-9ad0-ee102b21dd71",
+      "name": {
+        "en": "Namikoshi",
+        "ja": "ナミコシ"
+      },
+      "geo": {
+        "latitude": 35.4192,
+        "longitude": 136.75864
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4192304,136.758481,3a,75y,97.43h,96.99t/data=!3m7!1e1!3m5!1skmkTjib8g7TCYncoegC8pQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DkmkTjib8g7TCYncoegC8pQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D78.034775%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "e05bf400-0ff4-4b31-82c1-0b9541b8638f",
+      "name": {
+        "kr": "기후 공원",
+        "ja": "岐阜公園",
+        "en": "Gifu Park"
+      },
+      "geo": {
+        "latitude": 35.43376,
+        "longitude": 136.77337
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4337841,136.7733353,3a,75y,191.98h,99.25t/data=!3m6!1e1!3m4!1sA3bzXIe7p2N48mLwvRSyhg!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "e0ff024c-4efa-48a4-a46b-5647c412acdb",
+      "name": {
+        "en": "Souteigai",
+        "ja": "想定外"
+      },
+      "geo": {
+        "latitude": 35.4115,
+        "longitude": 136.75778
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4115603,136.7577875,3a,90y,97.37h,92.04t/data=!3m7!1e1!3m5!1sPJcdENyYwt4BHZuit68HJQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DPJcdENyYwt4BHZuit68HJQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D204.29727%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "e33ea417-9604-46d4-b3d3-58761c26550f",
+      "name": {
+        "ja": "麺や六三六 岐阜店",
+        "en": "Menyarokusanroku Gifuten"
+      },
+      "geo": {
+        "latitude": 35.4107,
+        "longitude": 136.75885
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4107018,136.7588932,3a,75y,251.8h,101.5t/data=!3m6!1e1!3m4!1s71X5iJZFdabz7cs765WAMw!2e0!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "eabad887-6cae-4fee-b280-b946968eb02d",
+      "name": {
+        "en": "Maruman Eel Restaurant",
+        "ja": "丸万うなぎ食堂"
+      },
+      "geo": {
+        "latitude": 35.41935,
+        "longitude": 136.75747
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4193769,136.757383,3a,67.2y,101.92h,96.65t/data=!3m6!1e1!3m4!1sgWoyJoS2dy6RxpSJh3vvDQ!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "f0705363-a4ba-4b78-b7e6-a4087dfb48bf",
+      "name": {
+        "en": "Ohno Daibutsu Do",
+        "ja": "大野佛壇大佛堂"
+      },
+      "geo": {
+        "latitude": 35.47441,
+        "longitude": 136.78729
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4744522,136.7874407,3a,75y,237.99h,95.88t/data=!3m7!1e1!3m5!1sWkrRrw7ZSIbZkh2U_HGJ8A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DWkrRrw7ZSIbZkh2U_HGJ8A%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D88.22281%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "f451f2a1-d4e3-4e0c-8975-474acc5962a8",
+      "name": {
+        "en": "Apparel Top",
+        "ja": "アパレル・トップ"
+      },
+      "geo": {
+        "latitude": 35.41107,
+        "longitude": 136.75617
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.410918,136.7561975,3a,75y,347.83h,95.58t/data=!3m7!1e1!3m5!1sVDtTGGwz95weYIMtdUnK5Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DVDtTGGwz95weYIMtdUnK5Q%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D4.727401%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "fb972ca7-2fd4-4e03-a0ee-b973ff1bc42b",
+      "name": {
+        "en": "Bizen",
+        "ja": "株式会社ビゼン"
+      },
+      "geo": {
+        "latitude": 35.41184,
+        "longitude": 136.75623
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.4116482,136.7561741,3a,75y,6.89h,91.89t/data=!3m8!1e1!3m6!1sAF1QipNDxYGhKN74hAfrG16KL_0eH3r6hKb5FY_30gu8!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNDxYGhKN74hAfrG16KL_0eH3r6hKb5FY_30gu8%3Dw203-h100-k-no-pi-3.6660652-ya53.418945-ro-1.0997261-fo100!7i5376!8i2688?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "fe12dbee-b39a-487c-865f-68aa9c780183",
+      "name": {
+        "ja": "東海自動車学校",
+        "en": "Tokai Motor Driving School"
+      },
+      "geo": {
+        "latitude": 35.38638,
+        "longitude": 136.62022
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-gifu-ogaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.3863251,136.6201878,3a,90y,5.79h,97.81t/data=!3m7!1e1!3m5!1s4Dg3vmRh_MIG8T288rtfyg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D4Dg3vmRh_MIG8T288rtfyg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D315.01926%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    },
+    {
+      "placeId": "d34caa92-2e86-41d2-ac72-3f5e9390826e",
+      "name": {
+        "en": "Mos Burger Yanagasechuoten",
+        "ja": "モスバーガー柳ヶ瀬中央店"
+      },
+      "geo": {
+        "latitude": 35.41871,
+        "longitude": 136.75823
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-gifu-gifu",
+      "streetViewUrl": "https://www.google.com/maps/@35.41871,136.7583508,3a,90y,277.36h,100.2t/data=!3m7!1e1!3m5!1sm3dbdcQIwGHc-kaW-u1AYA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dm3dbdcQIwGHc-kaW-u1AYA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D4.8540416%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©米澤穂信・東京創元社／小市民シリーズ製作委員会"
+    }
+  ]
+}

@@ -1,0 +1,392 @@
+{
+  "anime": {
+    "animeId": "gVF2NS4J6Yu9j3raEFQ8",
+    "slug": "bang-dream-3",
+    "title": {
+      "en": "BanG Dream! 3rd Season"
+    },
+    "author": {
+      "ja": [
+        "ブシロード"
+      ],
+      "en": [
+        "Bushiroad"
+      ],
+      "kr": [
+        "부시로드"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Sanzigen"
+      ],
+      "ja": [
+        "サンジゲン"
+      ],
+      "kr": [
+        "산지겐"
+      ]
+    }
+  },
+  "placeCount": 22,
+  "places": [
+    {
+      "placeId": "1261cd3d-fe5b-4c6f-972a-e7391ad57abb",
+      "name": {
+        "ja": "シティテラス目白",
+        "en": "City Terrace Mejiro"
+      },
+      "geo": {
+        "latitude": 35.71776,
+        "longitude": 139.71289
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7176577,139.7128629,3a,85.7y,19.77h,111.18t/data=!3m7!1e1!3m5!1sGrNuxEvMNfYh4kQdokE8bw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-21.179471057620063%26panoid%3DGrNuxEvMNfYh4kQdokE8bw%26yaw%3D19.765270340078914!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "1e490e23-880d-4ad0-a3bf-734a72e902d5",
+      "name": {
+        "ja": "セブン-イレブン 文京関口１丁目店",
+        "en": "7-Eleven Bunkyo Sekiguchi 1-chome Store"
+      },
+      "geo": {
+        "latitude": 35.71041,
+        "longitude": 139.72435
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7104256,139.7242769,3a,90y,102.64h,105.36t/data=!3m7!1e1!3m5!1skE9vF3WQz0Tpj-KTugYGCA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.36109742266882%26panoid%3DkE9vF3WQz0Tpj-KTugYGCA%26yaw%3D102.6424204812365!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "3fcaf39f-dbe5-44a2-8add-4a16409694f6",
+      "name": {
+        "kr": "도쿄 게이트브릿지",
+        "en": "Tokyo Gate Bridge",
+        "ja": "東京ゲートブリッジ"
+      },
+      "geo": {
+        "latitude": 35.61421,
+        "longitude": 139.83116
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-tokyo",
+      "streetViewUrl": "https://www.google.com/maps/@35.614015,139.8310808,3a,90y,212.38h,99.37t/data=!3m7!1e1!3m5!1sY6XoGYohq37t2Flni5COUg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.367709375426543%26panoid%3DY6XoGYohq37t2Flni5COUg%26yaw%3D212.378776269015!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "4360b9cb-e1b4-4b0b-bb50-811d39621315",
+      "name": {
+        "en": "Edogawa Park",
+        "ja": "文京区立江戸川公園"
+      },
+      "geo": {
+        "latitude": 35.71054,
+        "longitude": 139.7264
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7104507,139.7262622,3a,90y,59.79h,100.9t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC4lcLS5AE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6Ha8plBB22bL_aj0N3rkUP1qD2zE3eb-FaEIx3EjkfRpqgfQAg2NL4fxaW9epV8PN615YYpL6IqbWdX-jo16GpNiJ4--kGmQYp2S7ZXedAdXqXPOFV9mg7E2_0gxAs_fMAkoiU_Ehw%3Dw900-h600-k-no-pi-10.900066120851378-ya126.97303367770186-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "486c242d-50c8-4fe6-8a30-f1d43b693398",
+      "name": {
+        "en": "Sunrise Coast Kamogawa",
+        "ja": "サンライズコースト鴨川"
+      },
+      "geo": {
+        "latitude": 35.10415,
+        "longitude": 140.10606
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-chiba-kamogawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.1041267,140.1060484,3a,90y,300.48h,94.56t/data=!3m7!1e1!3m5!1s1WrcmjrplYQvMWKrhPODaQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.556493051308635%26panoid%3D1WrcmjrplYQvMWKrhPODaQ%26yaw%3D300.4843145731299!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "4b84c5de-4004-4aa1-a72c-911eeece68a3",
+      "name": {
+        "en": "Komatsuka Bridge",
+        "ja": "駒塚橋"
+      },
+      "geo": {
+        "latitude": 35.71209,
+        "longitude": 139.72329
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7120853,139.7232863,3a,90y,21.38h,90.29t/data=!3m7!1e1!3m5!1s4rjpym5-41LhzQGKpTqSLA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.2872447201350212%26panoid%3D4rjpym5-41LhzQGKpTqSLA%26yaw%3D21.37608739999588!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "58c7ce71-1760-49c8-8890-9ccf24b9eecf",
+      "name": {
+        "ja": "かもがわマリーンブリッジ",
+        "en": "Kamogawa marine bridge."
+      },
+      "geo": {
+        "latitude": 35.09705,
+        "longitude": 140.10527
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-chiba-kamogawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.0971404,140.1052599,3a,63.4y,123.22h,91.16t/data=!3m7!1e1!3m5!1sdvB1_qlk2xzcMbXucL9Svw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.1630115428601755%26panoid%3DdvB1_qlk2xzcMbXucL9Svw%26yaw%3D123.22013903324645!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "70bedc71-2fd5-4585-b4e5-bd1252412177",
+      "name": {
+        "kr": "일본 무도관",
+        "en": "Nippon Budokan",
+        "ja": "日本武道館"
+      },
+      "geo": {
+        "latitude": 35.69319,
+        "longitude": 139.74907
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6931476,139.7490635,3a,90y,77.21h,110.79t/data=!3m7!1e1!3m5!1s9r27-ByAo_EPrpKvmoombg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-20.789607978506183%26panoid%3D9r27-ByAo_EPrpKvmoombg%26yaw%3D77.21197677912365!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "746085f7-1362-4789-bf4f-590bbc8e958b",
+      "name": {
+        "en": "Komatsuka Bridge",
+        "ja": "駒塚橋"
+      },
+      "geo": {
+        "latitude": 35.71183,
+        "longitude": 139.72331
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7118355,139.7232966,3a,90y,32.42h,101.92t/data=!3m7!1e1!3m5!1stbaS0fqvAQOMFUmR5RvGdg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.919547353707813%26panoid%3DtbaS0fqvAQOMFUmR5RvGdg%26yaw%3D32.42010680729051!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "8920a10d-e94c-4316-9548-5b84652c32b1",
+      "name": {
+        "en": "Hidakaya Edogawabashi Store",
+        "ja": "日高屋 江戸川橋店",
+        "kr": "히다카야 에도가와바시점"
+      },
+      "geo": {
+        "latitude": 35.70919,
+        "longitude": 139.73164
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7091169,139.7314637,3a,90y,36.26h,102.99t/data=!3m7!1e1!3m5!1sjjQDlvggzdXfOP-Z4g8cWA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.987247213011429%26panoid%3DjjQDlvggzdXfOP-Z4g8cWA%26yaw%3D36.260100513335864!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "b4cd6cc8-28af-4321-9763-5fe0d461ed7f",
+      "name": {
+        "ja": "ゆーとぴあ",
+        "en": "Utopia"
+      },
+      "geo": {
+        "latitude": 35.15108,
+        "longitude": 140.30588
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-chiba-katsuura",
+      "streetViewUrl": "https://www.google.com/maps/@35.1510396,140.3060617,3a,90y,294.37h,98.65t/data=!3m7!1e1!3m5!1swh46lsbzTyCzgcv48Am4fw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.65206544014525%26panoid%3Dwh46lsbzTyCzgcv48Am4fw%26yaw%3D294.3682464262565!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "b6376d4a-a929-46d4-a5f8-fdf9242b5e9f",
+      "name": {
+        "en": "Nippon Budokan",
+        "ja": "日本武道館",
+        "kr": "일본 무도관"
+      },
+      "geo": {
+        "latitude": 35.69333,
+        "longitude": 139.7497
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Nippon+Budokan/@35.6934981,139.7497318,3a,90y,0.24h,79.07t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID4uO6RlQE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HaYI_0FSTjQXINg8ov8QG17vbJWJhWayoSklHbg_jzu1enWIi2MS5ESdR47BAGYFmudDAphl2DiU8k-3J6YXtPB6PsF4x7KhzfnCLW6Ezvz0j3uny2cPLfRDI6OZZXhj5RY6IMw4Q%3Dw900-h600-k-no-pi10.929979955281738-ya0.23654433453275847-ro0-fo100!7i6080!8i3040!4m9!3m8!1s0x60188c6b802bf413:0x215b5c71c9657188!8m2!3d35.69333!4d139.7497076!10e5!14m1!1BCgIgARICCAI!16zL20vMDFuMjc1?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "c2598232-fb8c-4a29-8f66-175d58096d61",
+      "name": {
+        "ja": "文京区立江戸川公園",
+        "en": "Edogawa Park"
+      },
+      "geo": {
+        "latitude": 35.71033,
+        "longitude": 139.72818
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7103157,139.7280354,3a,90y,82.45h,100.33t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC4leqWrAE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HY1Kl1UbJrqvoFU8_VkWzdLXHyNEu6k4dLLDTQRtKYId6HIiKMVwfb2Xfd1g_T3xqRIHjVtOV6Zx_UzFeR0SvkMbi9LLbgOQL4DEwG9_Q9kx-EBr7HTiYgGSSuBo-n9fjqKPMo2fg%3Dw900-h600-k-no-pi-10.33023382825992-ya165.6981681490035-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "c45fa19f-b5b9-492c-9ae7-181b8a710137",
+      "name": {
+        "ja": "早稲田駅（都電）",
+        "kr": "와세다 역",
+        "en": "Waseda Station"
+      },
+      "geo": {
+        "latitude": 35.71181,
+        "longitude": 139.71914
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Waseda+Station/@35.7117869,139.719144,3a,90y,348.04h,92.86t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgID4qYaMbA!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6Ha99x-MsVRM98-_2udMOdGUs6aOiY_Y-9XDx1PLxnSYNVsvxpx1xf5Mjl_N8cbOQUZ5LvJnmg3n1LWF4INhxDK-Ija42Kb0uwRD2WDVXRcqmFL2v02vrZB_ihrkQiP6ZtM3CBM%3Dw900-h600-k-no-pi-2.8585597414369204-ya55.79909305515446-ro0-fo100!7i10240!8i5120!4m9!3m8!1s0x60188d1a60b213c1:0x8d2ad5c8f8d3b72b!8m2!3d35.7117809!4d139.7191898!10e5!14m1!1BCgIgARICCAI!16s%2Fm%2F047c9f5?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "c8e8f67a-2245-42de-a84d-41199d8b7e10",
+      "name": {
+        "en": "Toshima Ward Minamiotsuka Park",
+        "kr": "토시마 구립 미나미오오즈카 공원",
+        "ja": "豊島区立南大塚公園"
+      },
+      "geo": {
+        "latitude": 35.72773,
+        "longitude": 139.7311
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7276193,139.7310179,3a,75y,29.01h,95.59t/data=!3m7!1e1!3m5!1sFGHH8tMBdZ4qpO10oTM_-g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.590132984271335%26panoid%3DFGHH8tMBdZ4qpO10oTM_-g%26yaw%3D29.008397453495114!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "d061be72-d2bb-487c-91bd-22ed1698e90e",
+      "name": {
+        "ja": "子育地蔵尊",
+        "en": "Kosodate Jizoson",
+        "kr": "육아지장보살"
+      },
+      "geo": {
+        "latitude": 35.70836,
+        "longitude": 139.73154
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7083476,139.7316209,3a,90y,306.41h,108.24t/data=!3m7!1e1!3m5!1s7GoTdORAyNtunnaVV5jfmQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.242175915162576%26panoid%3D7GoTdORAyNtunnaVV5jfmQ%26yaw%3D306.41103745929234!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "d5092cfd-feeb-41b1-951f-a435ad69b973",
+      "name": {
+        "ja": "立呑み晩杯屋 大塚南口",
+        "en": "Tachinomibanpaiya Otsukaminamiguchi"
+      },
+      "geo": {
+        "latitude": 35.73014,
+        "longitude": 139.72849
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7301659,139.728524,3a,90y,234.01h,97.49t/data=!3m7!1e1!3m5!1slcz7dMACS01dqbqKXggbsw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.486511008398125%26panoid%3Dlcz7dMACS01dqbqKXggbsw%26yaw%3D234.00632020924067!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "d6949c99-0bf4-438f-92e2-e4a09ce92c7a",
+      "name": {
+        "ja": "菜な畑ロード",
+        "en": "Nana Hatake Road"
+      },
+      "geo": {
+        "latitude": 35.11675,
+        "longitude": 140.10086
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-chiba-kamogawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.1166092,140.1008666,3a,90y,270.87h,99.97t/data=!3m7!1e1!3m5!1sufVSUenxF0BaVpvXYfSqDg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.968888917152455%26panoid%3DufVSUenxF0BaVpvXYfSqDg%26yaw%3D270.87223164214316!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "dbe8a274-cad2-49ea-bd80-1adda0337c2f",
+      "name": {
+        "en": "LIQUIDROOM"
+      },
+      "geo": {
+        "latitude": 35.64922,
+        "longitude": 139.71076
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6494404,139.7107424,3a,48.8y,169.44h,97.76t/data=!3m7!1e1!3m5!1soHEEkz_SUpAFjCKLr8XtSg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.756434624856226%26panoid%3DoHEEkz_SUpAFjCKLr8XtSg%26yaw%3D169.44290828627567!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "df4772d6-7172-4f45-8359-47f9b1153eb9",
+      "name": {
+        "en": "Nii"
+      },
+      "geo": {
+        "latitude": 35.72968,
+        "longitude": 139.72773
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.729672,139.727701,3a,90y,54.39h,98.69t/data=!3m7!1e1!3m5!1sJ5OpfYZ7JXgixIZWf66tgw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.689257801952138%26panoid%3DJ5OpfYZ7JXgixIZWf66tgw%26yaw%3D54.391659790741485!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "ee96de1c-e181-412d-bbef-bab811083f5e",
+      "name": {
+        "en": "Awa-Kamogawa Station",
+        "kr": "아와카모가와 역",
+        "ja": "安房鴨川駅"
+      },
+      "geo": {
+        "latitude": 35.10762,
+        "longitude": 140.10394
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-chiba-kamogawa",
+      "streetViewUrl": "https://www.google.com/maps/@35.1073205,140.1039126,3a,64.3y,9.71h,97.1t/data=!3m7!1e1!3m5!1sMKUm8VaYcw1GmpF9YENmaQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.102712781683337%26panoid%3DMKUm8VaYcw1GmpF9YENmaQ%26yaw%3D9.710943587874674!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "f7f9dd76-994c-4f6d-b33f-826b6e3f87e6",
+      "name": {
+        "ja": "鴨川漁港 前原港区",
+        "en": "Kamogawa Fishing Port Maebara port district."
+      },
+      "geo": {
+        "latitude": 35.098715,
+        "longitude": 140.108905
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": null,
+      "streetViewUrl": "https://www.google.com/maps/@35.0986979,140.1088388,3a,90y,27.91h,102.6t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDy_c7nfw!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6Hb4Y_NL0zs1PWCae65Vl2d34CBDmJ66hwLAga31G6pn6-80wIstW0vzdD1AreCCGpV2-ORhlJENfbVNrWNUbqynC_TR-1LUtcu4F0eq5be0XD6OCGZUWmGHbmCCQK8YAESW2Dw%3Dw900-h600-k-no-pi-12.601088318626097-ya98.90844040567771-ro0-fo100!7i4608!8i2304?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    }
+  ]
+}

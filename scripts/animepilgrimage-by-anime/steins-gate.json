@@ -1,0 +1,1093 @@
+{
+  "anime": {
+    "animeId": "VYoUbJBIkUiLX3HPYQGl",
+    "slug": "steins-gate",
+    "title": {
+      "en": "Steins;Gate"
+    },
+    "author": {
+      "en": [
+        "5pb.",
+        "Nitroplus"
+      ]
+    },
+    "studio": {
+      "en": [
+        "WHITE FOX"
+      ]
+    }
+  },
+  "placeCount": 65,
+  "places": [
+    {
+      "placeId": "09609e5b-9fc8-42c6-937f-2e69471ce2b6",
+      "name": {
+        "en": "Horin Park",
+        "kr": "호린 공원",
+        "ja": "千代田区立芳林公園"
+      },
+      "geo": {
+        "latitude": 35.70223,
+        "longitude": 139.77008
+      },
+      "ep": 20,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/YvhPWY4j88drkoKx8",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "0a5ecdef-9911-4144-a682-2cf3fe8ab887",
+      "name": {
+        "en": "GamePanic Akihabara",
+        "ja": "ゲームパニック秋葉原"
+      },
+      "geo": {
+        "latitude": 35.69873,
+        "longitude": 139.7714
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/fSGZRNkMNdSrLaeT9",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "0c69433a-006f-4ceb-8bcb-bda0f8908b24",
+      "name": {
+        "ja": "ミマツたばこ",
+        "en": "Mimatsu tobacco"
+      },
+      "geo": {
+        "latitude": 35.6975,
+        "longitude": 139.77295
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/h58zq3k9F6Jj2Upi9",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "0e294b35-299f-4a6c-8f5c-6e3b0d422882",
+      "name": {
+        "ja": "秋葉原駅 電気街口西側広場",
+        "en": "Akihabara Sta. Electric Town Exit West Square"
+      },
+      "geo": {
+        "latitude": 35.69928,
+        "longitude": 139.77259
+      },
+      "ep": 14,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/6QLUmzHPDQFRshzR9",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "0e88e901-2463-4fc1-aaa0-5ef3912d4c6b",
+      "name": {
+        "ja": "東京タイムズタワー",
+        "en": "Tokyo Times Tower",
+        "kr": "도쿄 타임즈 타워"
+      },
+      "geo": {
+        "latitude": 35.70123,
+        "longitude": 139.77252
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/ZsKXLc56i43JYiJcA",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "0f3d98d9-7307-4f88-ab61-a88384652f62",
+      "name": {
+        "ja": "秋葉原UDX",
+        "kr": "아키하바라 UDX",
+        "en": "Akihabara UDX"
+      },
+      "geo": {
+        "latitude": 35.69969,
+        "longitude": 139.77248
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/f37ukrn6eEcnb7Ez6",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "12be5b29-1eff-48bf-8c20-87f8ea03cbc9",
+      "name": {
+        "en": "Fureai Hall",
+        "ja": "ふれあい会館"
+      },
+      "geo": {
+        "latitude": 35.69667,
+        "longitude": 139.77318
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6965953,139.7731669,3a,75y,4.56h,90.6t/data=!3m7!1e1!3m5!1smSdEd90b_gIs9RNcyHAquA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DmSdEd90b_gIs9RNcyHAquA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D15.079153%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "12c067a7-1062-4373-9610-eed8cc454d09",
+      "name": {
+        "en": "FUKUSHIMAYA dining area",
+        "ja": "福島屋 TASTING MARKET イートインコーナー"
+      },
+      "geo": {
+        "latitude": 35.70028,
+        "longitude": 139.77222
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/8zox5JAmejqejCE97",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "13f02d5d-48c3-4cf3-a365-61e4ac4158dd",
+      "name": {
+        "en": "NewDays Mets Akihabara",
+        "ja": "NewDays メッツ秋葉原"
+      },
+      "geo": {
+        "latitude": 35.6982,
+        "longitude": 139.77256
+      },
+      "ep": 17,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/DGoMFWfjaNCthLvaA",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "1859f5d0-b30a-449e-8976-1510be4fae3e",
+      "name": {
+        "ja": "東京ビッグサイト屋上展示場",
+        "en": "Tokyo Big Sight Rooftop Exhibition Area"
+      },
+      "geo": {
+        "latitude": 35.62853,
+        "longitude": 139.79397
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://maps.app.goo.gl/cbrA38chNymfcozs6",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "1e942d5d-bcd7-401b-ac48-522733ddc9bb",
+      "name": {
+        "en": "Shin-ochanomizu Sta.",
+        "kr": "신오차노미즈 역",
+        "ja": "新御茶ノ水駅"
+      },
+      "geo": {
+        "latitude": 35.69909,
+        "longitude": 139.76538
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/7Mn3vdvzCH8rSh3M7",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "2afaeada-cafd-4345-ae05-fe8595e823b6",
+      "name": {
+        "ja": "富士ソフトアキバプラザ",
+        "kr": "후지소프트 아키하바라 프라자",
+        "en": "Fujisoft Akiba Plaza"
+      },
+      "geo": {
+        "latitude": 35.69955,
+        "longitude": 139.77375
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/PqY7hTNFKuANWb1B6",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "2c166d28-7c0c-4962-8ee7-fc8efbc0e489",
+      "name": {
+        "ja": "柳森神社",
+        "en": "Yanagimori Shrine",
+        "kr": "야나기모리 신사"
+      },
+      "geo": {
+        "latitude": 35.69666,
+        "longitude": 139.77364
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6965765,139.773619,3a,90y,0.75h,96.01t/data=!3m7!1e1!3m5!1s91zbA9To6i2A59s_lG6XWQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D91zbA9To6i2A59s_lG6XWQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D78.97553%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "345fb0c4-3afd-4586-97aa-8c0b8972c6d5",
+      "name": {
+        "ja": "モーゼスさんのケバブ 秋葉原駅前店",
+        "en": "Moses Kebab AKIBA Sta."
+      },
+      "geo": {
+        "latitude": 35.6988,
+        "longitude": 139.77174
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/NkXRVSrdVouwfNxn8",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "34d5593d-99fa-4022-9107-757768942e9e",
+      "name": {
+        "ja": "万世橋警察署 末広町地域安全センター",
+        "en": "Suehirocho Area Safety Center"
+      },
+      "geo": {
+        "latitude": 35.70287,
+        "longitude": 139.77127
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/EGQU2jXwXRuQj1P67",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "35e80124-16b6-4df8-9c59-3875e484d6db",
+      "name": {
+        "en": "Lashinbang Akihabara New Store",
+        "kr": "라신반 아키하바라 신관",
+        "ja": "らしんばん秋葉原店新館"
+      },
+      "geo": {
+        "latitude": 35.69939,
+        "longitude": 139.77041
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/RPguk2f61SazTTjA8",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "399224a2-24b4-4ac9-8328-b82800fb3338",
+      "name": {
+        "en": "Akihabara UDX",
+        "kr": "아키하바라 UDX",
+        "ja": "秋葉原UDX"
+      },
+      "geo": {
+        "latitude": 35.70028,
+        "longitude": 139.77237
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7003083,139.7724163,2a,75y,273.93h,96.91t/data=!3m7!1e1!3m5!1sMhBXevbua1KU5Zhr9i2-xA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DMhBXevbua1KU5Zhr9i2-xA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D54.997196%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "3c767e50-f778-4994-836f-9ddf79c87e91",
+      "name": {
+        "en": "BicCamera AKIBA Store",
+        "kr": "빅 카메라 아키바",
+        "ja": "ビックカメラ AKIBA"
+      },
+      "geo": {
+        "latitude": 35.69981,
+        "longitude": 139.77133
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6997314,139.7713166,3a,75y,2.36h,100.8t/data=!3m6!1e1!3m4!1s4ZSkTGISbIotUmyl4rucFg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "3f3d529c-dcab-48d5-9525-e50a3784ac1f",
+      "name": {
+        "en": "Tuun-kaikan",
+        "ja": "通運会館"
+      },
+      "geo": {
+        "latitude": 35.70188,
+        "longitude": 139.77101
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/AEDeYD2taZLFg51V7",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "4195333a-a0be-4ad9-ae6a-575eb03a4c52",
+      "name": {
+        "en": "Park Gallery"
+      },
+      "geo": {
+        "latitude": 35.70148,
+        "longitude": 139.76959
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7015044,139.7694953,3a,90y,89.83h,99.15t/data=!3m6!1e1!3m4!1saOL7Mvtn_P5es3heYI4LSg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "4498e9ad-ae8f-463e-923a-ae59111e334d",
+      "name": {
+        "ja": "セブン-イレブン 秋葉原駅北店",
+        "kr": "세븐일레븐 아키하바라기타점",
+        "en": "7-Eleven Akihabara Station North Store"
+      },
+      "geo": {
+        "latitude": 35.6995,
+        "longitude": 139.77422
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/GVkE53FEFMSRYkLe9",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "44b6367b-6bd0-46e1-a617-c656fa1eff33",
+      "name": {
+        "en": "Akihabara Station",
+        "kr": "아키하바라 역",
+        "ja": "秋葉原駅"
+      },
+      "geo": {
+        "latitude": 35.69849,
+        "longitude": 139.77251
+      },
+      "ep": 20,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/efautM6zQjC5ZxH5A",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "4810ac86-cc19-408d-b9da-77b69a874586",
+      "name": {
+        "en": "Akiba CO Gallery",
+        "ja": "アキバCOギャラリー"
+      },
+      "geo": {
+        "latitude": 35.70254,
+        "longitude": 139.77151
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7024295,139.7716143,3a,75y,332.85h,101.09t/data=!3m6!1e1!3m4!1swsqctcvhMGUA5kMDAYzEpg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "5692d9b5-c229-481d-b6ac-6cdaa36418e7",
+      "name": {
+        "kr": "치요다 구립 아키하바라 공원",
+        "ja": "千代田区立秋葉原公園",
+        "en": "Akihabara Park"
+      },
+      "geo": {
+        "latitude": 35.69802,
+        "longitude": 139.77493
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/qJZZRemsLXAhwSUA9",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "56b714ea-3188-4adf-ab37-d8a69aa701d2",
+      "name": {
+        "ja": "ファミリーマート 豊島南池袋三丁目店",
+        "en": "FamilyMart Toshima Minami-Ikebukuro 3-chome Store"
+      },
+      "geo": {
+        "latitude": 35.72189,
+        "longitude": 139.71606
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://maps.app.goo.gl/hXoPjsx7BBGeaEKz9",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "5cfd0cc7-765c-42c1-aef3-a9f718dedb77",
+      "name": {
+        "kr": "렘 아키하바라",
+        "ja": "レム秋葉原",
+        "en": "remm AKIHABARA"
+      },
+      "geo": {
+        "latitude": 35.69765,
+        "longitude": 139.77377
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/bkq4zSwbtELiaeR56",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "5d6af7c9-de6c-45ec-905a-101c30bfcd54",
+      "name": {
+        "ja": "秋葉原ラジオ会館",
+        "en": "Akihabara Radio Kaikan",
+        "kr": "아키하바라 라디오회관"
+      },
+      "geo": {
+        "latitude": 35.69812,
+        "longitude": 139.77194
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6981869,139.7719398,3a,90y,168.82h,114.06t/data=!3m7!1e1!3m5!1s8sIi0xcNOuhg7GkIFqubGw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D8sIi0xcNOuhg7GkIFqubGw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D73.600174%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "5e0b623e-81df-409e-9bd9-edd2fcf3e944",
+      "name": {
+        "ja": "エクセルシオール カフェ 秋葉原中央通り店",
+        "en": "Excelsior Caffé Akihabara Chuo Dori Store"
+      },
+      "geo": {
+        "latitude": 35.70146,
+        "longitude": 139.77141
+      },
+      "ep": 14,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/Fg5EsWNrfvJQzyy16",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "60c49735-ba2c-4122-9fdf-78f17e98c352",
+      "name": {
+        "en": "Akihabara Park",
+        "ja": "千代田区立秋葉原公園",
+        "kr": "치요다 구립 아키하바라 공원"
+      },
+      "geo": {
+        "latitude": 35.6976,
+        "longitude": 139.77486
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/VijfDYijGAXcfcy59",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "652188ce-2b72-40a6-ae70-3fa47366581e",
+      "name": {
+        "kr": "보크스 아키하바라 하비 천국 2",
+        "en": "Volks Akihabara Hobby Paradise 2",
+        "ja": "ボークス秋葉原ホビー天国2"
+      },
+      "geo": {
+        "latitude": 35.70001,
+        "longitude": 139.77158
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/Zt4Juh4jCC1KC3VH6",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "6840b8df-8ea6-45f2-bae6-07bde18b0d49",
+      "name": {
+        "ja": "秋葉原駅 電気街口西側広場",
+        "en": "Akihabara Sta. Electric Town Exit West Square"
+      },
+      "geo": {
+        "latitude": 35.69892,
+        "longitude": 139.77263
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/dzcjTF5pmFNXn5g47",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "68dc78c6-f038-4f21-a5f7-072015d02243",
+      "name": {
+        "en": "Repark Soto-Kanda 3-Chome #2",
+        "ja": "三井のリパーク 外神田３丁目第２ 駐車場"
+      },
+      "geo": {
+        "latitude": 35.70255,
+        "longitude": 139.77009
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7027707,139.7701095,3a,90y,180.24h,101.02t/data=!3m6!1e1!3m4!1siKF3pitJSSPUOloIckbigg!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "69274fdd-7b48-4471-84d8-fda84ae51d04",
+      "name": {
+        "en": "TAITO Station Akihabara",
+        "kr": "타이토 스테이션 아키하바라점",
+        "ja": "タイトーステーション 秋葉原店"
+      },
+      "geo": {
+        "latitude": 35.7003,
+        "longitude": 139.77169
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7002873,139.7719105,3a,71.1y,272.47h,99.44t/data=!3m6!1e1!3m4!1sJL5cP77YAwTVu8Jgm94MlQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "6be86366-aee2-4b3a-bb31-ddf78b2bc548",
+      "name": {
+        "ja": "秋葉原駅",
+        "en": "Akihabara Station",
+        "kr": "아키하바라 역"
+      },
+      "geo": {
+        "latitude": 35.69911,
+        "longitude": 139.77323
+      },
+      "ep": 22,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/ojqkqDqL1EHmBnWeA",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "6d9e9c52-b0a8-4e4c-a702-a6bc3eaf96fb",
+      "name": {
+        "en": "Fureai Hall",
+        "ja": "ふれあい会館"
+      },
+      "geo": {
+        "latitude": 35.69654,
+        "longitude": 139.77308
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/YxZ2FVWnzU5pcB6KA",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "6e950a1c-1448-4998-b24a-b16516d3b71e",
+      "name": {
+        "kr": "호린 공원",
+        "en": "Horin Park",
+        "ja": "千代田区立芳林公園"
+      },
+      "geo": {
+        "latitude": 35.70201,
+        "longitude": 139.77001
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/Z8oCCrr3qbH5Nbq26",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "77343b4d-fe28-452f-86e6-147bfa1c6a1f",
+      "name": {
+        "en": "Miraizaka Akihabara Ekimae Store",
+        "kr": "미라이자카 아키하바라에키마에점",
+        "ja": "ミライザカ 秋葉原駅前店"
+      },
+      "geo": {
+        "latitude": 35.69699,
+        "longitude": 139.77329
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/4JupVyPSG3XVv26G7",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "7753059f-dd86-47c7-9b83-5c8fc2ab3e80",
+      "name": {
+        "ja": "NPC24H外神田第２パーキング",
+        "en": "J.PARK Sotokanda #2"
+      },
+      "geo": {
+        "latitude": 35.70199,
+        "longitude": 139.77082
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/hCuop6WNeWNqgKCz6",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "7779bd76-4dd8-4166-8e35-bd8245ae5231",
+      "name": {
+        "ja": "コイズミ無線",
+        "en": "Koizumi Musen"
+      },
+      "geo": {
+        "latitude": 35.70176,
+        "longitude": 139.77223
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/s4Bep3MqoeLPPeMSA",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "79aced3d-901a-4f30-8e79-2844490279ff",
+      "name": {
+        "kr": "메이드 카페 메이릿슈",
+        "en": "Cafe Mai:lish",
+        "ja": "カフェ メイリッシュ"
+      },
+      "geo": {
+        "latitude": 35.70232,
+        "longitude": 139.76956
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/BHRGQHL3QWAR9TMP9",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "7b3adc29-ccb7-4647-a018-2b5287394a16",
+      "name": {
+        "ja": "万世橋",
+        "en": "Mansei Bridge"
+      },
+      "geo": {
+        "latitude": 35.69707,
+        "longitude": 139.77111
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/U6VCw9a8Z6ByuuF59",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "86279f5d-cde6-4761-8603-5764e2b71c4d",
+      "name": {
+        "en": "Pasokon Kobo Akihabara BUYMORE",
+        "kr": "컴퓨터 공방 아키하바라 BUYMORE점",
+        "ja": "パソコン工房 秋葉原本店"
+      },
+      "geo": {
+        "latitude": 35.70097,
+        "longitude": 139.77091
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7010573,139.7709257,3a,75y,182.06h,97.33t/data=!3m7!1e1!3m5!1sbA8WESWS5e3DBoHsZ97Zdg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DbA8WESWS5e3DBoHsZ97Zdg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D20.381502%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "895f2e19-ccda-4f1b-abb2-4092b2d0dad4",
+      "name": {
+        "en": "Shin-ochanomizu Sta.",
+        "kr": "신오차노미즈 역",
+        "ja": "新御茶ノ水駅"
+      },
+      "geo": {
+        "latitude": 35.69801,
+        "longitude": 139.76599
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6980571,139.7659858,2a,90y,112.97h,91.29t/data=!3m6!1e1!3m4!1s6hE8IY06G-dpiHCuQnS18Q!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "8d43d26e-0822-4af2-a4ca-341a5df8ce29",
+      "name": {
+        "en": "Miraizaka Akihabara Ekimae Store",
+        "kr": "미라이자카 아키하바라에키마에점",
+        "ja": "ミライザカ 秋葉原駅前店"
+      },
+      "geo": {
+        "latitude": 35.69735,
+        "longitude": 139.77339
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/SFPg6CZiPcMoAFb98",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "903da26c-b4aa-479f-a2b0-cf5c9a0a75da",
+      "name": {
+        "ja": "タイガー無線",
+        "en": "Tiger Radio"
+      },
+      "geo": {
+        "latitude": 35.69857,
+        "longitude": 139.77141
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/uBkF4toKvv9Em3vu7",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "99795390-6587-4b61-bf49-f0e7970bf2d4",
+      "name": {
+        "kr": "아키하바라 게이머즈 본점",
+        "en": "Akihabara Gamers",
+        "ja": "AKIHABARAゲーマーズ本店"
+      },
+      "geo": {
+        "latitude": 35.69826,
+        "longitude": 139.77159
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/cCjWkGxgb4Qjc6YT8",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "9ff4a4bb-d2d4-462f-86c1-19f420187e36",
+      "name": {
+        "ja": "エクセルシオール カフェ 秋葉原ダイビル店",
+        "en": "Excelsior Caffé Akihabara"
+      },
+      "geo": {
+        "latitude": 35.69948,
+        "longitude": 139.77239
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/ktd4e195XLqkdvnr7",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "a00805f2-c5de-41fa-8793-f487a1892849",
+      "name": {
+        "ja": "スターバックス コーヒー JR東日本ホテルメッツ プレミア 秋葉原店",
+        "en": "Starbucks Coffee - JR-East Hotel Mets Akihabara"
+      },
+      "geo": {
+        "latitude": 35.69764,
+        "longitude": 139.77257
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/mc1B8ycEpajAmNcK8",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "acd2d147-a940-43e0-b679-ebbe5d550407",
+      "name": {
+        "ja": "愛三電機",
+        "en": "Aisan Denki Co., Ltd.",
+        "kr": "아이산 전기"
+      },
+      "geo": {
+        "latitude": 35.69956,
+        "longitude": 139.77159
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/dNWmVFWojMEdE5fk8",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "b0479f5e-fc52-4c4e-bc16-d5570642137f",
+      "name": {
+        "en": "Holy Resurrection Cathedral - St. Nikolai",
+        "ja": "東京復活大聖堂"
+      },
+      "geo": {
+        "latitude": 35.69804,
+        "longitude": 139.76584
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/itLeH6BQ4ePmQqj6A",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "d3cccba2-d293-493f-b6ac-b4cbc343db40",
+      "name": {
+        "en": "Horin Park",
+        "ja": "千代田区立芳林公園",
+        "kr": "호린 공원"
+      },
+      "geo": {
+        "latitude": 35.70183,
+        "longitude": 139.7699
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/1SjLMu1pbBmFWfUR9",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "d50c5615-cc4f-400b-8f13-2607524286bd",
+      "name": {
+        "ja": "やなか珈琲店 CHABARA店",
+        "en": "Yanaka Coffee Chabara Shop"
+      },
+      "geo": {
+        "latitude": 35.69957,
+        "longitude": 139.77308
+      },
+      "ep": 17,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/PAZPupS1gYDSWzyXA",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "d5613362-a317-4d4a-907f-a370c43e2e42",
+      "name": {
+        "en": "Japan Kennel Club",
+        "ja": "一般社団法人ジャパンケネルクラブ"
+      },
+      "geo": {
+        "latitude": 35.69598,
+        "longitude": 139.77066
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/Dmv5igAKErdpVzuk8",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "de2848a6-24eb-4946-af44-0776660ba660",
+      "name": {
+        "en": "Gallery SPACE8510-2"
+      },
+      "geo": {
+        "latitude": 35.7025,
+        "longitude": 139.78282
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://maps.app.goo.gl/wWSdRTQsH3WZSUhL6",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "e0fe9983-6a6b-45fd-9ba5-5a9463f3582b",
+      "name": {
+        "en": "Akiba-style idol shop",
+        "ja": "アキバ系アイドルショップ"
+      },
+      "geo": {
+        "latitude": 35.70174,
+        "longitude": 139.77142
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/dmJQ5rNHndxXWcgv6",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "e6d656ae-8cc5-4c04-b8b4-9506e06a699e",
+      "name": {
+        "ja": "AOKI 秋葉原店",
+        "en": "AOKI Akihabaraten"
+      },
+      "geo": {
+        "latitude": 35.69917,
+        "longitude": 139.7718
+      },
+      "ep": 20,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/y8BxCthhPQuRC17V8",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "e7ddd1cf-4a60-4067-8579-4169e5d54847",
+      "name": {
+        "en": "Mihara pearl shop",
+        "ja": "三原真珠"
+      },
+      "geo": {
+        "latitude": 35.7043,
+        "longitude": 139.77427
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://maps.app.goo.gl/j9NmdYwQMj4dt6se9",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "ec186a30-ed8a-48ec-a197-807039ed5910",
+      "name": {
+        "ja": "ヨドバシカメラ マルチメディアAkiba",
+        "kr": "요도바시 카메라 멀티미디어 Akiba",
+        "en": "Yodobashi Akiba"
+      },
+      "geo": {
+        "latitude": 35.69917,
+        "longitude": 139.77446
+      },
+      "ep": 18,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/uJUBThJRKSs7B4Ax6",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "ec7be73a-bcfd-4e1d-8a8f-7361ebc71316",
+      "name": {
+        "en": "Akihabara Sta. Electric Town Exit West Square",
+        "ja": "秋葉原駅 電気街口西側広場"
+      },
+      "geo": {
+        "latitude": 35.69861,
+        "longitude": 139.77259
+      },
+      "ep": 21,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/vEAsmVpHDdLt62cH6",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "f20112a9-ca98-47aa-b18c-22fee1c7cf17",
+      "name": {
+        "kr": "규동전문 삼보",
+        "en": "Beef Bowl specialty shop Sambo",
+        "ja": "牛丼専門 サンボ"
+      },
+      "geo": {
+        "latitude": 35.70126,
+        "longitude": 139.77097
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/r3HWtuNwckG67ioQ6",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "f219437c-1acb-43a9-99c5-b9b199db8b5d",
+      "name": {
+        "en": "Shoheibashikado Bridge",
+        "ja": "昌平橋架道橋"
+      },
+      "geo": {
+        "latitude": 35.69824,
+        "longitude": 139.76866
+      },
+      "ep": 15,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/UcTdmFTW9SeLUEst9",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "f21a975d-b4cf-432c-b775-a0b04e5a47e5",
+      "name": {
+        "ja": "秋葉原ラジオ会館",
+        "en": "Akihabara Radio Kaikan",
+        "kr": "아키하바라 라디오회관"
+      },
+      "geo": {
+        "latitude": 35.69806,
+        "longitude": 139.7721
+      },
+      "ep": 14,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/8sm9KmHMDp8cTz1K6",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "f8647dd5-94f2-42bd-9090-4019488187fe",
+      "name": {
+        "ja": "秋葉原UDX",
+        "kr": "아키하바라 UDX",
+        "en": "Akihabara UDX"
+      },
+      "geo": {
+        "latitude": 35.69967,
+        "longitude": 139.77221
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/KdSA1KQN8Hrjnqv87",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "fce02367-d02f-4c0a-92cd-ea0ff143fd7c",
+      "name": {
+        "ja": "橙幻郷",
+        "kr": "메이드 카페 도원향",
+        "en": "Tougenkyou"
+      },
+      "geo": {
+        "latitude": 35.7006,
+        "longitude": 139.77
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/icvUT2sjLnybxxpQ9",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    },
+    {
+      "placeId": "e56ff6d7-fb04-4a5a-9833-0e1f5e072274",
+      "name": {
+        "ja": "千石電商 秋葉原本店",
+        "en": "Sengoku Densyo (Akihabara Main Store)"
+      },
+      "geo": {
+        "latitude": 35.69937,
+        "longitude": 139.7701
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/C2bACJ1N7uebUZQ47",
+      "copyright": "© 2011 5pb./Nitroplus 未来ガジェット研究所"
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "anime": {
+    "animeId": "xYGIxEMWtc0UkKtWbp4R",
+    "slug": "jujutsu-kaisen-0",
+    "title": {
+      "ja": "劇場版 呪術廻戦 0",
+      "kr": "극장판 주술회전 0",
+      "en": "Jujutsu Kaisen 0 Movie"
+    },
+    "author": {
+      "ja": [
+        "芥見下々"
+      ],
+      "en": [
+        "Gege Akutami"
+      ],
+      "kr": [
+        "아쿠타미 게게"
+      ]
+    },
+    "studio": {
+      "en": [
+        "MAPPA"
+      ]
+    }
+  },
+  "placeCount": 7,
+  "places": [
+    {
+      "placeId": "11b4f44f-9c4a-44a9-80eb-88a3fd531776",
+      "name": {
+        "es": "Cerca de la Shinjuku Piccadilly Cinema",
+        "ja": "新宿ピカデリー付近",
+        "en": "Near the Shinjuku Piccadilly Cinema",
+        "id": "Sekitar Shinjuku Piccadilly Cinema",
+        "de": "In der Nähe des Shinjuku Piccadilly Cinema"
+      },
+      "geo": {
+        "latitude": 35.6927393,
+        "longitude": 139.7047692
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6927393,139.7047692,3a,90y,259.15h,104.45t/data=!3m6!1e1!3m4!1sUSA5GaxApxJCUA7UPqm2Jw!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2021「劇場版 呪術廻戦 0」製作委員会　©芥見下々／集英社"
+    },
+    {
+      "placeId": "378bfd7d-afa1-4a5e-98ee-4c34b6f498a3",
+      "name": {
+        "en": "Hanamikoji Street",
+        "ja": "花見小路通"
+      },
+      "geo": {
+        "latitude": 35.0035834,
+        "longitude": 135.77503
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0035834,135.77503,3a,75y,183.44h,91.9t/data=!3m7!1e1!3m5!1sp5no3ALLr2n2Cci9ujWu1A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dp5no3ALLr2n2Cci9ujWu1A%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D46.805313%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2021「劇場版 呪術廻戦 0」製作委員会　©芥見下々／集英社"
+    },
+    {
+      "placeId": "62c9cfd4-fc81-40c3-92e7-8e3ea7f04283",
+      "name": {
+        "en": "Four Seasons Pathway",
+        "ja": "新宿遊歩道公園（四季の路）"
+      },
+      "geo": {
+        "latitude": 35.6938266,
+        "longitude": 139.7042314
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Four+Seasons+Pathway/@35.6938266,139.7042314,3a,90y,267.01h,98.48t/data=!3m6!1e1!3m4!1sxxwSHcw1M3FQHdrJ3zHXHw!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x60188d74b7370c09:0x3b9a1dd599c24016!2sFour+Seasons+Pathway!8m2!3d35.6937895!4d139.7042127!16s%2Fg%2F11szfgq9tc!3m5!1s0x60188d74b7370c09:0x3b9a1dd599c24016!8m2!3d35.6937895!4d139.7042127!16s%2Fg%2F11szfgq9tc?entry=ttu",
+      "copyright": "© 2021「劇場版 呪術廻戦 0」製作委員会　©芥見下々／集英社"
+    },
+    {
+      "placeId": "6ded4727-07ec-43f4-a562-347e8b3ffceb",
+      "name": {
+        "en": "Hapina Nakakecho",
+        "ja": "ハピナ名掛丁商店街"
+      },
+      "geo": {
+        "latitude": 38.262113,
+        "longitude": 140.8807771
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-miyagi-sendai",
+      "streetViewUrl": "https://www.google.com/maps/@38.262113,140.8807771,3a,90y,260.46h,98.52t/data=!3m7!1e1!3m5!1se9hPq-AuwO6TXifsualAog!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3De9hPq-AuwO6TXifsualAog%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D299.70367%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2021「劇場版 呪術廻戦 0」製作委員会　©芥見下々／集英社"
+    },
+    {
+      "placeId": "6fe7a273-abcf-4f75-980a-7ec4437b2192",
+      "name": {
+        "ja": "奥の正法寺",
+        "en": "Shoboji Temple"
+      },
+      "geo": {
+        "latitude": 39.0671678,
+        "longitude": 141.2239644
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-iwate-oshu",
+      "streetViewUrl": "https://www.google.com/maps/@39.0671678,141.2239644,3a,48.7y,37.35h,102.44t/data=!3m7!1e1!3m5!1sb9-fMNz4PoTiMra0sEacGQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Db9-fMNz4PoTiMra0sEacGQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D342.5715%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 2021「劇場版 呪術廻戦 0」製作委員会　©芥見下々／集英社"
+    },
+    {
+      "placeId": "917c6b41-6c43-4bbd-aed1-05f29e4bdd88",
+      "name": {
+        "en": "Yodobashi Camera Multimedia Kyoto",
+        "ja": "ヨドバシカメラ マルチメディア京都"
+      },
+      "geo": {
+        "latitude": 34.9876129,
+        "longitude": 135.7598231
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/place/Yodobashi+Camera+Multimedia+Kyoto/@34.9876129,135.7598231,3a,90y,355.72h,107.68t/data=!3m6!1e1!3m4!1sLVJIsvQrtassEwvyqODh_Q!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x600108af745dfa35:0x76ee39833b9252db!2sYodobashi+Camera+Multimedia+Kyoto!8m2!3d34.988109!4d135.7593982!16s%2Fg%2F120r9fq7!3m5!1s0x600108af745dfa35:0x76ee39833b9252db!8m2!3d34.988109!4d135.7593982!16s%2Fg%2F120r9fq7?entry=ttu",
+      "copyright": "© 2021「劇場版 呪術廻戦 0」製作委員会　©芥見下々／集英社"
+    },
+    {
+      "placeId": "ee087be5-15e8-4661-bdac-b9d281858d87",
+      "name": {
+        "es": "Cerca de la Uta-Hiroba Shinjuku 3-Chome",
+        "en": "Near the Uta-Hiroba Shinjuku 3-Chome",
+        "de": "In der Nähe des Uta-Hiroba Shinjuku 3-Chome",
+        "id": "Sekitar Uta-Hiroba Shinjuku 3-Chome",
+        "ja": "カラオケルーム歌広場 新宿三丁目店付近"
+      },
+      "geo": {
+        "latitude": 35.6925096,
+        "longitude": 139.7056307
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Uta-Hiroba+Shinjuku+3-Chome/@35.6925096,139.7056307,3a,90y,119.39h,112.55t/data=!3m6!1e1!3m4!1s4qYMjz-Ud4Pt53ifVLp9nA!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x60188cdb850ff853:0x6256a5d884c970d7!2sUta-Hiroba+Shinjuku+3-Chome!8m2!3d35.6921613!4d139.7058724!16s%2Fg%2F1tdgptsz!3m5!1s0x60188cdb850ff853:0x6256a5d884c970d7!8m2!3d35.6921613!4d139.7058724!16s%2Fg%2F1tdgptsz?entry=ttu",
+      "copyright": "© 2021「劇場版 呪術廻戦 0」製作委員会　©芥見下々／集英社"
+    }
+  ]
+}

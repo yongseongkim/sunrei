@@ -1,0 +1,492 @@
+{
+  "anime": {
+    "animeId": "PMFHkoPU1pObVfazDppZ",
+    "slug": "tamako-love-story",
+    "title": {
+      "ja": "たまこラブストーリー",
+      "kr": "타마코 러브 스토리",
+      "en": "Tamako Love Story"
+    },
+    "author": {
+      "en": [
+        "Kyoto Animation"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Kyoto Animation"
+      ]
+    }
+  },
+  "placeCount": 29,
+  "places": [
+    {
+      "placeId": "00602184-5ecc-4bcf-9bc5-456d990031b3",
+      "name": {
+        "en": "Fujinomori Station",
+        "ja": "藤森駅",
+        "kr": "후지노모리 역"
+      },
+      "geo": {
+        "latitude": 34.95683,
+        "longitude": 135.77052
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9570657,135.770343,3a,48.8y,257.47h,95.1t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICi-OC1twE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu0Y-RPNCBzKo1L6e--LiorZbEOR9hmNcRaRI1eYZeDLoIwTQb0VNuHh2sY8LUPuvsC6HPfkej4dBjcS048KQtqBGg93TF03PrqrB2G7JGIdRjS6r2n93y4_GRWPgQr60hJpX2VS%3Dw900-h600-k-no-pi-5.097725227712047-ya257.3684719272573-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "00b47e78-6a3d-41a3-bbca-d48a0afe3ad1",
+      "name": {
+        "ja": "八条小町",
+        "en": "Hachijo Komachi"
+      },
+      "geo": {
+        "latitude": 34.98458,
+        "longitude": 135.75835
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9845883,135.7584408,2a,90y,71.23h,89.01t/data=!3m7!1e1!3m5!1sSjji1KH537tIx96qx7L0ow!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.9935371696760313%26panoid%3DSjji1KH537tIx96qx7L0ow%26yaw%3D71.2302669405638!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "030428ab-40cf-47eb-a7ba-859e6bc25997",
+      "name": {
+        "ja": "デイケアセンターほがらか",
+        "en": "Day Care Center Hogaraka"
+      },
+      "geo": {
+        "latitude": 34.95787,
+        "longitude": 135.77065
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9578574,135.7705494,3a,75y,96.48h,80.3t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDE5PvdVQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu2lncldJQr1-fMg3dUAxZxpjpRjg2R6I0pbBZir3uMPbfcqpAJD104W1YpPHg2tH-5vV5TSN1RwBN7dhOiLhPta8FFSGOuQiJqkaApo-p3dzrJOqjsvMpvd7fadbSPuaqdMR3Q%3Dw900-h600-k-no-pi9.69632748231264-ya2.013200633357627-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "041c06b7-f676-4967-b706-db5d3039a99b",
+      "name": {
+        "ja": "出町ふたば",
+        "en": "Demachi Futaba",
+        "kr": "데마치 후타바"
+      },
+      "geo": {
+        "latitude": 35.03011,
+        "longitude": 135.76963
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0301168,135.769773,3a,75y,260.33h,93.36t/data=!3m7!1e1!3m5!1sNuH7HUJOd3qE_2va9roQMA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.360182938321387%26panoid%3DNuH7HUJOd3qE_2va9roQMA%26yaw%3D260.33358325215244!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "0b3add08-ee11-44db-912f-1fcae1a96b77",
+      "name": {
+        "ja": "タネ源本店",
+        "en": "Tanegen Honten"
+      },
+      "geo": {
+        "latitude": 35.03034,
+        "longitude": 135.77089
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0304433,135.7711874,3a,42.3y,238.41h,92.52t/data=!3m7!1e1!3m5!1s_ufNBBobfIX2EK_XOj2t0w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.519811846178527%26panoid%3D_ufNBBobfIX2EK_XOj2t0w%26yaw%3D238.40878664735087!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "2a6db91d-43ed-48df-9e79-de1f30ea8cc2",
+      "name": {
+        "en": "KIWIDog & CatHotel"
+      },
+      "geo": {
+        "latitude": 34.95919,
+        "longitude": 135.77042
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9592086,135.7706464,3a,75y,263.76h,95.23t/data=!3m7!1e1!3m5!1sUXjkLIi_tUItzeK8DC4O1Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.229249573716231%26panoid%3DUXjkLIi_tUItzeK8DC4O1Q%26yaw%3D263.757720024256!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "32c06185-450c-4f20-a654-6e8c819aedc1",
+      "name": {
+        "en": "DELTA / KYOTOGRAPHIE Permanent Space"
+      },
+      "geo": {
+        "latitude": 35.0305,
+        "longitude": 135.76851
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0307058,135.7685041,3a,28.2y,179.63h,91.96t/data=!3m7!1e1!3m5!1sHoHN0EzgUvamcXl02VI2Hw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.959518654153797%26panoid%3DHoHN0EzgUvamcXl02VI2Hw%26yaw%3D179.63127134372658!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "3703fcff-2194-4499-8b8a-ee9e14d21587",
+      "name": {
+        "en": "Koyama",
+        "ja": "コヤマ"
+      },
+      "geo": {
+        "latitude": 34.95906,
+        "longitude": 135.77064
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9589411,135.7704568,3a,75y,55.08h,93.36t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDE5PujOw!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu2GOczd2iq5MlaSFgtCLgzhgaoQAkCCWJ649upXmAfFCGfrCfIwVp6YPksg5rH4-s5CKEZKAnnFf-WI7WnR-ALvTaFtBYxrHwPoYjmQGFOnPTSXX5dM-xy1AS42Z6TEbEifu5A%3Dw900-h600-k-no-pi-3.3643897117909347-ya337.8384186552107-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "38c8fc34-c6ac-4193-8f66-94050c9d9eeb",
+      "name": {
+        "ja": "野呂本店",
+        "en": "Noro Main Store"
+      },
+      "geo": {
+        "latitude": 35.03072,
+        "longitude": 135.76788
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0307132,135.7678963,3a,75y,180.93h,97.07t/data=!3m7!1e1!3m5!1sw3JVsuSfCwdRhg8L_A14NA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.065946931981898%26panoid%3Dw3JVsuSfCwdRhg8L_A14NA%26yaw%3D180.9258262530603!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "3c85682c-5411-4a37-b68d-812991338b1a",
+      "name": {
+        "kr": "교토역 빌딩",
+        "en": "Kyoto Station Building",
+        "ja": "京都駅ビル"
+      },
+      "geo": {
+        "latitude": 34.98609,
+        "longitude": 135.75899
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9860046,135.7589932,2a,64.3y,358.76h,106.62t/data=!3m7!1e1!3m5!1se4-M9uyCtHEGrFofZpAM1A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-16.62206280446847%26panoid%3De4-M9uyCtHEGrFofZpAM1A%26yaw%3D358.76113250266246!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "3d64b63c-807f-4b6b-8ef0-29dc10b43610",
+      "name": {
+        "ja": "いづもや",
+        "en": "Izumoya"
+      },
+      "geo": {
+        "latitude": 35.03027,
+        "longitude": 135.76823
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0302911,135.7682197,3a,90y,148.63h,85.79t/data=!3m7!1e1!3m5!1skysyDz_89_CJV2-KAmlUkA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D4.212754390812748%26panoid%3DkysyDz_89_CJV2-KAmlUkA%26yaw%3D148.63160040501015!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "44489afb-2130-4aea-aeb2-d5aa02563b7d",
+      "name": {
+        "ja": "寿司ふじ井",
+        "en": "Sushi Fujii"
+      },
+      "geo": {
+        "latitude": 35.03024,
+        "longitude": 135.76794
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0303094,135.7679178,3a,90y,150.91h,94.23t/data=!3m7!1e1!3m5!1s98muLGAgakeG4d3RqOAt8g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.232501815043165%26panoid%3D98muLGAgakeG4d3RqOAt8g%26yaw%3D150.91275535186472!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "4e8a62b5-3758-450a-85b5-7c5ab803e13d",
+      "name": {
+        "en": "Kamogawa Delta",
+        "ja": "鴨川デルタ",
+        "kr": "카모가와 델타"
+      },
+      "geo": {
+        "latitude": 35.02969,
+        "longitude": 135.77176
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0294529,135.7718706,3a,50.2y,84.38h,93.28t/data=!3m8!1e1!3m6!1sAF1QipPN8p_SGrEo-8y15anT_gk_UwJtSP9AxXZkaDdG!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipPN8p_SGrEo-8y15anT_gk_UwJtSP9AxXZkaDdG%3Dw900-h600-k-no-pi-3.28480473489671-ya84.38443966483406-ro0-fo100!7i6528!8i3264?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "5772713d-56f5-4b32-8daf-4ac3bb900d0c",
+      "name": {
+        "ja": "茶寮 FUKUCHA 京都駅店",
+        "en": "Saryo FUKUCHA - Kyoto Station"
+      },
+      "geo": {
+        "latitude": 34.98611,
+        "longitude": 135.75871
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9860782,135.7587754,2a,90y,57.96h,75.29t/data=!3m7!1e1!3m5!1sD2chFa1OWtSmWESocOHudg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D14.713586982331051%26panoid%3DD2chFa1OWtSmWESocOHudg%26yaw%3D57.96005239456091!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "5e2908f6-e9c0-411b-8120-a96007f888c2",
+      "name": {
+        "ja": "出町の飛び石",
+        "en": "Stepping Stones"
+      },
+      "geo": {
+        "latitude": 35.02939,
+        "longitude": 135.77222
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0294529,135.7718706,3a,47.7y,200.54h,91.1t/data=!3m8!1e1!3m6!1sAF1QipPN8p_SGrEo-8y15anT_gk_UwJtSP9AxXZkaDdG!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipPN8p_SGrEo-8y15anT_gk_UwJtSP9AxXZkaDdG%3Dw900-h600-k-no-pi-1.1039880046400867-ya200.53553883413605-ro0-fo100!7i6528!8i3264?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "5e85e33e-b1dd-416c-954d-609bb2e6a897",
+      "name": {
+        "en": "Ramen Kozo",
+        "ja": "ラーメン小憎"
+      },
+      "geo": {
+        "latitude": 34.95747,
+        "longitude": 135.77045
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.957645,135.7704689,3a,90y,12.83h,89.38t/data=!3m8!1e1!3m6!1sAF1QipN4Ycn02d4EoIlnmIDDukJd-5aZlDSJG423VgSs!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipN4Ycn02d4EoIlnmIDDukJd-5aZlDSJG423VgSs%3Dw900-h600-k-no-pi0.6168902639347351-ya282.60748025301586-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "77cb58b9-281e-473b-aa25-417c214abbfa",
+      "name": {
+        "ja": "千丸屋本店 京湯葉鍋と京湯葉土産",
+        "en": "Semmaruya honten"
+      },
+      "geo": {
+        "latitude": 35.00479,
+        "longitude": 135.7633
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0047477,135.7632777,3a,90y,56.94h,99.07t/data=!3m7!1e1!3m5!1smL-Xm_-uPYRJMSY9lhF34A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.065524400056887%26panoid%3DmL-Xm_-uPYRJMSY9lhF34A%26yaw%3D56.942108206673!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "a6b428e1-75c9-41e2-8c93-d1da96641e75",
+      "name": {
+        "ja": "京都市役所産業観光局 京都総合観光案内所",
+        "en": "Kyoto Shiyakusho Sangyokankokyoku Kyoto Total Information Centre"
+      },
+      "geo": {
+        "latitude": 34.9856,
+        "longitude": 135.75836
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9855713,135.758299,2a,90y,86.89h,95.35t/data=!3m7!1e1!3m5!1sPTPMEICEDwW-uNPvsY4zNA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.350187339122797%26panoid%3DPTPMEICEDwW-uNPvsY4zNA%26yaw%3D86.8949328362617!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "b749a0bc-32b5-4cb2-9037-1e523c45d9d7",
+      "name": {
+        "en": "Perk Coffee - JR Kyoto Station Shinkansen Inbound Platform",
+        "ja": "PERK COFFEE JR京都駅新幹線上りホーム"
+      },
+      "geo": {
+        "latitude": 34.9847,
+        "longitude": 135.75913
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9846624,135.7590842,2a,90y,358.22h,93.68t/data=!3m7!1e1!3m5!1sCkEVi7D7KMe9jcudMglVeg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.680689147268737%26panoid%3DCkEVi7D7KMe9jcudMglVeg%26yaw%3D358.22348834229604!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "bdae168a-667b-4ed6-952c-f8912d8bcc85",
+      "name": {
+        "en": "Matsuya Shokuryohinten",
+        "ja": "マツヤ食料品店"
+      },
+      "geo": {
+        "latitude": 35.03028,
+        "longitude": 135.76851
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0302844,135.7684173,3a,75y,83.74h,93.81t/data=!3m7!1e1!3m5!1sYJXxCLpmNk9Ly96JgO1CeA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.807865284402837%26panoid%3DYJXxCLpmNk9Ly96JgO1CeA%26yaw%3D83.74360216887345!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "d6526531-45ad-44bd-ad2e-754c5dd607eb",
+      "name": {
+        "en": "S.O.U./Violet&Claire"
+      },
+      "geo": {
+        "latitude": 35.03027,
+        "longitude": 135.7684
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0302844,135.7684173,3a,90y,202.05h,103.34t/data=!3m7!1e1!3m5!1sYJXxCLpmNk9Ly96JgO1CeA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.335281999773002%26panoid%3DYJXxCLpmNk9Ly96JgO1CeA%26yaw%3D202.04806108145948!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "d9b89e12-da45-46c7-b65d-aadb186997bb",
+      "name": {
+        "en": "Kyoto Station",
+        "ja": "京都駅",
+        "kr": "교토 역"
+      },
+      "geo": {
+        "latitude": 34.98623,
+        "longitude": 135.7589
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9861966,135.7589641,2a,90y,357.13h,108.03t/data=!3m7!1e1!3m5!1sqHX-DVmf2tblGcqtQSuYCA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.027428294501377%26panoid%3DqHX-DVmf2tblGcqtQSuYCA%26yaw%3D357.13194652759296!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "da438205-deec-4152-9908-e5fd8ce4d06e",
+      "name": {
+        "en": "gutsy pine",
+        "ja": "ど根性松"
+      },
+      "geo": {
+        "latitude": 35.03024,
+        "longitude": 135.77195
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0298371,135.7723256,3a,60.9y,329.73h,93.77t/data=!3m8!1e1!3m6!1sAF1QipOLvqgMxjMHI2mDA2SdhE-AmX4ApG8YTjYkFjlh!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipOLvqgMxjMHI2mDA2SdhE-AmX4ApG8YTjYkFjlh%3Dw900-h600-k-no-pi-3.7721326510376514-ya321.1543020157404-ro0-fo100!7i7680!8i3840?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "dae7796d-6b01-4395-b19a-01dfafb1d7b9",
+      "name": {
+        "ja": "ファミリーマート 出町店",
+        "kr": "패밀리마트 데마치점",
+        "en": "FamilyMart Demachi store"
+      },
+      "geo": {
+        "latitude": 35.03026,
+        "longitude": 135.7699
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.030282,135.7696965,3a,90y,87.51h,97.64t/data=!3m7!1e1!3m5!1s5jtFl8MKUHt1ZKNEO-jWsg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.643429978459409%26panoid%3D5jtFl8MKUHt1ZKNEO-jWsg%26yaw%3D87.50575601255713!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "dc015a35-3932-4e21-99ae-c6067f859d86",
+      "name": {
+        "kr": "교토 타워",
+        "en": "Nidec Kyoto Tower",
+        "ja": "ニデック京都タワー"
+      },
+      "geo": {
+        "latitude": 34.98702,
+        "longitude": 135.75929
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9869138,135.7593956,3a,75y,327.55h,113.06t/data=!3m7!1e1!3m5!1s-JCB7y7vidtatqkI6RauHg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-23.063518171590545%26panoid%3D-JCB7y7vidtatqkI6RauHg%26yaw%3D327.5517412090335!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "dee914f4-3e44-4e3c-b629-bcbbe9b4a2f7",
+      "name": {
+        "en": "Yakiniku Sagaki",
+        "ja": "焼肉さが喜"
+      },
+      "geo": {
+        "latitude": 35.03027,
+        "longitude": 135.76807
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0302963,135.7680109,3a,90y,139.79h,88t/data=!3m7!1e1!3m5!1s3Lb9DQuJSv1EKUQnqYPT6Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.995708598110511%26panoid%3D3Lb9DQuJSv1EKUQnqYPT6Q%26yaw%3D139.78739813198018!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "e24dd24a-ed25-4f8c-b8d7-34228ad0ab88",
+      "name": {
+        "ja": "JR東海 京都駅新幹線中央口 JR全線きっぷうりば (みどりの窓口)",
+        "en": "JR-Central Ticket Office, Kyoto Station Shinkansen Central Entrance"
+      },
+      "geo": {
+        "latitude": 34.98478,
+        "longitude": 135.75837
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@34.9847688,135.758312,2a,75y,21.07h,96.38t/data=!3m7!1e1!3m5!1sQEdWImR1RKXjb_guohRJyQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.375266670268672%26panoid%3DQEdWImR1RKXjb_guohRJyQ%26yaw%3D21.066254174877663!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "fb6e3dee-2367-4ef3-9d76-0976a142f632",
+      "name": {
+        "en": "Boai Bookstore",
+        "ja": "暮靄書房"
+      },
+      "geo": {
+        "latitude": 35.03027,
+        "longitude": 135.76833
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0302851,135.7683277,3a,90y,184.31h,91.25t/data=!3m7!1e1!3m5!1sYaMjN7XVTSwRuHD7cQzR_g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.2495194225753323%26panoid%3DYaMjN7XVTSwRuHD7cQzR_g%26yaw%3D184.31042107845727!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    },
+    {
+      "placeId": "fe6b499c-6953-408c-aecd-2d2340608ea9",
+      "name": {
+        "en": "Yoroken",
+        "ja": "和菓子&ワイン 養老軒"
+      },
+      "geo": {
+        "latitude": 35.00349,
+        "longitude": 135.73333
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://www.google.com/maps/@35.0036334,135.7333138,3a,57.8y,174.82h,92.21t/data=!3m7!1e1!3m5!1sm4hTEQe68lsBPvSmG3XYEA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.2080559427752604%26panoid%3Dm4hTEQe68lsBPvSmG3XYEA%26yaw%3D174.8191914823382!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©京都アニメーション/うさぎ山商店街"
+    }
+  ]
+}

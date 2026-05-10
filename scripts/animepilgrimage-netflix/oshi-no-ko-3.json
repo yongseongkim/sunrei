@@ -1,0 +1,525 @@
+{
+  "anime": {
+    "animeId": "hXT39kYUcusxwt3QStKh",
+    "slug": "oshi-no-ko-3",
+    "title": {
+      "de": "Oshi no Ko Staffel 3",
+      "ja": "【推しの子】第3期",
+      "kr": "【최애의 아이】3기",
+      "en": "Oshi no Ko Season 3",
+      "id": "Oshi no Ko Musim 3",
+      "es": "Oshi no Ko Temporada 3"
+    },
+    "author": {
+      "ja": [
+        "赤坂アカ",
+        "横槍メンゴ"
+      ],
+      "en": [
+        "Aka Akasaka",
+        "Mengo Yokoyar"
+      ],
+      "kr": [
+        "아카사카 아카",
+        "요코야리 멩고"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Doga Kobo"
+      ],
+      "ja": [
+        "動画工房"
+      ]
+    }
+  },
+  "placeCount": 30,
+  "places": [
+    {
+      "placeId": "1e545b9c-a83a-4503-b00a-2ba565d62820",
+      "name": {
+        "ja": "田道広場公園",
+        "kr": "덴도 광장 공원",
+        "en": "Dendo Square Park"
+      },
+      "geo": {
+        "latitude": 35.63599,
+        "longitude": 139.70862
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-meguro-meguro",
+      "streetViewUrl": "https://maps.app.goo.gl/ChHXMmqQ8Gxc8tr39",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "2536c5ac-1ad1-4df0-985f-2d4704b0bd5d",
+      "name": {
+        "kr": "도쿄국제전시장 (도쿄빅사이트) 미나미전시동",
+        "en": "Tokyo Big Sight South Exhibition Halls",
+        "ja": "東京ビッグサイト 南展示棟"
+      },
+      "geo": {
+        "latitude": 35.62702,
+        "longitude": 139.79492
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://maps.app.goo.gl/H3jM4M6pvFSJJKN36",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "2f64c35e-888f-4842-b275-bf795b45d174",
+      "name": {
+        "ja": "ユニカビジョン",
+        "en": "YUNIKA VISION"
+      },
+      "geo": {
+        "latitude": 35.69389,
+        "longitude": 139.7004
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-shinjuku-shinjuku",
+      "streetViewUrl": "https://maps.app.goo.gl/W8tcS5m1BjfudTwC6",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "34bb1444-aa8a-4e4a-b95c-c721d34782ea",
+      "name": {
+        "ja": "ABC-MART 渋谷店",
+        "en": "ABC-MART Shibuya Store"
+      },
+      "geo": {
+        "latitude": 35.66031,
+        "longitude": 139.69855
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-shibuya-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/oQySZcMhvwJvgxXx5",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "36446a22-23bc-4843-8f39-0d0fd8b20c55",
+      "name": {
+        "ja": "渋谷区交差点",
+        "en": "Shibuya Crossing"
+      },
+      "geo": {
+        "latitude": 35.65935,
+        "longitude": 139.70071
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/AwScK1pHiXHjuua5A",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "3eaa4767-20f5-479a-9e51-d9a6c45d039b",
+      "name": {
+        "ja": "三井住友銀行 目黒支店",
+        "en": "Sumitomo Mitsui Bank, Meguro Branch"
+      },
+      "geo": {
+        "latitude": 35.63372,
+        "longitude": 139.71501
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-shinagawa-shinagawa",
+      "streetViewUrl": "https://maps.app.goo.gl/HnaDvqdjcDAPDPyJA",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "3f1bc31b-49ea-4538-b763-ffae20c9ccf5",
+      "name": {
+        "en": "Tokyo Big Sight",
+        "ja": "東京ビッグサイト",
+        "kr": "도쿄빅사이트"
+      },
+      "geo": {
+        "latitude": 35.63028,
+        "longitude": 139.79312
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://maps.app.goo.gl/cnxRogz5LYXCgj7C6",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "40717f12-3c70-4e40-86fb-b8b05b3e0e0b",
+      "name": {
+        "ja": "弘南堂書店",
+        "en": "Konando Books"
+      },
+      "geo": {
+        "latitude": 35.63446,
+        "longitude": 139.71186
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-meguro-meguro",
+      "streetViewUrl": "https://maps.app.goo.gl/UnXPSggM5D2z9pLy9",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "43350d87-a295-4e51-99b9-9d82d49c3f38",
+      "name": {
+        "ja": "東京ビッグサイト屋上展示場",
+        "en": "Tokyo Big Sight Rooftop Exhibition Area"
+      },
+      "geo": {
+        "latitude": 35.62907,
+        "longitude": 139.79439
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://maps.app.goo.gl/TGDpJPmY6Xez45tt6",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "561f231f-310a-4543-80fd-cac36c8bd92c",
+      "name": {
+        "ja": "(株)BS-TBS",
+        "en": "BS-TBS Inc."
+      },
+      "geo": {
+        "latitude": 35.67096,
+        "longitude": 139.73473
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://maps.app.goo.gl/siu2QxGHEtgW5eYQ7",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "65741a56-15dc-4a20-b202-43f34fdaf766",
+      "name": {
+        "ja": "ジラソーレ",
+        "en": "Girasole"
+      },
+      "geo": {
+        "latitude": 35.64552,
+        "longitude": 139.69897
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-meguro-meguro",
+      "streetViewUrl": "https://maps.app.goo.gl/bjqYMyWjYncAQwws7",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "6786b44b-ed5b-4b52-9c89-a63c95cc900f",
+      "name": {
+        "ja": "デュオ表参道",
+        "en": "Duo Omotesando"
+      },
+      "geo": {
+        "latitude": 35.67166,
+        "longitude": 139.71043
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-shibuya-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/PDrC8wLqiK6ggyQF8",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "68ba3526-14c1-4755-b707-30b7f15808a1",
+      "name": {
+        "kr": "덴도 광장 공원",
+        "en": "Dendo Square Park",
+        "ja": "田道広場公園"
+      },
+      "geo": {
+        "latitude": 35.63607,
+        "longitude": 139.70863
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/pYuUCqEhaANeW69QA",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "6abe7050-9394-4832-8e2b-c6fa7b117c10",
+      "name": {
+        "en": "BS-TBS Inc.",
+        "ja": "(株)BS-TBS"
+      },
+      "geo": {
+        "latitude": 35.671457,
+        "longitude": 139.735029
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://maps.app.goo.gl/LEpki1dM3g68XaRj8",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "7aa65528-9e5c-4798-b74d-18c97df53852",
+      "name": {
+        "ja": "LENSLiST 渋谷店",
+        "en": "LENSLiST"
+      },
+      "geo": {
+        "latitude": 35.66013,
+        "longitude": 139.69846
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-shibuya-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/3RVUr4KbJ6MRqZa87",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "7e79c963-a4c0-4f51-93da-694e3b6e74ed",
+      "name": {
+        "ja": "三田丘の上公園",
+        "en": "Mita Okanoue Park"
+      },
+      "geo": {
+        "latitude": 35.64012,
+        "longitude": 139.71401
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/ucNaVpAGoqSup4pC7",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "9e3ec051-6c8e-4145-b7e6-4df6b50f7b76",
+      "name": {
+        "ja": "日本橋三越本店",
+        "kr": "니혼바시 미츠코시 본점",
+        "en": "Nihombashi Mitsukoshi Main Store"
+      },
+      "geo": {
+        "latitude": 35.68583,
+        "longitude": 139.77426
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-chuo-chuo",
+      "streetViewUrl": "https://maps.app.goo.gl/SwxXq4btheWJv79T6",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "a8e14c5d-1c5a-4aa1-aaaa-56217f1faf01",
+      "name": {
+        "ja": "原宿はらっぱファーム",
+        "en": "Harajuku Harappa Farm"
+      },
+      "geo": {
+        "latitude": 35.67177,
+        "longitude": 139.71167
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-shibuya-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/16iHkCVBzc25iNUX8",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "ac3f7b25-f275-4237-bb71-24ad9f706e5e",
+      "name": {
+        "ja": "ユイト 日本橋室町野村ビル",
+        "en": "YUITO"
+      },
+      "geo": {
+        "latitude": 35.68705,
+        "longitude": 139.77375
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-chuo-chuo",
+      "streetViewUrl": "https://maps.app.goo.gl/4DNPrZnVDKP8r2qW7",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "b5cb5e09-96b2-4980-8ad0-d90a8f9b61a9",
+      "name": {
+        "ja": "クレッセント目黒青葉台",
+        "en": "Crescent Meguro Aobadai"
+      },
+      "geo": {
+        "latitude": 35.64727,
+        "longitude": 139.69615
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-meguro-meguro",
+      "streetViewUrl": "https://maps.app.goo.gl/2rUWtFqexeomxzLT6",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "c755f212-18c9-41d7-829b-1bfb586bee6c",
+      "name": {
+        "ja": "練馬区立 桜台地区区民館",
+        "en": "Nerima City Sakuradai Community Center"
+      },
+      "geo": {
+        "latitude": 35.74571,
+        "longitude": 139.66305
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-nerima-nerima",
+      "streetViewUrl": "https://maps.app.goo.gl/z44RRv25z3BBg58N9",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "d04d3c4a-70a2-4698-9028-95b7a9ccab45",
+      "name": {
+        "ja": "東京ビッグサイト屋上展示場",
+        "en": "Tokyo Big Sight Rooftop Exhibition Area"
+      },
+      "geo": {
+        "latitude": 35.62889,
+        "longitude": 139.79391
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-koto-city",
+      "streetViewUrl": "https://maps.app.goo.gl/qbGHwA8MBDqb79Q98",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "e22eae22-a672-4c2f-b3af-b9230669cd47",
+      "name": {
+        "en": "Shueisha",
+        "ja": "㈱集英社 神保町3丁目ビル"
+      },
+      "geo": {
+        "latitude": 35.69524,
+        "longitude": 139.75554
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/ZLLFTTmpZaAkwf8Y9",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "e57f4147-4f5f-4b9d-85c6-1cbbe1ac59c3",
+      "name": {
+        "en": "Ichigaya Fish Center",
+        "ja": "市ヶ谷フィッシュセンター"
+      },
+      "geo": {
+        "latitude": 35.69212,
+        "longitude": 139.73579
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://maps.app.goo.gl/KZgzaaAJkDfVXRa7A",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "ec5e89ad-751e-4ab8-bcee-2552d3195df3",
+      "name": {
+        "ja": "LENSLiST 渋谷店",
+        "en": "LENSLiST"
+      },
+      "geo": {
+        "latitude": 35.66002,
+        "longitude": 139.69847
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/u1hwiGqDjwzVDk916",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "f17e1437-d41a-4aab-a8ff-764c5336b432",
+      "name": {
+        "ja": "GISELE (表参道ショールーム)",
+        "en": "GISELE (Showroom in Omotesando)"
+      },
+      "geo": {
+        "latitude": 35.6717,
+        "longitude": 139.71151
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-shibuya-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/cCmRypHe6GuHXwQs5",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "f256574e-bdd8-464e-a827-ed4c906e2821",
+      "name": {
+        "en": "Ebisuminami-2 Park",
+        "ja": "恵比寿南二公園",
+        "kr": "에비스미나미2 공원"
+      },
+      "geo": {
+        "latitude": 35.643605920449296,
+        "longitude": 139.70861680541424
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/NrGEAAfrrq3j4AGF8",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "f35e7c7a-b517-47d3-ae61-3dd2c1631694",
+      "name": {
+        "en": "Hitotsugi Park",
+        "ja": "一ツ木公園"
+      },
+      "geo": {
+        "latitude": 35.67069,
+        "longitude": 139.73355
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://maps.app.goo.gl/NUeWSa2Ewz2hQTP88",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "f701d38f-ec42-449c-96cd-d2e37aa19725",
+      "name": {
+        "ja": "喫茶室ルノアール ニュー新宿3丁目店",
+        "en": "Renoir New Shinjuku 3-chome"
+      },
+      "geo": {
+        "latitude": 35.69073,
+        "longitude": 139.70556
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://maps.app.goo.gl/4QHpNPZ3oQnGTY8X7",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    },
+    {
+      "placeId": "fe50630e-21be-4755-9306-f7baa9b41c5c",
+      "name": {
+        "ja": "一ツ木公園",
+        "en": "Hitotsugi Park"
+      },
+      "geo": {
+        "latitude": 35.67094,
+        "longitude": 139.73429
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://maps.app.goo.gl/923dTzMUzvG3jPCt6",
+      "copyright": "©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会"
+    }
+  ]
+}

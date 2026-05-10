@@ -1,0 +1,776 @@
+{
+  "anime": {
+    "animeId": "y5w1zYuadN3Ej0cGsH8F",
+    "slug": "okitsura",
+    "title": {
+      "ja": "沖縄で好きになった子が方言すぎてツラすぎる",
+      "kr": "오키나와에서 좋아하게 된 아이가 사투리가 심해서 너무 괴로워",
+      "en": "Okitsura"
+    },
+    "author": {
+      "en": [
+        "Egumi Sora"
+      ],
+      "ja": [
+        "空えぐみ"
+      ],
+      "kr": [
+        "소라 에구미"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Millepensee"
+      ],
+      "ja": [
+        "ミルパンセ"
+      ]
+    }
+  },
+  "placeCount": 46,
+  "places": [
+    {
+      "placeId": "07bcf5fe-daeb-4722-9f3b-8bd5ad52f2fa",
+      "name": {
+        "en": "Tomori Stone Lion",
+        "ja": "富盛の石彫大獅子"
+      },
+      "geo": {
+        "latitude": 26.13357,
+        "longitude": 127.72427
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-okinawa-yaese",
+      "streetViewUrl": "https://www.google.com/maps/@26.1335474,127.7242679,3a,90y,11.22h,75.48t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDJ0_ysAg!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu1VILbaAXlRW8_wqonOSJx215kzFuvcXodJOh4uuPpB2RpRhYCHF8LCtuB-yk6QfgvPvE_LYjJ6wtGKOh_Jz1kTILzW9CC5rJIzbkhsl0JV9Ro3duT8LE8rw8fAD6gor90DPHA%3Dw900-h600-k-no-pi14.522196723370271-ya356.60643328588645-ro0-fo100!7i11968!8i5984?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "0b3dcbbb-8fef-449f-99b1-e88550749b21",
+      "name": {
+        "ja": "和樂",
+        "en": "Waraku"
+      },
+      "geo": {
+        "latitude": 26.35944,
+        "longitude": 127.86956
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3595635,127.8694494,3a,46.2y,116.94h,98.11t/data=!3m7!1e1!3m5!1sVG3E5vsQmC0P--FxovYjjQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.11276392193615%26panoid%3DVG3E5vsQmC0P--FxovYjjQ%26yaw%3D116.94249489449194!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "0d00e179-544f-4fcd-80c7-07135a51d0a1",
+      "name": {
+        "ja": "ちむどんどん学童クラブ",
+        "en": "Chimu Dongdan School Children's Club"
+      },
+      "geo": {
+        "latitude": 26.34576,
+        "longitude": 127.8712
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3459085,127.8710593,3a,48.7y,134.44h,99.81t/data=!3m7!1e1!3m5!1sxgJKFdGHH-1kN2SH_SHAKA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.809855604685481%26panoid%3DxgJKFdGHH-1kN2SH_SHAKA%26yaw%3D134.44381922151828!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "0f37c501-633d-43d5-ae09-3c4ab1457849",
+      "name": {
+        "en": "Family Mart Uruma Taba",
+        "ja": "ファミリーマート うるま田場店"
+      },
+      "geo": {
+        "latitude": 26.3685,
+        "longitude": 127.8595
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3685978,127.8594919,3a,90y,181.33h,102.67t/data=!3m7!1e1!3m5!1sL1l4XHiHh1uQMRh2_qO3gQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.670287701137823%26panoid%3DL1l4XHiHh1uQMRh2_qO3gQ%26yaw%3D181.33112384972767!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "133a006e-d598-4e35-90b5-35a6be23e73b",
+      "name": {
+        "ja": "いこい",
+        "en": "Ikoi"
+      },
+      "geo": {
+        "latitude": 26.3689,
+        "longitude": 127.85126
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3688617,127.8512271,3a,75y,23.3h,92.95t/data=!3m7!1e1!3m5!1soGAE_wdihJCKVqeFE2o9jQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.9491038391395534%26panoid%3DoGAE_wdihJCKVqeFE2o9jQ%26yaw%3D23.296406979412843!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "1a5cbed3-5dec-48cd-92ff-4a0c95422e2a",
+      "name": {
+        "kr": "로손 편의점",
+        "ja": "ローソン 北谷町北前店",
+        "en": "Lawson Chatan Kitamae"
+      },
+      "geo": {
+        "latitude": 26.29613,
+        "longitude": 127.76062
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-okinawa-chatan",
+      "streetViewUrl": "https://www.google.com/maps/@26.2962036,127.7606466,3a,41.5y,198.81h,96.45t/data=!3m7!1e1!3m5!1s3qXkkc_6kGlfwVFnAzFoAg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.446131517609217%26panoid%3D3qXkkc_6kGlfwVFnAzFoAg%26yaw%3D198.81051236376075!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "1b889c8d-17f1-4d33-a9d1-ef5a8c6e29d5",
+      "name": {
+        "ja": "沖ツラベンチ",
+        "en": "Okitsura Bench"
+      },
+      "geo": {
+        "latitude": 26.36403,
+        "longitude": 127.87293
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3641925,127.8727364,3a,49.6y,128.05h,95.58t/data=!3m7!1e1!3m5!1s5QV_PiCAb_rik_PjFPscog!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.580574864676194%26panoid%3D5QV_PiCAb_rik_PjFPscog%26yaw%3D128.04684836513334!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "2d6f0563-9338-4a93-908c-62a50aaa7158",
+      "name": {
+        "ja": "ハートロック",
+        "en": "Heart Rock"
+      },
+      "geo": {
+        "latitude": 26.71391,
+        "longitude": 128.01475
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": null,
+      "streetViewUrl": "https://www.google.com/maps/@26.7137081,128.0148136,3a,36.7y,341.17h,95.96t/data=!3m8!1e1!3m6!1sAF1QipPszP-xF5Sgs8yMWpvMYtCPZurKGWSSJcsoiIDQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipPszP-xF5Sgs8yMWpvMYtCPZurKGWSSJcsoiIDQ%3Dw900-h600-k-no-pi-5.959458756267253-ya4.166858220651363-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "32029549-9baa-4533-b101-cef1e92ffbe8",
+      "name": {
+        "ja": "津波三味線店（つは琉球店・つは三線店・衣装）",
+        "en": "Tsuha Shamisen Shop"
+      },
+      "geo": {
+        "latitude": 26.36812,
+        "longitude": 127.85069
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.36803,127.8509011,3a,49.6y,302.39h,94.7t/data=!3m7!1e1!3m5!1sDcZt_iGEu7kcbYXT4mmLtw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.696959816539234%26panoid%3DDcZt_iGEu7kcbYXT4mmLtw%26yaw%3D302.3888030574675!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "33b41831-baf3-4c16-9bd7-6c437c716ad0",
+      "name": {
+        "en": "AEON Gushikawa",
+        "ja": "イオン具志川店"
+      },
+      "geo": {
+        "latitude": 26.33869,
+        "longitude": 127.84516
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3385624,127.8450601,3a,63.3y,33.47h,108.36t/data=!3m7!1e1!3m5!1sAF1QipPfvOXdX68dUF7QDw8P75FhqF5zGxHVOALgToar!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipPfvOXdX68dUF7QDw8P75FhqF5zGxHVOALgToar%3Dw900-h600-k-no-pi-18.360629142703743-ya153.6689656524141-ro0-fo100!7i10532!8i5266?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "42ead723-f0f5-4a4c-bdb5-e55208ca2134",
+      "name": {
+        "en": "Gushigawa Coast",
+        "ja": "具志川海岸"
+      },
+      "geo": {
+        "latitude": 26.36364,
+        "longitude": 127.87261
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3639626,127.8729726,3a,48.7y,200.59h,92.72t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDqq7jnQw!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu0EH2KbkDRIvB_dQZnx1vOoEQRvsixJpUBKHi_MA_DsXZJY0b7GF8u9Nj3avEKOTv-_0t3XanMQX7Lcl-hqSEMQOqT1mtciys7vea3YNIjsgAaY_Mc0MHJhmah4SbQ9lLQf-bAO%3Dw900-h600-k-no-pi-2.7195069264994345-ya123.58597380450985-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "464ec6a6-d884-489e-8109-75f4a8e7e3e6",
+      "name": {
+        "en": "A&W Makiminato",
+        "ja": "Ａ&Ｗ 牧港店"
+      },
+      "geo": {
+        "latitude": 26.26671,
+        "longitude": 127.7282
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-okinawa-urasoe",
+      "streetViewUrl": "https://www.google.com/maps/@26.2670826,127.7277451,3a,24.5y,126.85h,97.93t/data=!3m7!1e1!3m5!1sd0hwJQhu5iWAgoiyPa04kw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.926778524731645%26panoid%3Dd0hwJQhu5iWAgoiyPa04kw%26yaw%3D126.85244864187749!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "4b717e77-6dbe-4203-913c-2c82d2c6eee3",
+      "name": {
+        "ja": "フレッシュプラザユニオン あげな店",
+        "en": "Fresh Plaza Union Agena"
+      },
+      "geo": {
+        "latitude": 26.37727,
+        "longitude": 127.85656
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3772704,127.8569653,3a,25.3y,245.23h,95.42t/data=!3m7!1e1!3m5!1sWLepiu_OSKg02cOQ1Ic8dA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.421795746691359%26panoid%3DWLepiu_OSKg02cOQ1Ic8dA%26yaw%3D245.22856439407246!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "4b8c4e53-e282-4515-82ac-3b0f52ab1c1c",
+      "name": {
+        "en": "Relaxation maju",
+        "ja": "リラクゼーションmaju"
+      },
+      "geo": {
+        "latitude": 26.35631,
+        "longitude": 127.87074
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3563262,127.8707068,3a,75y,59.72h,92.18t/data=!3m7!1e1!3m5!1sYqNbM426vmNemx1kg98MVw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.183438695651091%26panoid%3DYqNbM426vmNemx1kg98MVw%26yaw%3D59.721489066011934!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "5091ad0d-f144-41c2-9def-7b2970731bf3",
+      "name": {
+        "ja": "首里駅",
+        "kr": "슈리 역",
+        "en": "Shuri Station"
+      },
+      "geo": {
+        "latitude": 26.21921,
+        "longitude": 127.72573
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-okinawa-naha",
+      "streetViewUrl": "https://www.google.com/maps/@26.2192184,127.725773,2a,49.6y,255.55h,98.02t/data=!3m7!1e1!3m5!1sw73MvhPmB6eFxwXmw7LeZw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.018573051190927%26panoid%3Dw73MvhPmB6eFxwXmw7LeZw%26yaw%3D255.54703708687862!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "555a1f59-6c84-4484-b38a-b1ebf52663f3",
+      "name": {
+        "ja": "守礼門",
+        "en": "Shureimon Gate",
+        "kr": "슈레이몬"
+      },
+      "geo": {
+        "latitude": 26.21814,
+        "longitude": 127.71685
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-okinawa-naha",
+      "streetViewUrl": "https://www.google.com/maps/@26.218161,127.7168466,3a,90y,100.6h,126.94t/data=!3m7!1e1!3m5!1sIY7RU0Au5eTOnC017Pjl4g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-36.93765149787754%26panoid%3DIY7RU0Au5eTOnC017Pjl4g%26yaw%3D100.60479486799703!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "5f0780fd-8d65-4835-9be9-40a123619c8c",
+      "name": {
+        "kr": "반소 유적 공원",
+        "en": "Banshoato Park",
+        "ja": "番所跡公園"
+      },
+      "geo": {
+        "latitude": 26.359,
+        "longitude": 127.86937
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3588746,127.8694165,3a,38.5y,323.84h,96.45t/data=!3m7!1e1!3m5!1sIFzWniOS-ldmsDYT6TQ75g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.453727240577223%26panoid%3DIFzWniOS-ldmsDYT6TQ75g%26yaw%3D323.8401888280162!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "684cb6dc-dd7e-4782-a3e8-db7190108740",
+      "name": {
+        "en": "Gushikawa Community Center",
+        "kr": "구시카와 공민관",
+        "ja": "具志川公民館"
+      },
+      "geo": {
+        "latitude": 26.35839,
+        "longitude": 127.8702
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.358295,127.8701887,3a,75y,14.27h,91.74t/data=!3m7!1e1!3m5!1s1IBFRJusQhMeUt87RNaYbg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.7421489622751665%26panoid%3D1IBFRJusQhMeUt87RNaYbg%26yaw%3D14.265292503065734!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "690a266a-97c9-4c70-b223-4a7f9c022540",
+      "name": {
+        "ja": "サンエーＶ２１食品館 田場店",
+        "en": "San-A V21 Food Hall Taba"
+      },
+      "geo": {
+        "latitude": 26.36413,
+        "longitude": 127.86855
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3642085,127.8684714,3a,75y,139.17h,97.86t/data=!3m7!1e1!3m5!1s0OtjyCPcUxrczD3ax8se4A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.855137709958811%26panoid%3D0OtjyCPcUxrczD3ax8se4A%26yaw%3D139.17187642442903!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "6ddcbd66-dde9-4d43-bc01-ef8d0177c121",
+      "name": {
+        "ja": "業務用食品スーパー 北谷店",
+        "en": "Gyomu Supermarket - Promart"
+      },
+      "geo": {
+        "latitude": 26.30912,
+        "longitude": 127.76386
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-okinawa-chatan",
+      "streetViewUrl": "https://www.google.com/maps/@26.3091368,127.763897,3a,90y,229.31h,104.29t/data=!3m7!1e1!3m5!1s3Zlivs0HV5azmymfwDaSLQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.287725370124107%26panoid%3D3Zlivs0HV5azmymfwDaSLQ%26yaw%3D229.31137517216655!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "6e7a83e3-716c-4528-b1de-6891bced6b29",
+      "name": {
+        "en": "Zenzai Specialist~.",
+        "ja": "ぜんざい専門家～"
+      },
+      "geo": {
+        "latitude": 26.33946,
+        "longitude": 127.88008
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3393955,127.8799286,3a,43.8y,66.84h,93.3t/data=!3m7!1e1!3m5!1smCCXLlAk2k3Em8oacnWX4Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.3006085714086453%26panoid%3DmCCXLlAk2k3Em8oacnWX4Q%26yaw%3D66.8406629878328!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "70020780-ef0d-4167-b831-ac3a4aa6e080",
+      "name": {
+        "ja": "サンエー 具志川メインシティ",
+        "en": "San-A Gushikawa Main City",
+        "kr": "산에이 구시카와메인시티"
+      },
+      "geo": {
+        "latitude": 26.3528,
+        "longitude": 127.82566
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3536155,127.826273,3a,75y,210.5h,113.65t/data=!3m7!1e1!3m5!1sFsg1xt_VNElEK9UIvXDX-Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-23.650565170057547%26panoid%3DFsg1xt_VNElEK9UIvXDX-Q%26yaw%3D210.50051515841088!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "71d45b28-6457-498c-97a3-4f97f010418e",
+      "name": {
+        "ja": "タウンプラザかねひで具志川店",
+        "en": "Kanehide Gushikawa Branch"
+      },
+      "geo": {
+        "latitude": 26.37825,
+        "longitude": 127.85745
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3785732,127.8572861,3a,45.4y,166.69h,98.62t/data=!3m7!1e1!3m5!1soFuZXjWP4EACKaPyBrbAIQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.617498765348756%26panoid%3DoFuZXjWP4EACKaPyBrbAIQ%26yaw%3D166.69215928791743!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "74679fb9-7969-4d83-986a-9e253a8320d8",
+      "name": {
+        "ja": "デイサービスLIB",
+        "en": "LIB Adult Day Care"
+      },
+      "geo": {
+        "latitude": 26.36428,
+        "longitude": 127.86834
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3642085,127.8684714,3a,48.8y,306.51h,90.72t/data=!3m7!1e1!3m5!1s0OtjyCPcUxrczD3ax8se4A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.717708489046899%26panoid%3D0OtjyCPcUxrczD3ax8se4A%26yaw%3D306.5079011982637!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "8eb80239-90d9-4cb9-8cf7-aa00bd63424c",
+      "name": {
+        "ja": "与那城総合公園",
+        "en": "Yonashiro Athletic Park"
+      },
+      "geo": {
+        "latitude": 26.32823,
+        "longitude": 127.90704
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3281744,127.9069667,3a,37.9y,107.92h,100.85t/data=!3m8!1e1!3m6!1sAF1QipMxu_fPBO-7q-ITnTjcZ49cdpXUqsdpFOgn8S5P!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipMxu_fPBO-7q-ITnTjcZ49cdpXUqsdpFOgn8S5P%3Dw900-h600-k-no-pi-10.846541932129043-ya117.92199640346848-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "96104c15-d330-41ea-a20f-e08fe8bf0205",
+      "name": {
+        "en": "Smilax Kurichi"
+      },
+      "geo": {
+        "latitude": 26.36272,
+        "longitude": 127.87027
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3628274,127.8701642,3a,63.5y,133.33h,95.22t/data=!3m7!1e1!3m5!1sIshVmCsiTzJiWiHsQ6VJsw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.221546578665084%26panoid%3DIshVmCsiTzJiWiHsQ6VJsw%26yaw%3D133.32573257300692!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "9773632a-3380-43d6-84ce-3d0fe788367a",
+      "name": {
+        "en": "Kumon Maths & English",
+        "ja": "公文式うるま具志川教室"
+      },
+      "geo": {
+        "latitude": 26.36339,
+        "longitude": 127.86875
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3634022,127.8688658,3a,90y,245.34h,97.02t/data=!3m7!1e1!3m5!1s9Q7-RbuYUmc2J9dNDBrOWQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.023100847740693%26panoid%3D9Q7-RbuYUmc2J9dNDBrOWQ%26yaw%3D245.3408231496923!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "aaabe913-1e05-41e0-8f04-4410373e9ce1",
+      "name": {
+        "en": "Kafu Banta",
+        "kr": "카후 반타",
+        "ja": "果報バンタ(カフウバンタ)"
+      },
+      "geo": {
+        "latitude": 26.36067,
+        "longitude": 127.99226
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3606904,127.9921811,3a,48.5y,63.52h,83.72t/data=!3m7!1e1!3m5!1sAF1QipPpnWLSbnLTJrOJVwrDZAS_2S6mrUICY3erT_DM!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipPpnWLSbnLTJrOJVwrDZAS_2S6mrUICY3erT_DM%3Dw900-h600-k-no-pi6.281862691994334-ya358.6953227132055-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "ad319fa4-8052-4bf9-84c1-494250a014be",
+      "name": {
+        "en": "Moon Ocean Ginowan Hotel & Residence",
+        "ja": "ムーンオーシャン宜野湾 ホテル＆レジデンス",
+        "kr": "문 오션 기노완 호텔 앤 레지던스"
+      },
+      "geo": {
+        "latitude": 26.27322,
+        "longitude": 127.72641
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-okinawa-ginowan",
+      "streetViewUrl": "https://www.google.com/maps/@26.2731647,127.726182,3a,75y,74.77h,102.58t/data=!3m7!1e1!3m5!1sHwHvZqKxS6uQFmrqagfQkQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.583952971060086%26panoid%3DHwHvZqKxS6uQFmrqagfQkQ%26yaw%3D74.76713179903699!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "b429cffb-5865-4b5c-a0e2-41c65705c37e",
+      "name": {
+        "ja": "ふるふる",
+        "en": "Furufuru"
+      },
+      "geo": {
+        "latitude": 26.36318,
+        "longitude": 127.86902
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3630307,127.8689798,3a,75y,8.51h,94.53t/data=!3m7!1e1!3m5!1saiRb_m-QH46omDpnMbZoqg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.530389633022793%26panoid%3DaiRb_m-QH46omDpnMbZoqg%26yaw%3D8.51171751267566!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "b7eb22e8-5c80-404f-b531-d8b7f17a21bf",
+      "name": {
+        "ja": "古宇利大橋南詰展望所",
+        "en": "Kouri Bridge View Point"
+      },
+      "geo": {
+        "latitude": 26.67895,
+        "longitude": 128.01284
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-okinawa-nago",
+      "streetViewUrl": "https://www.google.com/maps/@26.6787824,128.0126861,3a,57.1y,24.58h,101.61t/data=!3m8!1e1!3m6!1sAF1QipP0VeXpZrwwgAFJJdbRz1Ur0WCgHzCaqUhT3bpk!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipP0VeXpZrwwgAFJJdbRz1Ur0WCgHzCaqUhT3bpk%3Dw900-h600-k-no-pi-11.613159323401277-ya14.584861169092068-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "b9914502-3e22-4d28-b40c-040dd5c6cfdc",
+      "name": {
+        "en": "First-class architect office e-craft.",
+        "ja": "一級建築士事務所 e-craft."
+      },
+      "geo": {
+        "latitude": 26.3661,
+        "longitude": 127.87305
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3657603,127.8729115,3a,43.8y,34.69h,95.86t/data=!3m7!1e1!3m5!1s34nAE0soHdln8LYZ9kDcpg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.856062918867877%26panoid%3D34nAE0soHdln8LYZ9kDcpg%26yaw%3D34.68982324914935!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "bc776334-b660-4a3c-a2d1-b1b9897e32d5",
+      "name": {
+        "en": "Nago Fumie",
+        "ja": "名護フミエ"
+      },
+      "geo": {
+        "latitude": 26.36314,
+        "longitude": 127.87063
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3630759,127.8706316,3a,90y,343.48h,101.27t/data=!3m7!1e1!3m5!1sXT8fchWG5QoJ6YzZKipdMA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.272787962236293%26panoid%3DXT8fchWG5QoJ6YzZKipdMA%26yaw%3D343.4756465162352!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "c11cbc70-da45-4cce-a3d3-e51f7c0af478",
+      "name": {
+        "en": "Teruma Beach",
+        "ja": "照間ビーチ"
+      },
+      "geo": {
+        "latitude": 26.336,
+        "longitude": 127.89456
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3359712,127.8945773,3a,90y,50.7h,104.43t/data=!3m7!1e1!3m5!1sP2bbS2yZLIu4bjTmlS66TA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.42912385478104%26panoid%3DP2bbS2yZLIu4bjTmlS66TA%26yaw%3D50.69745320167562!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "c29998bc-38e4-4536-8bfc-86d69b6e8ec9",
+      "name": {
+        "en": "Bake House Lotti"
+      },
+      "geo": {
+        "latitude": 26.34298,
+        "longitude": 127.87806
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3430103,127.8780024,3a,90y,329.43h,103.46t/data=!3m7!1e1!3m5!1snorSepkTwUgJ26baEHPerg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-13.462231096848313%26panoid%3DnorSepkTwUgJ26baEHPerg%26yaw%3D329.4304616666103!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "c34c6f86-943c-492e-a779-350159b0a896",
+      "name": {
+        "en": "Hamachidori Monument",
+        "ja": "浜千鳥の歌碑"
+      },
+      "geo": {
+        "latitude": 26.36867,
+        "longitude": 127.87479
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3689047,127.8747553,3a,23y,185.68h,91.48t/data=!3m7!1e1!3m5!1stY5edqE6JmDZo_ypuV7__w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.4769465428717155%26panoid%3DtY5edqE6JmDZo_ypuV7__w%26yaw%3D185.6823029622594!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "cb50f094-8579-4015-9536-4a943be7ed37",
+      "name": {
+        "en": "Okinawa Rail Observation Deck",
+        "kr": "얀바루퀴나 전망대",
+        "ja": "ヤンバルクイナ展望台"
+      },
+      "geo": {
+        "latitude": 26.86256,
+        "longitude": 128.26501
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-okinawa-kunigami",
+      "streetViewUrl": "https://www.google.com/maps/@26.8626405,128.2650605,3a,90y,216.59h,115.61t/data=!3m8!1e1!3m6!1sCIABIhADydERiQA9n2fc-ucAA6N3!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu2Y-NmqI6reogxCz-YRhrtp0_p7IOINPN8JqsEZGInqmk-UBW6BhOLAZxpqUTCEwYSpOg-hYsq7BoWXClevjlFVpmdnmtJ7bEmUobQV1yR-92Wrd-pd7BAgeHXqBD13K43RkO0WWsiJfMBx%3Dw900-h600-k-no-pi-25.609173976245557-ya164.46833933533773-ro0-fo100!7i5760!8i2880?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "cf63a751-ec98-477f-a759-f22d1aa8b26f",
+      "name": {
+        "ja": "そば処 具志川そば",
+        "en": "Soba Restaurant Gushigawa Soba"
+      },
+      "geo": {
+        "latitude": 26.349,
+        "longitude": 127.87008
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3491078,127.8702677,3a,90y,224.21h,112.67t/data=!3m7!1e1!3m5!1sSNWV2k2MTwCboL72I_XTgw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-22.67325218486485%26panoid%3DSNWV2k2MTwCboL72I_XTgw%26yaw%3D224.20776739488534!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "d99c6d3f-149e-41c3-9146-d1b779280469",
+      "name": {
+        "ja": "田原コンクリート工業",
+        "en": "Tahara Concrete Industry Co."
+      },
+      "geo": {
+        "latitude": 26.36454,
+        "longitude": 127.86836
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3644712,127.8683322,3a,90y,60.85h,93.95t/data=!3m7!1e1!3m5!1sjw4iMqoB78ohH11h3fStTA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.948744900298209%26panoid%3Djw4iMqoB78ohH11h3fStTA%26yaw%3D60.85395964437017!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "dcf5f32a-55e1-4e08-91e8-f6dc12bc88d6",
+      "name": {
+        "en": "Tsuhakogumi Corporation",
+        "ja": "株式会社 津波古組"
+      },
+      "geo": {
+        "latitude": 26.36689,
+        "longitude": 127.87392
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3669556,127.8741285,3a,73.9y,133.15h,104.54t/data=!3m8!1e1!3m6!1sAF1QipNyulV0IYIf-Dcvt6XC_Zd-g3YNLzBydbN51SEp!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipNyulV0IYIf-Dcvt6XC_Zd-g3YNLzBydbN51SEp%3Dw900-h600-k-no-pi-14.543857954271104-ya165.1483895694422-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "dee76174-091b-4f5d-ab99-401e79cc17f5",
+      "name": {
+        "en": "Gushigawa Foods",
+        "ja": "具志川食糧"
+      },
+      "geo": {
+        "latitude": 26.36284,
+        "longitude": 127.87013
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3626977,127.8700862,3a,75y,27.63h,99.1t/data=!3m7!1e1!3m5!1sAWllJ2ZE_dwbKRM4asQEKw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.096657670959402%26panoid%3DAWllJ2ZE_dwbKRM4asQEKw%26yaw%3D27.63415628968782!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "e3e0b0ba-2d63-4c68-b168-4d8bc52242db",
+      "name": {
+        "en": "BIKE SHOP DOC"
+      },
+      "geo": {
+        "latitude": 26.31082,
+        "longitude": 127.76316
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-okinawa-chatan",
+      "streetViewUrl": "https://www.google.com/maps/@26.3108663,127.7632575,3a,48.7y,247.01h,97.24t/data=!3m7!1e1!3m5!1sGd_jbd4mP70HXTZ_vae1YA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.236894977181592%26panoid%3DGd_jbd4mP70HXTZ_vae1YA%26yaw%3D247.00701116406353!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "e557949d-7ce6-4383-8b16-31a8be967edd",
+      "name": {
+        "ja": "Sun Rise Cafe パラパラ",
+        "en": "Sun Rise Cafe para para"
+      },
+      "geo": {
+        "latitude": 26.36396,
+        "longitude": 127.87254
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3640792,127.8726883,3a,75y,223.53h,96.95t/data=!3m7!1e1!3m5!1sAQ3hDijomtIDLc9I7IgFKA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.953567326209949%26panoid%3DAQ3hDijomtIDLc9I7IgFKA%26yaw%3D223.52992050941717!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "efc37be4-7d6c-4b48-932d-68b0a2ad9f2f",
+      "name": {
+        "ja": "ヘアーサロン・ライフ",
+        "en": "Hair Salon Life"
+      },
+      "geo": {
+        "latitude": 26.36258,
+        "longitude": 127.86921
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3628674,127.8690221,3a,75y,138.27h,98.23t/data=!3m7!1e1!3m5!1sGHQU0nM9dNaoQpCvSc_YOA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.234969902266172%26panoid%3DGHQU0nM9dNaoQpCvSc_YOA%26yaw%3D138.27306133717408!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "fc4a034c-a5d0-4bfe-a6fc-e31bfb55c562",
+      "name": {
+        "en": "Bise-Fukugi Tree Road",
+        "ja": "備瀬のフクギ並木"
+      },
+      "geo": {
+        "latitude": 26.70584,
+        "longitude": 127.88119
+      },
+      "ep": null,
+      "type": "ED",
+      "cityId": "JP-okinawa-motobu",
+      "streetViewUrl": "https://www.google.com/maps/@26.7058221,127.881316,3a,89.4y,263.88h,94.29t/data=!3m7!1e1!3m5!1sjcegYLbtVvclBWaVAJAkoA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.289530510879402%26panoid%3DjcegYLbtVvclBWaVAJAkoA%26yaw%3D263.88401565118846!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    },
+    {
+      "placeId": "e17c1483-ee16-485b-9baf-c94f3a3dde89",
+      "name": {
+        "kr": "해중도로",
+        "ja": "海中道路ビーチ",
+        "en": "Mid-Sea Road Beach"
+      },
+      "geo": {
+        "latitude": 26.33207,
+        "longitude": 127.92523
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-okinawa-uruma",
+      "streetViewUrl": "https://www.google.com/maps/@26.3320488,127.9253622,3a,21.7y,302.63h,94.87t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID-zM3SNQ!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAIMqDu0ZB7Q9ZRCpmaufsaopTYwDGkEIT3cZSeq8w2PmzW_VzntzXVZuRUgBvAuEjT8FNJ-q0To76eBE0vNpRiLBgMG5zm0i39SETf4R0iF5irxRymapzPAH7Mkm9nsE_9H5z7ZDfPFj%3Dw900-h600-k-no-pi-4.866949198977011-ya295.6344395096388-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©︎空えぐみ・新潮社／「沖ツラ」製作委員会"
+    }
+  ]
+}

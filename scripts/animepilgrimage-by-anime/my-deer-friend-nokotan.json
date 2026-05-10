@@ -1,0 +1,500 @@
+{
+  "anime": {
+    "animeId": "pvWIpj2to4PlwxwvGIDt",
+    "slug": "my-deer-friend-nokotan",
+    "title": {
+      "ja": "しかのこのこのここしたんたん",
+      "kr": "사슴 아이 어슬렁어슬렁 호시탐탐",
+      "en": "My Deer Friend Nokotan"
+    },
+    "author": {
+      "ja": [
+        "おしおしお"
+      ],
+      "en": [
+        "Oshioshio"
+      ],
+      "kr": [
+        "오시오시오"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Wit Studio"
+      ]
+    }
+  },
+  "placeCount": 29,
+  "places": [
+    {
+      "placeId": "0e000499-4e54-41b1-a3b5-246274bd363e",
+      "name": {
+        "es": "Cerca de la Omote-Sando of Koganeyma Shrine in Kinkasan",
+        "en": "Near the Omote-Sando of Koganeyma Shrine in Kinkasan",
+        "id": "Sekitar Omote-Sando of Koganeyma Shrine in Kinkasan",
+        "de": "In der Nähe des Omote-Sando of Koganeyma Shrine in Kinkasan",
+        "ja": "表参道(黄金山神社)付近"
+      },
+      "geo": {
+        "latitude": 38.2977982,
+        "longitude": 141.5518888
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-miyagi-ishinomaki",
+      "streetViewUrl": "https://www.google.com/maps/@38.2977982,141.5518888,3a,45.5y,223.75h,87.76t/data=!3m7!1e1!3m5!1sWCpVolXproXJy8i9sSbZwA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DWCpVolXproXJy8i9sSbZwA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D169.1483%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "0e6c5292-0de4-485e-a9ba-931b467ecd46",
+      "name": {
+        "en": "Yahikoyama Panorama Tower",
+        "ja": "弥彦山 パノラマタワー"
+      },
+      "geo": {
+        "latitude": 37.7103115,
+        "longitude": 138.8099429
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-niigata-niigata",
+      "streetViewUrl": "https://www.google.com/maps/place/Yahikoyama+Panorama+Tower/@37.7103115,138.8099429,3a,90y,158.29h,126.34t/data=!3m6!1e1!3m4!1s9zGMT2Q9pYWM3GGN20MtBw!2e0!7i16384!8i8192!4m6!3m5!1s0x5ff4ef0dcfae3d69:0xe5a763301c595f5e!8m2!3d37.7101259!4d138.8099937!16s%2Fg%2F11g9ddvsd4?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "1512612d-0e7d-4a5b-8202-682edcbaf747",
+      "name": {
+        "en": "Kofuku-ji",
+        "ja": "興福寺"
+      },
+      "geo": {
+        "latitude": 34.6830026,
+        "longitude": 135.8318428
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nara-nara",
+      "streetViewUrl": "https://www.google.com/maps/@34.6830026,135.8318428,3a,90y,113.02h,110.32t/data=!3m8!1e1!3m6!1sAF1QipOQ_MQBMOGiJUIX_DdfF5XTY08VzAwAh5VBlB8p!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOQ_MQBMOGiJUIX_DdfF5XTY08VzAwAh5VBlB8p%3Dw203-h100-k-no-pi0-ya338.02475-ro-0-fo100!7i8704!8i4352?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "2a77c9a7-6c79-4cd4-92ad-e406ddf9d22b",
+      "name": {
+        "ja": "韓国岳",
+        "en": "Mount Karakuni"
+      },
+      "geo": {
+        "latitude": 31.9451099,
+        "longitude": 130.8503324
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-miyazaki-ebino",
+      "streetViewUrl": "https://www.google.com/maps/@31.9451099,130.8503324,3a,75y,49.48h,60.86t/data=!3m8!1e1!3m6!1sAF1QipPaeYDOtBufsF_1NpHn-fHHHOzYIL-K8rCexLBy!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPaeYDOtBufsF_1NpHn-fHHHOzYIL-K8rCexLBy%3Dw203-h100-k-no-pi-0-ya100.217804-ro0-fo100!7i10240!8i5120?entry=ttu&g_ep=EgoyMDI0MDkxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "36e76ea2-029a-4701-b943-a47686756971",
+      "name": {
+        "en": "Todai-ji",
+        "ja": "東大寺"
+      },
+      "geo": {
+        "latitude": 34.6874195,
+        "longitude": 135.8398691
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nara-nara",
+      "streetViewUrl": "https://www.google.com/maps/@34.6874195,135.8398691,3a,75y,5.78h,98.25t/data=!3m8!1e1!3m6!1sAF1QipP5F0hc-3MfR068uWE8r63vf9Iu_BuNl2BuJi0p!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipP5F0hc-3MfR068uWE8r63vf9Iu_BuNl2BuJi0p%3Dw203-h100-k-no-pi-0-ya283.7386-ro0-fo100!7i6528!8i3264?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "391a51dd-bd9b-4c9e-bbb2-bf86bad3a24e",
+      "name": {
+        "ja": "鹿像",
+        "en": "Deer Statue"
+      },
+      "geo": {
+        "latitude": 35.9681573,
+        "longitude": 140.6290971
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-ibaraki-kashima",
+      "streetViewUrl": "https://www.google.com/maps/place/Deer+Statue/@35.9681573,140.6290971,3a,44.5y,86.92h,94.16t/data=!3m7!1e1!3m5!1slUoxRb5aZP5WwpP3AW3s-g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DlUoxRb5aZP5WwpP3AW3s-g%26cb_client%3Dsearch.gws-prod.gps%26w%3D211%26h%3D120%26yaw%3D94.577995%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m14!1m7!3m6!1s0x6022553e3dd2786f:0x72e31b588c55a324!2sMitarashi+Pond!8m2!3d35.9712091!4d140.6359681!16s%2Fg%2F11f9wk8qsk!3m5!1s0x602255ded7893a15:0xa7e91f2ae7ee5f15!8m2!3d35.9681412!4d140.629229!16s%2Fg%2F11h3l536wh?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "39241091-e4a1-4f15-9d72-3b60727e25bf",
+      "name": {
+        "ja": "日野駅",
+        "en": "Hino Station"
+      },
+      "geo": {
+        "latitude": 35.6794874,
+        "longitude": 139.3942481
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hino",
+      "streetViewUrl": "https://www.google.com/maps/@35.6794874,139.3942481,3a,75y,240.55h,109.26t/data=!3m7!1e1!3m5!1sgaZ4c7u6MCuzBiE275Qvag!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DgaZ4c7u6MCuzBiE275Qvag%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D261.7338%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "3f4a5d60-0add-486f-a468-fe04c952d5b1",
+      "name": {
+        "ja": "彌彦神社",
+        "en": "Yahiko Shrine"
+      },
+      "geo": {
+        "latitude": 37.7064699,
+        "longitude": 138.8264736
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-niigata-yahiko",
+      "streetViewUrl": "https://www.google.com/maps/@37.7064699,138.8264736,3a,75y,295.95h,92.84t/data=!3m6!1e1!3m4!1sAF1QipNrGODPisw8WYmBRgMVLc8tR541eWDHqDqw-YgN!2e10!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "4b4a5497-afd0-4d78-a79d-9a8280e7a2b9",
+      "name": {
+        "ja": "相州春日神社(戸塚)",
+        "en": "Soshukasuga Shrine"
+      },
+      "geo": {
+        "latitude": 35.3852273,
+        "longitude": 139.4926238
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.3852273,139.4926238,3a,73.9y,262.49h,100.42t/data=!3m6!1e1!3m4!1s0zt1WnGfF8q2b6Px2zqpxg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "53b1fc02-ea39-4f21-a1fd-0febcbd8aa97",
+      "name": {
+        "en": "Yunoko",
+        "ja": "湯ノ湖"
+      },
+      "geo": {
+        "latitude": 36.7964502,
+        "longitude": 139.4285832
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tochigi-nikko",
+      "streetViewUrl": "https://www.google.com/maps/@36.7964502,139.4285832,2a,75y,301.6h,95.85t/data=!3m6!1e1!3m4!1sQfRiuvqq2ncrugdLgrVmHA!2e0!7i13312!8i6656?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "5e57dcbf-62a7-4f4a-a17f-cf257cbd6e16",
+      "name": {
+        "ja": "登龍峠展望台",
+        "en": "Noboryo-Toge Observation Deck"
+      },
+      "geo": {
+        "latitude": 33.1134731,
+        "longitude": 139.8353099
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hachijo-town",
+      "streetViewUrl": "https://www.google.com/maps/place/Noboryo-Toge+Observation+Deck/@33.1134731,139.8353099,3a,75y,287.81h,102.21t/data=!3m8!1e1!3m6!1sAF1QipO5ScXIIYt55XCX5_5QvdXyjivkjK5j6JS_XmRn!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipO5ScXIIYt55XCX5_5QvdXyjivkjK5j6JS_XmRn%3Dw203-h100-k-no-pi-10-ya51.99998-ro-0-fo100!7i4608!8i2304!4m9!3m8!1s0x601571ba7101ca17:0x442224eccb1ce13!8m2!3d33.1134643!4d139.8353446!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1tjpqg4h?coh=205409&entry=ttu&g_ep=EgoyMDI0MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "5fb30847-60ad-4a8b-a18f-eb7315a4c4e2",
+      "name": {
+        "ja": "嚴島神社",
+        "en": "Itsukushima Shrine"
+      },
+      "geo": {
+        "latitude": 34.2955744,
+        "longitude": 132.3189858
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hiroshima-hatsukaichi",
+      "streetViewUrl": "https://www.google.com/maps/@34.2955744,132.3189858,3a,85.2y,153.46h,93.24t/data=!3m6!1e1!3m4!1sakkD5X8ULrM5EeZmjke8KA!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "60e52530-f436-4927-a0f2-1b3cc264c20d",
+      "name": {
+        "ja": "神鹿園（三嶋大社）",
+        "en": "Shinrokuen Deer Garden"
+      },
+      "geo": {
+        "latitude": 35.1216515,
+        "longitude": 138.9195659
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shizuoka-mishima",
+      "streetViewUrl": "https://www.google.com/maps/@35.1216515,138.9195659,2a,41.5y,64.33h,86.9t/data=!3m6!1e1!3m4!1sUjQy07T_WBje5AWsmfh9Kg!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "6371d362-03d8-438e-a7da-db092f209d96",
+      "name": {
+        "ja": "キョン飼育施設",
+        "en": "Muntjac Breeding Facility"
+      },
+      "geo": {
+        "latitude": 33.1112618,
+        "longitude": 139.7867505
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hachijo-town",
+      "streetViewUrl": "https://www.google.com/maps/@33.1112618,139.7867505,18z?entry=ttu&g_ep=EgoyMDI0MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "6933460e-2aa0-4a60-ae66-2924840d9b6e",
+      "name": {
+        "ja": "大山阿夫利神社",
+        "en": "Oyama Afuri Shrine"
+      },
+      "geo": {
+        "latitude": 35.4318202,
+        "longitude": 139.2382483
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-isehara",
+      "streetViewUrl": "https://www.google.com/maps/place/Oyama+Afuri+Shrine/@35.4318202,139.2382483,3a,47.8y,138.4h,91.48t/data=!3m8!1e1!3m6!1sAF1QipPSZk6mKFXUOthdnJRSodFBbvtf7vQkons5sGBj!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPSZk6mKFXUOthdnJRSodFBbvtf7vQkons5sGBj%3Dw203-h100-k-no-pi-0-ya64.80768-ro-0-fo100!7i11264!8i5632!4m6!3m5!1s0x6019076c288025ed:0xce128286d4ac7f62!8m2!3d35.4318672!4d139.2380301!16s%2Fg%2F121x722d?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "7465e3e9-a70c-4cc0-b923-aba37fe6925c",
+      "name": {
+        "ja": "三嶋大社",
+        "en": "Mishima Taisha"
+      },
+      "geo": {
+        "latitude": 35.1208084,
+        "longitude": 138.9189781
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shizuoka-mishima",
+      "streetViewUrl": "https://www.google.com/maps/@35.1208084,138.9189781,2a,75y,13.18h,97.36t/data=!3m6!1e1!3m4!1shP4db9av9zDHyhkfqyY9eA!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "80cc700d-cdeb-48d5-ba29-f6faf8fbb130",
+      "name": {
+        "en": "Daini Shibetsutenbo Parking Lot",
+        "ja": "第二しべつ展望パーキング"
+      },
+      "geo": {
+        "latitude": 43.6223234,
+        "longitude": 145.218307
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-shibetsu",
+      "streetViewUrl": "https://www.google.com/maps/@43.6223234,145.218307,3a,90y,342.41h,102.22t/data=!3m6!1e1!3m4!1sUC9tTzzfOkqrzAjFogCMmA!2e0!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MDkxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "9532b937-bd31-47cb-b95e-8d25fed2ef32",
+      "name": {
+        "en": "Shikagahara",
+        "ja": "鹿ヶ原"
+      },
+      "geo": {
+        "latitude": 31.8924712,
+        "longitude": 130.9008259
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-miyazaki-kobayashi",
+      "streetViewUrl": "https://www.google.com/maps/place/%E9%B9%BF%E3%83%B6%E5%8E%9F/@31.8924712,130.9008259,3a,90y,291.04h,102.63t/data=!3m8!1e1!3m6!1sAF1QipNhztSAm6o66c7hbszdOT8_eeI4IMqgJnMvUOWa!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNhztSAm6o66c7hbszdOT8_eeI4IMqgJnMvUOWa%3Dw203-h100-k-no-pi-0-ya239-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x353f19bf06ebb539:0xc3c68cef1324f543!8m2!3d31.8924712!4d130.9008259!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11g8w7s7k3?entry=ttu&g_ep=EgoyMDI0MDkxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "96874bb4-8991-4cba-8196-caa8cab0cbbe",
+      "name": {
+        "ja": "程久保駅",
+        "en": "Hodokubo Station"
+      },
+      "geo": {
+        "latitude": 35.6547834,
+        "longitude": 139.4104806
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hino",
+      "streetViewUrl": "https://www.google.com/maps/@35.6547834,139.4104806,3a,75y,11.88h,102.43t/data=!3m6!1e1!3m4!1ssULcEms7Rt0nWqACMokcZQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "9845ea50-7dd8-4891-9967-b3e9c489b2b7",
+      "name": {
+        "en": "Nakahodokubo Bridge",
+        "ja": "中程久保橋"
+      },
+      "geo": {
+        "latitude": 35.6532344,
+        "longitude": 139.4084143
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hino",
+      "streetViewUrl": "https://www.google.com/maps/@35.6532344,139.4084143,3a,75y,114.87h,103.03t/data=!3m7!1e1!3m5!1sJN8e58tIXIQTDycxION1fQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DJN8e58tIXIQTDycxION1fQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D326.41473%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "a2090040-09d9-4856-ae4a-d1d067265089",
+      "name": {
+        "en": "Five-Story Pagoda",
+        "ja": "五重塔"
+      },
+      "geo": {
+        "latitude": 35.6616133,
+        "longitude": 139.4112376
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hino",
+      "streetViewUrl": "https://www.google.com/maps/@35.6616133,139.4112376,3a,40.7y,281.62h,107.15t/data=!3m7!1e1!3m5!1sbyMC1Lb5Xe85jVXLT8zT8g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DbyMC1Lb5Xe85jVXLT8zT8g%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D226.56975%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "a9f25e34-5749-42ad-8b88-29742ce5e501",
+      "name": {
+        "en": "Mitarashi Pond",
+        "ja": "御手洗池"
+      },
+      "geo": {
+        "latitude": 35.9712835,
+        "longitude": 140.6360426
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-ibaraki-kashima",
+      "streetViewUrl": "https://www.google.com/maps/@35.9712835,140.6360426,2a,75y,239.67h,97.43t/data=!3m6!1e1!3m4!1sGDJkmAYz6L-6YcGLZYN6zg!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "ad7dee30-561b-49bd-8793-04bf92ad3d81",
+      "name": {
+        "ja": "金華山黄金山神社",
+        "en": "Kinkasan Koganeyama Shrine"
+      },
+      "geo": {
+        "latitude": 38.2977648,
+        "longitude": 141.5548359
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-miyagi-ishinomaki",
+      "streetViewUrl": "https://www.google.com/maps/@38.2977648,141.5548359,3a,90y,59.86h,110.28t/data=!3m6!1e1!3m4!1sR2H7-ZIVoGoM511ry8yQHA!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "b4e3ce45-5e6a-4152-b5c9-a97cc70b38f0",
+      "name": {
+        "en": "Near the Nikko Yumoto Rest House",
+        "ja": "日光湯元レストハウス付近",
+        "es": "Cerca de la Nikko Yumoto Rest House",
+        "id": "Sekitar Nikko Yumoto Rest House",
+        "de": "In der Nähe des Nikko Yumoto Rest House"
+      },
+      "geo": {
+        "latitude": 36.8044656,
+        "longitude": 139.4242228
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tochigi-nikko",
+      "streetViewUrl": "https://www.google.com/maps/@36.8044656,139.4242228,3a,75y,250.51h,99.55t/data=!3m7!1e1!3m5!1srcU4FThqxmAznHtk1h2xwQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DrcU4FThqxmAznHtk1h2xwQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D244.25795%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu&g_ep=EgoyMDI0MDgyMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "b97036cb-b5eb-46d2-8acd-a79413daf55b",
+      "name": {
+        "ja": "中門跡",
+        "en": "Ruins of Kofuku-ji Chumon (Central Gate)"
+      },
+      "geo": {
+        "latitude": 34.6826179,
+        "longitude": 135.8312065
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-nara-nara",
+      "streetViewUrl": "https://www.google.com/maps/place/Ruins+of+Kofuku-ji+Chumon+(Central+Gate)/@34.6826179,135.8312065,3a,75y,273.36h,102.53t/data=!3m8!1e1!3m6!1sAF1QipNvIUdCoK5AG7Z7UxKdItnjlad8WoTqV7u_Am8d!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNvIUdCoK5AG7Z7UxKdItnjlad8WoTqV7u_Am8d%3Dw203-h100-k-no-pi0-ya31.37126-ro0-fo100!7i7744!8i3872!4m6!3m5!1s0x60013988938484a1:0xe8cc1639162599e6!8m2!3d34.6826565!4d135.8311647!16s%2Fg%2F11c6zyfq2s?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "b9fcd436-6723-4d4e-a39b-fab1848b0cfb",
+      "name": {
+        "ja": "御番所山",
+        "en": "Mount Gobansho"
+      },
+      "geo": {
+        "latitude": 38.2862006,
+        "longitude": 141.5183582
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-miyagi-ishinomaki",
+      "streetViewUrl": "https://www.google.com/maps/@38.2862006,141.5183582,3a,75y,80.37h,96.13t/data=!3m8!1e1!3m6!1sAF1QipMlOKqq4TymBZ4yukgPYtibXHO2sgaYxHAFkguk!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMlOKqq4TymBZ4yukgPYtibXHO2sgaYxHAFkguk%3Dw203-h100-k-no-pi0-ya283.4584-ro-0-fo100!7i8704!8i4352?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "bfd1a03a-3b36-48dc-8d92-e3530597124a",
+      "name": {
+        "ja": "嚴島神社 大鳥居",
+        "en": "Itsukushima Shrine Torii"
+      },
+      "geo": {
+        "latitude": 34.2969269,
+        "longitude": 132.3192066
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hiroshima-hatsukaichi",
+      "streetViewUrl": "https://www.google.com/maps/@34.2969269,132.3192066,3a,41.2y,297.32h,93.12t/data=!3m7!1e1!3m5!1sAF1QipNo3Nhn4sKNeEBJEdXadFWUl2F8Dk2HQd7FFKJP!2e10!3e11!7i8704!8i4352?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "d9e58863-72df-4a76-8caa-46af15e1fe44",
+      "name": {
+        "ja": "日野市立南平体育館",
+        "en": "Minamidaira Gymnastics"
+      },
+      "geo": {
+        "latitude": 35.6591192,
+        "longitude": 139.3970215
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-hino",
+      "streetViewUrl": "https://www.google.com/maps/@35.6591192,139.3970215,3a,90y,81.95h,98.76t/data=!3m6!1e1!3m4!1sucrHxom6EOTq4v9H5_z-9w!2e0!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MDkxNi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    },
+    {
+      "placeId": "e02723c5-c84a-41a2-9859-4db114611303",
+      "name": {
+        "ja": "鹿苑",
+        "en": "Shikazono"
+      },
+      "geo": {
+        "latitude": 37.7059982,
+        "longitude": 138.8286879
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-niigata-yahiko",
+      "streetViewUrl": "https://www.google.com/maps/place/Shikazono/@37.7059982,138.8286879,3a,44.7y,1.69h,96.67t/data=!3m8!1e1!3m6!1sAF1QipPcIITuANY1Ngx-vcz64dKeN1G5d568YfF2gM1K!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPcIITuANY1Ngx-vcz64dKeN1G5d568YfF2gM1K%3Dw203-h100-k-no-pi-0-ya37.07147-ro-0-fo100!7i8192!8i4096!4m14!1m7!3m6!1s0x5ff4ef6ee5f883d5:0x65920da6ba5f943d!2sYahiko+Shrine!8m2!3d37.7065836!4d138.826233!16s%2Fm%2F0nb2n9d!3m5!1s0x5ff4ef6f66cdfe2f:0xe4ecd222c1fc0e69!8m2!3d37.7062055!4d138.8286495!16s%2Fg%2F11c0pz281w?coh=205409&entry=ttu",
+      "copyright": "©おしおしお・講談社／日野南高校シカ部"
+    }
+  ]
+}

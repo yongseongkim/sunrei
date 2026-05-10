@@ -1,0 +1,725 @@
+{
+  "anime": {
+    "animeId": "TCBZtniKN2tuT2Mr6sFW",
+    "slug": "the-dangers-in-my-heart-2",
+    "title": {
+      "de": "The Dangers in My Heart Staffel 2",
+      "ja": "僕の心のヤバイやつ ２期",
+      "kr": "내 마음의 위험한 녀석 2기",
+      "en": "The Dangers in My Heart Season 2",
+      "id": "The Dangers in My Heart Musim 2",
+      "es": "The Dangers in My Heart Temporada 2"
+    },
+    "author": {
+      "ja": [
+        "桜井のりお"
+      ],
+      "en": [
+        "Norio Sakurai"
+      ],
+      "kr": [
+        "사쿠라이 노리오"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Shin-Ei Animation"
+      ]
+    }
+  },
+  "placeCount": 42,
+  "places": [
+    {
+      "placeId": "1514d7ef-d70c-4721-af02-d941835d14be",
+      "name": {
+        "ja": "ガストロノミー “ジョエル・ロブション”",
+        "kr": "가스트로노미 죠엘로부숑",
+        "en": "Gastronomy “Joël Robuchon”"
+      },
+      "geo": {
+        "latitude": 35.64195,
+        "longitude": 139.71443
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/kjaXpEaPvJHsKmn99",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "15e9db64-c920-48a5-b9ff-f1d7f890d0c9",
+      "name": {
+        "en": "Meguro Shinkin Bank Senzoku Branch",
+        "ja": "目黒信用金庫 洗足支店"
+      },
+      "geo": {
+        "latitude": 35.60982,
+        "longitude": 139.69557
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/bpNFjbJ1ua7DVxnL6",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "18139f8a-74e0-45a1-9579-6d976df7f46d",
+      "name": {
+        "ja": "三井のリパーク 洗足２丁目 駐車場",
+        "en": "Repark Senzoku 2-Chome"
+      },
+      "geo": {
+        "latitude": 35.60955,
+        "longitude": 139.69509
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/gnr4Kj29SVx6eVrt7",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "21ed7550-0430-4047-afa9-b5dac15a262d",
+      "name": {
+        "kr": "센조쿠 역",
+        "ja": "洗足駅",
+        "en": "Senzoku Sta."
+      },
+      "geo": {
+        "latitude": 35.61046,
+        "longitude": 139.69447
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/BFTZymvS3u2epRDm8",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "24ff71a3-5a3c-4e6e-9fec-75e72f5ae4b0",
+      "name": {
+        "en": "Idol On Stage",
+        "ja": "アイドルオンステージ"
+      },
+      "geo": {
+        "latitude": 35.67136,
+        "longitude": 139.70426
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/yTeYQ4pxc3BFckfp9",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "263395fb-1c1d-43f2-838a-935b9c2b656e",
+      "name": {
+        "en": "Takeshita Street Entrance Arch (Harajuku Station)",
+        "ja": "竹下通り 入口アーチ (原宿駅)",
+        "kr": "다케시타도리 입구 아치(하라주쿠역)"
+      },
+      "geo": {
+        "latitude": 35.67152,
+        "longitude": 139.70342
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/B9Pf9d4w589SusHWA",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "2fbe3f46-276b-443b-9627-204e908ba005",
+      "name": {
+        "ja": "品川駅",
+        "en": "Shinagawa Station",
+        "kr": "시나가와 역"
+      },
+      "geo": {
+        "latitude": 35.62895,
+        "longitude": 139.73937
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://maps.app.goo.gl/MJgZrgF9rqUGv3ji9",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "3215de45-ce20-4cfb-a727-ff08ecb6655e",
+      "name": {
+        "ja": "トモズ 洗足駅前店",
+        "en": "Tomod's Senzoku Ekimae Store"
+      },
+      "geo": {
+        "latitude": 35.61071,
+        "longitude": 139.6946
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/yCjjgdYzQEsMBTse6",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "3ad724cb-bd59-4888-8335-66a5ce56b5e6",
+      "name": {
+        "ja": "クローゼットチャイルド原宿１号店",
+        "en": "Closet Child Harajuku"
+      },
+      "geo": {
+        "latitude": 35.67096,
+        "longitude": 139.70534
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/unBJdwgpJeRqnUL79",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "3e5ea8b6-e9a5-4491-be3b-85f00f9f7708",
+      "name": {
+        "ja": "荏原警察署 洗足駐在所",
+        "en": "Senzoku Police Box"
+      },
+      "geo": {
+        "latitude": 35.60978,
+        "longitude": 139.69913
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/fcvJG4jLPNUKMPNy8",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "40e5a9bd-81c9-402e-9a11-15e1b4a10b8a",
+      "name": {
+        "ja": "カンデオホテルズ広島八丁堀",
+        "kr": "칸데오 호텔 히로시마 핫초보리",
+        "en": "CANDEO HOTELS Hiroshima Hatchobori"
+      },
+      "geo": {
+        "latitude": 34.39497,
+        "longitude": 132.46373
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-hiroshima-hiroshima",
+      "streetViewUrl": "https://maps.app.goo.gl/T3HuAiUeNkvXghqEA",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "4116f3ad-ff9f-4691-bbea-c5b602efcc50",
+      "name": {
+        "kr": "도호 시네마 시부야",
+        "en": "TOHO Cinemas Shibuya",
+        "ja": "TOHOシネマズ 渋谷"
+      },
+      "geo": {
+        "latitude": 35.65925,
+        "longitude": 139.69884
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/hbWjub7fs59bL78P7",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "48405cd1-799d-4f75-9b24-a19cadb47ac0",
+      "name": {
+        "ja": "やまきや寝具店",
+        "en": "Yamakiya Bedding Store"
+      },
+      "geo": {
+        "latitude": 35.60952,
+        "longitude": 139.6959
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/7mQXjmaRdo7tAMuB9",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "4d7b321e-f30c-4764-9393-694e9dfe55ad",
+      "name": {
+        "kr": "후시미 이나리 신사",
+        "ja": "伏見稲荷大社",
+        "en": "Fushimi Inari Taisha"
+      },
+      "geo": {
+        "latitude": 34.96651,
+        "longitude": 135.77544
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/PVYSvipRiSTgayji7",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "57c129a4-af9f-44ef-8766-86a379344159",
+      "name": {
+        "ja": "ネコノテ観光業船着場",
+        "en": "Nekonote Sightseeing Pier"
+      },
+      "geo": {
+        "latitude": 34.40745,
+        "longitude": 133.20201
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-hiroshima-onomichi",
+      "streetViewUrl": "https://maps.app.goo.gl/gFCMWApkZTnf1TWW6",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "5a06e905-d12a-4069-8b08-170ce7dd4f67",
+      "name": {
+        "ja": "千本鳥居",
+        "en": "Senbon Torii (Thousand Torii Gates)",
+        "kr": "센본토리이"
+      },
+      "geo": {
+        "latitude": 34.96692,
+        "longitude": 135.77479
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/4tksaUCttr1AFuW8A",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "698c9995-3316-4107-a36c-343b60b22ff1",
+      "name": {
+        "en": "Auguste Rodin Sculpture: \"The Spirit of Eternal Rest\"",
+        "ja": "「永遠なる休息の精」オーギュスト・ロダン"
+      },
+      "geo": {
+        "latitude": 35.64209,
+        "longitude": 139.71413
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/WYrHv5uFmU89X8re7",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "6b889886-30b8-4d07-9160-d56301dce536",
+      "name": {
+        "en": "SoLaDo Takeshita-dori",
+        "ja": "ソラド 竹下通り"
+      },
+      "geo": {
+        "latitude": 35.67053,
+        "longitude": 139.70617
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/9RjyCZQZhoZSgYDJ9",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "71165e78-a226-4a0a-a535-2d1ad81cdb24",
+      "name": {
+        "kr": "기요미즈데라",
+        "en": "Kiyomizu-dera",
+        "ja": "清水寺"
+      },
+      "geo": {
+        "latitude": 34.99474,
+        "longitude": 135.7852
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/FJ6JWffcXoMRkU9H7",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "7b4b70c5-6379-4d41-b707-c31c7964c4ad",
+      "name": {
+        "ja": "ハチ公前広場",
+        "kr": "하치코앞 광장",
+        "en": "Hachiko Square"
+      },
+      "geo": {
+        "latitude": 35.65903,
+        "longitude": 139.70073
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/zuERcd9B81XWotPj8",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "82f6ac1d-55c7-4cb9-a14d-a0ce4e1e4d60",
+      "name": {
+        "kr": "세븐일레븐 에비스아메리카바시점",
+        "ja": "セブン-イレブン 恵比寿アメリカ橋店",
+        "en": "7-Eleven Ebisu America Bridge Store"
+      },
+      "geo": {
+        "latitude": 35.64292,
+        "longitude": 139.71183
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/rm49ZHyiNvTtejB6A",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "93e56377-12b9-41bc-be2c-aaf49c990a9c",
+      "name": {
+        "en": "Able Meguro Senzoku",
+        "ja": "エーブル目黒洗足"
+      },
+      "geo": {
+        "latitude": 35.61479,
+        "longitude": 139.69331
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/fg6HnKcFBLdce6te8",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "97ef03eb-9d90-4a36-995a-e441359dfbe4",
+      "name": {
+        "ja": "プラタナス自転車駐輪場付近",
+        "en": "Puratanasudori Bicycle"
+      },
+      "geo": {
+        "latitude": 35.64129,
+        "longitude": 139.71394
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/L4LpnAcGmrsY9uea6",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "a4944178-271a-4103-8568-2af8d1d1f2d5",
+      "name": {
+        "en": "Town Bakery Hasegawa",
+        "ja": "ハセパン"
+      },
+      "geo": {
+        "latitude": 35.61397,
+        "longitude": 139.69146
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/zwMDQssp72xTnayy6",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "ae7a4158-7d66-46b0-9d01-b4efcf5dd976",
+      "name": {
+        "en": "FamilyMart Haramachi 2-chome store",
+        "ja": "ファミリーマート 原町二丁目店"
+      },
+      "geo": {
+        "latitude": 35.61388,
+        "longitude": 139.69163
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/9KE64ztjLtdp41KH6",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "b05b8a67-b1e4-4ce3-a6dd-c32a6fe37461",
+      "name": {
+        "ja": "恵比寿駅",
+        "en": "Ebisu Station",
+        "kr": "에비스 역"
+      },
+      "geo": {
+        "latitude": 35.64613,
+        "longitude": 139.71063
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/vFzvyKBDeHgtAkwX9",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "b0a4e443-1d41-4529-90bb-d4c53a69ccd5",
+      "name": {
+        "ja": "目黒信用金庫 洗足支店",
+        "en": "Meguro Shinkin Bank Senzoku Branch"
+      },
+      "geo": {
+        "latitude": 35.60973,
+        "longitude": 139.69578
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/m1nJmkd9NaYkpya57",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "b0b02929-6b51-4572-b6bd-5f9759cb98cc",
+      "name": {
+        "en": "Ebisu Station",
+        "kr": "에비스 역",
+        "ja": "恵比寿駅"
+      },
+      "geo": {
+        "latitude": 35.64571,
+        "longitude": 139.71071
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/FQFXxo6VxqZU4iwW8",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "b22a2c6e-be5b-4efe-a0f0-07fc508e1b85",
+      "name": {
+        "en": "Yoshinoya Musashi-Koyama",
+        "ja": "吉野家 武蔵小山店"
+      },
+      "geo": {
+        "latitude": 35.61912,
+        "longitude": 139.70493
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/K4LBqZuMCwo4cZ2X7",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "b298b776-bd0e-42b1-87cf-7c86276bb0de",
+      "name": {
+        "ja": "マリオンクレープ 原宿竹下通り店",
+        "kr": "마리온 크레페 하라주쿠 타케시타도리점",
+        "en": "Marion Crêpes Takeshita Street"
+      },
+      "geo": {
+        "latitude": 35.67123,
+        "longitude": 139.70488
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/t3P6Fn9GJp1MPjv56",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "b30c0b73-0e16-45bf-ac9c-51884d54ce1c",
+      "name": {
+        "en": "Inari Station",
+        "ja": "稲荷駅",
+        "kr": "이나리 역"
+      },
+      "geo": {
+        "latitude": 34.96691,
+        "longitude": 135.77091
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/zL6DTfRfAKm8Mj8p8",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "b34072d3-e958-4827-97bc-8e7e538e79aa",
+      "name": {
+        "ja": "スイーツパラダイス 原宿店",
+        "en": "SWEETS PARADISE Harajuku",
+        "kr": "스위트 파라다이스 하라주쿠점"
+      },
+      "geo": {
+        "latitude": 35.67034,
+        "longitude": 139.70607
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/2FHG8kseJTGL5Lfy6",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "b54fc6c6-9cdc-4362-8b1a-43a839dc694c",
+      "name": {
+        "en": "Grace Estate",
+        "ja": "グレースエステート"
+      },
+      "geo": {
+        "latitude": 35.61125,
+        "longitude": 139.69527
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/TNcTuXch5LuGx4WZA",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "bee44495-292e-472d-9c86-373130b53b89",
+      "name": {
+        "ja": "ガストロノミー “ジョエル・ロブション”",
+        "en": "Gastronomy “Joël Robuchon”",
+        "kr": "가스트로노미 죠엘로부숑"
+      },
+      "geo": {
+        "latitude": 35.64199,
+        "longitude": 139.71447
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/cJYHXkMSRvNiZccG6",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "c1902c78-6002-42fa-af32-ed26e33593f0",
+      "name": {
+        "en": "Nara-miyage hyakka-shoten",
+        "ja": "奈良みやげ百貨商店"
+      },
+      "geo": {
+        "latitude": 34.68378,
+        "longitude": 135.83986
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-nara-nara",
+      "streetViewUrl": "https://maps.app.goo.gl/dZQJqsZ39zEDyH1Y8",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "ce7fdb7f-fdfe-4405-b74f-3dd60c628455",
+      "name": {
+        "ja": "尾道 共楽園",
+        "en": "Onomichi Kyourakuen"
+      },
+      "geo": {
+        "latitude": 34.40973,
+        "longitude": 133.19924
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-hiroshima-onomichi",
+      "streetViewUrl": "https://maps.app.goo.gl/5zdyDMh9uHn1LBUE7",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "d34f69cf-4231-4ae6-aba0-3f252209a95b",
+      "name": {
+        "kr": "가스트로노미 죠엘로부숑",
+        "ja": "ガストロノミー “ジョエル・ロブション”",
+        "en": "Gastronomy “Joël Robuchon”"
+      },
+      "geo": {
+        "latitude": 35.64154,
+        "longitude": 139.71431
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/5NHk8sbGZMQr23MJ7",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "e43c8073-84cd-4733-8c47-ec0697af0839",
+      "name": {
+        "en": "Ginkgo Street Dental Clinic",
+        "ja": "いちょう通り歯科医院"
+      },
+      "geo": {
+        "latitude": 35.60965,
+        "longitude": 139.69591
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/hgpGcbEqDBGmiyH26",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "ee1d1d22-b10a-4db2-b1a7-86388f8bdba4",
+      "name": {
+        "en": "Ukigumo-enchi",
+        "kr": "우키구모 원지",
+        "ja": "浮雲園地"
+      },
+      "geo": {
+        "latitude": 34.68444,
+        "longitude": 135.84073
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-nara-nara",
+      "streetViewUrl": "https://maps.app.goo.gl/QA7rHzUPuUqPP2iYA",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "f75f9820-bbd9-4a90-8042-d2ecf8e7ae95",
+      "name": {
+        "en": "Ginkgo Street Dental Clinic",
+        "ja": "いちょう通り歯科医院"
+      },
+      "geo": {
+        "latitude": 35.60968,
+        "longitude": 139.69681
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinagawa-city",
+      "streetViewUrl": "https://maps.app.goo.gl/dfQE2AHyM84DWkig8",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "fb242a8c-414b-4e07-b456-27c71d16136a",
+      "name": {
+        "kr": "라멘 지로 미타본점",
+        "en": "Ramen Jiro Mita Honten",
+        "ja": "ラーメン二郎 三田本店"
+      },
+      "geo": {
+        "latitude": 35.64804,
+        "longitude": 139.74164
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://maps.app.goo.gl/VgACQ58b3NcBWmgU8",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    },
+    {
+      "placeId": "fc07ef9f-3fdf-45df-87cb-9c7378dfe5a0",
+      "name": {
+        "en": "Meguro Fudoson",
+        "ja": "目黒不動尊"
+      },
+      "geo": {
+        "latitude": 35.62839,
+        "longitude": 139.70826
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://maps.app.goo.gl/fogtARsw5eTBBq2C6",
+      "copyright": "©桜井のりお（秋田書店）／僕ヤバ製作委員会"
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "anime": {
+    "animeId": "elMjTgqvqmXjY2mYsP97",
+    "slug": "ocean-waves",
+    "title": {
+      "ja": "海がきこえる",
+      "kr": "바다가 들린다",
+      "en": "Ocean Waves"
+    },
+    "author": {
+      "kr": [
+        "히무로 사에코"
+      ],
+      "ja": [
+        "氷室冴子"
+      ],
+      "en": [
+        "Saeko Himuro"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "スタジオジブリ"
+      ],
+      "en": [
+        "Studio Ghibli"
+      ],
+      "kr": [
+        "스튜디오 지브리"
+      ]
+    }
+  },
+  "placeCount": 19,
+  "places": [
+    {
+      "placeId": "0d9a4daf-4c0a-4636-8b32-1e5213785445",
+      "name": {
+        "en": "Nishitokuzen Shrine",
+        "ja": "西徳善八幡宮"
+      },
+      "geo": {
+        "latitude": 33.54147,
+        "longitude": 133.69951
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kochi-konan",
+      "streetViewUrl": "https://www.google.co.jp/maps/@33.5414584,133.6992508,3a,58.5y,82.94h,97.63t/data=!3m7!1e1!3m5!1sn14cXVaZ6C5MaJIbbR72lg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.634844418178389%26panoid%3Dn14cXVaZ6C5MaJIbbR72lg%26yaw%3D82.94003728581079!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "0f4da645-45d9-4842-ba8f-9b21cef3cfb5",
+      "name": {
+        "kr": "신주쿠 스미토모 빌딩",
+        "ja": "新宿住友ビル",
+        "en": "Shinjuku Sumitomo Building"
+      },
+      "geo": {
+        "latitude": 35.69067,
+        "longitude": 139.69252
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.co.jp/maps/@35.6908111,139.6938858,3a,88.4y,230.1h,111.19t/data=!3m7!1e1!3m5!1sZUWcNuGhM_FCa1WiROfB4A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-21.193134706062253%26panoid%3DZUWcNuGhM_FCa1WiROfB4A%26yaw%3D230.09543235477275!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "0fc7845f-5418-45a2-926c-fe5395fb8e5a",
+      "name": {
+        "en": "Tenjino Bridge",
+        "ja": "天神大橋"
+      },
+      "geo": {
+        "latitude": 33.55467,
+        "longitude": 133.53756
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kochi-kochi",
+      "streetViewUrl": "https://www.google.co.jp/maps/@33.5547009,133.5375665,3a,65y,203.24h,92.8t/data=!3m7!1e1!3m5!1skkXzPUqr5fEaO3mUeuZ-Gg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.803953672029735%26panoid%3DkkXzPUqr5fEaO3mUeuZ-Gg%26yaw%3D203.23959710622935!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "1fb49da4-bdb2-4d2b-8693-b0a4db99352d",
+      "name": {
+        "ja": "吉祥寺駅",
+        "en": "Kichijoji Station",
+        "kr": "기치조지 역"
+      },
+      "geo": {
+        "latitude": 35.70323,
+        "longitude": 139.58079
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.co.jp/maps/place/Kichij%C5%8Dji+Station/@35.7032849,139.5805109,3a,72.5y,314.98h,92.1t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgICEyMDx_AE!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYBUJysy8uquKDUqGRSf9u103CbUHrwRdKVfepA2PmpR0Hh3Y7hbiDWeK30gWdq5LbLh-sZMvpsEsOQrEMMFv4zQXq4U3FlckLU4bBHPxWSPN2Kwu2395yWlknj9YtYavzlJKE7vg%3Dw900-h600-k-no-pi-2.1018846366917217-ya182.60070781335764-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x6018ee47f6226cc3:0x34e6b69989d52a4e!8m2!3d35.7031485!4d139.5798087!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1tznmcvr?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "2de95650-db5e-45f1-8357-582ab7a08e9c",
+      "name": {
+        "ja": "土佐せれくとしょっぷ てんこす",
+        "en": "Tosa Select Shop Tencos"
+      },
+      "geo": {
+        "latitude": 33.56025,
+        "longitude": 133.54145
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kochi-kochi",
+      "streetViewUrl": "https://www.google.co.jp/maps/@33.5603084,133.541447,3a,73.9y,132.67h,105.69t/data=!3m7!1e1!3m5!1sJ3D2AJhvi2Zl-4YToGJM1A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.687364258127246%26panoid%3DJ3D2AJhvi2Zl-4YToGJM1A%26yaw%3D132.67316284736728!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "3bdb2cde-a595-4a09-aa16-ad99be183d6a",
+      "name": {
+        "en": "Kochi Prefecture Gokoku Shrine",
+        "ja": "高知県護国神社"
+      },
+      "geo": {
+        "latitude": 33.54544,
+        "longitude": 133.57085
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kochi-kochi",
+      "streetViewUrl": "https://www.google.co.jp/maps/@33.5454492,133.570799,3a,60.4y,108.88h,99.2t/data=!3m7!1e1!3m5!1sy1gkuYLS9qPjQB5FVXrakg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.19584549854072%26panoid%3Dy1gkuYLS9qPjQB5FVXrakg%26yaw%3D108.87564377192847!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "45826adb-7509-4dce-8caf-5b0a5c95cabd",
+      "name": {
+        "ja": "ファミリーマート 高知大橋通り店",
+        "en": "FamilyMart; Kochi Ohashi-dori"
+      },
+      "geo": {
+        "latitude": 33.56009,
+        "longitude": 133.53638
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kochi-kochi",
+      "streetViewUrl": "https://www.google.co.jp/maps/@33.5601428,133.5366589,3a,50y,258.73h,89.49t/data=!3m7!1e1!3m5!1sFZG0WwCcaWlACz9cRLSaYQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.5100459517164779%26panoid%3DFZG0WwCcaWlACz9cRLSaYQ%26yaw%3D258.7287013904229!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "4cb1dbd0-5d5b-42c1-b76d-21f900b403d9",
+      "name": {
+        "en": "Tsuki",
+        "ja": "月"
+      },
+      "geo": {
+        "latitude": 33.55585,
+        "longitude": 133.53767
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kochi-kochi",
+      "streetViewUrl": "https://www.google.co.jp/maps/@33.5558621,133.5377795,3a,75y,256.06h,96.4t/data=!3m7!1e1!3m5!1ssl8oEOwPyFlukwAZ5TbKNw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.397673087446137%26panoid%3Dsl8oEOwPyFlukwAZ5TbKNw%26yaw%3D256.0577789203717!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "664432fe-f868-4b2a-9c96-8ca1867e80b6",
+      "name": {
+        "ja": "道の駅 なかとさ",
+        "en": "Roadside Station Nakatosa"
+      },
+      "geo": {
+        "latitude": 33.32437,
+        "longitude": 133.23501
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kochi-nakatosa",
+      "streetViewUrl": "https://www.google.co.jp/maps/@33.3237387,133.2352084,3a,43.4y,342.4h,90.76t/data=!3m7!1e1!3m5!1sPNRQ013aqYuKJBfnkgmbZw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.7607208643908621%26panoid%3DPNRQ013aqYuKJBfnkgmbZw%26yaw%3D342.399818986533!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "69ef32ff-46c7-4613-ba77-7ca369a7cf17",
+      "name": {
+        "en": "Hyatt Regency Tokyo",
+        "kr": "하얏트 리젠시 도쿄"
+      },
+      "geo": {
+        "latitude": 35.6913,
+        "longitude": 139.69203
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.co.jp/maps/@35.6912233,139.6919952,3a,85.7y,265.62h,133.58t/data=!3m7!1e1!3m5!1sXnndbuZ7654bDbCoTP_6ug!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-43.57523555556051%26panoid%3DXnndbuZ7654bDbCoTP_6ug%26yaw%3D265.6152067670558!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "7a775dd4-0e40-4721-9530-d5fb441e2173",
+      "name": {
+        "ja": "天神大橋",
+        "en": "Tenjino Bridge"
+      },
+      "geo": {
+        "latitude": 33.55529,
+        "longitude": 133.53746
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kochi-kochi",
+      "streetViewUrl": "https://www.google.co.jp/maps/@33.5552708,133.5374656,3a,90y,78.96h,94.85t/data=!3m7!1e1!3m5!1sm1hEkJaI8KXuPqoD997hww!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.848737364134664%26panoid%3Dm1hEkJaI8KXuPqoD997hww%26yaw%3D78.95737184503491!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "85052119-d267-47ff-a8ee-9f5db354ece1",
+      "name": {
+        "en": "Ui Eye Clinic",
+        "ja": "宇井眼科医院"
+      },
+      "geo": {
+        "latitude": 35.64605,
+        "longitude": 139.60148
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-setagaya-city",
+      "streetViewUrl": "https://www.google.co.jp/maps/@35.6460694,139.6016458,3a,45.7y,261.76h,92.34t/data=!3m7!1e1!3m5!1sfLY6gr39ZBvgDShZXNfyKQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.3390473042426976%26panoid%3DfLY6gr39ZBvgDShZXNfyKQ%26yaw%3D261.75916189811244!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "97799dff-ed3b-4037-8359-78535213511d",
+      "name": {
+        "en": "FamilyMart Kochi Harimayahco 1-chome",
+        "ja": "ファミリーマート 高知はりまや町一丁目店"
+      },
+      "geo": {
+        "latitude": 33.56084,
+        "longitude": 133.54293
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kochi-kochi",
+      "streetViewUrl": "https://www.google.co.jp/maps/@33.560865,133.5430013,3a,81.5y,179.04h,100.54t/data=!3m7!1e1!3m5!1s158G-UHWoX5hblHRH7f-mw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.540000000000006%26panoid%3D158G-UHWoX5hblHRH7f-mw%26yaw%3D179.04!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "9d1dc959-ede4-4624-9f59-463a999c0fda",
+      "name": {
+        "en": "Kochi Castle",
+        "ja": "高知城",
+        "kr": "고치성"
+      },
+      "geo": {
+        "latitude": 33.56061,
+        "longitude": 133.5337
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kochi-kochi",
+      "streetViewUrl": "https://www.google.co.jp/maps/@33.5606358,133.5337683,3a,44.1y,273.65h,105.89t/data=!3m7!1e1!3m5!1sDHXsyyB-_l_1o04Zb00wsA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.88833087358826%26panoid%3DDHXsyyB-_l_1o04Zb00wsA%26yaw%3D273.65465736032075!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "ba005308-0f19-4631-85c9-4e41590a5e26",
+      "name": {
+        "ja": "高知県護国神社",
+        "en": "Kochi Prefecture Gokoku Shrine"
+      },
+      "geo": {
+        "latitude": 33.54526,
+        "longitude": 133.57141
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kochi-kochi",
+      "streetViewUrl": "https://www.google.co.jp/maps/@33.5452434,133.5715247,3a,48.8y,283.86h,84.73t/data=!3m7!1e1!3m5!1slx76ONKW2jj2zM9sb5IQuA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D5.273887905995409%26panoid%3Dlx76ONKW2jj2zM9sb5IQuA%26yaw%3D283.8617085923168!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "d6726b9c-6717-4124-a847-bd9a8b960f82",
+      "name": {
+        "en": "BOSTON CAFE"
+      },
+      "geo": {
+        "latitude": 33.56134,
+        "longitude": 133.54008
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kochi-kochi",
+      "streetViewUrl": "https://www.google.co.jp/maps/@33.5613216,133.5399894,3a,68.7y,260.35h,101.29t/data=!3m7!1e1!3m5!1slzAURRyrn0owx3k1ux3p2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.289100496054388%26panoid%3DlzAURRyrn0owx3k1ux3p2A%26yaw%3D260.35082919317955!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "d92b144c-696d-416e-8d26-c2f196189126",
+      "name": {
+        "en": "Tokyo Metropolitan Assembly Building",
+        "ja": "東京都議会議事堂"
+      },
+      "geo": {
+        "latitude": 35.68903,
+        "longitude": 139.69286
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.co.jp/maps/@35.6890163,139.692968,3a,84.3y,307.92h,105.2t/data=!3m7!1e1!3m5!1s4c22Y4VgVAz6VBx60xyA2Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.202714751170078%26panoid%3D4c22Y4VgVAz6VBx60xyA2Q%26yaw%3D307.92054726961226!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "dbc7e40f-3288-4843-81b4-a25e7775da2b",
+      "name": {
+        "en": "Kochi Airport",
+        "ja": "高知空港（高知龍馬空港）",
+        "kr": "고치 공항"
+      },
+      "geo": {
+        "latitude": 33.54745,
+        "longitude": 133.67445
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kochi-nankoku",
+      "streetViewUrl": "https://www.google.co.jp/maps/@33.547382,133.6745585,2a,55y,299.61h,92.74t/data=!3m7!1e1!3m5!1s7nje4Qbj4opp8ocLrRI-hQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.739999999999995%26panoid%3D7nje4Qbj4opp8ocLrRI-hQ%26yaw%3D299.61!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    },
+    {
+      "placeId": "fed2e41e-eee9-4fb5-8d72-2dca4633b03a",
+      "name": {
+        "en": "Kichijoji Station",
+        "kr": "기치조지 역",
+        "ja": "吉祥寺駅"
+      },
+      "geo": {
+        "latitude": 35.70307,
+        "longitude": 139.58079
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-musashino",
+      "streetViewUrl": "https://www.google.co.jp/maps/place/Kichij%C5%8Dji+Station/@35.7032849,139.5805109,3a,81.8y,196.8h,86.81t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICEyMDx_AE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZJXP_2xlqTFLwyVck7tKz4odC82uHetDStXmTEjqdG-koHPqui58GA8nfw_meM6s1mjBoo0PbIqe4d7IqZRxg4AOunBbeyKAjSf5PG7ygggnw1mZe6Zq7VxFREBDxZ4-DL_-sK0Q%3Dw900-h600-k-no-pi3.185232453995951-ya64.42913779650777-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x6018ee47f6226cc3:0x34e6b69989d52a4e!8m2!3d35.7031485!4d139.5798087!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1tznmcvr?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 1993 Saeko Himuro/Keiko Niwa/Studio Ghibli, N"
+    }
+  ]
+}

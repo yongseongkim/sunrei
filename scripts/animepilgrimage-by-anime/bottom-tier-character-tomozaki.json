@@ -1,0 +1,973 @@
+{
+  "anime": {
+    "animeId": "eHyev9i9uF8t1YZFk8B7",
+    "slug": "bottom-tier-character-tomozaki",
+    "title": {
+      "ja": "弱キャラ友崎くん",
+      "kr": "약캐 토모자키 군",
+      "en": "Bottom-tier Character Tomozaki"
+    },
+    "author": {
+      "en": [
+        "Yuki Yaku"
+      ],
+      "kr": [
+        "야쿠 유우키"
+      ],
+      "ja": [
+        "屋久ユウキ"
+      ]
+    },
+    "studio": {
+      "en": [
+        "project No.9"
+      ]
+    }
+  },
+  "placeCount": 58,
+  "places": [
+    {
+      "placeId": "0025fd8c-d6ed-4229-a2b0-df77e4ff4e2e",
+      "name": {
+        "ja": "上落合整形外科・内科",
+        "en": "Kamiochiai Orthopaedic Surgeon and Internal Medicine"
+      },
+      "geo": {
+        "latitude": 35.88919,
+        "longitude": 139.62803
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/kPeV28bUnid6KvHg7",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "052bf5ee-73a1-4104-901d-38217137eb17",
+      "name": {
+        "en": "TEPCO Power Grid Yono substation",
+        "ja": "東京電力パワーグリッド（株）与野変電所"
+      },
+      "geo": {
+        "latitude": 35.88784,
+        "longitude": 139.62865
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/He5RJsnYovJoup9t9",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "0af7709b-c863-439f-9e6e-49cd582040d1",
+      "name": {
+        "en": "Lumine Omiyaokujoteien Green Peace Garden",
+        "ja": "ルミネ大宮屋上庭園 グリーンピースガーデン"
+      },
+      "geo": {
+        "latitude": 35.90624,
+        "longitude": 139.62463
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/f2vyX5DAvNkvvDbN8",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "10a613d4-fd0c-4ad5-9b94-d08257c5f62e",
+      "name": {
+        "ja": "さわらびの湯",
+        "en": "Sawarabino-yu"
+      },
+      "geo": {
+        "latitude": 35.87138,
+        "longitude": 139.18115
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-hanno",
+      "streetViewUrl": "https://maps.app.goo.gl/1P6E9r82Kpj6kZNH8",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "1c10533c-7f48-497f-995e-f26ccd7756c6",
+      "name": {
+        "en": "Toda Koen Ekihigashiguchi Ryokuchi Park",
+        "kr": "도다공원역 동측 출입구 녹지",
+        "ja": "戸田公園駅東口緑地"
+      },
+      "geo": {
+        "latitude": 35.80587,
+        "longitude": 139.68017
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-saitama-toda",
+      "streetViewUrl": "https://maps.app.goo.gl/akUZUHLb4idMkfzZ8",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "1d41b5a7-4af2-4c78-b435-f3d1f750de30",
+      "name": {
+        "en": "Coffee house Hakushaku Tei",
+        "ja": "カフェ&デリ 伯爵邸"
+      },
+      "geo": {
+        "latitude": 35.90847,
+        "longitude": 139.62547
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/1XiotDZ8a6iob7PP7",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "1f140a3a-d953-4e1e-9f7d-0a7cb9155201",
+      "name": {
+        "ja": "スペイン坂",
+        "kr": "스페인자카",
+        "en": "Spain-zaka Slope"
+      },
+      "geo": {
+        "latitude": 35.66097,
+        "longitude": 139.69876
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/WcJNHswrHCmeLyyZ9",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "2392d8a0-3f4e-446b-8e36-05e262d32c02",
+      "name": {
+        "en": "Kenny's Family Village Auto Campground",
+        "ja": "ケニーズ・ファミリー・ビレッジ/オートキャンプ場"
+      },
+      "geo": {
+        "latitude": 35.8798,
+        "longitude": 139.18306
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-saitama-hanno",
+      "streetViewUrl": "https://maps.app.goo.gl/5Qpm5Xc727AK7kwe8",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "23eee1e6-1464-44ad-842d-06c1a71af4c7",
+      "name": {
+        "en": "Omiya Sta. (Bus)",
+        "ja": "大宮駅西口 (バス)"
+      },
+      "geo": {
+        "latitude": 35.90556,
+        "longitude": 139.62273
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/1vmq1HwyN4CzSP7B9",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "24d7c036-e746-40b4-a1d5-09662c2359d9",
+      "name": {
+        "ja": "池袋駅",
+        "kr": "이케부쿠로 역",
+        "en": "Ikebukuro Station"
+      },
+      "geo": {
+        "latitude": 35.72902,
+        "longitude": 139.7113
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://maps.app.goo.gl/ygUd1fGCSJhxkjrR7",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "2692196d-3c1f-4ff2-87fe-0c35df8ee9dd",
+      "name": {
+        "ja": "大宮駅西口 (バス)",
+        "en": "Omiya Sta. (Bus)"
+      },
+      "geo": {
+        "latitude": 35.90531,
+        "longitude": 139.62274
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/tLhkqNNmMiTxRyrGA",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "2763e9a5-b5f3-4226-806a-62ef7d05eef3",
+      "name": {
+        "ja": "ケニーズ・ファミリー・ビレッジ/オートキャンプ場",
+        "en": "Kenny's Family Village Auto Campground"
+      },
+      "geo": {
+        "latitude": 35.88046,
+        "longitude": 139.18244
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-hanno",
+      "streetViewUrl": "https://maps.app.goo.gl/k15LEhS71t7RgvmK7",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "2aa85ac8-ecfa-4262-a428-5fc0077fd63f",
+      "name": {
+        "ja": "戸田公園駅",
+        "kr": "도다코엔 역",
+        "en": "Toda-Koen Station"
+      },
+      "geo": {
+        "latitude": 35.80766,
+        "longitude": 139.67812
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-saitama-toda",
+      "streetViewUrl": "https://maps.app.goo.gl/WevRHHa9YgG1BBWf7",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "2c4e077a-af7e-409c-844f-4e84d857e558",
+      "name": {
+        "en": "Hanno Station",
+        "kr": "한노 역",
+        "ja": "飯能駅"
+      },
+      "geo": {
+        "latitude": 35.85119,
+        "longitude": 139.32007
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-hanno",
+      "streetViewUrl": "https://maps.app.goo.gl/iaAc4HzCdQFR2SyeA",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "2d6b41f7-f3ae-4318-92c6-3758f68e4dad",
+      "name": {
+        "kr": "기타요노 역",
+        "ja": "北与野駅",
+        "en": "Kita-Yono Station"
+      },
+      "geo": {
+        "latitude": 35.89033,
+        "longitude": 139.62878
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/ySgaKvsCpeCGZ7uh7",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "3358f46f-96eb-415a-973d-aed583757f42",
+      "name": {
+        "ja": "大宮駅",
+        "en": "Omiya Station",
+        "kr": "오미야 역"
+      },
+      "geo": {
+        "latitude": 35.90644,
+        "longitude": 139.62415
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/w7D3nihVSoKksvFY9",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "35565f8f-bbcc-4252-b83b-82ca5c48a11e",
+      "name": {
+        "kr": "오미야 역",
+        "ja": "大宮駅",
+        "en": "Omiya Station"
+      },
+      "geo": {
+        "latitude": 35.90661,
+        "longitude": 139.6232
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/qL6WEwbrwpLQzBLz5",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "37779fa8-8aa9-42a3-bb20-de8a4641ad19",
+      "name": {
+        "en": "“Soaring Together and Participating in Peace”",
+        "ja": "「飛翔ふれあいと参加平和」"
+      },
+      "geo": {
+        "latitude": 35.9059,
+        "longitude": 139.62246
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/BDiq4kgkYQabBUJc8",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "45b3c8c0-fcbb-4dbb-b5b2-e6a13348b899",
+      "name": {
+        "en": "Alusa Kita-Yono Porte 29",
+        "ja": "アルーサ北与野ポルテ29"
+      },
+      "geo": {
+        "latitude": 35.88957,
+        "longitude": 139.62807
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/dQ4Lf2F9Jk4uuYcJA",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "4893dd06-7961-4568-b9a3-bd7f356002b3",
+      "name": {
+        "en": "Saitama Resona Bank, Omiya Branch, West Exit Branch Office",
+        "ja": "埼玉りそな銀行 大宮支店 西口出張所"
+      },
+      "geo": {
+        "latitude": 35.90555,
+        "longitude": 139.62322
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/cL5eyetqKmAX536KA",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "49fdb72e-e07b-44b8-8882-1f1e22646684",
+      "name": {
+        "ja": "ハンドメイドと雑貨のお店mini*",
+        "en": "Handmade Goods and Accessories Shop mini*"
+      },
+      "geo": {
+        "latitude": 35.90946,
+        "longitude": 139.62955
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/zyMXwSVQKc6A5riWA",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "4dc5778e-077b-434a-b845-2afce4899fe6",
+      "name": {
+        "en": "Auto Shop Quick",
+        "ja": "オートショップQuick"
+      },
+      "geo": {
+        "latitude": 35.96709,
+        "longitude": 139.71265
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/ktsC1ebYYu2cteMu6",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "4e5fa1ee-bed8-4d02-9313-152537cd25d0",
+      "name": {
+        "en": "Ootoya Omiya Suzuran-dori",
+        "ja": "大戸屋ごはん処 大宮すずらん通り店"
+      },
+      "geo": {
+        "latitude": 35.90707,
+        "longitude": 139.62641
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/byBRatpyhzzHomeE6",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "4f4deb5a-cac7-460e-b2e9-dda3ae1230ed",
+      "name": {
+        "en": "The Alley - Lumine Omiya",
+        "ja": "THE ALLEY ルミネ大宮店"
+      },
+      "geo": {
+        "latitude": 35.90632,
+        "longitude": 139.62262
+      },
+      "ep": 1,
+      "type": "OP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/LQ2oKPJVH5eG197c6",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "541b83f5-59e1-4a43-8798-3252a959f010",
+      "name": {
+        "en": "Gusto Higashi-Iwatsuki",
+        "ja": "ガスト 東岩槻店"
+      },
+      "geo": {
+        "latitude": 35.96578,
+        "longitude": 139.71087
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/XDLqi29gzDvQSWop8",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "5595a1db-504b-4021-9956-f5070714eda5",
+      "name": {
+        "en": "Palm Cottage V",
+        "ja": "パームコテージⅤ"
+      },
+      "geo": {
+        "latitude": 35.88728,
+        "longitude": 139.62882
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/vxQNzucdwmnTkBay6",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "5dfc901a-f992-409f-b4eb-fdd2ca8da75b",
+      "name": {
+        "ja": "ケヤキ薬局",
+        "en": "Keyaki Pharmacy"
+      },
+      "geo": {
+        "latitude": 35.88242,
+        "longitude": 139.6291
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/Am4ygv7RpuSiywu46",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "5e947b98-7db0-40a2-9438-392fbb2f101b",
+      "name": {
+        "ja": "花積第一駐車場",
+        "en": "Hanazumi No. 1 Parking Lot"
+      },
+      "geo": {
+        "latitude": 35.96866,
+        "longitude": 139.71354
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-kasukabe",
+      "streetViewUrl": "https://maps.app.goo.gl/jqu4gQEiosfWaUbd9",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "65f24463-173f-4b02-bfb4-787954f628da",
+      "name": {
+        "kr": "히가시이와쓰키 역",
+        "en": "Higashi-Iwatsuki Station",
+        "ja": "東岩槻駅"
+      },
+      "geo": {
+        "latitude": 35.9631,
+        "longitude": 139.7118
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/Cd9ohyP2ECFSyFN58",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "6f4ff8e4-0ffc-4278-8e45-e71ec561e2ff",
+      "name": {
+        "ja": "西谷公園",
+        "en": "Nishitani Park"
+      },
+      "geo": {
+        "latitude": 35.8833,
+        "longitude": 139.62677
+      },
+      "ep": 6,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/KSvSVjMiCv8Bt5cZ6",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "7579338d-3eb2-446a-981a-19c02ad55fd6",
+      "name": {
+        "en": "Omiya Arshe",
+        "ja": "大宮アルシェ"
+      },
+      "geo": {
+        "latitude": 35.90609,
+        "longitude": 139.62215
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/1DF7qwwDCCqRRqEAA",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "85455c38-5fee-4cf5-b732-986655fbd6c7",
+      "name": {
+        "ja": "ドラッグストアセキ 東岩槻店",
+        "en": "Drugstore Seki Higashi-Iwatsuki"
+      },
+      "geo": {
+        "latitude": 35.96594,
+        "longitude": 139.71096
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/TWG2ayDg7UHRyrLc6",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "86e82db9-0ac5-44f4-bbfe-edaf42738991",
+      "name": {
+        "en": "WWW"
+      },
+      "geo": {
+        "latitude": 35.66163,
+        "longitude": 139.69875
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/M6xioudxH2bBAQLr5",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "88379c20-dc75-4382-8450-46198905a2a3",
+      "name": {
+        "ja": "忠犬ハチ公像",
+        "kr": "하치코 동상",
+        "en": "Hachiko Statue"
+      },
+      "geo": {
+        "latitude": 35.65905,
+        "longitude": 139.70064
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/235RhXfwgpTt3vUa8",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "909e6a4e-66ea-403d-bf5c-bb414fe24d8e",
+      "name": {
+        "ja": "オートショップQuick",
+        "en": "Auto Shop Quick"
+      },
+      "geo": {
+        "latitude": 35.96742,
+        "longitude": 139.71304
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-kasukabe",
+      "streetViewUrl": "https://maps.app.goo.gl/gZNCXtYWNPfPbgRD6",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "982e53ee-29db-4cbf-bfb4-539d8870fc28",
+      "name": {
+        "en": "fino"
+      },
+      "geo": {
+        "latitude": 35.88952,
+        "longitude": 139.62964
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/hhc3kCEBQYPs1SoP9",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "a5726813-dc30-4687-8fd4-88995a35e49e",
+      "name": {
+        "ja": "まいばすけっと 与野本町駅東店",
+        "en": "My Basket Yono Honmachiekihigashi Shop"
+      },
+      "geo": {
+        "latitude": 35.88194,
+        "longitude": 139.63009
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/TxyPAbEMrfRWK98Y8",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "ba8065d6-a46b-4f0f-a69d-062051b2db54",
+      "name": {
+        "ja": "ビームス 大宮",
+        "en": "BEAMS OMIYA"
+      },
+      "geo": {
+        "latitude": 35.90614,
+        "longitude": 139.62401
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/aKpiW85XBSwshYMA7",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "bef238ed-f87e-41c1-8cd0-c29a101a789a",
+      "name": {
+        "ja": "荒川運動公園",
+        "kr": "아라카와운동 공원",
+        "en": "Arakawa Undo Park"
+      },
+      "geo": {
+        "latitude": 35.80067,
+        "longitude": 139.6808
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-saitama-toda",
+      "streetViewUrl": "https://maps.app.goo.gl/3ZiPtTdJKQPxpCqC8",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "c4409aa4-2200-4aa8-b3a6-71bf40043440",
+      "name": {
+        "ja": "びゅうサイトタワー",
+        "en": "View Site Tower"
+      },
+      "geo": {
+        "latitude": 35.88845,
+        "longitude": 139.62829
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/QM2zmX97DAngGyZF8",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "c637d28b-8f12-413c-84b1-58d22081d246",
+      "name": {
+        "en": "Omotejionji Danchi Maeno Park",
+        "ja": "表慈恩寺団地 前の公園"
+      },
+      "geo": {
+        "latitude": 35.96892,
+        "longitude": 139.71271
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/HGuxfaY8GsL7Ak5W6",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "cc408212-0215-4292-885e-81ad5aa5c782",
+      "name": {
+        "en": "Espoir Iwatsuki",
+        "ja": "エスポワール岩槻"
+      },
+      "geo": {
+        "latitude": 35.96674,
+        "longitude": 139.71224
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/VhJ7L3z2wjk1Vjrz7",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "cd7890b6-0df4-4f2b-8aec-6b5335445f78",
+      "name": {
+        "en": "Omiya Station",
+        "kr": "오미야 역",
+        "ja": "大宮駅"
+      },
+      "geo": {
+        "latitude": 35.90597,
+        "longitude": 139.62304
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/9fdqctKGYKpTvqAS9",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "cd815dde-a695-4349-9617-ddc88fc94f2e",
+      "name": {
+        "en": "Gong Cha Arshe Omiya Store",
+        "ja": "ゴンチャ アルシェ大宮店"
+      },
+      "geo": {
+        "latitude": 35.90624,
+        "longitude": 139.62216
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/Zj2isCNoJE1nMb6r8",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "cfc11963-5c5b-494d-8e2b-b52151765242",
+      "name": {
+        "en": "Karaoke Big Echo Omiya Minami Ginza Street",
+        "ja": "カラオケ ビッグエコー大宮南銀通り店"
+      },
+      "geo": {
+        "latitude": 35.90576,
+        "longitude": 139.62557
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/aaKf3Kdfp9QaZH1m6",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "d0db1d27-86dc-486f-b04e-eb315535a839",
+      "name": {
+        "ja": "THE ALLEY ルミネ大宮店",
+        "en": "The Alley - Lumine Omiya"
+      },
+      "geo": {
+        "latitude": 35.90633,
+        "longitude": 139.62246
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/KmNqEwZc5aFaXa6X8",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "d3f83148-bb7b-4204-8ad1-6cdd6e9ad8c9",
+      "name": {
+        "ja": "サンドラッグ 大宮東口駅前店",
+        "en": "Sundrug Omiya East Exit Station Store"
+      },
+      "geo": {
+        "latitude": 35.90761,
+        "longitude": 139.62498
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/wfJQtbQabn5GsFzA6",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "d4626fc5-1067-4742-b206-bf2be45131a1",
+      "name": {
+        "ja": "東岩槻駅",
+        "en": "Higashi-Iwatsuki Station",
+        "kr": "히가시이와쓰키 역"
+      },
+      "geo": {
+        "latitude": 35.96312,
+        "longitude": 139.71169
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/ARzdbkywcXoP5st68",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "d59ee69a-1575-4173-9fa9-6b92ab7ab014",
+      "name": {
+        "ja": "ミニストップ 大宮東口店",
+        "en": "Ministop Omiya East Exit Store"
+      },
+      "geo": {
+        "latitude": 35.90778,
+        "longitude": 139.62505
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/7YKEorYnBrgYCxRJA",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "dc5cfcb4-e9ef-444e-9f6a-b6f8bce662a9",
+      "name": {
+        "en": "Lipps Shibuya",
+        "ja": "LIPPS hair 渋谷"
+      },
+      "geo": {
+        "latitude": 35.66203,
+        "longitude": 139.69672
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://maps.app.goo.gl/fJgJyJLFf127kP3x5",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "dd4483bf-2888-47ed-b3a5-2b1fd69cb090",
+      "name": {
+        "en": "Bic Camera Omiya Nishiguchi Sogo",
+        "ja": "ビックカメラ 大宮西口そごう店",
+        "kr": "빅카메라 오미야 니시구치 소고"
+      },
+      "geo": {
+        "latitude": 35.9045,
+        "longitude": 139.62132
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/V3C4DJKkwWa8dLNJ6",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "e06503ad-5153-4031-8188-6228181fe84d",
+      "name": {
+        "kr": "무사시우라와에키니시구치 (버스)",
+        "ja": "武蔵浦和駅西口（バス）",
+        "en": "Musashi Urawa Eki Nishiguchi (Bus)"
+      },
+      "geo": {
+        "latitude": 35.84541,
+        "longitude": 139.64625
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/Pgv8AxjnC1WW4siT9",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "e0bdb243-fd44-4488-aef2-16531cb0d08f",
+      "name": {
+        "ja": "まいばすけっと 与野本町駅東店",
+        "en": "My Basket Yono Honmachiekihigashi Shop"
+      },
+      "geo": {
+        "latitude": 35.88186,
+        "longitude": 139.62967
+      },
+      "ep": 8,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/U4PGr5tGkTf2kgU28",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "e802ebfe-a03e-44fd-a01e-5b03d972d411",
+      "name": {
+        "en": "Hanazumi Tanaka Parking Lot",
+        "ja": "花積田中駐車場"
+      },
+      "geo": {
+        "latitude": 35.97,
+        "longitude": 139.71274
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/ibsoU6Z4wj2Tsyqz9",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "f5d22615-41c3-4e4b-86d9-8d415099df63",
+      "name": {
+        "en": "Shimochiaihikawa Shrine",
+        "ja": "氷川神社"
+      },
+      "geo": {
+        "latitude": 35.88438,
+        "longitude": 139.62884
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/eHxWHNQce4Lbzfxt5",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "f74f071c-3948-4cae-9e38-af119d6d764b",
+      "name": {
+        "ja": "ローソン 東岩槻駅北口店",
+        "en": "Lawson Higashi-Iwatsuki Station North Exit Store",
+        "kr": "로손 히가시이와츠키역키타구치점"
+      },
+      "geo": {
+        "latitude": 35.96383,
+        "longitude": 139.71223
+      },
+      "ep": 7,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/ThkmtB5Q3zmKTRSP6",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "0b242400-bfe9-46bb-b48c-65a546bc9fb1",
+      "name": {
+        "ja": "ケニーズ・ファミリー・ビレッジ/オートキャンプ場",
+        "en": "Kenny's Family Village Auto Campground"
+      },
+      "geo": {
+        "latitude": 35.88046,
+        "longitude": 139.18339
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-saitama-hanno",
+      "streetViewUrl": "https://maps.app.goo.gl/4hDd9qqTsaDvmb8W6",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    },
+    {
+      "placeId": "4c73f4e6-9c6d-4b46-9e17-6fb69e24d687",
+      "name": {
+        "ja": "スターバックス コーヒー ルミネ大宮 LUMINE2店",
+        "en": "Starbucks Coffee - Lumine Omiya LUMINE 2",
+        "kr": "스타벅스 루미네 오미야 2"
+      },
+      "geo": {
+        "latitude": 35.90654,
+        "longitude": 139.62453
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-saitama-saitama",
+      "streetViewUrl": "https://maps.app.goo.gl/bV3RcebdgSWdnCXX8",
+      "copyright": "©屋久ユウキ・小学館／「弱キャラ友崎くん」製作委員会"
+    }
+  ]
+}

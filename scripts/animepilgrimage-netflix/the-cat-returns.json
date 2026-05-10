@@ -1,0 +1,100 @@
+{
+  "anime": {
+    "animeId": "m6CFZQrjKW65ycCZE0zC",
+    "slug": "the-cat-returns",
+    "title": {
+      "ja": "猫の恩返し",
+      "kr": "고양이의 보은",
+      "en": "The Cat Returns"
+    },
+    "author": {
+      "ja": [
+        "柊あおい"
+      ],
+      "en": [
+        "Aoi Hiiragi"
+      ],
+      "kr": [
+        "히이라기 아오이"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "スタジオジブリ"
+      ],
+      "en": [
+        "Studio Ghibli"
+      ],
+      "kr": [
+        "스튜디오 지브리"
+      ]
+    }
+  },
+  "placeCount": 4,
+  "places": [
+    {
+      "placeId": "2e6664f7-3cb2-48ca-bd86-3c9e6d4bcafe",
+      "name": {
+        "ja": "神宮前歩道橋",
+        "en": "Jingumae Pedestrian Bridge"
+      },
+      "geo": {
+        "latitude": 35.667475,
+        "longitude": 139.7071892
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.667475,139.7071892,3a,63.5y,331.96h,97.96t/data=!3m7!1e1!3m5!1sLt6IA_9qAH902Xet2hORKQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DLt6IA_9qAH902Xet2hORKQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D8.018471%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?hl=en&entry=ttu",
+      "copyright": "© 2002 Aoi Hiiragi/Reiko Yoshida/Studio Ghibli, NDHMT"
+    },
+    {
+      "placeId": "8dc57c95-bf63-46bf-9de4-2c0b827e073d",
+      "name": {
+        "en": "Cake Boutique MYNT",
+        "ja": "ケーキブティックミント"
+      },
+      "geo": {
+        "latitude": 35.6974782,
+        "longitude": 139.6444534
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6974782,139.6444534,3a,75y,21.84h,105.21t/data=!3m6!1e1!3m4!1s8dGa82cYsGW5T2Ip23rdhA!2e0!7i13312!8i6656?hl=en&entry=ttu",
+      "copyright": "© 2002 Aoi Hiiragi/Reiko Yoshida/Studio Ghibli, NDHMT"
+    },
+    {
+      "placeId": "a052e5f1-581e-4e72-886d-1b5a17003f64",
+      "name": {
+        "en": "Yokohama Motomachi Shopping Street",
+        "ja": "横浜元町ショッピングストリート"
+      },
+      "geo": {
+        "latitude": 35.4411647,
+        "longitude": 139.6501499
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-yokohama",
+      "streetViewUrl": "https://www.google.com/maps/@35.4411647,139.6501499,3a,75y,59.78h,93.19t/data=!3m6!1e1!3m4!1sCAwj99PqrWXL2UB0Uc0_Ag!2e0!7i16384!8i8192?hl=en&entry=ttu",
+      "copyright": "© 2002 Aoi Hiiragi/Reiko Yoshida/Studio Ghibli, NDHMT"
+    },
+    {
+      "placeId": "e5d035a9-4ca4-4f0b-9f7c-b1a2d348d4d0",
+      "name": {
+        "ja": "阿佐ヶ谷南一丁目",
+        "en": "Asagaya Minami 1 Chome"
+      },
+      "geo": {
+        "latitude": 35.7022398,
+        "longitude": 139.6361687
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-suginami-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Asagaya+Minami+1+Chome/@35.7022398,139.6361687,3a,90y,184.6h,97.62t/data=!3m6!1e1!3m4!1sOGBIIhA-_wHS5mfiCJIDjQ!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x6018f27148ef1c27:0x1d8f932a69ce2157!2sAsagaya+Minami+1+Chome!8m2!3d35.702084!4d139.63607!16s%2Fg%2F11fmpclh50!3m5!1s0x6018f27148ef1c27:0x1d8f932a69ce2157!8m2!3d35.702084!4d139.63607!16s%2Fg%2F11fmpclh50?hl=en&entry=ttu",
+      "copyright": "© 2002 Aoi Hiiragi/Reiko Yoshida/Studio Ghibli, NDHMT"
+    }
+  ]
+}

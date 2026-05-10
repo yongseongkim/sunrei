@@ -1,0 +1,317 @@
+{
+  "anime": {
+    "animeId": "A3z4LwVo0l6qQmaYFKdg",
+    "slug": "bang-dream",
+    "title": {
+      "en": "BanG Dream!"
+    },
+    "author": {
+      "en": [
+        "ISSEN"
+      ]
+    },
+    "studio": {
+      "en": [
+        "ISSEN",
+        "XEBEC"
+      ]
+    }
+  },
+  "placeCount": 18,
+  "places": [
+    {
+      "placeId": "0850f00d-1df4-4265-8afb-5cb6432ff362",
+      "name": {
+        "en": "Munatsuki-zaka Slope",
+        "ja": "胸突坂"
+      },
+      "geo": {
+        "latitude": 35.71266,
+        "longitude": 139.72357
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7126145,139.7235485,3a,90y,35.95h,108.39t/data=!3m7!1e1!3m5!1s5jSLrgFGI2QYeftyMC755Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.387430559573644%26panoid%3D5jSLrgFGI2QYeftyMC755Q%26yaw%3D35.94698646275204!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "098dd930-b7cb-4958-b1d9-e4a7b731c2ec",
+      "name": {
+        "kr": "하네다 공항 제2터미널 역",
+        "ja": "羽田空港第2ターミナル駅",
+        "en": "Haneda Airport Terminal 2 Station"
+      },
+      "geo": {
+        "latitude": 35.55052,
+        "longitude": 139.78839
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.5505664,139.7884714,2a,90y,232.26h,91.49t/data=!3m7!1e1!3m5!1sbPORTr-lvOQ3N0gm9uI6uQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.4933657751897442%26panoid%3DbPORTr-lvOQ3N0gm9uI6uQ%26yaw%3D232.25599840991748!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "0a6e88af-5a19-48c3-acdd-f6cfbfd0983f",
+      "name": {
+        "ja": "滝野川警察署 飛鳥山交番",
+        "en": "Asukayama Police box",
+        "kr": "다키노가와경찰서 아스카야마파출소"
+      },
+      "geo": {
+        "latitude": 35.75071,
+        "longitude": 139.73754
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-kita-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7506915,139.7376003,3a,90y,210.87h,95.08t/data=!3m7!1e1!3m5!1s8NIbdRbHwjpl92vVc-ODhw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.08251403883996%26panoid%3D8NIbdRbHwjpl92vVc-ODhw%26yaw%3D210.8674223407405!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "0e114e96-ff13-4a75-b47d-a50697634095",
+      "name": {
+        "en": "Old Brewing Laboratory Site Park",
+        "ja": "醸造試験所跡地公園"
+      },
+      "geo": {
+        "latitude": 35.75128,
+        "longitude": 139.73575
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-kita-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7511895,139.7359709,3a,86.1y,308.73h,99.76t/data=!3m7!1e1!3m5!1soL4GGW1lSzBoDpA5q0Xwhg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.756639265229637%26panoid%3DoL4GGW1lSzBoDpA5q0Xwhg%26yaw%3D308.729005020957!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "0f3d0404-8d2d-40df-ab75-c624ed292118",
+      "name": {
+        "ja": "早稲田駅（都電）",
+        "kr": "와세다 역",
+        "en": "Waseda Station"
+      },
+      "geo": {
+        "latitude": 35.71176,
+        "longitude": 139.7193
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7117593,139.7194242,3a,90y,268.61h,97.81t/data=!3m7!1e1!3m5!1scXRSl8bwyQGJ_S4VvijGsQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.814065896454252%26panoid%3DcXRSl8bwyQGJ_S4VvijGsQ%26yaw%3D268.6093970528156!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "17f94bb3-8737-44ac-afff-05725d3a0a3c",
+      "name": {
+        "en": "Asukayama Station",
+        "kr": "아스카야마 역",
+        "ja": "飛鳥山駅"
+      },
+      "geo": {
+        "latitude": 35.75019,
+        "longitude": 139.73744
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-kita-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Asukayama+Station/@35.7502156,139.7373722,3a,90y,112.76h,92.03t/data=!3m7!1e1!3m5!1sAF1QipMO6GjeDYvFiBSWco6RMBFXf-PO_-IoVCTAOsiW!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipMO6GjeDYvFiBSWco6RMBFXf-PO_-IoVCTAOsiW%3Dw900-h600-k-no-pi-2.0315197701605996-ya53.741019714485994-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x60189278d5fd003f:0xa696df5437e72ed4!8m2!3d35.7501771!4d139.7373504!10e5!14m1!1BCgIgARICCAI!16s%2Fm%2F047m3qc?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "1e7f70ae-d9f1-4c2c-b5fe-c1e2d36f566d",
+      "name": {
+        "ja": "ジーンハート株式会社",
+        "en": "Geneheart Inc."
+      },
+      "geo": {
+        "latitude": 35.71214,
+        "longitude": 139.71745
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7121973,139.7174528,3a,75y,195.32h,96.1t/data=!3m7!1e1!3m5!1sycwJxqj5gO1J276ibm1DTw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.100762438592199%26panoid%3DycwJxqj5gO1J276ibm1DTw%26yaw%3D195.32498795400772!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "3d46aa69-d17e-4dca-bde1-c643e0c028c5",
+      "name": {
+        "en": "Higo-Hosokawa Garden",
+        "kr": "히고호소카와 정원",
+        "ja": "肥後細川庭園"
+      },
+      "geo": {
+        "latitude": 35.71259,
+        "longitude": 139.72214
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7125699,139.7221741,3a,90y,284.93h,95.32t/data=!3m7!1e1!3m5!1sP89pxHC1fcfO3Ro2fwlUPw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.319531636751435%26panoid%3DP89pxHC1fcfO3Ro2fwlUPw%26yaw%3D284.93124717811315!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "3e89afd2-9d61-4bb6-a2f2-2efa89c1e79f",
+      "name": {
+        "ja": "アイパーク駐車場文京関口第１",
+        "en": "I-Park Parking Bunkyo Sekiguchi No.1"
+      },
+      "geo": {
+        "latitude": 35.71137,
+        "longitude": 139.72304
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7113243,139.7230315,3a,63.4y,201.1h,97.47t/data=!3m7!1e1!3m5!1suJw4qHOiKf5aF8IfKEr06A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.472972024254375%26panoid%3DuJw4qHOiKf5aF8IfKEr06A%26yaw%3D201.10051645135158!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "5195d1a0-8cd2-4911-9656-b593d41fa78e",
+      "name": {
+        "ja": "飛鳥山公園歩道橋",
+        "en": "Asukayama Koen Hodo Bridge"
+      },
+      "geo": {
+        "latitude": 35.75105,
+        "longitude": 139.73725
+      },
+      "ep": 11,
+      "type": "EP",
+      "cityId": "JP-tokyo-kita-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.751225,139.7372459,3a,75y,162.59h,106.62t/data=!3m7!1e1!3m5!1sU0Nw7QaUT-kZiZzGA7MmBQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-16.622045251054928%26panoid%3DU0Nw7QaUT-kZiZzGA7MmBQ%26yaw%3D162.59258515967116!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "5681a4c5-f966-494e-860c-dc185d608a7f",
+      "name": {
+        "en": "Edogawa Park",
+        "ja": "文京区立江戸川公園"
+      },
+      "geo": {
+        "latitude": 35.71059,
+        "longitude": 139.72635
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7104178,139.7263923,3a,75y,2.29h,92.87t/data=!3m8!1e1!3m6!1sAF1QipOFfpGE0GgL-zwtKaKbC9q5gNW3SnFcx00UADpK!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipOFfpGE0GgL-zwtKaKbC9q5gNW3SnFcx00UADpK%3Dw900-h600-k-no-pi-2.8665698915463196-ya73.31029089526919-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "6199df07-4341-4d50-a8da-d165b4b71321",
+      "name": {
+        "en": "Edogawabashi Jizo-dori Shopping Street",
+        "ja": "江戸川橋地蔵通り商店街"
+      },
+      "geo": {
+        "latitude": 35.70833,
+        "longitude": 139.7318
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7083165,139.7318666,3a,90y,313.35h,95.73t/data=!3m7!1e1!3m5!1sXnWCHT7Dh2vIgo9madvR-g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.728960297020734%26panoid%3DXnWCHT7Dh2vIgo9madvR-g%26yaw%3D313.34985133763246!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "93b5f59a-521e-4847-99b2-ca1b72d516db",
+      "name": {
+        "ja": "都電雑司ヶ谷駅",
+        "kr": "도덴조시가야 역",
+        "en": "Toden-Zoshigaya Station"
+      },
+      "geo": {
+        "latitude": 35.72405,
+        "longitude": 139.71774
+      },
+      "ep": 10,
+      "type": "EP",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7241435,139.7179583,3a,75y,245.5h,95.03t/data=!3m7!1e1!3m5!1slfa7MLawqn2I-Xv81BXtdQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.032833006804154%26panoid%3Dlfa7MLawqn2I-Xv81BXtdQ%26yaw%3D245.49981667988206!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "a011f811-b60f-4b11-b56c-9f93140de8aa",
+      "name": {
+        "ja": "駒塚橋",
+        "en": "Komatsuka Bridge"
+      },
+      "geo": {
+        "latitude": 35.71211,
+        "longitude": 139.72332
+      },
+      "ep": 2,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7119573,139.7232847,3a,44.6y,16.66h,90.57t/data=!3m7!1e1!3m5!1sNk9-k95J255Kju_HGgoaBQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.5670452199175458%26panoid%3DNk9-k95J255Kju_HGgoaBQ%26yaw%3D16.65881269780867!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "abae8c02-0cc2-4a6d-a9f3-c6162ed8de7d",
+      "name": {
+        "en": "Bunkyo Mejiro-dai1 Post Office",
+        "ja": "文京目白台一郵便局"
+      },
+      "geo": {
+        "latitude": 35.71503,
+        "longitude": 139.7247
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7150106,139.7247342,3a,90y,325.48h,83.56t/data=!3m7!1e1!3m5!1sI9NuaC49lHNq0F1KiSimWQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D6.441968355220524%26panoid%3DI9NuaC49lHNq0F1KiSimWQ%26yaw%3D325.4834646847309!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "c2ddaeb8-d425-4fc2-9ddf-d5731b64abe8",
+      "name": {
+        "en": "Ki no shita",
+        "ja": "㐂の下"
+      },
+      "geo": {
+        "latitude": 35.7058,
+        "longitude": 139.72013
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7058774,139.720184,3a,90y,219.3h,96.66t/data=!3m7!1e1!3m5!1sLQWpGXs2V1ywvY3KBdqyEw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.664245172661808%26panoid%3DLQWpGXs2V1ywvY3KBdqyEw%26yaw%3D219.3043947390433!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "f13390e6-0d3d-462c-82dd-a9416687567f",
+      "name": {
+        "ja": "飛鳥山前郵便局",
+        "en": "Asukayama Post Office"
+      },
+      "geo": {
+        "latitude": 35.75082,
+        "longitude": 139.73708
+      },
+      "ep": 1,
+      "type": "OP",
+      "cityId": "JP-tokyo-kita-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7507896,139.7371124,3a,90y,2.08h,105.86t/data=!3m7!1e1!3m5!1s4-5U_wW2910f-CwmRfW2uQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.858483917081927%26panoid%3D4-5U_wW2910f-CwmRfW2uQ%26yaw%3D2.0792114128325263!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    },
+    {
+      "placeId": "fc797b62-e2b5-412a-842b-a729545fa09f",
+      "name": {
+        "ja": "ヴィラ目白台",
+        "en": "Villa Mejirodai"
+      },
+      "geo": {
+        "latitude": 35.71416,
+        "longitude": 139.72475
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-tokyo-bunkyo-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7140169,139.7246122,3a,74y,40.12h,101.87t/data=!3m7!1e1!3m5!1s-IIU0a8pzQpKn2tGdHQ13Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.867141514731173%26panoid%3D-IIU0a8pzQpKn2tGdHQ13Q%26yaw%3D40.12415033699243!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©BanG Dream! Project"
+    }
+  ]
+}

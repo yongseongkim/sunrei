@@ -5,7 +5,7 @@ description: This skill should be used when the user asks to "convert YouTube to
 
 # YouTube to Sunrei — Full Workflow
 
-Orchestrate the complete YouTube-to-Sunrei pipeline with interactive checkpoints. This chains all 4 individual skills into a single guided flow.
+Orchestrate the complete YouTube-to-Sunrei pipeline with interactive checkpoints. This chains the individual skills into a single guided flow, following the unified Step 1 → Step 2 → Step 3 model shared with `animepilgrimage-to-sunrei`. YouTube's Step 1 has two sub-stages (1a fetch metadata, 1b extract transcripts) because each is independently invokable.
 
 ## Usage
 
@@ -16,7 +16,9 @@ The user provides a YouTube video or playlist URL as an argument. Example:
 
 ## Workflow
 
-### Step 1: Fetch Video Info
+### Step 1: Extract Info
+
+#### Step 1a: Fetch Video Info
 
 Execute the `/youtube-fetch-info` skill with the provided URL.
 
@@ -27,7 +29,7 @@ Execute the `/youtube-fetch-info` skill with the provided URL.
 
 Checkpoint: Confirm with user before proceeding to transcript extraction.
 
-### Step 2: Extract Transcripts
+#### Step 1b: Extract Transcripts
 
 Execute the `/youtube-extract-transcript` skill.
 
@@ -39,7 +41,7 @@ Execute the `/youtube-extract-transcript` skill.
 
 Checkpoint: All transcripts must be approved before proceeding.
 
-### Step 3: Extract Locations
+### Step 2: Extract Locations
 
 Execute the `/youtube-extract-locations` skill.
 
@@ -52,15 +54,14 @@ Execute the `/youtube-extract-locations` skill.
 
 Checkpoint: User must approve location list before Sunrei creation.
 
-### Step 4: Create Sunrei
+### Step 3: Create Sunrei
 
-Execute the `/youtube-create-sunrei` skill.
+Execute the shared `/create-sunrei` skill with `--workspace .claude/workspace/youtube/{ID}`.
 
-- Requires admin authentication: `SUNREI_ADMIN_TOKEN` must be set in `.claude/.env`. If missing, run: `uv run --with requests python .claude/scripts/auth/login.py`
-- Auto-set title, description, and link from video_info.json; select tags if available
-- Build SunreiSpots from extracted locations
-- Create via server admin API (all requests require `Authorization: Bearer ${TOKEN}` header)
-- Report created Sunrei ID and summary
+- Reads `sunrei.json` (assembled at the end of Step 2) — already includes `_source.registryKey="youtube/{channelId}.json"` and `_source.tagCandidates`
+- Resolves tags (matches existing or auto-creates), dry-run preview, user confirmation, then POSTs to `/admin/sunreis`
+- On 201: appends a per-channel entry to `s3://sunrei-resources/youtube/{channelId}.json` (asks the user for an `aws-vault` profile)
+- Reports created Sunrei ID and summary
 
 ## Error Handling
 

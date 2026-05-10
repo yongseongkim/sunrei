@@ -1,0 +1,179 @@
+{
+  "anime": {
+    "animeId": "YLZiKMcAArdDWFoFtsY4",
+    "slug": "ruri-rocks",
+    "title": {
+      "ja": "瑠璃の宝石",
+      "kr": "루리의 보석",
+      "en": "Ruri Rocks"
+    },
+    "author": {
+      "kr": [
+        "시부야 케이이치로"
+      ],
+      "en": [
+        "Keiichiro Shibuya"
+      ],
+      "ja": [
+        "渋谷圭一郎"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Studio Bind"
+      ],
+      "ja": [
+        "スタジオバインド"
+      ]
+    }
+  },
+  "placeCount": 9,
+  "places": [
+    {
+      "placeId": "20ff511f-4c2d-4bda-a006-d28bb21d2597",
+      "name": {
+        "ja": "東久留米市立中央図書館",
+        "en": "Higashikurume City Central Library"
+      },
+      "geo": {
+        "latitude": 35.75495,
+        "longitude": 139.52176
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-tokyo-higashikurume",
+      "streetViewUrl": "https://www.google.com/maps/@35.7547659,139.5218769,3a,54y,349.23h,96.16t/data=!3m7!1e1!3m5!1smnufRwdq1v0FaX9iT1LGeQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.16014971121956%26panoid%3DmnufRwdq1v0FaX9iT1LGeQ%26yaw%3D349.2276788539414!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025 渋谷圭一郎/KADOKAWA/「瑠璃の宝石」製作委員会"
+    },
+    {
+      "placeId": "5368da86-4705-431d-880a-82bd27cd2b4a",
+      "name": {
+        "ja": "笹洞鉱山ミネラルハンティングガイドツアー",
+        "en": "Sasahora Mine Mineral Hunting Guide Tour"
+      },
+      "geo": {
+        "latitude": 35.64256,
+        "longitude": 137.11926
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-gifu-gero",
+      "streetViewUrl": "https://www.google.com/maps/@35.6424821,137.1193715,3a,90y,331.28h,104.95t/data=!3m7!1e1!3m5!1siJcg-p2KAJGm8Ny_-hCiIw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.946315789473687%26panoid%3DiJcg-p2KAJGm8Ny_-hCiIw%26yaw%3D331.27842105263153!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkwMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025 渋谷圭一郎/KADOKAWA/「瑠璃の宝石」製作委員会"
+    },
+    {
+      "placeId": "7e54b3af-85c3-4af0-9bba-76ffe80ba928",
+      "name": {
+        "en": "Joyful Honda Nitta",
+        "ja": "ジョイフル本田 新田店"
+      },
+      "geo": {
+        "latitude": 36.30268,
+        "longitude": 139.3026
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-gunma-ota",
+      "streetViewUrl": "https://www.google.com/maps/@36.303192,139.3043882,3a,42y,247.52h,96.01t/data=!3m7!1e1!3m5!1s9vIdhnVdvFIH7S6GGQr_aw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.012690556019493%26panoid%3D9vIdhnVdvFIH7S6GGQr_aw%26yaw%3D247.52326503548377!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025 渋谷圭一郎/KADOKAWA/「瑠璃の宝石」製作委員会"
+    },
+    {
+      "placeId": "8c06aba4-ddec-47ad-b2c3-d0186b92bec2",
+      "name": {
+        "en": "Takasaki Station",
+        "ja": "高崎駅",
+        "kr": "다카사키 역"
+      },
+      "geo": {
+        "latitude": 36.32271,
+        "longitude": 139.01153
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-gunma-takasaki",
+      "streetViewUrl": "https://www.google.com/maps/@36.3225927,139.0115442,3a,90y,172.95h,108.24t/data=!3m7!1e1!3m5!1spC-0q93jHPhUmq65nfTeRQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-18.24053337691724%26panoid%3DpC-0q93jHPhUmq65nfTeRQ%26yaw%3D172.9510877968306!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025 渋谷圭一郎/KADOKAWA/「瑠璃の宝石」製作委員会"
+    },
+    {
+      "placeId": "a1118132-0b30-476a-a33c-831c44606b05",
+      "name": {
+        "ja": "道の駅 大滝温泉",
+        "en": "Roadside Station Otaki-onsen"
+      },
+      "geo": {
+        "latitude": 35.94992,
+        "longitude": 138.93811
+      },
+      "ep": 3,
+      "type": "EP",
+      "cityId": "JP-saitama-chichibu",
+      "streetViewUrl": "https://www.google.com/maps/place/Roadside+Station+Otaki-onsen/@35.9503803,138.9381995,3a,90y,224.54h,96.15t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICEx9GrQg!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HaYDR-SDo_dnOHSebLzGHoFy4E4KaovJZGqJNO6pbP6sME-mjLsij8CpKXgmgM3880bU5zwmyD-znA9Cdn1S1txfZ0dkneE0cbJ8jxRWKB_MmMSSEwxNK9vp4kziM59-4zhNvJ9%3Dw900-h600-k-no-pi-6.145554210279656-ya359.54426577469917-ro0-fo100!7i5376!8i2688!4m9!3m8!1s0x601eb16ade704e0d:0x4d8b0bc0d5d6f0e4!8m2!3d35.9501536!4d138.9379174!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F122xqj0r?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025 渋谷圭一郎/KADOKAWA/「瑠璃の宝石」製作委員会"
+    },
+    {
+      "placeId": "a9745c74-a154-48b1-9a86-74ddf0513028",
+      "name": {
+        "ja": "群馬大学桐生正門前(バス)",
+        "en": "Gunmadaigaku kiryuseimon mae(Bus)"
+      },
+      "geo": {
+        "latitude": 36.42241,
+        "longitude": 139.34682
+      },
+      "ep": 12,
+      "type": "EP",
+      "cityId": "JP-gunma-kiryu",
+      "streetViewUrl": "https://www.google.com/maps/@36.422625,139.3467933,3a,48.7y,167.98h,96.55t/data=!3m7!1e1!3m5!1sgl9XaNKQJrpQJ9aI6TgeGA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.5513258147664%26panoid%3Dgl9XaNKQJrpQJ9aI6TgeGA%26yaw%3D167.9788360130906!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025 渋谷圭一郎/KADOKAWA/「瑠璃の宝石」製作委員会"
+    },
+    {
+      "placeId": "b487c7e4-0333-48dd-b50f-1e4d88a882b9",
+      "name": {
+        "en": "Kanaguya",
+        "kr": "카나구야",
+        "ja": "歴史の宿金具屋"
+      },
+      "geo": {
+        "latitude": 36.73476,
+        "longitude": 138.43286
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-nagano-yamanochi",
+      "streetViewUrl": "https://www.google.com/maps/@36.7347709,138.4328927,2a,90y,256.54h,90t/data=!3m7!1e1!3m5!1sMYdxmvpFFhuWrwyvATZ1xA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.002749166392106872%26panoid%3DMYdxmvpFFhuWrwyvATZ1xA%26yaw%3D256.5389629008836!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025 渋谷圭一郎/KADOKAWA/「瑠璃の宝石」製作委員会"
+    },
+    {
+      "placeId": "ba6cc58e-2183-4a98-b652-c36de4754048",
+      "name": {
+        "ja": "道の駅 オアシスおぶせ",
+        "en": "Roadside Station Oasis Obuse"
+      },
+      "geo": {
+        "latitude": 36.68899,
+        "longitude": 138.29479
+      },
+      "ep": 13,
+      "type": "EP",
+      "cityId": "JP-nagano-obuse",
+      "streetViewUrl": "https://www.google.com/maps/@36.6887964,138.2948304,2a,73.5y,346.83h,98.4t/data=!3m7!1e1!3m5!1sJDfDa2mJophbxd5acpWXkw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.396708482424174%26panoid%3DJDfDa2mJophbxd5acpWXkw%26yaw%3D346.8300077794352!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025 渋谷圭一郎/KADOKAWA/「瑠璃の宝石」製作委員会"
+    },
+    {
+      "placeId": "d944adbd-2a23-4255-ba77-de10923579fa",
+      "name": {
+        "en": "Former Katsuragatani Reservoir Dam",
+        "ja": "旧桂ヶ谷貯水池堰堤"
+      },
+      "geo": {
+        "latitude": 34.11851,
+        "longitude": 131.38661
+      },
+      "ep": 9,
+      "type": "EP",
+      "cityId": "JP-yamaguchi-yamaguchi",
+      "streetViewUrl": "https://www.google.com/maps/@34.1185259,131.386643,3a,89.8y,103.1h,98.59t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIC996vyyQE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HaUtNAIcJuPyWtVMkKOTvzxBJA7nTsO3eL8JNlLIQCZ4Nr3vEy_4S_TBIztIwZowWIrts9FUXn9gXTmqAYTKwZdRM0cjd69Rn0Z7l-r09HjqNDhdqGDk0m62AiKyz4Mfdx9o74hqQ%3Dw900-h600-k-no-pi-8.590092948531705-ya36.663057997399534-ro0-fo100!7i7296!8i3648?entry=ttu&g_ep=EgoyMDI1MDkwMi4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©2025 渋谷圭一郎/KADOKAWA/「瑠璃の宝石」製作委員会"
+    }
+  ]
+}

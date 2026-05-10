@@ -1,0 +1,94 @@
+{
+  "anime": {
+    "animeId": "NudLgt4nu08ywcI9EayS",
+    "slug": "komi-cant-communicate",
+    "title": {
+      "ja": "古見さんは、コミュ症です。",
+      "kr": "코미 양은 커뮤증입니다",
+      "en": "Komi Can't Communicate"
+    },
+    "author": {
+      "ja": [
+        "オダトモヒト"
+      ],
+      "en": [
+        "Tomohito Oda"
+      ],
+      "kr": [
+        "오다 토모히토"
+      ]
+    },
+    "studio": {
+      "en": [
+        "OLM"
+      ]
+    }
+  },
+  "placeCount": 4,
+  "places": [
+    {
+      "placeId": "1fdb45eb-23ca-4802-b914-1de39d1f9d25",
+      "name": {
+        "ja": "大和駅ビル プロス",
+        "en": "Pross"
+      },
+      "geo": {
+        "latitude": 35.4699592,
+        "longitude": 139.4624788
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-yamato",
+      "streetViewUrl": "https://www.google.com/maps/@35.4699592,139.4624788,3a,75y,261.28h,109.21t/data=!3m7!1e1!3m5!1suVqufDk3nk6YOPJxuzRkPg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DuVqufDk3nk6YOPJxuzRkPg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D221.36452%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©オダトモヒト・小学館／私立伊旦高校"
+    },
+    {
+      "placeId": "8e7017ab-6f25-4911-8d21-83157a32a687",
+      "name": {
+        "en": "Yomiuriland-mae Station",
+        "ja": "読売ランド前駅"
+      },
+      "geo": {
+        "latitude": 35.6144395,
+        "longitude": 139.5280423
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.6144395,139.5280423,3a,47.2y,47.01h,95.56t/data=!3m6!1e1!3m4!1sQFjKDmJmVG8-7edZ8gl8PA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©オダトモヒト・小学館／私立伊旦高校"
+    },
+    {
+      "placeId": "c6f61548-a962-4458-b537-358470879a05",
+      "name": {
+        "ja": "よみうりランド",
+        "en": "Yomiuri Land"
+      },
+      "geo": {
+        "latitude": 35.6235374,
+        "longitude": 139.5207931
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-kawasaki",
+      "streetViewUrl": "https://www.google.com/maps/@35.6235374,139.5207931,3a,48.8y,347.67h,95.89t/data=!3m6!1e1!3m4!1sxa-KXENVxv-pVdwl3Ejo8A!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©オダトモヒト・小学館／私立伊旦高校"
+    },
+    {
+      "placeId": "fe3c0ce5-1f56-41b0-a39a-f8ceaca7da23",
+      "name": {
+        "en": "Chuo 1 Go Park",
+        "ja": "中央１号公園"
+      },
+      "geo": {
+        "latitude": 35.4678155,
+        "longitude": 139.4595265
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kanagawa-yamato",
+      "streetViewUrl": "https://www.google.com/maps/@35.4678155,139.4595265,3a,38.4y,123.02h,91.85t/data=!3m7!1e1!3m5!1sJQToCC5F8OXZ5PBsR5874A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DJQToCC5F8OXZ5PBsR5874A%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D91.15029%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©オダトモヒト・小学館／私立伊旦高校"
+    }
+  ]
+}

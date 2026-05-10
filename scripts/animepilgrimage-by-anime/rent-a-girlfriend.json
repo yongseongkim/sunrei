@@ -1,0 +1,282 @@
+{
+  "anime": {
+    "animeId": "4qj55JHEmZFWloUisn7T",
+    "slug": "rent-a-girlfriend",
+    "title": {
+      "ja": "彼女、お借りします",
+      "kr": "여친, 빌리겠습니다",
+      "en": "Rent-A-Girlfriend"
+    },
+    "author": {
+      "ja": [
+        "宮島礼吏"
+      ],
+      "en": [
+        "Reiji Miyajima"
+      ],
+      "kr": [
+        "미야지마 레이지"
+      ]
+    },
+    "studio": {
+      "ja": [
+        "トムス・エンタテインメント"
+      ],
+      "en": [
+        "TMS Entertainment"
+      ]
+    }
+  },
+  "placeCount": 15,
+  "places": [
+    {
+      "placeId": "09842568-7e37-460c-a339-e1da388d26e2",
+      "name": {
+        "en": "Asakusa Sta.",
+        "ja": "浅草駅"
+      },
+      "geo": {
+        "latitude": 35.7111915,
+        "longitude": 139.797864
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7111915,139.797864,2a,75y,20.44h,104.2t/data=!3m6!1e1!3m4!1sRufFU6CPEZBT9OtGnmzd2g!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    },
+    {
+      "placeId": "10a09d35-60e5-4c5a-809b-0ebc60dd1a19",
+      "name": {
+        "ja": "駒場東大前駅",
+        "en": "Komaba-todaimae"
+      },
+      "geo": {
+        "latitude": 35.6587721,
+        "longitude": 139.6829019
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6587721,139.6829019,3a,90y,16.42h,93.24t/data=!3m7!1e1!3m5!1svPJIwMFul0BU1P5Dc2tHmA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DvPJIwMFul0BU1P5Dc2tHmA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D300.79767%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    },
+    {
+      "placeId": "287e41fd-3183-4eba-965c-4fa4908656a0",
+      "name": {
+        "id": "Sekitar Mixalive TOKYO",
+        "en": "Near the Mixalive TOKYO",
+        "ja": "Mixalive TOKYO付近",
+        "de": "In der Nähe des Mixalive TOKYO",
+        "es": "Cerca de la Mixalive TOKYO"
+      },
+      "geo": {
+        "latitude": 35.729719,
+        "longitude": 139.7148611
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.729719,139.7148611,3a,75y,63.71h,96.54t/data=!3m6!1e1!3m4!1sUwDhOu2xO-QIflCTqInFuQ!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    },
+    {
+      "placeId": "2aae55b5-ec04-43da-8b12-180c646a7365",
+      "name": {
+        "ja": "伊豆急下田駅",
+        "en": "Izukyu-Shimoda"
+      },
+      "geo": {
+        "latitude": 34.6790747,
+        "longitude": 138.944736
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shizuoka-shimoda",
+      "streetViewUrl": "https://www.google.com/maps/@34.6790747,138.944736,3a,90y,293.98h,98.69t/data=!3m7!1e1!3m5!1simhLUiJoHyiPJgikZCO8rA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DimhLUiJoHyiPJgikZCO8rA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D205.19382%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    },
+    {
+      "placeId": "43ff1895-4e9f-4f73-b40e-56c5bfd3aca5",
+      "name": {
+        "ja": "東武練馬駅",
+        "en": "Tobu-nerima Station"
+      },
+      "geo": {
+        "latitude": 35.7684999,
+        "longitude": 139.6614902
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-nerima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7684999,139.6614902,3a,75y,327.1h,99.92t/data=!3m7!1e1!3m5!1srBOy5KwACn8x2MkVZU-wXQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DrBOy5KwACn8x2MkVZU-wXQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D87.496506%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    },
+    {
+      "placeId": "57ccd2f2-6616-45d6-bfe2-f6e55bf796f6",
+      "name": {
+        "ja": "白浜大浜海水浴場",
+        "en": "Shirahama beach"
+      },
+      "geo": {
+        "latitude": 34.688162,
+        "longitude": 138.9724396
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shizuoka-shimoda",
+      "streetViewUrl": "https://www.google.com/maps/@34.688162,138.9724396,3a,90y,188.48h,98.23t/data=!3m8!1e1!3m6!1sAF1QipOsVOfyQekNqfmdexKkXtP913y_ID3KT-qr-SPy!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOsVOfyQekNqfmdexKkXtP913y_ID3KT-qr-SPy%3Dw203-h100-k-no-pi-0-ya111.48466-ro-0-fo100!7i8704!8i4352?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    },
+    {
+      "placeId": "77d5eaa3-6358-49d8-8c51-9dbc50ac89fb",
+      "name": {
+        "ja": "浅草花やしき",
+        "en": "Asakusa Hanayashiki"
+      },
+      "geo": {
+        "latitude": 35.7151292,
+        "longitude": 139.795058
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7151292,139.795058,3a,90y,345.18h,98.99t/data=!3m7!1e1!3m5!1s5FNWi2Lh7UmIFWJhByssMQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D5FNWi2Lh7UmIFWJhByssMQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D51.10708%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    },
+    {
+      "placeId": "7bca1fe4-24de-4cd2-b7d5-27c07d0a3cb9",
+      "name": {
+        "id": "Sekitar Doutor Coffee Shop Yoyogi Hachiman Branch",
+        "es": "Cerca de la Doutor Coffee Shop Yoyogi Hachiman Branch",
+        "de": "In der Nähe des Doutor Coffee Shop Yoyogi Hachiman Branch",
+        "ja": "ドトールコーヒーショップ 代々木八幡店付近",
+        "en": "Near the Doutor Coffee Shop Yoyogi Hachiman Branch"
+      },
+      "geo": {
+        "latitude": 35.6690956,
+        "longitude": 139.6889534
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shibuya",
+      "streetViewUrl": "https://www.google.com/maps/@35.6690956,139.6889534,3a,75y,26.76h,92.43t/data=!3m7!1e1!3m5!1smW-GVCjCIUp9y-uppkf1rQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DmW-GVCjCIUp9y-uppkf1rQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D311.92645%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    },
+    {
+      "placeId": "854cedd0-fca2-4152-97be-ad3ad549b6ce",
+      "name": {
+        "en": "Shibamata Taishakuten",
+        "ja": "柴又帝釈天"
+      },
+      "geo": {
+        "latitude": 35.7581291,
+        "longitude": 139.8780995
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-katsushika-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7581291,139.8780995,3a,90y,75.71h,102.33t/data=!3m6!1e1!3m4!1seJpbjlBfA-nOcTKuzqTD1w!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    },
+    {
+      "placeId": "9d3d2c23-879f-46a7-beae-e4d8245128cd",
+      "name": {
+        "ja": "雷門",
+        "en": "Kaminarimon"
+      },
+      "geo": {
+        "latitude": 35.7109323,
+        "longitude": 139.7963119
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7109323,139.7963119,3a,75y,4.41h,99.53t/data=!3m7!1e1!3m5!1svxNO5RgWRyh3zbrXaZd1hQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DvxNO5RgWRyh3zbrXaZd1hQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D30.113226%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    },
+    {
+      "placeId": "9d408b9f-fb1f-47b4-b6b2-0ad6d73b3066",
+      "name": {
+        "ja": "ファミリーマート 下田白浜店",
+        "en": "FamilyMart Shimoda Shirahama"
+      },
+      "geo": {
+        "latitude": 34.6907407,
+        "longitude": 138.9722638
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shizuoka-shimoda",
+      "streetViewUrl": "https://www.google.com/maps/@34.6907407,138.9722638,3a,66y,249.55h,94.56t/data=!3m7!1e1!3m5!1sB17QhwM6lRt9xQrCcjP2Sw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DB17QhwM6lRt9xQrCcjP2Sw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D114.86735%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    },
+    {
+      "placeId": "a81d8fdb-ba9b-48e4-9435-8539eeed5de0",
+      "name": {
+        "ja": "GiGO 池袋3号館",
+        "en": "GiGO Ikebukuro No.3"
+      },
+      "geo": {
+        "latitude": 35.7298648,
+        "longitude": 139.7129253
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7298648,139.7129253,3a,75y,83.11h,98.1t/data=!3m6!1e1!3m4!1s7OXPjr18cwZIhSxjc_rYwA!2e0!7i16384!8i8192?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    },
+    {
+      "placeId": "cfc1fb35-81d9-4df0-aebe-29e7b0471911",
+      "name": {
+        "ja": "本堂",
+        "en": "Senso-ji main hall"
+      },
+      "geo": {
+        "latitude": 35.7145079,
+        "longitude": 139.7963545
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7145079,139.7963545,2a,75y,86.73h,105.4t,0r/data=!3m6!1e1!3m4!1sUyQsto0qpL_CoWnvRoNSTw!2e0!7i13312!8i6656?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    },
+    {
+      "placeId": "f1085f77-90f4-4445-a953-c6be381d7afc",
+      "name": {
+        "id": "Sekitar Naka-itabashi Station",
+        "ja": "中板橋駅付近",
+        "de": "In der Nähe des Naka-itabashi Station",
+        "es": "Cerca de la Naka-itabashi Station",
+        "en": "Near the Naka-itabashi Station"
+      },
+      "geo": {
+        "latitude": 35.7556032,
+        "longitude": 139.6964881
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-itabashi-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7556032,139.6964881,3a,75y,254.49h,92.45t/data=!3m7!1e1!3m5!1sJlIWQPGFz9QexvGC1-vhKw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DJlIWQPGFz9QexvGC1-vhKw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D285.3343%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    },
+    {
+      "placeId": "fb36cd52-d865-49bb-a578-49ca672b3368",
+      "name": {
+        "ja": "東京オペラシティ サンクンガーデン",
+        "en": "Tokyo Opera City Sankun Garden"
+      },
+      "geo": {
+        "latitude": 35.6825136,
+        "longitude": 139.6870753
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6825136,139.6870753,2a,90y,78.53h,99.56t/data=!3m7!1e1!3m5!1sPYWcp5s3R9m3gyBpl3kY5Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DPYWcp5s3R9m3gyBpl3kY5Q%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D99.15403%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?entry=ttu",
+      "copyright": "© 宮島礼吏・講談社／「彼女、お借りします」製作委員会"
+    }
+  ]
+}

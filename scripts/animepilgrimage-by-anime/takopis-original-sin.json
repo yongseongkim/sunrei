@@ -1,0 +1,229 @@
+{
+  "anime": {
+    "animeId": "xfD3SAgNnScPXtkyEpGo",
+    "slug": "takopis-original-sin",
+    "title": {
+      "ja": "タコピーの原罪",
+      "en": "Takopi's Original Sin",
+      "kr": "타코피의 원죄",
+      "enH": "takopī no genzai",
+      "jaH": "たこぴーのげんざい"
+    },
+    "author": {
+      "ja": [
+        "タイザン5"
+      ],
+      "en": [
+        "Taizan 5"
+      ],
+      "kr": [
+        "타이잔5"
+      ]
+    },
+    "studio": {
+      "en": [
+        "ENISHIYA"
+      ]
+    }
+  },
+  "placeCount": 12,
+  "places": [
+    {
+      "placeId": "1f2db751-0a94-4a85-8e80-c621ade78186",
+      "name": {
+        "ja": "柳島歩道橋",
+        "en": "Yanagishima Pedestrian bridge"
+      },
+      "geo": {
+        "latitude": 35.7075,
+        "longitude": 139.82026
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-sumida-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7075034,139.8202793,3a,90y,118.08h,81.19t/data=!3m7!1e1!3m5!1snclT7WSALlrbNS7YTsfskg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D8.807602760684944%26panoid%3DnclT7WSALlrbNS7YTsfskg%26yaw%3D118.08102411400311!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©タイザン5／集英社・「タコピーの原罪」製作委員会"
+    },
+    {
+      "placeId": "2bc538ba-d291-49ab-9778-0486223159c8",
+      "name": {
+        "kr": "하코다테 페리 터미널",
+        "en": "Hakodate Terminal",
+        "ja": "函館ターミナル"
+      },
+      "geo": {
+        "latitude": 41.80747,
+        "longitude": 140.71021
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-hokkaido-hakodate",
+      "streetViewUrl": "https://www.google.com/maps/@41.8074363,140.710373,3a,90y,146.23h,100.26t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgICEla6rNg!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HbXeXxemDMkGa8GpM31p_Pqdw5w9zfQmTo67vhZKEdiXK7SdInfVLa2xkwFoeF1tRah43YdnpFNFMYmz9NgCdMcqURN_Bkk029uzNL7bYf5c5d7wyJegS-fFKB_zXmcUgJ4X9p2%3Dw900-h600-k-no-pi-10.257384349043576-ya101.86360363536357-ro0-fo100!7i5376!8i2688?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©タイザン5／集英社・「タコピーの原罪」製作委員会"
+    },
+    {
+      "placeId": "323374c2-f5fa-4c3d-9903-fab115256579",
+      "name": {
+        "ja": "上野駅",
+        "kr": "우에노 역",
+        "en": "Ueno Station"
+      },
+      "geo": {
+        "latitude": 35.71263,
+        "longitude": 139.77662
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7126519,139.7765912,2a,90y,139.37h,114.52t/data=!3m7!1e1!3m5!1sbFEWjinbReGKv4KbnmN7yg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-24.522121363274252%26panoid%3DbFEWjinbReGKv4KbnmN7yg%26yaw%3D139.36883379576622!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©タイザン5／集英社・「タコピーの原罪」製作委員会"
+    },
+    {
+      "placeId": "33e8bdef-358f-4b54-8efd-85067ac37e11",
+      "name": {
+        "ja": "パークタワー錦糸町",
+        "en": "Park Tower Kinshicho"
+      },
+      "geo": {
+        "latitude": 35.69482,
+        "longitude": 139.81132
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-sumida-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6948392,139.8113757,3a,43y,84.88h,90.9t/data=!3m7!1e1!3m5!1sRpPQeYLpoXT7oiEWDlSbjQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.8988249431070585%26panoid%3DRpPQeYLpoXT7oiEWDlSbjQ%26yaw%3D84.87663538269473!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©タイザン5／集英社・「タコピーの原罪」製作委員会"
+    },
+    {
+      "placeId": "40f82515-aa43-4dd7-aca4-ef7335d15e7a",
+      "name": {
+        "en": "trattorìa pioggia"
+      },
+      "geo": {
+        "latitude": 35.70533,
+        "longitude": 139.84116
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-edogawa-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7052177,139.8414446,3a,75y,299.77h,95.83t/data=!3m7!1e1!3m5!1sdSfPL5r6Ci_QOgsJ7u9F5g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.834385523736344%26panoid%3DdSfPL5r6Ci_QOgsJ7u9F5g%26yaw%3D299.7745853477819!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©タイザン5／集英社・「タコピーの原罪」製作委員会"
+    },
+    {
+      "placeId": "45e50808-2ed3-4290-9bd0-c935e83e6eea",
+      "name": {
+        "ja": "タイムズ錦糸町駅前",
+        "en": "Times Kinshicho Ekimae"
+      },
+      "geo": {
+        "latitude": 35.69587,
+        "longitude": 139.81258
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-sumida-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6958614,139.8125296,3a,85.2y,82.38h,97.04t/data=!3m7!1e1!3m5!1scWuh70Ng76RKJ_JIccKV0A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.042556312038499%26panoid%3DcWuh70Ng76RKJ_JIccKV0A%26yaw%3D82.38332816306823!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©タイザン5／集英社・「タコピーの原罪」製作委員会"
+    },
+    {
+      "placeId": "5c98e9d4-0510-4fa3-ac29-e704a52c74e6",
+      "name": {
+        "kr": "신하코다테호쿠토 역",
+        "ja": "新函館北斗駅",
+        "en": "Shin-Hakodate-Hokuto Station"
+      },
+      "geo": {
+        "latitude": 41.90374,
+        "longitude": 140.6475
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-hokkaido-hokuto",
+      "streetViewUrl": "https://www.google.com/maps/@41.9037696,140.647148,3a,90y,56.66h,102.38t/data=!3m7!1e1!3m5!1slYtg7dHPxTaOqbNuevl_Jg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.378008587445223%26panoid%3DlYtg7dHPxTaOqbNuevl_Jg%26yaw%3D56.65501646817253!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©タイザン5／集英社・「タコピーの原罪」製作委員会"
+    },
+    {
+      "placeId": "678cdedc-52aa-405d-b4e5-eb9e34f70233",
+      "name": {
+        "ja": "木村家人形焼 本店",
+        "en": "Kimuraya Ningyo-yaki Main Shop"
+      },
+      "geo": {
+        "latitude": 35.71354,
+        "longitude": 139.79663
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/place/%E6%9C%A8%E6%9D%91%E5%AE%B6%E4%BA%BA%E5%BD%A2%E7%84%BC+%E6%9C%AC%E5%BA%97/@35.71352,139.7967496,2a,90y,116.48h,96.09t/data=!3m8!1e1!3m6!1sUJ4U2GSNac7LNwpb2ePu2w!2e0!3e2!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.089810369944445%26panoid%3DUJ4U2GSNac7LNwpb2ePu2w%26yaw%3D116.478859802651!7i13312!8i6656!4m9!3m8!1s0x60188ec1a5d72cb5:0xb24f4a07a3704829!8m2!3d35.713538!4d139.7966702!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1tglyzvm?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©タイザン5／集英社・「タコピーの原罪」製作委員会"
+    },
+    {
+      "placeId": "8136a80c-743c-438e-863c-630bb4be0f19",
+      "name": {
+        "en": "Shin-Aomori Station",
+        "kr": "신 아오모리 역",
+        "ja": "新青森駅"
+      },
+      "geo": {
+        "latitude": 40.82795,
+        "longitude": 140.69349
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-aomori-aomori",
+      "streetViewUrl": "https://www.google.com/maps/place/Shin-Aomori+Station/@40.8281932,140.6934715,3a,48.7y,337.41h,88.45t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgIDd55TRCg!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HZ-GCJhofDfS1z_7pf0gt8QY1tTCrcmAhQx1Xnd9uJ_IxMQIxtKhz7YMzJf04cZZindTRzz4Q9KdQZjjZ93s9_FGMgQs4bj1C_5Q1GwSyOz2zDC5zqVm6PHPEoYMFoY-hi0W2k%3Dw900-h600-k-no-pi1.5516142415267637-ya337.4057204489013-ro0-fo100!7i6080!8i3040!4m9!3m8!1s0x5f9b9f4ebb956233:0x9859aeab81c5f296!8m2!3d40.8281932!4d140.6934715!10e5!14m1!1BCgIgARICCAI!16zL20vMDg3eGpy?entry=ttu&g_ep=EgoyMDI1MDgwNS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©タイザン5／集英社・「タコピーの原罪」製作委員会"
+    },
+    {
+      "placeId": "a1c2a79d-50a6-4249-8292-4bb5ae8c171e",
+      "name": {
+        "en": "Koyojido Park",
+        "ja": "光陽児童公園"
+      },
+      "geo": {
+        "latitude": 41.8957,
+        "longitude": 140.68314
+      },
+      "ep": 1,
+      "type": "EP",
+      "cityId": "JP-hokkaido-nanae",
+      "streetViewUrl": "https://www.google.com/maps/@41.8955536,140.6832904,3a,90y,326.79h,97.01t/data=!3m7!1e1!3m5!1srv9vOBFvMnqswhpwVZnO9g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.00516943419197%26panoid%3Drv9vOBFvMnqswhpwVZnO9g%26yaw%3D326.7905210468875!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©タイザン5／集英社・「タコピーの原罪」製作委員会"
+    },
+    {
+      "placeId": "ae7bbb10-d6d4-4562-b261-0f1019353ede",
+      "name": {
+        "en": "Asakusa Culture Tourist Information Center",
+        "ja": "浅草文化観光センター",
+        "kr": "아사쿠사문화관광센터"
+      },
+      "geo": {
+        "latitude": 35.71083,
+        "longitude": 139.79649
+      },
+      "ep": 5,
+      "type": "EP",
+      "cityId": "JP-tokyo-taito-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7107554,139.7963308,3a,90y,77.23h,104.01t/data=!3m7!1e1!3m5!1s33kuwaToltsE8g42AmyEhw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.008816420919786%26panoid%3D33kuwaToltsE8g42AmyEhw%26yaw%3D77.23444143843912!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©タイザン5／集英社・「タコピーの原罪」製作委員会"
+    },
+    {
+      "placeId": "d2f058e4-e899-4f2b-89f9-9a4e82740cbc",
+      "name": {
+        "en": "Tokyo Disneyland",
+        "kr": "도쿄 디즈니랜드",
+        "ja": "東京ディズニーランド"
+      },
+      "geo": {
+        "latitude": 35.63323,
+        "longitude": 139.88022
+      },
+      "ep": 4,
+      "type": "EP",
+      "cityId": "JP-chiba-urayasu",
+      "streetViewUrl": "https://www.google.com/maps/@35.6332689,139.8802144,3a,90y,120.59h,103.14t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICEn4OVJw!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYvwCC5qwWuj3ioAhlGY41qhyxSefmbfBlS199zDta4MF25wkFUtkIk1H31BUjuidqe7aDOxaAfUWXkpRcirvORt1akoGcVlv29yuW4kaRhzL6Wahc3aj3PplMH2sch4LzZXs8p%3Dw900-h600-k-no-pi-13.138493463018634-ya210.59452069090017-ro0-fo100!7i8704!8i4352?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "©タイザン5／集英社・「タコピーの原罪」製作委員会"
+    }
+  ]
+}

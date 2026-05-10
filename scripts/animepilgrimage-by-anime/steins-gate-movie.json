@@ -1,0 +1,439 @@
+{
+  "anime": {
+    "animeId": "ZH0zqKiaPk9CiGpashc9",
+    "slug": "steins-gate-movie",
+    "title": {
+      "ja": "Steins;Gate 負荷領域のデジャヴ",
+      "kr": "Steins;Gate 부하영역의 데자뷰",
+      "en": "Steins;Gate Load Region of Déjà Vu"
+    },
+    "author": {
+      "en": [
+        "5pb.",
+        "Nitroplus"
+      ]
+    },
+    "studio": {
+      "en": [
+        "WHITE FOX"
+      ]
+    }
+  },
+  "placeCount": 25,
+  "places": [
+    {
+      "placeId": "0d0896ab-6382-4017-b92a-8291cf99284b",
+      "name": {
+        "en": "Akibaoo 8",
+        "ja": "あきばお〜 八號店"
+      },
+      "geo": {
+        "latitude": 35.70145,
+        "longitude": 139.7705
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.701523,139.7705153,3a,44.6y,163.78h,98.44t/data=!3m7!1e1!3m5!1strdt1r-1Chh_V0vfKJAF2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.4399559229023%26panoid%3Dtrdt1r-1Chh_V0vfKJAF2A%26yaw%3D163.77823425295736!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "122f8a22-2492-48f1-8a23-f44b6ca20700",
+      "name": {
+        "en": "Repark Soto-Kanda 3-Chome #2",
+        "ja": "三井のリパーク 外神田３丁目第２駐車場"
+      },
+      "geo": {
+        "latitude": 35.70245,
+        "longitude": 139.77008
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7024421,139.7700862,3a,75y,186.81h,91.21t/data=!3m7!1e1!3m5!1s42kND95oaU2WrPBueW0UCA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.207205640530347%26panoid%3D42kND95oaU2WrPBueW0UCA%26yaw%3D186.8081242381418!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "2002e7f1-750c-4f0e-8ba7-6710464f3187",
+      "name": {
+        "ja": "リバティー 秋葉原1号店",
+        "kr": "리버티 아키하바라 1호점",
+        "en": "Liberty Akihabara first store"
+      },
+      "geo": {
+        "latitude": 35.7014,
+        "longitude": 139.7714
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7013837,139.771514,3a,90y,95.82h,98.81t/data=!3m7!1e1!3m5!1sdkOMCgYglQCIRSdwOY44_A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8.811964838119124%26panoid%3DdkOMCgYglQCIRSdwOY44_A%26yaw%3D95.81970992515967!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "45714019-3aba-4a1d-9a7d-17a8cc37b741",
+      "name": {
+        "en": "West side plaza of Electric Town Exit, Akihabara Station",
+        "ja": "秋葉原駅 電気街口西側広場"
+      },
+      "geo": {
+        "latitude": 35.69882,
+        "longitude": 139.77261
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.698862,139.7725025,3a,49.6y,105.79h,100.14t/data=!3m7!1e1!3m5!1sGZH5kxh0sGK7Qt-v0pI27Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.14466605529367%26panoid%3DGZH5kxh0sGK7Qt-v0pI27Q%26yaw%3D105.7875516346779!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "55b13fa9-9c77-42b9-a4a7-7c1674ab5674",
+      "name": {
+        "kr": "컴퓨터 공방 아키하바라 BUYMORE점",
+        "en": "Pasokon Kobo Akihabara Branch",
+        "ja": "パソコン工房 秋葉原本店"
+      },
+      "geo": {
+        "latitude": 35.70085,
+        "longitude": 139.77093
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7008401,139.7709013,3a,75y,98.52h,110.31t/data=!3m7!1e1!3m5!1sgp6nJdjW3Q6fUNzBMsFryA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-20.31180949289042%26panoid%3Dgp6nJdjW3Q6fUNzBMsFryA%26yaw%3D98.51885328434973!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "5606842d-a913-4015-a08a-727a852e165a",
+      "name": {
+        "ja": "トレーダー 秋葉原2号店",
+        "kr": "트레이더 아키하바라 2호점",
+        "en": "Trader2"
+      },
+      "geo": {
+        "latitude": 35.69865,
+        "longitude": 139.7705
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6987295,139.7705277,3a,48.8y,204.12h,106.63t/data=!3m7!1e1!3m5!1sbSj8r9UR8KLtv_V37L7GzA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-16.631874009447245%26panoid%3DbSj8r9UR8KLtv_V37L7GzA%26yaw%3D204.11620527524488!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "614dda15-a34a-46dc-adc6-7345c90a5fed",
+      "name": {
+        "ja": "秋葉原ラジオ会館",
+        "en": "Akihabara Radio Kaikan",
+        "kr": "아키하바라 라디오회관"
+      },
+      "geo": {
+        "latitude": 35.69814,
+        "longitude": 139.77196
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6981869,139.7719398,3a,90y,162.99h,118.17t/data=!3m7!1e1!3m5!1s8sIi0xcNOuhg7GkIFqubGw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-28.169915362830494%26panoid%3D8sIi0xcNOuhg7GkIFqubGw%26yaw%3D162.9880830095022!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "67c5c67a-05da-4c80-b615-721120330658",
+      "name": {
+        "ja": "雑司ヶ谷鬼子母神堂",
+        "kr": "키시모신당",
+        "en": "Kishimojin Temple"
+      },
+      "geo": {
+        "latitude": 35.72203,
+        "longitude": 139.71377
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7220367,139.7137625,3a,90y,165.8h,90.76t/data=!3m8!1e1!3m6!1sAF1QipNRXtEBqLGjp0Iml1QBpuBEBfVT4u6unhrzG7V4!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipNRXtEBqLGjp0Iml1QBpuBEBfVT4u6unhrzG7V4%3Dw900-h600-k-no-pi-0.7613967690008252-ya238.15465038146772-ro0-fo100!7i12000!8i6000?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "6fbec572-8dad-447d-ba81-670a86a1f035",
+      "name": {
+        "en": "UDX Akiba Plaza",
+        "ja": "秋葉原UDX アキバ広場"
+      },
+      "geo": {
+        "latitude": 35.70058,
+        "longitude": 139.77221
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7005019,139.7721349,3a,90y,96.56h,93.86t/data=!3m7!1e1!3m5!1sMGJt8bh4mdoEPBvVzm3fWQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.858818777591381%26panoid%3DMGJt8bh4mdoEPBvVzm3fWQ%26yaw%3D96.55825376125028!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "72ab4ba5-49b4-4617-9577-e52c7f1846fb",
+      "name": {
+        "kr": "호린 공원",
+        "en": "Horin Park",
+        "ja": "千代田区立芳林公園"
+      },
+      "geo": {
+        "latitude": 35.70152,
+        "longitude": 139.76987
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7016534,139.7699226,2a,90y,177.77h,94.11t/data=!3m7!1e1!3m5!1sRO4rlglMqne4mnUGsYC4xw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.114429303490368%26panoid%3DRO4rlglMqne4mnUGsYC4xw%26yaw%3D177.77159768202293!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "75645339-d9e4-43ef-a8b3-57a219f9217c",
+      "name": {
+        "ja": "秋葉原電気街",
+        "kr": "아키하바라 전자 거리",
+        "en": "Akihabara Electric Town"
+      },
+      "geo": {
+        "latitude": 35.69969,
+        "longitude": 139.77137
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6996825,139.771463,3a,90y,9.51h,106.01t/data=!3m7!1e1!3m5!1s9yJOEhFhaBy6CXMAiEOM3w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-16.00992106761349%26panoid%3D9yJOEhFhaBy6CXMAiEOM3w%26yaw%3D9.509461603354996!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "77b25a6a-12fc-4978-85ef-47d30b2aee09",
+      "name": {
+        "ja": "柳森神社",
+        "kr": "야나기모리 신사",
+        "en": "Yanagimori Shrine"
+      },
+      "geo": {
+        "latitude": 35.69668,
+        "longitude": 139.77364
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/place/Yanagimori+Shrine/@35.6966945,139.7735727,3a,90y,112.29h,101.76t/data=!3m8!1e1!3m6!1sAF1QipPqz1qQF4fpZ_HkffRbVysZg9gMvSItp9i7z4QI!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipPqz1qQF4fpZ_HkffRbVysZg9gMvSItp9i7z4QI%3Dw900-h600-k-no-pi-11.757854444533592-ya283.2668963919331-ro0-fo100!7i7200!8i3600!4m9!3m8!1s0x60188ea8384f674b:0xfdc0f7ae522cf411!8m2!3d35.6967251!4d139.7734832!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11ghs8t7hr?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "812ed7b0-7585-462e-a2f1-7ba8b7cb5628",
+      "name": {
+        "kr": "미니스톱 미나미이케부쿠로 2초메점",
+        "ja": "ミニストップ 南池袋２丁目店",
+        "en": "Ministop Minami Ikebukuro 2-chome"
+      },
+      "geo": {
+        "latitude": 35.72419,
+        "longitude": 139.71772
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7241916,139.7177205,3a,90y,106.76h,99.61t/data=!3m7!1e1!3m5!1s45SsRJBCxDy3dOVI51OmWA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.611532698547705%26panoid%3D45SsRJBCxDy3dOVI51OmWA%26yaw%3D106.75961795859547!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "8499f659-0225-4cfa-a9ed-3b665e498d0a",
+      "name": {
+        "kr": "칸다 후레아이 다리",
+        "en": "Kanda Fureai Bridge",
+        "ja": "神田ふれあい橋"
+      },
+      "geo": {
+        "latitude": 35.69699,
+        "longitude": 139.7733
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.697099,139.7733501,3a,90y,154.81h,100.34t/data=!3m7!1e1!3m5!1sst7lh7FPI5-06RSjogduDA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.3352950071978%26panoid%3Dst7lh7FPI5-06RSjogduDA%26yaw%3D154.80994794448156!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "84d8fccb-9abe-4ef4-8c23-27b988dcfc18",
+      "name": {
+        "en": "Toden-Zoshigaya Station",
+        "kr": "도덴조시가야 역",
+        "ja": "都電雑司ヶ谷駅"
+      },
+      "geo": {
+        "latitude": 35.72424,
+        "longitude": 139.71802
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7241435,139.7179583,3a,75y,25h,92.81t/data=!3m7!1e1!3m5!1slfa7MLawqn2I-Xv81BXtdQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.805720106120546%26panoid%3Dlfa7MLawqn2I-Xv81BXtdQ%26yaw%3D25.00433848647118!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "9a5edbbd-d29b-49e6-85a9-4360b7f28044",
+      "name": {
+        "ja": "ドスパラ秋葉原本店",
+        "kr": "도스파라 아키하바라 본점",
+        "en": "Dospara Akihabara Main Shop"
+      },
+      "geo": {
+        "latitude": 35.70044,
+        "longitude": 139.77086
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7004771,139.7708706,3a,90y,184.96h,99.14t/data=!3m7!1e1!3m5!1swHOtCgc6-N5_HnHZmp-GgQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.143720746940133%26panoid%3DwHOtCgc6-N5_HnHZmp-GgQ%26yaw%3D184.9579601685348!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "9e6ea6c5-b0d3-424c-9183-10996857a76e",
+      "name": {
+        "en": "Anison Karaoke BAR Takamari Kenkyujo",
+        "ja": "高まり研究所"
+      },
+      "geo": {
+        "latitude": 35.70202,
+        "longitude": 139.76982
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7020352,139.7698348,3a,90y,184.81h,97.36t/data=!3m7!1e1!3m5!1spulmwGdCO-AFVJkE_LGyrg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.358829598810075%26panoid%3DpulmwGdCO-AFVJkE_LGyrg%26yaw%3D184.813087546593!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "a180866f-0cda-4130-b310-294cade08546",
+      "name": {
+        "ja": "じゃんぱら 秋葉原3号店",
+        "en": "Janpara Akihabara 3"
+      },
+      "geo": {
+        "latitude": 35.70144,
+        "longitude": 139.77086
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7014417,139.770766,3a,75y,62.36h,92.14t/data=!3m7!1e1!3m5!1s1k3W7d-fstRgA-0EtGXhAA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.13563782111072%26panoid%3D1k3W7d-fstRgA-0EtGXhAA%26yaw%3D62.359880534131214!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "a23bf746-74cb-4c51-abcc-22055263a23e",
+      "name": {
+        "ja": "HEY",
+        "en": "HEY (Hirose Entertainment Yard) Taito"
+      },
+      "geo": {
+        "latitude": 35.69903,
+        "longitude": 139.77056
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6990327,139.7705163,3a,90y,88.86h,96.08t/data=!3m7!1e1!3m5!1s3nmbPBFGhGeyEWGZUb2t_w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.082958109752582%26panoid%3D3nmbPBFGhGeyEWGZUb2t_w%26yaw%3D88.86114772346072!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "a395d2a8-ab49-4cd5-a432-6414cc55f9d7",
+      "name": {
+        "en": "FamilyMart Sotokanda 3-chome Higashi",
+        "ja": "ファミリーマート 外神田三丁目東店",
+        "kr": "선쿠스 소토칸다3쵸메히가시점"
+      },
+      "geo": {
+        "latitude": 35.70103,
+        "longitude": 139.77092
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7010573,139.7709257,3a,75y,184.16h,101.12t/data=!3m7!1e1!3m5!1sbA8WESWS5e3DBoHsZ97Zdg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.121513759566724%26panoid%3DbA8WESWS5e3DBoHsZ97Zdg%26yaw%3D184.15756798968306!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "b8331589-23cb-47a0-bdc0-2132fe1e1b3e",
+      "name": {
+        "en": "BACKYARD PLANTS ZOSHIGAYA"
+      },
+      "geo": {
+        "latitude": 35.72252,
+        "longitude": 139.71639
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-toshima-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7225384,139.7163717,3a,90y,113.43h,93.27t/data=!3m7!1e1!3m5!1s-d4Bf_KYHVsj1qJmWIE9TQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.2741758106068914%26panoid%3D-d4Bf_KYHVsj1qJmWIE9TQ%26yaw%3D113.4273818284493!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "b924411d-a3a9-44fb-9895-e05aff7be2bf",
+      "name": {
+        "en": "Bellesalle Akihabara",
+        "ja": "ベルサール秋葉原"
+      },
+      "geo": {
+        "latitude": 35.70021,
+        "longitude": 139.77126
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7002338,139.7712382,3a,90y,190.75h,96.86t/data=!3m7!1e1!3m5!1sB75OVaKAb4RtJ2Z3J2vtCw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.858581898982038%26panoid%3DB75OVaKAb4RtJ2Z3J2vtCw%26yaw%3D190.7507998125061!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "bf200741-2dad-4b98-98c3-30c04c9ca3f5",
+      "name": {
+        "en": "Nadai Fujisoba Akihabara Electric Town Store",
+        "ja": "名代 富士そば 秋葉原電気街店",
+        "kr": "나다이 후지소바 아키하바라전기거리점"
+      },
+      "geo": {
+        "latitude": 35.69827,
+        "longitude": 139.77139
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6981843,139.7716334,3a,47.9y,299.97h,93t/data=!3m7!1e1!3m5!1sakuFZUn3Zjn4CKn-cXGl9w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.000875194870474%26panoid%3DakuFZUn3Zjn4CKn-cXGl9w%26yaw%3D299.9745864121446!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "d9278733-7914-40fb-b70b-08e105916600",
+      "name": {
+        "en": "Kamikaze Style Akihabara",
+        "ja": "カミカゼスタイル 秋葉原店"
+      },
+      "geo": {
+        "latitude": 35.70206,
+        "longitude": 139.77005
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.702062,139.770055,3a,90y,2.73h,100.89t/data=!3m7!1e1!3m5!1sZNuYu_y7q5mieCWkpagnsA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.892334946199469%26panoid%3DZNuYu_y7q5mieCWkpagnsA%26yaw%3D2.7296342966927796!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    },
+    {
+      "placeId": "f2f7991c-9156-4041-9ec5-ff8cd06e71de",
+      "name": {
+        "en": "Beef Bowl Speciality Shop Sambo",
+        "ja": "牛丼専門 サンボ",
+        "kr": "규동전문 삼보"
+      },
+      "geo": {
+        "latitude": 35.70128,
+        "longitude": 139.77095
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.7012951,139.7709568,3a,90y,92.37h,89.82t/data=!3m7!1e1!3m5!1sxDwXwnZrQZw7hBE62KDkyw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.18482350865998853%26panoid%3DxDwXwnZrQZw7hBE62KDkyw%26yaw%3D92.36697123886256!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© 2013 5pb.／Nitroplus STEINS;GATE MOVIE PROJECT"
+    }
+  ]
+}

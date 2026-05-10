@@ -1,0 +1,432 @@
+{
+  "anime": {
+    "animeId": "IrgbISlZnKp368pmKXQD",
+    "slug": "teasing-master-takagi-san-3",
+    "title": {
+      "ja": "からかい上手の高木さん3",
+      "kr": "장난을 잘 치는 타카기 양 3",
+      "en": "Teasing Master Takagi-san 3"
+    },
+    "author": {
+      "ja": [
+        "山本崇一朗"
+      ],
+      "en": [
+        "Soichiro Yamamoto"
+      ],
+      "kr": [
+        "야마모토 소이치로"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Shin-Ei Animation"
+      ]
+    }
+  },
+  "placeCount": 24,
+  "places": [
+    {
+      "placeId": "0bef419e-4793-49fc-88ec-79f322cbf049",
+      "name": {
+        "ja": "鹿島公園",
+        "en": "Kashima Park"
+      },
+      "geo": {
+        "latitude": 34.4736937,
+        "longitude": 134.1706491
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4736937,134.1706491,3a,42.2y,299.26h,95.52t/data=!3m7!1e1!3m5!1s2JrAFBWeeRK-o2_0Hi8NfQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D2JrAFBWeeRK-o2_0Hi8NfQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D305.20883%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "0efd7a5e-bdbb-45be-b164-ec83e32868d6",
+      "name": {
+        "de": "In der Nähe des Disposal of gas appliances",
+        "es": "Cerca de la Disposal of gas appliances",
+        "ja": "ガス器具のくずにし付近",
+        "id": "Sekitar Disposal of gas appliances",
+        "en": "Near the Disposal of gas appliances"
+      },
+      "geo": {
+        "latitude": 34.489111,
+        "longitude": 134.1879463
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.489111,134.1879463,3a,90y,88.87h,95.5t/data=!3m6!1e1!3m4!1sXtloxtrrIZOCxv13qJT5TQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "1062378a-cb70-4a5f-9d5e-bff235957366",
+      "name": {
+        "ja": "ブックスことぶき",
+        "en": "Books Kotobuki"
+      },
+      "geo": {
+        "latitude": 34.4821116,
+        "longitude": 134.1889206
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4821116,134.1889206,3a,75y,268.56h,101.66t/data=!3m7!1e1!3m5!1s5yzJSB6Oxe6dNi6UMOuJTA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D5yzJSB6Oxe6dNi6UMOuJTA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D199.038%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "11996afb-1fe1-44ad-adc0-4fce6b163c7d",
+      "name": {
+        "ja": "福田海岸",
+        "en": "Sanuki Hyakkei 100 Sights of Fukuda Coast"
+      },
+      "geo": {
+        "latitude": 34.5375841,
+        "longitude": 134.354662
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-shodoshima",
+      "streetViewUrl": "https://www.google.com/maps/@34.5375841,134.354662,3a,75y,116.62h,95.06t/data=!3m6!1e1!3m4!1sB6-9E2QkrPsVtDv1hVercQ!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "1f20899d-37ad-4491-9a4b-15a0c77842b7",
+      "name": {
+        "en": "Sapporo Beer's historic sign",
+        "ja": "サッポロビールの歴史的な看板"
+      },
+      "geo": {
+        "latitude": 34.4829177,
+        "longitude": 134.1878849
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4829177,134.1878849,3a,75y,127.43h,94.88t/data=!3m6!1e1!3m4!1shqOsJRxxaRwa6TdhE16flA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "219e7fd9-3183-49ab-a3ef-19b114a995f5",
+      "name": {
+        "ja": "木本戎堂",
+        "en": "Kimoto Ebisu-do"
+      },
+      "geo": {
+        "latitude": 34.5976766,
+        "longitude": 133.7703929
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okayama-kurashiki",
+      "streetViewUrl": "https://www.google.com/maps/@34.5976766,133.7703929,3a,90y,158.11h,100.82t/data=!3m7!1e1!3m5!1s6kQ2TPSuASMbtPbImNuDNw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D6kQ2TPSuASMbtPbImNuDNw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D13.104184%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "2f04c6ce-2790-414b-8cfa-5dde944ed655",
+      "name": {
+        "es": "Cerca de la mei mei",
+        "ja": "mei mei付近",
+        "id": "Sekitar mei mei",
+        "en": "Near the mei mei",
+        "de": "In der Nähe des mei mei"
+      },
+      "geo": {
+        "latitude": 34.493236,
+        "longitude": 134.1997333
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.493236,134.1997333,3a,75y,355.34h,98.53t/data=!3m7!1e1!3m5!1skOKorbf7t6WX3fOaSC7Jrg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DkOKorbf7t6WX3fOaSC7Jrg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D126.34531%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "3f8925c5-e91e-4750-a041-2d93bb508d7c",
+      "name": {
+        "de": "In der Nähe des Kimura Rice Store",
+        "en": "Near the Kimura Rice Store",
+        "id": "Sekitar Kimura Rice Store",
+        "ja": "木村米穀店付近",
+        "es": "Cerca de la Kimura Rice Store"
+      },
+      "geo": {
+        "latitude": 34.4825448,
+        "longitude": 134.1860104
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4825448,134.1860104,3a,44.6y,338.31h,93.28t/data=!3m6!1e1!3m4!1shBOivGoGnC13iss1MB1q7A!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "4b57ac36-f236-4646-8379-d3f66f70e57a",
+      "name": {
+        "en": "Maze Cafe & Bar",
+        "ja": "たこやきnoばぁ- めいず"
+      },
+      "geo": {
+        "latitude": 34.4839305,
+        "longitude": 134.1874105
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4839305,134.1874105,3a,75y,152.09h,93.57t/data=!3m6!1e1!3m4!1suez0Dwiar3vNAiQDBubqTg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "544f74be-920b-4e41-89f2-004838af8bc4",
+      "name": {
+        "ja": "西光寺横の路地",
+        "en": "The alley next to Saikoji Temple"
+      },
+      "geo": {
+        "latitude": 34.4829601,
+        "longitude": 134.1868204
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4829601,134.1868204,3a,75y,162.45h,96.55t/data=!3m7!1e1!3m5!1stJ-BotgndPBeRQxLKUC0ng!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DtJ-BotgndPBeRQxLKUC0ng%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D201.92053%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "57a6ddef-b270-46c7-8dcc-9e43659b07ff",
+      "name": {
+        "ja": "小豆島フェリー福田営業所",
+        "en": "Shodoshima Ferry Co., Ltd. Shodoshima Fukuda sales office"
+      },
+      "geo": {
+        "latitude": 34.5427205,
+        "longitude": 134.3436543
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-shodoshima",
+      "streetViewUrl": "https://www.google.com/maps/@34.5427205,134.3436543,3a,75y,78.35h,94.15t/data=!3m6!1e1!3m4!1szC9z8w_ckSL_2k8wePnBTg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "5ee594cd-8cec-4397-8670-5bdedc9d51fa",
+      "name": {
+        "ja": "池本芳栄堂",
+        "en": "Ikemoto Houeido"
+      },
+      "geo": {
+        "latitude": 34.4851597,
+        "longitude": 134.1850761
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/place/%E7%AC%A0%E4%BA%95%E6%9B%B8%E6%88%BF/@34.4851597,134.1850761,3a,75y,317.98h,95.53t/data=!3m6!1e1!3m4!1sFprjyen0sHN2qYt0MUR3VQ!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0x35538993c78ae133:0xb93731dcba8f70fa!2z5rGg5pys6Iqz5qCE5aCC!8m2!3d34.4854254!4d134.1845758!16s%2Fg%2F1tg_jg76!3m5!1s0x35538993c0ea81ab:0xad543868a590f72b!8m2!3d34.485256!4d134.1848723!16s%2Fg%2F1tcwjcwx?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "69d3041a-3b5e-4be0-905f-4053ccc49d6e",
+      "name": {
+        "ja": "千軒海水浴場",
+        "en": "Senge Beach"
+      },
+      "geo": {
+        "latitude": 34.4658455,
+        "longitude": 134.1498252
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4658455,134.1498252,3a,90y,230.31h,85.09t/data=!3m6!1e1!3m4!1s7_AV2MTlXVvOM7LTpycR3Q!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "7d84c26d-4ea4-4a31-8eae-bc99252fe95d",
+      "name": {
+        "en": "Tonosho Port No. 1 Wharf (Ferry terminal for Takamatsu)",
+        "ja": "土庄港１号岸壁（高松行きフェリー乗り場）"
+      },
+      "geo": {
+        "latitude": 34.4888411,
+        "longitude": 134.1734222
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4888411,134.1734222,3a,44.5y,306.79h,92.06t/data=!3m7!1e1!3m5!1sbCx-35oOkVnSq0idw30mvg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DbCx-35oOkVnSq0idw30mvg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D354.64526%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "ab1d8240-becf-4fd8-b263-3bb08c73e4cc",
+      "name": {
+        "ja": "レストラン 亀遊亭",
+        "en": "Kiyu-tei"
+      },
+      "geo": {
+        "latitude": 34.5966687,
+        "longitude": 133.7704086
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okayama-kurashiki",
+      "streetViewUrl": "https://www.google.com/maps/@34.5966687,133.7704086,3a,75y,32.05h,89.11t/data=!3m6!1e1!3m4!1sfwrgxOJgrMrc3F0Najs4oQ!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "bb02c732-fc48-40de-a8cf-049889b00c74",
+      "name": {
+        "en": "Kasaneiwa",
+        "ja": "重岩"
+      },
+      "geo": {
+        "latitude": 34.4793777,
+        "longitude": 134.1491566
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4793777,134.1491566,3a,75y,67.21h,102.24t/data=!3m8!1e1!3m6!1sAF1QipPJLBPYKslnu17qqMJy87VytkI22xtMF4o1RLgv!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPJLBPYKslnu17qqMJy87VytkI22xtMF4o1RLgv%3Dw203-h100-k-no-pi-0-ya113.51277-ro0-fo100!7i10240!8i5120?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "c2a6d388-ea52-4fd5-a092-49d832087d11",
+      "name": {
+        "ja": "富丘八幡神社",
+        "en": "Tomioka Hachiman Shrine"
+      },
+      "geo": {
+        "latitude": 34.4855854,
+        "longitude": 134.1953303
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4855854,134.1953303,3a,75y,182.56h,85.84t/data=!3m8!1e1!3m6!1sAF1QipNnMw7R0C9Zsf4gJOW3ZRq3GDLLZG9wc2EJF9rs!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNnMw7R0C9Zsf4gJOW3ZRq3GDLLZG9wc2EJF9rs%3Dw203-h100-k-no-pi-0-ya113.49528-ro-0-fo100!7i3840!8i1920?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "cf92978a-c749-47a6-a762-0ff09fc7bc74",
+      "name": {
+        "en": "Saegusa Print Shop",
+        "ja": "三枝印判店"
+      },
+      "geo": {
+        "latitude": 34.4840014,
+        "longitude": 134.187362
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4840014,134.187362,3a,75y,313.49h,94.04t/data=!3m6!1e1!3m4!1sORmG5Zzyc5WM2pDCPMBW7w!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "d8837b4d-3331-46eb-b978-ffcc519b99df",
+      "name": {
+        "ja": "玉光神社付近",
+        "en": "Near the Tamamitsu Shrine",
+        "es": "Cerca de la Tamamitsu Shrine",
+        "id": "Sekitar Tamamitsu Shrine",
+        "de": "In der Nähe des Tamamitsu Shrine"
+      },
+      "geo": {
+        "latitude": 34.4939485,
+        "longitude": 134.1977651
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4939485,134.1977651,3a,75y,140.83h,89.7t/data=!3m6!1e1!3m4!1s3RojJt_nxouTsEHSONTUMA!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "e2ed03ae-1fb9-4b1c-aca9-b12accf274ac",
+      "name": {
+        "ja": "ぽこあぽこ - 大人・こどもコワーキングスペース",
+        "en": "Pokoapoko - Coworking space for adults and children"
+      },
+      "geo": {
+        "latitude": 34.4865541,
+        "longitude": 134.1831759
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4865541,134.1831759,3a,75y,61.32h,92.14t/data=!3m6!1e1!3m4!1sCgAKuKBf54SwEj5mjRmkag!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "e9c53a83-830a-4aed-9c93-10bc61ae524f",
+      "name": {
+        "es": "Cerca de la Saikoji Temple Ginkgo Tree",
+        "en": "Near the Saikoji Temple Ginkgo Tree",
+        "ja": "西光寺 イチョウ付近",
+        "id": "Sekitar Saikoji Temple Ginkgo Tree",
+        "de": "In der Nähe des Saikoji Temple Ginkgo Tree"
+      },
+      "geo": {
+        "latitude": 34.4834002,
+        "longitude": 134.1872928
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4834002,134.1872928,3a,90y,148.91h,92.95t/data=!3m6!1e1!3m4!1szSBw1yifEZAq5_H6KSFcTg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "eec1f627-e8c7-448f-ab9c-59926bafaad5",
+      "name": {
+        "es": "Cerca de la Drugstore Zag Zag Tonosho",
+        "id": "Sekitar Drugstore Zag Zag Tonosho",
+        "ja": "ザグザグ 土庄店付近",
+        "en": "Near the Drugstore Zag Zag Tonosho",
+        "de": "In der Nähe des Drugstore Zag Zag Tonosho"
+      },
+      "geo": {
+        "latitude": 34.4824673,
+        "longitude": 134.1878074
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4824673,134.1878074,3a,46.3y,213.8h,94.39t/data=!3m6!1e1!3m4!1sk0nAm-N5M7fyxxKbYWYp9w!2e0!7i13312!8i6656?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "f61a6879-cbbf-441c-9714-4e29918f2152",
+      "name": {
+        "ja": "鹿島明神社",
+        "en": "Kashimamyo Shrine"
+      },
+      "geo": {
+        "latitude": 34.4740408,
+        "longitude": 134.1699163
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kagawa-tonosho",
+      "streetViewUrl": "https://www.google.com/maps/@34.4740408,134.1699163,3a,90y,328.91h,95.65t/data=!3m8!1e1!3m6!1sAF1QipM54K-ywzUn5ZXAK_6X011YLHR9XQHA9ZtJ77qj!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipM54K-ywzUn5ZXAK_6X011YLHR9XQHA9ZtJ77qj%3Dw203-h100-k-no-pi-0-ya37.912655-ro-0-fo100!7i3840!8i1920?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    },
+    {
+      "placeId": "f7c0251a-f668-4e9d-89e3-0f8ffde4d296",
+      "name": {
+        "en": "Kurashiki Bikan Historical Quarter",
+        "ja": "倉敷美観地区"
+      },
+      "geo": {
+        "latitude": 34.5956186,
+        "longitude": 133.771954
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-okayama-kurashiki",
+      "streetViewUrl": "https://www.google.com/maps/@34.5956186,133.771954,3a,90y,7.88h,97.69t/data=!3m6!1e1!3m4!1sV34w-f93IjhAvIvUeaYRvg!2e0!7i16384!8i8192?coh=205409&entry=ttu",
+      "copyright": "©2022 山本崇一朗・小学館／からかい上手の高木さん３製作委員会"
+    }
+  ]
+}

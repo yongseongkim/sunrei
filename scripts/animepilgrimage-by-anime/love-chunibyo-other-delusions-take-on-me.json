@@ -1,0 +1,1134 @@
+{
+  "anime": {
+    "animeId": "9CrfdTfoKGhoPGvKXh4M",
+    "slug": "love-chunibyo-other-delusions-take-on-me",
+    "title": {
+      "ja": "映画 中二病でも恋がしたい！ -Take On Me-",
+      "kr": "중2병이라도 사랑이 하고 싶어! 테이크 온 미",
+      "en": "Love, Chunibyo & Other Delusions! Take on Me"
+    },
+    "author": {
+      "en": [
+        "Torako"
+      ],
+      "kr": [
+        "토라코"
+      ],
+      "ja": [
+        "虎虎"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Kyoto Animation"
+      ]
+    }
+  },
+  "placeCount": 67,
+  "places": [
+    {
+      "placeId": "04b4f033-4244-43c2-a19d-c63ee55a26d5",
+      "name": {
+        "ja": "NTT東日本 竜飛電話交換所",
+        "en": "NTT East Tappi Telephone Switchboard"
+      },
+      "geo": {
+        "latitude": 41.25758,
+        "longitude": 140.34565
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aomori-sotogahama",
+      "streetViewUrl": "https://maps.app.goo.gl/wKK6fQYxXAzocJmF9",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "08436128-9245-456d-bc21-b7d675fb91cd",
+      "name": {
+        "kr": "아오모리 에키마에 공원",
+        "ja": "青森駅前公園",
+        "en": "Aomori Ekimae Park"
+      },
+      "geo": {
+        "latitude": 40.82757,
+        "longitude": 140.73459
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aomori-aomori",
+      "streetViewUrl": "https://maps.app.goo.gl/9y2ouRjFnvQbegZM9",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "15417e68-5435-4c5b-90a0-f2c1c92b0008",
+      "name": {
+        "en": "Hayashi",
+        "ja": "株式会社ハヤシ"
+      },
+      "geo": {
+        "latitude": 33.88995,
+        "longitude": 135.14827
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-wakayama-mihama",
+      "streetViewUrl": "https://maps.app.goo.gl/TDyD6jZhZGNK9emM9",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "16e060d9-cc52-4d94-9065-86f7acb688c1",
+      "name": {
+        "en": "Miyoshino Tanukikoji",
+        "ja": "みよしの 狸小路店"
+      },
+      "geo": {
+        "latitude": 43.05753,
+        "longitude": 141.35502
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://maps.app.goo.gl/VTRkGT7muj26QxJQA",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "19769301-1029-4f7a-9da4-e961b36fe911",
+      "name": {
+        "en": "Haneda Airport",
+        "kr": "도쿄 국제공항",
+        "ja": "羽田空港"
+      },
+      "geo": {
+        "latitude": 35.55101,
+        "longitude": 139.78865
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://maps.app.goo.gl/W7bsk7h4Tade3iER8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "1c6fd771-1755-4311-9b08-8739bea48748",
+      "name": {
+        "ja": "青函連絡船メモリアルシップ八甲田丸",
+        "en": "Seikan Train Ferry Memorial Ship Hakkoda-maru",
+        "kr": "세이칸 연락선 메모리얼십 핫코다마루"
+      },
+      "geo": {
+        "latitude": 40.83165,
+        "longitude": 140.73619
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aomori-aomori",
+      "streetViewUrl": "https://maps.app.goo.gl/bTUkQfM1NA4bGWnm8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "1e4a893b-0274-4683-bcfe-7c86ab0d1d1e",
+      "name": {
+        "en": "FamilyMart Aomori-Ekimae Store",
+        "ja": "ファミリーマート 青森駅前店"
+      },
+      "geo": {
+        "latitude": 40.82812,
+        "longitude": 140.73549
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aomori-aomori",
+      "streetViewUrl": "https://maps.app.goo.gl/dEhscaVsFKZFAXQq9",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "2444585e-17b6-4156-96cc-055cd0036dd8",
+      "name": {
+        "en": "Staircase Village Road",
+        "ja": "階段村道"
+      },
+      "geo": {
+        "latitude": 41.2576,
+        "longitude": 140.34376
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aomori-sotogahama",
+      "streetViewUrl": "https://maps.app.goo.gl/RKozjntrtBpshEj57",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "2475bf0a-e133-410a-9f0f-86446cc158b4",
+      "name": {
+        "en": "Chiyoda Kuritsu Rensei Park",
+        "ja": "千代田区立 練成公園",
+        "kr": "렌세이 공원"
+      },
+      "geo": {
+        "latitude": 35.7038,
+        "longitude": 139.77067
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/ZG7F2GtiS1xuRwuv8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "2b41140e-b932-45cf-8ea9-a9ee27bc8747",
+      "name": {
+        "en": "Cape Tappi",
+        "kr": "탓피자키",
+        "ja": "龍飛崎"
+      },
+      "geo": {
+        "latitude": 41.25896,
+        "longitude": 140.34255
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aomori-sotogahama",
+      "streetViewUrl": "https://maps.app.goo.gl/vh776fAcvGCsbbCdA",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "2b873934-7e32-442c-8d65-a8b28dcf8445",
+      "name": {
+        "en": "THE KNOT SAPPORO"
+      },
+      "geo": {
+        "latitude": 43.05693,
+        "longitude": 141.35312
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://maps.app.goo.gl/fNWnCUFrpPoJJAWx5",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "33226ff8-0e62-4a2f-91b1-dda445cd4ded",
+      "name": {
+        "ja": "京阪石山駅",
+        "en": "Keihan-Ishiyama Station",
+        "kr": "게이한이시야마 역"
+      },
+      "geo": {
+        "latitude": 34.9796,
+        "longitude": 135.89976
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://maps.app.goo.gl/dAYJTWiq61xtKn3h8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "338fdc29-20e4-4cb3-9b58-69e8ed11e625",
+      "name": {
+        "ja": "トレカジャンボ 秋葉原本店",
+        "en": "Trading Card Jumbo Akihabara Main Store"
+      },
+      "geo": {
+        "latitude": 35.70146,
+        "longitude": 139.77075
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/veZw8xVXpDdzjQnA9",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "386533d0-68b0-4d29-b556-4b42c46a14a4",
+      "name": {
+        "en": "Kaigake Elementary School",
+        "ja": "しゃくなげ学校(旧鎌掛小学校)"
+      },
+      "geo": {
+        "latitude": 34.98853,
+        "longitude": 136.26005
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shiga-hino",
+      "streetViewUrl": "https://maps.app.goo.gl/qCcMXY5zD3jwHmgW7",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "390340c2-cd05-4747-bd5c-0530d454b3f4",
+      "name": {
+        "kr": "신주쿠 피카데리",
+        "en": "Shinjuku Piccadilly Cinema",
+        "ja": "新宿ピカデリー"
+      },
+      "geo": {
+        "latitude": 35.6925,
+        "longitude": 139.70364
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-shinjuku-city",
+      "streetViewUrl": "https://maps.app.goo.gl/8cFJ5xXt5iLqzVV17",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "3a5a3ac8-f691-4525-b079-f0e33a10b815",
+      "name": {
+        "ja": "武装商店",
+        "en": "Busou Shoten"
+      },
+      "geo": {
+        "latitude": 35.70168,
+        "longitude": 139.77132
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-chiyoda-city",
+      "streetViewUrl": "https://maps.app.goo.gl/SnydNtovx8vHxTwY9",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "3b1f6a8c-0d8b-4aef-8b1d-61d8e20cb4dd",
+      "name": {
+        "kr": "니덱 교토타워",
+        "ja": "ニデック京都タワー",
+        "en": "Nidec Kyoto Tower"
+      },
+      "geo": {
+        "latitude": 34.9876,
+        "longitude": 135.75932
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/NPyTwVz7WQd997F6A",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "4046bc9b-6881-42a4-a51c-316dfe23f76e",
+      "name": {
+        "en": "Otowa Deli",
+        "ja": "音羽DELI"
+      },
+      "geo": {
+        "latitude": 34.75424,
+        "longitude": 135.33015
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hyogo-nishinomiya",
+      "streetViewUrl": "https://maps.app.goo.gl/Vwgvw6zpdS1LwdoL8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "41568335-c860-48e3-9fdf-b8e7d23e14a1",
+      "name": {
+        "kr": "\"츠가루해협\" 노래기념비",
+        "ja": "津軽海峡冬景色歌謡碑",
+        "en": "Tsugaru Kaikyo Fuyugeshiki"
+      },
+      "geo": {
+        "latitude": 41.25791,
+        "longitude": 140.34482
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aomori-sotogahama",
+      "streetViewUrl": "https://maps.app.goo.gl/Z2sFUWAkPQp3eTys5",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "445d062a-9bb1-495b-b07d-fdb30b2b0b71",
+      "name": {
+        "en": "Aomori Airport",
+        "ja": "青森空港",
+        "kr": "아오모리 공항"
+      },
+      "geo": {
+        "latitude": 40.73825,
+        "longitude": 140.68853
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aomori-aomori",
+      "streetViewUrl": "https://maps.app.goo.gl/925mLdfX8vdC3REP7",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "4907b5dc-cb34-4b9e-8e0b-2dbdecee028c",
+      "name": {
+        "ja": "焼肉ライク 札幌狸小路店",
+        "en": "Yakiniku Like Sapporo Tanukiko-ji"
+      },
+      "geo": {
+        "latitude": 43.05771,
+        "longitude": 141.35584
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://maps.app.goo.gl/kLsiHDAdZipNTdnx6",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "4ad28f38-3296-449f-bdf6-55464136f360",
+      "name": {
+        "ja": "ねぶたの家 ワ･ラッセ",
+        "en": "Nebuta Museum WA RASSE",
+        "kr": "네부타의 집 와랏세"
+      },
+      "geo": {
+        "latitude": 40.82939,
+        "longitude": 140.73531
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aomori-aomori",
+      "streetViewUrl": "https://maps.app.goo.gl/qpzCf4p8WUsq4DC29",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "4d18aae4-e05e-49df-9640-50c153c55c86",
+      "name": {
+        "en": "West Japan JR Bus, Kyoto Bus Ticket Center",
+        "ja": "西日本JRバス 京都チケットセンター"
+      },
+      "geo": {
+        "latitude": 34.98632,
+        "longitude": 135.75882
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/oNb1xz4VifHkDq6t7",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "5b14bc61-e9ca-4f93-bcff-117fadc0e7b5",
+      "name": {
+        "ja": "りとるはうす しもん",
+        "en": "Little House Simon"
+      },
+      "geo": {
+        "latitude": 40.82514,
+        "longitude": 140.74533
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aomori-aomori",
+      "streetViewUrl": "https://maps.app.goo.gl/svBsKbiVCMhBFTgr8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "63586b9e-a30d-456d-aba9-8f9914630a59",
+      "name": {
+        "ja": "京都駅",
+        "en": "Kyoto Station",
+        "kr": "교토 역"
+      },
+      "geo": {
+        "latitude": 34.98583,
+        "longitude": 135.75894
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/8yt8PAo8TMFe8ijo6",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "6a43f762-e95c-4ef2-b111-a023efdccd00",
+      "name": {
+        "ja": "京都駅",
+        "en": "Kyoto Station",
+        "kr": "교토 역"
+      },
+      "geo": {
+        "latitude": 34.9858,
+        "longitude": 135.75836
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/r3YhCsENUx3eMsJD6",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "6f35353d-94ed-4076-99be-bf821d28d3bf",
+      "name": {
+        "en": "DELTA Bistro, Coffee Shop & Gallery by KYOTOGRAPHIE"
+      },
+      "geo": {
+        "latitude": 35.03028,
+        "longitude": 135.76844
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/4bLoBrEtxoGoHb1e6",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "70ee0b17-0581-494d-9ff9-d47a5fcbbf2c",
+      "name": {
+        "en": "Kyoshin TOP∑ Kyoto Station",
+        "ja": "京進の大学受験TOPΣ 京都駅前校"
+      },
+      "geo": {
+        "latitude": 34.98721,
+        "longitude": 135.76163
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/4Za8ijCALayLdhSDA",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "715bc860-c902-4e61-a9fa-8c21aaee4422",
+      "name": {
+        "ja": "おもかる石",
+        "kr": "오모카루이시",
+        "en": "Omokaru Stone"
+      },
+      "geo": {
+        "latitude": 34.96649,
+        "longitude": 135.77568
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/3K29KcMnsVGfqhHv5",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "76554127-35c4-4982-8e80-172f0ea5cc2b",
+      "name": {
+        "ja": "階段国道339号 下側",
+        "en": "National highway of stairs Under Side"
+      },
+      "geo": {
+        "latitude": 41.25906,
+        "longitude": 140.34459
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aomori-sotogahama",
+      "streetViewUrl": "https://maps.app.goo.gl/N1eTrXU4TR4yzQbL8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "7bb728b9-8d4b-464b-9cdd-5f691785e481",
+      "name": {
+        "ja": "青森駅",
+        "kr": "아오모리 역",
+        "en": "Aomori Station"
+      },
+      "geo": {
+        "latitude": 40.82855,
+        "longitude": 140.73528
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aomori-aomori",
+      "streetViewUrl": "https://maps.app.goo.gl/tNH1b24N5ptv8AcR8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "813d3fa9-e385-4c11-8f0e-d8a32c65376c",
+      "name": {
+        "en": "Mt. Inari Crossroads Observatori",
+        "ja": "稲荷山十字路展望台"
+      },
+      "geo": {
+        "latitude": 34.96908,
+        "longitude": 135.78139
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/sWwrMB1wLyE2KmjG7",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "8dd13fe5-ab40-45f8-8e2b-dac59b16eb83",
+      "name": {
+        "ja": "羽田空港",
+        "en": "Haneda Airport",
+        "kr": "도쿄 국제공항"
+      },
+      "geo": {
+        "latitude": 35.55128,
+        "longitude": 139.78892
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://maps.app.goo.gl/KSb34C7STUdzYAEL7",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "9043f695-289b-477e-a28b-17cb656dc72b",
+      "name": {
+        "ja": "東福寺",
+        "en": "Tofuku-ji Temple",
+        "kr": "토후쿠지"
+      },
+      "geo": {
+        "latitude": 34.97616,
+        "longitude": 135.77377
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/MsyE6L6puqz389cp9",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "967abfaf-4a36-4e9e-8fe0-a148c5c55c5c",
+      "name": {
+        "en": "Kumiko Bench",
+        "kr": "쿠미코 벤치",
+        "ja": "久美子ベンチ"
+      },
+      "geo": {
+        "latitude": 34.88959,
+        "longitude": 135.8084
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://maps.app.goo.gl/ZHsUHt3rMSepwp1o6",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "99a91e85-ae1e-4d63-8664-c36fd11f4944",
+      "name": {
+        "ja": "カリヨンの塔",
+        "en": "Carillon Tower"
+      },
+      "geo": {
+        "latitude": 40.82462,
+        "longitude": 140.74524
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aomori-aomori",
+      "streetViewUrl": "https://maps.app.goo.gl/5NC5PAhBQXLvUGVL7",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "a0db3e39-0ade-4f79-b345-26613e9f2651",
+      "name": {
+        "ja": "札幌駅南口駅前広場",
+        "en": "Sapporo Station South Square",
+        "kr": "삿포로역 남쪽 광장"
+      },
+      "geo": {
+        "latitude": 43.06722,
+        "longitude": 141.3504
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://maps.app.goo.gl/b1kEWU4LcGerqG3dA",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "a1a73e93-5a36-4330-83ec-07210b16786c",
+      "name": {
+        "en": "Kyoto Station",
+        "ja": "京都駅",
+        "kr": "교토 역"
+      },
+      "geo": {
+        "latitude": 34.98523,
+        "longitude": 135.75839
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/3EofVjYXKWrRC96p6",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "a4e2acbf-3bcc-4c53-83fc-1c216f024cc5",
+      "name": {
+        "kr": "도쿄 국제공항",
+        "en": "Haneda Airport",
+        "ja": "羽田空港"
+      },
+      "geo": {
+        "latitude": 35.55235,
+        "longitude": 139.78755
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://maps.app.goo.gl/4UKSNKVv8YVgXCWeA",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "a6db4322-1b66-415d-8aca-941f18b7c77e",
+      "name": {
+        "ja": "函館駅",
+        "en": "Hakodate Station",
+        "kr": "하코다테 역"
+      },
+      "geo": {
+        "latitude": 41.77457,
+        "longitude": 140.72597
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-hakodate",
+      "streetViewUrl": "https://maps.app.goo.gl/cEqayC41E8uv2MD27",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "ab0fd11b-1ada-4cce-be50-d93fe82d8111",
+      "name": {
+        "kr": "게이한이시야마 역",
+        "en": "Keihan-Ishiyama Station",
+        "ja": "京阪石山駅"
+      },
+      "geo": {
+        "latitude": 34.97951,
+        "longitude": 135.90006
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://maps.app.goo.gl/nwGNSPniRamdPV6o8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "adbd5382-70ed-4f7b-a568-68608b75d70e",
+      "name": {
+        "en": "Staircase Village Road",
+        "ja": "階段村道"
+      },
+      "geo": {
+        "latitude": 41.25759,
+        "longitude": 140.34316
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-aomori-sotogahama",
+      "streetViewUrl": "https://maps.app.goo.gl/B2U9WCG7fzXjSmL58",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "b338ef89-c580-4637-9c44-fb3ea2ea0fd0",
+      "name": {
+        "ja": "屋形船 四季",
+        "en": "Houseboat Shiki"
+      },
+      "geo": {
+        "latitude": 34.97822,
+        "longitude": 135.90558
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://maps.app.goo.gl/LHLv7uGgF9jcMEjd6",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "b38c67fc-3b34-4f17-b2c8-ef2709b14ccf",
+      "name": {
+        "en": "Enjukaigan",
+        "ja": "煙樹ヶ浜"
+      },
+      "geo": {
+        "latitude": 33.8845,
+        "longitude": 135.14315
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-wakayama-mihama",
+      "streetViewUrl": "https://maps.app.goo.gl/cF2XWgprTDUWfqfF8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "c0c6764b-ccfe-488b-90f5-d1bcaf761934",
+      "name": {
+        "ja": "元祖寿司 羽田空港第2ターミナル店",
+        "en": "Gansozushi Haneda Airport Terminal 2 Store"
+      },
+      "geo": {
+        "latitude": 35.55023,
+        "longitude": 139.78889
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-ota-city",
+      "streetViewUrl": "https://maps.app.goo.gl/Hfmp5N3XzLZck5QK6",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "c1c4731f-af27-4f52-99e7-dccfa23b0a4a",
+      "name": {
+        "ja": "カントリーハウス英國屋 JR京都伊勢丹 3F",
+        "en": "Country House Eikokuya"
+      },
+      "geo": {
+        "latitude": 34.98599,
+        "longitude": 135.75837
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/8HkmHgBPqBn7CqxYA",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "c201c6d3-3ea2-4161-bcea-19dab9d66d46",
+      "name": {
+        "kr": "오도리 공원 니시3초메 분수",
+        "ja": "西３丁目噴水",
+        "en": "Odori Park fountain"
+      },
+      "geo": {
+        "latitude": 43.06059,
+        "longitude": 141.35273
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://maps.app.goo.gl/cZUPdBFjVougqPcE6",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "c2a6374b-d30d-48e8-a3da-eb77ec90cf13",
+      "name": {
+        "en": "7-Eleven Sapporo Minami 9 Jonishi 4-chome Store",
+        "ja": "7-Eleven 札幌南9条西4丁目店"
+      },
+      "geo": {
+        "latitude": 43.04875,
+        "longitude": 141.35369
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://maps.app.goo.gl/A8aJ8EJgD2Vv85zE7",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "c3101d8e-e311-478c-8dfd-c660dcbb0894",
+      "name": {
+        "ja": "にしきた公園",
+        "en": "Nishi-Kita Park"
+      },
+      "geo": {
+        "latitude": 34.74656,
+        "longitude": 135.35618
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hyogo-nishinomiya",
+      "streetViewUrl": "https://maps.app.goo.gl/yCSsHKpsesmsFzNr7",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "c74e2ba1-830b-499c-b32b-2d07937ff899",
+      "name": {
+        "ja": "パークウェル水車町",
+        "en": "Parkwell Suishacho"
+      },
+      "geo": {
+        "latitude": 43.04862,
+        "longitude": 141.36211
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://maps.app.goo.gl/UAvL6oReX8UZ4p9w9",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "cbdd9d11-f5e5-45a9-ac18-9b1a295526f6",
+      "name": {
+        "ja": "中島公園",
+        "en": "Nakajima Park",
+        "kr": "나카지마 공원"
+      },
+      "geo": {
+        "latitude": 43.04748,
+        "longitude": 141.35493
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://maps.app.goo.gl/uXipQMVgtWAGu4fw9",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "cdb19c4d-ef51-433b-834f-9698d4e5f132",
+      "name": {
+        "en": "Uji Bridge",
+        "kr": "우지바시",
+        "ja": "宇治橋"
+      },
+      "geo": {
+        "latitude": 34.89272,
+        "longitude": 135.80604
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-uji",
+      "streetViewUrl": "https://maps.app.goo.gl/Uo4iGZCdFMPf7qAi8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "d142d088-c187-456f-9a41-dbb998c94e4c",
+      "name": {
+        "ja": "メゾン・セ・デリシウ",
+        "en": "Maison des Délices"
+      },
+      "geo": {
+        "latitude": 35.03058,
+        "longitude": 135.76851
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/V6XmXAkoLb7C9eWZA",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "d59c0434-05f9-47f3-a070-b84d5615e825",
+      "name": {
+        "ja": "六本木ヒルズ展望台 東京シティビュー",
+        "kr": "도쿄 시티뷰 & 스카이덱",
+        "en": "Tokyo City View"
+      },
+      "geo": {
+        "latitude": 35.66007,
+        "longitude": 139.72929
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://maps.app.goo.gl/E27tkMRyykBA9gAh7",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "d7e82519-29ed-473d-8da4-a37a5c5374dc",
+      "name": {
+        "en": "Hyotei",
+        "ja": "瓢亭",
+        "kr": "표정"
+      },
+      "geo": {
+        "latitude": 34.96972,
+        "longitude": 135.78023
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/MCq9UWxR3ztDXgn9A",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "d85d1669-e62e-45df-ad04-8721802b5bfc",
+      "name": {
+        "kr": "와카야마 역",
+        "ja": "和歌山駅",
+        "en": "Wakayama Station"
+      },
+      "geo": {
+        "latitude": 34.23256,
+        "longitude": 135.19274
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-wakayama-wakayama",
+      "streetViewUrl": "https://maps.app.goo.gl/Hk8G6bfUyzr8dVNC8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "d87b8403-4d07-4f50-8c52-6c9c5c568208",
+      "name": {
+        "kr": "요도바시 카메라 멀티미디어 교토",
+        "ja": "ヨドバシカメラ マルチメディア京都",
+        "en": "Yodobashi Camera Multimedia Kyoto"
+      },
+      "geo": {
+        "latitude": 34.98787,
+        "longitude": 135.75937
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/T59LSmFXmXVCG2WJ8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "da2c4c68-68c8-4a05-a557-8e97699f4341",
+      "name": {
+        "ja": "狸小路",
+        "kr": "다누키코지",
+        "en": "TANUKI KOJI"
+      },
+      "geo": {
+        "latitude": 43.05729,
+        "longitude": 141.3531
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://maps.app.goo.gl/4H9XoPpBaX9a9uow7",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "dac3162c-6f97-49fd-adce-a20f9cc65300",
+      "name": {
+        "ja": "しゃくなげ学校(旧鎌掛小学校)",
+        "en": "Kaigake Elementary School"
+      },
+      "geo": {
+        "latitude": 34.98835,
+        "longitude": 136.25981
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shiga-hino",
+      "streetViewUrl": "https://maps.app.goo.gl/zvAMJ3vMrNssMsUbA",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "dfb2699f-7383-4d48-854b-45e1626ec9ea",
+      "name": {
+        "ja": "アルコ",
+        "en": "Alco"
+      },
+      "geo": {
+        "latitude": 33.88655,
+        "longitude": 135.15303
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-wakayama-gobō",
+      "streetViewUrl": "https://maps.app.goo.gl/mpoqFW5LuEkJYBAH7",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "e0112a9f-fbd9-416d-83ce-bb2d5e54e3cb",
+      "name": {
+        "ja": "中野サンモール",
+        "en": "Nakano Sun Mall"
+      },
+      "geo": {
+        "latitude": 35.70654,
+        "longitude": 139.66576
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-nakano-city",
+      "streetViewUrl": "https://maps.app.goo.gl/RzfKb19LW5SvYHJw6",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "e422a1ab-c997-4a0e-995b-94a459195fe3",
+      "name": {
+        "kr": "도쿄 타워",
+        "ja": "東京タワー",
+        "en": "Tokyo Tower"
+      },
+      "geo": {
+        "latitude": 35.65911,
+        "longitude": 139.74529
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-minato-city",
+      "streetViewUrl": "https://maps.app.goo.gl/SgQyq7dH2V7o5zG58",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "e5338ded-dfd6-49db-8a6d-6c03fb2b853f",
+      "name": {
+        "kr": "교마이 인",
+        "en": "Kyomai Inn",
+        "ja": "京舞イン"
+      },
+      "geo": {
+        "latitude": 34.98722,
+        "longitude": 135.76217
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-kyoto-kyoto",
+      "streetViewUrl": "https://maps.app.goo.gl/Xvb8dZMQDnne8pc56",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "e71d3d92-5176-4197-986e-e31516d54dee",
+      "name": {
+        "ja": "公益社団法人 北海道トラック協会",
+        "en": "Public Interest Incorporated Association Hokkaido Trucking Association"
+      },
+      "geo": {
+        "latitude": 43.04909,
+        "longitude": 141.3581
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://maps.app.goo.gl/Hbfgkr1wiaSPyTzu7",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "ecde1300-7361-4351-abd3-76113c26ec7a",
+      "name": {
+        "en": "Karahashi Park",
+        "ja": "唐橋公園"
+      },
+      "geo": {
+        "latitude": 34.97762,
+        "longitude": 135.90818
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-shiga-otsu",
+      "streetViewUrl": "https://maps.app.goo.gl/DBGapJa9rBgyJibM8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "f2203bb9-c252-4721-8101-f17ff0962133",
+      "name": {
+        "en": "Platon Senior Care Facility",
+        "ja": "老人保健施設プラトン"
+      },
+      "geo": {
+        "latitude": 33.88988,
+        "longitude": 135.14901
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-wakayama-mihama",
+      "streetViewUrl": "https://maps.app.goo.gl/3eCjQCH8cAd1rbbr5",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    },
+    {
+      "placeId": "f7a195c1-3ba0-409d-9c95-91bef0a51c32",
+      "name": {
+        "ja": "札幌駅南口駅前広場",
+        "en": "Sapporo Station South Square",
+        "kr": "삿포로역 남쪽 광장"
+      },
+      "geo": {
+        "latitude": 43.06757,
+        "longitude": 141.35037
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-hokkaido-sapporo",
+      "streetViewUrl": "https://maps.app.goo.gl/2u29v2s7ZY83GETc8",
+      "copyright": "© 虎虎／京都アニメーション／中二病でも製作委員会"
+    }
+  ]
+}

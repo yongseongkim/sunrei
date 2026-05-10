@@ -1,0 +1,498 @@
+{
+  "anime": {
+    "animeId": "TokTljW8Xuc2zv5zjpL7",
+    "slug": "oomuro-ke-dear-friends",
+    "title": {
+      "ja": "大室家 dear friends",
+      "kr": "오무로가 dear friends",
+      "en": "Oomuro-ke: Dear Friends"
+    },
+    "author": {
+      "kr": [
+        "나모리"
+      ],
+      "en": [
+        "Namori"
+      ],
+      "ja": [
+        "なもり"
+      ]
+    },
+    "studio": {
+      "en": [
+        "Passione",
+        "STUDIO LINGS"
+      ],
+      "ja": [
+        "パッショーネ",
+        "スタジオリングス"
+      ]
+    }
+  },
+  "placeCount": 29,
+  "places": [
+    {
+      "placeId": "15f8c445-87fd-467d-ba5f-867319ed2000",
+      "name": {
+        "ja": "エヌアイウエル（株）",
+        "en": "NIW Inc."
+      },
+      "geo": {
+        "latitude": 36.73501,
+        "longitude": 137.00015
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7350195,137.0001431,3a,90y,69.68h,88.98t/data=!3m7!1e1!3m5!1skvb9Kbw6i0obmcn7zARDew!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.0188913337473195%26panoid%3Dkvb9Kbw6i0obmcn7zARDew%26yaw%3D69.67706177073227!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "1cf0b8fb-5ca0-4e54-b68f-6891315ea7f0",
+      "name": {
+        "ja": "Ｖ・drug 高岡木津店",
+        "en": "V drug Takaoka Kizu Store"
+      },
+      "geo": {
+        "latitude": 36.73865,
+        "longitude": 137.00156
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7385503,137.0015466,3a,15.9y,28.39h,93.08t/data=!3m7!1e1!3m5!1sUABiOQ3Wm_u5WcekaTlO0g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.0779569347511284%26panoid%3DUABiOQ3Wm_u5WcekaTlO0g%26yaw%3D28.39148438267442!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "1f8ceca8-fb90-4dee-b76a-9e1ed4007d46",
+      "name": {
+        "en": "Green Parking Lot",
+        "ja": "グリーンパーキング"
+      },
+      "geo": {
+        "latitude": 36.73519,
+        "longitude": 137.00093
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7352148,137.0009795,3a,63.9y,225.65h,95.48t/data=!3m7!1e1!3m5!1sOHmj8k7PlbEdLijVLpOe7A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.478929848072994%26panoid%3DOHmj8k7PlbEdLijVLpOe7A%26yaw%3D225.65424990253004!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "28444816-1e65-4ea0-afa0-024c7cb6a582",
+      "name": {
+        "en": "s. r-trois",
+        "ja": "s. r-trois / エス エール トロワ"
+      },
+      "geo": {
+        "latitude": 36.73898,
+        "longitude": 137.00569
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7389394,137.0055608,3a,48.7y,34.07h,95.21t/data=!3m7!1e1!3m5!1sSwKQWEsOhcOGZEjaHnZIIw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.206543116852288%26panoid%3DSwKQWEsOhcOGZEjaHnZIIw%26yaw%3D34.074208927517624!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "2b2649b3-7830-4f62-8828-94585cb1fde1",
+      "name": {
+        "en": "Otayadori Pocket Park",
+        "ja": "御旅屋通ポケットパーク"
+      },
+      "geo": {
+        "latitude": 36.74569,
+        "longitude": 137.01585
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7457027,137.0159718,3a,75y,258.71h,104.19t/data=!3m7!1e1!3m5!1sw6pa_UNu5nEippbKjDs5fQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.188781927783111%26panoid%3Dw6pa_UNu5nEippbKjDs5fQ%26yaw%3D258.7094765010976!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "3b8d2296-4680-45c1-bd77-61dee643674c",
+      "name": {
+        "ja": "グリーンパーキング",
+        "en": "Green Parking Lot"
+      },
+      "geo": {
+        "latitude": 36.7357,
+        "longitude": 137.00128
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7356885,137.0012751,3a,90y,262.27h,97.26t/data=!3m7!1e1!3m5!1sS_M-XSDYoipUyB3amx8D5Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.259842978070026%26panoid%3DS_M-XSDYoipUyB3amx8D5Q%26yaw%3D262.26798370382346!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "4da65a1b-b6d1-4f41-814f-36f038f0848f",
+      "name": {
+        "ja": "寺田矯正歯科医院",
+        "en": "Terada Orthodontics Clinic"
+      },
+      "geo": {
+        "latitude": 36.73546,
+        "longitude": 137.00483
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7354704,137.0047655,3a,90y,85.65h,100.81t/data=!3m7!1e1!3m5!1s0cCEaUddwfxA_xpypyf-kw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.809604564455285%26panoid%3D0cCEaUddwfxA_xpypyf-kw%26yaw%3D85.65391452018957!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "5030e5c5-0ce9-41ff-83e5-7fcfb39c1e9c",
+      "name": {
+        "ja": "浦田ライフサービス",
+        "en": "Urata Life Service"
+      },
+      "geo": {
+        "latitude": 36.73572,
+        "longitude": 137.00212
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7357421,137.0020952,3a,90y,116.63h,99.34t/data=!3m7!1e1!3m5!1saEGr_WJFVC7h8wT_veDngg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.335268874001244%26panoid%3DaEGr_WJFVC7h8wT_veDngg%26yaw%3D116.63196473453162!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "572562d7-ca2c-4e2a-bf12-75e6652b53f3",
+      "name": {
+        "en": "La Foret",
+        "ja": "喫茶 ラ・フォーレ"
+      },
+      "geo": {
+        "latitude": 36.73924,
+        "longitude": 137.00268
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7393827,137.0026502,3a,43y,323.78h,95.75t/data=!3m7!1e1!3m5!1svJJfh8qVJsNmXvetXY-atg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5.749075622055884%26panoid%3DvJJfh8qVJsNmXvetXY-atg%26yaw%3D323.7799331209928!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "59cd0504-d579-4648-8199-717fc435184d",
+      "name": {
+        "en": "NIW Inc.",
+        "ja": "エヌアイウエル（株）"
+      },
+      "geo": {
+        "latitude": 36.7348,
+        "longitude": 137.00044
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7347795,137.0004865,3a,90y,299.65h,87.38t/data=!3m7!1e1!3m5!1sKCVBIzmgvNI728LSdW-N-Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.6197269232956444%26panoid%3DKCVBIzmgvNI728LSdW-N-Q%26yaw%3D299.6490678723039!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "5b2f5963-49ff-4609-b34a-a2485ed769bd",
+      "name": {
+        "en": "La Foret",
+        "ja": "喫茶 ラ・フォーレ"
+      },
+      "geo": {
+        "latitude": 36.73951,
+        "longitude": 137.00259
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.739636,137.0025611,3a,39.2y,198.4h,93.55t/data=!3m7!1e1!3m5!1s8Q42cALMpaw3PAv7CRv2Cw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.5517911112951026%26panoid%3D8Q42cALMpaw3PAv7CRv2Cw%26yaw%3D198.40006610583924!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "682d36d1-f8d4-48e4-b371-d17a3cba747e",
+      "name": {
+        "en": "Green Bean to Bar Chocolate | Nakameguro"
+      },
+      "geo": {
+        "latitude": 35.64879,
+        "longitude": 139.69403
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-tokyo-meguro-city",
+      "streetViewUrl": "https://www.google.com/maps/@35.6487554,139.6940586,3a,90y,7.36h,101.25t/data=!3m7!1e1!3m5!1smXbH1ehE9OPTFyXdFaNtHw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.254648117186605%26panoid%3DmXbH1ehE9OPTFyXdFaNtHw%26yaw%3D7.361066489813851!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "81d4ddd7-b907-4f82-b339-b225cbb8de7c",
+      "name": {
+        "en": "Green Parking Lot",
+        "ja": "グリーンパーキング"
+      },
+      "geo": {
+        "latitude": 36.73508,
+        "longitude": 137.00083
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7350733,137.0008209,3a,75y,220.52h,100.75t/data=!3m7!1e1!3m5!1s_fwckRw7JgIMn06MqzdFIA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.752840168046149%26panoid%3D_fwckRw7JgIMn06MqzdFIA%26yaw%3D220.52295835163156!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "81d79093-1281-48a0-af45-a15cf2e5c4c0",
+      "name": {
+        "en": "Terada Orthodontics Clinic",
+        "ja": "寺田矯正歯科医院"
+      },
+      "geo": {
+        "latitude": 36.73552,
+        "longitude": 137.00404
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7355378,137.0040503,3a,49.6y,274.65h,94.38t/data=!3m7!1e1!3m5!1s-zy9-KG0nPWGlMCZT9w8QA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.38268067483277%26panoid%3D-zy9-KG0nPWGlMCZT9w8QA%26yaw%3D274.65170901815594!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "89bd6d8f-44dc-44b5-ae85-6e526178c91c",
+      "name": {
+        "ja": "エヌアイウエル（株）",
+        "en": "NIW Inc."
+      },
+      "geo": {
+        "latitude": 36.73537,
+        "longitude": 136.99969
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7353459,136.9997229,3a,75y,314.63h,100.64t/data=!3m7!1e1!3m5!1suk7nX6rU-Aliv87d-kDHBg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.64064425726761%26panoid%3Duk7nX6rU-Aliv87d-kDHBg%26yaw%3D314.62956412719495!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "906dc0e5-c32b-4ab9-81c4-ca51b47ee38e",
+      "name": {
+        "en": "NIW Inc.",
+        "ja": "エヌアイウエル（株）"
+      },
+      "geo": {
+        "latitude": 36.73526,
+        "longitude": 136.99983
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7352791,136.999807,3a,90y,316.25h,99.08t/data=!3m7!1e1!3m5!1sosPH5pKIrP2pCret99T7vw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.075224197568005%26panoid%3DosPH5pKIrP2pCret99T7vw%26yaw%3D316.2528252272728!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "9696aeb7-320b-4718-9317-39df18776946",
+      "name": {
+        "ja": "金屋緑地公園",
+        "en": "Kanaya Ryokuchi Park"
+      },
+      "geo": {
+        "latitude": 36.75009,
+        "longitude": 137.00712
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7498764,137.0069254,3a,45.4y,34.68h,92.36t/data=!3m7!1e1!3m5!1sBhrselxtzSNN_dD-bg8bfQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.363233985454272%26panoid%3DBhrselxtzSNN_dD-bg8bfQ%26yaw%3D34.68394745583107!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "a6cad501-3efb-48e0-af08-bd076a3c45f9",
+      "name": {
+        "en": "Green Parking Lot",
+        "ja": "グリーンパーキング"
+      },
+      "geo": {
+        "latitude": 36.73603,
+        "longitude": 137.00136
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7359888,137.001347,3a,75y,10.85h,94.59t/data=!3m7!1e1!3m5!1sYr_OUZcwql1n43-6jvHU6Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.585102207964866%26panoid%3DYr_OUZcwql1n43-6jvHU6Q%26yaw%3D10.85027562244402!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "b095bb2e-7f65-4d01-9407-fda9cadf7307",
+      "name": {
+        "ja": "中の島",
+        "en": "middle of an island"
+      },
+      "geo": {
+        "latitude": 36.75062,
+        "longitude": 137.02206
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7506478,137.0220092,3a,62.2y,140.28h,94.31t/data=!3m7!1e1!3m5!1s6jFBtybvbAJQf4xP5jlPEQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.308024075334345%26panoid%3D6jFBtybvbAJQf4xP5jlPEQ%26yaw%3D140.28140352838145!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "b498eae7-d72d-4fc6-bcb3-e938155f5ebe",
+      "name": {
+        "ja": "千保川緑地",
+        "en": "Senbogawa Ryokuchi Park"
+      },
+      "geo": {
+        "latitude": 36.74196,
+        "longitude": 137.00015
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7419056,137.0002929,3a,48y,301.2h,97.91t/data=!3m7!1e1!3m5!1sxqIfngwZMWV85e0dxmV-EQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7.911331639637851%26panoid%3DxqIfngwZMWV85e0dxmV-EQ%26yaw%3D301.2039085772213!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "cc8f43b8-8c12-4699-bc97-72fcfb605c64",
+      "name": {
+        "ja": "御旅屋セリオ",
+        "en": "Otaya Serio"
+      },
+      "geo": {
+        "latitude": 36.74536,
+        "longitude": 137.0143
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7453149,137.0143509,3a,49.6y,324.14h,91.94t/data=!3m7!1e1!3m5!1sIEx3-8-9HHBEoU9F2wuWrg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.9363599443372692%26panoid%3DIEx3-8-9HHBEoU9F2wuWrg%26yaw%3D324.142450846257!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "d3d3bd64-b6c8-4b02-8f3f-18a3a269ddc7",
+      "name": {
+        "en": "NIW Inc.",
+        "ja": "エヌアイウエル（株）"
+      },
+      "geo": {
+        "latitude": 36.73485,
+        "longitude": 137.00055
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7347795,137.0004865,3a,50.8y,37.74h,94.26t/data=!3m7!1e1!3m5!1sKCVBIzmgvNI728LSdW-N-Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.2624657225325535%26panoid%3DKCVBIzmgvNI728LSdW-N-Q%26yaw%3D37.740250259729685!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "d674f387-a286-4dcc-8af4-05d9678cf99f",
+      "name": {
+        "en": "Lawson Takaoka Station",
+        "ja": "ローソン 高岡駅前店"
+      },
+      "geo": {
+        "latitude": 36.74316,
+        "longitude": 137.01647
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7431532,137.0164868,3a,90y,14.28h,96.95t/data=!3m7!1e1!3m5!1sQen6e6pgb_lRUdFm79xkig!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.949089451886536%26panoid%3DQen6e6pgb_lRUdFm79xkig%26yaw%3D14.28418692241683!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "d6cf87bc-c8ef-40d9-a182-bbf02dc6fffa",
+      "name": {
+        "en": "Live Town Takaoka",
+        "ja": "ライブタウン高岡"
+      },
+      "geo": {
+        "latitude": 36.73564,
+        "longitude": 137.00264
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7356382,137.0026539,3a,90y,91.91h,102.89t/data=!3m7!1e1!3m5!1sDrDr3KpzJedYze7qEHWd2g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.887116909533802%26panoid%3DDrDr3KpzJedYze7qEHWd2g%26yaw%3D91.90912135233091!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "e79910a9-ae78-44f2-8be6-17e77be154e4",
+      "name": {
+        "ja": "あぱはうす壱番館",
+        "en": "Appa Hassu Ichibankan"
+      },
+      "geo": {
+        "latitude": 36.73567,
+        "longitude": 137.00574
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7357382,137.00574,3a,73.2y,187.05h,100.41t/data=!3m7!1e1!3m5!1sTKj6KbRPe3IBHJz23RJQPg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10.413102318219714%26panoid%3DTKj6KbRPe3IBHJz23RJQPg%26yaw%3D187.04787893650106!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "e99dfc7b-12df-4451-baf1-3bd750635eda",
+      "name": {
+        "ja": "金屋緑地公園",
+        "en": "Kanaya Ryokuchi Park"
+      },
+      "geo": {
+        "latitude": 36.75001,
+        "longitude": 137.00751
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7500054,137.0075013,3a,74.3y,277.72h,93.88t/data=!3m7!1e1!3m5!1sFbR7WZfebu1uaybPqKj1Jw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.8762476964525945%26panoid%3DFbR7WZfebu1uaybPqKj1Jw%26yaw%3D277.7194474712313!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "eaa216e1-bc69-4c82-be2f-66b71ea9563e",
+      "name": {
+        "ja": "グリーンパーキング",
+        "en": "Green Parking Lot"
+      },
+      "geo": {
+        "latitude": 36.73542,
+        "longitude": 137.00124
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7354417,137.0012498,3a,75y,258.63h,93.41t/data=!3m7!1e1!3m5!1swInRxvWVaZnRL6ckIj7x5A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.4129414095137918%26panoid%3DwInRxvWVaZnRL6ckIj7x5A%26yaw%3D258.6309985119923!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "f4e6172a-25d8-4c4c-b12a-9c01fcb34ea8",
+      "name": {
+        "ja": "アットパーク第二駐車場",
+        "en": "At Park Daini Parking Lot"
+      },
+      "geo": {
+        "latitude": 36.74508,
+        "longitude": 137.01376
+      },
+      "ep": null,
+      "type": "OTHERS",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7450855,137.0137558,3a,90y,63.32h,104.64t/data=!3m7!1e1!3m5!1sp7ekIX9205mvnjiKHP-nDA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-14.63545407219135%26panoid%3Dp7ekIX9205mvnjiKHP-nDA%26yaw%3D63.31782675250171!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    },
+    {
+      "placeId": "b3a66498-40fa-4027-9bee-5f159588bfbc",
+      "name": {
+        "en": "Green Parking Lot",
+        "ja": "グリーンパーキング"
+      },
+      "geo": {
+        "latitude": 36.7353,
+        "longitude": 137.00108
+      },
+      "ep": null,
+      "type": "OP",
+      "cityId": "JP-toyama-takaoka",
+      "streetViewUrl": "https://www.google.com/maps/@36.7352751,137.0010497,3a,75y,44.79h,96.95t/data=!3m7!1e1!3m5!1sLCMs5_W10rHVK44I94qUxg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.949381963547751%26panoid%3DLCMs5_W10rHVK44I94qUxg%26yaw%3D44.78599298589008!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+      "copyright": "© なもり・一迅社／「大室家」製作委員会"
+    }
+  ]
+}
