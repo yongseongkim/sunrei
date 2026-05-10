@@ -79,3 +79,16 @@ docker-compose.override.yml
 # Python
 __pycache__/
 *.pyc
+
+# Skill workspaces (per-run state, not source)
+.claude/workspace/
+
+# Scraped data from animepilgrimage (regenerable via scripts/scrape-animepilgrimage.ts)
+scripts/animepilgrimage-anime-list.json
+scripts/animepilgrimage-by-anime/
+scripts/animepilgrimage-data.json
+scripts/animepilgrimage-netflix-matched.json
+scripts/animepilgrimage-netflix-unmatched.json
+scripts/animepilgrimage-netflix/
+scripts/animepilgrimage-progress.json
+scripts/netflix-kr-anime.json
