@@ -1,25 +1,30 @@
-import { CreateSunreiRequest, UpdateSunreiRequest } from '@/api/admin';
 import SpotCard from '@/components/sunrei-form/SpotCard';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { MapPin, Plus } from 'lucide-react';
+import { TagDTO } from '@/api/admin';
 import {
   FieldArrayWithId,
   UseFormRegister,
   UseFormSetValue,
   UseFormWatch,
 } from 'react-hook-form';
-
-type FormData = CreateSunreiRequest | UpdateSunreiRequest;
+import { SunreiFormValue } from '@/lib/schemas';
 
 interface SpotsListProps {
-  spotFields: FieldArrayWithId<FormData, 'spots', 'id'>[];
-  register: UseFormRegister<FormData>;
-  setValue: UseFormSetValue<FormData>;
-  watch: UseFormWatch<FormData>;
+  spotFields: FieldArrayWithId<SunreiFormValue, 'spots', 'id'>[];
+  register: UseFormRegister<SunreiFormValue>;
+  setValue: UseFormSetValue<SunreiFormValue>;
+  watch: UseFormWatch<SunreiFormValue>;
+  spotTags: TagDTO[][];
   onAddSpot: () => void;
   onRemoveSpot: (index: number) => void;
   onOpenMap: (spotIndex: number) => void;
+  onSpotTagsChange: (
+    index: number,
+    tagIds: string[],
+    tags: TagDTO[]
+  ) => void;
 }
 
 export default function SpotsList({
@@ -27,20 +32,17 @@ export default function SpotsList({
   register,
   setValue,
   watch,
+  spotTags,
   onAddSpot,
   onRemoveSpot,
   onOpenMap,
+  onSpotTagsChange,
 }: SpotsListProps) {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <Label className="text-base">Spots</Label>
-        <Button
-          type="button"
-          onClick={onAddSpot}
-          size="sm"
-          variant="outline"
-        >
+        <Button type="button" onClick={onAddSpot} size="sm" variant="outline">
           <Plus className="h-4 w-4 mr-2" />
           Add Spot
         </Button>
@@ -54,6 +56,8 @@ export default function SpotsList({
             register={register}
             setValue={setValue}
             watch={watch}
+            selectedTags={spotTags[index] ?? []}
+            onTagsChange={(tagIds, tags) => onSpotTagsChange(index, tagIds, tags)}
             onRemove={onRemoveSpot}
             onOpenMap={onOpenMap}
           />

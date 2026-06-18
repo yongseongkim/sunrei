@@ -1,12 +1,20 @@
-import { PlaceInput } from '@/api/admin';
 import SpotsMap from '@/components/SpotsMap';
 import { Label } from '@/components/ui/label';
 import { Map } from 'lucide-react';
 
+// Minimal structural place shape (only what the map needs); accepts both
+// PlaceInput and the zod-derived form place value.
+type MapPlace = {
+  name?: string | null;
+  address?: string | null;
+  latitude: number;
+  longitude: number;
+} | null;
+
 interface SpotsMapSectionProps {
   spots: Array<{
     title: string;
-    place: PlaceInput | null;
+    place: MapPlace;
   }>;
   height?: string;
 }

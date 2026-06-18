@@ -1,13 +1,20 @@
 'use client';
 
-import { PlaceInput } from '@/api/admin';
 import { Wrapper } from '@googlemaps/react-wrapper';
 import { useEffect, useRef, useState } from 'react';
+
+// Structural place shape; accepts both PlaceInput and the form's place value.
+type SpotPlace = {
+  name?: string | null;
+  address?: string | null;
+  latitude?: number;
+  longitude?: number;
+} | null;
 
 interface SpotsMapProps {
   spots: Array<{
     title: string;
-    place: PlaceInput | null;
+    place: SpotPlace;
   }>;
   height?: string;
 }

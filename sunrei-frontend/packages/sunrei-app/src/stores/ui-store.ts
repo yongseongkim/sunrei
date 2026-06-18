@@ -1,65 +1,47 @@
+'use client';
+
 import { create } from 'zustand';
 
-interface ModalSpot {
-  id: string;
-  title: string;
-  description?: string;
-  youtubeLink?: string | null;
-  images: any[];
-  placeId: string;
-  placeName: string;
-  placeAddress: string;
-  lat: number;
-  lng: number;
+export type MapMode = 'nearby' | 'source';
+
+interface VideoPreview {
   sunreiId: string;
-  sunreiTitle: string;
+  returnTo: 'nearby' | 'source';
 }
 
-interface UIState {
-  selectedSunrei: string | null;
-  hoveredMarker: string | null;
-  modalSpot: ModalSpot | null;
-  searchQuery: string;
-  selectedPlaceId: string | null;
-  bottomBarDetailSpot: ModalSpot | null;
+interface UiState {
   isMobile: boolean;
+  setIsMobile: (m: boolean) => void;
 
-  setSelectedSunrei: (id: string | null) => void;
-  setHoveredMarker: (id: string | null) => void;
-  setModalSpot: (spot: ModalSpot | null) => void;
-  setSearchQuery: (query: string) => void;
-  setSelectedPlaceId: (id: string | null) => void;
-  closeModal: () => void;
-  setBottomBarDetailSpot: (spot: ModalSpot | null) => void;
-  setIsMobile: (isMobile: boolean) => void;
+  // Place list <-> detail
+  activePlaceId: string | null; // selected marker/card
+  setActivePlace: (id: string | null) => void;
+
+  // Search + filters UI
+  searchOpen: boolean;
+  setSearchOpen: (v: boolean) => void;
+  filtersOpen: boolean;
+  setFiltersOpen: (v: boolean) => void;
+
+  // Video preview overlay
+  videoPreview: VideoPreview | null;
+  enterVideoPreview: (sunreiId: string, returnTo: MapMode) => void;
+  exitVideoPreview: () => void;
 }
 
-const LG_BREAKPOINT = 1024;
+export const useUiStore = create<UiState>((set) => ({
+  isMobile: false,
+  setIsMobile: (m) => set({ isMobile: m }),
 
-export const useUIStore = create<UIState>((set) => ({
-  selectedSunrei: null,
-  hoveredMarker: null,
-  modalSpot: null,
-  searchQuery: '',
-  selectedPlaceId: null,
-  bottomBarDetailSpot: null,
-  isMobile: typeof window !== 'undefined' ? window.innerWidth < LG_BREAKPOINT : false,
+  activePlaceId: null,
+  setActivePlace: (id) => set({ activePlaceId: id }),
 
-  setSelectedSunrei: (id) => set({ selectedSunrei: id }),
-  setHoveredMarker: (id) => set({ hoveredMarker: id }),
-  setModalSpot: (spot) => set({ modalSpot: spot }),
-  setSearchQuery: (query) => set({ searchQuery: query }),
-  setSelectedPlaceId: (id) => set({ selectedPlaceId: id }),
-  closeModal: () => set({ modalSpot: null }),
-  setBottomBarDetailSpot: (spot) => set({ bottomBarDetailSpot: spot }),
-  setIsMobile: (isMobile) => set({ isMobile }),
+  searchOpen: false,
+  setSearchOpen: (v) => set({ searchOpen: v }),
+  filtersOpen: false,
+  setFiltersOpen: (v) => set({ filtersOpen: v }),
+
+  videoPreview: null,
+  enterVideoPreview: (sunreiId, returnTo) => set({ videoPreview: { sunreiId, returnTo } }),
+  exitVideoPreview: () => set({ videoPreview: null }),
 }));
-
-// Set up resize listener only on client side
-if (typeof window !== 'undefined') {
-  const handleResize = () => {
-    useUIStore.getState().setIsMobile(window.innerWidth < LG_BREAKPOINT);
-  };
-
-  window.addEventListener('resize', handleResize);
-}

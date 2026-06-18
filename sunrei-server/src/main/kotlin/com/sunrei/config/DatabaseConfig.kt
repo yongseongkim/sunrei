@@ -1,10 +1,13 @@
 package com.sunrei.config
 
+import com.sunrei.database.OAuthProviderTable
 import com.sunrei.database.Places
+import com.sunrei.database.Sources
 import com.sunrei.database.SunreiSpots
-import com.sunrei.database.SunreiTags
+import com.sunrei.database.SunreiSpotTags
 import com.sunrei.database.Sunreis
 import com.sunrei.database.Tags
+import com.sunrei.database.UserTable
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import io.ktor.server.config.ApplicationConfig
@@ -26,10 +29,13 @@ object DatabaseConfig {
             transaction {
                 SchemaUtils.create(
                     Places,
+                    Sources,
                     Sunreis,
                     SunreiSpots,
                     Tags,
-                    SunreiTags
+                    SunreiSpotTags,
+                    UserTable,
+                    OAuthProviderTable
                 )
             }
         }

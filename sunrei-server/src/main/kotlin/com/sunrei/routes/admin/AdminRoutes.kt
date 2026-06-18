@@ -14,7 +14,9 @@ fun Route.adminRoutes() {
             call.respondRedirect("/admin/sunreis", permanent = false)
         }
 
+        adminSourceRoutes()
         adminSunreiRoutes()
+        adminPlaceRoutes()
         adminTagRoutes()
         imageRoutes()
         resourceRoutes()

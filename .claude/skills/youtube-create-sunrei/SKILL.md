@@ -85,19 +85,44 @@ The token is auto-loaded by `_load_dot_env()` from `.claude/.env`. If `SUNREI_AD
 Set the following automatically from `video_info.json` — do NOT use AskUserQuestion for these:
 
 - Title: Use `channelName` from `video_info.json` directly
-- Description: Summarize what the channel covers based on the video descriptions in `video_info.json` (the `description` field of each video in `selectedVideos`)
+- Summary: One-line channel summary derived from the video descriptions
+- Description: A longer summary of what the channel covers based on the video descriptions in `video_info.json` (the `description` field of each video in `selectedVideos`)
 - Link: Construct the channel URL as `https://www.youtube.com/channel/{channelId}` using `channelId` from `video_info.json`
+- Published: `false` — ingested Sunreis always land as drafts (the admin publishes them later)
 
-Then, fetch available tags:
+#### Resolve / create the Source
+
+A Sunrei must belong to a Source. Resolve or create the YouTube source for this channel:
+
+```bash
+# Look for an existing YouTube source by channel link
+curl -s -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/sources?q=${channelName}" | jq '.data[] | select(.type=="YOUTUBE")'
+```
+
+- If a matching YOUTUBE source exists, reuse its `id` as `sourceId`.
+- Otherwise create one:
+
+```bash
+curl -s -X POST "{SERVER_URL}/admin/sources" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${TOKEN}" \
+  -d '{ "type": "YOUTUBE", "name": "<channelName>", "externalUrl": "https://www.youtube.com/channel/<channelId>" }'
+```
+
+Use the returned `id` as `sourceId`.
+
+#### Tags (spot-level)
+
+Tags live on spots now. Fetch the bilingual tag list:
 
 ```bash
 curl -s -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/tags" | jq '.data'
 ```
 
-The response includes `data` (array of tags), `totalSize`, `totalElements`, `nextToken`, and `sunreiCountByTagId`.
+The response includes `data` (array of `{id, labelEn, labelKo}` tags), `totalSize`, `totalElements`, `nextToken`, and `spotCountByTagId`.
 
-- If tags exist (`data` is non-empty), use AskUserQuestion to let the user select tags from the list
-- If no tags exist (`data` is empty), skip tag selection and use an empty `tagIds` array
+- If tags exist (`data` is non-empty), use AskUserQuestion to let the user select tags; the selected tag IDs are attached to each spot's `tagIds`.
+- If no tags exist, skip tag selection (each spot gets an empty `tagIds`).
 
 ### 4. Build SunreiSpots
 
@@ -106,9 +131,11 @@ For each location in `locations.json`, create a spot. The spot title is the vide
 ```json
 {
   "title": "시부야의 맛있는 야키토리 맛집 투어",
-  "description": "시부야 맛집 투어를 소개하는 영상에서 방문한 야키토리 전문점. 비장탄으로 굽는 것이 특징이며, 특히 쓰쿠네와 레바가 인기 메뉴로 영상에서 극찬을 받았다.",
+  "context": "영상에서 방문한 야키토리 전문점. 비장탄으로 굽는 것이 특징이며, 특히 쓰쿠네와 레바가 인기 메뉴로 극찬을 받았다.",
+  "description": "",
   "images": [],
   "youtubeLink": "https://youtube.com/watch?v=VIDEO_ID&t=123",
+  "tagIds": ["..."],
   "place": {
     "name": "토리키조쿠 시부야점",
     "address": "도쿄도 시부야구...",
@@ -120,8 +147,10 @@ For each location in `locations.json`, create a spot. The spot title is the vide
 ```
 
 - `title` = video title, truncated to 128 chars if needed (each video is a "scene/episode" within the channel)
-- `description` = location-specific context from the video
+- `context` = what this source says here — the location-specific mention/take from the video
+- `description` = optional longer description (often empty for ingest)
 - `images` = empty array `[]`
+- `tagIds` = the spot-level tags selected in step 3 (same set on every spot unless the user overrides per spot)
 - `place.name` = the actual location name
 
 If multiple locations are extracted from one video, each gets its own SunreiSpot with the same video title.
@@ -137,17 +166,21 @@ curl -s -X POST "{SERVER_URL}/admin/sunreis" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer ${TOKEN}" \
   -d '{
+    "sourceId": "SRC...",
+    "published": false,
     "title": "채널명",
+    "summary": "한 줄 요약",
     "description": "채널/영상 기반 설명",
     "link": "https://youtube.com/...",
     "images": [],
-    "tagIds": ["..."],
     "spots": [
       {
         "title": "영상 제목 (128자 이내)",
-        "description": "영상에서 소개된 장소 관련 내용",
+        "context": "영상에서 이 장소를 어떻게 다뤘는지",
+        "description": "",
         "images": [],
         "youtubeLink": "https://youtube.com/watch?v=...&t=123",
+        "tagIds": ["..."],
         "place": {
           "name": "장소명",
           "address": "주소",
@@ -159,6 +192,8 @@ curl -s -X POST "{SERVER_URL}/admin/sunreis" \
     ]
   }'
 ```
+
+Note: there is no top-level `tagIds` on the Sunrei — tags are per-spot (`spots[].tagIds` / `spots[].tagLabels`).
 
 ### 6. Handle Response
 

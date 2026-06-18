@@ -1,292 +1,177 @@
 'use client';
 
-import { useMapSpots } from '@/hooks/useMapSpots';
+import { useTranslations } from 'next-intl';
+import { Loader2, Search } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { MapView, useSeedInitialCenter } from '@/components/map-view';
+import { PlaceCard } from '@/components/place-card';
+import {
+  LocaleToggle,
+  PlaceDetail,
+  SearchNearbyButton,
+  SourceChips,
+  TagChipRail,
+  UnifiedSearch,
+  VideoPreview,
+} from '@/components/panels';
+import { useMapPlaces } from '@/hooks/use-map';
 import { useMapStore } from '@/stores/map-store';
-import { useUIStore } from '@/stores/ui-store';
-import { useMemo, useRef, useState } from 'react';
-import { Header } from '../components/Header';
-import { PlaceDetailDialog } from '../components/PlaceDetailDialog';
-import { SunreiDetailDialog } from '../components/SunreiDetailDialog';
-import { SunreiMap } from '../components/SunreiMap';
-import { SunreiSidebar } from '../components/SunreiSidebar';
-import { SunreiBottomBar } from '../components/SunreiBottomBar';
+import { useUiStore } from '@/stores/ui-store';
+import { useFilterStore } from '@/stores/filter-store';
 
-export default function Home() {
-  // Zustand stores
-  const {
-    selectedSunrei,
-    hoveredMarker,
-    modalSpot,
-    searchQuery,
-    selectedPlaceId,
-    bottomBarDetailSpot,
-    setSelectedSunrei,
-    setHoveredMarker,
-    setModalSpot,
-    setSearchQuery,
-    setSelectedPlaceId,
-    setBottomBarDetailSpot,
-  } = useUIStore();
-  const { setCenter, setZoom } = useMapStore();
+export default function AppShell() {
+  const t = useTranslations('list');
+  const nav = useTranslations('nav');
+  const searchLabel = nav('search');
+  useSeedInitialCenter();
 
-  // Local state
-  const [currentPolygon, setCurrentPolygon] = useState<string | undefined>(
-    undefined,
-  );
-  const [placeDetail, setPlaceDetail] = useState<any>(null);
-  const [selectedPlaceSpots, setSelectedPlaceSpots] = useState<any>(null);
-  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const mode = useMapStore((s) => s.mode);
+  const committedBounds = useMapStore((s) => s.committedBounds);
+  const mapCenter = useMapStore((s) => s.mapCenter);
+  const selectedSourceIds = useMapStore((s) => s.selectedSourceIds);
+  const pendingArea = useMapStore((s) => s.pendingArea);
 
-  // React Query - fetch map spots with embedded sunrei info
-  const { data: mapSpots = [], isLoading: loading } =
-    useMapSpots(currentPolygon);
+  const isMobile = useUiStore((s) => s.isMobile);
+  const activePlaceId = useUiStore((s) => s.activePlaceId);
+  const setActivePlace = useUiStore((s) => s.setActivePlace);
+  const searchOpen = useUiStore((s) => s.searchOpen);
+  const setSearchOpen = useUiStore((s) => s.setSearchOpen);
 
-  // Debounced bounds change handler
-  const handleBoundsChanged = (polygon: string) => {
-    // Clear existing timer
-    if (debounceTimerRef.current) {
-      clearTimeout(debounceTimerRef.current);
-    }
+  const activeTagIds = useFilterStore((s) => s.activeTagIds);
 
-    // Set new timer with 500ms delay
-    debounceTimerRef.current = setTimeout(() => {
-      setCurrentPolygon(polygon);
-    }, 500);
-  };
+  const { data, isFetching, isLoading } = useMapPlaces({
+    mode,
+    bounds: committedBounds,
+    center: mapCenter,
+    sourceIds: selectedSourceIds,
+  });
 
-  // Transform MapSpotDTO to the format expected by components
-  const allSpots = mapSpots.map((spot) => ({
-    id: spot.id,
-    title: spot.title,
-    description: spot.description,
-    youtubeLink: spot.youtubeLink,
-    images: spot.images,
-    placeId: spot.place?.id || '',
-    placeName: spot.place?.name || '',
-    placeAddress: spot.place?.address || '',
-    lat: spot.place?.latitude || 0,
-    lng: spot.place?.longitude || 0,
-    sunreiId: spot.sunreiId,
-    sunreiTitle: spot.sunreiInfo?.title || '',
-    sunreiTags: spot.sunreiInfo?.tags?.map((tag) => tag.name) || [],
-  }));
+  const allCards = data?.places ?? [];
+  const visibleCards =
+    activeTagIds.length === 0
+      ? allCards
+      : allCards.filter((c) =>
+          activeTagIds.every((id) => (c.tags ?? []).some((tg) => tg.id === id))
+        );
+  const dimmed = activeTagIds.length > 0;
 
-  // Place 기준으로 마커 그룹화
-  const groupedMarkers = useMemo(() => {
-    const markerMap = new Map<
-      string,
-      {
-        placeId: string;
-        placeName: string;
-        placeAddress: string;
-        lat: number;
-        lng: number;
-        spots: typeof allSpots;
-      }
-    >();
-
-    allSpots.forEach((spot) => {
-      const existing = markerMap.get(spot.placeId);
-      if (existing) {
-        existing.spots.push(spot);
-      } else {
-        markerMap.set(spot.placeId, {
-          placeId: spot.placeId,
-          placeName: spot.placeName,
-          placeAddress: spot.placeAddress,
-          lat: spot.lat,
-          lng: spot.lng,
-          spots: [spot],
-        });
-      }
-    });
-
-    return Array.from(markerMap.values());
-  }, [allSpots]);
-
-  // Handlers
-  const handleSunreiClick = (sunreiId: string) => {
-    setSelectedSunrei(sunreiId);
-  };
-
-  const handleMarkerClick = (marker: any) => {
-    setPlaceDetail(marker);
-  };
-
-  // Mobile: handle marker click for bottom bar
-  const handleMobileMarkerClick = (marker: any) => {
-    // Clear previous states
-    setSelectedPlaceSpots(null);
-    setBottomBarDetailSpot(null);
-
-    // Always show SpotSelector (consistent UX)
-    setSelectedPlaceSpots({
-      placeId: marker.placeId,
-      placeName: marker.placeName,
-      placeAddress: marker.placeAddress,
-      spots: marker.spots,
-    });
-
-    // Highlight the clicked marker on the map
-    setSelectedPlaceId(marker.placeId);
-  };
-
-  const handleShowAllContent = () => {
-    setSelectedSunrei(null);
-    setSearchQuery('');
-  };
-
-  const handleCloseModal = () => {
-    setModalSpot(null);
-    // modalSpot을 닫을 때 placeDetail이 있었다면 다시 표시
-    // (이미 placeDetail state가 유지되고 있으므로 별도 처리 불필요)
-  };
-
-  const handleClosePlaceDetail = () => {
-    setPlaceDetail(null);
-    // modalSpot도 함께 닫기
-    setModalSpot(null);
-  };
-
-  // 장소 개수 계산
-  const totalPlaces = useMemo(() => {
-    const placeIds = new Set<string>();
-    allSpots.forEach((spot) => {
-      if (spot.placeId) {
-        placeIds.add(spot.placeId);
-      }
-    });
-    return placeIds.size;
-  }, [allSpots]);
-
-  // Sunrei 개수 계산
-  const totalSunreis = useMemo(() => {
-    const sunreiIds = new Set<string>();
-    allSpots.forEach((spot) => {
-      if (spot.sunreiId) {
-        sunreiIds.add(spot.sunreiId);
-      }
-    });
-    return sunreiIds.size;
-  }, [allSpots]);
-
-  // 검색 필터링된 spots
-  const filteredSpots = useMemo(() => {
-    if (!searchQuery.trim()) return allSpots;
-    const query = searchQuery.toLowerCase();
-    return allSpots.filter(
-      (spot) =>
-        spot.title?.toLowerCase().includes(query) ||
-        spot.description?.toLowerCase().includes(query) ||
-        spot.sunreiTitle?.toLowerCase().includes(query) ||
-        spot.placeName?.toLowerCase().includes(query),
-    );
-  }, [allSpots, searchQuery]);
-
-  // 모바일: 지도 영역에 보이는 Spot만 필터링
-  const visibleSpots = useMemo(() => {
-    // groupedMarkers에서 placeId 추출
-    const visiblePlaceIds = new Set<string>();
-    groupedMarkers.forEach((marker) => {
-      visiblePlaceIds.add(marker.placeId);
-    });
-
-    // 검색 필터링 적용 후 visible spot만 반환
-    return filteredSpots.filter((spot) => visiblePlaceIds.has(spot.placeId));
-  }, [groupedMarkers, filteredSpots]);
+  const firstLoad = isLoading && allCards.length === 0;
 
   return (
-    <div className="flex flex-col h-screen bg-muted/30">
-      {/* Header */}
-      <Header onViewMarkersClick={() => console.log('View markers clicked')} />
+    <div className="fixed inset-0 flex flex-col bg-background text-foreground overflow-hidden">
+      {/* Top bar */}
+      <div className="flex items-center gap-2 px-3 py-2 border-b bg-background/90 backdrop-blur z-30">
+        <span className="font-bold text-base mr-auto">Sunrei</span>
+        <Button variant="outline" size="sm" onClick={() => setSearchOpen(true)}>
+          <Search className="h-4 w-4" />
+          <span className="hidden sm:inline">{searchLabel}</span>
+        </Button>
+        <LocaleToggle />
+      </div>
 
-      {/* Body with padding - 반응형 */}
-      <div className="flex flex-1 overflow-hidden lg:p-4 lg:gap-4">
-        {/* Sidebar - 데스크톱만 */}
-        <div className="hidden lg:flex">
-          <SunreiSidebar
-            spots={filteredSpots}
-            loading={loading}
-            searchQuery={searchQuery}
-            totalPlaces={totalPlaces}
-            totalSunreis={totalSunreis}
-            onSpotClick={(spot) => {
-              // 지도를 해당 장소로 이동
-              setCenter({ lat: spot.lat, lng: spot.lng });
-              setZoom(15); // 더 가까이 확대
-              // InfoWindow 표시
-              setSelectedPlaceId(spot.placeId);
-            }}
-            onSearchChange={setSearchQuery}
-            onShowAllContent={handleShowAllContent}
-          />
+      <SourceChips />
+      <TagChipRail />
+
+      <div className="relative flex-1 flex">
+        {/* Map (always rendered; markers from allCards; non-matching pins dimmed) */}
+        <div className="absolute inset-0">
+          <MapView cards={allCards} />
         </div>
 
-        {/* Map - 전체 화면 */}
-        <SunreiMap
-          groupedMarkers={groupedMarkers}
-          selectedSunrei={selectedSunrei}
-          onMarkerClick={handleMarkerClick}
-          onMobileMarkerClick={handleMobileMarkerClick}
-          onBoundsChanged={handleBoundsChanged}
-        />
+        {/* Desktop sidebar */}
+        {!isMobile && (
+          <aside className="relative w-[380px] shrink-0 border-r bg-background flex flex-col z-10">
+            <div className="px-3 py-2 text-sm font-semibold border-b">{t('title')}</div>
+            <div className="flex-1 overflow-auto p-2 space-y-2">
+              {firstLoad || isFetching ? (
+                <div className="grid place-items-center py-10">
+                  <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
+                </div>
+              ) : visibleCards.length === 0 ? (
+                <EmptyState mode={mode} />
+              ) : (
+                visibleCards.map((c) => (
+                  <PlaceCard
+                    key={c.place.id}
+                    card={c}
+                    active={c.place.id === activePlaceId}
+                    dimmed={dimmed && !(activeTagIds.length === 0)}
+                    onClick={() => setActivePlace(c.place.id)}
+                  />
+                ))
+              )}
+            </div>
+          </aside>
+        )}
+
+        {/* Desktop detail panel */}
+        {!isMobile && activePlaceId && (
+          <div className="absolute right-0 top-0 bottom-0 w-[360px] bg-background border-l z-20 overflow-auto">
+            <PlaceDetail placeId={activePlaceId} />
+          </div>
+        )}
+
+        {/* Mobile bottom sheet (card list / detail) */}
+        {isMobile && (
+          <div className="absolute left-0 right-0 bottom-0 h-[45%] bg-background border-t rounded-t-xl z-20 flex flex-col">
+            {activePlaceId ? (
+              <div className="flex-1 overflow-auto">
+                <PlaceDetail placeId={activePlaceId} />
+              </div>
+            ) : (
+              <>
+                <div className="px-3 py-2 text-sm font-semibold border-b">{t('title')}</div>
+                <div className="flex-1 overflow-auto p-2 space-y-2">
+                  {firstLoad || isFetching ? (
+                    <div className="grid place-items-center py-8">
+                      <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
+                    </div>
+                  ) : visibleCards.length === 0 ? (
+                    <EmptyState mode={mode} />
+                  ) : (
+                    visibleCards.map((c) => (
+                      <PlaceCard
+                        key={c.place.id}
+                        card={c}
+                        active={c.place.id === activePlaceId}
+                        dimmed={dimmed}
+                        onClick={() => setActivePlace(c.place.id)}
+                      />
+                    ))
+                  )}
+                </div>
+              </>
+            )}
+          </div>
+        )}
+
+        <SearchNearbyButton />
       </div>
 
-      {/* Mobile Bottom Bar - 모바일만 */}
-      <div className="lg:hidden">
-        <SunreiBottomBar
-          spots={visibleSpots}
-          searchQuery={searchQuery}
-          onSearchChange={setSearchQuery}
-          selectedSpot={bottomBarDetailSpot}
-          selectedPlaceSpots={selectedPlaceSpots}
-          onSpotClick={(spot) => {
-            // 지도를 해당 장소로 이동
-            setCenter({ lat: spot.lat, lng: spot.lng });
-            setZoom(15); // 더 가까이 확대
-            // Bottom bar에 detail 표시
-            setBottomBarDetailSpot(spot);
-            setSelectedPlaceSpots(null);
-          }}
-          onCloseDetail={(backToCarousel: boolean) => {
-            setBottomBarDetailSpot(null);
-            if (backToCarousel) {
-              setSelectedPlaceSpots(null);
-              setSelectedPlaceId(null);
-            }
-          }}
-          onCloseSpotSelector={() => {
-            setSelectedPlaceId(null);
-          }}
-          onSpotSelectorOpen={(placeId: string) => {
-            setSelectedPlaceId(placeId);
-          }}
-          loading={loading}
-        />
-      </div>
+      {searchOpen && <UnifiedSearch onClose={() => setSearchOpen(false)} />}
+      <VideoPreview />
 
-      {/* Detail Dialogs */}
-      {/* PlaceDetailDialog는 modalSpot이 없을 때만 표시 */}
-      {placeDetail && !modalSpot && (
-        <PlaceDetailDialog
-          placeName={placeDetail.placeName}
-          placeAddress={placeDetail.placeAddress}
-          lat={placeDetail.lat}
-          lng={placeDetail.lng}
-          spots={placeDetail.spots}
-          onClose={handleClosePlaceDetail}
-          onSpotClick={(spot) => {
-            // placeDetail을 유지하고 modalSpot만 설정
-            setModalSpot(spot);
-          }}
-        />
+      {/* Hidden pending-area hint label */}
+      {pendingArea && mode === 'nearby' && (
+        <div className="pointer-events-none absolute bottom-[45%] left-0 right-0 text-center text-xs text-muted-foreground z-10 sm:bottom-6" />
       )}
-      {/* SunreiDetailDialog는 modalSpot이 있을 때 표시 */}
-      <SunreiDetailDialog
-        modalSpot={modalSpot}
-        onClose={handleCloseModal}
-        onBack={placeDetail ? () => setModalSpot(null) : undefined}
-      />
+    </div>
+  );
+}
+
+function EmptyState({ mode }: { mode: 'nearby' | 'source' }) {
+  const t = useTranslations(mode === 'source' ? 'source' : 'list');
+  const clearSources = useMapStore((s) => s.clearSources);
+  return (
+    <div className="text-center py-8 text-muted-foreground">
+      <p className="text-sm">
+        {mode === 'source' ? t('noPlaces') : t('empty')}
+      </p>
+      {mode === 'source' && (
+        <Button variant="link" size="sm" onClick={clearSources}>
+          {t('clearSource')}
+        </Button>
+      )}
     </div>
   );
 }

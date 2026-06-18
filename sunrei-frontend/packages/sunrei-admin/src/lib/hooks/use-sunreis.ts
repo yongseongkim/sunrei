@@ -1,22 +1,44 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { adminApi } from '@/lib/api-client';
-import { CreateSunreiRequest, UpdateSunreiRequest, SunreiDTO } from '@/api/admin';
+import {
+  CreateSunreiRequest,
+  UpdateSunreiRequest,
+  SunreiDTO,
+} from '@/api/admin';
 
 // Query keys
 export const sunreiKeys = {
   all: ['sunreis'] as const,
   lists: () => [...sunreiKeys.all, 'list'] as const,
-  list: (nextToken: string, size: number) => [...sunreiKeys.lists(), nextToken, size] as const,
+  list: (params: {
+    nextToken?: string;
+    size?: number;
+    q?: string;
+    sourceId?: string;
+    published?: boolean;
+  }) => [...sunreiKeys.lists(), params] as const,
   details: () => [...sunreiKeys.all, 'detail'] as const,
   detail: (id: string) => [...sunreiKeys.details(), id] as const,
 };
 
-// List sunreis
-export function useSunreis(nextToken?: string, size: number = 100) {
+export function useSunreis(params: {
+  nextToken?: string;
+  size?: number;
+  q?: string;
+  sourceId?: string;
+  published?: boolean;
+} = {}) {
+  const { nextToken, size = 100, q, sourceId, published } = params;
   return useQuery({
-    queryKey: sunreiKeys.list(nextToken || '', size),
+    queryKey: sunreiKeys.list({ nextToken, size, q, sourceId, published }),
     queryFn: async () => {
-      const response = await adminApi.listSunreis(nextToken, size);
+      const response = await adminApi.listSunreis(
+        nextToken,
+        size,
+        q,
+        sourceId,
+        published
+      );
       return response.data.data || [];
     },
   });
@@ -37,7 +59,6 @@ export function useSunrei(id: string) {
 // Create sunrei
 export function useCreateSunrei() {
   const queryClient = useQueryClient();
-
   return useMutation({
     mutationFn: async (data: CreateSunreiRequest) => {
       const response = await adminApi.createSunrei(data);
@@ -52,7 +73,6 @@ export function useCreateSunrei() {
 // Update sunrei
 export function useUpdateSunrei() {
   const queryClient = useQueryClient();
-
   return useMutation({
     mutationFn: async ({ id, data }: { id: string; data: UpdateSunreiRequest }) => {
       const response = await adminApi.updateSunrei(id, data);
@@ -65,10 +85,23 @@ export function useUpdateSunrei() {
   });
 }
 
+/** Toggle publish state: published=true sets published_at (preserved), false clears it. */
+export function useSetSunreiPublished() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: async ({ id, published }: { id: string; published: boolean }) => {
+      const response = await adminApi.updateSunrei(id, { published });
+      return response.data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: sunreiKeys.lists() });
+    },
+  });
+}
+
 // Delete sunrei
 export function useDeleteSunrei() {
   const queryClient = useQueryClient();
-
   return useMutation({
     mutationFn: async (id: string) => {
       await adminApi.deleteSunrei(id);
@@ -79,3 +112,5 @@ export function useDeleteSunrei() {
     },
   });
 }
+
+export type { SunreiDTO };

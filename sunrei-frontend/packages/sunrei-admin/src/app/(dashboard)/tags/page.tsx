@@ -17,7 +17,7 @@ export default function TagsPage() {
   const error = queryError?.message || null;
   const tags = result?.data || [];
   const totalElements = result?.totalElements || 0;
-  const sunreiCountByTagId = result?.sunreiCountByTagId || {};
+  const spotCountByTagId = result?.spotCountByTagId || {};
 
   if (loading) {
     return (
@@ -33,7 +33,7 @@ export default function TagsPage() {
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Tags</h1>
           <p className="text-muted-foreground mt-2">
-            Manage all tags ({totalElements} total)
+            Bilingual spot tags ({totalElements} total)
           </p>
         </div>
       </div>
@@ -52,7 +52,7 @@ export default function TagsPage() {
               <Tag className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
               <h3 className="text-lg font-medium mb-2">No tags yet</h3>
               <p className="text-muted-foreground">
-                Tags will appear here once created from Sunrei forms.
+                Tags are created on the fly from spot forms.
               </p>
             </CardContent>
           </Card>
@@ -61,14 +61,13 @@ export default function TagsPage() {
             <TagCard
               key={tag.id}
               tag={tag}
-              sunreiCount={sunreiCountByTagId[tag.id!] || 0}
+              spotCount={spotCountByTagId[tag.id!] || 0}
               onClick={() => router.push(`/tags/${tag.id}`)}
             />
           ))
         )}
       </div>
 
-      {/* Pagination controls */}
       {totalElements > 0 && (
         <div className="flex items-center justify-between">
           <p className="text-sm text-muted-foreground">
@@ -102,37 +101,39 @@ export default function TagsPage() {
 
 function TagCard({
   tag,
-  sunreiCount,
-  onClick
+  spotCount,
+  onClick,
 }: {
   tag: TagDTO;
-  sunreiCount: number;
+  spotCount: number;
   onClick: () => void;
 }) {
   return (
-    <Card
-      className="cursor-pointer hover:bg-accent transition-colors"
-      onClick={onClick}
-    >
+    <Card className="cursor-pointer hover:bg-accent transition-colors" onClick={onClick}>
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="text-lg flex items-center gap-2">
             <Tag className="h-4 w-4" />
-            {tag.name}
+            {tag.labelKo}
           </CardTitle>
           <div className="flex items-center gap-2">
             <span className="text-sm text-muted-foreground">
-              {sunreiCount} Sunrei{sunreiCount !== 1 ? 's' : ''}
+              {spotCount} Spot{spotCount !== 1 ? 's' : ''}
             </span>
-            <Button variant="ghost" size="sm" onClick={(e) => { e.stopPropagation(); onClick(); }}>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={(e) => {
+                e.stopPropagation();
+                onClick();
+              }}
+            >
               <Edit2 className="h-4 w-4" />
             </Button>
           </div>
         </div>
-        {tag.description && (
-          <CardDescription className="line-clamp-2">
-            {tag.description}
-          </CardDescription>
+        {tag.labelEn && tag.labelEn !== tag.labelKo && (
+          <CardDescription className="line-clamp-2">{tag.labelEn}</CardDescription>
         )}
       </CardHeader>
     </Card>

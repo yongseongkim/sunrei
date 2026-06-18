@@ -1,0 +1,39 @@
+{
+  "nav": { "nearby": "Nearby", "search": "Search", "filters": "Filters", "clear": "Clear" },
+  "list": {
+    "title": "Places near map center",
+    "empty": "No places here yet",
+    "inVideos": "In {count, plural, one {# video} other {# videos}}",
+    "showPrevious": "Showing previous area",
+    "searchNearby": "Search nearby",
+    "finding": "Finding spots…"
+  },
+  "search": {
+    "placeholder": "Search areas, channels, videos",
+    "areas": "Areas & places",
+    "channels": "Channels & programs",
+    "videos": "Videos",
+    "noResults": "No results",
+    "addSource": "Add source",
+    "applied": "Source added"
+  },
+  "source": {
+    "clearSource": "Clear source",
+    "noPlaces": "No places for this source yet",
+    "managedPage": "Managed page",
+    "linksOut": "Visit ↗",
+    "watchOnYoutube": "Watch on YouTube ↗",
+    "whereToWatch": "Where to watch ↗"
+  },
+  "detail": {
+    "mentions": "Mentions",
+    "watch": "Watch",
+    "context": "Context",
+    "directions": "Directions",
+    "previewing": "Previewing video",
+    "backToList": "Back to list"
+  },
+  "tags": { "title": "Filter by tag", "reset": "Reset", "showPlaces": "Show {count} places" },
+  "geo": { "useLocation": "Use my location", "denied": "Showing Seoul" },
+  "locale": { "toggle": "한국어" }
+}

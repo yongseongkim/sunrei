@@ -95,6 +95,8 @@ tasks.register<org.openapitools.generator.gradle.plugin.tasks.GenerateTask>("gen
     outputDir.set("$buildDir/generated-app")
     apiPackage.set("com.sunrei.generated.api.app")
     modelPackage.set("com.sunrei.generated.dto.app")
+    // Wipe before generating so removed schemas don't linger across regenerations.
+    doFirst { delete("$buildDir/generated-app") }
     configOptions.set(
         mapOf(
             "dateLibrary" to "kotlinx-datetime",
@@ -125,6 +127,8 @@ tasks.register<org.openapitools.generator.gradle.plugin.tasks.GenerateTask>("gen
     outputDir.set("$buildDir/generated-admin")
     apiPackage.set("com.sunrei.generated.api.admin")
     modelPackage.set("com.sunrei.generated.dto.admin")
+    // Wipe before generating so removed schemas don't linger across regenerations.
+    doFirst { delete("$buildDir/generated-admin") }
     configOptions.set(
         mapOf(
             "dateLibrary" to "kotlinx-datetime",

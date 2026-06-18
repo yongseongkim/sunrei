@@ -1,40 +1,157 @@
 openapi: 3.0.0
 info:
   title: Sunrei App API
-  version: 1.0.0
-  description: Public API for Sunrei client applications
+  version: 2.0.0
+  description: Public map-first API for Sunrei client applications. Distance is always anchored to the map center, never GPS.
 
 servers:
   - url: http://localhost:3030
     description: Development server
 
 paths:
-  /api/sunreis:
+  /api/map:
     get:
-      summary: List all Sunrei
-      operationId: listSunreis
+      summary: List places for the map (nearby or source mode)
+      description: >
+        Nearby mode requires viewport bounds (swLat,swLng,neLat,neLng); centerLat/centerLng is the
+        map-view center used as the distance/sort anchor (computed from bounds center if absent).
+        Source mode is selected by passing sourceIds (comma-separated); it is global (no viewport
+        bound), returns every place featured by the selected source(s), nearest-to-center.
+        If sourceIds is present, source mode wins; otherwise bounds select nearby mode.
+        No tag filtering here — tags are filtered client-side.
+      operationId: getMapData
+      parameters:
+        - name: swLat
+          in: query
+          schema: { type: number, format: float }
+        - name: swLng
+          in: query
+          schema: { type: number, format: float }
+        - name: neLat
+          in: query
+          schema: { type: number, format: float }
+        - name: neLng
+          in: query
+          schema: { type: number, format: float }
+        - name: centerLat
+          in: query
+          schema: { type: number, format: float }
+        - name: centerLng
+          in: query
+          schema: { type: number, format: float }
+        - name: sourceIds
+          in: query
+          description: Comma-separated source IDs for source mode.
+          schema: { type: string }
       responses:
         '200':
-          description: List of all Sunrei
+          description: Places (one card per place) for the active mode
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListSunreiResult'
+                $ref: '#/components/schemas/ListPlacesResult'
+        '400':
+          description: Missing bounds when sourceIds is absent
+
+  /api/sources:
+    get:
+      summary: List sources (source rail / add-source picker)
+      operationId: listSources
+      parameters:
+        - name: q
+          in: query
+          schema: { type: string }
+        - name: swLat
+          in: query
+          schema: { type: number, format: float }
+        - name: swLng
+          in: query
+          schema: { type: number, format: float }
+        - name: neLat
+          in: query
+          schema: { type: number, format: float }
+        - name: neLng
+          in: query
+          schema: { type: number, format: float }
+        - name: centerLat
+          in: query
+          schema: { type: number, format: float }
+        - name: centerLng
+          in: query
+          schema: { type: number, format: float }
+      responses:
+        '200':
+          description: Sources with counts and nearest distance
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListSourcesResult'
+
+  /api/sources/{id}:
+    get:
+      summary: Get a source (source intro / managed work page)
+      description: >
+        YouTube sources return enough data to link out; Anime, TV, and Other return managed-work
+        page data. Videos are sorted by nearest spot to the optional center.
+      operationId: getSource
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: centerLat
+          in: query
+          schema: { type: number, format: float }
+        - name: centerLng
+          in: query
+          schema: { type: number, format: float }
+      responses:
+        '200':
+          description: Source detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetSourceResult'
+        '404':
+          description: Source not found
+
+  /api/places/{id}:
+    get:
+      summary: Get place detail (mentions + spots)
+      operationId: getPlace
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: centerLat
+          in: query
+          schema: { type: number, format: float }
+        - name: centerLng
+          in: query
+          schema: { type: number, format: float }
+      responses:
+        '200':
+          description: Place detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPlaceResult'
+        '404':
+          description: Place not found
 
   /api/sunreis/{id}:
     get:
-      summary: Get Sunrei by ID
+      summary: Get a Sunrei (video preview / video detail)
       operationId: getSunrei
       parameters:
         - name: id
           in: path
           required: true
-          schema:
-            type: string
-          description: ID of the Sunrei to retrieve
+          schema: { type: string }
       responses:
         '200':
-          description: Details of the Sunrei
+          description: Sunrei with spots
           content:
             application/json:
               schema:
@@ -42,42 +159,9 @@ paths:
         '404':
           description: Sunrei not found
 
-  /api/map:
-    get:
-      summary: Get map data (spots with Sunrei info) filtered by polygon
-      operationId: getMapData
-      parameters:
-        - name: polygon
-          in: query
-          required: false
-          description: WKT format polygon string (e.g., "POLYGON((139.5 35.5, 139.8 35.5, 139.8 35.8, 139.5 35.8, 139.5 35.5))")
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Map data containing spots with embedded Sunrei info
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ListMapSpots'
-
-  /api/places:
-    get:
-      summary: List all places
-      operationId: listPlaces
-      responses:
-        '200':
-          description: List of places
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/PlaceDTO'
-
   /api/tags:
     get:
-      summary: List all tags
+      summary: List all bilingual tags
       operationId: listTags
       responses:
         '200':
@@ -89,291 +173,315 @@ paths:
                 items:
                   $ref: '#/components/schemas/TagDTO'
 
+  /api/search:
+    get:
+      summary: Unified search (places, sources, sunreis)
+      description: >
+        Database place hits, source hits, and published Sunrei hits. The client may merge Google
+        Places autocomplete results into the places group. Google Places is handled client-side.
+      operationId: search
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema: { type: string }
+        - name: centerLat
+          in: query
+          schema: { type: number, format: float }
+        - name: centerLng
+          in: query
+          schema: { type: number, format: float }
+      responses:
+        '200':
+          description: Search result groups
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResult'
+
 components:
   schemas:
-    # ===== Common DTOs =====
-    Coordinate:
-      type: object
-      required:
-        - lat
-        - lng
-      properties:
-        lat:
-          type: number
-          format: float
-          description: Latitude coordinate
-        lng:
-          type: number
-          format: float
-          description: Longitude coordinate
-
-    PlaceDTO:
-      type: object
-      required:
-        - id
-        - name
-        - latitude
-        - longitude
-        - isClosed
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-          description: Name of the place
-        address:
-          type: string
-          description: Address of the place
-        latitude:
-          type: number
-          format: float
-          description: Latitude of the place
-        longitude:
-          type: number
-          format: float
-          description: Longitude of the place
-        isClosed:
-          type: boolean
-          description: Whether the place is permanently closed or no longer exists
-        closedReason:
-          type: string
-          description: Reason for closure (e.g., "Permanently closed", "Demolished", "Relocated")
-        closedAt:
-          type: string
-          format: date-time
-          description: Date when the place was closed or ceased to exist
-        notes:
-          type: string
-          description: Additional notes about the place status or history
-        googleMapsId:
-          type: string
-          description: Google Maps Place ID
-
+    # ===== Common =====
     ImageDTO:
       type: object
-      required:
-        - url
+      required: [url]
       properties:
-        url:
-          type: string
-          description: URL of the image
-        width:
-          type: integer
-          description: Width of the image in pixels
-        height:
-          type: integer
-          description: Height of the image in pixels
-    
+        url: { type: string }
+        width: { type: integer }
+        height: { type: integer }
+
     MultiSizeImageDTO:
       type: object
-      required:
-        - images
+      required: [images]
       properties:
         images:
           type: array
-          description: Array of different image sizes (original, large, medium, small)
           items:
             $ref: '#/components/schemas/ImageDTO'
 
-    SunreiSpotDTO:
-      type: object
-      required:
-        - id
-        - sunreiId
-        - title
-        - place
-        - images
-      properties:
-        id:
-          type: string
-        sunreiId:
-          type: string
-          description: ID of the parent Sunrei
-        title:
-          type: string
-          maxLength: 128
-          description: Title of the Sunrei Spot
-        description:
-          type: string
-          description: Detailed description of the Sunrei Spot
-        youtubeLink:
-          type: string
-          description: YouTube video link for this spot
-          nullable: true
-        images:
-          type: array
-          description: Array of multi-size images for this spot
-          items:
-            $ref: '#/components/schemas/MultiSizeImageDTO'
-        place:
-          description: Associated place
-          $ref: '#/components/schemas/PlaceDTO'
+    SourceType:
+      type: string
+      enum: [YOUTUBE, TV, ANIME, OTHER]
 
     TagDTO:
       type: object
-      required:
-        - id
-        - name
+      required: [id, labelEn, labelKo]
       properties:
-        id:
+        id: { type: string }
+        labelEn: { type: string, maxLength: 64 }
+        labelKo: { type: string, maxLength: 64 }
+        description: { type: string, nullable: true }
+
+    PlaceDTO:
+      type: object
+      required: [id, name, latitude, longitude, isClosed]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        address: { type: string, nullable: true }
+        latitude: { type: number, format: float }
+        longitude: { type: number, format: float }
+        googleMapsId: { type: string, nullable: true }
+        isClosed: { type: boolean }
+        closedReason: { type: string, nullable: true }
+        closedAt: { type: string, format: date-time, nullable: true }
+        notes: { type: string, nullable: true }
+        areaLabel:
           type: string
-        name:
-          type: string
-          description: Name of the tag
-        description:
-          type: string
-          description: Description of the tag
           nullable: true
+          description: Optional display text (ward/city) derived from the address, for SpotRows.
+
+    SourceDTO:
+      type: object
+      required: [id, type, name]
+      properties:
+        id: { type: string }
+        type:
+          $ref: '#/components/schemas/SourceType'
+        name: { type: string }
+        nameEn: { type: string, nullable: true }
+        nameKo: { type: string, nullable: true }
+        synopsis: { type: string, nullable: true }
+        externalUrl: { type: string, nullable: true }
+        posterImage:
+          allOf:
+            - $ref: '#/components/schemas/MultiSizeImageDTO'
+          nullable: true
+        videoCount: { type: integer, nullable: true }
+        spotCount: { type: integer, nullable: true }
+        placeCount: { type: integer, nullable: true }
+        nearestDistanceMeters: { type: number, format: double, nullable: true }
+
+    SunreiSummaryDTO:
+      type: object
+      required: [id, sourceId, sourceName, sourceType, title, images, spotCount]
+      properties:
+        id: { type: string }
+        sourceId: { type: string }
+        sourceName: { type: string }
+        sourceType:
+          $ref: '#/components/schemas/SourceType'
+        title: { type: string }
+        summary: { type: string, nullable: true }
+        link: { type: string, nullable: true }
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/MultiSizeImageDTO'
+        spotCount: { type: integer }
+        placeCount: { type: integer, nullable: true }
+        areaCount: { type: integer, nullable: true }
+        nearestDistanceMeters: { type: number, format: double, nullable: true }
+
+    SunreiSpotDTO:
+      type: object
+      required: [id, sunreiId, title, images, place, tags]
+      properties:
+        id: { type: string }
+        sunreiId: { type: string }
+        title: { type: string, maxLength: 128 }
+        description: { type: string, nullable: true }
+        context:
+          type: string
+          nullable: true
+          description: What this source says here ("7화에서 주인공이 울며 식사한 식당").
+        youtubeLink: { type: string, nullable: true }
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/MultiSizeImageDTO'
+        place:
+          $ref: '#/components/schemas/PlaceDTO'
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        distanceMeters: { type: number, format: double, nullable: true }
 
     SunreiDTO:
       type: object
-      required:
-        - id
-        - title
-        - images
-        - spots
-        - tags
+      required: [id, sourceId, source, title, images, spots]
       properties:
-        id:
-          type: string
-        title:
-          type: string
-          description: Title of the Sunrei
-        description:
-          type: string
-          description: Detailed description of the Sunrei
-        link:
-          type: string
-          description: External link for this Sunrei (program URL or YouTube channel)
-          nullable: true
+        id: { type: string }
+        sourceId: { type: string }
+        source:
+          $ref: '#/components/schemas/SourceDTO'
+        title: { type: string }
+        description: { type: string, nullable: true }
+        summary: { type: string, nullable: true }
+        link: { type: string, nullable: true }
         images:
           type: array
-          description: Array of multi-size images for this Sunrei
           items:
             $ref: '#/components/schemas/MultiSizeImageDTO'
         spots:
           type: array
-          description: Array of Sunrei spots associated with this Sunrei
           items:
             $ref: '#/components/schemas/SunreiSpotDTO'
-        tags:
-          type: array
-          description: Array of tags associated with this Sunrei
-          items:
-            $ref: '#/components/schemas/TagDTO'
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
 
-    SunreiInfoDTO:
+    # ===== PlaceCard / map =====
+    PlaceMentionDTO:
       type: object
-      required:
-        - id
-        - title
-        - images
-        - tags
+      description: One mention = one video row in the card. Multiple spots of the same video at the same place collapse into one mention.
+      required: [source, sunreiId, sunreiTitle, spotId, images, tags]
       properties:
-        id:
-          type: string
-        title:
-          type: string
-          description: Title of the Sunrei
-        description:
-          type: string
-          description: Detailed description of the Sunrei
-        link:
-          type: string
-          description: External link for this Sunrei (program URL or YouTube channel)
-          nullable: true
+        source:
+          $ref: '#/components/schemas/SourceDTO'
+        sunreiId: { type: string }
+        sunreiTitle: { type: string }
+        spotId: { type: string, description: Representative spot (first with non-empty context). }
+        context: { type: string, nullable: true }
+        sunreiLink: { type: string, nullable: true, description: sunrei.link }
+        youtubeLink: { type: string, nullable: true, description: sunrei_spot.youtube_link deep link }
         images:
           type: array
-          description: Array of multi-size images for this Sunrei
           items:
             $ref: '#/components/schemas/MultiSizeImageDTO'
         tags:
           type: array
-          description: Array of tags associated with this Sunrei
           items:
             $ref: '#/components/schemas/TagDTO'
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
 
-    MapSunreiSpotDTO:
+    PlaceCardDTO:
       type: object
-      required:
-        - id
-        - sunreiId
-        - title
-        - place
-        - images
-        - sunreiInfo
+      description: One Place = one card = one marker. tags[] is the union of all published spots' tags at this place (powers client-side tag filter).
+      required: [place, mentions, tags, sourceCount, sunreiCount, spotCount]
       properties:
-        id:
-          type: string
-        sunreiId:
-          type: string
-          description: ID of the parent Sunrei
-        title:
-          type: string
-          maxLength: 128
-          description: Title of the Sunrei Spot
-        description:
-          type: string
-          description: Detailed description of the Sunrei Spot
-        youtubeLink:
-          type: string
-          description: YouTube video link for this spot
-          nullable: true
-        images:
-          type: array
-          description: Array of multi-size images for this spot
-          items:
-            $ref: '#/components/schemas/MultiSizeImageDTO'
         place:
-          description: Associated place
           $ref: '#/components/schemas/PlaceDTO'
-        sunreiInfo:
-          description: Associated Sunrei information (without nested spots)
-          $ref: '#/components/schemas/SunreiInfoDTO'
+        distanceMeters: { type: number, format: double, nullable: true }
+        mentions:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlaceMentionDTO'
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        sourceCount: { type: integer }
+        sunreiCount: { type: integer }
+        spotCount: { type: integer }
 
-    # ===== App API Response Models =====
-    ListSunreiResult:
+    BoundsDTO:
       type: object
-      required:
-        - sunreis
-        - totalCount
+      required: [swLat, swLng, neLat, neLng]
       properties:
+        swLat: { type: number, format: float }
+        swLng: { type: number, format: float }
+        neLat: { type: number, format: float }
+        neLng: { type: number, format: float }
+
+    # ===== Results =====
+    ListPlacesResult:
+      type: object
+      required: [places]
+      properties:
+        places:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlaceCardDTO'
+        sources:
+          type: array
+          nullable: true
+          description: Optional source rail data for the current map result.
+          items:
+            $ref: '#/components/schemas/SourceDTO'
+        bounds:
+          allOf:
+            - $ref: '#/components/schemas/BoundsDTO'
+          nullable: true
+
+    GetPlaceResult:
+      type: object
+      required: [place, mentions, spots]
+      properties:
+        place:
+          $ref: '#/components/schemas/PlaceDTO'
+        mentions:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlaceMentionDTO'
+        spots:
+          type: array
+          items:
+            $ref: '#/components/schemas/SunreiSpotDTO'
+
+    GetSourceResult:
+      type: object
+      required: [source, sunreis]
+      properties:
+        source:
+          $ref: '#/components/schemas/SourceDTO'
         sunreis:
           type: array
           items:
-            $ref: '#/components/schemas/SunreiDTO'
-          description: List of Sunrei
-        totalCount:
-          type: integer
-          description: Total number of Sunrei found
+            $ref: '#/components/schemas/SunreiSummaryDTO'
+        places:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/PlaceDTO'
 
     GetSunreiResult:
       type: object
-      required:
-        - sunrei
+      required: [sunrei]
       properties:
         sunrei:
           $ref: '#/components/schemas/SunreiDTO'
 
-    ListMapSpots:
+    ListSourcesResult:
       type: object
-      required:
-        - spots
+      required: [sources]
       properties:
-        spots:
+        sources:
           type: array
           items:
-            $ref: '#/components/schemas/MapSunreiSpotDTO'
-          description: List of spots with embedded Sunrei info for map display
+            $ref: '#/components/schemas/SourceDTO'
+
+    PlaceSearchHitDTO:
+      type: object
+      required: [place, mentionCount, sourceCount]
+      properties:
+        place:
+          $ref: '#/components/schemas/PlaceDTO'
+        mentionCount: { type: integer }
+        sourceCount: { type: integer }
+        distanceMeters: { type: number, format: double, nullable: true }
+
+    SearchResult:
+      type: object
+      description: Three groups — Areas & places, Channels & programs, and Videos.
+      required: [places, sources, sunreis]
+      properties:
+        places:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlaceSearchHitDTO'
+        sources:
+          type: array
+          items:
+            $ref: '#/components/schemas/SourceDTO'
+        sunreis:
+          type: array
+          items:
+            $ref: '#/components/schemas/SunreiSummaryDTO'

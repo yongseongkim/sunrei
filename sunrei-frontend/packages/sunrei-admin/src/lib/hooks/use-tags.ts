@@ -6,7 +6,8 @@ import { CreateTagRequest, UpdateTagRequest, TagDTO } from '@/api/admin';
 export const tagKeys = {
   all: ['tags'] as const,
   lists: () => [...tagKeys.all, 'list'] as const,
-  list: (nextToken?: string, size?: number) => [...tagKeys.lists(), { nextToken, size }] as const,
+  list: (nextToken?: string, size?: number) =>
+    [...tagKeys.lists(), { nextToken, size }] as const,
   search: (query: string) => [...tagKeys.all, 'search', query] as const,
   details: () => [...tagKeys.all, 'detail'] as const,
   detail: (id: string) => [...tagKeys.details(), id] as const,
@@ -23,8 +24,8 @@ export function useTags(nextToken?: string, size?: number) {
   });
 }
 
-// Search tags by name
-export function useSearchTags(query: string, enabled: boolean = true) {
+// Search tags by either label (en or ko)
+export function useSearchTags(query: string, enabled = true) {
   return useQuery({
     queryKey: tagKeys.search(query),
     queryFn: async () => {
@@ -35,7 +36,7 @@ export function useSearchTags(query: string, enabled: boolean = true) {
   });
 }
 
-// Get single tag with Sunrei IDs
+// Get single tag with associated spots
 export function useTag(id: string) {
   return useQuery({
     queryKey: tagKeys.detail(id),
@@ -47,10 +48,9 @@ export function useTag(id: string) {
   });
 }
 
-// Create tag
+// Create bilingual tag
 export function useCreateTag() {
   const queryClient = useQueryClient();
-
   return useMutation({
     mutationFn: async (data: CreateTagRequest) => {
       const response = await adminApi.createTag(data);
@@ -62,10 +62,9 @@ export function useCreateTag() {
   });
 }
 
-// Update tag
+// Update tag labels
 export function useUpdateTag(id: string) {
   const queryClient = useQueryClient();
-
   return useMutation({
     mutationFn: async (data: UpdateTagRequest) => {
       const response = await adminApi.updateTag(id, data);
@@ -78,16 +77,33 @@ export function useUpdateTag(id: string) {
   });
 }
 
-// Remove Sunrei from tag
-export function useRemoveSunreiFromTag(tagId: string) {
+// Delete tag
+export function useDeleteTag() {
   const queryClient = useQueryClient();
-
   return useMutation({
-    mutationFn: async (sunreiId: string) => {
-      await adminApi.removeSunreiFromTag(tagId, sunreiId);
+    mutationFn: async (id: string) => {
+      await adminApi.deleteTag(id);
+      return id;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: tagKeys.detail(tagId) });
+      queryClient.invalidateQueries({ queryKey: tagKeys.lists() });
     },
   });
 }
+
+// Detach a spot from a tag
+export function useDetachSpotFromTag(tagId: string) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: async (spotId: string) => {
+      await adminApi.detachSpotFromTag(tagId, spotId);
+      return spotId;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: tagKeys.detail(tagId) });
+      queryClient.invalidateQueries({ queryKey: tagKeys.lists() });
+    },
+  });
+}
+
+export type { TagDTO };
