@@ -12,18 +12,21 @@ import {
   SourceChips,
   TagChipRail,
   UnifiedSearch,
-  VideoPreview,
+  VideoPreviewPanel,
 } from '@/components/panels';
-import { useMapPlaces } from '@/hooks/use-map';
+import { SourceDetail, VideoDetail } from '@/components/detail-surfaces';
+import { useMapPlaces, useSunreiDetail, useTagFilter } from '@/hooks/use-map';
+import { useDeepLinkSync } from '@/hooks/use-deep-link';
 import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useFilterStore } from '@/stores/filter-store';
+import { cn } from '@/lib/utils';
 
 export default function AppShell() {
   const t = useTranslations('list');
   const nav = useTranslations('nav');
-  const searchLabel = nav('search');
   useSeedInitialCenter();
+  useDeepLinkSync();
 
   const mode = useMapStore((s) => s.mode);
   const committedBounds = useMapStore((s) => s.committedBounds);
@@ -36,8 +39,7 @@ export default function AppShell() {
   const setActivePlace = useUiStore((s) => s.setActivePlace);
   const searchOpen = useUiStore((s) => s.searchOpen);
   const setSearchOpen = useUiStore((s) => s.setSearchOpen);
-
-  const activeTagIds = useFilterStore((s) => s.activeTagIds);
+  const videoPreview = useUiStore((s) => s.videoPreview);
 
   const { data, isFetching, isLoading } = useMapPlaces({
     mode,
@@ -47,130 +49,115 @@ export default function AppShell() {
   });
 
   const allCards = data?.places ?? [];
-  const visibleCards =
-    activeTagIds.length === 0
-      ? allCards
-      : allCards.filter((c) =>
-          activeTagIds.every((id) => (c.tags ?? []).some((tg) => tg.id === id))
-        );
-  const dimmed = activeTagIds.length > 0;
+  const { dimmedIds, hasFilter } = useTagFilter(allCards);
+
+  // Video preview takes over the map with the video's spots (markers + fit handled in MapView).
+  const { data: previewData } = useSunreiDetail(videoPreview?.sunreiId ?? null);
+  const previewSpots = videoPreview ? previewData?.sunrei.spots ?? null : null;
 
   const firstLoad = isLoading && allCards.length === 0;
+  const showingPrevious = mode === 'nearby' && !!pendingArea;
+
+  const list = (
+    <>
+      <div className="px-3 py-2 text-sm font-semibold border-b border-line">
+        {showingPrevious ? t('showPrevious') : t('title')}
+      </div>
+      <div className={cn('flex-1 overflow-auto p-2 space-y-2', showingPrevious && 'opacity-50')}>
+        {firstLoad ? (
+          <div className="grid place-items-center py-10">
+            <Loader2 className="h-5 w-5 animate-spin text-ink3" />
+          </div>
+        ) : allCards.length === 0 ? (
+          <EmptyState mode={mode} hasFilter={hasFilter} />
+        ) : (
+          allCards.map((c) => (
+            <PlaceCard
+              key={c.place.id}
+              card={c}
+              active={c.place.id === activePlaceId}
+              dimmed={dimmedIds.has(c.place.id)}
+              onClick={() => setActivePlace(c.place.id)}
+            />
+          ))
+        )}
+      </div>
+    </>
+  );
+
+  const panelContent = videoPreview ? (
+    <VideoPreviewPanel />
+  ) : activePlaceId ? (
+    <div className="flex-1 overflow-auto">
+      <PlaceDetail placeId={activePlaceId} />
+    </div>
+  ) : (
+    list
+  );
 
   return (
     <div className="fixed inset-0 flex flex-col bg-background text-foreground overflow-hidden">
       {/* Top bar */}
-      <div className="flex items-center gap-2 px-3 py-2 border-b bg-background/90 backdrop-blur z-30">
+      <div className="flex items-center gap-2 px-3 py-2 border-b border-line bg-background/90 backdrop-blur z-30">
         <span className="font-bold text-base mr-auto">Sunrei</span>
         <Button variant="outline" size="sm" onClick={() => setSearchOpen(true)}>
           <Search className="h-4 w-4" />
-          <span className="hidden sm:inline">{searchLabel}</span>
+          <span className="hidden sm:inline">{nav('search')}</span>
         </Button>
         <LocaleToggle />
       </div>
 
       <SourceChips />
-      <TagChipRail />
+      {!videoPreview && <TagChipRail />}
 
       <div className="relative flex-1 flex">
-        {/* Map (always rendered; markers from allCards; non-matching pins dimmed) */}
+        {/* Map */}
         <div className="absolute inset-0">
-          <MapView cards={allCards} />
+          <MapView cards={allCards} previewSpots={previewSpots} />
         </div>
 
-        {/* Desktop sidebar */}
+        {/* Desktop left panel */}
         {!isMobile && (
-          <aside className="relative w-[380px] shrink-0 border-r bg-background flex flex-col z-10">
-            <div className="px-3 py-2 text-sm font-semibold border-b">{t('title')}</div>
-            <div className="flex-1 overflow-auto p-2 space-y-2">
-              {firstLoad || isFetching ? (
-                <div className="grid place-items-center py-10">
-                  <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
-                </div>
-              ) : visibleCards.length === 0 ? (
-                <EmptyState mode={mode} />
-              ) : (
-                visibleCards.map((c) => (
-                  <PlaceCard
-                    key={c.place.id}
-                    card={c}
-                    active={c.place.id === activePlaceId}
-                    dimmed={dimmed && !(activeTagIds.length === 0)}
-                    onClick={() => setActivePlace(c.place.id)}
-                  />
-                ))
-              )}
-            </div>
+          <aside className="relative w-[380px] shrink-0 border-r border-line bg-background flex flex-col z-10">
+            {panelContent}
           </aside>
         )}
 
-        {/* Desktop detail panel */}
-        {!isMobile && activePlaceId && (
-          <div className="absolute right-0 top-0 bottom-0 w-[360px] bg-background border-l z-20 overflow-auto">
-            <PlaceDetail placeId={activePlaceId} />
-          </div>
-        )}
-
-        {/* Mobile bottom sheet (card list / detail) */}
+        {/* Mobile bottom sheet */}
         {isMobile && (
-          <div className="absolute left-0 right-0 bottom-0 h-[45%] bg-background border-t rounded-t-xl z-20 flex flex-col">
-            {activePlaceId ? (
-              <div className="flex-1 overflow-auto">
-                <PlaceDetail placeId={activePlaceId} />
-              </div>
-            ) : (
-              <>
-                <div className="px-3 py-2 text-sm font-semibold border-b">{t('title')}</div>
-                <div className="flex-1 overflow-auto p-2 space-y-2">
-                  {firstLoad || isFetching ? (
-                    <div className="grid place-items-center py-8">
-                      <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
-                    </div>
-                  ) : visibleCards.length === 0 ? (
-                    <EmptyState mode={mode} />
-                  ) : (
-                    visibleCards.map((c) => (
-                      <PlaceCard
-                        key={c.place.id}
-                        card={c}
-                        active={c.place.id === activePlaceId}
-                        dimmed={dimmed}
-                        onClick={() => setActivePlace(c.place.id)}
-                      />
-                    ))
-                  )}
-                </div>
-              </>
-            )}
+          <div className="absolute left-0 right-0 bottom-0 h-[45%] bg-background border-t border-line rounded-t-xl z-20 flex flex-col">
+            {panelContent}
           </div>
         )}
 
-        <SearchNearbyButton />
+        <SearchNearbyButton isFetching={isFetching} />
       </div>
 
       {searchOpen && <UnifiedSearch onClose={() => setSearchOpen(false)} />}
-      <VideoPreview />
-
-      {/* Hidden pending-area hint label */}
-      {pendingArea && mode === 'nearby' && (
-        <div className="pointer-events-none absolute bottom-[45%] left-0 right-0 text-center text-xs text-muted-foreground z-10 sm:bottom-6" />
-      )}
+      <SourceDetail />
+      <VideoDetail />
     </div>
   );
 }
 
-function EmptyState({ mode }: { mode: 'nearby' | 'source' }) {
+function EmptyState({ mode, hasFilter }: { mode: 'nearby' | 'source'; hasFilter: boolean }) {
   const t = useTranslations(mode === 'source' ? 'source' : 'list');
+  const nav = useTranslations('nav');
   const clearSources = useMapStore((s) => s.clearSources);
+  const clearFilters = useFilterStore((s) => s.clear);
   return (
-    <div className="text-center py-8 text-muted-foreground">
-      <p className="text-sm">
-        {mode === 'source' ? t('noPlaces') : t('empty')}
-      </p>
-      {mode === 'source' && (
+    <div className="text-center py-8 text-ink3">
+      <p className="text-sm">{mode === 'source' ? t('noPlaces') : t('empty')}</p>
+      {mode === 'source' ? (
         <Button variant="link" size="sm" onClick={clearSources}>
           {t('clearSource')}
         </Button>
+      ) : (
+        hasFilter && (
+          <Button variant="link" size="sm" onClick={clearFilters}>
+            {nav('clear')}
+          </Button>
+        )
       )}
     </div>
   );

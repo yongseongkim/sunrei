@@ -23,7 +23,9 @@
     "managedPage": "정보 페이지",
     "linksOut": "바로가기 ↗",
     "watchOnYoutube": "YouTube에서 보기 ↗",
-    "whereToWatch": "보러가기 ↗"
+    "whereToWatch": "보러가기 ↗",
+    "spots": "등장 장소",
+    "videosNearYou": "주변 영상"
   },
   "detail": {
     "mentions": "언급",
@@ -31,7 +33,9 @@
     "context": "맥락",
     "directions": "길찾기",
     "previewing": "영상 미리보기",
-    "backToList": "목록으로"
+    "backToList": "목록으로",
+    "seeOnMap": "지도에서 보기",
+    "spotCount": "장소 {count}곳"
   },
   "tags": { "title": "태그로 필터", "reset": "초기화", "showPlaces": "장소 {count}개 보기" },
   "geo": { "useLocation": "내 위치 사용", "denied": "서울 표시 중" },

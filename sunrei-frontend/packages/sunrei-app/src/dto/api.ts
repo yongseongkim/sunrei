@@ -933,10 +933,12 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Get a Sunrei (video preview / video detail)
          * @param {string} id 
+         * @param {number} [centerLat] 
+         * @param {number} [centerLng] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSunrei: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getSunrei: async (id: string, centerLat?: number, centerLng?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getSunrei', 'id', id)
             const localVarPath = `/api/sunreis/{id}`
@@ -951,6 +953,14 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (centerLat !== undefined) {
+                localVarQueryParameter['centerLat'] = centerLat;
+            }
+
+            if (centerLng !== undefined) {
+                localVarQueryParameter['centerLng'] = centerLng;
+            }
 
 
     
@@ -1168,11 +1178,13 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get a Sunrei (video preview / video detail)
          * @param {string} id 
+         * @param {number} [centerLat] 
+         * @param {number} [centerLng] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSunrei(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSunreiResult>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getSunrei(id, options);
+        async getSunrei(id: string, centerLat?: number, centerLng?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetSunreiResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getSunrei(id, centerLat, centerLng, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getSunrei']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1277,11 +1289,13 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * 
          * @summary Get a Sunrei (video preview / video detail)
          * @param {string} id 
+         * @param {number} [centerLat] 
+         * @param {number} [centerLng] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSunrei(id: string, options?: RawAxiosRequestConfig): AxiosPromise<GetSunreiResult> {
-            return localVarFp.getSunrei(id, options).then((request) => request(axios, basePath));
+        getSunrei(id: string, centerLat?: number, centerLng?: number, options?: RawAxiosRequestConfig): AxiosPromise<GetSunreiResult> {
+            return localVarFp.getSunrei(id, centerLat, centerLng, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1380,12 +1394,14 @@ export class DefaultApi extends BaseAPI {
      * 
      * @summary Get a Sunrei (video preview / video detail)
      * @param {string} id 
+     * @param {number} [centerLat] 
+     * @param {number} [centerLng] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public getSunrei(id: string, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).getSunrei(id, options).then((request) => request(this.axios, this.basePath));
+    public getSunrei(id: string, centerLat?: number, centerLng?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getSunrei(id, centerLat, centerLng, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

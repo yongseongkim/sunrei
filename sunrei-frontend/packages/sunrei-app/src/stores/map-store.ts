@@ -27,6 +27,7 @@ interface MapState {
   removeSource: (id: string) => void;
   clearSources: () => void;
   panTo: (c: LatLng, zoom?: number) => void;
+  fitToPoints: (points: LatLng[], maxZoom?: number) => void;
 }
 
 export const useMapStore = create<MapState>((set, get) => ({
@@ -92,5 +93,24 @@ export const useMapStore = create<MapState>((set, get) => ({
     if (map) map.panTo(c);
     if (zoom) map?.setZoom(zoom);
     set({ mapCenter: c });
+  },
+
+  // Fit the map to a set of points (source-mode union, video-preview itinerary).
+  // No-op for an empty set; pans+zooms for a single point.
+  fitToPoints: (points, maxZoom = 16) => {
+    const map = get().map;
+    if (!map || points.length === 0) return;
+    if (points.length === 1) {
+      map.panTo(points[0]);
+      map.setZoom(15);
+      return;
+    }
+    const bounds = new google.maps.LatLngBounds();
+    points.forEach((p) => bounds.extend(p));
+    map.fitBounds(bounds, 64);
+    const onceIdle = google.maps.event.addListenerOnce(map, 'idle', () => {
+      if ((map.getZoom() ?? 0) > maxZoom) map.setZoom(maxZoom);
+    });
+    void onceIdle;
   },
 }));

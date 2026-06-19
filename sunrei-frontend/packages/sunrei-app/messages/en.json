@@ -23,7 +23,9 @@
     "managedPage": "Managed page",
     "linksOut": "Visit ↗",
     "watchOnYoutube": "Watch on YouTube ↗",
-    "whereToWatch": "Where to watch ↗"
+    "whereToWatch": "Where to watch ↗",
+    "spots": "Spots",
+    "videosNearYou": "Videos near you"
   },
   "detail": {
     "mentions": "Mentions",
@@ -31,7 +33,9 @@
     "context": "Context",
     "directions": "Directions",
     "previewing": "Previewing video",
-    "backToList": "Back to list"
+    "backToList": "Back to list",
+    "seeOnMap": "See on map",
+    "spotCount": "{count, plural, one {# spot} other {# spots}}"
   },
   "tags": { "title": "Filter by tag", "reset": "Reset", "showPlaces": "Show {count} places" },
   "geo": { "useLocation": "Use my location", "denied": "Showing Seoul" },

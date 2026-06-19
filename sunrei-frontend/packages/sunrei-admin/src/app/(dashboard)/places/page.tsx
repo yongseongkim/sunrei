@@ -71,6 +71,9 @@ function PlaceRow({ place }: { place: PlaceListItemDTO }) {
             {place.googleMapsId ?? '—'}
           </p>
         </div>
+        <div className="min-w-0 flex-1 text-xs text-muted-foreground truncate">
+          {place.area ?? '—'}
+        </div>
         <div className="flex items-center gap-2 shrink-0 text-xs text-muted-foreground">
           <Badge variant="outline">{place.sourceCount} src</Badge>
           <Badge variant="outline">{place.spotCount} spots</Badge>

@@ -1,6 +1,6 @@
 'use client';
 
-import { SunreiDTO } from '@/api/admin';
+import { SunreiDTO, SourceType } from '@/api/admin';
 import {
   useSunreis,
   useDeleteSunrei,
@@ -28,12 +28,18 @@ export default function SunreisPage() {
   const router = useRouter();
   const [q, setQ] = useState('');
   const [publishedFilter, setPublishedFilter] = useState<boolean | undefined>(undefined);
+  const [typeFilter, setTypeFilter] = useState<SourceType | undefined>(undefined);
 
   const {
-    data: sunreis = [],
+    data: allSunreis = [],
     isLoading: loading,
     error: queryError,
   } = useSunreis({ q: q || undefined, published: publishedFilter });
+
+  const sunreis =
+    typeFilter === undefined
+      ? allSunreis
+      : allSunreis.filter((s) => s.source?.type === typeFilter);
   const deleteMutation = useDeleteSunrei();
   const publishMutation = useSetSunreiPublished();
 
@@ -88,6 +94,18 @@ export default function SunreisPage() {
               onClick={() => setPublishedFilter(p)}
             >
               {p === undefined ? 'All' : p === true ? 'Published' : 'Drafts'}
+            </Button>
+          ))}
+        </div>
+        <div className="flex gap-1">
+          {([undefined, ...Object.values(SourceType)] as const).map((t) => (
+            <Button
+              key={String(t)}
+              variant={typeFilter === t ? 'default' : 'outline'}
+              size="sm"
+              onClick={() => setTypeFilter(t)}
+            >
+              {t === undefined ? 'All types' : t}
             </Button>
           ))}
         </div>

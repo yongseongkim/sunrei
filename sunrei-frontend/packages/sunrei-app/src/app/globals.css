@@ -42,6 +42,14 @@
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.62 0.15 265);
+
+  /* WF tokens (wireframe-kit): soft accent surface, accent ink, hairlines, ink shades */
+  --accent-soft: oklch(0.95 0.03 290);
+  --accent-ink: oklch(0.5 0.18 290);
+  --line: oklch(0.93 0 0);
+  --line2: oklch(0.88 0 0);
+  --ink2: oklch(0.44 0 0);
+  --ink3: oklch(0.62 0 0);
 }
 
 .dark {
@@ -70,6 +78,14 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.72 0.18 265);
+
+  /* WF tokens (dark) */
+  --accent-soft: oklch(0.32 0.06 290);
+  --accent-ink: oklch(0.8 0.16 290);
+  --line: oklch(1 0 0 / 12%);
+  --line2: oklch(1 0 0 / 18%);
+  --ink2: oklch(0.78 0 0);
+  --ink3: oklch(0.62 0 0);
 }
 
 @layer base {

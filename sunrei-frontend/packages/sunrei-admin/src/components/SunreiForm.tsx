@@ -284,9 +284,14 @@ export default function SunreiForm({
 
             {/* Summary */}
             <div className="space-y-2">
-              <Label htmlFor="summary" className="text-sm font-medium">
-                Summary
-              </Label>
+              <div className="flex items-center justify-between">
+                <Label htmlFor="summary" className="text-sm font-medium">
+                  Summary
+                </Label>
+                <span className="text-xs text-muted-foreground">
+                  {(watch('summary') || '').length} chars
+                </span>
+              </div>
               <Input
                 id="summary"
                 {...register('summary')}

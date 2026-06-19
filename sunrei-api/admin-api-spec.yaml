@@ -455,6 +455,49 @@ paths:
         '400': { description: Bad request }
         '401': { description: Unauthorized }
 
+  # ===== Resources (YouTube channel registries) =====
+  /admin/resources/youtube/{channelId}:
+    get:
+      summary: Get YouTube channel registry (raw JSON from S3)
+      operationId: getYoutubeResource
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - name: channelId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Channel registry JSON (free-form)
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '400': { description: channelId is required }
+        '401': { description: Unauthorized }
+        '404': { description: Channel registry not found }
+    put:
+      summary: Store YouTube channel registry (raw JSON to S3)
+      operationId: putYoutubeResource
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - name: channelId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '200': { description: Channel registry saved }
+        '400': { description: Invalid JSON body or channelId is required }
+        '401': { description: Unauthorized }
+
 components:
   securitySchemes:
     bearerAuth:

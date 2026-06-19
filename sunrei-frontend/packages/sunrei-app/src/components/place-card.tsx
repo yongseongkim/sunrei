@@ -10,13 +10,18 @@ import { cn } from '@/lib/utils';
 export function MentionRow({ mention }: { mention: PlaceMentionDTO }) {
   const tagLabel = useTagLabel();
   const enterPreview = useUiStore((s) => s.enterVideoPreview);
+  const openSourceDetail = useUiStore((s) => s.openSourceDetail);
   const mode = useMapStore((s) => s.mode);
 
   return (
-    <button
-      type="button"
+    <div
+      role="button"
+      tabIndex={0}
       onClick={() => enterPreview(mention.sunreiId, mode === 'source' ? 'source' : 'nearby')}
-      className="w-full text-left rounded-lg border bg-card hover:bg-accent transition-colors p-2.5 flex gap-2.5"
+      onKeyDown={(e) =>
+        e.key === 'Enter' && enterPreview(mention.sunreiId, mode === 'source' ? 'source' : 'nearby')
+      }
+      className="w-full text-left rounded-lg border border-line bg-card hover:bg-accent-soft transition-colors p-2.5 flex gap-2.5 cursor-pointer"
     >
       {mention.images?.[0]?.images?.[0]?.url ? (
         // eslint-disable-next-line @next/next/no-img-element
@@ -31,7 +36,16 @@ export function MentionRow({ mention }: { mention: PlaceMentionDTO }) {
       <div className="min-w-0 flex-1">
         <div className="text-sm font-medium truncate">{mention.sunreiTitle}</div>
         <div className="text-xs text-muted-foreground truncate">
-          {mention.source.name}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              openSourceDetail(mention.source.id);
+            }}
+            className="hover:text-foreground hover:underline"
+          >
+            {mention.source.name}
+          </button>
           {mention.context ? ` · ${mention.context}` : ''}
         </div>
         {mention.tags?.length > 0 && (
@@ -45,7 +59,7 @@ export function MentionRow({ mention }: { mention: PlaceMentionDTO }) {
         )}
       </div>
       <Play className="h-4 w-4 text-muted-foreground shrink-0 self-center" />
-    </button>
+    </div>
   );
 }
 

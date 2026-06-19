@@ -149,6 +149,12 @@ paths:
           in: path
           required: true
           schema: { type: string }
+        - name: centerLat
+          in: query
+          schema: { type: number, format: float }
+        - name: centerLng
+          in: query
+          schema: { type: number, format: float }
       responses:
         '200':
           description: Sunrei with spots

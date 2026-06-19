@@ -1,8 +1,11 @@
 'use client';
 
+import { useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { apiClient } from '@/lib/api-client';
 import { boundsKey, centerKey, qk } from '@/lib/query-keys';
+import { useFilterStore } from '@/stores/filter-store';
+import type { PlaceCardDTO, SunreiSpotDTO } from '@/dto';
 
 export type MapMode = 'nearby' | 'source';
 export type Bounds = { swLat: number; swLng: number; neLat: number; neLng: number };
@@ -65,4 +68,34 @@ export function useSourceDetail(id: string | null, center?: LatLng | null) {
     queryFn: async () => (await apiClient.getSource(id!, center?.lat, center?.lng)).data,
     enabled: !!id,
   });
+}
+
+/**
+ * Shared client-side tag filter selector (Bd-1/Bf-3). Returns the same `cards`
+ * (list is NOT trimmed — non-matches stay visible) plus the set of place ids whose
+ * tags don't match the active filter, so both the list and the markers dim the same
+ * places. Empty filter → nothing dimmed.
+ */
+export function useTagFilter(cards: PlaceCardDTO[]): { dimmedIds: Set<string>; hasFilter: boolean } {
+  const activeTagIds = useFilterStore((s) => s.activeTagIds);
+  return useMemo(() => {
+    const dimmedIds = new Set<string>();
+    if (activeTagIds.length === 0) return { dimmedIds, hasFilter: false };
+    for (const c of cards) {
+      const ids = new Set((c.tags ?? []).map((t) => t.id));
+      if (!activeTagIds.every((id) => ids.has(id))) dimmedIds.add(c.place.id);
+    }
+    return { dimmedIds, hasFilter: true };
+  }, [cards, activeTagIds]);
+}
+
+/** Group a video's spots by ward/area label for the itinerary list (Bd-6). */
+export function groupSpotsByArea(spots: SunreiSpotDTO[]): { area: string; spots: SunreiSpotDTO[] }[] {
+  const groups = new Map<string, SunreiSpotDTO[]>();
+  for (const s of spots) {
+    const area = s.place.areaLabel || s.place.address || '—';
+    if (!groups.has(area)) groups.set(area, []);
+    groups.get(area)!.push(s);
+  }
+  return Array.from(groups, ([area, spots]) => ({ area, spots }));
 }
