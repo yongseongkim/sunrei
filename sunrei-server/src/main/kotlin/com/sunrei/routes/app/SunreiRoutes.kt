@@ -17,8 +17,12 @@ fun Route.sunreiRoutes() {
             val id = call.parameters["id"]
                 ?: return@get call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id"))
 
+            // Optional map-center anchor: sorts spots nearest-first and sets distanceMeters.
+            val centerLat = call.request.queryParameters["centerLat"]?.toDoubleOrNull()
+            val centerLng = call.request.queryParameters["centerLng"]?.toDoubleOrNull()
+
             // Public: only published sunreis are visible.
-            val sunrei = sunreiService.getPublishedWithSpots(id)
+            val sunrei = sunreiService.getPublishedWithSpots(id, centerLat, centerLng)
             if (sunrei == null) {
                 call.respond(HttpStatusCode.NotFound, mapOf("error" to "Sunrei not found"))
             } else {

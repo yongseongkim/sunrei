@@ -56,7 +56,8 @@ fun SunreiSpot.toDTO(): SunreiSpotDTO = SunreiSpotDTO(
     youtubeLink = youtubeLink,
     images = images.map { it.toDTO() },
     place = place.toDTO(),
-    tags = tags.map { it.toDTO() }
+    tags = tags.map { it.toDTO() },
+    distanceMeters = distanceMeters
 )
 
 fun Sunrei.toDTO(): SunreiDTO {

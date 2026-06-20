@@ -9,5 +9,6 @@ data class SunreiSpot(
     val youtubeLink: String?,
     val images: List<MultiSizeImage>,
     val place: Place,
-    val tags: List<Tag> = emptyList()
+    val tags: List<Tag> = emptyList(),
+    val distanceMeters: Double? = null
 )

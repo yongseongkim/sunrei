@@ -23,9 +23,11 @@ import com.sunrei.routes.admin.converter.toDTO
 import com.sunrei.routes.admin.converter.toModel
 import com.sunrei.utils.PaginationToken
 import kotlinx.datetime.Clock
+import org.jetbrains.exposed.sql.Expression
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.SortOrder
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
+import org.jetbrains.exposed.sql.alias
 import org.jetbrains.exposed.sql.and
 import org.jetbrains.exposed.sql.andWhere
 import org.jetbrains.exposed.sql.deleteWhere
@@ -107,13 +109,13 @@ class SunreiService(
     }
 
     /** Public: a published sunrei with its source + spots (+ spot tags), or null. */
-    fun getPublishedWithSpots(id: String): Sunrei? = transaction {
+    fun getPublishedWithSpots(id: String, centerLat: Double? = null, centerLng: Double? = null): Sunrei? = transaction {
         val row = Sunreis.select {
             (Sunreis.id eq id) and (Sunreis.deletedAt.isNull()) and (Sunreis.publishedAt.isNotNull())
         }.firstOrNull() ?: return@transaction null
 
         val source = fetchSourcesByIds(listOf(row[Sunreis.sourceId]))[row[Sunreis.sourceId]]
-        val spots = fetchSpotsBySunreiIds(listOf(id))[id] ?: emptyList()
+        val spots = fetchSpotsBySunreiIds(listOf(id), centerLat, centerLng)[id] ?: emptyList()
         buildSunreiFromRow(row, source, spots)
     }
 
@@ -345,12 +347,31 @@ class SunreiService(
             .associate { it[Sources.id] to it.toSource() }
     }
 
-    private fun fetchSpotsBySunreiIds(sunreiIds: List<String>): Map<String, List<SunreiSpot>> {
+    private fun fetchSpotsBySunreiIds(
+        sunreiIds: List<String>,
+        centerLat: Double? = null,
+        centerLng: Double? = null
+    ): Map<String, List<SunreiSpot>> {
         if (sunreiIds.isEmpty()) return emptyMap()
 
-        val rows = (SunreiSpots innerJoin Places)
-            .select { (SunreiSpots.sunreiId inList sunreiIds) and (SunreiSpots.deletedAt.isNull()) }
-            .toList()
+        // With a center anchor, compute per-spot distance and return spots nearest-first.
+        val dist =
+            if (centerLat != null && centerLng != null)
+                StDistanceMeters(Places.geom, centerLng, centerLat).alias("spot_dist")
+            else null
+
+        val rows = if (dist != null) {
+            val cols: List<Expression<*>> = SunreiSpots.columns + Places.columns
+            (SunreiSpots innerJoin Places)
+                .slice(cols + dist)
+                .select { (SunreiSpots.sunreiId inList sunreiIds) and (SunreiSpots.deletedAt.isNull()) }
+                .orderBy(dist to SortOrder.ASC)
+                .toList()
+        } else {
+            (SunreiSpots innerJoin Places)
+                .select { (SunreiSpots.sunreiId inList sunreiIds) and (SunreiSpots.deletedAt.isNull()) }
+                .toList()
+        }
 
         val spotIds = rows.map { it[SunreiSpots.id] }.distinct()
         val tagsBySpot = fetchTagsBySpotIds(spotIds)
@@ -368,7 +389,8 @@ class SunreiService(
                     youtubeLink = row[SunreiSpots.youtubeLink],
                     images = row[SunreiSpots.images],
                     place = row.toPlace(),
-                    tags = tagsBySpot[spotId] ?: emptyList()
+                    tags = tagsBySpot[spotId] ?: emptyList(),
+                    distanceMeters = dist?.let { row.getOrNull(it) }
                 )
             }
         )
