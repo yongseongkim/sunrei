@@ -724,3 +724,43 @@ Checkpoint B: `pnpm --filter sunrei-app codegen && pnpm --filter sunrei-app buil
   non-matching pins dim, tags are bilingual, and the public UI has no media-type/platform facet or badge.
 - Unpublished sunreis (`published_at IS NULL`) never surface publicly; admin can publish/unpublish.
 - No legacy map DTOs, Sunrei-level tags, or public-route stubs remain.
+
+---
+
+## Implementation status & deviations
+
+Status: **implemented.** All of Phase A and Phase B is built, builds green
+(`./gradlew compileKotlin`, `pnpm --filter sunrei-app build`, `pnpm --filter sunrei-admin build`),
+and was verified end-to-end in-browser (desktop + mobile, EN + KO) against ingested data. An
+independent audit confirmed the Final Acceptance checklist passes — including parameterized PostGIS
+(no WKT interpolation), published-gating on every public read path, race-safe Place dedupe by
+`google_maps_id`, mention collapse/ordering/tag-union, real per-Place `OverlayView` markers, the full
+nearby/source/video-preview state machine, client-side tag filtering (list filters to matches, pins
+dim), bilingual filters, i18n, and no leftover stubs/legacy DTOs.
+
+The following are intentional deviations from the literal text above, made during implementation:
+
+1. **Bg-1/2/3 — source surfaces consolidated.** `SourceIntro`, `ChannelIntro`, and `WorkInfoPage` are
+   one type-branching `detail/SourceDetail` component (YouTube → intro + watch-out; Anime/TV/Other →
+   managed work page). Same behavior, fewer files.
+2. **Bg-4 — in-video tag-chip filter omitted.** `VideoDetail` shows the summary + tag-grouped spots
+   with the brand palette; the *optional* in-video tag-chip toggle was not built.
+3. **Bd-2 — mobile sheet.** Implemented as a 3-snap peek sheet (peek/half/full, tap-driven, map dims
+   at full); no separate `PeekCarousel`.
+4. **B0-5 — mention ordering.** Mentions order by source then sunrei recency. "Nearest spot" is
+   constant within a Place (all its mentions share the Place's coordinates), so it cannot order there.
+5. **`GET /api/sunreis/{id}` center anchor.** The server honors optional `centerLat,centerLng` (spots
+   returned nearest-first with `distanceMeters`); the client does not yet pass center, since no current
+   surface displays per-spot distance.
+6. **Search `spotCount`.** `SunreiSummaryDTO.spotCount` is `0` for video search hits (not yet projected).
+7. **File layout.** The public app matches the prescribed structure (`components/wf/*`,
+   `components/desktop/*`, `components/mobile/*`, `types/view-models.ts`, `/dev` sandbox).
+
+### Configuration
+
+- **Google Maps API key** must have **Maps JavaScript API**, **Places API**, and **Geocoding API**
+  enabled (Places + Geocoding power search autocomplete and result selection).
+- `sunrei-frontend/packages/sunrei-app/.env.local` — `NEXT_PUBLIC_API_URL`,
+  `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`, `NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID` (gitignored).
+- `sunrei-server/src/main/resources/application-local.conf` — DB connection plus Google OAuth under
+  `auth.oauth.google.{clientId,clientSecret}` (gitignored).
