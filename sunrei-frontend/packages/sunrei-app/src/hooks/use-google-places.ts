@@ -46,7 +46,7 @@ export function useGooglePlaceAutocomplete(query: string): GooglePrediction[] {
   return predictions;
 }
 
-/** Resolve a Google place_id to a lat/lng via Geocoder (for panTo). */
+/** Resolve a Google place_id to a lat/lng via the Geocoder (needs the Geocoding API). */
 export async function resolveGooglePlace(placeId: string): Promise<LatLng | null> {
   if (!placesReady()) return null;
   const geocoder = new google.maps.Geocoder();
