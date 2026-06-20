@@ -116,25 +116,31 @@ class SunreiSpotService {
                 val placeRows = byPlace[placeId] ?: return@mapNotNull null
                 val place = placeById[placeId] ?: return@mapNotNull null
 
-                // Collapse spots by sunrei (one mention per video).
+                // Collapse spots by sunrei (one mention per video). Order by source, then
+                // sunrei recency (newest first) — B0-5. "Nearest spot" is constant within a
+                // place (all its mentions share the place's coordinates), so it can't order here.
                 val bySunrei: Map<String, List<SpotRow>> = placeRows.groupBy { it.sunreiId }
-                val mentions = bySunrei.values.map { spotGroup ->
-                    val rep = spotGroup.firstOrNull { !it.context.isNullOrBlank() } ?: spotGroup.first()
-                    PlaceMention(
-                        source = rep.source,
-                        sunreiId = rep.sunreiId,
-                        sunreiTitle = rep.sunreiTitle,
-                        spotId = rep.spotId,
-                        context = rep.context,
-                        sunreiLink = rep.sunreiLink,
-                        youtubeLink = rep.youtubeLink,
-                        images = rep.sunreiImages,
-                        tags = rep.tags
+                val mentions = bySunrei.values
+                    .map { spotGroup ->
+                        spotGroup.firstOrNull { !it.context.isNullOrBlank() } ?: spotGroup.first()
+                    }
+                    .sortedWith(
+                        compareBy<SpotRow> { it.source.name }
+                            .thenByDescending { it.sunreiPublishedAt }
                     )
-                }.sortedWith(
-                    compareBy<PlaceMention> { it.source.name }
-                        .thenBy { it.sunreiTitle }
-                )
+                    .map { rep ->
+                        PlaceMention(
+                            source = rep.source,
+                            sunreiId = rep.sunreiId,
+                            sunreiTitle = rep.sunreiTitle,
+                            spotId = rep.spotId,
+                            context = rep.context,
+                            sunreiLink = rep.sunreiLink,
+                            youtubeLink = rep.youtubeLink,
+                            images = rep.sunreiImages,
+                            tags = rep.tags
+                        )
+                    }
 
                 val tags = placeRows.flatMap { it.tags }.distinctBy { it.id }
                 PlaceFeedItem(
