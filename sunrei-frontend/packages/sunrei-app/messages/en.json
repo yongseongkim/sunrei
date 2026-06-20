@@ -1,7 +1,10 @@
 {
-  "nav": { "nearby": "Nearby", "search": "Search", "filters": "Filters", "clear": "Clear" },
+  "nav": { "nearby": "Nearby", "search": "Search", "filters": "Filters", "clear": "Clear", "sourcesNearYou": "Sources near you", "all": "All", "nearest": "Nearest" },
   "list": {
     "title": "Places near map center",
+    "placesNear": "{count, plural, one {# place near you} other {# places near you}}",
+    "sortedByDistance": "Sorted by distance",
+    "showList": "Show list",
     "empty": "No places here yet",
     "inVideos": "In {count, plural, one {# video} other {# videos}}",
     "showPrevious": "Showing previous area",
@@ -15,7 +18,9 @@
     "videos": "Videos",
     "noResults": "No results",
     "addSource": "Add source",
-    "applied": "Source added"
+    "applied": "Source added",
+    "moveMap": "Move map",
+    "open": "Open"
   },
   "source": {
     "clearSource": "Clear source",
@@ -25,7 +30,9 @@
     "watchOnYoutube": "Watch on YouTube ↗",
     "whereToWatch": "Where to watch ↗",
     "spots": "Spots",
-    "videosNearYou": "Videos near you"
+    "videosNearYou": "Videos near you",
+    "removed": "Removed {name}",
+    "undo": "Undo"
   },
   "detail": {
     "mentions": "Mentions",

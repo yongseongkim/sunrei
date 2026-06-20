@@ -21,9 +21,10 @@ The user provides a YouTube video or playlist URL as an argument. Example:
 Execute the `/youtube-fetch-info` skill with the provided URL.
 
 - Fetch video/playlist metadata from YouTube Data API v3
-- Display video details to the user
+- Also fetch the owning channel's metadata (title, handle/URL, description, avatar) — this becomes the YouTube Source
+- Display video and channel details to the user
 - For playlists: let user select which videos to process
-- Save to `.claude/workspace/youtube/{ID}/video_info.json`
+- Save to `.claude/workspace/youtube/{ID}/video_info.json` (including the `channel` object)
 
 Checkpoint: Confirm with user before proceeding to transcript extraction.
 

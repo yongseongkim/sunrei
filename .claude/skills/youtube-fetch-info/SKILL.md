@@ -49,6 +49,30 @@ Then fetch all playlist items (paginate with `pageToken` if `nextPageToken` exis
 curl -s "https://www.googleapis.com/youtube/v3/playlistItems?playlistId={PLAYLIST_ID}&part=snippet,contentDetails&maxResults=50&key={API_KEY}"
 ```
 
+### 3.5. Fetch Channel Info
+
+A YouTube Source in Sunrei _is_ the channel, so always fetch the owning channel's
+metadata too. Take `snippet.channelId` from the video (or playlist) response above and
+call the channels endpoint:
+
+```bash
+curl -s "https://www.googleapis.com/youtube/v3/channels?id={CHANNEL_ID}&part=snippet&key={API_KEY}"
+```
+
+From `items[0].snippet`, extract:
+
+- `title` → channel title
+- `description` → channel description (used as the Source synopsis)
+- `customUrl` → the channel handle/custom URL (e.g. `@bimirya`), if present
+- `thumbnails.high.url` (fall back to `medium`/`default`) → channel avatar, used as the
+  Source poster image
+
+Build the canonical channel URL:
+
+- If `customUrl` exists → `https://www.youtube.com/{customUrl}` (the value already
+  includes the leading `@` for handles; legacy values like `c/Name` are used verbatim)
+- Otherwise → `https://www.youtube.com/channel/{channelId}`
+
 ### 4. Display Results
 
 Present the fetched info clearly:
@@ -67,6 +91,8 @@ For a playlist:
 - Playlist title and description
 - Total video count
 - List all videos with index number, title, channel, and video ID
+
+Also show the resolved channel: title, handle/URL, and a one-line description.
 
 ### 5. User Selection (Playlists)
 
@@ -99,7 +125,15 @@ Single video:
   "publishedAt": "...",
   "duration": "...",
   "thumbnailUrl": "...",
-  "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+  "url": "https://www.youtube.com/watch?v=VIDEO_ID",
+  "channel": {
+    "id": "UC...",
+    "title": "...",
+    "handle": "@...",
+    "url": "https://www.youtube.com/@...",
+    "description": "...",
+    "thumbnailUrl": "https://yt3.googleusercontent.com/..."
+  }
 }
 ```
 
@@ -112,6 +146,14 @@ Playlist:
   "title": "...",
   "description": "...",
   "channelName": "...",
+  "channel": {
+    "id": "UC...",
+    "title": "...",
+    "handle": "@...",
+    "url": "https://www.youtube.com/@...",
+    "description": "...",
+    "thumbnailUrl": "https://yt3.googleusercontent.com/..."
+  },
   "selectedVideos": [
     {
       "videoId": "...",
@@ -123,6 +165,9 @@ Playlist:
   ]
 }
 ```
+
+`channel.handle` is the `customUrl` value (may be absent for channels without a handle);
+`channel.url` is the canonical channel URL resolved in step 3.5.
 
 ### 7. Confirm
 

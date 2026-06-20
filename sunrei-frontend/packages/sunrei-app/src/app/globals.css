@@ -15,41 +15,42 @@
   --pantone-willow: #9CAF88;
   --pantone-gardenia: #F8F6F0;
 
-  /* UI Variables */
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  /* UI Variables — Sunrei wireframe palette (cornflower blue + cream/greige) */
+  --radius: 0.75rem;
+  --background: #f8f6f0;          /* Gardenia / cream */
+  --foreground: #2f2b27;          /* ink */
+  --card: #fdfcf9;                /* paper */
+  --card-foreground: #2f2b27;
+  --popover: #fdfcf9;
+  --popover-foreground: #2f2b27;
 
-  /* Primary: Cornflower Blue */
-  --primary: oklch(0.62 0.15 265);
-  --primary-foreground: oklch(1 0 0);
+  /* Primary: Cornflower Blue (#6495ED) */
+  --primary: #6495ED;
+  --primary-foreground: #ffffff;
 
-  /* Secondary: Tendril (light green) */
-  --secondary: oklch(0.83 0.08 130);
-  --secondary-foreground: oklch(0.25 0 0);
+  /* Secondary: Willow / Tendril green */
+  --secondary: #9CAF88;
+  --secondary-foreground: #2f2b27;
 
   /* Accent: Viola */
-  --accent: oklch(0.64 0.18 290);
-  --accent-foreground: oklch(1 0 0);
+  --accent: #9370DB;
+  --accent-foreground: #ffffff;
 
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted: #eceae1;               /* bg2 greige */
+  --muted-foreground: #6e6860;    /* ink2 */
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.62 0.15 265);
+  --border: #e2ded4;              /* line */
+  --input: #e2ded4;
+  --ring: #6495ED;
 
-  /* WF tokens (wireframe-kit): soft accent surface, accent ink, hairlines, ink shades */
-  --accent-soft: oklch(0.95 0.03 290);
-  --accent-ink: oklch(0.5 0.18 290);
-  --line: oklch(0.93 0 0);
-  --line2: oklch(0.88 0 0);
-  --ink2: oklch(0.44 0 0);
-  --ink3: oklch(0.62 0 0);
+  /* WF tokens (wireframe-kit) */
+  --bg2: #eceae1;                 /* greige surface */
+  --accent-soft: oklch(0.93 0.05 264);  /* pale blue wash */
+  --accent-ink: oklch(0.48 0.13 264);   /* deep blue text */
+  --line: #e2ded4;
+  --line2: #d2cdc1;               /* Cobblestone greige */
+  --ink2: #6e6860;
+  --ink3: #a39e95;
 }
 
 .dark {

@@ -1,7 +1,10 @@
 {
-  "nav": { "nearby": "주변", "search": "검색", "filters": "필터", "clear": "초기화" },
+  "nav": { "nearby": "주변", "search": "검색", "filters": "필터", "clear": "초기화", "sourcesNearYou": "주변 소스", "all": "전체", "nearest": "가까운 순" },
   "list": {
     "title": "지도 중심 기준 장소",
+    "placesNear": "주변 장소 {count}곳",
+    "sortedByDistance": "거리순 정렬",
+    "showList": "목록 보기",
     "empty": "이 근처에 장소가 없어요",
     "inVideos": "영상 {count}개",
     "showPrevious": "이전 영역 표시 중",
@@ -15,7 +18,9 @@
     "videos": "영상",
     "noResults": "결과 없음",
     "addSource": "소스 추가",
-    "applied": "추가됨"
+    "applied": "추가됨",
+    "moveMap": "지도 이동",
+    "open": "열기"
   },
   "source": {
     "clearSource": "소스 해제",
@@ -25,7 +30,9 @@
     "watchOnYoutube": "YouTube에서 보기 ↗",
     "whereToWatch": "보러가기 ↗",
     "spots": "등장 장소",
-    "videosNearYou": "주변 영상"
+    "videosNearYou": "주변 영상",
+    "removed": "{name} 제거됨",
+    "undo": "실행취소"
   },
   "detail": {
     "mentions": "언급",

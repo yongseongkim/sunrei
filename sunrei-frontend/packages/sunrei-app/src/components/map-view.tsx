@@ -17,9 +17,91 @@ function toBounds(b: google.maps.LatLngBounds | null): Bounds | null {
 
 type Marker = { id: string; lat: number; lng: number; label: string; dim: boolean; onClick: () => void };
 
+type PinState = { label: string; active: boolean; dim: boolean };
+interface PinHandle {
+  setPosition: (lat: number, lng: number) => void;
+  update: (s: PinState) => void;
+  remove: () => void;
+}
+
+// One teardrop pin as a Google Maps OverlayView (wireframe Pin). White/greige inactive,
+// cornflower-filled + enlarged when active; the count sits upright inside the teardrop.
+function makePinOverlay(
+  map: google.maps.Map,
+  lat: number,
+  lng: number,
+  onClick: () => void,
+  initial: PinState
+): PinHandle {
+  const container = document.createElement('div');
+  container.style.position = 'absolute';
+  container.style.transform = 'translate(-50%,-100%)';
+  container.style.cursor = 'pointer';
+  const drop = document.createElement('div');
+  drop.style.borderRadius = '50% 50% 50% 0';
+  drop.style.transform = 'rotate(-45deg)';
+  drop.style.boxShadow = '0 4px 10px rgba(0,0,0,.18)';
+  drop.style.display = 'flex';
+  drop.style.alignItems = 'center';
+  drop.style.justifyContent = 'center';
+  const num = document.createElement('span');
+  num.style.transform = 'rotate(45deg)';
+  num.style.fontWeight = '700';
+  drop.appendChild(num);
+  container.appendChild(drop);
+  container.addEventListener('click', onClick);
+
+  const applyState = (s: PinState) => {
+    const size = s.active ? 38 : 30;
+    drop.style.width = `${size}px`;
+    drop.style.height = `${size}px`;
+    drop.style.background = s.active ? '#6495ED' : '#fdfcf9';
+    drop.style.border = `2px solid ${s.active ? '#3f63a8' : '#d2cdc1'}`;
+    num.textContent = s.label;
+    num.style.color = s.active ? '#fff' : '#2f2b27';
+    num.style.fontSize = s.active ? '15px' : '13px';
+    container.style.opacity = s.dim ? '0.35' : '1';
+    container.style.zIndex = String(s.active ? 5 : 2);
+  };
+  applyState(initial);
+
+  class PinOverlay extends google.maps.OverlayView {
+    position: google.maps.LatLng;
+    constructor() {
+      super();
+      this.position = new google.maps.LatLng(lat, lng);
+    }
+    onAdd() {
+      this.getPanes()?.overlayMouseTarget.appendChild(container);
+    }
+    draw() {
+      const p = this.getProjection()?.fromLatLngToDivPixel(this.position);
+      if (p) {
+        container.style.left = `${p.x}px`;
+        container.style.top = `${p.y}px`;
+      }
+    }
+    onRemove() {
+      container.remove();
+    }
+  }
+  const overlay = new PinOverlay();
+  overlay.setMap(map);
+
+  return {
+    setPosition: (la, ln) => {
+      overlay.position = new google.maps.LatLng(la, ln);
+      overlay.draw();
+    },
+    update: applyState,
+    remove: () => overlay.setMap(null),
+  };
+}
+
 function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previewSpots: SunreiSpotDTO[] | null }) {
   const ref = useRef<HTMLDivElement>(null);
   const setMap = useMapStore((s) => s.setMap);
+  const mapInstance = useMapStore((s) => s.map);
   const onIdle = useMapStore((s) => s.onIdle);
   const fitToPoints = useMapStore((s) => s.fitToPoints);
   const initialSeed = useMapStore((s) => s.initialSeed);
@@ -29,7 +111,7 @@ function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previe
   const activePlaceId = useUiStore((s) => s.activePlaceId);
   const setActivePlace = useUiStore((s) => s.setActivePlace);
   const { dimmedIds } = useTagFilter(cards);
-  const markersRef = useRef<Record<string, google.maps.Marker>>({});
+  const markersRef = useRef<Record<string, PinHandle>>({});
   const fittedKeyRef = useRef<string | null>(null);
 
   useEffect(() => {
@@ -67,45 +149,37 @@ function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previe
         onClick: () => setActivePlace(c.place.id),
       }));
 
-  // Render/diff markers.
+  // Render/diff markers as one teardrop OverlayView per Place (Bc-4), keyed + diffed
+  // so panning/data changes don't recreate (no flicker). Re-runs when the map is ready.
   useEffect(() => {
-    const map = useMapStore.getState().map;
+    const map = mapInstance;
     if (!map) return;
     const seen = new Set<string>();
     for (const m of markers) {
       seen.add(m.id);
-      const active = m.id === activePlaceId;
-      const pos = { lat: m.lat, lng: m.lng };
+      const state = { label: m.label, active: m.id === activePlaceId, dim: m.dim };
       const existing = markersRef.current[m.id];
-      const label = { text: m.label, color: '#fff', fontSize: '11px', fontWeight: '700' };
       if (existing) {
-        existing.setPosition(pos);
-        existing.setLabel(label);
-        existing.setOpacity(m.dim ? 0.3 : 1);
-        existing.setZIndex(active ? 999 : 1);
+        existing.setPosition(m.lat, m.lng);
+        existing.update(state);
       } else {
-        const marker = new google.maps.Marker({
-          position: pos,
-          map,
-          label,
-          opacity: m.dim ? 0.3 : 1,
-          zIndex: active ? 999 : 1,
-        });
-        marker.addListener('click', m.onClick);
-        markersRef.current[m.id] = marker;
+        markersRef.current[m.id] = makePinOverlay(map, m.lat, m.lng, m.onClick, state);
       }
     }
     for (const id of Object.keys(markersRef.current)) {
       if (!seen.has(id)) {
-        markersRef.current[id].setMap(null);
+        markersRef.current[id].remove();
         delete markersRef.current[id];
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [markers.map((m) => m.id + m.label + m.dim).join('|'), activePlaceId]);
+  }, [mapInstance, markers.map((m) => m.id + m.label + m.dim).join('|'), activePlaceId]);
 
   // Fit to the video's spots (once per video) or the source-mode union (once per source-set).
+  // Guarded on mapInstance so it retries once the map is ready (avoids a cold-start race
+  // where the key gets marked "fitted" before the map exists and never fits).
   useEffect(() => {
+    if (!mapInstance) return;
     if (previewSpots && previewSpots.length) {
       const key = 'preview:' + previewSpots.map((s) => s.id).join(',');
       if (fittedKeyRef.current === key) return;
@@ -121,7 +195,7 @@ function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previe
       return;
     }
     if (!previewSpots && mode === 'nearby') fittedKeyRef.current = null;
-  }, [previewSpots, mode, selectedSourceIds, cards, fitToPoints]);
+  }, [mapInstance, previewSpots, mode, selectedSourceIds, cards, fitToPoints]);
 
   return <div ref={ref} className="absolute inset-0" />;
 }

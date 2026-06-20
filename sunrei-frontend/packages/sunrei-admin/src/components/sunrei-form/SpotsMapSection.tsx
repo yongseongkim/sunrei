@@ -21,10 +21,10 @@ interface SpotsMapSectionProps {
 
 export default function SpotsMapSection({
   spots,
-  height = '980px',
+  height = 'calc(100vh - 8rem)',
 }: SpotsMapSectionProps) {
   return (
-    <div className="lg:sticky lg:top-0">
+    <div className="lg:sticky lg:top-4 self-start">
       <div className="space-y-2">
         <div className="flex items-center gap-2">
           <Map className="h-4 w-4" />

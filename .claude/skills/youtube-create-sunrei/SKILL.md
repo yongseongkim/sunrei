@@ -21,7 +21,9 @@ Create a Sunrei entity with SunreiSpots via the server admin API using collected
 
 Read all JSON files from `.claude/workspace/youtube/{ID}/`:
 
-- `video_info.json` — video/playlist metadata
+- `video_info.json` — video/playlist metadata, including the `channel` object
+  (`id`, `title`, `handle`, `url`, `description`, `thumbnailUrl`) fetched in
+  `youtube-fetch-info` step 3.5; this drives Source creation below
 - `transcripts.json` — cleaned transcripts (optional, for descriptions)
 - `locations.json` — extracted and geocoded locations
 
@@ -87,29 +89,40 @@ Set the following automatically from `video_info.json` — do NOT use AskUserQue
 - Title: Use `channelName` from `video_info.json` directly
 - Summary: One-line channel summary derived from the video descriptions
 - Description: A longer summary of what the channel covers based on the video descriptions in `video_info.json` (the `description` field of each video in `selectedVideos`)
-- Link: Construct the channel URL as `https://www.youtube.com/channel/{channelId}` using `channelId` from `video_info.json`
+- Link: Use `channel.url` from `video_info.json` (resolved in fetch step 3.5). Fall back to `https://www.youtube.com/channel/{channelId}` only if `channel` is absent (older workspaces).
 - Published: `false` — ingested Sunreis always land as drafts (the admin publishes them later)
 
 #### Resolve / create the Source
 
-A Sunrei must belong to a Source. Resolve or create the YouTube source for this channel:
+A Sunrei must belong to a Source. Resolve or create the YouTube source for this channel,
+using the `channel` object from `video_info.json`.
 
 ```bash
-# Look for an existing YouTube source by channel link
-curl -s -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/sources?q=${channelName}" | jq '.data[] | select(.type=="YOUTUBE")'
+# Look for an existing YouTube source for this channel
+curl -s -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/sources?q=${channel.title}" | jq '.data[] | select(.type=="YOUTUBE")'
 ```
 
-- If a matching YOUTUBE source exists, reuse its `id` as `sourceId`.
-- Otherwise create one:
+- Among the YOUTUBE results, reuse the `id` of the one whose `externalUrl` equals
+  `channel.url` (most reliable). If none match by URL but one matches the channel title,
+  reuse that. Use the matched `id` as `sourceId`.
+- Otherwise create one from the channel metadata:
 
 ```bash
 curl -s -X POST "{SERVER_URL}/admin/sources" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer ${TOKEN}" \
-  -d '{ "type": "YOUTUBE", "name": "<channelName>", "externalUrl": "https://www.youtube.com/channel/<channelId>" }'
+  -d '{
+    "type": "YOUTUBE",
+    "name": "<channel.title>",
+    "synopsis": "<channel.description, truncated to ~500 chars>",
+    "externalUrl": "<channel.url>",
+    "posterImage": { "images": [ { "url": "<channel.thumbnailUrl>" } ] }
+  }'
 ```
 
-Use the returned `id` as `sourceId`.
+Use the returned `id` as `sourceId`. If `video_info.json` has no `channel` object (older
+workspace), fall back to `name = channelName` and
+`externalUrl = https://www.youtube.com/channel/{channelId}`, omitting `synopsis`/`posterImage`.
 
 #### Tags (spot-level)
 

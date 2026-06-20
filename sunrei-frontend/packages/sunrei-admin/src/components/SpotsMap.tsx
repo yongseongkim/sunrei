@@ -126,7 +126,14 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
           point.style.fontSize = '10px';
           point.style.fontWeight = '700';
           point.style.fontFamily = '-apple-system, sans-serif';
-          point.textContent = String(this.index + 1);
+
+          // Number nudged down ~1px: a single digit's glyph sits high in the line box,
+          // so flex-centering alone leaves it looking top-heavy in the circle.
+          const num = document.createElement('span');
+          num.textContent = String(this.index + 1);
+          num.style.lineHeight = '1';
+          num.style.transform = 'translateY(0.5px)';
+          point.appendChild(num);
 
           container.appendChild(point);
 

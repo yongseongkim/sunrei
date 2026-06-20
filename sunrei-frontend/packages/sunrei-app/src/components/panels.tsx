@@ -14,7 +14,66 @@ import { useSearch, useSources, useTags } from '@/hooks/use-discovery';
 import { useGooglePlaceAutocomplete, resolveGooglePlace } from '@/hooks/use-google-places';
 import { useTagLabel, LOCALE_COOKIE } from '@/lib/i18n';
 import { MentionRow } from './place-card';
+import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
+
+/** "Sources near you" rail (desktop sidebar). Tap to scope to a source. */
+export function SourceRail() {
+  const nav = useTranslations('nav');
+  const { data: sources = [] } = useSources();
+  const selected = useMapStore((s) => s.selectedSourceIds);
+  const addSource = useMapStore((s) => s.addSource);
+  const clearSources = useMapStore((s) => s.clearSources);
+  if (sources.length === 0) return null;
+
+  const Item = ({
+    label,
+    active,
+    onClick,
+    glyph,
+  }: {
+    label: string;
+    active: boolean;
+    onClick: () => void;
+    glyph?: string;
+  }) => (
+    <button
+      type="button"
+      onClick={onClick}
+      className="flex flex-col items-center gap-1 w-14 shrink-0"
+      title={label}
+    >
+      <span
+        className={cn(
+          'grid place-items-center h-11 w-11 rounded-full border text-sm font-bold transition-colors',
+          active ? 'bg-primary text-primary-foreground border-primary' : 'bg-card text-ink2 border-line2'
+        )}
+      >
+        {glyph ?? label.charAt(0).toUpperCase()}
+      </span>
+      <span className="w-full truncate text-center text-[10px] text-ink2">{label}</span>
+    </button>
+  );
+
+  return (
+    <div className="border-b border-line">
+      <div className="px-3 pt-3 text-[10px] font-bold uppercase tracking-wide text-ink3">
+        {nav('sourcesNearYou')}
+      </div>
+      <div className="flex gap-1 overflow-x-auto px-2 py-2">
+        <Item label={nav('all')} glyph="◎" active={selected.length === 0} onClick={clearSources} />
+        {sources.map((s) => (
+          <Item
+            key={s.id}
+            label={s.name}
+            active={selected.includes(s.id)}
+            onClick={() => addSource(s.id)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function LocaleToggle() {
   const t = useTranslations('locale');
@@ -70,24 +129,51 @@ export function SourceChips() {
   const nav = useTranslations('nav');
   const selectedSourceIds = useMapStore((s) => s.selectedSourceIds);
   const removeSource = useMapStore((s) => s.removeSource);
+  const addSource = useMapStore((s) => s.addSource);
   const clearSources = useMapStore((s) => s.clearSources);
   const { data: all = [] } = useSources();
-  if (selectedSourceIds.length === 0) return null;
+  const [undo, setUndo] = useState<{ id: string; name: string } | null>(null);
+
   const name = (id: string) => all.find((s) => s.id === id)?.name ?? id;
+  const handleRemove = (id: string) => {
+    setUndo({ id, name: name(id) });
+    removeSource(id);
+    setTimeout(() => setUndo((u) => (u?.id === id ? null : u)), 4000);
+  };
+
+  if (selectedSourceIds.length === 0 && !undo) return null;
   return (
-    <div className="flex flex-wrap gap-1.5 items-center px-3 py-2 border-b border-line bg-background/80 backdrop-blur">
-      {selectedSourceIds.map((id) => (
-        <Badge key={id} variant="default" className="gap-1">
-          {name(id)}
-          <button onClick={() => removeSource(id)} aria-label={t('clearSource')}>
-            <X className="h-3 w-3" />
+    <>
+      {selectedSourceIds.length > 0 && (
+        <div className="flex flex-wrap gap-1.5 items-center px-3 py-2 border-b border-line bg-background/80 backdrop-blur">
+          {selectedSourceIds.map((id) => (
+            <Badge key={id} variant="default" className="gap-1">
+              {name(id)}
+              <button onClick={() => handleRemove(id)} aria-label={t('clearSource')}>
+                <X className="h-3 w-3" />
+              </button>
+            </Badge>
+          ))}
+          <button onClick={clearSources} className="text-xs text-ink3 hover:text-foreground ml-1">
+            {nav('clear')}
           </button>
-        </Badge>
-      ))}
-      <button onClick={clearSources} className="text-xs text-ink3 hover:text-foreground ml-1">
-        {nav('clear')}
-      </button>
-    </div>
+        </div>
+      )}
+      {undo && (
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-6 z-40 flex items-center gap-3 rounded-full bg-foreground text-background px-4 py-2 text-[13px] shadow-lg">
+          <span>{t('removed', { name: undo.name })}</span>
+          <button
+            onClick={() => {
+              addSource(undo.id);
+              setUndo(null);
+            }}
+            className="font-bold underline"
+          >
+            {t('undo')}
+          </button>
+        </div>
+      )}
+    </>
   );
 }
 
@@ -166,7 +252,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
     gPredictions.length;
 
   return (
-    <div className="absolute inset-0 z-40 bg-background/95 flex flex-col">
+    <div className="absolute inset-0 z-50 bg-background flex flex-col">
       <div className="flex gap-2 p-3 border-b border-line">
         <Input
           autoFocus
@@ -192,6 +278,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
                   key={p.place.id}
                   title={p.place.name}
                   sub={p.place.address ?? ''}
+                  hint={t('moveMap')}
                   onClick={() => {
                     panTo({ lat: p.place.latitude, lng: p.place.longitude }, 14);
                     setActivePlace(p.place.id);
@@ -204,7 +291,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
                   key={g.placeId}
                   title={g.primary}
                   sub={g.secondary}
-                  hint="Google"
+                  hint={`Google · ${t('moveMap')}`}
                   onClick={() => selectGooglePlace(g.placeId)}
                 />
               ))}
@@ -233,6 +320,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
                   key={s.id}
                   title={s.title}
                   sub={s.sourceName}
+                  hint={t('open')}
                   onClick={() => {
                     enterPreview(s.id, mode === 'source' ? 'source' : 'nearby');
                     onClose();
