@@ -54,7 +54,10 @@ export default function AppShell() {
   });
 
   const allCards = data?.places ?? [];
-  const { dimmedIds } = useTagFilter(allCards);
+  // Tag filter (SPEC L57/L644/L723): the LIST filters to matches; the MAP keeps all pins
+  // and dims non-matches (MapView dims via the same selector). Map always gets allCards.
+  const { dimmedIds, hasFilter } = useTagFilter(allCards);
+  const visibleCards = hasFilter ? allCards.filter((c) => !dimmedIds.has(c.place.id)) : allCards;
   const { data: previewData } = useSunreiDetail(videoPreview?.sunreiId ?? null);
   const previewSpots = videoPreview ? previewData?.sunrei.spots ?? null : null;
 
@@ -69,15 +72,14 @@ export default function AppShell() {
             <PlaceCardSkeleton key={i} />
           ))}
         </div>
-      ) : allCards.length === 0 ? (
+      ) : visibleCards.length === 0 ? (
         <EmptyState mode={mode} />
       ) : (
-        allCards.map((c) => (
+        visibleCards.map((c) => (
           <PlaceCard
             key={c.place.id}
             card={c}
             active={c.place.id === activePlaceId}
-            dimmed={dimmedIds.has(c.place.id)}
             onClick={() => setActivePlace(c.place.id)}
           />
         ))
@@ -100,7 +102,7 @@ export default function AppShell() {
         <Sidebar
           detailPanel={detailPanel}
           listBody={listBody}
-          count={allCards.length}
+          count={visibleCards.length}
           showingPrevious={showingPrevious}
         />
       )}
@@ -146,7 +148,7 @@ export default function AppShell() {
         <PeekSheet
           detailPanel={detailPanel}
           listBody={listBody}
-          count={allCards.length}
+          count={visibleCards.length}
           showingPrevious={showingPrevious}
           onSnapChange={setMobileSnap}
         />
