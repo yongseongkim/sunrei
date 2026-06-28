@@ -2,10 +2,12 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { ChevronDown, Loader2, MapPin, Search, X } from 'lucide-react';
+import { Check, ChevronDown, Loader2, MapPin, Play, Search, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
+import { Avatar } from '@/components/wf';
+import { cn } from '@/lib/utils';
 import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useFilterStore } from '@/stores/filter-store';
@@ -124,9 +126,20 @@ export function TagChipRail() {
   const { data: tags = [] } = useTags();
   const activeTagIds = useFilterStore((s) => s.activeTagIds);
   const toggleTag = useFilterStore((s) => s.toggleTag);
+  const isMobile = useUiStore((s) => s.isMobile);
+  const setFiltersOpen = useUiStore((s) => s.setFiltersOpen);
   if (tags.length === 0) return null;
   return (
     <div className="flex gap-1.5 overflow-x-auto px-3 py-2 border-b border-line bg-background/80 backdrop-blur">
+      {/* Mobile entry point to the full filters sheet (desktop uses the top-right button). */}
+      {isMobile && (
+        <button
+          onClick={() => setFiltersOpen(true)}
+          className="shrink-0 inline-flex items-center gap-1 text-xs font-bold whitespace-nowrap px-2.5 py-1 rounded-full border border-dashed border-line2 bg-card text-ink2 hover:bg-accent-soft"
+        >
+          ✦ {t('filters')}
+        </button>
+      )}
       {tags.map((tag) => {
         const active = activeTagIds.includes(tag.id);
         return (
@@ -217,6 +230,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
               {(data?.places ?? []).map((p) => (
                 <ResultRow
                   key={p.place.id}
+                  icon={<IconCircle><MapPin className="h-3.5 w-3.5" /></IconCircle>}
                   title={p.place.name}
                   sub={p.place.address ?? ''}
                   hint={t('moveMap')}
@@ -230,6 +244,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
               {gPredictions.map((g) => (
                 <ResultRow
                   key={g.placeId}
+                  icon={<IconCircle><MapPin className="h-3.5 w-3.5" /></IconCircle>}
                   title={g.primary}
                   sub={g.secondary}
                   hint={`Google · ${t('moveMap')}`}
@@ -243,9 +258,11 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
                 return (
                   <ResultRow
                     key={s.id}
+                    icon={<Avatar label={s.name} size={28} />}
+                    selected={applied}
                     title={s.name}
                     sub={s.type}
-                    hint={applied ? '✓' : t('addSource')}
+                    hint={applied ? t('tapToRemove') : t('addSource')}
                     onClick={() => {
                       if (applied) removeSource(s.id);
                       else addSource(s.id);
@@ -259,6 +276,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
               {(data?.sunreis ?? []).map((s) => (
                 <ResultRow
                   key={s.id}
+                  icon={<IconCircle square><Play className="h-3.5 w-3.5" /></IconCircle>}
                   title={s.title}
                   sub={s.sourceName}
                   hint={t('open')}
@@ -290,27 +308,59 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
+/** 28px result-type glyph holder: circle for places, rounded square for videos. */
+function IconCircle({ children, square }: { children: React.ReactNode; square?: boolean }) {
+  return (
+    <span
+      className={cn(
+        'shrink-0 grid place-items-center h-7 w-7 bg-bg2 text-ink2',
+        square ? 'rounded-[7px]' : 'rounded-full'
+      )}
+    >
+      {children}
+    </span>
+  );
+}
+
 function ResultRow({
   title,
   sub,
   hint,
+  icon,
+  selected,
   onClick,
 }: {
   title: string;
   sub?: string;
   hint?: string;
+  icon?: React.ReactNode;
+  selected?: boolean;
   onClick: () => void;
 }) {
   return (
     <button
       onClick={onClick}
-      className="w-full text-left p-2 rounded-md hover:bg-accent-soft flex items-center gap-2"
+      className={cn(
+        'w-full text-left p-2 rounded-md flex items-center gap-2.5',
+        selected ? 'bg-accent-soft' : 'hover:bg-accent-soft'
+      )}
     >
+      {icon}
       <div className="min-w-0 flex-1">
         <div className="text-sm font-medium truncate">{title}</div>
         {sub && <div className="text-xs text-ink3 truncate">{sub}</div>}
       </div>
-      {hint && <span className="text-xs text-accent-ink shrink-0">{hint}</span>}
+      {hint &&
+        (selected ? (
+          <span className="shrink-0 inline-flex items-center gap-1 text-[10.5px] font-extrabold tracking-wide text-accent-ink whitespace-nowrap">
+            <span className="grid place-items-center h-4 w-4 rounded-full bg-primary text-primary-foreground">
+              <Check className="h-2.5 w-2.5" strokeWidth={3} />
+            </span>
+            {hint}
+          </span>
+        ) : (
+          <span className="text-xs shrink-0 text-accent-ink">{hint}</span>
+        ))}
     </button>
   );
 }
@@ -342,6 +392,11 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
         </button>
       </div>
       <div className="space-y-1.5">
+        {data.mentions.length > 0 && (
+          <h3 className="text-xs font-bold uppercase tracking-wide text-ink3">
+            {t('featuredIn', { count: data.mentions.length })}
+          </h3>
+        )}
         {data.mentions.map((m) => (
           <MentionRow key={m.spotId} mention={m} />
         ))}

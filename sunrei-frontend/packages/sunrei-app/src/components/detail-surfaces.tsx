@@ -8,7 +8,16 @@ import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useSourceDetail, useSunreiDetail } from '@/hooks/use-map';
 import { useTagLabel, tagColor } from '@/lib/i18n';
-import type { SourceDTO, SunreiSpotDTO } from '@/dto';
+import { Avatar } from '@/components/wf';
+import type { SourceDTO, SourceType, SunreiSpotDTO } from '@/dto';
+
+/** Display label for a source's media type (proper nouns, not localized). */
+const TYPE_LABEL: Record<SourceType, string> = {
+  YOUTUBE: 'YouTube',
+  TV: 'TV',
+  ANIME: 'Anime',
+  OTHER: 'Other',
+};
 
 /** Compact "Watch on YouTube ↗" / "Where to watch ↗" link, label by source type (Bg-1). */
 export function LinkOutButton({ source }: { source: SourceDTO }) {
@@ -86,7 +95,22 @@ export function SourceDetail() {
             />
           )}
           <div className="space-y-1">
-            <h1 className="text-lg font-semibold">{source.nameEn || source.name}</h1>
+            <div className="flex items-center gap-2.5">
+              <Avatar label={source.name} size={42} />
+              <div className="min-w-0">
+                <h1 className="text-lg font-semibold truncate">{source.nameEn || source.name}</h1>
+                <div className="flex items-center gap-1.5 mt-0.5">
+                  <span className="text-[10px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full bg-bg2 text-ink2">
+                    {TYPE_LABEL[source.type]}
+                  </span>
+                  {managed && (
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-accent-soft text-accent-ink">
+                      ✦ {t('managedBySunrei')}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
             {source.nameKo && source.nameKo !== source.name && (
               <p className="text-sm text-ink2">{source.nameKo}</p>
             )}

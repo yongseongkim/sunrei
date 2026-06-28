@@ -19,6 +19,7 @@
     "noResults": "결과 없음",
     "addSource": "소스 추가",
     "applied": "추가됨",
+    "tapToRemove": "필터링 중 · 탭하여 제거",
     "moveMap": "지도 이동",
     "open": "열기"
   },
@@ -26,6 +27,7 @@
     "clearSource": "소스 해제",
     "noPlaces": "이 소스의 장소가 아직 없어요",
     "managedPage": "정보 페이지",
+    "managedBySunrei": "Sunrei 관리",
     "linksOut": "바로가기 ↗",
     "watchOnYoutube": "YouTube에서 보기 ↗",
     "whereToWatch": "보러가기 ↗",
@@ -36,6 +38,7 @@
   },
   "detail": {
     "mentions": "언급",
+    "featuredIn": "{count}개 영상·작품에 등장",
     "watch": "보기",
     "context": "맥락",
     "directions": "길찾기",

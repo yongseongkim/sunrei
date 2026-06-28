@@ -46,7 +46,12 @@ export default function SpotCard({
     <Card className="py-0 px-0 rounded-lg gap-0">
       <CardHeader className="py-1 px-2 gap-0">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-medium">Spot {index + 1}</span>
+          <span className="flex items-center gap-1.5 text-xs font-medium">
+            <span className="grid place-items-center h-5 w-5 rounded-full bg-primary text-primary-foreground text-[11px] font-bold">
+              {index + 1}
+            </span>
+            Spot {index + 1}
+          </span>
           <Button
             type="button"
             onClick={() => onRemove(index)}

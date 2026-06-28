@@ -19,6 +19,7 @@
     "noResults": "No results",
     "addSource": "Add source",
     "applied": "Source added",
+    "tapToRemove": "FILTERING · TAP TO REMOVE",
     "moveMap": "Move map",
     "open": "Open"
   },
@@ -26,6 +27,7 @@
     "clearSource": "Clear source",
     "noPlaces": "No places for this source yet",
     "managedPage": "Managed page",
+    "managedBySunrei": "managed by Sunrei",
     "linksOut": "Visit ↗",
     "watchOnYoutube": "Watch on YouTube ↗",
     "whereToWatch": "Where to watch ↗",
@@ -36,6 +38,7 @@
   },
   "detail": {
     "mentions": "Mentions",
+    "featuredIn": "Featured in {count, plural, one {# video & work} other {# videos & works}}",
     "watch": "Watch",
     "context": "Context",
     "directions": "Directions",

@@ -67,10 +67,13 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
   useEffect(() => {
     if (!map || !window.google) return;
 
-    // Get all valid places
-    const validSpots = spots.filter(
-      (spot) => spot.place && spot.place.latitude && spot.place.longitude,
-    );
+    // Keep each spot's ORIGINAL list index so pin numbers match the SpotCard badges
+    // (a spot without a place simply gets no pin; the remaining pins keep their list numbers).
+    const validSpots = spots
+      .map((spot, originalIndex) => ({ spot, originalIndex }))
+      .filter(
+        ({ spot }) => spot.place && spot.place.latitude && spot.place.longitude,
+      );
 
     if (validSpots.length === 0) return;
 
@@ -84,7 +87,7 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
     const bounds = new google.maps.LatLngBounds();
 
     // Add markers for each spot
-    validSpots.forEach((spot, index) => {
+    validSpots.forEach(({ spot, originalIndex }) => {
       if (!spot.place) return;
 
       const position = {
@@ -166,7 +169,7 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
 
       const overlay = new MarkerOverlay(
         new google.maps.LatLng(position.lat, position.lng),
-        index,
+        originalIndex,
       );
       overlay.setMap(map);
       overlaysRef.current.push(overlay);
