@@ -2,13 +2,15 @@
 
 import { useTranslations } from 'next-intl';
 import { useMapStore } from '@/stores/map-store';
-import { useSources } from '@/hooks/use-discovery';
+import { useNearbySources } from '@/hooks/use-map';
 import { cn } from '@/lib/utils';
 
 /** "Sources near you" rail (desktop sidebar). Tap to scope to a source. */
 export function SourceRail() {
   const nav = useTranslations('nav');
-  const { data: sources = [] } = useSources();
+  const committedBounds = useMapStore((s) => s.committedBounds);
+  const mapCenter = useMapStore((s) => s.mapCenter);
+  const { data: sources = [] } = useNearbySources(committedBounds, mapCenter);
   const selected = useMapStore((s) => s.selectedSourceIds);
   const addSource = useMapStore((s) => s.addSource);
   const clearSources = useMapStore((s) => s.clearSources);

@@ -46,6 +46,28 @@ export function useMapPlaces(q: MapQuery) {
   });
 }
 
+/**
+ * Sources for the "near you" rail: the distinct sources of places inside the
+ * committed viewport, NOT the global source list. Reuses the nearby map query key
+ * so React Query dedupes with {@link useMapPlaces} (no extra request in nearby mode),
+ * and stays anchored to `bounds` so the rail keeps showing nearby sources even after
+ * a source is selected (which flips the main list into global source mode).
+ */
+export function useNearbySources(bounds: Bounds | null, center: LatLng | null) {
+  const ckey = centerKey(center);
+  return useQuery({
+    queryKey: qk.map.nearby(boundsKey(bounds), ckey),
+    queryFn: async () => {
+      const b = bounds!;
+      const res = await apiClient.getMapData(b.swLat, b.swLng, b.neLat, b.neLng, center?.lat, center?.lng);
+      return res.data;
+    },
+    enabled: bounds !== null,
+    staleTime: 30_000,
+    select: (data) => data.sources ?? [],
+  });
+}
+
 export function usePlaceDetail(id: string | null, center?: LatLng | null) {
   return useQuery({
     queryKey: qk.place(id ?? '', centerKey(center)),
