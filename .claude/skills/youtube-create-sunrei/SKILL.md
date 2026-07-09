@@ -24,7 +24,8 @@ Read all JSON files from `.claude/workspace/youtube/{ID}/`:
 - `video_info.json` — video/playlist metadata, including the `channel` object
   (`id`, `title`, `handle`, `url`, `description`, `thumbnailUrl`) fetched in
   `youtube-fetch-info` step 3.5; this drives Source creation below
-- `transcripts.json` — cleaned transcripts (optional, for descriptions)
+- `transcripts.json` — cleaned transcripts; the primary source for the Sunrei `summary`
+  and `description` in step 3 (falls back to video descriptions if absent)
 - `locations.json` — extracted and geocoded locations
 
 ### 1.5. Ask for AWS Vault Profile & Check Channel Registry
@@ -84,12 +85,29 @@ The token is auto-loaded by `_load_dot_env()` from `.claude/.env`. If `SUNREI_AD
 
 ### 3. Compose Sunrei Details
 
-Set the following automatically from `video_info.json` — do NOT use AskUserQuestion for these:
+Modeling rule: **one playlist/trip = one Sunrei**. The Source is the channel; the Sunrei is
+the playlist (or, for a single video, that one video). All locations across every video in
+the playlist become spots on this single Sunrei.
 
-- Title: Use `channelName` from `video_info.json` directly
-- Summary: One-line channel summary derived from the video descriptions
-- Description: A longer summary of what the channel covers based on the video descriptions in `video_info.json` (the `description` field of each video in `selectedVideos`)
-- Link: Use `channel.url` from `video_info.json` (resolved in fetch step 3.5). Fall back to `https://www.youtube.com/channel/{channelId}` only if `channel` is absent (older workspaces).
+Set the following automatically — do NOT use AskUserQuestion for these:
+
+- Title:
+  - Playlist (`video_info.json.type == "playlist"`): use the playlist `title` directly
+    (e.g. `비밀이야 in 이탈리아 🍝`).
+  - Single video (`type == "video"`): use the video `title` (truncate to 128 chars).
+- Summary: a **one-line** summary of the trip/playlist as a whole, derived from
+  `transcripts.json` (the actual narrated content — `cleanedText`/`fullText` of the videos),
+  not just the video descriptions. Capture the through-line of the trip (region + theme),
+  e.g. `피렌체·로마·베네치아를 돌며 미슐랭 레스토랑과 현지 맛집을 찾아가는 이탈리아 미식 여행`.
+- Description: a longer (2–4 sentence) summary of what the trip covers, synthesized from
+  `transcripts.json` first and the per-video `description` fields in `video_info.json`
+  second. If `transcripts.json` is absent, fall back to descriptions only.
+- Link:
+  - Playlist: use `video_info.json.url` (the playlist URL). Fall back to
+    `https://www.youtube.com/playlist?list={id}` if `url` is absent (older workspaces).
+  - Single video: use the video `url`.
+  - Note: this is the Sunrei's link and the 409-conflict key — it is the playlist/video URL,
+    NOT the channel URL. The channel URL belongs to the Source (`externalUrl`) below.
 - Published: `false` — ingested Sunreis always land as drafts (the admin publishes them later)
 
 #### Resolve / create the Source
@@ -139,7 +157,11 @@ The response includes `data` (array of `{id, labelEn, labelKo}` tags), `totalSiz
 
 ### 4. Build SunreiSpots
 
-For each location in `locations.json`, create a spot. The spot title is the video title (from `video_info.json`), not the location name. If the video title exceeds 128 characters, truncate it. The location name lives only in the Place object.
+`locations.json` nests `locations[]` under each video (`videos[].title`, `videos[].locations[]`).
+For each location, create a spot. The spot title is the **parent video's title**
+(`videos[].title` in `locations.json`), not the location name. If the video title exceeds 128
+characters, truncate it. The location name lives only in the Place object. Every spot from
+every video in the playlist attaches to the single Sunrei composed in step 3.
 
 ```json
 {
@@ -159,12 +181,15 @@ For each location in `locations.json`, create a spot. The spot title is the vide
 }
 ```
 
-- `title` = video title, truncated to 128 chars if needed (each video is a "scene/episode" within the channel)
-- `context` = what this source says here — the location-specific mention/take from the video
-- `description` = optional longer description (often empty for ingest)
+- `title` = video title, truncated to 128 chars if needed (each video is a "scene/episode" within the playlist)
+- `context` = **map directly from `locations[].description`** in `locations.json` — that field
+  is the 2–3 sentence per-place summary (video concept + what makes this place notable) and
+  is exactly the spot context. Do NOT leave it empty and do NOT re-derive it.
+- `description` = optional longer description; leave empty (`""`) for ingest
 - `images` = empty array `[]`
+- `youtubeLink` = `locations[].videoUrlWithTimestamp` (the video URL with the mention's `&t=`)
 - `tagIds` = the spot-level tags selected in step 3 (same set on every spot unless the user overrides per spot)
-- `place.name` = the actual location name
+- `place.name` = the actual location name (`locations[].name`)
 
 If multiple locations are extracted from one video, each gets its own SunreiSpot with the same video title.
 
@@ -181,10 +206,10 @@ curl -s -X POST "{SERVER_URL}/admin/sunreis" \
   -d '{
     "sourceId": "SRC...",
     "published": false,
-    "title": "채널명",
-    "summary": "한 줄 요약",
-    "description": "채널/영상 기반 설명",
-    "link": "https://youtube.com/...",
+    "title": "플레이리스트 제목 (예: 비밀이야 in 이탈리아 🍝)",
+    "summary": "트랜스크립트 기반 한 줄 여행 요약",
+    "description": "트랜스크립트 + 설명 기반 2~4문장 요약",
+    "link": "https://www.youtube.com/playlist?list=...",
     "images": [],
     "spots": [
       {

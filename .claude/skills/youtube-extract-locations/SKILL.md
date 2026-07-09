@@ -21,11 +21,19 @@ Read both JSON files from `.claude/workspace/youtube/{ID}/`.
 
 ### 2. Load Google Maps API Key
 
+The Places / Geocoding API uses the same Google API key as the YouTube Data API. Read it
+from the server's HOCON config at `sunrei-server/src/main/resources/application-local.conf`
+(key `google.youtubeApiKey`):
+
 ```bash
-grep google_maps_api_key sunrei-worker/.env | cut -d'=' -f2
+grep -E '^[[:space:]]*youtubeApiKey' sunrei-server/src/main/resources/application-local.conf \
+  | sed -E 's/.*=[[:space:]]*"?([^"]+)"?.*/\1/'
 ```
 
-If not found, ask the user to provide it.
+(Use POSIX `[[:space:]]`, not `\s` — `\s` is unsupported by BSD/macOS grep and sed.)
+
+If not found, ask the user to provide it. (The Places API must be enabled for this key in
+the Google Cloud console — see `b9e59bb` re: the Geocoding API requirement.)
 
 ### 3. Analyze Video Concept
 

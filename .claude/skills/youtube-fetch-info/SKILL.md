@@ -11,13 +11,19 @@ Fetch metadata for a YouTube video or playlist using the YouTube Data API v3.
 
 ### 1. Load API Key
 
-Read the YouTube API key from `sunrei-worker/.env`:
+Read the YouTube API key from the server's HOCON config at
+`sunrei-server/src/main/resources/application-local.conf` (key `google.youtubeApiKey`):
 
 ```bash
-grep youtube_api_key sunrei-worker/.env | cut -d'=' -f2
+grep -E '^[[:space:]]*youtubeApiKey' sunrei-server/src/main/resources/application-local.conf \
+  | sed -E 's/.*=[[:space:]]*"?([^"]+)"?.*/\1/'
 ```
 
-Store the key for use in subsequent curl calls. If not found, ask the user to provide it.
+(Use POSIX `[[:space:]]`, not `\s` — `\s` is unsupported by BSD/macOS grep and sed.)
+
+This single Google API key works for the YouTube Data API here and for the Places /
+Geocoding API in `youtube-extract-locations`. Store the key for use in subsequent curl
+calls. If not found, ask the user to provide it.
 
 ### 2. Parse URL
 
@@ -145,6 +151,7 @@ Playlist:
   "id": "PLAYLIST_ID",
   "title": "...",
   "description": "...",
+  "url": "https://www.youtube.com/playlist?list=PLAYLIST_ID",
   "channelName": "...",
   "channel": {
     "id": "UC...",
