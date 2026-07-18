@@ -89,27 +89,50 @@ class SearchService {
         } else emptyList()
 
         // ---- Published sunreis matching title/summary ----
-        val sunreis = (Sunreis innerJoin Sources)
+        val sunreiRows = (Sunreis innerJoin Sources)
             .select {
                 (Sunreis.deletedAt.isNull()) and (Sunreis.publishedAt.isNotNull()) and
                     ((Sunreis.title.lowerCase() like term) or (Sunreis.summary.lowerCase() like term))
             }
             .orderBy(Sunreis.createdAt to SortOrder.DESC)
-            .limit(20).map { row ->
-                val st = SourceType.valueOf(row[Sources.type])
-                SunreiSummaryDTO(
-                    id = row[Sunreis.id],
-                    sourceId = row[Sunreis.sourceId],
-                    sourceName = row[Sources.name],
-                    sourceType = AppSourceType.valueOf(st.name),
-                    title = row[Sunreis.title],
-                    summary = row[Sunreis.summary],
-                    link = row[Sunreis.link],
-                    images = row[Sunreis.images].map { it.toAppImageDTO() },
-                    spotCount = 0,
-                    placeCount = null, areaCount = null, nearestDistanceMeters = null
-                )
-            }
+            .limit(20).toList()
+
+        // Thumbnail fallback: a sunrei with no stored image borrows its first spot's
+        // YouTube thumbnail. A series' own `link` is a playlist (no single thumbnail),
+        // but each spot links to a watch URL we can derive an image from.
+        val needThumb = sunreiRows.filter { it[Sunreis.images].isEmpty() }.map { it[Sunreis.id] }
+        val thumbBySunrei: Map<String, MultiSizeImageDTO> = if (needThumb.isNotEmpty()) {
+            SunreiSpots
+                .slice(SunreiSpots.sunreiId, SunreiSpots.youtubeLink, SunreiSpots.id)
+                .select {
+                    (SunreiSpots.sunreiId inList needThumb) and (SunreiSpots.deletedAt.isNull()) and
+                        (SunreiSpots.youtubeLink.isNotNull())
+                }
+                .orderBy(SunreiSpots.id to SortOrder.ASC) // ULID id → oldest spot first
+                .toList()
+                .groupBy { it[SunreiSpots.sunreiId] }
+                .mapNotNull { (sid, spots) ->
+                    spots.firstNotNullOfOrNull { youtubeThumbnail(it[SunreiSpots.youtubeLink]) }?.let { sid to it }
+                }
+                .toMap()
+        } else emptyMap()
+
+        val sunreis = sunreiRows.map { row ->
+            val st = SourceType.valueOf(row[Sources.type])
+            val stored = row[Sunreis.images].map { it.toAppImageDTO() }
+            SunreiSummaryDTO(
+                id = row[Sunreis.id],
+                sourceId = row[Sunreis.sourceId],
+                sourceName = row[Sources.name],
+                sourceType = AppSourceType.valueOf(st.name),
+                title = row[Sunreis.title],
+                summary = row[Sunreis.summary],
+                link = row[Sunreis.link],
+                images = stored.ifEmpty { listOfNotNull(thumbBySunrei[row[Sunreis.id]]) },
+                spotCount = 0,
+                placeCount = null, areaCount = null, nearestDistanceMeters = null
+            )
+        }
 
         SearchResult(places = places, sources = sources, sunreis = sunreis)
     }
@@ -156,3 +179,13 @@ private fun com.sunrei.model.MultiSizeImage.toAppImageDTO() =
     MultiSizeImageDTO(
         images.map { ImageDTO(url = it.url, width = it.width, height = it.height) }
     )
+
+// video id from watch / youtu.be / embed / shorts URLs → hqdefault thumbnail
+private val YOUTUBE_ID = Regex("""(?:v=|youtu\.be/|/embed/|/shorts/)([A-Za-z0-9_-]{11})""")
+
+private fun youtubeThumbnail(link: String?): MultiSizeImageDTO? {
+    val id = link?.let { YOUTUBE_ID.find(it)?.groupValues?.get(1) } ?: return null
+    return MultiSizeImageDTO(
+        listOf(ImageDTO(url = "https://i.ytimg.com/vi/$id/hqdefault.jpg", width = 480, height = 360))
+    )
+}
