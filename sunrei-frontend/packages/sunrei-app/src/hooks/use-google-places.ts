@@ -46,6 +46,32 @@ export function useGooglePlaceAutocomplete(query: string): GooglePrediction[] {
   return predictions;
 }
 
+/**
+ * Reverse-geocode a lat/lng to a short "Ward, City" label for the map area chip.
+ * Best-effort: returns null if the Geocoding API is unavailable or nothing matches.
+ */
+export async function reverseGeocode(loc: LatLng): Promise<string | null> {
+  if (!placesReady()) return null;
+  const geocoder = new google.maps.Geocoder();
+  return new Promise((resolve) => {
+    geocoder.geocode({ location: loc }, (results, status) => {
+      if (status !== 'OK' || !results?.length) return resolve(null);
+      const comps = results[0].address_components ?? [];
+      const pick = (types: string[]) => {
+        for (const type of types) {
+          const c = comps.find((cc) => cc.types.includes(type));
+          if (c) return c.long_name;
+        }
+        return null;
+      };
+      const primary = pick(['sublocality_level_1', 'sublocality', 'neighborhood', 'locality']);
+      const secondary = pick(['locality', 'administrative_area_level_1']);
+      const parts = [primary, secondary].filter((v, i, a) => v && a.indexOf(v) === i) as string[];
+      resolve(parts.length ? parts.join(', ') : results[0].formatted_address ?? null);
+    });
+  });
+}
+
 /** Resolve a Google place_id to a lat/lng via the Geocoder (needs the Geocoding API). */
 export async function resolveGooglePlace(placeId: string): Promise<LatLng | null> {
   if (!placesReady()) return null;

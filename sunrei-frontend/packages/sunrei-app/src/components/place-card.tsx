@@ -2,9 +2,11 @@
 
 import { PlaceCardDTO, PlaceMentionDTO } from '@/dto';
 import { useTranslations } from 'next-intl';
+import { ChevronRight } from 'lucide-react';
 import { useUiStore } from '@/stores/ui-store';
 import { useMapStore } from '@/stores/map-store';
-import { Pin, Avatar, AvatarCluster, sourceVerb } from '@/components/wf';
+import { Pin, Avatar } from '@/components/wf';
+import { useTagLabel } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
 
 function formatDistance(m?: number | null) {
@@ -82,6 +84,31 @@ export function PlaceCardSkeleton() {
   );
 }
 
+/**
+ * One source's "take" on a place — how that source introduced it (channel · video +
+ * a 2-line description). Presentational only: the whole card selects the Place (opens
+ * Place detail, matching a marker tap); the per-video preview lives one level down,
+ * on the mention rows inside Place detail.
+ */
+function PlaceTake({ mention }: { mention: PlaceMentionDTO }) {
+  return (
+    <div className="flex items-start gap-[9px] border-t border-line py-2">
+      <Avatar label={mention.source.name} size={22} />
+      <div className="min-w-0 flex-1">
+        <div className="text-[11.5px] font-extrabold leading-tight text-foreground">
+          {mention.source.name}
+          {mention.sunreiTitle && <span className="font-semibold text-ink3"> · {mention.sunreiTitle}</span>}
+        </div>
+        {mention.context && (
+          <div className="mt-[3px] text-[12px] leading-relaxed text-ink2 line-clamp-2">
+            {mention.context}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function PlaceCard({
   card,
   active,
@@ -94,28 +121,43 @@ export function PlaceCard({
   onClick?: () => void;
 }) {
   const t = useTranslations('list');
+  const tagLabel = useTagLabel();
   const mentions = card.mentions ?? [];
-  const multi = mentions.length > 1;
+  const tag = card.tags?.[0];
+
+  // "and N other sources" — distinct sources beyond the two takes we show.
+  const shownIds = new Set(mentions.slice(0, 2).map((m) => m.source.id));
+  const otherSources = new Set(
+    mentions.slice(2).map((m) => m.source.id).filter((id) => !shownIds.has(id))
+  ).size;
+
+  const eyebrow =
+    card.sourceCount > 1
+      ? t('featuredBySources', { count: card.sourceCount })
+      : t('featuredInVideos', { count: mentions.length });
 
   return (
     <div
       onClick={onClick}
       className={cn(
-        'rounded-xl px-3 py-[11px] cursor-pointer transition-all bg-card',
+        'rounded-xl px-[13px] py-[11px] cursor-pointer transition-colors bg-card',
         active
           ? 'border-[1.5px] border-primary bg-accent-soft shadow-[0_4px_14px_oklch(0.66_0.13_264/0.16)]'
-          : multi
-            ? 'border-[1.5px] border-primary'
-            : 'border border-line hover:border-ink3/40',
+          : 'border border-line hover:border-ink3/40',
         dimmed && 'opacity-40'
       )}
     >
-      {/* Header: pin + name + distance */}
-      <div className="flex items-center gap-[7px]">
+      {/* Header: pin + name + tag + distance */}
+      <div className="flex items-center gap-2">
         <Pin />
-        <span className="flex-1 min-w-0 truncate text-[13.5px] font-extrabold text-foreground">
+        <span className="flex-1 min-w-0 truncate text-[14px] font-extrabold text-foreground">
           {card.place.name}
         </span>
+        {tag && (
+          <span className="shrink-0 rounded-full bg-bg2 px-[9px] py-0.5 text-[10.5px] font-bold text-ink2">
+            {tagLabel(tag)}
+          </span>
+        )}
         {card.distanceMeters != null && (
           <span className="shrink-0 text-[11px] font-bold text-accent-ink">
             {formatDistance(card.distanceMeters)}
@@ -123,40 +165,25 @@ export function PlaceCard({
         )}
       </div>
 
-      {multi ? (
-        <>
-          <div className="flex items-center gap-1.5 my-[7px]">
-            <AvatarCluster labels={mentions.map((m) => m.source.name)} />
-            <span className="text-[10.5px] font-extrabold uppercase tracking-wide text-accent-ink">
-              {t('inVideos', { count: mentions.length })}
-            </span>
-          </div>
-          <div className="flex flex-col">
-            {mentions.map((m, i) => (
-              <MentionRow key={m.spotId} mention={m} divided={i > 0} />
-            ))}
-          </div>
-        </>
-      ) : (
-        mentions[0] && (
-          <div className="flex gap-2.5 items-start mt-1.5">
-            <Avatar label={mentions[0].source.name} size={26} />
-            <div className="min-w-0 flex-1">
-              <div className="text-[11.5px] text-ink2 truncate">
-                <span className="font-bold text-foreground">{mentions[0].source.name}</span>{' '}
-                {sourceVerb(mentions[0].source.type)}
-                {mentions[0].sunreiTitle ? (
-                  <span className="text-ink3"> · {mentions[0].sunreiTitle}</span>
-                ) : null}
-              </div>
-              {mentions[0].context && (
-                <div className="mt-0.5 text-[12px] leading-snug text-foreground line-clamp-2">
-                  {mentions[0].context}
-                </div>
-              )}
-            </div>
-          </div>
-        )
+      {/* Eyebrow — how widely it's featured */}
+      {mentions.length > 0 && (
+        <div className="mt-[9px] text-[10px] font-extrabold uppercase tracking-wide text-accent-ink">
+          {eyebrow}
+        </div>
+      )}
+
+      {/* Up to two source "takes" */}
+      <div>
+        {mentions.slice(0, 2).map((m) => (
+          <PlaceTake key={m.spotId} mention={m} />
+        ))}
+      </div>
+
+      {otherSources > 0 && (
+        <div className="mt-2 flex items-center gap-1.5 border-t border-line pt-[9px] text-[11.5px] font-bold text-accent-ink">
+          {t('andOtherSources', { count: otherSources })}
+          <ChevronRight className="h-3 w-3" strokeWidth={2.4} />
+        </div>
       )}
     </div>
   );

@@ -1,8 +1,8 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { MapPin, SlidersHorizontal } from 'lucide-react';
-import { MapView, useSeedInitialCenter } from '@/components/map-view';
+import { MapPin } from 'lucide-react';
+import { MapView } from '@/components/map-view';
 import { PlaceCard, PlaceCardSkeleton } from '@/components/place-card';
 import { FiltersPanel } from '@/components/filters';
 import {
@@ -12,23 +12,28 @@ import {
   VideoPreviewPanel,
 } from '@/components/panels';
 import { SourceDetail, VideoDetail } from '@/components/detail-surfaces';
+import { SourceChannelPanel } from '@/components/source-channel';
 import { Sidebar } from '@/components/desktop/Sidebar';
 import { PeekSheet, type Snap } from '@/components/mobile/PeekSheet';
 import { SearchPill } from '@/components/wf';
+import { AreaChip, MapControls } from '@/components/map-chrome';
+import { Onboarding, useOnboarding } from '@/components/onboarding';
+import { AuthControl, LoginModal } from '@/components/auth';
 import { useMapPlaces, useSunreiDetail, useTagFilter } from '@/hooks/use-map';
 import { useDeepLinkSync } from '@/hooks/use-deep-link';
 import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
+import { useAuthStore } from '@/stores/auth-store';
 import { useFilterStore } from '@/stores/filter-store';
 import { cn } from '@/lib/utils';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function AppShell() {
   const t = useTranslations('list');
-  const nav = useTranslations('nav');
   const search = useTranslations('search');
-  useSeedInitialCenter();
+  useOnboarding();
   useDeepLinkSync();
+  useEffect(() => useAuthStore.getState().hydrate(), []);
 
   const mode = useMapStore((s) => s.mode);
   const committedBounds = useMapStore((s) => s.committedBounds);
@@ -40,8 +45,8 @@ export default function AppShell() {
   const activePlaceId = useUiStore((s) => s.activePlaceId);
   const setActivePlace = useUiStore((s) => s.setActivePlace);
   const setSearchOpen = useUiStore((s) => s.setSearchOpen);
+  const openSearch = useUiStore((s) => s.openSearch);
   const searchOpen = useUiStore((s) => s.searchOpen);
-  const setFiltersOpen = useUiStore((s) => s.setFiltersOpen);
   const videoPreview = useUiStore((s) => s.videoPreview);
 
   const [mobileSnap, setMobileSnap] = useState<Snap>('half');
@@ -65,7 +70,7 @@ export default function AppShell() {
   const showingPrevious = mode === 'nearby' && !!pendingArea;
 
   const listBody = (
-    <div className={cn('flex-1 overflow-auto px-3 py-2 space-y-2', showingPrevious && 'opacity-50')}>
+    <div className={cn('flex-1 overflow-auto px-4 py-2 space-y-2.5', showingPrevious && 'opacity-50')}>
       {firstLoad ? (
         <div className="space-y-2">
           {Array.from({ length: 4 }).map((_, i) => (
@@ -96,11 +101,19 @@ export default function AppShell() {
     </div>
   ) : null;
 
+  // Source mode = the channel view (wireframe §4): source header + its sunrei list,
+  // while the map shows every place across the source. Detail/preview overrides it.
+  const channelPanel =
+    mode === 'source' && selectedSourceIds.length > 0 ? (
+      <SourceChannelPanel sourceId={selectedSourceIds[0]} />
+    ) : null;
+
   return (
     <div className="fixed inset-0 flex bg-background text-foreground overflow-hidden">
       {!isMobile && (
         <Sidebar
           detailPanel={detailPanel}
+          channelPanel={channelPanel}
           listBody={listBody}
           count={visibleCards.length}
           showingPrevious={showingPrevious}
@@ -113,28 +126,31 @@ export default function AppShell() {
           <MapView cards={allCards} previewSpots={previewSpots} />
         </div>
 
-        {!isMobile && (
-          <div className="absolute top-3 left-4 right-4 z-20 flex items-center gap-2">
-            <SearchPill
-              placeholder={search('placeholder')}
-              onClick={() => setSearchOpen(true)}
-              className="flex-1 max-w-xl"
-            />
-            <button
-              type="button"
-              onClick={() => setFiltersOpen(true)}
-              className="ml-auto flex items-center gap-1.5 rounded-full bg-card border border-line2 px-4 py-2.5 text-[13px] font-semibold shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
-            >
-              <SlidersHorizontal className="h-4 w-4" />
-              {nav('filters')}
-            </button>
-          </div>
+        {/* Desktop map chrome: area chip (top-left) + zoom/recenter (top-right). */}
+        {!isMobile && !videoPreview && (
+          <>
+            <div className="absolute left-[18px] top-[18px] z-20">
+              <AreaChip />
+            </div>
+            <div className="absolute right-[18px] top-[18px] z-20">
+              <MapControls />
+            </div>
+          </>
         )}
 
         {isMobile && !videoPreview && (
-          <div className="absolute top-3 left-3 right-3 z-20">
-            <SearchPill placeholder={search('placeholder')} onClick={() => setSearchOpen(true)} />
-          </div>
+          <>
+            <div className="absolute left-3 right-3 top-3 z-20 flex items-center gap-2">
+              <SearchPill placeholder={search('placeholder')} onClick={openSearch} className="flex-1" />
+              <AuthControl variant="mobile" />
+            </div>
+            <div className="absolute left-3 top-16 z-20">
+              <AreaChip />
+            </div>
+            <div className="absolute right-3 top-16 z-20">
+              <MapControls zoom={false} />
+            </div>
+          </>
         )}
 
         {isMobile && mobileSnap === 'full' && !detailPanel && (
@@ -147,6 +163,7 @@ export default function AppShell() {
       {isMobile && (
         <PeekSheet
           detailPanel={detailPanel}
+          channelPanel={channelPanel}
           listBody={listBody}
           count={visibleCards.length}
           showingPrevious={showingPrevious}
@@ -158,6 +175,8 @@ export default function AppShell() {
       <FiltersPanel places={allCards} />
       <SourceDetail />
       <VideoDetail />
+      <LoginModal />
+      <Onboarding />
     </div>
   );
 }

@@ -12,6 +12,7 @@ interface MapState {
   selectedSourceIds: string[];
   committedBounds: Bounds | null; // the bounds currently fetched (nearby)
   pendingArea: Bounds | null; // viewport moved but not yet refetched
+  commitNextIdle: boolean; // auto-commit the next idle (e.g. after a location jump)
   mapCenter: LatLng | null; // distance/sort anchor (NOT GPS)
   initialSeed: LatLng; // opening center (GPS if granted, else Seoul)
   zoom: number;
@@ -26,7 +27,9 @@ interface MapState {
   addSource: (id: string) => void;
   removeSource: (id: string) => void;
   clearSources: () => void;
-  panTo: (c: LatLng, zoom?: number) => void;
+  // commitOnIdle: load the destination area on arrival (no "Search nearby" gate) —
+  // used when the user explicitly picks a location from search.
+  panTo: (c: LatLng, zoom?: number, commitOnIdle?: boolean) => void;
   fitToPoints: (points: LatLng[], maxZoom?: number) => void;
 }
 
@@ -35,6 +38,7 @@ export const useMapStore = create<MapState>((set, get) => ({
   selectedSourceIds: [],
   committedBounds: null,
   pendingArea: null,
+  commitNextIdle: false,
   mapCenter: null,
   initialSeed: SEOUL,
   zoom: DEFAULT_ZOOM,
@@ -45,13 +49,14 @@ export const useMapStore = create<MapState>((set, get) => ({
   setZoom: (z) => set({ zoom: z }),
 
   onIdle: (b, center) => {
-    const { mode, committedBounds } = get();
+    const { mode, committedBounds, commitNextIdle } = get();
     set({ mapCenter: center });
     if (mode === 'nearby') {
       // First idle auto-commits the opening viewport so the list loads immediately;
+      // an explicit location jump (commitNextIdle) also auto-loads on arrival;
       // later pans mark a pending area that the user confirms via "Search nearby".
-      if (committedBounds == null) {
-        set({ committedBounds: b, pendingArea: null });
+      if (committedBounds == null || commitNextIdle) {
+        set({ committedBounds: b, pendingArea: null, commitNextIdle: false });
         return;
       }
       const same =
@@ -88,11 +93,11 @@ export const useMapStore = create<MapState>((set, get) => ({
 
   clearSources: () => set({ mode: 'nearby', selectedSourceIds: [] }),
 
-  panTo: (c, zoom) => {
+  panTo: (c, zoom, commitOnIdle = false) => {
     const map = get().map;
     if (map) map.panTo(c);
     if (zoom) map?.setZoom(zoom);
-    set({ mapCenter: c });
+    set({ mapCenter: c, commitNextIdle: commitOnIdle });
   },
 
   // Fit the map to a set of points (source-mode union, video-preview itinerary).

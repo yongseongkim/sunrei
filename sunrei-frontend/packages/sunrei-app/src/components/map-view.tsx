@@ -24,8 +24,9 @@ interface PinHandle {
   remove: () => void;
 }
 
-// One teardrop pin as a Google Maps OverlayView (wireframe Pin). White/greige inactive,
-// cornflower-filled + enlarged when active; the count sits upright inside the teardrop.
+// One solid "stopover" dot per Place as a Google Maps OverlayView (wireframe Pin):
+// filled cornflower + white number + white ring + shadow, centered on the point;
+// deep-blue and enlarged when active, dimmed when tag-filtered. Badge = # of videos.
 function makePinOverlay(
   map: google.maps.Map,
   lat: number,
@@ -35,32 +36,30 @@ function makePinOverlay(
 ): PinHandle {
   const container = document.createElement('div');
   container.style.position = 'absolute';
-  container.style.transform = 'translate(-50%,-100%)';
+  container.style.transform = 'translate(-50%,-50%)';
   container.style.cursor = 'pointer';
-  const drop = document.createElement('div');
-  drop.style.borderRadius = '50% 50% 50% 0';
-  drop.style.transform = 'rotate(-45deg)';
-  drop.style.boxShadow = '0 4px 10px rgba(0,0,0,.18)';
-  drop.style.display = 'flex';
-  drop.style.alignItems = 'center';
-  drop.style.justifyContent = 'center';
+  const dot = document.createElement('div');
+  dot.style.borderRadius = '50%';
+  dot.style.border = '2px solid #fff';
+  dot.style.boxShadow = '0 2px 7px rgba(0,0,0,.34)';
+  dot.style.display = 'flex';
+  dot.style.alignItems = 'center';
+  dot.style.justifyContent = 'center';
   const num = document.createElement('span');
-  num.style.transform = 'rotate(45deg)';
-  num.style.fontWeight = '700';
-  drop.appendChild(num);
-  container.appendChild(drop);
+  num.style.fontWeight = '800';
+  num.style.color = '#fff';
+  dot.appendChild(num);
+  container.appendChild(dot);
   container.addEventListener('click', onClick);
 
   const applyState = (s: PinState) => {
-    const size = s.active ? 38 : 30;
-    drop.style.width = `${size}px`;
-    drop.style.height = `${size}px`;
-    drop.style.background = s.active ? '#6495ED' : '#fdfcf9';
-    drop.style.border = `2px solid ${s.active ? '#3f63a8' : '#d2cdc1'}`;
+    const size = s.active ? 34 : 28;
+    dot.style.width = `${size}px`;
+    dot.style.height = `${size}px`;
+    dot.style.background = s.active ? '#3f63a8' : '#6495ED';
     num.textContent = s.label;
-    num.style.color = s.active ? '#fff' : '#2f2b27';
-    num.style.fontSize = s.active ? '15px' : '13px';
-    container.style.opacity = s.dim ? '0.35' : '1';
+    num.style.fontSize = s.active ? '14px' : '12.5px';
+    container.style.opacity = s.dim ? '0.4' : '1';
     container.style.zIndex = String(s.active ? 5 : 2);
   };
   applyState(initial);
@@ -120,7 +119,7 @@ function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previe
       center: initialSeed,
       zoom,
       disableDefaultUI: true,
-      zoomControl: true,
+      zoomControl: false,
       clickableIcons: false,
     });
     setMap(map);
@@ -144,7 +143,8 @@ function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previe
         id: c.place.id,
         lat: c.place.latitude,
         lng: c.place.longitude,
-        label: String(c.spotCount),
+        // Marker badge = # of videos mentioning this place (direction B), matching "In N videos".
+        label: String(c.mentions.length),
         dim: dimmedIds.has(c.place.id),
         onClick: () => setActivePlace(c.place.id),
       }));

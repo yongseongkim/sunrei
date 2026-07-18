@@ -2,7 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { Check, ChevronDown, Loader2, MapPin, Play, Search, X } from 'lucide-react';
+import { Check, ChevronDown, ChevronLeft, Loader2, MapPin, Play, Search, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
@@ -126,20 +126,17 @@ export function TagChipRail() {
   const { data: tags = [] } = useTags();
   const activeTagIds = useFilterStore((s) => s.activeTagIds);
   const toggleTag = useFilterStore((s) => s.toggleTag);
-  const isMobile = useUiStore((s) => s.isMobile);
   const setFiltersOpen = useUiStore((s) => s.setFiltersOpen);
   if (tags.length === 0) return null;
   return (
-    <div className="flex gap-1.5 overflow-x-auto px-3 py-2 border-b border-line bg-background/80 backdrop-blur">
-      {/* Mobile entry point to the full filters sheet (desktop uses the top-right button). */}
-      {isMobile && (
-        <button
-          onClick={() => setFiltersOpen(true)}
-          className="shrink-0 inline-flex items-center gap-1 text-xs font-bold whitespace-nowrap px-2.5 py-1 rounded-full border border-dashed border-line2 bg-card text-ink2 hover:bg-accent-soft"
-        >
-          ✦ {t('filters')}
-        </button>
-      )}
+    <div className="flex gap-1.5 overflow-x-auto px-4 py-2 border-b border-line bg-background/80 backdrop-blur">
+      {/* Entry point to the full filters sheet (both desktop sidebar and mobile sheet). */}
+      <button
+        onClick={() => setFiltersOpen(true)}
+        className="shrink-0 inline-flex items-center gap-1 text-xs font-bold whitespace-nowrap px-2.5 py-1 rounded-full border border-dashed border-line2 bg-card text-ink2 hover:bg-accent-soft"
+      >
+        ✦ {t('filters')}
+      </button>
       {tags.map((tag) => {
         const active = activeTagIds.includes(tag.id);
         return (
@@ -171,15 +168,17 @@ export function TagChipRail() {
 
 export function UnifiedSearch({ onClose }: { onClose: () => void }) {
   const t = useTranslations('search');
-  const [q, setQ] = useState('');
-  const [debounced, setDebounced] = useState('');
+  // Query is stored (not local) so it survives previewing a video and coming back.
+  const q = useUiStore((s) => s.searchQuery);
+  const setQ = useUiStore((s) => s.setSearchQuery);
+  const [debounced, setDebounced] = useState(q);
   const mapCenter = useMapStore((s) => s.mapCenter);
-  const addSource = useMapStore((s) => s.addSource);
+  const setSourceMode = useMapStore((s) => s.setSourceMode);
+  const clearSources = useMapStore((s) => s.clearSources);
   const panTo = useMapStore((s) => s.panTo);
   const setActivePlace = useUiStore((s) => s.setActivePlace);
   const enterPreview = useUiStore((s) => s.enterVideoPreview);
-  const selectedSourceIds = useMapStore((s) => s.selectedSourceIds);
-  const removeSource = useMapStore((s) => s.removeSource);
+  const setSourceFromSearch = useUiStore((s) => s.setSourceFromSearch);
   const mode = useMapStore((s) => s.mode);
 
   useEffect(() => {
@@ -194,7 +193,9 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
   const selectGooglePlace = async (placeId: string) => {
     const loc = await resolveGooglePlace(placeId);
     if (loc) {
-      panTo(loc, 14);
+      // A location pick is a Nearby jump: drop any source scope and load the new area.
+      clearSources();
+      panTo(loc, 14, true);
       onClose();
     }
   };
@@ -235,7 +236,8 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
                   sub={p.place.address ?? ''}
                   hint={t('moveMap')}
                   onClick={() => {
-                    panTo({ lat: p.place.latitude, lng: p.place.longitude }, 14);
+                    clearSources();
+                    panTo({ lat: p.place.latitude, lng: p.place.longitude }, 14, true);
                     setActivePlace(p.place.id);
                     onClose();
                   }}
@@ -253,35 +255,32 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
               ))}
             </Section>
             <Section title={t('channels')}>
-              {(data?.sources ?? []).map((s) => {
-                const applied = selectedSourceIds.includes(s.id);
-                return (
-                  <ResultRow
-                    key={s.id}
-                    icon={<Avatar label={s.name} size={28} />}
-                    selected={applied}
-                    title={s.name}
-                    sub={s.type}
-                    hint={applied ? t('tapToRemove') : t('addSource')}
-                    onClick={() => {
-                      if (applied) removeSource(s.id);
-                      else addSource(s.id);
-                      onClose();
-                    }}
-                  />
-                );
-              })}
+              {(data?.sources ?? []).map((s) => (
+                <ResultRow
+                  key={s.id}
+                  icon={<Avatar label={s.name} size={28} />}
+                  title={s.name}
+                  sub={s.type}
+                  hint={t('open')}
+                  onClick={() => {
+                    // Open the channel view (wireframe §4): single-source scope + sunrei list.
+                    setSourceMode([s.id]);
+                    setSourceFromSearch(true);
+                    onClose();
+                  }}
+                />
+              ))}
             </Section>
             <Section title={t('videos')}>
               {(data?.sunreis ?? []).map((s) => (
                 <ResultRow
                   key={s.id}
-                  icon={<IconCircle square><Play className="h-3.5 w-3.5" /></IconCircle>}
+                  icon={<VideoThumb url={s.images?.[0]?.images?.[0]?.url} />}
                   title={s.title}
                   sub={s.sourceName}
                   hint={t('open')}
                   onClick={() => {
-                    enterPreview(s.id, mode === 'source' ? 'source' : 'nearby');
+                    enterPreview(s.id, mode === 'source' ? 'source' : 'nearby', true);
                     onClose();
                   }}
                 />
@@ -318,6 +317,36 @@ function IconCircle({ children, square }: { children: React.ReactNode; square?: 
       )}
     >
       {children}
+    </span>
+  );
+}
+
+/**
+ * Video result thumbnail (16:9-ish) for the "Videos" search group — a real image
+ * makes video rows unmistakable next to the pin-icon place rows and avatar channel
+ * rows. Falls back to a play glyph on the greige placeholder when a video has no image.
+ */
+function VideoThumb({ url }: { url?: string }) {
+  return (
+    <span
+      className="relative shrink-0 overflow-hidden rounded-md border border-line bg-bg2"
+      style={{ width: 56, height: 34 }}
+    >
+      {url ? (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={url} alt="" className="h-full w-full object-cover" />
+          <span className="absolute inset-0 grid place-items-center">
+            <span className="grid h-[18px] w-[18px] place-items-center rounded-full bg-black/50">
+              <Play className="h-2 w-2 text-white" fill="currentColor" strokeWidth={0} />
+            </span>
+          </span>
+        </>
+      ) : (
+        <span className="grid h-full w-full place-items-center text-ink3">
+          <Play className="h-3.5 w-3.5" fill="currentColor" strokeWidth={0} />
+        </span>
+      )}
     </span>
   );
 }
@@ -453,14 +482,19 @@ export function VideoPreviewPanel() {
   let n = 0;
   return (
     <div className="flex flex-col h-full">
-      <div className="flex items-center justify-between px-3 py-2 border-b border-line bg-accent-soft">
-        <div className="min-w-0">
-          <div className="text-xs font-medium text-accent-ink">{t('previewing')}</div>
+      <div className="flex items-center gap-2.5 px-3 py-2 border-b border-line bg-accent-soft">
+        <button
+          onClick={exit}
+          aria-label={t('backToList')}
+          className="flex shrink-0 items-center gap-0.5 text-accent-ink hover:opacity-80"
+        >
+          <ChevronLeft className="h-[18px] w-[18px]" />
+          <span className="text-[13px] font-semibold">{t('backToList')}</span>
+        </button>
+        <div className="min-w-0 flex-1">
+          <div className="text-[11px] font-medium text-accent-ink">{t('previewing')}</div>
           <div className="text-sm font-semibold truncate">{data?.sunrei.title ?? '…'}</div>
         </div>
-        <button onClick={exit} className="text-ink2 flex items-center gap-1 text-sm shrink-0">
-          <X className="h-4 w-4" /> {t('backToList')}
-        </button>
       </div>
       {isLoading || !data ? (
         <div className="grid place-items-center py-8">

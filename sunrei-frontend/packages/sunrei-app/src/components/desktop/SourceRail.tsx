@@ -2,65 +2,88 @@
 
 import { useTranslations } from 'next-intl';
 import { useMapStore } from '@/stores/map-store';
+import { useUiStore } from '@/stores/ui-store';
 import { useNearbySources } from '@/hooks/use-map';
+import { Avatar } from '@/components/wf';
 import { cn } from '@/lib/utils';
+import type { ReactNode } from 'react';
+import type { SourceDTO } from '@/dto';
 
-/** "Sources near you" rail (desktop sidebar). Tap to scope to a source. */
+/**
+ * "Sources in view" rail (direction B): slim chips — avatar + name + a place-count
+ * badge — for the distinct sources featured in the current viewport. Tapping a chip
+ * scopes the map/list to that source (source mode); tapping the active chip clears it.
+ */
 export function SourceRail() {
-  const nav = useTranslations('nav');
+  const t = useTranslations('list');
   const committedBounds = useMapStore((s) => s.committedBounds);
   const mapCenter = useMapStore((s) => s.mapCenter);
   const { data: sources = [] } = useNearbySources(committedBounds, mapCenter);
   const selected = useMapStore((s) => s.selectedSourceIds);
-  const addSource = useMapStore((s) => s.addSource);
+  const setSourceMode = useMapStore((s) => s.setSourceMode);
   const clearSources = useMapStore((s) => s.clearSources);
+  const setSourceFromSearch = useUiStore((s) => s.setSourceFromSearch);
   if (sources.length === 0) return null;
 
-  const Item = ({
-    label,
-    active,
-    onClick,
-    glyph,
-  }: {
-    label: string;
-    active: boolean;
-    onClick: () => void;
-    glyph?: string;
-  }) => (
-    <button
-      type="button"
-      onClick={onClick}
-      className="flex flex-col items-center gap-1 w-14 shrink-0"
-      title={label}
-    >
-      <span
-        className={cn(
-          'grid place-items-center h-11 w-11 rounded-full border text-sm font-bold transition-colors',
-          active ? 'bg-primary text-primary-foreground border-primary' : 'bg-card text-ink2 border-line2'
-        )}
-      >
-        {glyph ?? label.charAt(0).toUpperCase()}
-      </span>
-      <span className="w-full truncate text-center text-[10px] text-ink2">{label}</span>
-    </button>
-  );
+  const count = (s: SourceDTO) => s.placeCount ?? s.spotCount ?? s.videoCount ?? null;
 
   return (
-    <div className="border-b border-line">
-      <div className="px-3 pt-3 text-[10px] font-bold uppercase tracking-wide text-ink3">
-        {nav('sourcesNearYou')}
+    <div className="border-b border-line px-4 py-[14px]">
+      <SectionLabel count={sources.length}>{t('sourcesInView')}</SectionLabel>
+      <div className="mt-[11px] flex gap-[9px] overflow-x-auto pb-0.5">
+        {sources.map((s) => {
+          const active = selected.includes(s.id);
+          const n = count(s);
+          return (
+            <button
+              key={s.id}
+              type="button"
+              onClick={() => {
+                // Open this channel's view (single-source scope); tap again to clear.
+                if (active) clearSources();
+                else {
+                  setSourceMode([s.id]);
+                  setSourceFromSearch(false);
+                }
+              }}
+              title={s.name}
+              className={cn(
+                'flex shrink-0 items-center gap-[7px] rounded-full border py-[5px] pl-[5px] pr-[10px] transition-colors',
+                active ? 'border-primary bg-accent-soft' : 'border-line2 bg-card hover:border-ink3'
+              )}
+            >
+              <Avatar label={s.name} size={22} />
+              <span className="whitespace-nowrap text-[12.5px] font-bold text-foreground">{s.name}</span>
+              {n != null && (
+                <span className="rounded-full bg-bg2 px-[7px] py-px text-[10.5px] font-extrabold text-ink2">
+                  {n}
+                </span>
+              )}
+            </button>
+          );
+        })}
       </div>
-      <div className="flex gap-1 overflow-x-auto px-2 py-2">
-        <Item label={nav('all')} glyph="◎" active={selected.length === 0} onClick={clearSources} />
-        {sources.map((s) => (
-          <Item
-            key={s.id}
-            label={s.name}
-            active={selected.includes(s.id)}
-            onClick={() => addSource(s.id)}
-          />
-        ))}
-      </div>
+    </div>
+  );
+}
+
+/** Uppercase section eyebrow with a count, shared by the sidebar sections (direction B). */
+export function SectionLabel({
+  children,
+  count,
+  sub,
+}: {
+  children: ReactNode;
+  count?: number;
+  sub?: string;
+}) {
+  return (
+    <div className="flex items-baseline gap-2">
+      <span className="text-[11px] font-extrabold uppercase tracking-wide text-foreground">
+        {children}
+      </span>
+      {count != null && <span className="text-[11.5px] font-extrabold text-accent-ink">{count}</span>}
+      {sub && <span className="ml-auto text-[11px] font-semibold text-ink3">{sub}</span>}
     </div>
   );
 }

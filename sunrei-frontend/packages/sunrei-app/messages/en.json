@@ -1,5 +1,5 @@
 {
-  "nav": { "nearby": "Nearby", "search": "Search", "filters": "Filters", "clear": "Clear", "sourcesNearYou": "Sources near you", "all": "All", "nearest": "Nearest" },
+  "nav": { "nearby": "Nearby", "search": "Search", "filters": "Filters", "clear": "Clear", "sourcesNearYou": "Sources near you", "all": "All", "nearest": "Nearest", "back": "Back" },
   "list": {
     "title": "Places near map center",
     "placesNear": "{count, plural, one {# place near you} other {# places near you}}",
@@ -9,7 +9,13 @@
     "inVideos": "In {count, plural, one {# video} other {# videos}}",
     "showPrevious": "Showing previous area",
     "searchNearby": "Search nearby",
-    "finding": "Finding spots…"
+    "finding": "Finding spots…",
+    "sourcesInView": "Sources in view",
+    "places": "Places",
+    "nearestFirst": "nearest first",
+    "featuredBySources": "Featured by {count, plural, one {# source} other {# sources}}",
+    "featuredInVideos": "Featured in {count, plural, one {# video} other {# videos}}",
+    "andOtherSources": "and {count, plural, one {# other source} other {# other sources}}"
   },
   "search": {
     "placeholder": "Search areas, channels, videos",
@@ -21,7 +27,8 @@
     "applied": "Source added",
     "tapToRemove": "FILTERING · TAP TO REMOVE",
     "moveMap": "Move map",
-    "open": "Open"
+    "open": "Open",
+    "back": "Back to search"
   },
   "source": {
     "clearSource": "Clear source",
@@ -32,6 +39,7 @@
     "watchOnYoutube": "Watch on YouTube ↗",
     "whereToWatch": "Where to watch ↗",
     "spots": "Spots",
+    "series": "Series",
     "videosNearYou": "Videos near you",
     "removed": "Removed {name}",
     "undo": "Undo"
@@ -48,6 +56,24 @@
     "spotCount": "{count, plural, one {# spot} other {# spots}}"
   },
   "tags": { "title": "Filter by tag", "reset": "Reset", "showPlaces": "Show {count} places" },
-  "geo": { "useLocation": "Use my location", "denied": "Showing Seoul" },
+  "geo": {
+    "useLocation": "Use my location",
+    "denied": "Showing Seoul",
+    "browseSeoul": "Browse Seoul instead",
+    "primingTitle": "See what's around you",
+    "primingBody": "Sunrei centers the map on your location to show the places featured near you. You can browse anywhere without sharing it.",
+    "locating": "Centering the map on you…",
+    "locatingSub": "Finding places nearby"
+  },
+  "auth": {
+    "signIn": "Sign in with Google",
+    "signInTitle": "Sign in to Sunrei",
+    "signInBody": "There are no sign-in-only features yet — connect your account now for saving places and following channels, coming soon.",
+    "signInNote": "This opens the Google account chooser (browser UI).",
+    "later": "Not now",
+    "connected": "Connected with Google",
+    "logout": "Sign out",
+    "failed": "Sign-in failed"
+  },
   "locale": { "toggle": "한국어" }
 }

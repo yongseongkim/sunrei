@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { ExternalLink, Loader2, MapPin, X } from 'lucide-react';
+import { ChevronLeft, ExternalLink, Loader2, MapPin } from 'lucide-react';
 import { useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { useMapStore } from '@/stores/map-store';
@@ -34,22 +34,35 @@ export function LinkOutButton({ source }: { source: SourceDTO }) {
   );
 }
 
+/**
+ * Drill-down surface shell (source / video pages). A left-aligned back button
+ * (design `BackRow`) is the primary way out — it pops to whatever surface is
+ * underneath (source page → home; video page → source page or preview). The scope
+ * indicators (video preview, source chip) keep a ✕ instead; only these pages go back.
+ */
 function OverlayShell({
   title,
   onClose,
+  backLabel,
   children,
 }: {
   title: string;
   onClose: () => void;
+  backLabel?: string;
   children: React.ReactNode;
 }) {
+  const nav = useTranslations('nav');
   return (
     <div className="absolute inset-0 z-40 bg-background flex flex-col">
-      <div className="flex items-center justify-between p-3 border-b border-line">
-        <div className="text-sm font-semibold truncate">{title}</div>
-        <button onClick={onClose} className="text-ink3 hover:text-foreground">
-          <X className="h-4 w-4" />
+      <div className="flex items-center gap-2 p-3 border-b border-line">
+        <button
+          onClick={onClose}
+          className="flex shrink-0 items-center gap-0.5 text-ink2 hover:text-foreground"
+        >
+          <ChevronLeft className="h-[18px] w-[18px]" />
+          <span className="text-[13px] font-semibold">{backLabel ?? nav('back')}</span>
         </button>
+        {title && <div className="min-w-0 truncate text-sm font-semibold text-foreground">{title}</div>}
       </div>
       <div className="flex-1 overflow-auto">{children}</div>
     </div>
@@ -156,6 +169,7 @@ export function VideoDetail() {
   const id = useUiStore((s) => s.videoDetailId);
   const close = useUiStore((s) => s.closeVideoDetail);
   const enterPreview = useUiStore((s) => s.enterVideoPreview);
+  const sourceDetailId = useUiStore((s) => s.sourceDetailId);
   const mode = useMapStore((s) => s.mode);
   const tagLabel = useTagLabel();
   const { data, isLoading } = useSunreiDetail(id);
@@ -182,8 +196,11 @@ export function VideoDetail() {
 
   if (!id) return null;
 
+  // Opened from the source page → back reveals that channel, so label it with its name.
+  const backLabel = sourceDetailId ? data?.sunrei.source?.name : undefined;
+
   return (
-    <OverlayShell title={data?.sunrei.title ?? '…'} onClose={close}>
+    <OverlayShell title={data?.sunrei.title ?? '…'} onClose={close} backLabel={backLabel}>
       {isLoading || !data ? (
         <div className="grid place-items-center py-10">
           <Loader2 className="h-5 w-5 animate-spin text-ink3" />
