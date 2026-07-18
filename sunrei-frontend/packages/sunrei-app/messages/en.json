@@ -1,5 +1,14 @@
 {
-  "nav": { "nearby": "Nearby", "search": "Search", "filters": "Filters", "clear": "Clear", "sourcesNearYou": "Sources near you", "all": "All", "nearest": "Nearest", "back": "Back" },
+  "nav": {
+    "nearby": "Nearby",
+    "search": "Search",
+    "filters": "Filters",
+    "clear": "Clear",
+    "sourcesNearYou": "Sources near you",
+    "all": "All",
+    "nearest": "Nearest",
+    "back": "Back"
+  },
   "list": {
     "title": "Places near map center",
     "placesNear": "{count, plural, one {# place near you} other {# places near you}}",
@@ -42,7 +51,9 @@
     "series": "Series",
     "videosNearYou": "Videos near you",
     "removed": "Removed {name}",
-    "undo": "Undo"
+    "undo": "Undo",
+    "allSeries": "{name} · All series",
+    "seriesPlacesSub": "Places in this series"
   },
   "detail": {
     "mentions": "Mentions",
@@ -53,9 +64,20 @@
     "previewing": "Previewing video",
     "backToList": "Back to list",
     "seeOnMap": "See on map",
-    "spotCount": "{count, plural, one {# spot} other {# spots}}"
+    "spotCount": "{count, plural, one {# spot} other {# spots}}",
+    "viewOnGoogleMaps": "View on Google Maps",
+    "googleInfo": "Google info",
+    "reviews": "{count, plural, one {# review} other {# reviews}}",
+    "openNow": "Open",
+    "closedNow": "Closed",
+    "introducedBy": "How it's featured",
+    "sourceCount": "{count, plural, one {# source} other {# sources}}"
   },
-  "tags": { "title": "Filter by tag", "reset": "Reset", "showPlaces": "Show {count} places" },
+  "tags": {
+    "title": "Filter by tag",
+    "reset": "Reset",
+    "showPlaces": "Show {count} places"
+  },
   "geo": {
     "useLocation": "Use my location",
     "denied": "Showing Seoul",
@@ -75,5 +97,7 @@
     "logout": "Sign out",
     "failed": "Sign-in failed"
   },
-  "locale": { "toggle": "한국어" }
+  "locale": {
+    "toggle": "한국어"
+  }
 }

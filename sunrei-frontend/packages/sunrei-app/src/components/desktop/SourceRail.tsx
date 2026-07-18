@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useNearbySources } from '@/hooks/use-map';
-import { Avatar } from '@/components/wf';
+import { Avatar, sourceAvatarUrl } from '@/components/wf';
 import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 import type { SourceDTO } from '@/dto';
@@ -52,7 +52,7 @@ export function SourceRail() {
                 active ? 'border-primary bg-accent-soft' : 'border-line2 bg-card hover:border-ink3'
               )}
             >
-              <Avatar label={s.name} size={22} />
+              <Avatar label={s.name} src={sourceAvatarUrl(s, 22)} size={22} />
               <span className="whitespace-nowrap text-[12.5px] font-bold text-foreground">{s.name}</span>
               {n != null && (
                 <span className="rounded-full bg-bg2 px-[7px] py-px text-[10.5px] font-extrabold text-ink2">

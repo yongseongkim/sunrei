@@ -5,4 +5,4 @@ export { Avatar, AvatarCluster } from './Avatar';
 export { SearchPill } from './SearchPill';
 export { Handle } from './Handle';
 export { ViewToggle } from './ViewToggle';
-export { sourceVerb } from './source-meta';
+export { sourceVerb, sourceAvatarUrl } from './source-meta';

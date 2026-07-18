@@ -2,20 +2,26 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { Check, ChevronDown, ChevronLeft, Loader2, MapPin, Play, Search, X } from 'lucide-react';
+import { Check, ChevronLeft, Loader2, MapPin, Navigation, Play, Search, Star, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { Avatar } from '@/components/wf';
+import { Avatar, sourceAvatarUrl } from '@/components/wf';
 import { cn } from '@/lib/utils';
 import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useFilterStore } from '@/stores/filter-store';
-import { usePlaceDetail, useSunreiDetail, groupSpotsByArea } from '@/hooks/use-map';
+import { usePlaceDetail, useSunreiDetail } from '@/hooks/use-map';
 import { useSearch, useSources, useTags } from '@/hooks/use-discovery';
-import { useGooglePlaceAutocomplete, resolveGooglePlace } from '@/hooks/use-google-places';
+import {
+  useGooglePlaceAutocomplete,
+  useGooglePlaceDetails,
+  resolveGooglePlace,
+  type GooglePlaceInfo,
+} from '@/hooks/use-google-places';
 import { useTagLabel, LOCALE_COOKIE } from '@/lib/i18n';
-import { MentionRow } from './place-card';
+import { PlaceCard } from './place-card';
+import type { PlaceCardDTO, PlaceMentionDTO, SourceType, SunreiDTO, TagDTO } from '@/dto';
 import { useEffect, useState } from 'react';
 
 export function LocaleToggle() {
@@ -258,7 +264,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
               {(data?.sources ?? []).map((s) => (
                 <ResultRow
                   key={s.id}
-                  icon={<Avatar label={s.name} size={28} />}
+                  icon={<Avatar label={s.name} src={sourceAvatarUrl(s, 28)} size={28} />}
                   title={s.name}
                   sub={s.type}
                   hint={t('open')}
@@ -394,141 +400,375 @@ function ResultRow({
   );
 }
 
+/**
+ * Place (spot) detail — wireframe §1b. Opened by tapping a marker or a PlaceCard.
+ * The Home card folds mentions to 2 + "N more"; this expands EVERY source that
+ * featured this place. Header (pin · name · tag · distance · address) + actions
+ * (directions / Google Maps) stay pinned; the body scrolls: a Google-info card
+ * (live rating/reviews/price/hours/photos, distinct from Sunrei) then every
+ * source's take with a YouTube deep link.
+ */
 export function PlaceDetail({ placeId }: { placeId: string }) {
   const t = useTranslations('detail');
   const tagLabel = useTagLabel();
   const mapCenter = useMapStore((s) => s.mapCenter);
   const setActivePlace = useUiStore((s) => s.setActivePlace);
-  const [expanded, setExpanded] = useState(false);
   const { data, isLoading } = usePlaceDetail(placeId, mapCenter);
+  const info = useGooglePlaceDetails(data?.place.googleMapsId ?? null);
+
   if (isLoading)
     return (
-      <div className="grid place-items-center py-8">
+      <div className="grid flex-1 place-items-center py-8">
         <Loader2 className="h-5 w-5 animate-spin text-ink3" />
       </div>
     );
   if (!data) return null;
-  const spots = data.spots ?? [];
+
+  const { place, mentions } = data;
+  const tag = mentions.flatMap((m) => m.tags)[0];
+  const dist = mapCenter
+    ? distanceMeters(mapCenter, { lat: place.latitude, lng: place.longitude })
+    : null;
+  const sourceCount = new Set(mentions.map((m) => m.source.id)).size;
+  const mapsView = place.googleMapsId
+    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name)}&query_place_id=${place.googleMapsId}`
+    : `https://www.google.com/maps/search/?api=1&query=${place.latitude},${place.longitude}`;
+  const mapsDir = `https://www.google.com/maps/dir/?api=1&destination=${place.latitude},${place.longitude}${
+    place.googleMapsId ? `&destination_place_id=${place.googleMapsId}` : ''
+  }`;
+
   return (
-    <div className="space-y-3 p-3">
-      <div className="flex items-start justify-between gap-2">
-        <div>
-          <h2 className="text-lg font-semibold">{data.place.name}</h2>
-          {data.place.areaLabel && <p className="text-xs text-ink3">{data.place.areaLabel}</p>}
-        </div>
-        <button onClick={() => setActivePlace(null)} className="text-ink3">
-          <X className="h-4 w-4" />
+    <div className="flex flex-1 flex-col overflow-hidden">
+      {/* Pinned header: back · name/tag/distance/address · actions */}
+      <div className="border-b border-line px-4 pb-3.5 pt-2">
+        <button
+          onClick={() => setActivePlace(null)}
+          className="mb-3 inline-flex items-center gap-1 rounded-full border border-primary bg-accent-soft px-3 py-[7px] text-[12.5px] font-extrabold text-accent-ink"
+        >
+          <ChevronLeft className="h-3.5 w-3.5" strokeWidth={2.4} /> {t('backToList')}
         </button>
-      </div>
-      <div className="space-y-1.5">
-        {data.mentions.length > 0 && (
-          <h3 className="text-xs font-bold uppercase tracking-wide text-ink3">
-            {t('featuredIn', { count: data.mentions.length })}
-          </h3>
-        )}
-        {data.mentions.map((m) => (
-          <MentionRow key={m.spotId} mention={m} />
-        ))}
+
+        <div className="flex items-center gap-2">
+          <span className="min-w-0 flex-1 truncate text-[20px] font-extrabold tracking-tight text-foreground">
+            {place.name}
+          </span>
+          {tag && (
+            <span className="shrink-0 rounded-full bg-bg2 px-[10px] py-[3px] text-[10.5px] font-bold text-ink2">
+              {tagLabel(tag)}
+            </span>
+          )}
+        </div>
+        <div className="mt-2 flex items-center gap-2 pl-0.5">
+          {dist != null && (
+            <>
+              <span className="text-[12px] font-extrabold text-accent-ink">{formatDistanceM(dist)}</span>
+              <span className="h-[3px] w-[3px] rounded-full bg-line2" />
+            </>
+          )}
+          {place.address && <span className="min-w-0 truncate text-[12px] text-ink2">{place.address}</span>}
+        </div>
+
+        <div className="mt-3.5 flex gap-2.5">
+          <a
+            href={mapsDir}
+            target="_blank"
+            rel="noreferrer"
+            className="flex flex-1 items-center justify-center gap-1.5 rounded-[10px] bg-primary px-3 py-2.5 text-[13px] font-extrabold text-primary-foreground hover:opacity-95"
+          >
+            <Navigation className="h-[15px] w-[15px]" /> {t('directions')}
+          </a>
+          <a
+            href={mapsView}
+            target="_blank"
+            rel="noreferrer"
+            className="flex flex-1 items-center justify-center gap-1.5 rounded-[10px] border border-line2 bg-card px-3 py-2.5 text-[13px] font-extrabold text-foreground hover:border-ink3"
+          >
+            <MapPin className="h-[15px] w-[15px] text-ink2" /> {t('viewOnGoogleMaps')}{' '}
+            <span className="text-ink3">↗</span>
+          </a>
+        </div>
       </div>
 
-      {/* ExpandSpots (Bd-5): inline accordion of every spot at this place */}
-      {spots.length > 0 && (
-        <div className="border-t border-line pt-2">
-          <button
-            onClick={() => setExpanded((v) => !v)}
-            className="flex items-center gap-1 text-xs font-medium text-ink2"
-          >
-            <ChevronDown className={'h-4 w-4 transition-transform ' + (expanded ? 'rotate-180' : '')} />
-            {t('spotCount', { count: spots.length })}
-          </button>
-          {expanded && (
-            <div className="mt-2 space-y-1.5">
-              {spots.map((s) => (
-                <div key={s.id} className="rounded-lg border border-line bg-card p-2.5">
-                  <div className="text-sm font-medium">{s.title}</div>
-                  {s.context && <p className="text-xs text-ink2 mt-0.5">{s.context}</p>}
-                  {s.tags?.length > 0 && (
-                    <div className="flex flex-wrap gap-1 mt-1">
-                      {s.tags.map((tag) => (
-                        <span key={tag.id} className="text-[10px] px-1.5 py-0.5 rounded bg-accent-soft text-accent-ink">
-                          {tagLabel(tag)}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+      {/* Scrolling body: Google info card + every source's take */}
+      <div className="flex-1 overflow-auto px-4 pb-4 pt-3.5">
+        {info && <GoogleInfoCard info={info} />}
+
+        <div className="mt-4 flex items-baseline gap-2">
+          <span className="text-[11px] font-extrabold uppercase tracking-wide text-foreground">
+            {t('introducedBy')}
+          </span>
+          {sourceCount > 0 && (
+            <span className="text-[11.5px] font-extrabold text-accent-ink">
+              {t('sourceCount', { count: sourceCount })}
+            </span>
           )}
+        </div>
+        <div className="mt-1">
+          {mentions.map((m) => (
+            <PDMention key={m.spotId} m={m} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const SRC_TYPE_LABEL: Record<SourceType, string> = {
+  YOUTUBE: 'YouTube',
+  TV: 'TV',
+  ANIME: 'Anime',
+  OTHER: 'Other',
+};
+
+function TypeBadge({ type }: { type: SourceType }) {
+  return (
+    <span className="shrink-0 rounded bg-bg2 px-1.5 py-0.5 text-[9.5px] font-extrabold uppercase tracking-wide text-ink3">
+      {SRC_TYPE_LABEL[type] ?? type}
+    </span>
+  );
+}
+
+/** One fully-expanded source take: avatar · channel · type · series · take · YouTube ↗. */
+function PDMention({ m }: { m: PlaceMentionDTO }) {
+  const yt = m.youtubeLink ?? m.sunreiLink;
+  return (
+    <div className="border-t border-line py-3">
+      <div className="flex items-center gap-2.5">
+        <Avatar label={m.source.name} src={sourceAvatarUrl(m.source, 34)} size={34} />
+        <div className="min-w-0 flex-1">
+          <div className="truncate text-[13px] font-extrabold text-foreground">{m.source.name}</div>
+          <div className="mt-0.5 flex items-center gap-1.5">
+            <TypeBadge type={m.source.type} />
+            <span className="min-w-0 truncate text-[11px] font-semibold text-ink3">{m.sunreiTitle}</span>
+          </div>
+        </div>
+      </div>
+      {m.context && <p className="mt-2 text-[12.5px] leading-relaxed text-ink2">{m.context}</p>}
+      {yt && (
+        <a
+          href={yt}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-2.5 inline-flex items-center gap-1.5 rounded-lg border border-line2 bg-card px-2.5 py-1.5 text-[11.5px] font-bold text-foreground hover:border-ink3"
+        >
+          <Play className="h-3 w-3 text-primary" fill="currentColor" strokeWidth={0} /> YouTube{' '}
+          <span className="text-ink3">↗</span>
+        </a>
+      )}
+    </div>
+  );
+}
+
+/** Google's own info for the place — rating/reviews/price/open-now/photos (not Sunrei). */
+function GoogleInfoCard({ info }: { info: GooglePlaceInfo }) {
+  const t = useTranslations('detail');
+  const hasHead =
+    info.rating != null || info.reviews != null || info.priceLevel != null || info.openNow != null;
+  if (!hasHead && info.photos.length === 0) return null;
+  const dot = <span className="h-[3px] w-[3px] shrink-0 rounded-full bg-line2" />;
+  return (
+    <div className="rounded-xl border border-line bg-background p-3">
+      <div className="mb-2.5 flex items-center gap-1.5">
+        <GoogleGlyph />
+        <span className="text-[10.5px] font-extrabold uppercase tracking-wide text-ink3">
+          {t('googleInfo')}
+        </span>
+      </div>
+      {hasHead && (
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          {info.rating != null && (
+            <span className="inline-flex items-center gap-1 text-[13px] font-extrabold text-foreground">
+              {info.rating.toFixed(1)}
+              <span className="inline-flex gap-px">
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <Star
+                    key={i}
+                    className="h-[11px] w-[11px]"
+                    style={{ color: '#f5a623' }}
+                    fill={i < Math.round(info.rating!) ? '#f5a623' : 'none'}
+                    strokeWidth={1}
+                  />
+                ))}
+              </span>
+            </span>
+          )}
+          {info.reviews != null && (
+            <span className="text-[11.5px] font-semibold text-ink3">
+              {t('reviews', { count: info.reviews })}
+            </span>
+          )}
+          {info.priceLevel ? (
+            <>
+              {dot}
+              <span className="text-[11.5px] font-bold text-ink2">{'₩'.repeat(info.priceLevel)}</span>
+            </>
+          ) : null}
+          {info.openNow != null && (
+            <>
+              {dot}
+              <span
+                className="inline-flex items-center gap-1 text-[11.5px] font-bold"
+                style={{ color: info.openNow ? 'oklch(0.60 0.12 150)' : 'var(--ink3)' }}
+              >
+                <span
+                  className="h-1.5 w-1.5 rounded-full"
+                  style={{ background: info.openNow ? 'oklch(0.60 0.12 150)' : 'var(--ink3)' }}
+                />
+                {info.openNow ? t('openNow') : t('closedNow')}
+              </span>
+            </>
+          )}
+        </div>
+      )}
+      {info.photos.length > 0 && (
+        <div className="mt-2.5 flex gap-1.5 overflow-hidden">
+          {info.photos.map((src, i) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              key={i}
+              src={src}
+              alt=""
+              className="shrink-0 rounded-lg border border-line object-cover"
+              style={{ width: i === 0 ? 96 : 64, height: 62 }}
+            />
+          ))}
         </div>
       )}
     </div>
   );
 }
 
+/** 4-color Google "G" glyph. */
+function GoogleGlyph() {
+  return (
+    <svg width="13" height="13" viewBox="0 0 48 48" className="shrink-0">
+      <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
+      <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
+      <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
+      <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
+    </svg>
+  );
+}
+
+function distanceMeters(a: { lat: number; lng: number }, b: { lat: number; lng: number }): number {
+  const R = 6371000;
+  const toRad = (d: number) => (d * Math.PI) / 180;
+  const dLat = toRad(b.lat - a.lat);
+  const dLng = toRad(b.lng - a.lng);
+  const s =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(s));
+}
+
+function formatDistanceM(m: number) {
+  return m < 1000 ? `${Math.round(m)} m` : `${(m / 1000).toFixed(1)} km`;
+}
+
 /**
- * Video preview itinerary (Bd-6). Map-anchored: the map (via MapView previewSpots) shows
- * this video's spots and fits to them; this panel lists those spots ward-grouped with a
- * banner + ✕. Exit nests back to the active base mode.
+ * Series (Sunrei) view — wireframe §4 "일본 시리즈". Opened by picking a series in the
+ * channel view (or a video in search). Place-first: a series scope chip (channel ·
+ * series · N places, ✕ to exit) over the SAME PlaceCards as Home, scoped to this
+ * series, while the map (via MapView previewSpots) flies to and shows the series'
+ * places. Tapping a card opens that place's detail, which nests over this panel and
+ * backs out to it.
  */
 export function VideoPreviewPanel() {
   const t = useTranslations('detail');
+  const listT = useTranslations('list');
+  const sourceT = useTranslations('source');
+  const searchT = useTranslations('search');
+  const nav = useTranslations('nav');
   const videoPreview = useUiStore((s) => s.videoPreview);
   const exit = useUiStore((s) => s.exitVideoPreview);
-  const openVideoDetail = useUiStore((s) => s.openVideoDetail);
+  const setActivePlace = useUiStore((s) => s.setActivePlace);
   const { data, isLoading } = useSunreiDetail(videoPreview?.sunreiId ?? null);
   if (!videoPreview) return null;
-  const groups = groupSpotsByArea(data?.sunrei.spots ?? []);
-  let n = 0;
+  const sunrei = data?.sunrei;
+  const cards = sunrei ? spotsToPlaceCards(sunrei) : [];
+  const backLabel = videoPreview.fromSearch
+    ? searchT('back')
+    : sourceT('allSeries', { name: sunrei?.source.name ?? '' });
+
   return (
-    <div className="flex flex-col h-full">
-      <div className="flex items-center gap-2.5 px-3 py-2 border-b border-line bg-accent-soft">
-        <button
-          onClick={exit}
-          aria-label={t('backToList')}
-          className="flex shrink-0 items-center gap-0.5 text-accent-ink hover:opacity-80"
-        >
+    <div className="flex flex-1 flex-col overflow-hidden">
+      {/* Back + series scope chip */}
+      <div className="border-b border-line px-4 pb-3.5 pt-2">
+        <button onClick={exit} className="mb-2.5 flex items-center gap-0.5 text-ink2 hover:text-foreground">
           <ChevronLeft className="h-[18px] w-[18px]" />
-          <span className="text-[13px] font-semibold">{t('backToList')}</span>
+          <span className="text-[13px] font-semibold">{backLabel}</span>
         </button>
-        <div className="min-w-0 flex-1">
-          <div className="text-[11px] font-medium text-accent-ink">{t('previewing')}</div>
-          <div className="text-sm font-semibold truncate">{data?.sunrei.title ?? '…'}</div>
+        <div className="flex items-center gap-2.5 rounded-[10px] border border-primary bg-accent-soft px-2.5 py-2">
+          <Avatar label={sunrei?.source.name ?? '?'} src={sourceAvatarUrl(sunrei?.source, 26)} size={26} />
+          <div className="min-w-0 flex-1">
+            <div className="truncate text-[12.5px] font-extrabold text-foreground">{sunrei?.title ?? '…'}</div>
+            {sunrei && (
+              <div className="text-[10.5px] font-bold text-accent-ink">{t('spotCount', { count: cards.length })}</div>
+            )}
+          </div>
+          <button
+            onClick={exit}
+            aria-label={nav('clear')}
+            className="grid h-[22px] w-[22px] shrink-0 place-items-center rounded-full border border-primary bg-card text-accent-ink"
+          >
+            <X className="h-3 w-3" strokeWidth={2.5} />
+          </button>
         </div>
       </div>
-      {isLoading || !data ? (
-        <div className="grid place-items-center py-8">
+
+      {/* Place-first list — this series' places */}
+      {isLoading || !sunrei ? (
+        <div className="grid flex-1 place-items-center py-8">
           <Loader2 className="h-5 w-5 animate-spin text-ink3" />
         </div>
       ) : (
-        <div className="flex-1 overflow-auto p-3 space-y-3">
-          <Button size="sm" variant="ghost" onClick={() => openVideoDetail(data.sunrei.id)}>
-            {t('mentions')} →
-          </Button>
-          {groups.map((g) => (
-            <div key={g.area} className="space-y-1.5">
-              <div className="flex items-center gap-1 text-xs font-semibold text-ink3 uppercase">
-                <MapPin className="h-3.5 w-3.5" /> {g.area}
-              </div>
-              {g.spots.map((s) => {
-                n += 1;
-                return (
-                  <div key={s.id} className="rounded-lg border border-line bg-card p-2.5 flex gap-2.5">
-                    <span className="h-5 w-5 shrink-0 grid place-items-center rounded-full bg-primary text-primary-foreground text-[11px] font-bold">
-                      {n}
-                    </span>
-                    <div className="min-w-0">
-                      <div className="text-sm font-medium truncate">{s.title}</div>
-                      {s.context && <p className="text-xs text-ink2 line-clamp-2">{s.context}</p>}
-                      <div className="text-xs text-ink3">{s.place.name}</div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          ))}
+        <div className="flex-1 overflow-auto px-4 pb-2 pt-[15px]">
+          <div className="mb-[11px] flex items-baseline gap-2">
+            <span className="text-[11px] font-extrabold uppercase tracking-wide text-foreground">{listT('places')}</span>
+            <span className="text-[11.5px] font-extrabold text-accent-ink">{cards.length}</span>
+            <span className="ml-auto text-[11px] font-semibold text-ink3">{sourceT('seriesPlacesSub')}</span>
+          </div>
+          <div className="space-y-2.5">
+            {cards.map((c) => (
+              <PlaceCard key={c.place.id} card={c} onClick={() => setActivePlace(c.place.id)} />
+            ))}
+          </div>
         </div>
       )}
     </div>
   );
+}
+
+/** Group a series' spots into per-place cards (reuses the Home PlaceCard). */
+function spotsToPlaceCards(sunrei: SunreiDTO): PlaceCardDTO[] {
+  const byPlace = new Map<string, SunreiDTO['spots']>();
+  for (const s of sunrei.spots) {
+    const arr = byPlace.get(s.place.id) ?? [];
+    arr.push(s);
+    byPlace.set(s.place.id, arr);
+  }
+  return Array.from(byPlace.values()).map((group) => {
+    const tagMap = new Map<string, TagDTO>();
+    group.forEach((s) => s.tags.forEach((tag) => tagMap.set(tag.id, tag)));
+    const mentions: PlaceMentionDTO[] = group.map((s) => ({
+      source: sunrei.source,
+      sunreiId: sunrei.id,
+      sunreiTitle: sunrei.title,
+      spotId: s.id,
+      context: s.context,
+      sunreiLink: sunrei.link,
+      youtubeLink: s.youtubeLink,
+      images: s.images,
+      tags: s.tags,
+    }));
+    return {
+      place: group[0].place,
+      distanceMeters: group[0].distanceMeters ?? null,
+      mentions,
+      tags: Array.from(tagMap.values()),
+      sourceCount: 1,
+      sunreiCount: 1,
+      spotCount: group.length,
+    };
+  });
 }

@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { ChevronRight } from 'lucide-react';
 import { useUiStore } from '@/stores/ui-store';
 import { useMapStore } from '@/stores/map-store';
-import { Pin, Avatar } from '@/components/wf';
+import { Avatar, sourceAvatarUrl } from '@/components/wf';
 import { useTagLabel } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
 
@@ -33,7 +33,7 @@ export function MentionRow({ mention, divided }: { mention: PlaceMentionDTO; div
         divided && 'border-t border-line'
       )}
     >
-      <Avatar label={mention.source.name} size={20} />
+      <Avatar label={mention.source.name} src={sourceAvatarUrl(mention.source, 20)} size={20} />
       <div className="min-w-0 flex-1">
         <div className="text-[11.5px] font-extrabold text-foreground leading-tight truncate">
           {mention.sunreiTitle}
@@ -93,7 +93,7 @@ export function PlaceCardSkeleton() {
 function PlaceTake({ mention }: { mention: PlaceMentionDTO }) {
   return (
     <div className="flex items-start gap-[9px] border-t border-line py-2">
-      <Avatar label={mention.source.name} size={22} />
+      <Avatar label={mention.source.name} src={sourceAvatarUrl(mention.source, 22)} size={22} />
       <div className="min-w-0 flex-1">
         <div className="text-[11.5px] font-extrabold leading-tight text-foreground">
           {mention.source.name}
@@ -147,9 +147,8 @@ export function PlaceCard({
         dimmed && 'opacity-40'
       )}
     >
-      {/* Header: pin + name + tag + distance */}
+      {/* Header: name + tag + distance */}
       <div className="flex items-center gap-2">
-        <Pin />
         <span className="flex-1 min-w-0 truncate text-[14px] font-extrabold text-foreground">
           {card.place.name}
         </span>

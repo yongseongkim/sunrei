@@ -25,7 +25,6 @@ import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useAuthStore } from '@/stores/auth-store';
 import { useFilterStore } from '@/stores/filter-store';
-import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
 
 export default function AppShell() {
@@ -69,8 +68,17 @@ export default function AppShell() {
   const firstLoad = isLoading && allCards.length === 0;
   const showingPrevious = mode === 'nearby' && !!pendingArea;
 
+  // Tell the map store whether the committed nearby area is empty, so that panning an
+  // empty map auto-loads the new area (no "Search this area" gate when there's nothing
+  // to disrupt). Based on raw results, not the tag-filtered view.
+  useEffect(() => {
+    if (mode === 'nearby' && !isFetching) {
+      useMapStore.getState().setCommittedEmpty(allCards.length === 0);
+    }
+  }, [mode, isFetching, allCards.length]);
+
   const listBody = (
-    <div className={cn('flex-1 overflow-auto px-4 py-2 space-y-2.5', showingPrevious && 'opacity-50')}>
+    <div className="flex-1 overflow-auto px-4 py-2 space-y-2.5">
       {firstLoad ? (
         <div className="space-y-2">
           {Array.from({ length: 4 }).map((_, i) => (
@@ -92,13 +100,13 @@ export default function AppShell() {
     </div>
   );
 
-  // Active detail/preview overrides the list in both sidebar and sheet.
-  const detailPanel = videoPreview ? (
+  // Active detail/preview overrides the list in both sidebar and sheet. A selected
+  // place takes precedence over the series view, so tapping a place inside a series
+  // opens its detail on top and backs out to the series (not straight to the channel).
+  const detailPanel = activePlaceId ? (
+    <PlaceDetail placeId={activePlaceId} />
+  ) : videoPreview ? (
     <VideoPreviewPanel />
-  ) : activePlaceId ? (
-    <div className="flex-1 overflow-auto">
-      <PlaceDetail placeId={activePlaceId} />
-    </div>
   ) : null;
 
   // Source mode = the channel view (wireframe §4): source header + its sunrei list,

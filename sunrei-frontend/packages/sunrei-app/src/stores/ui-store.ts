@@ -79,7 +79,9 @@ export const useUiStore = create<UiState>((set) => ({
 
   videoPreview: null,
   enterVideoPreview: (sunreiId, returnTo, fromSearch = false) =>
-    set({ videoPreview: { sunreiId, returnTo, fromSearch }, sourceDetailId: null, videoDetailId: null }),
+    // Clear any active place so the series view isn't shadowed by a stale place detail
+    // (place detail now takes precedence over the series view).
+    set({ videoPreview: { sunreiId, returnTo, fromSearch }, activePlaceId: null, sourceDetailId: null, videoDetailId: null }),
   // Back from a search-originated preview reopens the (preserved) search results;
   // otherwise it just drops back to the underlying list.
   exitVideoPreview: () =>

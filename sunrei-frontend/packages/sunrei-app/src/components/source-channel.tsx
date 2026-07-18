@@ -6,7 +6,7 @@ import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useSourceDetail } from '@/hooks/use-map';
 import { SectionLabel } from '@/components/desktop/SourceRail';
-import { Avatar } from '@/components/wf';
+import { Avatar, sourceAvatarUrl } from '@/components/wf';
 import type { SourceType } from '@/dto';
 
 const TYPE_LABEL: Record<SourceType, string> = {
@@ -66,7 +66,7 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
         ) : (
           <>
             <div className="flex items-center gap-2.5">
-              <Avatar label={source.name} size={44} />
+              <Avatar label={source.name} src={sourceAvatarUrl(source, 44)} size={44} />
               <div className="min-w-0 flex-1">
                 <div className="truncate text-[16px] font-extrabold text-foreground">{source.name}</div>
                 <div className="text-[11.5px] font-semibold text-ink2">

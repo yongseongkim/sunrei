@@ -13,6 +13,7 @@ interface MapState {
   mode: MapMode;
   selectedSourceIds: string[];
   committedBounds: Bounds | null; // the bounds currently fetched (nearby)
+  committedEmpty: boolean; // the committed area returned no places (drives auto-load on pan)
   pendingArea: Bounds | null; // viewport moved but not yet refetched
   commitNextIdle: boolean; // auto-commit the next idle (e.g. after a location jump)
   mapCenter: LatLng | null; // distance/sort anchor (NOT GPS)
@@ -26,6 +27,7 @@ interface MapState {
   setMap: (m: google.maps.Map | null) => void;
   setCenter: (c: LatLng) => void;
   setZoom: (z: number) => void;
+  setCommittedEmpty: (v: boolean) => void;
   onIdle: (b: Bounds, center: LatLng) => void;
   commitSearchArea: () => void;
   setSourceMode: (ids: string[]) => void;
@@ -65,6 +67,7 @@ export const useMapStore = create<MapState>((set, get) => {
     mode: 'nearby',
     selectedSourceIds: [],
     committedBounds: null,
+    committedEmpty: false,
     pendingArea: null,
     commitNextIdle: false,
     mapCenter: null,
@@ -76,9 +79,10 @@ export const useMapStore = create<MapState>((set, get) => {
     setMap: (m) => set({ map: m }),
     setCenter: (c) => set({ mapCenter: c }),
     setZoom: (z) => set({ zoom: z }),
+    setCommittedEmpty: (v) => set({ committedEmpty: v }),
 
     onIdle: (b, center) => {
-      const { mode, committedBounds, commitNextIdle } = get();
+      const { mode, committedBounds, commitNextIdle, committedEmpty } = get();
       set({ mapCenter: center });
       if (mode === 'nearby') {
         // First idle auto-commits the opening viewport so the list loads immediately;
@@ -93,7 +97,17 @@ export const useMapStore = create<MapState>((set, get) => {
           b.swLng === committedBounds.swLng &&
           b.neLat === committedBounds.neLat &&
           b.neLng === committedBounds.neLng;
-        set({ pendingArea: same ? null : b });
+        if (same) {
+          set({ pendingArea: null });
+          return;
+        }
+        // When the current area has no places there's nothing to disrupt, so moving the
+        // map auto-loads the new area instead of gating behind "Search this area".
+        if (committedEmpty) {
+          set({ committedBounds: b, pendingArea: null });
+          return;
+        }
+        set({ pendingArea: b });
       }
     },
 

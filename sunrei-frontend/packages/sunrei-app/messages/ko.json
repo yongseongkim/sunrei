@@ -1,5 +1,14 @@
 {
-  "nav": { "nearby": "주변", "search": "검색", "filters": "필터", "clear": "초기화", "sourcesNearYou": "주변 소스", "all": "전체", "nearest": "가까운 순", "back": "뒤로" },
+  "nav": {
+    "nearby": "주변",
+    "search": "검색",
+    "filters": "필터",
+    "clear": "초기화",
+    "sourcesNearYou": "주변 소스",
+    "all": "전체",
+    "nearest": "가까운 순",
+    "back": "뒤로"
+  },
   "list": {
     "title": "지도 중심 기준 장소",
     "placesNear": "주변 장소 {count}곳",
@@ -42,7 +51,9 @@
     "series": "시리즈",
     "videosNearYou": "주변 영상",
     "removed": "{name} 제거됨",
-    "undo": "실행취소"
+    "undo": "실행취소",
+    "allSeries": "{name} · 모든 시리즈",
+    "seriesPlacesSub": "이 시리즈가 다룬 장소"
   },
   "detail": {
     "mentions": "언급",
@@ -53,9 +64,20 @@
     "previewing": "영상 미리보기",
     "backToList": "목록으로",
     "seeOnMap": "지도에서 보기",
-    "spotCount": "장소 {count}곳"
+    "spotCount": "장소 {count}곳",
+    "viewOnGoogleMaps": "구글맵에서 보기",
+    "googleInfo": "Google 정보",
+    "reviews": "리뷰 {count}",
+    "openNow": "영업 중",
+    "closedNow": "영업 종료",
+    "introducedBy": "이렇게 소개됐어요",
+    "sourceCount": "{count}개 소스"
   },
-  "tags": { "title": "태그로 필터", "reset": "초기화", "showPlaces": "장소 {count}개 보기" },
+  "tags": {
+    "title": "태그로 필터",
+    "reset": "초기화",
+    "showPlaces": "장소 {count}개 보기"
+  },
   "geo": {
     "useLocation": "내 위치 사용",
     "denied": "서울 표시 중",
@@ -75,5 +97,7 @@
     "logout": "로그아웃",
     "failed": "로그인에 실패했어요"
   },
-  "locale": { "toggle": "English" }
+  "locale": {
+    "toggle": "English"
+  }
 }

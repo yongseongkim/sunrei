@@ -8,7 +8,7 @@ import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useSourceDetail, useSunreiDetail } from '@/hooks/use-map';
 import { useTagLabel, tagColor } from '@/lib/i18n';
-import { Avatar } from '@/components/wf';
+import { Avatar, sourceAvatarUrl } from '@/components/wf';
 import type { SourceDTO, SourceType, SunreiSpotDTO } from '@/dto';
 
 /** Display label for a source's media type (proper nouns, not localized). */
@@ -109,7 +109,7 @@ export function SourceDetail() {
           )}
           <div className="space-y-1">
             <div className="flex items-center gap-2.5">
-              <Avatar label={source.name} size={42} />
+              <Avatar label={source.name} src={sourceAvatarUrl(source, 42)} size={42} />
               <div className="min-w-0">
                 <h1 className="text-lg font-semibold truncate">{source.nameEn || source.name}</h1>
                 <div className="flex items-center gap-1.5 mt-0.5">

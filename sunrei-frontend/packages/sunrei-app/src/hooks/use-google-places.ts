@@ -72,6 +72,63 @@ export async function reverseGeocode(loc: LatLng): Promise<string | null> {
   });
 }
 
+export interface GooglePlaceInfo {
+  rating?: number;
+  reviews?: number;
+  priceLevel?: number; // 0–4 → ₩ symbols
+  openNow: boolean | null;
+  photos: string[]; // ready-to-use photo URLs
+}
+
+/**
+ * Live Google Places details (rating · reviews · price · open-now · photos) for the
+ * place-detail "Google 정보" card — data Sunrei doesn't store, fetched client-side by
+ * google_maps_id. Best-effort: null until the places library is ready and the lookup
+ * succeeds. Note: getDetails with these fields is a billed Places request.
+ */
+export function useGooglePlaceDetails(placeId?: string | null): GooglePlaceInfo | null {
+  const [info, setInfo] = useState<GooglePlaceInfo | null>(null);
+
+  useEffect(() => {
+    setInfo(null);
+    if (!placeId || !placesReady()) return;
+    let cancelled = false;
+    // PlacesService needs a DOM node (or map) to attach to; a detached div is fine.
+    const service = new google.maps.places.PlacesService(document.createElement('div'));
+    service.getDetails(
+      {
+        placeId,
+        fields: ['rating', 'user_ratings_total', 'price_level', 'opening_hours', 'utc_offset_minutes', 'photos'],
+      },
+      (res, status) => {
+        if (cancelled) return;
+        if (status !== google.maps.places.PlacesServiceStatus.OK || !res) {
+          setInfo(null);
+          return;
+        }
+        let openNow: boolean | null = null;
+        try {
+          openNow = res.opening_hours?.isOpen?.() ?? null;
+        } catch {
+          openNow = null;
+        }
+        setInfo({
+          rating: res.rating ?? undefined,
+          reviews: res.user_ratings_total ?? undefined,
+          priceLevel: res.price_level ?? undefined,
+          openNow,
+          photos: (res.photos ?? []).slice(0, 4).map((p) => p.getUrl({ maxWidth: 240, maxHeight: 160 })),
+        });
+      }
+    );
+    return () => {
+      cancelled = true;
+    };
+  }, [placeId]);
+
+  return info;
+}
+
 /** Resolve a Google place_id to a lat/lng via the Geocoder (needs the Geocoding API). */
 export async function resolveGooglePlace(placeId: string): Promise<LatLng | null> {
   if (!placesReady()) return null;
