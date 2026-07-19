@@ -34,16 +34,3 @@ export function Avatar({ label, src, size = 22 }: { label: string; src?: string 
     </span>
   );
 }
-
-/** Overlapping avatar cluster for the rich (multi-mention) card. */
-export function AvatarCluster({ labels, size = 20 }: { labels: string[]; size?: number }) {
-  return (
-    <div className="flex">
-      {labels.map((l, i) => (
-        <span key={i} className="rounded-full border-2 border-card" style={{ marginLeft: i ? -6 : 0 }}>
-          <Avatar label={l} size={size} />
-        </span>
-      ))}
-    </div>
-  );
-}

@@ -4,9 +4,6 @@
     "search": "Search",
     "filters": "Filters",
     "clear": "Clear",
-    "sourcesNearYou": "Sources near you",
-    "all": "All",
-    "nearest": "Nearest",
     "back": "Back"
   },
   "list": {
@@ -42,28 +39,18 @@
   "source": {
     "clearSource": "Clear source",
     "noPlaces": "No places for this source yet",
-    "managedPage": "Managed page",
-    "managedBySunrei": "managed by Sunrei",
-    "linksOut": "Visit ↗",
     "watchOnYoutube": "Watch on YouTube ↗",
     "whereToWatch": "Where to watch ↗",
     "spots": "Spots",
     "series": "Series",
-    "videosNearYou": "Videos near you",
-    "removed": "Removed {name}",
-    "undo": "Undo",
     "allSeries": "{name} · All series",
     "seriesPlacesSub": "Places in this series"
   },
   "detail": {
     "mentions": "Mentions",
-    "featuredIn": "Featured in {count, plural, one {# video & work} other {# videos & works}}",
-    "watch": "Watch",
     "context": "Context",
     "directions": "Directions",
-    "previewing": "Previewing video",
     "backToList": "Back to list",
-    "seeOnMap": "See on map",
     "spotCount": "{count, plural, one {# spot} other {# spots}}",
     "viewOnGoogleMaps": "View on Google Maps",
     "googleInfo": "Google info",
@@ -96,8 +83,5 @@
     "connected": "Connected with Google",
     "logout": "Sign out",
     "failed": "Sign-in failed"
-  },
-  "locale": {
-    "toggle": "한국어"
   }
 }

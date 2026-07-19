@@ -11,7 +11,6 @@ import {
   UnifiedSearch,
   VideoPreviewPanel,
 } from '@/components/panels';
-import { SourceDetail, VideoDetail } from '@/components/detail-surfaces';
 import { SourceChannelPanel } from '@/components/source-channel';
 import { Sidebar } from '@/components/desktop/Sidebar';
 import { PeekSheet, type Snap } from '@/components/mobile/PeekSheet';
@@ -28,7 +27,6 @@ import { useFilterStore } from '@/stores/filter-store';
 import { useEffect, useState } from 'react';
 
 export default function AppShell() {
-  const t = useTranslations('list');
   const search = useTranslations('search');
   useOnboarding();
   useDeepLinkSync();
@@ -181,8 +179,6 @@ export default function AppShell() {
 
       {searchOpen && <UnifiedSearch onClose={() => setSearchOpen(false)} />}
       <FiltersPanel places={allCards} />
-      <SourceDetail />
-      <VideoDetail />
       <LoginModal />
       <Onboarding />
     </div>

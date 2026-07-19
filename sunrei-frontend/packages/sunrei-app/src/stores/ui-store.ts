@@ -43,16 +43,6 @@ interface UiState {
   videoPreview: VideoPreview | null;
   enterVideoPreview: (sunreiId: string, returnTo: MapMode, fromSearch?: boolean) => void;
   exitVideoPreview: () => void;
-
-  // Source / work info page (Bg-1/2/3): YouTube intro or managed work page
-  sourceDetailId: string | null;
-  openSourceDetail: (id: string) => void;
-  closeSourceDetail: () => void;
-
-  // Tag-grouped video summary (Bg-4), distinct from the map-itinerary preview
-  videoDetailId: string | null;
-  openVideoDetail: (id: string) => void;
-  closeVideoDetail: () => void;
 }
 
 export const useUiStore = create<UiState>((set) => ({
@@ -81,17 +71,9 @@ export const useUiStore = create<UiState>((set) => ({
   enterVideoPreview: (sunreiId, returnTo, fromSearch = false) =>
     // Clear any active place so the series view isn't shadowed by a stale place detail
     // (place detail now takes precedence over the series view).
-    set({ videoPreview: { sunreiId, returnTo, fromSearch }, activePlaceId: null, sourceDetailId: null, videoDetailId: null }),
+    set({ videoPreview: { sunreiId, returnTo, fromSearch }, activePlaceId: null }),
   // Back from a search-originated preview reopens the (preserved) search results;
   // otherwise it just drops back to the underlying list.
   exitVideoPreview: () =>
     set((s) => (s.videoPreview?.fromSearch ? { videoPreview: null, searchOpen: true } : { videoPreview: null })),
-
-  sourceDetailId: null,
-  openSourceDetail: (id) => set({ sourceDetailId: id }),
-  closeSourceDetail: () => set({ sourceDetailId: null }),
-
-  videoDetailId: null,
-  openVideoDetail: (id) => set({ videoDetailId: id }),
-  closeVideoDetail: () => set({ videoDetailId: null }),
 }));

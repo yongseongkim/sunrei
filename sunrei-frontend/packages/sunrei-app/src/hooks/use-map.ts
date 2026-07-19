@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import { apiClient } from '@/lib/api-client';
 import { boundsKey, centerKey, qk } from '@/lib/query-keys';
 import { useFilterStore } from '@/stores/filter-store';
-import type { PlaceCardDTO, SunreiSpotDTO } from '@/dto';
+import type { PlaceCardDTO } from '@/dto';
 
 export type MapMode = 'nearby' | 'source';
 export type Bounds = { swLat: number; swLng: number; neLat: number; neLng: number };
@@ -109,15 +109,4 @@ export function useTagFilter(cards: PlaceCardDTO[]): { dimmedIds: Set<string>; h
     }
     return { dimmedIds, hasFilter: true };
   }, [cards, activeTagIds]);
-}
-
-/** Group a video's spots by ward/area label for the itinerary list (Bd-6). */
-export function groupSpotsByArea(spots: SunreiSpotDTO[]): { area: string; spots: SunreiSpotDTO[] }[] {
-  const groups = new Map<string, SunreiSpotDTO[]>();
-  for (const s of spots) {
-    const area = s.place.areaLabel || s.place.address || '—';
-    if (!groups.has(area)) groups.set(area, []);
-    groups.get(area)!.push(s);
-  }
-  return Array.from(groups, ([area, spots]) => ({ area, spots }));
 }

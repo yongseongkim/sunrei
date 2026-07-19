@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { LocaleToggle, TagChipRail } from '@/components/panels';
+import { TagChipRail } from '@/components/panels';
 import { AuthControl } from '@/components/auth';
 import { SourceRail, SectionLabel } from '@/components/desktop/SourceRail';
 import { SearchPill } from '@/components/wf';
@@ -35,7 +35,6 @@ export function Sidebar({
         <div className="mb-[13px] flex items-center gap-2">
           <span className="h-6 w-6 rounded-md bg-primary" />
           <span className="mr-auto text-base font-extrabold tracking-tight">Sunrei</span>
-          <LocaleToggle />
           <AuthControl />
         </div>
         <SearchPill

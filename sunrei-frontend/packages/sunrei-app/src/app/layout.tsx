@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { cookies } from 'next/headers';
+import { headers } from 'next/headers';
 import { NextIntlClientProvider } from 'next-intl';
 import './globals.css';
 import { Providers } from './providers';
-import { LOCALE_COOKIE, loadMessages, resolveLocale } from '@/lib/i18n';
+import { localeFromAcceptLanguage, loadMessages } from '@/lib/i18n';
 
 export const metadata: Metadata = {
   title: 'Sunrei — 성지순례 지도',
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const cookieStore = await cookies();
-  const locale = resolveLocale(cookieStore.get(LOCALE_COOKIE)?.value);
+  const h = await headers();
+  const locale = localeFromAcceptLanguage(h.get('accept-language'));
   const messages = loadMessages(locale);
 
   return (

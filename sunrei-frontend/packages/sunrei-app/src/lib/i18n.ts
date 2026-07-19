@@ -5,7 +5,6 @@ import ko from '../../messages/ko.json';
 export const locales = ['en', 'ko'] as const;
 export type Locale = (typeof locales)[number];
 export const DEFAULT_LOCALE: Locale = 'ko';
-export const LOCALE_COOKIE = 'NEXT_LOCALE';
 
 export const messages: Record<Locale, unknown> = { en, ko };
 
@@ -17,8 +16,24 @@ export function loadMessages(locale: string | undefined | null) {
   return (isLocale(locale) ? messages[locale] : messages[DEFAULT_LOCALE]) as Record<string, unknown>;
 }
 
-export function resolveLocale(locale: string | undefined | null): Locale {
-  return isLocale(locale) ? locale : DEFAULT_LOCALE;
+/**
+ * Pick the best supported locale from the browser/OS `Accept-Language` header
+ * (e.g. "ko-KR,ko;q=0.9,en-US;q=0.8"): highest-q language whose base matches a
+ * supported locale, else the Korean default.
+ */
+export function localeFromAcceptLanguage(header: string | null | undefined): Locale {
+  if (!header) return DEFAULT_LOCALE;
+  const ranked = header
+    .split(',')
+    .map((part) => {
+      const [tag, q] = part.trim().split(';q=');
+      return { base: tag.split('-')[0]?.toLowerCase(), q: q ? parseFloat(q) : 1 };
+    })
+    .sort((a, b) => b.q - a.q);
+  for (const { base } of ranked) {
+    if (isLocale(base)) return base;
+  }
+  return DEFAULT_LOCALE;
 }
 
 /** Pick a tag's display label by current locale (KO default, EN fallback). */
@@ -29,19 +44,4 @@ export function useTagLabel() {
     if (locale === 'en') return tag.labelEn || tag.labelKo || '';
     return tag.labelKo || tag.labelEn || '';
   };
-}
-
-export const SOURCE_TAG_COLORS: Record<string, string> = {
-  cornflower: '#6495ED',
-  willow: '#9CAF88',
-  viola: '#9370DB',
-  taupe: '#8B8680',
-};
-
-/** Stable brand-palette color for a tag id (cornflower/willow/viola/taupe). */
-export function tagColor(tagId: string): string {
-  const palette = ['#6495ED', '#9CAF88', '#9370DB', '#8B8680'];
-  let h = 0;
-  for (let i = 0; i < tagId.length; i++) h = (h * 31 + tagId.charCodeAt(i)) >>> 0;
-  return palette[h % palette.length];
 }

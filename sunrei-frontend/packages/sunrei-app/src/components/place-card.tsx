@@ -3,8 +3,6 @@
 import { PlaceCardDTO, PlaceMentionDTO } from '@/dto';
 import { useTranslations } from 'next-intl';
 import { ChevronRight } from 'lucide-react';
-import { useUiStore } from '@/stores/ui-store';
-import { useMapStore } from '@/stores/map-store';
 import { Avatar, sourceAvatarUrl } from '@/components/wf';
 import { useTagLabel } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
@@ -13,47 +11,6 @@ function formatDistance(m?: number | null) {
   if (m == null) return '';
   if (m < 1000) return `${Math.round(m)} m`;
   return `${(m / 1000).toFixed(1)} km`;
-}
-
-/** One mention row (one video) used in the rich card and the detail panel. */
-export function MentionRow({ mention, divided }: { mention: PlaceMentionDTO; divided?: boolean }) {
-  const enterPreview = useUiStore((s) => s.enterVideoPreview);
-  const openSourceDetail = useUiStore((s) => s.openSourceDetail);
-  const mode = useMapStore((s) => s.mode);
-  return (
-    <div
-      role="button"
-      tabIndex={0}
-      onClick={() => enterPreview(mention.sunreiId, mode === 'source' ? 'source' : 'nearby')}
-      onKeyDown={(e) =>
-        e.key === 'Enter' && enterPreview(mention.sunreiId, mode === 'source' ? 'source' : 'nearby')
-      }
-      className={cn(
-        'flex gap-2 py-1.5 items-start cursor-pointer',
-        divided && 'border-t border-line'
-      )}
-    >
-      <Avatar label={mention.source.name} src={sourceAvatarUrl(mention.source, 20)} size={20} />
-      <div className="min-w-0 flex-1">
-        <div className="text-[11.5px] font-extrabold text-foreground leading-tight truncate">
-          {mention.sunreiTitle}
-        </div>
-        <div className="text-[11px] leading-snug text-ink2 truncate">
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              openSourceDetail(mention.source.id);
-            }}
-            className="text-ink3 hover:text-foreground hover:underline"
-          >
-            {mention.source.name}
-          </button>
-          {mention.context ? ` · ${mention.context}` : ''}
-        </div>
-      </div>
-    </div>
-  );
 }
 
 /** Loading skeleton sharing the card footprint (Bh-1). */

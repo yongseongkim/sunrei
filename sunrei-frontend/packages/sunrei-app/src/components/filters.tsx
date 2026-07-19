@@ -16,7 +16,6 @@ import type { PlaceCardDTO } from '@/dto';
  */
 export function FiltersPanel({ places }: { places: PlaceCardDTO[] }) {
   const t = useTranslations('tags');
-  const nav = useTranslations('nav');
   const tagLabel = useTagLabel();
   const open = useUiStore((s) => s.filtersOpen);
   const setOpen = useUiStore((s) => s.setFiltersOpen);

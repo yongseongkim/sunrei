@@ -5,14 +5,6 @@ import { apiClient } from '@/lib/api-client';
 import { centerKey, qk } from '@/lib/query-keys';
 import type { LatLng } from './use-map';
 
-export function useSources(q?: string) {
-  return useQuery({
-    queryKey: qk.sourceList(q),
-    queryFn: async () => (await apiClient.listSources(q)).data.sources,
-    staleTime: 60_000,
-  });
-}
-
 export function useSearch(q: string, center?: LatLng | null, enabled = true) {
   return useQuery({
     queryKey: qk.search(q, centerKey(center)),

@@ -3,9 +3,9 @@
 import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import { useEffect, useRef } from 'react';
 import { config } from '@/lib/config';
-import { useMapStore, SEOUL } from '@/stores/map-store';
+import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
-import { useTagFilter, type Bounds, type LatLng } from '@/hooks/use-map';
+import { useTagFilter, type Bounds } from '@/hooks/use-map';
 import type { PlaceCardDTO, SunreiSpotDTO } from '@/dto';
 
 function toBounds(b: google.maps.LatLngBounds | null): Bounds | null {
@@ -232,23 +232,4 @@ export function MapView({
       <GoogleMapInner cards={cards} previewSpots={previewSpots} />
     </Wrapper>
   );
-}
-
-/** Optional geolocation: seed opening center to the user, else Seoul. Non-blocking. */
-export function useSeedInitialCenter() {
-  const panTo = useMapStore((s) => s.panTo);
-  useEffect(() => {
-    if (typeof navigator === 'undefined' || !navigator.geolocation) return;
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const c: LatLng = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-        useMapStore.setState({ initialSeed: c });
-        panTo(c, 12);
-      },
-      () => {
-        useMapStore.setState({ initialSeed: SEOUL });
-      },
-      { maximumAge: 60_000, timeout: 5000 }
-    );
-  }, [panTo]);
 }

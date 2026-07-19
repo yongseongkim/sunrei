@@ -1,10 +1,8 @@
 'use client';
 
-import { useTranslations, useLocale } from 'next-intl';
-import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { Check, ChevronLeft, Loader2, MapPin, Navigation, Play, Search, Star, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Avatar, sourceAvatarUrl } from '@/components/wf';
 import { cn } from '@/lib/utils';
@@ -12,36 +10,17 @@ import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useFilterStore } from '@/stores/filter-store';
 import { usePlaceDetail, useSunreiDetail } from '@/hooks/use-map';
-import { useSearch, useSources, useTags } from '@/hooks/use-discovery';
+import { useSearch, useTags } from '@/hooks/use-discovery';
 import {
   useGooglePlaceAutocomplete,
   useGooglePlaceDetails,
   resolveGooglePlace,
   type GooglePlaceInfo,
 } from '@/hooks/use-google-places';
-import { useTagLabel, LOCALE_COOKIE } from '@/lib/i18n';
+import { useTagLabel } from '@/lib/i18n';
 import { PlaceCard } from './place-card';
 import type { PlaceCardDTO, PlaceMentionDTO, SourceType, SunreiDTO, TagDTO } from '@/dto';
 import { useEffect, useState } from 'react';
-
-export function LocaleToggle() {
-  const t = useTranslations('locale');
-  const router = useRouter();
-  const locale = useLocale();
-  const next = locale === 'en' ? 'ko' : 'en';
-  return (
-    <Button
-      variant="outline"
-      size="sm"
-      onClick={() => {
-        document.cookie = `${LOCALE_COOKIE}=${next};path=/;max-age=31536000`;
-        router.refresh();
-      }}
-    >
-      {t('toggle')}
-    </Button>
-  );
-}
 
 /** "Search nearby" → "Finding spots…" → reload (nearby mode only, Bd-3). */
 export function SearchNearbyButton({ isFetching }: { isFetching: boolean }) {
@@ -70,59 +49,6 @@ export function SearchNearbyButton({ isFetching }: { isFetching: boolean }) {
         )}
       </Button>
     </div>
-  );
-}
-
-export function SourceChips() {
-  const t = useTranslations('source');
-  const nav = useTranslations('nav');
-  const selectedSourceIds = useMapStore((s) => s.selectedSourceIds);
-  const removeSource = useMapStore((s) => s.removeSource);
-  const addSource = useMapStore((s) => s.addSource);
-  const clearSources = useMapStore((s) => s.clearSources);
-  const { data: all = [] } = useSources();
-  const [undo, setUndo] = useState<{ id: string; name: string } | null>(null);
-
-  const name = (id: string) => all.find((s) => s.id === id)?.name ?? id;
-  const handleRemove = (id: string) => {
-    setUndo({ id, name: name(id) });
-    removeSource(id);
-    setTimeout(() => setUndo((u) => (u?.id === id ? null : u)), 4000);
-  };
-
-  if (selectedSourceIds.length === 0 && !undo) return null;
-  return (
-    <>
-      {selectedSourceIds.length > 0 && (
-        <div className="flex flex-wrap gap-1.5 items-center px-3 py-2 border-b border-line bg-background/80 backdrop-blur">
-          {selectedSourceIds.map((id) => (
-            <Badge key={id} variant="default" className="gap-1">
-              {name(id)}
-              <button onClick={() => handleRemove(id)} aria-label={t('clearSource')}>
-                <X className="h-3 w-3" />
-              </button>
-            </Badge>
-          ))}
-          <button onClick={clearSources} className="text-xs text-ink3 hover:text-foreground ml-1">
-            {nav('clear')}
-          </button>
-        </div>
-      )}
-      {undo && (
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-6 z-40 flex items-center gap-3 rounded-full bg-foreground text-background px-4 py-2 text-[13px] shadow-lg">
-          <span>{t('removed', { name: undo.name })}</span>
-          <button
-            onClick={() => {
-              addSource(undo.id);
-              setUndo(null);
-            }}
-            className="font-bold underline"
-          >
-            {t('undo')}
-          </button>
-        </div>
-      )}
-    </>
   );
 }
 

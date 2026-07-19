@@ -6,7 +6,6 @@ export const qk = {
     source: (sourceIds: string, center: string) => ['map', 'source', sourceIds, center] as const,
   },
   place: (id: string, center?: string) => ['place', id, center ?? ''] as const,
-  sourceList: (q?: string) => ['sources', q ?? ''] as const,
   source: (id: string, center?: string) => ['source', id, center ?? ''] as const,
   sunrei: (id: string) => ['sunrei', id] as const,
   search: (q: string, center?: string) => ['search', q, center ?? ''] as const,
