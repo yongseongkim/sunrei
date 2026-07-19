@@ -102,9 +102,12 @@ export const useMapStore = create<MapState>((set, get) => {
           return;
         }
         // When the current area has no places there's nothing to disrupt, so moving the
-        // map auto-loads the new area instead of gating behind "Search this area".
+        // map auto-loads the new area instead of gating behind "Search this area". This
+        // is one-shot: clear committedEmpty now so that once the new area's results come
+        // in, further moves fall back to the manual gate (never auto-refresh while
+        // results exist). committedEmpty re-arms only if the new area is itself empty.
         if (committedEmpty) {
-          set({ committedBounds: b, pendingArea: null });
+          set({ committedBounds: b, pendingArea: null, committedEmpty: false });
           return;
         }
         set({ pendingArea: b });
