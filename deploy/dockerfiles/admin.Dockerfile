@@ -4,7 +4,7 @@ WORKDIR /app
 
 # Install build dependencies for native modules
 RUN apk add --no-cache python3 make g++ && \
-    npm install -g pnpm
+    npm install -g pnpm@11
 
 # Increase Node.js memory limit for builds
 ENV NODE_OPTIONS=--max-old-space-size=4096
