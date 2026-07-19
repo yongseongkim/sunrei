@@ -5,7 +5,10 @@ data class SunreiSpot(
     val sunreiId: String,
     val title: String,
     val description: String?,
+    val context: String?,
     val youtubeLink: String?,
     val images: List<MultiSizeImage>,
-    val place: Place
+    val place: Place,
+    val tags: List<Tag> = emptyList(),
+    val distanceMeters: Double? = null
 )

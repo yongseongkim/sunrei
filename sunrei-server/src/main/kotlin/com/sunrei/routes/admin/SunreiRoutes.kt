@@ -21,39 +21,29 @@ fun Route.adminSunreiRoutes() {
         get {
             val sunreiService: SunreiService = call.injectSunreiService()
             val nextToken = call.request.queryParameters["nextToken"]
-            val size = call.request.queryParameters["size"]?.toIntOrNull() ?: 20
-            val keyword = call.request.queryParameters["keyword"]
+            val size = call.request.queryParameters["size"]?.toIntOrNull()?.coerceIn(1, 100) ?: 20
+            val q = call.request.queryParameters["q"]
+            val sourceId = call.request.queryParameters["sourceId"]
+            val published = call.request.queryParameters["published"]?.toBooleanStrictOrNull()
 
-            // Validate size
-            val validatedSize = when {
-                size < 1 -> 1
-                size > 100 -> 100
-                else -> size
-            }
-
-            val result = sunreiService.listByKeyword(
+            val result = sunreiService.list(
                 nextToken = nextToken,
-                size = validatedSize,
-                keyword = keyword
+                size = size,
+                q = q,
+                sourceId = sourceId,
+                published = published
             )
-
             call.respond(result)
         }
 
         get("/{id}") {
             val sunreiService: SunreiService = call.injectSunreiService()
-            val id = call.parameters["id"] ?: run {
-                call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
-                return@get
-            }
+            val id = call.parameters["id"]
+                ?: return@get call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
 
             val sunrei = sunreiService.getById(id)
-
-            if (sunrei != null) {
-                call.respond(sunrei.toDTO())
-            } else {
-                call.respond(HttpStatusCode.NotFound, mapOf("error" to "Sunrei not found"))
-            }
+            if (sunrei != null) call.respond(sunrei.toDTO())
+            else call.respond(HttpStatusCode.NotFound, mapOf("error" to "Sunrei not found"))
         }
 
         post {
@@ -71,20 +61,14 @@ fun Route.adminSunreiRoutes() {
 
         put("/{id}") {
             val sunreiService: SunreiService = call.injectSunreiService()
-            val id = call.parameters["id"] ?: run {
-                call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
-                return@put
-            }
+            val id = call.parameters["id"]
+                ?: return@put call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
 
             try {
                 val request = call.receive<UpdateSunreiRequest>()
                 val updated = sunreiService.update(id, request)
-
-                if (updated != null) {
-                    call.respond(updated.toDTO())
-                } else {
-                    call.respond(HttpStatusCode.NotFound, mapOf("error" to "Sunrei not found"))
-                }
+                if (updated != null) call.respond(updated.toDTO())
+                else call.respond(HttpStatusCode.NotFound, mapOf("error" to "Sunrei not found"))
             } catch (e: Exception) {
                 call.respond(HttpStatusCode.BadRequest, mapOf("error" to (e.message ?: "Invalid request")))
             }
@@ -92,18 +76,12 @@ fun Route.adminSunreiRoutes() {
 
         delete("/{id}") {
             val sunreiService: SunreiService = call.injectSunreiService()
-            val id = call.parameters["id"] ?: run {
-                call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
-                return@delete
-            }
+            val id = call.parameters["id"]
+                ?: return@delete call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
 
             val deleted = sunreiService.delete(id)
-
-            if (deleted) {
-                call.respond(HttpStatusCode.NoContent)
-            } else {
-                call.respond(HttpStatusCode.NotFound, mapOf("error" to "Sunrei not found"))
-            }
+            if (deleted) call.respond(HttpStatusCode.NoContent)
+            else call.respond(HttpStatusCode.NotFound, mapOf("error" to "Sunrei not found"))
         }
     }
 }

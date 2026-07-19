@@ -1,12 +1,13 @@
 'use client';
 
 import { use, useState } from 'react';
-import { useTag, useUpdateTag, useRemoveSunreiFromTag } from '@/lib/hooks/use-tags';
+import { useTag, useUpdateTag, useDetachSpotFromTag } from '@/lib/hooks/use-tags';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import {
   AlertDialog,
@@ -18,26 +19,27 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
-import { Tag, AlertCircle, Loader2, ArrowLeft, ExternalLink, Edit2, Save, X, Trash2 } from 'lucide-react';
-import Link from 'next/link';
+import { Tag, AlertCircle, Loader2, ArrowLeft, Edit2, Save, X, Trash2 } from 'lucide-react';
 
 export default function TagDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const router = useRouter();
   const { data: tag, isLoading, error: queryError } = useTag(id);
   const updateTagMutation = useUpdateTag(id);
-  const removeSunreiMutation = useRemoveSunreiFromTag(id);
+  const detachMutation = useDetachSpotFromTag(id);
 
   const [isEditing, setIsEditing] = useState(false);
-  const [editName, setEditName] = useState('');
+  const [editLabelEn, setEditLabelEn] = useState('');
+  const [editLabelKo, setEditLabelKo] = useState('');
   const [editDescription, setEditDescription] = useState('');
-  const [sunreiToRemove, setSunreiToRemove] = useState<{ id: string; title: string } | null>(null);
+  const [spotToRemove, setSpotToRemove] = useState<{ id: string; title: string } | null>(null);
 
   const error = queryError?.message || null;
 
   const handleEdit = () => {
     if (tag) {
-      setEditName(tag.name || '');
+      setEditLabelEn(tag.labelEn || '');
+      setEditLabelKo(tag.labelKo || '');
       setEditDescription(tag.description || '');
       setIsEditing(true);
     }
@@ -46,31 +48,23 @@ export default function TagDetailPage({ params }: { params: Promise<{ id: string
   const handleSave = async () => {
     try {
       await updateTagMutation.mutateAsync({
-        name: editName,
+        labelEn: editLabelEn,
+        labelKo: editLabelKo,
         description: editDescription || null,
       });
       setIsEditing(false);
-    } catch (err) {
-      // Error handling
+    } catch {
+      // surfaced via mutation error
     }
   };
 
-  const handleCancel = () => {
-    setIsEditing(false);
-  };
-
-  const handleRemoveSunrei = (sunreiId: string, sunreiTitle: string) => {
-    setSunreiToRemove({ id: sunreiId, title: sunreiTitle });
-  };
-
-  const confirmRemoveSunrei = async () => {
-    if (!sunreiToRemove) return;
-
+  const confirmDetach = async () => {
+    if (!spotToRemove) return;
     try {
-      await removeSunreiMutation.mutateAsync(sunreiToRemove.id);
-      setSunreiToRemove(null);
-    } catch (err) {
-      // Error handling
+      await detachMutation.mutateAsync(spotToRemove.id);
+      setSpotToRemove(null);
+    } catch {
+      // surfaced via mutation error
     }
   };
 
@@ -115,7 +109,7 @@ export default function TagDetailPage({ params }: { params: Promise<{ id: string
               <Save className="h-4 w-4 mr-2" />
               Save
             </Button>
-            <Button variant="outline" onClick={handleCancel}>
+            <Button variant="outline" onClick={() => setIsEditing(false)}>
               <X className="h-4 w-4 mr-2" />
               Cancel
             </Button>
@@ -140,20 +134,26 @@ export default function TagDetailPage({ params }: { params: Promise<{ id: string
               {isEditing ? (
                 <div className="space-y-3">
                   <div>
-                    <label className="text-sm font-medium">Name</label>
+                    <Label className="text-sm font-medium">한국어 (Korean)</Label>
                     <Input
-                      value={editName}
-                      onChange={(e) => setEditName(e.target.value)}
-                      placeholder="Tag name"
+                      value={editLabelKo}
+                      onChange={(e) => setEditLabelKo(e.target.value)}
                       className="mt-1"
                     />
                   </div>
                   <div>
-                    <label className="text-sm font-medium">Description</label>
+                    <Label className="text-sm font-medium">English</Label>
+                    <Input
+                      value={editLabelEn}
+                      onChange={(e) => setEditLabelEn(e.target.value)}
+                      className="mt-1"
+                    />
+                  </div>
+                  <div>
+                    <Label className="text-sm font-medium">Description</Label>
                     <Textarea
                       value={editDescription}
                       onChange={(e) => setEditDescription(e.target.value)}
-                      placeholder="Tag description (optional)"
                       className="mt-1"
                       rows={3}
                     />
@@ -161,7 +161,10 @@ export default function TagDetailPage({ params }: { params: Promise<{ id: string
                 </div>
               ) : (
                 <>
-                  <CardTitle className="text-2xl">{tag.name}</CardTitle>
+                  <CardTitle className="text-2xl">{tag.labelKo}</CardTitle>
+                  {tag.labelEn && tag.labelEn !== tag.labelKo && (
+                    <CardDescription className="mt-2">{tag.labelEn}</CardDescription>
+                  )}
                   {tag.description && (
                     <CardDescription className="mt-2">{tag.description}</CardDescription>
                   )}
@@ -174,60 +177,53 @@ export default function TagDetailPage({ params }: { params: Promise<{ id: string
 
       <div>
         <h2 className="text-lg font-semibold mb-3">
-          Associated Sunreis ({tag.sunreis?.length || 0})
+          Associated Spots ({tag.spots?.length || 0})
         </h2>
-        {tag.sunreis && tag.sunreis.length > 0 ? (
+        {tag.spots && tag.spots.length > 0 ? (
           <div className="space-y-2">
-            {tag.sunreis.map((sunrei) => (
+            {tag.spots.map((spot) => (
               <div
-                key={sunrei.id}
-                className="flex items-center justify-between p-3 rounded-md border bg-card hover:bg-accent transition-colors"
+                key={spot.id}
+                className="flex items-center justify-between p-3 rounded-md border bg-card"
               >
-                <span className="text-sm font-medium">{sunrei.title}</span>
-                <div className="flex items-center gap-1">
-                  <Link href={`/sunreis/${sunrei.id}`}>
-                    <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
-                      <ExternalLink className="h-3.5 w-3.5" />
-                    </Button>
-                  </Link>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-8 w-8 p-0 text-destructive hover:text-destructive"
-                    onClick={() => handleRemoveSunrei(sunrei.id!, sunrei.title!)}
-                    disabled={removeSunreiMutation.isPending}
-                  >
-                    <Trash2 className="h-3.5 w-3.5" />
-                  </Button>
+                <div className="flex flex-col">
+                  <span className="text-sm font-medium">{spot.title}</span>
+                  <span className="text-xs text-muted-foreground">{spot.sunreiTitle}</span>
                 </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-8 w-8 p-0 text-destructive hover:text-destructive"
+                  onClick={() => setSpotToRemove({ id: spot.id!, title: spot.title! })}
+                  disabled={detachMutation.isPending}
+                >
+                  <Trash2 className="h-3.5 w-3.5" />
+                </Button>
               </div>
             ))}
           </div>
         ) : (
           <div className="text-center py-8 border rounded-md">
-            <p className="text-sm text-muted-foreground">
-              No Sunreis associated with this tag yet.
-            </p>
+            <p className="text-sm text-muted-foreground">No spots use this tag yet.</p>
           </div>
         )}
       </div>
 
-      <AlertDialog open={!!sunreiToRemove} onOpenChange={(open) => !open && setSunreiToRemove(null)}>
+      <AlertDialog open={!!spotToRemove} onOpenChange={(open) => !open && setSpotToRemove(null)}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Remove Sunrei from Tag</AlertDialogTitle>
+            <AlertDialogTitle>Detach Spot from Tag</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to remove <strong>{sunreiToRemove?.title}</strong> from this tag?
-              This action cannot be undone.
+              Detach <strong>{spotToRemove?.title}</strong> from this tag? The spot itself is not deleted.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
             <AlertDialogAction
-              onClick={confirmRemoveSunrei}
+              onClick={confirmDetach}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
-              Remove
+              Detach
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

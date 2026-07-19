@@ -14,14 +14,24 @@ import {
   SidebarRail,
 } from '@/components/ui/sidebar';
 import { auth } from '@/lib/auth';
-import { LogOut, MapPin, Tag } from 'lucide-react';
+import { FileText, LogOut, MapPin, Tag, Tv } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const navigationItems = [
   {
-    title: 'Sunreis',
+    title: 'Content',
     href: '/sunreis',
+    icon: FileText,
+  },
+  {
+    title: 'Channels / Sources',
+    href: '/sources',
+    icon: Tv,
+  },
+  {
+    title: 'Places',
+    href: '/places',
     icon: MapPin,
   },
   {
@@ -61,7 +71,7 @@ export function AppSidebar() {
             <SidebarMenu>
               {navigationItems.map((item) => (
                 <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton asChild isActive={pathname === item.href}>
+                  <SidebarMenuButton asChild isActive={pathname.startsWith(item.href)}>
                     <Link href={item.href}>
                       <item.icon className="h-4 w-4" />
                       <span>{item.title}</span>

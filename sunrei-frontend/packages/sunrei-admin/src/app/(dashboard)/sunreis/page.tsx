@@ -1,33 +1,60 @@
 'use client';
 
-import { SunreiDTO } from '@/api/admin';
-import { useSunreis, useDeleteSunrei } from '@/lib/hooks/use-sunreis';
+import { SunreiDTO, SourceType } from '@/api/admin';
+import {
+  useSunreis,
+  useDeleteSunrei,
+  useSetSunreiPublished,
+} from '@/lib/hooks/use-sunreis';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Separator } from '@/components/ui/separator';
-import ResponsiveImage, { useFirstImage } from '@/components/ResponsiveImage';
+import ResponsiveImage from '@/components/ResponsiveImage';
 import {
-  Plus, Edit2, Trash2, MapPin, AlertCircle, Loader2,
-  ChevronDown, ChevronRight
+  Plus,
+  Edit2,
+  Trash2,
+  MapPin,
+  AlertCircle,
+  Loader2,
+  Eye,
+  EyeOff,
 } from 'lucide-react';
 
 export default function SunreisPage() {
   const router = useRouter();
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [q, setQ] = useState('');
+  const [publishedFilter, setPublishedFilter] = useState<boolean | undefined>(undefined);
+  const [typeFilter, setTypeFilter] = useState<SourceType | undefined>(undefined);
 
-  const { data: sunreis = [], isLoading: loading, error: queryError } = useSunreis();
+  const {
+    data: allSunreis = [],
+    isLoading: loading,
+    error: queryError,
+  } = useSunreis({ q: q || undefined, published: publishedFilter });
+
+  const sunreis =
+    typeFilter === undefined
+      ? allSunreis
+      : allSunreis.filter((s) => s.source?.type === typeFilter);
   const deleteMutation = useDeleteSunrei();
+  const publishMutation = useSetSunreiPublished();
 
-  const error = queryError?.message || (deleteMutation.error as any)?.response?.data?.message || null;
+  const error =
+    queryError?.message ||
+    (deleteMutation.error as any)?.response?.data?.error ||
+    null;
 
-  const handleDelete = async (id: string) => {
-    if (typeof window !== 'undefined' && !confirm('Are you sure you want to delete this Sunrei?')) return;
-
+  const handleDelete = (id: string) => {
+    if (typeof window !== 'undefined' && !confirm('Delete this Sunrei?')) return;
     deleteMutation.mutate(id);
+  };
+
+  const togglePublish = (s: SunreiDTO) => {
+    publishMutation.mutate({ id: s.id, published: s.publishedAt == null });
   };
 
   if (loading) {
@@ -42,8 +69,8 @@ export default function SunreisPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Sunreis</h1>
-          <p className="text-muted-foreground mt-2">Manage all Sunrei locations</p>
+          <h1 className="text-3xl font-bold tracking-tight">Content</h1>
+          <p className="text-muted-foreground mt-2">Manage Sunreis (videos / works)</p>
         </div>
         <Button onClick={() => router.push('/sunreis/new')}>
           <Plus className="h-4 w-4 mr-2" />
@@ -51,22 +78,52 @@ export default function SunreisPage() {
         </Button>
       </div>
 
+      <div className="flex flex-wrap items-center gap-2">
+        <input
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          placeholder="Search by title/summary..."
+          className="flex-1 min-w-[200px] max-w-sm rounded-md border bg-background px-3 py-2 text-sm"
+        />
+        <div className="flex gap-1">
+          {([undefined, true, false] as const).map((p) => (
+            <Button
+              key={String(p)}
+              variant={publishedFilter === p ? 'default' : 'outline'}
+              size="sm"
+              onClick={() => setPublishedFilter(p)}
+            >
+              {p === undefined ? 'All' : p === true ? 'Published' : 'Drafts'}
+            </Button>
+          ))}
+        </div>
+        <div className="flex gap-1">
+          {([undefined, ...Object.values(SourceType)] as const).map((t) => (
+            <Button
+              key={String(t)}
+              variant={typeFilter === t ? 'default' : 'outline'}
+              size="sm"
+              onClick={() => setTypeFilter(t)}
+            >
+              {t === undefined ? 'All types' : t}
+            </Button>
+          ))}
+        </div>
+      </div>
+
       {error && (
-        <Alert variant="destructive" className="mb-6">
+        <Alert variant="destructive">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>{error}</AlertDescription>
         </Alert>
       )}
 
-      <div className="space-y-4">
+      <div className="space-y-2">
         {sunreis.length === 0 ? (
           <Card>
             <CardContent className="text-center py-12">
               <MapPin className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
               <h3 className="text-lg font-medium mb-2">No Sunreis yet</h3>
-              <p className="text-muted-foreground mb-4">
-                Get started by creating your first Sunrei location.
-              </p>
               <Button onClick={() => router.push('/sunreis/new')}>
                 <Plus className="h-4 w-4 mr-2" />
                 Create First Sunrei
@@ -75,13 +132,16 @@ export default function SunreisPage() {
           </Card>
         ) : (
           sunreis.map((sunrei) => (
-            <SunreiCard
+            <SunreiRow
               key={sunrei.id}
               sunrei={sunrei}
-              isExpanded={expandedId === sunrei.id}
               onEdit={() => router.push(`/sunreis/${sunrei.id}/edit`)}
-              onToggleExpand={() => setExpandedId(expandedId === sunrei.id ? null : sunrei.id)}
-              onDelete={() => handleDelete(sunrei.id!)}
+              onDelete={() => handleDelete(sunrei.id)}
+              onTogglePublish={() => togglePublish(sunrei)}
+              toggling={
+                publishMutation.isPending &&
+                publishMutation.variables?.id === sunrei.id
+              }
             />
           ))
         )}
@@ -90,142 +150,68 @@ export default function SunreisPage() {
   );
 }
 
-function SunreiCard({ 
-  sunrei, 
-  isExpanded,
-  onEdit, 
-  onToggleExpand,
-  onDelete
+function SunreiRow({
+  sunrei,
+  onEdit,
+  onDelete,
+  onTogglePublish,
+  toggling,
 }: {
   sunrei: SunreiDTO;
-  isExpanded: boolean;
   onEdit: () => void;
-  onToggleExpand: () => void;
   onDelete: () => void;
+  onTogglePublish: () => void;
+  toggling: boolean;
 }) {
-
+  const published = sunrei.publishedAt != null;
   return (
-    <Card>
-      <CardHeader>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={onToggleExpand}
-              className="p-0 h-auto"
-            >
-              {isExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
-            </Button>
-            <div>
-              <CardTitle className="text-lg">{sunrei.title}</CardTitle>
-              {!isExpanded && sunrei.description && (
-                <CardDescription className="line-clamp-1">{sunrei.description}</CardDescription>
-              )}
+    <Card className="py-3">
+      <CardContent className="flex items-center justify-between gap-4">
+        <div className="flex items-center gap-3 min-w-0">
+          {sunrei.images?.[0] ? (
+            <div className="h-10 w-10 rounded-md overflow-hidden bg-muted shrink-0">
+              <ResponsiveImage
+                multiSizeImage={sunrei.images[0]}
+                alt={sunrei.title}
+                size="small"
+                className="h-full w-full object-cover"
+              />
             </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <Badge variant="secondary">{sunrei.spots?.length || 0} spots</Badge>
-            <Button variant="ghost" size="sm" onClick={onEdit}>
-              <Edit2 className="h-4 w-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={onDelete}
-              className="text-destructive hover:text-destructive"
-            >
-              <Trash2 className="h-4 w-4" />
-            </Button>
+          ) : null}
+          <div className="min-w-0">
+            <p className="font-medium truncate">{sunrei.title}</p>
+            <p className="text-xs text-muted-foreground truncate">
+              {sunrei.source?.name ?? '—'} · {sunrei.spots?.length || 0} spots
+            </p>
           </div>
         </div>
-      </CardHeader>
-      {isExpanded && (
-        <CardContent>
-          <div className="space-y-3">
-            <div>
-              <p className="text-sm text-muted-foreground">{sunrei.description}</p>
-              {sunrei.link && (
-                <a href={sunrei.link} target="_blank" rel="noopener noreferrer" 
-                   className="text-sm text-primary hover:underline">
-                  {sunrei.link}
-                </a>
-              )}
-            </div>
-            {sunrei.images && sunrei.images.length > 0 && (
-              <>
-                <Separator />
-                <div className="space-y-2">
-                  <p className="text-sm font-medium">Images:</p>
-                  <div className="flex gap-2">
-                    {sunrei.images.slice(0, 6).map((multiSizeImage, index) => (
-                      <div key={index} className="w-16 h-16 rounded-md overflow-hidden bg-muted flex-shrink-0">
-                        <ResponsiveImage
-                          multiSizeImage={multiSizeImage}
-                          alt={`Sunrei image ${index + 1}`}
-                          size="small"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    ))}
-                    {sunrei.images.length > 6 && (
-                      <div className="w-16 h-16 rounded-md bg-muted flex items-center justify-center flex-shrink-0">
-                        <span className="text-xs text-muted-foreground">+{sunrei.images.length - 6}</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </>
-            )}
-            {sunrei.spots && sunrei.spots.length > 0 && (
-              <>
-                <Separator />
-                <div className="space-y-2">
-                  <p className="text-sm font-medium">Spots:</p>
-                  {sunrei.spots.map((spot, index) => (
-                    <div key={spot.id} className="pl-4 space-y-1">
-                      <p className="text-sm font-medium">{index + 1}. {spot.title}</p>
-                      {spot.description && (
-                        <p className="text-sm text-muted-foreground pl-4">{spot.description}</p>
-                      )}
-                      {spot.place && (
-                        <div className="pl-4 flex items-center gap-2">
-                          <MapPin className="h-3 w-3" />
-                          <span className="text-xs text-muted-foreground">
-                            {spot.place.name} - {spot.place.address}
-                          </span>
-                        </div>
-                      )}
-                      {spot.images && spot.images.length > 0 && (
-                        <div className="pl-4 mt-2">
-                          <div className="flex gap-1">
-                            {spot.images.slice(0, 4).map((multiSizeImage, imgIndex) => (
-                              <div key={imgIndex} className="w-10 h-10 rounded overflow-hidden bg-muted">
-                                <ResponsiveImage
-                                  multiSizeImage={multiSizeImage}
-                                  alt={`Spot image ${imgIndex + 1}`}
-                                  size="small"
-                                  className="w-full h-full object-cover"
-                                />
-                              </div>
-                            ))}
-                            {spot.images.length > 4 && (
-                              <div className="w-10 h-10 rounded bg-muted flex items-center justify-center">
-                                <span className="text-xs text-muted-foreground">+{spot.images.length - 4}</span>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
-        </CardContent>
-      )}
+        <div className="flex items-center gap-2 shrink-0">
+          <Badge variant={published ? 'default' : 'secondary'}>
+            {published ? 'Published' : 'Draft'}
+          </Badge>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0"
+            onClick={onTogglePublish}
+            disabled={toggling}
+            title={published ? 'Unpublish' : 'Publish'}
+          >
+            {published ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+          </Button>
+          <Button variant="ghost" size="sm" className="h-8 w-8 p-0" onClick={onEdit}>
+            <Edit2 className="h-4 w-4" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0 text-destructive hover:text-destructive"
+            onClick={onDelete}
+          >
+            <Trash2 className="h-4 w-4" />
+          </Button>
+        </div>
+      </CardContent>
     </Card>
   );
 }
-

@@ -1,65 +1,79 @@
+'use client';
+
 import { create } from 'zustand';
 
-interface ModalSpot {
-  id: string;
-  title: string;
-  description?: string;
-  youtubeLink?: string | null;
-  images: any[];
-  placeId: string;
-  placeName: string;
-  placeAddress: string;
-  lat: number;
-  lng: number;
+export type MapMode = 'nearby' | 'source';
+
+interface VideoPreview {
   sunreiId: string;
-  sunreiTitle: string;
+  returnTo: 'nearby' | 'source';
+  fromSearch?: boolean; // entered from search results → "back to list" reopens search
 }
 
-interface UIState {
-  selectedSunrei: string | null;
-  hoveredMarker: string | null;
-  modalSpot: ModalSpot | null;
-  searchQuery: string;
-  selectedPlaceId: string | null;
-  bottomBarDetailSpot: ModalSpot | null;
+interface UiState {
   isMobile: boolean;
+  setIsMobile: (m: boolean) => void;
 
-  setSelectedSunrei: (id: string | null) => void;
-  setHoveredMarker: (id: string | null) => void;
-  setModalSpot: (spot: ModalSpot | null) => void;
-  setSearchQuery: (query: string) => void;
-  setSelectedPlaceId: (id: string | null) => void;
-  closeModal: () => void;
-  setBottomBarDetailSpot: (spot: ModalSpot | null) => void;
-  setIsMobile: (isMobile: boolean) => void;
+  // Place list <-> detail
+  activePlaceId: string | null; // selected marker/card
+  setActivePlace: (id: string | null) => void;
+
+  // Search + filters UI. The query lives here (not local to the search panel) so
+  // it survives closing the panel to preview a video and coming back to the results.
+  searchOpen: boolean;
+  setSearchOpen: (v: boolean) => void;
+  openSearch: () => void; // fresh open (clears the query)
+  searchQuery: string;
+  setSearchQuery: (q: string) => void;
+  // Source opened from a search result → the channel view's back reopens search.
+  sourceFromSearch: boolean;
+  setSourceFromSearch: (v: boolean) => void;
+  filtersOpen: boolean;
+  setFiltersOpen: (v: boolean) => void;
+
+  // Location-permission onboarding (§0): our priming card → "locating" → done.
+  onboarding: 'priming' | 'locating' | 'done';
+  setOnboarding: (v: 'priming' | 'locating' | 'done') => void;
+
+  // Google sign-in modal (§6)
+  loginOpen: boolean;
+  setLoginOpen: (v: boolean) => void;
+
+  // Video preview overlay (map itinerary — Bd-6)
+  videoPreview: VideoPreview | null;
+  enterVideoPreview: (sunreiId: string, returnTo: MapMode, fromSearch?: boolean) => void;
+  exitVideoPreview: () => void;
 }
 
-const LG_BREAKPOINT = 1024;
+export const useUiStore = create<UiState>((set) => ({
+  isMobile: false,
+  setIsMobile: (m) => set({ isMobile: m }),
 
-export const useUIStore = create<UIState>((set) => ({
-  selectedSunrei: null,
-  hoveredMarker: null,
-  modalSpot: null,
+  activePlaceId: null,
+  setActivePlace: (id) => set({ activePlaceId: id }),
+
+  searchOpen: false,
+  setSearchOpen: (v) => set({ searchOpen: v }),
+  openSearch: () => set({ searchOpen: true, searchQuery: '', sourceFromSearch: false }),
   searchQuery: '',
-  selectedPlaceId: null,
-  bottomBarDetailSpot: null,
-  isMobile: typeof window !== 'undefined' ? window.innerWidth < LG_BREAKPOINT : false,
+  setSearchQuery: (q) => set({ searchQuery: q }),
+  sourceFromSearch: false,
+  setSourceFromSearch: (v) => set({ sourceFromSearch: v }),
+  filtersOpen: false,
+  setFiltersOpen: (v) => set({ filtersOpen: v }),
 
-  setSelectedSunrei: (id) => set({ selectedSunrei: id }),
-  setHoveredMarker: (id) => set({ hoveredMarker: id }),
-  setModalSpot: (spot) => set({ modalSpot: spot }),
-  setSearchQuery: (query) => set({ searchQuery: query }),
-  setSelectedPlaceId: (id) => set({ selectedPlaceId: id }),
-  closeModal: () => set({ modalSpot: null }),
-  setBottomBarDetailSpot: (spot) => set({ bottomBarDetailSpot: spot }),
-  setIsMobile: (isMobile) => set({ isMobile }),
+  onboarding: 'done',
+  setOnboarding: (v) => set({ onboarding: v }),
+  loginOpen: false,
+  setLoginOpen: (v) => set({ loginOpen: v }),
+
+  videoPreview: null,
+  enterVideoPreview: (sunreiId, returnTo, fromSearch = false) =>
+    // Clear any active place so the series view isn't shadowed by a stale place detail
+    // (place detail now takes precedence over the series view).
+    set({ videoPreview: { sunreiId, returnTo, fromSearch }, activePlaceId: null }),
+  // Back from a search-originated preview reopens the (preserved) search results;
+  // otherwise it just drops back to the underlying list.
+  exitVideoPreview: () =>
+    set((s) => (s.videoPreview?.fromSearch ? { videoPreview: null, searchOpen: true } : { videoPreview: null })),
 }));
-
-// Set up resize listener only on client side
-if (typeof window !== 'undefined') {
-  const handleResize = () => {
-    useUIStore.getState().setIsMobile(window.innerWidth < LG_BREAKPOINT);
-  };
-
-  window.addEventListener('resize', handleResize);
-}

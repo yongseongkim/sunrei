@@ -2,6 +2,8 @@ package com.sunrei.routes.admin
 
 import com.sunrei.di.injectTagService
 import com.sunrei.generated.dto.admin.CreateTagRequest
+import com.sunrei.generated.dto.admin.SpotSummaryDTO
+import com.sunrei.generated.dto.admin.TagWithSpots
 import com.sunrei.generated.dto.admin.UpdateTagRequest
 import com.sunrei.routes.admin.converter.toDTO
 import com.sunrei.service.TagService
@@ -17,134 +19,105 @@ import io.ktor.server.routing.route
 
 fun Route.adminTagRoutes() {
     route("/tags") {
-        // List all tags with pagination
         get {
             val tagService: TagService = call.injectTagService()
             val nextToken = call.request.queryParameters["nextToken"]
-            val size = call.request.queryParameters["size"]?.toIntOrNull() ?: 20
+            val size = call.request.queryParameters["size"]?.toIntOrNull()?.coerceIn(1, 100) ?: 20
 
-            // Validate size
-            val validatedSize = when {
-                size < 1 -> 1
-                size > 100 -> 100
-                else -> size
-            }
-
-            val result = tagService.list(
-                nextToken = nextToken,
-                size = validatedSize
-            )
-
-            call.respond(result)
+            call.respond(tagService.list(nextToken = nextToken, size = size))
         }
 
-        // Search tags by name
         get("/search") {
             val tagService: TagService = call.injectTagService()
-            val query = call.request.queryParameters["q"] ?: ""
-            val tags = tagService.searchByName(query).map { it.toDTO() }
-            call.respond(tags)
+            val q = call.request.queryParameters["q"] ?: ""
+            call.respond(tagService.search(q).map { it.toDTO() })
         }
 
-        // Get tag with associated Sunreis
         get("/{id}") {
             val tagService: TagService = call.injectTagService()
-            val id = call.parameters["id"] ?: run {
-                call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
-                return@get
-            }
+            val id = call.parameters["id"]
+                ?: return@get call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
 
-            val data = tagService.getWithSunreis(id)
+            val data = tagService.getWithSpots(id)
             if (data == null) {
                 call.respond(HttpStatusCode.NotFound, mapOf("error" to "Tag not found"))
                 return@get
             }
 
-            val response = com.sunrei.generated.dto.admin.TagWithSunreis(
-                id = data.tag.id,
-                name = data.tag.name,
-                description = data.tag.description,
-                sunreis = data.sunreis.map { sunrei ->
-                    com.sunrei.generated.dto.admin.SunreiBasicInfo(
-                        id = sunrei.id,
-                        title = sunrei.title
-                    )
-                }
+            call.respond(
+                TagWithSpots(
+                    id = data.tag.id,
+                    labelEn = data.tag.labelEn,
+                    labelKo = data.tag.labelKo,
+                    description = data.tag.description,
+                    spots = data.spots.map { spot ->
+                        SpotSummaryDTO(
+                            id = spot.id,
+                            title = spot.title,
+                            sunreiId = spot.sunreiId,
+                            sunreiTitle = spot.sunreiTitle
+                        )
+                    }
+                )
             )
-
-            call.respond(response)
         }
 
-        // Create new tag
         post {
             val tagService: TagService = call.injectTagService()
             try {
                 val request = call.receive<CreateTagRequest>()
-                val createdTag = tagService.create(
-                    name = request.name,
+                val created = tagService.create(
+                    labelEn = request.labelEn,
+                    labelKo = request.labelKo,
                     description = request.description
                 )
-                call.respond(HttpStatusCode.Created, createdTag.toDTO())
+                call.respond(HttpStatusCode.Created, created.toDTO())
             } catch (e: Exception) {
                 call.respond(HttpStatusCode.BadRequest, mapOf("error" to (e.message ?: "Invalid request")))
             }
         }
 
-        // Update tag
         put("/{id}") {
             val tagService: TagService = call.injectTagService()
-            val id = call.parameters["id"] ?: run {
-                call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
-                return@put
-            }
+            val id = call.parameters["id"]
+                ?: return@put call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
 
             try {
                 val request = call.receive<UpdateTagRequest>()
-                val updatedTag = tagService.update(
+                val updated = tagService.update(
                     id = id,
-                    name = request.name,
+                    labelEn = request.labelEn,
+                    labelKo = request.labelKo,
                     description = request.description
                 )
-
-                if (updatedTag != null) {
-                    call.respond(updatedTag.toDTO())
-                } else {
-                    call.respond(HttpStatusCode.NotFound, mapOf("error" to "Tag not found"))
-                }
+                if (updated != null) call.respond(updated.toDTO())
+                else call.respond(HttpStatusCode.NotFound, mapOf("error" to "Tag not found"))
             } catch (e: Exception) {
                 call.respond(HttpStatusCode.BadRequest, mapOf("error" to (e.message ?: "Invalid request")))
             }
         }
 
-        // Delete tag
         delete("/{id}") {
-            val id = call.parameters["id"] ?: run {
-                call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
-                return@delete
-            }
+            val tagService: TagService = call.injectTagService()
+            val id = call.parameters["id"]
+                ?: return@delete call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing id parameter"))
 
-            // TODO: Implement tag deletion logic
-            call.respond(HttpStatusCode.NoContent)
+            val deleted = tagService.delete(id)
+            if (deleted) call.respond(HttpStatusCode.NoContent)
+            else call.respond(HttpStatusCode.NotFound, mapOf("error" to "Tag not found"))
         }
 
-        // Remove Sunrei from tag
-        delete("/{id}/sunreis/{sunreiId}") {
+        // Detach a spot from a tag.
+        delete("/{id}/spots/{spotId}") {
             val tagService: TagService = call.injectTagService()
-            val tagId = call.parameters["id"] ?: run {
-                call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing tag id parameter"))
-                return@delete
-            }
-            val sunreiId = call.parameters["sunreiId"] ?: run {
-                call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing sunrei id parameter"))
-                return@delete
-            }
+            val tagId = call.parameters["id"]
+                ?: return@delete call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing tag id parameter"))
+            val spotId = call.parameters["spotId"]
+                ?: return@delete call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Missing spot id parameter"))
 
-            val removed = tagService.removeSunreiFromTag(tagId, sunreiId)
-            if (removed) {
-                call.respond(HttpStatusCode.NoContent)
-            } else {
-                call.respond(HttpStatusCode.NotFound, mapOf("error" to "Tag-Sunrei association not found"))
-            }
+            val detached = tagService.detach(tagId, spotId)
+            if (detached) call.respond(HttpStatusCode.NoContent)
+            else call.respond(HttpStatusCode.NotFound, mapOf("error" to "Tag-spot association not found"))
         }
     }
 }

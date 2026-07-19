@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: Sunrei Admin API
-  version: 1.0.0
-  description: Admin API for Sunrei management
+  version: 2.0.0
+  description: Admin API for Sunrei content management (Source -> Sunrei -> SunreiSpot -> Place).
 
 servers:
   - url: http://localhost:3030
@@ -31,29 +31,129 @@ paths:
         '401':
           description: Invalid credentials
 
+  # ===== Sources =====
+  /admin/sources:
+    get:
+      summary: List sources
+      operationId: listSources
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - name: q
+          in: query
+          schema: { type: string }
+        - name: nextToken
+          in: query
+          schema: { type: string }
+        - name: size
+          in: query
+          schema: { type: integer, default: 20, minimum: 1, maximum: 100 }
+      responses:
+        '200':
+          description: Paginated list of sources
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListSourcesResult'
+        '401': { description: Unauthorized }
+    post:
+      summary: Create source
+      operationId: createSource
+      security: [{ bearerAuth: [] }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSourceRequest'
+      responses:
+        '201':
+          description: Source created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SourceDTO'
+        '400': { description: Bad request }
+        '401': { description: Unauthorized }
+
+  /admin/sources/{id}:
+    get:
+      summary: Get source
+      operationId: getSource
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Source detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SourceDTO'
+        '401': { description: Unauthorized }
+        '404': { description: Not found }
+    put:
+      summary: Update source
+      operationId: updateSource
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateSourceRequest'
+      responses:
+        '200':
+          description: Source updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SourceDTO'
+        '401': { description: Unauthorized }
+        '404': { description: Not found }
+    delete:
+      summary: Soft-delete source
+      operationId: deleteSource
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204': { description: Source deleted }
+        '401': { description: Unauthorized }
+        '404': { description: Not found }
+
+  # ===== Sunreis =====
   /admin/sunreis:
     get:
       summary: List Sunreis with pagination
       operationId: listSunreis
-      security:
-        - bearerAuth: [ ]
+      security: [{ bearerAuth: [] }]
       parameters:
         - name: nextToken
           in: query
-          schema:
-            type: string
-          description: Token for next page (from previous response)
+          schema: { type: string }
         - name: size
           in: query
-          schema:
-            type: integer
-            default: 20
-            minimum: 1
-            maximum: 100
-        - name: search
+          schema: { type: integer, default: 20, minimum: 1, maximum: 100 }
+        - name: q
           in: query
-          schema:
-            type: string
+          schema: { type: string }
+        - name: sourceId
+          in: query
+          schema: { type: string }
+        - name: published
+          in: query
+          schema: { type: boolean }
       responses:
         '200':
           description: Paginated list of Sunreis
@@ -61,14 +161,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListSunreisResult'
-        '401':
-          description: Unauthorized
-
+        '401': { description: Unauthorized }
     post:
       summary: Create new Sunrei
       operationId: createSunrei
-      security:
-        - bearerAuth: [ ]
+      security: [{ bearerAuth: [] }]
       requestBody:
         required: true
         content:
@@ -82,23 +179,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SunreiDTO'
-        '401':
-          description: Unauthorized
-        '400':
-          description: Bad request
+        '400': { description: Bad request }
+        '401': { description: Unauthorized }
 
   /admin/sunreis/{id}:
     get:
       summary: Get Sunrei details
       operationId: getSunrei
-      security:
-        - bearerAuth: [ ]
+      security: [{ bearerAuth: [] }]
       parameters:
         - name: id
           in: path
           required: true
-          schema:
-            type: string
+          schema: { type: string }
       responses:
         '200':
           description: Sunrei details
@@ -106,22 +199,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SunreiDTO'
-        '401':
-          description: Unauthorized
-        '404':
-          description: Not found
-
+        '401': { description: Unauthorized }
+        '404': { description: Not found }
     put:
       summary: Update Sunrei
       operationId: updateSunrei
-      security:
-        - bearerAuth: [ ]
+      security: [{ bearerAuth: [] }]
       parameters:
         - name: id
           in: path
           required: true
-          schema:
-            type: string
+          schema: { type: string }
       requestBody:
         required: true
         content:
@@ -135,74 +223,60 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SunreiDTO'
-        '401':
-          description: Unauthorized
-        '404':
-          description: Not found
-
+        '401': { description: Unauthorized }
+        '404': { description: Not found }
     delete:
       summary: Delete Sunrei
       operationId: deleteSunrei
-      security:
-        - bearerAuth: [ ]
+      security: [{ bearerAuth: [] }]
       parameters:
         - name: id
           in: path
           required: true
-          schema:
-            type: string
+          schema: { type: string }
       responses:
-        '204':
-          description: Sunrei deleted
-        '401':
-          description: Unauthorized
-        '404':
-          description: Not found
+        '204': { description: Sunrei deleted }
+        '401': { description: Unauthorized }
+        '404': { description: Not found }
 
-  /admin/places/search:
+  # ===== Places =====
+  /admin/places:
     get:
-      summary: Search places for autocomplete
-      operationId: searchPlaces
-      security:
-        - bearerAuth: [ ]
+      summary: List places (keyed by Google place_id; Area/Sources/Spots columns)
+      operationId: listPlaces
+      security: [{ bearerAuth: [] }]
       parameters:
         - name: q
           in: query
-          required: true
-          schema:
-            type: string
-          description: Search query
+          schema: { type: string }
+        - name: nextToken
+          in: query
+          schema: { type: string }
+        - name: size
+          in: query
+          schema: { type: integer, default: 20, minimum: 1, maximum: 100 }
       responses:
         '200':
-          description: List of matching places
+          description: Paginated list of places
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/PlaceDTO'
-        '401':
-          description: Unauthorized
+                $ref: '#/components/schemas/ListPlacesResult'
+        '401': { description: Unauthorized }
 
+  # ===== Tags =====
   /admin/tags:
     get:
       summary: List tags with pagination
       operationId: listTags
-      security:
-        - bearerAuth: [ ]
+      security: [{ bearerAuth: [] }]
       parameters:
         - name: nextToken
           in: query
-          schema:
-            type: string
-          description: Token for next page (from previous response)
+          schema: { type: string }
         - name: size
           in: query
-          schema:
-            type: integer
-            default: 20
-            minimum: 1
-            maximum: 100
+          schema: { type: integer, default: 20, minimum: 1, maximum: 100 }
       responses:
         '200':
           description: Paginated list of tags
@@ -210,14 +284,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListTagsResult'
-        '401':
-          description: Unauthorized
-
+        '401': { description: Unauthorized }
     post:
-      summary: Create new tag
+      summary: Create new bilingual tag
       operationId: createTag
-      security:
-        - bearerAuth: [ ]
+      security: [{ bearerAuth: [] }]
       requestBody:
         required: true
         content:
@@ -231,22 +302,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TagDTO'
-        '401':
-          description: Unauthorized
+        '400': { description: Bad request }
+        '401': { description: Unauthorized }
 
   /admin/tags/search:
     get:
-      summary: Search tags by name
+      summary: Search tags by label (en or ko)
       operationId: searchTags
-      security:
-        - bearerAuth: [ ]
+      security: [{ bearerAuth: [] }]
       parameters:
         - name: q
           in: query
           required: true
-          schema:
-            type: string
-          description: Search query for tag name
+          schema: { type: string }
       responses:
         '200':
           description: List of matching tags
@@ -256,44 +324,36 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TagDTO'
-        '401':
-          description: Unauthorized
+        '401': { description: Unauthorized }
 
   /admin/tags/{id}:
     get:
-      summary: Get tag with associated Sunreis
+      summary: Get tag with associated spots
       operationId: getTag
-      security:
-        - bearerAuth: [ ]
+      security: [{ bearerAuth: [] }]
       parameters:
         - name: id
           in: path
           required: true
-          schema:
-            type: string
+          schema: { type: string }
       responses:
         '200':
-          description: Tag with Sunrei IDs
+          description: Tag with spots
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TagWithSunreis'
-        '401':
-          description: Unauthorized
-        '404':
-          description: Not found
-
+                $ref: '#/components/schemas/TagWithSpots'
+        '401': { description: Unauthorized }
+        '404': { description: Not found }
     put:
-      summary: Update tag
+      summary: Update tag labels
       operationId: updateTag
-      security:
-        - bearerAuth: [ ]
+      security: [{ bearerAuth: [] }]
       parameters:
         - name: id
           in: path
           required: true
-          schema:
-            type: string
+          schema: { type: string }
       requestBody:
         required: true
         content:
@@ -307,71 +367,56 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TagDTO'
-        '401':
-          description: Unauthorized
-        '404':
-          description: Not found
-
+        '401': { description: Unauthorized }
+        '404': { description: Not found }
     delete:
       summary: Delete tag
       operationId: deleteTag
-      security:
-        - bearerAuth: [ ]
+      security: [{ bearerAuth: [] }]
       parameters:
         - name: id
           in: path
           required: true
-          schema:
-            type: string
+          schema: { type: string }
       responses:
-        '204':
-          description: Tag deleted
-        '401':
-          description: Unauthorized
-        '404':
-          description: Not found
+        '204': { description: Tag deleted }
+        '401': { description: Unauthorized }
+        '404': { description: Not found }
 
-  /admin/tags/{id}/sunreis/{sunreiId}:
+  /admin/tags/{id}/spots/{spotId}:
     delete:
-      summary: Remove Sunrei from tag
-      operationId: removeSunreiFromTag
-      security:
-        - bearerAuth: [ ]
+      summary: Detach a spot from a tag
+      operationId: detachSpotFromTag
+      security: [{ bearerAuth: [] }]
       parameters:
         - name: id
           in: path
           required: true
-          schema:
-            type: string
+          schema: { type: string }
           description: Tag ID
-        - name: sunreiId
+        - name: spotId
           in: path
           required: true
-          schema:
-            type: string
-          description: Sunrei ID to remove from tag
+          schema: { type: string }
+          description: SunreiSpot ID to detach
       responses:
-        '204':
-          description: Sunrei removed from tag
-        '401':
-          description: Unauthorized
-        '404':
-          description: Tag-Sunrei association not found
+        '204': { description: Spot detached from tag }
+        '401': { description: Unauthorized }
+        '404': { description: Tag-spot association not found }
 
+  # ===== Images =====
   /admin/images/upload:
     post:
       summary: Upload image
       operationId: uploadImage
-      security:
-        - bearerAuth: [ ]
+      security: [{ bearerAuth: [] }]
       requestBody:
         required: true
         content:
           multipart/form-data:
             schema:
               type: object
-              required:
-                - file
+              required: [file]
               properties:
                 file:
                   type: string
@@ -383,29 +428,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MultiSizeImageDTO'
-        '401':
-          description: Unauthorized
-        '400':
-          description: Bad request
+        '400': { description: Bad request }
+        '401': { description: Unauthorized }
 
   /admin/images/upload-url:
     post:
       summary: Upload image from URL
       operationId: uploadImageFromUrl
-      security:
-        - bearerAuth: [ ]
+      security: [{ bearerAuth: [] }]
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required:
-                - url
+              required: [url]
               properties:
-                url:
-                  type: string
-                  description: URL of the image to download and upload
+                url: { type: string }
       responses:
         '201':
           description: Image uploaded from URL (multiple sizes)
@@ -413,10 +452,51 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MultiSizeImageDTO'
-        '401':
-          description: Unauthorized
-        '400':
-          description: Bad request
+        '400': { description: Bad request }
+        '401': { description: Unauthorized }
+
+  # ===== Resources (YouTube channel registries) =====
+  /admin/resources/youtube/{channelId}:
+    get:
+      summary: Get YouTube channel registry (raw JSON from S3)
+      operationId: getYoutubeResource
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - name: channelId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Channel registry JSON (free-form)
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '400': { description: channelId is required }
+        '401': { description: Unauthorized }
+        '404': { description: Channel registry not found }
+    put:
+      summary: Store YouTube channel registry (raw JSON to S3)
+      operationId: putYoutubeResource
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - name: channelId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '200': { description: Channel registry saved }
+        '400': { description: Invalid JSON body or channelId is required }
+        '401': { description: Unauthorized }
 
 components:
   securitySchemes:
@@ -427,428 +507,403 @@ components:
       description: JWT token for admin authentication
 
   schemas:
-    # ===== Common DTOs =====
+    # ===== Common =====
     PlaceDTO:
       type: object
-      required:
-        - id
-        - name
-        - latitude
-        - longitude
-        - isClosed
+      required: [id, name, latitude, longitude, isClosed]
       properties:
-        id:
-          type: string
-        name:
-          type: string
-          description: Name of the place
-        address:
-          type: string
-          description: Address of the place
-        latitude:
-          type: number
-          format: float
-          description: Latitude of the place
-        longitude:
-          type: number
-          format: float
-          description: Longitude of the place
-        isClosed:
-          type: boolean
-          description: Whether the place is permanently closed or no longer exists
-        closedReason:
-          type: string
-          description: Reason for closure (e.g., "Permanently closed", "Demolished", "Relocated")
-        closedAt:
-          type: string
-          format: date-time
-          description: Date when the place was closed or ceased to exist
-        notes:
-          type: string
-          description: Additional notes about the place status or history
-        googleMapsId:
-          type: string
-          description: Google Maps Place ID
+        id: { type: string }
+        name: { type: string }
+        address: { type: string, nullable: true }
+        latitude: { type: number, format: float }
+        longitude: { type: number, format: float }
+        googleMapsId: { type: string, nullable: true }
+        isClosed: { type: boolean }
+        closedReason: { type: string, nullable: true }
+        closedAt: { type: string, format: date-time, nullable: true }
+        notes: { type: string, nullable: true }
 
     ImageDTO:
       type: object
-      required:
-        - url
+      required: [url]
       properties:
-        url:
-          type: string
-          description: URL of the image
-        width:
-          type: integer
-          description: Width of the image in pixels
-        height:
-          type: integer
-          description: Height of the image in pixels
-    
+        url: { type: string }
+        width: { type: integer }
+        height: { type: integer }
+
     MultiSizeImageDTO:
       type: object
-      required:
-        - images
+      required: [images]
       properties:
         images:
           type: array
-          description: Array of different image sizes (original, large, medium, small)
           items:
             $ref: '#/components/schemas/ImageDTO'
 
-    SunreiSpotDTO:
+    PlaceInput:
       type: object
-      required:
-        - id
-        - sunreiId
-        - title
-        - place
-        - images
+      required: [name, address, latitude, longitude]
       properties:
-        id:
-          type: string
-        sunreiId:
-          type: string
-          description: ID of the parent Sunrei
-        title:
-          type: string
-          maxLength: 128
-          description: Title of the Sunrei Spot
-        description:
-          type: string
-          description: Detailed description of the Sunrei Spot
-        youtubeLink:
-          type: string
-          description: YouTube video link for this spot
-          nullable: true
-        images:
-          type: array
-          description: Array of multi-size images for this spot
-          items:
-            $ref: '#/components/schemas/MultiSizeImageDTO'
-        place:
-          description: Associated place
-          $ref: '#/components/schemas/PlaceDTO'
+        id: { type: string, description: ID for existing place (omit to create new) }
+        name: { type: string }
+        address: { type: string }
+        latitude: { type: number, format: float }
+        longitude: { type: number, format: float }
+        googleMapsId: { type: string, nullable: true, description: Google Maps Place ID (dedupe key) }
 
+    ImageInput:
+      type: object
+      required: [url]
+      properties:
+        url: { type: string }
+        width: { type: integer }
+        height: { type: integer }
+
+    SourceType:
+      type: string
+      enum: [YOUTUBE, TV, ANIME, OTHER]
+
+    # ===== Sources =====
+    SourceDTO:
+      type: object
+      required: [id, type, name]
+      properties:
+        id: { type: string }
+        type:
+          $ref: '#/components/schemas/SourceType'
+        name: { type: string }
+        nameEn: { type: string, nullable: true }
+        nameKo: { type: string, nullable: true }
+        synopsis: { type: string, nullable: true }
+        externalUrl: { type: string, nullable: true }
+        posterImage:
+          allOf:
+            - $ref: '#/components/schemas/MultiSizeImageDTO'
+          nullable: true
+        createdAt: { type: string, format: date-time }
+        updatedAt: { type: string, format: date-time }
+
+    SourceRowDTO:
+      description: Source list row with counts (app-behavior text is derived client-side from type).
+      allOf:
+        - $ref: '#/components/schemas/SourceDTO'
+        - type: object
+          properties:
+            sunreiCount: { type: integer }
+            spotCount: { type: integer }
+
+    CreateSourceRequest:
+      type: object
+      required: [type, name]
+      properties:
+        type:
+          $ref: '#/components/schemas/SourceType'
+        name: { type: string }
+        nameEn: { type: string, nullable: true }
+        nameKo: { type: string, nullable: true }
+        synopsis: { type: string, nullable: true }
+        externalUrl: { type: string, nullable: true }
+        posterImage:
+          allOf:
+            - $ref: '#/components/schemas/MultiSizeImageDTO'
+          nullable: true
+
+    UpdateSourceRequest:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/SourceType'
+        name: { type: string, nullable: true }
+        nameEn: { type: string, nullable: true }
+        nameKo: { type: string, nullable: true }
+        synopsis: { type: string, nullable: true }
+        externalUrl: { type: string, nullable: true }
+        posterImage:
+          allOf:
+            - $ref: '#/components/schemas/MultiSizeImageDTO'
+          nullable: true
+
+    ListSourcesResult:
+      type: object
+      required: [data, totalSize, totalElements]
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/SourceRowDTO'
+        totalSize: { type: integer }
+        totalElements: { type: integer }
+        nextToken: { type: string, nullable: true }
+
+    # ===== Tags (bilingual) =====
     TagDTO:
       type: object
-      required:
-        - id
-        - name
+      required: [id, labelEn, labelKo]
       properties:
-        id:
-          type: string
-        name:
-          type: string
-          description: Name of the tag
-        description:
-          type: string
-          description: Description of the tag
-          nullable: true
+        id: { type: string }
+        labelEn: { type: string, maxLength: 64 }
+        labelKo: { type: string, maxLength: 64 }
+        description: { type: string, nullable: true }
 
-    SunreiBasicInfo:
+    CreateTagRequest:
       type: object
-      required:
-        - id
-        - title
+      required: [labelEn, labelKo]
       properties:
-        id:
-          type: string
-        title:
-          type: string
+        labelEn: { type: string, maxLength: 64 }
+        labelKo: { type: string, maxLength: 64 }
+        description: { type: string, nullable: true }
 
-    TagWithSunreis:
+    UpdateTagRequest:
+      type: object
+      properties:
+        labelEn: { type: string, maxLength: 64, nullable: true }
+        labelKo: { type: string, maxLength: 64, nullable: true }
+        description: { type: string, nullable: true }
+
+    SpotSummaryDTO:
+      type: object
+      required: [id, title, sunreiId, sunreiTitle]
+      properties:
+        id: { type: string }
+        title: { type: string }
+        sunreiId: { type: string }
+        sunreiTitle: { type: string }
+
+    TagWithSpots:
       allOf:
         - $ref: '#/components/schemas/TagDTO'
         - type: object
+          required: [spots]
           properties:
-            sunreis:
+            spots:
               type: array
               items:
-                $ref: '#/components/schemas/SunreiBasicInfo'
-              description: List of Sunreis associated with this tag
+                $ref: '#/components/schemas/SpotSummaryDTO'
+
+    ListTagsResult:
+      type: object
+      required: [data, totalSize, totalElements]
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        totalSize: { type: integer }
+        totalElements: { type: integer }
+        nextToken: { type: string, nullable: true }
+        spotCountByTagId:
+          type: object
+          description: Map of tag ID to number of associated SunreiSpots
+          additionalProperties: { type: integer }
+
+    # ===== Places (list rows) =====
+    PlaceListItemDTO:
+      type: object
+      required: [id, name, latitude, longitude, isClosed, sourceCount, spotCount]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        address: { type: string, nullable: true }
+        latitude: { type: number, format: float }
+        longitude: { type: number, format: float }
+        googleMapsId: { type: string, nullable: true }
+        isClosed: { type: boolean }
+        area:
+          type: string
+          nullable: true
+          description: Area label (KO), derived from address.
+        sourceCount: { type: integer }
+        spotCount: { type: integer }
+
+    ListPlacesResult:
+      type: object
+      required: [data, totalSize, totalElements]
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlaceListItemDTO'
+        totalSize: { type: integer }
+        totalElements: { type: integer }
+        nextToken: { type: string, nullable: true }
+
+    # ===== Sunrei + spots =====
+    SunreiSpotDTO:
+      type: object
+      required: [id, sunreiId, title, images, place, tags]
+      properties:
+        id: { type: string }
+        sunreiId: { type: string }
+        title: { type: string, maxLength: 128 }
+        description: { type: string, nullable: true }
+        context: { type: string, nullable: true, description: What this source says here. }
+        youtubeLink: { type: string, nullable: true }
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/MultiSizeImageDTO'
+        place:
+          $ref: '#/components/schemas/PlaceDTO'
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
 
     SunreiDTO:
       type: object
-      required:
-        - id
-        - title
-        - images
-        - spots
-        - tags
+      required: [id, sourceId, source, title, images, spots]
       properties:
-        id:
-          type: string
-        title:
-          type: string
-          description: Title of the Sunrei
-        description:
-          type: string
-          description: Detailed description of the Sunrei
-        link:
-          type: string
-          description: External link for this Sunrei (program URL or YouTube channel)
-          nullable: true
+        id: { type: string }
+        sourceId: { type: string }
+        source:
+          $ref: '#/components/schemas/SourceDTO'
+        publishedAt: { type: string, format: date-time, nullable: true, description: NULL = draft; set = published }
+        title: { type: string }
+        description: { type: string, nullable: true }
+        summary: { type: string, nullable: true }
+        link: { type: string, nullable: true }
         images:
           type: array
-          description: Array of multi-size images for this Sunrei
           items:
             $ref: '#/components/schemas/MultiSizeImageDTO'
         spots:
           type: array
-          description: Array of Sunrei spots associated with this Sunrei
           items:
             $ref: '#/components/schemas/SunreiSpotDTO'
-        tags:
+        createdAt: { type: string, format: date-time }
+        updatedAt: { type: string, format: date-time }
+
+    CreateSunreiRequest:
+      type: object
+      required: [sourceId, published, title]
+      properties:
+        sourceId: { type: string }
+        published:
+          type: boolean
+          description: true -> published_at = now() (preserved on re-save); false -> NULL (draft).
+        title: { type: string }
+        summary: { type: string, nullable: true }
+        description: { type: string, nullable: true }
+        link: { type: string, nullable: true }
+        images:
           type: array
-          description: Array of tags associated with this Sunrei
           items:
-            $ref: '#/components/schemas/TagDTO'
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
+            $ref: '#/components/schemas/MultiSizeImageDTO'
+        spots:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateSunreiSpotInline'
 
-    # ===== Admin API Request/Response Models =====
-    LoginRequest:
+    UpdateSunreiRequest:
       type: object
-      required:
-        - username
-        - password
       properties:
-        username:
-          type: string
-        password:
-          type: string
+        sourceId: { type: string, nullable: true }
+        published:
+          type: boolean
+          nullable: true
+        title: { type: string, nullable: true }
+        summary: { type: string, nullable: true }
+        description: { type: string, nullable: true }
+        link: { type: string, nullable: true }
+        images:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/MultiSizeImageDTO'
+        spots:
+          type: array
+          items:
+            $ref: '#/components/schemas/UpdateSunreiSpotInline'
 
-    LoginResponse:
+    CreateSunreiSpotInline:
       type: object
-      required:
-        - token
-        - expiresIn
-        - user
+      required: [title]
       properties:
-        token:
-          type: string
-          description: JWT token
-        expiresIn:
-          type: integer
-          description: Token expiration time in seconds
-        user:
-          type: object
-          required:
-            - id
-            - username
-            - role
-          properties:
-            id:
-              type: string
-            username:
-              type: string
-            role:
-              type: string
+        title: { type: string, maxLength: 128 }
+        description: { type: string, nullable: true }
+        context: { type: string, nullable: true }
+        youtubeLink: { type: string, nullable: true }
+        place:
+          allOf:
+            - $ref: '#/components/schemas/PlaceInput'
+          nullable: true
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/MultiSizeImageDTO'
+        tagIds:
+          type: array
+          description: Existing tag IDs to attach to this spot.
+          items: { type: string }
+        tagLabels:
+          type: array
+          description: KO labels to find-or-create and attach (ko=typed, en=typed until translated).
+          items: { type: string }
 
+    UpdateSunreiSpotInline:
+      type: object
+      required: [title]
+      properties:
+        id: { type: string, description: ID for existing spot (omit for new spots) }
+        title: { type: string, maxLength: 128 }
+        description: { type: string, nullable: true }
+        context: { type: string, nullable: true }
+        youtubeLink: { type: string, nullable: true }
+        place:
+          allOf:
+            - $ref: '#/components/schemas/PlaceInput'
+          nullable: true
+        images:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/MultiSizeImageDTO'
+        tagIds:
+          type: array
+          nullable: true
+          description: Replaces this spot's tags when present.
+          items: { type: string }
+        tagLabels:
+          type: array
+          nullable: true
+          description: KO labels to find-or-create and attach.
+          items: { type: string }
+        _delete: { type: boolean, description: Mark this spot for deletion }
+
+    # ===== Sunrei list result =====
     ListSunreisResult:
       type: object
-      required:
-        - data
-        - totalSize
-        - totalElements
+      required: [data, totalSize, totalElements]
       properties:
         data:
           type: array
           items:
             $ref: '#/components/schemas/SunreiDTO'
-        totalSize:
-          type: integer
-          description: Number of items in this page
-        totalElements:
-          type: integer
-          description: Total number of items across all pages
-        nextToken:
-          type: string
-          description: Token to retrieve next page (null if no more pages)
-          nullable: true
+        totalSize: { type: integer }
+        totalElements: { type: integer }
+        nextToken: { type: string, nullable: true }
 
-    ListTagsResult:
+    # ===== Auth (unchanged) =====
+    LoginRequest:
       type: object
-      required:
-        - data
-        - totalSize
-        - totalElements
+      required: [username, password]
       properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/TagDTO'
-        totalSize:
-          type: integer
-          description: Number of items in this page
-        totalElements:
-          type: integer
-          description: Total number of items across all pages
-        nextToken:
-          type: string
-          description: Token to retrieve next page (null if no more pages)
-          nullable: true
-        sunreiCountByTagId:
-          type: object
-          description: Map of tag ID to number of associated Sunreis
-          additionalProperties:
-            type: integer
+        username: { type: string }
+        password: { type: string }
 
-    CreateSunreiRequest:
+    LoginResponse:
       type: object
-      required:
-        - title
-        - description
+      required: [token, expiresIn, user]
       properties:
-        title:
-          type: string
-        description:
-          type: string
-        link:
-          type: string
-          nullable: true
-        tagIds:
-          type: array
-          items:
-            type: string
-        spots:
-          type: array
-          items:
-            $ref: '#/components/schemas/CreateSunreiSpotInline'
-        images:
-          type: array
-          items:
-            $ref: '#/components/schemas/MultiSizeImageDTO'
+        token: { type: string }
+        expiresIn: { type: integer }
+        user:
+          $ref: '#/components/schemas/LoginResponseUser'
 
-    UpdateSunreiRequest:
+    LoginResponseUser:
       type: object
+      required: [id, username, role]
       properties:
-        title:
-          type: string
-        description:
-          type: string
-        link:
-          type: string
-          nullable: true
-        tagIds:
-          type: array
-          items:
-            type: string
-        spots:
-          type: array
-          items:
-            $ref: '#/components/schemas/UpdateSunreiSpotInline'
-        images:
-          type: array
-          items:
-            $ref: '#/components/schemas/MultiSizeImageDTO'
-
-    CreateSunreiSpotInline:
-      type: object
-      required:
-        - title
-      properties:
-        title:
-          type: string
-          maxLength: 128
-        description:
-          type: string
-        youtubeLink:
-          type: string
-          nullable: true
-        place:
-          $ref: '#/components/schemas/PlaceInput'
-          nullable: true
-        images:
-          type: array
-          items:
-            $ref: '#/components/schemas/MultiSizeImageDTO'
-
-    UpdateSunreiSpotInline:
-      type: object
-      required:
-        - title
-      properties:
-        id:
-          type: string
-          description: ID for existing spot (omit for new spots)
-        title:
-          type: string
-          maxLength: 128
-        description:
-          type: string
-        youtubeLink:
-          type: string
-          nullable: true
-        place:
-          $ref: '#/components/schemas/PlaceInput'
-          nullable: true
-        images:
-          type: array
-          items:
-            $ref: '#/components/schemas/MultiSizeImageDTO'
-        _delete:
-          type: boolean
-          description: Mark this spot for deletion
-
-    PlaceInput:
-      type: object
-      required:
-        - name
-        - address
-        - latitude
-        - longitude
-      properties:
-        id:
-          type: string
-          description: ID for existing place (omit to create new)
-        name:
-          type: string
-        address:
-          type: string
-        latitude:
-          type: number
-          format: float
-        longitude:
-          type: number
-          format: float
-        googleMapsId:
-          type: string
-          description: Google Maps Place ID for finding existing places
-
-    ImageInput:
-      type: object
-      required:
-        - url
-      properties:
-        url:
-          type: string
-        width:
-          type: integer
-        height:
-          type: integer
-
-    CreateTagRequest:
-      type: object
-      required:
-        - name
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-          nullable: true
-
-    UpdateTagRequest:
-      type: object
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-          nullable: true
+        id: { type: string }
+        username: { type: string }
+        role: { type: string }

@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "nearby": "주변",
+    "search": "검색",
+    "filters": "필터",
+    "clear": "초기화",
+    "back": "뒤로"
+  },
+  "list": {
+    "title": "지도 중심 기준 장소",
+    "placesNear": "주변 장소 {count}곳",
+    "sortedByDistance": "거리순 정렬",
+    "showList": "목록 보기",
+    "empty": "이 근처에 장소가 없어요",
+    "inVideos": "영상 {count}개",
+    "showPrevious": "이전 영역 표시 중",
+    "searchNearby": "이 주변 검색",
+    "finding": "장소를 찾는 중…",
+    "sourcesInView": "주변 소스",
+    "places": "장소",
+    "nearestFirst": "가까운 순",
+    "featuredBySources": "소스 {count}개가 소개",
+    "featuredInVideos": "영상 {count}개에 등장",
+    "andOtherSources": "외 소스 {count}개"
+  },
+  "search": {
+    "placeholder": "지역, 채널, 영상 검색",
+    "areas": "지역 및 장소",
+    "channels": "채널 및 작품",
+    "videos": "영상",
+    "noResults": "결과 없음",
+    "addSource": "소스 추가",
+    "applied": "추가됨",
+    "tapToRemove": "필터링 중 · 탭하여 제거",
+    "moveMap": "지도 이동",
+    "open": "열기",
+    "back": "검색으로"
+  },
+  "source": {
+    "clearSource": "소스 해제",
+    "noPlaces": "이 소스의 장소가 아직 없어요",
+    "watchOnYoutube": "YouTube에서 보기 ↗",
+    "whereToWatch": "보러가기 ↗",
+    "spots": "등장 장소",
+    "series": "시리즈",
+    "allSeries": "{name} · 모든 시리즈",
+    "seriesPlacesSub": "이 시리즈가 다룬 장소"
+  },
+  "detail": {
+    "mentions": "언급",
+    "context": "맥락",
+    "directions": "길찾기",
+    "backToList": "목록으로",
+    "spotCount": "장소 {count}곳",
+    "viewOnGoogleMaps": "구글맵에서 보기",
+    "googleInfo": "Google 정보",
+    "reviews": "리뷰 {count}",
+    "openNow": "영업 중",
+    "closedNow": "영업 종료",
+    "introducedBy": "이렇게 소개됐어요",
+    "sourceCount": "{count}개 소스"
+  },
+  "tags": {
+    "title": "태그로 필터",
+    "reset": "초기화",
+    "showPlaces": "장소 {count}개 보기"
+  },
+  "geo": {
+    "useLocation": "내 위치 사용",
+    "denied": "서울 표시 중",
+    "browseSeoul": "서울부터 둘러보기",
+    "primingTitle": "내 주변을 둘러보세요",
+    "primingBody": "Sunrei는 내 위치를 중심으로 주변에 소개된 장소를 보여줘요. 위치를 공유하지 않아도 어디든 둘러볼 수 있어요.",
+    "locating": "지도를 내 위치로 맞추는 중…",
+    "locatingSub": "주변 장소를 찾는 중"
+  },
+  "auth": {
+    "signIn": "Google로 로그인",
+    "signInTitle": "Sunrei에 로그인",
+    "signInBody": "지금은 로그인 전용 기능이 없어요. 곧 추가될 장소 저장·채널 팔로우를 위해 계정을 미리 연결해 둘 수 있습니다.",
+    "signInNote": "누르면 구글 계정 선택 창(브라우저 기본 UI)이 열립니다.",
+    "later": "나중에 하기",
+    "connected": "Google 계정으로 연결됨",
+    "logout": "로그아웃",
+    "failed": "로그인에 실패했어요"
+  }
+}

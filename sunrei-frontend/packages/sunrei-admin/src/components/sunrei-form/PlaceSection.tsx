@@ -1,20 +1,13 @@
-import {
-  CreateSunreiRequest,
-  PlaceInput,
-  UpdateSunreiRequest,
-} from '@/api/admin';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { MapPin, X } from 'lucide-react';
-import { useEffect } from 'react';
 import { UseFormSetValue, UseFormWatch } from 'react-hook-form';
-
-type FormData = CreateSunreiRequest | UpdateSunreiRequest;
+import { SunreiFormValue } from '@/lib/schemas';
 
 interface PlaceSectionProps {
   spotIndex: number;
-  watch: UseFormWatch<FormData>;
-  setValue: UseFormSetValue<FormData>;
+  watch: UseFormWatch<SunreiFormValue>;
+  setValue: UseFormSetValue<SunreiFormValue>;
   onOpenMap: (spotIndex: number) => void;
 }
 
@@ -24,21 +17,10 @@ export default function PlaceSection({
   setValue,
   onOpenMap,
 }: PlaceSectionProps) {
-  const place: PlaceInput | null = watch(`spots.${spotIndex}.place`) ?? null;
-
-  // Ensure place data is registered when it exists
-  useEffect(() => {
-    if (place) {
-      setValue(`spots.${spotIndex}.place.id`, place.id);
-      setValue(`spots.${spotIndex}.place.name`, place.name);
-      setValue(`spots.${spotIndex}.place.address`, place.address);
-      setValue(`spots.${spotIndex}.place.latitude`, place.latitude);
-      setValue(`spots.${spotIndex}.place.longitude`, place.longitude);
-    }
-  }, [place, spotIndex, setValue]);
+  const place = watch(`spots.${spotIndex}.place`) ?? null;
 
   const handleRemovePlace = () => {
-    setValue(`spots.${spotIndex}.place`, undefined);
+    setValue(`spots.${spotIndex}.place`, null);
   };
 
   return (
@@ -63,12 +45,12 @@ export default function PlaceSection({
             <p className="text-xs font-medium truncate">
               {place.name || 'Unnamed Place'}
             </p>
-            <p className="text-[10px] text-muted-foreground truncate">{place.address}</p>
-            {place.latitude && place.longitude && (
-              <p className="text-[10px] font-mono text-muted-foreground">
-                {place.latitude.toFixed(5)}, {place.longitude.toFixed(5)}
-              </p>
-            )}
+            <p className="text-[10px] text-muted-foreground truncate">
+              {place.address}
+            </p>
+            <p className="text-[10px] font-mono text-muted-foreground">
+              {place.latitude.toFixed(5)}, {place.longitude.toFixed(5)}
+            </p>
           </div>
           <Button
             type="button"

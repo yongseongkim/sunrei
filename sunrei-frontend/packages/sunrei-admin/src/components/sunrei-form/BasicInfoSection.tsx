@@ -1,14 +1,12 @@
-import { CreateSunreiRequest, UpdateSunreiRequest } from '@/api/admin';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
-
-type FormData = CreateSunreiRequest | UpdateSunreiRequest;
+import { SunreiFormValue } from '@/lib/schemas';
 
 interface BasicInfoSectionProps {
-  register: UseFormRegister<FormData>;
-  errors: FieldErrors<FormData>;
+  register: UseFormRegister<SunreiFormValue>;
+  errors: FieldErrors<SunreiFormValue>;
 }
 
 export default function BasicInfoSection({
@@ -22,7 +20,7 @@ export default function BasicInfoSection({
           <Label htmlFor="title">Title *</Label>
           <Input
             id="title"
-            {...register('title', { required: 'Title is required' })}
+            {...register('title')}
             placeholder="Enter Sunrei title"
           />
           {errors.title && (
@@ -44,20 +42,13 @@ export default function BasicInfoSection({
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="description">Description *</Label>
+        <Label htmlFor="description">Description</Label>
         <Textarea
           id="description"
-          {...register('description', {
-            required: 'Description is required',
-          })}
+          {...register('description')}
           rows={3}
-          placeholder="Describe this Sunrei location"
+          placeholder="Describe this Sunrei"
         />
-        {errors.description && (
-          <p className="text-sm text-destructive">
-            {errors.description.message as string}
-          </p>
-        )}
       </div>
     </div>
   );
