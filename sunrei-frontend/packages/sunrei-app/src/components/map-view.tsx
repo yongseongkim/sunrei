@@ -15,7 +15,7 @@ function toBounds(b: google.maps.LatLngBounds | null): Bounds | null {
   return { swLat: sw.lat(), swLng: sw.lng(), neLat: ne.lat(), neLng: ne.lng() };
 }
 
-type Marker = { id: string; lat: number; lng: number; label: string; dim: boolean; onClick: () => void };
+type Marker = { id: string; placeId: string; lat: number; lng: number; label: string; dim: boolean; onClick: () => void };
 
 type PinState = { label: string; active: boolean; dim: boolean };
 interface PinHandle {
@@ -129,18 +129,31 @@ function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previe
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Build the marker set: video-preview spots take over the map; else place cards.
+  // Build the marker set: the series/video-preview places take over the map; else the
+  // nearby place cards. Preview spots are deduped by place so one place = one pin (matching
+  // the place-first list), and — like the cards — tapping a pin selects+highlights that
+  // place (opens its detail).
   const markers: Marker[] = previewSpots
-    ? previewSpots.map((s, i) => ({
-        id: `spot-${s.id}`,
-        lat: s.place.latitude,
-        lng: s.place.longitude,
-        label: String(i + 1),
-        dim: false,
-        onClick: () => {},
-      }))
+    ? (() => {
+        const byPlace = new Map<string, { place: SunreiSpotDTO['place']; count: number }>();
+        for (const s of previewSpots) {
+          const e = byPlace.get(s.place.id);
+          if (e) e.count += 1;
+          else byPlace.set(s.place.id, { place: s.place, count: 1 });
+        }
+        return Array.from(byPlace.values()).map(({ place, count }) => ({
+          id: place.id,
+          placeId: place.id,
+          lat: place.latitude,
+          lng: place.longitude,
+          label: String(count),
+          dim: false,
+          onClick: () => setActivePlace(place.id),
+        }));
+      })()
     : cards.map((c) => ({
         id: c.place.id,
+        placeId: c.place.id,
         lat: c.place.latitude,
         lng: c.place.longitude,
         // Marker badge = # of videos mentioning this place (direction B), matching "In N videos".
@@ -157,7 +170,7 @@ function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previe
     const seen = new Set<string>();
     for (const m of markers) {
       seen.add(m.id);
-      const state = { label: m.label, active: m.id === activePlaceId, dim: m.dim };
+      const state = { label: m.label, active: m.placeId === activePlaceId, dim: m.dim };
       const existing = markersRef.current[m.id];
       if (existing) {
         existing.setPosition(m.lat, m.lng);
