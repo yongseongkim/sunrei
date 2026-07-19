@@ -45,6 +45,8 @@ const config: Config = {
         accent: {
           DEFAULT: 'var(--accent)',
           foreground: 'var(--accent-foreground)',
+          soft: 'var(--accent-soft)',
+          ink: 'var(--accent-ink)',
         },
         destructive: {
           DEFAULT: 'var(--destructive)',
@@ -53,6 +55,11 @@ const config: Config = {
         border: 'var(--border)',
         input: 'var(--input)',
         ring: 'var(--ring)',
+        bg2: 'var(--bg2)',
+        line: 'var(--line)',
+        line2: 'var(--line2)',
+        ink2: 'var(--ink2)',
+        ink3: 'var(--ink3)',
       },
       borderRadius: {
         sm: 'calc(var(--radius) - 4px)',

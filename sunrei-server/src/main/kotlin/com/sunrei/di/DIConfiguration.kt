@@ -8,6 +8,8 @@ import com.sunrei.auth.service.IAuthService
 import com.sunrei.service.PlaceService
 import com.sunrei.service.S3Config
 import com.sunrei.service.S3Service
+import com.sunrei.service.SearchService
+import com.sunrei.service.SourceService
 import com.sunrei.service.SunreiService
 import com.sunrei.service.SunreiSpotService
 import com.sunrei.service.TagService
@@ -29,8 +31,10 @@ object ServiceLocator {
     lateinit var userService: UserService
     lateinit var placeService: PlaceService
     lateinit var tagService: TagService
-    lateinit var sunreiSpotService: SunreiSpotService
+    lateinit var sourceService: SourceService
     lateinit var sunreiService: SunreiService
+    lateinit var sunreiSpotService: SunreiSpotService
+    lateinit var searchService: SearchService
     lateinit var authRepository: IAuthRepository
     lateinit var authService: IAuthService
 }
@@ -67,18 +71,20 @@ fun Application.configureDI() {
             ?: "sunrei-page-token-secret-change-in-production"
 
         // Create leaf services
-        val placeService = PlaceService()
+        val placeService = PlaceService(pageTokenSecret)
         val userService = UserService()
         val tagService = TagService(pageTokenSecret)
+        val sourceService = SourceService(pageTokenSecret)
 
         // Create S3Service
         val s3Service = S3Service(httpClientLazy.value, s3Config)
 
-        // Create SunreiSpotService (depends on PlaceService)
-        val sunreiSpotService = SunreiSpotService(placeService)
+        // Create SunreiService (depends on PlaceService, TagService, pageTokenSecret)
+        val sunreiService = SunreiService(placeService, tagService, pageTokenSecret)
 
-        // Create SunreiService (depends on SunreiSpotService, PlaceService, pageTokenSecret)
-        val sunreiService = SunreiService(sunreiSpotService, placeService, pageTokenSecret)
+        // Public read services
+        val sunreiSpotService = SunreiSpotService()
+        val searchService = SearchService()
 
         // Create OAuthProviderFactory (depends on config, httpClient)
         val oAuthProviderFactory = OAuthProviderFactory(config, httpClientLazy.value)
@@ -96,8 +102,10 @@ fun Application.configureDI() {
         ServiceLocator.userService = userService
         ServiceLocator.placeService = placeService
         ServiceLocator.tagService = tagService
-        ServiceLocator.sunreiSpotService = sunreiSpotService
+        ServiceLocator.sourceService = sourceService
         ServiceLocator.sunreiService = sunreiService
+        ServiceLocator.sunreiSpotService = sunreiSpotService
+        ServiceLocator.searchService = searchService
         ServiceLocator.authRepository = authRepository
         ServiceLocator.authService = authService
     }

@@ -5,9 +5,11 @@ import io.ktor.server.routing.route
 
 fun Route.appRoutes() {
     route("/api") {
-        sunreiRoutes()
-        sunreiSpotRoutes()
         mapRoutes()
+        appSourceRoutes()
+        placeRoutes()
+        sunreiRoutes()
+        searchRoutes()
         tagRoutes()
     }
 }

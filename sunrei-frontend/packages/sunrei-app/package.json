@@ -8,10 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf .next node_modules",
-    "codegen": "rm -rf src/dto && openapi-generator-cli generate -i ../../sunrei-api/app-api-spec.yaml -g typescript-axios -o src/dto --additional-properties=typescriptThreePlus=true --global-property=apiDocs=false,modelDocs=false"
+    "codegen": "rm -rf src/dto && openapi-generator-cli generate -i ../../../sunrei-api/app-api-spec.yaml -g typescript-axios -o src/dto --additional-properties=typescriptThreePlus=true --global-property=apiDocs=false,modelDocs=false"
   },
   "dependencies": {
-    "@tanstack/react-query-devtools": "^5.90.2"
+    "@tanstack/react-query-devtools": "^5.90.2",
+    "next-intl": "^4.13.0"
   },
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.20.2"

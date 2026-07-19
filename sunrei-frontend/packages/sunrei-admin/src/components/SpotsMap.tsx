@@ -1,13 +1,20 @@
 'use client';
 
-import { PlaceInput } from '@/api/admin';
 import { Wrapper } from '@googlemaps/react-wrapper';
 import { useEffect, useRef, useState } from 'react';
+
+// Structural place shape; accepts both PlaceInput and the form's place value.
+type SpotPlace = {
+  name?: string | null;
+  address?: string | null;
+  latitude?: number;
+  longitude?: number;
+} | null;
 
 interface SpotsMapProps {
   spots: Array<{
     title: string;
-    place: PlaceInput | null;
+    place: SpotPlace;
   }>;
   height?: string;
 }
@@ -60,10 +67,13 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
   useEffect(() => {
     if (!map || !window.google) return;
 
-    // Get all valid places
-    const validSpots = spots.filter(
-      (spot) => spot.place && spot.place.latitude && spot.place.longitude,
-    );
+    // Keep each spot's ORIGINAL list index so pin numbers match the SpotCard badges
+    // (a spot without a place simply gets no pin; the remaining pins keep their list numbers).
+    const validSpots = spots
+      .map((spot, originalIndex) => ({ spot, originalIndex }))
+      .filter(
+        ({ spot }) => spot.place && spot.place.latitude && spot.place.longitude,
+      );
 
     if (validSpots.length === 0) return;
 
@@ -77,7 +87,7 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
     const bounds = new google.maps.LatLngBounds();
 
     // Add markers for each spot
-    validSpots.forEach((spot, index) => {
+    validSpots.forEach(({ spot, originalIndex }) => {
       if (!spot.place) return;
 
       const position = {
@@ -119,7 +129,14 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
           point.style.fontSize = '10px';
           point.style.fontWeight = '700';
           point.style.fontFamily = '-apple-system, sans-serif';
-          point.textContent = String(this.index + 1);
+
+          // Number nudged down ~1px: a single digit's glyph sits high in the line box,
+          // so flex-centering alone leaves it looking top-heavy in the circle.
+          const num = document.createElement('span');
+          num.textContent = String(this.index + 1);
+          num.style.lineHeight = '1';
+          num.style.transform = 'translateY(0.5px)';
+          point.appendChild(num);
 
           container.appendChild(point);
 
@@ -152,7 +169,7 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
 
       const overlay = new MarkerOverlay(
         new google.maps.LatLng(position.lat, position.lng),
-        index,
+        originalIndex,
       );
       overlay.setMap(map);
       overlaysRef.current.push(overlay);

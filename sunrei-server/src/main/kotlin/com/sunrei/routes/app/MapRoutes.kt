@@ -1,95 +1,81 @@
 package com.sunrei.routes.app
 
+import com.sunrei.di.injectPlaceService
 import com.sunrei.di.injectSunreiSpotService
-import com.sunrei.database.SunreiTags
-import com.sunrei.database.Sunreis
-import com.sunrei.database.Tags
-import com.sunrei.generated.dto.app.ListMapSpots
-import com.sunrei.model.Sunrei
-import com.sunrei.model.Tag
-import com.sunrei.routes.app.converter.toMapSpotDTO
-import com.sunrei.routes.app.converter.toSunreiInfoDTO
+import com.sunrei.generated.dto.app.BoundsDTO
+import com.sunrei.generated.dto.app.ListPlacesResult
+import com.sunrei.routes.app.converter.toDTO
+import com.sunrei.service.PlaceService
 import com.sunrei.service.SunreiSpotService
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.response.respond
 import io.ktor.server.routing.Route
 import io.ktor.server.routing.get
 import io.ktor.server.routing.route
-import org.jetbrains.exposed.sql.and
-import org.jetbrains.exposed.sql.select
-import org.jetbrains.exposed.sql.transactions.transaction
 
 fun Route.mapRoutes() {
     route("/map") {
         get {
-            val sunreiSpotService: SunreiSpotService = call.injectSunreiSpotService()
-            val polygon = call.request.queryParameters["polygon"]
+            val placeService: PlaceService = call.injectPlaceService()
+            val spotService: SunreiSpotService = call.injectSunreiSpotService()
+            val p = call.request.queryParameters
 
-            if (polygon != null) {
-                try {
-                    val spots = sunreiSpotService.listInPolygon(polygon)
-                    if (spots.isEmpty()) {
-                        val result = ListMapSpots(spots = emptyList())
-                        call.respond(result)
+            val centerLat = p["centerLat"]?.toDoubleOrNull()
+            val centerLng = p["centerLng"]?.toDoubleOrNull()
+            val sourceIdsParam = p["sourceIds"]
+            val sourceIds = sourceIdsParam
+                ?.split(",")
+                ?.map { it.trim() }
+                ?.filter { it.isNotEmpty() }
+                ?: emptyList()
+
+            val placesWithDistance = when {
+                // Source mode wins: global, no viewport bound.
+                sourceIds.isNotEmpty() ->
+                    placeService.listBySourcesWithDistance(sourceIds, centerLat, centerLng)
+
+                // Nearby mode: requires viewport bounds.
+                else -> {
+                    val swLat = p["swLat"]?.toDoubleOrNull()
+                    val swLng = p["swLng"]?.toDoubleOrNull()
+                    val neLat = p["neLat"]?.toDoubleOrNull()
+                    val neLng = p["neLng"]?.toDoubleOrNull()
+                    if (swLat == null || swLng == null || neLat == null || neLng == null) {
+                        call.respond(
+                            HttpStatusCode.BadRequest,
+                            mapOf("error" to "Requires sourceIds or viewport bounds (swLat,swLng,neLat,neLng)")
+                        )
                         return@get
                     }
-
-                    val sunreiIds = spots.map { it.sunreiId }.distinct()
-
-                    // Fetch Sunrei data and build SunreiInfoDTO map
-                    val sunreiInfoMap = transaction {
-                        // Fetch sunreis
-                        val sunreiRows = Sunreis.select {
-                            (Sunreis.id inList sunreiIds) and (Sunreis.deletedAt.isNull())
-                        }.associateBy { it[Sunreis.id] }
-
-                        // Fetch tags for all sunreis
-                        val tagsMap = (SunreiTags innerJoin Tags)
-                            .select { SunreiTags.sunreiId inList sunreiIds }
-                            .map { row ->
-                                val sunreiId = row[SunreiTags.sunreiId]
-                                val tag = Tag(
-                                    id = row[Tags.id],
-                                    name = row[Tags.name],
-                                    description = row[Tags.description]
-                                )
-                                sunreiId to tag
-                            }
-                            .groupBy({ it.first }, { it.second })
-
-                        // Build SunreiInfoDTO map
-                        sunreiRows.mapValues { (sunreiId, row) ->
-                            val tags = tagsMap[sunreiId] ?: emptyList()
-                            Sunrei(
-                                id = row[Sunreis.id],
-                                title = row[Sunreis.title],
-                                description = row[Sunreis.description],
-                                link = row[Sunreis.link],
-                                images = row[Sunreis.images],
-                                spots = emptyList(), // Not needed for SunreiInfoDTO
-                                tags = tags,
-                                createdAt = row[Sunreis.createdAt],
-                                updatedAt = row[Sunreis.updatedAt]
-                            ).toSunreiInfoDTO()
-                        }
-                    }
-
-                    val mapSpots = spots.mapNotNull { spot ->
-                        val sunreiInfo = sunreiInfoMap[spot.sunreiId]
-                        sunreiInfo?.let { spot.toMapSpotDTO(it) }
-                    }
-
-                    val result = ListMapSpots(spots = mapSpots)
-                    call.respond(result)
-                } catch (e: IllegalArgumentException) {
-                    call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Invalid polygon format"))
-                    return@get
+                    placeService.listInBoundsWithDistance(swLat, swLng, neLat, neLng, centerLat, centerLng)
                 }
-            } else {
-                // Return empty result when no polygon provided
-                val result = ListMapSpots(spots = emptyList())
-                call.respond(result)
             }
+
+            val feedItems = spotService.feedByPlaces(placesWithDistance)
+            val cards = feedItems.map { it.toDTO() }
+
+            // Optional source rail: distinct sources across all mentions.
+            val sources = feedItems
+                .flatMap { it.mentions }
+                .map { it.source }
+                .distinctBy { it.id }
+                .map { it.toDTO() }
+
+            val bounds = if (sourceIds.isEmpty()) {
+                val swLat = p["swLat"]?.toDoubleOrNull()
+                val swLng = p["swLng"]?.toDoubleOrNull()
+                val neLat = p["neLat"]?.toDoubleOrNull()
+                val neLng = p["neLng"]?.toDoubleOrNull()
+                if (swLat != null && swLng != null && neLat != null && neLng != null) BoundsDTO(swLat.toFloat(), swLng.toFloat(), neLat.toFloat(), neLng.toFloat()) else null
+            } else null
+
+            call.respond(
+                ListPlacesResult(
+                    places = cards,
+                    sources = sources.ifEmpty { null },
+                    bounds = bounds
+                )
+            )
         }
     }
 }

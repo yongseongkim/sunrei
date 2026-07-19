@@ -5,6 +5,9 @@ export const config = {
   googleMaps: {
     apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
   },
+  googleAuth: {
+    clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '',
+  },
 } as const;
 
 // Type check for required environment variables

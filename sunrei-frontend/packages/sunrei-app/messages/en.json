@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "nearby": "Nearby",
+    "search": "Search",
+    "filters": "Filters",
+    "clear": "Clear",
+    "back": "Back"
+  },
+  "list": {
+    "title": "Places near map center",
+    "placesNear": "{count, plural, one {# place near you} other {# places near you}}",
+    "sortedByDistance": "Sorted by distance",
+    "showList": "Show list",
+    "empty": "No places here yet",
+    "inVideos": "In {count, plural, one {# video} other {# videos}}",
+    "showPrevious": "Showing previous area",
+    "searchNearby": "Search nearby",
+    "finding": "Finding spots…",
+    "sourcesInView": "Sources in view",
+    "places": "Places",
+    "nearestFirst": "nearest first",
+    "featuredBySources": "Featured by {count, plural, one {# source} other {# sources}}",
+    "featuredInVideos": "Featured in {count, plural, one {# video} other {# videos}}",
+    "andOtherSources": "and {count, plural, one {# other source} other {# other sources}}"
+  },
+  "search": {
+    "placeholder": "Search areas, channels, videos",
+    "areas": "Areas & places",
+    "channels": "Channels & programs",
+    "videos": "Videos",
+    "noResults": "No results",
+    "addSource": "Add source",
+    "applied": "Source added",
+    "tapToRemove": "FILTERING · TAP TO REMOVE",
+    "moveMap": "Move map",
+    "open": "Open",
+    "back": "Back to search"
+  },
+  "source": {
+    "clearSource": "Clear source",
+    "noPlaces": "No places for this source yet",
+    "watchOnYoutube": "Watch on YouTube ↗",
+    "whereToWatch": "Where to watch ↗",
+    "spots": "Spots",
+    "series": "Series",
+    "allSeries": "{name} · All series",
+    "seriesPlacesSub": "Places in this series"
+  },
+  "detail": {
+    "mentions": "Mentions",
+    "context": "Context",
+    "directions": "Directions",
+    "backToList": "Back to list",
+    "spotCount": "{count, plural, one {# spot} other {# spots}}",
+    "viewOnGoogleMaps": "View on Google Maps",
+    "googleInfo": "Google info",
+    "reviews": "{count, plural, one {# review} other {# reviews}}",
+    "openNow": "Open",
+    "closedNow": "Closed",
+    "introducedBy": "How it's featured",
+    "sourceCount": "{count, plural, one {# source} other {# sources}}"
+  },
+  "tags": {
+    "title": "Filter by tag",
+    "reset": "Reset",
+    "showPlaces": "Show {count} places"
+  },
+  "geo": {
+    "useLocation": "Use my location",
+    "denied": "Showing Seoul",
+    "browseSeoul": "Browse Seoul instead",
+    "primingTitle": "See what's around you",
+    "primingBody": "Sunrei centers the map on your location to show the places featured near you. You can browse anywhere without sharing it.",
+    "locating": "Centering the map on you…",
+    "locatingSub": "Finding places nearby"
+  },
+  "auth": {
+    "signIn": "Sign in with Google",
+    "signInTitle": "Sign in to Sunrei",
+    "signInBody": "There are no sign-in-only features yet — connect your account now for saving places and following channels, coming soon.",
+    "signInNote": "This opens the Google account chooser (browser UI).",
+    "later": "Not now",
+    "connected": "Connected with Google",
+    "logout": "Sign out",
+    "failed": "Sign-in failed"
+  }
+}

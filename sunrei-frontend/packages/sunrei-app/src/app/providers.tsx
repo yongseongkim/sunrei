@@ -2,8 +2,10 @@
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { useState } from 'react';
-import { AuthProvider } from '@/contexts/AuthContext';
+import { useEffect, useState } from 'react';
+import { useUiStore } from '@/stores/ui-store';
+
+const MOBILE_BREAKPOINT = 1024;
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(
@@ -19,11 +21,18 @@ export function Providers({ children }: { children: React.ReactNode }) {
       }),
   );
 
+  const setIsMobile = useUiStore((s) => s.setIsMobile);
+
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, [setIsMobile]);
+
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        {children}
-      </AuthProvider>
+      {children}
       {process.env.NODE_ENV === 'development' && (
         <ReactQueryDevtools initialIsOpen={false} />
       )}

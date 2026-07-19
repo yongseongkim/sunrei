@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "clean": "rm -rf .next node_modules",
-    "codegen": "rm -rf src/api/admin && openapi-generator-cli generate -i ../../sunrei-api/admin-api-spec.yaml -g typescript-axios -o src/api/admin --additional-properties=typescriptThreePlus=true,apiPackage=admin,modelPackage=admin --global-property=apiDocs=false,modelDocs=false"
+    "codegen": "rm -rf src/api/admin && openapi-generator-cli generate -i ../../../sunrei-api/admin-api-spec.yaml -g typescript-axios -o src/api/admin --additional-properties=typescriptThreePlus=true,apiPackage=admin,modelPackage=admin --global-property=apiDocs=false,modelDocs=false"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
