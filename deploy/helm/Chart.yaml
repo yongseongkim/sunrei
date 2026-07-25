@@ -2,8 +2,8 @@ apiVersion: v2
 name: sunrei
 description: Sunrei application - 성지순례 지도 플랫폼
 type: application
-version: 0.14.3
-appVersion: "v0.14.3"
+version: 0.14.4
+appVersion: "v0.14.4"
 keywords:
   - sunrei
 maintainers:
