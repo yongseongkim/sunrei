@@ -80,7 +80,7 @@ CREATE INDEX idx_sunrei_deleted_at ON sunrei(deleted_at);
 -- SunreiSpot: one mention of a place under a Sunrei.
 CREATE TABLE sunrei_spot (
   id VARCHAR(32) PRIMARY KEY,
-  title VARCHAR(128) NOT NULL, description TEXT, context TEXT, youtube_link VARCHAR(255),
+  title VARCHAR(128) NOT NULL, context TEXT, youtube_link VARCHAR(255),
   images JSONB NOT NULL DEFAULT '[]'::jsonb,
   place_id VARCHAR(32) NOT NULL REFERENCES place(id),
   sunrei_id VARCHAR(32) NOT NULL REFERENCES sunrei(id) ON DELETE CASCADE,

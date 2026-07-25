@@ -93,12 +93,6 @@ export default function SpotCard({
               placeholder="Context — what this source says here (e.g. 7화에서 울며 식사한 식당)"
               className="text-xs resize-none"
             />
-            <Textarea
-              {...register(`spots.${index}.description` as const)}
-              rows={3}
-              placeholder="Spot description"
-              className="text-sm resize-none"
-            />
           </div>
         </div>
         <PlaceSection

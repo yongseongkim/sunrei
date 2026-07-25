@@ -196,7 +196,6 @@ class SunreiSpotService {
                 id = spotId,
                 sunreiId = row[SunreiSpots.sunreiId],
                 title = row[SunreiSpots.title],
-                description = row[SunreiSpots.description],
                 context = row[SunreiSpots.context],
                 youtubeLink = row[SunreiSpots.youtubeLink],
                 images = row[SunreiSpots.images],

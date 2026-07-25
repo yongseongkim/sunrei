@@ -51,7 +51,6 @@ fun SunreiSpot.toDTO(): SunreiSpotDTO = SunreiSpotDTO(
     id = id,
     sunreiId = sunreiId,
     title = title,
-    description = description,
     context = context,
     youtubeLink = youtubeLink,
     images = images.map { it.toDTO() },

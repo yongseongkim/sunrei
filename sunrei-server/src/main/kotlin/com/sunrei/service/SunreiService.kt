@@ -213,13 +213,13 @@ class SunreiService(
 
     private fun createSunreiSpot(sunreiId: String, spot: CreateSunreiSpotInline): String =
         doCreateSpot(
-            sunreiId, spot.title, spot.description, spot.context, spot.youtubeLink,
+            sunreiId, spot.title, spot.context, spot.youtubeLink,
             spot.place, spot.images, spot.tagIds, spot.tagLabels
         )
 
     private fun createSunreiSpot(sunreiId: String, spot: UpdateSunreiSpotInline): String =
         doCreateSpot(
-            sunreiId, spot.title, spot.description, spot.context, spot.youtubeLink,
+            sunreiId, spot.title, spot.context, spot.youtubeLink,
             spot.place, spot.images, spot.tagIds, spot.tagLabels
         )
 
@@ -227,7 +227,6 @@ class SunreiService(
     private fun doCreateSpot(
         sunreiId: String,
         title: String,
-        description: String?,
         context: String?,
         youtubeLink: String?,
         place: PlaceInput?,
@@ -242,7 +241,6 @@ class SunreiService(
         val spotId = SunreiSpots.insertAndGetId { stmt ->
             stmt[SunreiSpots.sunreiId] = sunreiId
             stmt[SunreiSpots.title] = title
-            stmt[SunreiSpots.description] = description
             stmt[SunreiSpots.context] = context
             stmt[SunreiSpots.placeId] = placeId
             stmt[SunreiSpots.youtubeLink] = youtubeLink
@@ -261,7 +259,6 @@ class SunreiService(
     private fun updateSunreiSpot(spotId: String, spot: UpdateSunreiSpotInline) {
         SunreiSpots.update({ SunreiSpots.id eq spotId }) { stmt ->
             stmt[SunreiSpots.title] = spot.title
-            spot.description?.let { stmt[SunreiSpots.description] = it }
             spot.context?.let { stmt[SunreiSpots.context] = it }
             spot.youtubeLink?.let { stmt[SunreiSpots.youtubeLink] = it }
             spot.place?.let { placeInput ->
@@ -384,7 +381,6 @@ class SunreiService(
                     id = spotId,
                     sunreiId = row[SunreiSpots.sunreiId],
                     title = row[SunreiSpots.title],
-                    description = row[SunreiSpots.description],
                     context = row[SunreiSpots.context],
                     youtubeLink = row[SunreiSpots.youtubeLink],
                     images = row[SunreiSpots.images],

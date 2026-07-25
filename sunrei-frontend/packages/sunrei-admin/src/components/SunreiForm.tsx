@@ -107,7 +107,6 @@ export default function SunreiForm({
       const spots = (sunreiData.spots || []).map((s) => ({
         id: s.id,
         title: s.title,
-        description: s.description ?? '',
         context: s.context ?? '',
         youtubeLink: s.youtubeLink ?? '',
         place: s.place ?? null,
