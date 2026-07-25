@@ -735,7 +735,6 @@ components:
         id: { type: string }
         sunreiId: { type: string }
         title: { type: string, maxLength: 128 }
-        description: { type: string, nullable: true }
         context: { type: string, nullable: true, description: What this source says here. }
         youtubeLink: { type: string, nullable: true }
         images:
@@ -820,7 +819,6 @@ components:
       required: [title]
       properties:
         title: { type: string, maxLength: 128 }
-        description: { type: string, nullable: true }
         context: { type: string, nullable: true }
         youtubeLink: { type: string, nullable: true }
         place:
@@ -846,7 +844,6 @@ components:
       properties:
         id: { type: string, description: ID for existing spot (omit for new spots) }
         title: { type: string, maxLength: 128 }
-        description: { type: string, nullable: true }
         context: { type: string, nullable: true }
         youtubeLink: { type: string, nullable: true }
         place:

@@ -615,12 +615,6 @@ export interface SunreiSpotDTO {
      */
     'title': string;
     /**
-     * 
-     * @type {string}
-     * @memberof SunreiSpotDTO
-     */
-    'description'?: string | null;
-    /**
      * What this source says here (\"7화에서 주인공이 울며 식사한 식당\").
      * @type {string}
      * @memberof SunreiSpotDTO

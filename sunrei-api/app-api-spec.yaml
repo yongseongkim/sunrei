@@ -306,7 +306,6 @@ components:
         id: { type: string }
         sunreiId: { type: string }
         title: { type: string, maxLength: 128 }
-        description: { type: string, nullable: true }
         context:
           type: string
           nullable: true
