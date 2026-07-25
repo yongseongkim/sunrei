@@ -49,7 +49,6 @@ export interface CreateSunreiRequest {
 }
 export interface CreateSunreiSpotInline {
     'title': string;
-    'description'?: string | null;
     'context'?: string | null;
     'youtubeLink'?: string | null;
     'place'?: PlaceInput | null;
@@ -235,7 +234,6 @@ export interface SunreiSpotDTO {
     'id': string;
     'sunreiId': string;
     'title': string;
-    'description'?: string | null;
     /**
      * What this source says here.
      */
@@ -285,7 +283,6 @@ export interface UpdateSunreiSpotInline {
      */
     'id'?: string;
     'title': string;
-    'description'?: string | null;
     'context'?: string | null;
     'youtubeLink'?: string | null;
     'place'?: PlaceInput | null;
