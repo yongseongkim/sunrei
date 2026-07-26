@@ -12,7 +12,7 @@ Create a Sunrei entity with SunreiSpots via the server admin API using collected
 - `.claude/workspace/youtube/{ID}/video_info.json` must exist
 - `.claude/workspace/youtube/{ID}/locations.json` must exist
 - The sunrei-server must be running (for API calls in Steps 2–5)
-- `SUNREI_ADMIN_TOKEN` must be set in `.claude/.env`. If missing or expired, tell the user to run: `uv run --with requests python .claude/scripts/auth/login.py`
+- Admin API access, minted locally in Step 2 — no login flow. Requires `sops` plus GCP credentials with decrypt permission on the homelab KMS key (`gcloud auth application-default login` if decryption fails).
 - `aws-vault` and `aws` CLI must be installed (for S3 registry access in Steps 1.5 and 6)
 
 ## Steps
@@ -75,13 +75,19 @@ curl -s http://localhost:3030/health
 
 If the health check fails, ask the user to start the server first.
 
-Read the admin token from `.claude/.env`:
+Mint a short-lived admin token for the API calls in Steps 4–6:
 
 ```bash
-TOKEN=$SUNREI_ADMIN_TOKEN
+TOKEN=$(python3 .claude/scripts/auth/mint_token.py)
 ```
 
-The token is auto-loaded by `_load_dot_env()` from `.claude/.env`. If `SUNREI_ADMIN_TOKEN` is not set, tell the user to run: `uv run --with requests python .claude/scripts/auth/login.py`
+This signs an admin JWT with the server's `auth-jwt-secret` (decrypted from
+`deploy/secrets/secrets.enc.yaml` via SOPS), so no browser login is needed. The token
+lasts 60 minutes — keep it in the shell variable and never write it to a file. If the
+ingest run outruns the token, mint another one; pass `--minutes N` for a longer window.
+
+If minting fails with a decryption error, the GCP credentials lack KMS decrypt permission —
+tell the user to run `gcloud auth application-default login`.
 
 ### 3. Compose Sunrei Details
 
