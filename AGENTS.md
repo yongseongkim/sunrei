@@ -48,6 +48,7 @@ SunreiSpot에 연결되는 bilingual 태그. `label_en`, `label_ko`를 가지며
 - Release flow: `scripts/release.sh` → auto-increment version → create and push tag → GitHub Actions builds images → GitHub Actions updates Helm chart → ArgoCD auto-syncs
 - Version convention: git tags use `v` prefix (`v0.12.0`), image tags and chart `version` strip it (`0.12.0`), chart `appVersion` keeps it (`v0.12.0`)
 - Verify deployment: `kubectl get pods -n sunrei`, `argocd app get sunrei`
+- Secrets: `deploy/secrets/secrets.enc.yaml` (SOPS + GCP KMS, rules in `.sops.yaml`) — 수동 적용: `sops -d ... | kubectl create/replace -f -` (`kubectl apply` 금지)
 - Common issue: `ImagePullBackOff` — check for `v` prefix mismatch between chart values and actual image tags
 
 자세한 내용은 `deploy/README.md` 참고.

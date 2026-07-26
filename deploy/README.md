@@ -85,11 +85,23 @@ deploy/helm/
 
 ## Secrets
 
-Secrets are stored in a manually-created Kubernetes secret:
+Secrets live in this repo at `deploy/secrets/secrets.enc.yaml` — a Kubernetes
+Secret manifest encrypted with [SOPS](https://github.com/getsops/sops) + Google
+Cloud KMS (rules in `.sops.yaml` at the repo root). Values are encrypted; key
+names stay readable, so the file itself documents which keys the project uses.
 
+Editing and applying (requires GCP credentials with decrypt permission on the
+KMS key):
+
+```bash
+sops deploy/secrets/secrets.enc.yaml                         # edit in place
+sops -d deploy/secrets/secrets.enc.yaml | kubectl create -f -  # first apply
+sops -d deploy/secrets/secrets.enc.yaml | kubectl replace -f - # re-apply
 ```
-kubectl -n sunrei get secret sunrei-secrets
-```
+
+Never client-side `kubectl apply` a decrypted Secret — it leaks the plaintext
+into the `last-applied-configuration` annotation. ArgoCD does not manage this
+file; applying it is a manual step.
 
 Required keys:
 
