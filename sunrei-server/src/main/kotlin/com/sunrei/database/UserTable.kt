@@ -3,14 +3,15 @@ package com.sunrei.database
 import org.jetbrains.exposed.sql.kotlin.datetime.timestamp
 import org.jetbrains.exposed.sql.ReferenceOption
 
-object UserTable : ULIDTimestampedTable("users", "U") {
+// "user" is a Postgres reserved word; Exposed quotes it automatically in generated SQL.
+object UserTable : ULIDTimestampedTable("user", "U") {
     val email = varchar("email", 255).uniqueIndex()
     val name = varchar("name", 255).nullable()
     val role = varchar("role", 20).default("user")
         .check { it inList(listOf("user", "admin")) }
 }
 
-object OAuthProviderTable : ULIDTimestampedTable("oauth_providers", "OAUTH") {
+object OAuthProviderTable : ULIDTimestampedTable("oauth_provider", "OAUTH") {
     val userId = varchar("user_id", 32).references(UserTable.id, ReferenceOption.CASCADE)
     val provider = varchar("provider", 64)
     val providerUserId = varchar("provider_user_id", 64)

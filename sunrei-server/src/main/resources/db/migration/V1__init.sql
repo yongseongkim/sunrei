@@ -90,27 +90,28 @@ CREATE TABLE sunrei_spot (
 CREATE INDEX idx_sunrei_spot_sunrei_id_deleted_at ON sunrei_spot(sunrei_id, deleted_at);
 CREATE INDEX idx_sunrei_spot_place_id_deleted_at ON sunrei_spot(place_id, deleted_at);
 
--- Spot-level tag join (replaces the old sunrei-level sunrei_tags).
-CREATE TABLE sunrei_spot_tags (
+-- Spot-level tag join (replaces the old sunrei-level sunrei_tag).
+CREATE TABLE sunrei_spot_tag (
   sunrei_spot_id VARCHAR(32) NOT NULL REFERENCES sunrei_spot(id) ON DELETE CASCADE,
   tag_id VARCHAR(32) NOT NULL REFERENCES tag(id) ON DELETE CASCADE,
   PRIMARY KEY (sunrei_spot_id, tag_id));
-CREATE INDEX idx_sst_tag_id ON sunrei_spot_tags(tag_id);
+CREATE INDEX idx_sunrei_spot_tag_tag_id ON sunrei_spot_tag(tag_id);
 
 -- Auth tables (existing shape, unchanged behavior).
-CREATE TABLE users (
+-- "user" is a reserved word in Postgres, so it stays double-quoted everywhere.
+CREATE TABLE "user" (
   id VARCHAR(32) PRIMARY KEY,
   email VARCHAR(255) UNIQUE NOT NULL,
   name VARCHAR(255),
   role VARCHAR(20) DEFAULT 'user' CHECK (role IN ('user', 'admin')),
   created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP);
-CREATE INDEX idx_users_email ON users(email);
-CREATE INDEX idx_users_role ON users(role);
+CREATE INDEX idx_user_email ON "user"(email);
+CREATE INDEX idx_user_role ON "user"(role);
 
-CREATE TABLE oauth_providers (
+CREATE TABLE oauth_provider (
   id VARCHAR(32) PRIMARY KEY,
-  user_id VARCHAR(32) NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  user_id VARCHAR(32) NOT NULL REFERENCES "user"(id) ON DELETE CASCADE,
   provider VARCHAR(64) NOT NULL,
   provider_user_id VARCHAR(64) NOT NULL,
   provider_data TEXT,
@@ -121,12 +122,12 @@ CREATE TABLE oauth_providers (
   updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
   UNIQUE(user_id, provider),
   UNIQUE(provider, provider_user_id));
-CREATE INDEX idx_oauth_providers_user_id ON oauth_providers(user_id);
-CREATE INDEX idx_oauth_providers_provider ON oauth_providers(provider);
+CREATE INDEX idx_oauth_provider_user_id ON oauth_provider(user_id);
+CREATE INDEX idx_oauth_provider_provider ON oauth_provider(provider);
 
 -- Folded admin reseed (previously V4): one admin account so Google OAuth
 -- (linked by email on first login) can access the admin after the content wipe.
-INSERT INTO users (id, email, name, role, created_at, updated_at)
+INSERT INTO "user" (id, email, name, role, created_at, updated_at)
 VALUES (
   'U00000000000000000000000000',
   'nelson@vcnc.co.kr',
