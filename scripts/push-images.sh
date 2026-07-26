@@ -85,7 +85,7 @@ build_image() {
     fi
 
     # Load .env file for the specific app (for Next.js apps only)
-    local env_file="${image_name}/.env"
+    local env_file="sunrei-frontend/packages/${image_name}/.env"
     local build_args=""
 
     if [ -f "$env_file" ]; then

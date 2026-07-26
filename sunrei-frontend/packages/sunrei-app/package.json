@@ -15,6 +15,7 @@
     "next-intl": "^4.13.0"
   },
   "devDependencies": {
-    "@openapitools/openapi-generator-cli": "^2.20.2"
+    "@openapitools/openapi-generator-cli": "^2.20.2",
+    "@types/google.maps": "^3.58.1"
   }
 }
