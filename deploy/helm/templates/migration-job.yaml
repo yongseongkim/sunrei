@@ -23,14 +23,14 @@ spec:
             - name: DATABASE_HOST
               valueFrom:
                 secretKeyRef:
-                  name: sunrei-secrets
+                  name: sunrei-infra-secrets
                   key: database-host
             - name: FLYWAY_USER
               value: "postgres"
             - name: FLYWAY_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: sunrei-secrets
+                  name: sunrei-infra-secrets
                   key: database-password
           resources:
             limits:
