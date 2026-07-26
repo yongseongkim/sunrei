@@ -59,29 +59,65 @@ OCR output: yt-dlp download progress logs can mix with JSON stdout. When parsing
    - 자막 전환이 빠른 영상에서는 `--interval 0.5` 등으로 샘플링 간격을 줄여 누락을 방지한다 (기본값: 1.0초).
    - 채널 로고가 자막 영역에 겹치면 필터링에 의해 자막까지 함께 제거될 수 있다. 이 경우 OCR 결과가 비정상적으로 적다면 원본 프레임을 확인해볼 것.
 
-### Rate Limiting
+### 요청 제한 (Rate Limiting)
 
-youtube-transcript-api commonly hits rate limits (HTTP 429) with rapid automated requests, resulting in temporary blocks.
+youtube-transcript-api는 자동화된 요청을 빠르게 보내면 YouTube의 봇 차단(IP 차단)에 걸린다. 실패는 이런 모습이다:
 
-Known limits:
+```
+"Could not retrieve a transcript for the video ... This is most likely caused by:
+- YouTube is blocking requests from your IP ...
+- You have done too many requests and your IP has been blocked by YouTube"
+```
 
-- ~5 requests per 10 seconds
-- Free third-party providers: ~1000 requests per hour
-- High-volume automated scraping triggers YouTube's anti-bot policies
+이 오류는 원인이 두 가지인데 메시지만으로는 구분되지 않는다:
+(a) 영상에 자막이 정말 없거나, (b) IP가 차단된 경우다. 연달아 나오면 (b)로, 잘 받다가 한 번만 튀면 (a)로 본다.
 
-Mitigation:
+#### 실측 결과 (2026-07, 육식맨 82편 재생목록에서 확인)
 
-- Single videos: Add 10-22 second delay between requests
-- Playlists: Wait ~60 seconds between videos. Inform the user of progress
-- yt-dlp: Use `--sleep-interval 15` or `--min-sleep-interval 6 --max-sleep-interval 12`
-- On 429 errors: Use exponential backoff (wait longer after each retry), do NOT immediately retry
+차단은 미리 걸려 있던 IP 표시가 아니라 요청 속도로 발동한다. 새 IP도 요청 15~20번 만에 똑같이
+차단됐다. 기준이 일정 시간 동안의 요청 수라서, 요청 간격을 ~30초 아래로 둬도 소용없다:
 
-Batch processing: For playlists with many videos (>10), create a batch Python script rather than running individual commands. The script should:
+| 간격 | 결과 |
+|------|------|
+| 14초 | 약 17번 만에 차단 |
+| 20초 | 약 10~20번 만에 차단 |
+| 60~90초 | 25번, 차단 없음 |
 
-- Handle rate limiting internally (see Rate Limiting section above)
-- Track success/failure per video
-- Save raw results to `transcripts_raw.json`
-- Report summary at the end (N success, N failed, N OCR fallback needed)
+IP를 바꿔 우회하려 하지 말고 속도를 늦춘다. 영상마다 60~90초씩 천천히 흘려보내면 기준 아래로
+유지되어 차단 없이 재생목록을 끝까지 받는다.
+
+한 가지 더 확인된 점: yt-dlp로도 못 피한다. `yt-dlp --write-auto-subs`는 같은 자막 다운로드
+엔드포인트에서 429가 나고, `--impersonate`나 `--js-runtimes deno`도 소용없다(요청 제한이 봇
+탐지가 아니라 다운로드 엔드포인트에 걸려 있다). YouTube Data API의 `captions.download`는 본인
+소유가 아닌 채널의 자막은 받을 수 없다.
+
+#### 대응 방법
+
+- 단일 영상: 그냥 요청해도 된다.
+- 재생목록: 영상 사이에 60~90초를 무작위로 둔다(예: `random.uniform(60, 90)`). 14~20초 간격은
+  쓰지 않는다 — 매번 15~20번쯤에서 벽에 부딪힌다.
+- IP 차단 오류가 나면: 다음 영상으로 넘기지도, 곧바로 재시도하지도 않는다. 길게(예: 600초)
+  기다린 뒤 같은 영상을 다시 시도한다. 그 사이 요청 카운트가 초기화될 여지가 생긴다.
+- 연속으로 기다리는 횟수에 상한을 둔다(예: 4번이면 중단). 계속 차단당하는 실행이 무한히 도는 대신 멈추도록.
+
+#### 일괄 처리
+
+영상이 많은 재생목록(>10)은 명령을 하나씩 돌리거나 작업 폴더마다 새 스크립트를 쓰지 말고,
+공용 일괄 스크립트를 쓴다:
+
+```bash
+uv run --with youtube-transcript-api --with python-dotenv \
+  python .claude/scripts/youtube/fetch_playlist_transcripts.py "{ID}"
+```
+
+`{ID}`는 `.claude/workspace/youtube/` 아래 작업 폴더의 이름이다. 이 스크립트는 `video_info.json`의
+`selectedVideos`를 읽어 작업 폴더에 `transcripts_raw.json`을 쓰며, 위 내용을 전부 구현한다:
+
+- 영상 사이 60~90초 무작위 대기.
+- IP 차단 오류 시: 약 600초 멈췄다가 같은 영상 재시도, 연속 4번이면 중단.
+- 이어받기: 이미 받은 영상은 건너뛰고 오류 난 것만 다시 받으며, 영상마다 결과를 저장한다 —
+  중간에 끊겨도 같은 명령을 다시 돌리면 이어진다.
+- 끝에 요약 출력(성공 N개, 자막 없음 N개).
 
 ### 3. Audit and Clean Transcript
 
@@ -91,7 +127,7 @@ For each transcript, analyze and clean the text:
 2. Remove noise: "[음악]", "[박수]", "[웃음]" markers, repeated filler words
 3. Fix formatting: Merge broken sentences, fix punctuation
 4. Preserve timestamps: Keep segment timing information intact
-5. Identify key sections: Note sections that mention places, restaurants, attractions
+5. Identify key sections: Note sections that mention places, restaurants, attractions — especially the food/menu commentary (dish names, how it's cooked and served, taste, and the creator's reaction) with their timestamps. This narration is the primary source for the per-place descriptions in `youtube-extract-locations`, so carry it forward instead of trimming it as filler.
 
 #### 전후 문맥 참조를 통한 교정
 
