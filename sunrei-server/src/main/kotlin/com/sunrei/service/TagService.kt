@@ -179,7 +179,7 @@ class TagService(
         } > 0
     }
 
-    /** Hard delete a tag (cascades to sunrei_spot_tags). */
+    /** Hard delete a tag (cascades to sunrei_spot_tag). */
     fun delete(id: String): Boolean = transaction {
         Tags.deleteWhere { Tags.id eq id } > 0
     }
