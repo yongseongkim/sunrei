@@ -59,6 +59,15 @@ The output (if the file exists) is a per-channel registry with a `sunreis` array
 - If the file exists: parse the JSON, display the count of existing sunreis and total spots, then ask the user whether to proceed with creating another Sunrei or abort.
 - If the command fails (exit code 1, file not found): no existing registry, continue normally.
 
+레지스트리는 오래됐을 수 있다. 운영 DB를 초기화하고 나면 이미 없는 ID를 가리킨다.
+이미 등록된 것으로 넘기기 전에, 레지스트리의 `sunreiId` 하나를 실제 API로 확인한다:
+
+```bash
+curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/sunreis/{sunreiId}"
+```
+
+404가 나오면 레지스트리를 무시하고 전부 새로 만든 뒤, 6단계에서 레지스트리를 덮어쓴다.
+
 ### 2. Get Server Configuration
 
 Ask the user for:
@@ -88,6 +97,9 @@ ingest run outruns the token, mint another one; pass `--minutes N` for a longer 
 
 If minting fails with a decryption error, the GCP credentials lack KMS decrypt permission —
 tell the user to run `gcloud auth application-default login`.
+
+curl 대신 Python으로 운영 API를 호출할 때는 실제 `User-Agent` 헤더를 넣는다(예: `sunrei-ingest/1.0`).
+Python 기본 urllib User-Agent에는 Cloudflare가 403을 돌려주지만, 같은 요청도 curl로는 성공한다.
 
 ### 3. Compose Sunrei Details
 
@@ -172,7 +184,7 @@ every video in the playlist attaches to the single Sunrei composed in step 3.
 ```json
 {
   "title": "시부야의 맛있는 야키토리 맛집 투어",
-  "context": "영상에서 방문한 야키토리 전문점. 비장탄으로 굽는 것이 특징이며, 특히 쓰쿠네와 레바가 인기 메뉴로 극찬을 받았다.",
+  "context": "시부야 뒷골목 야키토리 투어에서 방문한 카운터 10석 규모의 노포. 대표 메뉴는 비장탄에 구운 쓰쿠네와 레바로, 쓰쿠네는 겉을 바삭하게 구운 뒤 노른자에 찍어 먹고(육즙이 팡 터진다고 표현), 레바는 비린내 없이 부드럽다고 강조했다 (12:30).",
   "description": "",
   "images": [],
   "youtubeLink": "https://youtube.com/watch?v=VIDEO_ID&t=123",
@@ -189,8 +201,9 @@ every video in the playlist attaches to the single Sunrei composed in step 3.
 
 - `title` = video title, truncated to 128 chars if needed (each video is a "scene/episode" within the playlist)
 - `context` = **map directly from `locations[].description`** in `locations.json` — that field
-  is the 2–3 sentence per-place summary (video concept + what makes this place notable) and
-  is exactly the spot context. Do NOT leave it empty and do NOT re-derive it.
+  is the per-place description (음식점 소개 + 음식/메뉴 묘사와 영상 속 코멘트) and is exactly the
+  spot context, the only editorial text the public map card shows. Do NOT leave it empty, do NOT
+  re-derive it, and do NOT trim the food detail away.
 - `description` = optional longer description; leave empty (`""`) for ingest
 - `images` = empty array `[]`
 - `youtubeLink` = `locations[].videoUrlWithTimestamp` (the video URL with the mention's `&t=`)
@@ -238,6 +251,18 @@ curl -s -X POST "{SERVER_URL}/admin/sunreis" \
 ```
 
 Note: there is no top-level `tagIds` on the Sunrei — tags are per-spot (`spots[].tagIds` / `spots[].tagLabels`).
+
+위 소스 해석·spot 구성·409 처리를 한 번에 하는 스크립트가 있다. 워크스페이스 하나를 받아
+dry-run으로 만들 내용을 먼저 보여주고, `--commit`에서만 실제로 생성한다(기본 초안, `--publish` 시 공개):
+
+```bash
+uv run python .claude/scripts/youtube/create_sunrei.py <ID> [--prod] [--commit] \
+  [--summary "트랜스크립트 기반 한 줄 요약"] [--tag-ids a,b]
+```
+
+여러 재생목록은 이 명령을 워크스페이스마다 반복한다. 다만 태그 선택·spot 검토 같은 대화형 확인을
+건너뛰므로, 요약은 `--summary`로 직접 넘기고(트랜스크립트 기반) 생성 뒤 admin에서 검토한다.
+성공 시 `_create_manifest.json`을 남기니 6단계 S3 레지스트리 갱신에 쓴다.
 
 ### 6. Handle Response
 
@@ -288,6 +313,20 @@ On error:
 - Display the error message
 - Offer to retry with corrections
 - Common errors: missing required fields, invalid tag IDs
+
+### 6.5. 기존 Sunrei 수정하기
+
+수정은 `PUT {SERVER_URL}/admin/sunreis/{id}`로 한다:
+
+- 최상위 필드(`title`, `summary`, `description`, `link`, `images`, `published`, `sourceId`)는
+  선택이라, 담아 보낸 필드만 바뀐다.
+- `spots`는 통째로 교체가 아니라 병합이다. `id`가 있는 항목은 해당 spot을 수정하고
+  (`title`은 모든 항목에 필수, 나머지는 선택), `id`가 없는 항목은 새 spot을 만들며,
+  `{"id": "SS...", "delete": true}`는 삭제 표시(soft-delete)한다. 배열에 없는 spot은 그대로 둔다.
+- Sunrei 하나당 PUT은 한 번에 하나씩 보낸다. PUT을 겹쳐 보내면(예: 여러 spot 이름을 병렬로 수정)
+  요청이 서로 엉켜 Sunrei 상태가 어긋난다. 바꿀 내용은 방금 받은 `GET /admin/sunreis/{id}` 위에
+  모아 한 요청으로 보낸다.
+- 이미 상태가 꼬였다면, Sunrei를 지우고 `locations.json`에서 다시 만드는 편이 하나씩 고치는 것보다 빠르고 안전하다.
 
 ### 7. Cleanup (Optional)
 

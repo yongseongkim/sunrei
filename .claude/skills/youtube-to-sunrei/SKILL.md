@@ -57,7 +57,7 @@ Checkpoint: User must approve location list before Sunrei creation.
 
 Execute the `/youtube-create-sunrei` skill.
 
-- Admin authentication is minted locally — `TOKEN=$(python3 .claude/scripts/auth/mint_token.py)`, no login flow. Needs `sops` + GCP KMS decrypt permission
+- 관리자 인증은 로그인 없이 로컬에서 발급한다 — `TOKEN=$(python3 .claude/scripts/auth/mint_token.py)`. `sops` + GCP KMS decrypt 권한이 필요하다(스크립트가 스킬 안에서 자동으로 발급하므로 별도 export는 불필요)
 - One playlist/trip = one Sunrei: title = playlist title, link = playlist URL, summary/description derived from transcripts; the channel becomes the Source. Select tags if available
 - Build SunreiSpots from extracted locations (spot `context` = each location's per-place summary)
 - Create via server admin API (all requests require `Authorization: Bearer ${TOKEN}` header)
