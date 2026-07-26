@@ -82,7 +82,7 @@ server:
     - name: DATABASE_HOST
       valueFrom:
         secretKeyRef:
-          name: sunrei-secrets
+          name: sunrei-infra-secrets
           key: database-host
     - name: DATABASE_PORT
       value: "5432"
@@ -93,7 +93,7 @@ server:
     - name: DATABASE_PASSWORD
       valueFrom:
         secretKeyRef:
-          name: sunrei-secrets
+          name: sunrei-infra-secrets
           key: database-password
     - name: JWT_PAGE_TOKEN_SECRET
       valueFrom:

@@ -85,26 +85,45 @@ deploy/helm/
 
 ## Secrets
 
-Secrets are stored in a manually-created Kubernetes secret:
+Secrets are split into two Kubernetes Secrets by ownership:
 
+- **`sunrei-secrets`** (app-owned) — managed in this repo at
+  `deploy/secrets/secrets.enc.yaml`, a Secret manifest encrypted with
+  [SOPS](https://github.com/getsops/sops) + Google Cloud KMS (rules in
+  `.sops.yaml` at the repo root). Values are encrypted; key names stay
+  readable, so the file itself documents which keys the project uses.
+- **`sunrei-infra-secrets`** (infrastructure-dependent: `database-host`,
+  `database-password`) — managed in the homelab-infra repo
+  (`k8s/sunrei/infra-secrets.enc.yaml`). These change when the app moves to a
+  different cluster/DB, so they live with the infrastructure.
+
+Editing and applying (requires GCP credentials with decrypt permission on the
+KMS key):
+
+```bash
+sops deploy/secrets/secrets.enc.yaml                         # edit in place
+sops -d deploy/secrets/secrets.enc.yaml | kubectl create -f -  # first apply
+sops -d deploy/secrets/secrets.enc.yaml | kubectl replace -f - # re-apply
 ```
-kubectl -n sunrei get secret sunrei-secrets
-```
+
+Never client-side `kubectl apply` a decrypted Secret — it leaks the plaintext
+into the `last-applied-configuration` annotation. ArgoCD does not manage these
+files; applying them is a manual step.
 
 Required keys:
 
-| Key | Used by |
-|-----|---------|
-| `google-maps-api-key` | admin, app |
-| `google-maps-map-id` | admin |
-| `google-oauth-client-id` | admin, app, server |
-| `google-oauth-client-secret` | server |
-| `database-host` | server |
-| `database-password` | server |
-| `jwt-page-token-secret` | server |
-| `aws-access-key-id` | server |
-| `aws-secret-access-key` | server |
-| `auth-jwt-secret` | server |
+| Key | Secret | Used by |
+|-----|--------|---------|
+| `google-maps-api-key` | sunrei-secrets | admin, app |
+| `google-maps-map-id` | sunrei-secrets | admin |
+| `google-oauth-client-id` | sunrei-secrets | admin, app, server |
+| `google-oauth-client-secret` | sunrei-secrets | server |
+| `jwt-page-token-secret` | sunrei-secrets | server |
+| `aws-access-key-id` | sunrei-secrets | server |
+| `aws-secret-access-key` | sunrei-secrets | server |
+| `auth-jwt-secret` | sunrei-secrets | server |
+| `database-host` | sunrei-infra-secrets | server, migration |
+| `database-password` | sunrei-infra-secrets | server, migration |
 
 If a key is missing, the pod will fail to start with `CreateContainerConfigError`.
 

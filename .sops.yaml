@@ -1,0 +1,17 @@
+# SOPS encryption rules.
+#
+# The sunrei Kubernetes Secret lives in deploy/secrets/secrets.enc.yaml,
+# encrypted with SOPS + Google Cloud KMS. Safe to commit: values are
+# encrypted, key names stay readable so you can see at a glance which
+# keys the project uses. Decrypting requires GCP application-default
+# credentials with cloudkms decrypt permission on the key below.
+#
+# Apply (never client-side `kubectl apply` — it leaks plaintext into the
+# last-applied-configuration annotation):
+#   sops -d deploy/secrets/secrets.enc.yaml | kubectl create -f -   # or replace
+
+creation_rules:
+  # k8s Secret manifests: encrypt only data/stringData values.
+  - path_regex: \.enc\.yaml$
+    gcp_kms: projects/default-487602/locations/asia-northeast3/keyRings/homelab-secrets/cryptoKeys/sops-key
+    encrypted_regex: ^(data|stringData)$
