@@ -30,8 +30,9 @@ export default function LoginPage() {
       setLoading(true);
       setError(null);
 
-      // Load Google Identity Services
-      if (!window.google) {
+      // Load Google Identity Services. Google Maps also owns window.google,
+      // so check for the GIS namespace specifically.
+      if (!window.google?.accounts?.oauth2) {
         await new Promise<void>((resolve, reject) => {
           const script = document.createElement('script');
           script.src = 'https://accounts.google.com/gsi/client';
