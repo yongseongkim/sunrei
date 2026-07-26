@@ -48,7 +48,9 @@ export function useGoogleLogin(onSuccess?: () => void) {
     setError(false);
     setLoading(true);
     try {
-      if (!window.google) {
+      // Google Maps also owns window.google, so check for the GIS namespace
+      // specifically — otherwise the GSI script is never loaded on map pages.
+      if (!window.google?.accounts?.oauth2) {
         await new Promise<void>((resolve, reject) => {
           const sc = document.createElement('script');
           sc.src = 'https://accounts.google.com/gsi/client';
@@ -83,7 +85,8 @@ export function useGoogleLogin(onSuccess?: () => void) {
           setLoading(false);
         },
       });
-      client?.requestAccessToken();
+      if (!client) throw new Error('gis');
+      client.requestAccessToken();
     } catch {
       setError(true);
       setLoading(false);
