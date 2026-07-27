@@ -1,79 +1,69 @@
 ---
 name: youtube-to-sunrei
-description: This skill should be used when the user asks to "convert YouTube to sunrei", "create sunrei from YouTube", "process YouTube video end-to-end", or provides a YouTube URL and wants the full extraction workflow.
+description: Run the complete YouTube-to-Sunrei workflow. Use when the user asks to convert a YouTube video or playlist into a Sunrei, process a YouTube URL end to end, or continue a partially completed ingest.
 ---
 
-# YouTube to Sunrei — Full Workflow
+# Convert YouTube Content to a Sunrei
 
-Orchestrate the complete YouTube-to-Sunrei pipeline with interactive checkpoints. This chains all 4 individual skills into a single guided flow.
+Run the four YouTube skills in sequence, pausing for approval at each checkpoint.
 
-## Usage
-
-The user provides a YouTube video or playlist URL as an argument. Example:
-
-- `/youtube-to-sunrei https://www.youtube.com/watch?v=VIDEO_ID`
-- `/youtube-to-sunrei https://www.youtube.com/playlist?list=PLAYLIST_ID`
+Accept either a video URL or a playlist URL.
 
 ## Workflow
 
-### Step 1: Fetch Video Info
+### 1. Fetch Metadata
 
-Execute the `/youtube-fetch-info` skill with the provided URL.
+Run `youtube-fetch-info` with the provided URL.
 
-- Fetch video/playlist metadata from YouTube Data API v3
-- Also fetch the owning channel's metadata (title, handle/URL, description, avatar) — this becomes the YouTube Source
-- Display video and channel details to the user
-- For playlists: let user select which videos to process
-- Save to `.claude/workspace/youtube/{ID}/video_info.json` (including the `channel` object)
+- Fetch the video or playlist metadata and the owning channel.
+- For a playlist, ask which videos to process.
+- Save the result, including the `channel` object, to
+  `.claude/workspace/youtube/{ID}/video_info.json`.
 
-Checkpoint: Confirm with user before proceeding to transcript extraction.
+Ask for confirmation before extracting transcripts.
 
-### Step 2: Extract Transcripts
+### 2. Extract Transcripts
 
-Execute the `/youtube-extract-transcript` skill.
+Run `youtube-extract-transcript`.
 
-- Extract transcript for each selected video
-- Clean and audit transcripts (fix Korean auto-caption errors, remove noise)
-- Present each transcript for user approval
-- User can request re-edits or approve
-- Save to `.claude/workspace/youtube/{ID}/transcripts.json`
+- Extract, audit, and clean the transcript for each selected video.
+- Let the user approve, revise, or skip each transcript.
+- Save approved transcripts to
+  `.claude/workspace/youtube/{ID}/transcripts.json`.
 
-Checkpoint: All transcripts must be approved before proceeding.
+Do not extract locations until all retained transcripts are approved.
 
-### Step 3: Extract Locations
+### 3. Extract Locations
 
-Execute the `/youtube-extract-locations` skill.
+Run `youtube-extract-locations`.
 
-- Analyze video concept from title/description
-- Parse Google Maps links from video descriptions
-- Extract location mentions from transcripts
-- Geocode locations via Google Maps Places API
-- Present locations for user review (add/edit/remove)
-- Save to `.claude/workspace/youtube/{ID}/locations.json`
+- Determine each video's geographic scope and theme.
+- Collect locations from descriptions, map links, and transcripts.
+- Geocode and verify each place.
+- Let the user add, edit, or remove locations.
+- Save the approved list to `.claude/workspace/youtube/{ID}/locations.json`.
 
-Checkpoint: User must approve location list before Sunrei creation.
+Do not create the Sunrei until the user approves the location list.
 
-### Step 4: Create Sunrei
+### 4. Create the Sunrei
 
-Execute the `/youtube-create-sunrei` skill.
+Run `youtube-create-sunrei`.
 
-- Admin authentication is minted locally, no login flow — `TOKEN=$(python3 .claude/scripts/auth/mint_token.py)`. Requires `sops` + GCP KMS decrypt permission (the script mints it automatically within the skill, so no separate export is needed)
-- One playlist/trip = one Sunrei: title = playlist title, link = playlist URL, summary/description derived from transcripts; the channel becomes the Source. Select tags if available
-- Build SunreiSpots from extracted locations (spot `context` = each location's per-place summary)
-- Create via server admin API (all requests require `Authorization: Bearer ${TOKEN}` header)
-- Report created Sunrei ID and summary
+- Treat one playlist or trip as one Sunrei and the channel as its Source.
+- Derive the Sunrei summary and description from the transcripts.
+- Convert every approved location into a SunreiSpot.
+- Create a draft through the admin API and report the new Sunrei ID.
 
-## Error Handling
+Let `youtube-create-sunrei` handle authentication, duplicate checks, spot
+review, and S3 registry updates.
 
-- If any step fails, inform the user and offer to retry that step
-- The user can exit at any checkpoint and resume later using the individual skills
-- All intermediate data is saved to `.claude/workspace/youtube/{ID}/` so progress is preserved
-- If the user has already completed some steps, skip them and continue from where they left off (check for existing JSON files)
+## Resume or Recover
 
-## Resuming
+Inspect `.claude/workspace/youtube/{ID}/` before starting:
 
-If `.claude/workspace/youtube/{ID}/` already contains data from a previous run:
+1. Identify completed steps from the existing JSON files.
+2. Summarize the saved progress.
+3. Ask whether to resume or start over.
 
-1. Check which JSON files exist
-2. Show the user what's already been done
-3. Ask if they want to continue from where they left off or start fresh
+If a step fails, report the error and retry that step only. Preserve intermediate
+files so the user can stop at any checkpoint and continue later.

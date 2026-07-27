@@ -1,26 +1,26 @@
 ---
 name: api-protocol
-description: API protocol guide for Sunrei project. Use when writing API endpoints, request/response type naming, and HTTP method conventions.
+description: Conventions for Sunrei API endpoints, request and response types, HTTP methods, response bodies, errors, and pagination. Use when adding or reviewing an API contract.
 ---
 
-# API Protocol Guide
+# Sunrei API Protocol
 
-RESTful API + OpenAPI 3.0 spec
+Follow REST conventions and document the API with OpenAPI 3.0.
 
 - Request type: `{HttpMethod}{Name}Params` (e.g., `GetUserParams`, `ListUsersParams`)
 - Response type: `{HttpMethod}{Name}Result` (e.g., `GetUserResult`, `ListUsersResult`)
 
 ## HTTP Method Rules
 
-- `GET` + singular → single item (e.g., `GET /sunreis/{id}`)
-- `List` + plural → list items (e.g., `GET /sunreis`)
-- `POST` → create
-- `PUT` → full update
-- `PATCH` → partial update
-- `DELETE` → delete
+- Use `GET /sunreis/{id}` to retrieve one item.
+- Use `GET /sunreis` to list items.
+- Use `POST` to create an item.
+- Use `PUT` for a full update.
+- Use `PATCH` for a partial update.
+- Use `DELETE` to delete an item.
 
 ## Response Format
 
-- Success: `{ "data": ... }` or domain key (e.g., `{ "sunreis": [...] }`)
+- Success: `{ "data": ... }` or a domain key such as `{ "sunreis": [...] }`
 - Error: `{ "error": { "code": "...", "message": "..." } }`
-- Pagination: `{ "items": [...], "nextToken": "..." }`
+- Paginated list: `{ "items": [...], "nextToken": "..." }`

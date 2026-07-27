@@ -1,163 +1,168 @@
 ---
 name: youtube-extract-transcript
-description: This skill should be used when the user asks to "extract transcript", "get subtitles", "get captions" from a YouTube video, or wants to continue the YouTube-to-Sunrei workflow after fetching video info.
+description: Extract, audit, and clean transcripts or on-screen text from YouTube videos. Use when the user asks for subtitles, captions, or transcripts, or continues the YouTube-to-Sunrei workflow after fetching metadata.
 ---
 
-# Extract and Clean YouTube Video Transcript
+# Extract and Clean YouTube Transcripts
 
-Extract transcript from YouTube video(s) using Python scripts, then clean/audit the transcript.
+Extract text from one or more videos, correct recognition errors, and preserve the
+details needed for location extraction.
 
 ## Prerequisites
 
-- `.claude/workspace/youtube/{ID}/video_info.json` must exist (created by `/youtube-fetch-info`)
-- If it doesn't exist, ask the user to run `/youtube-fetch-info` first or provide a video ID
+- Use `.claude/workspace/youtube/{ID}/video_info.json`, created by
+  `youtube-fetch-info`.
+- If the file is missing, ask the user to fetch the metadata or provide a video
+  ID directly.
 
 ## Steps
 
 ### 1. Load Video Info
 
-Read `.claude/workspace/youtube/{ID}/video_info.json` to get video ID(s).
+Read the video IDs from
+`.claude/workspace/youtube/{ID}/video_info.json`.
 
-If the user provides an ID directly, use that instead.
+Use a video ID supplied directly by the user instead of the workspace file.
 
 ### 2. Extract Transcript for Each Video
 
-For each video, run the transcript extraction script:
+Run the caption extractor for each video:
 
 ```bash
 uv run --with youtube-transcript-api --with python-dotenv python .claude/scripts/youtube/extract_transcript.py "{VIDEO_ID}"
 ```
 
-If the result contains `"error": "no_transcript_available"`, fall back to whisper:
+If it returns `"error": "no_transcript_available"`, fall back to Whisper:
 
 ```bash
 uv run --with yt-dlp --with openai-whisper python .claude/scripts/youtube/whisper_transcribe.py "https://www.youtube.com/watch?v={VIDEO_ID}"
 ```
 
-If Whisper also fails, returns empty, returns no useful text (e.g., only noise markers, gibberish, repetitive filler), or returns too little text relative to the video duration, fall back to video OCR:
+If Whisper fails or produces too little useful text for the video's duration,
+fall back to OCR:
 
 ```bash
 uv run --with easyocr --with opencv-python-headless --with yt-dlp \
   python .claude/scripts/youtube/extract_onscreen_text.py "https://www.youtube.com/watch?v={VIDEO_ID}"
 ```
 
-This extracts burned-in subtitles and on-screen text from video frames using OCR.
+This reads burned-in subtitles and other on-screen text from video frames.
 
-OCR language flag: Use `--lang ja,en` for Japanese content. Do NOT use `ko,ja,en` — easyocr throws `"Japanese is only compatible with English"`.
+For Japanese content, use `--lang ja,en`. EasyOCR cannot load Japanese and
+Korean together, so `--lang ko,ja,en` fails.
 
-OCR output: yt-dlp download progress logs can mix with JSON stdout. When parsing OCR results, extract the JSON block from potentially mixed output using regex.
+The OCR command may mix yt-dlp progress logs with JSON on standard output.
+Extract the JSON object before parsing the result.
 
-#### Handling repeated OCR text
+#### Handle Repeated OCR Text
 
-The script has several built-in stages that strip noise outside the caption area:
+The script removes common OCR noise in three stages:
 
-1. Caption-area crop — scans only the bottom 30% of each frame. Most captions sit near the bottom, so titles, logos, and other UI at the top are ignored.
-2. Static-text filter — text that appears identically in 80%+ of sampled frames is treated as a watermark, channel logo, or fixed overlay and removed.
-3. Deduplication — text with 80%+ similarity across consecutive frames is merged into one segment; segments shorter than 0.5s are treated as noise and dropped.
-4. Practical tips
-   - In videos where captions sit in the center or top, OCR may miss them (only the bottom 30% is scanned).
-   - For videos with fast caption changes, lower the sampling interval with `--interval 0.5` (default: 1.0s) to avoid drops.
-   - If a channel logo overlaps the caption area, the filter may strip the caption along with it. When OCR output looks abnormally sparse, check the original frames.
+1. Scan only the bottom 30% of each frame, where captions usually appear.
+2. Remove text that appears unchanged in at least 80% of sampled frames.
+3. Merge consecutive segments with at least 80% similarity and discard segments
+   shorter than 0.5 seconds.
+
+Adjust the defaults when needed:
+
+- If captions appear in the center or at the top, the default crop may miss them.
+- For fast-changing captions, use `--interval 0.5` instead of the one-second
+  default.
+- If a logo overlaps the caption area, the static-text filter may remove nearby
+  captions. Inspect the frames when the output is unusually sparse.
 
 ### Rate Limiting
 
-youtube-transcript-api trips YouTube's bot blocking (IP block) when automated requests go out too fast. A failure looks like this:
+YouTube may block caption requests when `youtube-transcript-api` runs too
+quickly. The error usually says that YouTube is blocking the IP or has received
+too many requests.
 
-```
-"Could not retrieve a transcript for the video ... This is most likely caused by:
-- YouTube is blocking requests from your IP ...
-- You have done too many requests and your IP has been blocked by YouTube"
-```
+The message does not distinguish an unavailable transcript from a rate limit. A
+single failure among successful requests probably means no transcript exists;
+repeated failures usually indicate a block.
 
-This error has two causes that the message alone can't distinguish:
-(a) the video genuinely has no transcript, or (b) the IP is blocked. Treat repeated failures as (b), and a single failure amid otherwise-successful fetches as (a).
+Use these limits:
 
-#### Measured results (2026-07, on a 82-video 육식맨 playlist)
+- Fetch a single video immediately.
+- For a playlist, wait a random 60–90 seconds between videos. Tests in July
+  2026 found that 14–20 second intervals triggered a block after roughly 10–20
+  requests, while 60–90 second intervals completed 25 requests.
+- After a block, wait about 10 minutes and retry the same video. Stop after four
+  consecutive blocks.
 
-The block is triggered by request rate, not by a pre-flagged IP. A fresh IP was blocked the same way after 15–20 requests. Because the threshold is request count over a time window, keeping the interval under ~30s doesn't help:
-
-| Interval | Result |
-|------|------|
-| 14s | blocked after ~17 requests |
-| 20s | blocked after ~10–20 requests |
-| 60–90s | 25 requests, no block |
-
-Don't try to dodge it by changing IP — slow down. Spacing videos 60–90s apart keeps you under the threshold and fetches the whole playlist without a block.
-
-One more finding: yt-dlp doesn't get around it either. `yt-dlp --write-auto-subs` gets a 429 from the same caption-download endpoint, and `--impersonate` or `--js-runtimes deno` don't help (the limit is on the download endpoint, not bot detection). The YouTube Data API's `captions.download` can't fetch captions for channels you don't own.
-
-#### What to do
-
-- Single video: just request it.
-- Playlist: put a random 60–90s gap between videos (e.g. `random.uniform(60, 90)`). Don't use 14–20s intervals — they hit the wall around request 15–20 every time.
-- On an IP-block error: don't skip to the next video and don't retry immediately. Wait a long time (e.g. 600s), then retry the same video — that gives the request count room to reset.
-- Cap the number of consecutive waits (e.g. stop after 4), so a run that keeps getting blocked halts instead of looping forever.
+Changing IPs or switching to `yt-dlp --write-auto-subs` does not avoid this
+limit. The YouTube Data API also cannot download captions from channels the
+authenticated user does not own.
 
 #### Batch processing
 
-For playlists with many videos (>10), don't run commands one at a time or write a new script per workspace — use the shared batch script:
+For a playlist with more than 10 videos, use the shared batch script:
 
 ```bash
 uv run --with youtube-transcript-api --with python-dotenv \
   python .claude/scripts/youtube/fetch_playlist_transcripts.py "{ID}"
 ```
 
-`{ID}` is the workspace folder name under `.claude/workspace/youtube/`. The script reads `selectedVideos` from `video_info.json`, writes `transcripts_raw.json` into the workspace folder, and implements everything above:
+`{ID}` is the folder name under `.claude/workspace/youtube/`. The script reads
+`selectedVideos` from `video_info.json`, writes `transcripts_raw.json`, and:
 
-- Random 60–90s wait between videos.
-- On an IP-block error: pause ~600s, retry the same video, stop after 4 consecutive blocks.
-- Resume: skips already-fetched videos and re-fetches only failed ones, saving results per video — if interrupted, rerunning the same command continues where it left off.
-- Prints a summary at the end (N succeeded, N no-transcript).
+- Waits 60–90 seconds between videos.
+- Waits about 10 minutes after a block, retries the same video, and stops after
+  four consecutive blocks.
+- Saves each result as it completes. Rerunning the command skips successful
+  videos and retries failed ones.
+- Prints success and no-transcript counts.
 
 ### 3. Audit and Clean Transcript
 
-For each transcript, analyze and clean the text:
+For each transcript:
 
-1. Fix Korean auto-generated errors: Common YouTube auto-caption mistakes in Korean (e.g., misheard words, wrong particles)
-2. Remove noise: "[음악]", "[박수]", "[웃음]" markers, repeated filler words
-3. Fix formatting: Merge broken sentences, fix punctuation
-4. Preserve timestamps: Keep segment timing information intact
-5. Identify key sections: Note sections that mention places, restaurants, attractions — especially the food/menu commentary (dish names, how it's cooked and served, taste, and the creator's reaction) with their timestamps. This narration is the primary source for the per-place descriptions in `youtube-extract-locations`, so carry it forward instead of trimming it as filler.
+1. Correct obvious recognition errors, including misheard Korean words and
+   particles.
+2. Remove noise markers such as `[음악]`, `[박수]`, and `[웃음]`, along with
+   repeated filler.
+3. Join broken sentences and repair punctuation without changing the speaker's
+   meaning.
+4. Preserve every segment's timing.
+5. Mark passages about places, restaurants, attractions, and food. Keep dish
+   names, preparation and serving details, tasting notes, reactions, and
+   timestamps. `youtube-extract-locations` uses this narration to write each
+   place description.
 
-#### Context-aware correction
+#### Correct OCR in Context
 
-OCR output has many per-segment misreads. Always read the neighboring segments and grasp the context before correcting.
+Read the full `fullText` before editing individual segments. For each correction,
+inspect the two preceding and two following segments.
 
-Procedure:
-
-1. Grasp the overall flow — first read the whole `fullText` to understand the video's topic, speaker, and tone. This anchors every per-segment correction.
-2. Sliding-window correction — when correcting a segment, read the 2 preceding and 2 following segments together. For example:
-   - `"그렇다 사실 여기논 안도 다다오가 아"` → reading the next segment `"카타야마 마사미치라는 인테리어 디자이너가 맡은 긋이다"` shows that "아" is a cut-off "아니고", and "긋" should be "곳".
-   - `"싶었으나;"` → the preceding `"저 건물들에서 내려다보이는 거 아난가 ?"` and following `"당연하게도 안쪽은 지붕으로 덮어있다"` show the sentence continues across segments.
-3. Unify recurring proper nouns — when the same proper noun is recognized differently across segments, normalize to the most accurate form:
-   - `"도교 토일핏 프로적트"` / `"도교 화장실 프로적트"` → `"도쿄 토일렛 프로젝트"`
-   - `"히라아마"` → `"히라야마"` (protagonist of the film Perfect Days)
-   - `"빚 벤터스"` / `"팀 벤터스"` → `"빔 벤더스"` (director Wim Wenders)
-4. OCR-specific misread patterns — suspect these first:
-   - Final-consonant (받침) errors: `긋`→`곳`, `잇`→`있`, `앉`→`않`, `햇`→`했`
-   - Jamo confusion: `논`→`는`, `안분`→`않은`, `적논지`→`졌는지`
-   - Cut-off sentences: when a segment ends missing a particle or verb ending, restore it by joining with the start of the next segment.
-   - Special-character noise: remove stray `_`, `;`, `:` tacked onto the end of a sentence.
-5. Knowledge-based correction — when OCR is plausible character-by-character but wrong in meaning, correct it using general knowledge:
-   - Well-known proper nouns: `"고로나"` → `"코로나"`; `"2020년"` in an `"올림픽"` context, etc.
-   - Channel name / greeting: fix the intro greeting using the channel name and title from video_info.json (e.g. `"비밀이 합니다"` → `"비밀이야 입니다"`).
-   - Place / architect names: verify real people and places mentioned in context (e.g. `"쿠마 렌고"` → `"쿠마 켄고"`, `"프리초거상"` → `"프리츠커상"`).
+- Restore a cut-off word or sentence only when adjacent segments make the
+  continuation clear. For example, the segment ending `"안도 다다오가 아"`
+  continues as `"아니고"` when the next segment names the actual designer.
+- Normalize recurring proper nouns. Examples include
+  `"도교 토일핏 프로적트"` to `"도쿄 토일렛 프로젝트"`, `"히라아마"` to
+  `"히라야마"`, and `"팀 벤터스"` to `"빔 벤더스"`.
+- Check common Korean OCR errors first: `긋` to `곳`, `잇` to `있`, `햇` to
+  `했`, `논` to `는`, and similar consonant or jamo confusion.
+- Remove stray trailing characters such as `_`, `;`, and `:`.
+- Use the channel name and video title in `video_info.json` to correct greetings
+  and names. Use established context to correct well-known people and places,
+  such as `"쿠마 렌고"` to `"쿠마 켄고"` and `"프리초거상"` to
+  `"프리츠커상"`.
 
 ### 4. Present for User Approval
 
-Show the cleaned transcript to the user with:
+Show:
 
-- Original language detected
-- Transcript source (YouTube captions vs Whisper)
-- Total segment count and duration
-- The cleaned full text (or a summary if very long)
-- Key sections highlighted that seem to mention locations
+- Detected language
+- Source: YouTube captions, Whisper, or OCR
+- Segment count and duration
+- Cleaned text, or a summary when the transcript is very long
+- Passages that mention locations
 
-Use AskUserQuestion:
+Ask the user to:
 
-- "Approve this transcript"
-- "Request re-edit" (user provides feedback)
-- "Skip this video" (for playlists)
+- Approve the transcript
+- Request another edit
+- Skip the video when processing a playlist
 
 ### 5. Save Results
 
@@ -180,6 +185,5 @@ Save to `.claude/workspace/youtube/{ID}/transcripts.json`:
 }
 ```
 
-### 6. Confirm
-
-Tell the user transcripts have been saved and ask if they want to proceed to location extraction.
+After saving the file, report its path and ask whether to continue with location
+extraction.

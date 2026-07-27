@@ -1,49 +1,52 @@
 ---
 name: youtube-fetch-info
-description: This skill should be used when the user asks to "fetch YouTube info", "get YouTube video details", "get YouTube playlist info", or provides a YouTube URL to start processing.
+description: Fetch metadata for a YouTube video, playlist, and channel. Use when the user provides a YouTube URL, asks for video or playlist details, or starts the YouTube-to-Sunrei workflow.
 ---
 
-# Fetch YouTube Video or Playlist Info
+# Fetch YouTube Metadata
 
-Fetch metadata for a YouTube video or playlist using the YouTube Data API v3.
+Use the YouTube Data API v3 to collect metadata for a video or playlist and its
+owning channel.
 
-## Quick Method (Script)
+## Default Method
 
-Usually you don't run the steps below by hand — a single script run does it all. It builds
-`video_info.json` per the schema, including channel info (playlists are paginated automatically):
+Use the shared script unless the workflow requires interactive video selection.
+It paginates playlists and writes `video_info.json` in the format shown below.
 
 ```bash
 uv run python .claude/scripts/youtube/fetch_info.py "<URL>" [--videos all|1,3,5|first:N]
 ```
 
-The steps below are the contract the script follows internally. Only call them directly
-when the script can't do the job — for example, when selecting videos interactively.
+Follow the remaining steps directly only when the script cannot handle the
+request.
 
 ## Steps
 
 ### 1. Load API Key
 
-Read the YouTube API key from the server's HOCON config at
-`sunrei-server/src/main/resources/application-local.conf` (key `google.youtubeApiKey`):
+Read `google.youtubeApiKey` from
+`sunrei-server/src/main/resources/application-local.conf`:
 
 ```bash
 grep -E '^[[:space:]]*youtubeApiKey' sunrei-server/src/main/resources/application-local.conf \
   | sed -E 's/.*=[[:space:]]*"?([^"]+)"?.*/\1/'
 ```
 
-(Use POSIX `[[:space:]]`, not `\s` — `\s` is unsupported by BSD/macOS grep and sed.)
+Use POSIX `[[:space:]]`; BSD and macOS versions of `grep` and `sed` do not
+support `\s`.
 
-This single Google API key works for the YouTube Data API here and for the Places /
-Geocoding API in `youtube-extract-locations`. Store the key for use in subsequent curl
-calls. If not found, ask the user to provide it.
+The same key is used later by the Places API in `youtube-extract-locations`.
+Keep it available for subsequent requests. If the key is missing, ask the user
+to provide it.
 
 ### 2. Parse URL
 
-Determine if the URL is a video or playlist:
+Classify the URL and extract its ID:
 
-- Video URL contains `watch?v=` or `youtu.be/` → extract video ID
-- Playlist URL contains `list=` → extract playlist ID
-- If URL contains both, ask user whether to process the single video or the full playlist
+- A video URL contains `watch?v=` or `youtu.be/`.
+- A playlist URL contains `list=`.
+- If the URL contains both, ask whether to process the video or the full
+  playlist.
 
 ### 3. Fetch Metadata
 
@@ -67,31 +70,30 @@ Then fetch all playlist items (paginate with `pageToken` if `nextPageToken` exis
 curl -s "https://www.googleapis.com/youtube/v3/playlistItems?playlistId={PLAYLIST_ID}&part=snippet,contentDetails&maxResults=50&key={API_KEY}"
 ```
 
-### 3.5. Fetch Channel Info
+### 4. Fetch Channel Metadata
 
-A YouTube Source in Sunrei is the channel, so always fetch the owning channel's
-metadata too. Take `snippet.channelId` from the video (or playlist) response above and
-call the channels endpoint:
+The YouTube channel becomes the Source in Sunrei. Read `snippet.channelId` from
+the video or playlist response and call the channels endpoint:
 
 ```bash
 curl -s "https://www.googleapis.com/youtube/v3/channels?id={CHANNEL_ID}&part=snippet&key={API_KEY}"
 ```
 
-From `items[0].snippet`, extract:
+Read these fields from `items[0].snippet`:
 
-- `title` → channel title
-- `description` → channel description (used as the Source synopsis)
-- `customUrl` → the channel handle/custom URL (e.g. `@bimirya`), if present
-- `thumbnails.high.url` (fall back to `medium`/`default`) → channel avatar, used as the
-  Source poster image
+- `title`: channel title
+- `description`: channel description, used as the Source synopsis
+- `customUrl`: channel handle or custom URL, such as `@bimirya`
+- `thumbnails.high.url`: channel avatar, used as the Source poster image; fall
+  back to `medium` or `default`
 
 Build the canonical channel URL:
 
-- If `customUrl` exists → `https://www.youtube.com/{customUrl}` (the value already
-  includes the leading `@` for handles; legacy values like `c/Name` are used verbatim)
-- Otherwise → `https://www.youtube.com/channel/{channelId}`
+- If `customUrl` exists, use `https://www.youtube.com/{customUrl}`. Handles
+  already include `@`; preserve legacy values such as `c/Name`.
+- Otherwise, use `https://www.youtube.com/channel/{channelId}`.
 
-### 4. Display Results
+### 5. Display the Result
 
 Present the fetched info clearly:
 
@@ -110,17 +112,17 @@ For a playlist:
 - Total video count
 - List all videos with index number, title, channel, and video ID
 
-Also show the resolved channel: title, handle/URL, and a one-line description.
+Also show the channel title, handle or URL, and a one-line description.
 
-### 5. User Selection (Playlists)
+### 6. Select Playlist Videos
 
-For playlists, use AskUserQuestion to ask which videos to process:
+For a playlist, ask which videos to process:
 
-- Option: "All videos"
-- Option: "Select specific videos" (then ask for comma-separated indices)
-- Option: "First N videos" (then ask for N)
+- All videos
+- Specific videos, identified by comma-separated indices
+- The first N videos
 
-### 6. Save Data
+### 7. Save the Data
 
 Create the workspace directory and save:
 
@@ -185,9 +187,8 @@ Playlist:
 }
 ```
 
-`channel.handle` is the `customUrl` value (may be absent for channels without a handle);
-`channel.url` is the canonical channel URL resolved in step 3.5.
+Set `channel.handle` to `customUrl`; omit it when the channel has no handle. Set
+`channel.url` to the canonical URL resolved in step 4.
 
-### 7. Confirm
-
-Tell the user the info has been saved and ask if they want to proceed to transcript extraction.
+After saving the file, report its path and ask whether to continue with transcript
+extraction.

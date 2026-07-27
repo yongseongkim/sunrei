@@ -1,17 +1,19 @@
 ---
 name: youtube-extract-locations
-description: This skill should be used when the user asks to "extract locations", "find places mentioned in video", or wants to continue the YouTube-to-Sunrei workflow after transcript extraction.
+description: Extract and verify places mentioned in YouTube videos. Use when the user asks to find locations in a video or continues the YouTube-to-Sunrei workflow after transcript extraction.
 ---
 
-# Extract Locations from YouTube Video
+# Extract Locations from YouTube Videos
 
-Analyze video metadata and transcript to extract location information, then geocode using Google Maps Places API.
+Identify relevant places from video metadata and transcripts, then geocode and
+verify them with the Google Maps Places API.
 
 ## Prerequisites
 
-- `.claude/workspace/youtube/{ID}/video_info.json` must exist
-- `.claude/workspace/youtube/{ID}/transcripts.json` must exist
-- If missing, ask the user to run the prior skills first
+- Require `.claude/workspace/youtube/{ID}/video_info.json` and
+  `.claude/workspace/youtube/{ID}/transcripts.json`.
+- If either file is missing, ask the user to complete the preceding workflow
+  step.
 
 ## Steps
 
@@ -21,51 +23,50 @@ Read both JSON files from `.claude/workspace/youtube/{ID}/`.
 
 ### 2. Load Google Maps API Key
 
-The Places / Geocoding API uses the same Google API key as the YouTube Data API. Read it
-from the server's HOCON config at `sunrei-server/src/main/resources/application-local.conf`
-(key `google.youtubeApiKey`):
+Read `google.youtubeApiKey` from
+`sunrei-server/src/main/resources/application-local.conf`. The Places API and
+YouTube Data API use the same key.
 
 ```bash
 grep -E '^[[:space:]]*youtubeApiKey' sunrei-server/src/main/resources/application-local.conf \
   | sed -E 's/.*=[[:space:]]*"?([^"]+)"?.*/\1/'
 ```
 
-(Use POSIX `[[:space:]]`, not `\s` — `\s` is unsupported by BSD/macOS grep and sed.)
+Use POSIX `[[:space:]]`; BSD and macOS versions of `grep` and `sed` do not
+support `\s`.
 
-If not found, ask the user to provide it. (The Places API must be enabled for this key in
-the Google Cloud console — see `b9e59bb` re: the Geocoding API requirement.)
+If the key is missing, ask the user to provide it. The Places API must be
+enabled for the key in Google Cloud; commit `b9e59bb` documents the related
+Geocoding API requirement.
 
 ### 3. Analyze Video Concept
 
-For each video, determine the content concept from title + description:
+Derive a concise concept for each video from its title and description. Include:
 
-- What type of content is it? (food tour, travel vlog, attraction guide, etc.)
-- What geographic area does it cover? (city, neighborhood, country)
-- What kind of locations should be extracted? (restaurants, tourist spots, shops, etc.)
+- The most specific geographic scope available
+- The content type, such as a food tour, travel vlog, or architecture guide
+- The types of destinations to extract
+- Distinctive details from the title, such as dishes, chefs, ratings, or price
+  range
 
-This concept guides which transcript mentions are relevant locations vs just passing references.
+Use the concept to separate destinations from passing references. For example,
+exclude 압구정 현대아파트 when a Japanese architecture video mentions it only
+as a comparison.
 
-- The concept determines the geographic scope. Locations outside this scope are references, not destinations.
-- Example: A "Japanese architecture travel" video that mentions 압구정 현대아파트 (Seoul) as a comparison → exclude it. Only include locations within the video's target geography (Japan).
+Specific concepts:
 
-#### Concept Examples
+- "싱가포르 현지 맛집 투어 - 바쿠테, 프론미, 하이난 치킨 라이스"
+  identifies the region, theme, and dishes.
+- "기후현 야생요리 전문식당" identifies the region and content type.
+- "랭스 럭셔리 레스토랑 Le Parc Les Crayères, 600종 샴페인" identifies
+  the city, venue, and distinguishing feature.
 
-Good (specific):
-- "싱가포르 현지 맛집 투어 - 바쿠테, 프론미, 하이난 치킨 라이스" — region + theme + key dishes
-- "기후현 야생요리 전문식당" — region + unique content type
-- "랭스 럭셔리 레스토랑 Le Parc Les Crayères, 600종 샴페인" — city + venue name + key feature
-- "삿포로 라멘/수프카레" — city + food type
-- "도쿄 히로오 건축여행 — 오직 히로오에만 존재하는 가게들" — city neighborhood + content type + theme
+Concepts that need refinement:
 
-Bad (too broad):
-- "이탈리아 맛집 방문기" → city unknown, food type unknown. Refine to "피렌체 미슐랭 3스타 와인 셀러 레스토랑"
-- "일본 료칸 방문기" → region unknown. Refine to "니세코 미쉐린 설경 료칸"
-- "일본 맛집 방문기" → worst case. No city, no food type
-
-Rules:
-1. Be as specific as possible with geography (country → city → neighborhood)
-2. Specify content type (food tour, ryokan, architecture trip, cafe tour, wine restaurant, etc.)
-3. Reflect key keywords from the video title (specific dish names, chef names, Michelin ratings, price range, etc.)
+- "이탈리아 맛집 방문기" omits the city and type of food. Refine it to
+  "피렌체 미슐랭 3스타 와인 셀러 레스토랑".
+- "일본 료칸 방문기" omits the region. Refine it to
+  "니세코 미쉐린 설경 료칸".
 
 ### 4. Extract Google Maps Links from Description
 
@@ -75,70 +76,74 @@ Parse the video description for Google Maps links:
 - `https://goo.gl/maps/...`
 - `https://maps.app.goo.gl/...`
 
-These are high-confidence locations explicitly shared by the creator.
+Treat these as high-confidence locations because the creator shared them
+directly.
 
 ### 5. Extract Location Mentions
 
-Distinguish sources that "find" a place from sources that "describe" it.
+Use different evidence to identify a place and to describe it.
 
-Finding sources (which places exist) — priority order:
-1. Description chapters with timestamps (curated by the creator — best)
-2. Google Maps links in the description (Step 4)
-3. Title/description analysis (main buildings/places when there are no chapters)
+Identify places in this order:
+
+1. Timestamped chapters in the description
+2. Google Maps links
+3. Places central to the title or description
 4. Transcript mentions
 
-Describing sources (what the place/food was like) — the transcript is the top priority. Chapters are usually
-just "00:00 shop name", so the actual descriptions — taste, cooking, serving, the YouTuber's comments — live in
-the narration. Even though the transcript ranks lowest for "finding", don't skip past it until you have pulled
-out the descriptions.
+Use the transcript as the primary source for descriptions. Chapters often
+contain only a timestamp and place name; the narration contains the atmosphere,
+food, preparation, and creator's reaction.
 
-Each place's `description` covers both of the axes below (3-6 sentences; it can be longer if the video covers a
-lot of food). This value later becomes the spot's `context`, and it is the only editorial text the public map
-card displays:
+Write a three-to-six-sentence `description` for each place. It may be longer
+when the video covers several dishes. This value becomes the spot's `context`
+and is the only editorial text shown on the public map card. Include:
 
-1. Restaurant — what kind of place it is (atmosphere, characteristics, location context) and the video's
-   concept/theme, in one or two sentences.
-2. Food — what the signature menu items are, how they are cooked/served, and how the video described that food
-   (taste, texture, assessment). When possible, include the timestamp of that scene.
+1. The type of place, atmosphere, distinguishing features, geographic context,
+   and connection to the video's theme
+2. Signature items, preparation and serving details, taste or texture, the
+   creator's assessment, and timestamps when available
 
-Bad: "야키토리 맛집" (too short, no context)
-Bad: "쓰쿠네가 극찬받았다" (only an impression, no food description)
-Good: "시부야 뒷골목 야키토리 투어에서 방문한 카운터 10석 규모의 노포 야키토리 전문점. 대표 메뉴는 비장탄에
+Insufficient: "야키토리 맛집" (no context)
+
+Insufficient: "쓰쿠네가 극찬받았다" (reaction only)
+
+Useful: "시부야 뒷골목 야키토리 투어에서 방문한 카운터 10석 규모의 노포 야키토리 전문점. 대표 메뉴는 비장탄에
 구운 쓰쿠네와 레바로, 쓰쿠네는 겉을 바삭하게 구운 뒤 날달걀 노른자에 찍어 먹으며 유튜버가 '육즙이 팡
 터진다'고 표현했고, 레바는 비린내 없이 부드럽다고 강조했다 (12:30)."
 
-What to check when pulling from the transcript:
+Extract:
 
-- Place name (restaurant/cafe/shop/attraction)
-- Any address or neighborhood mentioned
-- Descriptions that pin down the place ("that yakitori place near Shibuya station")
-- Specific comments about the food/menu (which item, taste/cooking/assessment) and their timestamps
+- Place name and category
+- Address, neighborhood, or other identifying context
+- Menu items, preparation, taste, and assessment
+- Relevant timestamps
 
 Filter by the video concept identified in Step 3. For example:
 
-- A food tour video → extract only food-related venues
-- A general travel vlog → extract tourist spots, restaurants, viewpoints
-- Ignore passing mentions that aren't actual recommendations
+- For a food tour, include only food-related venues.
+- For a general travel vlog, include destinations such as attractions,
+  restaurants, and viewpoints.
+- Ignore places mentioned only in passing.
 
-### 5.5. Clean & Filter Locations
+### 6. Clean and Filter Locations
 
 Before geocoding, clean and filter the extracted locations:
 
-- Concept-scope filter: Remove locations outside the video's geographic concept (e.g., Korean locations used for comparison in a Japan travel video)
-- Deduplication: If the same `googleMapsId` appears multiple times within one video, keep only the first occurrence (earliest timestamp)
-- Non-place filter: Remove entries that aren't meaningful destinations:
+- Remove places outside the video's geographic concept.
+- If a `googleMapsId` appears more than once in a video, keep the earliest
+  occurrence.
+- Remove entries that are not meaningful destinations:
   - Real estate offices, generic street names ("Walking Street", "Shopping Street")
   - Overly generic names ("라멘집", "Pedestrian Paradise")
   - Concepts rather than places
-- Place-name validation: `name` must be the actual business name. Parsing a structured block in the
-  description (name / address / hours listed line by line) easily lets a wrong line end up in `name` —
-  hours ("매일 11:00 - 21:00"), phone numbers, address fragments, and the like. Discard such names and find
-  the real one from the video title or captions. If the name can't be determined, don't make one up — flag it
-  to the user. Don't pass these values to the geocoding step: an address fragment used as a name throws off the
-  pin location too (see Step 6).
-- Videos without chapters: When a video has no description chapters or Google Maps links, analyze the title and description to identify the main architectural/location subjects. Search for those directly.
+- Require the actual business name. Structured description blocks can place
+  hours, phone numbers, or address fragments in the name field. Recover the
+  name from the title or captions. If it cannot be identified, flag it instead
+  of inventing one or sending the bad value to geocoding.
+- When a video has no chapters or map links, identify the main places from its
+  title and description and search for them directly.
 
-### 6. Geocode Locations via Google Maps Places API
+### 7. Geocode Locations
 
 For each extracted location that doesn't already have coordinates (from Google Maps links), use the Places API:
 
@@ -153,18 +158,20 @@ curl -s -X POST "https://places.googleapis.com/v1/places:searchText" \
   }'
 ```
 
-Use area context from the video concept to improve search accuracy (e.g., "시부야 야키토리 가게" instead of just "야키토리 가게").
+Include geographic context in the query, such as "시부야 야키토리 가게"
+instead of "야키토리 가게".
 
-Two failure modes to watch for:
+Guard against two common errors:
 
-- Don't geocode from an address alone. A `textQuery` that contains only an address makes Google return
-  whatever business it judges closest to that address — usually a nearby hotel or office building — so a
-  plausible-looking coordinate gets the wrong `googleMapsId`. Always search the business name plus area context.
-- Verify the result before accepting it. The returned `displayName` should match the extracted name, allowing
-  for language or romanization differences. If it doesn't line up, refine the query and retry or flag it for
-  review — don't silently take the first result.
+- Never geocode an address alone. Google may return a nearby hotel or office
+  with plausible coordinates but the wrong `googleMapsId`. Search for the
+  business name and area together.
+- Compare `displayName` with the extracted name, allowing for translation and
+  romanization. If they do not match, refine the query or flag the result. Do
+  not accept the first result silently.
 
-A helper encodes both guards in code. It supports a single lookup and a bulk backfill of `locations.json`:
+Use the helper for a single lookup or to fill missing coordinates in
+`locations.json`:
 
 ```bash
 # Single lookup (warns on displayName mismatch)
@@ -174,36 +181,37 @@ uv run python .claude/scripts/youtube/geocode.py --query "<business name>" --are
 uv run python .claude/scripts/youtube/geocode.py <ID>
 ```
 
-### 6.5. Large playlists: split extraction across subagents
+### 8. Process Large Playlists
 
-For playlists with dozens of videos, run the per-video extraction (Steps 3-6) split across subagents. Two rules learned the hard way:
+For playlists with dozens of videos, split steps 3–7 into batches of three or
+four videos:
 
-- Don't launch them all at once — run small batches of 3-4. Launching a large batch (e.g. 13) at once hits the
-  API rate limit and the whole batch fails with 429. Rerun a failed batch in smaller units.
-- Match subagent results by video ID and place name, not by list order or the server's spotId. Matching by
-  spotId attached results to the wrong spot when a video had multiple places. After merging, confirm each
-  description actually refers to its place (it names or clearly describes it) before applying.
+- Larger concurrent batches can hit the API rate limit and fail with HTTP 429.
+  Retry a failed batch in smaller groups.
+- Match results by video ID and place name, never by list order or server
+  `spotId`. After merging, confirm that every description names or clearly
+  describes its place.
 
-### 7. Present Results to User
+### 9. Review the Results
 
 Display all extracted locations in a table:
 
 | #   | Name | Address | Lat/Lng | Source | Timestamp | Google Maps |
 | --- | ---- | ------- | ------- | ------ | --------- | ----------- |
 
-Source: "description_link", "transcript_mention", or "both"
+Set `Source` to `description_link`, `transcript_mention`, or `both`.
 
-- Group results by "videos with locations" and "videos without locations"
-- Flag potential issues: non-concept locations, duplicates, generic entries
-- Offer automated cleanup before manual review
+- Group videos by whether they contain locations.
+- Flag out-of-scope places, duplicates, generic entries, and geocoding warnings.
+- Offer automated cleanup before manual review.
 
-Use AskUserQuestion:
+Ask the user to:
 
-- "Approve all locations"
-- "Edit locations" (user can add/remove/modify)
-- "Re-extract" (with different concept guidance)
+- Approve all locations
+- Add, remove, or edit locations
+- Extract again with revised concept guidance
 
-### 8. Save Results
+### 10. Save the Results
 
 Save to `.claude/workspace/youtube/{ID}/locations.json`:
 
@@ -233,6 +241,5 @@ Save to `.claude/workspace/youtube/{ID}/locations.json`:
 }
 ```
 
-### 9. Confirm
-
-Tell the user locations have been saved and ask if they want to proceed to Sunrei creation.
+After saving the file, report its path and ask whether to continue with Sunrei
+creation.
