@@ -3,312 +3,289 @@
   "id": "PLkmBZE3qxSdHQQwUr8yTLgk3IauZQAeDi",
   "title": "비밀이야 in 일본 🍣",
   "description": "",
+  "url": "https://www.youtube.com/playlist?list=PLkmBZE3qxSdHQQwUr8yTLgk3IauZQAeDi",
   "channelName": "비밀이야 bimirya",
-  "channelId": "UCaKQ7_GT0k8u_sL0nE2tgkA",
+  "channel": {
+    "id": "UCaKQ7_GT0k8u_sL0nE2tgkA",
+    "title": "비밀이야 bimirya",
+    "handle": "@bimirya",
+    "url": "https://www.youtube.com/@bimirya",
+    "description": "먹자! 마시자! 놀러 다니자!\n\n🍕 비즈니스 문의 : bimiryabdr@naver.com\n🍷 인스타그램 : www.instagram.com/bimirya\n🥪 네이버 블로그 : blog.naver.com/mardukas\n",
+    "thumbnailUrl": "https://yt3.ggpht.com/xTnhjCg0_h3Qdsy7Ar2B8AM8150MF0v-_CkRyCwRz6AK4-ZGEZVjYtWViSy6_9uxal7v1rHJKA=s800-c-k-c0x00ffffff-no-rj"
+  },
   "selectedVideos": [
+    {
+      "videoId": "aDcCeWReTG0",
+      "title": "프렌치 셰프도 감탄한 삿포로 3스타 재패니즈 프렌치🍽️북해도 식재료 끝판왕 | 몰리에르 モリエール",
+      "channelName": "비밀이야 bimirya",
+      "position": 0,
+      "url": "https://www.youtube.com/watch?v=aDcCeWReTG0"
+    },
     {
       "videoId": "90FahyHS8dA",
       "title": "1박에 500만 원짜리 료칸 밥은 뭐가 나올까? | 소네카",
       "channelName": "비밀이야 bimirya",
-      "position": 0,
-      "url": "https://www.youtube.com/watch?v=90FahyHS8dA",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n[SONEKA]\n-주소: 307-1 Omagari, Kitahiroshima, Hokkaido 061-1270 일본\n-전화번호: +8111 777 3355\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일, 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 1,
+      "url": "https://www.youtube.com/watch?v=90FahyHS8dA"
     },
     {
       "videoId": "p582RAgWsHs",
       "title": "설경 뻥뷰의 미쉐린 료칸☃️...아라마사를 이 가격에? | Niseko Zaborin",
       "channelName": "비밀이야 bimirya",
-      "position": 1,
-      "url": "https://www.youtube.com/watch?v=p582RAgWsHs",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보\n[Zaborin Ryokan 坐忘林]\n-주소: 76-4 Hanazono, Kutchan, Abuta District, Hokkaido 044-0084 일본\n-전화번호: +81136 23 0003\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일, 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 2,
+      "url": "https://www.youtube.com/watch?v=p582RAgWsHs"
     },
     {
       "videoId": "0VWZ5bhb7Bk",
       "title": "삿포로 소바집에서 취했습니다. | 미슐랭 1스타_테우치소바 코하시 | (+비추천 이자카야)",
       "channelName": "비밀이야 bimirya",
-      "position": 2,
-      "url": "https://www.youtube.com/watch?v=0VWZ5bhb7Bk",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 #삿포로\n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n테우치소바 코하시 手打ち蕎麦 こはし\n주소: 21 Chome-1-2 Kita 10 Jonishi, Chuo Ward, Sapporo, Hokkaido 060-0010 일본\n영업 시간: 11:00 ~ 20:00 / 월&화요일 정기휴무\nhttps://maps.app.goo.gl/EhQhckAeKCtrvLPS9\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일, 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 3,
+      "url": "https://www.youtube.com/watch?v=0VWZ5bhb7Bk"
     },
     {
       "videoId": "TIlMgP127dc",
       "title": "[EN] 한국에선 불법! '야생요리 전문식당' | 일본 야나기야 | Cuisine Yanagiya",
       "channelName": "비밀이야 bimirya",
-      "position": 3,
-      "url": "https://www.youtube.com/watch?v=TIlMgP127dc",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 #야나기야 #Yanagiya #일본\n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보\n야나기야\n주소: 일본 〒509-6361 Gifu, Mizunami, 陶町猿爪573-27\n영업 시간: 매일 오후 12:00~3:00 / 오후 5:00~10:00\n전화 번호: +81 50-5263-3236\nhttps://maps.app.goo.gl/gpogANnCJmSwDosH8\n\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 4,
+      "url": "https://www.youtube.com/watch?v=TIlMgP127dc"
     },
     {
       "videoId": "5JIZFg4dXfo",
       "title": "뭐 하나 빠짐없이 좋았던 홋카이도 프리미엄 료칸 (feat. 훌륭한 퀄리티의 해산물)[EN]ㅣ모쿠노쇼",
       "channelName": "비밀이야 bimirya",
-      "position": 4,
-      "url": "https://www.youtube.com/watch?v=5JIZFg4dXfo",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- 주소: 393 Niseko, Niseko-cho, Abuta-gun, Hokkaido, 048-1511\n- 번호: +81 136 592 323\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 5,
+      "url": "https://www.youtube.com/watch?v=5JIZFg4dXfo"
     },
     {
       "videoId": "-KVf5NCWlGY",
       "title": "시골 료칸에 이런 퀄리티 있는 재료가?",
       "channelName": "비밀이야 bimirya",
-      "position": 5,
-      "url": "https://www.youtube.com/watch?v=-KVf5NCWlGY",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : mardukas@sandbox.co.kr"
+      "position": 6,
+      "url": "https://www.youtube.com/watch?v=-KVf5NCWlGY"
     },
     {
       "videoId": "ls0stez98hg",
       "title": "이 시골 료칸이 홋카이도 유일의 미쉐린 1스타를 받은 곳이라고?[EN]ㅣ비쿠니 칸코 하우스",
       "channelName": "비밀이야 bimirya",
-      "position": 6,
-      "url": "https://www.youtube.com/watch?v=ls0stez98hg",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- 주소: 일본 〒046-0201 Hokkaido, Shakotan District, Shakotan, Bikunicho, Funama−４９\n- 번호: +81 135-44-2100\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 7,
+      "url": "https://www.youtube.com/watch?v=ls0stez98hg"
     },
     {
       "videoId": "ymvNifPTOVs",
       "title": "북해도 유일 미쉐린 1스타 료칸 #shorts",
       "channelName": "비밀이야 bimirya",
-      "position": 7,
-      "url": "https://www.youtube.com/watch?v=ymvNifPTOVs",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : mardukas@sandbox.co.kr"
+      "position": 8,
+      "url": "https://www.youtube.com/watch?v=ymvNifPTOVs"
     },
     {
       "videoId": "ylfG2fvn3K4",
       "title": "🍷다시는 못 볼 줄 알았던 와인과의 운명적인 만남[EN]ㅣ코트도르",
       "channelName": "비밀이야 bimirya",
-      "position": 8,
-      "url": "https://www.youtube.com/watch?v=ylfG2fvn3K4",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- Restaurant Cote d'Or\n- 주소: 北海道札幌市中央区宮ケ丘1-2-38\n- 번호: 050-5596-3694\n- 화~일 12:00 - 15:00/ 18:00 - 22:30\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 9,
+      "url": "https://www.youtube.com/watch?v=ylfG2fvn3K4"
     },
     {
       "videoId": "AJIsfQ_s7vU",
       "title": "삿포로에서 만난 진짜 나만 알고 싶은 와인리스트 #shorts",
       "channelName": "비밀이야 bimirya",
-      "position": 9,
-      "url": "https://www.youtube.com/watch?v=AJIsfQ_s7vU",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : mardukas@sandbox.co.kr"
+      "position": 10,
+      "url": "https://www.youtube.com/watch?v=AJIsfQ_s7vU"
     },
     {
       "videoId": "zFKDef6mDHY",
       "title": "인당 45만원, 와인만 250만원 나온 후덜덜한 일본 타베로그 TOP10 맛집! 과연 그 맛은? (feat. 깻잎에 싸주는 말고기🐎)[EN]ㅣACA",
       "channelName": "비밀이야 bimirya",
-      "position": 10,
-      "url": "https://www.youtube.com/watch?v=zFKDef6mDHY",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- 번호: 03-6262-5090\n- 월~금 17:00~/ 토 12:00~/ 일 휴무\n- 주소: 東京都中央区日本橋室町2-1-1 三井2号館\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 11,
+      "url": "https://www.youtube.com/watch?v=zFKDef6mDHY"
     },
     {
       "videoId": "pn6xLx1HwJE",
       "title": "이름 내건 식당은 일단 맛 보장이 국룰🏅미쉐린 2스타를 이끌던 류지로 셰프가 차린 도쿄 고급 스시의 한끝차이ㅣ류지로",
       "channelName": "비밀이야 bimirya",
-      "position": 11,
-      "url": "https://www.youtube.com/watch?v=pn6xLx1HwJE",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- 주소: 일본 〒107-0062 Tokyo, Minato City, Minamiaoyama, 2 Chome−11−11 ARISTO南青山 １階\n- 월~토 오후 12:00~2:00, 오후 6:00~11:30/ 일 휴무\n- 번호: +81 50-5870-5473\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 12,
+      "url": "https://www.youtube.com/watch?v=pn6xLx1HwJE"
     },
     {
       "videoId": "aZbrrnUTjSU",
       "title": "간판없는 식당? 입소문으로만 찾아가야 하는 꼼꼼 숨겨진 일본 소고기 오마카세[EN]ㅣ미가키쇼 나가야마",
       "channelName": "비밀이야 bimirya",
-      "position": 12,
-      "url": "https://www.youtube.com/watch?v=aZbrrnUTjSU",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- 주소: Tokyo, Minato City, Akasaka, 3-chōme−14−2\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 13,
+      "url": "https://www.youtube.com/watch?v=aZbrrnUTjSU"
     },
     {
       "videoId": "1XZofgYeyUw",
       "title": "동에 번쩍 서에 번쩍하는 비밀이야가 호텔 고르는 꿀팁🌟[EN]ㅣ만다린 오리엔탈 도쿄",
       "channelName": "비밀이야 bimirya",
-      "position": 13,
-      "url": "https://www.youtube.com/watch?v=1XZofgYeyUw",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 호텔 정보\n- 주소: 2 Chome-1-1 Nihonbashimuromachi, Chuo City, Tokyo 103-8328 일본\n- 번호: +81332708800\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 14,
+      "url": "https://www.youtube.com/watch?v=1XZofgYeyUw"
     },
     {
       "videoId": "zuf53B4FMgI",
       "title": "원두면 몰라도 우유를 골라 마시는 카페가 있다? 홋카이도 필수 카페 4곳 [EN]",
       "channelName": "비밀이야 bimirya",
-      "position": 14,
-      "url": "https://www.youtube.com/watch?v=zuf53B4FMgI",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 15,
+      "url": "https://www.youtube.com/watch?v=zuf53B4FMgI"
     },
     {
       "videoId": "eodAIw3o50E",
       "title": "❄️영하 9도 삿포로에서 프라이빗하게 즐기는 료칸과 최고급 가이세키 식사ㅣ스이잔테이 클럽 [EN]",
       "channelName": "비밀이야 bimirya",
-      "position": 15,
-      "url": "https://www.youtube.com/watch?v=eodAIw3o50E",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- 스이잔테이 클럽 조잔케이\n- 주소: 2 Chome-2-10 Jozankeionsennishi, Minami Ward, Sapporo, Hokkaido 061-2303 일본\n- 연락처: +81 11-595-2001\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 16,
+      "url": "https://www.youtube.com/watch?v=eodAIw3o50E"
     },
     {
       "videoId": "JO9Cqs4Cf-o",
       "title": "새우탕 찐하게 우려낸 국물 라멘 🦐 이거지...삿포로가면 꼭 들려야 할 두 곳ㅣ수프카레 사무라이&에비소바 이치겐 [EN]",
       "channelName": "비밀이야 bimirya",
-      "position": 16,
-      "url": "https://www.youtube.com/watch?v=JO9Cqs4Cf-o",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- 수프카레 사무라이\n- 주소: 일본 〒060-0063 Hokkaido, Sapporo, Chuo Ward, Minami 3 Jonishi, 6 Chome−1−3 ティアラ36 2F\n- 번호: +81 11-272-3671\n- 월~일 오전 11:30~오후 3:00, 오후 5:30~9:30\n\n- 에비소바 이치겐\n- 주소: 9 Chome-1024-10 Minami 7 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0807 일본\n- 번호: +81 11-513-0098\n- 월~일 오전 11:00~오전 3:00\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 17,
+      "url": "https://www.youtube.com/watch?v=JO9Cqs4Cf-o"
     },
     {
       "videoId": "ZyY6Hl555Ws",
       "title": "이 영상을 보시면 단번에 이해하실 수 있습니다ㅣ짧고 굵은 가심비 1등 스시집 소개🍣ㅣ스시미야카와 [EN]",
       "channelName": "비밀이야 bimirya",
-      "position": 17,
-      "url": "https://www.youtube.com/watch?v=ZyY6Hl555Ws",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- 주소: 일본 〒064-0824 Hokkaido, Sapporo, Chuo Ward, Kita 4 Jonishi, 25 Chome−2−2 リヒトラーレ円山 1F\n- 번호: +81 11-613-2221\n- 월,화,목~일 오후 5:00~10:00/ 수 휴\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 18,
+      "url": "https://www.youtube.com/watch?v=ZyY6Hl555Ws"
     },
     {
       "videoId": "BGmaULQnWR0",
       "title": "맛&가성비 둘 다 잡은 카이센동 맛집 두 곳 추천!ㅣ우니 무라카미&사카나야노 다이도코로 [EN]",
       "channelName": "비밀이야 bimirya",
-      "position": 18,
-      "url": "https://www.youtube.com/watch?v=BGmaULQnWR0",
-      "description": "밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- 우니 무라카미\n- 월~일 오전 11:30~오후 1:30, 오후 5:30~8:45\n- 주소: 일본 〒060-0003 Hokkaido, Sapporo, Chuo Ward, Kita 3 Jonishi, 4 Chome−1-1 日本生命札幌ビル\n- 연락처: +81 11-290-1000\n\n- 사카나야노 다이도코로\n- 월~일 오전 7:00~오후 3:00\n- 주소: 일본 〒060-0052 Hokkaido, Sapporo, Chuo Ward, Minami 2 Johigashi, 2 Chome, 小西ビル １ 階\n- 연락처: +81 11-251-2219\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 19,
+      "url": "https://www.youtube.com/watch?v=BGmaULQnWR0"
     },
     {
       "videoId": "ILFK8cODr4U",
       "title": "징기스칸 양고기 타파할 최고 맛집 대공개🍖🪇ㅣ이타다끼마쓰&호르몬풍토 [EN]",
       "channelName": "비밀이야 bimirya",
-      "position": 19,
-      "url": "https://www.youtube.com/watch?v=ILFK8cODr4U",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- 이타다끼마쓰\n- 월~일 오전 11:30~오후 2:00, 오후 4:00~9:30\n- 주소: 5 Chome-1-6 Minami 5 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0805 일본\n- 연락처: +81 50-5484-2607\n\n- 호르몬풍토\n- 월~금 오후 5:00~오전 5:00/ 토 오후 4:00~오전 5:00/ 일 오후 4:00~오전 12:00\n- 주소: 4 Chome Minami 6 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0806 일본\n- 연락처: +81 11-521-2244\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 20,
+      "url": "https://www.youtube.com/watch?v=ILFK8cODr4U"
     },
     {
       "videoId": "YYhUDMpqnOY",
       "title": "겉바속촉 덴뿌라 진짜 잘하는 집은 따로 있다?! 🦐 미슐랭 투스타 단골집 [EN]ㅣ덴푸라아라키",
       "channelName": "비밀이야 bimirya",
-      "position": 20,
-      "url": "https://www.youtube.com/watch?v=YYhUDMpqnOY",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- Tempura Araki\n- 월~토 오후 6:00~10:30, 일 휴무\n- 주소: 일본 064-0807 Hokkaido, Sapporo, Chuo Ward, Minami 7 Jonishi, 4 Chome−1-2 1F\n- 연락처: +81 11-552-5550\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 21,
+      "url": "https://www.youtube.com/watch?v=YYhUDMpqnOY"
     },
     {
       "videoId": "kwNgGM31Wn4",
       "title": "비밀이야가 오픈런하는 장어맛집?🏃🏻‍♂️사르르 녹는 장어와 맥주 한잔..🍺 [EN]ㅣ우나메이",
       "channelName": "비밀이야 bimirya",
-      "position": 21,
-      "url": "https://www.youtube.com/watch?v=kwNgGM31Wn4",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- 수~월 오전 11:30~오후 2:30, 오후 5:00~8:30/ 화 휴무\n- 주소: 27 Chome-3-3 Kita 1 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0821 일본\n- 번호: +81 11-612-5777\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 22,
+      "url": "https://www.youtube.com/watch?v=kwNgGM31Wn4"
     },
     {
       "videoId": "LVbINarIdNA",
       "title": "삿포로의 함박 눈꽃 게살🌨️🦀있잖아요..저 너무 들떴어요 [EN] ㅣ카츠카니노 하나사키",
       "channelName": "비밀이야 bimirya",
-      "position": 22,
-      "url": "https://www.youtube.com/watch?v=LVbINarIdNA",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- Katukanino Hanasaki\n- 주소: 일본 〒064-0805 Hokkaido, Sapporo, Chuo Ward, Minami 5 Jonishi, 2 Chome−1−1 美松村岡ビル 5Ｆ\n- 050-5484-1912\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 23,
+      "url": "https://www.youtube.com/watch?v=LVbINarIdNA"
     },
     {
       "videoId": "tbosSzVJGqw",
       "title": "역대급 야끼니꾸 맛집🔥안심에 버금가는 와규 부위는 어디일까? 애기보, 대창, 양깃머리까지 맛있는 집 [EN]ㅣ도쿄 킨류잔",
       "channelName": "비밀이야 bimirya",
-      "position": 23,
-      "url": "https://www.youtube.com/watch?v=tbosSzVJGqw",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭 \n먹자! 마시자! 놀러 다니자! \n\n* 가게 정보 \n- 킨류잔\n- 월~일 08:30 - 17:30/ 수 휴무\n- 주소: 3 Chome-14-1 Shirokane, Minato City, Tokyo 108-0072 일본\n- 전화: +81338419190\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다. \n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시 \n* 비즈니스 문의 : bimiryabdr@naver.com"
+      "position": 24,
+      "url": "https://www.youtube.com/watch?v=tbosSzVJGqw"
     },
     {
       "videoId": "brRcKWhPkKw",
       "title": "작은 마을 하나를 섭렵해 보았습니다 [마쓰야마 투어 2편][EN]ㅣ오마카세, 프렌치 레스토랑",
       "channelName": "비밀이야 bimirya",
-      "position": 24,
-      "url": "https://www.youtube.com/watch?v=brRcKWhPkKw",
-      "description": "[교원투어 여행이지 X 비밀이야]\n'마쓰야마' 지역으로 제가 픽한 식당들이 패키지에 알차게 구성되어 있으니 일본 소도시의 매력을 한껏 느껴보시면 좋겠습니다.\n⛩ 투어 링크: https://sbsb.kr/secret_tour2\n\n#맛집 #미슐랭 #와인\n먹자! 마시자! 놀러 다니자!\n\n* 업로드 시간 : 매주 수요일, 금요일 오후 6시\n* 비지니스 문의 : bimiryabdr@naver.com"
+      "position": 25,
+      "url": "https://www.youtube.com/watch?v=brRcKWhPkKw"
     },
     {
       "videoId": "SLEXVgPrklk",
       "title": "물건 제대로 건졌다🐟 비주얼에 한번 맛에 두번 감탄하는 가성비 갑 오마카세 [EN]ㅣDogo Kaishu",
       "channelName": "비밀이야 bimirya",
-      "position": 25,
-      "url": "https://www.youtube.com/watch?v=SLEXVgPrklk",
-      "description": "Dogo Kaishu 식당이 포함된 '마쓰야마' 미식 투어는? \n⛩ 투어 링크: https://sbsb.kr/secret_tour2\n\n#맛집 #미슐랭 #와인\n먹자! 마시자! 놀러 다니자!\n\n* 업로드 시간 : 매주 수요일, 금요일 오후 6시\n* 비지니스 문의 : bimiryabdr@naver.com"
+      "position": 26,
+      "url": "https://www.youtube.com/watch?v=SLEXVgPrklk"
     },
     {
       "videoId": "QRDDx31HolM",
       "title": "미식 투어는 이렇게 하는 거에요🤫 17시간 강행군 [마쓰야마 투어 1편] [EN]ㅣ야키토리, 우동, 사케, 길거리먹방",
       "channelName": "비밀이야 bimirya",
-      "position": 26,
-      "url": "https://www.youtube.com/watch?v=QRDDx31HolM",
-      "description": "[교원투어 여행이지 X 비밀이야]\n일본 '마쓰야마' 지역으로 미식 투어를 알차게 짜보았습니다.\n제가 픽한 식당들이 패키지에 구성되어 있으니 일본 소도시의 매력을 한껏 느껴보시면 좋겠습니다.\n동행 패키지는 완판되었습니다. 감사합니다.\n\n⛩ 투어 링크: https://sbsb.kr/secret_tour2\n\n#맛집 #미슐랭 #와인\n먹자! 마시자! 놀러 다니자!\n\n* 업로드 시간 : 매주 수요일, 금요일 오후 6시\n* 비지니스 문의 : bimiryabdr@naver.com"
+      "position": 27,
+      "url": "https://www.youtube.com/watch?v=QRDDx31HolM"
     },
     {
       "videoId": "qGhQRyw6IRE",
       "title": "(EN) 이런 초대형 아스파라거스 요리 본 적 있어요? 프랑스 본점에서 건물, 인테리어, 음식, 와인리스트까지 그대로 들여온 이곳 ㅣ L’Auberge de L’ill",
       "channelName": "비밀이야 bimirya",
-      "position": 27,
-      "url": "https://www.youtube.com/watch?v=qGhQRyw6IRE",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭\n먹자! 마시자! 놀러 다니자!\n\n* 가게 정보\n- L’Auberge de L’ill\n- 수~월 11:30-23:00, 브레이크 타임 15:00~17:30 / 화 휴무\n- 전화 : +81 11-632-7810\n- 주소 : 28 Chome-3-1 Minami 1 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0801 일본\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다.\n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시\n* 비지니스 문의 : bimiryabdr@naver.com"
+      "position": 28,
+      "url": "https://www.youtube.com/watch?v=qGhQRyw6IRE"
     },
     {
       "videoId": "pmOL-N9ZgYQ",
       "title": "(EN) 일본에서 가장 먼저 찾게 되는 삿포로 미슐랭 투스타 술집🐟🍶 비밀이야가 이토록 사랑하는 이유는? l 슈보신센",
       "channelName": "비밀이야 bimirya",
-      "position": 28,
-      "url": "https://www.youtube.com/watch?v=pmOL-N9ZgYQ",
-      "description": "#비밀이야 #맛집 #와인 #미슐랭\n\n* 가게 정보\n- 슈보신센 (酒房しんせん)\n- 월~토 17:30~23:00 / 일 휴무\n- 전화 : +81 11-512-3721\n- 주소 : 3 Chome-6-22 Minami 6 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0806 일본\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다.\n* 업로드 시간 : 매주 수요일 & 일요일 오후 6시\n* 비지니스 문의 : bimiryabdr@naver.com"
+      "position": 29,
+      "url": "https://www.youtube.com/watch?v=pmOL-N9ZgYQ"
     },
     {
       "videoId": "vSNU8_Aft-M",
       "title": "홋카이도를 대표하는 고급 생선 홍살치🐟",
       "channelName": "비밀이야 bimirya",
-      "position": 29,
-      "url": "https://www.youtube.com/watch?v=vSNU8_Aft-M",
-      "description": "#맛집 #미슐랭 #와인\n먹자! 마시자! 놀러 다니자!\n\n* 가게 정보-1\n- 酒庵 五醍 (슈안 고다이)\n- 월~토 17:00-23:00\n- 전화 : +81 11-531-8080\n- 주소 : Japan 4 Chome-2-18 Minami 7 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0807\n\n* 가게 정보-2\n- Suage+ (스아게 플러스)\n- 월~일 11:30-23:00\n- 전화 : +81 11-233-2911\n- 주소 : Japan 〒064-0804 Hokkaido, Sapporo, Chuo Ward, Minami 4 Jonishi, 5 Chome−6-1 都志松ビル ２階\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다.\n* 업로드 시간 : 금요일 오후 6시\n* 비지니스 문의 : bimiryabdr@naver.com"
+      "position": 30,
+      "url": "https://www.youtube.com/watch?v=vSNU8_Aft-M"
     },
     {
       "videoId": "m5uPotCxv2Y",
       "title": "삿포로에서 2차 가기 좋은 곳 대방출✌",
       "channelName": "비밀이야 bimirya",
-      "position": 30,
-      "url": "https://www.youtube.com/watch?v=m5uPotCxv2Y",
-      "description": "#맛집 #미슐랭 #와인\n먹자! 마시자! 놀러 다니자!\n\n* 가게 정보-1\n- バードウォッチング (Bird Watching)\n- 월~일 17:30-25:00\n- 전화 : +81 11-272-1150\n- 주소 : Japan 〒064-0804 Hokkaido, Sapporo, Chuo Ward, Minami 4 Jonishi, 5 Chome−５\n\n* 가게 정보-2\n- ラーメン信月 (라멘 신게츠)\n- 월~토 8:00-17:00\n- 전화 : +81 11-533-4844\n- 주소 : Japan 〒064-0805 Hokkaido, Sapporo, Chuo Ward, Minami 5 Jonishi, 3 Chome, N･グランデビル（旧･第4グリーンビル）\n\n* 가게 정보-3\n- ジンギスカン ラム (징기스칸 라무)\n- 월~일 17:00-22:00 / 화 휴무\n- 전화 : +81 11-512-2277\n- 주소 : Japan 4 Chome-2-11 Minami 7 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0807\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다.\n* 업로드 시간 : 금요일 오후 6시\n* 비지니스 문의 : bimiryabdr@naver.com"
+      "position": 31,
+      "url": "https://www.youtube.com/watch?v=m5uPotCxv2Y"
     },
     {
       "videoId": "BnpEQIAGbUM",
       "title": "여기는 재료 퀄리티로 승부 보는 식당입니다🍣",
       "channelName": "비밀이야 bimirya",
-      "position": 31,
-      "url": "https://www.youtube.com/watch?v=BnpEQIAGbUM",
-      "description": "#맛집 #미슐랭 #와인\n먹자! 마시자! 놀러 다니자!\n\n* 가게 정보\n- ○鮨 (마루즈시)\n- 월 18:00-21:00 / 화~토 12:00-14:00, 18:00-21:00\n- 전화 : +81 11 552 6266\n- 주소 : 〒064-0806 Hokkaido, Sapporo, Chuo Ward, Minami 6 Jonishi, 4 Chome−４ ライトビル １F Japan\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다.\n* 업로드 시간 : 매주 수요일, 금요일 오후 6시\n* 비지니스 문의 : bimiryabdr@naver.com"
+      "position": 32,
+      "url": "https://www.youtube.com/watch?v=BnpEQIAGbUM"
     },
     {
       "videoId": "_1-2klFGMw8",
       "title": "클래식한 음식으로 35년 동안 자리를 지킬 수 있었던 이유🤫",
       "channelName": "비밀이야 bimirya",
-      "position": 32,
-      "url": "https://www.youtube.com/watch?v=_1-2klFGMw8",
-      "description": "#맛집 #미슐랭 #와인\n먹자! 마시자! 놀러 다니자!\n\n* 가게 정보\n- Le Gentilhomme (장띠옴므)\n- 월~일 11:30-15:00, 17:30-22:00 / 화 휴무\n- 전화 : +81 11-531-2251\n- 주소 : Japan 〒064-0804 Hokkaido, Sapporo, Chuo Ward, Minami 4 Jonishi, 8 Chome−２−1-3 サンプラーザ札幌 1F\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다.\n* 업로드 시간 : 금요일 오후 6시\n* 비지니스 문의 : bimiryabdr@naver.com"
+      "position": 33,
+      "url": "https://www.youtube.com/watch?v=_1-2klFGMw8"
     },
     {
       "videoId": "Bm0e98UsIYA",
       "title": "맛있는 거 다음 맛있는 거 🍣",
       "channelName": "비밀이야 bimirya",
-      "position": 33,
-      "url": "https://www.youtube.com/watch?v=Bm0e98UsIYA",
-      "description": "#맛집 #미슐랭 #와인\n먹자! 마시자! 놀러 다니자!\n\n* 가게 정보\n- 寿し ひでたか (스시 히데타카)\n- 월~토 18:00-23:00\n- 전화 : +81 11-200-0677\n- 주소 : Japan 〒064-0807 Hokkaido, Sapporo, Chuo Ward, 南7条西4丁目 延寿堂1F\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다.\n* 업로드 시간 : 매주 수요일, 금요일 오후 6시\n* 비지니스 문의 : bimiryabdr@naver.com"
+      "position": 34,
+      "url": "https://www.youtube.com/watch?v=Bm0e98UsIYA"
     },
     {
       "videoId": "rMu6RFdC038",
       "title": "삿포로의 투스타 튀김 오마카세",
       "channelName": "비밀이야 bimirya",
-      "position": 34,
-      "url": "https://www.youtube.com/watch?v=rMu6RFdC038",
-      "description": "#맛집 #미슐랭 #와인\n먹자! 마시자! 놀러 다니자!\n\n* 가게 정보\n- 天ぷら あら木 (텐푸라 아라키)\n- 월~토 18:00-22:30\n- 전화 : +81 11-552-5550\n- 주소 : Japna 〒064-0807 Hokkaido, Sapporo, Chuo Ward, Minami 7 Jonishi, 4 Chome−1-2 延寿堂 1F\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다.\n* 업로드 시간 : 매주 금요일 오후 6시\n* 비지니스 문의 : bimiryabdr@naver.com"
+      "position": 35,
+      "url": "https://www.youtube.com/watch?v=rMu6RFdC038"
     },
     {
       "videoId": "fdZlJ49JBig",
       "title": "여기 예약하기가 진짜 어렵습니다",
       "channelName": "비밀이야 bimirya",
-      "position": 35,
-      "url": "https://www.youtube.com/watch?v=fdZlJ49JBig",
-      "description": "#맛집 #미슐랭 #와인\n먹자! 마시자! 놀러 다니자!\n\n* 가게 정보\n- すし宮川 (스시 미야카와)\n- 월~일 9:30-19:30\n- 전화 : +81 11-613-2221\n- 주소 : 25-2-2, Kita-4-jonishi, Chuo-ku, Sapporo-shi, Hokkaido, 060-0004 / 北海道札幌市中央区北4条西25-2-2 リヒトラーレ円山1F\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다.\n* 업로드 시간 : 매주 수요일, 금요일 오후 6시\n* 비지니스 문의 : bimiryabdr@naver.com"
+      "position": 36,
+      "url": "https://www.youtube.com/watch?v=fdZlJ49JBig"
     },
     {
       "videoId": "GgUXN4BiXck",
       "title": "일본인 셰프에게 취향저격 당했습니다",
       "channelName": "비밀이야 bimirya",
-      "position": 36,
-      "url": "https://www.youtube.com/watch?v=GgUXN4BiXck",
-      "description": "#맛집 #미슐랭 #와인\n먹자! 마시자! 놀러 다니자!\n\n* 가게 정보\n- 酒房しんせん (슈보신센)\n- 월~토 17:30-23:00\n- 전화 : +81 11 512 3721\n- 주소 : 3 Chome-6-22 Minami 6 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0806 Japan\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다.\n* 업로드 시간 : 매주 수요일, 금요일 오후 6시\n* 비지니스 문의 : bimiryabdr@naver.com"
+      "position": 37,
+      "url": "https://www.youtube.com/watch?v=GgUXN4BiXck"
     },
     {
       "videoId": "AtrrQe6srv8",
       "title": "아니 셰프님! 그분을 모르시다니...😮",
       "channelName": "비밀이야 bimirya",
-      "position": 37,
-      "url": "https://www.youtube.com/watch?v=AtrrQe6srv8",
-      "description": "#맛집 #미슐랭 #와인\n먹자! 마시자! 놀러 다니자!\n\n* 가게 정보\n- comme moa (꼼모아)\n- 월~금 18:00~22:00 / 토,일 12:00~15:00, 18:00~23:00\n- 전화 : 02-6217-5252\n- 주소 : 서울특별시 용산구 신흥로 56\n\n* 본 영상은 광고, 협찬과 무관한 레스토랑 방문기입니다.\n* 업로드 시간 : 매주 수요일, 금요일 오후 6시\n* 비지니스 문의 : bimiryabdr@naver.com"
+      "position": 38,
+      "url": "https://www.youtube.com/watch?v=AtrrQe6srv8"
     }
   ]
 }

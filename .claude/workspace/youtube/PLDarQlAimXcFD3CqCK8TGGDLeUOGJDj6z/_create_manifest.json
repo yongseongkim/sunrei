@@ -1,0 +1,931 @@
+{
+  "sunreiId": "SR01kyhwcyy5f1tf40nvhhxgc17x",
+  "sourceId": "SRC01kyhwcyvmh243xgb308xz76r1",
+  "spots": [
+    {
+      "spotId": "SS01kyhwcyy7cb66vv451hatdvp5",
+      "videoId": "7_1X4BiYRns",
+      "videoTitle": "일본 현대건축 여행ep27/히로오가 도쿄 최고의 부촌인 이유(feat. 일본의 압구정 현대아파트)"
+    },
+    {
+      "spotId": "SS01kyhwcyya7xma6r7wwm1nptkm",
+      "videoId": "7_1X4BiYRns",
+      "videoTitle": "일본 현대건축 여행ep27/히로오가 도쿄 최고의 부촌인 이유(feat. 일본의 압구정 현대아파트)"
+    },
+    {
+      "spotId": "SS01kyhwcyybtjv4tyqzw8zzxsvm",
+      "videoId": "7_1X4BiYRns",
+      "videoTitle": "일본 현대건축 여행ep27/히로오가 도쿄 최고의 부촌인 이유(feat. 일본의 압구정 현대아파트)"
+    },
+    {
+      "spotId": "SS01kyhwcyyd0wjtkegyrpkdtfys",
+      "videoId": "7_1X4BiYRns",
+      "videoTitle": "일본 현대건축 여행ep27/히로오가 도쿄 최고의 부촌인 이유(feat. 일본의 압구정 현대아파트)"
+    },
+    {
+      "spotId": "SS01kyhwcyyfzq59esqp4vk4egzb",
+      "videoId": "7_1X4BiYRns",
+      "videoTitle": "일본 현대건축 여행ep27/히로오가 도쿄 최고의 부촌인 이유(feat. 일본의 압구정 현대아파트)"
+    },
+    {
+      "spotId": "SS01kyhwcyyhdzea43hfh52p2dhq",
+      "videoId": "d62huiunpPQ",
+      "videoTitle": "일본 현대건축 여행ep33/아오야마는 진짜 유명한 느좋 부촌임"
+    },
+    {
+      "spotId": "SS01kyhwcyyng7pqfcnxzg2deg60",
+      "videoId": "d62huiunpPQ",
+      "videoTitle": "일본 현대건축 여행ep33/아오야마는 진짜 유명한 느좋 부촌임"
+    },
+    {
+      "spotId": "SS01kyhwcyyrk8sq1jttvhct2398",
+      "videoId": "d62huiunpPQ",
+      "videoTitle": "일본 현대건축 여행ep33/아오야마는 진짜 유명한 느좋 부촌임"
+    },
+    {
+      "spotId": "SS01kyhwcyytjyczp6xkjg7mqjze",
+      "videoId": "d62huiunpPQ",
+      "videoTitle": "일본 현대건축 여행ep33/아오야마는 진짜 유명한 느좋 부촌임"
+    },
+    {
+      "spotId": "SS01kyhwcyyydn0mktvg5cn8xwcp",
+      "videoId": "d62huiunpPQ",
+      "videoTitle": "일본 현대건축 여행ep33/아오야마는 진짜 유명한 느좋 부촌임"
+    },
+    {
+      "spotId": "SS01kyhwcyyztkb0pxjp4hnxpaah",
+      "videoId": "d62huiunpPQ",
+      "videoTitle": "일본 현대건축 여행ep33/아오야마는 진짜 유명한 느좋 부촌임"
+    },
+    {
+      "spotId": "SS01kyhwcyz1f6c2p527cw5kyxq1",
+      "videoId": "XR0MFKS8brg",
+      "videoTitle": "일본 현대건축 여행ep32/ 미대보다 감각적인 공대, 가나가와공과대학(KAIT)"
+    },
+    {
+      "spotId": "SS01kyhwcyz35zqbksvyf0eqk62c",
+      "videoId": "XR0MFKS8brg",
+      "videoTitle": "일본 현대건축 여행ep32/ 미대보다 감각적인 공대, 가나가와공과대학(KAIT)"
+    },
+    {
+      "spotId": "SS01kyhwcyz4f87dnmwp97hxxtvs",
+      "videoId": "T8rK1SZsNv4",
+      "videoTitle": "일본 현대건축 여행ep.15/도쿄 미술관 투어의 의외의 성지, 우에노, 르 코르뷔지에"
+    },
+    {
+      "spotId": "SS01kyhwcyz7ekdv6h91hhd121pb",
+      "videoId": "T8rK1SZsNv4",
+      "videoTitle": "일본 현대건축 여행ep.15/도쿄 미술관 투어의 의외의 성지, 우에노, 르 코르뷔지에"
+    },
+    {
+      "spotId": "SS01kyhwcyzc8r7yaf65szgz4zs3",
+      "videoId": "ZwbYyONOCZE",
+      "videoTitle": "일본 현대건축 여행ep.1 / 건축가들이 벌이는 패션쇼, 도쿄 오모테산도"
+    },
+    {
+      "spotId": "SS01kyhwcyze9ffrj19z6ykk393d",
+      "videoId": "ZwbYyONOCZE",
+      "videoTitle": "일본 현대건축 여행ep.1 / 건축가들이 벌이는 패션쇼, 도쿄 오모테산도"
+    },
+    {
+      "spotId": "SS01kyhwcyzg8gce8ysecmb8nnge",
+      "videoId": "ZwbYyONOCZE",
+      "videoTitle": "일본 현대건축 여행ep.1 / 건축가들이 벌이는 패션쇼, 도쿄 오모테산도"
+    },
+    {
+      "spotId": "SS01kyhwcyzjm8fhsq3k28e5x632",
+      "videoId": "ZwbYyONOCZE",
+      "videoTitle": "일본 현대건축 여행ep.1 / 건축가들이 벌이는 패션쇼, 도쿄 오모테산도"
+    },
+    {
+      "spotId": "SS01kyhwcyzmc5kmyj8276absz4n",
+      "videoId": "ZwbYyONOCZE",
+      "videoTitle": "일본 현대건축 여행ep.1 / 건축가들이 벌이는 패션쇼, 도쿄 오모테산도"
+    },
+    {
+      "spotId": "SS01kyhwcyznfn7z3yeef44qckpv",
+      "videoId": "uwuZFZXLMmQ",
+      "videoTitle": "일본 현대건축 여행ep.14/도쿄에 숨겨진 작은 교토, 작은 파리, 카구라자카의 유명 건축물 둘러보기"
+    },
+    {
+      "spotId": "SS01kyhwcz0mvq9a0wxgbq4qz0e3",
+      "videoId": "uwuZFZXLMmQ",
+      "videoTitle": "일본 현대건축 여행ep.14/도쿄에 숨겨진 작은 교토, 작은 파리, 카구라자카의 유명 건축물 둘러보기"
+    },
+    {
+      "spotId": "SS01kyhwcz0px3zvsy3p36razejq",
+      "videoId": "uwuZFZXLMmQ",
+      "videoTitle": "일본 현대건축 여행ep.14/도쿄에 숨겨진 작은 교토, 작은 파리, 카구라자카의 유명 건축물 둘러보기"
+    },
+    {
+      "spotId": "SS01kyhwcz0rnm9z2n8k62mphn0s",
+      "videoId": "uwuZFZXLMmQ",
+      "videoTitle": "일본 현대건축 여행ep.14/도쿄에 숨겨진 작은 교토, 작은 파리, 카구라자카의 유명 건축물 둘러보기"
+    },
+    {
+      "spotId": "SS01kyhwcz0v6mjg6stwdr23cjgr",
+      "videoId": "uwuZFZXLMmQ",
+      "videoTitle": "일본 현대건축 여행ep.14/도쿄에 숨겨진 작은 교토, 작은 파리, 카구라자카의 유명 건축물 둘러보기"
+    },
+    {
+      "spotId": "SS01kyhwcz0yywy45nwf2kshdnes",
+      "videoId": "uwuZFZXLMmQ",
+      "videoTitle": "일본 현대건축 여행ep.14/도쿄에 숨겨진 작은 교토, 작은 파리, 카구라자카의 유명 건축물 둘러보기"
+    },
+    {
+      "spotId": "SS01kyhwcz10zde9w2mm00114cam",
+      "videoId": "uwuZFZXLMmQ",
+      "videoTitle": "일본 현대건축 여행ep.14/도쿄에 숨겨진 작은 교토, 작은 파리, 카구라자카의 유명 건축물 둘러보기"
+    },
+    {
+      "spotId": "SS01kyhwcz12a3pbd4w42fxrzp28",
+      "videoId": "uwuZFZXLMmQ",
+      "videoTitle": "일본 현대건축 여행ep.14/도쿄에 숨겨진 작은 교토, 작은 파리, 카구라자카의 유명 건축물 둘러보기"
+    },
+    {
+      "spotId": "SS01kyhwcz14d5ppwvx1w0n63r9e",
+      "videoId": "uwuZFZXLMmQ",
+      "videoTitle": "일본 현대건축 여행ep.14/도쿄에 숨겨진 작은 교토, 작은 파리, 카구라자카의 유명 건축물 둘러보기"
+    },
+    {
+      "spotId": "SS01kyhwcz8dgjj3hqwv20e7why5",
+      "videoId": "y5jnQELKvp4",
+      "videoTitle": "일본 현대건축 여행ep.7 / 건축가들이 만든 압도적인 스케일, 도쿄 긴자, 마루노우치"
+    },
+    {
+      "spotId": "SS01kyhwcz150617searj9q285g0",
+      "videoId": "y5jnQELKvp4",
+      "videoTitle": "일본 현대건축 여행ep.7 / 건축가들이 만든 압도적인 스케일, 도쿄 긴자, 마루노우치"
+    },
+    {
+      "spotId": "SS01kyhwcz170atknsfnqh7qmrxj",
+      "videoId": "y5jnQELKvp4",
+      "videoTitle": "일본 현대건축 여행ep.7 / 건축가들이 만든 압도적인 스케일, 도쿄 긴자, 마루노우치"
+    },
+    {
+      "spotId": "SS01kyhwcz19s2k90f34ep0f3jcv",
+      "videoId": "Bn75Zi-RidE",
+      "videoTitle": "영화 '퍼펙트데이즈'가 알려주지 않는 시부야의 이야기 #1"
+    },
+    {
+      "spotId": "SS01kyhwcz1bk8g0h97pq443243z",
+      "videoId": "xX4IXlV5i8M",
+      "videoTitle": "일본 현대건축 여행ep23/아자부다이 힐스가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwcz1dmbqycmq01awksvfb",
+      "videoId": "xX4IXlV5i8M",
+      "videoTitle": "일본 현대건축 여행ep23/아자부다이 힐스가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwcz1fwqd9b9w2q8kca0ht",
+      "videoId": "xX4IXlV5i8M",
+      "videoTitle": "일본 현대건축 여행ep23/아자부다이 힐스가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwcz1gk11fskef02h3m9e5",
+      "videoId": "Kk_zEgXrXeY",
+      "videoTitle": "일본 현대건축 여행ep.4 / 안도 타다오가 북치고 장구치는 곳, 도쿄 시부야"
+    },
+    {
+      "spotId": "SS01kyhwcz1j5w9389fym2kvpx9n",
+      "videoId": "Kk_zEgXrXeY",
+      "videoTitle": "일본 현대건축 여행ep.4 / 안도 타다오가 북치고 장구치는 곳, 도쿄 시부야"
+    },
+    {
+      "spotId": "SS01kyhwcz1m6pwvp37jxj7qfa51",
+      "videoId": "Kk_zEgXrXeY",
+      "videoTitle": "일본 현대건축 여행ep.4 / 안도 타다오가 북치고 장구치는 곳, 도쿄 시부야"
+    },
+    {
+      "spotId": "SS01kyhwcz1n9wr012s2qr88z8jb",
+      "videoId": "Kk_zEgXrXeY",
+      "videoTitle": "일본 현대건축 여행ep.4 / 안도 타다오가 북치고 장구치는 곳, 도쿄 시부야"
+    },
+    {
+      "spotId": "SS01kyhwcz1qpzme8j4hhn6x7hvm",
+      "videoId": "Kk_zEgXrXeY",
+      "videoTitle": "일본 현대건축 여행ep.4 / 안도 타다오가 북치고 장구치는 곳, 도쿄 시부야"
+    },
+    {
+      "spotId": "SS01kyhwcz1s9s2brzarq8z20peq",
+      "videoId": "GYjYEbTaCWE",
+      "videoTitle": "일본 현대건축 여행ep.2 /극T가 들어가도 극F가 되어 나오는 도서관, 기후 미디어 코스모스 모두의 숲"
+    },
+    {
+      "spotId": "SS01kyhwcz1z28pag8gygbh7s1qq",
+      "videoId": "GYjYEbTaCWE",
+      "videoTitle": "일본 현대건축 여행ep.2 /극T가 들어가도 극F가 되어 나오는 도서관, 기후 미디어 코스모스 모두의 숲"
+    },
+    {
+      "spotId": "SS01kyhwcz21w5hrnsp2g8axj4a4",
+      "videoId": "GYjYEbTaCWE",
+      "videoTitle": "일본 현대건축 여행ep.2 /극T가 들어가도 극F가 되어 나오는 도서관, 기후 미디어 코스모스 모두의 숲"
+    },
+    {
+      "spotId": "SS01kyhwcz23hnpw27a03hwra839",
+      "videoId": "MP33JQA586M",
+      "videoTitle": "일본 현대건축 여행 ep.3 /100년을 간직한 의외의 장소, 이케부쿠로 / 프랭크 로이드 라이트에서 쿠마 켄고까지"
+    },
+    {
+      "spotId": "SS01kyhwcz24nd5bt7xrwanjeegq",
+      "videoId": "MP33JQA586M",
+      "videoTitle": "일본 현대건축 여행 ep.3 /100년을 간직한 의외의 장소, 이케부쿠로 / 프랭크 로이드 라이트에서 쿠마 켄고까지"
+    },
+    {
+      "spotId": "SS01kyhwcz260m5yxtccjg2s4vpa",
+      "videoId": "MP33JQA586M",
+      "videoTitle": "일본 현대건축 여행 ep.3 /100년을 간직한 의외의 장소, 이케부쿠로 / 프랭크 로이드 라이트에서 쿠마 켄고까지"
+    },
+    {
+      "spotId": "SS01kyhwcz28w5mgre0rv2w8h6s0",
+      "videoId": "MP33JQA586M",
+      "videoTitle": "일본 현대건축 여행 ep.3 /100년을 간직한 의외의 장소, 이케부쿠로 / 프랭크 로이드 라이트에서 쿠마 켄고까지"
+    },
+    {
+      "spotId": "SS01kyhwcz2asbrvw464r84qzm4y",
+      "videoId": "g9PrE_JzoUw",
+      "videoTitle": "일본 현대건축 여행 ep.5 / 샤넬을 품은 뒷골목, 도쿄 하라주쿠에서 오모테산도까지"
+    },
+    {
+      "spotId": "SS01kyhwcz2brg502anww56rhwhn",
+      "videoId": "g9PrE_JzoUw",
+      "videoTitle": "일본 현대건축 여행 ep.5 / 샤넬을 품은 뒷골목, 도쿄 하라주쿠에서 오모테산도까지"
+    },
+    {
+      "spotId": "SS01kyhwcz2e4djn4ss9bax5myg3",
+      "videoId": "g9PrE_JzoUw",
+      "videoTitle": "일본 현대건축 여행 ep.5 / 샤넬을 품은 뒷골목, 도쿄 하라주쿠에서 오모테산도까지"
+    },
+    {
+      "spotId": "SS01kyhwcz2f1g09zj2f8be3yznx",
+      "videoId": "g9PrE_JzoUw",
+      "videoTitle": "일본 현대건축 여행 ep.5 / 샤넬을 품은 뒷골목, 도쿄 하라주쿠에서 오모테산도까지"
+    },
+    {
+      "spotId": "SS01kyhwcz2h9fvp0hjkqmbkzbdg",
+      "videoId": "g9PrE_JzoUw",
+      "videoTitle": "일본 현대건축 여행 ep.5 / 샤넬을 품은 뒷골목, 도쿄 하라주쿠에서 오모테산도까지"
+    },
+    {
+      "spotId": "SS01kyhwcz2kt9rh5j508psx0hhs",
+      "videoId": "g9PrE_JzoUw",
+      "videoTitle": "일본 현대건축 여행 ep.5 / 샤넬을 품은 뒷골목, 도쿄 하라주쿠에서 오모테산도까지"
+    },
+    {
+      "spotId": "SS01kyhwcz3sk194z8751ka99kby",
+      "videoId": "g9PrE_JzoUw",
+      "videoTitle": "일본 현대건축 여행 ep.5 / 샤넬을 품은 뒷골목, 도쿄 하라주쿠에서 오모테산도까지"
+    },
+    {
+      "spotId": "SS01kyhwcz3vnbwrhmhqtyp4zx9e",
+      "videoId": "HILaFQlPm3k",
+      "videoTitle": "일본 현대건축 여행ep.6/아키하바라가 뻔하다면..? 건축가들이 세운, 오타쿠를 위한 새로운 성지, 토코로자와"
+    },
+    {
+      "spotId": "SS01kyhwcz3wnt5swpk6aa4yj646",
+      "videoId": "HILaFQlPm3k",
+      "videoTitle": "일본 현대건축 여행ep.6/아키하바라가 뻔하다면..? 건축가들이 세운, 오타쿠를 위한 새로운 성지, 토코로자와"
+    },
+    {
+      "spotId": "SS01kyhwcz3yfyqmd7nsvqpzz4t9",
+      "videoId": "QQjNqjsEN0g",
+      "videoTitle": "일본 지역경제를 일으킨 어느 신사. 근데 이제 라노벨을 곁들인..도쿄 이색 건축여행, 토코로자와 신사"
+    },
+    {
+      "spotId": "SS01kyhwcz40e5yz0gtmqah27c5v",
+      "videoId": "QQjNqjsEN0g",
+      "videoTitle": "일본 지역경제를 일으킨 어느 신사. 근데 이제 라노벨을 곁들인..도쿄 이색 건축여행, 토코로자와 신사"
+    },
+    {
+      "spotId": "SS01kyhwcz415xwy5jh7v279m5m4",
+      "videoId": "zHiMkbqTHJU",
+      "videoTitle": "일본 현대건축 여행ep.8/도쿄 올드머니의 상징 긴자, 에르메스에서 로로피아나, 긴자식스까지"
+    },
+    {
+      "spotId": "SS01kyhwcz43kk889szej915s5sg",
+      "videoId": "zHiMkbqTHJU",
+      "videoTitle": "일본 현대건축 여행ep.8/도쿄 올드머니의 상징 긴자, 에르메스에서 로로피아나, 긴자식스까지"
+    },
+    {
+      "spotId": "SS01kyhwcz47vb5nppky2asapytm",
+      "videoId": "zHiMkbqTHJU",
+      "videoTitle": "일본 현대건축 여행ep.8/도쿄 올드머니의 상징 긴자, 에르메스에서 로로피아나, 긴자식스까지"
+    },
+    {
+      "spotId": "SS01kyhwcz4acn9ndqfwj08w6sg9",
+      "videoId": "zHiMkbqTHJU",
+      "videoTitle": "일본 현대건축 여행ep.8/도쿄 올드머니의 상징 긴자, 에르메스에서 로로피아나, 긴자식스까지"
+    },
+    {
+      "spotId": "SS01kyhwcz4cs1xevk4q8n3fap2s",
+      "videoId": "zHiMkbqTHJU",
+      "videoTitle": "일본 현대건축 여행ep.8/도쿄 올드머니의 상징 긴자, 에르메스에서 로로피아나, 긴자식스까지"
+    },
+    {
+      "spotId": "SS01kyhwcz4grdmz5djwfwdg3gt4",
+      "videoId": "zHiMkbqTHJU",
+      "videoTitle": "일본 현대건축 여행ep.8/도쿄 올드머니의 상징 긴자, 에르메스에서 로로피아나, 긴자식스까지"
+    },
+    {
+      "spotId": "SS01kyhwcz4jzsz5gfd48pv6whfj",
+      "videoId": "oK0Htyl1-VQ",
+      "videoTitle": "일본 현대건축 여행ep.9/긴자에서 만나는 건축과 지구의 미래"
+    },
+    {
+      "spotId": "SS01kyhwcz4mrqcphf8qbj3k023j",
+      "videoId": "oK0Htyl1-VQ",
+      "videoTitle": "일본 현대건축 여행ep.9/긴자에서 만나는 건축과 지구의 미래"
+    },
+    {
+      "spotId": "SS01kyhwcz4pntkkz1gy26qtz83f",
+      "videoId": "ks9z5MwLHXY",
+      "videoTitle": "일본 현대건축 여행ep.10/쿠마몬 말고 안도 타다오...구마모토 여행에서 꼭 봐야하는 건축물"
+    },
+    {
+      "spotId": "SS01kyhwcz4thb8860m56y6e183y",
+      "videoId": "ks9z5MwLHXY",
+      "videoTitle": "일본 현대건축 여행ep.10/쿠마몬 말고 안도 타다오...구마모토 여행에서 꼭 봐야하는 건축물"
+    },
+    {
+      "spotId": "SS01kyhwcz54abasccqfrj567qcp",
+      "videoId": "ks9z5MwLHXY",
+      "videoTitle": "일본 현대건축 여행ep.10/쿠마몬 말고 안도 타다오...구마모토 여행에서 꼭 봐야하는 건축물"
+    },
+    {
+      "spotId": "SS01kyhwcz5500gxmptfnn9r0vz9",
+      "videoId": "BgF6rLnyoGs",
+      "videoTitle": "일본 현대건축 여행ep.11/구마모토와 천재 건축가들의 만남, 구마모토 아트폴리스"
+    },
+    {
+      "spotId": "SS01kyhwcz57syp6rwe4mpck8ff9",
+      "videoId": "BgF6rLnyoGs",
+      "videoTitle": "일본 현대건축 여행ep.11/구마모토와 천재 건축가들의 만남, 구마모토 아트폴리스"
+    },
+    {
+      "spotId": "SS01kyhwcz592kz2jmj0mtw5fs6h",
+      "videoId": "J8FcWsEif-k",
+      "videoTitle": "일본 현대건축 여행ep.12/후쿠오카 여행을 더욱 재미있게 부수는 방법, 후쿠오카 주요 관광지의 건축물 구경하기"
+    },
+    {
+      "spotId": "SS01kyhwcz5ade0wsxq7x2h0kte9",
+      "videoId": "J8FcWsEif-k",
+      "videoTitle": "일본 현대건축 여행ep.12/후쿠오카 여행을 더욱 재미있게 부수는 방법, 후쿠오카 주요 관광지의 건축물 구경하기"
+    },
+    {
+      "spotId": "SS01kyhwcz5cmphpbtmqmnsmb2sn",
+      "videoId": "J8FcWsEif-k",
+      "videoTitle": "일본 현대건축 여행ep.12/후쿠오카 여행을 더욱 재미있게 부수는 방법, 후쿠오카 주요 관광지의 건축물 구경하기"
+    },
+    {
+      "spotId": "SS01kyhwcz5d1wabbyemrxp3x62x",
+      "videoId": "J8FcWsEif-k",
+      "videoTitle": "일본 현대건축 여행ep.12/후쿠오카 여행을 더욱 재미있게 부수는 방법, 후쿠오카 주요 관광지의 건축물 구경하기"
+    },
+    {
+      "spotId": "SS01kyhwcz5fscd11fw642dtgfxb",
+      "videoId": "J8FcWsEif-k",
+      "videoTitle": "일본 현대건축 여행ep.12/후쿠오카 여행을 더욱 재미있게 부수는 방법, 후쿠오카 주요 관광지의 건축물 구경하기"
+    },
+    {
+      "spotId": "SS01kyhwcz5hfc5av65gtyftgnvg",
+      "videoId": "J8FcWsEif-k",
+      "videoTitle": "일본 현대건축 여행ep.12/후쿠오카 여행을 더욱 재미있게 부수는 방법, 후쿠오카 주요 관광지의 건축물 구경하기"
+    },
+    {
+      "spotId": "SS01kyhwcz5j6qjbk3588ej8fnmp",
+      "videoId": "J8FcWsEif-k",
+      "videoTitle": "일본 현대건축 여행ep.12/후쿠오카 여행을 더욱 재미있게 부수는 방법, 후쿠오카 주요 관광지의 건축물 구경하기"
+    },
+    {
+      "spotId": "SS01kyhwcz5m5bj9yy2seb3xs4e0",
+      "videoId": "g7J0tViEQ1o",
+      "videoTitle": "일본 현대건축 여행ep.13/무라카미 하루키와 나츠메 소세키의 서재, 도쿄 와세다"
+    },
+    {
+      "spotId": "SS01kyhwcz5n6316k54nrs01qm69",
+      "videoId": "g7J0tViEQ1o",
+      "videoTitle": "일본 현대건축 여행ep.13/무라카미 하루키와 나츠메 소세키의 서재, 도쿄 와세다"
+    },
+    {
+      "spotId": "SS01kyhwcz5q86fk28yqcyztg3ac",
+      "videoId": "g7J0tViEQ1o",
+      "videoTitle": "일본 현대건축 여행ep.13/무라카미 하루키와 나츠메 소세키의 서재, 도쿄 와세다"
+    },
+    {
+      "spotId": "SS01kyhwcz5rjdaajz4x969axv77",
+      "videoId": "fXAtHT096Vc",
+      "videoTitle": "일본 현대건축 여행ep.16/신주쿠 여행시 알아두면 더욱 재미있는 건축물TMI"
+    },
+    {
+      "spotId": "SS01kyhwcz6wem6bwxyn0q0j8kv5",
+      "videoId": "fXAtHT096Vc",
+      "videoTitle": "일본 현대건축 여행ep.16/신주쿠 여행시 알아두면 더욱 재미있는 건축물TMI"
+    },
+    {
+      "spotId": "SS01kyhwcz6yj4y8b3tnbqzq7awf",
+      "videoId": "fXAtHT096Vc",
+      "videoTitle": "일본 현대건축 여행ep.16/신주쿠 여행시 알아두면 더욱 재미있는 건축물TMI"
+    },
+    {
+      "spotId": "SS01kyhwcz6zvagr80e2xg2wefdx",
+      "videoId": "fXAtHT096Vc",
+      "videoTitle": "일본 현대건축 여행ep.16/신주쿠 여행시 알아두면 더욱 재미있는 건축물TMI"
+    },
+    {
+      "spotId": "SS01kyhwcz71fzw97h96vwxk3kzb",
+      "videoId": "9Y38r0HGjCs",
+      "videoTitle": "일본 현대건축 여행ep.17/도쿄 최고의 미술관에는 소장품이 단 하나도 없다? 롯본기 국립신미술관"
+    },
+    {
+      "spotId": "SS01kyhwcz737d60nwpm4qrpp9jr",
+      "videoId": "XUNlP214vXU",
+      "videoTitle": "도쿄대 캠퍼스 투어 / 최고의 건축가들이 지켜낸 최고의 대학교"
+    },
+    {
+      "spotId": "SS01kyhwcz74tcdjp83wes8bqh3b",
+      "videoId": "XUNlP214vXU",
+      "videoTitle": "도쿄대 캠퍼스 투어 / 최고의 건축가들이 지켜낸 최고의 대학교"
+    },
+    {
+      "spotId": "SS01kyhwcz76pq2stwm2mr39mmwn",
+      "videoId": "XUNlP214vXU",
+      "videoTitle": "도쿄대 캠퍼스 투어 / 최고의 건축가들이 지켜낸 최고의 대학교"
+    },
+    {
+      "spotId": "SS01kyhwcz7ev86gd84y577shb4w",
+      "videoId": "XUNlP214vXU",
+      "videoTitle": "도쿄대 캠퍼스 투어 / 최고의 건축가들이 지켜낸 최고의 대학교"
+    },
+    {
+      "spotId": "SS01kyhwcz7hb9sbt92y1zvj85gm",
+      "videoId": "XUNlP214vXU",
+      "videoTitle": "도쿄대 캠퍼스 투어 / 최고의 건축가들이 지켜낸 최고의 대학교"
+    },
+    {
+      "spotId": "SS01kyhwcz7kqza9ctmhk8yrwefs",
+      "videoId": "XUNlP214vXU",
+      "videoTitle": "도쿄대 캠퍼스 투어 / 최고의 건축가들이 지켜낸 최고의 대학교"
+    },
+    {
+      "spotId": "SS01kyhwcz7mg05rr6yrw68e7te7",
+      "videoId": "XUNlP214vXU",
+      "videoTitle": "도쿄대 캠퍼스 투어 / 최고의 건축가들이 지켜낸 최고의 대학교"
+    },
+    {
+      "spotId": "SS01kyhwcz7p1n3t50t4s3e30tvs",
+      "videoId": "STp0ugXlXfY",
+      "videoTitle": "일본 현대건축 여행ep19/누가 아사쿠사를 묻거든, 고개를 들어 지붕을 보게 하라"
+    },
+    {
+      "spotId": "SS01kyhwcz7q8fa3vnm5mx99xcpc",
+      "videoId": "STp0ugXlXfY",
+      "videoTitle": "일본 현대건축 여행ep19/누가 아사쿠사를 묻거든, 고개를 들어 지붕을 보게 하라"
+    },
+    {
+      "spotId": "SS01kyhwcz7s7rzd22nccwkd0zy0",
+      "videoId": "STp0ugXlXfY",
+      "videoTitle": "일본 현대건축 여행ep19/누가 아사쿠사를 묻거든, 고개를 들어 지붕을 보게 하라"
+    },
+    {
+      "spotId": "SS01kyhwcz7tepfejw2r0ypgt20v",
+      "videoId": "STp0ugXlXfY",
+      "videoTitle": "일본 현대건축 여행ep19/누가 아사쿠사를 묻거든, 고개를 들어 지붕을 보게 하라"
+    },
+    {
+      "spotId": "SS01kyhwcz7whn70rdf8gmd7zjq7",
+      "videoId": "STp0ugXlXfY",
+      "videoTitle": "일본 현대건축 여행ep19/누가 아사쿠사를 묻거든, 고개를 들어 지붕을 보게 하라"
+    },
+    {
+      "spotId": "SS01kyhwcz7xz8tk3p4s02p1g8tx",
+      "videoId": "STp0ugXlXfY",
+      "videoTitle": "일본 현대건축 여행ep19/누가 아사쿠사를 묻거든, 고개를 들어 지붕을 보게 하라"
+    },
+    {
+      "spotId": "SS01kyhwcz7z7t2ys1a3vnkc5qev",
+      "videoId": "JZoN83wn5dA",
+      "videoTitle": "일본 현대건축 여행ep20/다이칸야마가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwcz808sy8a0j99ydfyver",
+      "videoId": "JZoN83wn5dA",
+      "videoTitle": "일본 현대건축 여행ep20/다이칸야마가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwcz88xwjp4f9mc273gqhw",
+      "videoId": "JZoN83wn5dA",
+      "videoTitle": "일본 현대건축 여행ep20/다이칸야마가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwcz89mzsjx9p4fx4w2419",
+      "videoId": "JZoN83wn5dA",
+      "videoTitle": "일본 현대건축 여행ep20/다이칸야마가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwcz8bpgjynt6x7tewthtp",
+      "videoId": "JZoN83wn5dA",
+      "videoTitle": "일본 현대건축 여행ep20/다이칸야마가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwcz8earj52gmtzrvtnc1x",
+      "videoId": "JZoN83wn5dA",
+      "videoTitle": "일본 현대건축 여행ep20/다이칸야마가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwcz8gy5wapz21pa7aqf06",
+      "videoId": "JZoN83wn5dA",
+      "videoTitle": "일본 현대건축 여행ep20/다이칸야마가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwcz8jpyrwa7f4e5c60jn3",
+      "videoId": "ib1dbfCDn8o",
+      "videoTitle": "일본 현대건축 여행ep21/나카메구로 카페 투어. 근데 이제 건축을 곁들인"
+    },
+    {
+      "spotId": "SS01kyhwcz8k9szx9amdvnxfhghq",
+      "videoId": "ib1dbfCDn8o",
+      "videoTitle": "일본 현대건축 여행ep21/나카메구로 카페 투어. 근데 이제 건축을 곁들인"
+    },
+    {
+      "spotId": "SS01kyhwcza09vbdkbfws27zcfvj",
+      "videoId": "ib1dbfCDn8o",
+      "videoTitle": "일본 현대건축 여행ep21/나카메구로 카페 투어. 근데 이제 건축을 곁들인"
+    },
+    {
+      "spotId": "SS01kyhwcza2c1kvc8w5wd7p4jdt",
+      "videoId": "ib1dbfCDn8o",
+      "videoTitle": "일본 현대건축 여행ep21/나카메구로 카페 투어. 근데 이제 건축을 곁들인"
+    },
+    {
+      "spotId": "SS01kyhwcza34zmc9qrzg3b6hgvq",
+      "videoId": "ib1dbfCDn8o",
+      "videoTitle": "일본 현대건축 여행ep21/나카메구로 카페 투어. 근데 이제 건축을 곁들인"
+    },
+    {
+      "spotId": "SS01kyhwcza51mp96ejm2yy5b8yv",
+      "videoId": "ib1dbfCDn8o",
+      "videoTitle": "일본 현대건축 여행ep21/나카메구로 카페 투어. 근데 이제 건축을 곁들인"
+    },
+    {
+      "spotId": "SS01kyhwcza7c124wxqcgkp3nzde",
+      "videoId": "ib1dbfCDn8o",
+      "videoTitle": "일본 현대건축 여행ep21/나카메구로 카페 투어. 근데 이제 건축을 곁들인"
+    },
+    {
+      "spotId": "SS01kyhwcza8gdjjksa3mvt29e8m",
+      "videoId": "pLseKjqPvkc",
+      "videoTitle": "일본 현대건축 여행ep22/건축가,디자이너가 저출산을 해결하려 하면 벌어지는 일"
+    },
+    {
+      "spotId": "SS01kyhwczaad3c4czdfv3dgbj6p",
+      "videoId": "ohtvVIl-rF4",
+      "videoTitle": "일본 현대건축 여행ep.24/후쿠오카 넥서스 월드. 버블경제가 상상한 미래도시의 모습은?"
+    },
+    {
+      "spotId": "SS01kyhwczac30fmmcrkv2g2zb9a",
+      "videoId": "ohtvVIl-rF4",
+      "videoTitle": "일본 현대건축 여행ep.24/후쿠오카 넥서스 월드. 버블경제가 상상한 미래도시의 모습은?"
+    },
+    {
+      "spotId": "SS01kyhwczadfemdejqxwzfsp471",
+      "videoId": "tx8CGpVPmAs",
+      "videoTitle": "일본 현대건축 여행ep25/시로카네다이가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwczafer3sbr7580hwgq12",
+      "videoId": "tx8CGpVPmAs",
+      "videoTitle": "일본 현대건축 여행ep25/시로카네다이가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwczag2bqy92z9jwmv8b22",
+      "videoId": "tx8CGpVPmAs",
+      "videoTitle": "일본 현대건축 여행ep25/시로카네다이가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwczajcvwe1wdwny79s67d",
+      "videoId": "tx8CGpVPmAs",
+      "videoTitle": "일본 현대건축 여행ep25/시로카네다이가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwczakkzc65ajdga139qvc",
+      "videoId": "tx8CGpVPmAs",
+      "videoTitle": "일본 현대건축 여행ep25/시로카네다이가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwczamf9q0etvfhey841fz",
+      "videoId": "tx8CGpVPmAs",
+      "videoTitle": "일본 현대건축 여행ep25/시로카네다이가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwczappqjcybzmwc6xm8ev",
+      "videoId": "g5uvDtMPgys",
+      "videoTitle": "영화 '퍼펙트데이즈'가 알려주지 않는 시부야의 이야기 #2"
+    },
+    {
+      "spotId": "SS01kyhwczaqx2zyaeaqem44ee6t",
+      "videoId": "g5uvDtMPgys",
+      "videoTitle": "영화 '퍼펙트데이즈'가 알려주지 않는 시부야의 이야기 #2"
+    },
+    {
+      "spotId": "SS01kyhwczasrhvdg3tda5d31w4n",
+      "videoId": "svLNosI6E2Q",
+      "videoTitle": "일본 현대건축 여행ep26/오타니의 고향이 알려주는 지방(?)의 익힘 정도, 이와테 시와초"
+    },
+    {
+      "spotId": "SS01kyhwczat678ntjasbknv6yyv",
+      "videoId": "svLNosI6E2Q",
+      "videoTitle": "일본 현대건축 여행ep26/오타니의 고향이 알려주는 지방(?)의 익힘 정도, 이와테 시와초"
+    },
+    {
+      "spotId": "SS01kyhwczawn1ww5vpzqndmfbmt",
+      "videoId": "D6RL3kQ0pWc",
+      "videoTitle": "일본 현대건축 여행ep28/도쿄여행을 더욱 깊이있게 다녀오는 방법"
+    },
+    {
+      "spotId": "SS01kyhwczay1pr3p6w0ywx24vgr",
+      "videoId": "D6RL3kQ0pWc",
+      "videoTitle": "일본 현대건축 여행ep28/도쿄여행을 더욱 깊이있게 다녀오는 방법"
+    },
+    {
+      "spotId": "SS01kyhwczaza91jty3c5njrm0bg",
+      "videoId": "D6RL3kQ0pWc",
+      "videoTitle": "일본 현대건축 여행ep28/도쿄여행을 더욱 깊이있게 다녀오는 방법"
+    },
+    {
+      "spotId": "SS01kyhwczb15dejara3asd4r1zh",
+      "videoId": "D6RL3kQ0pWc",
+      "videoTitle": "일본 현대건축 여행ep28/도쿄여행을 더욱 깊이있게 다녀오는 방법"
+    },
+    {
+      "spotId": "SS01kyhwczb30tdvdfedzyrfja0a",
+      "videoId": "Zb4GyroZoVc",
+      "videoTitle": "일본 현대건축 여행ep29/스타벅스가 도쿄 소도시에 만든 특별한 매장, 스타벅스 사이닝 스토어"
+    },
+    {
+      "spotId": "SS01kyhwczb4rsmd0z1tdnb3e63v",
+      "videoId": "J8sDgpgvtt0",
+      "videoTitle": "일본 현대건축 여행ep30/투박하지만 독보적 감성을 품은 곳, 나고야"
+    },
+    {
+      "spotId": "SS01kyhwczb6zsc4sbbwseeakk89",
+      "videoId": "J8sDgpgvtt0",
+      "videoTitle": "일본 현대건축 여행ep30/투박하지만 독보적 감성을 품은 곳, 나고야"
+    },
+    {
+      "spotId": "SS01kyhwczb7s5yesvj66acdw8ww",
+      "videoId": "J8sDgpgvtt0",
+      "videoTitle": "일본 현대건축 여행ep30/투박하지만 독보적 감성을 품은 곳, 나고야"
+    },
+    {
+      "spotId": "SS01kyhwczbcfcnedfz4rdpfvt7q",
+      "videoId": "J8sDgpgvtt0",
+      "videoTitle": "일본 현대건축 여행ep30/투박하지만 독보적 감성을 품은 곳, 나고야"
+    },
+    {
+      "spotId": "SS01kyhwczbe19v0qvxzqq8kf9a0",
+      "videoId": "J8sDgpgvtt0",
+      "videoTitle": "일본 현대건축 여행ep30/투박하지만 독보적 감성을 품은 곳, 나고야"
+    },
+    {
+      "spotId": "SS01kyhwczbftqt1ygaw1ctbwv7k",
+      "videoId": "J8sDgpgvtt0",
+      "videoTitle": "일본 현대건축 여행ep30/투박하지만 독보적 감성을 품은 곳, 나고야"
+    },
+    {
+      "spotId": "SS01kyhwczbh3788pnhsver6zm77",
+      "videoId": "mw8gbfXM06Y",
+      "videoTitle": "일본 현대건축 여행ep31/거장이 설계한 대학 캠퍼스 뒤에 숨겨진 불편한 진실"
+    },
+    {
+      "spotId": "SS01kyhwczbj2gvcsqvajp5j3c95",
+      "videoId": "vI_3a0SsxpE",
+      "videoTitle": "일본 건축여행ep34/시모키타자와, 빈티(?)와 빈티지 사이의 외줄타기"
+    },
+    {
+      "spotId": "SS01kyhwczbmn4x2mbkbyt83bj62",
+      "videoId": "vI_3a0SsxpE",
+      "videoTitle": "일본 건축여행ep34/시모키타자와, 빈티(?)와 빈티지 사이의 외줄타기"
+    },
+    {
+      "spotId": "SS01kyhwczbn6nw83zn27z5xv1bh",
+      "videoId": "vI_3a0SsxpE",
+      "videoTitle": "일본 건축여행ep34/시모키타자와, 빈티(?)와 빈티지 사이의 외줄타기"
+    },
+    {
+      "spotId": "SS01kyhwczbqxktw32kqqmzbcgs4",
+      "videoId": "vI_3a0SsxpE",
+      "videoTitle": "일본 건축여행ep34/시모키타자와, 빈티(?)와 빈티지 사이의 외줄타기"
+    },
+    {
+      "spotId": "SS01kyhwczbrj20pdt4nz6dhdyyw",
+      "videoId": "vI_3a0SsxpE",
+      "videoTitle": "일본 건축여행ep34/시모키타자와, 빈티(?)와 빈티지 사이의 외줄타기"
+    },
+    {
+      "spotId": "SS01kyhwczbt8bybvpzkbk25ndh4",
+      "videoId": "vI_3a0SsxpE",
+      "videoTitle": "일본 건축여행ep34/시모키타자와, 빈티(?)와 빈티지 사이의 외줄타기"
+    },
+    {
+      "spotId": "SS01kyhwczbvsm8bkhr0w6m0hgdv",
+      "videoId": "hVWm_ElNTWQ",
+      "videoTitle": "일본 건축여행ep35/지방도시에 공공도서관 건립은 세금낭비일까?"
+    },
+    {
+      "spotId": "SS01kyhwczd5rncdbs3maa3p6s6f",
+      "videoId": "hVWm_ElNTWQ",
+      "videoTitle": "일본 건축여행ep35/지방도시에 공공도서관 건립은 세금낭비일까?"
+    },
+    {
+      "spotId": "SS01kyhwczd648vv62p7bsf8ch6d",
+      "videoId": "REvGuvL5Mhs",
+      "videoTitle": "도쿄 필수코스 또 생겼네...조감도 뚫고 나온 아시아 최대급 신상 티파니"
+    },
+    {
+      "spotId": "SS01kyhwczd7e6qpkyvmzdv658wr",
+      "videoId": "REvGuvL5Mhs",
+      "videoTitle": "도쿄 필수코스 또 생겼네...조감도 뚫고 나온 아시아 최대급 신상 티파니"
+    },
+    {
+      "spotId": "SS01kyhwczd9pqtfef07sh9nnvb8",
+      "videoId": "REvGuvL5Mhs",
+      "videoTitle": "도쿄 필수코스 또 생겼네...조감도 뚫고 나온 아시아 최대급 신상 티파니"
+    },
+    {
+      "spotId": "SS01kyhwczdap05mfttts09j63gb",
+      "videoId": "REvGuvL5Mhs",
+      "videoTitle": "도쿄 필수코스 또 생겼네...조감도 뚫고 나온 아시아 최대급 신상 티파니"
+    },
+    {
+      "spotId": "SS01kyhwczdcdx5gyk1x8q403nk8",
+      "videoId": "xs22pKzUwiQ",
+      "videoTitle": "특이점이 온 도쿄의 도시공원 퀄리티"
+    },
+    {
+      "spotId": "SS01kyhwczddpwxkntp0hh5fc3dn",
+      "videoId": "xs22pKzUwiQ",
+      "videoTitle": "특이점이 온 도쿄의 도시공원 퀄리티"
+    },
+    {
+      "spotId": "SS01kyhwczdegm32gw36epj5zckg",
+      "videoId": "xs22pKzUwiQ",
+      "videoTitle": "특이점이 온 도쿄의 도시공원 퀄리티"
+    },
+    {
+      "spotId": "SS01kyhwczdfbfgtcc40apth9sbw",
+      "videoId": "Sq5B9MVF7Vs",
+      "videoTitle": "일본 건축여행ep38/도쿄 MZ들이 가장 많이 찾는 공간, 가메아리 아트 센터 by DAIKEI MILLS"
+    },
+    {
+      "spotId": "SS01kyhwczdhhh1edkxh4bcbhw0q",
+      "videoId": "Sq5B9MVF7Vs",
+      "videoTitle": "일본 건축여행ep38/도쿄 MZ들이 가장 많이 찾는 공간, 가메아리 아트 센터 by DAIKEI MILLS"
+    },
+    {
+      "spotId": "SS01kyhwczdjajdvvzny44y9v5be",
+      "videoId": "Sq5B9MVF7Vs",
+      "videoTitle": "일본 건축여행ep38/도쿄 MZ들이 가장 많이 찾는 공간, 가메아리 아트 센터 by DAIKEI MILLS"
+    },
+    {
+      "spotId": "SS01kyhwczdkdecm12rvvrmmp63n",
+      "videoId": "PbGdaHPlhJ8",
+      "videoTitle": "일본 건축여행ep39/도쿄에서 에렌 예거 체험하기, 메구로 천공정원"
+    },
+    {
+      "spotId": "SS01kyhwczdn61tj4kdpcx176jw0",
+      "videoId": "PbGdaHPlhJ8",
+      "videoTitle": "일본 건축여행ep39/도쿄에서 에렌 예거 체험하기, 메구로 천공정원"
+    },
+    {
+      "spotId": "SS01kyhwczdppq7v734b1a24ztpz",
+      "videoId": "PbGdaHPlhJ8",
+      "videoTitle": "일본 건축여행ep39/도쿄에서 에렌 예거 체험하기, 메구로 천공정원"
+    },
+    {
+      "spotId": "SS01kyhwczdr88s2msf0x7h87k7x",
+      "videoId": "PbGdaHPlhJ8",
+      "videoTitle": "일본 건축여행ep39/도쿄에서 에렌 예거 체험하기, 메구로 천공정원"
+    },
+    {
+      "spotId": "SS01kyhwczdsscpb06aa1rr148vx",
+      "videoId": "Y_wbeg8GBQg",
+      "videoTitle": "일본 건축여행ep40/토라노몬 힐즈가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwczdtkn6q1byjba5fahbw",
+      "videoId": "Y_wbeg8GBQg",
+      "videoTitle": "일본 건축여행ep40/토라노몬 힐즈가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwczdw79ss5heb6f89tx1m",
+      "videoId": "Y_wbeg8GBQg",
+      "videoTitle": "일본 건축여행ep40/토라노몬 힐즈가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwczdxfxr35sch5tkx2td3",
+      "videoId": "Y_wbeg8GBQg",
+      "videoTitle": "일본 건축여행ep40/토라노몬 힐즈가 도쿄 최고의 부촌인 이유"
+    },
+    {
+      "spotId": "SS01kyhwczdzc783txybtqkb9021",
+      "videoId": "LP8zWRrT8C0",
+      "videoTitle": "오사카 건축여행ep1/시장통이 일본 제 2의 도시가 될 수 있었던 건에 관하여"
+    },
+    {
+      "spotId": "SS01kyhwcze0b57m5489w8h2rn2g",
+      "videoId": "LP8zWRrT8C0",
+      "videoTitle": "오사카 건축여행ep1/시장통이 일본 제 2의 도시가 될 수 있었던 건에 관하여"
+    },
+    {
+      "spotId": "SS01kyhwcze1pgwsaby7dd0t57mm",
+      "videoId": "LP8zWRrT8C0",
+      "videoTitle": "오사카 건축여행ep1/시장통이 일본 제 2의 도시가 될 수 있었던 건에 관하여"
+    },
+    {
+      "spotId": "SS01kyhwcze5pxn6pzp7qajetgrf",
+      "videoId": "LP8zWRrT8C0",
+      "videoTitle": "오사카 건축여행ep1/시장통이 일본 제 2의 도시가 될 수 있었던 건에 관하여"
+    },
+    {
+      "spotId": "SS01kyhwczege0p50d52qtfqa2en",
+      "videoId": "LP8zWRrT8C0",
+      "videoTitle": "오사카 건축여행ep1/시장통이 일본 제 2의 도시가 될 수 있었던 건에 관하여"
+    },
+    {
+      "spotId": "SS01kyhwczejnmyd8y89379s52xp",
+      "videoId": "LP8zWRrT8C0",
+      "videoTitle": "오사카 건축여행ep1/시장통이 일본 제 2의 도시가 될 수 있었던 건에 관하여"
+    },
+    {
+      "spotId": "SS01kyhwczemmw0wz2cvbv80askq",
+      "videoId": "1W8nkiSRaBs",
+      "videoTitle": "서울은 철거, 오사카는 보존? 비슷한 두 건축물의 엇갈린 운명 l 오사카 건축여행ep2. 세운상가와 센바센터빌딩"
+    },
+    {
+      "spotId": "SS01kyhwczeny11dfzwjfzh6v896",
+      "videoId": "1xg7PqZuoGU",
+      "videoTitle": "일본 건축여행ep43/ 아파트만 짓는다고 살기 좋은 곳이 될까? 도쿄 근교에서 찾은 해답, MUFG PARK LIBRARY"
+    },
+    {
+      "spotId": "SS01kyhwczeqebk9qdn3503r51h1",
+      "videoId": "skhNkILNIec",
+      "videoTitle": "일본 건축여행ep.44/우에노가 도쿄 문화예술의 중심지가 된 이유, 우에노 도쿄도미술관"
+    },
+    {
+      "spotId": "SS01kyhwczetqx0yywtrbwhpdkkk",
+      "videoId": "skhNkILNIec",
+      "videoTitle": "일본 건축여행ep.44/우에노가 도쿄 문화예술의 중심지가 된 이유, 우에노 도쿄도미술관"
+    },
+    {
+      "spotId": "SS01kyhwczew1qhhp54ctq61wv9t",
+      "videoId": "WB6sz4NVzgs",
+      "videoTitle": "일본 건축여행ep.45/일본 미니멀리즘의 끝판왕, 우에노 호류지 보물관"
+    },
+    {
+      "spotId": "SS01kyhwczexzhmz9cfresw96r2z",
+      "videoId": "WB6sz4NVzgs",
+      "videoTitle": "일본 건축여행ep.45/일본 미니멀리즘의 끝판왕, 우에노 호류지 보물관"
+    },
+    {
+      "spotId": "SS01kyhwczeyyynzfc3xt3v9wn34",
+      "videoId": "4xBYEVitri4",
+      "videoTitle": "일본은 어떻게 세계 건축 강국이 되었을까? / 우에노 국립서양미술관"
+    },
+    {
+      "spotId": "SS01kyhwczezka0e2408kpew8vdf",
+      "videoId": "4xBYEVitri4",
+      "videoTitle": "일본은 어떻게 세계 건축 강국이 되었을까? / 우에노 국립서양미술관"
+    },
+    {
+      "spotId": "SS01kyhwczf1ckbxvk73009rzggj",
+      "videoId": "4xBYEVitri4",
+      "videoTitle": "일본은 어떻게 세계 건축 강국이 되었을까? / 우에노 국립서양미술관"
+    },
+    {
+      "spotId": "SS01kyhwczf299g943j6yxz45bqa",
+      "videoId": "4xBYEVitri4",
+      "videoTitle": "일본은 어떻게 세계 건축 강국이 되었을까? / 우에노 국립서양미술관"
+    },
+    {
+      "spotId": "SS01kyhwczg81zswwzgw6mfcedj0",
+      "videoId": "4xBYEVitri4",
+      "videoTitle": "일본은 어떻게 세계 건축 강국이 되었을까? / 우에노 국립서양미술관"
+    },
+    {
+      "spotId": "SS01kyhwczga8qxn7a5zcz8qcy7n",
+      "videoId": "XC848GyKaKk",
+      "videoTitle": "일본 건축여행ep.47/ 취향이 미술관이 되는 도쿄 최고의 부촌 '쇼토'"
+    },
+    {
+      "spotId": "SS01kyhwczgcbjrrx3fxjwxm4qr7",
+      "videoId": "XC848GyKaKk",
+      "videoTitle": "일본 건축여행ep.47/ 취향이 미술관이 되는 도쿄 최고의 부촌 '쇼토'"
+    },
+    {
+      "spotId": "SS01kyhwczge43a1m9y3f0nmkt0b",
+      "videoId": "XC848GyKaKk",
+      "videoTitle": "일본 건축여행ep.47/ 취향이 미술관이 되는 도쿄 최고의 부촌 '쇼토'"
+    }
+  ]
+}
