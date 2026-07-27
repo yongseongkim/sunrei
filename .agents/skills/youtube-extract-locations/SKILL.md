@@ -50,19 +50,19 @@ This concept guides which transcript mentions are relevant locations vs just pas
 
 #### Concept Examples
 
-**Good (specific):**
+Good (specific):
 - "싱가포르 현지 맛집 투어 - 바쿠테, 프론미, 하이난 치킨 라이스" — region + theme + key dishes
 - "기후현 야생요리 전문식당" — region + unique content type
 - "랭스 럭셔리 레스토랑 Le Parc Les Crayères, 600종 샴페인" — city + venue name + key feature
 - "삿포로 라멘/수프카레" — city + food type
 - "도쿄 히로오 건축여행 — 오직 히로오에만 존재하는 가게들" — city neighborhood + content type + theme
 
-**Bad (too broad):**
+Bad (too broad):
 - "이탈리아 맛집 방문기" → city unknown, food type unknown. Refine to "피렌체 미슐랭 3스타 와인 셀러 레스토랑"
 - "일본 료칸 방문기" → region unknown. Refine to "니세코 미쉐린 설경 료칸"
 - "일본 맛집 방문기" → worst case. No city, no food type
 
-**Rules:**
+Rules:
 1. Be as specific as possible with geography (country → city → neighborhood)
 2. Specify content type (food tour, ryokan, architecture trip, cafe tour, wine restaurant, etc.)
 3. Reflect key keywords from the video title (specific dish names, chef names, Michelin ratings, price range, etc.)
@@ -79,37 +79,40 @@ These are high-confidence locations explicitly shared by the creator.
 
 ### 5. Extract Location Mentions
 
-장소를 "찾는" 소스와 그 장소를 "설명하는" 소스를 구분한다.
+Distinguish sources that "find" a place from sources that "describe" it.
 
-찾는 소스 (어떤 장소가 있는지) — 우선순위:
-1. 타임스탬프가 있는 설명란 챕터 (제작자가 직접 정리 — 최상)
-2. 설명란의 Google Maps 링크 (Step 4)
-3. 제목·설명 분석 (챕터가 없을 때 주요 건물/장소)
-4. 트랜스크립트 언급
+Finding sources (which places exist) — priority order:
+1. Description chapters with timestamps (curated by the creator — best)
+2. Google Maps links in the description (Step 4)
+3. Title/description analysis (main buildings/places when there are no chapters)
+4. Transcript mentions
 
-설명하는 소스 (그 장소·음식이 어땠는지) — 트랜스크립트가 1순위다. 챕터는 대개 "00:00 가게이름"뿐이라,
-맛·조리·서빙·유튜버의 코멘트 같은 실제 묘사는 나레이션에 있다. 트랜스크립트가 "찾는" 데에서 최하위라고
-해서, 설명을 뽑을 때까지 흘려보내면 안 된다.
+Describing sources (what the place/food was like) — the transcript is the top priority. Chapters are usually
+just "00:00 shop name", so the actual descriptions — taste, cooking, serving, the YouTuber's comments — live in
+the narration. Even though the transcript ranks lowest for "finding", don't skip past it until you have pulled
+out the descriptions.
 
-각 장소의 `description`은 아래 두 축을 모두 담는다 (3~6문장, 영상이 음식을 많이 다루면 더 길어도 된다).
-이 값은 나중에 spot의 `context`가 되며, public 지도 카드가 보여주는 유일한 편집 텍스트다:
+Each place's `description` covers both of the axes below (3-6 sentences; it can be longer if the video covers a
+lot of food). This value later becomes the spot's `context`, and it is the only editorial text the public map
+card displays:
 
-1. 음식점 — 어떤 곳인지(분위기·특징·위치 맥락)와 영상의 개념/테마를 한두 문장으로.
-2. 음식 — 대표 메뉴가 무엇인지, 어떻게 조리·서빙되는지, 그리고 영상에서 그 음식을 어떻게 묘사했는지
-   (맛·식감·평가). 가능하면 해당 장면의 타임스탬프를 함께 남긴다.
+1. Restaurant — what kind of place it is (atmosphere, characteristics, location context) and the video's
+   concept/theme, in one or two sentences.
+2. Food — what the signature menu items are, how they are cooked/served, and how the video described that food
+   (taste, texture, assessment). When possible, include the timestamp of that scene.
 
-Bad: "야키토리 맛집" (너무 짧고 맥락 없음)
-Bad: "쓰쿠네가 극찬받았다" (감상만 있고 음식 묘사가 없음)
+Bad: "야키토리 맛집" (too short, no context)
+Bad: "쓰쿠네가 극찬받았다" (only an impression, no food description)
 Good: "시부야 뒷골목 야키토리 투어에서 방문한 카운터 10석 규모의 노포 야키토리 전문점. 대표 메뉴는 비장탄에
 구운 쓰쿠네와 레바로, 쓰쿠네는 겉을 바삭하게 구운 뒤 날달걀 노른자에 찍어 먹으며 유튜버가 '육즙이 팡
 터진다'고 표현했고, 레바는 비린내 없이 부드럽다고 강조했다 (12:30)."
 
-트랜스크립트에서 뽑을 때 확인할 것:
+What to check when pulling from the transcript:
 
-- 장소 이름 (식당·카페·상점·명소)
-- 언급된 주소나 동네
-- 장소를 특정하는 묘사 ("시부야역 근처 그 야키토리 집")
-- 음식/메뉴에 대한 구체적 코멘트 (무슨 메뉴, 맛·조리·평가)와 그 타임스탬프
+- Place name (restaurant/cafe/shop/attraction)
+- Any address or neighborhood mentioned
+- Descriptions that pin down the place ("that yakitori place near Shibuya station")
+- Specific comments about the food/menu (which item, taste/cooking/assessment) and their timestamps
 
 Filter by the video concept identified in Step 3. For example:
 
@@ -127,11 +130,12 @@ Before geocoding, clean and filter the extracted locations:
   - Real estate offices, generic street names ("Walking Street", "Shopping Street")
   - Overly generic names ("라멘집", "Pedestrian Paradise")
   - Concepts rather than places
-- 장소 이름 검증: `name`은 실제 상호여야 한다. 설명란의 정형 블록(이름 / 주소 / 영업시간이
-  줄줄이 이어진 형태)을 파싱하면 엉뚱한 줄이 `name`에 들어가기 쉽다 — 영업시간("매일 11:00 - 21:00"),
-  전화번호, 주소 조각 같은 것들. 이런 이름은 버리고 영상 제목이나 자막에서 실제 이름을 찾는다.
-  이름을 알 수 없으면 지어내지 말고 사용자에게 표시한다. 이런 값은 좌표 검색 단계로 넘기지 않는다 —
-  주소 조각이 이름으로 들어가면 핀 위치까지 틀어진다(6단계 참고).
+- Place-name validation: `name` must be the actual business name. Parsing a structured block in the
+  description (name / address / hours listed line by line) easily lets a wrong line end up in `name` —
+  hours ("매일 11:00 - 21:00"), phone numbers, address fragments, and the like. Discard such names and find
+  the real one from the video title or captions. If the name can't be determined, don't make one up — flag it
+  to the user. Don't pass these values to the geocoding step: an address fragment used as a name throws off the
+  pin location too (see Step 6).
 - Videos without chapters: When a video has no description chapters or Google Maps links, analyze the title and description to identify the main architectural/location subjects. Search for those directly.
 
 ### 6. Geocode Locations via Google Maps Places API
@@ -151,34 +155,34 @@ curl -s -X POST "https://places.googleapis.com/v1/places:searchText" \
 
 Use area context from the video concept to improve search accuracy (e.g., "시부야 야키토리 가게" instead of just "야키토리 가게").
 
-조심해야 할 실패 두 가지:
+Two failure modes to watch for:
 
-- 주소만으로 좌표를 찾지 않는다. 주소만 담은 `textQuery`는 Google이 그 주소에서 가장 가깝다고
-  판단한 업체를 돌려준다 — 대개 근처 호텔이나 사무실 건물이다 — 그래서 그럴듯한 좌표에 엉뚱한
-  `googleMapsId`가 붙는다. 항상 상호에 지역 맥락을 더해 검색한다.
-- 결과를 받아들이기 전에 확인한다. 돌려받은 `displayName`이 추출한 이름과 맞아야 하며,
-  언어나 로마자 표기 차이는 감안한다. 어긋나면 검색어를 다듬어 다시 시도하거나 검토 대상으로
-  표시하고, 첫 결과를 말없이 그대로 쓰지 않는다.
+- Don't geocode from an address alone. A `textQuery` that contains only an address makes Google return
+  whatever business it judges closest to that address — usually a nearby hotel or office building — so a
+  plausible-looking coordinate gets the wrong `googleMapsId`. Always search the business name plus area context.
+- Verify the result before accepting it. The returned `displayName` should match the extracted name, allowing
+  for language or romanization differences. If it doesn't line up, refine the query and retry or flag it for
+  review — don't silently take the first result.
 
-이 두 가지 가드를 코드로 넣어 둔 헬퍼가 있다. 개별 조회와 `locations.json` 일괄 백필을 모두 지원한다:
+A helper encodes both guards in code. It supports a single lookup and a bulk backfill of `locations.json`:
 
 ```bash
-# 한 곳만 조회 (displayName 불일치 시 경고)
-uv run python .claude/scripts/youtube/geocode.py --query "<상호>" --area "<지역>"
+# Single lookup (warns on displayName mismatch)
+uv run python .claude/scripts/youtube/geocode.py --query "<business name>" --area "<area>"
 
-# locations.json에서 좌표 없는 항목을 채우고, 이상한 이름·불일치는 geocodeWarning으로 표시
+# Fill in items missing coordinates in locations.json, flagging odd names/mismatches as geocodeWarning
 uv run python .claude/scripts/youtube/geocode.py <ID>
 ```
 
-### 6.5. 대용량 재생목록: 하위 에이전트로 나눠 추출하기
+### 6.5. Large playlists: split extraction across subagents
 
-영상이 수십 개인 재생목록은 영상별 추출(3~6단계)을 하위 에이전트로 나눠 돌린다. 겪어 보고 얻은 두 가지 원칙:
+For playlists with dozens of videos, run the per-video extraction (Steps 3-6) split across subagents. Two rules learned the hard way:
 
-- 한꺼번에 다 띄우지 말고 3~4개씩 작은 묶음으로 실행한다. 한 번에 크게(예: 13개) 띄우면 API 요청
-  제한에 걸려 그 묶음 전체가 429로 실패한다. 실패한 묶음은 더 작은 단위로 다시 돌린다.
-- 하위 에이전트 결과는 목록 순서나 서버의 spotId가 아니라 영상 ID와 장소 이름으로 맞춘다.
-  spotId로 맞췄더니 한 영상에 장소가 여럿일 때 결과가 엉뚱한 spot에 붙었다. 병합한 뒤에는
-  각 설명이 실제로 그 장소를 가리키는지(이름을 언급하거나 분명히 묘사하는지) 확인하고 반영한다.
+- Don't launch them all at once — run small batches of 3-4. Launching a large batch (e.g. 13) at once hits the
+  API rate limit and the whole batch fails with 429. Rerun a failed batch in smaller units.
+- Match subagent results by video ID and place name, not by list order or the server's spotId. Matching by
+  spotId attached results to the wrong spot when a video had multiple places. After merging, confirm each
+  description actually refers to its place (it names or clearly describes it) before applying.
 
 ### 7. Present Results to User
 

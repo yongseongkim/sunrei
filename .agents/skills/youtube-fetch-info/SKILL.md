@@ -7,17 +7,17 @@ description: This skill should be used when the user asks to "fetch YouTube info
 
 Fetch metadata for a YouTube video or playlist using the YouTube Data API v3.
 
-## 빠른 방법 (스크립트)
+## Quick Method (Script)
 
-대개는 아래 단계를 손으로 하지 말고 스크립트 한 번으로 끝낸다. 채널 정보까지 포함해
-`video_info.json`을 스키마대로 만들어 준다(재생목록은 페이지네이션 자동 처리):
+Usually you don't run the steps below by hand — a single script run does it all. It builds
+`video_info.json` per the schema, including channel info (playlists are paginated automatically):
 
 ```bash
 uv run python .claude/scripts/youtube/fetch_info.py "<URL>" [--videos all|1,3,5|first:N]
 ```
 
-아래 단계들은 이 스크립트가 내부적으로 따르는 계약이다. 영상 선택을 대화형으로 하는 등
-스크립트로 안 되는 경우에만 직접 호출한다.
+The steps below are the contract the script follows internally. Only call them directly
+when the script can't do the job — for example, when selecting videos interactively.
 
 ## Steps
 
@@ -69,7 +69,7 @@ curl -s "https://www.googleapis.com/youtube/v3/playlistItems?playlistId={PLAYLIS
 
 ### 3.5. Fetch Channel Info
 
-A YouTube Source in Sunrei _is_ the channel, so always fetch the owning channel's
+A YouTube Source in Sunrei is the channel, so always fetch the owning channel's
 metadata too. Take `snippet.channelId` from the video (or playlist) response above and
 call the channels endpoint:
 

@@ -97,8 +97,8 @@ def main():
 
     token = admin_token()
     if not token:
-        print("admin 토큰을 얻지 못했습니다. SOPS + GCP KMS decrypt 권한을 확인하거나 "
-              "SUNREI_ADMIN_TOKEN을 직접 export 하세요 (mint_token.py 참고).")
+        print("Could not obtain an admin token. Check SOPS + GCP KMS decrypt access, "
+              "or export SUNREI_ADMIN_TOKEN yourself (see mint_token.py).")
         sys.exit(1)
 
     source_id, how = resolve_source(token, channel, prod)
