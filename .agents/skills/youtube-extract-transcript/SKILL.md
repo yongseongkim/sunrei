@@ -86,7 +86,8 @@ Use these limits:
 - Fetch a single video immediately.
 - For a playlist, wait a random 60–90 seconds between videos. Tests in July
   2026 found that 14–20 second intervals triggered a block after roughly 10–20
-  requests, while 60–90 second intervals completed 25 requests.
+  requests, while 60–90 second intervals completed later runs of up to 165
+  videos without blocks.
 - After a block, wait about 10 minutes and retry the same video. Stop after four
   consecutive blocks.
 
@@ -112,6 +113,31 @@ uv run --with youtube-transcript-api --with python-dotenv \
 - Saves each result as it completes. Rerunning the command skips successful
   videos and retries failed ones.
 - Prints success and no-transcript counts.
+
+#### Re-derive locations after video edits
+
+When a creator re-edits a video, old timestamps can drift and places can be cut.
+Re-extract the transcript before reusing an older `locations.json`. Keep
+verified geocodes for places that still appear; a place's map pin does not
+change when the video is re-cut. Back up the old file first:
+
+```bash
+mv .claude/workspace/youtube/{ID}/locations.json \
+   .claude/workspace/youtube/{ID}/locations.legacy.json
+```
+
+For large playlists, split the matching into subagent batches. Each batch should
+match legacy places against the current narration, flag places that were cut,
+extract new places, and return a verbatim `quote` from the current transcript
+for each retained place. Map those quotes back to fresh timestamps in the
+segment list. Then merge the batches, geocode only new places, and run
+country-aware cleanup:
+
+```bash
+uv run python .claude/scripts/youtube/prep_redrive_batches.py {ID} [batch_size]
+uv run python .claude/scripts/youtube/merge_redrive.py {ID}
+uv run python .claude/scripts/youtube/cleanup_geocodes.py {ID} japan|france|italy
+```
 
 ### 3. Audit and Clean Transcript
 

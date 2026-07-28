@@ -268,6 +268,12 @@ review, so pass a transcript-based summary with `--summary` and review the
 result in the admin app. On success, it writes `_create_manifest.json` for the
 registry update in step 7.
 
+Creation produces a draft (`published: false`). Publish only when requested:
+`PUT {SERVER_URL}/admin/sunreis/{id}` with `{"published": true}`.
+
+If a Sunrei with this playlist/video link already exists (HTTP 409, or one found
+in Step 3), update it with Step 8 rather than creating a duplicate.
+
 ### 7. Handle the Response and Update the Registry
 
 On HTTP 201:
@@ -313,6 +319,21 @@ For HTTP 409:
 - Explain that a Sunrei with the same link exists.
 - Show `existingId` and ask whether to skip or update it.
 
+#### Rebuild a stale registry
+
+If step 3 found stale registry entries, rebuild the registry from live Sunrei
+records instead of appending to dead IDs. The helper downloads the registry,
+fetches spots for the given Sunrei IDs, rebuilds the `sunreis` array, and
+uploads the result:
+
+```bash
+uv run python .claude/scripts/youtube/registry_update.py <channelId> <sunreiId1,sunreiId2,...> \
+  [--profile aws-vault-profile] [--channel-name "..."] [--channel-link "..."] [--commit]
+```
+
+Pass every live Sunrei for that channel so stale entries are dropped. Run the
+helper once per channel; one channel can contain several playlists or Sunrei.
+
 For any other error:
 
 - Show the error and offer to retry after correcting the payload.
@@ -323,15 +344,27 @@ For any other error:
 Edit via `PUT {SERVER_URL}/admin/sunreis/{id}`:
 
 - Send only top-level fields that should change. All are optional.
-- Treat `spots` as a merge. An item with an `id` updates that spot and must
-  include `title`. An item without an `id` creates a spot.
-  `{"id": "SS...", "delete": true}` soft-deletes one. Omitted spots remain
-  unchanged.
+- Include `spots` only when changing spots. When `spots` is present, an item
+  with an `id` updates that spot, an item without an `id` creates a new spot,
+  and any existing spot whose `id` is omitted is soft-deleted.
+- To replace all spots, send only the new spot list. Explicit delete entries are
+  rarely needed, because every spot item must include `title`, including
+  `{ "id": "...", "_delete": true }`.
+- Tags update per spot. Send `tagIds` or `tagLabels` only when replacing that
+  spot's tag set.
 - Send one PUT per Sunrei. Start from a fresh `GET /admin/sunreis/{id}`, combine
   all changes, and submit them together. Concurrent PUT requests can overwrite
   one another.
 - If concurrent updates have already left the data inconsistent, recreate the
   Sunrei from `locations.json` instead of repairing spots individually.
+
+For a full spot replacement from `locations.json` (preserves the Sunrei ID,
+source, and published status), use the helper:
+
+```bash
+uv run python .claude/scripts/youtube/update_sunrei_spots.py <ID> <SUNREI_ID> \
+  [--prod] [--commit] [--summary "..."]
+```
 
 ### 9. Clean Up
 

@@ -9,6 +9,30 @@ Run the four YouTube skills in sequence, pausing for approval at each checkpoint
 
 Accept either a video URL or a playlist URL.
 
+## Choose the Extraction Strategy
+
+Choose the Step 3 location path from the content type:
+
+- Description-first: Use this for channels that put a Google Maps link or a
+  structured `* 가게 정보` block per place in every description, such as food
+  vlogs. Run `extract_from_descriptions.py` and skip transcripts.
+- Transcript-driven: travel/architecture vlogs that name places only in the
+  narration. Extract transcripts first (Step 2), then match places from them.
+- Web-research: TV-show clip compilations whose titles name a dish but not a
+  venue, such as 스트리트푸드파이터. Research the real vendors and geocode with
+  `geocode_food_vendors.py`.
+
+Inspect a few descriptions before choosing. Per-place map links or `가게 정보`
+blocks mean description-first; unstructured descriptions require transcripts or
+web research.
+
+## Re-Derive After Edits
+
+If videos were re-edited after a prior ingest, re-extract transcripts before
+reusing `locations.json`. Re-derive locations from the current transcript while
+reusing verified geocodes. Back up the old file as `locations.legacy.json` and
+follow the re-derivation section of `youtube-extract-transcript`.
+
 ## Workflow
 
 ### 1. Fetch Metadata
@@ -38,7 +62,8 @@ Do not extract locations until all retained transcripts are approved.
 Run `youtube-extract-locations`.
 
 - Determine each video's geographic scope and theme.
-- Collect locations from descriptions, map links, and transcripts.
+- Collect locations with the chosen path: description-first, transcript-driven,
+  or web research. Follow `youtube-extract-locations` for the detailed steps.
 - Geocode and verify each place.
 - Let the user add, edit, or remove locations.
 - Save the approved list to `.claude/workspace/youtube/{ID}/locations.json`.

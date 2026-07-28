@@ -10,16 +10,52 @@ verify them with the Google Maps Places API.
 
 ## Prerequisites
 
-- Require `.claude/workspace/youtube/{ID}/video_info.json` and
-  `.claude/workspace/youtube/{ID}/transcripts.json`.
-- If either file is missing, ask the user to complete the preceding workflow
-  step.
+- Require `.claude/workspace/youtube/{ID}/video_info.json`.
+- The transcript-driven path (Steps 5–7) also requires
+  `.claude/workspace/youtube/{ID}/transcripts.json`. The description-first path
+  uses descriptions only and skips the caption API.
+- If a required file is missing, ask the user to complete the preceding step.
+
+## Description-first fast path
+
+Some channels list every visited place in the description. When they do, extract
+and geocode locations from descriptions before fetching transcripts:
+
+```bash
+uv run python .claude/scripts/youtube/extract_from_descriptions.py <ID> all   # or: fetch | parse | geocode
+```
+
+Use this path for:
+
+- Map-link channels, such as @saturdaytokyo / 토요일의 도쿄. Descriptions contain
+  a Google Maps link per place (`maps.app.goo.gl`, `goo.gl/maps`,
+  `maps.google.com`, or `g.page`). The script resolves each link to the creator's
+  exact pin, then verifies the Places result is within about 200 m.
+- Structured-block channels, such as 비밀이야 bimirya. Descriptions contain a
+  `* 가게 정보` block with `- <name>` and `- 주소 : <address>`. The script pairs
+  each address with the nearest preceding name and geocodes by name plus area.
+
+The script caches intermediate files as `descriptions.json`, `staging.json`, and
+`resolved_links.json`, so reruns can resume from any stage. If this path covers
+the playlist, skip Steps 4–7 and go straight to Step 9.
+
+## Web-research fallback
+
+For TV-show clip compilations whose titles name a dish but not a venue, such as
+스트리트푸드파이터, identify the real vendors through web research. Cross-check
+Korean fan blogs with local sources, dedupe clips to distinct vendors, and
+geocode the result:
+
+```bash
+uv run python .claude/scripts/youtube/geocode_food_vendors.py <ID> <vendors.json>
+```
 
 ## Steps
 
 ### 1. Load Data
 
-Read both JSON files from `.claude/workspace/youtube/{ID}/`.
+Read `video_info.json` from `.claude/workspace/youtube/{ID}/`. For the
+transcript-driven path, also read `transcripts.json`.
 
 ### 2. Load Google Maps API Key
 
@@ -75,9 +111,11 @@ Parse the video description for Google Maps links:
 - `https://maps.google.com/...`
 - `https://goo.gl/maps/...`
 - `https://maps.app.goo.gl/...`
+- `https://g.page/...` (Google Business profile links)
 
 Treat these as high-confidence locations because the creator shared them
-directly.
+directly. The fast-path script resolves short links to exact pins automatically;
+if parsing by hand, follow the redirect and use the resolved coordinates.
 
 ### 5. Extract Location Mentions
 
@@ -142,10 +180,17 @@ Before geocoding, clean and filter the extracted locations:
   of inventing one or sending the bad value to geocoding.
 - When a video has no chapters or map links, identify the main places from its
   title and description and search for them directly.
+- Validate accepted coordinates against the playlist's region. Out-of-region
+  pins are often geocode errors, especially when a foreign place name is matched
+  by Korean transliteration. Re-geocode outliers with country and city context.
+  If the creator genuinely visited an out-of-region place, keep it and flag it
+  for review. For a single-country playlist, run:
+  `uv run python .claude/scripts/youtube/cleanup_geocodes.py <ID> japan|france|italy`
 
 ### 7. Geocode Locations
 
-For each extracted location that doesn't already have coordinates (from Google Maps links), use the Places API:
+For each extracted location that does not already have coordinates from Google
+Maps links, use the Places API:
 
 ```bash
 curl -s -X POST "https://places.googleapis.com/v1/places:searchText" \
@@ -167,8 +212,10 @@ Guard against two common errors:
   with plausible coordinates but the wrong `googleMapsId`. Search for the
   business name and area together.
 - Compare `displayName` with the extracted name, allowing for translation and
-  romanization. If they do not match, refine the query or flag the result. Do
-  not accept the first result silently.
+  romanization. Refine obvious mismatches, but do not invent a phonetic
+  correction when the venue name appears only in speech. If the returned
+  business is plausibly the spoken venue, keep it and flag only genuine
+  uncertainty.
 
 Use the helper for a single lookup or to fill missing coordinates in
 `locations.json`:

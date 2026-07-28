@@ -17,6 +17,11 @@ It paginates playlists and writes `video_info.json` in the format shown below.
 uv run python .claude/scripts/youtube/fetch_info.py "<URL>" [--videos all|1,3,5|first:N]
 ```
 
+`--videos` controls which playlist entries are written to `selectedVideos`.
+Downstream transcript and create scripts process only that array. Use
+`--videos all` for a real ingest; use `first:1` or explicit indices only for
+disposable tests.
+
 Follow the remaining steps directly only when the script cannot handle the
 request.
 
