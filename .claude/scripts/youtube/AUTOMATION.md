@@ -70,6 +70,19 @@ uv run python .claude/scripts/youtube/renew_playlists.py \
   --commit --upload
 ```
 
+Back up existing workspace JSON and create a fresh baseline for every
+configured playlist:
+
+```bash
+uv run --with boto3 python \
+  .claude/scripts/youtube/sync_workspace_s3.py --commit
+```
+
+Run this command before removing historical workspace data from Git. Without
+`--commit`, it validates the JSON, checks for credential patterns, fetches the
+current YouTube and production baselines, and prints the upload plan without
+changing S3.
+
 Do not use `--bootstrap` after normal operation starts. It intentionally treats
 every current remote video as already known.
 
@@ -99,6 +112,27 @@ URL. `evidence_timeline.json` records every selected transcript, Whisper, and
 OCR segment with its source and start/end time. The raw modality files remain
 available so a bad timeline or Codex result can be reproduced and debugged.
 Every manifest entry includes its artifact role and SHA-256.
+
+Playlist baselines and historical workspace snapshots use separate immutable
+paths:
+
+```text
+playlists/{playlistId}/snapshots/{snapshotId}/
+playlists/{playlistId}/workspace-snapshots/{snapshotId}/
+workspaces/{workspaceId}/snapshots/{snapshotId}/
+```
+
+A playlist baseline stores the latest channel, playlist, video title,
+description, duration, thumbnail, and the known-video state used for renewal.
+A workspace snapshot preserves the existing JSON hierarchy, including source,
+review, derived, and intermediate files needed for debugging. Raw media,
+automation runtime state, logs, and non-JSON files are excluded.
+
+Each snapshot has a manifest with raw and compressed SHA-256 values. The sync
+command reads every uploaded object back and verifies both hashes before it
+updates the corresponding `latest.json` or `workspace-latest.json` pointer. If
+the artifact store is public, it also verifies the pointer without AWS
+credentials.
 
 The S3 uploader decrypts the existing `aws-access-key-id` and
 `aws-secret-access-key` values from `deploy/secrets/secrets.enc.yaml`. Codex

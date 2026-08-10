@@ -19,6 +19,7 @@ from renew_playlists import (
     youtube_video_id,
 )
 from review_transcripts import update_reviewed_transcript
+from sync_workspace_s3 import validate_json_artifact, workspace_snapshot_plans
 from upload_artifacts import artifact_entries, manifest_value
 
 
@@ -227,6 +228,47 @@ class RenewalTests(unittest.TestCase):
         manifest = manifest_value("playlist", "abc", "run", "bucket", "region", "prefix", entries)
         self.assertNotIn("body", manifest["artifacts"][0])
         self.assertEqual(manifest["reviewStatus"], "pending")
+
+    def test_workspace_snapshot_keeps_json_and_skips_automation_and_raw_media(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            workspace = Path(temp_dir)
+            playlist = workspace / "playlist"
+            playlist.mkdir()
+            (playlist / "video_info.json").write_text(
+                '{"selectedVideos":[]}', encoding="utf-8"
+            )
+            (playlist / "video.mp4").write_bytes(b"raw")
+            automation = workspace / "automation"
+            automation.mkdir()
+            (automation / "state.json").write_text("{}", encoding="utf-8")
+
+            plans = workspace_snapshot_plans(
+                workspace,
+                {"playlist"},
+                "snapshot",
+                "bucket",
+                "region",
+                "youtube/artifacts/v1",
+            )
+
+        self.assertEqual(len(plans), 1)
+        self.assertEqual(plans[0]["manifest"]["snapshotType"], "workspace_history")
+        self.assertEqual(
+            [entry["file"] for entry in plans[0]["entries"]],
+            ["video_info.json"],
+        )
+        self.assertEqual(plans[0]["entries"][0]["role"], "source")
+
+    def test_workspace_snapshot_rejects_secret_fields(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "data.json"
+            path.write_text(
+                '{"aws-secret-access-key":"must-not-upload"}',
+                encoding="utf-8",
+            )
+
+            with self.assertRaisesRegex(ValueError, "Sensitive key"):
+                validate_json_artifact(path)
 
     def test_codex_environment_removes_ingest_credentials(self):
         previous = dict(os.environ)
