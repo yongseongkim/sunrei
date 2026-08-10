@@ -93,12 +93,20 @@ def download_video(video_url: str, video_id: str) -> str:
     os.remove(video_path)  # yt-dlp skips download if file exists
 
     ydl_opts = {
-        "format": "bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/best[height<=720][ext=mp4]/best[height<=720]",
+        # OCR does not need audio. Prefer a progressive or video-only stream to
+        # avoid failures from downloading and merging two separate formats.
+        "format": "best[height<=720][ext=mp4]/best[height<=720]/bestvideo[height<=720][ext=mp4]/bestvideo[height<=720]",
         "outtmpl": video_path,
         "quiet": True,
         "no_warnings": True,
-        "merge_output_format": "mp4",
     }
+    # Optional auth for members-only videos (see whisper_transcribe.py).
+    cf = os.environ.get("SUNREI_YT_COOKIES")
+    cb = os.environ.get("SUNREI_YT_BROWSER")
+    if cf:
+        ydl_opts["cookiefile"] = cf
+    elif cb:
+        ydl_opts["cookiesfrombrowser"] = (cb,)
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([video_url])

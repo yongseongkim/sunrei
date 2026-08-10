@@ -5,8 +5,8 @@ description: Extract and verify places mentioned in YouTube videos. Use when the
 
 # Extract Locations from YouTube Videos
 
-Identify relevant places from video metadata and transcripts, then geocode and
-verify them with the Google Maps Places API.
+Identify relevant places from descriptions, captions, audio, and on-screen
+text, then geocode and verify them with the Google Maps Places API.
 
 ## Prerequisites
 
@@ -38,6 +38,10 @@ Use this path for:
 The script caches intermediate files as `descriptions.json`, `staging.json`, and
 `resolved_links.json`, so reruns can resume from any stage. If this path covers
 the playlist, skip Steps 4–7 and go straight to Step 9.
+
+Scheduled renewal still captures the other modalities for audit and proper-name
+correction. Description links take precedence when the sources disagree about
+the identity of a place.
 
 ## Web-research fallback
 
@@ -290,3 +294,17 @@ Save to `.claude/workspace/youtube/{ID}/locations.json`:
 
 After saving the file, report its path and ask whether to continue with Sunrei
 creation.
+
+## Automated Candidate Extraction
+
+For a new-video run workspace containing `metadata.json`, captions, Whisper
+output, and video OCR, generate un-geocoded candidates with:
+
+```bash
+uv run python .claude/scripts/youtube/extract_locations_headless.py <RUN_DIR>
+```
+
+The script processes timed windows so locations near the end of a long video
+are not lost to input truncation. It records verbatim evidence by modality and
+sets every location to `decision: pending`. Do not convert these candidates to
+`locations.json` or geocode them until names, scope, and evidence are approved.

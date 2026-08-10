@@ -197,3 +197,12 @@ Set `channel.handle` to `customUrl`; omit it when the channel has no handle. Set
 
 After saving the file, report its path and ask whether to continue with transcript
 extraction.
+
+## Automated Playlist Checks
+
+Do not overwrite a curated `video_info.json` during a scheduled check. Keep the
+playlist IDs and enabled flags in `.claude/config/youtube-renewal.json`, and let
+`renew_playlists.py` compare the live playlist with its local state. Dynamic
+metadata and run state belong under
+`.claude/workspace/youtube/automation/`; they are uploaded as artifacts when
+requested and are not committed to Git.

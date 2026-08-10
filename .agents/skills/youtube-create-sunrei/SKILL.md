@@ -15,7 +15,8 @@ server admin API.
 - Run sunrei-server before making local API requests.
 - Use `sops` and GCP credentials that can decrypt the homelab KMS key. If
   decryption fails, run `gcloud auth application-default login`.
-- Install `aws-vault` and the AWS CLI for the channel registry.
+- Use the Admin API for the channel registry. The server owns the S3
+  credentials; do not decrypt or pass AWS keys for registry updates.
 
 ## Steps
 
@@ -64,11 +65,11 @@ HTTP 403.
 
 ### 3. Check the Channel Registry
 
-Ask which `aws-vault` profile to use and keep it for the registry update in
-step 7. Download the channel registry:
+Read the channel registry through the Admin API:
 
 ```bash
-aws-vault exec {profile} -- aws s3 cp s3://sunrei-resources/youtube/{channelId}.json -
+curl -s -H "Authorization: Bearer ${TOKEN}" \
+  "{SERVER_URL}/admin/resources/youtube/{channelId}"
 ```
 
 The registry contains a `sunreis` array:
@@ -279,19 +280,23 @@ in Step 3), update it with Step 8 rather than creating a duplicate.
 On HTTP 201:
 
 - Show the Sunrei ID, title, spot count, and admin link.
-- Update the S3 channel registry with the `aws-vault` profile selected in
-  step 3.
+- Update the S3-backed channel registry through the Admin API.
 
-  1. Download the existing registry:
+  1. Read the existing registry:
      ```bash
-     aws-vault exec {profile} -- aws s3 cp s3://sunrei-resources/youtube/{channelId}.json /tmp/registry.json
+     curl -s -H "Authorization: Bearer ${TOKEN}" \
+       "{SERVER_URL}/admin/resources/youtube/{channelId}"
      ```
   2. If it exists, append the new entry to `sunreis`.
   3. If it does not exist, create a registry with `channelName`, the `link` from
      `video_info.json`, and one `sunreis` entry.
-  4. Upload the updated registry:
+  4. Save the updated registry:
      ```bash
-     aws-vault exec {profile} -- aws s3 cp /tmp/registry.json s3://sunrei-resources/youtube/{channelId}.json --content-type application/json
+     curl -s -X PUT \
+       -H "Authorization: Bearer ${TOKEN}" \
+       -H "Content-Type: application/json" \
+       --data-binary @/tmp/registry.json \
+       "{SERVER_URL}/admin/resources/youtube/{channelId}"
      ```
 
   Use this entry format:
@@ -328,7 +333,7 @@ uploads the result:
 
 ```bash
 uv run python .claude/scripts/youtube/registry_update.py <channelId> <sunreiId1,sunreiId2,...> \
-  [--profile aws-vault-profile] [--channel-name "..."] [--channel-link "..."] [--commit]
+  [--channel-name "..."] [--channel-link "..."] [--commit]
 ```
 
 Pass every live Sunrei for that channel so stale entries are dropped. Run the

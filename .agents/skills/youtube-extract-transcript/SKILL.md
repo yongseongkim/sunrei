@@ -155,6 +155,48 @@ For each transcript:
    timestamps. `youtube-extract-locations` uses this narration to write each
    place description.
 
+For a long transcript, run the headless Codex reviewer in small, resumable
+batches:
+
+```bash
+uv run python .claude/scripts/youtube/review_transcripts.py "{ID}" \
+  --video-id "{VIDEO_ID}"
+```
+
+Use `--all` only for an intentional full-workspace backfill. The reviewer:
+
+- Keeps `transcripts.json` unchanged.
+- Writes correction proposals and uncertain passages to
+  `transcript_review.json`.
+- Writes the resulting transcript to `transcripts.reviewed.json`.
+- Validates the segment index and original text before accepting a proposal, so
+  segment count and timing cannot change.
+- Uses aligned segments from `audio_transcript.json` and `onscreen_text.json`
+  when those files exist. Conflicts remain flagged instead of being resolved
+  from a plausible text-only guess.
+- Runs Codex in an empty temporary directory with an ephemeral, read-only
+  session. It does not load user MCP configuration or project rules, and AWS,
+  SOPS, Google, Admin API, and GitHub credentials are removed from the child
+  process environment.
+
+Corrections default to `"decision": "pending"` and are not copied into the
+reviewed transcript. Change reviewed proposals to `accept` or `reject`, then
+rebuild without starting another Codex call:
+
+```bash
+uv run python .claude/scripts/youtube/review_transcripts.py "{ID}" \
+  --video-id "{VIDEO_ID}" --max-new-chunks 0
+```
+
+Use `transcript_review_hints.json` in the workspace for verified spellings of
+people, channels, restaurants, and other recurring entities. Hints are scoped
+per video so a name such as `나폴리맛피아` does not cause ordinary uses of
+`마피아` or a business such as `와규 마피아` to be rewritten.
+
+Do not accept a plausible reconstruction when the intended wording is
+uncertain. Recheck the flagged timestamp against the audio and on-screen text;
+leave the item pending when the sources still disagree.
+
 #### Correct OCR in Context
 
 Read the full `fullText` before editing individual segments. For each correction,

@@ -26,6 +26,12 @@ Inspect a few descriptions before choosing. Per-place map links or `가게 정�
 blocks mean description-first; unstructured descriptions require transcripts or
 web research.
 
+This optimization applies to an interactive one-time ingest. Daily renewal
+still collects captions, audio transcription, and on-screen text for every new
+video, including description-first channels. The extra evidence is retained for
+name correction and audit even when description links remain the primary place
+source.
+
 ## Re-Derive After Edits
 
 If videos were re-edited after a prior ingest, re-extract transcripts before
@@ -92,3 +98,29 @@ Inspect `.claude/workspace/youtube/{ID}/` before starting:
 
 If a step fails, report the error and retry that step only. Preserve intermediate
 files so the user can stop at any checkpoint and continue later.
+
+## Daily Renewal
+
+Playlist policy is stored in `.claude/config/youtube-renewal.json`. To inspect
+enabled playlists without changing state, run:
+
+```bash
+uv run python .claude/scripts/youtube/renew_playlists.py
+```
+
+A committed run discovers new videos, collects captions, Whisper output, and
+video OCR, then runs the structured Codex reviewers:
+
+```bash
+uv run python .claude/scripts/youtube/renew_playlists.py --commit [--upload]
+```
+
+Before discovery, the job reads video IDs from the configured production
+Sunrei's spot links. If that lookup fails, it skips the playlist instead of
+risking duplicate work. The job is resumable and stops at `review_pending`. It
+does not geocode, publish, change Sunrei spots, or update the channel registry.
+Use `youtube-create-sunrei` only after transcript corrections and location
+candidates have explicit decisions.
+
+Operational details, S3 paths, and launchd setup are documented in
+`.claude/scripts/youtube/AUTOMATION.md`.
