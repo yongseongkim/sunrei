@@ -16,9 +16,12 @@ check, but never changes the Admin API, a Sunrei, or its spots.
    - YouTube captions
    - Whisper transcription of the audio
    - OCR of text visible in the video
-6. Run transcript review and location candidate extraction with `codex exec`.
-7. Save the run as `review_pending`.
-8. With `--upload`, gzip JSON artifacts and upload them under an immutable S3
+6. Normalize the reviewed transcript, Whisper output, and OCR into one
+   timestamp-ordered `evidence_timeline.json`.
+7. Give Codex the video metadata and the relevant timeline window, then extract
+   location candidates and supporting details.
+8. Save the run as `review_pending`.
+9. With `--upload`, gzip JSON artifacts and upload them under an immutable S3
    run path. Raw audio and video are deleted by the evidence scripts and are
    never artifacts.
 
@@ -83,6 +86,20 @@ JSON files are stored as `.json.gz` with raw and compressed SHA-256 values in
 `manifest.json`. The per-video `latest.json` pointer changes only after every
 run object and its manifest upload successfully.
 
+The immutable run keeps both source and derived artifacts:
+
+| Role | Files |
+| --- | --- |
+| Source | `metadata.json`, `captions.json`, `audio_transcript.json`, `onscreen_text.json` |
+| Normalized source | `transcripts.json`, `evidence_timeline.json` |
+| Review and derived | `transcript_review.json`, `transcripts.reviewed.json`, `location_candidates.json` |
+
+`metadata.json` contains the channel, title, description, playlist, and video
+URL. `evidence_timeline.json` records every selected transcript, Whisper, and
+OCR segment with its source and start/end time. The raw modality files remain
+available so a bad timeline or Codex result can be reproduced and debugged.
+Every manifest entry includes its artifact role and SHA-256.
+
 The S3 uploader decrypts the existing `aws-access-key-id` and
 `aws-secret-access-key` values from `deploy/secrets/secrets.enc.yaml`. Codex
 runs in an empty, read-only temporary directory without AWS, SOPS, Google,
@@ -112,6 +129,6 @@ does not approve the data. Geocoding, updating `locations.json`, and calling the
 Admin API remain separate approved actions.
 
 After accepting transcript corrections, rebuild `transcripts.reviewed.json`
-with `review_transcripts.py --max-new-chunks 0`, then rerun location extraction
-with `extract_locations_headless.py --restart`. The location extractor prefers
-the reviewed transcript over raw captions.
+with `review_transcripts.py --max-new-chunks 0`, rebuild the timeline with
+`evidence_timeline.py --force`, then rerun location extraction with
+`extract_locations_headless.py --restart`.

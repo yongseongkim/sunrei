@@ -1,4 +1,4 @@
-"""Extract reviewable location candidates from caption, audio, and video OCR.
+"""Extract locations from video metadata and timestamped source evidence.
 
 This script does not geocode, update a Sunrei, or upload data. It writes
 ``location_candidates.json`` with ``review_pending`` status.
@@ -18,13 +18,9 @@ from pathlib import Path
 
 from _common import workspace
 from codex_headless import run_structured
+from evidence_timeline import ensure_timeline
 
 SCHEMA_FILE = Path(__file__).with_name("location_candidates.schema.json")
-EVIDENCE_FILES = {
-    "captions": "captions.json",
-    "audio": "audio_transcript.json",
-    "onscreen": "onscreen_text.json",
-}
 CONFIDENCE = {"low": 0, "medium": 1, "high": 2}
 
 
@@ -64,17 +60,6 @@ def sha256_files(paths):
     return digest.hexdigest()
 
 
-def unwrap_video(value, video_id=None):
-    if not isinstance(value, dict):
-        return {}
-    if value.get("videoId"):
-        return value
-    for video in value.get("videos", []):
-        if video_id is None or video.get("videoId") == video_id:
-            return video
-    return {}
-
-
 def load_metadata(ws):
     for file_name in ("metadata.json", "video_info.json"):
         path = ws / file_name
@@ -83,44 +68,6 @@ def load_metadata(ws):
             if value.get("type") == "video" or value.get("videoId"):
                 return value
     raise FileNotFoundError(f"No single-video metadata found in {ws}")
-
-
-def load_evidence(ws, video_id):
-    evidence = {}
-    paths = []
-    for source, file_name in EVIDENCE_FILES.items():
-        path = ws / file_name
-        if not path.is_file():
-            continue
-        paths.append(path)
-        video = unwrap_video(read_json(path), video_id)
-        if video.get("segments"):
-            evidence[source] = video
-
-    # Prefer the human-reviewed transcript whenever it exists. Pending reviews
-    # are content-equivalent to the source; accepted corrections then flow into
-    # a restarted location extraction without changing this interface.
-    transcript_path = ws / "transcripts.reviewed.json"
-    if transcript_path.is_file():
-        paths.append(transcript_path)
-        video = unwrap_video(read_json(transcript_path), video_id)
-        if video.get("segments"):
-            evidence["captions"] = video
-    return evidence, paths
-
-
-def segment_end(segment):
-    start = float(segment.get("start") or 0)
-    if segment.get("end") is not None:
-        return float(segment["end"])
-    return start + float(segment.get("duration") or 0)
-
-
-def duration_of(evidence):
-    return max(
-        (segment_end(segment) for video in evidence.values() for segment in video.get("segments", [])),
-        default=0,
-    )
 
 
 def windows(duration, size, overlap):
@@ -136,44 +83,44 @@ def windows(duration, size, overlap):
         start = max(start + 1, end - overlap)
 
 
-def evidence_window(evidence, start, end):
-    result = {}
-    for source, video in evidence.items():
-        segments = []
-        for segment in video.get("segments", []):
-            segment_start = float(segment.get("start") or 0)
-            if segment_end(segment) < start or segment_start > end:
-                continue
-            segments.append(
-                {
-                    "text": segment.get("text", ""),
-                    "start": segment_start,
-                    "end": segment_end(segment),
-                }
-            )
-        if segments:
-            result[source] = segments
-    return result
+def timeline_window(timeline, start, end):
+    return [
+        event
+        for event in timeline.get("events", [])
+        if event.get("endSeconds", 0) >= start
+        and event.get("startSeconds", 0) <= end
+    ]
 
 
-def make_prompt(metadata, evidence, start, end):
+def make_prompt(metadata, timeline, start, end):
     payload = {
-        "videoId": metadata.get("videoId") or metadata.get("id"),
-        "title": metadata.get("title", ""),
-        "channelName": metadata.get("channelName", ""),
-        "description": metadata.get("description", "")[:12000],
-        "window": {"startSeconds": start, "endSeconds": end},
-        "evidence": evidence_window(evidence, start, end),
+        "metadata": {
+            "videoId": metadata.get("videoId") or metadata.get("id"),
+            "title": metadata.get("title", ""),
+            "description": metadata.get("description", ""),
+            "channelId": metadata.get("channelId", ""),
+            "channelName": metadata.get("channelName", ""),
+            "playlistId": metadata.get("playlistId", ""),
+            "playlistTitle": metadata.get("playlistTitle", ""),
+            "publishedAt": metadata.get("publishedAt"),
+            "url": metadata.get("url", ""),
+        },
+        "timeline": {
+            "window": {"startSeconds": start, "endSeconds": end},
+            "sourceStatus": timeline.get("sources", {}),
+            "events": timeline_window(timeline, start, end),
+        },
     }
     return """Extract real places that are visited, filmed, or presented as a
 destination in this YouTube video. Return only JSON matching the supplied
 schema. Do not run commands, inspect files, browse the web, or geocode.
 
-Use the title and description together with all available caption, audio, and
-on-screen OCR evidence. A place supported by a creator-provided description or
-multiple modalities is stronger than a name inferred from one corrupted ASR
-token. Preserve verified Korean and foreign spellings. Do not translate or
-normalize a name when that would hide a source conflict.
+Use metadata together with the timestamped transcript, Whisper, and OCR events.
+A place supported by a creator-provided description or multiple sources is
+stronger than a name inferred from one corrupted ASR token. Preserve verified
+Korean and foreign spellings. Do not translate or normalize a name when that
+would hide a source conflict. A source marked duplicate is not independent
+support; inspect sourceStatus and origin before comparing modalities.
 
 Include restaurants, shops, attractions, buildings, viewpoints, and other
 specific destinations central to the video. Exclude places mentioned only as a
@@ -181,10 +128,11 @@ comparison, generic streets or neighborhoods without a specific destination,
 the creator's home, sponsors, and locations inferred only from background
 scenery. Do not invent a venue name from an address, dish, or generic category.
 
-Every location must include at least one verbatim evidence quote. Use
-startSeconds 0 for title or description evidence. Mark needsVerification when
-sources disagree, the exact business name is uncertain, or only weak OCR/ASR
-supports the candidate. Put unresolved conflicts in issues.
+Every location must include at least one verbatim evidence quote. Label timed
+evidence as transcript, whisper, or ocr exactly as it appears in the timeline.
+Use startSeconds 0 for title or description evidence. Mark needsVerification
+when sources disagree, the exact business name is uncertain, or only weak
+OCR/ASR supports the candidate. Put unresolved conflicts in issues.
 
 Write description as two to five Korean sentences suitable for a Sunrei spot.
 Describe why the video visits the place, its relevant atmosphere or geographic
@@ -229,12 +177,16 @@ def merge_location(existing, incoming):
         existing["reason"] = (existing.get("reason", "") + " " + incoming["reason"]).strip()
 
 
-def extract(metadata, evidence, model, timeout, window_seconds, overlap_seconds):
+def extract(metadata, timeline, model, timeout, window_seconds, overlap_seconds):
     results = []
-    for start, end in windows(duration_of(evidence), window_seconds, overlap_seconds):
+    for start, end in windows(
+        float(timeline.get("durationSeconds") or 0),
+        window_seconds,
+        overlap_seconds,
+    ):
         print(f"location extraction [{start:.0f}:{end:.0f}]", flush=True)
         result = run_structured(
-            make_prompt(metadata, evidence, start, end),
+            make_prompt(metadata, timeline, start, end),
             SCHEMA_FILE,
             model=model,
             timeout=timeout,
@@ -292,14 +244,14 @@ def main():
 
     metadata = load_metadata(ws)
     video_id = metadata.get("videoId") or metadata.get("id")
-    evidence, evidence_paths = load_evidence(ws, video_id)
-    if not evidence:
+    timeline, timeline_path = ensure_timeline(ws, video_id)
+    if not timeline.get("events"):
         raise ValueError(f"No timed transcript, audio, or OCR evidence found in {ws}")
     metadata_path = ws / ("metadata.json" if (ws / "metadata.json").is_file() else "video_info.json")
-    source_sha = sha256_files([metadata_path] + evidence_paths)
+    source_sha = sha256_files([metadata_path, timeline_path])
     results = extract(
         metadata,
-        evidence,
+        timeline,
         args.model,
         args.timeout,
         args.window_seconds,

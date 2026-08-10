@@ -36,7 +36,16 @@
               "properties": {
                 "source": {
                   "type": "string",
-                  "enum": ["title", "description", "captions", "audio", "onscreen"]
+                  "enum": [
+                    "title",
+                    "description",
+                    "transcript",
+                    "whisper",
+                    "ocr",
+                    "captions",
+                    "audio",
+                    "onscreen"
+                  ]
                 },
                 "quote": { "type": "string" },
                 "startSeconds": { "type": "number", "minimum": 0 }

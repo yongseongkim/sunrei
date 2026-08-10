@@ -298,13 +298,19 @@ creation.
 ## Automated Candidate Extraction
 
 For a new-video run workspace containing `metadata.json`, captions, Whisper
-output, and video OCR, generate un-geocoded candidates with:
+output, and video OCR, first build the normalized source timeline:
+
+```bash
+uv run python .claude/scripts/youtube/evidence_timeline.py <RUN_DIR>
+```
+
+Then generate un-geocoded candidates with:
 
 ```bash
 uv run python .claude/scripts/youtube/extract_locations_headless.py <RUN_DIR>
 ```
 
-The script processes timed windows so locations near the end of a long video
-are not lost to input truncation. It records verbatim evidence by modality and
-sets every location to `decision: pending`. Do not convert these candidates to
+The extractor sends Codex the channel, title, description, and one relevant
+timeline window at a time. It records verbatim evidence by source and sets every
+location to `decision: pending`. Do not convert these candidates to
 `locations.json` or geocode them until names, scope, and evidence are approved.

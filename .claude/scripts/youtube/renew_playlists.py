@@ -557,6 +557,15 @@ def process_video(
         7200,
     )
     stages["transcriptReview"] = "completed"
+    run_checked(
+        command_uv(
+            "python",
+            str(SCRIPT_DIR / "evidence_timeline.py"),
+            str(run_dir),
+        ),
+        120,
+    )
+    stages["evidenceTimeline"] = "completed"
     record["status"] = "extracting_locations"
     record["updatedAt"] = utc_now()
     write_json(state_path, state)

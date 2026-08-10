@@ -10,7 +10,8 @@ sys.path.insert(0, str(SCRIPT_DIR))
 
 from codex_headless import sanitized_environment
 from _common import jwt_is_usable
-from extract_locations_headless import load_evidence, merge_results
+from evidence_timeline import build_timeline, ensure_timeline
+from extract_locations_headless import merge_results, timeline_window
 from renew_playlists import (
     discover,
     parse_json_output,
@@ -100,22 +101,54 @@ class RenewalTests(unittest.TestCase):
             self.assertFalse(video["approved"])
             self.assertEqual(video["segments"][0]["start"], 3.0)
 
-    def test_reviewed_transcript_takes_precedence_for_location_evidence(self):
+    def test_evidence_timeline_combines_and_orders_sources(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             workspace = Path(temp_dir)
-            raw = {"videoId": "abc", "segments": [{"text": "권성중", "start": 0}]}
-            reviewed = {"videos": [{"videoId": "abc", "segments": [{"text": "권성준", "start": 0}]}]}
-            (workspace / "captions.json").write_text(
-                json.dumps(raw, ensure_ascii=False), encoding="utf-8"
-            )
-            (workspace / "transcripts.reviewed.json").write_text(
-                json.dumps(reviewed, ensure_ascii=False), encoding="utf-8"
-            )
+            files = {
+                "metadata.json": {"videoId": "abc", "title": "Title"},
+                "captions.json": {
+                    "videoId": "abc",
+                    "segments": [{"text": "권성중", "start": 10, "duration": 2}],
+                },
+                "transcripts.reviewed.json": {
+                    "videos": [
+                        {
+                            "videoId": "abc",
+                            "language": "ko",
+                            "segments": [{"text": "권성준", "start": 10, "duration": 2}],
+                        }
+                    ]
+                },
+                "audio_transcript.json": {
+                    "videoId": "abc",
+                    "language": "ko",
+                    "segments": [{"text": "오디오", "start": 5, "duration": 2}],
+                },
+                "onscreen_text.json": {
+                    "videoId": "abc",
+                    "language": "ko",
+                    "segments": [{"text": "간판", "start": 7, "duration": 1}],
+                },
+            }
+            for file_name, value in files.items():
+                (workspace / file_name).write_text(
+                    json.dumps(value, ensure_ascii=False), encoding="utf-8"
+                )
 
-            evidence, paths = load_evidence(workspace, "abc")
+            timeline = build_timeline(workspace, "abc")
+            cached, output = ensure_timeline(workspace, "abc")
 
-        self.assertEqual(evidence["captions"]["segments"][0]["text"], "권성준")
-        self.assertEqual({path.name for path in paths}, {"captions.json", "transcripts.reviewed.json"})
+        self.assertEqual(
+            [(event["source"], event["text"]) for event in timeline["events"]],
+            [("whisper", "오디오"), ("ocr", "간판"), ("transcript", "권성준")],
+        )
+        self.assertEqual(timeline["sources"]["transcript"]["file"], "transcripts.reviewed.json")
+        self.assertEqual(cached["inputFingerprint"], timeline["inputFingerprint"])
+        self.assertEqual(output.name, "evidence_timeline.json")
+        self.assertEqual(
+            [event["text"] for event in timeline_window(timeline, 6, 8)],
+            ["오디오", "간판"],
+        )
 
     def test_accepted_correction_updates_missing_cleaned_text(self):
         source = {
@@ -189,6 +222,7 @@ class RenewalTests(unittest.TestCase):
             entries = artifact_entries(run_dir, "bucket", "region", "prefix")
 
         self.assertEqual([entry["file"] for entry in entries], ["metadata.json"])
+        self.assertEqual(entries[0]["role"], "source")
         self.assertEqual(entries[0]["contentEncoding"], "gzip")
         manifest = manifest_value("playlist", "abc", "run", "bucket", "region", "prefix", entries)
         self.assertNotIn("body", manifest["artifacts"][0])

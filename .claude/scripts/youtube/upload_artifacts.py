@@ -1,4 +1,4 @@
-"""Upload reviewed YouTube JSON artifacts to S3 using SOPS-managed keys.
+"""Upload YouTube source and derived JSON artifacts using SOPS-managed keys.
 
 The default is a dry run. Pass ``--commit`` to decrypt the existing server AWS
 key and upload immutable gzip objects, a run manifest, and ``latest.json``.
@@ -24,17 +24,18 @@ from _common import ROOT
 
 DEFAULT_CONFIG = ROOT / ".claude" / "config" / "youtube-renewal.json"
 SECRETS_FILE = ROOT / "deploy" / "secrets" / "secrets.enc.yaml"
-ALLOWED_FILES = (
-    "metadata.json",
-    "captions.json",
-    "audio_transcript.json",
-    "onscreen_text.json",
-    "transcripts.json",
-    "transcript_review.json",
-    "transcripts.reviewed.json",
-    "location_candidates.json",
-    "run_manifest.json",
-)
+ARTIFACT_ROLES = {
+    "metadata.json": "source",
+    "captions.json": "source",
+    "audio_transcript.json": "source",
+    "onscreen_text.json": "source",
+    "transcripts.json": "source_normalized",
+    "evidence_timeline.json": "source_normalized",
+    "transcript_review.json": "review",
+    "transcripts.reviewed.json": "derived",
+    "location_candidates.json": "derived",
+}
+ALLOWED_FILES = tuple(ARTIFACT_ROLES)
 SAFE_ID = re.compile(r"^[A-Za-z0-9_-]+$")
 
 
@@ -102,6 +103,7 @@ def artifact_entries(run_dir, bucket, region, run_prefix):
         entries.append(
             {
                 "file": file_name,
+                "role": ARTIFACT_ROLES[file_name],
                 "key": key,
                 "url": public_url(bucket, region, key),
                 "contentType": "application/json",

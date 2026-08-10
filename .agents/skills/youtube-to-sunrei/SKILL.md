@@ -109,7 +109,8 @@ uv run python .claude/scripts/youtube/renew_playlists.py
 ```
 
 A committed run discovers new videos, collects captions, Whisper output, and
-video OCR, then runs the structured Codex reviewers:
+video OCR, then builds a timestamped evidence timeline and runs the structured
+Codex reviewers:
 
 ```bash
 uv run python .claude/scripts/youtube/renew_playlists.py --commit [--upload]
@@ -121,6 +122,11 @@ risking duplicate work. The job is resumable and stops at `review_pending`. It
 does not geocode, publish, change Sunrei spots, or update the channel registry.
 Use `youtube-create-sunrei` only after transcript corrections and location
 candidates have explicit decisions.
+
+S3 runs retain `metadata.json`, each raw text source, and the normalized
+`evidence_timeline.json` alongside the derived review files. Codex receives the
+metadata plus one relevant timeline window at a time; it does not receive the
+video or raw media.
 
 Operational details, S3 paths, and launchd setup are documented in
 `.claude/scripts/youtube/AUTOMATION.md`.
