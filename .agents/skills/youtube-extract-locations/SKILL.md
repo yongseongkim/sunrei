@@ -10,10 +10,12 @@ text, then geocode and verify them with the Google Maps Places API.
 
 ## Prerequisites
 
-- Require `.claude/workspace/youtube/{ID}/video_info.json`.
-- The transcript-driven path (Steps 5–7) also requires
-  `.claude/workspace/youtube/{ID}/transcripts.json`. The description-first path
-  uses descriptions only and skips the caption API.
+- Require playlist metadata in `video_info.json` or single-video run metadata in
+  `metadata.json`.
+- The multimodal path also requires the caption, Whisper, and OCR artifacts
+  produced by `youtube-extract-transcript`.
+- `extract_locations_headless.py` builds or reuses `evidence_timeline.json` and
+  writes `location_candidates.json` with `review_pending` status.
 - If a required file is missing, ask the user to complete the preceding step.
 
 ## Description-first fast path
@@ -36,10 +38,11 @@ Use this path for:
   each address with the nearest preceding name and geocodes by name plus area.
 
 The script caches intermediate files as `descriptions.json`, `staging.json`, and
-`resolved_links.json`, so reruns can resume from any stage. If this path covers
-the playlist, skip Steps 4–7 and go straight to Step 9.
+`resolved_links.json`, so reruns can resume from any stage. Use resolved links
+as the place identity and geocode, but still inspect the aligned evidence in
+Step 5 for context and proper-name correction.
 
-Scheduled renewal still captures the other modalities for audit and proper-name
+Still collect every text modality for context, audit, and proper-name
 correction. Description links take precedence when the sources disagree about
 the identity of a place.
 
@@ -58,8 +61,9 @@ uv run python .claude/scripts/youtube/geocode_food_vendors.py <ID> <vendors.json
 
 ### 1. Load Data
 
-Read `video_info.json` from `.claude/workspace/youtube/{ID}/`. For the
-transcript-driven path, also read `transcripts.json`.
+Read the video metadata and available raw text artifacts. Build or load
+`evidence_timeline.json` before transcript-driven extraction so captions,
+Whisper, and OCR remain distinguishable by source and timestamp.
 
 ### 2. Load Google Maps API Key
 
@@ -130,11 +134,11 @@ Identify places in this order:
 1. Timestamped chapters in the description
 2. Google Maps links
 3. Places central to the title or description
-4. Transcript mentions
+4. Timestamped transcript, Whisper, and OCR evidence
 
-Use the transcript as the primary source for descriptions. Chapters often
-contain only a timestamp and place name; the narration contains the atmosphere,
-food, preparation, and creator's reaction.
+Use the aligned timeline as the primary source for descriptions. Chapters often
+contain only a timestamp and place name; narration and on-screen text provide
+the atmosphere, food, preparation, creator reaction, and exact spelling.
 
 Write a three-to-six-sentence `description` for each place. It may be longer
 when the video covers several dishes. This value becomes the spot's `context`

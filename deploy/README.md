@@ -11,6 +11,7 @@ Code → GitHub Actions → GHCR → ArgoCD → k3s (Oracle ARM)
 | admin     | 3102 | 1        | admin.sunrei.com |
 | app       | 3101 | 2        | sunrei.com |
 | server    | 3100 | 2        | api.sunrei.com |
+| YouTube renewal | - | daily CronJob | internal |
 
 All images are built for linux/arm64. External traffic is routed through Cloudflare Tunnel (no Ingress resource needed).
 
@@ -31,7 +32,7 @@ The script:
 
 Pushing a tag matching `v*.*.*` triggers the Docker Publish to GHCR workflow (`.github/workflows/docker-publish.yml`):
 
-1. **build** (matrix): Builds and pushes four images in parallel:
+1. **build** (matrix): Builds and pushes five images in parallel:
 
 | Image | Dockerfile |
 |-------|-----------|
@@ -39,6 +40,7 @@ Pushing a tag matching `v*.*.*` triggers the Docker Publish to GHCR workflow (`.
 | sunrei-app | `deploy/dockerfiles/app.Dockerfile` |
 | sunrei-server | `deploy/dockerfiles/server.Dockerfile` |
 | sunrei-migration | `deploy/dockerfiles/migration.Dockerfile` |
+| sunrei-youtube-renewal | `deploy/dockerfiles/youtube-renewal.Dockerfile` |
 
 Each image is pushed to `ghcr.io/yongseongkim/sunrei/<name>` with semantic version tags (e.g. `0.12.1`, `0.12`, `0`, `latest`).
 
@@ -69,6 +71,7 @@ deploy/helm/
 └── templates/
     ├── _helpers.tpl     # label and naming helpers
     ├── deployment.yaml  # Deployments for admin, app, server
+    ├── youtube-renewal-cronjob.yaml # Daily Codex ingest CronJob and PVC
     └── service.yaml     # ClusterIP Services for admin, app, server
 ```
 
@@ -96,6 +99,11 @@ Secrets are split into two Kubernetes Secrets by ownership:
   `database-password`) — managed in the homelab-infra repo
   (`k8s/sunrei/infra-secrets.enc.yaml`). These change when the app moves to a
   different cluster/DB, so they live with the infrastructure.
+- **`sunrei-youtube-renewal-auth`** (Codex subscription login seed) — generated
+  from the local Codex CLI login and encrypted as
+  `deploy/secrets/youtube-renewal-auth.enc.yaml`. The CronJob copies it to a
+  retained PVC only when no cached login exists, allowing Codex to refresh the
+  cache in place between runs.
 
 Editing and applying (requires GCP credentials with decrypt permission on the
 KMS key):
@@ -110,18 +118,34 @@ Never client-side `kubectl apply` a decrypted Secret — it leaks the plaintext
 into the `last-applied-configuration` annotation. ArgoCD does not manage these
 files; applying them is a manual step.
 
+Prepare and install the Codex subscription login separately:
+
+```bash
+# If auth.json does not exist, use file storage and sign in first.
+codex login -c 'cli_auth_credentials_store="file"' --device-auth
+
+.claude/scripts/youtube/prepare_codex_auth_secret.sh
+sops -d deploy/secrets/youtube-renewal-auth.enc.yaml | kubectl create -f -
+```
+
+Use `kubectl replace -f -` instead of `create -f -` when rotating the seed.
+`auth.json` contains access tokens and must never be committed without SOPS
+encryption. The retained PVC stores refreshed credentials, automation state,
+dependency caches, and Whisper models.
+
 Required keys:
 
 | Key | Secret | Used by |
 |-----|--------|---------|
-| `google-maps-api-key` | sunrei-secrets | admin, app |
+| `google-maps-api-key` | sunrei-secrets | admin, app, YouTube renewal |
 | `google-maps-map-id` | sunrei-secrets | admin |
 | `google-oauth-client-id` | sunrei-secrets | admin, app, server |
 | `google-oauth-client-secret` | sunrei-secrets | server |
 | `jwt-page-token-secret` | sunrei-secrets | server |
-| `aws-access-key-id` | sunrei-secrets | server |
-| `aws-secret-access-key` | sunrei-secrets | server |
-| `auth-jwt-secret` | sunrei-secrets | server |
+| `aws-access-key-id` | sunrei-secrets | server, YouTube renewal |
+| `aws-secret-access-key` | sunrei-secrets | server, YouTube renewal |
+| `auth-jwt-secret` | sunrei-secrets | server, YouTube renewal |
+| `auth.json` | sunrei-youtube-renewal-auth | YouTube renewal CronJob |
 | `database-host` | sunrei-infra-secrets | server, migration |
 | `database-password` | sunrei-infra-secrets | server, migration |
 

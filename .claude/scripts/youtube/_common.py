@@ -32,6 +32,10 @@ def workspace(id_or_path):
 
 
 def load_google_api_key():
+    for name in ("YOUTUBE_API_KEY", "GOOGLE_MAPS_API_KEY"):
+        value = os.environ.get(name)
+        if value:
+            return value
     if not CONF.is_file():
         return None
     m = re.search(r'youtubeApiKey\s*=\s*"?([^"\s]+)"?', CONF.read_text())

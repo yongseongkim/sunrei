@@ -13,6 +13,7 @@ import argparse
 import gzip
 import hashlib
 import json
+import os
 import re
 import subprocess
 import sys
@@ -140,6 +141,16 @@ def create_client(region):
         import boto3
     except ImportError as error:
         raise RuntimeError("boto3 is required for --commit; run with `uv run --with boto3`") from error
+
+    access_key = os.environ.get("AWS_ACCESS_KEY_ID")
+    secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    if access_key or secret_key:
+        if not access_key or not secret_key:
+            raise RuntimeError(
+                "AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY must be set together"
+            )
+        return boto3.client("s3", region_name=region)
+
     return boto3.client(
         "s3",
         region_name=region,

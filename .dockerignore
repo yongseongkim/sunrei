@@ -25,6 +25,8 @@ dist/
 # Local env files
 .env*.local
 .env
+.claude/.env
+.claude/workspace/
 
 # IDE
 .vscode/

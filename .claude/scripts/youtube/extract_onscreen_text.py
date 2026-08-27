@@ -1,6 +1,6 @@
 """Extract on-screen text from YouTube video frames using OCR.
 
-3rd fallback when YouTube captions and Whisper STT both fail.
+Independent evidence source alongside YouTube captions and Whisper STT.
 Uses yt-dlp + opencv + easyocr to read burned-in subtitles and annotations.
 
 Usage:

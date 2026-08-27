@@ -15,9 +15,11 @@ Choose the Step 3 location path from the content type:
 
 - Description-first: Use this for channels that put a Google Maps link or a
   structured `* 가게 정보` block per place in every description, such as food
-  vlogs. Run `extract_from_descriptions.py` and skip transcripts.
+  vlogs. Run `extract_from_descriptions.py` and give those exact links priority
+  when identifying places.
 - Transcript-driven: travel/architecture vlogs that name places only in the
-  narration. Extract transcripts first (Step 2), then match places from them.
+  narration. Collect multimodal text evidence first, then match places from the
+  aligned timeline.
 - Web-research: TV-show clip compilations whose titles name a dish but not a
   venue, such as 스트리트푸드파이터. Research the real vendors and geocode with
   `geocode_food_vendors.py`.
@@ -26,18 +28,18 @@ Inspect a few descriptions before choosing. Per-place map links or `가게 정�
 blocks mean description-first; unstructured descriptions require transcripts or
 web research.
 
-This optimization applies to an interactive one-time ingest. Daily renewal
-still collects captions, audio transcription, and on-screen text for every new
-video, including description-first channels. The extra evidence is retained for
-name correction and audit even when description links remain the primary place
-source.
+Collect captions, audio transcription, and on-screen text for every new video,
+including description-first and web-research channels. Keep description links
+as the primary place identity when they conflict with weaker ASR or OCR, while
+retaining every source for correction and audit.
 
 ## Re-Derive After Edits
 
-If videos were re-edited after a prior ingest, re-extract transcripts before
-reusing `locations.json`. Re-derive locations from the current transcript while
-reusing verified geocodes. Back up the old file as `locations.legacy.json` and
-follow the re-derivation section of `youtube-extract-transcript`.
+If videos were re-edited after a prior ingest, recollect all text evidence
+before reusing `locations.json`. Rebuild the timeline and location candidates
+against the current video while reusing verified geocodes for places that still
+appear. Keep the prior locations as `locations.legacy.json` until review is
+complete.
 
 ## Workflow
 
@@ -50,18 +52,23 @@ Run `youtube-fetch-info` with the provided URL.
 - Save the result, including the `channel` object, to
   `.claude/workspace/youtube/{ID}/video_info.json`.
 
-Ask for confirmation before extracting transcripts.
+Ask for confirmation before collecting text evidence.
 
-### 2. Extract Transcripts
+### 2. Collect and Review Text Evidence
 
 Run `youtube-extract-transcript`.
 
-- Extract, audit, and clean the transcript for each selected video.
-- Let the user approve, revise, or skip each transcript.
-- Save approved transcripts to
-  `.claude/workspace/youtube/{ID}/transcripts.json`.
+- Attempt YouTube captions, local Whisper transcription, and video OCR for each
+  selected video.
+- Preserve each raw result and align the sources in
+  `evidence_timeline.json`.
+- Run the isolated Codex reviewer and keep corrections in
+  `transcript_review.json` with `pending` decisions.
+- Let the user approve, reject, revise, or skip the proposed corrections.
 
-Do not extract locations until all retained transcripts are approved.
+Location candidates may be extracted from the pending evidence timeline, but do
+not create or update a Sunrei until the required transcript and location
+decisions are explicit.
 
 ### 3. Extract Locations
 

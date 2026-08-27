@@ -10,8 +10,8 @@ check, but never changes the Admin API, a Sunrei, or its spots.
 2. Fetch every enabled playlist from the YouTube Data API.
 3. Read the configured production Sunrei and collect video IDs from its spot
    links. If this lookup fails, stop processing that playlist.
-4. Compare remote video IDs with the production IDs, existing playlist
-   workspace, and local automation state.
+4. Compare remote video IDs with the production IDs, the latest S3 playlist
+   baseline, existing playlist workspace, and local automation state.
 5. For each new video, attempt all three evidence sources:
    - YouTube captions
    - Whisper transcription of the audio
@@ -145,15 +145,49 @@ does not issue Admin API write requests.
 
 ## Scheduling
 
-The launchd definition runs every day at 04:30 local time:
+The production Helm chart runs the worker as a k3s CronJob every day at 04:30
+Asia/Seoul. The chart stores the UTC equivalent, `30 19 * * *`, and uses
+`concurrencyPolicy: Forbid` so a slow Whisper/OCR run cannot overlap the next
+one.
+
+The worker uses a retained PVC for:
+
+- `state.json` and resumable run artifacts
+- the Codex `auth.json` cache refreshed by the CLI
+- uv dependency and Whisper model caches
+
+When a configured playlist has no local state, the worker restores its latest
+S3 playlist baseline before discovery. This also covers a new PVC or a playlist
+enabled after the PVC was created, without treating the existing catalog as
+new videos.
+
+Prepare the SOPS-encrypted login seed before enabling the first job:
+
+```bash
+codex login -c 'cli_auth_credentials_store="file"' --device-auth
+.claude/scripts/youtube/prepare_codex_auth_secret.sh
+sops -d deploy/secrets/youtube-renewal-auth.enc.yaml | kubectl create -f -
+```
+
+After the worker image has been released and ArgoCD has synced the chart, start
+one job manually and inspect it before waiting for the schedule:
+
+```bash
+kubectl -n sunrei create job --from=cronjob/sunrei-youtube-renewal \
+  sunrei-youtube-renewal-manual
+kubectl -n sunrei logs -f job/sunrei-youtube-renewal-manual
+```
+
+The local launchd definition remains available for development and runs every
+day at 04:30 local time:
 
 ```text
 .claude/launchd/com.yongseongkim.sunrei-youtube-renewal.plist
 ```
 
-Test a committed run manually before loading the agent. After validation, link
-the plist into `~/Library/LaunchAgents` and load it with `launchctl bootstrap`.
-The Mac must be on, and the saved Codex CLI login must remain valid.
+Do not run launchd and the k3s CronJob at the same time. Although both are
+resumable, their local state stores are independent and they can process the
+same pending video twice.
 
 ## Approval Boundary
 

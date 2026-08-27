@@ -13,6 +13,7 @@ Usage:
 
 import argparse
 import copy
+import gzip
 import json
 import os
 import random
@@ -21,6 +22,7 @@ import subprocess
 import sys
 import time
 import urllib.parse
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -36,7 +38,9 @@ from _common import (
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_CONFIG = ROOT / ".claude" / "config" / "youtube-renewal.json"
-AUTOMATION_ROOT = WS_ROOT / "automation"
+AUTOMATION_ROOT = Path(
+    os.environ.get("SUNREI_YOUTUBE_AUTOMATION_ROOT", WS_ROOT / "automation")
+)
 STATE_FILE = AUTOMATION_ROOT / "state.json"
 RUNS_ROOT = AUTOMATION_ROOT / "runs"
 YOUTUBE_API = "https://www.googleapis.com/youtube/v3"
@@ -222,6 +226,59 @@ def load_state(path):
     if value.get("schemaVersion") != 1:
         raise ValueError(f"Unsupported state schema in {path}")
     return value
+
+
+def public_object_url(bucket, region, key):
+    encoded = urllib.parse.quote(key, safe="/")
+    return f"https://{bucket}.s3.{region}.amazonaws.com/{encoded}"
+
+
+def read_remote_json(url, compressed=False):
+    request = urllib.request.Request(url, headers={"User-Agent": "sunrei-youtube-renewal/1"})
+    try:
+        with urllib.request.urlopen(request, timeout=60) as response:
+            body = response.read()
+        if compressed:
+            body = gzip.decompress(body)
+        return json.loads(body.decode("utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError, gzip.BadGzipFile) as error:
+        raise RuntimeError(f"Could not read playlist baseline {url}: {error}") from error
+
+
+def restore_state_from_baselines(config, playlists, reader=read_remote_json):
+    store = config["artifactStore"]
+    bucket = store["bucket"]
+    region = store["region"]
+    root_prefix = store["prefix"].strip("/")
+    state = {
+        "schemaVersion": 1,
+        "updatedAt": utc_now(),
+        "restoredFrom": "s3_playlist_baselines",
+        "playlists": {},
+    }
+    for playlist in playlists:
+        playlist_id = playlist["id"]
+        owner_prefix = f"{root_prefix}/playlists/{playlist_id}/"
+        latest_key = f"{owner_prefix}latest.json"
+        latest = reader(public_object_url(bucket, region, latest_key))
+        state_key = latest.get("stateKey", "")
+        if latest.get("playlistId") != playlist_id or not state_key.startswith(owner_prefix):
+            raise RuntimeError(f"Invalid S3 baseline pointer for playlist {playlist_id}")
+        playlist_baseline = reader(
+            public_object_url(bucket, region, state_key), compressed=True
+        )
+        if (
+            playlist_baseline.get("schemaVersion") != 1
+            or playlist_baseline.get("playlistId") != playlist_id
+            or not isinstance(playlist_baseline.get("knownVideoIds"), list)
+        ):
+            raise RuntimeError(f"Invalid S3 baseline state for playlist {playlist_id}")
+        state["playlists"][playlist_id] = {
+            key: value
+            for key, value in playlist_baseline.items()
+            if key not in {"schemaVersion", "playlistId"}
+        }
+    return state
 
 
 def playlist_state(state, playlist_id):
@@ -522,7 +579,7 @@ def process_video(
             "status": "collecting",
             "title": item.get("title", ""),
             "position": item.get("position"),
-            "runDirectory": str(run_dir.relative_to(ROOT)),
+            "runDirectory": str(run_dir.relative_to(AUTOMATION_ROOT)),
             "updatedAt": utc_now(),
         }
     )
@@ -620,12 +677,6 @@ def main():
     config = read_json(args.config)
     if config.get("schemaVersion") != 1:
         raise ValueError(f"Unsupported config schema in {args.config}")
-    state = load_state(args.state)
-    working_state = state if args.commit else copy.deepcopy(state)
-    api_key = load_google_api_key()
-    if not api_key:
-        raise RuntimeError("No YouTube API key found in application-local.conf")
-
     selected = set(args.playlist_ids or [])
     playlists = [
         playlist
@@ -636,6 +687,25 @@ def main():
     missing = selected - {playlist["id"] for playlist in config.get("playlists", [])}
     if missing:
         raise ValueError(f"Unknown playlists: {', '.join(sorted(missing))}")
+    state = load_state(args.state)
+    missing_baselines = [
+        playlist
+        for playlist in playlists
+        if playlist["id"] not in state["playlists"]
+    ]
+    if missing_baselines and not args.bootstrap:
+        restored = restore_state_from_baselines(config, missing_baselines)
+        state["playlists"].update(restored["playlists"])
+        state["restoredFrom"] = restored["restoredFrom"]
+        state["updatedAt"] = restored["updatedAt"]
+        print(f"restored {len(missing_baselines)} playlist baselines from S3")
+    working_state = state if args.commit else copy.deepcopy(state)
+    api_key = load_google_api_key()
+    if not api_key:
+        raise RuntimeError(
+            "No YouTube API key found in YOUTUBE_API_KEY, GOOGLE_MAPS_API_KEY, "
+            "or application-local.conf"
+        )
     max_videos = args.max_videos or config["defaults"].get("maxNewVideosPerRun", 2)
     if max_videos < 1:
         raise ValueError("max-videos must be positive")

@@ -9,12 +9,13 @@ SCRIPT_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from codex_headless import sanitized_environment
-from _common import jwt_is_usable
+from _common import jwt_is_usable, load_google_api_key
 from evidence_timeline import build_timeline, ensure_timeline
 from extract_locations_headless import merge_results, timeline_window
 from renew_playlists import (
     discover,
     parse_json_output,
+    restore_state_from_baselines,
     write_primary_transcript,
     youtube_video_id,
 )
@@ -24,6 +25,17 @@ from upload_artifacts import artifact_entries, manifest_value
 
 
 class RenewalTests(unittest.TestCase):
+    def test_youtube_api_key_prefers_environment(self):
+        previous = os.environ.get("YOUTUBE_API_KEY")
+        try:
+            os.environ["YOUTUBE_API_KEY"] = "from-environment"
+            self.assertEqual(load_google_api_key(), "from-environment")
+        finally:
+            if previous is None:
+                os.environ.pop("YOUTUBE_API_KEY", None)
+            else:
+                os.environ["YOUTUBE_API_KEY"] = previous
+
     def test_expired_admin_token_is_not_reused(self):
         import base64
 
@@ -58,6 +70,49 @@ class RenewalTests(unittest.TestCase):
             [item["videoId"] for item in discover(remote, state, {"production"})],
             ["new"],
         )
+
+    def test_restore_state_combines_s3_playlist_baselines(self):
+        config = {
+            "artifactStore": {
+                "bucket": "bucket",
+                "region": "region",
+                "prefix": "youtube/artifacts/v1",
+            }
+        }
+        playlists = [{"id": "one"}, {"id": "two"}]
+        responses = {
+            "https://bucket.s3.region.amazonaws.com/youtube/artifacts/v1/playlists/one/latest.json": {
+                "playlistId": "one",
+                "stateKey": "youtube/artifacts/v1/playlists/one/snapshots/run/state.json.gz",
+            },
+            "https://bucket.s3.region.amazonaws.com/youtube/artifacts/v1/playlists/one/snapshots/run/state.json.gz": {
+                "schemaVersion": 1,
+                "playlistId": "one",
+                "knownVideoIds": ["video-one"],
+                "videos": {},
+            },
+            "https://bucket.s3.region.amazonaws.com/youtube/artifacts/v1/playlists/two/latest.json": {
+                "playlistId": "two",
+                "stateKey": "youtube/artifacts/v1/playlists/two/snapshots/run/state.json.gz",
+            },
+            "https://bucket.s3.region.amazonaws.com/youtube/artifacts/v1/playlists/two/snapshots/run/state.json.gz": {
+                "schemaVersion": 1,
+                "playlistId": "two",
+                "knownVideoIds": ["video-two"],
+                "videos": {},
+            },
+        }
+        reads = []
+
+        def reader(url, compressed=False):
+            reads.append((url, compressed))
+            return responses[url]
+
+        state = restore_state_from_baselines(config, playlists, reader=reader)
+
+        self.assertEqual(state["playlists"]["one"]["knownVideoIds"], ["video-one"])
+        self.assertEqual(state["playlists"]["two"]["knownVideoIds"], ["video-two"])
+        self.assertEqual([compressed for _, compressed in reads], [False, True, False, True])
 
     def test_youtube_video_id_supports_spot_link_formats(self):
         expected = "aDcCeWReTG0"

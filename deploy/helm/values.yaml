@@ -18,6 +18,10 @@ images:
     repository: server
     tag: 0.1.0
     pullPolicy: IfNotPresent
+  youtubeRenewal:
+    repository: youtube-renewal
+    tag: 0.1.0
+    pullPolicy: IfNotPresent
 
 # Image pull secrets (not needed for public GHCR images)
 imagePullSecrets: []
@@ -128,6 +132,55 @@ server:
           name: sunrei-secrets
           key: auth-jwt-secret
 
+# Daily YouTube playlist renewal (04:30 Asia/Seoul; schedule is UTC)
+youtubeRenewal:
+  enabled: true
+  schedule: "30 19 * * *"
+  concurrencyPolicy: Forbid
+  startingDeadlineSeconds: 3600
+  activeDeadlineSeconds: 72000
+  backoffLimit: 1
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 3
+  codexAuthSecret:
+    name: sunrei-youtube-renewal-auth
+    key: auth.json
+  youtubeCookiesSecret:
+    enabled: false
+    name: sunrei-youtube-renewal-auth
+    key: youtube-cookies.txt
+  persistence:
+    enabled: true
+    existingClaim: ""
+    storageClass: ""
+    accessMode: ReadWriteOnce
+    size: 10Gi
+  temporaryStorage:
+    sizeLimit: 8Gi
+  env:
+    - name: YOUTUBE_API_KEY
+      valueFrom:
+        secretKeyRef:
+          name: sunrei-secrets
+          key: google-maps-api-key
+    - name: AUTH_JWT_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: sunrei-secrets
+          key: auth-jwt-secret
+    - name: AWS_ACCESS_KEY_ID
+      valueFrom:
+        secretKeyRef:
+          name: sunrei-secrets
+          key: aws-access-key-id
+    - name: AWS_SECRET_ACCESS_KEY
+      valueFrom:
+        secretKeyRef:
+          name: sunrei-secrets
+          key: aws-secret-access-key
+    - name: AWS_REGION
+      value: ap-northeast-2
+
 # Cloudflare Tunnel Configuration
 # Services are exposed via Cloudflare Tunnel (cloudflared)
 # No Ingress needed - Tunnel connects directly to ClusterIP services
@@ -162,3 +215,10 @@ resources:
     requests:
       cpu: 200m
       memory: 256Mi
+  youtubeRenewal:
+    limits:
+      cpu: "4"
+      memory: 8Gi
+    requests:
+      cpu: "1"
+      memory: 2Gi
