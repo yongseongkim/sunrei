@@ -4,11 +4,13 @@
 - Admin token is minted locally (no login flow) — see auth/mint_token.py.
 - All HTTP sets a real User-Agent (prod Cloudflare 403s urllib's default).
 """
+import base64
 import json
 import os
 import re
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -30,6 +32,10 @@ def workspace(id_or_path):
 
 
 def load_google_api_key():
+    for name in ("YOUTUBE_API_KEY", "GOOGLE_MAPS_API_KEY"):
+        value = os.environ.get(name)
+        if value:
+            return value
     if not CONF.is_file():
         return None
     m = re.search(r'youtubeApiKey\s*=\s*"?([^"\s]+)"?', CONF.read_text())
@@ -51,6 +57,16 @@ def load_env():
     return env
 
 
+def jwt_is_usable(token, minimum_seconds=60):
+    try:
+        payload = token.split(".")[1]
+        payload += "=" * (-len(payload) % 4)
+        value = json.loads(base64.urlsafe_b64decode(payload))
+        return int(value["exp"]) > int(time.time()) + minimum_seconds
+    except (IndexError, KeyError, TypeError, ValueError, json.JSONDecodeError):
+        return False
+
+
 def admin_token():
     """Resolve an admin JWT: env var, then .claude/.env, then mint one locally.
 
@@ -58,7 +74,7 @@ def admin_token():
     (see auth/mint_token.py), so no SUNREI_ADMIN_TOKEN needs to be pre-set.
     """
     tok = os.environ.get("SUNREI_ADMIN_TOKEN") or load_env().get("SUNREI_ADMIN_TOKEN")
-    if tok:
+    if tok and jwt_is_usable(tok):
         return tok
     mint = ROOT / ".claude" / "scripts" / "auth" / "mint_token.py"
     if mint.is_file():

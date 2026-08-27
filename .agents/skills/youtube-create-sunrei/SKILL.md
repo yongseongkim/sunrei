@@ -15,7 +15,8 @@ server admin API.
 - Run sunrei-server before making local API requests.
 - Use `sops` and GCP credentials that can decrypt the homelab KMS key. If
   decryption fails, run `gcloud auth application-default login`.
-- Install `aws-vault` and the AWS CLI for the channel registry.
+- Use the Admin API for the channel registry. The server owns the S3
+  credentials; do not decrypt or pass AWS keys for registry updates.
 
 ## Steps
 
@@ -64,11 +65,11 @@ HTTP 403.
 
 ### 3. Check the Channel Registry
 
-Ask which `aws-vault` profile to use and keep it for the registry update in
-step 7. Download the channel registry:
+Read the channel registry through the Admin API:
 
 ```bash
-aws-vault exec {profile} -- aws s3 cp s3://sunrei-resources/youtube/{channelId}.json -
+curl -s -H "Authorization: Bearer ${TOKEN}" \
+  "{SERVER_URL}/admin/resources/youtube/{channelId}"
 ```
 
 The registry contains a `sunreis` array:
@@ -268,24 +269,34 @@ review, so pass a transcript-based summary with `--summary` and review the
 result in the admin app. On success, it writes `_create_manifest.json` for the
 registry update in step 7.
 
+Creation produces a draft (`published: false`). Publish only when requested:
+`PUT {SERVER_URL}/admin/sunreis/{id}` with `{"published": true}`.
+
+If a Sunrei with this playlist/video link already exists (HTTP 409, or one found
+in Step 3), update it with Step 8 rather than creating a duplicate.
+
 ### 7. Handle the Response and Update the Registry
 
 On HTTP 201:
 
 - Show the Sunrei ID, title, spot count, and admin link.
-- Update the S3 channel registry with the `aws-vault` profile selected in
-  step 3.
+- Update the S3-backed channel registry through the Admin API.
 
-  1. Download the existing registry:
+  1. Read the existing registry:
      ```bash
-     aws-vault exec {profile} -- aws s3 cp s3://sunrei-resources/youtube/{channelId}.json /tmp/registry.json
+     curl -s -H "Authorization: Bearer ${TOKEN}" \
+       "{SERVER_URL}/admin/resources/youtube/{channelId}"
      ```
   2. If it exists, append the new entry to `sunreis`.
   3. If it does not exist, create a registry with `channelName`, the `link` from
      `video_info.json`, and one `sunreis` entry.
-  4. Upload the updated registry:
+  4. Save the updated registry:
      ```bash
-     aws-vault exec {profile} -- aws s3 cp /tmp/registry.json s3://sunrei-resources/youtube/{channelId}.json --content-type application/json
+     curl -s -X PUT \
+       -H "Authorization: Bearer ${TOKEN}" \
+       -H "Content-Type: application/json" \
+       --data-binary @/tmp/registry.json \
+       "{SERVER_URL}/admin/resources/youtube/{channelId}"
      ```
 
   Use this entry format:
@@ -313,6 +324,21 @@ For HTTP 409:
 - Explain that a Sunrei with the same link exists.
 - Show `existingId` and ask whether to skip or update it.
 
+#### Rebuild a stale registry
+
+If step 3 found stale registry entries, rebuild the registry from live Sunrei
+records instead of appending to dead IDs. The helper downloads the registry,
+fetches spots for the given Sunrei IDs, rebuilds the `sunreis` array, and
+uploads the result:
+
+```bash
+uv run python .claude/scripts/youtube/registry_update.py <channelId> <sunreiId1,sunreiId2,...> \
+  [--channel-name "..."] [--channel-link "..."] [--commit]
+```
+
+Pass every live Sunrei for that channel so stale entries are dropped. Run the
+helper once per channel; one channel can contain several playlists or Sunrei.
+
 For any other error:
 
 - Show the error and offer to retry after correcting the payload.
@@ -323,15 +349,27 @@ For any other error:
 Edit via `PUT {SERVER_URL}/admin/sunreis/{id}`:
 
 - Send only top-level fields that should change. All are optional.
-- Treat `spots` as a merge. An item with an `id` updates that spot and must
-  include `title`. An item without an `id` creates a spot.
-  `{"id": "SS...", "delete": true}` soft-deletes one. Omitted spots remain
-  unchanged.
+- Include `spots` only when changing spots. When `spots` is present, an item
+  with an `id` updates that spot, an item without an `id` creates a new spot,
+  and any existing spot whose `id` is omitted is soft-deleted.
+- To replace all spots, send only the new spot list. Explicit delete entries are
+  rarely needed, because every spot item must include `title`, including
+  `{ "id": "...", "_delete": true }`.
+- Tags update per spot. Send `tagIds` or `tagLabels` only when replacing that
+  spot's tag set.
 - Send one PUT per Sunrei. Start from a fresh `GET /admin/sunreis/{id}`, combine
   all changes, and submit them together. Concurrent PUT requests can overwrite
   one another.
 - If concurrent updates have already left the data inconsistent, recreate the
   Sunrei from `locations.json` instead of repairing spots individually.
+
+For a full spot replacement from `locations.json` (preserves the Sunrei ID,
+source, and published status), use the helper:
+
+```bash
+uv run python .claude/scripts/youtube/update_sunrei_spots.py <ID> <SUNREI_ID> \
+  [--prod] [--commit] [--summary "..."]
+```
 
 ### 9. Clean Up
 

@@ -1,189 +1,171 @@
 ---
 name: youtube-extract-transcript
-description: Extract, audit, and clean transcripts or on-screen text from YouTube videos. Use when the user asks for subtitles, captions, or transcripts, or continues the YouTube-to-Sunrei workflow after fetching metadata.
+description: Collect, align, and review YouTube captions, Whisper audio transcripts, and OCR text from video frames. Use when the user asks for a transcript, subtitles, on-screen text, multimodal transcript review, or the evidence stage of the YouTube-to-Sunrei workflow.
 ---
 
-# Extract and Clean YouTube Transcripts
+# Extract and Review YouTube Text
 
-Extract text from one or more videos, correct recognition errors, and preserve the
-details needed for location extraction.
+Collect captions, audio transcription, and on-screen text as independent evidence.
+Use Codex to compare aligned time ranges without changing the raw sources.
 
 ## Prerequisites
 
-- Use `.claude/workspace/youtube/{ID}/video_info.json`, created by
-  `youtube-fetch-info`.
-- If the file is missing, ask the user to fetch the metadata or provide a video
-  ID directly.
+- Load the video metadata created by `youtube-fetch-info`.
+- Include the video ID, URL, channel, title, and description in `metadata.json`.
+- Process playlist videos independently so every run has one video's metadata and
+  evidence files.
 
-## Steps
+## 1. Collect Every Source
 
-### 1. Load Video Info
+Attempt all three sources for each video. Do not treat Whisper and OCR only as
+fallbacks for missing captions.
 
-Read the video IDs from
-`.claude/workspace/youtube/{ID}/video_info.json`.
-
-Use a video ID supplied directly by the user instead of the workspace file.
-
-### 2. Extract Transcript for Each Video
-
-Run the caption extractor for each video:
-
-```bash
-uv run --with youtube-transcript-api --with python-dotenv python .claude/scripts/youtube/extract_transcript.py "{VIDEO_ID}"
-```
-
-If it returns `"error": "no_transcript_available"`, fall back to Whisper:
-
-```bash
-uv run --with yt-dlp --with openai-whisper python .claude/scripts/youtube/whisper_transcribe.py "https://www.youtube.com/watch?v={VIDEO_ID}"
-```
-
-If Whisper fails or produces too little useful text for the video's duration,
-fall back to OCR:
-
-```bash
-uv run --with easyocr --with opencv-python-headless --with yt-dlp \
-  python .claude/scripts/youtube/extract_onscreen_text.py "https://www.youtube.com/watch?v={VIDEO_ID}"
-```
-
-This reads burned-in subtitles and other on-screen text from video frames.
-
-For Japanese content, use `--lang ja,en`. EasyOCR cannot load Japanese and
-Korean together, so `--lang ko,ja,en` fails.
-
-The OCR command may mix yt-dlp progress logs with JSON on standard output.
-Extract the JSON object before parsing the result.
-
-#### Handle Repeated OCR Text
-
-The script removes common OCR noise in three stages:
-
-1. Scan only the bottom 30% of each frame, where captions usually appear.
-2. Remove text that appears unchanged in at least 80% of sampled frames.
-3. Merge consecutive segments with at least 80% similarity and discard segments
-   shorter than 0.5 seconds.
-
-Adjust the defaults when needed:
-
-- If captions appear in the center or at the top, the default crop may miss them.
-- For fast-changing captions, use `--interval 0.5` instead of the one-second
-  default.
-- If a logo overlaps the caption area, the static-text filter may remove nearby
-  captions. Inspect the frames when the output is unusually sparse.
-
-### Rate Limiting
-
-YouTube may block caption requests when `youtube-transcript-api` runs too
-quickly. The error usually says that YouTube is blocking the IP or has received
-too many requests.
-
-The message does not distinguish an unavailable transcript from a rate limit. A
-single failure among successful requests probably means no transcript exists;
-repeated failures usually indicate a block.
-
-Use these limits:
-
-- Fetch a single video immediately.
-- For a playlist, wait a random 60–90 seconds between videos. Tests in July
-  2026 found that 14–20 second intervals triggered a block after roughly 10–20
-  requests, while 60–90 second intervals completed 25 requests.
-- After a block, wait about 10 minutes and retry the same video. Stop after four
-  consecutive blocks.
-
-Changing IPs or switching to `yt-dlp --write-auto-subs` does not avoid this
-limit. The YouTube Data API also cannot download captions from channels the
-authenticated user does not own.
-
-#### Batch processing
-
-For a playlist with more than 10 videos, use the shared batch script:
+### YouTube captions
 
 ```bash
 uv run --with youtube-transcript-api --with python-dotenv \
-  python .claude/scripts/youtube/fetch_playlist_transcripts.py "{ID}"
+  python .claude/scripts/youtube/extract_transcript.py "{VIDEO_ID}"
 ```
 
-`{ID}` is the folder name under `.claude/workspace/youtube/`. The script reads
-`selectedVideos` from `video_info.json`, writes `transcripts_raw.json`, and:
+Save the unmodified result as `captions.json`.
 
-- Waits 60–90 seconds between videos.
-- Waits about 10 minutes after a block, retries the same video, and stops after
-  four consecutive blocks.
-- Saves each result as it completes. Rerunning the command skips successful
-  videos and retries failed ones.
-- Prints success and no-transcript counts.
+### Whisper audio transcription
 
-### 3. Audit and Clean Transcript
-
-For each transcript:
-
-1. Correct obvious recognition errors, including misheard Korean words and
-   particles.
-2. Remove noise markers such as `[음악]`, `[박수]`, and `[웃음]`, along with
-   repeated filler.
-3. Join broken sentences and repair punctuation without changing the speaker's
-   meaning.
-4. Preserve every segment's timing.
-5. Mark passages about places, restaurants, attractions, and food. Keep dish
-   names, preparation and serving details, tasting notes, reactions, and
-   timestamps. `youtube-extract-locations` uses this narration to write each
-   place description.
-
-#### Correct OCR in Context
-
-Read the full `fullText` before editing individual segments. For each correction,
-inspect the two preceding and two following segments.
-
-- Restore a cut-off word or sentence only when adjacent segments make the
-  continuation clear. For example, the segment ending `"안도 다다오가 아"`
-  continues as `"아니고"` when the next segment names the actual designer.
-- Normalize recurring proper nouns. Examples include
-  `"도교 토일핏 프로적트"` to `"도쿄 토일렛 프로젝트"`, `"히라아마"` to
-  `"히라야마"`, and `"팀 벤터스"` to `"빔 벤더스"`.
-- Check common Korean OCR errors first: `긋` to `곳`, `잇` to `있`, `햇` to
-  `했`, `논` to `는`, and similar consonant or jamo confusion.
-- Remove stray trailing characters such as `_`, `;`, and `:`.
-- Use the channel name and video title in `video_info.json` to correct greetings
-  and names. Use established context to correct well-known people and places,
-  such as `"쿠마 렌고"` to `"쿠마 켄고"` and `"프리초거상"` to
-  `"프리츠커상"`.
-
-### 4. Present for User Approval
-
-Show:
-
-- Detected language
-- Source: YouTube captions, Whisper, or OCR
-- Segment count and duration
-- Cleaned text, or a summary when the transcript is very long
-- Passages that mention locations
-
-Ask the user to:
-
-- Approve the transcript
-- Request another edit
-- Skip the video when processing a playlist
-
-### 5. Save Results
-
-Save to `.claude/workspace/youtube/{ID}/transcripts.json`:
-
-```json
-{
-  "videos": [
-    {
-      "videoId": "...",
-      "title": "...",
-      "language": "ko",
-      "source": "youtube_captions | whisper | ocr_frames",
-      "segments": [{ "text": "...", "start": 0.0, "duration": 3.5 }],
-      "fullText": "...",
-      "cleanedText": "...",
-      "approved": true
-    }
-  ]
-}
+```bash
+uv run --python 3.11 --with yt-dlp --with openai-whisper \
+  python .claude/scripts/youtube/whisper_transcribe.py \
+  "https://www.youtube.com/watch?v={VIDEO_ID}" base
 ```
 
-After saving the file, report its path and ask whether to continue with location
-extraction.
+Save the unmodified result as `audio_transcript.json`. Whisper runs locally;
+the script downloads temporary audio and deletes it after transcription.
+
+### Video OCR
+
+```bash
+uv run --python 3.11 --with easyocr --with opencv-python-headless --with yt-dlp \
+  python .claude/scripts/youtube/extract_onscreen_text.py \
+  "https://www.youtube.com/watch?v={VIDEO_ID}" --lang ko,en --interval 1.0
+```
+
+Save the unmodified result as `onscreen_text.json`. Use `--lang ja,en` for
+Japanese videos. EasyOCR cannot load Korean and Japanese together. Use
+`--interval 0.5` for rapidly changing text.
+
+Preserve a source's structured error in its file and continue collecting the
+other sources. Stop only when every source is empty or unavailable.
+
+## 2. Create the Base Transcript
+
+Create `transcripts.json` for compatibility with the review workflow. Select the
+first usable source in this order:
+
+1. YouTube captions
+2. Whisper
+3. OCR
+
+This selection defines the editable transcript track; it does not make the
+selected source authoritative. Keep the other tracks separate so spoken text is
+not merged with labels, captions, signs, or decorative text shown on screen.
+
+Set `approved` to `false` and preserve every segment boundary and timestamp.
+
+## 3. Review with Codex
+
+Run the isolated headless reviewer:
+
+```bash
+uv run python .claude/scripts/youtube/review_transcripts.py "{RUN_DIR}" --all
+```
+
+The reviewer receives the video title and description, the target transcript
+segments, and Whisper and OCR events from the same time range. Apply these
+rules:
+
+- Use agreement between sources to correct clear recognition errors.
+- Give exact text in a title, description, or on-screen label more weight for
+  person, place, restaurant, dish, and brand names.
+- Treat OCR as a separate visual annotation. Do not insert `WOW`, prices, signs,
+  or labels into spoken dialogue unless the evidence shows they were spoken.
+- Do not resolve conflicts from plausibility alone. Flag the time range when
+  sources disagree or the intended wording remains uncertain.
+- Preserve meaning, segment boundaries, and timestamps.
+
+The reviewer must not modify `captions.json`, `audio_transcript.json`,
+`onscreen_text.json`, or `transcripts.json`. It writes:
+
+- `transcript_review.json`: corrections and unresolved passages, initially
+  `pending`
+- `transcripts.reviewed.json`: the base transcript with accepted corrections
+  only
+
+Do not bulk-accept medium- or low-confidence proposals. After explicit review,
+set each proposal to `accept` or `reject` and rebuild without another model call:
+
+```bash
+uv run python .claude/scripts/youtube/review_transcripts.py "{RUN_DIR}" \
+  --all --max-new-chunks 0
+```
+
+Use `transcript_review_hints.json` for verified spellings that recur in a video.
+Scope hints narrowly so a person or brand name does not cause unrelated global
+replacements.
+
+## 4. Build the Evidence Timeline
+
+Normalize all available tracks after review:
+
+```bash
+uv run python .claude/scripts/youtube/evidence_timeline.py "{RUN_DIR}" --force
+```
+
+`evidence_timeline.json` contains timestamp-ordered events labeled
+`transcript`, `whisper`, or `ocr`, plus each source's status and input hash.
+Duplicate tracks are marked and must not count as independent confirmation.
+
+Use this file, together with `metadata.json`, as the LLM input for location and
+context extraction:
+
+```bash
+uv run python .claude/scripts/youtube/extract_locations_headless.py \
+  "{RUN_DIR}" --restart
+```
+
+The location result remains `review_pending`. Every candidate must cite a
+verbatim source event and timestamp. Preserve source conflicts and uncertain
+names instead of inventing a correction or venue.
+
+## 5. Handle Caption Blocking
+
+For playlists, wait a random 60-90 seconds between caption requests. After
+repeated `RequestBlocked` or `IpBlocked` errors, stop caption requests for that
+run instead of repeatedly retrying the same IP. Continue with Whisper and OCR.
+
+An yt-dlp login challenge is separate from caption IP blocking. If audio or
+video download requires authentication, provide a protected Netscape cookie
+file through `SUNREI_YT_COOKIES`. Do not pass cookie contents or credentials to
+Codex.
+
+## 6. Preserve Artifacts
+
+Keep these files for review and debugging:
+
+```text
+metadata.json
+captions.json
+audio_transcript.json
+onscreen_text.json
+transcripts.json
+transcript_review.json
+transcripts.reviewed.json
+evidence_timeline.json
+location_candidates.json
+```
+
+Upload JSON artifacts only after local validation. Do not store downloaded
+audio or video. S3 upload preserves pending decisions and never constitutes
+approval.
+
+Present source availability, segment counts, conflicts, proposed corrections,
+and location-related passages to the user. Continue to publication only after
+the required transcript and location decisions are explicit.

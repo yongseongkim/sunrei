@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "artifactStore": {
+    "bucket": "sunrei-resources",
+    "prefix": "youtube/artifacts/v1",
+    "region": "ap-northeast-2",
+    "public": true
+  },
+  "defaults": {
+    "maxNewVideosPerRun": 2,
+    "captionDelaySeconds": {
+      "min": 60,
+      "max": 90
+    },
+    "transcriptReviewChunkSize": 600,
+    "evidence": {
+      "captions": true,
+      "audio": true,
+      "videoOcr": true,
+      "whisperModel": "base",
+      "ocrLanguages": ["ko", "en"],
+      "ocrIntervalSeconds": 1.0
+    }
+  },
+  "playlists": [
+    {
+      "id": "PLRLht13xoCf6Y9WiydRPHK8ks_FZG8rdC",
+      "name": "도쿄 맛집",
+      "sunreiId": "SR01kymcw7rt33057gxjmcmqcqm2",
+      "enabled": true,
+      "locationStrategy": "description_first"
+    },
+    {
+      "id": "PLDarQlAimXcFD3CqCK8TGGDLeUOGJDj6z",
+      "name": "일본 건축여행",
+      "sunreiId": "SR01kyhwcyy5f1tf40nvhhxgc17x",
+      "enabled": true,
+      "locationStrategy": "multimodal"
+    },
+    {
+      "id": "PLkmBZE3qxSdH0bvPK3Fn4pY7jrcWKIX5J",
+      "name": "비밀이야 in 이탈리아",
+      "sunreiId": "SR01kyhw8vv345x6ywas7my5p8te",
+      "enabled": true,
+      "locationStrategy": "multimodal"
+    },
+    {
+      "id": "PLkmBZE3qxSdHktyll4GHSDVTsPfOpPvoI",
+      "name": "비밀이야 in 프랑스",
+      "sunreiId": "SR01kyhwcxvhhbhftbxtq7h252zw",
+      "enabled": true,
+      "locationStrategy": "multimodal"
+    },
+    {
+      "id": "PLkmBZE3qxSdHQQwUr8yTLgk3IauZQAeDi",
+      "name": "비밀이야 in 일본",
+      "sunreiId": "SR01kyj3jcwveajd0dyy9a7ktcsp",
+      "enabled": true,
+      "locationStrategy": "multimodal"
+    },
+    {
+      "id": "PLMorkLyAs-imjd7Ra23jioyXg37ywAHhv",
+      "name": "푸드 트립",
+      "sunreiId": "SR01kz0c3w1ax9fz01wnpdn2a824",
+      "enabled": true,
+      "locationStrategy": "multimodal"
+    },
+    {
+      "id": "PLgbB1gJhmG7DWksYdc3AKRjRuzc4TMd5c",
+      "name": "스트리트푸드파이터 시즌 1",
+      "sunreiId": "SR01kyhxp2gwq2nfkqw9nt0na55y",
+      "enabled": false,
+      "disabledReason": "completed_playlist",
+      "locationStrategy": "web_research"
+    },
+    {
+      "id": "PLgbB1gJhmG7AbFF7O-kA2lQXYt1eRDFM2",
+      "name": "스트리트푸드파이터 시즌 2",
+      "sunreiId": "SR01kyhxp3f4201e3v8k5h1tg47v",
+      "enabled": false,
+      "disabledReason": "completed_playlist",
+      "locationStrategy": "web_research"
+    },
+    {
+      "id": "PLkmBZE3qxSdGkIxhowBQ3WfsHNPoErCNF",
+      "name": "비밀이야 in 한국",
+      "sunreiId": "SR01kyhxg7bhjyxt4xj9semgvbhv",
+      "enabled": false,
+      "disabledReason": "not_selected_for_daily_renewal",
+      "locationStrategy": "multimodal"
+    },
+    {
+      "id": "PLkmBZE3qxSdE1XFNY0NiK_-MY4eUtkHJs",
+      "name": "비밀이야 in 싱가포르",
+      "sunreiId": "SR01kyhwcx1w4n61ds2k99gc8ekt",
+      "enabled": false,
+      "disabledReason": "not_selected_for_daily_renewal",
+      "locationStrategy": "multimodal"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{{- if .Values.youtubeRenewal.enabled }}
+{{- $component := "youtube-renewal" }}
+{{- $defaultClaim := printf "%s-youtube-renewal" (include "sunrei.fullname" .) }}
+{{- $claimName := default $defaultClaim .Values.youtubeRenewal.persistence.existingClaim }}
+{{- if and .Values.youtubeRenewal.persistence.enabled (not .Values.youtubeRenewal.persistence.existingClaim) }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ $claimName }}
+  labels:
+    {{- include "sunrei.componentLabels" (dict "Chart" .Chart "Release" .Release "Values" .Values "component" $component) | nindent 4 }}
+  annotations:
+    helm.sh/resource-policy: keep
+spec:
+  accessModes:
+    - {{ .Values.youtubeRenewal.persistence.accessMode }}
+  {{- with .Values.youtubeRenewal.persistence.storageClass }}
+  storageClassName: {{ . | quote }}
+  {{- end }}
+  resources:
+    requests:
+      storage: {{ .Values.youtubeRenewal.persistence.size }}
+---
+{{- end }}
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "sunrei.fullname" . }}-youtube-renewal
+  labels:
+    {{- include "sunrei.componentLabels" (dict "Chart" .Chart "Release" .Release "Values" .Values "component" $component) | nindent 4 }}
+spec:
+  schedule: {{ .Values.youtubeRenewal.schedule | quote }}
+  concurrencyPolicy: {{ .Values.youtubeRenewal.concurrencyPolicy }}
+  startingDeadlineSeconds: {{ .Values.youtubeRenewal.startingDeadlineSeconds }}
+  successfulJobsHistoryLimit: {{ .Values.youtubeRenewal.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.youtubeRenewal.failedJobsHistoryLimit }}
+  jobTemplate:
+    spec:
+      activeDeadlineSeconds: {{ .Values.youtubeRenewal.activeDeadlineSeconds }}
+      backoffLimit: {{ .Values.youtubeRenewal.backoffLimit }}
+      template:
+        metadata:
+          labels:
+            {{- include "sunrei.componentSelectorLabels" (dict "Chart" .Chart "Release" .Release "Values" .Values "component" $component) | nindent 12 }}
+        spec:
+          restartPolicy: Never
+          imagePullSecrets:
+            {{- toYaml .Values.imagePullSecrets | nindent 12 }}
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 10001
+            runAsGroup: 10001
+            fsGroup: 10001
+            fsGroupChangePolicy: OnRootMismatch
+            seccompProfile:
+              type: RuntimeDefault
+          initContainers:
+            - name: seed-codex-auth
+              image: "{{ .Values.registry }}/{{ .Values.images.youtubeRenewal.repository }}:{{ .Values.images.youtubeRenewal.tag }}"
+              imagePullPolicy: {{ .Values.images.youtubeRenewal.pullPolicy }}
+              command: ["/bin/sh", "-ec"]
+              args:
+                - |
+                  umask 077
+                  mkdir -p "$CODEX_HOME"
+                  if [ ! -s "$CODEX_HOME/auth.json" ]; then
+                    cp /var/run/secrets/codex/auth.json "$CODEX_HOME/auth.json"
+                  fi
+                  chmod 600 "$CODEX_HOME/auth.json"
+              env:
+                - name: CODEX_HOME
+                  value: /var/lib/sunrei/codex
+              securityContext:
+                allowPrivilegeEscalation: false
+                readOnlyRootFilesystem: true
+                capabilities:
+                  drop: ["ALL"]
+              resources:
+                requests:
+                  cpu: 10m
+                  memory: 32Mi
+                limits:
+                  cpu: 100m
+                  memory: 64Mi
+              volumeMounts:
+                - name: state
+                  mountPath: /var/lib/sunrei
+                - name: codex-auth-seed
+                  mountPath: /var/run/secrets/codex
+                  readOnly: true
+          containers:
+            - name: youtube-renewal
+              image: "{{ .Values.registry }}/{{ .Values.images.youtubeRenewal.repository }}:{{ .Values.images.youtubeRenewal.tag }}"
+              imagePullPolicy: {{ .Values.images.youtubeRenewal.pullPolicy }}
+              env:
+                - name: HOME
+                  value: /var/lib/sunrei/home
+                - name: CODEX_HOME
+                  value: /var/lib/sunrei/codex
+                - name: SUNREI_YOUTUBE_AUTOMATION_ROOT
+                  value: /var/lib/sunrei/automation
+                - name: UV_CACHE_DIR
+                  value: /var/lib/sunrei/uv-cache
+                - name: XDG_CACHE_HOME
+                  value: /var/lib/sunrei/cache
+                {{- if .Values.youtubeRenewal.youtubeCookiesSecret.enabled }}
+                - name: SUNREI_YT_COOKIES
+                  value: /var/run/secrets/youtube/youtube-cookies.txt
+                {{- end }}
+                {{- with .Values.youtubeRenewal.env }}
+                {{- toYaml . | nindent 16 }}
+                {{- end }}
+              securityContext:
+                allowPrivilegeEscalation: false
+                readOnlyRootFilesystem: true
+                capabilities:
+                  drop: ["ALL"]
+              resources:
+                {{- toYaml .Values.resources.youtubeRenewal | nindent 16 }}
+              volumeMounts:
+                - name: state
+                  mountPath: /var/lib/sunrei
+                - name: temporary
+                  mountPath: /tmp
+                {{- if .Values.youtubeRenewal.youtubeCookiesSecret.enabled }}
+                - name: youtube-cookies
+                  mountPath: /var/run/secrets/youtube
+                  readOnly: true
+                {{- end }}
+          volumes:
+            - name: state
+              {{- if .Values.youtubeRenewal.persistence.enabled }}
+              persistentVolumeClaim:
+                claimName: {{ $claimName }}
+              {{- else }}
+              emptyDir: {}
+              {{- end }}
+            - name: temporary
+              emptyDir:
+                sizeLimit: {{ .Values.youtubeRenewal.temporaryStorage.sizeLimit }}
+            - name: codex-auth-seed
+              secret:
+                secretName: {{ .Values.youtubeRenewal.codexAuthSecret.name }}
+                defaultMode: 0440
+                items:
+                  - key: {{ .Values.youtubeRenewal.codexAuthSecret.key }}
+                    path: auth.json
+            {{- if .Values.youtubeRenewal.youtubeCookiesSecret.enabled }}
+            - name: youtube-cookies
+              secret:
+                secretName: {{ .Values.youtubeRenewal.youtubeCookiesSecret.name }}
+                defaultMode: 0440
+                items:
+                  - key: {{ .Values.youtubeRenewal.youtubeCookiesSecret.key }}
+                    path: youtube-cookies.txt
+            {{- end }}
+{{- end }}

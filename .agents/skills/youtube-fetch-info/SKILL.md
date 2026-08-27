@@ -17,6 +17,11 @@ It paginates playlists and writes `video_info.json` in the format shown below.
 uv run python .claude/scripts/youtube/fetch_info.py "<URL>" [--videos all|1,3,5|first:N]
 ```
 
+`--videos` controls which playlist entries are written to `selectedVideos`.
+Downstream transcript and create scripts process only that array. Use
+`--videos all` for a real ingest; use `first:1` or explicit indices only for
+disposable tests.
+
 Follow the remaining steps directly only when the script cannot handle the
 request.
 
@@ -192,3 +197,12 @@ Set `channel.handle` to `customUrl`; omit it when the channel has no handle. Set
 
 After saving the file, report its path and ask whether to continue with transcript
 extraction.
+
+## Automated Playlist Checks
+
+Do not overwrite a curated `video_info.json` during a scheduled check. Keep the
+playlist IDs and enabled flags in `.claude/config/youtube-renewal.json`, and let
+`renew_playlists.py` compare the live playlist with its local state. Dynamic
+metadata and run state belong under
+`.claude/workspace/youtube/automation/`; they are uploaded as artifacts when
+requested and are not committed to Git.

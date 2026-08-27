@@ -3,1059 +3,890 @@
     {
       "videoId": "l_WnIdakons",
       "title": "1582년에 오픈했다는 프랑스의 전설적인 와인 성지🍷 50만 병 이상의 와인을 보유하고 있다는 라 투르 다르장에서 117만번째 오리를 맛보고 왔습니다!",
-      "concept": "1582년에 오픈한 전설적인 와인 성지, 라 투르 다르장에서 117만번째 오리 맛보기",
+      "concept": "15",
       "locations": [
         {
-          "name": "La Tour d'Argent",
-          "displayName": "La Tour d'Argent",
+          "name": "15 Quai de la Tournelle",
           "address": "15 Quai de la Tournelle, 75005 Paris, 프랑스",
-          "latitude": 48.849855999999996,
-          "longitude": 2.354994,
-          "googleMapsId": "ChIJ5eQBbSBx5kcRvEQZIALlPF4",
-          "googleMapsUri": "https://maps.google.com/?cid=6790554135459087548&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "description": " — 비밀이야 in 한국 영상에서 소개한 15-17 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=l_WnIdakons",
-          "description": "전설적인 와인 성지를 소개하는 영상에서 방문한 파리의 레스토랑. 1582년에 오픈하여 50만 병 이상의 와인을 보유하고 있으며, 117만번째 오리를 맛보는 특별한 경험이 담겨 있다."
+          "latitude": 48.8498169,
+          "longitude": 2.3549792,
+          "googleMapsId": "ChIJgy2hteRx5kcRGUsObuT23Ag",
+          "googleMapsUri": "https://maps.google.com/?cid=638656708139174681&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "GoHWikk8Lbc",
       "title": "[EN] 파리의 독보적인 미슐랭 3스타 레스토랑?👀 프랑스 최고 셰프가 이끄는 Epicure에 다녀왔습니다!",
-      "concept": "파리 미슐랭 3스타 Epicure 방문기",
+      "concept": "112",
       "locations": [
         {
-          "name": "Epicure",
-          "displayName": "Epicure",
+          "name": "112 Rue du Faubourg Saint-Honoré",
           "address": "112 Rue du Faubourg Saint-Honoré, 75008 Paris, 프랑스",
-          "latitude": 48.8717373,
-          "longitude": 2.3148527999999997,
-          "googleMapsId": "ChIJVeUHqupv5kcRDHPinmB3LtU",
-          "googleMapsUri": "https://maps.google.com/?cid=15361346635873547020&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "description": " — 비밀이야 in 한국 영상에서 소개한 112 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=GoHWikk8Lbc",
-          "description": "파리의 독보적인 미슐랭 3스타 레스토랑을 소개하는 영상에서 방문한 곳. 프랑스 최고 셰프가 이끄는 레스토랑으로, 압도적인 파인다이닝을 경험할 수 있다."
+          "latitude": 48.8716805,
+          "longitude": 2.3148017,
+          "googleMapsId": "ChIJdyvCKslv5kcREPYXcY6aLBM",
+          "googleMapsUri": "https://maps.google.com/?cid=1381649122269328912&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "gWwmfIk70LI",
       "title": "미쉐린 3스타 레스토랑에서 와인과 함께🍷",
-      "concept": "미쉐린 3스타 Le Pré Catelan 와인 다이닝",
+      "concept": "프랑스",
       "locations": [
         {
-          "name": "Le Pré Catelan",
-          "displayName": "Le Pré Catelan",
-          "address": "프랑스 75016 Paris, 불로니으 산림공원",
-          "latitude": 48.863999299999996,
-          "longitude": 2.2507703,
-          "googleMapsId": "ChIJXZ9lqzZl5kcRxIInGxIRFaI",
-          "googleMapsUri": "https://maps.google.com/?cid=11679259978117907140&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "name": "불로니으 산림공원",
+          "address": "프랑스 75016 파리",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 Bois 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=gWwmfIk70LI",
-          "description": "미쉐린 3스타 레스토랑에서의 와인 다이닝을 소개하는 영상에서 방문한 파리의 레스토랑. 불로니으 숲 속에 위치하며, 와인과 함께하는 품격 있는 식사를 즐길 수 있다."
-        }
-      ]
-    },
-    {
-      "videoId": "gA1c2apLx6w",
-      "title": "프랑스를 간다면 꼭 가야할 레스토랑!🥂 600종의 샴페인, 1100종의 와인 리스트를 보유한 럭셔리 & 클래식 끝판왕 Le Parc Les Crayeres를 소개합니다",
-      "concept": "랭스 럭셔리 레스토랑 Le Parc Les Crayères, 600종 샴페인",
-      "locations": [
-        {
-          "name": "Le Parc Les Crayères",
-          "displayName": "Restaurant Le Parc",
-          "address": "64 Bd Henry Vasnier, 51100 Reims, 프랑스",
-          "latitude": 49.241126799999996,
-          "longitude": 4.0516764,
-          "googleMapsId": "ChIJt418KV116UcRgkS3d9pAIp4",
-          "googleMapsUri": "https://maps.google.com/?cid=11394741314256323714&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=gA1c2apLx6w",
-          "description": "프랑스를 간다면 꼭 가야 할 레스토랑을 소개하는 영상에서 방문한 랭스의 럭셔리 레스토랑. 600종의 샴페인과 1100종의 와인 리스트를 보유한 럭셔리 & 클래식 끝판왕이다."
-        }
-      ]
-    },
-    {
-      "videoId": "halkS8GZClw",
-      "title": "창의적인 요리와 자연이 함께하는 남프랑스 최고의 레스토랑!",
-      "concept": "남프랑스 최고의 레스토랑 L'Oustau de Baumanière",
-      "locations": [
-        {
-          "name": "L'Oustau de Baumanière",
-          "displayName": "Restaurant L'Oustau de Baumanière***",
-          "address": "500 Rte DE BAUMANIERE, 13520 Les Baux-de-Provence, 프랑스",
-          "latitude": 43.7470467,
-          "longitude": 4.7955684,
-          "googleMapsId": "ChIJH_doE0LhtRIROj436AJRQ-k",
-          "googleMapsUri": "https://maps.google.com/?cid=16808367307204542010&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=halkS8GZClw",
-          "description": "남프랑스 최고의 레스토랑을 소개하는 영상에서 방문한 레보드프로방스의 미슐랭 3스타. 창의적인 요리와 자연이 함께하며, 남프랑스의 아름다운 환경 속에서 식사를 즐길 수 있다."
-        }
-      ]
-    },
-    {
-      "videoId": "d3eVlWLO98Y",
-      "title": "유럽 단골집 예약! 프랑스 최고의 해산물 레스토랑 소개합니다",
-      "concept": "프랑스 최고의 해산물 레스토랑 Christopher Coutanceau",
-      "locations": [
-        {
-          "name": "Christopher Coutanceau",
-          "displayName": "Christopher Coutanceau",
-          "address": "Plage de la Concurrence, 17000 La Rochelle, 프랑스",
-          "latitude": 46.155248199999996,
-          "longitude": -1.1598545999999998,
-          "googleMapsId": "ChIJ87_sn6VTAUgRsNVFS7MOq3w",
-          "googleMapsUri": "https://maps.google.com/?cid=8983290044945388976&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=d3eVlWLO98Y",
-          "description": "프랑스 최고의 해산물 레스토랑을 소개하는 영상에서 방문한 라로셸의 레스토랑. 유럽 단골집으로 예약할 정도로 애정하는 곳이며, 해산물 요리의 장인이 운영한다."
-        }
-      ]
-    },
-    {
-      "videoId": "-NcF7fdSvFo",
-      "title": "[EN] 프랑스 굴지에 있는 미슐랭 3스타 레스토랑? 역대급 완성도의 요리를 선보이는 Régis & Jacques Marcon에 다녀왔습니다!",
-      "concept": "프랑스 미슐랭 3스타 Régis & Jacques Marcon",
-      "locations": [
-        {
-          "name": "Régis & Jacques Marcon",
-          "displayName": "Restaurant Marcon",
-          "address": "18 Chem. de Brard Larsiallas, 43290 Saint-Bonnet-le-Froid, 프랑스",
-          "latitude": 45.138551899999996,
-          "longitude": 4.434272,
-          "googleMapsId": "ChIJM_Y85_919UcReASpU9RrmFA",
-          "googleMapsUri": "https://maps.google.com/?cid=5807510279175079032&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=-NcF7fdSvFo",
-          "description": "프랑스 시골에 위치한 미슐랭 3스타를 소개하는 영상에서 방문한 레스토랑. 역대급 완성도의 요리를 선보이며, 프랑스 굴지에 숨겨진 보석 같은 곳이다."
-        }
-      ]
-    },
-    {
-      "videoId": "b1ezkKcXkBM",
-      "title": "50만 병 넘는 와인을 판매하는 라 투르 다르장! 117만번 째 이후 118만번 째 오리 먹으러 방문했습니다 [EN]ㅣLa tour d'argent",
-      "concept": "라 투르 다르장 재방문, 118만번째 오리",
-      "locations": [
-        {
-          "name": "La Tour d'Argent",
-          "displayName": "La Tour d'Argent",
-          "address": "15 Quai de la Tournelle, 75005 Paris, 프랑스",
-          "latitude": 48.849855999999996,
-          "longitude": 2.354994,
-          "googleMapsId": "ChIJ5eQBbSBx5kcRvEQZIALlPF4",
-          "googleMapsUri": "https://maps.google.com/?cid=6790554135459087548&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=b1ezkKcXkBM",
-          "description": "라 투르 다르장을 재방문하는 영상에서 소개된 파리의 전설적인 레스토랑. 117만번째 오리 이후 118만번째 오리를 먹으러 방문했으며, 50만 병 넘는 와인 컬렉션이 여전히 인상적이다."
-        }
-      ]
-    },
-    {
-      "videoId": "R-ilj6zvNuc",
-      "title": "꿈의 도시 남프랑스 에즈!🏘️ 환상적인 전망을 갖춘 2스타에서 발견한 전설의 와인ㅣLa Chèvre D'Or",
-      "concept": "남프랑스 에즈, La Chèvre d'Or 2스타 전망 레스토랑",
-      "locations": [
-        {
-          "name": "La Chèvre d'Or",
-          "displayName": "라 쉐브르 도르",
-          "address": "Rue du Barri, 06360 Èze, 프랑스",
-          "latitude": 43.727315,
-          "longitude": 7.361860999999998,
-          "googleMapsId": "ChIJkzb602fDzRIRnT5iz2d2u4w",
-          "googleMapsUri": "https://maps.google.com/?cid=10140829174187835037&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=R-ilj6zvNuc",
-          "description": "남프랑스 에즈의 환상적인 전망 레스토랑을 소개하는 영상에서 방문한 미슐랭 2스타. 꿈의 도시 에즈에서 지중해 뷰와 함께 전설의 와인을 즐길 수 있는 곳이다."
-        }
-      ]
-    },
-    {
-      "videoId": "JXRSt5lFPQM",
-      "title": "[EN] 1784년에 생긴 파리의 시그니처 레스토랑?✨ 프랑스 최고의 셰프가 운영하는 역사적인 레스토랑 Le Grand Véfour에 다녀왔습니다!",
-      "concept": "1784년 오픈 파리 시그니처 레스토랑 Le Grand Véfour",
-      "locations": [
-        {
-          "name": "Le Grand Véfour",
-          "displayName": "Le Grand Véfour",
-          "address": "17 Rue de Beaujolais, 75001 Paris, 프랑스",
-          "latitude": 48.8661299,
-          "longitude": 2.3379859,
-          "googleMapsId": "ChIJd9mmyyRu5kcRLYUD8BMhZ8I",
-          "googleMapsUri": "https://maps.google.com/?cid=14008201535474074925&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=JXRSt5lFPQM",
-          "description": "1784년에 오픈한 파리 시그니처 레스토랑을 소개하는 영상에서 방문한 역사적인 레스토랑. 프랑스 최고의 셰프가 운영하며, 수백 년의 역사가 담긴 공간에서 식사를 즐길 수 있다."
+          "latitude": 48.8619839,
+          "longitude": 2.2523138,
+          "googleMapsId": "ChIJ28laW9p65kcRLkyGSRGcV04",
+          "googleMapsUri": "https://maps.google.com/?cid=5645152255994121262&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "6vYMBhJOneU",
       "title": "반백년 째 3스타 식당. 대체 뭐가 나올까? | Les Prés d'Eugénie",
-      "concept": "반백년째 3스타 Les Prés d'Eugénie",
+      "concept": "Place",
       "locations": [
         {
           "name": "Les Prés d'Eugénie",
-          "displayName": "Les Prés d'Eugénie - Relais & Châteaux",
           "address": "Place de l'Impératrice, 334 Rue René Vielle Vieille, 40320 Eugénie-les-Bains, 프랑스",
+          "description": "전화번호: +33 5 58 05 06 07",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=6vYMBhJOneU",
           "latitude": 43.6957059,
           "longitude": -0.3797101,
           "googleMapsId": "ChIJD6BkQV5xVg0RSZsafdGLI6s",
-          "googleMapsUri": "https://maps.google.com/?cid=12331853936533871433&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=6vYMBhJOneU",
-          "description": "반백년째 3스타를 유지하고 있는 레스토랑을 소개하는 영상에서 방문한 곳. 50년 이상 미슐랭 3스타를 유지한 전설적인 식당으로, 대체 뭐가 나오는지 영상에서 공개되었다."
+          "googleMapsUri": "https://maps.google.com/?cid=12331853936533871433&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
-      "videoId": "Uiq6Vi9Bhm0",
-      "title": "보르도 5대 샤또 중 한 곳이 오너인 르 클라랑스🍷 수만 병의 올드 빈티지 와인 리스트를 보유한 럭셔리 레스토랑!",
-      "concept": "보르도 5대 샤또 오너의 럭셔리 레스토랑 Le Clarence",
+      "videoId": "gA1c2apLx6w",
+      "title": "프랑스를 간다면 꼭 가야할 레스토랑!🥂 600종의 샴페인, 1100종의 와인 리스트를 보유한 럭셔리 & 클래식 끝판왕 Le Parc Les Crayeres를 소개합니다",
+      "concept": "64",
       "locations": [
         {
-          "name": "Le Clarence",
-          "displayName": "Le Clarence",
-          "address": "31 Av. Franklin Delano Roosevelt, 75008 Paris, 프랑스",
-          "latitude": 48.8674268,
-          "longitude": 2.3097738999999997,
-          "googleMapsId": "ChIJH5K8McVv5kcRHrJn-zUA3KQ",
-          "googleMapsUri": "https://maps.google.com/?cid=11879370148947669534&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=Uiq6Vi9Bhm0",
-          "description": "보르도 5대 샤또 오너의 럭셔리 레스토랑을 소개하는 영상에서 방문한 파리의 레스토랑. 수만 병의 올드 빈티지 와인 리스트를 보유하고 있으며, 보르도 최고급 와인을 즐길 수 있다."
+          "name": "64 Bd Henry Vasnier",
+          "address": "64 Bd Henry Vasnier, 51100 Reims, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 64, 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=gA1c2apLx6w",
+          "latitude": 49.2411995,
+          "longitude": 4.0514909999999995,
+          "googleMapsId": "ChIJ3_gcgjl06UcRODNVLKd4z3Q",
+          "googleMapsUri": "https://maps.google.com/?cid=8417078887977399096&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
-      "videoId": "0EJ4-mDI1do",
-      "title": "프랑스 굴 요리의 최강자! 1908년에 오픈해서 113년째 운영 중인 역사와 전통의 식당을 다녀왔습니다! 야외에서 샴페인 한 잔과 함께 먹는 신선한 해산물의 맛은?!",
-      "concept": "니스 113년 전통 굴 요리 전문 Le Café de Turin",
+      "videoId": "halkS8GZClw",
+      "title": "창의적인 요리와 자연이 함께하는 남프랑스 최고의 레스토랑!",
+      "concept": "D27,",
       "locations": [
         {
-          "name": "Le Café de Turin",
-          "displayName": "Le Café de Turin",
-          "address": "5 Pl. Garibaldi, 06300 Nice, 프랑스",
-          "latitude": 43.7005556,
-          "longitude": 7.279444400000001,
-          "googleMapsId": "ChIJo0rdT7razRIRn_qJeQf_HKE",
-          "googleMapsUri": "https://maps.google.com/?cid=11609434347023235743&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=0EJ4-mDI1do",
-          "description": "프랑스 굴 요리의 최강자를 소개하는 영상에서 방문한 니스의 레스토랑. 1908년에 오픈하여 113년째 운영 중이며, 야외에서 샴페인과 함께 신선한 해산물을 즐길 수 있다."
+          "name": "D27",
+          "address": "D27, Les Baux-de-Provence, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 D27, 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=halkS8GZClw",
+          "latitude": 43.7488798,
+          "longitude": 4.7964273,
+          "googleMapsId": "EiFEMjcsIExlcyBCYXV4LWRlLVByb3ZlbmNlLCBGcmFuY2UiLiosChQKEgnB-ogbceG1EhEbWIQ2BNFwZxIUChIJIbJq2F3htRIR4ASX_aUZCAQ",
+          "googleMapsUri": "https://maps.google.com/?q=D27,+Les+Baux-de-Provence,+France&ftid=0x12b5e1711b88fac1:0x6770d1043684581b&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "b1ezkKcXkBM",
+      "title": "50만 병 넘는 와인을 판매하는 라 투르 다르장! 117만번 째 이후 118만번 째 오리 먹으러 방문했습니다 [EN]ㅣLa tour d'argent",
+      "concept": "15",
+      "locations": [
+        {
+          "name": "15 Quai de la Tournelle",
+          "address": "15 Quai de la Tournelle, 75005 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 15 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=b1ezkKcXkBM",
+          "latitude": 48.8498169,
+          "longitude": 2.3549792,
+          "googleMapsId": "ChIJgy2hteRx5kcRGUsObuT23Ag",
+          "googleMapsUri": "https://maps.google.com/?cid=638656708139174681&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "d3eVlWLO98Y",
+      "title": "유럽 단골집 예약! 프랑스 최고의 해산물 레스토랑 소개합니다",
+      "concept": "1",
+      "locations": [
+        {
+          "name": "Plage de la Concurrence",
+          "address": "1 Prom. de la Concurrence, 17000 La Rochelle, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 Plage 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=d3eVlWLO98Y",
+          "latitude": 46.1549665,
+          "longitude": -1.160504,
+          "googleMapsId": "ChIJq9NAuatTAUgR0kAlP8NzU-4",
+          "googleMapsUri": "https://maps.google.com/?cid=17173197086509056210&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "-NcF7fdSvFo",
+      "title": "[EN] 프랑스 굴지에 있는 미슐랭 3스타 레스토랑? 역대급 완성도의 요리를 선보이는 Régis & Jacques Marcon에 다녀왔습니다!",
+      "concept": "18",
+      "locations": [
+        {
+          "name": "18 Chem. de Brard",
+          "address": "18 Chem. de Brard, 43290 Saint-Bonnet-le-Froid, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 18 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=-NcF7fdSvFo",
+          "latitude": 45.1388477,
+          "longitude": 4.4333203999999995,
+          "googleMapsId": "ChIJc9nW4P919UcR_dlx8QGZODQ",
+          "googleMapsUri": "https://maps.google.com/?cid=3762925722292836861&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "JXRSt5lFPQM",
+      "title": "[EN] 1784년에 생긴 파리의 시그니처 레스토랑?✨ 프랑스 최고의 셰프가 운영하는 역사적인 레스토랑 Le Grand Véfour에 다녀왔습니다!",
+      "concept": "17",
+      "locations": [
+        {
+          "name": "17 Rue de Beaujolais",
+          "address": "17 Rue de Beaujolais, 75001 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 17 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=JXRSt5lFPQM",
+          "latitude": 48.8662966,
+          "longitude": 2.3380871,
+          "googleMapsId": "ChIJF5u6yyRu5kcRsUJ6p5HApjw",
+          "googleMapsUri": "https://maps.google.com/?cid=4370392220222243505&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "PBEH_kLnL7w",
       "title": "프랑스 1등 맛집! 자신있게 추천합니다 | \"Le MaZenay\"",
-      "concept": "프랑스 1등 맛집 Le MaZenay",
+      "concept": "46",
       "locations": [
         {
-          "name": "Le MaZenay",
-          "displayName": "Le MaZenay",
+          "name": "46 Rue de Montmorency",
           "address": "46 Rue de Montmorency, 75003 Paris, 프랑스",
-          "latitude": 48.8636402,
-          "longitude": 2.3533729,
-          "googleMapsId": "ChIJvbCbVRpu5kcRfMWl3JeGW4s",
-          "googleMapsUri": "https://maps.google.com/?cid=10041767780952687996&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "description": " — 비밀이야 in 한국 영상에서 소개한 46 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=PBEH_kLnL7w",
-          "description": "프랑스 1등 맛집을 자신있게 추천하는 영상에서 방문한 파리의 레스토랑. 영상 진행자가 자신있게 프랑스 1등이라고 추천한 곳으로, 파리 방문 시 꼭 가봐야 할 맛집이다."
+          "latitude": 48.863644199999996,
+          "longitude": 2.3533182,
+          "googleMapsId": "ChIJwWUvVRpu5kcRPYv_yuaqWXQ",
+          "googleMapsUri": "https://maps.google.com/?cid=8383920089551833917&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "Uiq6Vi9Bhm0",
+      "title": "보르도 5대 샤또 중 한 곳이 오너인 르 클라랑스🍷 수만 병의 올드 빈티지 와인 리스트를 보유한 럭셔리 레스토랑!",
+      "concept": "31",
+      "locations": [
+        {
+          "name": "31 Av. Franklin Delano Roosevelt",
+          "address": "31 Av. Franklin Delano Roosevelt, 75008 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 31 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=Uiq6Vi9Bhm0",
+          "latitude": 48.8674099,
+          "longitude": 2.3097868,
+          "googleMapsId": "ChIJ6U0jMcVv5kcRJzmlNNybXPw",
+          "googleMapsUri": "https://maps.google.com/?cid=18184580765493573927&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "0EJ4-mDI1do",
+      "title": "프랑스 굴 요리의 최강자! 1908년에 오픈해서 113년째 운영 중인 역사와 전통의 식당을 다녀왔습니다! 야외에서 샴페인 한 잔과 함께 먹는 신선한 해산물의 맛은?!",
+      "concept": "5",
+      "locations": [
+        {
+          "name": "5 Pl. Garibaldi",
+          "address": "5 Pl. Garibaldi, 06300 Nice, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 5 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=0EJ4-mDI1do",
+          "latitude": 43.7005682,
+          "longitude": 7.279525199999999,
+          "googleMapsId": "ChIJkVnKT7razRIRCtHODegLM4U",
+          "googleMapsUri": "https://maps.google.com/?cid=9598028322148634890&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "cgY_FyxsGp8",
       "title": "프랑스에 온다면 꼭 들러봐야 할 해산물 캐주얼 식당",
-      "concept": "라로셸 해산물 캐주얼 식당 La Yole de Chris",
+      "concept": "1",
       "locations": [
         {
-          "name": "La Yole de Chris",
-          "displayName": "La Yole de Chris",
-          "address": "plage de la concurrence, 17000 La Rochelle, 프랑스",
-          "latitude": 46.1554687,
-          "longitude": -1.1603561,
-          "googleMapsId": "ChIJTcKDKs1TAUgREZZaCKzpOD4",
-          "googleMapsUri": "https://maps.google.com/?cid=4483590354131129873&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "name": "Plage de la Concurrence",
+          "address": "1 Prom. de la Concurrence, 17000 La Rochelle, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 Plage 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=cgY_FyxsGp8",
-          "description": "프랑스에 온다면 꼭 들러봐야 할 해산물 캐주얼 식당을 소개하는 영상에서 방문한 라로셸의 레스토랑. 캐주얼한 분위기에서 신선한 해산물을 합리적인 가격에 즐길 수 있다."
+          "latitude": 46.1549665,
+          "longitude": -1.160504,
+          "googleMapsId": "ChIJq9NAuatTAUgR0kAlP8NzU-4",
+          "googleMapsUri": "https://maps.google.com/?cid=17173197086509056210&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "KYYsPZ4ZSmU",
+      "title": "하룻밤 550만 원 투숙객만 예약 가능? 극강의 예약 난이도 뚫고 다녀왔습니다 | 플레니튀드",
+      "concept": "8",
+      "locations": [
+        {
+          "name": "Plénitude",
+          "address": "8 Quai du Louvre, 75001 Paris, 프랑스",
+          "description": "Plénitude — 비밀이야 in 한국 영상에서 소개한 8 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=KYYsPZ4ZSmU",
+          "latitude": 48.8588971,
+          "longitude": 2.3420459,
+          "googleMapsId": "ChIJ1YFmqNZv5kcRBAVR2JH8pEo",
+          "googleMapsUri": "https://maps.google.com/?cid=5378701558316860676&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "wrSNqw6Mvek",
       "title": "아시아/일본인 셰프 최초의 쓰리스타⭐⭐⭐",
-      "concept": "아시아/일본인 셰프 최초 3스타 Kei",
+      "concept": "5",
       "locations": [
         {
-          "name": "Kei",
-          "displayName": "Restaurant Kei",
+          "name": "5 Rue Coq Héron",
           "address": "5 Rue Coq Héron, 75001 Paris, 프랑스",
-          "latitude": 48.864357999999996,
-          "longitude": 2.3420826999999997,
-          "googleMapsId": "ChIJqTnaAiNu5kcRQsRFgf8qeoA",
-          "googleMapsUri": "https://maps.google.com/?cid=9257759260887336002&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "description": " — 비밀이야 in 한국 영상에서 소개한 5 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=wrSNqw6Mvek",
-          "description": "아시아/일본인 셰프 최초의 미슐랭 3스타를 소개하는 영상에서 방문한 파리의 레스토랑. 케이 셰프가 일본인으로서 최초로 3스타를 획득한 역사적인 곳이다."
+          "latitude": 48.8643631,
+          "longitude": 2.3420995,
+          "googleMapsId": "ChIJNRgRAyNu5kcRPXOCPHT5-fI",
+          "googleMapsUri": "https://maps.google.com/?cid=17508299304006218557&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "QuNzFUH_IHo",
       "title": "[EN] 파리지앵이 된듯한 역대급 조식과 브런치🍽 파리에서 가장 핫한 브런치 레스토랑에 다녀왔습니다!",
-      "concept": "파리 역대급 조식과 브런치 투어",
+      "concept": "Pl.",
       "locations": [
         {
-          "name": "Le Train Bleu",
-          "displayName": "Le Train Bleu",
-          "address": "Gare de Lyon, Pl. Louis Armand hall 1, 75012 Paris, 프랑스",
-          "latitude": 48.8448989,
-          "longitude": 2.3732694000000003,
-          "googleMapsId": "ChIJzev2rBxy5kcRYsCGyZ-UMRs",
-          "googleMapsUri": "https://maps.google.com/?cid=1959510726884638818&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "name": "루이 아흐멍 광장",
+          "address": "Pl. Louis Armand, 75012 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 Pl. 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=QuNzFUH_IHo",
-          "description": "파리 역대급 조식과 브런치를 소개하는 영상에서 방문한 리옹역 내 레스토랑. 파리지앵이 된 듯한 역대급 조식과 브런치를 즐길 수 있으며, 화려한 실내 장식이 특징이다."
+          "latitude": 48.8450619,
+          "longitude": 2.3731551,
+          "googleMapsId": "ChIJidV0GRty5kcRdRXp7rTlUjI",
+          "googleMapsUri": "https://maps.google.com/?cid=3626213215251797365&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         },
         {
-          "name": "Buvette",
-          "displayName": "Buvette Paris",
+          "name": "28 Rue Henry Monnier",
           "address": "28 Rue Henry Monnier, 75009 Paris, 프랑스",
-          "latitude": 48.88044,
-          "longitude": 2.3377375,
-          "googleMapsId": "ChIJcQXFZkZu5kcRM7dlSZoQVK8",
-          "googleMapsUri": "https://maps.google.com/?cid=12633741109523494707&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "description": " — 비밀이야 in 한국 영상에서 소개한 Pl. 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=QuNzFUH_IHo",
-          "description": "파리에서 가장 핫한 브런치 레스토랑을 소개하는 영상에서 방문한 곳. 파리지앵 스타일의 브런치를 즐길 수 있으며, 트렌디한 분위기가 매력적이다."
+          "latitude": 48.880473099999996,
+          "longitude": 2.3377376,
+          "googleMapsId": "ChIJhzAmYUZu5kcRrMG0ee11c0w",
+          "googleMapsUri": "https://maps.google.com/?cid=5508876432013836716&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "Q_U8VL2gSqk",
       "title": "(EN) 찐 푸아그라 꼭 맛보세요!",
-      "concept": "파리 찐 푸아그라 맛집 Bofinger",
+      "concept": "5",
       "locations": [
         {
-          "name": "Bofinger",
-          "displayName": "Bofinger",
-          "address": "5-7 Rue de la Bastille, 75004 Paris, 프랑스",
-          "latitude": 48.8539497,
-          "longitude": 2.3678627,
-          "googleMapsId": "ChIJuYqiNwBy5kcRBjo0Df8Wpkc",
-          "googleMapsUri": "https://maps.google.com/?cid=5162839307520850438&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "name": "5 Rue de la Bastille",
+          "address": "5 Rue de la Bastille, 75004 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 5-7 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=Q_U8VL2gSqk",
-          "description": "파리 찐 푸아그라 맛집을 소개하는 영상에서 방문한 레스토랑. 꼭 맛봐야 할 찐 푸아그라를 합리적인 가격에 즐길 수 있으며, 전통적인 파리 브라세리 분위기가 특징이다."
+          "latitude": 48.854044099999996,
+          "longitude": 2.3678063,
+          "googleMapsId": "ChIJ8xJQEQBy5kcRn9DSa73oY8o",
+          "googleMapsUri": "https://maps.google.com/?cid=14583755918611239071&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "azEpgYW3K94",
       "title": "[EN] 파리 최고의 해산물 파인 다이닝🍽 생선 요리의 장인이 운영하는 La Table d'Akihiro에 다녀왔습니다!",
-      "concept": "파리 최고의 해산물 파인다이닝 La Table d'Akihiro",
+      "concept": "49",
       "locations": [
         {
-          "name": "La Table d'Akihiro",
-          "displayName": "La Table d'Akihiro",
+          "name": "49 Rue Vaneau",
           "address": "49 Rue Vaneau, 75007 Paris, 프랑스",
-          "latitude": 48.8510284,
-          "longitude": 2.3194816,
-          "googleMapsId": "ChIJLS57hSxw5kcReNpz46DjYQ0",
-          "googleMapsUri": "https://maps.google.com/?cid=964302075384289912&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "description": " — 비밀이야 in 한국 영상에서 소개한 49 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=azEpgYW3K94",
-          "description": "파리 최고의 해산물 파인다이닝을 소개하는 영상에서 방문한 레스토랑. 생선 요리의 장인이 운영하는 곳으로, 정교한 해산물 요리가 인상적이다."
+          "latitude": 48.8511272,
+          "longitude": 2.3194596,
+          "googleMapsId": "ChIJDS1MhSxw5kcR_XXjYQl79gM",
+          "googleMapsUri": "https://maps.google.com/?cid=285550906611824125&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "NUyL5KzBhPI",
       "title": "비밀이야가 마음에 들어 X 3번 외친 곳, 파리에서 괜찮은 가격의 와인+미슐랭🌟 레스토랑을 찾는다면! [EN]ㅣLe Villaret",
-      "concept": "파리 괜찮은 가격의 와인+미슐랭 Le Villaret",
+      "concept": "13",
       "locations": [
         {
-          "name": "Le Villaret",
-          "displayName": "Le Villaret",
+          "name": "13 Rue Ternaux",
           "address": "13 Rue Ternaux, 75011 Paris, 프랑스",
-          "latitude": 48.864318999999995,
-          "longitude": 2.372838,
-          "googleMapsId": "ChIJRV4qmfxt5kcR8htPBNXSGKE",
-          "googleMapsUri": "https://maps.google.com/?cid=11608259851889613810&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "description": " — 비밀이야 in 한국 영상에서 소개한 13 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=NUyL5KzBhPI",
-          "description": "파리에서 괜찮은 가격의 와인과 미슐랭 식사를 소개하는 영상에서 방문한 레스토랑. 영상 진행자가 마음에 들어 세 번이나 외칠 정도로 좋았으며, 합리적인 가격이 매력이다."
-        }
-      ]
-    },
-    {
-      "videoId": "Z6zsnguERvQ",
-      "title": "프랑스 알프스에 숨겨진 맛집? 근사한 풍경과 즐기는 3스타 미슐랭 레스토랑",
-      "concept": "프랑스 알프스 3스타 미슐랭 Flocons de Sel",
-      "locations": [
-        {
-          "name": "Flocons de Sel",
-          "displayName": "Flocons de Sel",
-          "address": "1775 Rte du Leutaz, 74120 Megève, 프랑스",
-          "latitude": 45.8302798,
-          "longitude": 6.5968981,
-          "googleMapsId": "ChIJ4xBKAP_ii0cR_L-Q0gDCjn4",
-          "googleMapsUri": "https://maps.google.com/?cid=9119439604260323324&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=Z6zsnguERvQ",
-          "description": "프랑스 알프스에 숨겨진 미슐랭 3스타를 소개하는 영상에서 방문한 메제브의 레스토랑. 근사한 알프스 풍경과 함께 즐기는 3스타 미슐랭 다이닝이 인상적이다."
-        }
-      ]
-    },
-    {
-      "videoId": "-yaNxv271Cs",
-      "title": "(EN) 에펠탑 2층에 위치한 미쉐린 원스타 레스토랑",
-      "concept": "에펠탑 2층 미쉐린 1스타 Le Jules Verne",
-      "locations": [
-        {
-          "name": "Le Jules Verne",
-          "displayName": "Jules Verne",
-          "address": "Avenue Gustave Eiffel 2ème, Tour Eiffel, Av. Anatole France, 75007 Paris, 프랑스",
-          "latitude": 48.8583698,
-          "longitude": 2.2944833,
-          "googleMapsId": "ChIJl_7p8uFv5kcRj5ZGEf31ILM",
-          "googleMapsUri": "https://maps.google.com/?cid=12907586999309211279&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=-yaNxv271Cs",
-          "description": "에펠탑 2층에 위치한 미쉐린 1스타를 소개하는 영상에서 방문한 레스토랑. 에펠탑에서 파리 전경을 감상하며 식사할 수 있는 특별한 경험을 제공한다."
-        }
-      ]
-    },
-    {
-      "videoId": "qRMfDWxGKxM",
-      "title": "와인리스트 TOP2 파리 미슐랭 레스토랑! 페어링, 이게 최선입니까? [EN]ㅣLe Taillevent",
-      "concept": "와인리스트 TOP2 파리 미슐랭 Le Taillevent",
-      "locations": [
-        {
-          "name": "Le Taillevent",
-          "displayName": "Le Taillevent",
-          "address": "15 Rue Lamennais, 75008 Paris, 프랑스",
-          "latitude": 48.874097,
-          "longitude": 2.3024750000000003,
-          "googleMapsId": "ChIJp_LMzsFv5kcRahcM9RvYYV4",
-          "googleMapsUri": "https://maps.google.com/?cid=6800954526893086570&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=qRMfDWxGKxM",
-          "description": "와인리스트 TOP2 파리 미슐랭 레스토랑을 소개하는 영상에서 방문한 곳. 파리 최고 수준의 와인리스트를 보유하고 있지만, 페어링에 대한 솔직한 평가가 담겨 있다."
+          "latitude": 48.8643673,
+          "longitude": 2.372805,
+          "googleMapsId": "ChIJ6wHqmPxt5kcR624kLnBVcyc",
+          "googleMapsUri": "https://maps.google.com/?cid=2842709730099752683&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "xp9qbTCMuFE",
       "title": "프랑스 산 속 오지마을에서 만난 인생 요리 | Auberge du Vieux Puits",
-      "concept": "프랑스 산속 오지마을 인생 요리 Auberge du Vieux Puits",
+      "concept": "5",
       "locations": [
         {
           "name": "Auberge du Vieux Puits",
-          "displayName": "Auberge du Vieux Puits",
           "address": "5 Av. Saint-Victor, 11360 Fontjoncouse, 프랑스",
-          "latitude": 43.048523,
-          "longitude": 2.7888566,
-          "googleMapsId": "ChIJwz7atuhJsBIRZ6esU5Pl6As",
-          "googleMapsUri": "https://maps.google.com/?cid=858188149940856679&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "description": "전화번호: +33 4 68 44 07 37",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=xp9qbTCMuFE",
-          "description": "프랑스 산속 오지마을의 인생 요리를 소개하는 영상에서 방문한 레스토랑. 접근이 어려운 오지마을에 위치하지만, 그만큼 특별한 인생 요리를 맛볼 수 있는 곳이다."
-        }
-      ]
-    },
-    {
-      "videoId": "r1OERKKpg-o",
-      "title": "[EN] 파리의 정원에서 즐기는 미슐랭 다이닝🍽 눈과 입이 모두 즐거운 La Grande Cascade에 다녀왔습니다!",
-      "concept": "파리의 정원에서 즐기는 미슐랭 다이닝 La Grande Cascade",
-      "locations": [
-        {
-          "name": "La Grande Cascade",
-          "displayName": "La Grande Cascade",
-          "address": "Rte de la Vge aux Berceaux, 75016 Paris, 프랑스",
-          "latitude": 48.8626993,
-          "longitude": 2.2404366,
-          "googleMapsId": "ChIJBU9a9RVl5kcRauGO7npEArM",
-          "googleMapsUri": "https://maps.google.com/?cid=12898947577521561962&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=r1OERKKpg-o",
-          "description": "파리의 정원에서 즐기는 미슐랭 다이닝을 소개하는 영상에서 방문한 레스토랑. 불로뉴 숲 속에 위치하며, 눈과 입이 모두 즐거운 아름다운 다이닝을 경험할 수 있다."
+          "latitude": 43.047627299999995,
+          "longitude": 2.7905957,
+          "googleMapsId": "ChIJwz7atuhJsBIRZ6esU5Pl6As",
+          "googleMapsUri": "https://maps.google.com/?cid=858188149940856679&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "mEeT5zWyp9Q",
       "title": "3스타 → 2스타 → 1스타 몰락하고 있다는 소식 듣고 얼른 방문해 본 레스토랑 [EN]ㅣL'astrance",
-      "concept": "3스타에서 1스타로 몰락 논란의 L'Astrance",
+      "concept": "32",
       "locations": [
         {
-          "name": "L'Astrance",
-          "displayName": "Astrance",
-          "address": "32 Rue de Longchamp, 75116 Paris, 프랑스",
-          "latitude": 48.8650824,
-          "longitude": 2.2898578,
-          "googleMapsId": "ChIJ_QxhRv1v5kcRyxeqcySoeBQ",
-          "googleMapsUri": "https://maps.google.com/?cid=1475113752476653515&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "name": "32 Rue de Longchamp",
+          "address": "32 Rue de Longchamp, 75016 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 32 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=mEeT5zWyp9Q",
-          "description": "3스타에서 1스타로 몰락하고 있다는 소식을 듣고 방문한 파리의 레스토랑. 과거 3스타의 영광과 현재의 변화를 솔직하게 다룬 영상에서 소개되었다."
+          "latitude": 48.8651154,
+          "longitude": 2.2898502,
+          "googleMapsId": "ChIJH6dnJuVv5kcRqnJ-mHzv_S4",
+          "googleMapsUri": "https://maps.google.com/?cid=3386125813265887914&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
-      "videoId": "dXWlBZfBkKM",
-      "title": "랍스터 3대장 중 이 곳이 끝판왕! 인당 50만원짜리 메뉴 하나하나에 진심인 레스토랑ㅣL'ambroisie",
-      "concept": "파리 랍스터 끝판왕 L'Ambroisie, 인당 50만원",
+      "videoId": "qRMfDWxGKxM",
+      "title": "와인리스트 TOP2 파리 미슐랭 레스토랑! 페어링, 이게 최선입니까? [EN]ㅣLe Taillevent",
+      "concept": "15",
       "locations": [
         {
-          "name": "L'Ambroisie",
-          "displayName": "L'Ambroisie",
-          "address": "9 Pl. des Vosges, 75004 Paris, 프랑스",
-          "latitude": 48.8553396,
-          "longitude": 2.3643541,
-          "googleMapsId": "ChIJK-TZ1v9x5kcRvQoSvNJ21Vo",
-          "googleMapsUri": "https://maps.google.com/?cid=6545268280923392701&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=dXWlBZfBkKM",
-          "description": "파리 랍스터 끝판왕을 소개하는 영상에서 방문한 보주 광장의 미슐랭 3스타 레스토랑. 랍스터 3대장 중 최고로 꼽히며, 인당 50만원의 코스에서 메뉴 하나하나에 진심인 곳이다."
-        }
-      ]
-    },
-    {
-      "videoId": "Kpzqj03ulNo",
-      "title": "샴페인의 본고장 '샹파뉴 랭스'에서 종일 취해있기..🌀진짜 비밀이야 샴페인 하우스🤫[EN]ㅣ샹파뉴 랭스",
-      "concept": "샹파뉴 랭스에서 종일 취하기, 브라세리 Excelsior",
-      "locations": [
-        {
-          "name": "Brasserie Excelsior Reims",
-          "displayName": "Brasserie Excelsior Reims",
-          "address": "96 Pl. Drouet d'Erlon, 51100 Reims, 프랑스",
-          "latitude": 49.25745,
-          "longitude": 4.026276999999999,
-          "googleMapsId": "ChIJBdh7YKp16UcRY1y-loeELiQ",
-          "googleMapsUri": "https://maps.google.com/?cid=2607166952178605155&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=Kpzqj03ulNo",
-          "description": "샹파뉴 랭스에서 종일 취하는 여행을 소개하는 영상에서 방문한 브라세리. 샴페인의 본고장에서 진짜 샴페인 하우스를 탐방하며 방문한 곳이다."
+          "name": "15 Rue Lamennais",
+          "address": "15 Rue Lamennais, 75008 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 15 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=qRMfDWxGKxM",
+          "latitude": 48.8741266,
+          "longitude": 2.3024801999999998,
+          "googleMapsId": "ChIJBZVLv8Fv5kcRFjvSNnnoiRc",
+          "googleMapsUri": "https://maps.google.com/?cid=1696142341990136598&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "y6i88w-_hBk",
       "title": "19살부터 서빙 알바로 시작해 20년째 근무 중인 소믈리에가 있는 화이트 와인 최고 파리 레스토랑ㅣLa Cagouille",
-      "concept": "화이트 와인 최고 파리 레스토랑 La Cagouille",
+      "concept": "10",
       "locations": [
         {
           "name": "La Cagouille",
-          "displayName": "La Cagouille",
           "address": "10 place Constantin-Brancusi, 75014 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 10 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=y6i88w-_hBk",
           "latitude": 48.837193299999996,
           "longitude": 2.3208824,
           "googleMapsId": "ChIJl23DU1pu5kcRg1KaCcrIla8",
-          "googleMapsUri": "https://maps.google.com/?cid=12652239498237334147&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=y6i88w-_hBk",
-          "description": "화이트 와인 최고의 파리 레스토랑을 소개하는 영상에서 방문한 곳. 19살부터 서빙 알바로 시작해 20년째 근무 중인 소믈리에가 있으며, 화이트 와인 페어링이 뛰어나다."
+          "googleMapsUri": "https://maps.google.com/?cid=12652239498237334147&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "-yaNxv271Cs",
+      "title": "(EN) 에펠탑 2층에 위치한 미쉐린 원스타 레스토랑",
+      "concept": "5",
+      "locations": [
+        {
+          "name": "5 Av. Gustave Eiffel",
+          "address": "5 Av. Gustave Eiffel, 75007 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 5 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=-yaNxv271Cs",
+          "latitude": 48.858114699999994,
+          "longitude": 2.2945214,
+          "googleMapsId": "ChIJT6Ju8eFv5kcRgAcu3-IV7y0",
+          "googleMapsUri": "https://maps.google.com/?cid=3309888315291731840&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "Z6zsnguERvQ",
+      "title": "프랑스 알프스에 숨겨진 맛집? 근사한 풍경과 즐기는 3스타 미슐랭 레스토랑",
+      "concept": "1775",
+      "locations": [
+        {
+          "name": "1775 Rte du Leutaz",
+          "address": "1775 Rte du Leutaz, 74120 Megève, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 1775 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=Z6zsnguERvQ",
+          "latitude": 45.830301,
+          "longitude": 6.5970588999999995,
+          "googleMapsId": "ChIJQQPCAf_ii0cR2aMKixDjEaM",
+          "googleMapsUri": "https://maps.google.com/?cid=11750422562978046937&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "dXWlBZfBkKM",
+      "title": "랍스터 3대장 중 이 곳이 끝판왕! 인당 50만원짜리 메뉴 하나하나에 진심인 레스토랑ㅣL'ambroisie",
+      "concept": "9",
+      "locations": [
+        {
+          "name": "9 Pl. des Vosges",
+          "address": "9 Pl. des Vosges, 75004 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 9 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=dXWlBZfBkKM",
+          "latitude": 48.8553584,
+          "longitude": 2.3642182,
+          "googleMapsId": "ChIJp00gLf5x5kcRpqKOw_FP1vg",
+          "googleMapsUri": "https://maps.google.com/?cid=17930606866208826022&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "Kpzqj03ulNo",
+      "title": "샴페인의 본고장 '샹파뉴 랭스'에서 종일 취해있기..🌀진짜 비밀이야 샴페인 하우스🤫[EN]ㅣ샹파뉴 랭스",
+      "concept": "96",
+      "locations": [
+        {
+          "name": "96 Pl. Drouet d'Erlon",
+          "address": "96 Pl. Drouet d'Erlon, 51100 Reims, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 96 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=Kpzqj03ulNo",
+          "latitude": 49.2574499,
+          "longitude": 4.0262967,
+          "googleMapsId": "ChIJOVhPXqp16UcR2U60JM1ODHA",
+          "googleMapsUri": "https://maps.google.com/?cid=8073914874959515353&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "DRxvfZjNbfc",
       "title": "숨겨왔던 나의~ 찐 단골집 대공개! 비밀이야가 아침부터 취하고 싶을 때 찾는다는 이 곳?🥴[EN]ㅣDrouant",
-      "concept": "비밀이야 찐 단골집 Drouant",
+      "concept": "16-18",
       "locations": [
         {
-          "name": "Drouant",
-          "displayName": "Restaurant Drouant",
+          "name": "16-18 Rue Gaillon",
           "address": "16-18 Rue Gaillon, 75002 Paris, 프랑스",
-          "latitude": 48.8687465,
-          "longitude": 2.334434,
-          "googleMapsId": "ChIJeQAhgjpu5kcR2eETKOOnYng",
-          "googleMapsUri": "https://maps.google.com/?cid=8674680426340803033&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "description": " — 비밀이야 in 한국 영상에서 소개한 16-18 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=DRxvfZjNbfc",
-          "description": "비밀이야의 찐 단골집을 대공개하는 영상에서 소개된 파리 레스토랑. 아침부터 취하고 싶을 때 찾는다는 곳으로, 숨겨왔던 진짜 단골집이 공개되었다."
+          "latitude": 48.8686426,
+          "longitude": 2.3344381999999997,
+          "googleMapsId": "ChIJAQDMgzpu5kcRwDzY8a0nShA",
+          "googleMapsUri": "https://maps.google.com/?cid=1173794280923741376&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
-      "videoId": "WMx6EFEVQlc",
-      "title": "힙한 내추럴 와인과 어울리는 노르딕 퀴진!👨‍🍳 트렌디한 요리로 오픈 2년만에 미슐랭 스타를 받은 프랑스 니스의 Pure & V를 소개합니다!",
-      "concept": "니스 내추럴 와인 노르딕 퀴진 Pure & V",
+      "videoId": "r1OERKKpg-o",
+      "title": "[EN] 파리의 정원에서 즐기는 미슐랭 다이닝🍽 눈과 입이 모두 즐거운 La Grande Cascade에 다녀왔습니다!",
+      "concept": "Carr",
       "locations": [
         {
-          "name": "Pure & V",
-          "displayName": "Restaurant Pure & V",
-          "address": "7 Rue du Lycée, 06000 Nice, 프랑스",
-          "latitude": 43.6993757,
-          "longitude": 7.274324899999999,
-          "googleMapsId": "ChIJbUiThBLQzRIRS_1yfGa4r64",
-          "googleMapsUri": "https://maps.google.com/?cid=12587482233837911371&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=WMx6EFEVQlc",
-          "description": "니스의 내추럴 와인과 노르딕 퀴진을 소개하는 영상에서 방문한 레스토랑. 오픈 2년만에 미슐랭 스타를 받았으며, 힙한 내추럴 와인과 트렌디한 요리가 특징이다."
+          "name": "꺄흐푸흐 드 롱셩",
+          "address": "Carr de Longchamp, 75016 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 Carr 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=r1OERKKpg-o",
+          "latitude": 48.8644832,
+          "longitude": 2.2379018,
+          "googleMapsId": "ChIJp6Apsy5l5kcRQSBIBpR-VhU",
+          "googleMapsUri": "https://maps.google.com/?cid=1537555497019252801&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
-      "videoId": "3H-b3qKf9NU",
-      "title": "[EN] 100년 역사의 프랑스 리옹 전통 레스토랑🥩 이색적이지만 아쉬움이 남았던 Aux Lyonnais에서의 식사",
-      "concept": "100년 역사 프랑스 리옹 전통 레스토랑 Aux Lyonnais",
+      "videoId": "QIIvV21rErU",
+      "title": "파리 3스타 미슐랭 식당의 위엄...인데 솔직히 감동이 없네요 | Le Gabriel",
+      "concept": "la",
       "locations": [
         {
-          "name": "Aux Lyonnais",
-          "displayName": "Aux Lyonnais",
-          "address": "32 Rue Saint-Marc, 75002 Paris, 프랑스",
-          "latitude": 48.870740999999995,
-          "longitude": 2.338718,
-          "googleMapsId": "ChIJQRZQ6Dtu5kcR-0r2malRDQw",
-          "googleMapsUri": "https://maps.google.com/?cid=868440092026751739&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=3H-b3qKf9NU",
-          "description": "100년 역사의 프랑스 리옹 전통 레스토랑을 소개하는 영상에서 방문한 파리의 부숑 리오네. 이색적이지만 아쉬움이 남았다는 솔직한 후기가 담겨 있다."
-        }
-      ]
-    },
-    {
-      "videoId": "XVahpVb99Ac",
-      "title": "니스 해산물 맛집 원픽은 이 곳! 알 만한 사람들은 다 아는 Boccacio 🦐날 홍합, 날 조개로 주는 싱싱함 클라스..✨[EN]",
-      "concept": "니스 해산물 맛집 원픽 Boccacio",
-      "locations": [
-        {
-          "name": "Boccacio",
-          "displayName": "Boccaccio",
-          "address": "7 Rue Massena, 06000 Nice, 프랑스",
-          "latitude": 43.697682,
-          "longitude": 7.268434999999999,
-          "googleMapsId": "ChIJITv5JKHazRIRSknWDX_Difo",
-          "googleMapsUri": "https://maps.google.com/?cid=18053175531751754058&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=XVahpVb99Ac",
-          "description": "니스 해산물 맛집 원픽을 소개하는 영상에서 방문한 레스토랑. 알 만한 사람들은 다 아는 곳으로, 날 홍합과 날 조개로 제공되는 싱싱한 해산물이 인상적이다."
-        }
-      ]
-    },
-    {
-      "videoId": "6rYFA1-cOEw",
-      "title": "파리의 전설적인 1스타 레스토랑🌟[EN]ㅣLucas Carton",
-      "concept": "파리의 전설적인 1스타 Lucas Carton",
-      "locations": [
-        {
-          "name": "Lucas Carton",
-          "displayName": "Lucas Carton",
-          "address": "9 Pl. de la Madeleine, 75008 Paris, 프랑스",
-          "latitude": 48.869681199999995,
-          "longitude": 2.3231271000000002,
-          "googleMapsId": "ChIJrf6XLDNu5kcRgypP8GERVqw",
-          "googleMapsUri": "https://maps.google.com/?cid=12418132134861941379&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=6rYFA1-cOEw",
-          "description": "파리의 전설적인 미슐랭 1스타를 소개하는 영상에서 방문한 레스토랑. 오랜 역사와 전통을 자랑하며, 파리를 대표하는 클래식 레스토랑이다."
-        }
-      ]
-    },
-    {
-      "videoId": "IDUozojLxog",
-      "title": "대게 되게 벌크업🦀 파리의 평범한 해산물 레스토랑 퀄리티ㅣ캐주얼하게 갈 수 있는 식당 추천ㅣhuguette, bistro de la mer",
-      "concept": "파리 캐주얼 해산물 레스토랑 Huguette",
-      "locations": [
-        {
-          "name": "Huguette",
-          "displayName": "Huguette, Bistro de la mer",
-          "address": "81 Rue de Seine, 75006 Paris, 프랑스",
-          "latitude": 48.8532996,
-          "longitude": 2.3371134,
-          "googleMapsId": "ChIJZ6UXGNlx5kcRkussL8qcmrI",
-          "googleMapsUri": "https://maps.google.com/?cid=12869771277353413522&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=IDUozojLxog",
-          "description": "파리의 캐주얼 해산물 레스토랑을 소개하는 영상에서 방문한 비스트로 드 라 메르. 대게를 포함한 다양한 해산물을 캐주얼한 분위기에서 즐길 수 있으며, 파리의 평범한 해산물 레스토랑 퀄리티를 보여준다."
-        }
-      ]
-    },
-    {
-      "videoId": "SHVcjUBlRUw",
-      "title": "[EN] 파리에서 만난 매력적인 이국의 맛!🍜 현지보다 맛있는 쿠스쿠스와 쌀국수를 먹고 왔습니다!",
-      "concept": "파리에서 만난 이국의 맛, 쿠스쿠스와 쌀국수",
-      "locations": [
-        {
-          "name": "Au Clair de Lune",
-          "displayName": "Au Clair de Lune",
-          "address": "11 Rue Française, 75002 Paris, 프랑스",
-          "latitude": 48.8646043,
-          "longitude": 2.3476798,
-          "googleMapsId": "ChIJm8dATBhu5kcRYH9dfbzLAD8",
-          "googleMapsUri": "https://maps.google.com/?cid=4539852434807029600&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=SHVcjUBlRUw",
-          "description": "파리에서 만난 이국의 맛을 소개하는 영상에서 방문한 쿠스쿠스 맛집. 현지보다 맛있는 쿠스쿠스를 맛볼 수 있으며, 파리의 다양한 식문화를 경험할 수 있다."
-        },
-        {
-          "name": "Le Kok",
-          "displayName": "Le kok",
-          "address": "129 bis Av. de Choisy, 75013 Paris, 프랑스",
-          "latitude": 48.826541299999995,
-          "longitude": 2.3594226,
-          "googleMapsId": "ChIJI7Qxt4hx5kcR-IK2S91wzR8",
-          "googleMapsUri": "https://maps.google.com/?cid=2291611881161786104&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=SHVcjUBlRUw",
-          "description": "파리에서 만난 이국의 맛을 소개하는 영상에서 방문한 쌀국수 맛집. 현지보다 맛있다는 평가를 받은 쌀국수를 맛볼 수 있는 곳이다."
-        }
-      ]
-    },
-    {
-      "videoId": "sSrSbgQMu5o",
-      "title": "샴페인의 왕이라고 소개한 메종 크룩의 와이너리, 직접 들어가 보여드립니다🍾[EN]ㅣMaison krug",
-      "concept": "메종 크룩 와이너리 방문",
-      "locations": [
-        {
-          "name": "Maison Krug",
-          "displayName": "Champagne Krug",
-          "address": "5 Rue Coquebert, 51100 Reims, 프랑스",
-          "latitude": 49.2608531,
-          "longitude": 4.0365826,
-          "googleMapsId": "ChIJh0CeIK516UcRGR4cjIO1_ls",
-          "googleMapsUri": "https://maps.google.com/?cid=6628935278131944985&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=sSrSbgQMu5o",
-          "description": "샴페인의 왕이라 소개된 메종 크룩의 와이너리를 직접 방문한 영상. 와이너리 내부를 직접 들어가 보여주며, 크룩 샴페인의 제조 과정을 엿볼 수 있다."
-        }
-      ]
-    },
-    {
-      "videoId": "coBnpOfw1t4",
-      "title": "쌀국수의 원조는 프랑스다?!🍜 파리에서 줄서서 먹는 쌀국수 맛집! (f. 귀국 전 시장 투어)",
-      "concept": "파리 줄서서 먹는 쌀국수 맛집 투어",
-      "locations": [
-        {
-          "name": "Pho Banh Cuon 14",
-          "displayName": "Phở Bánh Cuốn 14",
-          "address": "129 Av. de Choisy, 75013 Paris, 프랑스",
-          "latitude": 48.826326200000004,
-          "longitude": 2.3595762,
-          "googleMapsId": "ChIJI7Qxt4hx5kcRMQE6xMrfhb8",
-          "googleMapsUri": "https://maps.google.com/?cid=13800682695115276593&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=coBnpOfw1t4",
-          "description": "파리에서 줄서서 먹는 쌀국수 맛집을 소개하는 영상에서 방문한 곳. 쌀국수의 원조는 프랑스라는 재미있는 이야기와 함께, 귀국 전 시장 투어로 방문한 맛집이다."
-        }
-      ]
-    },
-    {
-      "videoId": "7O5dGQYeSug",
-      "title": "별빛이 내린다..🌟별이 15개? 프랑스에서 가장 각광받고 있는 셰프의 3스타 레스토랑 [EN]ㅣAlléno Paris",
-      "concept": "프랑스 가장 각광받는 셰프의 3스타 Alléno Paris",
-      "locations": [
-        {
-          "name": "Alléno Paris",
-          "displayName": "Alléno",
-          "address": "8 Av. Dutuit, 75008 Paris, 프랑스",
-          "latitude": 48.8661356,
-          "longitude": 2.3163359000000003,
-          "googleMapsId": "ChIJt_i_hmdv5kcRmMIR274srQM",
-          "googleMapsUri": "https://maps.google.com/?cid=264917151315509912&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=7O5dGQYeSug",
-          "description": "프랑스에서 가장 각광받고 있는 셰프의 3스타 레스토랑을 소개하는 영상에서 방문한 곳. 별이 15개라는 셰프의 실력을 느낄 수 있으며, 별빛이 내리는 듯한 분위기가 인상적이다."
+          "name": "Le Gabriel",
+          "address": "la reserve, 42 Av. Gabriel, 75008 Paris, 프랑스",
+          "description": "Le Gabriel — 비밀이야 in 한국 영상에서 소개한 la 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=QIIvV21rErU",
+          "latitude": 48.8697972,
+          "longitude": 2.3133111,
+          "googleMapsId": "ChIJA1PHDM9v5kcRsdD0Snjw06k",
+          "googleMapsUri": "https://maps.google.com/?cid=12237389011940069553&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "R6DoQ9HncrA",
       "title": "단품 시켰는데 코스가 나오는 프렌치 식당🍾이런 기회 흔치 않아 | 레스쁘아 (with 100만 유튜버 & 신상 크룩)",
-      "concept": "서울 강남 프렌치 레스토랑 레스쁘아",
+      "concept": "대한민국",
       "locations": [
         {
           "name": "레스쁘아",
-          "displayName": "레스쁘아 (L'Espoir) Restaurant français",
           "address": "대한민국 서울특별시 강남구 도산대로56길 10 레스쁘아 2층",
+          "description": "레스쁘아 — 비밀이야 in 한국 영상에서 소개한 서울 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=R6DoQ9HncrA",
           "latitude": 37.5224636,
           "longitude": 127.0401333,
           "googleMapsId": "ChIJpwr6Gm6kfDUR4YOjEQvB5YM",
-          "googleMapsUri": "https://maps.google.com/?cid=9504214841920029665&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=R6DoQ9HncrA",
-          "description": "서울 강남의 프렌치 레스토랑을 소개하는 영상에서 방문한 곳. 단품을 시켰는데 코스가 나올 정도로 관대한 서비스가 특징이며, 100만 유튜버와 신상 크룩 샴페인을 함께 즐겼다."
+          "googleMapsUri": "https://maps.google.com/?cid=9504214841920029665&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "WMx6EFEVQlc",
+      "title": "힙한 내추럴 와인과 어울리는 노르딕 퀴진!👨‍🍳 트렌디한 요리로 오픈 2년만에 미슐랭 스타를 받은 프랑스 니스의 Pure & V를 소개합니다!",
+      "concept": "15",
+      "locations": [
+        {
+          "name": "15 Rue Bottero",
+          "address": "15 Rue Bottero, 06000 Nice, 프랑스",
+          "description": "📢다음 주 영상부터 금요일 오후 6시로 편성 일정이 변경됩니다",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=WMx6EFEVQlc",
+          "latitude": 43.6964829,
+          "longitude": 7.2541088999999985,
+          "googleMapsId": "ChIJVbGPhBLQzRIRKU7whZCWBZM",
+          "googleMapsUri": "https://maps.google.com/?cid=10594039245925535273&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "6rYFA1-cOEw",
+      "title": "파리의 전설적인 1스타 레스토랑🌟[EN]ㅣLucas Carton",
+      "concept": "9",
+      "locations": [
+        {
+          "name": "9 Pl. de la Madeleine",
+          "address": "9 Pl. de la Madeleine, 75008 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 9 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=6rYFA1-cOEw",
+          "latitude": 48.869614299999995,
+          "longitude": 2.3230443999999997,
+          "googleMapsId": "ChIJMx9P08xv5kcRHvrv2SuSvLc",
+          "googleMapsUri": "https://maps.google.com/?cid=13239617721600047646&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "3H-b3qKf9NU",
+      "title": "[EN] 100년 역사의 프랑스 리옹 전통 레스토랑🥩 이색적이지만 아쉬움이 남았던 Aux Lyonnais에서의 식사",
+      "concept": "32",
+      "locations": [
+        {
+          "name": "32 Rue Saint-Marc",
+          "address": "32 Rue Saint-Marc, 75002 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 32 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=3H-b3qKf9NU",
+          "latitude": 48.870773199999995,
+          "longitude": 2.3387089999999997,
+          "googleMapsId": "ChIJa18S6Dtu5kcRUnpDs9Z_iHI",
+          "googleMapsUri": "https://maps.google.com/?cid=8252986877263706706&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "IDUozojLxog",
+      "title": "대게 되게 벌크업🦀 파리의 평범한 해산물 레스토랑 퀄리티ㅣ캐주얼하게 갈 수 있는 식당 추천ㅣhuguette, bistro de la mer",
+      "concept": "81",
+      "locations": [
+        {
+          "name": "81 Rue de Seine",
+          "address": "81 Rue de Seine, 75006 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 81 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=IDUozojLxog",
+          "latitude": 48.853367399999996,
+          "longitude": 2.3371085,
+          "googleMapsId": "ChIJZ6UXGNlx5kcRHo2jv9gU1Qc",
+          "googleMapsUri": "https://maps.google.com/?cid=564380249465523486&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "7O5dGQYeSug",
+      "title": "별빛이 내린다..🌟별이 15개? 프랑스에서 가장 각광받고 있는 셰프의 3스타 레스토랑 [EN]ㅣAlléno Paris",
+      "concept": "Carré",
+      "locations": [
+        {
+          "name": "Carré des",
+          "address": "Carré des, 8 Av. Dutuit, 75008 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 8 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=7O5dGQYeSug",
+          "latitude": 48.8661252,
+          "longitude": 2.3164184,
+          "googleMapsId": "ChIJOdDV79Fv5kcRurM-hvX_QyU",
+          "googleMapsUri": "https://maps.google.com/?cid=2685271232827274170&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "SHVcjUBlRUw",
+      "title": "[EN] 파리에서 만난 매력적인 이국의 맛!🍜 현지보다 맛있는 쿠스쿠스와 쌀국수를 먹고 왔습니다!",
+      "concept": "11",
+      "locations": [
+        {
+          "name": "11 Rue Française",
+          "address": "11 Rue Française, 75002 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 11 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=SHVcjUBlRUw",
+          "latitude": 48.8645907,
+          "longitude": 2.3476212999999997,
+          "googleMapsId": "ChIJy2MgTBhu5kcRKoCzFAFJq9g",
+          "googleMapsUri": "https://maps.google.com/?cid=15612652802201059370&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        },
+        {
+          "name": "129 bis Av. de Choisy",
+          "address": "129 bis Av. de Choisy, 75013 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 11 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=SHVcjUBlRUw",
+          "latitude": 48.8264923,
+          "longitude": 2.3592662,
+          "googleMapsId": "ChIJ-cmesYhx5kcRDYMEzldQshU",
+          "googleMapsUri": "https://maps.google.com/?cid=1563400358699762445&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "coBnpOfw1t4",
+      "title": "쌀국수의 원조는 프랑스다?!🍜 파리에서 줄서서 먹는 쌀국수 맛집! (f. 귀국 전 시장 투어)",
+      "concept": "129",
+      "locations": [
+        {
+          "name": "129 Av. de Choisy",
+          "address": "129 Av. de Choisy, 75013 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 129 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=coBnpOfw1t4",
+          "latitude": 48.826384499999996,
+          "longitude": 2.3595231,
+          "googleMapsId": "ChIJfdgFsIhx5kcRmJw5O8j9qa4",
+          "googleMapsUri": "https://maps.google.com/?cid=12585869670092479640&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        },
+        {
+          "name": "3 Rue Volta",
+          "address": "3 Rue Volta, 75003 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 129 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=coBnpOfw1t4",
+          "latitude": 48.864732499999995,
+          "longitude": 2.3567814,
+          "googleMapsId": "ChIJb-YLNgVu5kcRLHD67Fo1M2s",
+          "googleMapsUri": "https://maps.google.com/?cid=7724576450509697068&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        },
+        {
+          "name": "몽또흐겨이 가",
+          "address": "Rue Montorgueil, Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 129 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=coBnpOfw1t4",
+          "latitude": 48.8647834,
+          "longitude": 2.346804,
+          "googleMapsId": "ChIJwUCsQRhu5kcRLgoASQ1fQyQ",
+          "googleMapsUri": "https://maps.google.com/?cid=2613036719468972590&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "WmKBpFDk1YQ",
       "title": "많은 분들이 기다려 주신 베르사유 궁전 디너 공개합니다✨ 전세계 공통 '밤비'로 통하는 사슴고기? 🦌ㅣLe Grand Contrôle [EN]",
-      "concept": "베르사유 궁전 호텔 디너",
+      "concept": "Le",
       "locations": [
         {
           "name": "Le Grand Contrôle",
-          "displayName": "Airelles Château de Versailles, Le Grand Contrôle",
-          "address": "12 Rue de l'Indépendance Américaine, 78000 Versailles, 프랑스",
+          "address": "Le Grand Contrôle, 12 Rue de l'Indépendance Américaine, 78000 Versailles, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 12 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=WmKBpFDk1YQ",
           "latitude": 48.8013233,
           "longitude": 2.1199224,
-          "googleMapsId": "ChIJp9eEe6x95kcRx9ZXHHSdrPc",
-          "googleMapsUri": "https://maps.google.com/?cid=17846812545379718855&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=WmKBpFDk1YQ",
-          "description": "베르사유 궁전 디너를 소개하는 영상에서 방문한 호텔 레스토랑. 세계 공통으로 '밤비'로 통하는 사슴고기 등 특별한 메뉴가 제공되며, 궁전에서의 디너가 인상적이다."
-        }
-      ]
-    },
-    {
-      "videoId": "4J6RLbRSu64",
-      "title": "한국에 상륙하는 프랑스 유일 여성 3스타 셰프 레스토랑! 한국에서 무사히 성공할 수 있을까? [EN]ㅣLa dame de pic",
-      "concept": "프랑스 유일 여성 3스타 셰프 La Dame de Pic",
-      "locations": [
-        {
-          "name": "La Dame de Pic",
-          "displayName": "La Dame de Pic",
-          "address": "20 Rue du Louvre, 75001 Paris, 프랑스",
-          "latitude": 48.8614756,
-          "longitude": 2.3413144999999997,
-          "googleMapsId": "ChIJaWy42CNu5kcRSLqIejQtI7s",
-          "googleMapsUri": "https://maps.google.com/?cid=13484671412694727240&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=4J6RLbRSu64",
-          "description": "프랑스 유일 여성 3스타 셰프의 레스토랑을 소개하는 영상에서 방문한 파리의 레스토랑. 한국에 상륙한다는 소식과 함께, 무사히 성공할 수 있을지에 대한 기대가 담겨 있다."
+          "googleMapsId": "ChIJ6U6dbL995kcR3XxTB_Jvq4c",
+          "googleMapsUri": "https://maps.google.com/?cid=9776030501433474269&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "E8LBPjio53s",
       "title": "세계에서 가장 아름다운 레스토랑으로 손꼽히는 곳✨ 화려함 끝판왕과 거장 셰프와의 만남[EN]ㅣLe Meurice Alain Ducasse",
-      "concept": "세계에서 가장 아름다운 레스토랑 Le Meurice Alain Ducasse",
+      "concept": "228",
       "locations": [
         {
-          "name": "Le Meurice Alain Ducasse",
-          "displayName": "Restaurant le Meurice Alain Ducasse",
+          "name": "228 Rue de Rivoli",
           "address": "228 Rue de Rivoli, 75001 Paris, 프랑스",
-          "latitude": 48.8652915,
-          "longitude": 2.3280563,
-          "googleMapsId": "ChIJQdFbHk9v5kcRBtFW38NDhbc",
-          "googleMapsUri": "https://maps.google.com/?cid=13224050389388022022&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "description": " — 비밀이야 in 한국 영상에서 소개한 228 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=E8LBPjio53s",
-          "description": "세계에서 가장 아름다운 레스토랑을 소개하는 영상에서 방문한 파리의 3스타 레스토랑. 화려함 끝판왕이라는 평가와 함께, 거장 알랭 뒤카스 셰프와의 만남이 인상적이다."
+          "latitude": 48.865354599999996,
+          "longitude": 2.3282186,
+          "googleMapsId": "ChIJ28ff3y1u5kcRs25dsaRcMJw",
+          "googleMapsUri": "https://maps.google.com/?cid=11254597331218951859&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "WSqVHx2iRNY",
+      "title": "전세계 5명 중 하나! 여성 3스타 셰프의 요리는? | Marsan by Helene Darroze",
+      "concept": "4",
+      "locations": [
+        {
+          "name": "Marsan by Helene Darroze",
+          "address": "4 Rue d'Assas, 75006 Paris, 프랑스",
+          "description": "Marsan by Helene Darroze — 비밀이야 in 한국 영상에서 소개한 4 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=WSqVHx2iRNY",
+          "latitude": 48.8500532,
+          "longitude": 2.3278184,
+          "googleMapsId": "ChIJ81phINFx5kcRW5UjTPo8aGc",
+          "googleMapsUri": "https://maps.google.com/?cid=7451272629201376603&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "4J6RLbRSu64",
+      "title": "한국에 상륙하는 프랑스 유일 여성 3스타 셰프 레스토랑! 한국에서 무사히 성공할 수 있을까? [EN]ㅣLa dame de pic",
+      "concept": "20",
+      "locations": [
+        {
+          "name": "20 Rue du Louvre",
+          "address": "20 Rue du Louvre, 75001 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 20 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=4J6RLbRSu64",
+          "latitude": 48.8614427,
+          "longitude": 2.3413816,
+          "googleMapsId": "ChIJS8Ug2CNu5kcRV82fz49wHFY",
+          "googleMapsUri": "https://maps.google.com/?cid=6204958149575691607&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "XehtVBQvDhM",
       "title": "3만 원 대에 즐기는 프랑스 명장 요리? | Daniel et Denise",
-      "concept": "리옹 3만원대 명장 요리 Daniel et Denise",
+      "concept": "36",
       "locations": [
         {
-          "name": "Daniel et Denise",
-          "displayName": "Daniel & Denise Saint Jean - Bouchon Lyonnais",
+          "name": "Daniel & Denise Saint Jean - Bouchon Lyonnais",
           "address": "36 Rue Tramassac, 69005 Lyon, 프랑스",
+          "description": "전화번호: +33 4 78 42 24 62",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=XehtVBQvDhM",
           "latitude": 45.760353599999995,
           "longitude": 4.8254871,
           "googleMapsId": "ChIJZ7jWkKvr9EcRtV8rnu3DfmQ",
-          "googleMapsUri": "https://maps.google.com/?cid=7241440676186644405&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=XehtVBQvDhM",
-          "description": "리옹에서 3만 원대에 즐기는 명장 요리를 소개하는 영상에서 방문한 부숑 리오네. MOF(프랑스 국가 최우수 장인)가 운영하며, 합리적인 가격에 전통 리옹 요리를 맛볼 수 있다."
-        }
-      ]
-    },
-    {
-      "videoId": "aQWebvFbH-o",
-      "title": "프랑스 한식당은 한국의 맛을 잘 나타낼 수 있을까?[EN]ㅣSetopa",
-      "concept": "파리 한식당 Setopa",
-      "locations": [
-        {
-          "name": "Setopa",
-          "displayName": "Sétopa",
-          "address": "6 Rue Dupuytren, 75006 Paris, 프랑스",
-          "latitude": 48.8517392,
-          "longitude": 2.3394057999999998,
-          "googleMapsId": "ChIJl8BALABx5kcRcqB9X8pffNA",
-          "googleMapsUri": "https://maps.google.com/?cid=15022987779791233138&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=aQWebvFbH-o",
-          "description": "프랑스 한식당을 소개하는 영상에서 방문한 파리의 한식 레스토랑. 프랑스에서 한국의 맛을 잘 나타낼 수 있는지에 대한 솔직한 평가가 담겨 있다."
+          "googleMapsUri": "https://maps.google.com/?cid=7241440676186644405&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "vmGwRznz0Yo",
       "title": "13가지 코스 요리가 나오는데 디저트가 가장 맛있다고?! 🍨🫢  [EN]ㅣBlanc",
-      "concept": "13가지 코스, 디저트가 가장 맛있는 Blanc",
+      "concept": "54",
       "locations": [
         {
-          "name": "Blanc",
-          "displayName": "Blanc",
-          "address": "52 Rue de Longchamp, 75116 Paris, 프랑스",
-          "latitude": 48.865128299999995,
-          "longitude": 2.2875706,
-          "googleMapsId": "ChIJ-We0YUpv5kcREptIC-71C_Y",
-          "googleMapsUri": "https://maps.google.com/?cid=17729534760814418706&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "name": "54 Rue de Longchamp",
+          "address": "54 Rue de Longchamp, 75116 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 54 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=vmGwRznz0Yo",
-          "description": "13가지 코스 요리 중 디저트가 가장 맛있는 레스토랑을 소개하는 영상에서 방문한 파리의 레스토랑. 13가지 코스가 제공되지만 디저트가 가장 인상적이라는 독특한 평가가 담겨 있다."
-        }
-      ]
-    },
-    {
-      "videoId": "shmIpRm4PRE",
-      "title": "헤밍웨이가 해산물을 먹고 싶을 때면 갔던 파리 브라세리🦞[EN]ㅣLa closerie des lias",
-      "concept": "헤밍웨이가 다녔던 파리 브라세리 La Closerie des Lilas",
-      "locations": [
-        {
-          "name": "La Closerie des Lilas",
-          "displayName": "La Closerie des Lilas",
-          "address": "171 Bd du Montparnasse, 75006 Paris, 프랑스",
-          "latitude": 48.8401436,
-          "longitude": 2.3360431999999998,
-          "googleMapsId": "ChIJD0MBxsZx5kcREfMy9IsrUTo",
-          "googleMapsUri": "https://maps.google.com/?cid=4202187807410811665&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=shmIpRm4PRE",
-          "description": "헤밍웨이가 해산물을 먹고 싶을 때면 찾았던 파리 브라세리를 소개하는 영상에서 방문한 곳. 문학적 역사가 깃든 공간에서 해산물을 즐길 수 있으며, 클래식한 파리 분위기가 매력적이다."
+          "latitude": 48.8651274,
+          "longitude": 2.2874205,
+          "googleMapsId": "ChIJV7sF4fpv5kcR2En_Vb7U2uA",
+          "googleMapsUri": "https://maps.google.com/?cid=16202496523370449368&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "AxLRF-gZmSA",
       "title": "센 강 유람선 중 유일하게 1스타를 받은 최고의 크루즈 레스토랑은? ⛴️🍷 [EN]ㅣDon Juan II",
-      "concept": "센강 유일 미슐랭 1스타 크루즈 Don Juan II",
+      "concept": "5",
       "locations": [
         {
-          "name": "Don Juan II",
-          "displayName": "Don Juan II | Yachts de Paris",
+          "name": "5 Port Debilly",
           "address": "5 Port Debilly, 75016 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 5 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=AxLRF-gZmSA",
           "latitude": 48.8627847,
           "longitude": 2.2956447,
-          "googleMapsId": "ChIJV893WNdx5kcRId2B1-rDEZU",
-          "googleMapsUri": "https://maps.google.com/?cid=10741581999660719393&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=AxLRF-gZmSA",
-          "description": "센강 유람선 중 유일하게 미슐랭 1스타를 받은 크루즈 레스토랑을 소개하는 영상에서 방문한 곳. 센강 위에서 파리의 야경과 함께 미슐랭 수준의 식사를 즐길 수 있는 특별한 경험이다."
+          "googleMapsId": "ChIJX2wLt-Zv5kcRB4wDBqDAC0o",
+          "googleMapsUri": "https://maps.google.com/?cid=5335569977078680583&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "shmIpRm4PRE",
+      "title": "헤밍웨이가 해산물을 먹고 싶을 때면 갔던 파리 브라세리🦞[EN]ㅣLa closerie des lias",
+      "concept": "171",
+      "locations": [
+        {
+          "name": "171 Bd du Montparnasse",
+          "address": "171 Bd du Montparnasse, 75006 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 171 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=shmIpRm4PRE",
+          "latitude": 48.840149,
+          "longitude": 2.3360122999999997,
+          "googleMapsId": "ChIJrfYSlcZx5kcRw21ba6l36QI",
+          "googleMapsUri": "https://maps.google.com/?cid=209830427183771075&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "aQWebvFbH-o",
+      "title": "프랑스 한식당은 한국의 맛을 잘 나타낼 수 있을까?[EN]ㅣSetopa",
+      "concept": "6",
+      "locations": [
+        {
+          "name": "6 Rue Dupuytren",
+          "address": "6 Rue Dupuytren, 75006 Paris, 프랑스",
+          "description": " — 비밀이야 in 한국 영상에서 소개한 6 맛집.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=aQWebvFbH-o",
+          "latitude": 48.8517352,
+          "longitude": 2.3394201,
+          "googleMapsId": "ChIJQfdcpN5x5kcRn385Lgx5FeY",
+          "googleMapsUri": "https://maps.google.com/?cid=16579290696456437663&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "OR4FNr-0I6c",
       "title": "경비행기가 있는 미슐랭 투스타 에펠탑뷰 레스토랑! 프랑스식 김치의 충격적인 맛 [EN] ㅣL'Oiseau Blanc",
-      "concept": "미슐랭 2스타 에펠탑뷰 L'Oiseau Blanc",
+      "concept": "19",
       "locations": [
         {
-          "name": "L'Oiseau Blanc",
-          "displayName": "L'Oiseau Blanc",
+          "name": "19 Av. Kléber",
           "address": "19 Av. Kléber, 75116 Paris, 프랑스",
-          "latitude": 48.8707437,
-          "longitude": 2.2933136999999997,
-          "googleMapsId": "ChIJZXST6-5v5kcR2yYcipYCUqA",
-          "googleMapsUri": "https://maps.google.com/?cid=11552298839744194267&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "description": " — 비밀이야 in 한국 영상에서 소개한 19 맛집.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=OR4FNr-0I6c",
-          "description": "미슐랭 2스타 에펠탑 뷰 레스토랑을 소개하는 영상에서 방문한 곳. 경비행기가 전시된 독특한 인테리어가 특징이며, 에펠탑 뷰와 함께 프랑스식 김치의 충격적인 맛도 화제가 되었다."
-        }
-      ]
-    },
-    {
-      "videoId": "tME5rlpprwI",
-      "title": "니스 실패없는 현지 식당 추천! 해산물이 질린다면 이곳으로 가세요ㅣLe Petit Palais&La Favola",
-      "concept": "니스 실패없는 현지 식당 추천",
-      "locations": [
-        {
-          "name": "Le Petit Palais",
-          "displayName": "Le Petit Palais - Steakhouse à Nice",
-          "address": "3 Rue de la Préfecture, 06000 Nice, 프랑스",
-          "latitude": 43.6970041,
-          "longitude": 7.2736966999999995,
-          "googleMapsId": "ChIJh5Djo3_bzRIR3PYZy2Wh94o",
-          "googleMapsUri": "https://maps.google.com/?cid=10013649755052832476&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=tME5rlpprwI",
-          "description": "니스 실패없는 현지 식당을 추천하는 영상에서 방문한 스테이크하우스. 해산물이 질릴 때 가기 좋은 곳으로, 니스의 현지 분위기를 느끼며 식사할 수 있다."
-        },
-        {
-          "name": "La Favola",
-          "displayName": "La Favola",
-          "address": "13 Cr Saleya, 06300 Nice, 프랑스",
-          "latitude": 43.6958589,
-          "longitude": 7.273727999999999,
-          "googleMapsId": "ChIJF7GuAaPazRIRBr6thVAlsy4",
-          "googleMapsUri": "https://maps.google.com/?cid=3365074374346259974&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=tME5rlpprwI",
-          "description": "니스 실패없는 현지 식당을 추천하는 영상에서 방문한 쿠르 살레야의 레스토랑. 해산물이 질릴 때 찾기 좋은 대안으로, 니스 현지인들이 즐겨 찾는 곳이다."
+          "latitude": 48.8706101,
+          "longitude": 2.2938337,
+          "googleMapsId": "ChIJEWaO6-5v5kcRhO55Cimnzx4",
+          "googleMapsUri": "https://maps.google.com/?cid=2220176936028204676&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "tifp9zuDE7k",
       "title": "프랑스 전성기를 그대로 구현한 1박에 무려 450만원짜리 베르사유 궁전 호텔의 모습은? 프라이빗 투어까지 잊지 못할 하룻밤ㅣLe Grand Contrôle [EN]",
-      "concept": "베르사유 궁전 호텔 프라이빗 투어, 1박 450만원",
+      "concept": "Le",
       "locations": [
         {
           "name": "Le Grand Contrôle",
-          "displayName": "Airelles Château de Versailles, Le Grand Contrôle",
-          "address": "12 Rue de l'Indépendance Américaine, 78000 Versailles, 프랑스",
+          "address": "Le Grand Contrôle, 12 Rue de l'Indépendance Américaine, 78000 Versailles, 프랑스",
+          "description": "다음 편에 베르사유 궁전 호텔 디너가 공개됩니다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=tifp9zuDE7k",
           "latitude": 48.8013233,
           "longitude": 2.1199224,
-          "googleMapsId": "ChIJp9eEe6x95kcRx9ZXHHSdrPc",
-          "googleMapsUri": "https://maps.google.com/?cid=17846812545379718855&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=tifp9zuDE7k",
-          "description": "베르사유 궁전 호텔의 프라이빗 투어를 소개하는 영상에서 방문한 1박 450만원의 럭셔리 호텔. 프랑스 전성기를 그대로 구현한 숙소로, 잊지 못할 하룻밤을 보낼 수 있다."
+          "googleMapsId": "ChIJ6U6dbL995kcR3XxTB_Jvq4c",
+          "googleMapsUri": "https://maps.google.com/?cid=9776030501433474269&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     }
