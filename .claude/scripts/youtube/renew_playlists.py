@@ -436,6 +436,9 @@ def write_primary_transcript(run_dir, metadata, captions, audio, onscreen):
     return value
 
 
+CODEX_SDK = "openai-codex==0.160.0"
+
+
 def command_uv(*args):
     return ["uv", "run", *args]
 
@@ -604,6 +607,8 @@ def process_video(
 
     run_checked(
         command_uv(
+            "--with",
+            CODEX_SDK,
             "python",
             str(SCRIPT_DIR / "review_transcripts.py"),
             str(run_dir),
@@ -630,6 +635,8 @@ def process_video(
 
     run_checked(
         command_uv(
+            "--with",
+            CODEX_SDK,
             "python",
             str(SCRIPT_DIR / "extract_locations_headless.py"),
             str(run_dir),

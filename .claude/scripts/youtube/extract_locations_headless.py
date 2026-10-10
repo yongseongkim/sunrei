@@ -4,7 +4,7 @@ This script does not geocode, update a Sunrei, or upload data. It writes
 ``location_candidates.json`` with ``review_pending`` status.
 
 Usage:
-    uv run python .claude/scripts/youtube/extract_locations_headless.py WORKSPACE
+    uv run --with openai-codex==0.160.0 python .claude/scripts/youtube/extract_locations_headless.py WORKSPACE
 """
 
 import argparse
@@ -21,6 +21,7 @@ from codex_headless import run_structured
 from evidence_timeline import ensure_timeline
 
 SCHEMA_FILE = Path(__file__).with_name("location_candidates.schema.json")
+PROMPT_FILE = Path(__file__).parent / "prompts" / "extract_locations.md"
 CONFIDENCE = {"low": 0, "medium": 1, "high": 2}
 
 
@@ -111,38 +112,11 @@ def make_prompt(metadata, timeline, start, end):
             "events": timeline_window(timeline, start, end),
         },
     }
-    return """Extract real places that are visited, filmed, or presented as a
-destination in this YouTube video. Return only JSON matching the supplied
-schema. Do not run commands, inspect files, browse the web, or geocode.
-
-Use metadata together with the timestamped transcript, Whisper, and OCR events.
-A place supported by a creator-provided description or multiple sources is
-stronger than a name inferred from one corrupted ASR token. Preserve verified
-Korean and foreign spellings. Do not translate or normalize a name when that
-would hide a source conflict. A source marked duplicate is not independent
-support; inspect sourceStatus and origin before comparing modalities.
-
-Include restaurants, shops, attractions, buildings, viewpoints, and other
-specific destinations central to the video. Exclude places mentioned only as a
-comparison, generic streets or neighborhoods without a specific destination,
-the creator's home, sponsors, and locations inferred only from background
-scenery. Do not invent a venue name from an address, dish, or generic category.
-
-Every location must include at least one verbatim evidence quote. Label timed
-evidence as transcript, whisper, or ocr exactly as it appears in the timeline.
-Use startSeconds 0 for title or description evidence. Mark needsVerification
-when sources disagree, the exact business name is uncertain, or only weak
-OCR/ASR supports the candidate. Put unresolved conflicts in issues.
-
-Write description as two to five Korean sentences suitable for a Sunrei spot.
-Describe why the video visits the place, its relevant atmosphere or geographic
-context, and the dishes, preparation, taste, texture, or creator assessment
-actually supported by the evidence. Include useful timestamps in parentheses.
-Do not turn uncertain ASR wording into a factual claim. Keep reason separate as
-a concise explanation of why the place identity is accepted or flagged.
-
-Input:
-""" + json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+    return (
+        PROMPT_FILE.read_text(encoding="utf-8")
+        + "\n## Input Data\n\n"
+        + json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+    )
 
 
 def norm_name(value):
@@ -257,7 +231,9 @@ def main():
         args.window_seconds,
         args.overlap_seconds,
     )
-    write_json(output, merge_results(metadata, source_sha, results))
+    candidates = merge_results(metadata, source_sha, results)
+    candidates["promptSha256"] = sha256_files([PROMPT_FILE, SCHEMA_FILE])
+    write_json(output, candidates)
     print(f"review pending -> {output}")
 
 

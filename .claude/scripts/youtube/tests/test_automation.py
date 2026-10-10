@@ -8,7 +8,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(SCRIPT_DIR))
 
-from codex_headless import sanitized_environment
+from codex_headless import parse_final_response, scrubbed_environment
 from _common import jwt_is_usable, load_google_api_key
 from evidence_timeline import build_timeline, ensure_timeline
 from extract_locations_headless import merge_results, timeline_window
@@ -331,7 +331,9 @@ class RenewalTests(unittest.TestCase):
             os.environ["AWS_ACCESS_KEY_ID"] = "secret"
             os.environ["SUNREI_ADMIN_TOKEN"] = "secret"
             os.environ["PATH"] = "/bin"
-            env = sanitized_environment()
+            with scrubbed_environment():
+                env = dict(os.environ)
+            restored = dict(os.environ)
         finally:
             os.environ.clear()
             os.environ.update(previous)
@@ -339,6 +341,12 @@ class RenewalTests(unittest.TestCase):
         self.assertNotIn("AWS_ACCESS_KEY_ID", env)
         self.assertNotIn("SUNREI_ADMIN_TOKEN", env)
         self.assertEqual(env["PATH"], "/bin")
+        self.assertEqual(restored["AWS_ACCESS_KEY_ID"], "secret")
+
+    def test_codex_final_response_accepts_fenced_json(self):
+        self.assertEqual(parse_final_response('```json\n{"locations": []}\n```'), {"locations": []})
+        with self.assertRaises(RuntimeError):
+            parse_final_response("[]")
 
 
 if __name__ == "__main__":

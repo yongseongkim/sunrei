@@ -75,7 +75,7 @@ Set `approved` to `false` and preserve every segment boundary and timestamp.
 Run the isolated headless reviewer:
 
 ```bash
-uv run python .claude/scripts/youtube/review_transcripts.py "{RUN_DIR}" --all
+uv run --with openai-codex==0.160.0 python .claude/scripts/youtube/review_transcripts.py "{RUN_DIR}" --all
 ```
 
 The reviewer receives the video title and description, the target transcript
@@ -103,7 +103,7 @@ Do not bulk-accept medium- or low-confidence proposals. After explicit review,
 set each proposal to `accept` or `reject` and rebuild without another model call:
 
 ```bash
-uv run python .claude/scripts/youtube/review_transcripts.py "{RUN_DIR}" \
+uv run --with openai-codex==0.160.0 python .claude/scripts/youtube/review_transcripts.py "{RUN_DIR}" \
   --all --max-new-chunks 0
 ```
 
@@ -127,7 +127,7 @@ Use this file, together with `metadata.json`, as the LLM input for location and
 context extraction:
 
 ```bash
-uv run python .claude/scripts/youtube/extract_locations_headless.py \
+uv run --with openai-codex==0.160.0 python .claude/scripts/youtube/extract_locations_headless.py \
   "{RUN_DIR}" --restart
 ```
 

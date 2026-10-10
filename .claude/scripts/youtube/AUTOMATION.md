@@ -18,8 +18,9 @@ check, but never changes the Admin API, a Sunrei, or its spots.
    - OCR of text visible in the video
 6. Normalize the reviewed transcript, Whisper output, and OCR into one
    timestamp-ordered `evidence_timeline.json`.
-7. Give Codex the video metadata and the relevant timeline window, then extract
-   location candidates and supporting details.
+7. Give Codex (Python SDK) the video metadata and the relevant timeline
+   window, then extract location candidates and supporting details with the
+   shared rules in `prompts/extract_locations.md`.
 8. Save the run as `review_pending`.
 9. With `--upload`, gzip JSON artifacts and upload them under an immutable S3
    run path. Raw audio and video are deleted by the evidence scripts and are

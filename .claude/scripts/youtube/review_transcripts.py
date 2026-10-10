@@ -5,9 +5,9 @@ The source transcript is never changed. Every proposal is recorded in
 are applied to ``transcripts.reviewed.json``.
 
 Usage:
-    uv run python .claude/scripts/youtube/review_transcripts.py {ID} \
+    uv run --with openai-codex==0.160.0 python .claude/scripts/youtube/review_transcripts.py {ID} \
       --video-id VIDEO_ID
-    uv run python .claude/scripts/youtube/review_transcripts.py {ID} --all
+    uv run --with openai-codex==0.160.0 python .claude/scripts/youtube/review_transcripts.py {ID} --all
 """
 import argparse
 import copy

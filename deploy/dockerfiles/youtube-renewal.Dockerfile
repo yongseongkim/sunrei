@@ -2,7 +2,7 @@ FROM ghcr.io/astral-sh/uv:0.11.26 AS uv
 
 FROM node:22-bookworm-slim
 
-ARG CODEX_VERSION=0.150.1
+ARG CODEX_VERSION=0.160.0
 
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
