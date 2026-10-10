@@ -120,12 +120,14 @@ class YoutubeService(
 
             val memberships = YoutubePlaylistVideos.select { YoutubePlaylistVideos.playlistId eq playlistId }
                 .associateBy { it[YoutubePlaylistVideos.videoId] }
-            val remoteIds = request.videos.map { it.id }.toSet()
+            // 같은 영상이 플레이리스트에 두 번 들어 있을 수 있어서 첫 위치만 쓴다.
+            val videos = request.videos.distinctBy { it.id }
+            val remoteIds = videos.map { it.id }.toSet()
             val existingVideoIds = if (remoteIds.isEmpty()) emptySet() else
                 YoutubeVideos.select { YoutubeVideos.id inList remoteIds }.map { it[YoutubeVideos.id] }.toSet()
 
             val added = mutableListOf<String>()
-            request.videos.forEach { video ->
+            videos.forEach { video ->
                 if (video.id in existingVideoIds) {
                     YoutubeVideos.update({ YoutubeVideos.id eq video.id }) { stmt ->
                         stmt[title] = video.title.take(255)
