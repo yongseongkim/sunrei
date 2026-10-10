@@ -161,29 +161,20 @@ youtubeRenewal:
     size: 10Gi
   temporaryStorage:
     sizeLimit: 8Gi
+  # Admin API the collector stores collection state through; defaults to the in-cluster server service.
+  apiUrl: ""
   env:
+    # The Maps browser key is referrer-restricted, so the Data API and Places API use a server key.
     - name: YOUTUBE_API_KEY
       valueFrom:
         secretKeyRef:
           name: sunrei-secrets
-          key: google-maps-api-key
+          key: youtube-api-key
     - name: AUTH_JWT_SECRET
       valueFrom:
         secretKeyRef:
           name: sunrei-secrets
           key: auth-jwt-secret
-    - name: AWS_ACCESS_KEY_ID
-      valueFrom:
-        secretKeyRef:
-          name: sunrei-secrets
-          key: aws-access-key-id
-    - name: AWS_SECRET_ACCESS_KEY
-      valueFrom:
-        secretKeyRef:
-          name: sunrei-secrets
-          key: aws-secret-access-key
-    - name: AWS_REGION
-      value: ap-northeast-2
 
 # Cloudflare Tunnel Configuration
 # Services are exposed via Cloudflare Tunnel (cloudflared)

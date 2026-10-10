@@ -8,4 +8,4 @@ mkdir -p "$ROOT/.claude/workspace/youtube/automation/logs"
 cd "$ROOT"
 
 exec /opt/homebrew/bin/uv run python \
-  .claude/scripts/youtube/renew_playlists.py --commit --upload
+  .claude/scripts/youtube/renew_playlists.py --commit

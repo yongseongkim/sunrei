@@ -1,150 +1,90 @@
 # YouTube Renewal Automation
 
-The renewal job checks selected playlists for new videos and prepares a
-multimodal, reviewable ingest. It reads production Sunrei spots as a duplicate
-check, but never changes the Admin API, a Sunrei, or its spots.
+The renewal job checks registered playlists for new videos, extracts location
+candidates, and stores everything in the Sunrei DB through the admin YouTube
+API (`/admin/youtube/*`). Candidates become Sunrei spots only when an admin
+approves them, so the job never changes a Sunrei itself.
+
+Because all state lives behind the API, the job runs on any machine that
+reaches it. `SUNREI_API_URL` selects the server; it defaults to production
+(`https://sunrei-api.yongseongkimm.com`), and the CronJob uses the in-cluster
+service.
 
 ## Workflow
 
-1. Read `.claude/config/youtube-renewal.json`.
-2. Fetch every enabled playlist from the YouTube Data API.
-3. Read the configured production Sunrei and collect video IDs from its spot
-   links. If this lookup fails, stop processing that playlist.
-4. Compare remote video IDs with the production IDs, the latest S3 playlist
-   baseline, existing playlist workspace, and local automation state.
-5. For each new video, attempt all three evidence sources:
-   - YouTube captions
-   - Whisper transcription of the audio
-   - OCR of text visible in the video
-6. Normalize the reviewed transcript, Whisper output, and OCR into one
-   timestamp-ordered `evidence_timeline.json`.
-7. Give an agent the video metadata and the relevant timeline window, then
-   extract location candidates and supporting details with the shared rules in
-   `prompts/extract_locations.md`. Codex (Python SDK) runs first; when it
-   fails, for example on a usage limit, Claude Code (`claude -p`) runs the same
-   prompt and schema. `STRUCTURED_AGENTS` changes the order.
-8. Save the run as `review_pending`.
-9. With `--upload`, gzip JSON artifacts and upload them under an immutable S3
-   run path. Raw audio and video are deleted by the evidence scripts and are
-   never artifacts.
+1. List the playlists with `syncEnabled` from the API.
+2. Fetch each playlist and its video details from the YouTube Data API.
+3. Send the current video list to `PUT /admin/youtube/playlists/{id}/videos`.
+   The server records new videos as `PENDING`, marks missing ones as removed,
+   and returns the videos waiting for processing (`PENDING`, then `FAILED`).
+4. For each pending video, up to `--max-videos` per run:
+   - set it to `PROCESSING` and attempt captions, Whisper, and video OCR;
+   - store each usable source as a `CAPTIONS`, `WHISPER`, or `OCR` text and
+     record each failed source as an attempt;
+   - review the primary transcript and store `TRANSCRIPT_REVIEWED` and
+     `TRANSCRIPT_REVIEW`;
+   - merge the sources into one timestamp-ordered timeline and store it as
+     `TIMELINE`;
+   - extract location candidates with the shared rules in
+     `prompts/extract_locations.md`, geocode each candidate as a suggestion,
+     and store the extraction run with its raw output and candidates;
+   - set the video to `REVIEW_PENDING`, or `COMPLETED` when no candidate was
+     found.
+5. A failure sets the video to `FAILED` with the stage and error, and a later
+   run retries it.
 
-The job retries failed videos on a later run. A video becomes known only after
-all local review artifacts are ready. Videos removed from a playlist are
-reported but never deleted from S3 or Sunrei automatically.
+Codex (Python SDK) runs the agents first; when it fails, for example on a usage
+limit, Claude Code (`claude -p`) runs the same prompt and schema.
+`STRUCTURED_AGENTS` changes the order.
 
-## Playlist Policy
+Intermediate files are cached under `$SUNREI_YOUTUBE_AUTOMATION_ROOT/runs/{videoId}`
+so a retry skips finished steps, and they are deleted once the video is stored.
+A video left `PROCESSING` by an interrupted run is reset to `FAILED` after
+`--stale-hours` (default 24).
 
-Playlist inclusion belongs in `.claude/config/youtube-renewal.json`, so the
-policy is reviewed in Git. Dynamic state and downloaded results belong under
-`.claude/workspace/youtube/automation/`, which is ignored by Git.
+## Playlists
 
-Each existing playlist entry includes its production `sunreiId`. The current
-policy enables the selected active food and travel playlists, disables the
-completed Street Food Fighter seasons, and leaves the Korea and Singapore
-playlists outside daily renewal. An explicit `--playlist` argument can run a
-disabled entry for testing or backfill.
+Register a playlist with the Sunrei that approved places go to. By default its
+current videos are recorded as `SKIPPED`, so only videos added later are
+processed; `--baseline none` queues every current video.
+
+```bash
+uv run python .claude/scripts/youtube/youtube_playlists.py list
+uv run python .claude/scripts/youtube/youtube_playlists.py add PLAYLIST_ID --sunrei SUNREI_ID
+uv run python .claude/scripts/youtube/youtube_playlists.py update PLAYLIST_ID --disable
+```
+
+`migrate_legacy_state.py` moves the earlier file-based state (the playlist list
+and S3 baselines) into the DB once. It is a dry run unless `--commit` is given.
 
 ## Commands
 
-Inspect new videos without changing local state:
+Show new and pending videos without changing anything:
 
 ```bash
 uv run python .claude/scripts/youtube/renew_playlists.py
 ```
 
-Mark the current remote playlist contents as the initial baseline without
-processing old videos:
-
-```bash
-uv run python .claude/scripts/youtube/renew_playlists.py --bootstrap --commit
-```
-
-Process at most one new video locally:
+Process at most one pending video, optionally from a specific playlist:
 
 ```bash
 uv run python .claude/scripts/youtube/renew_playlists.py \
-  --commit --max-videos 1
+  --commit --max-videos 1 [--playlist PLAYLIST_ID]
 ```
 
-Process and upload pending artifacts:
+An explicit `--playlist` also runs a playlist whose sync is disabled.
 
-```bash
-uv run python .claude/scripts/youtube/renew_playlists.py \
-  --commit --upload
-```
+## Credentials
 
-Back up existing workspace JSON and create a fresh baseline for every
-configured playlist:
-
-```bash
-uv run --with boto3 python \
-  .claude/scripts/youtube/sync_workspace_s3.py --commit
-```
-
-Run this command before removing historical workspace data from Git. Without
-`--commit`, it validates the JSON, checks for credential patterns, fetches the
-current YouTube and production baselines, and prints the upload plan without
-changing S3.
-
-Do not use `--bootstrap` after normal operation starts. It intentionally treats
-every current remote video as already known.
-
-## Artifact Layout
-
-Each uploaded run uses this immutable prefix:
-
-```text
-s3://sunrei-resources/youtube/artifacts/v1/
-  playlists/{playlistId}/videos/{videoId}/runs/{runId}/
-```
-
-JSON files are stored as `.json.gz` with raw and compressed SHA-256 values in
-`manifest.json`. The per-video `latest.json` pointer changes only after every
-run object and its manifest upload successfully.
-
-The immutable run keeps both source and derived artifacts:
-
-| Role | Files |
-| --- | --- |
-| Source | `metadata.json`, `captions.json`, `audio_transcript.json`, `onscreen_text.json` |
-| Normalized source | `transcripts.json`, `evidence_timeline.json` |
-| Review and derived | `transcript_review.json`, `transcripts.reviewed.json`, `location_candidates.json` |
-
-`metadata.json` contains the channel, title, description, playlist, and video
-URL. `evidence_timeline.json` records every selected transcript, Whisper, and
-OCR segment with its source and start/end time. The raw modality files remain
-available so a bad timeline or Codex result can be reproduced and debugged.
-Every manifest entry includes its artifact role and SHA-256.
-
-Playlist baselines and historical workspace snapshots use separate immutable
-paths:
-
-```text
-playlists/{playlistId}/snapshots/{snapshotId}/
-playlists/{playlistId}/workspace-snapshots/{snapshotId}/
-workspaces/{workspaceId}/snapshots/{snapshotId}/
-```
-
-A playlist baseline stores the latest channel, playlist, video title,
-description, duration, thumbnail, and the known-video state used for renewal.
-A workspace snapshot preserves the existing JSON hierarchy, including source,
-review, derived, and intermediate files needed for debugging. Raw media,
-automation runtime state, logs, and non-JSON files are excluded.
-
-Each snapshot has a manifest with raw and compressed SHA-256 values. The sync
-command reads every uploaded object back and verifies both hashes before it
-updates the corresponding `latest.json` or `workspace-latest.json` pointer. If
-the artifact store is public, it also verifies the pointer without AWS
-credentials.
-
-The S3 uploader decrypts the existing `aws-access-key-id` and
-`aws-secret-access-key` values from `deploy/secrets/secrets.enc.yaml`. Codex
-and Claude run in an empty temporary directory without tools, AWS, SOPS,
-Google, GitHub, YouTube, Anthropic API, or Admin API credentials.
-
-The renewal process itself uses a short-lived Admin JWT to read each production
-Sunrei before discovery. The token is not passed to an agent, and the automation
-does not issue Admin API write requests.
+- `YOUTUBE_API_KEY`: a server key for the YouTube Data API and Places API. The
+  Maps key in `google-maps-api-key` is referrer-restricted and cannot be used.
+  Locally, the key is read from `application-local.conf`.
+- Admin API: a short-lived admin JWT minted from `AUTH_JWT_SECRET`, or locally
+  from `deploy/secrets/secrets.enc.yaml` with SOPS. The token is re-minted
+  before it expires during a long run.
+- Codex and Claude run in an empty temporary directory without tools and
+  without SOPS, Google, GitHub, YouTube, Anthropic API, or Admin API
+  credentials. The admin token is never passed to an agent.
 
 ## Scheduling
 
@@ -155,14 +95,9 @@ one.
 
 The worker uses a retained PVC for:
 
-- `state.json` and resumable run artifacts
+- cached run files of videos still in progress
 - the Codex `auth.json` cache refreshed by the CLI
 - uv dependency and Whisper model caches
-
-When a configured playlist has no local state, the worker restores its latest
-S3 playlist baseline before discovery. This also covers a new PVC or a playlist
-enabled after the PVC was created, without treating the existing catalog as
-new videos.
 
 Prepare the SOPS-encrypted login seed before enabling the first job. Sign in
 to Codex in a dedicated `CODEX_HOME`, so the job does not share a refresh token
@@ -190,25 +125,22 @@ kubectl -n sunrei create job --from=cronjob/sunrei-youtube-renewal \
 kubectl -n sunrei logs -f job/sunrei-youtube-renewal-manual
 ```
 
-The local launchd definition remains available for development and runs every
-day at 04:30 local time:
+YouTube blocks captions and media downloads from datacenter IPs, so the
+evidence stage can fail on the cluster. The local launchd definition runs the
+same job from a residential connection every day at 04:30 local time:
 
 ```text
 .claude/launchd/com.yongseongkim.sunrei-youtube-renewal.plist
 ```
 
-Do not run launchd and the k3s CronJob at the same time. Although both are
-resumable, their local state stores are independent and they can process the
-same pending video twice.
+Both runners share the DB state, and `PROCESSING` marks a video in progress,
+but run only one of them on a schedule to avoid processing the same video
+twice.
 
 ## Approval Boundary
 
-`transcript_review.json` corrections and `location_candidates.json` locations
-start with `decision: pending`. S3 upload preserves that state for review; it
-does not approve the data. Geocoding, updating `locations.json`, and calling the
-Admin API remain separate approved actions.
-
-After accepting transcript corrections, rebuild `transcripts.reviewed.json`
-with `review_transcripts.py --max-new-chunks 0`, rebuild the timeline with
-`evidence_timeline.py --force`, then rerun location extraction with
-`extract_locations_headless.py --restart`.
+Extracted candidates start as `PENDING`. An admin approves or rejects each one
+with `PATCH /admin/youtube/extracted-places/{id}`; approval adds a spot to the
+playlist's Sunrei, using the reviewer's place or the geocoded suggestion. The
+video becomes `COMPLETED` once no candidate is pending. Rejected candidates
+remain for reference.

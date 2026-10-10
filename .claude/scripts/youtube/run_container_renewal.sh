@@ -28,4 +28,4 @@ if [ "$codex_ready" = false ] && [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
 fi
 
 cd /app
-exec uv run python .claude/scripts/youtube/renew_playlists.py --commit --upload
+exec uv run python .claude/scripts/youtube/renew_playlists.py --commit

@@ -103,6 +103,8 @@ spec:
                   value: /var/lib/sunrei/uv-cache
                 - name: XDG_CACHE_HOME
                   value: /var/lib/sunrei/cache
+                - name: SUNREI_API_URL
+                  value: {{ default (printf "http://%s-server:%v" (include "sunrei.fullname" .) .Values.server.service.port) .Values.youtubeRenewal.apiUrl | quote }}
                 - name: CLAUDE_CODE_OAUTH_TOKEN
                   valueFrom:
                     secretKeyRef:

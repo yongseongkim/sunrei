@@ -108,32 +108,28 @@ files so the user can stop at any checkpoint and continue later.
 
 ## Daily Renewal
 
-Playlist policy is stored in `.claude/config/youtube-renewal.json`. To inspect
-enabled playlists without changing state, run:
+Registered playlists, their videos, collected texts, and extraction runs live in
+the Sunrei DB behind `/admin/youtube/*`. To list playlists and inspect new or
+pending videos without changing anything, run:
 
 ```bash
+uv run python .claude/scripts/youtube/youtube_playlists.py list
 uv run python .claude/scripts/youtube/renew_playlists.py
 ```
 
-A committed run discovers new videos, collects captions, Whisper output, and
-video OCR, then builds a timestamped evidence timeline and runs the structured
-Codex reviewers:
+A committed run syncs each playlist's videos, collects captions, Whisper output,
+and video OCR for pending videos, builds a timestamped evidence timeline, runs
+the transcript and location agents, and stores every text and candidate through
+the API:
 
 ```bash
-uv run python .claude/scripts/youtube/renew_playlists.py --commit [--upload]
+uv run python .claude/scripts/youtube/renew_playlists.py --commit [--max-videos N] [--playlist ID]
 ```
 
-Before discovery, the job reads video IDs from the configured production
-Sunrei's spot links. If that lookup fails, it skips the playlist instead of
-risking duplicate work. The job is resumable and stops at `review_pending`. It
-does not geocode, publish, change Sunrei spots, or update the channel registry.
-Use `youtube-create-sunrei` only after transcript corrections and location
-candidates have explicit decisions.
+Candidates wait as `PENDING` until an admin approves them, and approval adds the
+spot to the playlist's Sunrei. The job never changes a Sunrei by itself. The
+agents receive the metadata plus one relevant timeline window at a time; they do
+not receive the video or raw media.
 
-S3 runs retain `metadata.json`, each raw text source, and the normalized
-`evidence_timeline.json` alongside the derived review files. Codex receives the
-metadata plus one relevant timeline window at a time; it does not receive the
-video or raw media.
-
-Operational details, S3 paths, and launchd setup are documented in
+Operational details, credentials, and scheduling are documented in
 `.claude/scripts/youtube/AUTOMATION.md`.

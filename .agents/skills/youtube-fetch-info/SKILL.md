@@ -200,9 +200,7 @@ extraction.
 
 ## Automated Playlist Checks
 
-Do not overwrite a curated `video_info.json` during a scheduled check. Keep the
-playlist IDs and enabled flags in `.claude/config/youtube-renewal.json`, and let
-`renew_playlists.py` compare the live playlist with its local state. Dynamic
-metadata and run state belong under
-`.claude/workspace/youtube/automation/`; they are uploaded as artifacts when
-requested and are not committed to Git.
+Do not overwrite a curated `video_info.json` during a scheduled check. Register
+playlists for periodic collection with `youtube_playlists.py add`; the collector
+keeps their videos and processing state in the Sunrei DB through the admin API,
+not in workspace files.

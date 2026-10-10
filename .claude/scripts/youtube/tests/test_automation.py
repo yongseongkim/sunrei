@@ -14,16 +14,19 @@ import structured_agent
 from _common import jwt_is_usable, load_google_api_key
 from evidence_timeline import build_timeline, ensure_timeline
 from extract_locations_headless import merge_results, timeline_window
+from collection_api import CollectionApi
+from migrate_legacy_state import handled_video_ids, legacy_baseline
 from renew_playlists import (
-    discover,
+    first_timestamp,
     parse_json_output,
-    restore_state_from_baselines,
+    place_inputs,
+    processing_order,
+    reset_stale_processing,
+    store_evidence_texts,
     write_primary_transcript,
-    youtube_video_id,
 )
 from review_transcripts import update_reviewed_transcript
-from sync_workspace_s3 import validate_json_artifact, workspace_snapshot_plans
-from upload_artifacts import artifact_entries, manifest_value
+from youtube_data import duration_seconds, video_inputs
 
 
 class RenewalTests(unittest.TestCase):
@@ -44,90 +47,146 @@ class RenewalTests(unittest.TestCase):
         payload = base64.urlsafe_b64encode(b'{"exp":1}').rstrip(b"=").decode()
         self.assertFalse(jwt_is_usable(f"header.{payload}.signature"))
 
-    def test_discover_includes_failed_before_new(self):
-        remote = [
-            {"videoId": "known", "position": 0},
-            {"videoId": "failed", "position": 1},
-            {"videoId": "new", "position": 2},
+    def test_processing_order_puts_new_videos_before_failures(self):
+        videos = [
+            {"id": "failed", "status": "FAILED"},
+            {"id": "first", "status": "PENDING"},
+            {"id": "second", "status": "PENDING"},
         ]
-        state = {
-            "knownVideoIds": ["known"],
-            "videos": {"failed": {"status": "failed"}},
+
+        self.assertEqual([video["id"] for video in processing_order(videos)], ["first", "second", "failed"])
+
+    def test_stale_processing_videos_are_reset_to_failed(self):
+        updates = []
+
+        class FakeApi:
+            def list_videos(self, playlist_id=None, status=None):
+                return [
+                    {"id": "stale", "stage": "extraction", "updatedAt": "2020-01-01T00:00:00Z"},
+                    {"id": "running", "stage": "evidence", "updatedAt": "2999-01-01T00:00:00.123Z"},
+                ]
+
+            def update_video(self, video_id, **fields):
+                updates.append((video_id, fields))
+
+        reset_stale_processing(FakeApi(), "playlist", 24)
+
+        self.assertEqual(updates, [("stale", {"status": "FAILED", "error": "interrupted during extraction"})])
+
+    def test_duration_and_video_inputs_follow_the_sync_api(self):
+        self.assertEqual(duration_seconds("PT1H2M3S"), 3723)
+        self.assertEqual(duration_seconds("P1DT1S"), 86401)
+        self.assertIsNone(duration_seconds(""))
+        remote = {"videos": [{"videoId": "abc", "title": "T" * 300, "position": 4, "channelName": "Ch"}]}
+        details = {"abc": {"duration": "PT10M", "publishedAt": "2026-01-01T00:00:00Z", "thumbnailUrl": "u"}}
+
+        [video] = video_inputs(remote, details)
+        self.assertEqual(video["id"], "abc")
+        self.assertEqual(len(video["title"]), 255)
+        self.assertEqual(video["durationSeconds"], 600)
+        self.assertEqual(video["channelTitle"], "Ch")
+        self.assertEqual(video["position"], 4)
+
+    def test_evidence_texts_are_stored_and_failures_become_attempts(self):
+        calls = []
+
+        class FakeApi:
+            def create_text(self, video_id, kind, **fields):
+                calls.append(("text", kind, fields))
+                return {"id": f"YT-{kind}"}
+
+            def update_video(self, video_id, **fields):
+                calls.append(("attempt", fields["stage"], fields["error"]))
+
+        evidence = {
+            "captions": {"videoId": "abc", "error": "Sign in to confirm you're not a bot"},
+            "audio": {
+                "videoId": "abc",
+                "language": "ko",
+                "segments": [{"text": "안녕", "start": 1.5, "end": 3.0}],
+            },
+            "onscreen": {"videoId": "abc", "error": "disabled"},
         }
 
-        self.assertEqual([item["videoId"] for item in discover(remote, state)], ["failed", "new"])
+        ids = store_evidence_texts(FakeApi(), "abc", evidence, {"whisperModel": "small"})
 
-    def test_discover_excludes_production_and_terminal_videos(self):
-        remote = [
-            {"videoId": "production", "position": 0},
-            {"videoId": "reviewed", "position": 1},
-            {"videoId": "new", "position": 2},
-        ]
-        state = {
-            "knownVideoIds": [],
-            "videos": {"reviewed": {"status": "review_pending"}},
+        self.assertEqual(ids, ["YT-WHISPER"])
+        self.assertEqual(calls[0], ("attempt", "captions", "Sign in to confirm you're not a bot"))
+        _, kind, fields = calls[1]
+        self.assertEqual(kind, "WHISPER")
+        self.assertEqual(fields["segments"], [{"start": 1.5, "end": 3.0, "text": "안녕"}])
+        self.assertEqual(fields["params"]["model"], "small")
+        self.assertEqual(fields["payload"], {"videoId": "abc", "language": "ko"})
+        self.assertEqual(len(calls), 2)
+
+    def test_place_inputs_map_candidates_without_a_geocoding_key(self):
+        candidates = {
+            "locations": [
+                {
+                    "name": "Il San Pietro",
+                    "aliases": ["산 피에트로"],
+                    "category": "hotel",
+                    "area": "Positano",
+                    "description": "설명",
+                    "reason": "자막과 OCR이 일치",
+                    "confidence": "high",
+                    "needsVerification": False,
+                    "evidence": [
+                        {"source": "title", "quote": "Il San Pietro", "startSeconds": 0},
+                        {"source": "ocr", "quote": "IL SAN PIETRO", "startSeconds": 95.4},
+                        {"source": "whisper", "quote": "산 피에트로", "startSeconds": 80.2},
+                    ],
+                }
+            ]
         }
 
-        self.assertEqual(
-            [item["videoId"] for item in discover(remote, state, {"production"})],
-            ["new"],
-        )
+        [place] = place_inputs(candidates, None)
+        self.assertEqual(place["confidence"], "HIGH")
+        self.assertEqual(place["timestampSeconds"], 80)
+        self.assertIsNone(place["place"])
+        self.assertIn("geocode skipped", place["geocodeWarning"])
+        self.assertIsNone(first_timestamp([{"source": "description", "quote": "x", "startSeconds": 0}]))
 
-    def test_restore_state_combines_s3_playlist_baselines(self):
-        config = {
-            "artifactStore": {
-                "bucket": "bucket",
-                "region": "region",
-                "prefix": "youtube/artifacts/v1",
-            }
-        }
-        playlists = [{"id": "one"}, {"id": "two"}]
+    def test_collection_api_reuses_a_token_until_it_nears_expiry(self):
+        import base64
+        import time
+
+        def token(expires_in):
+            payload = json.dumps({"exp": int(time.time()) + expires_in}).encode()
+            return "h." + base64.urlsafe_b64encode(payload).rstrip(b"=").decode() + ".s"
+
+        minted = [token(3600), token(7200)]
+        api = CollectionApi(base_url="http://example.invalid", token_provider=lambda: minted.pop(0))
+        first = api._token()
+        self.assertEqual(api._token(), first)
+        api.token = token(60)
+        self.assertNotEqual(api._token(), first)
+        self.assertEqual(minted, [])
+
+    def test_legacy_baseline_requeues_unfinished_runs(self):
+        prefix = "https://sunrei-resources.s3.ap-northeast-2.amazonaws.com/youtube/artifacts/v1/playlists/one/"
         responses = {
-            "https://bucket.s3.region.amazonaws.com/youtube/artifacts/v1/playlists/one/latest.json": {
+            prefix + "latest.json": {
                 "playlistId": "one",
                 "stateKey": "youtube/artifacts/v1/playlists/one/snapshots/run/state.json.gz",
             },
-            "https://bucket.s3.region.amazonaws.com/youtube/artifacts/v1/playlists/one/snapshots/run/state.json.gz": {
+            prefix + "snapshots/run/state.json.gz": {
                 "schemaVersion": 1,
                 "playlistId": "one",
-                "knownVideoIds": ["video-one"],
-                "videos": {},
-            },
-            "https://bucket.s3.region.amazonaws.com/youtube/artifacts/v1/playlists/two/latest.json": {
-                "playlistId": "two",
-                "stateKey": "youtube/artifacts/v1/playlists/two/snapshots/run/state.json.gz",
-            },
-            "https://bucket.s3.region.amazonaws.com/youtube/artifacts/v1/playlists/two/snapshots/run/state.json.gz": {
-                "schemaVersion": 1,
-                "playlistId": "two",
-                "knownVideoIds": ["video-two"],
-                "videos": {},
+                "knownVideoIds": ["done", "reviewing"],
+                "videos": {"reviewing": {"status": "review_pending"}, "approved": {"status": "approved"}},
             },
         }
         reads = []
 
         def reader(url, compressed=False):
-            reads.append((url, compressed))
+            reads.append(compressed)
             return responses[url]
 
-        state = restore_state_from_baselines(config, playlists, reader=reader)
+        baseline = legacy_baseline("one", reader=reader)
 
-        self.assertEqual(state["playlists"]["one"]["knownVideoIds"], ["video-one"])
-        self.assertEqual(state["playlists"]["two"]["knownVideoIds"], ["video-two"])
-        self.assertEqual([compressed for _, compressed in reads], [False, True, False, True])
-
-    def test_youtube_video_id_supports_spot_link_formats(self):
-        expected = "aDcCeWReTG0"
-        links = [
-            f"https://www.youtube.com/watch?v={expected}&t=30",
-            f"https://youtu.be/{expected}?t=30",
-            f"https://www.youtube.com/shorts/{expected}",
-            f"https://www.youtube.com/embed/{expected}",
-            expected,
-        ]
-
-        self.assertEqual([youtube_video_id(link) for link in links], [expected] * 5)
-        self.assertIsNone(youtube_video_id("https://example.com/not-youtube"))
+        self.assertEqual(reads, [False, True])
+        self.assertEqual(handled_video_ids(baseline), {"done", "approved"})
 
     def test_parse_json_output_ignores_progress_logs(self):
         value = {
@@ -271,61 +330,6 @@ class RenewalTests(unittest.TestCase):
         self.assertEqual(merged["locations"][0]["confidence"], "high")
         self.assertEqual(merged["locations"][0]["decision"], "pending")
         self.assertEqual(len(merged["locations"][0]["evidence"]), 2)
-
-    def test_artifacts_are_gzipped_and_raw_media_is_ignored(self):
-        with tempfile.TemporaryDirectory() as temp_dir:
-            run_dir = Path(temp_dir)
-            (run_dir / "metadata.json").write_text('{"videoId":"abc"}', encoding="utf-8")
-            (run_dir / "audio.wav").write_bytes(b"raw")
-            entries = artifact_entries(run_dir, "bucket", "region", "prefix")
-
-        self.assertEqual([entry["file"] for entry in entries], ["metadata.json"])
-        self.assertEqual(entries[0]["role"], "source")
-        self.assertEqual(entries[0]["contentEncoding"], "gzip")
-        manifest = manifest_value("playlist", "abc", "run", "bucket", "region", "prefix", entries)
-        self.assertNotIn("body", manifest["artifacts"][0])
-        self.assertEqual(manifest["reviewStatus"], "pending")
-
-    def test_workspace_snapshot_keeps_json_and_skips_automation_and_raw_media(self):
-        with tempfile.TemporaryDirectory() as temp_dir:
-            workspace = Path(temp_dir)
-            playlist = workspace / "playlist"
-            playlist.mkdir()
-            (playlist / "video_info.json").write_text(
-                '{"selectedVideos":[]}', encoding="utf-8"
-            )
-            (playlist / "video.mp4").write_bytes(b"raw")
-            automation = workspace / "automation"
-            automation.mkdir()
-            (automation / "state.json").write_text("{}", encoding="utf-8")
-
-            plans = workspace_snapshot_plans(
-                workspace,
-                {"playlist"},
-                "snapshot",
-                "bucket",
-                "region",
-                "youtube/artifacts/v1",
-            )
-
-        self.assertEqual(len(plans), 1)
-        self.assertEqual(plans[0]["manifest"]["snapshotType"], "workspace_history")
-        self.assertEqual(
-            [entry["file"] for entry in plans[0]["entries"]],
-            ["video_info.json"],
-        )
-        self.assertEqual(plans[0]["entries"][0]["role"], "source")
-
-    def test_workspace_snapshot_rejects_secret_fields(self):
-        with tempfile.TemporaryDirectory() as temp_dir:
-            path = Path(temp_dir) / "data.json"
-            path.write_text(
-                '{"aws-secret-access-key":"must-not-upload"}',
-                encoding="utf-8",
-            )
-
-            with self.assertRaisesRegex(ValueError, "Sensitive key"):
-                validate_json_artifact(path)
 
     def test_codex_environment_removes_ingest_credentials(self):
         previous = dict(os.environ)

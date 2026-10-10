@@ -135,20 +135,21 @@ sops -d deploy/secrets/youtube-renewal-auth.enc.yaml | kubectl create -f -
 
 Use `kubectl replace -f -` instead of `create -f -` when rotating the seed.
 `auth.json` contains access tokens and must never be committed without SOPS
-encryption. The retained PVC stores refreshed credentials, automation state,
-dependency caches, and Whisper models.
+encryption. The retained PVC stores refreshed credentials, cached files of videos in progress,
+dependency caches, and Whisper models. Collection state lives in the DB.
 
 Required keys:
 
 | Key | Secret | Used by |
 |-----|--------|---------|
-| `google-maps-api-key` | sunrei-secrets | admin, app, YouTube renewal |
+| `google-maps-api-key` | sunrei-secrets | admin, app |
+| `youtube-api-key` | sunrei-secrets | YouTube renewal (YouTube Data API, Places API) |
 | `google-maps-map-id` | sunrei-secrets | admin |
 | `google-oauth-client-id` | sunrei-secrets | admin, app, server |
 | `google-oauth-client-secret` | sunrei-secrets | server |
 | `jwt-page-token-secret` | sunrei-secrets | server |
-| `aws-access-key-id` | sunrei-secrets | server, YouTube renewal |
-| `aws-secret-access-key` | sunrei-secrets | server, YouTube renewal |
+| `aws-access-key-id` | sunrei-secrets | server |
+| `aws-secret-access-key` | sunrei-secrets | server |
 | `auth-jwt-secret` | sunrei-secrets | server, YouTube renewal |
 | `auth.json` | sunrei-youtube-renewal-auth | YouTube renewal CronJob |
 | `database-host` | sunrei-infra-secrets | server, migration |

@@ -1,63 +1,60 @@
-"""Discover and prepare new videos from configured YouTube playlists.
+"""Collect new videos from registered YouTube playlists into the Sunrei DB.
 
-The command is a dry run unless ``--commit`` is supplied. A committed run
-collects captions, a Whisper transcript, and video OCR; runs the isolated Codex
-transcript and location reviewers; and stops at ``review_pending``. Add
-``--upload`` to store the JSON artifacts in S3. It reads production Sunrei spots
-to avoid duplicate processing, but never changes the Admin API or a Sunrei.
+Playlists, videos, and their processing status live behind the admin YouTube
+API, so the collector runs anywhere that reaches it (``SUNREI_API_URL``).
+The command is a dry run unless ``--commit`` is supplied. A committed run syncs
+each playlist's videos, collects captions, a Whisper transcript, and video OCR
+for pending videos, runs the transcript and location agents, and stores every
+text and extraction run through the API. Candidates wait for admin review, so
+no Sunrei is changed here.
 
 Usage:
     uv run python .claude/scripts/youtube/renew_playlists.py
-    uv run python .claude/scripts/youtube/renew_playlists.py --commit [--upload]
+    uv run python .claude/scripts/youtube/renew_playlists.py --commit [--max-videos N] [--playlist ID]
 """
 
 import argparse
-import copy
-import gzip
 import json
 import os
 import random
-import re
+import shutil
 import subprocess
 import sys
 import time
-import urllib.parse
-import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from _common import (
-    ROOT,
-    WS_ROOT,
-    admin_api,
-    admin_token,
-    http_json,
-    load_env,
-    load_google_api_key,
-)
+import geocode
+from _common import ROOT, WS_ROOT, load_env, load_google_api_key
+from collection_api import CollectionApi, json_string
+from youtube_data import fetch_playlist, fetch_video_details, video_inputs
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_CONFIG = ROOT / ".claude" / "config" / "youtube-renewal.json"
 AUTOMATION_ROOT = Path(
     os.environ.get("SUNREI_YOUTUBE_AUTOMATION_ROOT", WS_ROOT / "automation")
 )
-STATE_FILE = AUTOMATION_ROOT / "state.json"
 RUNS_ROOT = AUTOMATION_ROOT / "runs"
-YOUTUBE_API = "https://www.googleapis.com/youtube/v3"
-YOUTUBE_VIDEO_ID = re.compile(
-    r"(?:[?&]v=|youtu\.be/|/embed/|/shorts/)([A-Za-z0-9_-]{11})"
+PROCESSABLE = {"PENDING", "FAILED"}
+EVIDENCE_TEXTS = (
+    ("captions", "CAPTIONS"),
+    ("audio", "WHISPER"),
+    ("onscreen", "OCR"),
 )
 
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
-    parser.add_argument("--state", type=Path, default=STATE_FILE)
     parser.add_argument("--playlist", action="append", dest="playlist_ids")
     parser.add_argument("--max-videos", type=int)
-    parser.add_argument("--bootstrap", action="store_true", help="Mark current remote videos as known")
-    parser.add_argument("--commit", action="store_true", help="Write state and process new videos")
-    parser.add_argument("--upload", action="store_true", help="Upload review-pending JSON artifacts")
+    parser.add_argument(
+        "--stale-hours",
+        type=float,
+        default=24,
+        help="Treat PROCESSING videos untouched this long as interrupted",
+    )
+    parser.add_argument("--commit", action="store_true", help="Sync playlists and process pending videos")
     return parser.parse_args()
 
 
@@ -79,243 +76,8 @@ def utc_now():
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
 
-def new_run_id():
-    return datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-
-
-def youtube_get(api_key, resource, params):
-    query = dict(params)
-    query["key"] = api_key
-    url = f"{YOUTUBE_API}/{resource}?{urllib.parse.urlencode(query)}"
-    status, body = http_json("GET", url, timeout=60)
-    if status != 200:
-        raise RuntimeError(f"YouTube API {resource} failed ({status}): {str(body)[:500]}")
-    return body or {}
-
-
-def fetch_playlist(api_key, playlist_id):
-    metadata = youtube_get(
-        api_key,
-        "playlists",
-        {"id": playlist_id, "part": "snippet,contentDetails"},
-    ).get("items", [])
-    if not metadata:
-        raise RuntimeError(f"Playlist not found: {playlist_id}")
-    playlist_snippet = metadata[0].get("snippet", {})
-    videos = []
-    page_token = None
-    while True:
-        params = {
-            "playlistId": playlist_id,
-            "part": "snippet,contentDetails",
-            "maxResults": 50,
-        }
-        if page_token:
-            params["pageToken"] = page_token
-        body = youtube_get(api_key, "playlistItems", params)
-        for item in body.get("items", []):
-            snippet = item.get("snippet", {})
-            video_id = (
-                item.get("contentDetails", {}).get("videoId")
-                or snippet.get("resourceId", {}).get("videoId")
-            )
-            title = snippet.get("title", "")
-            if not video_id or title in {"Deleted video", "Private video"}:
-                continue
-            videos.append(
-                {
-                    "videoId": video_id,
-                    "title": title,
-                    "channelName": snippet.get("videoOwnerChannelTitle")
-                    or playlist_snippet.get("channelTitle", ""),
-                    "position": snippet.get("position", len(videos)),
-                    "playlistAddedAt": snippet.get("publishedAt"),
-                    "url": f"https://www.youtube.com/watch?v={video_id}",
-                }
-            )
-        page_token = body.get("nextPageToken")
-        if not page_token:
-            break
-    return {
-        "id": playlist_id,
-        "title": playlist_snippet.get("title", ""),
-        "channelId": playlist_snippet.get("channelId", ""),
-        "channelName": playlist_snippet.get("channelTitle", ""),
-        "videos": videos,
-    }
-
-
-def best_thumbnail(thumbnails):
-    for key in ("maxres", "standard", "high", "medium", "default"):
-        if thumbnails.get(key, {}).get("url"):
-            return thumbnails[key]["url"]
-    return None
-
-
-def fetch_video_details(api_key, video_ids):
-    output = {}
-    for offset in range(0, len(video_ids), 50):
-        chunk = video_ids[offset : offset + 50]
-        body = youtube_get(
-            api_key,
-            "videos",
-            {"id": ",".join(chunk), "part": "snippet,contentDetails"},
-        )
-        for item in body.get("items", []):
-            snippet = item.get("snippet", {})
-            output[item["id"]] = {
-                "description": snippet.get("description", ""),
-                "publishedAt": snippet.get("publishedAt"),
-                "duration": item.get("contentDetails", {}).get("duration"),
-                "thumbnailUrl": best_thumbnail(snippet.get("thumbnails", {})),
-                "channelId": snippet.get("channelId"),
-                "channelName": snippet.get("channelTitle"),
-            }
-    return output
-
-
-def existing_video_ids(playlist_id):
-    path = WS_ROOT / playlist_id / "video_info.json"
-    if not path.is_file():
-        return []
-    value = read_json(path)
-    return [
-        video.get("videoId")
-        for video in value.get("selectedVideos", [])
-        if video.get("videoId")
-    ]
-
-
-def youtube_video_id(link):
-    if not isinstance(link, str):
-        return None
-    value = link.strip()
-    if re.fullmatch(r"[A-Za-z0-9_-]{11}", value):
-        return value
-    match = YOUTUBE_VIDEO_ID.search(value)
-    return match.group(1) if match else None
-
-
-def production_video_ids(sunrei_id, token):
-    status, body = admin_api(
-        "GET", f"/admin/sunreis/{sunrei_id}", token, prod=True
-    )
-    if status != 200 or not isinstance(body, dict):
-        raise RuntimeError(
-            f"Production Sunrei baseline GET failed for {sunrei_id} "
-            f"(HTTP {status}): {str(body)[:500]}"
-        )
-    spots = body.get("spots")
-    if not isinstance(spots, list):
-        raise RuntimeError(f"Production Sunrei {sunrei_id} has no spots array")
-    return sorted(
-        {
-            video_id
-            for spot in spots
-            if isinstance(spot, dict)
-            for video_id in [youtube_video_id(spot.get("youtubeLink"))]
-            if video_id
-        }
-    )
-
-
-def load_state(path):
-    if not path.is_file():
-        return {"schemaVersion": 1, "updatedAt": None, "playlists": {}}
-    value = read_json(path)
-    if value.get("schemaVersion") != 1:
-        raise ValueError(f"Unsupported state schema in {path}")
-    return value
-
-
-def public_object_url(bucket, region, key):
-    encoded = urllib.parse.quote(key, safe="/")
-    return f"https://{bucket}.s3.{region}.amazonaws.com/{encoded}"
-
-
-def read_remote_json(url, compressed=False):
-    request = urllib.request.Request(url, headers={"User-Agent": "sunrei-youtube-renewal/1"})
-    try:
-        with urllib.request.urlopen(request, timeout=60) as response:
-            body = response.read()
-        if compressed:
-            body = gzip.decompress(body)
-        return json.loads(body.decode("utf-8"))
-    except (OSError, UnicodeDecodeError, json.JSONDecodeError, gzip.BadGzipFile) as error:
-        raise RuntimeError(f"Could not read playlist baseline {url}: {error}") from error
-
-
-def restore_state_from_baselines(config, playlists, reader=read_remote_json):
-    store = config["artifactStore"]
-    bucket = store["bucket"]
-    region = store["region"]
-    root_prefix = store["prefix"].strip("/")
-    state = {
-        "schemaVersion": 1,
-        "updatedAt": utc_now(),
-        "restoredFrom": "s3_playlist_baselines",
-        "playlists": {},
-    }
-    for playlist in playlists:
-        playlist_id = playlist["id"]
-        owner_prefix = f"{root_prefix}/playlists/{playlist_id}/"
-        latest_key = f"{owner_prefix}latest.json"
-        latest = reader(public_object_url(bucket, region, latest_key))
-        state_key = latest.get("stateKey", "")
-        if latest.get("playlistId") != playlist_id or not state_key.startswith(owner_prefix):
-            raise RuntimeError(f"Invalid S3 baseline pointer for playlist {playlist_id}")
-        playlist_baseline = reader(
-            public_object_url(bucket, region, state_key), compressed=True
-        )
-        if (
-            playlist_baseline.get("schemaVersion") != 1
-            or playlist_baseline.get("playlistId") != playlist_id
-            or not isinstance(playlist_baseline.get("knownVideoIds"), list)
-        ):
-            raise RuntimeError(f"Invalid S3 baseline state for playlist {playlist_id}")
-        state["playlists"][playlist_id] = {
-            key: value
-            for key, value in playlist_baseline.items()
-            if key not in {"schemaVersion", "playlistId"}
-        }
-    return state
-
-
-def playlist_state(state, playlist_id):
-    return state["playlists"].setdefault(
-        playlist_id,
-        {
-            "knownVideoIds": existing_video_ids(playlist_id),
-            "videos": {},
-            "lastCheckedAt": None,
-            "remoteVideoCount": None,
-        },
-    )
-
-
-def discover(remote_videos, current_state, external_known=None):
-    known = set(current_state.get("knownVideoIds", []))
-    known.update(external_known or [])
-    known.update(
-        video_id
-        for video_id, value in current_state.get("videos", {}).items()
-        if value.get("status") in {"review_pending", "approved"}
-    )
-    pending_ids = {
-        video_id
-        for video_id, value in current_state.get("videos", {}).items()
-        if value.get("status") not in {"review_pending", "approved"}
-    }
-    by_id = {video["videoId"]: video for video in remote_videos}
-    pending = [by_id[video_id] for video_id in pending_ids if video_id in by_id]
-    new = [
-        video
-        for video in remote_videos
-        if video["videoId"] not in known and video["videoId"] not in pending_ids
-    ]
-    return sorted(pending, key=lambda video: video.get("position", 0)) + sorted(
-        new, key=lambda video: video.get("position", 0)
-    )
+def parse_time(value):
+    return datetime.fromisoformat(value.replace("Z", "+00:00"))
 
 
 def parse_json_output(output):
@@ -530,68 +292,212 @@ def run_checked(command, timeout):
         print(result.stdout.strip(), flush=True)
 
 
-def update_run_manifest(run_dir, metadata, status, stages, error=None):
-    value = {
-        "schemaVersion": 1,
-        "playlistId": metadata["playlistId"],
-        "videoId": metadata["videoId"],
-        "runId": metadata["runId"],
-        "status": status,
-        "updatedAt": utc_now(),
-        "stages": stages,
+def text_segments(segments):
+    return [
+        {
+            "start": segment["start"],
+            "end": segment["start"] + segment["duration"],
+            "text": segment["text"],
+        }
+        for segment in segments
+    ]
+
+
+def evidence_params(source, evidence_config):
+    if source == "captions":
+        return {"tool": "youtube-transcript-api"}
+    if source == "audio":
+        return {"tool": "openai-whisper", "model": evidence_config.get("whisperModel", "base")}
+    return {
+        "tool": "easyocr",
+        "languages": evidence_config.get("ocrLanguages", ["ko", "en"]),
+        "intervalSeconds": evidence_config.get("ocrIntervalSeconds", 1.0),
     }
+
+
+def store_evidence_texts(api, video_id, evidence, evidence_config):
+    """Store each usable evidence source and record failed ones as attempts."""
+    text_ids = []
+    for source, kind in EVIDENCE_TEXTS:
+        value = evidence[source]
+        if not has_segments(value):
+            error = value.get("error") if isinstance(value, dict) else None
+            if error and error != "disabled":
+                api.update_video(video_id, stage=source, error=str(error)[-2000:])
+            continue
+        segments = normalized_segments(value)
+        created = api.create_text(
+            video_id,
+            kind,
+            segments=text_segments(segments),
+            language=value.get("language"),
+            full_text=" ".join(segment["text"] for segment in segments),
+            payload={key: item for key, item in value.items() if key != "segments"} or None,
+            params=evidence_params(source, evidence_config),
+        )
+        text_ids.append(created["id"])
+    return text_ids
+
+
+def store_review_texts(api, video_id, run_dir):
+    text_ids = []
+    reviewed_path = run_dir / "transcripts.reviewed.json"
+    if reviewed_path.is_file():
+        video = read_json(reviewed_path)["videos"][0]
+        segments = normalized_segments(video)
+        created = api.create_text(
+            video_id,
+            "TRANSCRIPT_REVIEWED",
+            segments=text_segments(segments),
+            language=video.get("language"),
+            full_text=video.get("cleanedText") or video.get("fullText"),
+            payload={"source": video.get("source")},
+        )
+        text_ids.append(created["id"])
+    review_path = run_dir / "transcript_review.json"
+    if review_path.is_file():
+        created = api.create_text(video_id, "TRANSCRIPT_REVIEW", payload=read_json(review_path))
+        text_ids.append(created["id"])
+    return text_ids
+
+
+def store_timeline_text(api, video_id, run_dir):
+    timeline = read_json(run_dir / "evidence_timeline.json")
+    created = api.create_text(
+        video_id,
+        "TIMELINE",
+        segments=[
+            {
+                "start": event["startSeconds"],
+                "end": event["endSeconds"],
+                "text": event["text"],
+                "source": event["source"],
+            }
+            for event in timeline.get("events", [])
+        ],
+        payload={key: value for key, value in timeline.items() if key != "events"},
+    )
+    return created["id"]
+
+
+def suggested_place(api_key, location):
+    """Return a geocoded place suggestion and a warning for the reviewer."""
+    name = location.get("name", "")
+    if not api_key:
+        return None, "geocode skipped: no Google API key"
+    if geocode.looks_like_non_name(name):
+        return None, "name looks like hours/phone/address; needs a real venue name"
+    result, error = geocode.search(api_key, f"{name} {location.get('area', '')}".strip())
     if error:
-        value["error"] = error
-    write_json(run_dir / "run_manifest.json", value)
-
-
-def process_video(
-    config,
-    config_path,
-    playlist,
-    remote_playlist,
-    item,
-    details,
-    record,
-    state,
-    state_path,
-    upload,
-):
-    run_id = record.get("runId") or new_run_id()
-    run_dir = RUNS_ROOT / playlist["id"] / item["videoId"] / run_id
-    run_dir.mkdir(parents=True, exist_ok=True)
-    metadata = {
-        "type": "video",
-        "id": item["videoId"],
-        "videoId": item["videoId"],
-        "playlistId": playlist["id"],
-        "playlistTitle": remote_playlist["title"],
-        "locationStrategy": playlist.get("locationStrategy", "multimodal"),
-        "runId": run_id,
-        **item,
-        **details,
+        return None, f"geocode failed: {error}"
+    if result.get("latitude") is None or result.get("longitude") is None:
+        return None, "geocode returned no coordinates"
+    place = {
+        "name": (result.get("displayName") or name)[:128],
+        "address": (result.get("address") or "")[:255],
+        "latitude": result["latitude"],
+        "longitude": result["longitude"],
+        "googleMapsId": result.get("googleMapsId"),
     }
+    warning = None
+    if not geocode.name_matches(name, result.get("displayName")):
+        warning = f"displayName '{result.get('displayName')}' != '{name}'; verify"
+    return place, warning
+
+
+def first_timestamp(evidence):
+    timed = [
+        item["startSeconds"]
+        for item in evidence
+        if item.get("source") not in {"title", "description"} and item.get("startSeconds", 0) > 0
+    ]
+    return int(min(timed)) if timed else None
+
+
+def place_inputs(candidates, api_key):
+    places = []
+    for location in candidates.get("locations", []):
+        evidence = [
+            {
+                "source": item["source"],
+                "quote": item["quote"],
+                "startSeconds": float(item.get("startSeconds") or 0),
+            }
+            for item in location.get("evidence", [])
+        ]
+        place, warning = suggested_place(api_key, location)
+        places.append(
+            {
+                "name": location["name"][:255],
+                "aliases": location.get("aliases", []),
+                "category": location.get("category") or None,
+                "area": location.get("area") or None,
+                "description": location.get("description") or None,
+                "evidence": evidence,
+                "confidence": (location.get("confidence") or "").upper() or None,
+                "needsVerification": bool(location.get("needsVerification")),
+                "reason": location.get("reason") or None,
+                "timestampSeconds": first_timestamp(evidence),
+                "place": place,
+                "geocodeWarning": warning,
+            }
+        )
+    return places
+
+
+def run_agents(candidates):
+    agents = []
+    for window in candidates.get("windows", []):
+        if window.get("agent") and window["agent"] not in agents:
+            agents.append(window["agent"])
+    return ",".join(agents) or "unknown"
+
+
+def configured_agents():
+    return os.environ.get("STRUCTURED_AGENTS", "codex,claude")
+
+
+def run_metadata(playlist, video, item):
+    return {
+        "type": "video",
+        "id": video["id"],
+        "videoId": video["id"],
+        "title": video["title"],
+        "description": video.get("description") or "",
+        "channelId": video.get("channelId") or "",
+        "channelName": video.get("channelTitle") or item.get("channelName", ""),
+        "publishedAt": video.get("publishedAt"),
+        "position": item.get("position"),
+        "playlistId": playlist["id"],
+        "playlistTitle": playlist["title"],
+        "url": f"https://www.youtube.com/watch?v={video['id']}",
+    }
+
+
+def process_video(api, config, playlist, video, item, api_key, progress):
+    """Collect evidence and candidates for one video and store them through the API.
+
+    Returns the number of stored place candidates. Local files under
+    ``RUNS_ROOT`` cache finished steps until the video is stored.
+    """
+    video_id = video["id"]
+    run_dir = RUNS_ROOT / video_id
+    run_dir.mkdir(parents=True, exist_ok=True)
+    metadata = run_metadata(playlist, video, item)
     write_json(run_dir / "metadata.json", metadata)
     write_json(
         run_dir / "descriptions.json",
-        {item["videoId"]: {"videoId": item["videoId"], "title": item["title"], "description": metadata.get("description", "")}},
+        {video_id: {"videoId": video_id, "title": metadata["title"], "description": metadata["description"]}},
     )
-    record.update(
-        {
-            "runId": run_id,
-            "status": "collecting",
-            "title": item.get("title", ""),
-            "position": item.get("position"),
-            "runDirectory": str(run_dir.relative_to(AUTOMATION_ROOT)),
-            "updatedAt": utc_now(),
-        }
-    )
-    state["updatedAt"] = utc_now()
-    write_json(state_path, state)
-    stages = {"metadata": "completed", "evidence": "running"}
-    update_run_manifest(run_dir, metadata, "collecting", stages)
+    evidence_config = config["defaults"]["evidence"]
 
-    evidence = collect_evidence(run_dir, metadata, config["defaults"]["evidence"])
+    def advance(stage, **fields):
+        progress["stage"] = stage
+        api.update_video(video_id, stage=stage, **fields)
+
+    advance("evidence", status="PROCESSING", error="")
+    evidence = collect_evidence(run_dir, metadata, evidence_config)
+    text_ids = store_evidence_texts(api, video_id, evidence, evidence_config)
     write_primary_transcript(
         run_dir,
         metadata,
@@ -599,12 +505,8 @@ def process_video(
         evidence["audio"],
         evidence["onscreen"],
     )
-    stages["evidence"] = "completed"
-    record["status"] = "reviewing"
-    record["updatedAt"] = utc_now()
-    write_json(state_path, state)
-    update_run_manifest(run_dir, metadata, "reviewing", stages)
 
+    advance("transcript_review")
     run_checked(
         command_uv(
             "--with",
@@ -618,95 +520,125 @@ def process_video(
         ),
         7200,
     )
-    stages["transcriptReview"] = "completed"
+    text_ids += store_review_texts(api, video_id, run_dir)
+
+    advance("timeline")
     run_checked(
-        command_uv(
-            "python",
-            str(SCRIPT_DIR / "evidence_timeline.py"),
-            str(run_dir),
-        ),
+        command_uv("python", str(SCRIPT_DIR / "evidence_timeline.py"), str(run_dir)),
         120,
     )
-    stages["evidenceTimeline"] = "completed"
-    record["status"] = "extracting_locations"
-    record["updatedAt"] = utc_now()
-    write_json(state_path, state)
-    update_run_manifest(run_dir, metadata, "extracting_locations", stages)
+    text_ids.insert(0, store_timeline_text(api, video_id, run_dir))
 
-    run_checked(
-        command_uv(
-            "--with",
-            CODEX_SDK,
-            "python",
-            str(SCRIPT_DIR / "extract_locations_headless.py"),
-            str(run_dir),
-        ),
-        7200,
-    )
-    stages["locationCandidates"] = "completed"
-
-    if upload:
-        record["status"] = "uploading"
-        record["updatedAt"] = utc_now()
-        write_json(state_path, state)
-        update_run_manifest(run_dir, metadata, "uploading", stages)
+    advance("extraction")
+    started_at = utc_now()
+    try:
         run_checked(
             command_uv(
                 "--with",
-                "boto3",
+                CODEX_SDK,
                 "python",
-                str(SCRIPT_DIR / "upload_artifacts.py"),
+                str(SCRIPT_DIR / "extract_locations_headless.py"),
                 str(run_dir),
-                "--playlist-id",
-                playlist["id"],
-                "--video-id",
-                item["videoId"],
-                "--run-id",
-                run_id,
-                "--config",
-                str(config_path),
-                "--commit",
             ),
-            900,
+            7200,
         )
-        stages["artifactUpload"] = "completed"
+    except (RuntimeError, subprocess.TimeoutExpired) as error:
+        api.create_extraction_run(
+            video_id,
+            {
+                "agent": configured_agents(),
+                "inputTextIds": text_ids,
+                "status": "FAILED",
+                "error": str(error)[-2000:],
+                "startedAt": started_at,
+                "finishedAt": utc_now(),
+            },
+        )
+        raise
+    candidates = read_json(run_dir / "location_candidates.json")
 
-    record["status"] = "review_pending"
-    record["updatedAt"] = utc_now()
-    record.pop("error", None)
-    update_run_manifest(run_dir, metadata, "review_pending", stages)
+    advance("geocode")
+    places = place_inputs(candidates, api_key)
+    api.create_extraction_run(
+        video_id,
+        {
+            "agent": run_agents(candidates),
+            "promptSha256": candidates.get("promptSha256"),
+            "inputTextIds": text_ids,
+            "status": "SUCCEEDED",
+            "rawOutput": json_string(candidates),
+            "startedAt": started_at,
+            "finishedAt": candidates.get("generatedAt") or utc_now(),
+            "places": places,
+        },
+    )
+    api.update_video(
+        video_id,
+        status="REVIEW_PENDING" if places else "COMPLETED",
+        stage="review" if places else "done",
+        error="",
+    )
+    shutil.rmtree(run_dir, ignore_errors=True)
+    return len(places)
+
+
+def selected_playlists(api, selected_ids):
+    playlists = api.list_playlists()
+    if not selected_ids:
+        return [playlist for playlist in playlists if playlist["syncEnabled"]]
+    by_id = {playlist["id"]: playlist for playlist in playlists}
+    missing = [playlist_id for playlist_id in selected_ids if playlist_id not in by_id]
+    if missing:
+        raise ValueError(
+            f"Unregistered playlists: {', '.join(missing)}; add them with youtube_playlists.py add"
+        )
+    return [by_id[playlist_id] for playlist_id in selected_ids]
+
+
+def reset_stale_processing(api, playlist_id, stale_hours):
+    """Mark videos left PROCESSING by an interrupted run as FAILED so they are retried."""
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=stale_hours)
+    for video in api.list_videos(playlist_id=playlist_id, status="PROCESSING"):
+        if parse_time(video["updatedAt"]) < cutoff:
+            api.update_video(
+                video["id"],
+                status="FAILED",
+                error=f"interrupted during {video.get('stage') or 'processing'}",
+            )
+            print(f"  [stale] {video['id']} -> FAILED")
+
+
+def processing_order(videos):
+    """Process new videos before retrying failures, each in playlist order."""
+    return sorted(videos, key=lambda video: video["status"] == "FAILED")
+
+
+def dry_run_playlist(api, playlist, remote):
+    stored = {video["id"]: video for video in api.list_videos(playlist_id=playlist["id"])}
+    new = [item for item in remote["videos"] if item["videoId"] not in stored]
+    pending = [
+        video
+        for item in remote["videos"]
+        for video in [stored.get(item["videoId"])]
+        if video and video["status"] in PROCESSABLE
+    ]
+    remote_ids = {item["videoId"] for item in remote["videos"]}
+    removed = [video_id for video_id in stored if video_id not in remote_ids]
+    print(
+        f"{playlist['title']}: remote={len(remote['videos'])} stored={len(stored)} "
+        f"new={len(new)} pending={len(pending)} removed={len(removed)}"
+    )
+    for item in new:
+        print(f"  [new] {item['videoId']} {item['title']}")
+    for video in pending:
+        print(f"  [{video['status'].lower()}] {video['id']} {video['title']}")
 
 
 def main():
     args = parse_args()
-    if args.upload and not args.commit:
-        raise ValueError("--upload requires --commit")
     config = read_json(args.config)
-    if config.get("schemaVersion") != 1:
+    if config.get("schemaVersion") != 2:
         raise ValueError(f"Unsupported config schema in {args.config}")
-    selected = set(args.playlist_ids or [])
-    playlists = [
-        playlist
-        for playlist in config.get("playlists", [])
-        if (playlist.get("enabled") or playlist["id"] in selected)
-        and (not selected or playlist["id"] in selected)
-    ]
-    missing = selected - {playlist["id"] for playlist in config.get("playlists", [])}
-    if missing:
-        raise ValueError(f"Unknown playlists: {', '.join(sorted(missing))}")
-    state = load_state(args.state)
-    missing_baselines = [
-        playlist
-        for playlist in playlists
-        if playlist["id"] not in state["playlists"]
-    ]
-    if missing_baselines and not args.bootstrap:
-        restored = restore_state_from_baselines(config, missing_baselines)
-        state["playlists"].update(restored["playlists"])
-        state["restoredFrom"] = restored["restoredFrom"]
-        state["updatedAt"] = restored["updatedAt"]
-        print(f"restored {len(missing_baselines)} playlist baselines from S3")
-    working_state = state if args.commit else copy.deepcopy(state)
     api_key = load_google_api_key()
     if not api_key:
         raise RuntimeError(
@@ -716,101 +648,64 @@ def main():
     max_videos = args.max_videos or config["defaults"].get("maxNewVideosPerRun", 2)
     if max_videos < 1:
         raise ValueError("max-videos must be positive")
+    api = CollectionApi()
+    playlists = selected_playlists(api, args.playlist_ids)
     remaining = max_videos
     had_failures = False
-    print(f"mode={'commit' if args.commit else 'dry-run'} playlists={len(playlists)} maxVideos={max_videos}")
+    print(
+        f"mode={'commit' if args.commit else 'dry-run'} api={api.base_url} "
+        f"playlists={len(playlists)} maxVideos={max_videos}"
+    )
 
     for playlist in playlists:
-        current = playlist_state(working_state, playlist["id"])
-        remote = fetch_playlist(api_key, playlist["id"])
-        current["lastCheckedAt"] = utc_now()
-        current["remoteVideoCount"] = len(remote["videos"])
-        production_ids = []
-        if playlist.get("sunreiId"):
-            try:
-                token = admin_token()
-                if not token:
-                    raise RuntimeError(
-                        "Could not resolve an Admin API token for the production baseline"
-                    )
-                production_ids = production_video_ids(playlist["sunreiId"], token)
-            except RuntimeError as error:
-                had_failures = True
-                current["productionBaselineError"] = str(error)
-                print(f"{playlist['name']}: blocked: {error}", file=sys.stderr)
-                continue
-            current["productionVideoIds"] = production_ids
-            current["productionCheckedAt"] = utc_now()
-            current.pop("productionBaselineError", None)
-        if args.bootstrap:
-            current["knownVideoIds"] = [video["videoId"] for video in remote["videos"]]
-            current["videos"] = {}
-            print(
-                f"{playlist['name']}: bootstrap {len(remote['videos'])} known videos "
-                f"production={len(production_ids)}"
-            )
+        try:
+            remote = fetch_playlist(api_key, playlist["id"])
+        except RuntimeError as error:
+            had_failures = True
+            print(f"{playlist['title']}: blocked: {error}", file=sys.stderr)
+            continue
+        if not args.commit:
+            dry_run_playlist(api, playlist, remote)
             continue
 
-        candidates = discover(remote["videos"], current, production_ids)
-        remote_ids = {video["videoId"] for video in remote["videos"]}
-        removed_count = sum(
-            1 for video_id in current.get("knownVideoIds", []) if video_id not in remote_ids
-        )
+        details = fetch_video_details(api_key, [item["videoId"] for item in remote["videos"]])
+        reset_stale_processing(api, playlist["id"], args.stale_hours)
+        result = api.sync_playlist_videos(playlist["id"], video_inputs(remote, details))
+        pending = processing_order(result["pendingVideos"])
         print(
-            f"{playlist['name']}: remote={len(remote['videos'])} "
-            f"known={len(current.get('knownVideoIds', []))} "
-            f"production={len(production_ids)} "
-            f"pending/new={len(candidates)} removed={removed_count}"
+            f"{playlist['title']}: remote={len(remote['videos'])} "
+            f"added={len(result['addedVideoIds'])} removed={len(result['removedVideoIds'])} "
+            f"pending={len(pending)}"
         )
-        for item in candidates:
-            marker = "retry" if item["videoId"] in current.get("videos", {}) else "new"
-            print(f"  [{marker}] {item['videoId']} {item['title']}")
-        if not args.commit or remaining <= 0:
-            continue
-
-        chosen = candidates[:remaining]
-        details = fetch_video_details(api_key, [item["videoId"] for item in chosen])
-        for item in chosen:
-            video_id = item["videoId"]
-            record = current["videos"].setdefault(video_id, {"status": "discovered"})
+        items = {item["videoId"]: item for item in remote["videos"]}
+        chosen = pending[:remaining]
+        for index, video in enumerate(chosen):
+            if index:
+                delay = config["defaults"].get("captionDelaySeconds", {})
+                time.sleep(random.uniform(delay.get("min", 60), delay.get("max", 90)))
+            print(f"  [{video['status'].lower()}] {video['id']} {video['title']}", flush=True)
+            progress = {"stage": "evidence"}
             try:
-                process_video(
-                    config,
-                    args.config,
-                    playlist,
-                    remote,
-                    item,
-                    details.get(video_id, {}),
-                    record,
-                    working_state,
-                    args.state,
-                    args.upload,
+                count = process_video(
+                    api, config, playlist, video, items.get(video["id"], {}), api_key, progress
                 )
-                if video_id not in current["knownVideoIds"]:
-                    current["knownVideoIds"].append(video_id)
-                print(f"  review pending: {video_id}")
+                print(f"  stored {count} candidates: {video['id']}")
             except (OSError, RuntimeError, subprocess.TimeoutExpired) as error:
                 had_failures = True
-                record["status"] = "failed"
-                record["error"] = str(error)[-2000:]
-                record["updatedAt"] = utc_now()
-                print(f"  failed: {video_id}: {error}", file=sys.stderr)
-            working_state["updatedAt"] = utc_now()
-            write_json(args.state, working_state)
-            remaining -= 1
-            if remaining <= 0:
-                break
+                print(f"  failed: {video['id']}: {error}", file=sys.stderr)
+                try:
+                    api.update_video(
+                        video["id"],
+                        status="FAILED",
+                        stage=progress["stage"],
+                        error=str(error)[-2000:] or "failed",
+                    )
+                except RuntimeError as update_error:
+                    print(f"  could not record the failure: {update_error}", file=sys.stderr)
+        remaining -= len(chosen)
 
-        delay = config["defaults"].get("captionDelaySeconds", {})
-        if remaining > 0 and chosen:
-            time.sleep(random.uniform(delay.get("min", 60), delay.get("max", 90)))
-
-    if args.commit:
-        working_state["updatedAt"] = utc_now()
-        write_json(args.state, working_state)
-        print(f"state -> {args.state}")
     if had_failures:
-        raise RuntimeError("One or more playlists could not be renewed; see the errors above")
+        raise RuntimeError("One or more playlists could not be collected; see the errors above")
 
 
 if __name__ == "__main__":
