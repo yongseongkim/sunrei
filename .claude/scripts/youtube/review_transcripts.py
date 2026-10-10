@@ -1,4 +1,4 @@
-"""Review transcript segments with Codex headless mode.
+"""Review transcript segments with a headless agent (Codex, then Claude).
 
 The source transcript is never changed. Every proposal is recorded in
 ``transcript_review.json`` for human approval, and only accepted corrections
@@ -20,7 +20,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from _common import workspace
-from codex_headless import run_structured
+from structured_agent import run_structured
 
 SCHEMA_VERSION = 1
 SCHEMA_FILE = Path(__file__).with_name("transcript_review.schema.json")
@@ -42,7 +42,7 @@ def parse_args():
     parser.add_argument("--chunk-size", type=int, default=600)
     parser.add_argument("--max-chars", type=int, default=50000)
     parser.add_argument("--context", type=int, default=3)
-    parser.add_argument("--model", help="Codex model; defaults to the configured model")
+    parser.add_argument("--model", help="Model for the first agent; defaults to its configured model")
     parser.add_argument("--timeout", type=int, default=900)
     parser.add_argument(
         "--max-new-chunks",
@@ -235,7 +235,7 @@ Input:
 """ + json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 
-def run_codex(prompt, model, timeout):
+def run_agent(prompt, model, timeout):
     return run_structured(
         prompt,
         SCHEMA_FILE,
@@ -460,8 +460,8 @@ def main():
                 args.context,
                 auxiliary.get(video_id, {}),
             )
-            print(f"{video_id} [{start}:{end}] running Codex", flush=True)
-            result = run_codex(prompt, args.model, args.timeout)
+            print(f"{video_id} [{start}:{end}] running agent", flush=True)
+            result = run_agent(prompt, args.model, args.timeout)
             corrections, flags, rejected = validate_result(result, video, start, end)
             completed_at = utc_now()
             for item in corrections:

@@ -8,7 +8,9 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(SCRIPT_DIR))
 
+from claude_headless import claude_environment
 from codex_headless import parse_final_response, scrubbed_environment
+import structured_agent
 from _common import jwt_is_usable, load_google_api_key
 from evidence_timeline import build_timeline, ensure_timeline
 from extract_locations_headless import merge_results, timeline_window
@@ -348,6 +350,37 @@ class RenewalTests(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             parse_final_response("[]")
 
+
+    def test_claude_environment_keeps_only_the_subscription_token(self):
+        previous = dict(os.environ)
+        try:
+            os.environ["CLAUDE_CODE_OAUTH_TOKEN"] = "subscription"
+            os.environ["ANTHROPIC_API_KEY"] = "secret"
+            os.environ["AUTH_JWT_SECRET"] = "secret"
+            os.environ["PATH"] = "/bin"
+            env = claude_environment()
+        finally:
+            os.environ.clear()
+            os.environ.update(previous)
+
+        self.assertEqual(env["CLAUDE_CODE_OAUTH_TOKEN"], "subscription")
+        self.assertNotIn("ANTHROPIC_API_KEY", env)
+        self.assertNotIn("AUTH_JWT_SECRET", env)
+        self.assertEqual(env["PATH"], "/bin")
+
+    def test_structured_agent_falls_back_to_the_next_provider(self):
+        def limited(*args, **kwargs):
+            raise RuntimeError("usage limit")
+
+        previous = dict(structured_agent.PROVIDERS)
+        try:
+            structured_agent.PROVIDERS["codex"] = limited
+            structured_agent.PROVIDERS["claude"] = lambda *args, **kwargs: {"locations": []}
+            value = structured_agent.run_structured("prompt", "schema.json")
+        finally:
+            structured_agent.PROVIDERS.update(previous)
+
+        self.assertEqual(value, {"locations": [], "agent": "claude"})
 
 if __name__ == "__main__":
     unittest.main()

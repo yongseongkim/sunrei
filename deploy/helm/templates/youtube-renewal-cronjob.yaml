@@ -103,6 +103,12 @@ spec:
                   value: /var/lib/sunrei/uv-cache
                 - name: XDG_CACHE_HOME
                   value: /var/lib/sunrei/cache
+                - name: CLAUDE_CODE_OAUTH_TOKEN
+                  valueFrom:
+                    secretKeyRef:
+                      name: {{ .Values.youtubeRenewal.claudeAuthSecret.name }}
+                      key: {{ .Values.youtubeRenewal.claudeAuthSecret.key }}
+                      optional: true
                 {{- if .Values.youtubeRenewal.youtubeCookiesSecret.enabled }}
                 - name: SUNREI_YT_COOKIES
                   value: /var/run/secrets/youtube/youtube-cookies.txt

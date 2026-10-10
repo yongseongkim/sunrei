@@ -23,13 +23,23 @@ command -v sops >/dev/null 2>&1 || {
 umask 077
 plain=$(mktemp)
 encrypted=$(mktemp)
-trap 'rm -f "$plain" "$encrypted"' EXIT HUP INT TERM
+claude_token=$(mktemp)
+trap 'rm -f "$plain" "$encrypted" "$claude_token"' EXIT HUP INT TERM
 
 cd "$ROOT"
 
+# The Claude fallback token from `claude setup-token` is optional.
+set -- --from-file="auth.json=$AUTH_FILE"
+if [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
+  printf '%s' "$CLAUDE_CODE_OAUTH_TOKEN" > "$claude_token"
+  set -- "$@" --from-file="claude-code-oauth-token=$claude_token"
+else
+  echo "CLAUDE_CODE_OAUTH_TOKEN is not set; the secret will not include the Claude fallback." >&2
+fi
+
 kubectl create secret generic sunrei-youtube-renewal-auth \
   --namespace sunrei \
-  --from-file="auth.json=$AUTH_FILE" \
+  "$@" \
   --dry-run=client \
   --output yaml > "$plain"
 
@@ -37,4 +47,4 @@ sops --encrypt --filename-override "$OUTPUT" "$plain" > "$encrypted"
 mv "$encrypted" "$OUTPUT"
 chmod 600 "$OUTPUT"
 
-echo "Encrypted Codex auth secret -> $OUTPUT"
+echo "Encrypted Codex/Claude auth secret -> $OUTPUT"

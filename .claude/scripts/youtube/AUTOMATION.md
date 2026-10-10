@@ -18,9 +18,11 @@ check, but never changes the Admin API, a Sunrei, or its spots.
    - OCR of text visible in the video
 6. Normalize the reviewed transcript, Whisper output, and OCR into one
    timestamp-ordered `evidence_timeline.json`.
-7. Give Codex (Python SDK) the video metadata and the relevant timeline
-   window, then extract location candidates and supporting details with the
-   shared rules in `prompts/extract_locations.md`.
+7. Give an agent the video metadata and the relevant timeline window, then
+   extract location candidates and supporting details with the shared rules in
+   `prompts/extract_locations.md`. Codex (Python SDK) runs first; when it
+   fails, for example on a usage limit, Claude Code (`claude -p`) runs the same
+   prompt and schema. `STRUCTURED_AGENTS` changes the order.
 8. Save the run as `review_pending`.
 9. With `--upload`, gzip JSON artifacts and upload them under an immutable S3
    run path. Raw audio and video are deleted by the evidence scripts and are
@@ -137,11 +139,11 @@ credentials.
 
 The S3 uploader decrypts the existing `aws-access-key-id` and
 `aws-secret-access-key` values from `deploy/secrets/secrets.enc.yaml`. Codex
-runs in an empty, read-only temporary directory without AWS, SOPS, Google,
-GitHub, YouTube, or Admin API credentials.
+and Claude run in an empty temporary directory without tools, AWS, SOPS,
+Google, GitHub, YouTube, Anthropic API, or Admin API credentials.
 
 The renewal process itself uses a short-lived Admin JWT to read each production
-Sunrei before discovery. The token is not passed to Codex, and the automation
+Sunrei before discovery. The token is not passed to an agent, and the automation
 does not issue Admin API write requests.
 
 ## Scheduling
@@ -162,13 +164,22 @@ S3 playlist baseline before discovery. This also covers a new PVC or a playlist
 enabled after the PVC was created, without treating the existing catalog as
 new videos.
 
-Prepare the SOPS-encrypted login seed before enabling the first job:
+Prepare the SOPS-encrypted login seed before enabling the first job. Sign in
+to Codex in a dedicated `CODEX_HOME`, so the job does not share a refresh token
+with another Codex consumer on the host. `claude setup-token` prints a one-year
+subscription token; it is optional and only used as the fallback.
 
 ```bash
+export CODEX_HOME="$(mktemp -d)"
 codex login -c 'cli_auth_credentials_store="file"' --device-auth
-.claude/scripts/youtube/prepare_codex_auth_secret.sh
+read -rs CLAUDE_CODE_OAUTH_TOKEN && export CLAUDE_CODE_OAUTH_TOKEN  # paste the setup-token output
+.claude/scripts/youtube/prepare_codex_auth_secret.sh "$CODEX_HOME/auth.json"
 sops -d deploy/secrets/youtube-renewal-auth.enc.yaml | kubectl create -f -
 ```
+
+`ANTHROPIC_API_KEY` is removed from the Claude environment, so the fallback
+never switches to pay-per-token billing. The Claude subscription limit is
+shared with interactive Claude Code use.
 
 After the worker image has been released and ArgoCD has synced the chart, start
 one job manually and inspect it before waiting for the schedule:

@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from _common import workspace
-from codex_headless import run_structured
+from structured_agent import run_structured
 from evidence_timeline import ensure_timeline
 
 SCHEMA_FILE = Path(__file__).with_name("location_candidates.schema.json")
@@ -166,7 +166,11 @@ def extract(metadata, timeline, model, timeout, window_seconds, overlap_seconds)
             timeout=timeout,
             temp_prefix="sunrei-location-extract-",
         )
-        result["window"] = {"startSeconds": start, "endSeconds": end}
+        result["window"] = {
+            "startSeconds": start,
+            "endSeconds": end,
+            "agent": result.pop("agent", None),
+        }
         results.append(result)
     return results
 

@@ -71,7 +71,7 @@ deploy/helm/
 └── templates/
     ├── _helpers.tpl     # label and naming helpers
     ├── deployment.yaml  # Deployments for admin, app, server
-    ├── youtube-renewal-cronjob.yaml # Daily Codex ingest CronJob and PVC
+    ├── youtube-renewal-cronjob.yaml # Daily Codex/Claude ingest CronJob and PVC
     └── service.yaml     # ClusterIP Services for admin, app, server
 ```
 
@@ -103,7 +103,8 @@ Secrets are split into two Kubernetes Secrets by ownership:
   from the local Codex CLI login and encrypted as
   `deploy/secrets/youtube-renewal-auth.enc.yaml`. The CronJob copies it to a
   retained PVC only when no cached login exists, allowing Codex to refresh the
-  cache in place between runs.
+  cache in place between runs. The optional `claude-code-oauth-token` key holds
+  a `claude setup-token` subscription token for the Claude fallback.
 
 Editing and applying (requires GCP credentials with decrypt permission on the
 KMS key):
@@ -118,13 +119,17 @@ Never client-side `kubectl apply` a decrypted Secret — it leaks the plaintext
 into the `last-applied-configuration` annotation. ArgoCD does not manage these
 files; applying them is a manual step.
 
-Prepare and install the Codex subscription login separately:
+Prepare and install the Codex and Claude subscription logins separately:
 
 ```bash
-# If auth.json does not exist, use file storage and sign in first.
+# A dedicated CODEX_HOME keeps the job's refresh token separate from other Codex users.
+export CODEX_HOME="$(mktemp -d)"
 codex login -c 'cli_auth_credentials_store="file"' --device-auth
 
-.claude/scripts/youtube/prepare_codex_auth_secret.sh
+# Optional fallback: paste the one-year token printed by `claude setup-token`.
+read -rs CLAUDE_CODE_OAUTH_TOKEN && export CLAUDE_CODE_OAUTH_TOKEN
+
+.claude/scripts/youtube/prepare_codex_auth_secret.sh "$CODEX_HOME/auth.json"
 sops -d deploy/secrets/youtube-renewal-auth.enc.yaml | kubectl create -f -
 ```
 

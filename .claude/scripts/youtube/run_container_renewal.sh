@@ -14,12 +14,18 @@ mkdir -p \
   "$SUNREI_YOUTUBE_AUTOMATION_ROOT" \
   "$UV_CACHE_DIR"
 
-if [ ! -s "$CODEX_HOME/auth.json" ]; then
-  echo "Codex auth is missing at $CODEX_HOME/auth.json" >&2
-  exit 1
+# Codex runs first and Claude is the fallback, so one usable login is enough.
+codex_ready=false
+if [ -s "$CODEX_HOME/auth.json" ] && codex login status >/dev/null 2>&1; then
+  codex_ready=true
+else
+  echo "Codex login is unavailable at $CODEX_HOME/auth.json" >&2
 fi
 
-codex login status >/dev/null
+if [ "$codex_ready" = false ] && [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
+  echo "Neither Codex nor Claude credentials are available" >&2
+  exit 1
+fi
 
 cd /app
 exec uv run python .claude/scripts/youtube/renew_playlists.py --commit --upload

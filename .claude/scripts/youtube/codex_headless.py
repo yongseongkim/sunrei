@@ -9,9 +9,12 @@ from contextlib import contextmanager
 from pathlib import Path
 
 SECRET_ENV_NAMES = {
+    "ANTHROPIC_API_KEY",
+    "AUTH_JWT_SECRET",
     "AWS_ACCESS_KEY_ID",
     "AWS_SECRET_ACCESS_KEY",
     "AWS_SESSION_TOKEN",
+    "CLAUDE_CODE_OAUTH_TOKEN",
     "CODEX_API_KEY",
     "GH_TOKEN",
     "GITHUB_TOKEN",
@@ -24,6 +27,7 @@ SECRET_ENV_NAMES = {
     "YOUTUBE_API_KEY",
 }
 SECRET_ENV_PREFIXES = (
+    "ANTHROPIC_",
     "AWS_",
     "GOOGLE_",
     "SOPS_",

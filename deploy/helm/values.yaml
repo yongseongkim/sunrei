@@ -145,6 +145,10 @@ youtubeRenewal:
   codexAuthSecret:
     name: sunrei-youtube-renewal-auth
     key: auth.json
+  # Optional fallback when Codex fails, e.g. on a usage limit: a `claude setup-token` subscription token.
+  claudeAuthSecret:
+    name: sunrei-youtube-renewal-auth
+    key: claude-code-oauth-token
   youtubeCookiesSecret:
     enabled: false
     name: sunrei-youtube-renewal-auth
