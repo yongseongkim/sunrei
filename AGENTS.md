@@ -39,6 +39,18 @@ Public 지도에서는 Place 하나가 마커 하나와 카드 하나로 표시�
 
 SunreiSpot에 연결되는 bilingual 태그. `label_en`, `label_ko`를 가지며 public 필터링은 spot 태그 기준으로 동작한다.
 
+### YouTube 수집
+
+등록한 플레이리스트의 새 영상에서 장소 후보를 추출하고, 어드민 검토를 거쳐 SunreiSpot으로 만든다.
+수집 job과 스킬은 `/admin/youtube/*` admin API로 같은 DB 상태를 읽고 쓴다.
+
+- `youtube_playlist`: 등록한 플레이리스트로, `sync_enabled`가 주기 수집 대상을 정하고 `sunrei_id`가 승인된 장소가 들어갈 Sunrei다.
+- `youtube_video`, `youtube_playlist_video`: 영상과 플레이리스트 소속이다. 동기화 때 목록에서 빠진 영상은 `removed_at`만 기록하고 데이터와 spot은 지우지 않는다.
+- `youtube_video.status`: `PENDING`과 `FAILED`가 처리 대상이고, 추출이 끝나면 `REVIEW_PENDING`, 후보 검토가 모두 끝나면 `COMPLETED`가 된다. 기준선으로 등록한 기존 영상은 `SKIPPED`다.
+- `youtube_video_text`: 자막, Whisper, OCR, 검토된 transcript, timeline을 종류별로 쌓아 두어 디버깅과 재추출에 쓴다.
+- `youtube_extraction_run`, `youtube_extracted_place`: agent 실행 기록(원본 출력, prompt 해시)과 장소 후보다. 후보는 승인될 때만 SunreiSpot이 되며, 반려한 후보도 남겨 둔다.
+- `youtube_video_attempt`: 자막 차단, rate limit 같은 외부 호출 실패 기록이다.
+
 ## Deployment
 
 - Infrastructure: k3s on Oracle Cloud ARM (Chuncheon), ArgoCD (GitOps), Cloudflare Tunnel

@@ -14,6 +14,7 @@ import com.sunrei.service.SunreiService
 import com.sunrei.service.SunreiSpotService
 import com.sunrei.service.TagService
 import com.sunrei.service.UserService
+import com.sunrei.service.YoutubeService
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -35,6 +36,7 @@ object ServiceLocator {
     lateinit var sunreiService: SunreiService
     lateinit var sunreiSpotService: SunreiSpotService
     lateinit var searchService: SearchService
+    lateinit var youtubeService: YoutubeService
     lateinit var authRepository: IAuthRepository
     lateinit var authService: IAuthService
 }
@@ -82,6 +84,9 @@ fun Application.configureDI() {
         // Create SunreiService (depends on PlaceService, TagService, pageTokenSecret)
         val sunreiService = SunreiService(placeService, tagService, pageTokenSecret)
 
+        // YouTube collection (approval adds spots through SunreiService)
+        val youtubeService = YoutubeService(sunreiService, pageTokenSecret)
+
         // Public read services
         val sunreiSpotService = SunreiSpotService()
         val searchService = SearchService()
@@ -106,6 +111,7 @@ fun Application.configureDI() {
         ServiceLocator.sunreiService = sunreiService
         ServiceLocator.sunreiSpotService = sunreiSpotService
         ServiceLocator.searchService = searchService
+        ServiceLocator.youtubeService = youtubeService
         ServiceLocator.authRepository = authRepository
         ServiceLocator.authService = authService
     }

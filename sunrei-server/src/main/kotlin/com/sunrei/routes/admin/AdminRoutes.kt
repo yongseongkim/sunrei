@@ -18,6 +18,7 @@ fun Route.adminRoutes() {
         adminSunreiRoutes()
         adminPlaceRoutes()
         adminTagRoutes()
+        adminYoutubeRoutes()
         imageRoutes()
         resourceRoutes()
     }
