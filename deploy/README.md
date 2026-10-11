@@ -93,8 +93,7 @@ Secrets are split into two Kubernetes Secrets by ownership:
   `.sops.yaml` at the repo root). Values are encrypted; key names stay
   readable, so the file itself documents which keys the project uses.
 - **`sunrei-infra-secrets`** (infrastructure-dependent: `database-host`,
-  `database-password`) — managed in the homelab-infra repo
-  (`k8s/sunrei/infra-secrets.enc.yaml`). These change when the app moves to a
+  `database-password`) — managed in the homelab-infra repo. These change when the app moves to a
   different cluster/DB, so they live with the infrastructure.
 
 Editing and applying (requires GCP credentials with decrypt permission on the
@@ -134,7 +133,7 @@ environment variables only when they start. Apply a changed Secret before the
 release that needs it:
 
 1. Edit and commit the encrypted file (`sops deploy/secrets/secrets.enc.yaml`,
-   or `k8s/sunrei/infra-secrets.enc.yaml` in homelab-infra).
+   or the infra-owned Secret in homelab-infra).
 2. Apply it to the cluster with `sops -d ... | kubectl replace -f -`.
 3. Restart the pods that use it:
    - for a new key that new code reads, release with `./scripts/release.sh`;
