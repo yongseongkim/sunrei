@@ -62,6 +62,15 @@ def transcribe(video_url: str, model_name: str = "base"):
             "quiet": True,
             "no_warnings": True,
         }
+        # Optional auth for members-only videos:
+        #   SUNREI_YT_COOKIES=<path to Netscape cookies.txt>
+        #   SUNREI_YT_BROWSER=<chrome|firefox|brave|safari>  (logged-in profile)
+        cf = os.environ.get("SUNREI_YT_COOKIES")
+        cb = os.environ.get("SUNREI_YT_BROWSER")
+        if cf:
+            ydl_opts["cookiefile"] = cf
+        elif cb:
+            ydl_opts["cookiesfrombrowser"] = (cb,)
 
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             ydl.download([video_url])

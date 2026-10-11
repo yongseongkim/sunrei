@@ -1,0 +1,441 @@
+import json
+import os
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(SCRIPT_DIR))
+
+from claude_headless import claude_environment
+from codex_headless import parse_final_response, scrubbed_environment
+import structured_agent
+from _common import jwt_is_usable, load_google_api_key
+from evidence_timeline import build_timeline, ensure_timeline
+from extract_locations_headless import merge_results, timeline_window
+from collection_api import CollectionApi
+from migrate_legacy_state import handled_video_ids, legacy_baseline, legacy_runs, legacy_texts
+from renew_playlists import (
+    first_timestamp,
+    parse_json_output,
+    place_inputs,
+    processing_order,
+    reset_stale_processing,
+    store_evidence_texts,
+    write_primary_transcript,
+)
+from review_transcripts import update_reviewed_transcript
+from youtube_data import duration_seconds, video_inputs
+
+
+class RenewalTests(unittest.TestCase):
+    def test_youtube_api_key_prefers_environment(self):
+        previous = os.environ.get("YOUTUBE_API_KEY")
+        try:
+            os.environ["YOUTUBE_API_KEY"] = "from-environment"
+            self.assertEqual(load_google_api_key(), "from-environment")
+        finally:
+            if previous is None:
+                os.environ.pop("YOUTUBE_API_KEY", None)
+            else:
+                os.environ["YOUTUBE_API_KEY"] = previous
+
+    def test_expired_admin_token_is_not_reused(self):
+        import base64
+
+        payload = base64.urlsafe_b64encode(b'{"exp":1}').rstrip(b"=").decode()
+        self.assertFalse(jwt_is_usable(f"header.{payload}.signature"))
+
+    def test_processing_order_puts_new_videos_before_failures(self):
+        videos = [
+            {"id": "failed", "status": "FAILED"},
+            {"id": "first", "status": "PENDING"},
+            {"id": "second", "status": "PENDING"},
+        ]
+
+        self.assertEqual([video["id"] for video in processing_order(videos)], ["first", "second", "failed"])
+
+    def test_stale_processing_videos_are_reset_to_failed(self):
+        updates = []
+
+        class FakeApi:
+            def list_videos(self, playlist_id=None, status=None):
+                return [
+                    {"id": "stale", "stage": "extraction", "updatedAt": "2020-01-01T00:00:00Z"},
+                    {"id": "running", "stage": "evidence", "updatedAt": "2999-01-01T00:00:00.123Z"},
+                ]
+
+            def update_video(self, video_id, **fields):
+                updates.append((video_id, fields))
+
+        reset_stale_processing(FakeApi(), "playlist", 24)
+
+        self.assertEqual(updates, [("stale", {"status": "FAILED", "error": "interrupted during extraction"})])
+
+    def test_duration_and_video_inputs_follow_the_sync_api(self):
+        self.assertEqual(duration_seconds("PT1H2M3S"), 3723)
+        self.assertEqual(duration_seconds("P1DT1S"), 86401)
+        self.assertIsNone(duration_seconds(""))
+        remote = {"videos": [{"videoId": "abc", "title": "T" * 300, "position": 4, "channelName": "Ch"}]}
+        details = {"abc": {"duration": "PT10M", "publishedAt": "2026-01-01T00:00:00Z", "thumbnailUrl": "u"}}
+
+        [video] = video_inputs(remote, details)
+        self.assertEqual(video["id"], "abc")
+        self.assertEqual(len(video["title"]), 255)
+        self.assertEqual(video["durationSeconds"], 600)
+        self.assertEqual(video["channelTitle"], "Ch")
+        self.assertEqual(video["position"], 4)
+
+    def test_evidence_texts_are_stored_and_failures_become_attempts(self):
+        calls = []
+
+        class FakeApi:
+            def create_text(self, video_id, kind, **fields):
+                calls.append(("text", kind, fields))
+                return {"id": f"YT-{kind}"}
+
+            def update_video(self, video_id, **fields):
+                calls.append(("attempt", fields["stage"], fields["error"]))
+
+        evidence = {
+            "captions": {"videoId": "abc", "error": "Sign in to confirm you're not a bot"},
+            "audio": {
+                "videoId": "abc",
+                "language": "ko",
+                "segments": [{"text": "안녕", "start": 1.5, "end": 3.0}],
+            },
+            "onscreen": {"videoId": "abc", "error": "disabled"},
+        }
+
+        ids = store_evidence_texts(FakeApi(), "abc", evidence, {"whisperModel": "small"})
+
+        self.assertEqual(ids, ["YT-WHISPER"])
+        self.assertEqual(calls[0], ("attempt", "captions", "Sign in to confirm you're not a bot"))
+        _, kind, fields = calls[1]
+        self.assertEqual(kind, "WHISPER")
+        self.assertEqual(fields["segments"], [{"start": 1.5, "end": 3.0, "text": "안녕"}])
+        self.assertEqual(fields["params"]["model"], "small")
+        self.assertEqual(fields["payload"], {"videoId": "abc", "language": "ko"})
+        self.assertEqual(len(calls), 2)
+
+    def test_place_inputs_map_candidates_without_a_geocoding_key(self):
+        candidates = {
+            "locations": [
+                {
+                    "name": "Il San Pietro",
+                    "aliases": ["산 피에트로"],
+                    "category": "hotel",
+                    "area": "Positano",
+                    "description": "설명",
+                    "reason": "자막과 OCR이 일치",
+                    "confidence": "high",
+                    "needsVerification": False,
+                    "evidence": [
+                        {"source": "title", "quote": "Il San Pietro", "startSeconds": 0},
+                        {"source": "ocr", "quote": "IL SAN PIETRO", "startSeconds": 95.4},
+                        {"source": "whisper", "quote": "산 피에트로", "startSeconds": 80.2},
+                    ],
+                }
+            ]
+        }
+
+        [place] = place_inputs(candidates, None)
+        self.assertEqual(place["confidence"], "HIGH")
+        self.assertEqual(place["timestampSeconds"], 80)
+        self.assertIsNone(place["place"])
+        self.assertIn("geocode skipped", place["geocodeWarning"])
+        self.assertIsNone(first_timestamp([{"source": "description", "quote": "x", "startSeconds": 0}]))
+
+    def test_collection_api_reuses_a_token_until_it_nears_expiry(self):
+        import base64
+        import time
+
+        def token(expires_in):
+            payload = json.dumps({"exp": int(time.time()) + expires_in}).encode()
+            return "h." + base64.urlsafe_b64encode(payload).rstrip(b"=").decode() + ".s"
+
+        minted = [token(3600), token(7200)]
+        api = CollectionApi(base_url="http://example.invalid", token_provider=lambda: minted.pop(0))
+        first = api._token()
+        self.assertEqual(api._token(), first)
+        api.token = token(60)
+        self.assertNotEqual(api._token(), first)
+        self.assertEqual(minted, [])
+
+    def test_legacy_baseline_requeues_unfinished_runs(self):
+        prefix = "https://sunrei-resources.s3.ap-northeast-2.amazonaws.com/youtube/artifacts/v1/playlists/one/"
+        responses = {
+            prefix + "latest.json": {
+                "playlistId": "one",
+                "stateKey": "youtube/artifacts/v1/playlists/one/snapshots/run/state.json.gz",
+            },
+            prefix + "snapshots/run/state.json.gz": {
+                "schemaVersion": 1,
+                "playlistId": "one",
+                "knownVideoIds": ["done", "reviewing"],
+                "videos": {"reviewing": {"status": "review_pending"}, "approved": {"status": "approved"}},
+            },
+        }
+        reads = []
+
+        def reader(url, compressed=False):
+            reads.append(compressed)
+            return responses[url]
+
+        baseline = legacy_baseline("one", reader=reader)
+
+        self.assertEqual(reads, [False, True])
+        self.assertEqual(handled_video_ids(baseline), {"done", "approved"})
+
+    def test_legacy_runs_link_locations_to_spots(self):
+        locations = [
+            {
+                "videoId": "v1",
+                "locations": [
+                    {"name": "Station", "googleMapsId": "g1", "latitude": 1.0, "longitude": 2.0,
+                     "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=v1&t=60"},
+                    {"name": "Cafe", "googleMapsId": "g2", "latitude": 1.0, "longitude": 2.0},
+                ],
+            },
+            {"videoId": "elsewhere", "locations": [{"name": "Other"}]},
+        ]
+        place = {"name": "Station", "address": "a", "latitude": 1.0, "longitude": 2.0, "googleMapsId": "g1"}
+        sunrei = {
+            "spots": [
+                {"id": "s1", "youtubeLink": "https://www.youtube.com/watch?v=v1&t=91", "place": place},
+                {"id": "s2", "youtubeLink": "https://www.youtube.com/watch?v=v2&t=5", "context": "c",
+                 "place": dict(place, name="Museum", googleMapsId="g3")},
+                {"id": "s3", "youtubeLink": "https://www.youtube.com/watch?v=city:Seoul", "place": place},
+            ]
+        }
+
+        runs = legacy_runs(locations, sunrei, {"v1", "v2"})
+
+        self.assertEqual(sorted(runs), ["v1", "v2"])
+        v1 = runs["v1"]["places"]
+        self.assertEqual([(p["name"], p["sunreiSpotId"], p["timestampSeconds"]) for p in v1],
+                         [("Station", "s1", 60), ("Cafe", None, None)])
+        self.assertEqual(runs["v1"]["rawOutput"]["videoId"], "v1")
+        self.assertIsNone(runs["v2"]["rawOutput"])
+        self.assertEqual([(p["name"], p["sunreiSpotId"], p["timestampSeconds"]) for p in runs["v2"]["places"]],
+                         [("Museum", "s2", 5)])
+
+    def test_legacy_texts_keep_source_and_cleaned_transcript(self):
+        raw = [{"videoId": "v1", "language": "ko", "source": "youtube_captions", "segments": [{"start": 0, "duration": 2, "text": "a"}], "fullText": "a"},
+               {"videoId": "v2", "segments": [], "fullText": "ocr"}]
+        reviewed = [
+            {"videoId": "v1", "language": "ko", "cleanedText": "A"},
+            {"videoId": "v2", "segments": [{"start": 1, "text": "OCR"}], "fullText": "OCR"},
+            {"videoId": "v3", "cleanedText": "x"},
+        ]
+
+        texts = legacy_texts(raw, reviewed, {"v1", "v2"})
+
+        self.assertEqual([t["kind"] for t in texts["v1"]], ["CAPTIONS", "TRANSCRIPT_REVIEWED"])
+        self.assertEqual(texts["v1"][0]["segments"], [{"start": 0, "end": 2, "text": "a"}])
+        self.assertEqual(texts["v1"][1]["full_text"], "A")
+        self.assertEqual([t["kind"] for t in texts["v2"]], ["OCR", "TRANSCRIPT_REVIEWED"])
+        self.assertEqual(texts["v2"][1]["segments"], [{"start": 1, "end": None, "text": "OCR"}])
+        self.assertNotIn("v3", texts)
+
+    def test_parse_json_output_ignores_progress_logs(self):
+        value = {
+            "videoId": "abc",
+            "segments": [{"text": "last nested object", "start": 1, "duration": 2}],
+        }
+        output = "download {not json}\nprogress\n" + json.dumps(value, indent=2)
+        parsed = parse_json_output(output)
+        self.assertEqual(parsed["videoId"], "abc")
+        self.assertEqual(len(parsed["segments"]), 1)
+
+    def test_ocr_can_be_primary_transcript(self):
+        metadata = {"videoId": "abc", "title": "Title"}
+        ocr = {
+            "videoId": "abc",
+            "language": "ko",
+            "segments": [{"text": "장소 이름", "start": 3, "duration": 2}],
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            value = write_primary_transcript(
+                Path(temp_dir),
+                metadata,
+                {"error": "no captions"},
+                {"error": "no audio"},
+                ocr,
+            )
+            video = value["videos"][0]
+            self.assertEqual(video["source"], "ocr_frames")
+            self.assertFalse(video["approved"])
+            self.assertEqual(video["segments"][0]["start"], 3.0)
+
+    def test_evidence_timeline_combines_and_orders_sources(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            workspace = Path(temp_dir)
+            files = {
+                "metadata.json": {"videoId": "abc", "title": "Title"},
+                "captions.json": {
+                    "videoId": "abc",
+                    "segments": [{"text": "권성중", "start": 10, "duration": 2}],
+                },
+                "transcripts.reviewed.json": {
+                    "videos": [
+                        {
+                            "videoId": "abc",
+                            "language": "ko",
+                            "segments": [{"text": "권성준", "start": 10, "duration": 2}],
+                        }
+                    ]
+                },
+                "audio_transcript.json": {
+                    "videoId": "abc",
+                    "language": "ko",
+                    "segments": [{"text": "오디오", "start": 5, "duration": 2}],
+                },
+                "onscreen_text.json": {
+                    "videoId": "abc",
+                    "language": "ko",
+                    "segments": [{"text": "간판", "start": 7, "duration": 1}],
+                },
+            }
+            for file_name, value in files.items():
+                (workspace / file_name).write_text(
+                    json.dumps(value, ensure_ascii=False), encoding="utf-8"
+                )
+
+            timeline = build_timeline(workspace, "abc")
+            cached, output = ensure_timeline(workspace, "abc")
+
+        self.assertEqual(
+            [(event["source"], event["text"]) for event in timeline["events"]],
+            [("whisper", "오디오"), ("ocr", "간판"), ("transcript", "권성준")],
+        )
+        self.assertEqual(timeline["sources"]["transcript"]["file"], "transcripts.reviewed.json")
+        self.assertEqual(cached["inputFingerprint"], timeline["inputFingerprint"])
+        self.assertEqual(output.name, "evidence_timeline.json")
+        self.assertEqual(
+            [event["text"] for event in timeline_window(timeline, 6, 8)],
+            ["오디오", "간판"],
+        )
+
+    def test_accepted_correction_updates_missing_cleaned_text(self):
+        source = {
+            "videos": [
+                {
+                    "videoId": "abc",
+                    "segments": [{"text": "권성중", "start": 0, "duration": 1}],
+                    "fullText": "권성중입니다",
+                }
+            ]
+        }
+        review = {
+            "videos": {
+                "abc": {
+                    "corrections": [
+                        {
+                            "segmentIndex": 0,
+                            "originalText": "권성중",
+                            "correctedText": "권성준",
+                            "confidence": "high",
+                            "decision": "accept",
+                        }
+                    ]
+                }
+            }
+        }
+
+        reviewed = update_reviewed_transcript(source, review, "none")
+
+        video = reviewed["videos"][0]
+        self.assertEqual(video["segments"][0]["text"], "권성준")
+        self.assertEqual(video["cleanedText"], "권성준입니다")
+
+    def test_location_merge_keeps_pending_decision(self):
+        metadata = {"videoId": "abc", "title": "Title"}
+        first = {
+            "concept": "Tokyo food",
+            "geographicScope": "Tokyo",
+            "locations": [
+                {
+                    "name": "가게 A",
+                    "aliases": [],
+                    "category": "restaurant",
+                    "area": "Tokyo",
+                    "evidence": [{"source": "captions", "quote": "가게 A", "startSeconds": 10}],
+                    "description": "영상에서 방문한 라멘 전문점이다.",
+                    "reason": "visited",
+                    "confidence": "medium",
+                    "needsVerification": False,
+                }
+            ],
+            "issues": [],
+            "window": {"startSeconds": 0, "endSeconds": 100},
+        }
+        second = json.loads(json.dumps(first, ensure_ascii=False))
+        second["locations"][0]["confidence"] = "high"
+        second["locations"][0]["evidence"][0]["source"] = "audio"
+
+        merged = merge_results(metadata, "sha", [first, second])
+
+        self.assertEqual(len(merged["locations"]), 1)
+        self.assertEqual(merged["locations"][0]["confidence"], "high")
+        self.assertEqual(merged["locations"][0]["decision"], "pending")
+        self.assertEqual(len(merged["locations"][0]["evidence"]), 2)
+
+    def test_codex_environment_removes_ingest_credentials(self):
+        previous = dict(os.environ)
+        try:
+            os.environ["AWS_ACCESS_KEY_ID"] = "secret"
+            os.environ["SUNREI_ADMIN_TOKEN"] = "secret"
+            os.environ["PATH"] = "/bin"
+            with scrubbed_environment():
+                env = dict(os.environ)
+            restored = dict(os.environ)
+        finally:
+            os.environ.clear()
+            os.environ.update(previous)
+
+        self.assertNotIn("AWS_ACCESS_KEY_ID", env)
+        self.assertNotIn("SUNREI_ADMIN_TOKEN", env)
+        self.assertEqual(env["PATH"], "/bin")
+        self.assertEqual(restored["AWS_ACCESS_KEY_ID"], "secret")
+
+    def test_codex_final_response_accepts_fenced_json(self):
+        self.assertEqual(parse_final_response('```json\n{"locations": []}\n```'), {"locations": []})
+        with self.assertRaises(RuntimeError):
+            parse_final_response("[]")
+
+
+    def test_claude_environment_keeps_only_the_subscription_token(self):
+        previous = dict(os.environ)
+        try:
+            os.environ["CLAUDE_CODE_OAUTH_TOKEN"] = "subscription"
+            os.environ["ANTHROPIC_API_KEY"] = "secret"
+            os.environ["AUTH_JWT_SECRET"] = "secret"
+            os.environ["PATH"] = "/bin"
+            env = claude_environment()
+        finally:
+            os.environ.clear()
+            os.environ.update(previous)
+
+        self.assertEqual(env["CLAUDE_CODE_OAUTH_TOKEN"], "subscription")
+        self.assertNotIn("ANTHROPIC_API_KEY", env)
+        self.assertNotIn("AUTH_JWT_SECRET", env)
+        self.assertEqual(env["PATH"], "/bin")
+
+    def test_structured_agent_falls_back_to_the_next_provider(self):
+        def limited(*args, **kwargs):
+            raise RuntimeError("usage limit")
+
+        previous = dict(structured_agent.PROVIDERS)
+        try:
+            structured_agent.PROVIDERS["codex"] = limited
+            structured_agent.PROVIDERS["claude"] = lambda *args, **kwargs: {"locations": []}
+            value = structured_agent.run_structured("prompt", "schema.json")
+        finally:
+            structured_agent.PROVIDERS.update(previous)
+
+        self.assertEqual(value, {"locations": [], "agent": "claude"})
+
+if __name__ == "__main__":
+    unittest.main()

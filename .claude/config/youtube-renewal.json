@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 2,
+  "defaults": {
+    "maxNewVideosPerRun": 2,
+    "captionDelaySeconds": {
+      "min": 60,
+      "max": 90
+    },
+    "transcriptReviewChunkSize": 600,
+    "evidence": {
+      "captions": true,
+      "audio": true,
+      "videoOcr": true,
+      "whisperModel": "base",
+      "ocrLanguages": ["ko", "en"],
+      "ocrIntervalSeconds": 1.0
+    }
+  }
+}

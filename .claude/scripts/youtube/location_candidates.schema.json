@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["concept", "geographicScope", "locations", "issues"],
+  "properties": {
+    "concept": { "type": "string" },
+    "geographicScope": { "type": "string" },
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "aliases",
+          "category",
+          "area",
+          "evidence",
+          "description",
+          "reason",
+          "confidence",
+          "needsVerification"
+        ],
+        "properties": {
+          "name": { "type": "string" },
+          "aliases": { "type": "array", "items": { "type": "string" } },
+          "category": { "type": "string" },
+          "area": { "type": "string" },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["source", "quote", "startSeconds"],
+              "properties": {
+                "source": {
+                  "type": "string",
+                  "enum": [
+                    "title",
+                    "description",
+                    "transcript",
+                    "whisper",
+                    "ocr",
+                    "captions",
+                    "audio",
+                    "onscreen"
+                  ]
+                },
+                "quote": { "type": "string" },
+                "startSeconds": { "type": "number", "minimum": 0 }
+              }
+            }
+          },
+          "description": { "type": "string" },
+          "reason": { "type": "string" },
+          "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+          "needsVerification": { "type": "boolean" }
+        }
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["summary", "startSeconds", "sources"],
+        "properties": {
+          "summary": { "type": "string" },
+          "startSeconds": { "type": "number", "minimum": 0 },
+          "sources": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

@@ -209,6 +209,15 @@ class SunreiService(
         updated > 0
     }
 
+    /** Add one spot to an existing Sunrei without touching its other spots. */
+    fun addSpot(sunreiId: String, spot: CreateSunreiSpotInline): String = transaction {
+        val exists = Sunreis.select { (Sunreis.id eq sunreiId) and (Sunreis.deletedAt.isNull()) }.count() > 0
+        require(exists) { "Sunrei not found: $sunreiId" }
+        val spotId = createSunreiSpot(sunreiId, spot)
+        Sunreis.update({ Sunreis.id eq sunreiId }) { it[Sunreis.updatedAt] = Clock.System.now() }
+        spotId
+    }
+
     // ===== Spot write helpers =====
 
     private fun createSunreiSpot(sunreiId: String, spot: CreateSunreiSpotInline): String =

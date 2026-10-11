@@ -16,7 +16,6 @@ Notes:
     so it lands a draft unless --publish is given. Review in admin afterward.
   - Admin token is auto-minted locally (auth/mint_token.py) — no login needed. Requires
     SOPS + GCP KMS decrypt permission. Override by exporting SUNREI_ADMIN_TOKEN.
-  - On success writes _create_manifest.json for the S3 registry step.
 """
 import json
 import sys
@@ -138,15 +137,7 @@ def main():
     if st == 201 and (resp or {}).get("id"):
         sid = resp["id"]
         created = resp.get("spots") or []
-        manifest_spots = []
-        for req, res in zip(spots, created):
-            yl = req.get("youtubeLink", "")
-            vid = yl.split("v=")[-1].split("&")[0] if "v=" in yl else None
-            manifest_spots.append({"spotId": res.get("id"), "videoId": vid, "videoTitle": req.get("title")})
-        json.dump({"sunreiId": sid, "sourceId": source_id, "spots": manifest_spots},
-                  open(ws / "_create_manifest.json", "w"), ensure_ascii=False, indent=2)
         print(f"\n✓ created sunrei {sid}, {len(created)} spots ({'published' if publish else 'draft'})")
-        print(f"manifest -> {ws / '_create_manifest.json'} (use for the S3 registry, Step 6)")
     elif st == 409:
         print(f"\n⊘ 409 conflict: link already exists -> {(resp or {}).get('existingId')}")
     else:

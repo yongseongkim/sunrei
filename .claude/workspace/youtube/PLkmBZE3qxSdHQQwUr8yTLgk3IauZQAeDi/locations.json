@@ -1,759 +1,614 @@
 {
   "videos": [
     {
+      "videoId": "aDcCeWReTG0",
+      "title": "프렌치 셰프도 감탄한 삿포로 3스타 재패니즈 프렌치🍽️북해도 식재료 끝판왕 | 몰리에르 モリエール",
+      "concept": "일본",
+      "locations": [
+        {
+          "name": "몰리에르 Moliere モリエール",
+          "address": "일본 〒064-0959 Hokkaido, Sapporo, Chuo Ward, Miyagaoka, 2-chōme−1−１ ラファイエット宮ケ丘 1F",
+          "description": "삿포로 미야가오카 공원 앞에 자리한 재패니즈 프렌치 레스토랑으로, 2017년 미쉐린 가이드 홋카이도 특별판에서 쓰리스타를 받은 곳이다. 클래식 프렌치가 아니라 모던한 '재패니즈 프렌치'를 표방하며 홋카이도 해산물과 농작물 재료를 적극적으로 활용하고, 서양식 스톡 대신 다시(출시) 느낌으로 국물을 잡하는 등 일본만의 스타일을 더해 동행한 프렌치 셰프도 인정했다. 점심 코스로 방문했으며 은행 튀김 같은 이색적인 애프타티저부터 쌀가루를 입혀 바삭함을 살린 생선 뮈니에르(레몬 버터 케이퍼 소스), 압도적인 크기로 등장하는 홋카이도 대표 고급 조개 호키가이(북방조개), 니세코에서 길러 낸 감자로 만든 도피누아(그라탕)까지 이어진다. 크리에이터는 '버터도 잘 쓰고 과하지 않아 밸런스가 완벽하다'며 '고기보다 감자가 더 맛있다'고 극찬했고, 밤 대신 일본 토착 밤(백화)으로 만든 몽블랑과 갈레트 데 루아 아몬드 파이로 디저트를 마무리했다. 와인은 좋아하는 버건디 화이트 뿔리니 몽라셰 2019와 보르도 생테스테프 샤토 몽로주 1998를 페어링해 완벽한 밸런스를 강조했다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=aDcCeWReTG0",
+          "latitude": 43.057375,
+          "longitude": 141.3115977,
+          "googleMapsId": "ChIJ14UhkcMpC18RYEwgnUQ8T10",
+          "googleMapsUri": "https://maps.google.com/?cid=6723659034079022176&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
       "videoId": "90FahyHS8dA",
       "title": "1박에 500만 원짜리 료칸 밥은 뭐가 나올까? | 소네카",
-      "concept": "일본 료칸 방문기",
+      "concept": "307-1",
       "locations": [
         {
           "name": "SONEKA",
-          "displayName": "SONEKA",
           "address": "307-1 Ōmagari, Kitahiroshima, Hokkaido 061-1270 일본",
+          "description": "삿포로에서 차로 약 40분 거리의 기타히로시마에 자리한 독채형 프리미엄 료칸으로, 크리에이터가 '홋카이도 끝판왕, 전 일본을 통틀어도 이보다 좋은 곳이 많지 않다'고 평가한 곳이다. 서로 다른 컨셉의 독채 객실 4채만 운영하며 객실마다 실내탕과 노천탕, 식기세척기·오븐·에스프레소 머신을 완비한 주방을 갖췄고, 식사를 포함하지 않고 취사도 가능한 유연한 구조다. 온천은 식물성 온천수에 찬물이 섞여 수영장처럼 미지근하게 유지되는 게 특징이고 일부 객실은 노천탕 대신 사우나를 갖췄다. 저녁 식사는 일식과 양식이 섞인 퓨전 코스로 한국인 손님에겐 한글 메뉴를 따로 준비해 주며, 홋카이도에서 가장 비싼 생선으로 꼬는 긴키(김기) 구이, 진짜 시샤모, 송이버섯 파스타, 홋카이도 소고기 등이 나온다. 식사 후에는 객실 앞에서 모닥불을 피워주고 마시멜로와 불꽃놀이 세트까지 챙겨주는 섬세한 환대가 인상적이며, 인당 가격이 아닌 객실 기준 요금이라 여럿이 묵을수록 가성비가 좋아 '또 오고 싶다'는 반응을 남겼다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=90FahyHS8dA",
           "latitude": 42.9529822,
           "longitude": 141.479408,
           "googleMapsId": "ChIJkw1nKADVdF8R-aM98eQnyIQ",
-          "googleMapsUri": "https://maps.google.com/?cid=9567941272601994233&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=90FahyHS8dA",
-          "description": "일본 프리미엄 료칸을 소개하는 영상에서 방문한 홋카이도 키타히로시마의 고급 료칸. 1박에 500만 원이라는 파격적인 가격에 걸맞은 최상급 식사와 서비스가 인상적이다."
+          "googleMapsUri": "https://maps.google.com/?cid=9567941272601994233&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "p582RAgWsHs",
       "title": "설경 뻥뷰의 미쉐린 료칸☃️...아라마사를 이 가격에? | Niseko Zaborin",
-      "concept": "일본 료칸 방문기",
+      "concept": "76-4",
       "locations": [
         {
-          "name": "Zaborin",
-          "displayName": "Zaborin Ryokan",
+          "name": "Zaborin Ryokan 坐忘林",
           "address": "76-4 Hanazono, Kutchan, Abuta District, Hokkaido 044-0084 일본",
+          "description": "니세코 한조노에 자리한 프리미엄 료칸으로 눈 덮인 설경을 객실에서 감상할 수 있고 크리에이터가 오랜 로망으로 삼아온 곳이다. 크리에이터는 '지금까지 본 료칸 중 와인 리스트가 가장 좋다'고 평가했고, 구하기 힘든 모던 사케 아라마사(핑크 유니콘, 농민예술개론 등 실험적인 이름을 단 사케)를 합리적인 가격에 즐길 수 있다는 점을 특히 강조했다. 식사는 전형적인 가이세키에서 한 발 나아가 코스 수가 더 많고 변형이 가미된 구성으로, 오징어 스프링롤과 오징어 간 흑마늘 소스, 달달한 일본 당근에 와규 플레이크와 비트 퓨레를 얹은 야채 요리, 해초를 입힌 굴 튀김과 락시위드 다시, 가리비 관자와 밤 같은 백합뿌리 완자, 산 와사비를 곁들인 볼락·문어·참치·성게 모둠 사시미 등이 차례로 나온다. 평소 당근을 안 먹는 크리에이터가 당근 요리를 비워가며 극찬했고, 동행 일행도 '지금까지 묵은 료칸 중 음식이 제일 좋다'고 평가했다. 1박은 아까우니 2박 이상 머물러 여유를 즐기기를 권하며, 체크아웃 길에는 니세코 스키장 인근 상점에서 우유·치즈로 만든 아이스크림과 케이크를 들를 수 있다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=p582RAgWsHs",
           "latitude": 42.9046156,
           "longitude": 140.6773586,
           "googleMapsId": "ChIJAeZ_igC7Cl8Rt7UeTpnAhUU",
-          "googleMapsUri": "https://maps.google.com/?cid=5009621925192709559&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=p582RAgWsHs",
-          "description": "일본 미쉐린 료칸을 소개하는 영상에서 방문한 니세코의 료칸. 설경 뻥뷰와 함께 아라마사 사케를 합리적인 가격에 즐길 수 있으며, 미쉐린 인정을 받은 곳이다."
+          "googleMapsUri": "https://maps.google.com/?cid=5009621925192709559&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "0VWZ5bhb7Bk",
       "title": "삿포로 소바집에서 취했습니다. | 미슐랭 1스타_테우치소바 코하시 | (+비추천 이자카야)",
-      "concept": "일본 미슐랭 맛집",
+      "concept": "21-chōme-1-2",
       "locations": [
         {
-          "name": "테우치소바 코하시",
-          "displayName": "테우치소바 코하시",
+          "name": "테우치소바 코하시 手打ち蕎麦 こはし",
           "address": "21-chōme-1-2 Kita 10 Jōnishi, Chuo Ward, Sapporo, Hokkaido 060-0010 일본",
+          "description": "삿포로 중앙도매시장 장외시장 인근에 자리한 수타 소바 전문점으로, 2017년 미쉐린 가이드 홋카이도 특별판에서 1스타를 받은 크리에이터의 또간집이다. 시내에 있으면서도 눈이 보이는 고즈넉한 분위기로 '시내인데 시외 느낌'이라는 묘사를 받았다. 메밀을 직접 방앗간에서 제분해 100% 메밀로 반죽한 면이 특징으로, 기본 소바(950엔)부터 따뜻한 나메코 소바(1,200엔), 차가운 소바를 뜨거운 오리 육수에 찍어 먹는 카모세이로(1,800엔)까지 다양하다. 이곳은 '소바집이 사실은 술집'이라는 모토답게 일본어 메뉴판에만 안주가 추가로 있어 생유바 사시미(750엔, 부라타치즈 같은 식감), 우엉 튀김(650엔), 오리 구이(1,700엔), 단새우 튀김(800엔) 등을 곁들여 낮술을 즐기기 좋다. 소바로 만든 술 소바쇼츄 소바유와리와 마지막에 소바 유를 쯔유에 섞어 먹는 방식, 날달걀을 추가해 찍어 먹는 색다른 경험이 겹쳐 '뻔한 삿포로 음식이 먹기 싫을 때 방문하면 좋다'는 총평을 남겼다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=0VWZ5bhb7Bk",
           "latitude": 43.06912,
           "longitude": 141.3212051,
           "googleMapsId": "ChIJEbDvNwApC18RGJVv5fGeXGU",
-          "googleMapsUri": "https://maps.google.com/?cid=7303887457461703960&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=0VWZ5bhb7Bk",
-          "description": "삿포로 미슐랭 1스타 소바집을 소개하는 영상에서 방문한 곳. 소바와 함께 사케를 즐기다 취할 정도로 매력적인 곳이며, 비추천 이자카야 정보도 함께 다루었다."
+          "googleMapsUri": "https://maps.google.com/?cid=7303887457461703960&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "TIlMgP127dc",
       "title": "[EN] 한국에선 불법! '야생요리 전문식당' | 일본 야나기야 | Cuisine Yanagiya",
-      "concept": "기후현 야생요리 전문식당",
+      "concept": "Mashizume-573-27",
       "locations": [
         {
-          "name": "야나기야 Cuisine Yanagiya",
-          "displayName": "Yanagiya",
+          "name": "야나기야",
           "address": "Mashizume-573-27 陶町猿爪 Mizunami, Gifu 509-6361 일본",
+          "description": "기후현 미즈나미에 있는 사냥·채집한 야생 재료로 요리를 만드는 야생요리 전문점으로 미쉐린 2스타를 받은 곳이다. 나고야에서 기차로 한 시간 거리이며 4명 이상만 예약을 받고(6명이면 한 방에서 딱 좋다), 역에서 미리 연락하면 픽업도 나온다. 5년 전 가을에 다녀와 잊지 못해 다시 찾았다는 크리에이터는 계절마다 메뉴가 바뀌는 점을 강조하며 특히 가을 방문을 추천했다. 피를 즉시 빼내 특유의 향을 없앤 사슴 심장 사시미를 비롯해 멧돼지 파꼬치(네기마), 멧돼지 목등심·등심, 사슴 로스, 쇠오리 구이 등을 비장탄과 일반 숯 두 종류로 숯불 구워 내고, 마지막에는 멧돼지 된장국과 마를 얹은 밥으로 마무리한다. '한국에서는 규제 때문에 이런 야생요리 식당이 법적으로 불가능하다'는 점도 특별함으로 꼽았으며, 크리에이터 총평은 '가을 시즌에 한 번 더 방문할 것', 인당 약 2만 엔 수준의 가격대였다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=TIlMgP127dc",
           "latitude": 35.3180079,
           "longitude": 137.3345021,
           "googleMapsId": "ChIJq6pWUtJRA2ARtKygfg8ao4A",
           "googleMapsUri": "https://maps.google.com/?cid=9269281111909903540&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=TIlMgP127dc",
-          "description": "한국에서는 불법인 야생요리 전문식당을 소개하는 영상에서 방문한 기후현 미즈나미의 레스토랑. 독특한 야생 식재료를 활용한 요리가 특징이며, 일본만의 식문화를 체험할 수 있다."
+          "geocodeWarning": "displayName 'Yanagiya' != '야나기야'; verify"
         }
       ]
     },
     {
       "videoId": "5JIZFg4dXfo",
       "title": "뭐 하나 빠짐없이 좋았던 홋카이도 프리미엄 료칸 (feat. 훌륭한 퀄리티의 해산물)[EN]ㅣ모쿠노쇼",
-      "concept": "일본 료칸 방문기",
+      "concept": "393393",
       "locations": [
         {
-          "name": "모쿠노쇼",
-          "displayName": "Niseko Konbu Onsen Tsuruga Besso Moku no Sho",
+          "name": "모쿠노쇼 (Mokunoshou)",
           "address": "393 Niseko, Abuta District, Hokkaido 048-1511 일본",
+          "description": "니세코 곤후 온천에 자리한 츠루가 그룹의 프리미엄 료칸 '모쿠노쇼'로, 삿포로에서 약 1시간 30분 거리의 계곡물이 흐르는 한적한 숲 속에 있다. 객실 수가 적어 프라이빗한 분위기이며 2020년에 문을 열었으나 기존 건물을 개조한 듯한 느낌이고, 노천 온천이 딸린 스위트룸과 바 앞 족욕 공간, 새벽에도 이용 가능한 대욕장을 갖췄다. 저녁은 가이세키로 호박 두부, 산초잎을 얹은 관자 수프, 광어·참치·도화새우·북방조개·성게 모둠 사시미, 러시아산 킹크랩 다리 찜, 가을 일식에서 빠질 수 없는 꽁치와 고급 심해어 메누키 찜, 큼직한 전복과 버섯찜, 홋카이도 와규, 연어 솥밥이 차례로 나온다. 크리에이터는 '전반적으로 재료가 굉장히 좋다'고 반복해 강조했고, 꽁치는 비늘이 깨끗해 낚시로 잡은 것이라고 추정할 정도로 퀄리티가 높았다. 인당 약 50만 원대의 가격대이지만 캠프파이어에서 마시멜로를 구워주는 츠루가 특유의 환대가 더해져 '겨울이 아니어도 충분히 만족스러운 하루'라는 총평을 남겼다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=5JIZFg4dXfo",
           "latitude": 42.8394239,
           "longitude": 140.6223305,
           "googleMapsId": "ChIJS-oU_YClCl8RiXnw9Fjhe-U",
-          "googleMapsUri": "https://maps.google.com/?cid=16536058229003680137&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=5JIZFg4dXfo",
-          "description": "홋카이도 프리미엄 료칸을 소개하는 영상에서 방문한 니세코의 료칸. 뭐 하나 빠짐없이 좋았다는 평가를 받았으며, 특히 훌륭한 퀄리티의 해산물 요리가 인상적이다."
+          "googleMapsUri": "https://maps.google.com/?cid=16536058229003680137&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "ls0stez98hg",
       "title": "이 시골 료칸이 홋카이도 유일의 미쉐린 1스타를 받은 곳이라고?[EN]ㅣ비쿠니 칸코 하우스",
-      "concept": "일본 료칸 방문기",
+      "concept": "일본",
       "locations": [
         {
-          "name": "비쿠니 칸코 하우스",
-          "displayName": "Bikuni Kanko House",
-          "address": "일본 〒046-0201 北海道積丹郡積丹町美国町船澗４９",
-          "latitude": 43.2990852,
-          "longitude": 140.5994288,
-          "googleMapsId": "ChIJlU4uFwT3Cl8RKGo6vRZq3AU",
-          "googleMapsUri": "https://maps.google.com/?cid=422329110962530856&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "name": "후나마",
+          "address": "일본 〒046-0201 홋카이도 Shakotan District, 샤코탄조 비쿠니초 후나마",
+          "description": "홋카이도 샤코탄 반도 비쿠니항에 자리한 소박한 시골 료칸으로, 삿포로에서 약 2시간·오타루에서 약 1시간 거리에 있다. 크리에이터는 이곳을 '비쿠니 칸코 하우스'라 부르며, 온천이 있는 것도 아니고 객실에 화장실·욕실조차 없는 단출한 시설이지만 2017년 미쉐린 가이드 북해도 특별판에서 북해도 숙소 중 유일하게 '음식'으로 1스타를 받은 곳이라고 소개한다. 저녁은 정통 가이세키가 아닌 투박하면서도 직관적인 해산물 코스로, 전복·문어·북방조개·새우튀김으로 시작해 부드럽고 기름기가 쫙 퍼지는 송어, 알이 가득 찬 갯가재, 한국에서는 어획이 불법인 대게 암컷의 알과 살, 도화새우·전복 튀김이 차례로 나오고, 우럭으로 끓인 된장 나베는 '국물이 예술로 우러났다'는 평가를 받는다. 다음 날 아침에는 임연수 된장구이와 함께 밥 위에 생 성게·생 전복을 통째로 올린 덮밥이 나오며, 근처 요이치의 100% 생사과 주스가 곁들여진다. 술은 같은 요이치 지역 닛카 위스키의 다케츠루·싱글몰트 요이치 하이볼이 잘 어울리고, 숙박·식사 포함 인당 약 25~26만 원 수준이다. 시설은 열악하지만 해산물 요리의 완성도가 뛰어나 '지금까지 먹어 본 북해도 료칸 중 음식이 제일 괜찮았다'며 샤코탄 반도 일정이라면 들러볼 만한 곳으로 추천한다.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=ls0stez98hg",
-          "description": "홋카이도 유일의 미쉐린 1스타 료칸을 소개하는 영상에서 방문한 샤코탄의 시골 료칸. 시골 위치에도 불구하고 미쉐린 1스타를 받은 실력파 료칸으로, 소박하지만 깊은 맛이 특징이다."
+          "latitude": 43.2975159,
+          "longitude": 140.5870735,
+          "googleMapsId": "ChIJ114uFwT3Cl8RevK_3TsnOOU",
+          "googleMapsUri": "https://maps.google.com/?cid=16516994771458191994&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "ylfG2fvn3K4",
       "title": "🍷다시는 못 볼 줄 알았던 와인과의 운명적인 만남[EN]ㅣ코트도르",
-      "concept": "일본의 프렌치 레스토랑",
+      "concept": "일본",
       "locations": [
         {
-          "name": "Restaurant Cote d'Or",
-          "displayName": "코트도르(Côte d'Or)",
-          "address": "1-chōme-2-38 Miyagaoka, Chuo Ward, Sapporo, Hokkaido 064-0959 일본",
-          "latitude": 43.0580144,
-          "longitude": 141.3121224,
-          "googleMapsId": "ChIJr-5x8cMpC18RE14Vils4K9c",
-          "googleMapsUri": "https://maps.google.com/?cid=15504548107962899987&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "name": "レストランコートドール",
+          "address": "일본 〒064-0959 Hokkaido, Sapporo, Chuo Ward, Miyagaoka, 1-chōme−2−３８ レストランコートドール",
+          "description": "삿포로 마루야마 공원 인근, 이른바 삿포로의 청담동이라 불리는 거리에 자리한 클래식 프렌치 레스토랑으로, 이름인 코트도르(Côte d'Or)는 부르고뉴 레드 와인의 핵심 지역인 '황금의 언덕'을 뜻한다. 2017년 미쉐린 가이드 북해도 특별판에서 1스타를 받았으며, 바게트와 버터가 완벽하고 푸아그라 꽁피에 무화과 잼·브리오슈를 곁들이는 등 전형적이면서 정교한 프렌치 코스를 내놓는다. 홋카이도산 와규 안심에 프랑스산 포르치니와 꽁떼 치즈 라비올리를 얹은 메인(약 16,000엔)은 한 접시에 담긴 구성이 인상적이고, 셰리 비네거 소스를 곁들인 긴포튀김, 홍합·오이 소스의 플랑 등 북해도 산지를 적극 활용한 요리가 이어진다. 디저트는 계절 수플레와 코코넛 블랑망제 등 네 종에서 고를 수 있으며, 수플레는 갓 구워 부풀린 뒤 가운데 아이스크림을 넣어 먹는 올타임 페이보릿으로 꼽힌다. 가장 큰 매력은 와인 리스트로, 국제 소매가 대비 눈에 띄게 저렴한 명품 와인들이 남아 있어 더 이상 구할 수 없는 Domaine Leflaive Batard Montrachet 1999(화이트)와 Prieure Roch Clos de Beze 1996(레드, 플래그십) 같은 희귀 빈티지를 만날 수 있다. 기대를 저버리지 않는 음식에 환상적인 와인이 어우러진, 오래 기억에 남을 삿포로의 저녁이라는 평가다.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=ylfG2fvn3K4",
-          "description": "일본 프렌치 레스토랑에서의 와인 경험을 소개하는 영상에서 방문한 삿포로의 레스토랑. 다시는 못 볼 줄 알았던 와인과의 운명적인 만남이 펼쳐진 곳으로, 와인 리스트가 훌륭하다."
+          "latitude": 43.058048799999995,
+          "longitude": 141.3121601,
+          "googleMapsId": "ChIJH5908cMpC18RSNyatFBNVz4",
+          "googleMapsUri": "https://maps.google.com/?cid=4492144162348129352&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "zFKDef6mDHY",
       "title": "인당 45만원, 와인만 250만원 나온 후덜덜한 일본 타베로그 TOP10 맛집! 과연 그 맛은? (feat. 깻잎에 싸주는 말고기🐎)[EN]ㅣACA",
-      "concept": "일본 와인 레스토랑",
+      "concept": "일본",
       "locations": [
         {
-          "name": "ACA",
-          "displayName": "la cocina de acá 1°",
+          "name": "Aca (아카)",
           "address": "일본 〒103-0002 Tokyo, Chuo City, Nihonbashimuromachi, 2-chōme−1−１ 三井二号館 1F",
+          "description": "도쿄 니혼바시무로마치 미츠이 2호관에 자리한 스페인 레스토랑 '아카(Aca)'로, 크리에이터가 '일본에서 최고로 핫한 스페인 레스토랑'이라 부르는 곳이다. 오픈 주방이라 셰프가 요리하는 과정을 실시간으로 볼 수 있으며, 숯불 직화를 기본으로 일본 와규와 해산물을 스페인 테크닉으로 풀어내는 스타일이다. 코스는 북방조개 직화 구이, 쉐리 와인 비네거로 산미를 잡은 킨메다이, 양젖으로 만든 만체고 치즈를 곁들인 은어(아유), 깻잎(시소) 향을 입힌 말고기 타르타르(함박 모양으로 굽고 계란 노른자를 올림), 하얀 돼지 하몽으로 우려낸 국물 등 독특한 구성으로 이어진다. 가고시마규 등심·안심은 겉 기름을 떼지 않고 통째로 숯향 가득 구워내고, 전복 내장(게우) 향이 폭발하는 전복죽, 비트 아이스크림과 페루 카카오 초콜릿·커피까지 디저트까지 갖춘 끝장코스다. 와인 리스트는 충격적일 정도로 비싸 Egly Ouriet 그랑크루 샴페인은 엄두도 내지 못했지만, 해외 시세의 2배 미만인 Domaine Ponsot Clos de La Roche 2015를 만날 수 있었다. 인당 약 5만 엔, 와인 2병에 약 250만 원이 나가는 만큼 특별한 날에 어울리는 파인다이닝이다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=zFKDef6mDHY",
           "latitude": 35.686865,
           "longitude": 139.7723438,
           "googleMapsId": "ChIJfy-g6MuLGGAR0jcF50OsA3A",
-          "googleMapsUri": "https://maps.google.com/?cid=8071484364816725970&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=zFKDef6mDHY",
-          "description": "일본 타베로그 TOP10 맛집을 소개하는 영상에서 방문한 도쿄 니혼바시의 와인 레스토랑. 인당 45만원에 와인만 250만원이 나올 정도로 와인에 진심인 곳이며, 깻잎에 싸주는 말고기 요리가 유명하다."
+          "googleMapsUri": "https://maps.google.com/?cid=8071484364816725970&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "pn6xLx1HwJE",
       "title": "이름 내건 식당은 일단 맛 보장이 국룰🏅미쉐린 2스타를 이끌던 류지로 셰프가 차린 도쿄 고급 스시의 한끝차이ㅣ류지로",
-      "concept": "일본 스시/오마카세",
+      "concept": "일본",
       "locations": [
         {
-          "name": "류지로",
-          "displayName": "스시 류지로",
+          "name": "스시 류지로",
           "address": "일본 〒107-0062 Tokyo, Minato City, Minamiaoyama, 2-chōme−11−１１ ARISTO南青山 １階",
+          "description": "도쿄 미나미아오야마에 자리한 미쉐린 1스타 스시집으로, 류지로 상이 직접 미소를 띄우며 간결하게 스시를 쥐고 마무리에 향을 뿌려주는 퍼포먼스까지 겸하는 카운터와 세컨 셰프가 맡는 카운터 두 곳으로 운영된다. 외국인 예약이 비교적 수월해 한국인 방문 후기가 꽤 많은 편이며, 코로나 이후 오랜만에 찾은 도쿄 고급 스시의 밤을 다룬 영상이다. 츠마미는 야마가타 산 재료를 쓴 상큼한 사시미 모듬, 자연산 전복(밤·고구마 향), 빨판을 따로 내주는 문어 튀김으로 시작해 시마네현 민물장어(겉을 바삭하게 구움), 하모가 들어간 투명하고 탄력 있는 소면, 도톰하고 풍미 깊은 무늬오징어가 이어진다. 니기리에서는 산미가 좋아 '이날 가장 기억에 남는 한 점'이 된 가쓰오, 고급 스시집에서는 잘 나오지 않는 기름진 연어, 참치의 감·주도로·도로 등 새 살을 연달아 내 일본 현지의 참치 수준을 체감하게 한다. 성게의 퀄리티가 압도적이고, 아나고를 오이와 함께 김에 싸주는 스타일, 갓 구워 뜨겁게 내는 계란, 스시에서 드물게 쓰는 넙치 관자(추가 주문할 정도로 맛있었다)까지 구성이 세심하다. 전반적으로 재료가 압도적으로 좋아 맛있게 먹으면서도 한국 스시의 수준이 크게 올라왔음을 다시금 느끼게 하는 한 끼다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=pn6xLx1HwJE",
           "latitude": 35.6713126,
           "longitude": 139.7210433,
           "googleMapsId": "ChIJwaYqX1CNGGARY7CAGDEQOIE",
-          "googleMapsUri": "https://maps.google.com/?cid=9311210032639029347&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=pn6xLx1HwJE",
-          "description": "도쿄 고급 스시를 소개하는 영상에서 방문한 미나미아오야마의 스시집. 미쉐린 2스타를 이끌던 류지로 셰프가 자신의 이름을 걸고 차린 곳으로, 고급 스시의 한끝차이를 느낄 수 있다."
+          "googleMapsUri": "https://maps.google.com/?cid=9311210032639029347&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "aZbrrnUTjSU",
       "title": "간판없는 식당? 입소문으로만 찾아가야 하는 꼼꼼 숨겨진 일본 소고기 오마카세[EN]ㅣ미가키쇼 나가야마",
-      "concept": "일본 스시/오마카세",
+      "concept": "3-chōme-14-2",
       "locations": [
         {
-          "name": "미가키쇼 나가야마",
-          "displayName": "磨匠ながやま",
-          "address": "일본 〒107-0052 Tokyo, Minato City, Akasaka, 3-chōme−14−２ ドルミ赤坂 2階",
+          "name": "미가키쇼 나가야마 (牧之士長山)",
+          "address": "4-chōme-11-24 Akasaka, Minato City, Tokyo 107-0052 일본",
+          "description": "도쿄 아카사카 건물 2층에 자리한 '미가키쇼 나가야마'는 예약 손님만 받는 니쿠 갓포(소고기 오마카세) 전문점으로, 한때 화제를 모았던 '와규 마피아' 출신이 독립해 운영하는 히스토리를 가진 곳이다. 단순히 고기를 구워주는 야키니쿠가 아니라 일본 와규를 다양한 요리로 풀어내는 콘셉트로, 육사시미(양깃머리·심장·살치살을 날로), 안심 카츠산도, 염도 2.8%의 저염 캐비아를 올린 와규 타르타르, 수비드 안심추리에 소 기름과 우유로 만든 매쉬 포테이토와 호주산 윈터 트러플을 곁들이는 등 아이디어가 돋보인다. 이어 북해도산 우니를 듬뿍 올린 '성게 폭탄' 소바, 안심 샤토브리앙 튀김과 비와호 은어 튀김, 생후추를 더한 우설 구이('가장 맛이 다르다'며 만족), 에다마메 소스의 소고기 경단, 알등심까지 고기 부위별 매력을 촘촘히 보여준다. 마지막엔 계란 노른자를 얹은 간장 소고기 덮밥(살짝 안 비벼 먹는 게 낫다는 아쉬움)과 소 기름을 넣어 직접 만든 와라비 모찌 아이스크림으로 마무리하며, 젓가락을 닦는 티슈와 함께 젓가락을 선물로 챙겨주는 디테일도 인상적이다. 와인 리스트도 괜찮아 루이 로드레 크리스탈이 3만 엔대, 2010년 샤또네프 뒤 파프를 곁들일 수 있고, 인당 약 25만 원·와인 1병 약 30만 원 선이다. 같은 건물 앞에는 1624년부터 이어진 주류 전문점 '아카사카 요모'가 있어 식사 후 한 잔하기 좋다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=aZbrrnUTjSU",
           "latitude": 35.673862899999996,
           "longitude": 139.73738079999998,
-          "googleMapsId": "ChIJ7Zm7SwWLGGARUzBYPUz7JSs",
-          "googleMapsUri": "https://maps.google.com/?cid=3109167422634471507&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=aZbrrnUTjSU",
-          "description": "숨겨진 소고기 오마카세를 소개하는 영상에서 방문한 도쿄 아카사카의 레스토랑. 간판 없이 입소문으로만 찾아가야 하는 곳으로, 꼼꼼하게 숨겨진 와규 오마카세가 인상적이다."
+          "googleMapsId": "ChIJ_bCImn-MGGARzmY45JJFJEo",
+          "googleMapsUri": "https://maps.google.com/?cid=5342471555164694222&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+          "geocodeWarning": "간판 없는 입소문 식당 - Places 미등록, 주소 기준 좌표"
         }
       ]
     },
     {
       "videoId": "1XZofgYeyUw",
       "title": "동에 번쩍 서에 번쩍하는 비밀이야가 호텔 고르는 꿀팁🌟[EN]ㅣ만다린 오리엔탈 도쿄",
-      "concept": "도쿄 럭셔리 호텔",
+      "concept": "2-chōme-1-1",
       "locations": [
         {
-          "name": "만다린 오리엔탈 도쿄",
-          "displayName": "만다린 오리엔탈 도쿄",
+          "name": "만다린 오리엔탈 도쿄 (Mandarin Oriental Tokyo)",
           "address": "2-chōme-1-1 Nihonbashimuromachi, Chuo City, Tokyo 103-8328 일본",
+          "description": "도쿄 니혼바시, 도쿄역에서 도보 거리에 자리한 만다린 오리엔탈 도쿄는 38층 로비를 품은 고층 럭셔리 호텔로, 맑은 날엔 객실에서 후지산이 보이고 도쿄 시내와 야경을 한눈에 내려다볼 수 있는 전망이 가장 큰 자랑이다. 넓은 욕실과 풍성한 어메니티, 웰컴 샴페인·과일·초콜릿·기프트, 편안한 침대와 스피커까지 세심한 디테일이 돋보이며, 지하 통로로 미츠코시 백화점 니혼바시 본점과 바로 이어지고 다카시마야·도쿄역도 가까워 쇼핑과 이동이 편리하다. 특히 음식에 진심인 호텔로 크고 작은 레스토랑이 무려 10개나 들어 있고, 삿포로 미야카와가 운영하는 '스시신'을 비롯해 스시·일식·이탈리안·프렌치·피자 바·스페인 타파스 바까지 갖추고 있다. 조식은 뷔페에 계란·프렌치토스트·와플·라멘 등 메인을 주문하는 방식이며, 생선과 치킨 육수를 섞은 시오라멘이 꽤 괜찮은 퀄리티로 나온다. 유명한 애프터눈 티는 2시간 제한으로 무한 리필 음료와 함께 브레게 콜라보 케이스 스탠드에 가리미+캐비아, 스모크샐몬+아스파라거스 샌드위치, 로스트비프, 스페인풍 오믈렛+판체타 트러플 소스, 사요리(학꽁치) 요리, 레몬 무스, 피스타치오·체리, 슈크림까지 정교하게 차려 나오며 한국인 직원이 한국어로 설명까지 해준다. 디럭스룸 1박 약 150만 원, 애프터눈 티 인당 약 1만 엔 수준으로, 좋은 호텔에서의 경험 자체가 여행의 일부가 되는 숙소라는 평가다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=1XZofgYeyUw",
           "latitude": 35.6870475,
           "longitude": 139.7730634,
           "googleMapsId": "ChIJ281VfFWJGGARYaR_hmZuo0I",
-          "googleMapsUri": "https://maps.google.com/?cid=4801803014329312353&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=1XZofgYeyUw",
-          "description": "호텔 고르는 꿀팁을 소개하는 영상에서 방문한 도쿄 니혼바시의 럭셔리 호텔. 동에 번쩍 서에 번쩍하는 여행자를 위한 호텔 선택 기준이 영상에서 공유되었다."
-        }
-      ]
-    },
-    {
-      "videoId": "zuf53B4FMgI",
-      "title": "원두면 몰라도 우유를 골라 마시는 카페가 있다? 홋카이도 필수 카페 4곳 [EN]",
-      "concept": "홋카이도 카페 투어",
-      "locations": [
-        {
-          "name": "미야코시야 커피",
-          "displayName": "Miyakoshiya Coffee",
-          "address": "1, 28-chōme-1 Minami 2 Jōnishi, Chuo Ward, Sapporo, Hokkaido 060-0062 일본",
-          "latitude": 43.05410940000001,
-          "longitude": 141.315684,
-          "googleMapsId": "ChIJ3Uho0ukpC18R5WJsIlq_sx0",
-          "googleMapsUri": "https://maps.google.com/?cid=2140264641776607973&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=zuf53B4FMgI",
-          "description": "홋카이도 필수 카페 4곳을 소개하는 영상에서 방문한 삿포로 마루야마의 클래식 커피 전문점. 원두보다 우유를 골라 마시는 독특한 컨셉의 카페 투어 중 하나로 소개되었다."
-        },
-        {
-          "name": "바리스타트 커피",
-          "displayName": "바리스타트 커피",
-          "address": "일본 〒060-0061 Hokkaido, Sapporo, Chuo Ward, Minami 1 Jōnishi, 4-chōme 第二ビル 1F 札幌市中央区南１条西４丁目８番地 NKC1-4",
-          "latitude": 43.0583246,
-          "longitude": 141.3513244,
-          "googleMapsId": "ChIJL6ONVJspC18Rl9-QN-T7Qh4",
-          "googleMapsUri": "https://maps.google.com/?cid=2180582127204097943&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=zuf53B4FMgI",
-          "description": "홋카이도 필수 카페 4곳을 소개하는 영상에서 방문한 삿포로의 라떼 전문 카페. 우유를 골라 마실 수 있는 독특한 시스템이 특징이며, 홋카이도 우유의 다양한 맛을 즐길 수 있다."
-        },
-        {
-          "name": "산드리아",
-          "displayName": "산도리아",
-          "address": "9-chōme-758-14 Minami 8 Jōnishi, Chuo Ward, Sapporo, Hokkaido 064-0808 일본",
-          "latitude": 43.049428299999995,
-          "longitude": 141.3457879,
-          "googleMapsId": "ChIJI2yh5YspC18RLAGjlDAyrXQ",
-          "googleMapsUri": "https://maps.google.com/?cid=8407431263604113708&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=zuf53B4FMgI",
-          "description": "홋카이도 필수 카페 4곳을 소개하는 영상에서 방문한 삿포로의 24시간 샌드위치집. 가성비 좋은 샌드위치를 언제든 즐길 수 있으며, 카페 투어의 한 코스로 추천되었다."
-        },
-        {
-          "name": "카페 랑방",
-          "displayName": "카페 랑방",
-          "address": "5-chōme-20 Minami 3 Jōnishi, Chuo Ward, Sapporo, Hokkaido 060-0063 일본",
-          "latitude": 43.056446699999995,
-          "longitude": 141.3500799,
-          "googleMapsId": "ChIJEyIp4IQpC18RpKVcYyIzW8s",
-          "googleMapsUri": "https://maps.google.com/?cid=14653362035368961444&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=zuf53B4FMgI",
-          "description": "홋카이도 필수 카페 4곳을 소개하는 영상에서 방문한 삿포로 다누키코지 인근의 아침 카페. 아침 시간대에 방문하기 좋은 카페로, 홋카이도 카페 투어의 마무리로 소개되었다."
+          "googleMapsUri": "https://maps.google.com/?cid=4801803014329312353&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "eodAIw3o50E",
       "title": "❄️영하 9도 삿포로에서 프라이빗하게 즐기는 료칸과 최고급 가이세키 식사ㅣ스이잔테이 클럽 [EN]",
-      "concept": "일본 료칸 방문기",
+      "concept": "2-chōme-2-10",
       "locations": [
         {
-          "name": "스이잔테이 클럽",
-          "displayName": "수이잔테이 클럽 조잔케이",
+          "name": "스이잔테이 클럽 조잔케이",
           "address": "2-chōme-2-10 Jōzankeionsennishi, Minami Ward, Sapporo, Hokkaido 061-2303 일본",
+          "description": "삿포로에서 차로 약 1시간 거리의 조잔케이 온천에 자리한 프라이빗 고급 료칸으로, 삿포로에서 가장 가까운 온천지라 접근성이 좋다. 전 세계에 두 곳뿐이라는 식물성 '모로 온천' 수질이 매끈하고 느낌이 좋아 목욕 자체가 즐겁고, 객실 수가 적어 한결 조용하다. 노천탕이 딸린 객실과 사우나·욕조를 갖춘 스위트룸 등 시설이 충실해 눈 내리는 겨울에는 노천탕에서 사케와 맥주를 칠링해 마시는 운치가 더해진다. 저녁 가이세키는 한식·양식·일식에 두루 정통한 셰프가 이끄는데, 안키모 자왕무시와 대구 이리 두부로 시작해 후구·새우·참치·북방조개 사시미에 성게와 털게, 전복 찜, 와규 안심 스테이크를 거쳐 밥과 디저트로 이어진다. 료칸치고는 사시미 양이 유난히 풍성하고, 고쿠류 준마이 다이긴죠 한 병이 약 5,000엔이라 사케 가격도 가성비가 좋다. 냉장고 음료와 바의 위스키 일부를 제외한 주류가 무료여서 늦은 밤 라운지에서 즐기기에도 좋다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=eodAIw3o50E",
           "latitude": 42.9718616,
           "longitude": 141.1658683,
           "googleMapsId": "ChIJd8VMBSfSCl8REvfyFPL_J6Y",
           "googleMapsUri": "https://maps.google.com/?cid=11972819549586388754&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=eodAIw3o50E",
-          "description": "삿포로 프라이빗 료칸을 소개하는 영상에서 방문한 조잔케이의 료칸. 영하 9도의 설경 속에서 프라이빗하게 최고급 가이세키 식사를 즐길 수 있는 곳이다."
+          "geocodeWarning": "displayName '수이잔테이 클럽 조잔케이' != '스이잔테이 클럽 조잔케이'; verify"
         }
       ]
     },
     {
       "videoId": "JO9Cqs4Cf-o",
       "title": "새우탕 찐하게 우려낸 국물 라멘 🦐 이거지...삿포로가면 꼭 들려야 할 두 곳ㅣ수프카레 사무라이&에비소바 이치겐 [EN]",
-      "concept": "삿포로 라멘/수프카레",
+      "concept": "일본",
       "locations": [
         {
           "name": "수프카레 사무라이",
-          "displayName": "로지우라 커리 사무라이 사쿠라점",
           "address": "일본 〒060-0063 Hokkaido, Sapporo, Chuo Ward, Minami 3 Jōnishi, 6-chōme−１−３ ティアラ36 2F",
+          "description": "스스키노 근처의 수프카레 전문점으로, 삿포로 여행 중 한 번은 꼭 들르게 되는 중독성 있는 맛을 선보인다. 야채·돼지고기·치킨 가라아게 등 들어가는 재료를 고르고, 국물 양과 맵기를 단계별로 선택하는 주문 방식이다. 매운맛 7~8단계쯤이면 신라면 한 끼 정도의 매쾌함이고, 온센 타마고를 터뜨려 밥을 말아 먹으면 추운 겨울 점심으로 제격이다. 매운맛이 캡사이신 계열이 아니라 커리 향신료의 스파이시라 얼큰하면서도 뒤끝이 개운하다. 비수기에는 줄 없이 들어가기도 해 숙소 가까이 있어 부담 없이 찾기 좋다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=JO9Cqs4Cf-o",
           "latitude": 43.0557952,
           "longitude": 141.3498962,
           "googleMapsId": "ChIJDT3-FoUpC18RpIexpQUNUTg",
           "googleMapsUri": "https://maps.google.com/?cid=4058039057143400356&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=JO9Cqs4Cf-o",
-          "description": "삿포로 라멘과 수프카레 맛집을 소개하는 영상에서 방문한 수프카레 전문점. 삿포로에 가면 꼭 들러야 할 곳 중 하나로 추천되었다."
+          "geocodeWarning": "displayName '로지우라 커리 사무라이 사쿠라점' != '수프카레 사무라이'; verify"
         },
         {
           "name": "에비소바 이치겐",
-          "displayName": "에비소바 이치겐",
           "address": "9-chōme-1024-10 Minami 7 Jōnishi, Chuo Ward, Sapporo, Hokkaido 064-0807 일본",
+          "description": "신치토세 공항에도 입점해 관광객에게 익숙한 삿포로의 새우 라멘 명소로, 본점은 보통 30분~1시간 웨이팅이 있다. 국물은 새우 베이스의 '오리지날', 돼지뼈를 섞은 '모더레이트', 걸쭉하고 진한 '리치' 세 종류이고 양념은 미소·시오·쇼유 중에서 고른다. 새우를 튀겨 갈아 올려 '새우탕면 열두 배'라는 표현이 나올 정도로 임팩트가 강하고, 초행에는 진한 리치에 미소 조합을 추천한다. 얇은 면발에 양념이 잘 붙고, 교자를 곁들인 뒤 남은 국물에 밥을 말아 먹으면 마무리까지 든든하다. 웨이팅을 싫어하는 Creator도 삿포로에 오면 한 번씩 들를 만큼 본점만의 바이브와 맛이 확실하다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=JO9Cqs4Cf-o",
           "latitude": 43.051269999999995,
           "longitude": 141.345472,
           "googleMapsId": "ChIJz4qGso4pC18R4wEprPFt2wE",
-          "googleMapsUri": "https://maps.google.com/?cid=133821498680476131&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=JO9Cqs4Cf-o",
-          "description": "삿포로 라멘과 수프카레 맛집을 소개하는 영상에서 방문한 새우 라멘 전문점. 새우탕을 찐하게 우려낸 국물이 특징이며, 삿포로 방문 시 꼭 들러야 할 곳으로 추천되었다."
+          "googleMapsUri": "https://maps.google.com/?cid=133821498680476131&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "ZyY6Hl555Ws",
       "title": "이 영상을 보시면 단번에 이해하실 수 있습니다ㅣ짧고 굵은 가심비 1등 스시집 소개🍣ㅣ스시미야카와 [EN]",
-      "concept": "일본 스시/오마카세",
+      "concept": "일본",
       "locations": [
         {
-          "name": "스시미야카와",
-          "displayName": "스시 미야카와",
+          "name": "스시 미야카와",
           "address": "일본 〒064-0824 Hokkaido, Sapporo, Chuo Ward, Kita 4 Jōnishi, 25-chōme−2−２ リヒトラーレ円山 1F",
+          "description": "삿포로의 미쉐린 3스타 스시집으로, 도쿄 3스타 '요시타케' 출신 셰프가 이끌어 정통 에도마에의 섬세함이 돋보인다. 새로 이전한 자리는 전보다 작고 아담하지만 코스의 완성도와 만족도는 오히려 단단해졌다. 백옥돈·어란·미나리 전채로 시작해 다금바리 샤브, 방어와 야마와사비, 와라야키 가쓰오, 에조 전복 내장 크림 소스를 거쳐 갑오징어·피조개 스시, 2주 숙성 삼치(이날의 베스트), 도요스 참치 뱃살, 고등어 봉초밥, 성게·김 스시, 장어까지 차례로 이어진다. 쥬욘다이와 아라마사 특별 버전 등 고급 사케를 코스 흐름에 맞춰 페어링할 수 있고, 예약만 된다면 무조건 한 번은 가볼 만큼 가성비도 갖췄다. 인당 약 25만 원, 주류는 인당 약 10만 원.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=ZyY6Hl555Ws",
           "latitude": 43.0621249,
           "longitude": 141.3176119,
           "googleMapsId": "ChIJq6o2ZuopC18R-IYrrMOFUWI",
-          "googleMapsUri": "https://maps.google.com/?cid=7084590764284151544&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=ZyY6Hl555Ws",
-          "description": "짧고 굵은 가심비 1등 스시집을 소개하는 영상에서 방문한 삿포로 마루야마의 스시집. 영상을 보면 단번에 이해할 수 있을 정도로 가심비가 뛰어난 곳이다."
+          "googleMapsUri": "https://maps.google.com/?cid=7084590764284151544&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "BGmaULQnWR0",
       "title": "맛&가성비 둘 다 잡은 카이센동 맛집 두 곳 추천!ㅣ우니 무라카미&사카나야노 다이도코로 [EN]",
-      "concept": "삿포로 카이센동",
+      "concept": "일본",
       "locations": [
         {
           "name": "우니 무라카미",
-          "displayName": "우니 무라카미",
           "address": "일본 〒060-0003 Hokkaido, Sapporo, Chuo Ward, Kita 3 Jōnishi, 4-chōme−1−１ 日本生命札幌ビル B1F",
+          "description": "성게로 유명한 하코다테 본점의 삿포로 분점으로, 삿포로역 인근 일본생명 빌딩 지하에 자리해 시장보다 깔끔한 분위기에서 카이센동을 즐길 수 있다. 삿포로 카이센동집 중 성게 퀄리티가 가장 좋은 곳으로 꼽히며, 카드 결제가 돼 현금 준비 부담이 없어 가족 단위 손님에도 편하다. 시그니처 우니동에는 성게 80g이 올라가고, 우니 이꾸라동·삼색동(우니·이꾸라·연어)·우니 그라탱까지 성게를 다양하게 즐길 수 있다. 여름철엔 성게 사이즈가 더 커지고, 니조시장 노점들과 달리 예쁘고 정갈하게 나와 사진을 찾는 손님이 많다. 다만 밥은 간을 하지 않은 맨밥이라 간장을 곁들여야 간이 맞는다. 인당 약 5만 원대.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=BGmaULQnWR0",
           "latitude": 43.0648623,
           "longitude": 141.3499018,
           "googleMapsId": "ChIJ9a9vKJ4pC18RDdPwRNvPVPo",
-          "googleMapsUri": "https://maps.google.com/?cid=18038270948187099917&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=BGmaULQnWR0",
-          "description": "맛과 가성비를 모두 잡은 카이센동 맛집을 소개하는 영상에서 방문한 삿포로의 우니 전문점. 성게를 전문으로 하며, 신선한 카이센동을 합리적인 가격에 즐길 수 있다."
+          "googleMapsUri": "https://maps.google.com/?cid=18038270948187099917&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         },
         {
           "name": "사카나야노 다이도코로",
-          "displayName": "사카나야노 다이도코로 니조시장 본점",
           "address": "일본 〒060-0052 Hokkaido, Sapporo, Chuo Ward, Minami 2 Jōhigashi, 2-chōme−１０ 小西ビル １ 階",
+          "description": "니조시장 안에 자리한 카이센동 전문점으로, 시내에서 접근성이 좋아 관광객뿐 아니라 현지인도 자주 찾는다. 같은 체인이 중앙도매시장에도 있지만 이곳 니조시장점을 주로 찾으며, 현금만 받으니 미리 준비해야 한다. 시그니처는 성게와 연어알을 듬뿍 올린 우니 이꾸라동에 가리비 토핑을 얹은 조합이고, 통통하고 크리미한 생굴(개당 330엔)도 빼놓지 않는다. 식사 중 임연수 구이(홋케)를 한 마리 시키면 바삭한 껍질과 촉촉한 살이 남은 밥과 어울어져 든든한 한 끼가 된다. 시장 안이라 식사 전후로 건어물과 특산물 쇼핑까지 덤으로 즐길 수 있다. 인당 약 5만 원대.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=BGmaULQnWR0",
           "latitude": 43.0587872,
           "longitude": 141.3588443,
           "googleMapsId": "ChIJ7wioW4IpC18RpY8ZVvVXm0o",
-          "googleMapsUri": "https://maps.google.com/?cid=5375987291419938725&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=BGmaULQnWR0",
-          "description": "맛과 가성비를 모두 잡은 카이센동 맛집을 소개하는 영상에서 방문한 삿포로 니조시장의 카이센동 전문점. 시장 안에 위치해 신선한 해산물을 가성비 좋게 맛볼 수 있다."
+          "googleMapsUri": "https://maps.google.com/?cid=5375987291419938725&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "ILFK8cODr4U",
       "title": "징기스칸 양고기 타파할 최고 맛집 대공개🍖🪇ㅣ이타다끼마쓰&호르몬풍토 [EN]",
-      "concept": "삿포로 징기스칸(양고기)",
+      "concept": "5-chōme-1-6",
       "locations": [
         {
           "name": "이타다끼마쓰",
-          "displayName": "이타다키마스",
           "address": "5-chōme-1-6 Minami 5 Jōnishi, Chuo Ward, Sapporo, Hokkaido 064-0805 일본",
+          "description": "스스키노에서 점심에 문을 여는 드문 징기스칸집으로, 북해도산 생 양고기를 부위별로 숙성해 구워 내는 것이 특징이다. 구글 평점은 가격이 비싸 다른 데보다 낮지만, 뉴질랜드산 냉동이 아닌 국산 생고기를 다양하게 맛볼 수 있어 양고기 애호가 사이에서 꼽히는 곳이다. 등심을 비롯해 허파(카파)·혓바닥·간·양깃머리 등 한정판 부위가 한글 메뉴판으로 주문할 수 있다. 고기를 구워 창난젓·깻잎·김치·감자와 곁들이고, 남은 밥에는 간장 소스를 찍어 양파·숙주와 함께 먹으면 좋다. 마지막에 양파를 넣고 끓인 양고기 수프가 소고기뭇국처럼 든든해 별미로 꼽힌다. 인당 약 7만 원.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=ILFK8cODr4U",
           "latitude": 43.0539704,
           "longitude": 141.3519437,
           "googleMapsId": "ChIJkWU54IUpC18RILG14Mo_wmM",
           "googleMapsUri": "https://maps.google.com/?cid=7188378095822680352&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=ILFK8cODr4U",
-          "description": "삿포로 징기스칸 양고기 맛집을 소개하는 영상에서 방문한 전문점. 징기스칸 양고기를 타파할 최고의 맛집으로 대공개되었으며, 양고기의 진수를 맛볼 수 있다."
+          "geocodeWarning": "displayName '이타다키마스' != '이타다끼마쓰'; verify"
         },
         {
           "name": "호르몬풍토",
-          "displayName": "화로구이 징기스칸 호르몬풍토 스스키노점",
           "address": "일본 〒064-0806 홋카이도 삿포로시 주오구 미나미 6 조니시 4 조메",
+          "description": "스스키노에서 밤늦게까지 문을 여는 현지인 밀착 고깃집으로, 징기스칸과 와규 야키니쿠, 호르몬을 한자리에서 모두 취급하는 독특한 구성이 강점이다. 영어·한글 메뉴판이 없어 현지 추천으로 찾는 곳이며, 의자 아래 옷 보관 공간이 있어 연기 냄새 걱정이 덜하다. 소고기 스지 오토시로 시작해 홍창·안창살·하라미·매콤한 양념 호르몬·진갈비살까지 고기 퀄리티가 먹을 만하고 가격도 합리적이다. 한국식 김치 세트와 육개장, 채수 간장 베이스의 냉면을 곁들이면 한국인 입맛에도 잘 맞는다. 해산물 위주 식사가 물릴 때 밤에 편하게 술 한 잔 더 하기 좋은 선택지다. 인당 약 4만 원.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=ILFK8cODr4U",
           "latitude": 43.053794499999995,
           "longitude": 141.3535497,
           "googleMapsId": "ChIJR9aHw4UpC18Rwqk-Np2JogI",
-          "googleMapsUri": "https://maps.google.com/?cid=189865442615929282&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=ILFK8cODr4U",
-          "description": "삿포로 징기스칸과 호르몬을 소개하는 영상에서 방문한 스스키노의 화로구이 전문점. 징기스칸과 함께 호르몬(내장) 야키니쿠를 즐길 수 있는 곳이다."
+          "googleMapsUri": "https://maps.google.com/?cid=189865442615929282&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "YYhUDMpqnOY",
       "title": "겉바속촉 덴뿌라 진짜 잘하는 집은 따로 있다?! 🦐 미슐랭 투스타 단골집 [EN]ㅣ덴푸라아라키",
-      "concept": "일본 덴푸라",
+      "concept": "1-chōme-13-1",
       "locations": [
         {
-          "name": "덴푸라 아라키",
-          "displayName": "텐푸라 아라키",
+          "name": "덴푸라 아라키 (天ぷら あら木)",
           "address": "일본 〒064-0807 Hokkaido, Sapporo, Chuo Ward, Minami 7 Jōnishi, 4-chōme−１−２ 1F",
+          "description": "이 영상에서 다루는 곳은 미쉐린 2스타 덴푸라 아라키로, 삿포로 스스키노에 자리하며 북해도의 질 좋은 해산물과 채소로 최고 수준의 튀김 코스를 선보인다. 별 획득 전부터 단골이던 자리라 패기 넘치던 젊은 셰프가 어느덧 2스타의 아우라를 갖추었고, 홍콩 분점까지 낼 정도로 입지를 다졌다. 새우 머리 튀김, 레어와 미디움으로 나눠 내는 새우살, 무늬오징어, 어란·백합뿌리, 보리멸, 북방조개, 20분 튀긴 연근, 김 위의 성게, 삼치, 표고와 새우, 관자, 와사비 얹은 장어까지 재료마다 온도와 시간을 달리한다. 볶은 참기름을 곁들인 튀김옷에 스타치(영귤)·라임 소금을 찍고, 대합 국물과 해조류 국물로 입을 가신 뒤 텐차(튀김오차즈케)로 마무리한다. 1년에 고구마를 900kg 사 들여온다는 시그니처 고구마 튀김과 북해도 야마와사비의 향긋함이 코스를 빛낸다. 인당 약 21만 원, 주류는 약 7만 원. (참고: locations.json의 spot명은 인근 호텔명으로 잘못 추출된 것으로 보이며, 실제 영상 소재는 덴푸라 아라키 식당입니다.)",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=YYhUDMpqnOY",
           "latitude": 43.0525053,
           "longitude": 141.3535794,
           "googleMapsId": "ChIJG79FOYYpC18ROd2h5DgUOG0",
-          "googleMapsUri": "https://maps.google.com/?cid=7870062583416479033&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=YYhUDMpqnOY",
-          "description": "삿포로 미슐랭 2스타 덴푸라를 소개하는 영상에서 방문한 전문점. 겉바속촉 덴뿌라를 진짜 잘하는 집으로, 영상 진행자의 단골집으로 소개되었다."
+          "googleMapsUri": "https://maps.google.com/?cid=7870062583416479033&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "kwNgGM31Wn4",
       "title": "비밀이야가 오픈런하는 장어맛집?🏃🏻‍♂️사르르 녹는 장어와 맥주 한잔..🍺 [EN]ㅣ우나메이",
-      "concept": "삿포로 장어 맛집",
+      "concept": "27-chōme-3-3",
       "locations": [
         {
-          "name": "우나메이",
-          "displayName": "우나메이",
+          "name": "우나메이 (うなめい)",
           "address": "27-chōme-3-3 Kita 1 Jōnishi, Chuo Ward, Sapporo, Hokkaido 064-0821 일본",
+          "description": "삿포로 마루야마 공원 인근에 자리한 장어 전문점 '우나메이'로, 비밀이야가 삿포로에 올 때마다 빠짐없이 들르는 가장 아끼는 식당 중 하나다. 11시 반 오픈과 동시에 자리가 차기 때문에 오픈런이 기본이고, 한번 들어오지 못하면 30~40분을 더 기다려야 하며 현금 결제만 가능하다. 맥주를 시키면 곁들여 나오는 장어뼈튀김, 오이와 장어를 초절임한 우자쿠, 한정판 장어 간 꼬치, 소금과 미림만으로 구운 시라야키, 청어알 와사비 무침, 채소 절임 오신코를 거쳐 마지막에 장어덮밥 '송'과 맑은 장어국이 이어진다. 도쿄·나고야식보다 양념이 약해 슴슴하면서도 깔끔한 것이 특징이며, 한국인이 좋아하는 바삭함보다는 찐 뒤 숯불 향으로 살짝 구운 일본 특유의 부드러운 식감을 즐길 수 있다. 산초를 솔솔 뿌려 먹으면 느끼함 없이 깔끔하게 장어 한 상을 마무리할 수 있어 부드러운 일본식 장어의 매력을 대표하는 곳이다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=kwNgGM31Wn4",
           "latitude": 43.0574494,
           "longitude": 141.31674669999998,
           "googleMapsId": "ChIJW3y2nsEpC18RjabZB_61zOo",
-          "googleMapsUri": "https://maps.google.com/?cid=16919098002782135949&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=kwNgGM31Wn4",
-          "description": "삿포로 장어 맛집을 소개하는 영상에서 방문한 마루야마의 장어 전문점. 영상 진행자가 오픈런할 정도로 좋아하는 곳이며, 사르르 녹는 장어와 맥주 조합이 인상적이다."
+          "googleMapsUri": "https://maps.google.com/?cid=16919098002782135949&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "LVbINarIdNA",
       "title": "삿포로의 함박 눈꽃 게살🌨️🦀있잖아요..저 너무 들떴어요 [EN] ㅣ카츠카니노 하나사키",
-      "concept": "삿포로 게요리",
+      "concept": "일본",
       "locations": [
         {
           "name": "카츠카니노 하나사키",
-          "displayName": "카츠카니노 하나사키",
-          "address": "일본 〒064-0805 Hokkaido, Sapporo, Chuo Ward, Minami 5 Jōnishi, 2-chōme−1−１ 美松村岡ビル 5Ｆ",
-          "latitude": 43.0543482,
-          "longitude": 141.3566687,
-          "googleMapsId": "ChIJc6VQuoYpC18RSdN7phs5lhc",
-          "googleMapsUri": "https://maps.google.com/?cid=1699608700298974025&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
+          "address": "일본 〒064-0805 Hokkaido, Sapporo, Chuo Ward, Minami 5 Jōnishi, 2-chōme−１−１ 美松村岡ビル ５F",
+          "description": "스스키노 호스이역 인근에 위치한 2017년 미쉐린 북해도 특별판 원스타 게 요리 전문점으로, 킹크랩(하나사키 크랩)을 주력으로 하는 고급 관광 식당이다. 게 요릿집 중에서도 가장 비싼 축에 속하지만, 할아버지 셰프가 자리에서 킹크랩을 부위별로 직접 발라 사시미·구이·통구이 등 다채로운 조리법으로 선보인다. VIP 코스는 직화로 구운 250g짜리 대형 전복, 성게, 거대한 굴과 해삼 등의 전채에 이어 얼음물에 꽃처럼 핀 킹크랩 사시미, 익힘 정도를 달리한 다리살, 심장과 통킹크랩까지 이어지며, 마지막엔 리시리산 다시마 국물과 연어알(이꾸라) 밥, 레미 마르탱 XO를 뿌린 멜론 디저트로 마무리된다. 게를 직접 까먹는 수고 없이 먹기 좋게 발라주는 서비스가 인상적이며, 16분 삶기 등 디테일이 살아있는 인당 약 5만 엔짜리 킹크랩의 끝판왕 경험이다.",
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=LVbINarIdNA",
-          "description": "삿포로 게요리 맛집을 소개하는 영상에서 방문한 게살 전문점. 함박 눈꽃처럼 풍성한 게살 요리가 특징이며, 삿포로에서 꼭 맛봐야 할 게요리로 추천되었다."
+          "latitude": 43.0543444,
+          "longitude": 141.35666279999998,
+          "googleMapsId": "ChIJc6VQuoYpC18RSdN7phs5lhc",
+          "googleMapsUri": "https://maps.google.com/?cid=1699608700298974025&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "tbosSzVJGqw",
       "title": "역대급 야끼니꾸 맛집🔥안심에 버금가는 와규 부위는 어디일까? 애기보, 대창, 양깃머리까지 맛있는 집 [EN]ㅣ도쿄 킨류잔",
-      "concept": "일본 야끼니꾸",
+      "concept": "3-chōme-14-1",
       "locations": [
         {
           "name": "킨류잔",
-          "displayName": "Kinryūzan",
           "address": "3-chōme-14-1 Shirokane, Minato City, Tokyo 108-0072 일본",
+          "description": "도쿄 시로카네에 자리한 40년 이상 역사의 야키니쿠 명소로, 타베로그 야키니쿠 부문 최상위권(과거 1위, 현재 4위권)에 랭크된 사실상 예약 불가 식당이다. 단골 위주로만 운영되어 신규 예약은 받지 않고, 단골조차 다음 예약까지 6개월을 기다려야 할 정도로 인기가 높다. 같은 집안에서 운영하는 아카사카 '라이몬'은 예약 텀이 1년 6개월에 달할 만큼 일본 야키니쿠를 대표하는 가게로 꼽힌다. 전날 도축한 신선한 암소 와규를 주로 쓰며, 소금·후추만 양념한 우설을 레몬즙과 파랑에 싸 먹는 것을 시작으로, 법상 생식이 불가능해 살짝 익혀 내는 간, 샤토브리앙(안심 중앙부)·리브로스(등심)·신신(도가니살)·토시살·하라미로 구성된 와규 모듬, 코부쿠로·양깃머리·기름 제거 대창의 호르몬 세트가 이어진다. 특히 간의 맛에 크게 감탄했고, 와규 특유의 과한 느끼함 대신 향과 깊은 맛이 살아 있어 최고의 한우가 떠오를 만큼 인상적이었다. 소꼬리 뭇국과 김치가 곁들여지며 야마자키 12년 하이볼을 함께 즐기는 인당 약 15만 원 코스다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=tbosSzVJGqw",
           "latitude": 35.645340999999995,
           "longitude": 139.72829099999998,
           "googleMapsId": "ChIJ_ePZ4AiLGGARHaUyRzvWWfk",
           "googleMapsUri": "https://maps.google.com/?cid=17967627738457220381&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=tbosSzVJGqw",
-          "description": "역대급 야끼니꾸 맛집을 소개하는 영상에서 방문한 도쿄 시로카네의 전문점. 안심에 버금가는 와규 부위부터 애기보, 대창, 양깃머리까지 다양한 부위를 맛볼 수 있다."
-        }
-      ]
-    },
-    {
-      "videoId": "brRcKWhPkKw",
-      "title": "작은 마을 하나를 섭렵해 보았습니다 [마쓰야마 투어 2편][EN]ㅣ오마카세, 프렌치 레스토랑",
-      "concept": "마쓰야마 미식 투어",
-      "locations": [
-        {
-          "name": "키요미즈",
-          "displayName": "카이세키 해산물 일식 레스토랑 키요미즈 마쓰야마 에히메",
-          "address": "1-chōme-5-16 Nibanchō, Matsuyama, Ehime 790-0002 일본",
-          "latitude": 33.8394354,
-          "longitude": 132.77393279999998,
-          "googleMapsId": "ChIJn-shGe_lTzURq9zNCP-QjOE",
-          "googleMapsUri": "https://maps.google.com/?cid=16252524580312046763&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=brRcKWhPkKw",
-          "description": "마쓰야마 미식 투어 2편에서 방문한 오마카세 레스토랑. 작은 마을 하나를 섭렵하는 코스 중 하나로, 미쉐린 1스타 수준의 가이세키 요리가 인상적이다."
-        }
-      ]
-    },
-    {
-      "videoId": "SLEXVgPrklk",
-      "title": "물건 제대로 건졌다🐟 비주얼에 한번 맛에 두번 감탄하는 가성비 갑 오마카세 [EN]ㅣDogo Kaishu",
-      "concept": "일본 스시/오마카세",
-      "locations": [
-        {
-          "name": "도고 카이슈",
-          "displayName": "도고 카이슈",
-          "address": "15-15番27号 Dōgoyunomachi, Matsuyama, Ehime 790-0842 일본",
-          "latitude": 33.8519556,
-          "longitude": 132.78438269999998,
-          "googleMapsId": "ChIJg5YFy-7lTzURIgAtnzprbPU",
-          "googleMapsUri": "https://maps.google.com/?cid=17684627736299896866&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=SLEXVgPrklk",
-          "description": "마쓰야마 도고 온천의 오마카세를 소개하는 영상에서 방문한 가성비 맛집. 비주얼에 한번 맛에 두번 감탄하는 가성비 갑 오마카세로, 물건을 제대로 건졌다는 극찬을 받았다."
-        }
-      ]
-    },
-    {
-      "videoId": "QRDDx31HolM",
-      "title": "미식 투어는 이렇게 하는 거에요🤫 17시간 강행군 [마쓰야마 투어 1편] [EN]ㅣ야키토리, 우동, 사케, 길거리먹방",
-      "concept": "마쓰야마 미식 투어",
-      "locations": [
-        {
-          "name": "토리이즈미",
-          "displayName": "Yakitoritoriizumi",
-          "address": "3-chōme-2-22 Nibanchō, Matsuyama, Ehime 790-0002 일본",
-          "latitude": 33.838903,
-          "longitude": 132.7694544,
-          "googleMapsId": "ChIJ35_DkO3lTzUREShn9thpEPQ",
-          "googleMapsUri": "https://maps.google.com/?cid=17586672925449594897&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=QRDDx31HolM",
-          "description": "마쓰야마 미식 투어 1편에서 방문한 야키토리 전문점. 17시간 강행군 미식 투어의 일부로, 야키토리와 사케, 우동 등 다양한 음식을 즐기는 코스에 포함되었다."
+          "geocodeWarning": "displayName 'Kinryūzan' != '킨류잔'; verify"
         }
       ]
     },
     {
       "videoId": "qGhQRyw6IRE",
       "title": "(EN) 이런 초대형 아스파라거스 요리 본 적 있어요? 프랑스 본점에서 건물, 인테리어, 음식, 와인리스트까지 그대로 들여온 이곳 ㅣ L’Auberge de L’ill",
-      "concept": "일본 와인 레스토랑",
+      "concept": "28-chōme-3-1",
       "locations": [
         {
-          "name": "L'Auberge de L'ill",
-          "displayName": "L'Auberge de L'ill Sapporo",
+          "name": "오베르주 드 릴 (L Auberge de L il)",
           "address": "28-chōme-3-1 Minami 1 Jōnishi, Chuo Ward, Sapporo, Hokkaido 064-0801 일본",
+          "description": "마루야마 공원 앞에 자리한 미쉐린 원스타 프렌치 '오베르주 드 릴'로, 프랑스 알자스에서 1967년부터 50년 넘게 쓰리스타를 유지했던 전설의 레스토랑을 건물·인테리어·요리·와인 리스트까지 그대로 재현한 분점 격 식당이다. 코스는 아뮤즈(양파 포타주, 알자스식 타르트 플람베)로 시작해 아마에비와 블러드 오렌지·허브 캐비어 전채, 청어 소스를 곁들인 화이트 아스파라거스 파이, 워터크레송 벨루떼의 가리비, 봄 채소를 곁들인 삼치 팬프라이, 모렐 버섯과 뱅존 소스의 송아지 비리까지 이어지는 정통 클래식 프렌치 구성이다. 식자재는 북해도산 최상품을 적극 활용해 가리비와 화이트 아스파라거스의 퀄리티가 유독 돋보였고, 소스를 즉석에서 자글자글 끓여내는 기본기가 인상적이었다. 알자스 와인 리스트가 풍성해 몽라쉐 프르미에 크루 끌라바용 2019나 20년 숙성된 도멘 드 슈발리에 블랑 등 한국에서는 구하기 힘든 와인을 합리적인 가격에 마실 수 있어, 북해도 프렌치의 수준을 보여주는 최고의 선택이다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=qGhQRyw6IRE",
           "latitude": 43.0548885,
           "longitude": 141.314502,
           "googleMapsId": "ChIJ3cVpe8IpC18R9_v6oY2YRh8",
-          "googleMapsUri": "https://maps.google.com/?cid=2253656397620902903&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=qGhQRyw6IRE",
-          "description": "일본 와인 레스토랑을 소개하는 영상에서 방문한 삿포로의 프렌치 레스토랑. 프랑스 본점에서 건물, 인테리어, 음식, 와인리스트까지 그대로 들여온 곳으로, 초대형 아스파라거스 요리가 인상적이다."
+          "googleMapsUri": "https://maps.google.com/?cid=2253656397620902903&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "pmOL-N9ZgYQ",
       "title": "(EN) 일본에서 가장 먼저 찾게 되는 삿포로 미슐랭 투스타 술집🐟🍶 비밀이야가 이토록 사랑하는 이유는? l 슈보신센",
-      "concept": "일본 미슐랭 맛집",
+      "concept": "3-chōme-6-22",
       "locations": [
         {
-          "name": "슈보신센",
-          "displayName": "슈보신센",
+          "name": "슈보신센 (酒房しんせん)",
           "address": "3-chōme-6-22 Minami 6 Jōnishi, Chuo Ward, Sapporo, Hokkaido 064-0806 일본",
+          "description": "삿포로에 위치한 미쉐린 투스타 일본 요리 술집으로, 비밀이야가 홋카이도에서 가장 사랑하는 식당으로 꼽는 곳이다. 코로나 이후 첫 일본 여행에서 첫 식당으로 선택했을 만큼 애정이 깊고, 3년 만에 부모님을 모시고 다시 찾았는데도 노장 셰프가 손을 잡으며 따뜻하게 맞아주는 정이 넘치는 집이다. 고래 볼살(밍크고래), 김기 어묵 국물, 한치 회, 시샤모·명란·소라·밤콩·감자 같은 북해도 특산물 전채, 꽃새우·새치·가리비·돌돔 회, 좋은 버터를 얹은 그린 아스파라가스 조개 구이, 봄 털게와 와사비 잎, 굵은 죽순 오징어 등 그때그때 가장 좋은 재료만 골라 내준다. 정미도 18% 도수 15~16도의 한정판 사케와 나라산 하루식가라 사케 다이긴죠 등 취향 좋은 주류가 어우러져 와도 와도 새로운 메뉴가 나오며, 가격은 재료 시세에 따라 만 몇천 엔에서 2만 5천 엔까지 천차만별이라 셰프를 온전히 믿고 맡기면 된다. 따뜻한 옹로(녹차)와 딸기 디저트까지 마치면 맨정신으로 나오기 아쉬운, 노장의 손맛이 살아있는 곳이다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=pmOL-N9ZgYQ",
           "latitude": 43.0534939,
           "longitude": 141.35475409999998,
           "googleMapsId": "ChIJyYryYYYpC18RMnPzPXVoq6Y",
-          "googleMapsUri": "https://maps.google.com/?cid=12009807684073386802&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=pmOL-N9ZgYQ",
-          "description": "삿포로 미슐랭 2스타 술집을 소개하는 영상에서 방문한 곳. 일본에서 가장 먼저 찾게 되는 삿포로 단골집으로, 영상 진행자가 이토록 사랑하는 이유가 상세히 소개되었다."
+          "googleMapsUri": "https://maps.google.com/?cid=12009807684073386802&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "vSNU8_Aft-M",
       "title": "홋카이도를 대표하는 고급 생선 홍살치🐟",
-      "concept": "삿포로 해산물 맛집",
+      "concept": "4-chōme-2-18",
       "locations": [
         {
-          "name": "슈안 고다이",
-          "displayName": "슈안 고다이",
+          "name": "酒庵 五醍 (슈안 고다이)",
           "address": "4-chōme-2-18 Minami 7 Jōnishi, Chuo Ward, Sapporo, Hokkaido 064-0807 일본",
+          "description": "삿포로 스스키노 안쪽 골목(덴뿌라 아라키 인근)에 자리한 로바다야끼 집으로, 저녁 식사 후 해산물과 채소를 숯불에 구워 가볍게 술 한잔하기 좋은 분위기의 식당이다. 시그니처는 북해도를 대표하는 고급 생선 김기로, 말려 살짝 구워 내는데 한 마리에 5~8천 엔을 호가하지만 기름지면서도 촉촉하고 감칠맛이 폭발해 비싼 값을 금방 알게 된다. 손바닥보다 큰 가리비 구이, 오랫동안 말려 훈제한 통굴, 어디서나 무난하게 맛있는 임연수(시샤모) 등 해산물과 표고버섯·감자·고구마 같은 북해도 채소 구이가 줄을 잇는다. 일반적인 노포형 로바다야끼와는 달리 작고 아늑한 분위기로, 삿포로에서 저녁을 먹고 2차를 할 때 술맛과 안주를 다 잡고 싶을 때 발길이 저절로 향하게 되는 곳이다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=vSNU8_Aft-M",
           "latitude": 43.052458699999995,
           "longitude": 141.353182,
           "googleMapsId": "ChIJzSGXPIYpC18Rj40TAu66qWw",
-          "googleMapsUri": "https://maps.google.com/?cid=7829994958560136591&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=vSNU8_Aft-M",
-          "description": "홋카이도 고급 생선을 소개하는 영상에서 방문한 삿포로의 해산물 레스토랑. 홋카이도를 대표하는 고급 생선 홍살치를 맛볼 수 있는 곳이다."
+          "googleMapsUri": "https://maps.google.com/?cid=7829994958560136591&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         },
         {
-          "name": "Suage+",
-          "displayName": "수프카레 스아게+",
+          "name": "Suage+ (스아게 플러스)",
           "address": "일본 〒064-0804 Hokkaido, Sapporo, Chuo Ward, Minami 4 Jōnishi, 5-chōme−６−１ 都志松ビル ２階",
+          "description": "삿포로 수많은 수프카레 명소 중 한 손에 꼽히는 인기집으로, 밤 9시가 넘어도 긴 웨이팅이 이어지며 본점이 가득 차면 늦게까지 여는 지점으로 돌리곤 한다. 주문은 카레 베이스(치킨·램·해산물·스페셜 콜)를 고른 뒤 수프(오징어 먹물·새우 등), 매운맛 10단계, 밥 양, 토핑 순으로 조립하는 방식이다. 훌륭한 사이즈의 굴과 1번 크리스피 치킨, 소시지·돼지고기·닭고기가 모두 들어간 스페셜 콜을 추천하며, 매운 단계 6~8단계쯤이 얼큰하게 가장 잘 어울린다. 수프카레는 고기 요리라기보다 진한 국물과 좋은 북해도 채소를 함께 즐기는 음식이라, 밥을 말아 먹으면 해장으로도 훌륭하다. 삿포로 특유의 걸쭉하고 지방기 있는 미소라멘 문화와 맞닿아 있어, 추운 밤에 한 그릇을 비우면 몸이 훈훈해지는 기분 좋은 식사다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=vSNU8_Aft-M",
           "latitude": 43.0557369,
           "longitude": 141.3512699,
           "googleMapsId": "ChIJv0HGVIQpC18Rc2m8zsIZwJE",
           "googleMapsUri": "https://maps.google.com/?cid=10502422655510800755&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=vSNU8_Aft-M",
-          "description": "삿포로 해산물 맛집을 소개하는 영상에서 함께 방문한 수프카레 전문점. 삿포로 대표 음식인 수프카레를 맛볼 수 있는 인기 맛집이다."
+          "geocodeWarning": "displayName '수프카레 스아게+' != 'Suage+ (스아게 플러스)'; verify"
         }
       ]
     },
     {
       "videoId": "m5uPotCxv2Y",
       "title": "삿포로에서 2차 가기 좋은 곳 대방출✌",
-      "concept": "삿포로 2차 맛집",
+      "concept": "5-chōme-5",
       "locations": [
         {
-          "name": "Bird Watching",
-          "displayName": "버드 워칭",
+          "name": "버드와칭 (バードウォッチング)",
           "address": "5-chōme-5-5 Minami 4 Jōnishi, Chuo Ward, Sapporo, Hokkaido 064-0804 일본",
+          "description": "삿포로 스스키노에 위치한 '버드와칭'으로, 프렌치 야키토리와 내추럴 와인을 결합한 독특한 컨셉의 술집이자 3층까지 규모를 갖춘 곳이다. 코로나 전부터 2차로 자주 들르던 단골 가게이며, 야키돈(꼬치구이) 실력이 삿포로에서 손꼽히는 수준이라고 평가한다. 하츠(닭심장), 닭똥집, 토마토 베이스 내장 요리인 트리바, 닭날개 등 꼬치를 바게트와 곁들여 즐기며, 트러플 향의 야키토리도 잘 어울린다. 와인 리스트는 폭이 넓어 올리사 골드 같은 고급 샴페인부터 가성비 좋은 내추럴 와인까지 한국 대비 3분의 1 수준의 가격에 마실 수 있고, 프랑스 요리 대회 출신의 거장 폴 보큐즈가 머무는 동안 들렀다는 일화가 있을 정도로 요리인들 사이에서도 알려진 집이다. 삿포로 밤의 2차 코스로 무난하게 추천할 만한 곳이다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=m5uPotCxv2Y",
           "latitude": 43.0558104,
           "longitude": 141.3514543,
           "googleMapsId": "ChIJ8czIVIQpC18RhmCueDq-j28",
-          "googleMapsUri": "https://maps.google.com/?cid=8038853018221699206&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=m5uPotCxv2Y",
-          "description": "삿포로에서 2차 가기 좋은 곳을 소개하는 영상에서 추천된 바. 삿포로 밤문화를 즐기기 좋은 곳으로, 2차로 가볍게 들르기 좋은 분위기가 특징이다."
+          "googleMapsUri": "https://maps.google.com/?cid=8038853018221699206&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         },
         {
-          "name": "라멘 신게츠",
-          "displayName": "라멘신게츠",
+          "name": "ラーメン信月 (라멘 신게츠)",
           "address": "일본 〒064-0805 Hokkaido, Sapporo, Chuo Ward, Minami 5 Jōnishi, 3-chōme Ｎ・グランデビル １階",
+          "description": "삿포로 라멘 요코초 골목에 자리한 미쉐린 비빌구르만 라멘집으로, 10석 남짓한 아담한 규모지만 밤이 되면 긴 줄이 생기는 해장의 성지다. 삿포로 특유의 걸쭉하고 느끼한 미소라멘과 달리 맑은 시오(소금) 육수를 베이스로 삼으며, 그 위에 생강을 듬뿍 올린 '쇼가 라면'이 대표 메뉴다. 고춧가루를 풀고 꼬들꼬들한 면발로 바꾸면 매콤하고 깔끔하게 한 그릇을 비울 수 있어 미소라멘에 질린 사람에게 특히 추천된다. 가게 전체가 매우 깨끗하게 관리되는 점도 인상적이며, 1차 술자리 이후 가볍게 들를 때 가장 먼저 떠오르는 곳이다. 곁들인 작은 볶음밥도 기름에 달달 잘 볶아 나와 든든한 마무리로 좋다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=m5uPotCxv2Y",
           "latitude": 43.054911399999995,
           "longitude": 141.3544669,
           "googleMapsId": "ChIJEeGUJoQpC18ROjXHTdFaoBQ",
-          "googleMapsUri": "https://maps.google.com/?cid=1486287732031829306&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=m5uPotCxv2Y",
-          "description": "삿포로에서 2차 가기 좋은 곳을 소개하는 영상에서 추천된 라멘집. 술 마신 후 마무리로 먹기 좋은 라멘 맛집으로 소개되었다."
+          "googleMapsUri": "https://maps.google.com/?cid=1486287732031829306&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         },
         {
-          "name": "징기스칸 라무",
-          "displayName": "라무",
+          "name": "ジンギスカン ラム (징기스칸 라무)",
           "address": "4-chōme-2-7 Minami 7 Jōnishi, Chuo Ward, Sapporo, Hokkaido 064-0807 일본",
+          "description": "삿포로 스스키노의 징기스칸(양고기 구이) 전문점으로, 한국 방송에 소개된 뒤 한국인 방문객 비중이 유난히 높은 곳이다. 호주산·아이슬란드산·뉴질랜드산은 물론 홋카이도산 등심과 양설·내장, 램 찹 꼬치와 양고기 소시지까지 부위와 산지가 다양해 선택의 폭이 넓고, 무엇보다 궂은 날씨에도 실내에서 웨이팅할 수 있어 편리하다. 두부 모양의 징기스칸 팬에 양기름을 두르고 고기와 함께 양파·숙주를 구워 먹으며, 홋카이도산 등심은 호주산의 약 두 배 가격이지만 그만큼 부위가 좋다. 다 구워진 뒤에는 밥에 김치·창란젓·청란젓·고추절임·양파를 얹어 한국식으로 한 입 먹는 식사가 일품이며, 미소 된장국과 산초 꽃게 절임을 곁들이면 느끼함 없이 든든하게 즐길 수 있다. 중간 가격대에 자리해 비싼 비 치즈와 저렴한 다루마 사이에서 무난한 선택지다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=m5uPotCxv2Y",
           "latitude": 43.0520795,
           "longitude": 141.3528412,
           "googleMapsId": "ChIJYeBcJoYpC18R3lFRGnbLUKM",
-          "googleMapsUri": "https://maps.google.com/?cid=11768129534427222494&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=m5uPotCxv2Y",
-          "description": "삿포로에서 2차 가기 좋은 곳을 소개하는 영상에서 추천된 징기스칸 전문점. 삿포로의 밤을 즐기며 가볍게 양고기를 맛볼 수 있는 곳이다."
+          "googleMapsUri": "https://maps.google.com/?cid=11768129534427222494&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "BnpEQIAGbUM",
       "title": "여기는 재료 퀄리티로 승부 보는 식당입니다🍣",
-      "concept": "일본 맛집 방문기",
+      "concept": "일본",
       "locations": [
         {
-          "name": "마루즈시",
-          "displayName": "마루즈시",
+          "name": "○鮨 (마루즈시)",
           "address": "일본 〒064-0806 Hokkaido, Sapporo, Chuo Ward, Minami 6 Jōnishi, 4-chōme−４ ライトビル １F",
+          "description": "삿포로 스즈키노에 자리한 스시집으로 '마루스시'라는 이름으로도 알려져 있으며 2017 미쉐린 가이드 북해도 특별판에서 1스타를 받았다. 비밀이야가 일본에서 가장 많이 방문한 식당으로 2010년 첫 방문 이후 10번이 넘게 찾았고, 원래 아버지와 아들 둘이 운영하다 2015년 아버지가 하와이로 떠난 뒤 아들이 가게를 이어받았다. 섬세함보다는 북해도의 훌륭한 재료를 '융단폭격'처럼 쏟아내는 스타일로, 스시미야카와와 대척점에 있으면서도 테마미 안주가 훌륭해 술 마시기 좋은 편안한 분위기다. '바다의 우유'라 불리는 아직 전갱이(광어)는 크리미하고 고소해 거의 생크림 수준이고, 참치 대뱃살 오도로·중뱃살, 사이즈 큰 문어, 촉촉하게 숙성한 전어, 찐 듯 부드러운 아나고, 달달한 계란까지 북해도 재료의 맛을 고스란히 느낄 수 있다. 1년에 서너 번, 때로는 혼자 오거나 대관해서 찾는 단골 집이며, 하와이로 떠난 예전 셰프님이 일부러 들러 7년 만에 다시 만났던 일도 특별한 기억으로 남는다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=BnpEQIAGbUM",
           "latitude": 43.0528633,
           "longitude": 141.3525359,
           "googleMapsId": "ChIJs-ElEYYpC18RaFO6-vyg98k",
-          "googleMapsUri": "https://maps.google.com/?cid=14553277729269764968&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=BnpEQIAGbUM",
-          "description": "재료 퀄리티로 승부하는 식당을 소개하는 영상에서 방문한 삿포로의 스시집. 맛있는 거 다음 맛있는 거가 나오는 곳으로, 재료의 신선도와 퀄리티가 압도적이다."
+          "googleMapsUri": "https://maps.google.com/?cid=14553277729269764968&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "_1-2klFGMw8",
       "title": "클래식한 음식으로 35년 동안 자리를 지킬 수 있었던 이유🤫",
-      "concept": "일본 맛집 방문기",
+      "concept": "일본",
       "locations": [
         {
-          "name": "Le Gentilhomme",
-          "displayName": "Le Gentilhomme",
+          "name": "Le Gentilhomme (장띠옴므)",
           "address": "일본 〒064-0804 Hokkaido, Sapporo, Chuo Ward, Minami 4 Jōnishi, 8-chōme−２−１−３ サンプラーザ札幌 1F",
+          "description": "삿포로 스즈키노 끝자락에 위치한 프렌치 레스토랑으로 1988년에 문을 열어 북해도 최초의 고급 레스토랑 중 하나로 꼽힌다. 셰프는 기싸부아나·트루아 등 프랑스 유명 식당에서 경력을 쌓았고 2012년 미쉐린 특별판 1스타를 받았다가 2017년 별을 잃었지만, 35년째 같은 자리에서 클래식 프렌치를 고집하며 '결코 올드하지 않다'는 평을 듣는다. 가장 큰 자랑은 북해도는 물론 일본 전체를 통틀어 손꼽히는 와인 리스트로, 1900년대 띠피트·마고·앙리 자이 등 올드 빈티지 보르도와 1986년 로버트파커 100점 보르도, 숙성된 DRC 잔 와인까지 갖추고 있어 프랑스 현지와 비교해도 손색이 없을 정도다. 점심은 아뮤즈부터 차가운·뜨거운 전채, 생선, 고기, 디저트까지 약 7만원, 와인 포함 스페셜 코스는 11~12만원대로 가성비가 뛰어나다. 포아그라 테린, 아메리칸 소스의 해산물 라비올리(가리비·관자·북방조개·대구 시라코), 브레이징 소고기 스테이크 등 정통 기법의 요리가 나오며 메인은 양고기를 추천한다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=_1-2klFGMw8",
           "latitude": 43.054478599999996,
           "longitude": 141.3464923,
           "googleMapsId": "ChIJUZbDmI8pC18RGusGnj4jaOk",
-          "googleMapsUri": "https://maps.google.com/?cid=16818731560261315354&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=_1-2klFGMw8",
-          "description": "35년 전통 프렌치 레스토랑을 소개하는 영상에서 방문한 삿포로의 클래식 프렌치. 클래식한 음식으로 35년 동안 자리를 지킬 수 있었던 이유가 영상에서 소개되었다."
+          "googleMapsUri": "https://maps.google.com/?cid=16818731560261315354&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "Bm0e98UsIYA",
       "title": "맛있는 거 다음 맛있는 거 🍣",
-      "concept": "일본 맛집 방문기",
+      "concept": "일본",
       "locations": [
         {
-          "name": "스시 히데타카",
-          "displayName": "Sushi Hidetaka",
+          "name": "寿し ひでたか (스시 히데타카)",
           "address": "일본 〒064-0807 Hokkaido, Sapporo, Chuo Ward, Minami 7 Jōnishi, 4-chōme 1F",
+          "description": "삿포로 스즈키노의 스시집으로 2017 미쉐린 가이드 북해도 특별판에서 1스타를 받았으며, 다른 곳에서 보기 힘든 개성 있는 츠마미와 저렴하고 다양한 사케 리스트가 특징이다. 2019년 첫 방문 이후 코로나로 3년 만에 다시 찾았고, 셰프는 요리 중에는 말을 걸어도 못 들을 정도로 집중도가 높다. 한반도에서 온 쫄깃한 전복, 머리 내장을 된장에 섞어 낸 진한 단새우, 큐슈에서 잡아 2주 숙성한 20kg짜리 다금바리, 사이즈 어마어마한 문어 등 인상적인 재료가 이어진다. 참치는 아오모리 230kg짜리 5만엔급을 아카미와 오도로로 내고, 고등어는 가운데 부분을 버리고 제일 맛있는 부분만 쥐어주는 식으로 그날 가장 맛있는 것을 10접 안팎으로 엄선해 낸다. 사케도 다양하고 가격이 착해 스시와 함께 술을 즐기는 이에게 잘 어울리며, 비밀이야는 1년에 한 번쯤은 꼭 찾고 싶은 집으로 꼽는다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=Bm0e98UsIYA",
           "latitude": 43.0525482,
           "longitude": 141.35363239999998,
           "googleMapsId": "ChIJl2M3OYYpC18Ryn1TYf8S6z4",
           "googleMapsUri": "https://maps.google.com/?cid=4533738337937358282&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=Bm0e98UsIYA",
-          "description": "삿포로 스시 맛집을 소개하는 영상에서 방문한 곳. 맛있는 거 다음 맛있는 거가 계속 나오는 스시집으로, 삿포로 스시의 수준을 보여주는 곳이다."
+          "geocodeWarning": "displayName 'Sushi Hidetaka' != '寿し ひでたか (스시 히데타카)'; verify"
+        }
+      ]
+    },
+    {
+      "videoId": "rMu6RFdC038",
+      "title": "삿포로의 투스타 튀김 오마카세",
+      "concept": "일본",
+      "locations": [
+        {
+          "name": "天ぷら あら木 (텐푸라 아라키)",
+          "address": "일본 〒064-0807 Hokkaido, Sapporo, Chuo Ward, Minami 7 Jōnishi, 4-chōme−１−２ 1F",
+          "description": "삿포로 스즈키노의 튀김집으로 2017 미쉐린 가이드 북해도 특별판에서 2스타를 받으며 '혜성처럼' 나타난 곳으로, 예약이 매우 어려워 한 달 반 전에 문의해도 저녁 자리를 잡지 못할 정도다. 마침 점심 영업을 시작한 참에 특별히 자리를 만들어줘 방문할 수 있었고, 점심은 저녁보다 간소화된 오마카세 구성으로 인당 약 7만원이며 코로나 전 저녁이 1만5천~1만6천엔이던 것과 비교해도 합리적이다. 꽁치를 숯불로 살짝 익혀 무·김과 내고, 새우는 머리부터 몸통까지 라임·소금·덴츠 소스로 바삭하고 폭신하게 튀겨내며 야간다니시끼 다음으로 각광받는 아이아마·보리멸치 등 인상적인 생선이 이어진다. 해산물 튀김도 훌륭하지만 특히 채소가 백미로, 연근·호박·카미카와 감자 등 채소를 좋아하지 않는 사람도 반하게 만드는 섬세함이 돋보인다. 마무리는 고구마 튀김과 수제 아이스크림을 결합한 시그니처 디저트로, 구하기 힘든 '히로키' 사케와 함께 섬세한 튀김의 세계를 즐길 수 있다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=rMu6RFdC038",
+          "latitude": 43.0525053,
+          "longitude": 141.3535794,
+          "googleMapsId": "ChIJG79FOYYpC18ROd2h5DgUOG0",
+          "googleMapsUri": "https://maps.google.com/?cid=7870062583416479033&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "fdZlJ49JBig",
+      "title": "여기 예약하기가 진짜 어렵습니다",
+      "concept": "일본",
+      "locations": [
+        {
+          "name": "すし宮川 (스시 미야카와)",
+          "address": "일본 〒064-0824 Hokkaido, Sapporo, Chuo Ward, Kita 4 Jōnishi, 25-chōme−2−２ リヒトラーレ円山 1F",
+          "description": "삿포로 마루야마 공원 근처에 있는 스시집으로 2017 미쉐린 가이드 북해도 특별판에서 3스타를 받았다. 도쿄의 3스타 스시 요시타케 넘버투로 지내다 홍콩 분점을 3스타로 이끌고 고향 삿포로로 돌아와 자신의 가게를 열었다. 인당 10만원 중반대의 섬세하고 수준 높은 스시를 선보이며, 사케를 한 병 가까이 마셔도 26만원 안팎이라 일본 내에서도 최고의 가성비로 꼽는다. 도미에 흰 홀스레디쉬 와사비를 곁들이고, 요시타케에서 비롯된 전복에 간장·간 소스를 얹는 등 한 점 한 점의 구성이 독특하며, 한국에선 불법인 빵게(암컷 대게), 하얀 옥돔 시라카와, 간기, 사와라 삼치 등 북해도 재료를 정밀하게 다룬다. 김을 한 장씩 꺼내 준비하는 디테일과 삭힌 쌀로 빚은 샤리가 돋보이며 예약이 매우 어렵지만, 가능하다면 꼭 한 번쯤 방문하길 권하는 집이다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=fdZlJ49JBig",
+          "latitude": 43.0621249,
+          "longitude": 141.3176119,
+          "googleMapsId": "ChIJq6o2ZuopC18R-IYrrMOFUWI",
+          "googleMapsUri": "https://maps.google.com/?cid=7084590764284151544&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+        }
+      ]
+    },
+    {
+      "videoId": "GgUXN4BiXck",
+      "title": "일본인 셰프에게 취향저격 당했습니다",
+      "concept": "3-chōme-6-22",
+      "locations": [
+        {
+          "name": "酒房しんせん (슈보신센)",
+          "address": "3-chōme-6-22 Minami 6 Jōnishi, Chuo Ward, Sapporo, Hokkaido 064-0806 일본",
+          "description": "삿포로의 미쉐린 2스타 술집으로 나이 지긋하고 유쾌한 할아버지 셰프가 3년 만에 찾은 손님을 반갑게 맞이하는 곳이다. 겉보기엔 허름하고 낡은 노가다식 이자카야 같지만 재료 하나하나가 범상치 않아, '재료를 이길 수 있는 건 없다'는 말이 절로 나온다. 갤럭시 울트라보다 큰 겨울철 도루묵, 사이즈와 기름기가 장난 아닌 줄가자미, 향이 대구 1위라는 김, 대구 정소로 만든 어묵, 향이 다른 작은 굴, 한치·전복·대구알·송이 등 다른 곳에서 맛보기 힘든 재료가 줄줄이 이어진다. 꽁치는 예약해 잡아온 것을 쓰고, 마지막은 꿩 육수에 송이를 넣은 우동으로 마무리하며 디저트로는 복숭아보다 부드러운 배와 감이 나온다. 다양한 사케를 양껏 마시고도 음식과 술을 합쳐 인당 30만원이 채 안 되는 가격이라 2스타 레스토랑 치고는 비싼 편이 아니어서 삿포로 미식가들에게 추천할 만하다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=GgUXN4BiXck",
+          "latitude": 43.0534939,
+          "longitude": 141.35475409999998,
+          "googleMapsId": "ChIJyYryYYYpC18RMnPzPXVoq6Y",
+          "googleMapsUri": "https://maps.google.com/?cid=12009807684073386802&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     },
     {
       "videoId": "AtrrQe6srv8",
       "title": "아니 셰프님! 그분을 모르시다니...😮",
-      "concept": "일본 맛집 방문기",
+      "concept": "대한민국",
       "locations": [
         {
-          "name": "comme moa",
-          "displayName": "꼼모아",
+          "name": "comme moa (꼼모아)",
           "address": "대한민국 서울특별시 용산구 신흥로 56",
+          "description": "서울 해방촌(이태원)에 자리한 작은 프렌치 비스트로로, 파리에서 오랜 경력을 쌓은 김모와 여성 셰프가 2014년에 열었다. 10년 전쯤 파리 1스타 레스토랑의 수셰프를 지낸 내공으로 코스가 아닌 단품 요리를 내며, 한 접시당 2~3만원, 스파클링 5만원대·와인 5~10만원대로 와인 가격이 매우 착하다. 광어 카르파치오, 사과·무화과 잼을 곁들인 오리 간 뭉(포아그라), 성게알과 아보카도를 올린 시그니처 성게알 크램블, 대파·아스파라거스에 베샤멜 소스를 얹은 달팽이 파이 등 클래식 프랑스 요리가 줄어든 소스 없이 본래 모습으로 나온다. 미리 예약해야 하는 비프 웰링턴은 서울의 수많은 웰링턴 중 첫 손에 꼽을 만큼 완성도가 높아 3인 이상 예약을 권하며, 프렌치 후라이와 오렌지 리큐어 수플레·밀푀유까지 빠지지 않는다. 최근 셰프조차 모를 정도로 유명인이 다녀갈 만큼 사랑받으며, 가벼운 소스 위주의 요즘 와인바 사이에서 본토 부럽지 않은 클래식 소스의 맛을 느낄 수 있는 곳이다.",
+          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=AtrrQe6srv8",
           "latitude": 37.5434828,
           "longitude": 126.98768969999999,
           "googleMapsId": "ChIJ70HYwU-ifDURHiVYS7OWR2I",
-          "googleMapsUri": "https://maps.google.com/?cid=7081794635870774558&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-          "source": "description",
-          "timestamp": null,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=AtrrQe6srv8",
-          "description": "일본 맛집을 소개하는 시리즈에서 다룬 서울 용산구의 프렌치 레스토랑. 셰프님이 모른다는 인물에 대한 에피소드가 화제가 되었으며, 수준 높은 프렌치 요리를 맛볼 수 있다."
+          "googleMapsUri": "https://maps.google.com/?cid=7081794635870774558&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         }
       ]
     }
