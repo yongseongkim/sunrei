@@ -15,10 +15,6 @@ interface ResponsiveImageProps {
   onClick?: () => void;
 }
 
-/**
- * ResponsiveImage component that automatically selects the appropriate image size
- * based on the specified size prop or container size
- */
 export default function ResponsiveImage({
   multiSizeImage,
   alt,
@@ -34,7 +30,7 @@ export default function ResponsiveImage({
   const [containerWidth, setContainerWidth] = useState<number>(0);
   const [imgError, setImgError] = useState(false);
 
-  // Select the appropriate image based on size
+  // 서버는 images를 너비가 큰 순서로 정렬해 돌려주므로 앞쪽일수록 큰 이미지다.
   useEffect(() => {
     if (!multiSizeImage?.images || multiSizeImage.images.length === 0) {
       setSelectedImage(null);
@@ -46,12 +42,10 @@ export default function ResponsiveImage({
     let selected: ImageDTO | null = null;
 
     if (size === 'auto') {
-      // Auto-select based on container width
-      // Default to medium size when container width is not yet measured
       if (containerWidth === 0) {
-        selected = images[1] || images[0]; // Default to medium or first available
+        selected = images[1] || images[0];
       } else if (containerWidth > 800) {
-        selected = images[0]; // Original
+        selected = images[0];
       } else if (containerWidth > 400) {
         selected =
           images.find((img) => img.width && img.width <= 800) ||
@@ -69,13 +63,11 @@ export default function ResponsiveImage({
           images[images.length - 1];
       }
     } else {
-      // Manual size selection
       switch (size) {
         case 'original':
           selected = images[0];
           break;
         case 'large':
-          // Find image around 800px or fallback
           selected =
             images.find(
               (img) => img.width && img.width > 600 && img.width <= 1000,
@@ -84,7 +76,6 @@ export default function ResponsiveImage({
             images[0];
           break;
         case 'medium':
-          // Find image around 400px or fallback
           selected =
             images.find(
               (img) => img.width && img.width > 300 && img.width <= 600,
@@ -94,7 +85,6 @@ export default function ResponsiveImage({
             images[0];
           break;
         case 'small':
-          // Find smallest image or around 150px
           selected =
             images.find((img) => img.width && img.width <= 200) ||
             images[images.length - 1];
@@ -108,7 +98,6 @@ export default function ResponsiveImage({
     }
   }, [multiSizeImage, size, containerWidth, fallbackSrc]);
 
-  // Measure container width for auto sizing
   useEffect(() => {
     if (size !== 'auto') return;
 
@@ -122,7 +111,6 @@ export default function ResponsiveImage({
     measureContainer();
     window.addEventListener('resize', measureContainer);
 
-    // Initial measurement after mount
     const timer = setTimeout(measureContainer, 100);
 
     return () => {
@@ -155,18 +143,12 @@ export default function ResponsiveImage({
   );
 }
 
-/**
- * Helper hook to get the first image from MultiSizeImageDTO array
- */
 export function useFirstImage(
   images?: MultiSizeImageDTO[],
 ): MultiSizeImageDTO | undefined {
   return images && images.length > 0 ? images[0] : undefined;
 }
 
-/**
- * Helper function to get image URL by size from MultiSizeImageDTO
- */
 export function getImageUrl(
   multiSizeImage?: MultiSizeImageDTO,
   size: 'small' | 'medium' | 'large' | 'original' = 'medium',
@@ -177,16 +159,12 @@ export function getImageUrl(
 
   const images = multiSizeImage.images;
 
-  // Get the appropriate size from images array
   switch (size) {
     case 'small':
-      // Get smallest image
       return images[images.length - 1]?.url || '';
     case 'medium':
-      // Get middle image
       return images[Math.floor(images.length / 2)]?.url || '';
     case 'large':
-      // Get second image (if exists)
       return (images[1] || images[0])?.url || '';
     case 'original':
       return images[0]?.url || '';

@@ -30,11 +30,10 @@ fun Route.mapRoutes() {
                 ?: emptyList()
 
             val placesWithDistance = when {
-                // Source mode wins: global, no viewport bound.
+                // sourceIds가 있으면 bounds가 함께 와도 source 모드로 처리하고 지도 영역을 무시한다.
                 sourceIds.isNotEmpty() ->
                     placeService.listBySourcesWithDistance(sourceIds, centerLat, centerLng)
 
-                // Nearby mode: requires viewport bounds.
                 else -> {
                     val swLat = p["swLat"]?.toDoubleOrNull()
                     val swLng = p["swLng"]?.toDoubleOrNull()
@@ -54,7 +53,7 @@ fun Route.mapRoutes() {
             val feedItems = spotService.feedByPlaces(placesWithDistance)
             val cards = feedItems.map { it.toDTO() }
 
-            // Optional source rail: distinct sources across all mentions.
+            // 앱의 source rail에 쓰도록 결과에 나온 Source를 중복 없이 담는다.
             val sources = feedItems
                 .flatMap { it.mentions }
                 .map { it.source }

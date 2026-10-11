@@ -24,9 +24,6 @@ interface PinHandle {
   remove: () => void;
 }
 
-// One solid "stopover" dot per Place as a Google Maps OverlayView (wireframe Pin):
-// filled cornflower + white number + white ring + shadow, centered on the point;
-// deep-blue and enlarged when active, dimmed when tag-filtered. Badge = # of videos.
 function makePinOverlay(
   map: google.maps.Map,
   lat: number,
@@ -129,10 +126,8 @@ function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previe
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Build the marker set: the series/video-preview places take over the map; else the
-  // nearby place cards. Preview spots are deduped by place so one place = one pin (matching
-  // the place-first list), and — like the cards — tapping a pin selects+highlights that
-  // place (opens its detail).
+  // 미리보기 중에는 그 Sunrei의 장소만 핀으로 보여 준다.
+  // 목록처럼 Place 하나에 핀 하나만 두도록 spot을 장소별로 묶고, 핀 숫자는 그 장소의 spot 수다.
   const markers: Marker[] = previewSpots
     ? (() => {
         const byPlace = new Map<string, { place: SunreiSpotDTO['place']; count: number }>();
@@ -156,14 +151,13 @@ function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previe
         placeId: c.place.id,
         lat: c.place.latitude,
         lng: c.place.longitude,
-        // Marker badge = # of videos mentioning this place (direction B), matching "In N videos".
+        // 핀 숫자는 이 장소를 언급한 Sunrei 수다.
         label: String(c.mentions.length),
         dim: dimmedIds.has(c.place.id),
         onClick: () => setActivePlace(c.place.id),
       }));
 
-  // Render/diff markers as one teardrop OverlayView per Place (Bc-4), keyed + diffed
-  // so panning/data changes don't recreate (no flicker). Re-runs when the map is ready.
+  // 핀을 매번 새로 만들면 지도를 옮기거나 데이터가 바뀔 때 깜빡이므로 place id로 비교해 바뀐 핀만 고친다.
   useEffect(() => {
     const map = mapInstance;
     if (!map) return;
@@ -188,9 +182,8 @@ function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previe
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mapInstance, markers.map((m) => m.id + m.label + m.dim).join('|'), activePlaceId]);
 
-  // Fit to the video's spots (once per video) or the source-mode union (once per source-set).
-  // Guarded on mapInstance so it retries once the map is ready (avoids a cold-start race
-  // where the key gets marked "fitted" before the map exists and never fits).
+  // 미리보기는 Sunrei마다, source 모드는 선택한 Source 조합마다 한 번만 지도를 장소에 맞춘다.
+  // 지도가 생기기 전에 키를 기록하면 끝내 맞추지 못하므로 mapInstance가 생긴 뒤에만 실행한다.
   useEffect(() => {
     if (!mapInstance) return;
     if (previewSpots && previewSpots.length) {

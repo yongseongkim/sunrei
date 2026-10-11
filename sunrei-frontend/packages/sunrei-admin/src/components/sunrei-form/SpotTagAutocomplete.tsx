@@ -43,7 +43,6 @@ export default function SpotTagAutocomplete({
     return () => clearTimeout(timer);
   }, [searchQuery]);
 
-  // Index selected tags by id for label lookup.
   const selectedById = useMemo(
     () => new Map(selectedTags.map((t) => [t.id, t])),
     [selectedTags]

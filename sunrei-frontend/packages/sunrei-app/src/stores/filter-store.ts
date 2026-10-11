@@ -2,8 +2,6 @@
 
 import { create } from 'zustand';
 
-// Client-side tag filter state. Toggling tags does NOT refetch the map — it filters
-// the already-returned in-scope set and dims non-matching pins.
 interface FilterState {
   activeTagIds: string[];
   toggleTag: (id: string) => void;

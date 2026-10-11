@@ -16,7 +16,6 @@ import com.sunrei.model.Sunrei
 import com.sunrei.model.SunreiSpot
 import com.sunrei.model.Tag
 
-// ===== Source type mapping (model enum -> generated enum share the same constant names) =====
 fun ModelSourceType.toDtoType(): com.sunrei.generated.dto.admin.SourceType =
     com.sunrei.generated.dto.admin.SourceType.valueOf(name)
 
@@ -48,7 +47,6 @@ fun Source.toRowDTO(sunreiCount: Int, spotCount: Int): SourceRowDTO = SourceRowD
     spotCount = spotCount
 )
 
-// ===== Tag (bilingual) =====
 fun Tag.toDTO(): TagDTO = TagDTO(
     id = id,
     labelEn = labelEn,
@@ -56,7 +54,6 @@ fun Tag.toDTO(): TagDTO = TagDTO(
     description = description
 )
 
-// ===== SunreiSpot (context + spot-level tags) =====
 fun SunreiSpot.toDTO(): SunreiSpotDTO = SunreiSpotDTO(
     id = id,
     sunreiId = sunreiId,
@@ -68,7 +65,6 @@ fun SunreiSpot.toDTO(): SunreiSpotDTO = SunreiSpotDTO(
     tags = tags.map { it.toDTO() }
 )
 
-// ===== Sunrei (source + sourceId + summary + publishedAt; no sunrei-level tags) =====
 fun Sunrei.toDTO(): SunreiDTO {
     val source = source ?: error("Sunrei $id has no source loaded; admin DTO requires a source")
     return SunreiDTO(
@@ -87,7 +83,6 @@ fun Sunrei.toDTO(): SunreiDTO {
     )
 }
 
-// ===== Place =====
 fun Place.toDTO(): PlaceDTO = PlaceDTO(
     id = id,
     name = name,

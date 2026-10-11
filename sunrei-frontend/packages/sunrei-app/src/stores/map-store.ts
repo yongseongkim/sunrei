@@ -3,7 +3,6 @@
 import { create } from 'zustand';
 import type { Bounds, LatLng, MapMode } from '@/hooks/use-map';
 
-// Seoul default when geolocation is denied/absent.
 export const SEOUL: LatLng = { lat: 37.5665, lng: 126.978 };
 const DEFAULT_ZOOM = 12;
 
@@ -12,16 +11,15 @@ type SavedView = { center: LatLng; zoom: number };
 interface MapState {
   mode: MapMode;
   selectedSourceIds: string[];
-  committedBounds: Bounds | null; // the bounds currently fetched (nearby)
-  committedEmpty: boolean; // the committed area returned no places (drives auto-load on pan)
-  pendingArea: Bounds | null; // viewport moved but not yet refetched
-  commitNextIdle: boolean; // auto-commit the next idle (e.g. after a location jump)
-  mapCenter: LatLng | null; // distance/sort anchor (NOT GPS)
-  initialSeed: LatLng; // opening center (GPS if granted, else Seoul)
+  committedBounds: Bounds | null; // nearby 목록을 불러온 영역
+  committedEmpty: boolean; // 불러온 영역에 장소가 하나도 없었는지
+  pendingArea: Bounds | null; // 지도를 옮겼지만 아직 불러오지 않은 영역
+  commitNextIdle: boolean; // 다음 idle에서 버튼 없이 바로 불러올지
+  mapCenter: LatLng | null; // 거리 계산과 정렬의 기준이며 GPS 위치가 아니다.
+  initialSeed: LatLng; // 위치 권한이 있으면 현재 위치, 없으면 서울
   zoom: number;
   map: google.maps.Map | null;
-  // The nearby viewport saved on entering source mode, restored when the user backs out
-  // (source mode fits the map to all of a source's spots; back should return home's view).
+  // source 모드는 지도를 Source의 모든 장소에 맞춰 옮기므로, 들어가기 전 nearby 화면을 저장했다가 나올 때 되돌린다.
   savedView: SavedView | null;
 
   setMap: (m: google.maps.Map | null) => void;
@@ -34,14 +32,12 @@ interface MapState {
   addSource: (id: string) => void;
   removeSource: (id: string) => void;
   clearSources: () => void;
-  // commitOnIdle: load the destination area on arrival (no "Search nearby" gate) —
-  // used when the user explicitly picks a location from search.
+  // commitOnIdle은 검색에서 위치를 고른 경우처럼 도착한 영역을 버튼 없이 바로 불러올 때 켠다.
   panTo: (c: LatLng, zoom?: number, commitOnIdle?: boolean) => void;
   fitToPoints: (points: LatLng[], maxZoom?: number) => void;
 }
 
 export const useMapStore = create<MapState>((set, get) => {
-  // Snapshot the live map viewport (used when leaving nearby for source mode).
   const captureView = (): SavedView | null => {
     const m = get().map;
     if (!m) return null;
@@ -50,8 +46,7 @@ export const useMapStore = create<MapState>((set, get) => {
     return { center: c.toJSON(), zoom: m.getZoom() ?? DEFAULT_ZOOM };
   };
 
-  // Return to the saved nearby viewport when backing out of source mode. commitNextIdle
-  // lets the restored view auto-load cleanly (no stray "Search this area" prompt).
+  // 되돌린 화면의 영역이 저장 전과 조금 달라도 "이 주변 검색" 버튼이 뜨지 않도록 다음 idle에서 바로 불러온다.
   const restoreView = () => {
     const { map, savedView } = get();
     if (map && savedView) {
@@ -85,9 +80,8 @@ export const useMapStore = create<MapState>((set, get) => {
       const { mode, committedBounds, commitNextIdle, committedEmpty } = get();
       set({ mapCenter: center });
       if (mode === 'nearby') {
-        // First idle auto-commits the opening viewport so the list loads immediately;
-        // an explicit location jump (commitNextIdle) also auto-loads on arrival;
-        // later pans mark a pending area that the user confirms via "Search nearby".
+        // 첫 idle에서는 시작 화면을 바로 불러오고, commitNextIdle이 켜져 있으면 도착한 영역을 바로 불러온다.
+        // 그 밖의 이동은 pendingArea에만 기록하고, 사용자가 "이 주변 검색"을 눌러야 불러온다.
         if (committedBounds == null || commitNextIdle) {
           set({ committedBounds: b, pendingArea: null, commitNextIdle: false });
           return;
@@ -101,11 +95,8 @@ export const useMapStore = create<MapState>((set, get) => {
           set({ pendingArea: null });
           return;
         }
-        // When the current area has no places there's nothing to disrupt, so moving the
-        // map auto-loads the new area instead of gating behind "Search this area". This
-        // is one-shot: clear committedEmpty now so that once the new area's results come
-        // in, further moves fall back to the manual gate (never auto-refresh while
-        // results exist). committedEmpty re-arms only if the new area is itself empty.
+        // 지금 영역에 장소가 없으면 새로 불러와도 보고 있던 목록이 바뀌지 않으므로 지도를 옮기는 즉시 새 영역을 불러온다.
+        // committedEmpty를 여기서 끄므로, 새 영역에 결과가 있으면 그다음 이동부터는 다시 버튼을 눌러야 한다.
         if (committedEmpty) {
           set({ committedBounds: b, pendingArea: null, committedEmpty: false });
           return;
@@ -130,7 +121,6 @@ export const useMapStore = create<MapState>((set, get) => {
         mode: 'source',
         selectedSourceIds: ids,
         pendingArea: null,
-        // Save the nearby view once, on the nearby → source transition.
         savedView: s.mode === 'nearby' && !s.savedView ? captureView() : s.savedView,
       }));
     },
@@ -169,8 +159,6 @@ export const useMapStore = create<MapState>((set, get) => {
       set({ mapCenter: c, commitNextIdle: commitOnIdle });
     },
 
-    // Fit the map to a set of points (source-mode union, video-preview itinerary).
-    // No-op for an empty set; pans+zooms for a single point.
     fitToPoints: (points, maxZoom = 16) => {
       const map = get().map;
       if (!map || points.length === 0) return;

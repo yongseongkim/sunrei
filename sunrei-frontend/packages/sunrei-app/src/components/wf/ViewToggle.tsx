@@ -2,7 +2,6 @@
 
 import { cn } from '@/lib/utils';
 
-/** List / Map segmented toggle. */
 export function ViewToggle({ map, onChange }: { map: boolean; onChange: (map: boolean) => void }) {
   return (
     <div className="inline-flex shrink-0 rounded-full bg-bg2 p-0.5 border border-line2">

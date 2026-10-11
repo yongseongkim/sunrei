@@ -54,7 +54,7 @@ export default function TagDetailPage({ params }: { params: Promise<{ id: string
       });
       setIsEditing(false);
     } catch {
-      // surfaced via mutation error
+      // 오류는 updateTagMutation.error로 화면에 보여 준다.
     }
   };
 
@@ -64,7 +64,7 @@ export default function TagDetailPage({ params }: { params: Promise<{ id: string
       await detachMutation.mutateAsync(spotToRemove.id);
       setSpotToRemove(null);
     } catch {
-      // surfaced via mutation error
+      // detach 실패는 화면에 따로 알리지 않는다.
     }
   };
 

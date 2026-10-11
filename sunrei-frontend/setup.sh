@@ -3,7 +3,6 @@
 echo "Setting up Sunrei Frontend Workspace with pnpm"
 echo "============================================="
 
-# Check if pnpm is installed
 if ! command -v pnpm &> /dev/null; then
     echo "pnpm is not installed. Installing..."
     npm install -g pnpm
@@ -12,11 +11,9 @@ else
     echo "✓ pnpm is already installed"
 fi
 
-# Install dependencies
 echo "Installing dependencies..."
 pnpm install
 
-# Show summary
 echo ""
 echo "Setup complete! 🎉"
 echo ""

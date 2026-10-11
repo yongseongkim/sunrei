@@ -15,16 +15,12 @@ const TOKEN_KEY = 'sunrei_token';
 interface AuthState {
   user: AuthUser | null;
   token: string | null;
-  /** Restore a persisted session on mount (localStorage). */
   hydrate: () => void;
   setSession: (user: AuthUser, token: string) => void;
   logout: () => void;
 }
 
-/**
- * Public-app auth (§6). Google sign-in currently unlocks no features; it just
- * connects the account (persisted to localStorage) for saving/following later.
- */
+// public 앱은 로그인해도 열리는 기능이 없고, 계정 연결 상태만 localStorage에 남긴다.
 export const useAuthStore = create<AuthState>((set) => ({
   user: null,
   token: null,
@@ -35,7 +31,7 @@ export const useAuthStore = create<AuthState>((set) => ({
       const t = localStorage.getItem(TOKEN_KEY);
       if (u && t) set({ user: JSON.parse(u) as AuthUser, token: t });
     } catch {
-      /* ignore malformed storage */
+      /* 저장된 값이 깨졌으면 로그인하지 않은 상태로 둔다. */
     }
   },
   setSession: (user, token) => {

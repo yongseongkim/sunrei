@@ -15,10 +15,10 @@ object Places : ULIDTimestampedTable("place", "P") {
     val notes = text("notes").nullable()
     val deletedAt = timestamp("deleted_at").nullable()
 
+    // DB trigger가 latitude, longitude로 채우므로 앱에서는 쓰지 않는다.
     val geom: Column<String> = registerColumn("geom", GeometryColumnType())
 }
 
-// Custom column type for PostGIS geometry
 private class GeometryColumnType : org.jetbrains.exposed.sql.ColumnType() {
     override fun sqlType(): String = "geometry(Point, 4326)"
     override fun valueFromDB(value: Any): String = value.toString()

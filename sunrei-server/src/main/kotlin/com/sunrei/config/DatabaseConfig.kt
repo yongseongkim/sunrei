@@ -23,7 +23,8 @@ object DatabaseConfig {
         val dataSource = hikari()
         Database.connect(dataSource)
 
-        // Only create tables in development mode
+        // 스키마는 Flyway migration이 만든다.
+        // 이 경로는 YouTube 테이블과 geom trigger를 만들지 않으므로 운영에서는 켜지 않는다.
         val seedData = config.propertyOrNull("features.seedData")?.getString()?.toBoolean() ?: false
         if (seedData) {
             transaction {

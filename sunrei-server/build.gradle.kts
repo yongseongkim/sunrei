@@ -28,7 +28,6 @@ kotlin {
 }
 
 dependencies {
-    // Ktor Server
     implementation(libs.ktor.server.core)
     implementation(libs.ktor.server.netty)
     implementation(libs.ktor.server.content.negotiation)
@@ -41,7 +40,6 @@ dependencies {
     implementation(libs.ktor.server.status.pages)
     implementation(libs.ktor.server.config.yaml)
 
-    // Database
     implementation(libs.exposed.core)
     implementation(libs.exposed.dao)
     implementation(libs.exposed.jdbc)
@@ -51,51 +49,41 @@ dependencies {
     implementation(libs.hikaricp)
     implementation("net.postgis:postgis-jdbc:2.5.1")
 
-    // Flyway
     implementation(libs.flyway.core)
     implementation(libs.flyway.database.postgresql)
     runtimeOnly(libs.postgresql)
 
-    // Serialization
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.datetime)
 
-    // Utilities
     implementation(libs.ulid.creator)
     implementation(libs.java.jwt)
 
-    // Google OAuth
     implementation("com.google.api-client:google-api-client:2.7.0")
     implementation("com.google.oauth-client:google-oauth-client:1.36.0")
     implementation("com.google.http-client:google-http-client-gson:1.45.0")
 
-    // AWS SDK
     implementation(libs.aws.s3)
 
-    // Ktor Client for downloading images
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.cio)
     implementation(libs.ktor.client.content.negotiation)
 
-    // Image processing
     implementation(libs.thumbnailator)
 
-    // Logging
     implementation(libs.logback.classic)
 
-    // Testing
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
 }
 
-// Generate DTOs from App API spec
 tasks.register<org.openapitools.generator.gradle.plugin.tasks.GenerateTask>("generateAppApi") {
     generatorName.set("kotlin")
     inputSpec.set("$rootDir/../sunrei-api/app-api-spec.yaml")
     outputDir.set("$buildDir/generated-app")
     apiPackage.set("com.sunrei.generated.api.app")
     modelPackage.set("com.sunrei.generated.dto.app")
-    // Wipe before generating so removed schemas don't linger across regenerations.
+    // 명세에서 지운 schema의 DTO가 남지 않도록 생성하기 전에 출력 폴더를 비운다.
     doFirst { delete("$buildDir/generated-app") }
     configOptions.set(
         mapOf(
@@ -110,7 +98,6 @@ tasks.register<org.openapitools.generator.gradle.plugin.tasks.GenerateTask>("gen
     generateApiTests.set(false)
     generateModelTests.set(false)
 
-    // Only generate models, not API clients
     globalProperties.set(
         mapOf(
             "models" to "",
@@ -120,14 +107,12 @@ tasks.register<org.openapitools.generator.gradle.plugin.tasks.GenerateTask>("gen
     )
 }
 
-// Generate DTOs from Admin API spec
 tasks.register<org.openapitools.generator.gradle.plugin.tasks.GenerateTask>("generateAdminApi") {
     generatorName.set("kotlin")
     inputSpec.set("$rootDir/../sunrei-api/admin-api-spec.yaml")
     outputDir.set("$buildDir/generated-admin")
     apiPackage.set("com.sunrei.generated.api.admin")
     modelPackage.set("com.sunrei.generated.dto.admin")
-    // Wipe before generating so removed schemas don't linger across regenerations.
     doFirst { delete("$buildDir/generated-admin") }
     configOptions.set(
         mapOf(
@@ -142,7 +127,6 @@ tasks.register<org.openapitools.generator.gradle.plugin.tasks.GenerateTask>("gen
     generateApiTests.set(false)
     generateModelTests.set(false)
 
-    // Only generate models, not API clients
     globalProperties.set(
         mapOf(
             "models" to "",
@@ -152,21 +136,18 @@ tasks.register<org.openapitools.generator.gradle.plugin.tasks.GenerateTask>("gen
     )
 }
 
-// Create custom task with desired name
 tasks.register("generateProtocols") {
     dependsOn("generateAppApi", "generateAdminApi")
     description = "Generate DTOs from OpenAPI specifications"
     group = "code generation"
 }
 
-// Configure Java version
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
 
-// Add generated sources to the main source set
 kotlin {
     jvmToolchain {
         languageVersion.set(JavaLanguageVersion.of(21))
@@ -180,20 +161,17 @@ kotlin {
     }
 }
 
-// Make sure code generation runs before compilation
 tasks.compileKotlin {
     dependsOn(tasks.named("generateProtocols"))
 }
 
-// Clean generated sources when cleaning
 tasks.clean {
     delete("$buildDir/generated-app")
     delete("$buildDir/generated-admin")
 }
 
-// Flyway configuration
 flyway {
-    // Default configuration for local development
+    // 환경 변수가 없으면 docker-compose.yml로 띄운 로컬 DB에 접속한다.
     url = System.getenv("DB_URL") ?: "jdbc:postgresql://localhost:5432/sunrei"
     user = System.getenv("DB_USER") ?: "sunrei"
     password = System.getenv("DB_PASSWORD") ?: "sunrei"
@@ -205,7 +183,6 @@ flyway {
     validateMigrationNaming = true
 }
 
-// Custom task for syncing database
 tasks.register("syncDatabase") {
     group = "database"
     description = "Run Flyway migrations to sync database schema"
@@ -222,14 +199,12 @@ tasks.register("syncDatabase") {
     }
 }
 
-// Task to show migration info
 tasks.register("showMigrations") {
     group = "database"
     description = "Show current migration status"
     dependsOn("flywayInfo")
 }
 
-// Task to validate migrations
 tasks.register("validateMigrations") {
     group = "database"
     description = "Validate applied migrations against available ones"

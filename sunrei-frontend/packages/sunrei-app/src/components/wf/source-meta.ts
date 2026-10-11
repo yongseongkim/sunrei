@@ -1,10 +1,8 @@
 import type { SourceDTO } from '@/dto';
 
 /**
- * A source's channel-thumbnail (posterImage) URL, sized for a `px` avatar. YouTube
- * avatar URLs carry a size token (…=s800-c-k-…); we request ~2× the display size for
- * retina and to avoid shipping the 800px original into a 22px circle. Returns undefined
- * when the source has no poster image (Avatar then shows the initial).
+ * YouTube 채널 썸네일 URL에는 `=s800-c-k-` 같은 크기 토큰이 들어 있다.
+ * 작은 원에 800px 원본을 내려받지 않도록 고해상도 화면을 고려해 표시 크기의 두 배로 바꿔 요청한다.
  */
 export function sourceAvatarUrl(
   source: Pick<SourceDTO, 'posterImage'> | null | undefined,

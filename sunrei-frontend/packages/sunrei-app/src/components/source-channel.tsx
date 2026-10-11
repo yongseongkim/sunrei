@@ -17,11 +17,9 @@ const TYPE_LABEL: Record<SourceType, string> = {
 };
 
 /**
- * Channel view (wireframe §4): opened when a source is selected from search or the
- * "Sources in view" rail. The map (source mode) shows every place across all of this
- * source's sunreis; this left panel is the channel header + its sunrei (series) list.
- * Tapping a sunrei previews just that sunrei's places. Back exits the scope — to the
- * search results if we came from search, else to Home.
+ * 검색이나 "주변 소스" 레일에서 Source를 고르면 목록 자리에 열리는 채널 화면이다.
+ * 지도는 source 모드로 이 Source의 모든 장소를 보여 주고, 패널은 Sunrei 목록을 보여 준다.
+ * Sunrei를 누르면 그 Sunrei의 장소만 미리보기로 보여 준다.
  */
 export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
   const t = useTranslations('source');
@@ -48,7 +46,6 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
-      {/* Channel header */}
       <div className="border-b border-line px-4 pb-[14px] pt-2">
         <button
           onClick={back}
@@ -90,7 +87,6 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
         )}
       </div>
 
-      {/* Sunrei (series) list — tapping one previews that sunrei's places */}
       <div className="flex-1 overflow-auto px-4 pb-2 pt-[15px]">
         <SectionLabel count={sunreis.length}>{t('series')}</SectionLabel>
         <div className="mt-[11px] flex flex-col gap-2.5">

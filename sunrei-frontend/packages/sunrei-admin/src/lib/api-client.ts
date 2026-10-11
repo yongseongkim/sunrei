@@ -5,7 +5,6 @@ import Cookies from 'js-cookie';
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3030';
 const TOKEN_COOKIE = 'adminToken';
 
-// Admin API client (with auth)
 const adminConfig = new Configuration({
   basePath: API_BASE,
   accessToken: () => {
@@ -18,12 +17,10 @@ const adminConfig = new Configuration({
 
 export const adminApi = new DefaultApi(adminConfig);
 
-// Axios instance for custom requests
 export const axiosInstance = axios.create({
   baseURL: API_BASE,
 });
 
-// Add auth token to requests
 axiosInstance.interceptors.request.use(
   (config) => {
     if (typeof window !== 'undefined') {
@@ -39,12 +36,10 @@ axiosInstance.interceptors.request.use(
   }
 );
 
-// Handle auth errors
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401 && typeof window !== 'undefined') {
-      // Remove auth cookie
       Cookies.remove(TOKEN_COOKIE, { path: '/' });
       window.location.href = '/login';
     }

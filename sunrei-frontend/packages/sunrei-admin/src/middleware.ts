@@ -1,18 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// 로그인 여부는 클라이언트의 Providers와 (dashboard) layout이 adminToken cookie로 확인한다.
+// admin 권한은 서버가 JWT role로 확인하므로 여기서는 요청을 그대로 통과시킨다.
 export function middleware(request: NextRequest) {
-  // TODO: Enable authentication check when login is implemented
-  // const token = request.cookies.get('adminToken');
-  // const isLoginPage = request.nextUrl.pathname === '/login';
-
-  // if (!token && !isLoginPage) {
-  //   return NextResponse.redirect(new URL('/login', request.url));
-  // }
-
-  // if (token && isLoginPage) {
-  //   return NextResponse.redirect(new URL('/', request.url));
-  // }
-
   return NextResponse.next();
 }
 

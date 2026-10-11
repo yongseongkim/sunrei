@@ -3,11 +3,10 @@
 @tailwind utilities;
 
 :root {
-  /* Fonts */
   --font-sans: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
   --font-mono: "Spline Sans Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
-  /* Pantone 2025 Color Palette */
+  /* 브랜드 색은 Pantone 2025 팔레트에서 골랐다. */
   --pantone-mocha-mousse: #A47764;
   --pantone-tendril: #B4D79E;
   --pantone-cornflower-blue: #6495ED;
@@ -16,40 +15,35 @@
   --pantone-willow: #9CAF88;
   --pantone-gardenia: #F8F6F0;
 
-  /* UI Variables — Sunrei wireframe palette (cornflower blue + cream/greige) */
   --radius: 0.75rem;
-  --background: #f8f6f0;          /* Gardenia / cream */
-  --foreground: #2f2b27;          /* ink */
-  --card: #fdfcf9;                /* paper */
+  --background: #f8f6f0;
+  --foreground: #2f2b27;
+  --card: #fdfcf9;
   --card-foreground: #2f2b27;
   --popover: #fdfcf9;
   --popover-foreground: #2f2b27;
 
-  /* Primary: Cornflower Blue (#6495ED) */
   --primary: #6495ED;
   --primary-foreground: #ffffff;
 
-  /* Secondary: Willow / Tendril green */
   --secondary: #9CAF88;
   --secondary-foreground: #2f2b27;
 
-  /* Accent: Viola */
   --accent: #9370DB;
   --accent-foreground: #ffffff;
 
-  --muted: #eceae1;               /* bg2 greige */
-  --muted-foreground: #6e6860;    /* ink2 */
+  --muted: #eceae1;
+  --muted-foreground: #6e6860;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #e2ded4;              /* line */
+  --border: #e2ded4;
   --input: #e2ded4;
   --ring: #6495ED;
 
-  /* WF tokens (wireframe-kit) */
-  --bg2: #eceae1;                 /* greige surface */
-  --accent-soft: oklch(0.93 0.05 264);  /* pale blue wash */
-  --accent-ink: oklch(0.48 0.13 264);   /* deep blue text */
+  --bg2: #eceae1;
+  --accent-soft: oklch(0.93 0.05 264); /* 옅은 파란 배경 */
+  --accent-ink: oklch(0.48 0.13 264); /* 진한 파란 글자 */
   --line: #e2ded4;
-  --line2: #d2cdc1;               /* Cobblestone greige */
+  --line2: #d2cdc1;
   --ink2: #6e6860;
   --ink3: #a39e95;
 }
@@ -62,15 +56,13 @@
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
 
-  /* Primary: Lighter Cornflower Blue for dark mode */
+  /* 다크 모드에서는 primary, secondary, accent를 각각 밝힌 Cornflower Blue, Tendril, Viola로 쓴다. */
   --primary: oklch(0.72 0.18 265);
   --primary-foreground: oklch(0.145 0 0);
 
-  /* Secondary: Brighter Tendril for dark mode */
   --secondary: oklch(0.75 0.12 130);
   --secondary-foreground: oklch(0.145 0 0);
 
-  /* Accent: Lighter Viola for dark mode */
   --accent: oklch(0.74 0.22 290);
   --accent-foreground: oklch(0.145 0 0);
 
@@ -81,7 +73,6 @@
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.72 0.18 265);
 
-  /* WF tokens (dark) */
   --accent-soft: oklch(0.32 0.06 290);
   --accent-ink: oklch(0.8 0.16 290);
   --line: oklch(1 0 0 / 12%);

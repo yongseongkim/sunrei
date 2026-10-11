@@ -8,11 +8,6 @@ import { SearchPill } from '@/components/wf';
 import { useUiStore } from '@/stores/ui-store';
 import type { ReactNode } from 'react';
 
-/**
- * Desktop sidebar (direction B): brand + search header, "Sources in view" chip rail,
- * and the "Places · nearest first" list — or the active detail/preview panel, or the
- * source channel view (§4), when one is open.
- */
 export function Sidebar({
   detailPanel,
   channelPanel,

@@ -3,7 +3,7 @@ package com.sunrei.database
 import org.jetbrains.exposed.sql.kotlin.datetime.timestamp
 import org.jetbrains.exposed.sql.ReferenceOption
 
-// "user" is a Postgres reserved word; Exposed quotes it automatically in generated SQL.
+// user는 Postgres 예약어지만 Exposed가 SQL을 만들 때 따옴표로 감싼다.
 object UserTable : ULIDTimestampedTable("user", "U") {
     val email = varchar("email", 255).uniqueIndex()
     val name = varchar("name", 255).nullable()

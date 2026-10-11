@@ -3,7 +3,6 @@
 import { Wrapper } from '@googlemaps/react-wrapper';
 import { useEffect, useRef, useState } from 'react';
 
-// Structural place shape; accepts both PlaceInput and the form's place value.
 type SpotPlace = {
   name?: string | null;
   address?: string | null;
@@ -23,7 +22,6 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const overlaysRef = useRef<google.maps.OverlayView[]>([]);
 
-  // Initialize map
   useEffect(() => {
     const mapElement = document.getElementById('spots-map');
     if (!mapElement || !window.google || map) return;
@@ -63,12 +61,10 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
     setMap(newMap);
   }, [map]);
 
-  // Create markers
   useEffect(() => {
     if (!map || !window.google) return;
 
-    // Keep each spot's ORIGINAL list index so pin numbers match the SpotCard badges
-    // (a spot without a place simply gets no pin; the remaining pins keep their list numbers).
+    // 핀 번호가 SpotCard 번호와 같도록 장소 없는 spot을 걸러내기 전의 순서를 쓴다.
     const validSpots = spots
       .map((spot, originalIndex) => ({ spot, originalIndex }))
       .filter(
@@ -77,16 +73,13 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
 
     if (validSpots.length === 0) return;
 
-    // Clear existing overlays
     overlaysRef.current.forEach((overlay) => {
       overlay.setMap(null);
     });
     overlaysRef.current = [];
 
-    // Create bounds to fit all markers
     const bounds = new google.maps.LatLngBounds();
 
-    // Add markers for each spot
     validSpots.forEach(({ spot, originalIndex }) => {
       if (!spot.place) return;
 
@@ -95,7 +88,6 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
         lng: spot.place.longitude!,
       };
 
-      // Create custom marker overlay
       class MarkerOverlay extends google.maps.OverlayView {
         private position: google.maps.LatLng;
         private containerDiv: HTMLDivElement | null = null;
@@ -111,7 +103,6 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
           const container = document.createElement('div');
           container.style.position = 'absolute';
 
-          // Point marker (16px circle with number)
           const point = document.createElement('div');
           point.style.boxSizing = 'border-box';
           point.style.position = 'absolute';
@@ -130,8 +121,7 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
           point.style.fontWeight = '700';
           point.style.fontFamily = '-apple-system, sans-serif';
 
-          // Number nudged down ~1px: a single digit's glyph sits high in the line box,
-          // so flex-centering alone leaves it looking top-heavy in the circle.
+          // 한 자리 숫자는 줄 높이 안에서 위로 치우쳐 보여서 flex 가운데 정렬 뒤에 조금 내린다.
           const num = document.createElement('span');
           num.textContent = String(this.index + 1);
           num.style.lineHeight = '1';
@@ -177,14 +167,12 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
       bounds.extend(position);
     });
 
-    // Fit map to show all markers
     if (validSpots.length > 0) {
       if (validSpots.length === 1) {
         map.setCenter(bounds.getCenter());
         map.setZoom(15);
       } else {
         map.fitBounds(bounds);
-        // Add padding
         const padding = { top: 50, right: 50, bottom: 50, left: 50 };
         map.fitBounds(bounds, padding);
       }
@@ -203,7 +191,6 @@ function Map({ spots }: { spots: SpotsMapProps['spots'] }) {
 export default function SpotsMap({ spots, height = '400px' }: SpotsMapProps) {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '';
 
-  // Check if there are any spots with valid places
   const hasValidSpots = spots.some(
     (spot) => spot.place && spot.place.latitude && spot.place.longitude,
   );
