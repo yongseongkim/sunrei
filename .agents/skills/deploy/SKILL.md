@@ -30,6 +30,11 @@ a tag that is missing from the registry.
 ArgoCD watches `deploy/helm/` on `main` and auto-syncs. The `sunrei-migration`
 job runs `flyway migrate` as a PreSync hook before the new pods start.
 
+If the release needs a new or changed Secret value, apply the Secret first,
+because ArgoCD does not apply Secrets. When the release stops using a key,
+delete the key only after the rollout finishes. Follow "Changing a Secret" in
+`deploy/README.md`.
+
 ## Verify
 
 ```bash
