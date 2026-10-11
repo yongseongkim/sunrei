@@ -55,8 +55,13 @@ uv run python .claude/scripts/youtube/youtube_playlists.py add PLAYLIST_ID --sun
 uv run python .claude/scripts/youtube/youtube_playlists.py update PLAYLIST_ID --disable
 ```
 
-`migrate_legacy_state.py` moves the earlier file-based state (the playlist list
-and S3 baselines) into the DB once. It is a dry run unless `--commit` is given.
+`migrate_legacy_state.py` moves the earlier file-based state into the DB once:
+the playlist list, the S3 baselines, and the committed workspace files
+(`locations.json` and transcripts). A location that is already a spot of the
+playlist's Sunrei is stored as an approved candidate linked to that spot, and
+the rest wait for review. It is a dry run unless `--commit` is given, and can be
+run again after a failure. After the migration, the script and the remaining
+files under `.claude/workspace/youtube` are deleted.
 
 ## Commands
 

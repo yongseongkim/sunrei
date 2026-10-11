@@ -1412,6 +1412,10 @@ components:
             - $ref: '#/components/schemas/PlaceInput'
           nullable: true
         geocodeWarning: { type: string, nullable: true }
+        sunreiSpotId:
+          type: string
+          nullable: true
+          description: An existing SunreiSpot this candidate already became; the candidate is stored as APPROVED.
 
     CreateYoutubeExtractionRunRequest:
       type: object

@@ -1,5 +1,6 @@
 package com.sunrei.service
 
+import com.sunrei.database.SunreiSpots
 import com.sunrei.database.Sunreis
 import com.sunrei.database.YoutubeExtractedPlaces
 import com.sunrei.database.YoutubeExtractionRuns
@@ -334,6 +335,8 @@ class YoutubeService(
         }
 
         request.places.orEmpty().forEach { place ->
+            // 이미 SunreiSpot으로 만들어진 후보는 승인된 상태로 저장한다.
+            val spotId = place.sunreiSpotId?.also(::requireSpotExists)
             YoutubeExtractedPlaces.insertAndGetId { stmt ->
                 stmt[YoutubeExtractedPlaces.runId] = runId
                 stmt[YoutubeExtractedPlaces.videoId] = videoId
@@ -355,7 +358,9 @@ class YoutubeService(
                     stmt[googleMapsId] = geo.googleMapsId
                 }
                 stmt[geocodeWarning] = place.geocodeWarning
-                stmt[reviewStatus] = YoutubeReviewStatus.PENDING.name
+                stmt[reviewStatus] = (if (spotId != null) YoutubeReviewStatus.APPROVED else YoutubeReviewStatus.PENDING).name
+                stmt[reviewedAt] = spotId?.let { now }
+                stmt[sunreiSpotId] = spotId
                 stmt[createdAt] = now
                 stmt[updatedAt] = now
             }
@@ -483,6 +488,11 @@ class YoutubeService(
     private fun requireSunreiExists(sunreiId: String) {
         val exists = Sunreis.select { (Sunreis.id eq sunreiId) and Sunreis.deletedAt.isNull() }.count() > 0
         require(exists) { "Sunrei not found: $sunreiId" }
+    }
+
+    private fun requireSpotExists(spotId: String) {
+        val exists = SunreiSpots.select { (SunreiSpots.id eq spotId) and SunreiSpots.deletedAt.isNull() }.count() > 0
+        require(exists) { "Sunrei spot not found: $spotId" }
     }
 
     private fun parseJson(value: String): JsonElement = try {

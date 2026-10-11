@@ -266,8 +266,8 @@ uv run python .claude/scripts/youtube/create_sunrei.py <ID> [--prod] [--commit] 
 
 Run the command once per workspace. The script skips tag selection and spot
 review, so pass a transcript-based summary with `--summary` and review the
-result in the admin app. On success, it writes `_create_manifest.json` for the
-registry update in step 7.
+result in the admin app. Each spot keeps its source video in `youtubeLink`, so
+the registry update in step 7 reads the live Sunrei instead of a local file.
 
 Creation produces a draft (`published: false`). Publish only when requested:
 `PUT {SERVER_URL}/admin/sunreis/{id}` with `{"published": true}`.
