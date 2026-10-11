@@ -146,6 +146,11 @@ release that needs it:
 Releasing before step 2 starts pods that reference a missing key, and they fail
 with `CreateContainerConfigError`.
 
+Remove a key in the opposite order: release the code that no longer reads it,
+wait until every pod runs the new version, and only then delete the key and
+apply the Secret. Deleting it first makes a restarted pod of the old version
+fail. Keep the Secret holding every key that any running version needs.
+
 ## Troubleshooting
 
 ### ImagePullBackOff
