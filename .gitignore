@@ -80,5 +80,5 @@ docker-compose.override.yml
 __pycache__/
 *.pyc
 
-# Local YouTube renewal state and run artifacts (durable copies live in S3)
+# Local cache of YouTube videos still being collected (state lives in the DB)
 .claude/workspace/youtube/automation/

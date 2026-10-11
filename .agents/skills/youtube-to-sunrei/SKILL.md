@@ -106,7 +106,7 @@ Inspect `.claude/workspace/youtube/{ID}/` before starting:
 If a step fails, report the error and retry that step only. Preserve intermediate
 files so the user can stop at any checkpoint and continue later.
 
-## Daily Renewal
+## Playlist Renewal
 
 Registered playlists, their videos, collected texts, and extraction runs live in
 the Sunrei DB behind `/admin/youtube/*`. To list playlists and inspect new or
@@ -127,9 +127,11 @@ uv run python .claude/scripts/youtube/renew_playlists.py --commit [--max-videos 
 ```
 
 Candidates wait as `PENDING` until an admin approves them, and approval adds the
-spot to the playlist's Sunrei. The job never changes a Sunrei by itself. The
+spot to the playlist's Sunrei. The collector never changes a Sunrei by itself. The
 agents receive the metadata plus one relevant timeline window at a time; they do
 not receive the video or raw media.
 
-Operational details, credentials, and scheduling are documented in
+Run the renewal periodically by invoking this skill, for example from a scheduled
+Claude Code session on a machine YouTube does not block. Operational details and
+credentials are documented in
 `.claude/scripts/youtube/AUTOMATION.md`.

@@ -42,7 +42,7 @@ SunreiSpot에 연결되는 bilingual 태그. `label_en`, `label_ko`를 가지며
 ### YouTube 수집
 
 등록한 플레이리스트의 새 영상에서 장소 후보를 추출하고, 어드민 검토를 거쳐 SunreiSpot으로 만든다.
-수집 job과 스킬은 `/admin/youtube/*` admin API로 같은 DB 상태를 읽고 쓴다.
+수집 스킬은 `/admin/youtube/*` admin API로 같은 DB 상태를 읽고 쓴다.
 
 - `youtube_playlist`: 등록한 플레이리스트로, `sync_enabled`가 주기 수집 대상을 정하고 `sunrei_id`가 승인된 장소가 들어갈 Sunrei다.
 - `youtube_video`, `youtube_playlist_video`: 영상과 플레이리스트 소속이다. 동기화 때 목록에서 빠진 영상은 `removed_at`만 기록하고 데이터와 spot은 지우지 않는다.

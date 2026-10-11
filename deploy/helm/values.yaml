@@ -18,10 +18,6 @@ images:
     repository: server
     tag: 0.1.0
     pullPolicy: IfNotPresent
-  youtubeRenewal:
-    repository: youtube-renewal
-    tag: 0.1.0
-    pullPolicy: IfNotPresent
 
 # Image pull secrets (not needed for public GHCR images)
 imagePullSecrets: []
@@ -132,50 +128,6 @@ server:
           name: sunrei-secrets
           key: auth-jwt-secret
 
-# Daily YouTube playlist renewal (04:30 Asia/Seoul; schedule is UTC)
-youtubeRenewal:
-  enabled: true
-  schedule: "30 19 * * *"
-  concurrencyPolicy: Forbid
-  startingDeadlineSeconds: 3600
-  activeDeadlineSeconds: 72000
-  backoffLimit: 1
-  successfulJobsHistoryLimit: 1
-  failedJobsHistoryLimit: 3
-  codexAuthSecret:
-    name: sunrei-youtube-renewal-auth
-    key: auth.json
-  # Optional fallback when Codex fails, e.g. on a usage limit: a `claude setup-token` subscription token.
-  claudeAuthSecret:
-    name: sunrei-youtube-renewal-auth
-    key: claude-code-oauth-token
-  youtubeCookiesSecret:
-    enabled: false
-    name: sunrei-youtube-renewal-auth
-    key: youtube-cookies.txt
-  persistence:
-    enabled: true
-    existingClaim: ""
-    storageClass: ""
-    accessMode: ReadWriteOnce
-    size: 10Gi
-  temporaryStorage:
-    sizeLimit: 8Gi
-  # Admin API the collector stores collection state through; defaults to the in-cluster server service.
-  apiUrl: ""
-  env:
-    # The Maps browser key is referrer-restricted, so the Data API and Places API use a server key.
-    - name: YOUTUBE_API_KEY
-      valueFrom:
-        secretKeyRef:
-          name: sunrei-secrets
-          key: youtube-api-key
-    - name: AUTH_JWT_SECRET
-      valueFrom:
-        secretKeyRef:
-          name: sunrei-secrets
-          key: auth-jwt-secret
-
 # Cloudflare Tunnel Configuration
 # Services are exposed via Cloudflare Tunnel (cloudflared)
 # No Ingress needed - Tunnel connects directly to ClusterIP services
@@ -210,10 +162,3 @@ resources:
     requests:
       cpu: 200m
       memory: 256Mi
-  youtubeRenewal:
-    limits:
-      cpu: "4"
-      memory: 8Gi
-    requests:
-      cpu: "1"
-      memory: 2Gi

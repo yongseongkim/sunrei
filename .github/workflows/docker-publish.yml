@@ -69,9 +69,6 @@ jobs:
           - name: migration
             dockerfile: deploy/dockerfiles/migration.Dockerfile
             context: .
-          - name: youtube-renewal
-            dockerfile: deploy/dockerfiles/youtube-renewal.Dockerfile
-            context: .
 
     steps:
       - name: Checkout repository
