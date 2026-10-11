@@ -1,6 +1,6 @@
 ---
 name: youtube-to-sunrei
-description: Run the complete YouTube-to-Sunrei workflow. Use when the user asks to convert a YouTube video or playlist into a Sunrei, process a YouTube URL end to end, or continue a partially completed ingest.
+description: Run the complete YouTube-to-Sunrei workflow. Use when the user asks to convert a YouTube video or playlist into a Sunrei, process a YouTube URL end to end, continue a partially completed ingest, or register and renew tracked playlists.
 ---
 
 # Convert YouTube Content to a Sunrei
@@ -109,29 +109,74 @@ files so the user can stop at any checkpoint and continue later.
 ## Playlist Renewal
 
 Registered playlists, their videos, collected texts, and extraction runs live in
-the Sunrei DB behind `/admin/youtube/*`. To list playlists and inspect new or
-pending videos without changing anything, run:
+the Sunrei DB behind `/admin/youtube/*`. A renewal run compares each playlist
+with YouTube, records new videos as `PENDING`, and runs steps 2 and 3 for
+`PENDING` and `FAILED` videos without checkpoints. Instead of step 4, the
+candidates wait for admin review.
+
+### Register a Playlist
+
+Register a playlist once with the Sunrei that approved places go to:
 
 ```bash
+uv run python .claude/scripts/youtube/youtube_playlists.py add PLAYLIST_ID --sunrei SUNREI_ID [--baseline all|none] [--disabled]
+```
+
+- `--baseline all` (default) records the current videos as `SKIPPED`, so only
+  videos added later are processed.
+- `--baseline none` records the current videos as `PENDING`, so the next run
+  processes the whole playlist.
+- `--disabled` keeps the playlist out of periodic runs.
+
+`sync_enabled` only selects the playlists a run without `--playlist` processes.
+It does not start anything by itself.
+Change it, or the Sunrei, with `update`, and list the registered playlists with
+`list`:
+
+```bash
+uv run python .claude/scripts/youtube/youtube_playlists.py update PLAYLIST_ID [--sunrei SUNREI_ID] [--enable | --disable]
 uv run python .claude/scripts/youtube/youtube_playlists.py list
-uv run python .claude/scripts/youtube/renew_playlists.py
 ```
 
-A committed run syncs each playlist's videos, collects captions, Whisper output,
-and video OCR for pending videos, builds a timestamped evidence timeline, runs
-the transcript and location agents, and stores every text and candidate through
-the API:
+### Run Once for One Playlist
+
+Run a single playlist on demand, for example from a local Mac without a schedule.
+An explicit `--playlist` also runs a playlist whose sync is disabled, so do not
+toggle `sync_enabled` for a one-off run:
 
 ```bash
-uv run python .claude/scripts/youtube/renew_playlists.py --commit [--max-videos N] [--playlist ID]
+# Show the new and pending videos without changing anything.
+uv run python .claude/scripts/youtube/renew_playlists.py --playlist PLAYLIST_ID
+
+# Sync the playlist and process its pending videos.
+uv run python .claude/scripts/youtube/renew_playlists.py --commit --playlist PLAYLIST_ID [--max-videos N]
 ```
 
-Candidates wait as `PENDING` until an admin approves them, and approval adds the
-spot to the playlist's Sunrei. The collector never changes a Sunrei by itself. The
-agents receive the metadata plus one relevant timeline window at a time; they do
-not receive the video or raw media.
+Run the committed command again later to process videos added since.
 
-Run the renewal periodically by invoking this skill, for example from a scheduled
-Claude Code session on a machine YouTube does not block. Operational details and
-credentials are documented in
+### Run Periodically
+
+Without `--playlist`, a run renews every playlist with `sync_enabled`:
+
+```bash
+uv run python .claude/scripts/youtube/renew_playlists.py --commit [--max-videos N]
+```
+
+The command does not need a Claude Code session.
+Schedule it with launchd or cron on a machine YouTube does not block, because
+YouTube blocks captions and media downloads from datacenter IPs.
+Run only one schedule at a time so the same video is not processed twice.
+
+### Review and Results
+
+Each processed video ends as `REVIEW_PENDING`, or `COMPLETED` when no candidate
+was found.
+A failed video becomes `FAILED` with its stage and error, and the next run retries
+it.
+Candidates wait as `PENDING` until an admin approves them, and approval adds the
+spot to the playlist's Sunrei. The collector never changes a Sunrei by itself.
+The agents receive the metadata plus one relevant timeline window at a time; they
+do not receive the video or raw media.
+
+Operational details and credentials are documented in
 `.claude/scripts/youtube/AUTOMATION.md`.

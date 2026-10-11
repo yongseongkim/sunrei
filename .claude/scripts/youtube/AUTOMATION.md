@@ -46,6 +46,8 @@ A video left `PROCESSING` by an interrupted run is reset to `FAILED` after
 Register a playlist with the Sunrei that approved places go to. By default its
 current videos are recorded as `SKIPPED`, so only videos added later are
 processed; `--baseline none` queues every current video.
+`--disabled` keeps it out of periodic runs. `syncEnabled` only selects the
+playlists a run without `--playlist` processes.
 
 ```bash
 uv run python .claude/scripts/youtube/youtube_playlists.py list
@@ -89,8 +91,8 @@ An explicit `--playlist` also runs a playlist whose sync is disabled.
 
 ## Scheduling
 
-The `youtube-to-sunrei` skill runs the committed command periodically from a
-machine YouTube does not block. YouTube blocks captions and media downloads
+Schedule the committed command with launchd or cron on a machine YouTube does
+not block; it does not need a Claude Code session. YouTube blocks captions and media downloads
 from datacenter IPs, so the cluster cannot run it.
 
 `PROCESSING` marks a video in progress, but run only one schedule at a time to
