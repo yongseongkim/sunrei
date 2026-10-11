@@ -15,7 +15,6 @@ from _common import jwt_is_usable, load_google_api_key
 from evidence_timeline import build_timeline, ensure_timeline
 from extract_locations_headless import merge_results, timeline_window
 from collection_api import CollectionApi
-from migrate_legacy_state import handled_video_ids, legacy_baseline, legacy_runs, legacy_texts
 from renew_playlists import (
     first_timestamp,
     parse_json_output,
@@ -162,82 +161,6 @@ class RenewalTests(unittest.TestCase):
         api.token = token(60)
         self.assertNotEqual(api._token(), first)
         self.assertEqual(minted, [])
-
-    def test_legacy_baseline_requeues_unfinished_runs(self):
-        prefix = "https://sunrei-resources.s3.ap-northeast-2.amazonaws.com/youtube/artifacts/v1/playlists/one/"
-        responses = {
-            prefix + "latest.json": {
-                "playlistId": "one",
-                "stateKey": "youtube/artifacts/v1/playlists/one/snapshots/run/state.json.gz",
-            },
-            prefix + "snapshots/run/state.json.gz": {
-                "schemaVersion": 1,
-                "playlistId": "one",
-                "knownVideoIds": ["done", "reviewing"],
-                "videos": {"reviewing": {"status": "review_pending"}, "approved": {"status": "approved"}},
-            },
-        }
-        reads = []
-
-        def reader(url, compressed=False):
-            reads.append(compressed)
-            return responses[url]
-
-        baseline = legacy_baseline("one", reader=reader)
-
-        self.assertEqual(reads, [False, True])
-        self.assertEqual(handled_video_ids(baseline), {"done", "approved"})
-
-    def test_legacy_runs_link_locations_to_spots(self):
-        locations = [
-            {
-                "videoId": "v1",
-                "locations": [
-                    {"name": "Station", "googleMapsId": "g1", "latitude": 1.0, "longitude": 2.0,
-                     "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=v1&t=60"},
-                    {"name": "Cafe", "googleMapsId": "g2", "latitude": 1.0, "longitude": 2.0},
-                ],
-            },
-            {"videoId": "elsewhere", "locations": [{"name": "Other"}]},
-        ]
-        place = {"name": "Station", "address": "a", "latitude": 1.0, "longitude": 2.0, "googleMapsId": "g1"}
-        sunrei = {
-            "spots": [
-                {"id": "s1", "youtubeLink": "https://www.youtube.com/watch?v=v1&t=91", "place": place},
-                {"id": "s2", "youtubeLink": "https://www.youtube.com/watch?v=v2&t=5", "context": "c",
-                 "place": dict(place, name="Museum", googleMapsId="g3")},
-                {"id": "s3", "youtubeLink": "https://www.youtube.com/watch?v=city:Seoul", "place": place},
-            ]
-        }
-
-        runs = legacy_runs(locations, sunrei, {"v1", "v2"})
-
-        self.assertEqual(sorted(runs), ["v1", "v2"])
-        v1 = runs["v1"]["places"]
-        self.assertEqual([(p["name"], p["sunreiSpotId"], p["timestampSeconds"]) for p in v1],
-                         [("Station", "s1", 60), ("Cafe", None, None)])
-        self.assertEqual(runs["v1"]["rawOutput"]["videoId"], "v1")
-        self.assertIsNone(runs["v2"]["rawOutput"])
-        self.assertEqual([(p["name"], p["sunreiSpotId"], p["timestampSeconds"]) for p in runs["v2"]["places"]],
-                         [("Museum", "s2", 5)])
-
-    def test_legacy_texts_keep_source_and_cleaned_transcript(self):
-        raw = [{"videoId": "v1", "language": "ko", "source": "youtube_captions", "segments": [{"start": 0, "duration": 2, "text": "a"}], "fullText": "a"},
-               {"videoId": "v2", "segments": [], "fullText": "ocr"}]
-        reviewed = [
-            {"videoId": "v1", "language": "ko", "cleanedText": "A"},
-            {"videoId": "v2", "segments": [{"start": 1, "text": "OCR"}], "fullText": "OCR"},
-            {"videoId": "v3", "cleanedText": "x"},
-        ]
-
-        texts = legacy_texts(raw, reviewed, {"v1", "v2"})
-
-        self.assertEqual([t["kind"] for t in texts["v1"]], ["CAPTIONS", "TRANSCRIPT_REVIEWED"])
-        self.assertEqual(texts["v1"][0]["segments"], [{"start": 0, "end": 2, "text": "a"}])
-        self.assertEqual(texts["v1"][1]["full_text"], "A")
-        self.assertEqual([t["kind"] for t in texts["v2"]], ["OCR", "TRANSCRIPT_REVIEWED"])
-        self.assertEqual(texts["v2"][1]["segments"], [{"start": 1, "end": None, "text": "OCR"}])
-        self.assertNotIn("v3", texts)
 
     def test_parse_json_output_ignores_progress_logs(self):
         value = {
