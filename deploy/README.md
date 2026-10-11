@@ -127,6 +127,25 @@ Required keys:
 
 If a key is missing, the pod will fail to start with `CreateContainerConfigError`.
 
+### Changing a Secret
+
+ArgoCD deploys the chart but never applies these Secrets, and pods read them as
+environment variables only when they start. Apply a changed Secret before the
+release that needs it:
+
+1. Edit and commit the encrypted file (`sops deploy/secrets/secrets.enc.yaml`,
+   or `k8s/sunrei/infra-secrets.enc.yaml` in homelab-infra).
+2. Apply it to the cluster with `sops -d ... | kubectl replace -f -`.
+3. Restart the pods that use it:
+   - for a new key that new code reads, release with `./scripts/release.sh`;
+     the rollout starts pods with the applied Secret;
+   - for a changed value without a code change, run
+     `kubectl -n sunrei rollout restart deployment/<name>`, because ArgoCD does
+     not restart pods when only a Secret changes.
+
+Releasing before step 2 starts pods that reference a missing key, and they fail
+with `CreateContainerConfigError`.
+
 ## Troubleshooting
 
 ### ImagePullBackOff
