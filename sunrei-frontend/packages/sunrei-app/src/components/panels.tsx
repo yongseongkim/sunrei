@@ -22,14 +22,13 @@ import { PlaceCard } from './place-card';
 import type { PlaceCardDTO, PlaceMentionDTO, SourceType, SunreiDTO, TagDTO } from '@/dto';
 import { useEffect, useState } from 'react';
 
-/** "Search nearby" → "Finding spots…" → reload (nearby mode only, Bd-3). */
 export function SearchNearbyButton({ isFetching }: { isFetching: boolean }) {
   const t = useTranslations('list');
   const pendingArea = useMapStore((s) => s.pendingArea);
   const commit = useMapStore((s) => s.commitSearchArea);
   const mode = useMapStore((s) => s.mode);
   const videoPreview = useUiStore((s) => s.videoPreview);
-  // Suppressed in source mode and during video preview (Bd-6 / Be-6).
+  // source 모드와 미리보기는 화면 영역과 관계없이 장소를 보여 주므로 버튼을 띄우지 않는다.
   if (mode !== 'nearby' || videoPreview) return null;
 
   const finding = isFetching && !pendingArea;
@@ -62,7 +61,6 @@ export function TagChipRail() {
   if (tags.length === 0) return null;
   return (
     <div className="flex gap-1.5 overflow-x-auto px-4 py-2 border-b border-line bg-background/80 backdrop-blur">
-      {/* Entry point to the full filters sheet (both desktop sidebar and mobile sheet). */}
       <button
         onClick={() => setFiltersOpen(true)}
         className="shrink-0 inline-flex items-center gap-1 text-xs font-bold whitespace-nowrap px-2.5 py-1 rounded-full border border-dashed border-line2 bg-card text-ink2 hover:bg-accent-soft"
@@ -100,7 +98,6 @@ export function TagChipRail() {
 
 export function UnifiedSearch({ onClose }: { onClose: () => void }) {
   const t = useTranslations('search');
-  // Query is stored (not local) so it survives previewing a video and coming back.
   const q = useUiStore((s) => s.searchQuery);
   const setQ = useUiStore((s) => s.setSearchQuery);
   const [debounced, setDebounced] = useState(q);
@@ -119,13 +116,12 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
   }, [q]);
 
   const { data, isFetching } = useSearch(debounced, mapCenter, debounced.length > 0);
-  // External Google Places results, merged into the Areas & places group (Be-2/Be-3).
   const gPredictions = useGooglePlaceAutocomplete(debounced);
 
   const selectGooglePlace = async (placeId: string) => {
     const loc = await resolveGooglePlace(placeId);
     if (loc) {
-      // A location pick is a Nearby jump: drop any source scope and load the new area.
+      // 위치를 고르면 source 모드를 풀고 nearby 모드에서 그 지역을 바로 불러온다.
       clearSources();
       panTo(loc, 14, true);
       onClose();
@@ -195,7 +191,6 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
                   sub={s.type}
                   hint={t('open')}
                   onClick={() => {
-                    // Open the channel view (wireframe §4): single-source scope + sunrei list.
                     setSourceMode([s.id]);
                     setSourceFromSearch(true);
                     onClose();
@@ -239,7 +234,6 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
-/** 28px result-type glyph holder: circle for places, rounded square for videos. */
 function IconCircle({ children, square }: { children: React.ReactNode; square?: boolean }) {
   return (
     <span
@@ -253,11 +247,7 @@ function IconCircle({ children, square }: { children: React.ReactNode; square?: 
   );
 }
 
-/**
- * Video result thumbnail (16:9-ish) for the "Videos" search group — a real image
- * makes video rows unmistakable next to the pin-icon place rows and avatar channel
- * rows. Falls back to a play glyph on the greige placeholder when a video has no image.
- */
+/** 영상 결과를 장소나 채널 결과와 바로 구분할 수 있도록 썸네일을 보여 준다. */
 function VideoThumb({ url }: { url?: string }) {
   return (
     <span
@@ -326,14 +316,7 @@ function ResultRow({
   );
 }
 
-/**
- * Place (spot) detail — wireframe §1b. Opened by tapping a marker or a PlaceCard.
- * The Home card folds mentions to 2 + "N more"; this expands EVERY source that
- * featured this place. Header (pin · name · tag · distance · address) + actions
- * (directions / Google Maps) stay pinned; the body scrolls: a Google-info card
- * (live rating/reviews/price/hours/photos, distinct from Sunrei) then every
- * source's take with a YouTube deep link.
- */
+/** PlaceCard는 언급을 두 개까지만 보여 주고, 장소 상세는 이 장소의 모든 언급을 보여 준다. */
 export function PlaceDetail({ placeId }: { placeId: string }) {
   const t = useTranslations('detail');
   const tagLabel = useTagLabel();
@@ -365,7 +348,6 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
-      {/* Pinned header: back · name/tag/distance/address · actions */}
       <div className="border-b border-line px-4 pb-3.5 pt-2">
         <button
           onClick={() => setActivePlace(null)}
@@ -415,7 +397,6 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
         </div>
       </div>
 
-      {/* Scrolling body: Google info card + every source's take */}
       <div className="flex-1 overflow-auto px-4 pb-4 pt-3.5">
         {info && <GoogleInfoCard info={info} />}
 
@@ -454,8 +435,8 @@ function TypeBadge({ type }: { type: SourceType }) {
   );
 }
 
-/** One fully-expanded source take: avatar · channel · type · series · take · YouTube ↗. */
 function PDMention({ m }: { m: PlaceMentionDTO }) {
+  // spot에 타임스탬프 링크가 있으면 그 장면으로, 없으면 Sunrei 링크로 보낸다.
   const yt = m.youtubeLink ?? m.sunreiLink;
   return (
     <div className="border-t border-line py-3">
@@ -485,7 +466,6 @@ function PDMention({ m }: { m: PlaceMentionDTO }) {
   );
 }
 
-/** Google's own info for the place — rating/reviews/price/open-now/photos (not Sunrei). */
 function GoogleInfoCard({ info }: { info: GooglePlaceInfo }) {
   const t = useTranslations('detail');
   const hasHead =
@@ -564,7 +544,6 @@ function GoogleInfoCard({ info }: { info: GooglePlaceInfo }) {
   );
 }
 
-/** 4-color Google "G" glyph. */
 function GoogleGlyph() {
   return (
     <svg width="13" height="13" viewBox="0 0 48 48" className="shrink-0">
@@ -592,12 +571,8 @@ function formatDistanceM(m: number) {
 }
 
 /**
- * Series (Sunrei) view — wireframe §4 "일본 시리즈". Opened by picking a series in the
- * channel view (or a video in search). Place-first: a series scope chip (channel ·
- * series · N places, ✕ to exit) over the SAME PlaceCards as Home, scoped to this
- * series, while the map (via MapView previewSpots) flies to and shows the series'
- * places. Tapping a card opens that place's detail, which nests over this panel and
- * backs out to it.
+ * Sunrei 미리보기 패널이며, 채널 화면에서 Sunrei를 고르거나 검색에서 영상을 고르면 열린다.
+ * 목록은 홈과 같은 PlaceCard를 이 Sunrei의 장소로만 채우고, 지도는 MapView의 previewSpots로 같은 장소를 보여 준다.
  */
 export function VideoPreviewPanel() {
   const t = useTranslations('detail');
@@ -618,7 +593,6 @@ export function VideoPreviewPanel() {
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
-      {/* Back + series scope chip */}
       <div className="border-b border-line px-4 pb-3.5 pt-2">
         <button onClick={exit} className="mb-2.5 flex items-center gap-0.5 text-ink2 hover:text-foreground">
           <ChevronLeft className="h-[18px] w-[18px]" />
@@ -642,7 +616,6 @@ export function VideoPreviewPanel() {
         </div>
       </div>
 
-      {/* Place-first list — this series' places */}
       {isLoading || !sunrei ? (
         <div className="grid flex-1 place-items-center py-8">
           <Loader2 className="h-5 w-5 animate-spin text-ink3" />
@@ -665,7 +638,7 @@ export function VideoPreviewPanel() {
   );
 }
 
-/** Group a series' spots into per-place cards (reuses the Home PlaceCard). */
+/** 미리보기 목록에도 PlaceCard를 쓰도록 Sunrei의 spot을 장소별 카드로 묶는다. */
 function spotsToPlaceCards(sunrei: SunreiDTO): PlaceCardDTO[] {
   const byPlace = new Map<string, SunreiDTO['spots']>();
   for (const s of sunrei.spots) {

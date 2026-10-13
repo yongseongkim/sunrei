@@ -236,7 +236,6 @@ export default function SunreiForm({
               </Alert>
             )}
 
-            {/* Source + publish state */}
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-2">
                 <Label className="text-sm font-medium">Source *</Label>
@@ -281,7 +280,6 @@ export default function SunreiForm({
 
             <Separator />
 
-            {/* Summary */}
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <Label htmlFor="summary" className="text-sm font-medium">

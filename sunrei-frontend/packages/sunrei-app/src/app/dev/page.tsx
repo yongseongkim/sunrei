@@ -4,8 +4,7 @@ import { PlaceCard, PlaceCardSkeleton } from '@/components/place-card';
 import type { PlaceCardDTO, SourceDTO } from '@/dto';
 import { useState } from 'react';
 
-// Component sandbox (Ba-5): renders the PlaceCard states board against mock data so the
-// card can be eyeballed in isolation without seeding the backend. Not linked in the app.
+// 백엔드 데이터 없이 PlaceCard 상태를 눈으로 확인하는 개발용 페이지이며 앱 안에서는 링크하지 않는다.
 
 const src = (id: string, name: string, type: SourceDTO['type']): SourceDTO => ({
   id,

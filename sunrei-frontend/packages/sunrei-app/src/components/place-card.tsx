@@ -13,7 +13,6 @@ function formatDistance(m?: number | null) {
   return `${(m / 1000).toFixed(1)} km`;
 }
 
-/** Loading skeleton sharing the card footprint (Bh-1). */
 export function PlaceCardSkeleton() {
   const bar = (w: string, h = 'h-1.5') => (
     <div className={cn('rounded-full bg-line', h)} style={{ width: w }} />
@@ -41,12 +40,7 @@ export function PlaceCardSkeleton() {
   );
 }
 
-/**
- * One source's "take" on a place — how that source introduced it (channel · video +
- * a 2-line description). Presentational only: the whole card selects the Place (opens
- * Place detail, matching a marker tap); the per-video preview lives one level down,
- * on the mention rows inside Place detail.
- */
+/** Source 하나가 이 장소를 어떻게 소개했는지 보여 주는 줄이다. */
 function PlaceTake({ mention }: { mention: PlaceMentionDTO }) {
   return (
     <div className="flex items-start gap-[9px] border-t border-line py-2">
@@ -82,7 +76,7 @@ export function PlaceCard({
   const mentions = card.mentions ?? [];
   const tag = card.tags?.[0];
 
-  // "and N other sources" — distinct sources beyond the two takes we show.
+  // 보여 준 두 언급에 없는 Source만 "외 소스 N개"로 센다.
   const shownIds = new Set(mentions.slice(0, 2).map((m) => m.source.id));
   const otherSources = new Set(
     mentions.slice(2).map((m) => m.source.id).filter((id) => !shownIds.has(id))
@@ -104,7 +98,6 @@ export function PlaceCard({
         dimmed && 'opacity-40'
       )}
     >
-      {/* Header: name + tag + distance */}
       <div className="flex items-center gap-2">
         <span className="flex-1 min-w-0 truncate text-[14px] font-extrabold text-foreground">
           {card.place.name}
@@ -121,14 +114,12 @@ export function PlaceCard({
         )}
       </div>
 
-      {/* Eyebrow — how widely it's featured */}
       {mentions.length > 0 && (
         <div className="mt-[9px] text-[10px] font-extrabold uppercase tracking-wide text-accent-ink">
           {eyebrow}
         </div>
       )}
 
-      {/* Up to two source "takes" */}
       <div>
         {mentions.slice(0, 2).map((m) => (
           <PlaceTake key={m.spotId} mention={m} />

@@ -15,8 +15,6 @@ import io.ktor.client.HttpClient
 import io.ktor.server.application.Application
 import io.ktor.server.application.ApplicationCall
 
-// Helper extension functions to get dependencies from ServiceLocator
-
 fun ApplicationCall.injectUserService(): UserService = ServiceLocator.userService
 fun ApplicationCall.injectPlaceService(): PlaceService = ServiceLocator.placeService
 fun ApplicationCall.injectTagService(): TagService = ServiceLocator.tagService
@@ -30,7 +28,6 @@ fun ApplicationCall.injectS3Service(): S3Service = ServiceLocator.s3Service
 fun ApplicationCall.injectS3Config(): S3Config = ServiceLocator.s3Config
 fun ApplicationCall.injectHttpClient(): HttpClient = ServiceLocator.httpClient.value
 
-// Application-level inject functions
 fun Application.injectUserService(): UserService = ServiceLocator.userService
 fun Application.injectPlaceService(): PlaceService = ServiceLocator.placeService
 fun Application.injectTagService(): TagService = ServiceLocator.tagService

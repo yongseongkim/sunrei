@@ -12,7 +12,6 @@ import com.sunrei.model.Sunrei
 import com.sunrei.model.SunreiSpot
 import com.sunrei.model.Tag
 
-// ===== Source type mapping (model enum -> generated enum share the same constant names) =====
 fun ModelSourceType.toDtoType(): com.sunrei.generated.dto.app.SourceType =
     com.sunrei.generated.dto.app.SourceType.valueOf(name)
 

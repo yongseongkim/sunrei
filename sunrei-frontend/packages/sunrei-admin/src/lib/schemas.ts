@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-// Shared image schema (matches MultiSizeImageDTO).
+// 생성된 MultiSizeImageDTO와 같은 모양을 유지한다.
 export const imageSchema = z.object({
   images: z
     .array(
@@ -14,8 +14,7 @@ export const imageSchema = z.object({
 });
 export type ImageFormValue = z.infer<typeof imageSchema>;
 
-// A place input for a spot (Google Maps result). Fields are nullish to match the
-// generated PlaceInput/PlaceDTO shapes (address/googleMapsId may be absent or null).
+// 생성된 PlaceInput과 PlaceDTO에서 address와 googleMapsId는 없거나 null일 수 있어서 nullish로 둔다.
 export const placeInputSchema = z.object({
   id: z.string().optional(),
   name: z.string().min(1),
@@ -26,7 +25,6 @@ export const placeInputSchema = z.object({
 });
 export type PlaceInputFormValue = z.infer<typeof placeInputSchema>;
 
-// ===== Sunrei form =====
 export const spotSchema = z.object({
   id: z.string().optional(),
   title: z.string().min(1, 'Spot title is required'),
@@ -53,7 +51,6 @@ export const sunreiSchema = z.object({
 });
 export type SunreiFormValue = z.infer<typeof sunreiSchema>;
 
-// ===== Source form =====
 export const sourceSchema = z
   .object({
     type: z.enum(['YOUTUBE', 'TV', 'ANIME', 'OTHER']),

@@ -13,11 +13,7 @@ function placesReady(): boolean {
   return typeof window !== 'undefined' && !!(window as any).google?.maps?.places;
 }
 
-/**
- * Google Places autocomplete predictions for `query` (Be-2/Be-3). Returns external
- * area/location results to merge into the search "Areas & places" group. Empty until
- * the places library is loaded and the query is non-trivial.
- */
+/** Sunrei에 없는 지역도 찾을 수 있도록 검색의 "지역 및 장소" 그룹에 Google Places 자동완성 결과를 섞는다. */
 export function useGooglePlaceAutocomplete(query: string): GooglePrediction[] {
   const [predictions, setPredictions] = useState<GooglePrediction[]>([]);
 
@@ -46,10 +42,7 @@ export function useGooglePlaceAutocomplete(query: string): GooglePrediction[] {
   return predictions;
 }
 
-/**
- * Reverse-geocode a lat/lng to a short "Ward, City" label for the map area chip.
- * Best-effort: returns null if the Geocoding API is unavailable or nothing matches.
- */
+/** 지도 영역 칩에 보여 줄 "구, 시" 형태의 짧은 지역 이름을 좌표로 찾는다. */
 export async function reverseGeocode(loc: LatLng): Promise<string | null> {
   if (!placesReady()) return null;
   const geocoder = new google.maps.Geocoder();
@@ -75,16 +68,15 @@ export async function reverseGeocode(loc: LatLng): Promise<string | null> {
 export interface GooglePlaceInfo {
   rating?: number;
   reviews?: number;
-  priceLevel?: number; // 0–4 → ₩ symbols
+  priceLevel?: number; // Google price_level 값이며 0부터 4까지다.
   openNow: boolean | null;
-  photos: string[]; // ready-to-use photo URLs
+  photos: string[];
 }
 
 /**
- * Live Google Places details (rating · reviews · price · open-now · photos) for the
- * place-detail "Google 정보" card — data Sunrei doesn't store, fetched client-side by
- * google_maps_id. Best-effort: null until the places library is ready and the lookup
- * succeeds. Note: getDetails with these fields is a billed Places request.
+ * 장소 상세의 "Google 정보" 카드에 쓸 평점, 리뷰 수, 가격대, 영업 여부, 사진을 google_maps_id로 가져온다.
+ * Sunrei는 이 정보를 저장하지 않으므로 브라우저에서 직접 조회한다.
+ * 이 필드로 getDetails를 호출하면 Places API 요금이 나간다.
  */
 export function useGooglePlaceDetails(placeId?: string | null): GooglePlaceInfo | null {
   const [info, setInfo] = useState<GooglePlaceInfo | null>(null);
@@ -93,7 +85,7 @@ export function useGooglePlaceDetails(placeId?: string | null): GooglePlaceInfo 
     setInfo(null);
     if (!placeId || !placesReady()) return;
     let cancelled = false;
-    // PlacesService needs a DOM node (or map) to attach to; a detached div is fine.
+    // PlacesService는 지도나 DOM 노드를 요구하지만 문서에 붙이지 않은 div로도 동작한다.
     const service = new google.maps.places.PlacesService(document.createElement('div'));
     service.getDetails(
       {
@@ -129,7 +121,6 @@ export function useGooglePlaceDetails(placeId?: string | null): GooglePlaceInfo 
   return info;
 }
 
-/** Resolve a Google place_id to a lat/lng via the Geocoder (needs the Geocoding API). */
 export async function resolveGooglePlace(placeId: string): Promise<LatLng | null> {
   if (!placesReady()) return null;
   const geocoder = new google.maps.Geocoder();

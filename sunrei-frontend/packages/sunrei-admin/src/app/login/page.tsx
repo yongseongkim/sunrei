@@ -30,8 +30,7 @@ export default function LoginPage() {
       setLoading(true);
       setError(null);
 
-      // Load Google Identity Services. Google Maps also owns window.google,
-      // so check for the GIS namespace specifically.
+      // Google Maps도 window.google을 쓰므로 GIS 네임스페이스가 있는지로 로드 여부를 확인한다.
       if (!window.google?.accounts?.oauth2) {
         await new Promise<void>((resolve, reject) => {
           const script = document.createElement('script');
@@ -42,7 +41,6 @@ export default function LoginPage() {
         });
       }
 
-      // Initialize and prompt for Google sign-in
       const tokenClient = window.google?.accounts?.oauth2?.initTokenClient({
         client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '',
         scope: 'openid email profile',
@@ -52,7 +50,7 @@ export default function LoginPage() {
               await auth.loginWithGoogle(response.access_token);
               router.push('/');
             } catch {
-              // Non-admin users will be redirected to /forbidden by auth.loginWithGoogle
+              // admin이 아니면 auth.loginWithGoogle이 이미 /forbidden으로 보냈다.
               setLoading(false);
             }
           } else if (response.error) {

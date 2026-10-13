@@ -9,11 +9,6 @@ import { useTagLabel } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
 import type { PlaceCardDTO } from '@/dto';
 
-/**
- * Bilingual tag filter (Bf-2). Desktop = centered modal, mobile = bottom sheet.
- * Full KO+EN tag grid, Reset, and a "Show N places" CTA reflecting the live match
- * count over the in-scope places (client-side; never refetches the map).
- */
 export function FiltersPanel({ places }: { places: PlaceCardDTO[] }) {
   const t = useTranslations('tags');
   const tagLabel = useTagLabel();

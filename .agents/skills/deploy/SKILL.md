@@ -32,7 +32,7 @@ job runs `flyway migrate` as a PreSync hook before the new pods start.
 
 If the release needs a new or changed Secret value, apply the Secret first,
 because ArgoCD does not apply Secrets. When the release stops using a key,
-delete the key only after the rollout finishes. Follow "Changing a Secret" in
+delete the key only after the rollout finishes. Follow "Secret 변경" in
 `deploy/README.md`.
 
 ## Verify

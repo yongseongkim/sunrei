@@ -67,7 +67,6 @@ class AuthService(
         val providerImpl = oAuthProviderFactory.getProvider(provider)
             ?: throw IllegalArgumentException("Unsupported OAuth provider: $provider")
 
-        // Handle access token (from GIS Token Client)
         if (accessToken != null && provider == OAuthProvider.GOOGLE) {
             val tokenInfo = OAuthTokenInfo(
                 accessToken = accessToken,
@@ -80,7 +79,6 @@ class AuthService(
             return findOrCreateOAuthUser(userInfo)
         }
 
-        // Handle id token (from legacy flow)
         if (idToken != null && provider == OAuthProvider.GOOGLE) {
             val tokenInfo = OAuthTokenInfo(
                 accessToken = null,

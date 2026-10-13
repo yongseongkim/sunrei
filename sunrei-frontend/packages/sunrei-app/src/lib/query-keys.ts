@@ -1,5 +1,4 @@
-// Query keys. The map key encodes mode/sourceIds/center — NOT tags (tag filtering is
-// client-side post-query state, so it must not refetch the map).
+// 태그 필터는 이미 받은 결과를 브라우저에서 거르기만 하므로 지도 query key에 태그를 넣지 않는다.
 export const qk = {
   map: {
     nearby: (bounds: string, center: string) => ['map', 'nearby', bounds, center] as const,

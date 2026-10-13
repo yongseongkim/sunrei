@@ -2,13 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Make placeholder text more visible */
+/* placeholder 글자가 너무 옅어서 ::placeholder와 placeholder-gray-* 클래스 색을 더 진하게 바꾼다. */
 ::placeholder {
   color: rgb(107 114 128); /* text-gray-500 */
   opacity: 1;
 }
 
-/* Override Tailwind's default placeholder colors to be darker */
 .placeholder-gray-300::placeholder {
   color: rgb(107 114 128); /* text-gray-500 */
 }
@@ -22,10 +21,9 @@
 }
 
 :root {
-  /* Fonts */
   --font-sans: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
 
-  /* Pantone 2025 Color Palette */
+  /* 브랜드 색은 Pantone 2025 팔레트에서 골랐다. */
   --pantone-mocha-mousse: #A47764;
   --pantone-tendril: #B4D79E;
   --pantone-cornflower-blue: #6495ED;
@@ -34,7 +32,6 @@
   --pantone-willow: #9CAF88;
   --pantone-gardenia: #F8F6F0;
 
-  /* UI Variables */
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -43,15 +40,13 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
 
-  /* Primary: Cornflower Blue */
+  /* primary, secondary, accent는 각각 Cornflower Blue, Tendril, Viola를 oklch로 옮긴 값이다. */
   --primary: oklch(0.62 0.15 265);
   --primary-foreground: oklch(1 0 0);
 
-  /* Secondary: Tendril (light green) */
   --secondary: oklch(0.83 0.08 130);
   --secondary-foreground: oklch(0.25 0 0);
 
-  /* Accent: Viola */
   --accent: oklch(0.64 0.18 290);
   --accent-foreground: oklch(1 0 0);
 
@@ -84,15 +79,13 @@
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
 
-  /* Primary: Lighter Cornflower Blue for dark mode */
+  /* 다크 모드에서는 primary, secondary, accent를 각각 밝힌 Cornflower Blue, Tendril, Viola로 쓴다. */
   --primary: oklch(0.72 0.18 265);
   --primary-foreground: oklch(0.145 0 0);
 
-  /* Secondary: Brighter Tendril for dark mode */
   --secondary: oklch(0.75 0.12 130);
   --secondary-foreground: oklch(0.145 0 0);
 
-  /* Accent: Lighter Viola for dark mode */
   --accent: oklch(0.74 0.22 290);
   --accent-foreground: oklch(0.145 0 0);
 

@@ -31,9 +31,8 @@ function requestLocation(panTo: (c: LatLng, zoom?: number) => void, done: () => 
 }
 
 /**
- * §0 — decide the opening flow once on mount: a previously-allowed user gets a
- * silent locate; a previously-declined user stays on Seoul; a first-timer sees
- * the priming card. The browser's own permission prompt is OS chrome (not ours).
+ * 브라우저 권한 요청 전에 Sunrei 안내 카드를 먼저 보여 주고, 사용자의 선택을 localStorage에 기억한다.
+ * 전에 허용했으면 카드 없이 위치를 확인하고, 거절했으면 서울에서 시작한다.
  */
 export function useOnboarding() {
   const panTo = useMapStore((s) => s.panTo);
@@ -48,7 +47,6 @@ export function useOnboarding() {
   }, []);
 }
 
-/** The priming card + "Centering the map…" state — our UI (§0). */
 export function Onboarding() {
   const t = useTranslations('geo');
   const onboarding = useUiStore((s) => s.onboarding);

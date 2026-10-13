@@ -11,7 +11,6 @@ import io.ktor.server.routing.route
 fun Route.tagRoutes() {
     route("/tags") {
         get {
-            // Public bilingual tag list (powers client-side tag filter in Phase B).
             val tagService: TagService = call.injectTagService()
             call.respond(tagService.listAll().map { it.toDTO() })
         }

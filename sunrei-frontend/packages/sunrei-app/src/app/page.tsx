@@ -56,8 +56,6 @@ export default function AppShell() {
   });
 
   const allCards = data?.places ?? [];
-  // Tag filter (SPEC L57/L644/L723): the LIST filters to matches; the MAP keeps all pins
-  // and dims non-matches (MapView dims via the same selector). Map always gets allCards.
   const { dimmedIds, hasFilter } = useTagFilter(allCards);
   const visibleCards = hasFilter ? allCards.filter((c) => !dimmedIds.has(c.place.id)) : allCards;
   const { data: previewData } = useSunreiDetail(videoPreview?.sunreiId ?? null);
@@ -66,9 +64,7 @@ export default function AppShell() {
   const firstLoad = isLoading && allCards.length === 0;
   const showingPrevious = mode === 'nearby' && !!pendingArea;
 
-  // Tell the map store whether the committed nearby area is empty, so that panning an
-  // empty map auto-loads the new area (no "Search this area" gate when there's nothing
-  // to disrupt). Based on raw results, not the tag-filtered view.
+  // committedEmpty는 태그 필터 때문에 목록만 빈 경우와 구분하도록 필터 전 결과로 정한다.
   useEffect(() => {
     if (mode === 'nearby' && !isFetching) {
       useMapStore.getState().setCommittedEmpty(allCards.length === 0);
@@ -98,17 +94,14 @@ export default function AppShell() {
     </div>
   );
 
-  // Active detail/preview overrides the list in both sidebar and sheet. A selected
-  // place takes precedence over the series view, so tapping a place inside a series
-  // opens its detail on top and backs out to the series (not straight to the channel).
+  // 장소 상세가 Sunrei 미리보기보다 우선한다.
+  // 그래서 미리보기 안에서 장소를 누르면 상세가 위에 열리고, 뒤로 가면 채널 화면이 아니라 미리보기로 돌아온다.
   const detailPanel = activePlaceId ? (
     <PlaceDetail placeId={activePlaceId} />
   ) : videoPreview ? (
     <VideoPreviewPanel />
   ) : null;
 
-  // Source mode = the channel view (wireframe §4): source header + its sunrei list,
-  // while the map shows every place across the source. Detail/preview overrides it.
   const channelPanel =
     mode === 'source' && selectedSourceIds.length > 0 ? (
       <SourceChannelPanel sourceId={selectedSourceIds[0]} />
@@ -126,13 +119,11 @@ export default function AppShell() {
         />
       )}
 
-      {/* Map */}
       <div className="relative flex-1">
         <div className="absolute inset-0">
           <MapView cards={allCards} previewSpots={previewSpots} />
         </div>
 
-        {/* Desktop map chrome: area chip (top-left) + zoom/recenter (top-right). */}
         {!isMobile && !videoPreview && (
           <>
             <div className="absolute left-[18px] top-[18px] z-20">

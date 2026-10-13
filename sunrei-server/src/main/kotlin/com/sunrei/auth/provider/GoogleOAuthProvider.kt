@@ -42,12 +42,10 @@ class GoogleOAuthProvider : IOAuthProvider {
     }
 
     override suspend fun verifyToken(tokenInfo: OAuthTokenInfo): OAuthUserInfo {
-        // If idToken is provided (and not empty), use it
         if (tokenInfo.idToken.isNullOrBlank().not()) {
             return verifyIdToken(tokenInfo.idToken)
         }
 
-        // Otherwise, use access_token to fetch user info from userinfo endpoint
         val accessToken = tokenInfo.accessToken
             ?: throw IllegalArgumentException("Either ID token or access token is required")
 

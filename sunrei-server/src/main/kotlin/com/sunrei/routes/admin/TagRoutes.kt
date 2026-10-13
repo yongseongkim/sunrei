@@ -107,7 +107,6 @@ fun Route.adminTagRoutes() {
             else call.respond(HttpStatusCode.NotFound, mapOf("error" to "Tag not found"))
         }
 
-        // Detach a spot from a tag.
         delete("/{id}/spots/{spotId}") {
             val tagService: TagService = call.injectTagService()
             val tagId = call.parameters["id"]

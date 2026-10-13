@@ -1,33 +1,14 @@
 # Sunrei Frontend
 
-성지순례 장소를 지도에서 탐색하는 웹 애플리케이션 monorepo
+Sunrei 웹 화면을 담은 pnpm workspace다.
 
-```
-sunrei-frontend/
-├── packages/
-│   ├── sunrei-app/      # 메인 서비스, 지도 기반 성지순례 탐색 서비스
-│   └── sunrei-admin/    # 컨텐츠 관리를 위한 관리자 페이지
-└── package.json
-```
-
-현재 로그인은 구글 로그인만 지원한다.
-어드민은 특별 권한이 있는 사용자만 접근 가능하다.
-
-## 기술 스택
-
-- Next.js 15, React 19, TypeScript
-- Tailwind CSS, shadcn/ui
-- Google Maps API
-- TanStack Query, Zustand
-- pnpm workspaces
-
-## Prerequisites
-
-- pnpm
+- `packages/sunrei-app`은 지도를 움직이며 주변 성지순례 장소를 찾고, 채널이나 작품을 골라 그 장소들을 모아 보는 public 앱이다.
+- `packages/sunrei-admin`은 운영자가 Source와 Sunrei를 등록하고, spot마다 장소와 맥락과 태그를 붙여 공개하는 admin 앱이다.
 
 ```bash
-pnpm dev          # 전체 앱 실행
-pnpm dev:app      # sunrei-app만 실행
-pnpm dev:admin    # sunrei-admin만 실행
-pnpm build        # 전체 빌드
+pnpm install
+pnpm dev:app
+pnpm dev:admin
 ```
+
+환경 변수, API client 생성, 지도 상태 모델 같은 개발 규칙은 [AGENTS.md](AGENTS.md)에 있다.

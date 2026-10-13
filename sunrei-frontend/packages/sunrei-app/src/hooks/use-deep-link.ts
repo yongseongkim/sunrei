@@ -6,14 +6,12 @@ import { useUiStore } from '@/stores/ui-store';
 import { useFilterStore } from '@/stores/filter-store';
 
 /**
- * Deep-link sync (Bc-5): hydrate stores from URL query params on mount, then write
- * state back via history.replaceState (no navigation, keeps the map page persistent).
- * Synced params: sourceIds, tags, place (active), sunrei (preview).
+ * 마운트할 때 URL query의 sourceIds, tags, place, sunrei 값을 store에 넣는다.
+ * 이후 store가 바뀌면 지도 페이지를 다시 불러오지 않도록 history.replaceState로 URL만 바꾼다.
  */
 export function useDeepLinkSync() {
   const hydrated = useRef(false);
 
-  // Params → stores (once, on mount).
   useEffect(() => {
     if (hydrated.current || typeof window === 'undefined') return;
     hydrated.current = true;
@@ -28,7 +26,6 @@ export function useDeepLinkSync() {
     if (sunrei) useUiStore.getState().enterVideoPreview(sunrei, 'nearby');
   }, []);
 
-  // Stores → URL (debounced via microtask through effect deps).
   const sourceIds = useMapStore((s) => s.selectedSourceIds);
   const activeTagIds = useFilterStore((s) => s.activeTagIds);
   const activePlaceId = useUiStore((s) => s.activePlaceId);

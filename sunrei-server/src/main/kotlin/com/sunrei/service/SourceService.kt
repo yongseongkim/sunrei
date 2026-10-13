@@ -157,11 +157,9 @@ class SourceService(
             .associate { it[Sunreis.sourceId] to it[SunreiSpots.id.count()].toInt() }
     }
 
-    // ===== Public (app) =====
-
     data class PublicSourceDetail(val source: SourceDTO, val sunreis: List<SunreiSummaryDTO>)
 
-    /** Published sources (>=1 published sunrei) matching q, with counts. */
+    /** 공개된 Sunrei가 하나 이상 있는 Source만 공개 앱에 보인다. */
     fun listPublic(q: String?): List<SourceDTO> = transaction {
         val publishedSourceIds = Sunreis
             .slice(Sunreis.sourceId)
@@ -190,7 +188,6 @@ class SourceService(
         rows.map { row -> row.toPublicSourceDTO(videoCount, spotCount, placeCount, null) }
     }
 
-    /** One published source with its published sunrei summaries (source intro / managed page). */
     fun getPublicDetail(id: String): PublicSourceDetail? = transaction {
         val sourceRow = Sources.select {
             (Sources.id eq id) and (Sources.deletedAt.isNull())
@@ -332,7 +329,6 @@ private fun com.sunrei.model.MultiSizeImage.toAppImage() =
         }
     )
 
-/** Shared mapper: read a [Source] from any [ResultRow] that selects the Sources columns. */
 internal fun ResultRow.toSource(): Source = Source(
     id = this[Sources.id],
     type = SourceType.valueOf(this[Sources.type]),

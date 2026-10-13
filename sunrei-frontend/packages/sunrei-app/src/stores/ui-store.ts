@@ -7,39 +7,35 @@ export type MapMode = 'nearby' | 'source';
 interface VideoPreview {
   sunreiId: string;
   returnTo: 'nearby' | 'source';
-  fromSearch?: boolean; // entered from search results → "back to list" reopens search
+  fromSearch?: boolean; // 검색 결과에서 열었으면 뒤로 가기가 검색 화면을 다시 연다.
 }
 
 interface UiState {
   isMobile: boolean;
   setIsMobile: (m: boolean) => void;
 
-  // Place list <-> detail
-  activePlaceId: string | null; // selected marker/card
+  activePlaceId: string | null;
   setActivePlace: (id: string | null) => void;
 
-  // Search + filters UI. The query lives here (not local to the search panel) so
-  // it survives closing the panel to preview a video and coming back to the results.
+  // 검색어를 검색 패널이 아니라 여기 두어야 미리보기를 보고 돌아왔을 때 검색 결과가 남아 있다.
   searchOpen: boolean;
   setSearchOpen: (v: boolean) => void;
-  openSearch: () => void; // fresh open (clears the query)
+  openSearch: () => void; // 검색어를 비우고 연다.
   searchQuery: string;
   setSearchQuery: (q: string) => void;
-  // Source opened from a search result → the channel view's back reopens search.
+  // 검색 결과에서 Source를 열었으면 채널 화면의 뒤로 가기가 검색 화면을 다시 연다.
   sourceFromSearch: boolean;
   setSourceFromSearch: (v: boolean) => void;
   filtersOpen: boolean;
   setFiltersOpen: (v: boolean) => void;
 
-  // Location-permission onboarding (§0): our priming card → "locating" → done.
   onboarding: 'priming' | 'locating' | 'done';
   setOnboarding: (v: 'priming' | 'locating' | 'done') => void;
 
-  // Google sign-in modal (§6)
   loginOpen: boolean;
   setLoginOpen: (v: boolean) => void;
 
-  // Video preview overlay (map itinerary — Bd-6)
+  // Sunrei 하나의 장소만 지도와 목록에 보여 주는 미리보기이며 nearby와 source 모드 위에 겹쳐 열린다.
   videoPreview: VideoPreview | null;
   enterVideoPreview: (sunreiId: string, returnTo: MapMode, fromSearch?: boolean) => void;
   exitVideoPreview: () => void;
@@ -69,11 +65,8 @@ export const useUiStore = create<UiState>((set) => ({
 
   videoPreview: null,
   enterVideoPreview: (sunreiId, returnTo, fromSearch = false) =>
-    // Clear any active place so the series view isn't shadowed by a stale place detail
-    // (place detail now takes precedence over the series view).
+    // 장소 상세가 미리보기보다 우선하므로 열려 있던 장소를 닫아야 미리보기가 보인다.
     set({ videoPreview: { sunreiId, returnTo, fromSearch }, activePlaceId: null }),
-  // Back from a search-originated preview reopens the (preserved) search results;
-  // otherwise it just drops back to the underlying list.
   exitVideoPreview: () =>
     set((s) => (s.videoPreview?.fromSearch ? { videoPreview: null, searchOpen: true } : { videoPreview: null })),
 }));

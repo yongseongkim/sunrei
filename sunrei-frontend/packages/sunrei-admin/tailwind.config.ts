@@ -10,7 +10,6 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Pantone 2025 Colors
         'pantone-mocha-mousse': 'var(--pantone-mocha-mousse)',
         'pantone-tendril': 'var(--pantone-tendril)',
         'pantone-cornflower-blue': 'var(--pantone-cornflower-blue)',
@@ -19,7 +18,6 @@ const config: Config = {
         'pantone-willow': 'var(--pantone-willow)',
         'pantone-gardenia': 'var(--pantone-gardenia)',
 
-        // UI Colors
         background: 'var(--background)',
         foreground: 'var(--foreground)',
         card: {

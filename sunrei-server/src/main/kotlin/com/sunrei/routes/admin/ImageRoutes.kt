@@ -23,7 +23,6 @@ import kotlinx.io.readByteArray
 
 fun Route.imageRoutes() {
     route("/images") {
-        // Upload image file
         post("/upload") {
             val s3Service: S3Service = call.injectS3Service()
             val multipart = call.receiveMultipart()
@@ -50,7 +49,6 @@ fun Route.imageRoutes() {
             }
 
             try {
-                // Check file size (max 5MB)
                 val bytes = file.provider().readRemaining().readByteArray()
                 if (bytes.size > 5 * 1024 * 1024) {
                     call.respond(HttpStatusCode.BadRequest, mapOf("error" to "File too large (max 5MB)"))
@@ -90,7 +88,6 @@ fun Route.imageRoutes() {
             }
         }
 
-        // Upload image from URL
         post("/upload-url") {
             val s3Service: S3Service = call.injectS3Service()
             val request = call.receive<UploadImageFromUrlRequest>()
@@ -100,7 +97,6 @@ fun Route.imageRoutes() {
                 return@post
             }
 
-            // Validate URL format
             try {
                 io.ktor.http.Url(request.url)
             } catch (e: Exception) {

@@ -11,8 +11,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Check authentication on mount - redirect to login if not authenticated
-    // Skip redirect if already on login or forbidden page
     if (!auth.isAuthenticated() && pathname !== '/login' && pathname !== '/forbidden') {
       router.push('/login');
     }

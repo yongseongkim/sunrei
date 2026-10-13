@@ -7,12 +7,11 @@ import org.jetbrains.exposed.sql.Op
 import org.jetbrains.exposed.sql.QueryBuilder
 import org.jetbrains.exposed.sql.QueryParameter
 
-// Parameterized PostGIS helpers — numeric values go through bind parameters
-// (QueryParameter), never string interpolation. SRID is fixed at 4326.
+// Exposed가 PostGIS 함수를 지원하지 않아 SQL을 직접 만든다.
+// 좌표는 SQL 문자열에 이어 붙이지 않고 QueryParameter로 바인딩하며, SRID는 4326으로 고정한다.
 
 private fun p(d: Double) = QueryParameter(d, DoubleColumnType())
 
-/** ST_MakeEnvelope(minLng, minLat, maxLng, maxLat, 4326) as a geometry expression. */
 class StMakeEnvelope(
     private val minLng: Double,
     private val minLat: Double,
@@ -32,7 +31,6 @@ class StMakeEnvelope(
     }
 }
 
-/** ST_Within(geom, envelope). */
 fun stWithin(geom: Expression<*>, envelope: Expression<*>): Op<Boolean> =
     object : Op<Boolean>() {
         override fun toQueryBuilder(queryBuilder: QueryBuilder) {
@@ -44,10 +42,6 @@ fun stWithin(geom: Expression<*>, envelope: Expression<*>): Op<Boolean> =
         }
     }
 
-/**
- * ST_Distance(geom::geography, ST_MakePoint(lng, lat)::geography) in meters.
- * Anchored to the map center, never GPS.
- */
 class StDistanceMeters(
     private val geom: Expression<*>,
     private val lng: Double,

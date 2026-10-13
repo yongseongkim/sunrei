@@ -16,11 +16,7 @@ export function loadMessages(locale: string | undefined | null) {
   return (isLocale(locale) ? messages[locale] : messages[DEFAULT_LOCALE]) as Record<string, unknown>;
 }
 
-/**
- * Pick the best supported locale from the browser/OS `Accept-Language` header
- * (e.g. "ko-KR,ko;q=0.9,en-US;q=0.8"): highest-q language whose base matches a
- * supported locale, else the Korean default.
- */
+/** Accept-Language에서 q 값이 가장 높은 지원 언어를 고르고, 지원하는 언어가 없으면 한국어를 쓴다. */
 export function localeFromAcceptLanguage(header: string | null | undefined): Locale {
   if (!header) return DEFAULT_LOCALE;
   const ranked = header
@@ -36,7 +32,6 @@ export function localeFromAcceptLanguage(header: string | null | undefined): Loc
   return DEFAULT_LOCALE;
 }
 
-/** Pick a tag's display label by current locale (KO default, EN fallback). */
 export function useTagLabel() {
   const locale = useLocale();
   return (tag: { labelKo?: string | null; labelEn?: string | null } | null | undefined) => {

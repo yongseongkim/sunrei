@@ -36,7 +36,6 @@ fun Route.resourceRoutes() {
 
             val body = call.receiveText()
 
-            // Validate that the body is valid JSON
             try {
                 Json.decodeFromString<JsonElement>(body)
             } catch (e: Exception) {

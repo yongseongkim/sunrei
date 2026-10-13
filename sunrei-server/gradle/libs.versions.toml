@@ -45,18 +45,14 @@ kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.
 ulid-creator = { module = "com.github.f4b6a3:ulid-creator", version.ref = "ulid" }
 
 java-jwt = { module = "com.auth0:java-jwt", version.ref = "jwt" }
-# AWS SDK
 aws-s3 = { module = "aws.sdk.kotlin:s3", version.ref = "aws" }
 
-# Ktor Client for downloading images from URLs
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor-client" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor-client" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor-client" }
 
-# Image processing
 thumbnailator = { module = "net.coobird:thumbnailator", version.ref = "thumbnailator" }
 
-# Flyway database migration
 flyway-core = { module = "org.flywaydb:flyway-core", version.ref = "flyway" }
 flyway-database-postgresql = { module = "org.flywaydb:flyway-database-postgresql", version.ref = "flyway" }
 

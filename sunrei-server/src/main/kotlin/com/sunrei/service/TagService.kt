@@ -66,7 +66,6 @@ class TagService(
         Tags.select { Tags.id eq id }.firstOrNull()?.toTag()
     }
 
-    /** Search both labels (case-insensitive). */
     fun search(q: String): List<Tag> = transaction {
         if (q.isBlank()) return@transaction emptyList()
         val term = "%${q.lowercase()}%"
@@ -76,8 +75,8 @@ class TagService(
     }
 
     /**
-     * Find a tag by its Korean label (case-insensitive), or create one with
-     * ko = typed, en = typed (until translated). Race-safe on the unique lower(label_ko) index.
+     * 태그는 대소문자를 무시한 한국어 label로 구분한다.
+     * 없는 이름이면 영어 label도 같은 값으로 만들고, 영어 label은 나중에 어드민에서 고친다.
      */
     fun findOrCreateByKoLabel(koLabel: String): Tag = transaction {
         val normalized = koLabel.trim()
@@ -172,14 +171,13 @@ class TagService(
         TagWithSpotsData(tag = tag, spots = spots)
     }
 
-    /** Detach a single spot from this tag. */
     fun detach(tagId: String, spotId: String): Boolean = transaction {
         SunreiSpotTags.deleteWhere {
             (SunreiSpotTags.tagId eq tagId) and (SunreiSpotTags.sunreiSpotId eq spotId)
         } > 0
     }
 
-    /** Hard delete a tag (cascades to sunrei_spot_tag). */
+    /** 태그 행을 지우면 spot 연결은 DB의 ON DELETE CASCADE로 함께 지워진다. */
     fun delete(id: String): Boolean = transaction {
         Tags.deleteWhere { Tags.id eq id } > 0
     }

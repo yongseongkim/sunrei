@@ -2,8 +2,7 @@ import SpotsMap from '@/components/SpotsMap';
 import { Label } from '@/components/ui/label';
 import { Map } from 'lucide-react';
 
-// Minimal structural place shape (only what the map needs); accepts both
-// PlaceInput and the zod-derived form place value.
+// PlaceInput과 zod 스키마에서 나온 폼의 place 값을 모두 받도록 지도에 필요한 필드만 둔다.
 type MapPlace = {
   name?: string | null;
   address?: string | null;

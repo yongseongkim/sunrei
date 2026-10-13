@@ -36,7 +36,6 @@ export function useSource(id: string) {
   });
 }
 
-/** Lightweight source search for the Sunrei form source picker. */
 export function useSearchSources(q: string, enabled = true) {
   return useQuery({
     queryKey: sourceKeys.search(q),

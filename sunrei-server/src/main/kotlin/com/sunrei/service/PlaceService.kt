@@ -25,10 +25,7 @@ class PlaceService(
 ) {
     private val pageToken = PaginationToken(pageTokenSecret)
 
-    /**
-     * Admin place list keyed by Google place_id. Each row carries spot/source counts.
-     * `area` is left null here (locality derivation is a later refinement).
-     */
+    /** 주소에서 지역명을 뽑는 로직이 없어 `area`는 항상 null이다. */
     fun list(q: String? = null, nextToken: String? = null, size: Int = 20): ListPlacesResult {
         val tokenData = pageToken.decodeToken(nextToken)
         val offset = tokenData?.offset ?: 0
@@ -87,8 +84,8 @@ class PlaceService(
     }
 
     /**
-     * Nearby mode: places inside the browser viewport bbox, distance-anchored to the
-     * map center (computed from bounds center if absent), published-gated, nearest first.
+     * nearby 모드에서 지도 화면 영역 안의 Place를 찾는다.
+     * center는 사용자 위치가 아니라 지도 중심이며, 그 지점에서 가까운 순으로 정렬한다.
      */
     fun listInBoundsWithDistance(
         swLat: Double,
@@ -102,7 +99,6 @@ class PlaceService(
         val cLat = centerLat ?: (swLat + neLat) / 2.0
         val cLng = centerLng ?: (swLng + neLng) / 2.0
 
-        // Place ids with at least one published spot.
         val publishedPlaceIds = (SunreiSpots innerJoin Sunreis)
             .slice(SunreiSpots.placeId)
             .select {
@@ -128,10 +124,7 @@ class PlaceService(
             .map { it.toPlace() to it.getOrNull(dist) }
     }
 
-    /**
-     * Source mode (global): every place featured by any selected source, published-gated,
-     * nearest to the optional center. No viewport bound.
-     */
+    /** source 모드에서는 지도 영역과 관계없이 고른 Source에 나온 Place를 모두 돌려준다. */
     fun listBySourcesWithDistance(
         sourceIds: List<String>,
         centerLat: Double?,
@@ -168,9 +161,8 @@ class PlaceService(
     }
 
     /**
-     * Find an existing non-deleted Place by googleMapsId (the dedupe key), else by lat/lng,
-     * or create a new one. Race-safe against the partial unique index on google_maps_id.
-     * Returns the place ID.
+     * 같은 장소인지는 googleMapsId로 판정하고, googleMapsId가 없으면 좌표가 같은 Place를 쓴다.
+     * 맞는 Place가 없을 때만 새로 만든다.
      */
     fun findOrCreatePlace(
         name: String,
@@ -199,7 +191,7 @@ class PlaceService(
                     stmt[Places.isClosed] = false
                 }
             } catch (_: SQLIntegrityConstraintViolationException) {
-                // Lost a concurrent insert on the same google_maps_id; reuse that row.
+                // 같은 google_maps_id로 동시에 insert해 unique index에 막히면 먼저 들어간 행을 쓴다.
                 if (googleMapsId != null) {
                     Places.select { (Places.googleMapsId eq googleMapsId) and (Places.deletedAt.isNull()) }
                         .first()[Places.id]
@@ -223,7 +215,6 @@ class PlaceService(
 
     private fun countSourcesByPlace(placeIds: List<String>): Map<String, Int> {
         if (placeIds.isEmpty()) return emptyMap()
-        // Distinct (placeId, sourceId) pairs -> count distinct sources per place.
         return (SunreiSpots innerJoin Sunreis)
             .slice(SunreiSpots.placeId, Sunreis.sourceId)
             .select {
@@ -237,10 +228,6 @@ class PlaceService(
     }
 }
 
-/**
- * Shared mapper: read a [Place] from any [ResultRow] that selects the Places columns.
- * Used by [PlaceService] and the public/Phase B queries.
- */
 fun ResultRow.toPlace(): Place = Place(
     id = this[Places.id],
     name = this[Places.name],

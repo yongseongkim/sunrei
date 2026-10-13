@@ -2,7 +2,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 const TOKEN_COOKIE = 'adminToken';
-const COOKIE_EXPIRES = 7; // 7 days
+const COOKIE_EXPIRES = 7; // 일 단위
 
 export interface User {
   id: string;
@@ -21,16 +21,13 @@ export const auth = {
 
     const user: User = response.data.user;
 
-    // Check if user is admin before storing token (case-insensitive)
     if (user.role.toUpperCase() !== 'ADMIN') {
-      // Redirect to forbidden page immediately
       if (typeof window !== 'undefined') {
         window.location.href = '/forbidden';
       }
       throw new Error('Access denied. Admin only.');
     }
 
-    // Set token from response only for admin users
     const token = response.data.token;
 
     Cookies.set(TOKEN_COOKIE, token, {
