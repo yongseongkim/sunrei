@@ -427,7 +427,7 @@ class YoutubeService(
                 CreateSunreiSpotInline(
                     title = (request.title ?: video[YoutubeVideos.title]).take(128),
                     context = request.context ?: row[YoutubeExtractedPlaces.description],
-                    youtubeLink = "https://www.youtube.com/watch?v=$videoId" + (timestamp?.let { "&t=$it" } ?: ""),
+                    sourceLink = "https://www.youtube.com/watch?v=$videoId" + (timestamp?.let { "&t=$it" } ?: ""),
                     place = place,
                     tagIds = request.tagIds
                 )

@@ -222,13 +222,13 @@ class SunreiService(
 
     private fun createSunreiSpot(sunreiId: String, spot: CreateSunreiSpotInline): String =
         doCreateSpot(
-            sunreiId, spot.title, spot.context, spot.youtubeLink,
+            sunreiId, spot.title, spot.context, spot.sourceLink,
             spot.place, spot.images, spot.tagIds, spot.tagLabels
         )
 
     private fun createSunreiSpot(sunreiId: String, spot: UpdateSunreiSpotInline): String =
         doCreateSpot(
-            sunreiId, spot.title, spot.context, spot.youtubeLink,
+            sunreiId, spot.title, spot.context, spot.sourceLink,
             spot.place, spot.images, spot.tagIds, spot.tagLabels
         )
 
@@ -237,7 +237,7 @@ class SunreiService(
         sunreiId: String,
         title: String,
         context: String?,
-        youtubeLink: String?,
+        sourceLink: String?,
         place: PlaceInput?,
         images: List<MultiSizeImageDTO>?,
         tagIds: List<String>?,
@@ -252,7 +252,7 @@ class SunreiService(
             stmt[SunreiSpots.title] = title
             stmt[SunreiSpots.context] = context
             stmt[SunreiSpots.placeId] = placeId
-            stmt[SunreiSpots.youtubeLink] = youtubeLink
+            stmt[SunreiSpots.sourceLink] = sourceLink
             stmt[SunreiSpots.images] = images?.map { it.toModel() } ?: emptyList()
         }
 
@@ -269,7 +269,7 @@ class SunreiService(
         SunreiSpots.update({ SunreiSpots.id eq spotId }) { stmt ->
             stmt[SunreiSpots.title] = spot.title
             spot.context?.let { stmt[SunreiSpots.context] = it }
-            spot.youtubeLink?.let { stmt[SunreiSpots.youtubeLink] = it }
+            spot.sourceLink?.let { stmt[SunreiSpots.sourceLink] = it }
             spot.place?.let { placeInput ->
                 stmt[SunreiSpots.placeId] = placeService.findOrCreatePlace(
                     placeInput.name, placeInput.address, placeInput.latitude, placeInput.longitude, placeInput.googleMapsId
@@ -391,7 +391,7 @@ class SunreiService(
                     sunreiId = row[SunreiSpots.sunreiId],
                     title = row[SunreiSpots.title],
                     context = row[SunreiSpots.context],
-                    youtubeLink = row[SunreiSpots.youtubeLink],
+                    sourceLink = row[SunreiSpots.sourceLink],
                     images = row[SunreiSpots.images],
                     place = row.toPlace(),
                     tags = tagsBySpot[spotId] ?: emptyList(),

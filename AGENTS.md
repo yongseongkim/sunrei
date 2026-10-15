@@ -13,8 +13,8 @@ Backend (Ktor + Exposed + PostgreSQL), Frontend (Next.js + TypeScript + Google M
 
 ### Source
 
-콘텐츠의 출처 또는 작품 단위. YouTube/TV/Anime/Other 타입을 가지며, 타입에 따라 public 앱 동작이 달라진다.
-YouTube Source는 외부 링크로 이동하고, Anime/TV/Other Source는 Sunrei가 관리하는 정보 페이지로 표시한다.
+콘텐츠의 출처 또는 작품 단위. YouTube/Instagram/TV/Anime/Other 타입을 가지며, 타입에 따라 public 앱 동작이 달라진다.
+YouTube와 Instagram Source는 외부 링크(채널, 프로필)로 이동하고, Anime/TV/Other Source는 Sunrei가 관리하는 정보 페이지로 표시한다.
 
 ### Sunrei
 
@@ -28,6 +28,8 @@ Public 엔드포인트는 `published_at IS NOT NULL`인 Sunrei만 노출하며, 
 Sunrei에 속한 개별 장소로, 작품 내 특정 장면이나 에피소드와 연결된 실제 장소
 예를 들어, "7화에서 주인공이 울면서 식사한 식당" 같이 하나의 Place 와 연결된다.
 Source가 해당 장소를 언급한 맥락(context)과 spot 단위 태그를 가진다.
+`source_link`는 그 장소를 언급한 콘텐츠로 바로 가는 링크로, YouTube 타임스탬프나 Instagram 게시물 주소다.
+(V3에서 `youtube_link`를 대신하며, `youtube_link`는 V4에서 지운다.)
 
 ### Place
 
@@ -50,6 +52,21 @@ SunreiSpot에 연결되는 bilingual 태그. `label_en`, `label_ko`를 가지며
 - `youtube_video_text`: 자막, Whisper, OCR, 검토된 transcript, timeline을 종류별로 쌓아 두어 디버깅과 재추출에 쓴다.
 - `youtube_extraction_run`, `youtube_extracted_place`: agent 실행 기록(원본 출력, prompt 해시)과 장소 후보다. 후보는 승인될 때만 SunreiSpot이 되며, 반려한 후보도 남겨 둔다.
 - `youtube_video_attempt`: 자막 차단, rate limit 같은 외부 호출 실패 기록이다.
+
+### Instagram 수집
+
+등록한 Instagram 계정의 게시물에서 장소 후보를 추출하고, 어드민 검토를 거쳐 SunreiSpot으로 만든다.
+YouTube 수집과 같은 모양이며 `/admin/instagram/*` admin API로 읽고 쓴다. 자세한 내용은 `SPEC-instagram.md` 참고.
+
+- `instagram_account`: 등록한 계정으로, id는 Instagram 사용자 ID다. 계정 하나에 Sunrei 하나(`sunrei_id`)이고, `backfill_cursor`는 과거 게시물 수집 진행 위치다.
+- `instagram_post`: 게시물과 처리 상태다. 캡션은 게시물에 저장하고, `title`은 캡션 첫 줄에서 만든다. 상태값은 YouTube 영상과 같다. Instagram에서 지운 게시물은 감지하지 않는다.
+- `instagram_post.location_tag`: 게시물 웹 페이지에서 읽은 위치 태그다. `location_tag_read_at`이 NULL이면 아직 읽지 않은 것이다.
+- `instagram_post_text`: 릴스의 Whisper와 OCR 결과를 종류별로 쌓아 둔다.
+- `instagram_extraction_run`, `instagram_extracted_place`: 게시물별 agent 실행 기록과 장소 후보다. 한 번에 여러 게시물을 추출하면 `batch_id`를 공유한다. 같은 게시물을 다시 추출하면 이전 실행의 대기 후보는 `SUPERSEDED`가 된다.
+- 광고 표시 글과 작성자 본인의 상품·행사를 알리는 글(`DISCLOSED_AD`, `SELF_PROMOTION`)은 후보를 만들지 않고 실행 기록에만 남긴다. 서버가 이 규칙을 지킨다.
+- 상호를 찾지 못한 후보(`name_found = false`)는 지도 검색을 하지 않으며, 승인하려면 장소를 직접 지정해야 한다.
+- 승인하면 계정의 Sunrei에 게시물 permalink를 `source_link`로 하는 SunreiSpot이 생긴다.
+- `instagram_post_attempt`: 로그인 차단, 다운로드 실패 같은 외부 호출 실패 기록이다.
 
 ## Deployment
 

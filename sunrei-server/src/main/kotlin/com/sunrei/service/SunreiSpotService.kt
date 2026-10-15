@@ -73,7 +73,7 @@ class SunreiSpotService {
                 val source: com.sunrei.model.Source,
                 val spotTitle: String,
                 val context: String?,
-                val youtubeLink: String?,
+                val sourceLink: String?,
                 val sunreiImages: List<MultiSizeImage>,
                 val tags: List<Tag>
             )
@@ -102,7 +102,7 @@ class SunreiSpotService {
                     ),
                     spotTitle = it[SunreiSpots.title],
                     context = it[SunreiSpots.context],
-                    youtubeLink = it[SunreiSpots.youtubeLink],
+                    sourceLink = it[SunreiSpots.sourceLink],
                     sunreiImages = it[Sunreis.images],
                     tags = tagsBySpot[spotId] ?: emptyList()
                 )
@@ -136,7 +136,7 @@ class SunreiSpotService {
                             spotId = rep.spotId,
                             context = rep.context,
                             sunreiLink = rep.sunreiLink,
-                            youtubeLink = rep.youtubeLink,
+                            sourceLink = rep.sourceLink,
                             images = rep.sunreiImages,
                             tags = rep.tags
                         )
@@ -197,7 +197,7 @@ class SunreiSpotService {
                 sunreiId = row[SunreiSpots.sunreiId],
                 title = row[SunreiSpots.title],
                 context = row[SunreiSpots.context],
-                youtubeLink = row[SunreiSpots.youtubeLink],
+                sourceLink = row[SunreiSpots.sourceLink],
                 images = row[SunreiSpots.images],
                 place = row.toPlace(),
                 tags = tagsBySpot[spotId] ?: emptyList()

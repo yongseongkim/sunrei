@@ -103,16 +103,16 @@ class SearchService {
         val needThumb = sunreiRows.filter { it[Sunreis.images].isEmpty() }.map { it[Sunreis.id] }
         val thumbBySunrei: Map<String, MultiSizeImageDTO> = if (needThumb.isNotEmpty()) {
             SunreiSpots
-                .slice(SunreiSpots.sunreiId, SunreiSpots.youtubeLink, SunreiSpots.id)
+                .slice(SunreiSpots.sunreiId, SunreiSpots.sourceLink, SunreiSpots.id)
                 .select {
                     (SunreiSpots.sunreiId inList needThumb) and (SunreiSpots.deletedAt.isNull()) and
-                        (SunreiSpots.youtubeLink.isNotNull())
+                        (SunreiSpots.sourceLink.isNotNull())
                 }
                 .orderBy(SunreiSpots.id to SortOrder.ASC) // ULID id → oldest spot first
                 .toList()
                 .groupBy { it[SunreiSpots.sunreiId] }
                 .mapNotNull { (sid, spots) ->
-                    spots.firstNotNullOfOrNull { youtubeThumbnail(it[SunreiSpots.youtubeLink]) }?.let { sid to it }
+                    spots.firstNotNullOfOrNull { youtubeThumbnail(it[SunreiSpots.sourceLink]) }?.let { sid to it }
                 }
                 .toMap()
         } else emptyMap()

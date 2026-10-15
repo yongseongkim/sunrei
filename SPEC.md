@@ -31,14 +31,14 @@ Target hierarchy: `Source -> Sunrei -> SunreiSpot -> Place`
   `(place_id, sunrei_id)`: if one video has multiple spots at the same place, merge them into one mention.
   Use the first spot with non-empty context as the representative row; its `spotId`, links, and tags
   represent the row. `place.mentions[]` contains `{ source, type, video=sunreiTitle, context, sunreiId,
-  spotId, sunreiLink, youtubeLink? }`. Use the compact card for one mention and the rich card for two or
+  spotId, sunreiLink, sourceLink? }`. Use the compact card for one mention and the rich card for two or
   more mentions. The rich header reads "In N videos." Do not collapse by source; the same channel can
   appear twice when it has two videos at the same place. A place's tags are the deduped union of all its
   spots' tags. Mention dedupe, ordering, and tag union are backend rules.
 - Link ownership has one role per field. `source.external_url` is the channel/work home or watch page:
   YouTube uses it for redirect, and managed works use it as "where to watch." `sunrei.link` is the
-  specific video or work-item URL. `sunrei_spot.youtube_link` is an optional timestamp/deep link into the
-  video at that spot. The mention's "Watch" CTA resolves `youtubeLink ?? sunreiLink ?? source.externalUrl`.
+  specific video or work-item URL. `sunrei_spot.source_link` (`youtube_link` until V3) is an optional deep link
+  into the content at that spot: a YouTube timestamp or an Instagram post. The mention's "Watch" CTA resolves `sourceLink ?? sunreiLink ?? source.externalUrl`.
   Tapping the source name uses `source.external_url`.
 - Distance is anchored to the map center, never GPS (chat2). The list is always sorted by distance from
   the current map view center. Geolocation is optional and only seeds the initial map center: granted opens
@@ -309,12 +309,12 @@ without extra client joins.
     and `externalUrl`.
   - `SunreiSummaryDTO{ id, sourceId, sourceName, sourceType, title, summary?, link?, images[],
     spotCount, placeCount?, areaCount?, nearestDistanceMeters? }`.
-  - `SunreiSpotDTO{ id, sunreiId, title, description?, context?, youtubeLink?, images[], place, tags[],
+  - `SunreiSpotDTO{ id, sunreiId, title, description?, context?, sourceLink?, images[], place, tags[],
     distanceMeters? }`.
   - `SunreiDTO{ id, sourceId, source, title, description?, summary?, link?, images[], spots[] }`.
     Sunrei-level tags are removed; tags live only on spots.
 - A1-2. PlaceCard and map schemas:
-  - `PlaceMentionDTO{ source, sunreiId, sunreiTitle, spotId, context?, sunreiLink?, youtubeLink?,
+  - `PlaceMentionDTO{ source, sunreiId, sunreiTitle, spotId, context?, sunreiLink?, sourceLink?,
     images[], tags[] }`. One mention is one video row in the card. Collapse multiple spots from the
     same video at the same place into one representative mention.
   - `PlaceCardDTO{ place, distanceMeters?, mentions[], tags[], sourceCount, sunreiCount, spotCount }`.
@@ -420,7 +420,7 @@ const spotSchema = z.object({
   title: z.string().min(1),
   description: z.string().optional(),
   context: z.string().optional(),
-  youtubeLink: z.string().url().or(z.literal('')).optional(),
+  sourceLink: z.string().url().or(z.literal('')).optional(),
   place: placeInput,
   tagIds: z.array(z.string()),
   images: z.array(imageSchema).max(5),
@@ -527,7 +527,7 @@ Deep-link through query params and keep desktop/mobile parity.
 ```kotlin
 data class PlaceMention(val source:Source, val sunreiId:String, val sunreiTitle:String,
                         val spotId:String, val context:String?, val sunreiLink:String?,
-                        val youtubeLink:String?, val images:List<MultiSizeImage>, val tags:List<Tag>)
+                        val sourceLink:String?, val images:List<MultiSizeImage>, val tags:List<Tag>)
 data class PlaceFeedItem(val place:Place, val distanceMeters:Double?,
                          val mentions:List<PlaceMention>, val tags:List<Tag>,
                          val sourceCount:Int, val sunreiCount:Int, val spotCount:Int)

@@ -14,6 +14,7 @@ import com.sunrei.service.SunreiService
 import com.sunrei.service.SunreiSpotService
 import com.sunrei.service.TagService
 import com.sunrei.service.UserService
+import com.sunrei.service.InstagramService
 import com.sunrei.service.YoutubeService
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
@@ -37,6 +38,7 @@ object ServiceLocator {
     lateinit var sunreiSpotService: SunreiSpotService
     lateinit var searchService: SearchService
     lateinit var youtubeService: YoutubeService
+    lateinit var instagramService: InstagramService
     lateinit var authRepository: IAuthRepository
     lateinit var authService: IAuthService
 }
@@ -87,6 +89,9 @@ fun Application.configureDI() {
         // YouTube collection (approval adds spots through SunreiService)
         val youtubeService = YoutubeService(sunreiService, pageTokenSecret)
 
+        // Instagram collection (approval adds spots through SunreiService)
+        val instagramService = InstagramService(sunreiService, pageTokenSecret)
+
         // Public read services
         val sunreiSpotService = SunreiSpotService()
         val searchService = SearchService()
@@ -112,6 +117,7 @@ fun Application.configureDI() {
         ServiceLocator.sunreiSpotService = sunreiSpotService
         ServiceLocator.searchService = searchService
         ServiceLocator.youtubeService = youtubeService
+        ServiceLocator.instagramService = instagramService
         ServiceLocator.authRepository = authRepository
         ServiceLocator.authService = authService
     }

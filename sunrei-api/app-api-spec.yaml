@@ -227,7 +227,7 @@ components:
 
     SourceType:
       type: string
-      enum: [YOUTUBE, TV, ANIME, OTHER]
+      enum: [YOUTUBE, INSTAGRAM, TV, ANIME, OTHER]
 
     TagDTO:
       type: object
@@ -310,7 +310,7 @@ components:
           type: string
           nullable: true
           description: What this source says here ("7화에서 주인공이 울며 식사한 식당").
-        youtubeLink: { type: string, nullable: true }
+        sourceLink: { type: string, nullable: true }
         images:
           type: array
           items:
@@ -357,7 +357,7 @@ components:
         spotId: { type: string, description: Representative spot (first with non-empty context). }
         context: { type: string, nullable: true }
         sunreiLink: { type: string, nullable: true, description: sunrei.link }
-        youtubeLink: { type: string, nullable: true, description: sunrei_spot.youtube_link deep link }
+        sourceLink: { type: string, nullable: true, description: sunrei_spot.source_link deep link (YouTube timestamp or Instagram post) }
         images:
           type: array
           items:

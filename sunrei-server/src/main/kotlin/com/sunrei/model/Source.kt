@@ -4,6 +4,7 @@ import kotlinx.datetime.Instant
 
 enum class SourceType {
     YOUTUBE,
+    INSTAGRAM,
     TV,
     ANIME,
     OTHER

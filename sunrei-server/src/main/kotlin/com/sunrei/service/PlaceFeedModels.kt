@@ -16,7 +16,7 @@ data class PlaceMention(
     val spotId: String,
     val context: String?,
     val sunreiLink: String?,
-    val youtubeLink: String?,
+    val sourceLink: String?,
     val images: List<MultiSizeImage>,
     val tags: List<Tag>
 )
