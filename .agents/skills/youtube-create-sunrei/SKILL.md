@@ -191,7 +191,7 @@ step 4.
   "title": "시부야의 맛있는 야키토리 맛집 투어",
   "context": "시부야 뒷골목 야키토리 투어에서 방문한 카운터 10석 규모의 노포. 대표 메뉴는 비장탄에 구운 쓰쿠네와 레바로, 쓰쿠네는 겉을 바삭하게 구운 뒤 노른자에 찍어 먹고(육즙이 팡 터진다고 표현), 레바는 비린내 없이 부드럽다고 강조했다 (12:30).",
   "images": [],
-  "youtubeLink": "https://youtube.com/watch?v=VIDEO_ID&t=123",
+  "sourceLink": "https://youtube.com/watch?v=VIDEO_ID&t=123",
   "tagIds": ["..."],
   "place": {
     "name": "토리키조쿠 시부야점",
@@ -208,7 +208,7 @@ step 4.
   menu details and is the only editorial text on the public map card. Do not
   leave it empty, regenerate it, or remove the food details.
 - `images`: Empty array
-- `youtubeLink`: `locations[].videoUrlWithTimestamp`
+- `sourceLink`: `locations[].videoUrlWithTimestamp`
 - `tagIds`: Tags selected in step 4; apply the same set to every spot unless the
   user overrides a specific spot
 - `place.name`: `locations[].name`
@@ -239,7 +239,7 @@ curl -s -X POST "{SERVER_URL}/admin/sunreis" \
         "title": "video title (max 128 chars)",
         "context": "how the video covered this place",
         "images": [],
-        "youtubeLink": "https://youtube.com/watch?v=...&t=123",
+        "sourceLink": "https://youtube.com/watch?v=...&t=123",
         "tagIds": ["..."],
         "place": {
           "name": "place name",
@@ -266,7 +266,7 @@ uv run python .claude/scripts/youtube/create_sunrei.py <ID> [--prod] [--commit] 
 
 Run the command once per workspace. The script skips tag selection and spot
 review, so pass a transcript-based summary with `--summary` and review the
-result in the admin app. Each spot keeps its source video in `youtubeLink`, so
+result in the admin app. Each spot keeps its source video in `sourceLink`, so
 the registry update in step 7 reads the live Sunrei instead of a local file.
 
 Creation produces a draft (`published: false`). Publish only when requested:
@@ -316,7 +316,7 @@ On HTTP 201:
   - `sunreiId`: from the API response (`id` of the created Sunrei)
   - `createdAt`: current ISO 8601 timestamp
   - `spots[].spotId`: from the API response (each spot's `id`)
-  - `spots[].videoId`: extract from the `youtubeLink` of each spot in the request payload (the `v` query parameter)
+  - `spots[].videoId`: extract from the `sourceLink` of each spot in the request payload (the `v` query parameter)
   - `spots[].videoTitle`: from the corresponding video in `video_info.json` (`selectedVideos[].title`)
 
 For HTTP 409:

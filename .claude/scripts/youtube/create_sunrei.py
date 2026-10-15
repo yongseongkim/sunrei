@@ -54,7 +54,7 @@ def build_spots(locs, tag_ids):
                 "title": vtitle,
                 "context": (l.get("description") or "")[:2000],
                 "images": [],
-                "youtubeLink": l.get("videoUrlWithTimestamp") or f"https://www.youtube.com/watch?v={v.get('videoId')}",
+                "sourceLink": l.get("videoUrlWithTimestamp") or f"https://www.youtube.com/watch?v={v.get('videoId')}",
                 "tagIds": tag_ids,
                 "place": {
                     "name": (l.get("name") or "")[:200],

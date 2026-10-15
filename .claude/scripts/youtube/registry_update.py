@@ -56,7 +56,7 @@ def main():
             print(f"skip {sid}: GET {st}"); continue
         spots = []
         for s in body.get("spots", []):
-            spots.append({"spotId": s.get("id"), "videoId": videoIdOf(s.get("youtubeLink")),
+            spots.append({"spotId": s.get("id"), "videoId": videoIdOf(s.get("sourceLink")),
                           "videoTitle": (s.get("title") or "")[:200]})
         entries.append({"sunreiId": sid, "createdAt": body.get("createdAt"), "spots": spots})
         print(f"  {sid}: {len(spots)} spots")
