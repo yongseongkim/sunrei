@@ -23,6 +23,41 @@ import type { RequestArgs } from './base';
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, BaseAPI, RequiredError, operationServerMap } from './base';
 
+export interface CreateInstagramExtractionRunRequest {
+    'batchId'?: string | null;
+    /**
+     * codex, claude, or skill
+     */
+    'agent': string;
+    'model'?: string | null;
+    'promptSha256'?: string | null;
+    'inputTextIds'?: Array<string>;
+    'status': InstagramExtractionRunStatus;
+    'promotion'?: InstagramPromotion | null;
+    'promotionEvidence'?: string | null;
+    /**
+     * This post\'s unmodified agent output item as a JSON string
+     */
+    'rawOutput'?: string | null;
+    'error'?: string | null;
+    'startedAt'?: string | null;
+    'finishedAt'?: string | null;
+    'places'?: Array<InstagramExtractedPlaceInput>;
+}
+
+
+export interface CreateInstagramPostTextRequest {
+    'kind': InstagramTextKind;
+    'language'?: string | null;
+    'segments'?: Array<InstagramSegmentDTO>;
+    'fullText'?: string | null;
+    /**
+     * Tool settings as a JSON string
+     */
+    'params'?: string | null;
+}
+
+
 export interface CreateSourceRequest {
     'type': SourceType;
     'name': string;
@@ -50,7 +85,7 @@ export interface CreateSunreiRequest {
 export interface CreateSunreiSpotInline {
     'title': string;
     'context'?: string | null;
-    'youtubeLink'?: string | null;
+    'sourceLink'?: string | null;
     'place'?: PlaceInput | null;
     'images'?: Array<MultiSizeImageDTO>;
     /**
@@ -67,6 +102,42 @@ export interface CreateTagRequest {
     'labelKo': string;
     'description'?: string | null;
 }
+export interface CreateYoutubeExtractionRunRequest {
+    /**
+     * codex, claude, or skill
+     */
+    'agent': string;
+    'model'?: string | null;
+    'promptSha256'?: string | null;
+    'inputTextIds'?: Array<string>;
+    'status': YoutubeExtractionRunStatus;
+    /**
+     * Unmodified agent output as a JSON string
+     */
+    'rawOutput'?: string | null;
+    'error'?: string | null;
+    'startedAt'?: string | null;
+    'finishedAt'?: string | null;
+    'places'?: Array<YoutubeExtractedPlaceInput>;
+}
+
+
+export interface CreateYoutubeVideoTextRequest {
+    'kind': YoutubeTextKind;
+    'language'?: string | null;
+    'segments'?: Array<YoutubeSegmentDTO>;
+    'fullText'?: string | null;
+    /**
+     * Kind-specific JSON document as a string
+     */
+    'payload'?: string | null;
+    /**
+     * Tool settings as a JSON string
+     */
+    'params'?: string | null;
+}
+
+
 export interface ImageDTO {
     'url': string;
     'width'?: number;
@@ -76,6 +147,316 @@ export interface ImageInput {
     'url': string;
     'width'?: number;
     'height'?: number;
+}
+export interface InstagramAccountDTO {
+    /**
+     * Instagram user ID
+     */
+    'id': string;
+    'username': string;
+    'name'?: string | null;
+    'biography'?: string | null;
+    'followersCount'?: number | null;
+    /**
+     * Media count reported by Instagram
+     */
+    'mediaCount'?: number | null;
+    /**
+     * Approved places are added to this Sunrei
+     */
+    'sunreiId'?: string | null;
+    'syncEnabled': boolean;
+    'backfillCursor'?: string | null;
+    'backfillCompletedAt'?: string | null;
+    'lastSyncedAt'?: string | null;
+    /**
+     * Posts stored for the account
+     */
+    'postCount': number;
+    /**
+     * Posts with status PENDING or FAILED
+     */
+    'pendingPostCount': number;
+    'createdAt': string;
+    'updatedAt': string;
+}
+
+export const InstagramConfidence = {
+    High: 'HIGH',
+    Medium: 'MEDIUM',
+    Low: 'LOW'
+} as const;
+
+export type InstagramConfidence = typeof InstagramConfidence[keyof typeof InstagramConfidence];
+
+
+export interface InstagramEvidenceDTO {
+    /**
+     * caption, speech, onscreen, or location_tag
+     */
+    'source': string;
+    'quote': string;
+    /**
+     * 0 for caption and location tag
+     */
+    'startSeconds': number;
+}
+export interface InstagramExtractedPlaceDTO {
+    'id': string;
+    'runId': string;
+    'postId': string;
+    'postTitle': string;
+    'permalink': string;
+    'name': string;
+    'nameFound': boolean;
+    'aliases': Array<string>;
+    'category'?: string | null;
+    'area'?: string | null;
+    'description'?: string | null;
+    'evidence': Array<InstagramEvidenceDTO>;
+    'confidence'?: InstagramConfidence | null;
+    'needsVerification': boolean;
+    'reason'?: string | null;
+    'geocodeStatus': InstagramGeocodeStatus;
+    'place'?: PlaceInput | null;
+    'geocodeWarning'?: string | null;
+    'reviewStatus': InstagramReviewStatus;
+    'reviewedAt'?: string | null;
+    'sunreiSpotId'?: string | null;
+    /**
+     * Live spots in the account\'s Sunrei, other than this candidate\'s own, whose Place has this candidate\'s googleMapsId
+     */
+    'existingSpotIds': Array<string>;
+    'createdAt': string;
+}
+
+
+export interface InstagramExtractedPlaceInput {
+    'name': string;
+    /**
+     * Defaults to true
+     */
+    'nameFound'?: boolean | null;
+    'aliases'?: Array<string>;
+    'category'?: string | null;
+    'area'?: string | null;
+    'description'?: string | null;
+    'evidence'?: Array<InstagramEvidenceDTO>;
+    'confidence'?: InstagramConfidence | null;
+    'needsVerification'?: boolean | null;
+    'reason'?: string | null;
+    /**
+     * Defaults to MATCHED when place is set, otherwise NOT_SEARCHED
+     */
+    'geocodeStatus'?: InstagramGeocodeStatus | null;
+    'place'?: PlaceInput | null;
+    'geocodeWarning'?: string | null;
+    /**
+     * An existing SunreiSpot this candidate already became; stored as APPROVED
+     */
+    'sunreiSpotId'?: string | null;
+}
+
+
+export interface InstagramExtractionRunDTO {
+    'id': string;
+    'postId': string;
+    'batchId'?: string | null;
+    'agent': string;
+    'model'?: string | null;
+    'promptSha256'?: string | null;
+    'inputTextIds': Array<string>;
+    'status': InstagramExtractionRunStatus;
+    'promotion'?: InstagramPromotion | null;
+    'promotionEvidence'?: string | null;
+    'rawOutput'?: string | null;
+    'error'?: string | null;
+    'startedAt'?: string | null;
+    'finishedAt'?: string | null;
+    'places': Array<InstagramExtractedPlaceDTO>;
+    'createdAt': string;
+}
+
+
+
+export const InstagramExtractionRunStatus = {
+    Succeeded: 'SUCCEEDED',
+    Failed: 'FAILED'
+} as const;
+
+export type InstagramExtractionRunStatus = typeof InstagramExtractionRunStatus[keyof typeof InstagramExtractionRunStatus];
+
+
+
+export const InstagramGeocodeStatus = {
+    Matched: 'MATCHED',
+    NameMismatch: 'NAME_MISMATCH',
+    NotFound: 'NOT_FOUND',
+    NotSearched: 'NOT_SEARCHED'
+} as const;
+
+export type InstagramGeocodeStatus = typeof InstagramGeocodeStatus[keyof typeof InstagramGeocodeStatus];
+
+
+export interface InstagramLocationTagDTO {
+    'pk'?: string | null;
+    'name': string;
+    'latitude'?: number | null;
+    'longitude'?: number | null;
+}
+
+export const InstagramMediaType = {
+    Image: 'IMAGE',
+    Video: 'VIDEO',
+    CarouselAlbum: 'CAROUSEL_ALBUM'
+} as const;
+
+export type InstagramMediaType = typeof InstagramMediaType[keyof typeof InstagramMediaType];
+
+
+export interface InstagramPostAttemptDTO {
+    'id': string;
+    'stage': string;
+    'error': string;
+    'createdAt': string;
+}
+export interface InstagramPostDTO {
+    'id': string;
+    'accountId': string;
+    'shortcode': string;
+    'permalink': string;
+    'mediaType': InstagramMediaType;
+    'productType'?: string | null;
+    'caption'?: string | null;
+    'title': string;
+    'postedAt': string;
+    'likeCount'?: number | null;
+    'commentsCount'?: number | null;
+    'locationTag'?: InstagramLocationTagDTO | null;
+    'locationTagReadAt'?: string | null;
+    'promotion'?: InstagramPromotion | null;
+    'promotionEvidence'?: string | null;
+    'status': InstagramPostStatus;
+    'stage'?: string | null;
+    'error'?: string | null;
+    'processedAt'?: string | null;
+    'createdAt': string;
+    'updatedAt': string;
+}
+
+
+export interface InstagramPostDetailDTO {
+    'post': InstagramPostDTO;
+    /**
+     * Text summaries without segments, newest first
+     */
+    'texts': Array<InstagramPostTextDTO>;
+    /**
+     * Extraction runs with candidates, newest first
+     */
+    'runs': Array<InstagramExtractionRunDTO>;
+    /**
+     * Recent failed attempts, newest first (at most 50)
+     */
+    'attempts': Array<InstagramPostAttemptDTO>;
+}
+export interface InstagramPostInput {
+    /**
+     * Instagram media ID
+     */
+    'id': string;
+    'permalink': string;
+    'mediaType': InstagramMediaType;
+    'productType'?: string | null;
+    'caption'?: string | null;
+    'postedAt': string;
+    'likeCount'?: number | null;
+    'commentsCount'?: number | null;
+}
+
+
+
+export const InstagramPostStatus = {
+    Pending: 'PENDING',
+    Processing: 'PROCESSING',
+    ReviewPending: 'REVIEW_PENDING',
+    Completed: 'COMPLETED',
+    Failed: 'FAILED',
+    Skipped: 'SKIPPED'
+} as const;
+
+export type InstagramPostStatus = typeof InstagramPostStatus[keyof typeof InstagramPostStatus];
+
+
+export interface InstagramPostTextDTO {
+    'id': string;
+    'postId': string;
+    'kind': InstagramTextKind;
+    'language'?: string | null;
+    'segmentCount': number;
+    /**
+     * Included only when a single text is requested
+     */
+    'segments'?: Array<InstagramSegmentDTO> | null;
+    'fullText'?: string | null;
+    'params'?: string | null;
+    'createdAt': string;
+}
+
+
+
+export const InstagramPromotion = {
+    None: 'NONE',
+    DisclosedAd: 'DISCLOSED_AD',
+    SelfPromotion: 'SELF_PROMOTION'
+} as const;
+
+export type InstagramPromotion = typeof InstagramPromotion[keyof typeof InstagramPromotion];
+
+
+
+export const InstagramReviewStatus = {
+    Pending: 'PENDING',
+    Approved: 'APPROVED',
+    Rejected: 'REJECTED',
+    Superseded: 'SUPERSEDED'
+} as const;
+
+export type InstagramReviewStatus = typeof InstagramReviewStatus[keyof typeof InstagramReviewStatus];
+
+
+export interface InstagramSegmentDTO {
+    'start': number;
+    'end'?: number | null;
+    'text': string;
+    /**
+     * OCR confidence
+     */
+    'confidence'?: number | null;
+}
+
+export const InstagramTextKind = {
+    Whisper: 'WHISPER',
+    Ocr: 'OCR'
+} as const;
+
+export type InstagramTextKind = typeof InstagramTextKind[keyof typeof InstagramTextKind];
+
+
+export interface ListInstagramAccountsResult {
+    'data': Array<InstagramAccountDTO>;
+}
+export interface ListInstagramExtractedPlacesResult {
+    'data': Array<InstagramExtractedPlaceDTO>;
+    'totalSize': number;
+    'totalElements': number;
+    'nextToken'?: string | null;
+}
+export interface ListInstagramPostsResult {
+    'data': Array<InstagramPostDTO>;
+    'totalSize': number;
+    'totalElements': number;
+    'nextToken'?: string | null;
 }
 export interface ListPlacesResult {
     'data': Array<PlaceListItemDTO>;
@@ -104,6 +485,21 @@ export interface ListTagsResult {
      * Map of tag ID to number of associated SunreiSpots
      */
     'spotCountByTagId'?: { [key: string]: number; };
+}
+export interface ListYoutubeExtractedPlacesResult {
+    'data': Array<YoutubeExtractedPlaceDTO>;
+    'totalSize': number;
+    'totalElements': number;
+    'nextToken'?: string | null;
+}
+export interface ListYoutubePlaylistsResult {
+    'data': Array<YoutubePlaylistDTO>;
+}
+export interface ListYoutubeVideosResult {
+    'data': Array<YoutubeVideoDTO>;
+    'totalSize': number;
+    'totalElements': number;
+    'nextToken'?: string | null;
 }
 export interface LoginRequest {
     'username': string;
@@ -163,6 +559,43 @@ export interface PlaceListItemDTO {
     'sourceCount': number;
     'spotCount': number;
 }
+export interface ReviewInstagramExtractedPlaceRequest {
+    'reviewStatus': InstagramReviewStatus;
+    /**
+     * Spot title; defaults to the post title
+     */
+    'title'?: string | null;
+    /**
+     * Spot context; defaults to the candidate description
+     */
+    'context'?: string | null;
+    'place'?: PlaceInput | null;
+    'tagIds'?: Array<string> | null;
+}
+
+
+export interface ReviewYoutubeExtractedPlaceRequest {
+    'reviewStatus': YoutubeReviewStatus;
+    /**
+     * Playlist whose Sunrei receives the spot; defaults to the video\'s first playlist with a Sunrei
+     */
+    'playlistId'?: string | null;
+    /**
+     * Spot title; defaults to the video title
+     */
+    'title'?: string | null;
+    /**
+     * Spot context; defaults to the candidate description
+     */
+    'context'?: string | null;
+    'place'?: PlaceInput | null;
+    'tagIds'?: Array<string> | null;
+}
+
+
+export interface SetInstagramLocationTagRequest {
+    'locationTag'?: InstagramLocationTagDTO | null;
+}
 export interface SourceDTO {
     'id': string;
     'type': SourceType;
@@ -199,6 +632,7 @@ export interface SourceRowDTO {
 
 export const SourceType = {
     Youtube: 'YOUTUBE',
+    Instagram: 'INSTAGRAM',
     Tv: 'TV',
     Anime: 'ANIME',
     Other: 'OTHER'
@@ -238,10 +672,24 @@ export interface SunreiSpotDTO {
      * What this source says here.
      */
     'context'?: string | null;
-    'youtubeLink'?: string | null;
+    'sourceLink'?: string | null;
     'images': Array<MultiSizeImageDTO>;
     'place': PlaceDTO;
     'tags': Array<TagDTO>;
+}
+export interface SyncYoutubePlaylistVideosRequest {
+    'videos': Array<YoutubeVideoInput>;
+    'initialStatus'?: YoutubeVideoStatus | null;
+}
+
+
+export interface SyncYoutubePlaylistVideosResult {
+    'addedVideoIds': Array<string>;
+    'removedVideoIds': Array<string>;
+    /**
+     * Videos in the playlist with status PENDING or FAILED, oldest position first
+     */
+    'pendingVideos': Array<YoutubeVideoDTO>;
 }
 export interface TagDTO {
     'id': string;
@@ -256,6 +704,16 @@ export interface TagWithSpots {
     'description'?: string | null;
     'spots': Array<SpotSummaryDTO>;
 }
+export interface UpdateInstagramPostRequest {
+    'status'?: InstagramPostStatus | null;
+    'stage'?: string | null;
+    /**
+     * Also recorded as an attempt; an empty string clears the error
+     */
+    'error'?: string | null;
+}
+
+
 export interface UpdateSourceRequest {
     'type'?: SourceType;
     'name'?: string | null;
@@ -284,7 +742,7 @@ export interface UpdateSunreiSpotInline {
     'id'?: string;
     'title': string;
     'context'?: string | null;
-    'youtubeLink'?: string | null;
+    'sourceLink'?: string | null;
     'place'?: PlaceInput | null;
     'images'?: Array<MultiSizeImageDTO> | null;
     /**
@@ -305,15 +763,378 @@ export interface UpdateTagRequest {
     'labelKo'?: string | null;
     'description'?: string | null;
 }
+export interface UpdateYoutubeVideoRequest {
+    'status'?: YoutubeVideoStatus | null;
+    'stage'?: string | null;
+    /**
+     * Also recorded as an attempt; an empty string clears the error
+     */
+    'error'?: string | null;
+}
+
+
 export interface UploadImageFromUrlRequest {
     'url': string;
 }
+export interface UpsertInstagramAccountRequest {
+    'username': string;
+    'name'?: string | null;
+    'biography'?: string | null;
+    'followersCount'?: number | null;
+    'mediaCount'?: number | null;
+    'sunreiId'?: string | null;
+    /**
+     * Defaults to true for a new account
+     */
+    'syncEnabled'?: boolean | null;
+    /**
+     * Saves backfill progress; null leaves it unchanged
+     */
+    'backfillCursor'?: string | null;
+    /**
+     * true clears the cursor and sets backfillCompletedAt
+     */
+    'backfillCompleted'?: boolean | null;
+}
+export interface UpsertInstagramPostsRequest {
+    'posts': Array<InstagramPostInput>;
+    /**
+     * Status for new posts (default PENDING); SKIPPED registers a baseline without processing.
+     */
+    'initialStatus'?: InstagramPostStatus | null;
+}
+
+
+export interface UpsertInstagramPostsResult {
+    'addedPostIds': Array<string>;
+    'updatedPostIds': Array<string>;
+}
+export interface UpsertYoutubePlaylistRequest {
+    'title': string;
+    'description'?: string | null;
+    'channelId'?: string | null;
+    'channelTitle'?: string | null;
+    'sunreiId'?: string | null;
+    /**
+     * Defaults to true for a new playlist
+     */
+    'syncEnabled'?: boolean | null;
+}
+
+export const YoutubeConfidence = {
+    High: 'HIGH',
+    Medium: 'MEDIUM',
+    Low: 'LOW'
+} as const;
+
+export type YoutubeConfidence = typeof YoutubeConfidence[keyof typeof YoutubeConfidence];
+
+
+export interface YoutubeEvidenceDTO {
+    'source': string;
+    'quote': string;
+    'startSeconds': number;
+}
+export interface YoutubeExtractedPlaceDTO {
+    'id': string;
+    'runId': string;
+    'videoId': string;
+    'videoTitle': string;
+    'name': string;
+    'aliases': Array<string>;
+    'category'?: string | null;
+    'area'?: string | null;
+    'description'?: string | null;
+    'evidence': Array<YoutubeEvidenceDTO>;
+    'confidence'?: YoutubeConfidence | null;
+    'needsVerification': boolean;
+    'reason'?: string | null;
+    'timestampSeconds'?: number | null;
+    'place'?: PlaceInput | null;
+    'geocodeWarning'?: string | null;
+    'reviewStatus': YoutubeReviewStatus;
+    'reviewedAt'?: string | null;
+    'sunreiSpotId'?: string | null;
+    'createdAt': string;
+}
+
+
+export interface YoutubeExtractedPlaceInput {
+    'name': string;
+    'aliases'?: Array<string>;
+    'category'?: string | null;
+    'area'?: string | null;
+    'description'?: string | null;
+    'evidence'?: Array<YoutubeEvidenceDTO>;
+    'confidence'?: YoutubeConfidence | null;
+    'needsVerification'?: boolean | null;
+    'reason'?: string | null;
+    'timestampSeconds'?: number | null;
+    'place'?: PlaceInput | null;
+    'geocodeWarning'?: string | null;
+    /**
+     * An existing SunreiSpot this candidate already became; the candidate is stored as APPROVED.
+     */
+    'sunreiSpotId'?: string | null;
+}
+
+
+export interface YoutubeExtractionRunDTO {
+    'id': string;
+    'videoId': string;
+    'agent': string;
+    'model'?: string | null;
+    'promptSha256'?: string | null;
+    'inputTextIds': Array<string>;
+    'status': YoutubeExtractionRunStatus;
+    'rawOutput'?: string | null;
+    'error'?: string | null;
+    'startedAt'?: string | null;
+    'finishedAt'?: string | null;
+    'places': Array<YoutubeExtractedPlaceDTO>;
+    'createdAt': string;
+}
+
+
+
+export const YoutubeExtractionRunStatus = {
+    Succeeded: 'SUCCEEDED',
+    Failed: 'FAILED'
+} as const;
+
+export type YoutubeExtractionRunStatus = typeof YoutubeExtractionRunStatus[keyof typeof YoutubeExtractionRunStatus];
+
+
+export interface YoutubePlaylistDTO {
+    'id': string;
+    'title': string;
+    'description'?: string | null;
+    'channelId'?: string | null;
+    'channelTitle'?: string | null;
+    /**
+     * Approved places are added to this Sunrei
+     */
+    'sunreiId'?: string | null;
+    'syncEnabled': boolean;
+    'lastSyncedAt'?: string | null;
+    /**
+     * Videos currently in the playlist
+     */
+    'videoCount': number;
+    /**
+     * Videos in the playlist waiting for processing
+     */
+    'pendingVideoCount': number;
+    'createdAt': string;
+    'updatedAt': string;
+}
+
+export const YoutubeReviewStatus = {
+    Pending: 'PENDING',
+    Approved: 'APPROVED',
+    Rejected: 'REJECTED'
+} as const;
+
+export type YoutubeReviewStatus = typeof YoutubeReviewStatus[keyof typeof YoutubeReviewStatus];
+
+
+export interface YoutubeSegmentDTO {
+    'start': number;
+    'end'?: number | null;
+    'text': string;
+    /**
+     * Timeline source such as transcript, whisper, or ocr
+     */
+    'source'?: string | null;
+}
+
+export const YoutubeTextKind = {
+    Captions: 'CAPTIONS',
+    Whisper: 'WHISPER',
+    Ocr: 'OCR',
+    TranscriptReviewed: 'TRANSCRIPT_REVIEWED',
+    TranscriptReview: 'TRANSCRIPT_REVIEW',
+    Timeline: 'TIMELINE'
+} as const;
+
+export type YoutubeTextKind = typeof YoutubeTextKind[keyof typeof YoutubeTextKind];
+
+
+export interface YoutubeVideoAttemptDTO {
+    'id': string;
+    'stage': string;
+    'error': string;
+    'createdAt': string;
+}
+export interface YoutubeVideoDTO {
+    'id': string;
+    'title': string;
+    'description'?: string | null;
+    'channelId'?: string | null;
+    'channelTitle'?: string | null;
+    'publishedAt'?: string | null;
+    'durationSeconds'?: number | null;
+    'thumbnailUrl'?: string | null;
+    'status': YoutubeVideoStatus;
+    'stage'?: string | null;
+    'error'?: string | null;
+    'processedAt'?: string | null;
+    'createdAt': string;
+    'updatedAt': string;
+}
+
+
+export interface YoutubeVideoDetailDTO {
+    'video': YoutubeVideoDTO;
+    'playlistIds': Array<string>;
+    /**
+     * Text summaries without segments, newest first
+     */
+    'texts': Array<YoutubeVideoTextDTO>;
+    /**
+     * Extraction runs with candidates, newest first
+     */
+    'runs': Array<YoutubeExtractionRunDTO>;
+    /**
+     * Recent failed attempts, newest first
+     */
+    'attempts': Array<YoutubeVideoAttemptDTO>;
+}
+export interface YoutubeVideoInput {
+    'id': string;
+    'title': string;
+    'description'?: string | null;
+    'channelId'?: string | null;
+    'channelTitle'?: string | null;
+    'publishedAt'?: string | null;
+    'durationSeconds'?: number | null;
+    'thumbnailUrl'?: string | null;
+    'position'?: number | null;
+}
+
+export const YoutubeVideoStatus = {
+    Pending: 'PENDING',
+    Processing: 'PROCESSING',
+    ReviewPending: 'REVIEW_PENDING',
+    Completed: 'COMPLETED',
+    Failed: 'FAILED',
+    Skipped: 'SKIPPED'
+} as const;
+
+export type YoutubeVideoStatus = typeof YoutubeVideoStatus[keyof typeof YoutubeVideoStatus];
+
+
+export interface YoutubeVideoTextDTO {
+    'id': string;
+    'videoId': string;
+    'kind': YoutubeTextKind;
+    'language'?: string | null;
+    'segmentCount': number;
+    /**
+     * Included only when a single text is requested
+     */
+    'segments'?: Array<YoutubeSegmentDTO> | null;
+    'fullText'?: string | null;
+    'payload'?: string | null;
+    'params'?: string | null;
+    'createdAt': string;
+}
+
+
 
 /**
  * DefaultApi - axios parameter creator
  */
 export const DefaultApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * A succeeded run copies its promotion to the post and supersedes the post\'s pending candidates from earlier runs. Places of a DISCLOSED_AD or SELF_PROMOTION run are not stored as candidates; they stay in rawOutput. 
+         * @summary Record an extraction run and its place candidates
+         * @param {string} id 
+         * @param {CreateInstagramExtractionRunRequest} createInstagramExtractionRunRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createInstagramExtractionRun: async (id: string, createInstagramExtractionRunRequest: CreateInstagramExtractionRunRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('createInstagramExtractionRun', 'id', id)
+            // verify required parameter 'createInstagramExtractionRunRequest' is not null or undefined
+            assertParamExists('createInstagramExtractionRun', 'createInstagramExtractionRunRequest', createInstagramExtractionRunRequest)
+            const localVarPath = `/admin/instagram/posts/{id}/extraction-runs`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(createInstagramExtractionRunRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Store a Whisper transcript or OCR text for a reel
+         * @param {string} id 
+         * @param {CreateInstagramPostTextRequest} createInstagramPostTextRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createInstagramPostText: async (id: string, createInstagramPostTextRequest: CreateInstagramPostTextRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('createInstagramPostText', 'id', id)
+            // verify required parameter 'createInstagramPostTextRequest' is not null or undefined
+            assertParamExists('createInstagramPostText', 'createInstagramPostTextRequest', createInstagramPostTextRequest)
+            const localVarPath = `/admin/instagram/posts/{id}/texts`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(createInstagramPostTextRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @summary Create source
@@ -428,6 +1249,94 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(createTagRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Record an extraction run and its place candidates
+         * @param {string} id 
+         * @param {CreateYoutubeExtractionRunRequest} createYoutubeExtractionRunRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createYoutubeExtractionRun: async (id: string, createYoutubeExtractionRunRequest: CreateYoutubeExtractionRunRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('createYoutubeExtractionRun', 'id', id)
+            // verify required parameter 'createYoutubeExtractionRunRequest' is not null or undefined
+            assertParamExists('createYoutubeExtractionRun', 'createYoutubeExtractionRunRequest', createYoutubeExtractionRunRequest)
+            const localVarPath = `/admin/youtube/videos/{id}/extraction-runs`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(createYoutubeExtractionRunRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Store a collected or derived text for a video
+         * @param {string} id 
+         * @param {CreateYoutubeVideoTextRequest} createYoutubeVideoTextRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createYoutubeVideoText: async (id: string, createYoutubeVideoTextRequest: CreateYoutubeVideoTextRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('createYoutubeVideoText', 'id', id)
+            // verify required parameter 'createYoutubeVideoTextRequest' is not null or undefined
+            assertParamExists('createYoutubeVideoText', 'createYoutubeVideoTextRequest', createYoutubeVideoTextRequest)
+            const localVarPath = `/admin/youtube/videos/{id}/texts`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(createYoutubeVideoTextRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -592,6 +1501,120 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         },
         /**
          * 
+         * @summary Get a registered Instagram account
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getInstagramAccount: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('getInstagramAccount', 'id', id)
+            const localVarPath = `/admin/instagram/accounts/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get a post with its texts, extraction runs, and attempts
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getInstagramPost: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('getInstagramPost', 'id', id)
+            const localVarPath = `/admin/instagram/posts/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get a stored text with its segments
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getInstagramPostText: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('getInstagramPostText', 'id', id)
+            const localVarPath = `/admin/instagram/texts/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Get source
          * @param {string} id 
          * @param {*} [options] Override http request option.
@@ -706,6 +1729,44 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         },
         /**
          * 
+         * @summary Get a registered YouTube playlist
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getYoutubePlaylist: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('getYoutubePlaylist', 'id', id)
+            const localVarPath = `/admin/youtube/playlists/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Get YouTube channel registry (raw JSON from S3)
          * @param {string} channelId 
          * @param {*} [options] Override http request option.
@@ -730,6 +1791,244 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             // authentication bearerAuth required
             // http bearer authentication required
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get a video with its texts, extraction runs, and attempts
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getYoutubeVideo: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('getYoutubeVideo', 'id', id)
+            const localVarPath = `/admin/youtube/videos/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get a stored text with its segments
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getYoutubeVideoText: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('getYoutubeVideoText', 'id', id)
+            const localVarPath = `/admin/youtube/texts/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary List registered Instagram accounts
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listInstagramAccounts: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/admin/instagram/accounts`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary List extracted place candidates
+         * @param {InstagramReviewStatus} [reviewStatus] 
+         * @param {InstagramGeocodeStatus} [geocodeStatus] 
+         * @param {string} [accountId] 
+         * @param {string} [postId] 
+         * @param {string} [nextToken] 
+         * @param {number} [size] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listInstagramExtractedPlaces: async (reviewStatus?: InstagramReviewStatus, geocodeStatus?: InstagramGeocodeStatus, accountId?: string, postId?: string, nextToken?: string, size?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/admin/instagram/extracted-places`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (reviewStatus !== undefined) {
+                localVarQueryParameter['reviewStatus'] = reviewStatus;
+            }
+
+            if (geocodeStatus !== undefined) {
+                localVarQueryParameter['geocodeStatus'] = geocodeStatus;
+            }
+
+            if (accountId !== undefined) {
+                localVarQueryParameter['accountId'] = accountId;
+            }
+
+            if (postId !== undefined) {
+                localVarQueryParameter['postId'] = postId;
+            }
+
+            if (nextToken !== undefined) {
+                localVarQueryParameter['nextToken'] = nextToken;
+            }
+
+            if (size !== undefined) {
+                localVarQueryParameter['size'] = size;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary List Instagram posts
+         * @param {string} [accountId] 
+         * @param {InstagramPostStatus} [status] 
+         * @param {InstagramMediaType} [mediaType] 
+         * @param {boolean} [locationTagRead] 
+         * @param {string} [nextToken] 
+         * @param {number} [size] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listInstagramPosts: async (accountId?: string, status?: InstagramPostStatus, mediaType?: InstagramMediaType, locationTagRead?: boolean, nextToken?: string, size?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/admin/instagram/posts`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (accountId !== undefined) {
+                localVarQueryParameter['accountId'] = accountId;
+            }
+
+            if (status !== undefined) {
+                localVarQueryParameter['status'] = status;
+            }
+
+            if (mediaType !== undefined) {
+                localVarQueryParameter['mediaType'] = mediaType;
+            }
+
+            if (locationTagRead !== undefined) {
+                localVarQueryParameter['locationTagRead'] = locationTagRead;
+            }
+
+            if (nextToken !== undefined) {
+                localVarQueryParameter['nextToken'] = nextToken;
+            }
+
+            if (size !== undefined) {
+                localVarQueryParameter['size'] = size;
+            }
 
 
     
@@ -945,6 +2244,153 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         },
         /**
          * 
+         * @summary List extracted place candidates
+         * @param {YoutubeReviewStatus} [reviewStatus] 
+         * @param {string} [playlistId] 
+         * @param {string} [videoId] 
+         * @param {string} [nextToken] 
+         * @param {number} [size] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listYoutubeExtractedPlaces: async (reviewStatus?: YoutubeReviewStatus, playlistId?: string, videoId?: string, nextToken?: string, size?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/admin/youtube/extracted-places`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (reviewStatus !== undefined) {
+                localVarQueryParameter['reviewStatus'] = reviewStatus;
+            }
+
+            if (playlistId !== undefined) {
+                localVarQueryParameter['playlistId'] = playlistId;
+            }
+
+            if (videoId !== undefined) {
+                localVarQueryParameter['videoId'] = videoId;
+            }
+
+            if (nextToken !== undefined) {
+                localVarQueryParameter['nextToken'] = nextToken;
+            }
+
+            if (size !== undefined) {
+                localVarQueryParameter['size'] = size;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary List registered YouTube playlists
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listYoutubePlaylists: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/admin/youtube/playlists`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary List YouTube videos
+         * @param {string} [playlistId] 
+         * @param {YoutubeVideoStatus} [status] 
+         * @param {string} [nextToken] 
+         * @param {number} [size] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listYoutubeVideos: async (playlistId?: string, status?: YoutubeVideoStatus, nextToken?: string, size?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/admin/youtube/videos`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (playlistId !== undefined) {
+                localVarQueryParameter['playlistId'] = playlistId;
+            }
+
+            if (status !== undefined) {
+                localVarQueryParameter['status'] = status;
+            }
+
+            if (nextToken !== undefined) {
+                localVarQueryParameter['nextToken'] = nextToken;
+            }
+
+            if (size !== undefined) {
+                localVarQueryParameter['size'] = size;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Admin login
          * @param {LoginRequest} loginRequest 
          * @param {*} [options] Override http request option.
@@ -1024,6 +2470,94 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * APPROVED creates a SunreiSpot in the account\'s Sunrei that links to the post. REJECTED and PENDING only change the review status; SUPERSEDED is set only by the server. When no candidate of the post remains pending, a REVIEW_PENDING post becomes COMPLETED. 
+         * @summary Review an extracted place
+         * @param {string} id 
+         * @param {ReviewInstagramExtractedPlaceRequest} reviewInstagramExtractedPlaceRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        reviewInstagramExtractedPlace: async (id: string, reviewInstagramExtractedPlaceRequest: ReviewInstagramExtractedPlaceRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('reviewInstagramExtractedPlace', 'id', id)
+            // verify required parameter 'reviewInstagramExtractedPlaceRequest' is not null or undefined
+            assertParamExists('reviewInstagramExtractedPlace', 'reviewInstagramExtractedPlaceRequest', reviewInstagramExtractedPlaceRequest)
+            const localVarPath = `/admin/instagram/extracted-places/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(reviewInstagramExtractedPlaceRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * APPROVED creates a SunreiSpot in the playlist\'s Sunrei from the reviewed place. REJECTED and PENDING only change the review status. When no candidate of the video remains pending, a REVIEW_PENDING video becomes COMPLETED. 
+         * @summary Review an extracted place
+         * @param {string} id 
+         * @param {ReviewYoutubeExtractedPlaceRequest} reviewYoutubeExtractedPlaceRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        reviewYoutubeExtractedPlace: async (id: string, reviewYoutubeExtractedPlaceRequest: ReviewYoutubeExtractedPlaceRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('reviewYoutubeExtractedPlace', 'id', id)
+            // verify required parameter 'reviewYoutubeExtractedPlaceRequest' is not null or undefined
+            assertParamExists('reviewYoutubeExtractedPlace', 'reviewYoutubeExtractedPlaceRequest', reviewYoutubeExtractedPlaceRequest)
+            const localVarPath = `/admin/youtube/extracted-places/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(reviewYoutubeExtractedPlaceRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * 
          * @summary Search tags by label (en or ko)
          * @param {string} q 
@@ -1058,6 +2592,138 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * A null locationTag records that the page was read and has no tag.
+         * @summary Record the location tag read from the post page
+         * @param {string} id 
+         * @param {SetInstagramLocationTagRequest} setInstagramLocationTagRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        setInstagramPostLocationTag: async (id: string, setInstagramLocationTagRequest: SetInstagramLocationTagRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('setInstagramPostLocationTag', 'id', id)
+            // verify required parameter 'setInstagramLocationTagRequest' is not null or undefined
+            assertParamExists('setInstagramPostLocationTag', 'setInstagramLocationTagRequest', setInstagramLocationTagRequest)
+            const localVarPath = `/admin/instagram/posts/{id}/location-tag`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(setInstagramLocationTagRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Upserts every listed video, marks videos missing from the list as removed, and records the sync time. Removed videos keep their data and spots. 
+         * @summary Sync the playlist\'s current videos and return videos waiting for processing
+         * @param {string} id 
+         * @param {SyncYoutubePlaylistVideosRequest} syncYoutubePlaylistVideosRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        syncYoutubePlaylistVideos: async (id: string, syncYoutubePlaylistVideosRequest: SyncYoutubePlaylistVideosRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('syncYoutubePlaylistVideos', 'id', id)
+            // verify required parameter 'syncYoutubePlaylistVideosRequest' is not null or undefined
+            assertParamExists('syncYoutubePlaylistVideos', 'syncYoutubePlaylistVideosRequest', syncYoutubePlaylistVideosRequest)
+            const localVarPath = `/admin/youtube/playlists/{id}/videos`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(syncYoutubePlaylistVideosRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * A non-empty error is also recorded as an attempt for that stage.
+         * @summary Update a post\'s processing status
+         * @param {string} id 
+         * @param {UpdateInstagramPostRequest} updateInstagramPostRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateInstagramPost: async (id: string, updateInstagramPostRequest: UpdateInstagramPostRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateInstagramPost', 'id', id)
+            // verify required parameter 'updateInstagramPostRequest' is not null or undefined
+            assertParamExists('updateInstagramPost', 'updateInstagramPostRequest', updateInstagramPostRequest)
+            const localVarPath = `/admin/instagram/posts/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(updateInstagramPostRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -1197,6 +2863,50 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * A non-null error is also recorded as an attempt for that stage.
+         * @summary Update a video\'s processing status
+         * @param {string} id 
+         * @param {UpdateYoutubeVideoRequest} updateYoutubeVideoRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateYoutubeVideo: async (id: string, updateYoutubeVideoRequest: UpdateYoutubeVideoRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateYoutubeVideo', 'id', id)
+            // verify required parameter 'updateYoutubeVideoRequest' is not null or undefined
+            assertParamExists('updateYoutubeVideo', 'updateYoutubeVideoRequest', updateYoutubeVideoRequest)
+            const localVarPath = `/admin/youtube/videos/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(updateYoutubeVideoRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * 
          * @summary Upload image
          * @param {File} file 
@@ -1281,6 +2991,138 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * The path id is the Instagram user ID from Business Discovery.
+         * @summary Register or update an Instagram account
+         * @param {string} id 
+         * @param {UpsertInstagramAccountRequest} upsertInstagramAccountRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        upsertInstagramAccount: async (id: string, upsertInstagramAccountRequest: UpsertInstagramAccountRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('upsertInstagramAccount', 'id', id)
+            // verify required parameter 'upsertInstagramAccountRequest' is not null or undefined
+            assertParamExists('upsertInstagramAccount', 'upsertInstagramAccountRequest', upsertInstagramAccountRequest)
+            const localVarPath = `/admin/instagram/accounts/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(upsertInstagramAccountRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Inserts new posts with initialStatus and updates the caption, title, and counts of existing posts without changing their status. Posts missing from the request are left alone. 
+         * @summary Store a page of the account\'s posts with their captions
+         * @param {string} id 
+         * @param {UpsertInstagramPostsRequest} upsertInstagramPostsRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        upsertInstagramPosts: async (id: string, upsertInstagramPostsRequest: UpsertInstagramPostsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('upsertInstagramPosts', 'id', id)
+            // verify required parameter 'upsertInstagramPostsRequest' is not null or undefined
+            assertParamExists('upsertInstagramPosts', 'upsertInstagramPostsRequest', upsertInstagramPostsRequest)
+            const localVarPath = `/admin/instagram/accounts/{id}/posts`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(upsertInstagramPostsRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Register or update a YouTube playlist
+         * @param {string} id 
+         * @param {UpsertYoutubePlaylistRequest} upsertYoutubePlaylistRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        upsertYoutubePlaylist: async (id: string, upsertYoutubePlaylistRequest: UpsertYoutubePlaylistRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('upsertYoutubePlaylist', 'id', id)
+            // verify required parameter 'upsertYoutubePlaylistRequest' is not null or undefined
+            assertParamExists('upsertYoutubePlaylist', 'upsertYoutubePlaylistRequest', upsertYoutubePlaylistRequest)
+            const localVarPath = `/admin/youtube/playlists/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(upsertYoutubePlaylistRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -1290,6 +3132,34 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 export const DefaultApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = DefaultApiAxiosParamCreator(configuration)
     return {
+        /**
+         * A succeeded run copies its promotion to the post and supersedes the post\'s pending candidates from earlier runs. Places of a DISCLOSED_AD or SELF_PROMOTION run are not stored as candidates; they stay in rawOutput. 
+         * @summary Record an extraction run and its place candidates
+         * @param {string} id 
+         * @param {CreateInstagramExtractionRunRequest} createInstagramExtractionRunRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createInstagramExtractionRun(id: string, createInstagramExtractionRunRequest: CreateInstagramExtractionRunRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InstagramExtractionRunDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createInstagramExtractionRun(id, createInstagramExtractionRunRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.createInstagramExtractionRun']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Store a Whisper transcript or OCR text for a reel
+         * @param {string} id 
+         * @param {CreateInstagramPostTextRequest} createInstagramPostTextRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createInstagramPostText(id: string, createInstagramPostTextRequest: CreateInstagramPostTextRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InstagramPostTextDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createInstagramPostText(id, createInstagramPostTextRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.createInstagramPostText']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
         /**
          * 
          * @summary Create source
@@ -1327,6 +3197,34 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createTag(createTagRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.createTag']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Record an extraction run and its place candidates
+         * @param {string} id 
+         * @param {CreateYoutubeExtractionRunRequest} createYoutubeExtractionRunRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createYoutubeExtractionRun(id: string, createYoutubeExtractionRunRequest: CreateYoutubeExtractionRunRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<YoutubeExtractionRunDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createYoutubeExtractionRun(id, createYoutubeExtractionRunRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.createYoutubeExtractionRun']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Store a collected or derived text for a video
+         * @param {string} id 
+         * @param {CreateYoutubeVideoTextRequest} createYoutubeVideoTextRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createYoutubeVideoText(id: string, createYoutubeVideoTextRequest: CreateYoutubeVideoTextRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<YoutubeVideoTextDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createYoutubeVideoText(id, createYoutubeVideoTextRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.createYoutubeVideoText']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -1384,6 +3282,45 @@ export const DefaultApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Get a registered Instagram account
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getInstagramAccount(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InstagramAccountDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getInstagramAccount(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getInstagramAccount']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Get a post with its texts, extraction runs, and attempts
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getInstagramPost(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InstagramPostDetailDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getInstagramPost(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getInstagramPost']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Get a stored text with its segments
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getInstagramPostText(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InstagramPostTextDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getInstagramPostText(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getInstagramPostText']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Get source
          * @param {string} id 
          * @param {*} [options] Override http request option.
@@ -1423,6 +3360,19 @@ export const DefaultApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Get a registered YouTube playlist
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getYoutubePlaylist(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<YoutubePlaylistDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getYoutubePlaylist(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getYoutubePlaylist']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Get YouTube channel registry (raw JSON from S3)
          * @param {string} channelId 
          * @param {*} [options] Override http request option.
@@ -1432,6 +3382,80 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getYoutubeResource(channelId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.getYoutubeResource']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Get a video with its texts, extraction runs, and attempts
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getYoutubeVideo(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<YoutubeVideoDetailDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getYoutubeVideo(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getYoutubeVideo']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Get a stored text with its segments
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getYoutubeVideoText(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<YoutubeVideoTextDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getYoutubeVideoText(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getYoutubeVideoText']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List registered Instagram accounts
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listInstagramAccounts(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListInstagramAccountsResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listInstagramAccounts(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listInstagramAccounts']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List extracted place candidates
+         * @param {InstagramReviewStatus} [reviewStatus] 
+         * @param {InstagramGeocodeStatus} [geocodeStatus] 
+         * @param {string} [accountId] 
+         * @param {string} [postId] 
+         * @param {string} [nextToken] 
+         * @param {number} [size] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listInstagramExtractedPlaces(reviewStatus?: InstagramReviewStatus, geocodeStatus?: InstagramGeocodeStatus, accountId?: string, postId?: string, nextToken?: string, size?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListInstagramExtractedPlacesResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listInstagramExtractedPlaces(reviewStatus, geocodeStatus, accountId, postId, nextToken, size, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listInstagramExtractedPlaces']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List Instagram posts
+         * @param {string} [accountId] 
+         * @param {InstagramPostStatus} [status] 
+         * @param {InstagramMediaType} [mediaType] 
+         * @param {boolean} [locationTagRead] 
+         * @param {string} [nextToken] 
+         * @param {number} [size] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listInstagramPosts(accountId?: string, status?: InstagramPostStatus, mediaType?: InstagramMediaType, locationTagRead?: boolean, nextToken?: string, size?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListInstagramPostsResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listInstagramPosts(accountId, status, mediaType, locationTagRead, nextToken, size, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listInstagramPosts']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -1497,6 +3521,51 @@ export const DefaultApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary List extracted place candidates
+         * @param {YoutubeReviewStatus} [reviewStatus] 
+         * @param {string} [playlistId] 
+         * @param {string} [videoId] 
+         * @param {string} [nextToken] 
+         * @param {number} [size] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listYoutubeExtractedPlaces(reviewStatus?: YoutubeReviewStatus, playlistId?: string, videoId?: string, nextToken?: string, size?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListYoutubeExtractedPlacesResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listYoutubeExtractedPlaces(reviewStatus, playlistId, videoId, nextToken, size, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listYoutubeExtractedPlaces']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List registered YouTube playlists
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listYoutubePlaylists(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListYoutubePlaylistsResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listYoutubePlaylists(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listYoutubePlaylists']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List YouTube videos
+         * @param {string} [playlistId] 
+         * @param {YoutubeVideoStatus} [status] 
+         * @param {string} [nextToken] 
+         * @param {number} [size] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listYoutubeVideos(playlistId?: string, status?: YoutubeVideoStatus, nextToken?: string, size?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListYoutubeVideosResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listYoutubeVideos(playlistId, status, nextToken, size, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.listYoutubeVideos']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Admin login
          * @param {LoginRequest} loginRequest 
          * @param {*} [options] Override http request option.
@@ -1523,6 +3592,34 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * APPROVED creates a SunreiSpot in the account\'s Sunrei that links to the post. REJECTED and PENDING only change the review status; SUPERSEDED is set only by the server. When no candidate of the post remains pending, a REVIEW_PENDING post becomes COMPLETED. 
+         * @summary Review an extracted place
+         * @param {string} id 
+         * @param {ReviewInstagramExtractedPlaceRequest} reviewInstagramExtractedPlaceRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async reviewInstagramExtractedPlace(id: string, reviewInstagramExtractedPlaceRequest: ReviewInstagramExtractedPlaceRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InstagramExtractedPlaceDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.reviewInstagramExtractedPlace(id, reviewInstagramExtractedPlaceRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.reviewInstagramExtractedPlace']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * APPROVED creates a SunreiSpot in the playlist\'s Sunrei from the reviewed place. REJECTED and PENDING only change the review status. When no candidate of the video remains pending, a REVIEW_PENDING video becomes COMPLETED. 
+         * @summary Review an extracted place
+         * @param {string} id 
+         * @param {ReviewYoutubeExtractedPlaceRequest} reviewYoutubeExtractedPlaceRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async reviewYoutubeExtractedPlace(id: string, reviewYoutubeExtractedPlaceRequest: ReviewYoutubeExtractedPlaceRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<YoutubeExtractedPlaceDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.reviewYoutubeExtractedPlace(id, reviewYoutubeExtractedPlaceRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.reviewYoutubeExtractedPlace']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * 
          * @summary Search tags by label (en or ko)
          * @param {string} q 
@@ -1533,6 +3630,48 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchTags(q, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.searchTags']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * A null locationTag records that the page was read and has no tag.
+         * @summary Record the location tag read from the post page
+         * @param {string} id 
+         * @param {SetInstagramLocationTagRequest} setInstagramLocationTagRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async setInstagramPostLocationTag(id: string, setInstagramLocationTagRequest: SetInstagramLocationTagRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InstagramPostDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.setInstagramPostLocationTag(id, setInstagramLocationTagRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.setInstagramPostLocationTag']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Upserts every listed video, marks videos missing from the list as removed, and records the sync time. Removed videos keep their data and spots. 
+         * @summary Sync the playlist\'s current videos and return videos waiting for processing
+         * @param {string} id 
+         * @param {SyncYoutubePlaylistVideosRequest} syncYoutubePlaylistVideosRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async syncYoutubePlaylistVideos(id: string, syncYoutubePlaylistVideosRequest: SyncYoutubePlaylistVideosRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SyncYoutubePlaylistVideosResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.syncYoutubePlaylistVideos(id, syncYoutubePlaylistVideosRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.syncYoutubePlaylistVideos']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * A non-empty error is also recorded as an attempt for that stage.
+         * @summary Update a post\'s processing status
+         * @param {string} id 
+         * @param {UpdateInstagramPostRequest} updateInstagramPostRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateInstagramPost(id: string, updateInstagramPostRequest: UpdateInstagramPostRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InstagramPostDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateInstagramPost(id, updateInstagramPostRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.updateInstagramPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -1578,6 +3717,20 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * A non-null error is also recorded as an attempt for that stage.
+         * @summary Update a video\'s processing status
+         * @param {string} id 
+         * @param {UpdateYoutubeVideoRequest} updateYoutubeVideoRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateYoutubeVideo(id: string, updateYoutubeVideoRequest: UpdateYoutubeVideoRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<YoutubeVideoDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateYoutubeVideo(id, updateYoutubeVideoRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.updateYoutubeVideo']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * 
          * @summary Upload image
          * @param {File} file 
@@ -1603,6 +3756,48 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.uploadImageFromUrl']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
+        /**
+         * The path id is the Instagram user ID from Business Discovery.
+         * @summary Register or update an Instagram account
+         * @param {string} id 
+         * @param {UpsertInstagramAccountRequest} upsertInstagramAccountRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async upsertInstagramAccount(id: string, upsertInstagramAccountRequest: UpsertInstagramAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InstagramAccountDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.upsertInstagramAccount(id, upsertInstagramAccountRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.upsertInstagramAccount']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Inserts new posts with initialStatus and updates the caption, title, and counts of existing posts without changing their status. Posts missing from the request are left alone. 
+         * @summary Store a page of the account\'s posts with their captions
+         * @param {string} id 
+         * @param {UpsertInstagramPostsRequest} upsertInstagramPostsRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async upsertInstagramPosts(id: string, upsertInstagramPostsRequest: UpsertInstagramPostsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UpsertInstagramPostsResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.upsertInstagramPosts(id, upsertInstagramPostsRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.upsertInstagramPosts']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Register or update a YouTube playlist
+         * @param {string} id 
+         * @param {UpsertYoutubePlaylistRequest} upsertYoutubePlaylistRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async upsertYoutubePlaylist(id: string, upsertYoutubePlaylistRequest: UpsertYoutubePlaylistRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<YoutubePlaylistDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.upsertYoutubePlaylist(id, upsertYoutubePlaylistRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.upsertYoutubePlaylist']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
     }
 };
 
@@ -1612,6 +3807,28 @@ export const DefaultApiFp = function(configuration?: Configuration) {
 export const DefaultApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = DefaultApiFp(configuration)
     return {
+        /**
+         * A succeeded run copies its promotion to the post and supersedes the post\'s pending candidates from earlier runs. Places of a DISCLOSED_AD or SELF_PROMOTION run are not stored as candidates; they stay in rawOutput. 
+         * @summary Record an extraction run and its place candidates
+         * @param {string} id 
+         * @param {CreateInstagramExtractionRunRequest} createInstagramExtractionRunRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createInstagramExtractionRun(id: string, createInstagramExtractionRunRequest: CreateInstagramExtractionRunRequest, options?: RawAxiosRequestConfig): AxiosPromise<InstagramExtractionRunDTO> {
+            return localVarFp.createInstagramExtractionRun(id, createInstagramExtractionRunRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Store a Whisper transcript or OCR text for a reel
+         * @param {string} id 
+         * @param {CreateInstagramPostTextRequest} createInstagramPostTextRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createInstagramPostText(id: string, createInstagramPostTextRequest: CreateInstagramPostTextRequest, options?: RawAxiosRequestConfig): AxiosPromise<InstagramPostTextDTO> {
+            return localVarFp.createInstagramPostText(id, createInstagramPostTextRequest, options).then((request) => request(axios, basePath));
+        },
         /**
          * 
          * @summary Create source
@@ -1641,6 +3858,28 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          */
         createTag(createTagRequest: CreateTagRequest, options?: RawAxiosRequestConfig): AxiosPromise<TagDTO> {
             return localVarFp.createTag(createTagRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Record an extraction run and its place candidates
+         * @param {string} id 
+         * @param {CreateYoutubeExtractionRunRequest} createYoutubeExtractionRunRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createYoutubeExtractionRun(id: string, createYoutubeExtractionRunRequest: CreateYoutubeExtractionRunRequest, options?: RawAxiosRequestConfig): AxiosPromise<YoutubeExtractionRunDTO> {
+            return localVarFp.createYoutubeExtractionRun(id, createYoutubeExtractionRunRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Store a collected or derived text for a video
+         * @param {string} id 
+         * @param {CreateYoutubeVideoTextRequest} createYoutubeVideoTextRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createYoutubeVideoText(id: string, createYoutubeVideoTextRequest: CreateYoutubeVideoTextRequest, options?: RawAxiosRequestConfig): AxiosPromise<YoutubeVideoTextDTO> {
+            return localVarFp.createYoutubeVideoText(id, createYoutubeVideoTextRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1685,6 +3924,36 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         },
         /**
          * 
+         * @summary Get a registered Instagram account
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getInstagramAccount(id: string, options?: RawAxiosRequestConfig): AxiosPromise<InstagramAccountDTO> {
+            return localVarFp.getInstagramAccount(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get a post with its texts, extraction runs, and attempts
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getInstagramPost(id: string, options?: RawAxiosRequestConfig): AxiosPromise<InstagramPostDetailDTO> {
+            return localVarFp.getInstagramPost(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get a stored text with its segments
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getInstagramPostText(id: string, options?: RawAxiosRequestConfig): AxiosPromise<InstagramPostTextDTO> {
+            return localVarFp.getInstagramPostText(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Get source
          * @param {string} id 
          * @param {*} [options] Override http request option.
@@ -1715,6 +3984,16 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         },
         /**
          * 
+         * @summary Get a registered YouTube playlist
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getYoutubePlaylist(id: string, options?: RawAxiosRequestConfig): AxiosPromise<YoutubePlaylistDTO> {
+            return localVarFp.getYoutubePlaylist(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Get YouTube channel registry (raw JSON from S3)
          * @param {string} channelId 
          * @param {*} [options] Override http request option.
@@ -1722,6 +4001,65 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          */
         getYoutubeResource(channelId: string, options?: RawAxiosRequestConfig): AxiosPromise<{ [key: string]: any; }> {
             return localVarFp.getYoutubeResource(channelId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get a video with its texts, extraction runs, and attempts
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getYoutubeVideo(id: string, options?: RawAxiosRequestConfig): AxiosPromise<YoutubeVideoDetailDTO> {
+            return localVarFp.getYoutubeVideo(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get a stored text with its segments
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getYoutubeVideoText(id: string, options?: RawAxiosRequestConfig): AxiosPromise<YoutubeVideoTextDTO> {
+            return localVarFp.getYoutubeVideoText(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List registered Instagram accounts
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listInstagramAccounts(options?: RawAxiosRequestConfig): AxiosPromise<ListInstagramAccountsResult> {
+            return localVarFp.listInstagramAccounts(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List extracted place candidates
+         * @param {InstagramReviewStatus} [reviewStatus] 
+         * @param {InstagramGeocodeStatus} [geocodeStatus] 
+         * @param {string} [accountId] 
+         * @param {string} [postId] 
+         * @param {string} [nextToken] 
+         * @param {number} [size] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listInstagramExtractedPlaces(reviewStatus?: InstagramReviewStatus, geocodeStatus?: InstagramGeocodeStatus, accountId?: string, postId?: string, nextToken?: string, size?: number, options?: RawAxiosRequestConfig): AxiosPromise<ListInstagramExtractedPlacesResult> {
+            return localVarFp.listInstagramExtractedPlaces(reviewStatus, geocodeStatus, accountId, postId, nextToken, size, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List Instagram posts
+         * @param {string} [accountId] 
+         * @param {InstagramPostStatus} [status] 
+         * @param {InstagramMediaType} [mediaType] 
+         * @param {boolean} [locationTagRead] 
+         * @param {string} [nextToken] 
+         * @param {number} [size] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listInstagramPosts(accountId?: string, status?: InstagramPostStatus, mediaType?: InstagramMediaType, locationTagRead?: boolean, nextToken?: string, size?: number, options?: RawAxiosRequestConfig): AxiosPromise<ListInstagramPostsResult> {
+            return localVarFp.listInstagramPosts(accountId, status, mediaType, locationTagRead, nextToken, size, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1774,6 +4112,42 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         },
         /**
          * 
+         * @summary List extracted place candidates
+         * @param {YoutubeReviewStatus} [reviewStatus] 
+         * @param {string} [playlistId] 
+         * @param {string} [videoId] 
+         * @param {string} [nextToken] 
+         * @param {number} [size] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listYoutubeExtractedPlaces(reviewStatus?: YoutubeReviewStatus, playlistId?: string, videoId?: string, nextToken?: string, size?: number, options?: RawAxiosRequestConfig): AxiosPromise<ListYoutubeExtractedPlacesResult> {
+            return localVarFp.listYoutubeExtractedPlaces(reviewStatus, playlistId, videoId, nextToken, size, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List registered YouTube playlists
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listYoutubePlaylists(options?: RawAxiosRequestConfig): AxiosPromise<ListYoutubePlaylistsResult> {
+            return localVarFp.listYoutubePlaylists(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List YouTube videos
+         * @param {string} [playlistId] 
+         * @param {YoutubeVideoStatus} [status] 
+         * @param {string} [nextToken] 
+         * @param {number} [size] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listYoutubeVideos(playlistId?: string, status?: YoutubeVideoStatus, nextToken?: string, size?: number, options?: RawAxiosRequestConfig): AxiosPromise<ListYoutubeVideosResult> {
+            return localVarFp.listYoutubeVideos(playlistId, status, nextToken, size, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Admin login
          * @param {LoginRequest} loginRequest 
          * @param {*} [options] Override http request option.
@@ -1794,6 +4168,28 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.putYoutubeResource(channelId, requestBody, options).then((request) => request(axios, basePath));
         },
         /**
+         * APPROVED creates a SunreiSpot in the account\'s Sunrei that links to the post. REJECTED and PENDING only change the review status; SUPERSEDED is set only by the server. When no candidate of the post remains pending, a REVIEW_PENDING post becomes COMPLETED. 
+         * @summary Review an extracted place
+         * @param {string} id 
+         * @param {ReviewInstagramExtractedPlaceRequest} reviewInstagramExtractedPlaceRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        reviewInstagramExtractedPlace(id: string, reviewInstagramExtractedPlaceRequest: ReviewInstagramExtractedPlaceRequest, options?: RawAxiosRequestConfig): AxiosPromise<InstagramExtractedPlaceDTO> {
+            return localVarFp.reviewInstagramExtractedPlace(id, reviewInstagramExtractedPlaceRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * APPROVED creates a SunreiSpot in the playlist\'s Sunrei from the reviewed place. REJECTED and PENDING only change the review status. When no candidate of the video remains pending, a REVIEW_PENDING video becomes COMPLETED. 
+         * @summary Review an extracted place
+         * @param {string} id 
+         * @param {ReviewYoutubeExtractedPlaceRequest} reviewYoutubeExtractedPlaceRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        reviewYoutubeExtractedPlace(id: string, reviewYoutubeExtractedPlaceRequest: ReviewYoutubeExtractedPlaceRequest, options?: RawAxiosRequestConfig): AxiosPromise<YoutubeExtractedPlaceDTO> {
+            return localVarFp.reviewYoutubeExtractedPlace(id, reviewYoutubeExtractedPlaceRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
          * 
          * @summary Search tags by label (en or ko)
          * @param {string} q 
@@ -1802,6 +4198,39 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          */
         searchTags(q: string, options?: RawAxiosRequestConfig): AxiosPromise<Array<TagDTO>> {
             return localVarFp.searchTags(q, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * A null locationTag records that the page was read and has no tag.
+         * @summary Record the location tag read from the post page
+         * @param {string} id 
+         * @param {SetInstagramLocationTagRequest} setInstagramLocationTagRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        setInstagramPostLocationTag(id: string, setInstagramLocationTagRequest: SetInstagramLocationTagRequest, options?: RawAxiosRequestConfig): AxiosPromise<InstagramPostDTO> {
+            return localVarFp.setInstagramPostLocationTag(id, setInstagramLocationTagRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Upserts every listed video, marks videos missing from the list as removed, and records the sync time. Removed videos keep their data and spots. 
+         * @summary Sync the playlist\'s current videos and return videos waiting for processing
+         * @param {string} id 
+         * @param {SyncYoutubePlaylistVideosRequest} syncYoutubePlaylistVideosRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        syncYoutubePlaylistVideos(id: string, syncYoutubePlaylistVideosRequest: SyncYoutubePlaylistVideosRequest, options?: RawAxiosRequestConfig): AxiosPromise<SyncYoutubePlaylistVideosResult> {
+            return localVarFp.syncYoutubePlaylistVideos(id, syncYoutubePlaylistVideosRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * A non-empty error is also recorded as an attempt for that stage.
+         * @summary Update a post\'s processing status
+         * @param {string} id 
+         * @param {UpdateInstagramPostRequest} updateInstagramPostRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateInstagramPost(id: string, updateInstagramPostRequest: UpdateInstagramPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<InstagramPostDTO> {
+            return localVarFp.updateInstagramPost(id, updateInstagramPostRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1837,6 +4266,17 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.updateTag(id, updateTagRequest, options).then((request) => request(axios, basePath));
         },
         /**
+         * A non-null error is also recorded as an attempt for that stage.
+         * @summary Update a video\'s processing status
+         * @param {string} id 
+         * @param {UpdateYoutubeVideoRequest} updateYoutubeVideoRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateYoutubeVideo(id: string, updateYoutubeVideoRequest: UpdateYoutubeVideoRequest, options?: RawAxiosRequestConfig): AxiosPromise<YoutubeVideoDTO> {
+            return localVarFp.updateYoutubeVideo(id, updateYoutubeVideoRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
          * 
          * @summary Upload image
          * @param {File} file 
@@ -1856,6 +4296,39 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         uploadImageFromUrl(uploadImageFromUrlRequest: UploadImageFromUrlRequest, options?: RawAxiosRequestConfig): AxiosPromise<MultiSizeImageDTO> {
             return localVarFp.uploadImageFromUrl(uploadImageFromUrlRequest, options).then((request) => request(axios, basePath));
         },
+        /**
+         * The path id is the Instagram user ID from Business Discovery.
+         * @summary Register or update an Instagram account
+         * @param {string} id 
+         * @param {UpsertInstagramAccountRequest} upsertInstagramAccountRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        upsertInstagramAccount(id: string, upsertInstagramAccountRequest: UpsertInstagramAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<InstagramAccountDTO> {
+            return localVarFp.upsertInstagramAccount(id, upsertInstagramAccountRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Inserts new posts with initialStatus and updates the caption, title, and counts of existing posts without changing their status. Posts missing from the request are left alone. 
+         * @summary Store a page of the account\'s posts with their captions
+         * @param {string} id 
+         * @param {UpsertInstagramPostsRequest} upsertInstagramPostsRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        upsertInstagramPosts(id: string, upsertInstagramPostsRequest: UpsertInstagramPostsRequest, options?: RawAxiosRequestConfig): AxiosPromise<UpsertInstagramPostsResult> {
+            return localVarFp.upsertInstagramPosts(id, upsertInstagramPostsRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Register or update a YouTube playlist
+         * @param {string} id 
+         * @param {UpsertYoutubePlaylistRequest} upsertYoutubePlaylistRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        upsertYoutubePlaylist(id: string, upsertYoutubePlaylistRequest: UpsertYoutubePlaylistRequest, options?: RawAxiosRequestConfig): AxiosPromise<YoutubePlaylistDTO> {
+            return localVarFp.upsertYoutubePlaylist(id, upsertYoutubePlaylistRequest, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -1863,6 +4336,30 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
  * DefaultApi - object-oriented interface
  */
 export class DefaultApi extends BaseAPI {
+    /**
+     * A succeeded run copies its promotion to the post and supersedes the post\'s pending candidates from earlier runs. Places of a DISCLOSED_AD or SELF_PROMOTION run are not stored as candidates; they stay in rawOutput. 
+     * @summary Record an extraction run and its place candidates
+     * @param {string} id 
+     * @param {CreateInstagramExtractionRunRequest} createInstagramExtractionRunRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createInstagramExtractionRun(id: string, createInstagramExtractionRunRequest: CreateInstagramExtractionRunRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).createInstagramExtractionRun(id, createInstagramExtractionRunRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Store a Whisper transcript or OCR text for a reel
+     * @param {string} id 
+     * @param {CreateInstagramPostTextRequest} createInstagramPostTextRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createInstagramPostText(id: string, createInstagramPostTextRequest: CreateInstagramPostTextRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).createInstagramPostText(id, createInstagramPostTextRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @summary Create source
@@ -1894,6 +4391,30 @@ export class DefaultApi extends BaseAPI {
      */
     public createTag(createTagRequest: CreateTagRequest, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).createTag(createTagRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Record an extraction run and its place candidates
+     * @param {string} id 
+     * @param {CreateYoutubeExtractionRunRequest} createYoutubeExtractionRunRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createYoutubeExtractionRun(id: string, createYoutubeExtractionRunRequest: CreateYoutubeExtractionRunRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).createYoutubeExtractionRun(id, createYoutubeExtractionRunRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Store a collected or derived text for a video
+     * @param {string} id 
+     * @param {CreateYoutubeVideoTextRequest} createYoutubeVideoTextRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public createYoutubeVideoText(id: string, createYoutubeVideoTextRequest: CreateYoutubeVideoTextRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).createYoutubeVideoText(id, createYoutubeVideoTextRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1943,6 +4464,39 @@ export class DefaultApi extends BaseAPI {
 
     /**
      * 
+     * @summary Get a registered Instagram account
+     * @param {string} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getInstagramAccount(id: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getInstagramAccount(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get a post with its texts, extraction runs, and attempts
+     * @param {string} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getInstagramPost(id: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getInstagramPost(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get a stored text with its segments
+     * @param {string} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getInstagramPostText(id: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getInstagramPostText(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Get source
      * @param {string} id 
      * @param {*} [options] Override http request option.
@@ -1976,6 +4530,17 @@ export class DefaultApi extends BaseAPI {
 
     /**
      * 
+     * @summary Get a registered YouTube playlist
+     * @param {string} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getYoutubePlaylist(id: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getYoutubePlaylist(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Get YouTube channel registry (raw JSON from S3)
      * @param {string} channelId 
      * @param {*} [options] Override http request option.
@@ -1983,6 +4548,70 @@ export class DefaultApi extends BaseAPI {
      */
     public getYoutubeResource(channelId: string, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).getYoutubeResource(channelId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get a video with its texts, extraction runs, and attempts
+     * @param {string} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getYoutubeVideo(id: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getYoutubeVideo(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get a stored text with its segments
+     * @param {string} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getYoutubeVideoText(id: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getYoutubeVideoText(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List registered Instagram accounts
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listInstagramAccounts(options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listInstagramAccounts(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List extracted place candidates
+     * @param {InstagramReviewStatus} [reviewStatus] 
+     * @param {InstagramGeocodeStatus} [geocodeStatus] 
+     * @param {string} [accountId] 
+     * @param {string} [postId] 
+     * @param {string} [nextToken] 
+     * @param {number} [size] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listInstagramExtractedPlaces(reviewStatus?: InstagramReviewStatus, geocodeStatus?: InstagramGeocodeStatus, accountId?: string, postId?: string, nextToken?: string, size?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listInstagramExtractedPlaces(reviewStatus, geocodeStatus, accountId, postId, nextToken, size, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List Instagram posts
+     * @param {string} [accountId] 
+     * @param {InstagramPostStatus} [status] 
+     * @param {InstagramMediaType} [mediaType] 
+     * @param {boolean} [locationTagRead] 
+     * @param {string} [nextToken] 
+     * @param {number} [size] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listInstagramPosts(accountId?: string, status?: InstagramPostStatus, mediaType?: InstagramMediaType, locationTagRead?: boolean, nextToken?: string, size?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listInstagramPosts(accountId, status, mediaType, locationTagRead, nextToken, size, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2040,6 +4669,45 @@ export class DefaultApi extends BaseAPI {
 
     /**
      * 
+     * @summary List extracted place candidates
+     * @param {YoutubeReviewStatus} [reviewStatus] 
+     * @param {string} [playlistId] 
+     * @param {string} [videoId] 
+     * @param {string} [nextToken] 
+     * @param {number} [size] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listYoutubeExtractedPlaces(reviewStatus?: YoutubeReviewStatus, playlistId?: string, videoId?: string, nextToken?: string, size?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listYoutubeExtractedPlaces(reviewStatus, playlistId, videoId, nextToken, size, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List registered YouTube playlists
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listYoutubePlaylists(options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listYoutubePlaylists(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List YouTube videos
+     * @param {string} [playlistId] 
+     * @param {YoutubeVideoStatus} [status] 
+     * @param {string} [nextToken] 
+     * @param {number} [size] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listYoutubeVideos(playlistId?: string, status?: YoutubeVideoStatus, nextToken?: string, size?: number, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listYoutubeVideos(playlistId, status, nextToken, size, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Admin login
      * @param {LoginRequest} loginRequest 
      * @param {*} [options] Override http request option.
@@ -2062,6 +4730,30 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
+     * APPROVED creates a SunreiSpot in the account\'s Sunrei that links to the post. REJECTED and PENDING only change the review status; SUPERSEDED is set only by the server. When no candidate of the post remains pending, a REVIEW_PENDING post becomes COMPLETED. 
+     * @summary Review an extracted place
+     * @param {string} id 
+     * @param {ReviewInstagramExtractedPlaceRequest} reviewInstagramExtractedPlaceRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public reviewInstagramExtractedPlace(id: string, reviewInstagramExtractedPlaceRequest: ReviewInstagramExtractedPlaceRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).reviewInstagramExtractedPlace(id, reviewInstagramExtractedPlaceRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * APPROVED creates a SunreiSpot in the playlist\'s Sunrei from the reviewed place. REJECTED and PENDING only change the review status. When no candidate of the video remains pending, a REVIEW_PENDING video becomes COMPLETED. 
+     * @summary Review an extracted place
+     * @param {string} id 
+     * @param {ReviewYoutubeExtractedPlaceRequest} reviewYoutubeExtractedPlaceRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public reviewYoutubeExtractedPlace(id: string, reviewYoutubeExtractedPlaceRequest: ReviewYoutubeExtractedPlaceRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).reviewYoutubeExtractedPlace(id, reviewYoutubeExtractedPlaceRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * 
      * @summary Search tags by label (en or ko)
      * @param {string} q 
@@ -2070,6 +4762,42 @@ export class DefaultApi extends BaseAPI {
      */
     public searchTags(q: string, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).searchTags(q, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * A null locationTag records that the page was read and has no tag.
+     * @summary Record the location tag read from the post page
+     * @param {string} id 
+     * @param {SetInstagramLocationTagRequest} setInstagramLocationTagRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public setInstagramPostLocationTag(id: string, setInstagramLocationTagRequest: SetInstagramLocationTagRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).setInstagramPostLocationTag(id, setInstagramLocationTagRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Upserts every listed video, marks videos missing from the list as removed, and records the sync time. Removed videos keep their data and spots. 
+     * @summary Sync the playlist\'s current videos and return videos waiting for processing
+     * @param {string} id 
+     * @param {SyncYoutubePlaylistVideosRequest} syncYoutubePlaylistVideosRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public syncYoutubePlaylistVideos(id: string, syncYoutubePlaylistVideosRequest: SyncYoutubePlaylistVideosRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).syncYoutubePlaylistVideos(id, syncYoutubePlaylistVideosRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * A non-empty error is also recorded as an attempt for that stage.
+     * @summary Update a post\'s processing status
+     * @param {string} id 
+     * @param {UpdateInstagramPostRequest} updateInstagramPostRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public updateInstagramPost(id: string, updateInstagramPostRequest: UpdateInstagramPostRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).updateInstagramPost(id, updateInstagramPostRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2109,6 +4837,18 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
+     * A non-null error is also recorded as an attempt for that stage.
+     * @summary Update a video\'s processing status
+     * @param {string} id 
+     * @param {UpdateYoutubeVideoRequest} updateYoutubeVideoRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public updateYoutubeVideo(id: string, updateYoutubeVideoRequest: UpdateYoutubeVideoRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).updateYoutubeVideo(id, updateYoutubeVideoRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * 
      * @summary Upload image
      * @param {File} file 
@@ -2128,6 +4868,42 @@ export class DefaultApi extends BaseAPI {
      */
     public uploadImageFromUrl(uploadImageFromUrlRequest: UploadImageFromUrlRequest, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).uploadImageFromUrl(uploadImageFromUrlRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The path id is the Instagram user ID from Business Discovery.
+     * @summary Register or update an Instagram account
+     * @param {string} id 
+     * @param {UpsertInstagramAccountRequest} upsertInstagramAccountRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public upsertInstagramAccount(id: string, upsertInstagramAccountRequest: UpsertInstagramAccountRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).upsertInstagramAccount(id, upsertInstagramAccountRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Inserts new posts with initialStatus and updates the caption, title, and counts of existing posts without changing their status. Posts missing from the request are left alone. 
+     * @summary Store a page of the account\'s posts with their captions
+     * @param {string} id 
+     * @param {UpsertInstagramPostsRequest} upsertInstagramPostsRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public upsertInstagramPosts(id: string, upsertInstagramPostsRequest: UpsertInstagramPostsRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).upsertInstagramPosts(id, upsertInstagramPostsRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Register or update a YouTube playlist
+     * @param {string} id 
+     * @param {UpsertYoutubePlaylistRequest} upsertYoutubePlaylistRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public upsertYoutubePlaylist(id: string, upsertYoutubePlaylistRequest: UpsertYoutubePlaylistRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).upsertYoutubePlaylist(id, upsertYoutubePlaylistRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

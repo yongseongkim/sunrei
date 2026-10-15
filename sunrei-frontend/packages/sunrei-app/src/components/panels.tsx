@@ -5,7 +5,7 @@ import { Check, ChevronLeft, Loader2, MapPin, Navigation, Play, Search, Star, X 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Avatar, sourceAvatarUrl } from '@/components/wf';
-import { cn } from '@/lib/utils';
+import { cn, linkKind } from '@/lib/utils';
 import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useFilterStore } from '@/stores/filter-store';
@@ -192,7 +192,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
                   key={s.id}
                   icon={<Avatar label={s.name} src={sourceAvatarUrl(s, 28)} size={28} />}
                   title={s.name}
-                  sub={s.type}
+                  sub={SRC_TYPE_LABEL[s.type]}
                   hint={t('open')}
                   onClick={() => {
                     // Open the channel view (wireframe §4): single-source scope + sunrei list.
@@ -332,7 +332,7 @@ function ResultRow({
  * featured this place. Header (pin · name · tag · distance · address) + actions
  * (directions / Google Maps) stay pinned; the body scrolls: a Google-info card
  * (live rating/reviews/price/hours/photos, distinct from Sunrei) then every
- * source's take with a YouTube deep link.
+ * source's take with a source link.
  */
 export function PlaceDetail({ placeId }: { placeId: string }) {
   const t = useTranslations('detail');
@@ -441,6 +441,7 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
 
 const SRC_TYPE_LABEL: Record<SourceType, string> = {
   YOUTUBE: 'YouTube',
+  INSTAGRAM: 'Instagram',
   TV: 'TV',
   ANIME: 'Anime',
   OTHER: 'Other',
@@ -454,9 +455,10 @@ function TypeBadge({ type }: { type: SourceType }) {
   );
 }
 
-/** One fully-expanded source take: avatar · channel · type · series · take · YouTube ↗. */
+/** One fully-expanded source take: avatar · channel · type · series · take · source link ↗. */
 function PDMention({ m }: { m: PlaceMentionDTO }) {
-  const yt = m.youtubeLink ?? m.sunreiLink;
+  const link = m.sourceLink ?? m.sunreiLink;
+  const kind = link ? linkKind(link) : null;
   return (
     <div className="border-t border-line py-3">
       <div className="flex items-center gap-2.5">
@@ -470,14 +472,22 @@ function PDMention({ m }: { m: PlaceMentionDTO }) {
         </div>
       </div>
       {m.context && <p className="mt-2 text-[12.5px] leading-relaxed text-ink2">{m.context}</p>}
-      {yt && (
+      {link && (
         <a
-          href={yt}
+          href={link}
           target="_blank"
           rel="noreferrer"
           className="mt-2.5 inline-flex items-center gap-1.5 rounded-lg border border-line2 bg-card px-2.5 py-1.5 text-[11.5px] font-bold text-foreground hover:border-ink3"
         >
-          <Play className="h-3 w-3 text-primary" fill="currentColor" strokeWidth={0} /> YouTube{' '}
+          {kind === 'youtube' ? (
+            <>
+              <Play className="h-3 w-3 text-primary" fill="currentColor" strokeWidth={0} /> YouTube
+            </>
+          ) : kind === 'instagram' ? (
+            'Instagram'
+          ) : (
+            'Link'
+          )}{' '}
           <span className="text-ink3">↗</span>
         </a>
       )}
@@ -683,7 +693,7 @@ function spotsToPlaceCards(sunrei: SunreiDTO): PlaceCardDTO[] {
       spotId: s.id,
       context: s.context,
       sunreiLink: sunrei.link,
-      youtubeLink: s.youtubeLink,
+      sourceLink: s.sourceLink,
       images: s.images,
       tags: s.tags,
     }));

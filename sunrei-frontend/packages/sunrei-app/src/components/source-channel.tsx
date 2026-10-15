@@ -11,6 +11,7 @@ import type { SourceType } from '@/dto';
 
 const TYPE_LABEL: Record<SourceType, string> = {
   YOUTUBE: 'YouTube',
+  INSTAGRAM: 'Instagram',
   TV: 'TV',
   ANIME: 'Anime',
   OTHER: 'Other',
@@ -44,7 +45,12 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
 
   const source = data?.source;
   const sunreis = data?.sunreis ?? [];
-  const isYouTube = source?.type === 'YOUTUBE';
+  const externalLabel =
+    source?.type === 'YOUTUBE'
+      ? t('watchOnYoutube')
+      : source?.type === 'INSTAGRAM'
+        ? t('viewOnInstagram')
+        : t('whereToWatch');
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
@@ -83,7 +89,7 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
                 className="mt-2.5 inline-flex items-center gap-1.5 rounded-full border border-line2 bg-card px-3 py-1.5 text-[11.5px] font-bold text-foreground hover:border-ink3"
               >
                 <ExternalLink className="h-3.5 w-3.5" />
-                {isYouTube ? t('watchOnYoutube') : t('whereToWatch')}
+                {externalLabel}
               </a>
             )}
           </>

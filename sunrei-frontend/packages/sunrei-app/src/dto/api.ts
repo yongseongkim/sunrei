@@ -358,11 +358,11 @@ export interface PlaceMentionDTO {
      */
     'sunreiLink'?: string | null;
     /**
-     * sunrei_spot.youtube_link deep link
+     * sunrei_spot.source_link deep link (YouTube timestamp or Instagram post)
      * @type {string}
      * @memberof PlaceMentionDTO
      */
-    'youtubeLink'?: string | null;
+    'sourceLink'?: string | null;
     /**
      * 
      * @type {Array<MultiSizeImageDTO>}
@@ -521,6 +521,7 @@ export interface SourceDTO {
 
 export const SourceType = {
     Youtube: 'YOUTUBE',
+    Instagram: 'INSTAGRAM',
     Tv: 'TV',
     Anime: 'ANIME',
     Other: 'OTHER'
@@ -625,7 +626,7 @@ export interface SunreiSpotDTO {
      * @type {string}
      * @memberof SunreiSpotDTO
      */
-    'youtubeLink'?: string | null;
+    'sourceLink'?: string | null;
     /**
      * 
      * @type {Array<MultiSizeImageDTO>}

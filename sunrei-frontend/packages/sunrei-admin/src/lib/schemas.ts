@@ -32,7 +32,7 @@ export const spotSchema = z.object({
   title: z.string().min(1, 'Spot title is required'),
   description: z.string().optional(),
   context: z.string().optional(),
-  youtubeLink: z.string().url().or(z.literal('')).optional(),
+  sourceLink: z.string().url().or(z.literal('')).optional(),
   place: placeInputSchema.nullable(),
   tagIds: z.array(z.string()),
   tagLabels: z.array(z.string()),
@@ -56,7 +56,7 @@ export type SunreiFormValue = z.infer<typeof sunreiSchema>;
 // ===== Source form =====
 export const sourceSchema = z
   .object({
-    type: z.enum(['YOUTUBE', 'TV', 'ANIME', 'OTHER']),
+    type: z.enum(['YOUTUBE', 'INSTAGRAM', 'TV', 'ANIME', 'OTHER']),
     name: z.string().min(1, 'Name is required'),
     nameEn: z.string().optional(),
     nameKo: z.string().optional(),
@@ -65,11 +65,11 @@ export const sourceSchema = z
     posterImage: imageSchema.nullable(),
   })
   .superRefine((v, ctx) => {
-    if (v.type === 'YOUTUBE' && !v.externalUrl) {
+    if ((v.type === 'YOUTUBE' || v.type === 'INSTAGRAM') && !v.externalUrl) {
       ctx.addIssue({
         path: ['externalUrl'],
         code: z.ZodIssueCode.custom,
-        message: 'YouTube sources require an external URL',
+        message: 'YouTube and Instagram sources require an external URL',
       });
     }
   });

@@ -8,6 +8,7 @@ import { Edit2, ExternalLink } from 'lucide-react';
 
 const TYPE_BEHAVIOR: Record<string, string> = {
   YOUTUBE: 'links out ↗',
+  INSTAGRAM: 'links out ↗',
   TV: '✦ managed page',
   ANIME: '✦ managed page',
   OTHER: '✦ managed page',
@@ -46,7 +47,11 @@ export default function SourcesList({
             </div>
             <div className="flex items-center gap-3 shrink-0">
               <span className="text-xs text-muted-foreground hidden sm:inline">
-                {s.type === 'YOUTUBE' ? <ExternalLink className="inline h-3 w-3" /> : '✦'}{' '}
+                {s.type === 'YOUTUBE' || s.type === 'INSTAGRAM' ? (
+                  <ExternalLink className="inline h-3 w-3" />
+                ) : (
+                  '✦'
+                )}{' '}
                 {TYPE_BEHAVIOR[s.type]}
               </span>
               <Button variant="ghost" size="sm" onClick={() => onEdit(s.id!)}>
