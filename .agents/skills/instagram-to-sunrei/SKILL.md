@@ -11,6 +11,12 @@ candidates in the Sunrei DB through `/admin/instagram/*`. A candidate becomes a
 SunreiSpot linked to its post only when it is approved. See
 `SPEC-instagram.md` for the data model and rules.
 
+Everything that touches Instagram runs on this machine: Business Discovery
+calls, post page reads, reel downloads, Whisper and OCR, extraction, and
+geocoding. The server only stores the results and serves them; it never calls
+Instagram and has no scheduled job. Point `SUNREI_API_URL` at the server that
+should receive the data.
+
 Every command takes `SUNREI_API_URL` (default: production). The admin token is
 minted locally from SOPS, as for the YouTube scripts.
 

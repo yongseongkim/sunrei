@@ -57,6 +57,7 @@ SunreiSpot에 연결되는 bilingual 태그. `label_en`, `label_ko`를 가지며
 
 등록한 Instagram 계정의 게시물에서 장소 후보를 추출하고, 어드민 검토를 거쳐 SunreiSpot으로 만든다.
 YouTube 수집과 같은 모양이며 `/admin/instagram/*` admin API로 읽고 쓴다. 자세한 내용은 `SPEC-instagram.md` 참고.
+게시물 수집, 릴스 전사, 장소 추출은 모두 로컬 스킬(`instagram-to-sunrei`)이 하고, 서버는 결과를 저장하고 보여 주기만 한다.
 
 - `instagram_account`: 등록한 계정으로, id는 Instagram 사용자 ID다. 계정 하나에 Sunrei 하나(`sunrei_id`)이고, `backfill_cursor`는 과거 게시물 수집 진행 위치다.
 - `instagram_post`: 게시물과 처리 상태다. 캡션은 게시물에 저장하고, `title`은 캡션 첫 줄에서 만든다. 상태값은 YouTube 영상과 같다. Instagram에서 지운 게시물은 감지하지 않는다.

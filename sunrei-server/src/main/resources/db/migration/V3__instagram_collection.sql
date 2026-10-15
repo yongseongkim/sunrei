@@ -14,7 +14,8 @@ ALTER TABLE source DROP CONSTRAINT source_type_check;
 ALTER TABLE source ADD CONSTRAINT source_type_check
   CHECK (type IN ('YOUTUBE','INSTAGRAM','TV','ANIME','OTHER'));
 
--- A registered Instagram professional account. sync_enabled drives the scheduled collection job.
+-- A registered Instagram professional account. The collection runs locally as a skill (renew_accounts.py);
+-- sync_enabled selects the accounts a run without --account processes.
 CREATE TABLE instagram_account (
   id VARCHAR(32) PRIMARY KEY,                   -- Instagram user ID from Business Discovery
   username VARCHAR(64) NOT NULL,                -- handle without @; can change

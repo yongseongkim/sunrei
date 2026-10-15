@@ -16,6 +16,10 @@ SunreiSpot을 만든다.
 YouTube 수집(`V2__youtube_collection.sql`, `YoutubeService`, `/admin/youtube/*`)을 본뜬다.
 Instagram은 YouTube와 같은 모양의 별도 테이블과 admin API를 갖고, YouTube 쪽은 건드리지 않는다.
 
+데이터를 가져오는 일은 모두 로컬 스킬(`instagram-to-sunrei`)이 한다. Graph API 호출, 게시물 페이지 읽기, 릴스
+다운로드, Whisper·OCR, 추출, 지오코딩이 로컬에서 돌고, 결과만 admin API로 서버에 저장한다. 서버는 Instagram을
+호출하지 않으며 주기 작업도 없다. 그래서 Instagram 키는 로컬 스크립트만 읽는다.
+
 Instagram 테이블 밖의 변경 세 가지:
 
 1. `sunrei_spot.youtube_link`를 `source_link`로, API 필드 `youtubeLink`를 `sourceLink`로 바꾼다.
@@ -106,7 +110,8 @@ ALTER TABLE source DROP CONSTRAINT source_type_check;
 ALTER TABLE source ADD CONSTRAINT source_type_check
   CHECK (type IN ('YOUTUBE','INSTAGRAM','TV','ANIME','OTHER'));
 
--- A registered Instagram professional account. sync_enabled drives the scheduled collection job.
+-- A registered Instagram professional account. The collection runs locally as a skill (renew_accounts.py);
+-- sync_enabled selects the accounts a run without --account processes.
 CREATE TABLE instagram_account (
   id VARCHAR(32) PRIMARY KEY,                   -- Instagram user ID from Business Discovery
   username VARCHAR(64) NOT NULL,                -- handle without @; can change
