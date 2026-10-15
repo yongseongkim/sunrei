@@ -127,6 +127,18 @@ Required keys:
 
 If a key is missing, the pod will fail to start with `CreateContainerConfigError`.
 
+Local scripts under `.claude/scripts` also read keys from
+`deploy/secrets/secrets.enc.yaml` with `sops -d --extract`. No pod uses these,
+so adding or changing them does not require re-applying the Secret:
+
+| Key | Used by |
+|-----|---------|
+| `instagram-access-token` | Instagram scripts; Facebook user token, rotated by `instagram/refresh_token.py` (about 60 days) |
+| `instagram-user-id` | Instagram scripts; the IG account that calls Business Discovery |
+| `instagram-app-id` | `instagram/refresh_token.py` |
+| `instagram-app-secret` | `instagram/refresh_token.py` |
+| `instagram-login-config-id` | Optional; Facebook Login for Business configuration for `instagram/refresh_token.py`'s login dialog |
+
 ## Troubleshooting
 
 ### ImagePullBackOff

@@ -2,6 +2,8 @@
 
 - Google API key is read from the server's application-local.conf.
 - Admin token is minted locally (no login flow) — see auth/mint_token.py.
+- Other secrets (e.g. the Instagram token) are decrypted from
+  deploy/secrets/secrets.enc.yaml with SOPS — see sops_secret().
 - All HTTP sets a real User-Agent (prod Cloudflare 403s urllib's default).
 """
 import base64
@@ -18,6 +20,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 ENV_FILE = ROOT / ".claude" / ".env"
+SECRETS_FILE = ROOT / "deploy" / "secrets" / "secrets.enc.yaml"
 CONF = ROOT / "sunrei-server" / "src" / "main" / "resources" / "application-local.conf"
 WS_ROOT = ROOT / ".claude" / "workspace" / "youtube"
 
@@ -55,6 +58,31 @@ def load_env():
             if k:
                 env[k.strip()] = v.strip().strip('"')
     return env
+
+
+_SECRETS = {}
+
+
+def sops_secret(name, required=True):
+    """Decrypt one stringData value from the SOPS secrets file.
+
+    Needs GCP credentials with decrypt permission on the homelab-secrets key.
+    Values are cached per process and never printed. A missing or undecryptable
+    value exits, or returns None when ``required`` is false.
+    """
+    if name not in _SECRETS:
+        out = subprocess.run(
+            ["sops", "-d", "--extract", f'["stringData"]["{name}"]', str(SECRETS_FILE)],
+            capture_output=True,
+            text=True,
+        )
+        if out.returncode != 0 or not out.stdout.strip():
+            if not required:
+                return None
+            reason = (out.stderr.strip().splitlines() or ["empty value"])[-1]
+            raise SystemExit(f"Could not decrypt {name} from {SECRETS_FILE.name}: {reason}")
+        _SECRETS[name] = out.stdout.strip()
+    return _SECRETS[name]
 
 
 def jwt_is_usable(token, minimum_seconds=60):
