@@ -1,6 +1,6 @@
 # Project Sunrei
 
-Sunrei는 영화, 드라마, 애니메이션, YouTube 영상 등의 촬영지나 배경이 된 장소를 찾아가는 '성지순례' 여행을 위한 지도 기반 웹 애플리케이션이다.
+Sunrei는 영화, 드라마, 애니메이션, YouTube 영상, Instagram 게시물 등의 촬영지나 배경이 된 장소를 찾아가는 '성지순례' 여행을 위한 지도 기반 웹 애플리케이션이다.
 제품과 시스템 구성의 설명은 `README.md`에 있고, 이 문서는 작업할 때 지켜야 할 규칙과 위치를 적는다.
 
 도메인 관련 코드를 변경할 때, 해당 내용을 설명하는 AGENTS.md가 있다면 함께 업데이트한다.
@@ -18,7 +18,7 @@ Sunrei는 영화, 드라마, 애니메이션, YouTube 영상 등의 촬영지나
 - `deploy/`: Dockerfile, Helm chart, SOPS로 암호화한 Secret이 있다.
   배포 절차는 `deploy/README.md`에 있다.
 - `scripts/release.sh`: 릴리스 태그를 만들어 배포를 시작한다.
-- `.claude/scripts/youtube/`, `.agents/skills/`: YouTube 영상에서 장소를 수집하는 스크립트와 Claude Code 스킬이다.
+- `.claude/scripts/youtube/`, `.claude/scripts/instagram/`, `.agents/skills/`: YouTube 영상과 Instagram 게시물에서 장소를 수집하는 스크립트와 Claude Code 스킬이다.
 
 ## API 명세와 코드 생성
 
