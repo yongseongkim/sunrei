@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Check, ChevronLeft, Loader2, MapPin, Navigation, Play, Search, Star, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Avatar, sourceAvatarUrl } from '@/components/wf';
+import { Avatar, fittedImageUrl, sourceAvatarUrl } from '@/components/wf';
 import { cn, linkKind } from '@/lib/utils';
 import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
@@ -453,6 +453,7 @@ function PDMention({ m }: { m: PlaceMentionDTO }) {
         </div>
       </div>
       {m.context && <p className="mt-2 text-[12.5px] leading-relaxed text-ink2">{m.context}</p>}
+      <MentionImages images={m.images} link={link} wide={kind === 'youtube'} />
       {link && (
         <a
           href={link}
@@ -472,6 +473,32 @@ function PDMention({ m }: { m: PlaceMentionDTO }) {
           <span className="text-ink3">↗</span>
         </a>
       )}
+    </div>
+  );
+}
+
+/** 언급한 게시물이나 영상의 이미지를 보여 주며, 누르면 그 게시물이나 영상으로 간다. YouTube 썸네일은 16:9로 둔다. */
+function MentionImages({ images, link, wide }: { images: PlaceMentionDTO['images']; link?: string | null; wide: boolean }) {
+  const shown = images.slice(0, wide ? 1 : 4);
+  if (!shown.length) return null;
+  const width = wide ? 128 : 72;
+  return (
+    <div className="mt-2.5 flex gap-1.5 overflow-hidden">
+      {shown.map((image, i) => {
+        const src = fittedImageUrl(image, width);
+        if (!src) return null;
+        // eslint-disable-next-line @next/next/no-img-element
+        const img = <img src={src} alt="" className="h-[72px] shrink-0 rounded-lg border border-line object-cover" style={{ width }} />;
+        return link ? (
+          <a key={i} href={link} target="_blank" rel="noreferrer" className="shrink-0">
+            {img}
+          </a>
+        ) : (
+          <span key={i} className="shrink-0">
+            {img}
+          </span>
+        );
+      })}
     </div>
   );
 }

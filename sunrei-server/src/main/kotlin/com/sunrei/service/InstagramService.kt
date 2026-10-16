@@ -38,10 +38,13 @@ import com.sunrei.generated.dto.admin.ListInstagramPostsResult
 import com.sunrei.generated.dto.admin.PlaceInput
 import com.sunrei.generated.dto.admin.ReviewInstagramExtractedPlaceRequest
 import com.sunrei.generated.dto.admin.SetInstagramLocationTagRequest
+import com.sunrei.generated.dto.admin.SetInstagramPostImagesRequest
 import com.sunrei.generated.dto.admin.UpdateInstagramPostRequest
 import com.sunrei.generated.dto.admin.UpsertInstagramAccountRequest
 import com.sunrei.generated.dto.admin.UpsertInstagramPostsRequest
 import com.sunrei.generated.dto.admin.UpsertInstagramPostsResult
+import com.sunrei.routes.admin.converter.toDTO
+import com.sunrei.routes.admin.converter.toModel
 import com.sunrei.utils.PaginationToken
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
@@ -305,6 +308,35 @@ class InstagramService(
         InstagramPosts.select { InstagramPosts.id eq postId }.first().toPostDTO()
     }
 
+    /** 게시물 이미지 사본을 바꾸고, 이 게시물에서 승인했지만 이미지가 없는 spot에도 넣는다. */
+    fun setImages(postId: String, request: SetInstagramPostImagesRequest): InstagramPostDTO? = transaction {
+        InstagramPosts.select { InstagramPosts.id eq postId }.firstOrNull() ?: return@transaction null
+        require(request.images.size <= MAX_POST_IMAGES) { "At most $MAX_POST_IMAGES images per post" }
+        val images = request.images.map { it.toModel() }
+        val now = Clock.System.now()
+        InstagramPosts.update({ InstagramPosts.id eq postId }) { stmt ->
+            stmt[InstagramPosts.images] = images
+            stmt[updatedAt] = now
+        }
+        if (images.isNotEmpty()) {
+            val approvedSpotIds = InstagramExtractedPlaces.slice(InstagramExtractedPlaces.sunreiSpotId)
+                .select { (InstagramExtractedPlaces.postId eq postId) and InstagramExtractedPlaces.sunreiSpotId.isNotNull() }
+                .mapNotNull { it[InstagramExtractedPlaces.sunreiSpotId] }
+            // 운영자가 직접 넣은 spot 이미지는 덮어쓰지 않는다.
+            val spotsWithoutImages = if (approvedSpotIds.isEmpty()) emptyList() else
+                SunreiSpots.select { SunreiSpots.id inList approvedSpotIds }
+                    .filter { it[SunreiSpots.images].isEmpty() }
+                    .map { it[SunreiSpots.id] }
+            if (spotsWithoutImages.isNotEmpty()) {
+                SunreiSpots.update({ SunreiSpots.id inList spotsWithoutImages }) { stmt ->
+                    stmt[SunreiSpots.images] = images
+                    stmt[SunreiSpots.updatedAt] = now
+                }
+            }
+        }
+        InstagramPosts.select { InstagramPosts.id eq postId }.first().toPostDTO()
+    }
+
     fun createText(postId: String, request: CreateInstagramPostTextRequest): InstagramPostTextDTO = transaction {
         requirePostExists(postId)
         val id = InstagramPostTexts.insertAndGetId { stmt ->
@@ -473,6 +505,7 @@ class InstagramService(
                     context = request.context ?: row[InstagramExtractedPlaces.description],
                     sourceLink = post[InstagramPosts.permalink],
                     place = place,
+                    images = post[InstagramPosts.images].map { it.toDTO() },
                     tagIds = request.tagIds
                 )
             )
@@ -628,6 +661,7 @@ class InstagramService(
         commentsCount = this[InstagramPosts.commentsCount],
         locationTag = this[InstagramPosts.locationTag]?.let { json.decodeFromJsonElement(InstagramLocationTagDTO.serializer(), it) },
         locationTagReadAt = this[InstagramPosts.locationTagReadAt],
+        images = this[InstagramPosts.images].map { it.toDTO() },
         promotion = this[InstagramPosts.promotion]?.let { InstagramPromotion.valueOf(it) },
         promotionEvidence = this[InstagramPosts.promotionEvidence],
         status = InstagramPostStatus.valueOf(this[InstagramPosts.status]),
@@ -712,6 +746,7 @@ class InstagramService(
 
     companion object {
         private const val MAX_POSTS_PER_UPSERT = 100
+        private const val MAX_POST_IMAGES = 5
 
         /** FAILED 게시물도 다음 수집 때 다시 처리한다. */
         private val PROCESSABLE_STATUSES = listOf(InstagramPostStatus.PENDING.name, InstagramPostStatus.FAILED.name)

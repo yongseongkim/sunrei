@@ -13,6 +13,7 @@ from graph_api import iso_timestamp, post_input, shortcode_of
 from import_workspace import geocoding_of
 from instagram_accounts import set_profile_picture
 from place_search import branch_mismatch, from_result
+from post_images import image_sources
 
 EVIDENCE = {
     "shortcode": "DdfnSrZT9zZ",
@@ -190,6 +191,24 @@ class ProfilePictureTest(unittest.TestCase):
         self.assertEqual(api.calls, [])
         self.assertTrue(set_profile_picture(api, source, "https://scontent.cdninstagram.com/p.jpg", replace=True))
         self.assertFalse(set_profile_picture(self.FakeApi(self.IMAGE), {"id": "SRC1"}, None))
+
+
+class PostImagesTest(unittest.TestCase):
+    def test_reel_uses_its_cover(self):
+        self.assertEqual(image_sources({"media_type": "VIDEO", "media_url": "v.mp4", "thumbnail_url": "cover.jpg"}), ["cover.jpg"])
+
+    def test_photo_uses_the_photo(self):
+        self.assertEqual(image_sources({"media_type": "IMAGE", "media_url": "p.jpg"}), ["p.jpg"])
+
+    def test_carousel_uses_items_up_to_five(self):
+        children = [{"media_type": "VIDEO", "media_url": "v.mp4", "thumbnail_url": "c0.jpg"}] + \
+            [{"media_type": "IMAGE", "media_url": f"i{n}.jpg"} for n in range(1, 7)]
+        media = {"media_type": "CAROUSEL_ALBUM", "media_url": "first.jpg", "children": {"data": children}}
+        self.assertEqual(image_sources(media), ["c0.jpg", "i1.jpg", "i2.jpg", "i3.jpg", "i4.jpg"])
+
+    def test_missing_urls_are_skipped(self):
+        self.assertEqual(image_sources({"media_type": "VIDEO", "media_url": "v.mp4"}), [])
+        self.assertEqual(image_sources({"media_type": "CAROUSEL_ALBUM", "media_url": "first.jpg"}), ["first.jpg"])
 
 
 if __name__ == "__main__":

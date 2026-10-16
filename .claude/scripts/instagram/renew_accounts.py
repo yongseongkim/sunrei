@@ -12,6 +12,7 @@ account:
 3. processes up to --max-posts PENDING or FAILED posts, newest first: reads the
    location tags, downloads reels for Whisper and OCR, extracts places in
    batches, geocodes them, and stores texts and one extraction run per post.
+   Posts that produced candidates get copies of their images (post_images.py).
    Candidates wait for admin review, so no Sunrei is changed here.
 
 Heavy steps run as their own scripts with ``uv run``: location_tags.py
@@ -42,6 +43,7 @@ from graph_api import GraphApi, TokenExpired, log, post_input  # noqa: E402
 from instagram_accounts import set_profile_picture, source_of_sunrei  # noqa: E402
 from instagram_collection_api import InstagramCollectionApi  # noqa: E402
 from place_search import geocode  # noqa: E402
+from post_images import save_post_images  # noqa: E402
 
 AUTOMATION_ROOT = ROOT / ".claude" / "workspace" / "instagram" / "automation"
 AD_PROMOTIONS = {"DISCLOSED_AD", "SELF_PROMOTION"}
@@ -161,6 +163,7 @@ def process_posts(api, account, posts, run_dir):
     if not key:
         raise RuntimeError("No Google API key for Places search")
     cache = {}
+    with_places = {}
     for post in posts:
         item = extraction["posts"].get(post["id"])
         if item is None:
@@ -176,11 +179,16 @@ def process_posts(api, account, posts, run_dir):
             run = api.create_extraction_run(post["id"], run_request(item, batch_of.get(post["id"], {}), candidates, text_ids[post["id"]]))
             status = status_after_run(run)
             api.update_post(post["id"], status=status, stage="done")
+            if run["places"]:
+                with_places[post["id"]] = post["shortcode"]
             log(f"{post['shortcode']}: {len(run['places'])} candidates, {status}")
         except Exception as error:  # noqa: BLE001 - keep the other posts going
             api.update_post(post["id"], status="FAILED", stage="store", error=str(error)[:1000])
             log(f"{post['shortcode']}: FAILED {error}")
 
+    # Copy the images of posts that produced candidates, so their spots show the post.
+    if with_places:
+        log(f"post images: {save_post_images(GraphApi(), api, username, with_places)}")
     shutil.rmtree(videos_dir, ignore_errors=True)
 
 

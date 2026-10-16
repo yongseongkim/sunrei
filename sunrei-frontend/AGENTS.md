@@ -86,6 +86,7 @@ pnpm codegen
 - nearby와 source 모드의 PlaceCard는 서버가 언급을 묶고 정렬해서 내려준다.
   미리보기 목록만 Sunrei의 spot을 브라우저에서 장소별 카드로 묶는다.
 - 장소 상세의 언급 링크는 spot의 `sourceLink`, 없으면 Sunrei 링크로 보내며, 주소에 따라 YouTube, Instagram, Link로 표시한다.
+  언급의 `images`(spot 이미지, 없으면 Sunrei 이미지)를 링크와 함께 보여 주며, YouTube 썸네일은 16:9 한 장, 그 밖에는 정사각형 최대 4장이다.
 - 태그 필터는 서버에 다시 묻지 않고 이미 받은 장소를 브라우저에서 거른다.
   선택한 태그를 모두 가진 장소만 목록에 남기고, 지도에서는 나머지 핀을 흐리게 표시한다.
 - URL query의 `sourceIds`, `tags`, `place`, `sunrei`로 deep link를 만든다.
@@ -116,3 +117,4 @@ pnpm codegen
 - 태그는 spot에 붙는다.
   폼에서 없는 태그를 입력하면 한국어와 영어 라벨을 모두 입력값으로 만들고, 영어 번역은 Tags 화면에서 고친다.
 - YouTube와 Instagram Source는 `externalUrl`(채널이나 프로필 주소)이 필수다.
+- spot 카드의 썸네일은 링크가 YouTube면 영상 썸네일, 아니면 spot의 첫 이미지(Instagram 게시물 이미지 등)다.

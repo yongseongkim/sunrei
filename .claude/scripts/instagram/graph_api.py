@@ -24,6 +24,8 @@ from _common import UA, sops_secret  # noqa: E402
 GRAPH = "https://graph.facebook.com/v25.0"
 MEDIA_FIELDS = "id,permalink,timestamp,media_type,media_product_type,caption,like_count,comments_count"
 ACCOUNT_FIELDS = "id,username,name,biography,followers_count,media_count,profile_picture_url"
+# A reel's cover is thumbnail_url; a carousel's items are in children.
+IMAGE_FIELDS = "id,permalink,media_type,media_url,thumbnail_url,children{media_type,media_url,thumbnail_url}"
 RATE_LIMIT_CODES = {4, 17, 32, 613, 80002}
 USAGE_PAUSE_PERCENT = 75
 REFRESH_HINT = "python3 .claude/scripts/instagram/refresh_token.py"

@@ -71,6 +71,7 @@ class SunreiSpotService {
                 val context: String?,
                 val sourceLink: String?,
                 val sunreiImages: List<MultiSizeImage>,
+                val spotImages: List<MultiSizeImage>,
                 val tags: List<Tag>
             )
 
@@ -100,6 +101,7 @@ class SunreiSpotService {
                     context = it[SunreiSpots.context],
                     sourceLink = it[SunreiSpots.sourceLink],
                     sunreiImages = it[Sunreis.images],
+                    spotImages = it[SunreiSpots.images],
                     tags = tagsBySpot[spotId] ?: emptyList()
                 )
             }
@@ -130,7 +132,8 @@ class SunreiSpotService {
                             context = rep.context,
                             sunreiLink = rep.sunreiLink,
                             sourceLink = rep.sourceLink,
-                            images = rep.sunreiImages,
+                            // Instagram처럼 Sunrei 하나에 게시물이 여럿이면 spot 이미지가 그 게시물을 보여 준다.
+                            images = rep.spotImages.ifEmpty { rep.sunreiImages },
                             tags = rep.tags
                         )
                     }

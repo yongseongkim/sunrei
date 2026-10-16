@@ -1,5 +1,6 @@
 import SpotTagAutocomplete from '@/components/sunrei-form/SpotTagAutocomplete';
 import ImageUpload from '@/components/ImageUpload';
+import ResponsiveImage from '@/components/ResponsiveImage';
 import PlaceSection from '@/components/sunrei-form/PlaceSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
@@ -42,6 +43,8 @@ export default function SpotCard({
   onOpenMap,
 }: SpotCardProps) {
   const videoId = youtubeVideoId(watch(`spots.${index}.sourceLink` as const));
+  // YouTube가 아니면 spot의 첫 이미지(Instagram 게시물 이미지 등)를 썸네일로 보여 준다.
+  const firstImage = watch(`spots.${index}.images` as const)?.[0];
   return (
     <Card className="py-0 px-0 rounded-lg gap-0">
       <CardHeader className="py-1 px-2 gap-0">
@@ -66,14 +69,21 @@ export default function SpotCard({
       <CardContent className="space-y-1.5 px-2 py-0 pt-1.5">
         <div className="flex gap-2">
           <div className="w-2/5 shrink-0 space-y-1.5">
-            {videoId && (
+            {videoId ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
                 alt="Video thumbnail"
                 className="w-full rounded border object-cover aspect-video"
               />
-            )}
+            ) : firstImage ? (
+              <ResponsiveImage
+                multiSizeImage={firstImage}
+                alt="Post image"
+                size="small"
+                className="w-full rounded border object-cover aspect-square"
+              />
+            ) : null}
             <Input
               {...register(`spots.${index}.sourceLink` as const)}
               type="url"

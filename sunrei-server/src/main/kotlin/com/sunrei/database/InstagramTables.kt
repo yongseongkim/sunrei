@@ -1,5 +1,6 @@
 package com.sunrei.database
 
+import com.sunrei.model.MultiSizeImage
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 import org.jetbrains.exposed.sql.Table
@@ -38,6 +39,7 @@ object InstagramPosts : Table("instagram_post") {
     val commentsCount = integer("comments_count").nullable()
     val locationTag = jsonb<JsonElement>("location_tag", Json.Default).nullable()
     val locationTagReadAt = timestamp("location_tag_read_at").nullable()
+    val images = jsonb<List<MultiSizeImage>>("images", Json.Default).default(emptyList())
     val promotion = varchar("promotion", 16).nullable()
     val promotionEvidence = text("promotion_evidence").nullable()
     val status = varchar("status", 16)

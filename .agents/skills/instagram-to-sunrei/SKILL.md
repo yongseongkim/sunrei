@@ -96,7 +96,25 @@ Pace and limits:
 - Disclosed ads and the author's own promotions produce no candidates; the
   server enforces this.
 
-## 4. Review Candidates
+## 4. Copy Post Images
+
+Spots show their post's images in the app (place detail) and the admin (spot
+card). The collector copies them for new posts with candidates. For posts
+imported or collected before that, run:
+
+```bash
+python3 .claude/scripts/instagram/post_images.py USERNAME
+python3 .claude/scripts/instagram/post_images.py USERNAME --commit
+```
+
+It takes each post's images (a reel's cover, the photo, or up to five carousel
+items) through Business Discovery, copies them into Sunrei's image storage with
+`/admin/images/upload-url`, and stores them on the post; spots already approved
+from the post that have no images get them. Instagram's image URLs expire, so
+never store them directly. Posts flagged for copyright can come back without an
+image URL; those are reported and skipped.
+
+## 5. Review Candidates
 
 List what needs a decision:
 

@@ -9,6 +9,7 @@ import com.sunrei.generated.dto.admin.InstagramPostStatus
 import com.sunrei.generated.dto.admin.InstagramReviewStatus
 import com.sunrei.generated.dto.admin.ReviewInstagramExtractedPlaceRequest
 import com.sunrei.generated.dto.admin.SetInstagramLocationTagRequest
+import com.sunrei.generated.dto.admin.SetInstagramPostImagesRequest
 import com.sunrei.generated.dto.admin.UpdateInstagramPostRequest
 import com.sunrei.generated.dto.admin.UpsertInstagramAccountRequest
 import com.sunrei.generated.dto.admin.UpsertInstagramPostsRequest
@@ -91,6 +92,16 @@ fun Route.adminInstagramRoutes() {
                 call.handleErrors {
                     val request = call.receive<SetInstagramLocationTagRequest>()
                     val updated = call.injectInstagramService().setLocationTag(id, request)
+                    if (updated != null) call.respond(updated)
+                    else call.respond(HttpStatusCode.NotFound, mapOf("error" to "Post not found"))
+                }
+            }
+
+            put("/{id}/images") {
+                val id = call.parameters["id"]!!
+                call.handleErrors {
+                    val request = call.receive<SetInstagramPostImagesRequest>()
+                    val updated = call.injectInstagramService().setImages(id, request)
                     if (updated != null) call.respond(updated)
                     else call.respond(HttpStatusCode.NotFound, mapOf("error" to "Post not found"))
                 }
