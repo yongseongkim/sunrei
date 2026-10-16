@@ -39,6 +39,7 @@ from _common import ROOT, load_google_api_key  # noqa: E402
 from extract_locations import post_input as prompt_post_input  # noqa: E402
 from extraction_runs import candidate_input, ocr_text, run_request, status_after_run, whisper_text  # noqa: E402
 from graph_api import GraphApi, TokenExpired, post_input  # noqa: E402
+from instagram_accounts import set_profile_picture, source_of_sunrei  # noqa: E402
 from instagram_collection_api import InstagramCollectionApi  # noqa: E402
 from place_search import geocode  # noqa: E402
 
@@ -74,14 +75,15 @@ def run_uv(args, timeout, allowed=(0,)):
 
 
 def sync_posts(graph, api, account, max_pages, commit):
-    """List posts through Business Discovery and store them; returns the number of new posts."""
+    """List posts through Business Discovery and store them; returns (new posts, profile)."""
     username = account["username"]
     backfill = account.get("backfillCompletedAt") is None
     cursor = account.get("backfillCursor") if backfill else None
     stored = {post["id"] for post in api.list_posts(account_id=account["id"])} if not commit else None
-    added_total = 0
+    added_total, first_profile = 0, None
     for page_number in range(1, max_pages + 1):
         profile, items, next_cursor = graph.media_page(username, after=cursor)
+        first_profile = first_profile or profile
         posts = [post_input(item) for item in items]
         if commit:
             added, _ = api.upsert_posts(account["id"], posts)
@@ -99,7 +101,7 @@ def sync_posts(graph, api, account, max_pages, commit):
         if not next_cursor or (not backfill and not added):
             break
         cursor = next_cursor
-    return added_total
+    return added_total, first_profile
 
 
 def reset_stale(api, account, stale_hours):
@@ -213,8 +215,11 @@ def main():
         username = account["username"]
         try:
             if graph:
-                added = sync_posts(graph, api, account, args.max_pages, args.commit)
+                added, profile = sync_posts(graph, api, account, args.max_pages, args.commit)
                 log(f"{username}: {added} new posts")
+                # The channel avatar: copy the profile picture once, when the Source has no poster yet.
+                if args.commit and profile and account.get("sunreiId"):
+                    set_profile_picture(api, source_of_sunrei(api, account["sunreiId"]), profile.get("profile_picture_url"))
         except TokenExpired as error:
             raise SystemExit(str(error))
         if args.commit:

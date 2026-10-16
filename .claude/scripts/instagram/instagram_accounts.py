@@ -7,12 +7,17 @@ with that URL is switched to INSTAGRAM) and its draft Sunrei. By default every
 post is collected, history included (--baseline none); --baseline skip records
 the newest page as SKIPPED so only later posts are processed.
 
+The profile picture becomes the Source's poster image (the channel avatar in the
+app) when the Source has none. Instagram's picture URLs expire, so the image is
+copied into Sunrei's image storage through /admin/images/upload-url.
+``update --refresh-picture`` replaces it with the current picture.
+
 ``SUNREI_API_URL`` selects the server (default: production).
 
 Usage:
     python3 .claude/scripts/instagram/instagram_accounts.py list
     python3 .claude/scripts/instagram/instagram_accounts.py add USERNAME [--sunrei ID] [--baseline none|skip] [--disabled]
-    python3 .claude/scripts/instagram/instagram_accounts.py update USERNAME [--sunrei ID] [--enable|--disable]
+    python3 .claude/scripts/instagram/instagram_accounts.py update USERNAME [--sunrei ID] [--enable|--disable] [--refresh-picture]
 """
 
 import argparse
@@ -29,14 +34,36 @@ def profile_url(username):
     return f"https://www.instagram.com/{username}/"
 
 
+def set_profile_picture(api, source, picture_url, replace=False):
+    """Copy the profile picture into image storage and make it the Source's poster image.
+
+    Keeps an existing poster unless ``replace``. Returns True when the poster changed.
+    """
+    if source.get("posterImage") and not replace:
+        return False
+    if not picture_url:
+        print("the profile has no picture; poster image unchanged")
+        return False
+    image = api.request("POST", "/admin/images/upload-url", {"url": picture_url})
+    api.request("PUT", f"/admin/sources/{source['id']}", {"posterImage": image})
+    print(f"poster image of source {source['id']} set from the profile picture")
+    return True
+
+
+def source_of_sunrei(api, sunrei_id):
+    sunrei = api.request("GET", f"/admin/sunreis/{sunrei_id}")
+    return api.request("GET", f"/admin/sources/{sunrei['sourceId']}")
+
+
 def find_or_create_sunrei(api, profile):
-    """Return the draft Sunrei of the account's INSTAGRAM Source, creating either when missing."""
+    """Return (sunrei id, source) for the account's INSTAGRAM Source, creating either when missing."""
     username, url = profile["username"], profile_url(profile["username"])
     found = api.request("GET", "/admin/sources", query={"q": username, "size": 50})["data"]
     source = next((s for s in found if (s.get("externalUrl") or "").rstrip("/") == url.rstrip("/")), None)
     if source and source["type"] != "INSTAGRAM":
-        api.request("PUT", f"/admin/sources/{source['id']}", {"type": "INSTAGRAM"})
-        print(f"switched source {source['id']} ({source['name']}) from {source['type']} to INSTAGRAM")
+        previous = source["type"]
+        source = api.request("PUT", f"/admin/sources/{source['id']}", {"type": "INSTAGRAM"})
+        print(f"switched source {source['id']} ({source['name']}) from {previous} to INSTAGRAM")
     elif source is None:
         source = api.request("POST", "/admin/sources", {
             "type": "INSTAGRAM",
@@ -55,7 +82,7 @@ def find_or_create_sunrei(api, profile):
         print(f"using sunrei {sunrei['id']} ({sunrei['title']}), {spots} existing spots")
         if spots:
             print("  It already has spots; approved candidates are added next to them.")
-        return sunrei["id"]
+        return sunrei["id"], source
     name = profile.get("name") or username
     sunrei = api.request("POST", "/admin/sunreis", {
         "sourceId": source["id"],
@@ -67,7 +94,7 @@ def find_or_create_sunrei(api, profile):
         "spots": [],
     })
     print(f"created draft sunrei {sunrei['id']} ({sunrei['title']})")
-    return sunrei["id"]
+    return sunrei["id"], source
 
 
 def account_by_username(api, username):
@@ -93,6 +120,7 @@ def main():
     toggle = update.add_mutually_exclusive_group()
     toggle.add_argument("--enable", action="store_true")
     toggle.add_argument("--disable", action="store_true")
+    update.add_argument("--refresh-picture", action="store_true", help="Replace the Source poster with the current profile picture")
     args = parser.parse_args()
     api = InstagramCollectionApi()
 
@@ -111,13 +139,21 @@ def main():
             body["sunreiId"] = args.sunrei
         if args.enable or args.disable:
             body["syncEnabled"] = args.enable
-        print(api.upsert_account(account["id"], body))
+        account = api.upsert_account(account["id"], body)
+        print(f"@{account['username']} sunrei={account.get('sunreiId')} sync={'on' if account['syncEnabled'] else 'off'}")
+        if args.refresh_picture:
+            profile = GraphApi().account(account["username"])
+            set_profile_picture(api, source_of_sunrei(api, account["sunreiId"]), profile.get("profile_picture_url"), replace=True)
         return
 
     graph = GraphApi()
     username = args.username.lstrip("@")
     profile, items, _ = graph.media_page(username)
-    sunrei_id = args.sunrei or find_or_create_sunrei(api, profile)
+    if args.sunrei:
+        sunrei_id, source = args.sunrei, source_of_sunrei(api, args.sunrei)
+    else:
+        sunrei_id, source = find_or_create_sunrei(api, profile)
+    set_profile_picture(api, source, profile.get("profile_picture_url"))
     body = {
         "username": profile["username"],
         "name": profile.get("name"),

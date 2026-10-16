@@ -45,6 +45,10 @@ python3 .claude/scripts/instagram/instagram_accounts.py add USERNAME
 - Without `--sunrei`, the command finds or creates the account's INSTAGRAM
   Source (an existing Source with the profile URL is switched to INSTAGRAM)
   and a draft Sunrei.
+- The profile picture becomes the Source's poster image, the channel avatar in
+  the app. Instagram picture URLs expire, so it is copied into Sunrei's image
+  storage. `instagram_accounts.py update USERNAME --refresh-picture` replaces
+  it after the account changes its picture.
 - Every post is collected, history included. `--baseline skip` records the
   newest page as SKIPPED so only later posts are processed; use it only when
   the user asks for new posts only.

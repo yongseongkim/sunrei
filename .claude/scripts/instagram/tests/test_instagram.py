@@ -11,6 +11,7 @@ from extract_locations import evidence_inputs, post_input as prompt_post_input
 from extraction_runs import candidate_input, evidence_items, ocr_text, run_request, status_after_run, whisper_text
 from graph_api import iso_timestamp, post_input, shortcode_of
 from import_workspace import geocoding_of
+from instagram_accounts import set_profile_picture
 from place_search import branch_mismatch, from_result
 
 EVIDENCE = {
@@ -161,6 +162,34 @@ class DownloadReelsTest(unittest.TestCase):
             "DdfnSrZT9zZ": "https://www.instagram.com/reel/DdfnSrZT9zZ/",
             "DT6hhkuicso": "https://www.instagram.com/reel/DT6hhkuicso/",
         })
+
+
+class ProfilePictureTest(unittest.TestCase):
+    IMAGE = {"images": [{"url": "https://sunrei-images.s3.ap-northeast-2.amazonaws.com/images/p.jpg", "width": 320, "height": 320}]}
+
+    class FakeApi:
+        def __init__(self, image):
+            self.calls, self.image = [], image
+
+        def request(self, method, path, body=None):
+            self.calls.append((method, path, body))
+            return self.image if path == "/admin/images/upload-url" else {}
+
+    def test_copies_the_picture_when_the_source_has_no_poster(self):
+        api = self.FakeApi(self.IMAGE)
+        self.assertTrue(set_profile_picture(api, {"id": "SRC1"}, "https://scontent.cdninstagram.com/p.jpg"))
+        self.assertEqual(api.calls, [
+            ("POST", "/admin/images/upload-url", {"url": "https://scontent.cdninstagram.com/p.jpg"}),
+            ("PUT", "/admin/sources/SRC1", {"posterImage": self.IMAGE}),
+        ])
+
+    def test_keeps_an_existing_poster_unless_replacing(self):
+        api = self.FakeApi(self.IMAGE)
+        source = {"id": "SRC1", "posterImage": self.IMAGE}
+        self.assertFalse(set_profile_picture(api, source, "https://scontent.cdninstagram.com/p.jpg"))
+        self.assertEqual(api.calls, [])
+        self.assertTrue(set_profile_picture(api, source, "https://scontent.cdninstagram.com/p.jpg", replace=True))
+        self.assertFalse(set_profile_picture(self.FakeApi(self.IMAGE), {"id": "SRC1"}, None))
 
 
 if __name__ == "__main__":
