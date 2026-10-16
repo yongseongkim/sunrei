@@ -10,12 +10,14 @@ Options:
     --prod  Use production server (https://sunrei-api.yongseongkimm.com)
 
 Environment variables (auto-loaded from .claude/.env if present):
-    GOOGLE_OAUTH_CLIENT_ID  - Google OAuth client ID (required)
+    GOOGLE_OAUTH_CLIENT_ID  - Google OAuth client ID; defaults to google-oauth-client-id
+                              in deploy/secrets/secrets.enc.yaml (SOPS)
     SUNREI_SERVER_URL       - Server URL (overrides default and --prod flag)
 """
 
 import http.server
 import os
+import subprocess
 import sys
 import threading
 import urllib.parse
@@ -25,6 +27,7 @@ from pathlib import Path
 import requests
 
 ENV_FILE = Path(__file__).resolve().parents[2] / ".env"
+SECRETS_FILE = Path(__file__).resolve().parents[3] / "deploy" / "secrets" / "secrets.enc.yaml"
 
 
 def _load_dot_env():
@@ -106,7 +109,14 @@ def main():
 
     client_id = os.environ.get("GOOGLE_OAUTH_CLIENT_ID")
     if not client_id:
-        print("Error: GOOGLE_OAUTH_CLIENT_ID is required. Set it in .claude/.env or as an environment variable.")
+        result = subprocess.run(
+            ["sops", "-d", "--extract", '["stringData"]["google-oauth-client-id"]', str(SECRETS_FILE)],
+            capture_output=True,
+            text=True,
+        )
+        client_id = result.stdout.strip() if result.returncode == 0 else None
+    if not client_id:
+        print("Error: GOOGLE_OAUTH_CLIENT_ID is required. Set it as an environment variable, or check gcloud auth for SOPS.")
         sys.exit(1)
 
     if os.environ.get("SUNREI_SERVER_URL"):

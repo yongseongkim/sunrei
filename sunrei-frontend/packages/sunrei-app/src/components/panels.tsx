@@ -5,7 +5,7 @@ import { Check, ChevronLeft, Loader2, MapPin, Navigation, Play, Search, Star, X 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Avatar, sourceAvatarUrl } from '@/components/wf';
-import { cn } from '@/lib/utils';
+import { cn, linkKind } from '@/lib/utils';
 import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useFilterStore } from '@/stores/filter-store';
@@ -188,7 +188,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
                   key={s.id}
                   icon={<Avatar label={s.name} src={sourceAvatarUrl(s, 28)} size={28} />}
                   title={s.name}
-                  sub={s.type}
+                  sub={SRC_TYPE_LABEL[s.type]}
                   hint={t('open')}
                   onClick={() => {
                     setSourceMode([s.id]);
@@ -422,6 +422,7 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
 
 const SRC_TYPE_LABEL: Record<SourceType, string> = {
   YOUTUBE: 'YouTube',
+  INSTAGRAM: 'Instagram',
   TV: 'TV',
   ANIME: 'Anime',
   OTHER: 'Other',
@@ -436,8 +437,9 @@ function TypeBadge({ type }: { type: SourceType }) {
 }
 
 function PDMention({ m }: { m: PlaceMentionDTO }) {
-  // spot에 타임스탬프 링크가 있으면 그 장면으로, 없으면 Sunrei 링크로 보낸다.
-  const yt = m.youtubeLink ?? m.sunreiLink;
+  // spot의 링크(YouTube 타임스탬프나 Instagram 게시물)가 있으면 그곳으로, 없으면 Sunrei 링크로 보낸다.
+  const link = m.sourceLink ?? m.sunreiLink;
+  const kind = link ? linkKind(link) : null;
   return (
     <div className="border-t border-line py-3">
       <div className="flex items-center gap-2.5">
@@ -451,14 +453,22 @@ function PDMention({ m }: { m: PlaceMentionDTO }) {
         </div>
       </div>
       {m.context && <p className="mt-2 text-[12.5px] leading-relaxed text-ink2">{m.context}</p>}
-      {yt && (
+      {link && (
         <a
-          href={yt}
+          href={link}
           target="_blank"
           rel="noreferrer"
           className="mt-2.5 inline-flex items-center gap-1.5 rounded-lg border border-line2 bg-card px-2.5 py-1.5 text-[11.5px] font-bold text-foreground hover:border-ink3"
         >
-          <Play className="h-3 w-3 text-primary" fill="currentColor" strokeWidth={0} /> YouTube{' '}
+          {kind === 'youtube' ? (
+            <>
+              <Play className="h-3 w-3 text-primary" fill="currentColor" strokeWidth={0} /> YouTube
+            </>
+          ) : kind === 'instagram' ? (
+            'Instagram'
+          ) : (
+            'Link'
+          )}{' '}
           <span className="text-ink3">↗</span>
         </a>
       )}
@@ -656,7 +666,7 @@ function spotsToPlaceCards(sunrei: SunreiDTO): PlaceCardDTO[] {
       spotId: s.id,
       context: s.context,
       sunreiLink: sunrei.link,
-      youtubeLink: s.youtubeLink,
+      sourceLink: s.sourceLink,
       images: s.images,
       tags: s.tags,
     }));

@@ -92,6 +92,16 @@ client-side `kubectl apply`는 복호화한 값을 `last-applied-configuration` 
 
 키가 없으면 Pod가 `CreateContainerConfigError`로 시작하지 못한다.
 
+`.claude/scripts`의 로컬 스크립트도 `sops -d --extract`로 이 파일의 키를 읽는다.
+아래 키는 Pod가 쓰지 않으므로 바꿔도 Secret을 다시 적용할 필요가 없다.
+
+| 키 | 쓰는 곳 |
+|----|---------|
+| `instagram-access-token` | Instagram 스크립트. Facebook 사용자 토큰이며 `instagram/refresh_token.py`로 약 60일마다 갱신한다 |
+| `instagram-user-id` | Instagram 스크립트. Business Discovery를 호출하는 IG 계정이다 |
+| `instagram-app-id` | `instagram/refresh_token.py` |
+| `instagram-app-secret` | `instagram/refresh_token.py` |
+
 ### Secret 변경
 
 ArgoCD는 chart만 배포하고 Secret은 적용하지 않으며, Pod는 시작할 때만 Secret을 환경 변수로 읽는다.

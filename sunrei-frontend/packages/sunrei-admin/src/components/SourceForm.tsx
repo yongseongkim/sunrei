@@ -21,7 +21,7 @@ type SourceFormProps = {
   sourceId?: string;
 };
 
-const TYPES: SourceFormValue['type'][] = ['YOUTUBE', 'TV', 'ANIME', 'OTHER'];
+const TYPES: SourceFormValue['type'][] = ['YOUTUBE', 'INSTAGRAM', 'TV', 'ANIME', 'OTHER'];
 
 export default function SourceForm({ mode, sourceId }: SourceFormProps) {
   const router = useRouter();
@@ -64,7 +64,7 @@ export default function SourceForm({ mode, sourceId }: SourceFormProps) {
   }, [source, reset]);
 
   const type = watch('type');
-  const isYoutube = type === 'YOUTUBE';
+  const linksOut = type === 'YOUTUBE' || type === 'INSTAGRAM';
 
   const onSubmit = (data: SourceFormValue) => {
     const payload: CreateSourceRequest = {
@@ -111,8 +111,8 @@ export default function SourceForm({ mode, sourceId }: SourceFormProps) {
           {mode === 'create' ? 'New Source' : 'Edit Source'}
         </h1>
         <p className="text-muted-foreground mt-2">
-          {isYoutube
-            ? 'YouTube source — provides the channel/watch link.'
+          {linksOut
+            ? 'Link-out source (YouTube/Instagram) — provides the channel/profile link.'
             : 'Managed work (TV/Anime/Other) — renders a Sunrei info page.'}
         </p>
       </div>
@@ -153,7 +153,7 @@ export default function SourceForm({ mode, sourceId }: SourceFormProps) {
               </div>
             </div>
 
-            {!isYoutube && (
+            {!linksOut && (
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="nameEn">Name (English)</Label>
@@ -167,21 +167,25 @@ export default function SourceForm({ mode, sourceId }: SourceFormProps) {
                   <Label htmlFor="synopsis">Synopsis</Label>
                   <Textarea id="synopsis" {...register('synopsis')} rows={3} />
                 </div>
-                <div className="space-y-2 md:col-span-2">
-                  <Label>Poster image</Label>
-                  <ImageUpload
-                    images={watch('posterImage') ? [watch('posterImage')!] : []}
-                    onChange={(imgs) => setValue('posterImage', imgs[0] ?? null)}
-                    label="Poster"
-                    maxImages={1}
-                  />
-                </div>
+              </div>
+            )}
+
+            {/* Instagram은 계정 등록 스크립트가 프로필 사진을 넣지만, 다른 이미지로 바꿀 수 있게 업로드를 남긴다. */}
+            {type !== 'YOUTUBE' && (
+              <div className="space-y-2">
+                <Label>Poster image</Label>
+                <ImageUpload
+                  images={watch('posterImage') ? [watch('posterImage')!] : []}
+                  onChange={(imgs) => setValue('posterImage', imgs[0] ?? null)}
+                  label="Poster"
+                  maxImages={1}
+                />
               </div>
             )}
 
             <div className="space-y-2">
               <Label htmlFor="externalUrl">
-                {isYoutube ? 'Channel / watch URL *' : 'Where to watch'}
+                {linksOut ? 'Channel / profile URL *' : 'Where to watch'}
               </Label>
               <Input
                 id="externalUrl"

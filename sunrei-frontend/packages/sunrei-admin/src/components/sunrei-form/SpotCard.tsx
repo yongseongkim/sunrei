@@ -41,7 +41,7 @@ export default function SpotCard({
   onRemove,
   onOpenMap,
 }: SpotCardProps) {
-  const videoId = youtubeVideoId(watch(`spots.${index}.youtubeLink` as const));
+  const videoId = youtubeVideoId(watch(`spots.${index}.sourceLink` as const));
   return (
     <Card className="py-0 px-0 rounded-lg gap-0">
       <CardHeader className="py-1 px-2 gap-0">
@@ -75,9 +75,9 @@ export default function SpotCard({
               />
             )}
             <Input
-              {...register(`spots.${index}.youtubeLink` as const)}
+              {...register(`spots.${index}.sourceLink` as const)}
               type="url"
-              placeholder="YouTube link / timestamp"
+              placeholder="YouTube timestamp or Instagram post link"
               className="h-8 text-xs"
             />
           </div>

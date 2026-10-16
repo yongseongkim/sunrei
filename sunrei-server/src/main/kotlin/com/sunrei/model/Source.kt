@@ -5,6 +5,7 @@ import kotlinx.datetime.Instant
 // converter가 상수 이름으로 바꾸므로 OpenAPI 명세의 SourceType과 이름이 같아야 한다.
 enum class SourceType {
     YOUTUBE,
+    INSTAGRAM,
     TV,
     ANIME,
     OTHER

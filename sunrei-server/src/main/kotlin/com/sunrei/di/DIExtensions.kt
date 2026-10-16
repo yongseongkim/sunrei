@@ -10,6 +10,7 @@ import com.sunrei.service.SunreiService
 import com.sunrei.service.SunreiSpotService
 import com.sunrei.service.TagService
 import com.sunrei.service.UserService
+import com.sunrei.service.InstagramService
 import com.sunrei.service.YoutubeService
 import io.ktor.client.HttpClient
 import io.ktor.server.application.Application
@@ -23,6 +24,7 @@ fun ApplicationCall.injectSunreiService(): SunreiService = ServiceLocator.sunrei
 fun ApplicationCall.injectSunreiSpotService(): SunreiSpotService = ServiceLocator.sunreiSpotService
 fun ApplicationCall.injectSearchService(): SearchService = ServiceLocator.searchService
 fun ApplicationCall.injectYoutubeService(): YoutubeService = ServiceLocator.youtubeService
+fun ApplicationCall.injectInstagramService(): InstagramService = ServiceLocator.instagramService
 fun ApplicationCall.injectAuthService(): IAuthService = ServiceLocator.authService
 fun ApplicationCall.injectS3Service(): S3Service = ServiceLocator.s3Service
 fun ApplicationCall.injectS3Config(): S3Config = ServiceLocator.s3Config

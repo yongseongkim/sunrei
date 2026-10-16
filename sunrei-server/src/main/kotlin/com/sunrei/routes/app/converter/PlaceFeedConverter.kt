@@ -12,7 +12,7 @@ fun PlaceMention.toDTO(): PlaceMentionDTO = PlaceMentionDTO(
     spotId = spotId,
     context = context,
     sunreiLink = sunreiLink,
-    youtubeLink = youtubeLink,
+    sourceLink = sourceLink,
     images = images.map { it.toDTO() },
     tags = tags.map { it.toDTO() }
 )

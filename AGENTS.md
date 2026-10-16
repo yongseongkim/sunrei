@@ -36,9 +36,9 @@ API를 바꿀 때는 `sunrei-api/`의 명세를 먼저 고치고 DTO를 다시 �
 ### Source
 
 콘텐츠의 출처 또는 작품 단위다.
-YouTube/TV/Anime/Other 타입을 가지며, 타입에 따라 public 앱 동작이 달라진다.
-YouTube Source는 외부 링크로 이동하고, Anime/TV/Other Source는 Sunrei가 관리하는 정보 페이지로 표시한다.
-`external_url`은 YouTube Source에서는 이동할 채널 주소이고, 나머지 Source에서는 작품을 볼 수 있는 곳의 주소다.
+YouTube/Instagram/TV/Anime/Other 타입을 가지며, 타입에 따라 public 앱 동작이 달라진다.
+YouTube와 Instagram Source는 외부 링크로 이동하고, Anime/TV/Other Source는 Sunrei가 관리하는 정보 페이지로 표시한다.
+`external_url`은 YouTube와 Instagram Source에서는 이동할 채널이나 프로필 주소이고, 나머지 Source에서는 작품을 볼 수 있는 곳의 주소다.
 
 ### Sunrei
 
@@ -53,7 +53,9 @@ Public 엔드포인트는 `published_at IS NOT NULL`인 Sunrei와 그 spot만 �
 Sunrei에 속한 개별 장소로, 작품 내 특정 장면이나 에피소드와 연결된 실제 장소다.
 예를 들어, "7화에서 주인공이 울면서 식사한 식당" 같이 하나의 Place 와 연결된다.
 Source가 해당 장소를 언급한 맥락(context)과 spot 단위 태그를 가진다.
-`youtube_link`는 영상에서 그 장면 시각으로 바로 가는 링크이며 없어도 된다.
+`source_link`는 그 장소를 언급한 콘텐츠로 바로 가는 링크이며 없어도 된다.
+YouTube 영상의 그 장면 시각이나 Instagram 게시물 주소다.
+V3에서 `youtube_link`를 대신하며, `youtube_link`는 V4에서 지운다.
 
 ### Place
 
@@ -92,6 +94,20 @@ YouTube가 데이터센터 IP에서 오는 자막과 영상 다운로드를 막�
   기준선으로 등록한 기존 영상은 `SKIPPED`다.
 - 동기화 때 플레이리스트에서 빠진 영상은 `removed_at`만 기록하고 데이터와 spot은 지우지 않는다.
 - 장소 후보는 `PATCH /admin/youtube/extracted-places/{id}`로 승인될 때만 SunreiSpot이 되며, 반려한 후보도 남겨 둔다.
+
+## Instagram 수집
+
+등록한 Instagram 계정의 게시물에서 장소 후보를 추출하고, 어드민 검토를 거쳐 SunreiSpot으로 만든다.
+YouTube 수집과 같은 구조이며, 수집 스크립트와 스킬은 `/admin/instagram/*` admin API로 같은 DB 상태를 읽고 쓴다.
+게시물 수집, 릴스 전사, 장소 추출은 모두 개인 머신의 스킬(`instagram-to-sunrei`)이 하고, 서버는 Instagram을 호출하지 않는다.
+설계와 결정 사항은 `SPEC-instagram.md`에, 테이블별 설명은 `sunrei-server/src/main/resources/db/migration/V3__instagram_collection.sql` 주석에 있다.
+
+- 계정 하나에 Sunrei 하나이며, 승인한 후보는 게시물 링크를 `source_link`로 하는 SunreiSpot이 된다.
+- 게시물 상태값은 YouTube 영상과 같다.
+  캡션은 게시물에 저장하고, Instagram에서 지운 게시물은 감지하지 않는다.
+- 같은 게시물을 다시 추출하면 이전 실행의 대기 후보는 `SUPERSEDED`가 된다.
+- 광고 표시 글과 작성자 본인의 상품·행사를 알리는 글은 후보를 만들지 않고 실행 기록에만 남기며, 서버가 이 규칙을 지킨다.
+- 상호를 찾지 못한 후보는 지도 검색을 하지 않으므로, 승인하려면 장소를 직접 지정해야 한다.
 
 ## Deployment
 

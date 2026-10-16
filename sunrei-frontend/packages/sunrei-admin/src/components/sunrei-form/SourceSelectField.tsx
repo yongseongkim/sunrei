@@ -23,6 +23,7 @@ import { cn } from '@/lib/utils';
 
 const TYPE_BADGE: Record<string, string> = {
   YOUTUBE: 'YouTube',
+  INSTAGRAM: 'Instagram',
   TV: 'TV',
   ANIME: 'Anime',
   OTHER: 'Other',

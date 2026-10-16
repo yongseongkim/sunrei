@@ -27,7 +27,7 @@ export default function SourcesPage() {
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Channels / Sources</h1>
           <p className="text-muted-foreground mt-2">
-            Content sources (YouTube / TV / Anime / Other)
+            Content sources (YouTube / Instagram / TV / Anime / Other)
           </p>
         </div>
         <Button onClick={() => router.push('/sources/new')}>

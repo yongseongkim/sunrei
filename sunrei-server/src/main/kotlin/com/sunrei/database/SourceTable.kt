@@ -7,7 +7,7 @@ import org.jetbrains.exposed.sql.kotlin.datetime.timestamp
 
 object Sources : ULIDTimestampedTable("source", "SRC") {
     val type = varchar("type", 16)
-        .check { it inList(listOf("YOUTUBE", "TV", "ANIME", "OTHER")) }
+        .check { it inList(listOf("YOUTUBE", "INSTAGRAM", "TV", "ANIME", "OTHER")) }
     val name = varchar("name", 255)
     val nameEn = varchar("name_en", 255).nullable()
     val nameKo = varchar("name_ko", 255).nullable()

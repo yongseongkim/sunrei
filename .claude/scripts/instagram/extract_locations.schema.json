@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "posts"
+  ],
+  "properties": {
+    "posts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "postId",
+          "promotion",
+          "promotionEvidence",
+          "places"
+        ],
+        "properties": {
+          "postId": {
+            "type": "string"
+          },
+          "promotion": {
+            "type": "string",
+            "enum": [
+              "NONE",
+              "DISCLOSED_AD",
+              "SELF_PROMOTION"
+            ]
+          },
+          "promotionEvidence": {
+            "type": "string"
+          },
+          "places": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "aliases",
+                "category",
+                "area",
+                "evidence",
+                "description",
+                "reason",
+                "confidence",
+                "needsVerification",
+                "nameFound"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "aliases": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "category": {
+                  "type": "string"
+                },
+                "area": {
+                  "type": "string"
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "source",
+                      "quote"
+                    ],
+                    "properties": {
+                      "source": {
+                        "type": "string",
+                        "enum": [
+                          "caption",
+                          "speech",
+                          "onscreen",
+                          "location_tag"
+                        ]
+                      },
+                      "quote": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "description": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "high",
+                    "medium",
+                    "low"
+                  ]
+                },
+                "needsVerification": {
+                  "type": "boolean"
+                },
+                "nameFound": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
