@@ -9,6 +9,13 @@ import json
 CONFIDENCE = {"high": "HIGH", "medium": "MEDIUM", "low": "LOW"}
 
 
+def api_location_tag(location):
+    """Convert a tag read from the post page ({pk, name, lat, lng}) to the API's InstagramLocationTagDTO, or None."""
+    if not location:
+        return None
+    return {"pk": location.get("pk"), "name": location["name"], "latitude": location.get("lat"), "longitude": location.get("lng")}
+
+
 def whisper_text(evidence):
     """Return create_text kwargs for a reel's Whisper transcript, or None when it has no speech."""
     audio = (evidence or {}).get("audio") or {}

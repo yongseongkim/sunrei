@@ -27,7 +27,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from extraction_runs import candidate_input, ocr_text, run_request, status_after_run, whisper_text  # noqa: E402
+from extraction_runs import api_location_tag, candidate_input, ocr_text, run_request, status_after_run, whisper_text  # noqa: E402
 from graph_api import post_input  # noqa: E402
 from instagram_collection_api import InstagramCollectionApi  # noqa: E402
 from place_search import branch_mismatch  # noqa: E402
@@ -122,12 +122,8 @@ def main():
     def import_post(post):
         post_id, code = post["id"], post["shortcode"]
         try:
-            tag = tags.get(code)
-            if tag is not None:
-                location = tag.get("location")
-                api.set_location_tag(post_id, {"pk": location.get("pk"), "name": location["name"],
-                                               "latitude": location.get("lat"), "longitude": location.get("lng")}
-                                     if location else None)
+            if code in tags:
+                api.set_location_tag(post_id, api_location_tag(tags[code].get("location")))
             evidence_path = ws / "evidence" / f"{code}.json"
             evidence = json.loads(evidence_path.read_text()) if evidence_path.is_file() else None
             text_ids = []

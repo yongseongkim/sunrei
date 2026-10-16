@@ -8,13 +8,12 @@ replaces instagram-access-token in deploy/secrets/secrets.enc.yaml through
 
 Meta accepts the localhost redirect only while the app is in development mode.
 The login and the exchange need instagram-app-id and instagram-app-secret in the
-secrets file. instagram-login-config-id (a Facebook Login for Business
-configuration) is used when present; otherwise the dialog asks for SCOPES.
+secrets file (add them with `sops deploy/secrets/secrets.enc.yaml`). If the
+browser login fails, --token-stdin exchanges a Graph API Explorer token instead.
 
 Usage:
     python3 .claude/scripts/instagram/refresh_token.py                     # browser login
     pbpaste | python3 .claude/scripts/instagram/refresh_token.py --token-stdin
-    pbpaste | python3 .claude/scripts/instagram/refresh_token.py --app-secret-stdin
 """
 
 import http.server
@@ -42,10 +41,10 @@ LOGIN_TIMEOUT_SECONDS = 300
 KST = timezone(timedelta(hours=9))
 
 
-def save(name, value):
+def save_token(token):
     result = subprocess.run(
-        ["sops", "set", "--value-stdin", str(SECRETS_FILE), f'["stringData"]["{name}"]'],
-        input=json.dumps(value),
+        ["sops", "set", "--value-stdin", str(SECRETS_FILE), '["stringData"]["instagram-access-token"]'],
+        input=json.dumps(token),
         capture_output=True,
         text=True,
     )
@@ -87,12 +86,7 @@ class CallbackHandler(http.server.BaseHTTPRequestHandler):
 
 def login_code(app_id):
     state = secrets.token_urlsafe(16)
-    params = {"client_id": app_id, "redirect_uri": REDIRECT_URI, "state": state, "response_type": "code"}
-    config_id = sops_secret("instagram-login-config-id", required=False)
-    if config_id:
-        params["config_id"] = config_id
-    else:
-        params["scope"] = SCOPES
+    params = {"client_id": app_id, "redirect_uri": REDIRECT_URI, "state": state, "response_type": "code", "scope": SCOPES}
     server = http.server.HTTPServer(("localhost", CALLBACK_PORT), CallbackHandler)
     server.timeout = 1
     print("Opening the Facebook login in your browser. Opt in the Sunrei Page and the Instagram account.")
@@ -114,29 +108,13 @@ def login_code(app_id):
 
 
 def main():
-    if "--app-secret-stdin" in sys.argv:
-        value = sys.stdin.read().strip()
-        if not value:
-            raise SystemExit("No app secret on stdin")
-        save("instagram-app-secret", value)
-        print(f"Saved instagram-app-secret to {SECRETS_FILE.name}. Commit the file to keep it.")
-        return
-
     app_id = sops_secret("instagram-app-id")
-    app_secret = sops_secret("instagram-app-secret", required=False)
+    app_secret = sops_secret("instagram-app-secret")
     if "--token-stdin" in sys.argv:
         token = sys.stdin.read().strip()
         if not token:
             raise SystemExit("No token on stdin")
-        if not app_secret:
-            save("instagram-access-token", token)
-            print(f"Saved the token as it is to {SECRETS_FILE.name}; it lasts only an hour or two. "
-                  "Add instagram-app-secret to get a 60-day token.")
-            return
     else:
-        if not app_secret:
-            raise SystemExit("The browser login needs instagram-app-secret. Copy the App Secret from the app's "
-                             "basic settings, then run: pbpaste | python3 .claude/scripts/instagram/refresh_token.py --app-secret-stdin")
         code = login_code(app_id)
         token = graph_token({"client_id": app_id, "client_secret": app_secret, "redirect_uri": REDIRECT_URI, "code": code})["access_token"]
 
@@ -146,9 +124,10 @@ def main():
         "client_secret": app_secret,
         "fb_exchange_token": token,
     })
-    save("instagram-access-token", body["access_token"])
+    save_token(body["access_token"])
     expires_in = body.get("expires_in")
-    expiry = f"expires around {datetime.now(KST) + timedelta(seconds=int(expires_in)):%Y-%m-%d %H:%M} KST" if expires_in else "no expiry returned"
+    expiry = (f"expires around {datetime.now(KST) + timedelta(seconds=int(expires_in)):%Y-%m-%d %H:%M} KST"
+              if expires_in else "no expiry returned")
     print(f"Saved a long-lived token to {SECRETS_FILE.name}; {expiry}. Commit the file to keep it.")
 
 

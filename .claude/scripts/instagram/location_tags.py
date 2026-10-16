@@ -8,8 +8,7 @@ A page without the media object is a miss. After five misses in a row the
 reader reloads a post that loaded before: if it still loads, the misses were
 posts hidden from logged-out visitors (age-restricted) and are recorded with
 "miss": true; if it does not, Instagram is showing a login wall and the reader
-stops with exit code 3. OUT_JSON.done is written on exit so a parallel
-extractor knows the reader has finished.
+stops with exit code 3.
 
 Usage:
     uv run --with playwright python .claude/scripts/instagram/location_tags.py OUT_JSON CODE_OR_FILE... [--delay 4]
@@ -27,8 +26,9 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
+from graph_api import shortcode_of
+
 SCRIPT_JSON = re.compile(r'<script type="application/json"[^>]*>(.*?)</script>', re.S)
-URL_CODE = re.compile(r"instagram\.com/(?:[^/]+/)?(?:p|reel|reels|tv)/([A-Za-z0-9_-]+)")
 MISS_LIMIT = 5
 
 
@@ -48,8 +48,7 @@ def shortcodes(inputs):
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
-            match = URL_CODE.search(line)
-            code = match.group(1) if match else line
+            code = shortcode_of(line) or line
             if code not in codes:
                 codes.append(code)
     return codes
@@ -121,8 +120,6 @@ def main():
     results = json.loads(out_path.read_text()) if out_path.is_file() else {}
     pending = [code for code in shortcodes(args.inputs) if code not in results]
     print(f"{len(pending)} posts to read ({len(results)} cached)", flush=True)
-    done_marker = out_path.with_name(out_path.name + ".done")
-    done_marker.unlink(missing_ok=True)
     probe = next((code for code, value in results.items() if not value.get("miss")), None)
     misses, missed, login_wall = 0, [], False
 
@@ -154,7 +151,6 @@ def main():
         browser.close()
 
     save(out_path, results)
-    done_marker.write_text("done\n")
     tagged = sum(1 for value in results.values() if value.get("location"))
     print(f"done: {len(results)} read, {tagged} with a location tag", flush=True)
     if login_wall:

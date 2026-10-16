@@ -101,10 +101,10 @@ class GraphApi:
         body = self.call(f"business_discovery.username({username}){{{ACCOUNT_FIELDS}}}")
         return body["business_discovery"]
 
-    def media_page(self, username, after=None, limit=50):
+    def media_page(self, username, after=None, limit=50, fields=MEDIA_FIELDS):
         """Return (account, media items newest first, cursor for the next page or None)."""
         edge = f"media.after({after}).limit({limit})" if after else f"media.limit({limit})"
-        body = self.call(f"business_discovery.username({username}){{{ACCOUNT_FIELDS},{edge}{{{MEDIA_FIELDS}}}}}")
+        body = self.call(f"business_discovery.username({username}){{{ACCOUNT_FIELDS},{edge}{{{fields}}}}}")
         result = body["business_discovery"]
         page = result.pop("media", {}) or {}
         items = page.get("data", [])

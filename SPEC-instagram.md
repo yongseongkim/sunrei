@@ -3,8 +3,9 @@
 상태: Phase 1~3 구현 완료, 브랜치 `feat/instagram-collection`.
 - Phase 1: 임시 PostGIS DB에서 V1→V2→V3 적용, 1.7 체크포인트 46개 항목, 동시 승인 테스트를 통과했다.
 - Phase 2: 두 앱의 타입을 다시 생성했고 둘 다 빌드가 통과한다.
-- Phase 3: 단위 테스트 16개가 통과한다. 로컬 DB에 choiza11 워크스페이스 2,004개를 가져왔고, 후보를 승인해 공개 앱에서
-  Instagram 링크로 보이는 것과, 수집기가 게시물 두 개를 끝까지 처리하는 것을 확인했다.
+- Phase 3: 단위 테스트 18개가 통과한다. 로컬 DB에 choiza11 워크스페이스 2,004개를 가져왔고, 후보를 승인해 공개 앱에서
+  Instagram 링크로 보이는 것, 프로필 사진이 채널 아바타로 보이는 것, 수집기가 게시물 두 개를 끝까지 처리하는 것을
+  확인했다.
 - 운영 배포와 운영 데이터 가져오기는 아직 하지 않았다.
 
 ## 요약
@@ -56,10 +57,6 @@ Instagram 테이블 밖의 변경 세 가지:
 
 - Graph API 접근이 된다. 앱 `sunrei`(2664113057374533), IG 사용자 `17841471572701752`. 토큰은
   2026-12-13까지 유효하다.
-- 저장소에 있고 아직 커밋하지 않은 것: `.claude/scripts/instagram/{download_reels,reel_evidence,refresh_token,token_status}.py`,
-  `instagram-download-reels` 스킬, `_common.py`의 `sops_secret()`, SOPS 파일의 Instagram 키.
-- 세션 스크래치패드의 프로토타입(Phase 3에서 저장소로 옮긴다): 게시물 목록 수집, 위치 태그 읽기,
-  추출 프롬프트와 스키마, 배치 추출기, 지오코더, draft Sunrei 생성기.
 - choiza11 워크스페이스 데이터(`.claude/workspace/instagram/choiza11/`, gitignore):
   - 게시물 2,004개 전체
   - 위치 태그: 1,997개를 읽었고 1,120개에 태그가 있다

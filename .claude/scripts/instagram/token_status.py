@@ -59,7 +59,7 @@ def main():
     data_access = data.get("data_access_expires_at") or 0
     print(f"Token valid; expires {when(expires_at)}")
     print(f"Data access expires {when(data_access)}")
-    soonest = min(t for t in (expires_at, data_access) if t) if expires_at or data_access else 0
+    soonest = min((t for t in (expires_at, data_access) if t), default=0)
     if soonest and soonest - time.time() < warn_days * 86400:
         print(f"Expires within {warn_days:g} days; refresh soon with\n  {REFRESH}")
         sys.exit(2)

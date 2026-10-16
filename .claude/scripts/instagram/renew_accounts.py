@@ -37,8 +37,8 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent / "youtube"))
 from _common import ROOT, load_google_api_key  # noqa: E402
 from extract_locations import post_input as prompt_post_input  # noqa: E402
-from extraction_runs import candidate_input, ocr_text, run_request, status_after_run, whisper_text  # noqa: E402
-from graph_api import GraphApi, TokenExpired, post_input  # noqa: E402
+from extraction_runs import api_location_tag, candidate_input, ocr_text, run_request, status_after_run, whisper_text  # noqa: E402
+from graph_api import GraphApi, TokenExpired, log, post_input  # noqa: E402
 from instagram_accounts import set_profile_picture, source_of_sunrei  # noqa: E402
 from instagram_collection_api import InstagramCollectionApi  # noqa: E402
 from place_search import geocode  # noqa: E402
@@ -57,10 +57,6 @@ def parse_args():
     parser.add_argument("--stale-hours", type=float, default=24)
     parser.add_argument("--skip-sync", action="store_true", help="Process stored posts without listing new ones")
     return parser.parse_args()
-
-
-def log(message):
-    print(f"{datetime.now().strftime('%H:%M:%S')} {message}", flush=True)
 
 
 def run_uv(args, timeout, allowed=(0,)):
@@ -125,10 +121,7 @@ def process_posts(api, account, posts, run_dir):
     tags = json.loads(tags_file.read_text()) if tags_file.is_file() else {}
     for code, tag in tags.items():
         if code in by_code:
-            location = tag.get("location")
-            api.set_location_tag(by_code[code]["id"], {"pk": location.get("pk"), "name": location["name"],
-                                                      "latitude": location.get("lat"), "longitude": location.get("lng")}
-                                 if location else None)
+            api.set_location_tag(by_code[code]["id"], api_location_tag(tag.get("location")))
 
     # Reels: download, then Whisper and OCR. Throttled downloads (exit 3) are retried in a later run.
     videos_dir, evidence_dir = run_dir / "videos", run_dir / "evidence"
@@ -174,8 +167,7 @@ def process_posts(api, account, posts, run_dir):
             api.update_post(post["id"], status="FAILED", stage="extract", error="The agent returned no result for this post")
             continue
         try:
-            location = (tags.get(post["shortcode"]) or {}).get("location")
-            tag = {"name": location["name"], "latitude": location.get("lat"), "longitude": location.get("lng")} if location else None
+            tag = api_location_tag((tags.get(post["shortcode"]) or {}).get("location"))
             candidates = []
             for place in item["places"]:
                 # Ads produce no candidates on the server, so skip their Places searches.
@@ -204,12 +196,7 @@ def main():
         accounts = [a for a in accounts if a["syncEnabled"]]
     log(f"server: {api.base_url}; {len(accounts)} accounts; {'COMMIT' if args.commit else 'DRY-RUN'}")
 
-    graph = None
-    if not args.skip_sync:
-        try:
-            graph = GraphApi()
-        except SystemExit as error:
-            raise SystemExit(f"Cannot read the Instagram token: {error}")
+    graph = None if args.skip_sync else GraphApi()
 
     for account in accounts:
         username = account["username"]

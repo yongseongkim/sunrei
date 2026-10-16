@@ -137,7 +137,6 @@ so adding or changing them does not require re-applying the Secret:
 | `instagram-user-id` | Instagram scripts; the IG account that calls Business Discovery |
 | `instagram-app-id` | `instagram/refresh_token.py` |
 | `instagram-app-secret` | `instagram/refresh_token.py` |
-| `instagram-login-config-id` | Optional; Facebook Login for Business configuration for `instagram/refresh_token.py`'s login dialog |
 
 ## Troubleshooting
 

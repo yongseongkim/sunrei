@@ -31,9 +31,18 @@ python3 .claude/scripts/instagram/token_status.py
 - Exit 0: continue.
 - Exit 2: continue, and tell the user the token expires within 7 days.
 - Exit 1: stop and ask the user to run
-  `! python3 .claude/scripts/instagram/refresh_token.py`, which opens the
-  Facebook login in the browser and saves a 60-day token. Do not run it
-  yourself; it writes the secrets file. Check again before continuing.
+  `! python3 .claude/scripts/instagram/refresh_token.py`. Check again before
+  continuing.
+
+`refresh_token.py` opens the Facebook login in the browser. In the consent
+dialog the user edits the settings and opts in only the Sunrei Page and the
+`_yongseongk` Instagram account. The script catches the result on
+`localhost:9877`, exchanges it for a token that lasts about 60 days, and saves
+it to the secrets file; remind the user to commit that file. Do not run it
+yourself unless the user's permission settings allow it, because it writes the
+secrets file. If the login fails, the fallback is a Graph API Explorer token:
+`! pbpaste | python3 .claude/scripts/instagram/refresh_token.py --token-stdin`.
+One token works for every account Business Discovery looks up.
 
 ## 2. Register the Account
 

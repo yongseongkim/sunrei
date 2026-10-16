@@ -725,7 +725,7 @@ class InstagramService(
     )
 
     companion object {
-        const val MAX_POSTS_PER_UPSERT = 100
+        private const val MAX_POSTS_PER_UPSERT = 100
 
         /** Posts the collection job should (re)process. */
         private val PROCESSABLE_STATUSES = listOf(InstagramPostStatus.PENDING.name, InstagramPostStatus.FAILED.name)
@@ -736,11 +736,11 @@ class InstagramService(
         private val SHORTCODE = Regex("""instagram\.com/(?:[^/]+/)?(?:p|reel|reels|tv)/([A-Za-z0-9_-]+)""")
         private val HASHTAG = Regex("""#\S+""")
 
-        fun shortcodeOf(permalink: String): String? =
+        private fun shortcodeOf(permalink: String): String? =
             SHORTCODE.find(permalink)?.groupValues?.get(1)?.takeIf { it.length <= 32 }
 
         /** First caption line with at least 4 characters left after removing hashtags, cut to 128. */
-        fun captionTitle(caption: String?): String? =
+        private fun captionTitle(caption: String?): String? =
             caption?.lineSequence()
                 ?.map { HASHTAG.replace(it, "").trim().trim(' ', '-', '·', '|') }
                 ?.firstOrNull { it.length >= 4 }

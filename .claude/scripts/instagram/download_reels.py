@@ -10,9 +10,7 @@ outcome, so a rerun skips finished reels and retries the rest.
 Age-restricted reels (alcohol, for example) need a logged-in session and are
 recorded as login_required. Login cookies are deliberately not supported. With
 --api-fallback USERNAME, those reels are downloaded from the Graph API's
-media_url instead, using instagram-access-token and instagram-user-id from
-deploy/secrets/secrets.enc.yaml (SOPS). INSTAGRAM_ACCESS_TOKEN and
-INSTAGRAM_USER_ID environment variables override them.
+media_url instead (graph_api.py; token from SOPS).
 
 Usage:
     uv run --with yt-dlp python .claude/scripts/instagram/download_reels.py OUT_DIR URL_OR_FILE... \
@@ -24,34 +22,26 @@ line. Exit code 3 means throttled reels remain; rerun later.
 
 import argparse
 import json
-import os
 import random
 import re
 import sys
 import time
 import urllib.error
-import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "youtube"))
-from _common import UA, sops_secret  # noqa: E402
+from _common import UA  # noqa: E402
+from graph_api import GraphApi, TokenExpired, log, shortcode_of  # noqa: E402
 
-GRAPH = "https://graph.facebook.com/v25.0"
 SHORTCODE = re.compile(r"^[A-Za-z0-9_-]{5,}$")
-URL_CODE = re.compile(r"instagram\.com/(?:[^/]+/)?(?:p|reel|reels|tv)/([A-Za-z0-9_-]+)")
 FORMAT = "bv*[height<=720]+ba/b[height<=720]/b"
 THROTTLE_STREAK_LIMIT = 3
 THROTTLE_BACKOFF_SECONDS = 120
 RETRY_PASS_DELAY_SECONDS = 300
 API_MAX_PAGES = 60
-API_USAGE_PAUSE_PERCENT = 75
 DONE = {"downloaded", "unavailable"}
-
-
-def log(message):
-    print(f"{datetime.now().strftime('%H:%M:%S')} {message}", flush=True)
 
 
 def parse_args():
@@ -74,9 +64,9 @@ def reel_urls(inputs):
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
-            match = URL_CODE.search(line)
-            if match:
-                reels.setdefault(match.group(1), line)
+            code = shortcode_of(line)
+            if code:
+                reels.setdefault(code, line)
             elif SHORTCODE.match(line):
                 reels.setdefault(line, f"https://www.instagram.com/reel/{line}/")
             else:
@@ -135,34 +125,15 @@ def download(out_dir, code, url):
 
 def graph_media_urls(username, wanted):
     """Page the account's media via Business Discovery until every wanted shortcode is found."""
-    token = os.environ.get("INSTAGRAM_ACCESS_TOKEN") or sops_secret("instagram-access-token")
-    user_id = os.environ.get("INSTAGRAM_USER_ID") or sops_secret("instagram-user-id")
-    found, after = {}, None
+    graph, found, after = GraphApi(), {}, None
     for _ in range(API_MAX_PAGES):
-        edge = f"media.after({after}).limit(50)" if after else "media.limit(50)"
-        fields = f"business_discovery.username({username}){{{edge}{{permalink,media_type,media_url}}}}"
-        query = urllib.parse.urlencode({"fields": fields, "access_token": token})
-        request = urllib.request.Request(f"{GRAPH}/{user_id}?{query}", headers={"User-Agent": UA})
-        try:
-            with urllib.request.urlopen(request, timeout=120) as response:
-                body = json.load(response)
-                usage = json.loads(response.headers.get("x-app-usage") or "{}")
-        except urllib.error.HTTPError as error:
-            # Report Meta's error only; the request URL carries the token.
-            payload = json.loads(error.read() or b"{}").get("error", {})
-            hint = "\nRefresh the token by logging in with Facebook:\n  python3 .claude/scripts/instagram/refresh_token.py" if payload.get("code") == 190 else ""
-            raise SystemExit(f"Graph API error #{payload.get('code')}: {payload.get('message')}{hint}")
-        page = body["business_discovery"].get("media", {})
-        for item in page.get("data", []):
-            match = URL_CODE.search(item.get("permalink", ""))
-            if match and match.group(1) in wanted:
-                found[match.group(1)] = item.get("media_url")
-        after = page.get("paging", {}).get("cursors", {}).get("after")
-        if wanted <= found.keys() or not after or not page.get("data"):
+        _, items, after = graph.media_page(username, after=after, fields="permalink,media_type,media_url")
+        for item in items:
+            code = shortcode_of(item.get("permalink"))
+            if code in wanted:
+                found[code] = item.get("media_url")
+        if wanted <= found.keys() or not after:
             break
-        if max(usage.values(), default=0) >= API_USAGE_PAUSE_PERCENT:
-            log("Graph API usage is high; pausing 10 minutes")
-            time.sleep(600)
     return found
 
 
@@ -237,7 +208,10 @@ def main():
         wanted = {code for code in reels if status.get(code, {}).get("status") == "login_required"}
         if wanted:
             log(f"looking up {len(wanted)} login-required reels via the Graph API")
-            media_urls = graph_media_urls(args.api_fallback, wanted)
+            try:
+                media_urls = graph_media_urls(args.api_fallback, wanted)
+            except TokenExpired as error:
+                raise SystemExit(str(error))
             for code in sorted(wanted):
                 url = media_urls.get(code)
                 if not url:

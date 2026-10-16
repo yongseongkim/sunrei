@@ -67,7 +67,7 @@ browser cookies or a logged-in session; automated logged-in access is against
 Instagram's terms and risks the account.
 
 Download them through the official Graph API instead. Check the token first
-(see Access Token below), then run:
+(step 1 of `instagram-to-sunrei`), then run:
 
 ```bash
 uv run --with yt-dlp python .claude/scripts/instagram/download_reels.py \
@@ -86,47 +86,6 @@ These stay `login_required`; tell the user which reels are missing.
 A `media_url` file can also come without an audio track: 2 of the first 4
 choiza11 reels did. Check with `ffprobe` before relying on it for Whisper; OCR
 still works.
-
-## Access Token
-
-Graph API calls use `instagram-access-token` and `instagram-user-id` from
-`deploy/secrets/secrets.enc.yaml`, decrypted with SOPS, so they need gcloud
-credentials that can decrypt the file. The token is a Facebook user token. One
-token works for every account Business Discovery looks up; it does not change
-per account.
-
-Check it before any Graph API step:
-
-```bash
-python3 .claude/scripts/instagram/token_status.py
-```
-
-- Exit 0: valid. Continue.
-- Exit 2: valid but expires within 7 days. Continue, and tell the user to
-  refresh soon.
-- Exit 1: expired or invalid. Stop and ask the user to refresh, then check
-  again before continuing.
-
-The user refreshes it by logging in when a run needs it. Ask the user to run:
-
-```bash
-! python3 .claude/scripts/instagram/refresh_token.py
-```
-
-It opens the Facebook login in the browser. In the consent dialog, the user
-chooses to edit the settings and opts in only the Sunrei Page and the
-`_yongseongk` Instagram account. The script catches the result on
-`localhost:9877`, exchanges it for a token that lasts about 60 days, and saves
-it to the secrets file. Run it yourself only if the user's permission settings
-allow it, because it writes to the secrets file. Remind the user to commit the
-secrets file afterward.
-
-The login needs `instagram-app-secret` in the secrets file. If it is missing,
-ask the user to copy the App Secret from the app's basic settings and run
-`! pbpaste | python3 .claude/scripts/instagram/refresh_token.py --app-secret-stdin`
-once. Meta accepts the localhost redirect only while the app is in development
-mode. If the login fails, the fallback is a Graph API Explorer token:
-`! pbpaste | python3 .claude/scripts/instagram/refresh_token.py --token-stdin`.
 
 ## Files
 
