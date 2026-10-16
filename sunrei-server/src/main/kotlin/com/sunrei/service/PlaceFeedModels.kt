@@ -5,10 +5,7 @@ import com.sunrei.model.Place
 import com.sunrei.model.Source
 import com.sunrei.model.Tag
 
-/**
- * One mention = one video row in a PlaceCard. Multiple spots of the same video at the
- * same place collapse into one representative mention.
- */
+/** PlaceCard에서 Sunrei 하나를 나타내는 한 줄이다. */
 data class PlaceMention(
     val source: Source,
     val sunreiId: String,
@@ -21,7 +18,6 @@ data class PlaceMention(
     val tags: List<Tag>
 )
 
-/** One Place = one card = one marker. */
 data class PlaceFeedItem(
     val place: Place,
     val distanceMeters: Double?,

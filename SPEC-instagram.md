@@ -599,7 +599,7 @@ OpenAPI 파일에 그대로 들어갈 내용이라 설명도 영어로 둔다.
     SetInstagramLocationTagRequest:
       type: object
       properties:
-        # null records that the post page was read and has no tag.
+        # null이면 게시물 페이지를 읽었고 태그가 없다는 뜻이다.
         locationTag:
           allOf: [{ $ref: '#/components/schemas/InstagramLocationTagDTO' }]
           nullable: true
@@ -780,7 +780,7 @@ OpenAPI 파일에 그대로 들어갈 내용이라 설명도 영어로 둔다.
           $ref: '#/components/schemas/InstagramReviewStatus'
         title: { type: string, nullable: true, maxLength: 128, description: Spot title; defaults to the post title }
         context: { type: string, nullable: true, description: Spot context; defaults to the candidate description }
-        # Required for APPROVED unless the candidate has a suggested place.
+        # 후보에 제안된 장소가 없으면 APPROVED로 바꿀 때 꼭 넣어야 한다.
         place:
           allOf: [{ $ref: '#/components/schemas/PlaceInput' }]
           nullable: true
@@ -892,7 +892,7 @@ OpenAPI 파일에 그대로 들어갈 내용이라 설명도 영어로 둔다.
   5. 게시물에 `PENDING` 후보가 남지 않았고 게시물이 `REVIEW_PENDING`이면 `COMPLETED`로 한다.
 
 중복: 같은 Sunrei에 이미 spot이 있는 장소의 후보도 승인할 수 있다. 공개 카드는 한 Sunrei의 같은 장소
-spot을 이미 mention 하나로 합치고(SPEC.md의 "A mention is unique by `(place_id, sunrei_id)`"),
+spot을 이미 mention 하나로 합치고(`SunreiSpotService`가 `(place_id, sunrei_id)`로 묶는다),
 context가 있는 첫 spot이 대표가 된다. 검토자는 `existingSpotIds`를 보고 중복인 줄 알고서 반려하거나
 남길 수 있다. 미결 사항 1 참고.
 
@@ -1007,7 +1007,6 @@ admin(`packages/sunrei-admin/src`):
 | `.claude/scripts/youtube/create_sunrei.py:57` | spot payload의 `youtubeLink` → `sourceLink` |
 | spot을 쓰거나 읽는 다른 스크립트 | 같음 (`rg -n youtubeLink .claude`로 찾는다) |
 | `.agents/skills/youtube-create-sunrei/SKILL.md:194, 211, 242, 269, 319` | 예시의 필드 이름 |
-| `SPEC.md:34, 40-41, 207, 312, 317, 423, 530` | `sunrei_spot.source_link` / `sourceLink`, 그리고 CTA 규칙 `sourceLink ?? sunreiLink ?? source.externalUrl` |
 
 완료 조건:
 - `rg -n youtubeLink .claude .agents sunrei-frontend --glob '!**/generated/**'` 결과가 없다.
@@ -1110,9 +1109,6 @@ Phase 1과 2는 한 릴리스(`scripts/release.sh`)로 내보낸다. API 필드 
 - V4는 `youtube_link`를 읽는 코드가 남지 않았는지 확인한 뒤 다음 릴리스로 내보낸다.
 
 Phase 3은 스크립트뿐이라 릴리스가 필요 없다.
-
-릴리스 후: `AGENTS.md`의 "YouTube 수집" 옆에 "Instagram 수집" 섹션을 추가하고 Source 타입 목록을
-고친다. `SPEC.md`의 "Link ownership" 항목도 `sunrei_spot.source_link`로 고친다.
 
 ---
 

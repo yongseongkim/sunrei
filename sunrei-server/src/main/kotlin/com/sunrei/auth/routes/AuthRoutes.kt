@@ -24,6 +24,7 @@ fun Route.authRoutes() {
             val authService: IAuthService = call.injectAuthService()
             try {
                 val request = call.receive<GoogleAuthRequest>()
+                // 공개 앱과 어드민 모두 이름과 달리 idToken 필드에 Google access token을 담아 보낸다.
                 val (user, _) = authService.authenticateWithOAuth(
                     provider = OAuthProviderEnum.GOOGLE,
                     accessToken = request.idToken

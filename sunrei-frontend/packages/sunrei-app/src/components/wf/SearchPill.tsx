@@ -2,7 +2,6 @@
 
 import { cn } from '@/lib/utils';
 
-/** Rounded search pill matching the wireframe SearchBar. */
 export function SearchPill({
   placeholder,
   onClick,

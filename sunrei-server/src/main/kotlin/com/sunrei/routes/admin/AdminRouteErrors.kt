@@ -6,7 +6,7 @@ import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.ApplicationCall
 import io.ktor.server.response.respond
 
-/** Map service errors of the collection routes: 404 not found, 409 conflict, 400 otherwise. */
+/** 수집 라우트의 서비스 오류를 404(없음), 409(충돌), 그 밖에는 400으로 응답한다. */
 internal suspend fun ApplicationCall.handleErrors(block: suspend () -> Unit) {
     try {
         block()

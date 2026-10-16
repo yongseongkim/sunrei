@@ -23,6 +23,7 @@ import kotlinx.serialization.json.Json
 import org.slf4j.event.Level
 
 fun main(args: Array<String>) {
+    // 설정 파일은 KTOR_ENV로 고르며, -config 실행 인자는 읽지 않는다.
     val env = System.getenv("KTOR_ENV") ?: "local"
     val appConfig = ConfigFactory.load("application-$env.conf")
 
@@ -49,14 +50,11 @@ fun Application.module() {
 
     val isDevelopment = config.propertyOrNull("ktor.deployment.watch")?.getList()?.isNotEmpty() == true
 
-    // Initialize database
     DatabaseConfig.init(config)
 
-    // Install DI plugin and configure dependencies
     install(DI)
     configureDI()
 
-    // Configure serialization
     install(ContentNegotiation) {
         json(Json {
             prettyPrint = isDevelopment
@@ -65,7 +63,6 @@ fun Application.module() {
         })
     }
 
-    // Configure CORS
     install(CORS) {
         val allowedHosts = config.propertyOrNull("cors.allowedHosts")?.getString() ?: "*"
 
@@ -88,7 +85,6 @@ fun Application.module() {
         allowCredentials = true
     }
 
-    // Configure logging
     install(CallLogging) {
         level = when (config.propertyOrNull("logging.level")?.getString()) {
             "DEBUG" -> Level.DEBUG
@@ -99,7 +95,6 @@ fun Application.module() {
         }
     }
 
-    // Log startup information
     val appName = config.propertyOrNull("app.name")?.getString() ?: "Sunrei Server"
     val appVersion = config.propertyOrNull("app.version")?.getString() ?: "1.0.0"
     val dbHost = config.property("database.host").getString()
@@ -110,9 +105,7 @@ fun Application.module() {
     log.info("Environment: ${if (isDevelopment) "development" else "production"}")
     log.info("Database: $dbHost:$dbPort/$dbName")
 
-    // Configure authentication
     configureAuthentication(config)
 
-    // Configure routes
     configureRouting()
 }

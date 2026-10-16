@@ -1,9 +1,9 @@
 packages:
   - 'packages/*'
 
-# pnpm 11 removed onlyBuiltDependencies and defaults strictDepBuilds=true, so
-# unapproved build scripts are a hard error. Build-script approvals now use the
-# allowBuilds map (https://pnpm.io/settings#allowbuilds).
+# pnpm 11은 strictDepBuilds가 기본으로 켜져 있어 허용하지 않은 의존성의 build script가 있으면 설치가 실패한다.
+# build script를 실행해도 되는 패키지를 allowBuilds에 적는다.
+# 설정 설명은 https://pnpm.io/settings#allowbuilds 에 있다.
 allowBuilds:
   '@nestjs/core': true
   '@openapitools/openapi-generator-cli': true

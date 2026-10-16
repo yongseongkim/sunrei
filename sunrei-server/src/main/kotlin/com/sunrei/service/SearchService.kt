@@ -25,11 +25,10 @@ import org.jetbrains.exposed.sql.transactions.transaction
 
 class SearchService {
 
-    /** Unified search: database place hits, published source hits, published sunrei hits. */
+    /** Sunrei DB에 없는 지역 검색은 클라이언트가 Google Places 자동완성 결과로 채운다. */
     fun search(q: String, centerLat: Double?, centerLng: Double?): SearchResult = transaction {
         val term = "%${q.lowercase()}%"
 
-        // ---- Places with published spots matching name/address ----
         val publishedPlaceIds = (SunreiSpots innerJoin Sunreis)
             .slice(SunreiSpots.placeId)
             .select {
@@ -62,7 +61,6 @@ class SearchService {
             )
         }
 
-        // ---- Published sources matching q ----
         val publishedSourceIds = Sunreis.slice(Sunreis.sourceId)
             .select { (Sunreis.deletedAt.isNull()) and (Sunreis.publishedAt.isNotNull()) }
             .map { it[Sunreis.sourceId] }.distinct()
@@ -88,7 +86,6 @@ class SearchService {
             }
         } else emptyList()
 
-        // ---- Published sunreis matching title/summary ----
         val sunreiRows = (Sunreis innerJoin Sources)
             .select {
                 (Sunreis.deletedAt.isNull()) and (Sunreis.publishedAt.isNotNull()) and
@@ -97,9 +94,8 @@ class SearchService {
             .orderBy(Sunreis.createdAt to SortOrder.DESC)
             .limit(20).toList()
 
-        // Thumbnail fallback: a sunrei with no stored image borrows its first spot's
-        // YouTube thumbnail. A series' own `link` is a playlist (no single thumbnail),
-        // but each spot links to a watch URL we can derive an image from.
+        // 저장된 이미지가 없는 Sunrei는 첫 spot의 YouTube 썸네일을 대신 쓴다.
+        // 시리즈 Sunrei의 link는 플레이리스트라 썸네일을 하나로 정할 수 없지만, spot은 개별 영상 URL을 가진다.
         val needThumb = sunreiRows.filter { it[Sunreis.images].isEmpty() }.map { it[Sunreis.id] }
         val thumbBySunrei: Map<String, MultiSizeImageDTO> = if (needThumb.isNotEmpty()) {
             SunreiSpots
@@ -108,7 +104,7 @@ class SearchService {
                     (SunreiSpots.sunreiId inList needThumb) and (SunreiSpots.deletedAt.isNull()) and
                         (SunreiSpots.sourceLink.isNotNull())
                 }
-                .orderBy(SunreiSpots.id to SortOrder.ASC) // ULID id → oldest spot first
+                .orderBy(SunreiSpots.id to SortOrder.ASC) // id가 ULID라 id 순으로 정렬하면 먼저 만든 spot이 앞에 온다.
                 .toList()
                 .groupBy { it[SunreiSpots.sunreiId] }
                 .mapNotNull { (sid, spots) ->
@@ -180,7 +176,7 @@ private fun com.sunrei.model.MultiSizeImage.toAppImageDTO() =
         images.map { ImageDTO(url = it.url, width = it.width, height = it.height) }
     )
 
-// video id from watch / youtu.be / embed / shorts URLs → hqdefault thumbnail
+// watch, youtu.be, embed, shorts 형식의 URL에서 영상 id를 뽑는다.
 private val YOUTUBE_ID = Regex("""(?:v=|youtu\.be/|/embed/|/shorts/)([A-Za-z0-9_-]{11})""")
 
 private fun youtubeThumbnail(link: String?): MultiSizeImageDTO? {

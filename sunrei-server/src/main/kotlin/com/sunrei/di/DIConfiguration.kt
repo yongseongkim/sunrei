@@ -25,7 +25,6 @@ import io.ktor.server.config.ApplicationConfig
 import io.ktor.server.plugins.di.DI
 import io.ktor.server.plugins.di.dependencies
 
-// Simple service locator for dependency injection
 object ServiceLocator {
     lateinit var httpClient: Lazy<HttpClient>
     lateinit var s3Config: S3Config
@@ -46,10 +45,7 @@ object ServiceLocator {
 fun Application.configureDI() {
     val config = environment.config
 
-    // First, install the DI plugin (if not already installed)
-    // Then configure dependencies
     dependencies {
-        // Create S3Config
         val s3Config = S3Config(
             region = config.property("aws.region").getString(),
             bucketName = config.property("aws.s3.bucket").getString(),
@@ -61,7 +57,6 @@ fun Application.configureDI() {
                 }.s3.${config.propertyOrNull("aws.region")?.getString() ?: "ap-northeast-2"}.amazonaws.com"
         )
 
-        // Create HttpClient with lazy initialization
         val httpClientLazy = lazy {
             HttpClient(CIO) {
                 install(ContentNegotiation) {
@@ -70,42 +65,31 @@ fun Application.configureDI() {
             }
         }
 
-        // Read page token secret from config
         val pageTokenSecret = config.propertyOrNull("jwt.pageToken.secret")?.getString()
             ?: "sunrei-page-token-secret-change-in-production"
 
-        // Create leaf services
         val placeService = PlaceService(pageTokenSecret)
         val userService = UserService()
         val tagService = TagService(pageTokenSecret)
         val sourceService = SourceService(pageTokenSecret)
 
-        // Create S3Service
         val s3Service = S3Service(httpClientLazy.value, s3Config)
 
-        // Create SunreiService (depends on PlaceService, TagService, pageTokenSecret)
         val sunreiService = SunreiService(placeService, tagService, pageTokenSecret)
 
-        // YouTube collection (approval adds spots through SunreiService)
         val youtubeService = YoutubeService(sunreiService, pageTokenSecret)
 
-        // Instagram collection (approval adds spots through SunreiService)
         val instagramService = InstagramService(sunreiService, pageTokenSecret)
 
-        // Public read services
         val sunreiSpotService = SunreiSpotService()
         val searchService = SearchService()
 
-        // Create OAuthProviderFactory (depends on config, httpClient)
         val oAuthProviderFactory = OAuthProviderFactory(config, httpClientLazy.value)
 
-        // Create AuthRepository (depends on UserService)
         val authRepository = AuthRepository(userService)
 
-        // Create AuthService (depends on config, AuthRepository, OAuthProviderFactory)
         val authService = AuthService(config, authRepository, oAuthProviderFactory)
 
-        // Store all services in ServiceLocator
         ServiceLocator.httpClient = httpClientLazy
         ServiceLocator.s3Config = s3Config
         ServiceLocator.s3Service = s3Service

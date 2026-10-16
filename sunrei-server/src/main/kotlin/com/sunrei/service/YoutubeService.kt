@@ -65,8 +65,6 @@ class YoutubeService(
     private val pageToken = PaginationToken(pageTokenSecret)
     private val json = Json { ignoreUnknownKeys = true }
 
-    // ===== Playlists =====
-
     fun listPlaylists(): ListYoutubePlaylistsResult = transaction {
         val rows = YoutubePlaylists.selectAll().orderBy(YoutubePlaylists.createdAt to SortOrder.ASC).toList()
         ListYoutubePlaylistsResult(data = rows.map { it.toPlaylistDTO() })
@@ -109,8 +107,8 @@ class YoutubeService(
     }
 
     /**
-     * Upsert the playlist's current videos, mark missing ones as removed, and
-     * return the videos still waiting for processing.
+     * 받은 영상 목록으로 플레이리스트 소속을 맞추고, 아직 처리할 영상을 돌려준다.
+     * 목록에서 빠진 영상은 removed_at만 기록하고 영상 데이터와 spot은 지우지 않는다.
      */
     fun syncPlaylistVideos(playlistId: String, request: SyncYoutubePlaylistVideosRequest): SyncYoutubePlaylistVideosResult =
         transaction {
@@ -197,8 +195,6 @@ class YoutubeService(
 
             SyncYoutubePlaylistVideosResult(addedVideoIds = added, removedVideoIds = removed, pendingVideos = pending)
         }
-
-    // ===== Videos =====
 
     fun listVideos(
         playlistId: String?,
@@ -294,8 +290,6 @@ class YoutubeService(
         YoutubeVideos.select { YoutubeVideos.id eq videoId }.first().toVideoDTO()
     }
 
-    // ===== Texts =====
-
     fun createText(videoId: String, request: CreateYoutubeVideoTextRequest): YoutubeVideoTextDTO = transaction {
         requireVideoExists(videoId)
         val id = YoutubeVideoTexts.insertAndGetId { stmt ->
@@ -314,8 +308,6 @@ class YoutubeService(
     fun getText(id: String): YoutubeVideoTextDTO? = transaction {
         YoutubeVideoTexts.select { YoutubeVideoTexts.id eq id }.firstOrNull()?.toTextDTO(includeSegments = true)
     }
-
-    // ===== Extraction runs =====
 
     fun createRun(videoId: String, request: CreateYoutubeExtractionRunRequest): YoutubeExtractionRunDTO = transaction {
         requireVideoExists(videoId)
@@ -370,8 +362,6 @@ class YoutubeService(
         row.toRunDTO(placeDTOs(YoutubeExtractedPlaces.runId eq runId))
     }
 
-    // ===== Extracted places =====
-
     fun listPlaces(
         reviewStatus: YoutubeReviewStatus?,
         playlistId: String?,
@@ -403,9 +393,7 @@ class YoutubeService(
         )
     }
 
-    /**
-     * Apply a review decision. APPROVED adds a SunreiSpot to the target playlist's Sunrei.
-     */
+    /** 승인하면 영상이 속한 플레이리스트의 Sunrei에 SunreiSpot을 추가한다. */
     fun reviewPlace(id: String, request: ReviewYoutubeExtractedPlaceRequest): YoutubeExtractedPlaceDTO? = transaction {
         val row = YoutubeExtractedPlaces.select { YoutubeExtractedPlaces.id eq id }.firstOrNull()
             ?: return@transaction null
@@ -451,8 +439,6 @@ class YoutubeService(
         completeVideoWhenReviewed(videoId, now)
         placeDTOs(YoutubeExtractedPlaces.id eq id).first()
     }
-
-    // ===== Helpers =====
 
     private fun resolveTargetSunrei(videoId: String, playlistId: String?): String {
         val candidates = (YoutubePlaylistVideos innerJoin YoutubePlaylists)
@@ -614,7 +600,7 @@ class YoutubeService(
     )
 
     companion object {
-        /** Videos the collection job should (re)process. */
+        /** FAILED 영상도 다음 수집 때 다시 처리한다. */
         private val PROCESSABLE_STATUSES = listOf(YoutubeVideoStatus.PENDING.name, YoutubeVideoStatus.FAILED.name)
         private val SEGMENTS = ListSerializer(YoutubeSegmentDTO.serializer())
         private val EVIDENCE = ListSerializer(YoutubeEvidenceDTO.serializer())

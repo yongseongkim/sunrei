@@ -1,12 +1,9 @@
 import type { SourceDTO } from '@/dto';
 
 /**
- * A source's channel-thumbnail (posterImage) URL, sized for a `px` avatar. We want ~2× the
- * display size for retina without shipping a large original into a 22px circle:
- * uploaded posters (e.g. Instagram profile pictures) come in several sizes, largest first,
- * so we take the smallest that still covers the target; YouTube avatar URLs carry a size
- * token (…=s800-c-k-…) that we rewrite. Returns undefined when the source has no poster
- * image (Avatar then shows the initial).
+ * 작은 원에 큰 원본을 내려받지 않도록 고해상도 화면을 고려해 표시 크기의 두 배에 맞는 이미지를 고른다.
+ * 업로드한 포스터(Instagram 프로필 사진 등)는 큰 것부터 여러 크기가 있어서 목표 크기를 덮는 가장 작은 것을 쓰고,
+ * YouTube 채널 썸네일 URL은 `=s800-c-k-` 같은 크기 토큰을 바꿔 요청한다.
  */
 export function sourceAvatarUrl(
   source: Pick<SourceDTO, 'posterImage'> | null | undefined,

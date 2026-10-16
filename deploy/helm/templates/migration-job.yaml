@@ -15,6 +15,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: migration
+          # migration 이미지는 server와 같은 릴리스에서 같은 태그로 빌드된다.
           image: "{{ .Values.registry }}/migration:{{ .Values.images.server.tag }}"
           command: ["sh", "-c"]
           args:

@@ -170,7 +170,7 @@ export default function SourceForm({ mode, sourceId }: SourceFormProps) {
               </div>
             )}
 
-            {/* Instagram keeps the upload: no script fetches profile pictures and its CDN URLs expire. */}
+            {/* Instagram은 계정 등록 스크립트가 프로필 사진을 넣지만, 다른 이미지로 바꿀 수 있게 업로드를 남긴다. */}
             {type !== 'YOUTUBE' && (
               <div className="space-y-2">
                 <Label>Poster image</Label>

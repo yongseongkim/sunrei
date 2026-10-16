@@ -6,7 +6,7 @@ import { useMapStore } from '@/stores/map-store';
 import { reverseGeocode } from '@/hooks/use-google-places';
 import { cn } from '@/lib/utils';
 
-/** Debounced, cached reverse-geocode of the map center → a "Ward, City" label. */
+/** 지도를 옮길 때마다 Geocoding API를 부르지 않도록 지도 중심이 500ms 동안 그대로일 때만 조회하고, 결과는 좌표별로 캐시한다. */
 function useAreaLabel(): string | null {
   const center = useMapStore((s) => s.mapCenter);
   const [label, setLabel] = useState<string | null>(null);
@@ -35,7 +35,6 @@ function useAreaLabel(): string | null {
   return label;
 }
 
-/** Pill naming the current map area, pinned over the map (direction B). */
 export function AreaChip({ className }: { className?: string }) {
   const label = useAreaLabel();
   if (!label) return null;
@@ -80,11 +79,7 @@ function MapBtn({
   );
 }
 
-/**
- * Map zoom + recenter controls (direction B). `zoom={false}` shows recenter only
- * (mobile, where the map region is short). Recenter re-requests geolocation and pans
- * there, falling back to the opening seed (Seoul if location was denied).
- */
+/** 모바일은 지도 영역이 좁아서 `zoom={false}`로 내 위치 버튼만 보여 준다. */
 export function MapControls({ zoom = true }: { zoom?: boolean }) {
   const map = useMapStore((s) => s.map);
   const panTo = useMapStore((s) => s.panTo);

@@ -1,13 +1,7 @@
-{{/*
-Expand the name of the chart.
-*/}}
 {{- define "sunrei.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
-{{/*
-Create a default fully qualified app name.
-*/}}
 {{- define "sunrei.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
@@ -21,16 +15,10 @@ Create a default fully qualified app name.
 {{- end }}
 {{- end }}
 
-{{/*
-Create chart name and version as used by the chart label.
-*/}}
 {{- define "sunrei.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
-{{/*
-Common labels
-*/}}
 {{- define "sunrei.labels" -}}
 helm.sh/chart: {{ include "sunrei.chart" . }}
 {{ include "sunrei.selectorLabels" . }}
@@ -40,25 +28,16 @@ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
-{{/*
-Selector labels
-*/}}
 {{- define "sunrei.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "sunrei.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
-{{/*
-Component-specific labels
-*/}}
 {{- define "sunrei.componentLabels" -}}
 {{ include "sunrei.labels" . }}
 app.kubernetes.io/component: {{ .component }}
 {{- end }}
 
-{{/*
-Component-specific selector labels
-*/}}
 {{- define "sunrei.componentSelectorLabels" -}}
 {{ include "sunrei.selectorLabels" . }}
 app.kubernetes.io/component: {{ .component }}

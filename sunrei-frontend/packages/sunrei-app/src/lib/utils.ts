@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export type LinkKind = "youtube" | "instagram" | "web"
 
-/** Which service a link points at (by host, subdomains included), for picking its label. */
+/** 링크 주소의 호스트(하위 도메인 포함)로 어느 서비스 링크인지 정해 라벨을 고른다. */
 export function linkKind(url: string): LinkKind {
   let host: string
   try {

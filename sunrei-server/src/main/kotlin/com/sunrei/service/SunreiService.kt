@@ -108,7 +108,6 @@ class SunreiService(
         buildSunreiList(rows)
     }
 
-    /** Public: a published sunrei with its source + spots (+ spot tags), or null. */
     fun getPublishedWithSpots(id: String, centerLat: Double? = null, centerLng: Double? = null): Sunrei? = transaction {
         val row = Sunreis.select {
             (Sunreis.id eq id) and (Sunreis.deletedAt.isNull()) and (Sunreis.publishedAt.isNotNull())
@@ -162,7 +161,7 @@ class SunreiService(
             request.images?.let { stmt[Sunreis.images] = it.map { img -> img.toModel() } }
             request.published?.let { published ->
                 when (published) {
-                    // Preserve the original publish time on re-save; only set if currently null.
+                    // 이미 공개된 Sunrei를 다시 저장해도 처음 공개한 시각을 유지한다.
                     true -> if (currentPublishedAt == null) stmt[Sunreis.publishedAt] = Clock.System.now()
                     false -> stmt[Sunreis.publishedAt] = null
                 }
@@ -185,7 +184,7 @@ class SunreiService(
 
                     spot.id == null && spot.delete != true ->
                         createSunreiSpot(id, spot)
-                    // new spot marked for delete, or unknown id: ignore
+                    // 삭제 표시가 붙은 새 spot과 이 Sunrei에 없는 id는 무시한다.
                 }
             }
 
@@ -209,7 +208,7 @@ class SunreiService(
         updated > 0
     }
 
-    /** Add one spot to an existing Sunrei without touching its other spots. */
+    /** update와 달리 다른 spot은 건드리지 않고 spot 하나만 추가한다. */
     fun addSpot(sunreiId: String, spot: CreateSunreiSpotInline): String = transaction {
         val exists = Sunreis.select { (Sunreis.id eq sunreiId) and (Sunreis.deletedAt.isNull()) }.count() > 0
         require(exists) { "Sunrei not found: $sunreiId" }
@@ -217,8 +216,6 @@ class SunreiService(
         Sunreis.update({ Sunreis.id eq sunreiId }) { it[Sunreis.updatedAt] = Clock.System.now() }
         spotId
     }
-
-    // ===== Spot write helpers =====
 
     private fun createSunreiSpot(sunreiId: String, spot: CreateSunreiSpotInline): String =
         doCreateSpot(
@@ -291,7 +288,7 @@ class SunreiService(
         }
     }
 
-    /** Returns null when neither tagIds nor tagLabels is present (=> no tag change requested). */
+    /** tagIds와 tagLabels가 둘 다 없으면 태그를 바꾸지 않는다는 뜻이므로 null을 돌려준다. */
     private fun resolveTagIds(tagIds: List<String>?, tagLabels: List<String>?): List<String>? {
         if (tagIds == null && tagLabels == null) return null
         val ids = (tagIds ?: emptyList()).toMutableList()
@@ -310,8 +307,6 @@ class SunreiService(
         val exists = Sources.select { (Sources.id eq sourceId) and (Sources.deletedAt.isNull()) }.count() > 0
         require(exists) { "Source $sourceId not found" }
     }
-
-    // ===== Read helpers =====
 
     private fun buildSunreiList(rows: List<ResultRow>): List<Sunrei> {
         if (rows.isEmpty()) return emptyList()
@@ -360,7 +355,6 @@ class SunreiService(
     ): Map<String, List<SunreiSpot>> {
         if (sunreiIds.isEmpty()) return emptyMap()
 
-        // With a center anchor, compute per-spot distance and return spots nearest-first.
         val dist =
             if (centerLat != null && centerLng != null)
                 StDistanceMeters(Places.geom, centerLng, centerLat).alias("spot_dist")

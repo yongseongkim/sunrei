@@ -2,14 +2,10 @@
 
 import { useEffect, useState } from 'react';
 
-/**
- * Round avatar. Shows an image (e.g. a YouTube channel thumbnail) when `src` is given
- * and loads; otherwise falls back to the label's initial — so a missing or hotlink-
- * blocked URL still renders a letter.
- */
+/** YouTube 채널 썸네일처럼 외부 이미지는 핫링크가 막힐 수 있으므로 불러오지 못하면 이름 첫 글자를 보여 준다. */
 export function Avatar({ label, src, size = 22 }: { label: string; src?: string | null; size?: number }) {
   const [broken, setBroken] = useState(false);
-  // Reset the error state when the source changes (avatars are reused across rows).
+  // 같은 Avatar가 다른 행에 다시 쓰이므로 src가 바뀌면 오류 상태를 지운다.
   useEffect(() => setBroken(false), [src]);
   const showImg = !!src && !broken;
   return (

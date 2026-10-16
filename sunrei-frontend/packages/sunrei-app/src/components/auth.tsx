@@ -22,7 +22,6 @@ declare global {
   }
 }
 
-/** 4-color Google "G". */
 function GoogleG({ size = 18 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 48 48" className="shrink-0">
@@ -35,9 +34,8 @@ function GoogleG({ size = 18 }: { size?: number }) {
 }
 
 /**
- * Google Identity Services token-client sign-in → POST /api/auth/google → store
- * the session (same flow the admin app uses). The account chooser that opens is
- * browser/OS chrome, not our UI.
+ * token client가 주는 값은 ID token이 아니라 access token이지만 서버 계약에 맞춰 idToken 필드에 담아 보낸다.
+ * 서버는 이 값으로 Google userinfo를 조회한다.
  */
 export function useGoogleLogin(onSuccess?: () => void) {
   const setSession = useAuthStore((s) => s.setSession);
@@ -48,8 +46,7 @@ export function useGoogleLogin(onSuccess?: () => void) {
     setError(false);
     setLoading(true);
     try {
-      // Google Maps also owns window.google, so check for the GIS namespace
-      // specifically — otherwise the GSI script is never loaded on map pages.
+      // Google Maps도 window.google을 쓰므로 GIS 네임스페이스로 확인해야 지도 페이지에서도 GIS 스크립트를 불러온다.
       if (!window.google?.accounts?.oauth2) {
         await new Promise<void>((resolve, reject) => {
           const sc = document.createElement('script');
@@ -115,7 +112,6 @@ function GoogleButton({ full, onClick, loading }: { full?: boolean; onClick: () 
   );
 }
 
-/** Header auth control — the sign-in button, or the account chip + dropdown. */
 export function AuthControl({ variant = 'header' }: { variant?: 'header' | 'mobile' }) {
   const t = useTranslations('auth');
   const user = useAuthStore((s) => s.user);
@@ -207,7 +203,6 @@ export function AuthControl({ variant = 'header' }: { variant?: 'header' | 'mobi
   );
 }
 
-/** Sign-in modal (§6) — our card; the Google chooser that follows is browser chrome. */
 export function LoginModal() {
   const t = useTranslations('auth');
   const open = useUiStore((s) => s.loginOpen);

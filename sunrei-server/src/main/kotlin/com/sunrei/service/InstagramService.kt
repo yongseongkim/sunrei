@@ -73,8 +73,6 @@ class InstagramService(
     private val pageToken = PaginationToken(pageTokenSecret)
     private val json = Json { ignoreUnknownKeys = true }
 
-    // ===== Accounts =====
-
     fun listAccounts(): ListInstagramAccountsResult = transaction {
         val rows = InstagramAccounts.selectAll().orderBy(InstagramAccounts.createdAt to SortOrder.ASC).toList()
         val counts = postCounts(rows.map { it[InstagramAccounts.id] })
@@ -136,11 +134,9 @@ class InstagramService(
         InstagramAccounts.select { InstagramAccounts.id eq id }.first().toAccountDTO(postCounts(listOf(id)))
     }
 
-    // ===== Posts =====
-
     /**
-     * Insert new posts and refresh the caption, title, and counts of existing ones.
-     * Every permalink is validated before anything is written.
+     * 새 게시물은 넣고, 있는 게시물은 캡션·제목·수치만 갱신한다.
+     * permalink가 하나라도 잘못되면 아무것도 쓰지 않는다.
      */
     fun upsertPosts(accountId: String, request: UpsertInstagramPostsRequest): UpsertInstagramPostsResult = transaction {
         InstagramAccounts.select { InstagramAccounts.id eq accountId }.firstOrNull()
@@ -297,7 +293,7 @@ class InstagramService(
         InstagramPosts.select { InstagramPosts.id eq postId }.first().toPostDTO()
     }
 
-    /** Record that the post page was read: the tag it shows, or none. */
+    /** 게시물 페이지를 읽은 결과를 기록하며, 태그가 없으면 null로 남긴다. */
     fun setLocationTag(postId: String, request: SetInstagramLocationTagRequest): InstagramPostDTO? = transaction {
         InstagramPosts.select { InstagramPosts.id eq postId }.firstOrNull() ?: return@transaction null
         val now = Clock.System.now()
@@ -308,8 +304,6 @@ class InstagramService(
         }
         InstagramPosts.select { InstagramPosts.id eq postId }.first().toPostDTO()
     }
-
-    // ===== Texts =====
 
     fun createText(postId: String, request: CreateInstagramPostTextRequest): InstagramPostTextDTO = transaction {
         requirePostExists(postId)
@@ -329,12 +323,10 @@ class InstagramService(
         InstagramPostTexts.select { InstagramPostTexts.id eq id }.firstOrNull()?.toTextDTO(includeSegments = true)
     }
 
-    // ===== Extraction runs =====
-
     /**
-     * Record one post's extraction. A succeeded run copies its promotion to the post and
-     * supersedes the post's pending candidates from earlier runs. Ads and the author's own
-     * promotions produce no candidates; their places stay in the raw output.
+     * 게시물 하나의 추출 기록을 남긴다.
+     * 성공한 기록은 홍보 분류를 게시물에 복사하고, 이전 실행의 대기 후보를 SUPERSEDED로 바꾼다.
+     * 광고와 본인 홍보 글의 장소는 후보로 만들지 않고 raw output에만 남긴다.
      */
     fun createRun(postId: String, request: CreateInstagramExtractionRunRequest): InstagramExtractionRunDTO = transaction {
         requirePostExists(postId)
@@ -426,8 +418,6 @@ class InstagramService(
         }
     }
 
-    // ===== Extracted places =====
-
     fun listPlaces(
         reviewStatus: InstagramReviewStatus?,
         geocodeStatus: InstagramGeocodeStatus?,
@@ -457,9 +447,7 @@ class InstagramService(
         )
     }
 
-    /**
-     * Apply a review decision. APPROVED adds a SunreiSpot linking to the post to the account's Sunrei.
-     */
+    /** 승인하면 계정의 Sunrei에 게시물 링크를 단 SunreiSpot을 추가한다. */
     fun reviewPlace(id: String, request: ReviewInstagramExtractedPlaceRequest): InstagramExtractedPlaceDTO? = transaction {
         require(request.reviewStatus != InstagramReviewStatus.SUPERSEDED) { "SUPERSEDED is set only by the server" }
         // 동시에 두 번 승인해도 spot이 하나만 생기도록 후보 행을 잠근다.
@@ -509,8 +497,6 @@ class InstagramService(
         placeDTOs(InstagramExtractedPlaces.id eq id).first()
     }
 
-    // ===== Helpers =====
-
     private fun completePostWhenReviewed(postId: String, now: Instant) {
         val pending = InstagramExtractedPlaces.select {
             (InstagramExtractedPlaces.postId eq postId) and
@@ -527,7 +513,7 @@ class InstagramService(
         }
     }
 
-    /** Total and processable (PENDING or FAILED) post counts per account, in two grouped queries. */
+    /** 계정별 전체 게시물 수와 처리할(PENDING, FAILED) 게시물 수를 그룹 쿼리 두 번으로 센다. */
     private fun postCounts(accountIds: List<String>): Map<String, Pair<Int, Int>> {
         if (accountIds.isEmpty()) return emptyMap()
         val count = InstagramPosts.id.count()
@@ -585,7 +571,7 @@ class InstagramService(
         val spotIds: Map<Pair<String, String>, List<String>>
     )
 
-    /** Live spots in the candidates' account Sunreis at the same Google places, in two queries per page. */
+    /** 후보 계정의 Sunrei에서 같은 Google 장소에 있는 spot을 페이지마다 쿼리 두 번으로 찾는다. */
     private fun existingSpots(rows: List<ResultRow>): ExistingSpots {
         val accountIds = rows.map { it[InstagramPosts.accountId] }.toSet()
         val mapsIds = rows.mapNotNull { it[InstagramExtractedPlaces.googleMapsId] }.toSet()
@@ -727,7 +713,7 @@ class InstagramService(
     companion object {
         private const val MAX_POSTS_PER_UPSERT = 100
 
-        /** Posts the collection job should (re)process. */
+        /** FAILED 게시물도 다음 수집 때 다시 처리한다. */
         private val PROCESSABLE_STATUSES = listOf(InstagramPostStatus.PENDING.name, InstagramPostStatus.FAILED.name)
         private val NO_CANDIDATE_PROMOTIONS = setOf(InstagramPromotion.DISCLOSED_AD, InstagramPromotion.SELF_PROMOTION)
         private val GEOCODED_STATUSES = setOf(InstagramGeocodeStatus.MATCHED, InstagramGeocodeStatus.NAME_MISMATCH)
@@ -739,7 +725,7 @@ class InstagramService(
         private fun shortcodeOf(permalink: String): String? =
             SHORTCODE.find(permalink)?.groupValues?.get(1)?.takeIf { it.length <= 32 }
 
-        /** First caption line with at least 4 characters left after removing hashtags, cut to 128. */
+        /** 해시태그를 지우고도 4자 이상 남는 첫 줄을 128자로 자른다. */
         private fun captionTitle(caption: String?): String? =
             caption?.lineSequence()
                 ?.map { HASHTAG.replace(it, "").trim().trim(' ', '-', '·', '|') }

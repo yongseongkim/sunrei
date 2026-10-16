@@ -11,7 +11,7 @@ import { TagDTO } from '@/api/admin';
 import { UseFormRegister, UseFormSetValue, UseFormWatch } from 'react-hook-form';
 import { SunreiFormValue } from '@/lib/schemas';
 
-// Extract a YouTube video id from a watch / youtu.be / embed URL (ignoring timestamps).
+// watch, youtu.be, embed, shorts 형식의 URL에서 썸네일에 쓸 영상 id만 뽑는다.
 function youtubeVideoId(url?: string | null): string | null {
   if (!url) return null;
   const m = url.match(

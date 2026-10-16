@@ -6,7 +6,6 @@ import {
   SunreiDTO,
 } from '@/api/admin';
 
-// Query keys
 export const sunreiKeys = {
   all: ['sunreis'] as const,
   lists: () => [...sunreiKeys.all, 'list'] as const,
@@ -44,7 +43,6 @@ export function useSunreis(params: {
   });
 }
 
-// Get single sunrei
 export function useSunrei(id: string) {
   return useQuery({
     queryKey: sunreiKeys.detail(id),
@@ -56,7 +54,6 @@ export function useSunrei(id: string) {
   });
 }
 
-// Create sunrei
 export function useCreateSunrei() {
   const queryClient = useQueryClient();
   return useMutation({
@@ -70,7 +67,6 @@ export function useCreateSunrei() {
   });
 }
 
-// Update sunrei
 export function useUpdateSunrei() {
   const queryClient = useQueryClient();
   return useMutation({
@@ -85,7 +81,7 @@ export function useUpdateSunrei() {
   });
 }
 
-/** Toggle publish state: published=true sets published_at (preserved), false clears it. */
+/** 서버는 published_at이 비어 있을 때만 현재 시각을 넣으므로, 공개된 Sunrei를 다시 저장해도 처음 공개한 시각이 남는다. */
 export function useSetSunreiPublished() {
   const queryClient = useQueryClient();
   return useMutation({
@@ -99,7 +95,6 @@ export function useSetSunreiPublished() {
   });
 }
 
-// Delete sunrei
 export function useDeleteSunrei() {
   const queryClient = useQueryClient();
   return useMutation({

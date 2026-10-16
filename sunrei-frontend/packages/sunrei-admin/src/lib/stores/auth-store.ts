@@ -4,7 +4,7 @@ import Cookies from 'js-cookie';
 import { create } from 'zustand';
 
 const TOKEN_COOKIE = 'adminToken';
-const COOKIE_EXPIRES = 7; // 7 days
+const COOKIE_EXPIRES = 7; // 일 단위
 
 interface AuthState {
   token: string | null;

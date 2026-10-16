@@ -39,7 +39,7 @@ export default function PlaceSearchModal({
       longitude: 0,
     },
   );
-  const [mapCenter, setMapCenter] = useState({ lat: 35.6762, lng: 139.6503 }); // Tokyo
+  const [mapCenter, setMapCenter] = useState({ lat: 35.6762, lng: 139.6503 }); // 도쿄
   const [mapZoom, setMapZoom] = useState(14);
   const [addressSearchInput, setAddressSearchInput] = useState('');
   const [coordinateSearchInput, setCoordinateSearchInput] = useState('');
@@ -49,24 +49,19 @@ export default function PlaceSearchModal({
   const geocoder = useRef<google.maps.Geocoder | null>(null);
   const initialPlaceRef = useRef<PlaceInput | undefined>(undefined);
 
-  // Update ref when initialPlace changes
   useEffect(() => {
     initialPlaceRef.current = initialPlace;
   }, [initialPlace]);
 
-  // Reset state when modal opens
   useEffect(() => {
     if (isOpen) {
-      // Reset all input fields
       setAddressSearchInput('');
       setCoordinateSearchInput('');
 
-      // Clear SearchBox input
       if (searchInputRef.current) {
         searchInputRef.current.value = '';
       }
 
-      // Reset to initial place or default values
       const initial = initialPlaceRef.current;
       if (initial?.latitude && initial?.longitude) {
         setMapCenter({
@@ -82,7 +77,7 @@ export default function PlaceSearchModal({
           latitude: 0,
           longitude: 0,
         });
-        setMapCenter({ lat: 35.6762, lng: 139.6503 }); // Tokyo
+        setMapCenter({ lat: 35.6762, lng: 139.6503 }); // 도쿄
         setMapZoom(14);
       }
     }
@@ -90,7 +85,6 @@ export default function PlaceSearchModal({
 
   useEffect(() => {
     if (map && searchInputRef.current && isOpen) {
-      // Clean up previous SearchBox if exists
       if (searchBoxRef.current) {
         google.maps.event.clearInstanceListeners(searchBoxRef.current);
       }
@@ -134,7 +128,6 @@ export default function PlaceSearchModal({
     const lat = e.latLng.lat();
     const lng = e.latLng.lng();
 
-    // Reverse geocoding to get address
     if (!geocoder.current) {
       geocoder.current = new google.maps.Geocoder();
     }
@@ -146,7 +139,6 @@ export default function PlaceSearchModal({
           const result = results[0];
           let placeName = 'Selected Location';
 
-          // Try to get a more specific name from address components
           if (result.address_components) {
             const pointOfInterest = result.address_components.find(
               (comp) =>
@@ -192,7 +184,6 @@ export default function PlaceSearchModal({
       const lat = parseFloat(coords[1]);
       const lng = parseFloat(coords[2]);
 
-      // Reverse geocoding to get address
       if (!geocoder.current) {
         geocoder.current = new google.maps.Geocoder();
       }
@@ -204,7 +195,6 @@ export default function PlaceSearchModal({
             const result = results[0];
             let placeName = 'Custom Location';
 
-            // Try to get a more specific name from address components
             if (result.address_components) {
               const pointOfInterest = result.address_components.find(
                 (comp) =>
@@ -257,7 +247,6 @@ export default function PlaceSearchModal({
   };
 
   const handleClose = () => {
-    // Clean up state when closing
     setAddressSearchInput('');
     setCoordinateSearchInput('');
     if (searchInputRef.current) {

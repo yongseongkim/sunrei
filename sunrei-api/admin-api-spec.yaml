@@ -1276,7 +1276,7 @@ components:
         totalElements: { type: integer }
         nextToken: { type: string, nullable: true }
 
-    # ===== Tags (bilingual) =====
+    # ===== Tags =====
     TagDTO:
       type: object
       required: [id, labelEn, labelKo]
@@ -1601,7 +1601,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/YoutubeVideoInput'
-        # Status for newly added videos (default PENDING); SKIPPED registers a baseline without processing.
+        # 새로 추가된 영상의 상태이며, 비우면 PENDING이다.
+        # SKIPPED로 보내면 처리하지 않고 기준선으로만 등록한다.
         initialStatus:
           allOf:
             - $ref: '#/components/schemas/YoutubeVideoStatus'
@@ -1749,7 +1750,7 @@ components:
         needsVerification: { type: boolean, nullable: true }
         reason: { type: string, nullable: true }
         timestampSeconds: { type: integer, nullable: true }
-        # Geocoding suggested by the job.
+        # 수집 작업이 지오코딩으로 제안한 장소다.
         place:
           allOf:
             - $ref: '#/components/schemas/PlaceInput'
@@ -1863,7 +1864,7 @@ components:
         playlistId: { type: string, nullable: true, description: Playlist whose Sunrei receives the spot; defaults to the video's first playlist with a Sunrei }
         title: { type: string, nullable: true, maxLength: 128, description: Spot title; defaults to the video title }
         context: { type: string, nullable: true, description: Spot context; defaults to the candidate description }
-        # Required for APPROVED unless the candidate already has a geocoded place.
+        # 후보에 지오코딩된 장소가 없으면 APPROVED로 바꿀 때 꼭 넣어야 한다.
         place:
           allOf:
             - $ref: '#/components/schemas/PlaceInput'
@@ -2054,7 +2055,7 @@ components:
     SetInstagramLocationTagRequest:
       type: object
       properties:
-        # null records that the post page was read and has no tag.
+        # null이면 게시물 페이지를 읽었고 태그가 없다는 뜻이다.
         locationTag:
           allOf: [{ $ref: '#/components/schemas/InstagramLocationTagDTO' }]
           nullable: true
@@ -2235,7 +2236,7 @@ components:
           $ref: '#/components/schemas/InstagramReviewStatus'
         title: { type: string, nullable: true, maxLength: 128, description: Spot title; defaults to the post title }
         context: { type: string, nullable: true, description: Spot context; defaults to the candidate description }
-        # Required for APPROVED unless the candidate has a suggested place.
+        # 후보에 제안된 장소가 없으면 APPROVED로 바꿀 때 꼭 넣어야 한다.
         place:
           allOf: [{ $ref: '#/components/schemas/PlaceInput' }]
           nullable: true
@@ -2259,7 +2260,7 @@ components:
           description: Recent failed attempts, newest first (at most 50)
           items: { $ref: '#/components/schemas/InstagramPostAttemptDTO' }
 
-    # ===== Auth (unchanged) =====
+    # ===== Auth =====
     LoginRequest:
       type: object
       required: [username, password]

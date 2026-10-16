@@ -15,7 +15,6 @@ interface MapProps {
   }>;
 }
 
-// Main Map component
 const MapComponent: React.FC<MapProps> = ({
   center,
   zoom,
@@ -40,6 +39,7 @@ const MapComponent: React.FC<MapProps> = ({
         streetViewControl: true,
         rotateControl: false,
         fullscreenControl: true,
+        // AdvancedMarkerElement는 map ID가 있는 지도에만 그려진다.
         mapId: process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID || 'DEMO_MAP_ID',
       });
 
@@ -55,19 +55,15 @@ const MapComponent: React.FC<MapProps> = ({
     }
   }, [ref, map, center, zoom, onClick, onLoad]);
 
-  // Handle markers
   useEffect(() => {
     if (!map) return;
 
-    // Clear existing markers
     markersRef.current.forEach((marker) => {
       marker.map = null;
     });
     markersRef.current = [];
 
-    // Add new markers
     markers.forEach(({ position, title }) => {
-      // Create custom marker element with Pantone color
       const markerElement = document.createElement('div');
       markerElement.style.width = '24px';
       markerElement.style.height = '24px';
@@ -97,7 +93,6 @@ const MapComponent: React.FC<MapProps> = ({
   return <div ref={ref} style={{ width: '100%', height: '100%', ...style }} />;
 };
 
-// Wrapper component with API key
 interface GoogleMapProps extends MapProps {
   apiKey: string;
 }

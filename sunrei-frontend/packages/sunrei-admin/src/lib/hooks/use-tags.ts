@@ -2,7 +2,6 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { adminApi } from '@/lib/api-client';
 import { CreateTagRequest, UpdateTagRequest, TagDTO } from '@/api/admin';
 
-// Query keys
 export const tagKeys = {
   all: ['tags'] as const,
   lists: () => [...tagKeys.all, 'list'] as const,
@@ -13,7 +12,6 @@ export const tagKeys = {
   detail: (id: string) => [...tagKeys.details(), id] as const,
 };
 
-// List tags with pagination
 export function useTags(nextToken?: string, size?: number) {
   return useQuery({
     queryKey: tagKeys.list(nextToken, size),
@@ -24,7 +22,6 @@ export function useTags(nextToken?: string, size?: number) {
   });
 }
 
-// Search tags by either label (en or ko)
 export function useSearchTags(query: string, enabled = true) {
   return useQuery({
     queryKey: tagKeys.search(query),
@@ -36,7 +33,6 @@ export function useSearchTags(query: string, enabled = true) {
   });
 }
 
-// Get single tag with associated spots
 export function useTag(id: string) {
   return useQuery({
     queryKey: tagKeys.detail(id),
@@ -48,7 +44,6 @@ export function useTag(id: string) {
   });
 }
 
-// Create bilingual tag
 export function useCreateTag() {
   const queryClient = useQueryClient();
   return useMutation({
@@ -62,7 +57,6 @@ export function useCreateTag() {
   });
 }
 
-// Update tag labels
 export function useUpdateTag(id: string) {
   const queryClient = useQueryClient();
   return useMutation({
@@ -77,7 +71,6 @@ export function useUpdateTag(id: string) {
   });
 }
 
-// Delete tag
 export function useDeleteTag() {
   const queryClient = useQueryClient();
   return useMutation({
@@ -91,7 +84,6 @@ export function useDeleteTag() {
   });
 }
 
-// Detach a spot from a tag
 export function useDetachSpotFromTag(tagId: string) {
   const queryClient = useQueryClient();
   return useMutation({

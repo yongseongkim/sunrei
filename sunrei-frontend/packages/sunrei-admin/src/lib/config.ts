@@ -7,7 +7,6 @@ export const config = {
   },
 } as const;
 
-// Type check for required environment variables
 if (typeof window !== 'undefined' && !config.googleMaps.apiKey) {
   console.warn('Google Maps API key is not configured. Map features will not work.');
 }

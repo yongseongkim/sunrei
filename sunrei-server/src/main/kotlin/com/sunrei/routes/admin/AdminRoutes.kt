@@ -9,7 +9,6 @@ import io.ktor.server.routing.route
 
 fun Route.adminRoutes() {
     route("/admin") {
-        // Redirect root admin path to Sunrei list
         get {
             call.respondRedirect("/admin/sunreis", permanent = false)
         }

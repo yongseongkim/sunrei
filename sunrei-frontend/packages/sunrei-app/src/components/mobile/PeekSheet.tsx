@@ -9,11 +9,6 @@ import { useState, type ReactNode } from 'react';
 
 export type Snap = 'peek' | 'half' | 'full';
 
-/**
- * Mobile peek sheet (Bd-2): 3 snap points (peek / half / full), tap-driven via the handle,
- * ~250ms transitions. Shows the active detail/preview panel when one is open, else the
- * place list. `onSnapChange` lets the shell dim the map at the full snap.
- */
 export function PeekSheet({
   detailPanel,
   channelPanel,

@@ -20,10 +20,9 @@ import org.jetbrains.exposed.sql.transactions.transaction
 class SunreiSpotService {
 
     /**
-     * Build PlaceCards for a set of places (each already carrying its distance to the
-     * map center). Two queries: spots joined to published sunreis + sources, then tags
-     * per spot. Mentions collapse multiple spots of the same video at one place into a
-     * single representative row (first spot with non-empty context).
+     * 한 Sunrei가 같은 Place에 spot을 여러 개 가지면 context가 있는 첫 spot을 대표로 삼아 mention 하나로 합친다.
+     * Place의 tags는 대표 spot만이 아니라 그 Place에 있는 공개 spot의 태그를 모두 합친 것이다.
+     * 결과는 입력 순서를 따르고, 공개된 spot이 없는 Place는 빠진다.
      */
     fun feedByPlaces(placesWithDistance: List<Pair<Place, Double?>>): List<PlaceFeedItem> {
         if (placesWithDistance.isEmpty()) return emptyList()
@@ -33,7 +32,6 @@ class SunreiSpotService {
         val distanceById = placesWithDistance.associate { it.first.id to it.second }
 
         return transaction {
-            // Q1: published spots at these places, with their sunrei + source.
             val spotRows = (SunreiSpots innerJoin Sunreis innerJoin Sources)
                 .select {
                     (SunreiSpots.placeId inList placeIds) and
@@ -45,7 +43,6 @@ class SunreiSpotService {
 
             val spotIds = spotRows.map { it[SunreiSpots.id] }.distinct()
 
-            // Q2: tags per spot.
             val tagsBySpot: Map<String, List<Tag>> =
                 if (spotIds.isEmpty()) emptyMap()
                 else (SunreiSpotTags innerJoin Tags)
@@ -62,7 +59,6 @@ class SunreiSpotService {
                         }
                     )
 
-            // Group spots under (placeId, sunreiId) and pick a representative.
             data class SpotRow(
                 val spotId: String,
                 val placeId: String,
@@ -108,7 +104,6 @@ class SunreiSpotService {
                 )
             }
 
-            // Build place -> items, preserving only places that have published spots.
             val byPlace: Map<String, List<SpotRow>> = rows.groupBy { it.placeId }
             val orderedPlaceIds = placesWithDistance.map { it.first.id }.filter { it in byPlace }
 
@@ -116,9 +111,7 @@ class SunreiSpotService {
                 val placeRows = byPlace[placeId] ?: return@mapNotNull null
                 val place = placeById[placeId] ?: return@mapNotNull null
 
-                // Collapse spots by sunrei (one mention per video). Order by source, then
-                // sunrei recency (newest first) — B0-5. "Nearest spot" is constant within a
-                // place (all its mentions share the place's coordinates), so it can't order here.
+                // 한 Place의 mention은 좌표가 모두 같아 거리로 정렬할 수 없으므로 Source 이름, 최근 공개순으로 정렬한다.
                 val bySunrei: Map<String, List<SpotRow>> = placeRows.groupBy { it.sunreiId }
                 val mentions = bySunrei.values
                     .map { spotGroup ->
@@ -156,13 +149,12 @@ class SunreiSpotService {
         }
     }
 
-    /** Published spots for a single sunrei (video preview / detail). */
+    // 호출하는 곳이 없고 항상 빈 목록을 돌려준다.
+    // 한 Sunrei의 spot은 SunreiService.getPublishedWithSpots로 읽는다.
     fun listPublishedBySunrei(sunreiId: String): List<SunreiSpot> {
-        // Delegates to SunreiService fetch; kept here for future direct use.
         return emptyList()
     }
 
-    /** All published SunreiSpots at a place (place detail's spots[]). */
     fun listPublishedSpotsByPlace(placeId: String): List<SunreiSpot> = transaction {
         val rows = (SunreiSpots innerJoin Places innerJoin Sunreis)
             .select {

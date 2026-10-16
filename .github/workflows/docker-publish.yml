@@ -1,7 +1,6 @@
 name: Docker Publish to GHCR
 
-# ARM64-only build optimized for OCI Free Tier (ARM OCPU)
-# k3s cluster runs on Oracle Cloud Infrastructure free tier ARM instance
+# 클러스터 노드가 ARM이라 linux/arm64 이미지만 빌드한다.
 
 on:
   push:
@@ -120,8 +119,8 @@ jobs:
             NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=${{ vars.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY }}
             NEXT_PUBLIC_GOOGLE_CLIENT_ID=${{ vars.NEXT_PUBLIC_GOOGLE_CLIENT_ID }}
 
-      # Make the image public (using GitHub CLI)
-      # Package name is "sunrei/{name}" (path after username yongseongkim)
+      # 클러스터가 imagePullSecrets 없이 받을 수 있도록 package를 public으로 바꾼다.
+      # package 이름은 사용자 이름 뒤의 경로인 sunrei/{name}이다.
       - name: Set image visibility to public
         run: |
           PACKAGE_NAME="sunrei/${{ matrix.image.name }}"
@@ -186,6 +185,7 @@ jobs:
         with:
           ref: main
 
+      # GITHUB_TOKEN으로 push한 태그는 workflow를 다시 실행하지 않으므로 이미지를 두 번 빌드하지 않는다.
       - name: Create and push tag
         run: |
           TAG="${{ needs.prepare.outputs.tag }}"

@@ -9,11 +9,6 @@ import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 import type { SourceDTO } from '@/dto';
 
-/**
- * "Sources in view" rail (direction B): slim chips — avatar + name + a place-count
- * badge — for the distinct sources featured in the current viewport. Tapping a chip
- * scopes the map/list to that source (source mode); tapping the active chip clears it.
- */
 export function SourceRail() {
   const t = useTranslations('list');
   const committedBounds = useMapStore((s) => s.committedBounds);
@@ -39,7 +34,6 @@ export function SourceRail() {
               key={s.id}
               type="button"
               onClick={() => {
-                // Open this channel's view (single-source scope); tap again to clear.
                 if (active) clearSources();
                 else {
                   setSourceMode([s.id]);
@@ -67,7 +61,6 @@ export function SourceRail() {
   );
 }
 
-/** Uppercase section eyebrow with a count, shared by the sidebar sections (direction B). */
 export function SectionLabel({
   children,
   count,
