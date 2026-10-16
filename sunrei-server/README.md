@@ -30,6 +30,7 @@ Sunrei의 공개 API, 어드민 API, 로그인 API를 제공하는 Kotlin 서버
 - `application-local.conf`: gitignore 대상이라 직접 만든다.
   `ktor.deployment.host`와 `port`, `database`, `auth.jwt`, `auth.oauth.google`, `aws` 값을 채우며, 구조는 위 두 파일을 참고한다.
   프론트엔드의 로컬 API 기본 주소에 맞춰 port는 3030으로 둔다.
+  이미지 버킷은 따로 두지 않고 `application.conf`의 `sunrei-resources`를 그대로 쓰므로, 로컬에서 올린 이미지도 운영과 같은 `images/` 아래에 저장된다.
 
 ## 로컬 실행
 
