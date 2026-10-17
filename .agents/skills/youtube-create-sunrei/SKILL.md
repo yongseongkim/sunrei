@@ -5,401 +5,137 @@ description: Create or update a Sunrei from prepared YouTube metadata, transcrip
 
 # Create a Sunrei from YouTube Data
 
-Turn approved YouTube data into a draft Sunrei and its SunreiSpots through the
-server admin API.
+Turn an approved `locations.json` into a draft Sunrei and its SunreiSpots
+through the admin API. The channel is the Source, one playlist or video is one
+Sunrei, and each approved location of each video is one SunreiSpot.
 
 ## Prerequisites
 
-- Require `.claude/workspace/youtube/{ID}/video_info.json` and
-  `.claude/workspace/youtube/{ID}/locations.json`.
-- Run sunrei-server before making local API requests.
-- Use `sops` and GCP credentials that can decrypt the homelab KMS key. If
-  decryption fails, run `gcloud auth application-default login`.
-- Use the Admin API for the channel registry. The server owns the S3
-  credentials; do not decrypt or pass AWS keys for registry updates.
+- `.claude/workspace/youtube/{ID}/video_info.json` and an approved
+  `.claude/workspace/youtube/{ID}/locations.json`. Without the user's approval
+  of the location list, stop.
+- `transcripts.json` or `transcripts.reviewed.json` for the summary; fall back
+  to the video descriptions when absent.
+- A reachable server: `http://localhost:3030` by default, production with
+  `--prod`. The scripts mint the admin token locally from the SOPS secrets;
+  when that fails, run `gcloud auth application-default login`.
 
-## Steps
+## 1. Compose the Sunrei Fields
 
-### 1. Load the Workspace
+Set these without asking:
 
-Read all JSON files from `.claude/workspace/youtube/{ID}/`:
+- Title: the playlist title unchanged, or the video title truncated to 128
+  characters.
+- Summary: one line with the region and theme of the whole trip, written from
+  the transcripts, such as
+  `피렌체·로마·베네치아를 돌며 미슐랭 레스토랑과 현지 맛집을 찾아가는 이탈리아 미식 여행`.
+- Description: two to four sentences, from the transcripts first and the video
+  descriptions second.
+- Link: `video_info.json.url`. It is the Sunrei link and the duplicate key for
+  `POST /admin/sunreis`; the channel URL is only the Source `externalUrl`.
+- Published: false. Ingested Sunreis stay drafts until an administrator
+  publishes them.
 
-- `video_info.json`: video or playlist metadata, including the `channel` object
-  (`id`, `title`, `handle`, `url`, `description`, `thumbnailUrl`) fetched in
-  `youtube-fetch-info` step 4; use it to resolve the Source
-- `transcripts.json`: cleaned transcripts and the primary source for the Sunrei
-  `summary` and `description`; fall back to video descriptions when absent
-- `locations.json`: approved, geocoded locations
+## 2. Choose Spot Tags
 
-### 2. Configure the Server and Authentication
-
-Read the server URL from `SUNREI_SERVER_URL` or ask the user for it. Use
-`http://localhost:3030` by default; production is
-`https://sunrei-api.yongseongkimm.com`.
-
-Verify the server before continuing:
-
-```bash
-curl -s "{SERVER_URL}/health"
-```
-
-If the health check fails, ask the user to start the server.
-
-Mint a short-lived admin token:
+Tags belong to spots. List them and let the user pick. The same set applies to
+every spot unless the user overrides one; when no tags exist, every spot gets
+an empty `tagIds`.
 
 ```bash
 TOKEN=$(python3 .claude/scripts/auth/mint_token.py)
+curl -s -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/tags" | jq '.data[] | {id, labelEn, labelKo}'
 ```
 
-The script decrypts `auth-jwt-secret` from
-`deploy/secrets/secrets.enc.yaml` and signs an admin JWT, so no browser login is
-needed. Keep the 60-minute token in the shell variable and never write it to a
-file. Mint another token if it expires, or pass `--minutes N` when a longer run
-is expected.
+## 3. Check Every Spot
 
-If decryption fails, run `gcloud auth application-default login`.
+`create_sunrei.py` builds one spot per location: the video title (128
+characters) as `title`, `locations[].description` as `context`, the
+timestamped video URL as `sourceLink`, an empty `images` array, the selected
+tags, and `locations[].name`, address, coordinates, and `googleMapsId` as the
+Place. Locations without coordinates or a `googleMapsId` are skipped; run
+`geocode.py` on the workspace first.
 
-When calling production from Python, set a descriptive `User-Agent`, such as
-`sunrei-ingest/1.0`. Cloudflare rejects Python's default urllib user agent with
-HTTP 403.
+Before the dry run, check the approved locations for the problems that are
+hard to fix after saving:
 
-### 3. Check the Channel Registry
-
-Read the channel registry through the Admin API:
-
-```bash
-curl -s -H "Authorization: Bearer ${TOKEN}" \
-  "{SERVER_URL}/admin/resources/youtube/{channelId}"
-```
-
-The registry contains a `sunreis` array:
-
-```json
-{
-  "channelName": "비밀이야 bimirya",
-  "link": "https://www.youtube.com/channel/UC...",
-  "sunreis": [
-    {
-      "sunreiId": "SR...",
-      "createdAt": "2026-02-17T10:06:43Z",
-      "spots": [
-        { "spotId": "SS...", "videoId": "abc123", "videoTitle": "..." }
-      ]
-    }
-  ]
-}
-```
-
-- If the registry exists, show its Sunrei and spot counts, then ask whether to
-  create another Sunrei.
-- If it does not exist, continue.
-
-A production database reset can leave stale IDs in the registry. Verify one
-registered `sunreiId` against the live API:
-
-```bash
-curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/sunreis/{sunreiId}"
-```
-
-If the API returns 404, ignore the existing entries and replace the registry in
-step 7 after creating the Sunrei.
-
-### 4. Compose the Sunrei
-
-Create one Sunrei for each playlist or trip. Use the channel as the Source and
-attach every approved location in the playlist to that Sunrei. For a single
-video, create one Sunrei for that video.
-
-Set these fields without asking the user:
-
-- Title:
-  - For a playlist, use its `title` unchanged, such as
-    `비밀이야 in 이탈리아 🍝`.
-  - For a video, use its `title`, truncated to 128 characters.
-- Summary: Write one line that captures the region and theme of the entire
-  trip. Derive it from `cleanedText` or `fullText`, not only from the video
-  descriptions. Example:
-  `피렌체·로마·베네치아를 돌며 미슐랭 레스토랑과 현지 맛집을 찾아가는 이탈리아 미식 여행`.
-- Description: Write two to four sentences that summarize the trip. Use
-  transcripts first, then the video descriptions. If transcripts are missing,
-  use the descriptions alone.
-- Link:
-  - For a playlist, use `video_info.json.url`. For an older workspace without
-    `url`, use `https://www.youtube.com/playlist?list={id}`.
-  - For a video, use its `url`.
-  - This playlist or video URL is the Sunrei link and the HTTP 409 conflict key.
-    Use the channel URL only for the Source `externalUrl`.
-- Published: Set `published` to `false`. Ingested Sunreis remain drafts until
-  an administrator publishes them.
-
-#### Resolve or Create the Source
-
-Resolve or create the YouTube Source from the `channel` object in
-`video_info.json`.
-
-```bash
-# Look for an existing YouTube source for this channel
-curl -s -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/sources?q=${channel.title}" | jq '.data[] | select(.type=="YOUTUBE")'
-```
-
-- Prefer a YouTube Source whose `externalUrl` equals `channel.url`. If no URL
-  matches, reuse an exact channel-title match.
-- If neither matches, create a Source from the channel metadata:
-
-```bash
-curl -s -X POST "{SERVER_URL}/admin/sources" \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer ${TOKEN}" \
-  -d '{
-    "type": "YOUTUBE",
-    "name": "<channel.title>",
-    "synopsis": "<channel.description, truncated to ~500 chars>",
-    "externalUrl": "<channel.url>",
-    "posterImage": { "images": [ { "url": "<channel.thumbnailUrl>" } ] }
-  }'
-```
-
-Use the returned `id` as `sourceId`. For an older workspace without a `channel`
-object, use `channelName` and
-`https://www.youtube.com/channel/{channelId}`, and omit `synopsis` and
-`posterImage`.
-
-#### Select Spot Tags
-
-Tags belong to spots. Fetch the bilingual tag list:
-
-```bash
-curl -s -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/tags" | jq '.data'
-```
-
-The response contains `{id, labelEn, labelKo}` entries in `data`, along with
-pagination fields and `spotCountByTagId`.
-
-- If tags exist (`data` is non-empty), ask the user to select them. Attach the
-  selected IDs to each spot's `tagIds`.
-- If no tags exist, skip tag selection (each spot gets an empty `tagIds`).
-
-### 5. Build SunreiSpots
-
-Create one spot for each item in `videos[].locations[]`. Use the parent video's
-`videos[].title` as the spot title and truncate it to 128 characters. Keep the
-location name in the Place object. Attach every spot to the Sunrei composed in
-step 4.
-
-```json
-{
-  "title": "시부야의 맛있는 야키토리 맛집 투어",
-  "context": "시부야 뒷골목 야키토리 투어에서 방문한 카운터 10석 규모의 노포. 대표 메뉴는 비장탄에 구운 쓰쿠네와 레바로, 쓰쿠네는 겉을 바삭하게 구운 뒤 노른자에 찍어 먹고(육즙이 팡 터진다고 표현), 레바는 비린내 없이 부드럽다고 강조했다.",
-  "images": [],
-  "sourceLink": "https://youtube.com/watch?v=VIDEO_ID&t=123",
-  "tagIds": ["..."],
-  "place": {
-    "name": "토리키조쿠 시부야점",
-    "address": "도쿄도 시부야구...",
-    "latitude": 35.123,
-    "longitude": 139.456,
-    "googleMapsId": "ChIJ..."
-  }
-}
-```
-
-- `title`: Parent video title, truncated to 128 characters
-- `context`: Copy `locations[].description` exactly. It contains the place and
-  menu details and is the only editorial text on the public map card. Do not
-  leave it empty, regenerate it, or remove the food details.
-- `images`: Empty array
-- `sourceLink`: `locations[].videoUrlWithTimestamp`
-- `tagIds`: Tags selected in step 4; apply the same set to every spot unless the
-  user overrides a specific spot
-- `place.name`: `locations[].name`
-
-If a video contains several locations, create a separate SunreiSpot for each
-one and reuse the video title.
-
-Before saving, check every spot for problems that are hard to fix later:
-
-- No placeholders. Every spot needs its video title, a real video URL with
-  `&t=` (not a city or playlist placeholder such as `watch?v=city:Chengdu`), and
-  a context written from the evidence, not text like
-  `<name> — <playlist> 영상에서 소개한 <area> 맛집.` or a bare dish name.
-- A real venue name in `place.name`. The admin API cannot rename a Place:
-  `findOrCreatePlace` reuses the existing Place for a `googleMapsId` and ignores
-  the new name, so a name such as `13-3` or `1) 카덴` later needs a DB update.
-- The name the video introduces, in Korean, when Google returns only a
-  foreign-language name. Example: the Nexus World buildings come back as
-  `ネクサスワールド レム棟・コールハース棟` and `ネクサスワールド石山棟`; save them as
-  `넥서스 월드 렘 쿨하스 동` and `넥서스 월드 이시야마 오사무 동`, the names the
-  context uses. Keep the Google `googleMapsId` and coordinates as they are.
-  When the video shows its own Korean spelling on screen, use it: the Osaka
-  ramen shop 人情麺家 牛骨王 is saved as `닌조멘 규코츠오 (우골왕)`, the spelling
-  and gloss from the burned-in subtitles.
+- The context is the approved `description` as written: finished public text
+  with no timestamps, source notes, or placeholders such as
+  `<name> — <playlist> 영상에서 소개한 <area> 맛집.`, and never a bare dish name.
+- `videoUrlWithTimestamp` is a real video URL with `&t=`, not a city or
+  playlist placeholder.
+- `name` is a real venue name. The admin API cannot rename a Place:
+  `findOrCreatePlace` reuses the existing Place for a `googleMapsId` and keeps
+  its old name, so `13-3` or `1) 카덴` needs a DB fix later.
+- `name` is the name the video introduces, in Korean when Google returns only
+  a foreign-language name (`ネクサスワールド石山棟` is saved as
+  `넥서스 월드 이시야마 오사무 동`, keeping Google's `googleMapsId` and
+  coordinates). When the video shows its own Korean spelling on screen, use
+  it.
 - One Place per building or venue. Spots of the same video on one Place
-  collapse into one card line that shows only the first context. Give each
-  building its own Google place; when the video really covers one site, write
-  one spot whose context covers all of it.
+  collapse into one card line that shows only the first context.
+- `images` stays empty. There is no YouTube image collection yet, and the
+  video thumbnail is not a spot image.
+- The video URL goes in `sourceLink`; the old `youtubeLink` field no longer
+  exists.
 
-Present all spots in a table and wait for approval.
+Present the spots in a table and wait for the user's approval.
 
-### 6. Create the Sunrei
-
-Send the POST request only after the user approves the spots in step 5.
-
-```bash
-curl -s -X POST "{SERVER_URL}/admin/sunreis" \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer ${TOKEN}" \
-  -d '{
-    "sourceId": "SRC...",
-    "published": false,
-    "title": "playlist title (e.g. 비밀이야 in 이탈리아 🍝)",
-    "summary": "one-line trip summary from transcripts",
-    "description": "2-4 sentence summary from transcripts + descriptions",
-    "link": "https://www.youtube.com/playlist?list=...",
-    "images": [],
-    "spots": [
-      {
-        "title": "video title (max 128 chars)",
-        "context": "how the video covered this place",
-        "images": [],
-        "sourceLink": "https://youtube.com/watch?v=...&t=123",
-        "tagIds": ["..."],
-        "place": {
-          "name": "place name",
-          "address": "address",
-          "latitude": 35.123,
-          "longitude": 139.456,
-          "googleMapsId": "ChIJ..."
-        }
-      }
-    ]
-  }'
-```
-
-Do not send top-level `tagIds`; tags belong to `spots[].tagIds`.
-
-The shared script resolves the Source, builds spots, and handles HTTP 409
-conflicts. Run it without `--commit` to preview the payload, then add `--commit`
-to create the Sunrei. It creates a draft unless `--publish` is supplied.
+## 4. Dry Run, Then Commit
 
 ```bash
-uv run python .claude/scripts/youtube/create_sunrei.py <ID> [--prod] [--commit] \
-  [--summary "one-line summary from transcripts"] [--tag-ids a,b]
+uv run python .claude/scripts/youtube/create_sunrei.py <ID> [--prod] \
+  --summary "<one-line summary>" [--description "..."] [--tag-ids a,b]
 ```
 
-Run the command once per workspace. The script skips tag selection and spot
-review, so pass a transcript-based summary with `--summary` and review the
-result in the admin app. Each spot keeps its source video in `sourceLink`, so
-the registry update in step 7 reads the live Sunrei instead of a local file.
+The dry run prints the title, link, the Source it will reuse or create, and
+the spot list. Read it, then add `--commit` to create the draft. Run it once
+per workspace.
 
-Creation produces a draft (`published: false`). Publish only when requested:
-`PUT {SERVER_URL}/admin/sunreis/{id}` with `{"published": true}`.
+- HTTP 201: note the Sunrei ID and spot count.
+- HTTP 409: a Sunrei with this link already exists (`existingId`). Do not
+  create another; update that Sunrei instead, as described in
+  `references/admin-operations.md`.
+- Other errors: check required fields and tag IDs, correct the payload, and
+  retry.
 
-If a Sunrei with this playlist/video link already exists (HTTP 409, or one found
-in Step 3), update it with Step 8 rather than creating a duplicate.
+The script does not select tags, does not review spot quality, and does not
+update the channel registry. Those are steps 2, 3, and 5.
 
-### 7. Handle the Response and Update the Registry
+## 5. Update the Channel Registry
 
-On HTTP 201:
-
-- Show the Sunrei ID, title, spot count, and admin link.
-- Update the S3-backed channel registry through the Admin API.
-
-  1. Read the existing registry:
-     ```bash
-     curl -s -H "Authorization: Bearer ${TOKEN}" \
-       "{SERVER_URL}/admin/resources/youtube/{channelId}"
-     ```
-  2. If it exists, append the new entry to `sunreis`.
-  3. If it does not exist, create a registry with `channelName`, the `link` from
-     `video_info.json`, and one `sunreis` entry.
-  4. Save the updated registry:
-     ```bash
-     curl -s -X PUT \
-       -H "Authorization: Bearer ${TOKEN}" \
-       -H "Content-Type: application/json" \
-       --data-binary @/tmp/registry.json \
-       "{SERVER_URL}/admin/resources/youtube/{channelId}"
-     ```
-
-  Use this entry format:
-
-  ```json
-  {
-    "sunreiId": "SR...",
-    "createdAt": "2026-02-18T12:00:00Z",
-    "spots": [
-      { "spotId": "SS...", "videoId": "90FahyHS8dA", "videoTitle": "video title" }
-    ]
-  }
-  ```
-
-  Field sources:
-
-  - `sunreiId`: from the API response (`id` of the created Sunrei)
-  - `createdAt`: current ISO 8601 timestamp
-  - `spots[].spotId`: from the API response (each spot's `id`)
-  - `spots[].videoId`: extract from the `sourceLink` of each spot in the request payload (the `v` query parameter)
-  - `spots[].videoTitle`: from the corresponding video in `video_info.json` (`selectedVideos[].title`)
-
-For HTTP 409:
-
-- Explain that a Sunrei with the same link exists.
-- Show `existingId` and ask whether to skip or update it.
-
-#### Rebuild a stale registry
-
-If step 3 found stale registry entries, rebuild the registry from live Sunrei
-records instead of appending to dead IDs. The helper downloads the registry,
-fetches spots for the given Sunrei IDs, rebuilds the `sunreis` array, and
-uploads the result:
+The server keeps a per-channel registry of Sunreis and spots in S3. After a
+successful create, rebuild it from every live Sunrei of that channel.
+Production is the default; add `--local` for a local server:
 
 ```bash
 uv run python .claude/scripts/youtube/registry_update.py <channelId> <sunreiId1,sunreiId2,...> \
-  [--channel-name "..."] [--channel-link "..."] [--commit]
+  [--channel-name "..."] [--channel-link "..."] --commit
 ```
 
-Pass every live Sunrei for that channel so stale entries are dropped. Run the
-helper once per channel; one channel can contain several playlists or Sunrei.
+Pass every live Sunrei ID for the channel; entries for IDs left out are
+dropped. Run it once per channel.
 
-For any other error:
+## Editing an Existing Sunrei
 
-- Show the error and offer to retry after correcting the payload.
-- Check for missing required fields and invalid tag IDs first.
+`PUT /admin/sunreis/{id}` changes only the top-level fields it receives, but
+`spots` is a full replacement: every existing spot whose `id` is missing from
+the list is soft-deleted, so a partial spot list silently deletes the rest.
+Start from a fresh GET, send every live spot with at least `id` and `title`,
+and compare the spot count before and after. For a full replacement from
+`locations.json`, use `update_sunrei_spots.py`. The details and the raw API
+calls are in `references/admin-operations.md`.
 
-### 8. Edit an Existing Sunrei
+## Finish
 
-Edit via `PUT {SERVER_URL}/admin/sunreis/{id}`:
+Report the Sunrei ID, the admin URL
+(`https://sunrei-admin.yongseongkimm.com/sunreis/{id}` in production), the
+number of spots created, and whether the registry was updated. Leave the
+Sunrei a draft and keep the workspace unless the user asks otherwise.
 
-- Send only top-level fields that should change. All are optional.
-- Include `spots` only when changing spots. When `spots` is present, an item
-  with an `id` updates that spot, an item without an `id` creates a new spot,
-  and any existing spot whose `id` is omitted is soft-deleted.
-- To replace all spots, send only the new spot list. Explicit delete entries are
-  rarely needed, because every spot item must include `title`, including
-  `{ "id": "...", "_delete": true }`.
-- To change a few spots, still list every live spot with at least `id` and
-  `title`, and compare the spot count before and after the PUT. A partial list
-  silently deletes the rest.
-- Tags update per spot. Send `tagIds` or `tagLabels` only when replacing that
-  spot's tag set.
-- Send one PUT per Sunrei. Start from a fresh `GET /admin/sunreis/{id}`, combine
-  all changes, and submit them together. Concurrent PUT requests can overwrite
-  one another.
-- If concurrent updates have already left the data inconsistent, recreate the
-  Sunrei from `locations.json` instead of repairing spots individually.
+## References
 
-For a full spot replacement from `locations.json` (preserves the Sunrei ID,
-source, and published status), use the helper:
-
-```bash
-uv run python .claude/scripts/youtube/update_sunrei_spots.py <ID> <SUNREI_ID> \
-  [--prod] [--commit] [--summary "..."]
-```
-
-### 9. Clean Up
-
-Ask whether to keep the workspace. Delete it only with confirmation:
-
-```bash
-rm -rf .claude/workspace/youtube/{ID}
-```
+- `references/admin-operations.md`: minting a token, the production
+  User-Agent, Source and Sunrei requests by hand, HTTP 409, the registry
+  format and stale-registry recovery, and editing or publishing an existing
+  Sunrei.

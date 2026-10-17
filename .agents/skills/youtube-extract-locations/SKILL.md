@@ -3,218 +3,128 @@ name: youtube-extract-locations
 description: Extract and verify places mentioned in YouTube videos. Use when the user asks to find locations in a video or continues the YouTube-to-Sunrei workflow after transcript extraction.
 ---
 
-# Extract Locations from YouTube Videos
+# Extract and Verify Locations
 
-Identify relevant places from descriptions, captions, audio, and on-screen
-text, then geocode and verify them with the Google Maps Places API.
+Turn a video's description, captions, Whisper transcript, and on-screen text
+into geocoded place candidates, then review them with the user.
 
-## Prerequisites
+## Inputs
 
-- Require playlist metadata in `video_info.json` or single-video run metadata in
-  `metadata.json`.
-- The multimodal path also requires the caption, Whisper, and OCR artifacts
-  produced by `youtube-extract-transcript`.
-- `extract_locations_headless.py` builds or reuses `evidence_timeline.json` and
-  writes `location_candidates.json` with `review_pending` status.
-- If a required file is missing, ask the user to complete the preceding step.
+- `video_info.json` from `youtube-fetch-info` for a workspace, or
+  `metadata.json` for a single-video run directory.
+- The evidence files from `youtube-extract-transcript`: `captions.json`,
+  `audio_transcript.json`, `onscreen_text.json`, and
+  `transcripts.reviewed.json` when a review ran.
+- The Google API key. The scripts read `YOUTUBE_API_KEY` from the environment
+  or `google.youtubeApiKey` from
+  `sunrei-server/src/main/resources/application-local.conf`. The Places API
+  and the YouTube Data API share it.
 
-## Description-first fast path
+When an input is missing, report which step produces it and stop.
 
-Some channels list every visited place in the description. When they do, extract
-and geocode locations from descriptions before fetching transcripts:
+## Choose an Extraction Path
+
+Inspect a few descriptions, then pick one path per playlist or video:
+
+| Path | Choose when | Tool |
+| --- | --- | --- |
+| Description-first | Descriptions carry a Google Maps link per place or a structured store-information block | `extract_from_descriptions.py` |
+| Timeline-driven | Places are named only in speech and on-screen text | `extract_locations_headless.py` |
+| Web research | TV-show clip compilations name a dish but not a venue | `geocode_food_vendors.py` |
+
+Every path still uses the full evidence timeline for context, proper-name
+correction, and audit. When sources disagree about which place it is, the
+description link wins. The formats the first path parses, and their failure
+modes, are in `references/description-first.md`.
+
+## Load the Shared Extraction Rules
+
+Read `.claude/scripts/youtube/prompts/extract_locations.md` before selecting
+or describing any place. It is the single source of truth for scope, which
+places to include or exclude, place identity, evidence, and the public
+context, and the headless extractor sends the same file to Codex. When a rule
+needs to change, change it there, not here.
+
+Keep hand-written candidates in the shape of
+`.claude/scripts/youtube/location_candidates.schema.json` until they are
+converted to `locations.json`.
+
+## Extract Candidates
+
+Timeline-driven path, per video:
+
+```bash
+uv run python .claude/scripts/youtube/evidence_timeline.py "{RUN_DIR}"
+uv run --with openai-codex==0.160.0 python .claude/scripts/youtube/extract_locations_headless.py "{RUN_DIR}"
+```
+
+The extractor sends the metadata and one timeline window at a time, records
+verbatim evidence per source, and writes `location_candidates.json` with every
+location at `decision: pending`. Pass `--restart` to discard a cached result.
+
+Description-first path, per workspace:
 
 ```bash
 uv run python .claude/scripts/youtube/extract_from_descriptions.py <ID> all   # or: fetch | parse | geocode
 ```
 
-Use this path for:
+The script fills identity and coordinates only. Write `concept` and each
+location's `description` from the evidence timeline, following the shared
+rules.
 
-- Map-link channels, such as @saturdaytokyo / 토요일의 도쿄. Descriptions contain
-  a Google Maps link per place (`maps.app.goo.gl`, `goo.gl/maps`,
-  `maps.google.com`, or `g.page`). The script resolves each link to the creator's
-  exact pin, then verifies the Places result is within about 200 m.
-- Structured-block channels, such as 비밀이야 bimirya. Descriptions contain a
-  `* 가게 정보` block with `- <name>` and `- 주소 : <address>`. The script pairs
-  each address with the nearest preceding name and geocodes by name plus area.
-  Other videos use `[name]` headings, `*주소:` lines, a road name split as
-  `도산대로 59길 16`, or no name line at all, and many add `mm:ss <name>`
-  chapters that give each place's timestamp. When a block has an address but
-  no name, take the name from the title, chapters, or on-screen text first.
-  Geocoding the bare address is how older ingests created places named `3`,
-  `13-3`, and `16`. Check each address against the on-screen text as well: one
-  목포 video listed 금메달식당 with a 수원 address copied from elsewhere, while
-  the video showed the 목포 address.
-
-The script caches intermediate files as `descriptions.json`, `staging.json`, and
-`resolved_links.json`, so reruns can resume from any stage. Use resolved links
-as the place identity and geocode, but still inspect the aligned evidence in
-Step 5 for context and proper-name correction.
-
-Still collect every text modality for context, audit, and proper-name
-correction. Description links take precedence when the sources disagree about
-the identity of a place.
-
-## Web-research fallback
-
-For TV-show clip compilations whose titles name a dish but not a venue, such as
-스트리트푸드파이터, identify the real vendors through web research. Cross-check
+Web-research path: identify the vendors through web research, cross-check
 Korean fan blogs with local sources, dedupe clips to distinct vendors, and
-geocode the result:
+geocode the list:
 
 ```bash
 uv run python .claude/scripts/youtube/geocode_food_vendors.py <ID> <vendors.json>
 ```
 
-## Steps
+For playlists with dozens of videos, work in batches of three or four videos.
+Larger batches hit HTTP 429 on the Places API; retry a failed batch in smaller
+groups. Match results by video ID and place name, never by list order.
 
-### 1. Load Data
+## Geocode and Verify
 
-Read the video metadata and available raw text artifacts. Build or load
-`evidence_timeline.json` before transcript-driven extraction so captions,
-Whisper, and OCR remain distinguishable by source and timestamp.
-
-### 2. Load Google Maps API Key
-
-Read `google.youtubeApiKey` from
-`sunrei-server/src/main/resources/application-local.conf`. The Places API and
-YouTube Data API use the same key.
+Geocode each candidate that has no pin from a Maps link with Places Text
+Search, searching for the business name together with its area:
 
 ```bash
-grep -E '^[[:space:]]*youtubeApiKey' sunrei-server/src/main/resources/application-local.conf \
-  | sed -E 's/.*=[[:space:]]*"?([^"]+)"?.*/\1/'
+uv run python .claude/scripts/youtube/geocode.py --query "<business name>" --area "<area>"   # one lookup
+uv run python .claude/scripts/youtube/geocode.py <ID>                                        # fill locations.json
 ```
 
-Use POSIX `[[:space:]]`; BSD and macOS versions of `grep` and `sed` do not
-support `\s`.
+Verify each result before accepting it:
 
-If the key is missing, ask the user to provide it. The Places API must be
-enabled for the key in Google Cloud; commit `b9e59bb` documents the related
-Geocoding API requirement.
+- The query names a business, not a bare address or a short romanized name.
+- The pin lies in the video's region. Re-geocode outliers with country and
+  city context; for a single-country playlist run
+  `uv run python .claude/scripts/youtube/cleanup_geocodes.py <ID> japan|france|italy`.
+- `displayName` matches the extracted name, allowing for translation and
+  romanization. Keep a plausible match for a venue named only in speech and
+  flag only real uncertainty.
+- Buildings the video introduces separately have separate Google places.
 
-### 3. Load the Extraction Rules
+The failures each check prevents are in
+`references/geocoding-and-review.md`, with the Places API call for lookups by
+hand.
 
-Read `.claude/scripts/youtube/prompts/extract_locations.md`. It is the single
-source of truth for location extraction and is shared with the headless Codex
-extractor. It defines the video concept, place identification order, source
-comparison, exclusions, evidence, and the spot description style.
+## Review
 
-Follow it when extracting by hand, and keep each video's result in the shape of
-`.claude/scripts/youtube/location_candidates.schema.json` before converting it
-to `locations.json`. When a rule needs to change, edit the prompt file instead
-of this skill so the scheduled job and this skill stay consistent.
+Show every candidate in one table:
 
-### 4. Extract Google Maps Links from Description
+| # | Name | Address | Lat/Lng | Source | Timestamp | Google Maps |
+| --- | --- | --- | --- | --- | --- | --- |
 
-Parse the video description for Google Maps links:
+`Source` is `description_link`, `description_block`, `transcript_mention`, or
+`both`. Flag out-of-scope places, duplicates (the same `googleMapsId` twice in
+one video keeps the earliest), generic entries, and geocode warnings. The user
+approves the list, adds, removes, or edits entries, or asks for another pass
+with a revised concept.
 
-- `https://maps.google.com/...`
-- `https://goo.gl/maps/...`
-- `https://maps.app.goo.gl/...`
-- `https://g.page/...` (Google Business profile links)
+## Save Approved Locations
 
-Treat these as high-confidence locations because the creator shared them
-directly. The fast-path script resolves short links to exact pins automatically;
-if parsing by hand, follow the redirect and use the resolved coordinates.
-
-### 5. Extract Location Candidates
-
-Apply the rules from Step 3 to each video. Use the aligned timeline as the
-primary source for descriptions; chapters often contain only a timestamp and
-place name, while narration and on-screen text provide the details.
-
-### 6. Clean and Filter Locations
-
-Before geocoding, apply the exclusions from Step 3 again across the whole
-playlist, then:
-
-- If a `googleMapsId` appears more than once in a video, keep the earliest
-  occurrence.
-- When a video has no chapters or map links, identify the main places from its
-  title and description and search for them directly.
-- Validate accepted coordinates against the playlist's region. Out-of-region
-  pins are often geocode errors, especially when a foreign place name is matched
-  by Korean transliteration. Re-geocode outliers with country and city context.
-  If the creator genuinely visited an out-of-region place, keep it and flag it
-  for review. For a single-country playlist, run:
-  `uv run python .claude/scripts/youtube/cleanup_geocodes.py <ID> japan|france|italy`
-
-### 7. Geocode Locations
-
-For each extracted location that does not already have coordinates from Google
-Maps links, use the Places API:
-
-```bash
-curl -s -X POST "https://places.googleapis.com/v1/places:searchText" \
-  -H "Content-Type: application/json" \
-  -H "X-Goog-Api-Key: {GOOGLE_MAPS_API_KEY}" \
-  -H "X-Goog-FieldMask: places.displayName,places.formattedAddress,places.location,places.id,places.googleMapsUri" \
-  -d '{
-    "textQuery": "{LOCATION_NAME} {AREA_CONTEXT}",
-    "languageCode": "ko"
-  }'
-```
-
-Include geographic context in the query, such as "시부야 야키토리 가게"
-instead of "야키토리 가게".
-
-Guard against two common errors:
-
-- Never geocode an address alone. Google may return a nearby hotel or office
-  with plausible coordinates but the wrong `googleMapsId`. Search for the
-  business name and area together.
-- Never geocode a short romanized name alone either. `Nakano` matched Tokyo's
-  Nakano ward instead of the Shibuya izakaya 奈加野 that the description's map
-  link pointed to. When the description has a map link, use its pin.
-- Compare `displayName` with the extracted name, allowing for translation and
-  romanization. Refine obvious mismatches, but do not invent a phonetic
-  correction when the venue name appears only in speech. If the returned
-  business is plausibly the spoken venue, keep it and flag only genuine
-  uncertainty.
-
-Use the helper for a single lookup or to fill missing coordinates in
-`locations.json`:
-
-```bash
-# Single lookup (warns on displayName mismatch)
-uv run python .claude/scripts/youtube/geocode.py --query "<business name>" --area "<area>"
-
-# Fill in items missing coordinates in locations.json, flagging odd names/mismatches as geocodeWarning
-uv run python .claude/scripts/youtube/geocode.py <ID>
-```
-
-### 8. Process Large Playlists
-
-For playlists with dozens of videos, split steps 3–7 into batches of three or
-four videos:
-
-- Larger concurrent batches can hit the API rate limit and fail with HTTP 429.
-  Retry a failed batch in smaller groups.
-- Match results by video ID and place name, never by list order or server
-  `spotId`. After merging, confirm that every description names or clearly
-  describes its place.
-
-### 9. Review the Results
-
-Display all extracted locations in a table:
-
-| #   | Name | Address | Lat/Lng | Source | Timestamp | Google Maps |
-| --- | ---- | ------- | ------- | ------ | --------- | ----------- |
-
-Set `Source` to `description_link`, `transcript_mention`, or `both`.
-
-- Group videos by whether they contain locations.
-- Flag out-of-scope places, duplicates, generic entries, and geocoding warnings.
-- Offer automated cleanup before manual review.
-
-Ask the user to:
-
-- Approve all locations
-- Add, remove, or edit locations
-- Extract again with revised concept guidance
-
-### 10. Save the Results
-
-Save to `.claude/workspace/youtube/{ID}/locations.json`:
+Write `.claude/workspace/youtube/{ID}/locations.json`:
 
 ```json
 {
@@ -234,7 +144,7 @@ Save to `.claude/workspace/youtube/{ID}/locations.json`:
           "source": "transcript_mention",
           "timestamp": 125.5,
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=VIDEO_ID&t=125",
-          "description": "시부야 뒷골목 야키토리 투어에서 방문한 카운터 10석 규모의 노포. 대표 메뉴는 비장탄에 구운 쓰쿠네와 레바로, 쓰쿠네는 겉을 바삭하게 구운 뒤 노른자에 찍어 먹고(육즙이 팡 터진다고 표현), 레바는 비린내 없이 부드럽다고 강조했다."
+          "description": "시부야 뒷골목 야키토리 투어에서 방문한 카운터 10석 규모의 노포. 대표 메뉴는 비장탄에 구운 쓰쿠네와 레바로, ..."
         }
       ]
     }
@@ -242,25 +152,23 @@ Save to `.claude/workspace/youtube/{ID}/locations.json`:
 }
 ```
 
-After saving the file, report its path and ask whether to continue with Sunrei
-creation.
+`description` is the approved candidate description and becomes the spot's
+public context unchanged.
 
-## Automated Candidate Extraction
+If videos were re-edited after an earlier ingest, recollect the evidence and
+rebuild the candidates against the current video. Reuse verified geocodes for
+places that still appear, and keep the old file as `locations.legacy.json`
+until the review is done.
 
-For a new-video run workspace containing `metadata.json`, captions, Whisper
-output, and video OCR, first build the normalized source timeline:
+## Finish
 
-```bash
-uv run python .claude/scripts/youtube/evidence_timeline.py <RUN_DIR>
-```
+Report the path of `location_candidates.json` or the approved
+`locations.json`, the number of locations, and any unresolved warnings. Do not
+create or update a Sunrei; `youtube-to-sunrei` decides the next step.
 
-Then generate un-geocoded candidates with:
+## References
 
-```bash
-uv run --with openai-codex==0.160.0 python .claude/scripts/youtube/extract_locations_headless.py <RUN_DIR>
-```
-
-The extractor sends Codex the channel, title, description, and one relevant
-timeline window at a time. It records verbatim evidence by source and sets every
-location to `decision: pending`. Do not convert these candidates to
-`locations.json` or geocode them until names, scope, and evidence are approved.
+- `references/description-first.md`: the description formats the fast path
+  parses, and what to do when a block has no name or a wrong address.
+- `references/geocoding-and-review.md`: why each geocoding guard exists, how
+  spots merge on the public card, and the Places API call by hand.

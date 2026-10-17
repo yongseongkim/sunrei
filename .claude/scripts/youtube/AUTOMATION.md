@@ -20,6 +20,9 @@ reaches it. `SUNREI_API_URL` selects the server; it defaults to production
    - set it to `PROCESSING` and attempt captions, Whisper, and video OCR;
    - store each usable source as a `CAPTIONS`, `WHISPER`, or `OCR` text and
      record each failed source as an attempt;
+   - when no source is usable and the audio and video downloads were refused
+     as members-only, set the video to `SKIPPED` and stop; a caption block
+     alone does not stop the video, because Whisper and OCR continue;
    - review the primary transcript and store `TRANSCRIPT_REVIEWED` and
      `TRANSCRIPT_REVIEW`;
    - merge the sources into one timestamp-ordered timeline and store it as
@@ -40,6 +43,24 @@ Intermediate files are cached under `$SUNREI_YOUTUBE_AUTOMATION_ROOT/runs/{video
 so a retry skips finished steps, and they are deleted once the video is stored.
 A video left `PROCESSING` by an interrupted run is reset to `FAILED` after
 `--stale-hours` (default 24).
+
+## Video States
+
+| From | To | When |
+| --- | --- | --- |
+| new in the playlist | `PENDING` | the sync finds a video that is not stored yet |
+| current at registration | `SKIPPED` | `youtube_playlists.py add` with the default `--baseline all` |
+| `PENDING`, `FAILED` | `PROCESSING` | a committed run picks the video up |
+| `PROCESSING` | `REVIEW_PENDING` | candidates were stored and wait for review |
+| `PROCESSING` | `COMPLETED` | the extraction found no candidate |
+| `PROCESSING` | `SKIPPED` | no source was usable and the downloads were refused as members-only |
+| `PROCESSING` | `FAILED` | any other error; the stage and error are recorded and the next run retries |
+| `PROCESSING`, stale | `FAILED` | untouched for longer than `--stale-hours` |
+| `REVIEW_PENDING` | `COMPLETED` | no candidate is pending any more |
+
+`SKIPPED` videos are never retried. A members-only video that an earlier run
+left `FAILED` is detected on its retry and becomes `SKIPPED`. Until a candidate
+is approved, nothing in this table changes a Sunrei.
 
 ## Playlists
 

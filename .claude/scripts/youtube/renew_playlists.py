@@ -6,7 +6,8 @@ The command is a dry run unless ``--commit`` is supplied. A committed run syncs
 each playlist's videos, collects captions, a Whisper transcript, and video OCR
 for pending videos, runs the transcript and location agents, and stores every
 text and extraction run through the API. Candidates wait for admin review, so
-no Sunrei is changed here.
+no Sunrei is changed here. A video whose audio and video downloads are refused
+as members-only is stored as ``SKIPPED`` and never retried.
 
 Usage:
     uv run python .claude/scripts/youtube/renew_playlists.py
@@ -165,6 +166,36 @@ def normalized_segments(video):
 
 def has_segments(value):
     return isinstance(value, dict) and bool(value.get("segments")) and not value.get("error")
+
+
+MEMBERS_ONLY_MARKER = "members-only"
+
+
+class MembersOnlyVideo(RuntimeError):
+    """The video is members-only, so its captions, audio, and frames cannot be fetched."""
+
+
+def is_members_only_error(value):
+    error = value.get("error") if isinstance(value, dict) else None
+    return bool(error) and MEMBERS_ONLY_MARKER in str(error).lower()
+
+
+def is_members_only(evidence):
+    """True when no source has segments and every enabled download was refused as members-only.
+
+    yt-dlp reports "Join this channel to get access to members-only content"
+    for the audio and video downloads. Captions are not consulted: their
+    library wraps the same reason in a different message, and a caption error
+    alone also covers IP blocks and missing tracks.
+    """
+    if any(has_segments(value) for value in evidence.values()):
+        return False
+    downloads = [
+        evidence.get(source)
+        for source in ("audio", "onscreen")
+        if not (isinstance(evidence.get(source), dict) and evidence[source].get("error") == "disabled")
+    ]
+    return bool(downloads) and all(is_members_only_error(value) for value in downloads)
 
 
 def write_primary_transcript(run_dir, metadata, captions, audio, onscreen):
@@ -498,6 +529,8 @@ def process_video(api, config, playlist, video, item, api_key, progress):
     advance("evidence", status="PROCESSING", error="")
     evidence = collect_evidence(run_dir, metadata, evidence_config)
     text_ids = store_evidence_texts(api, video_id, evidence, evidence_config)
+    if is_members_only(evidence):
+        raise MembersOnlyVideo("members-only video: captions, audio, and video are not accessible")
     write_primary_transcript(
         run_dir,
         metadata,
@@ -580,6 +613,42 @@ def process_video(api, config, playlist, video, item, api_key, progress):
     )
     shutil.rmtree(run_dir, ignore_errors=True)
     return len(places)
+
+
+def record_outcome(api, video_id, **fields):
+    try:
+        api.update_video(video_id, **fields)
+    except RuntimeError as error:
+        print(f"  could not record the outcome of {video_id}: {error}", file=sys.stderr)
+
+
+def run_video(api, config, playlist, video, item, api_key):
+    """Process one video and record how it ended.
+
+    Returns ``stored`` when candidates were stored, ``skipped`` when the video
+    is members-only and was set to ``SKIPPED``, or ``failed`` when it was set
+    to ``FAILED`` for the next run to retry.
+    """
+    progress = {"stage": "evidence"}
+    try:
+        count = process_video(api, config, playlist, video, item, api_key, progress)
+    except MembersOnlyVideo as error:
+        print(f"  skipped: {video['id']}: {error}")
+        record_outcome(api, video["id"], status="SKIPPED", stage=progress["stage"], error=str(error))
+        shutil.rmtree(RUNS_ROOT / video["id"], ignore_errors=True)
+        return "skipped"
+    except (OSError, RuntimeError, subprocess.TimeoutExpired) as error:
+        print(f"  failed: {video['id']}: {error}", file=sys.stderr)
+        record_outcome(
+            api,
+            video["id"],
+            status="FAILED",
+            stage=progress["stage"],
+            error=str(error)[-2000:] or "failed",
+        )
+        return "failed"
+    print(f"  stored {count} candidates: {video['id']}")
+    return "stored"
 
 
 def selected_playlists(api, selected_ids):
@@ -684,24 +753,8 @@ def main():
                 delay = config["defaults"].get("captionDelaySeconds", {})
                 time.sleep(random.uniform(delay.get("min", 60), delay.get("max", 90)))
             print(f"  [{video['status'].lower()}] {video['id']} {video['title']}", flush=True)
-            progress = {"stage": "evidence"}
-            try:
-                count = process_video(
-                    api, config, playlist, video, items.get(video["id"], {}), api_key, progress
-                )
-                print(f"  stored {count} candidates: {video['id']}")
-            except (OSError, RuntimeError, subprocess.TimeoutExpired) as error:
-                had_failures = True
-                print(f"  failed: {video['id']}: {error}", file=sys.stderr)
-                try:
-                    api.update_video(
-                        video["id"],
-                        status="FAILED",
-                        stage=progress["stage"],
-                        error=str(error)[-2000:] or "failed",
-                    )
-                except RuntimeError as update_error:
-                    print(f"  could not record the failure: {update_error}", file=sys.stderr)
+            outcome = run_video(api, config, playlist, video, items.get(video["id"], {}), api_key)
+            had_failures = had_failures or outcome == "failed"
         remaining -= len(chosen)
 
     if had_failures:

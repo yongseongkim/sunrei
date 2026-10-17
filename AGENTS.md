@@ -92,7 +92,7 @@ YouTube가 데이터센터 IP에서 오는 자막과 영상 다운로드를 막�
 실행 방법은 `.claude/scripts/youtube/AUTOMATION.md`에, 테이블별 설명은 `sunrei-server/src/main/resources/db/migration/V2__youtube_collection.sql` 주석에 있다.
 
 - `youtube_video.status`: `PENDING`과 `FAILED`가 처리 대상이고, 추출이 끝나면 `REVIEW_PENDING`, 후보 검토가 모두 끝나면 `COMPLETED`가 된다.
-  기준선으로 등록한 기존 영상은 `SKIPPED`다.
+  기준선으로 등록한 기존 영상과, 음성·영상 다운로드가 멤버십 전용으로 거부된 영상은 `SKIPPED`이며 다시 처리하지 않는다.
 - 동기화 때 플레이리스트에서 빠진 영상은 `removed_at`만 기록하고 데이터와 spot은 지우지 않는다.
 - 장소 후보는 `PATCH /admin/youtube/extracted-places/{id}`로 승인될 때만 SunreiSpot이 되며, 반려한 후보도 남겨 둔다.
 
