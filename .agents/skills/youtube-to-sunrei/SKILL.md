@@ -33,6 +33,21 @@ including description-first and web-research channels. Keep description links
 as the primary place identity when they conflict with weaker ASR or OCR, while
 retaining every source for correction and audit.
 
+Whatever the path, the same rules from `prompts/extract_locations.md` apply:
+
+- Select only the places worth visiting that the video introduces, the ones
+  that fit the theme of its title and description. A place it mentions as a
+  comparison or model, such as the New York building a Ginza building
+  imitates, goes into the description of the introduced place, not onto the
+  map. Leave out places the video recommends against, and stops that do not
+  fit the theme, such as landmarks and shops passed on a food tour.
+- A Google Maps link in the description is the best identity. A description
+  address is weaker: when it contradicts the video, infer the region from the
+  title, speech, and on-screen text, and search there.
+- Use title and description, captions, Whisper, and OCR together, and always
+  run OCR. Creators often name the place only in burned-in subtitles, and OCR
+  holds the names, addresses, and prices in scenes without speech.
+
 ## Re-Derive After Edits
 
 If videos were re-edited after a prior ingest, recollect all text evidence
@@ -173,6 +188,9 @@ Each processed video ends as `REVIEW_PENDING`, or `COMPLETED` when no candidate
 was found.
 A failed video becomes `FAILED` with its stage and error, and the next run retries
 it.
+Members-only videos fail every source and would fail again on each run. Set them
+to `SKIPPED` with `CollectionApi().update_video(video_id, status="SKIPPED")`
+instead of leaving them `FAILED`.
 Candidates wait as `PENDING` until an admin approves them, and approval adds the
 spot to the playlist's Sunrei. The collector never changes a Sunrei by itself.
 The agents receive the metadata plus one relevant timeline window at a time; they
@@ -180,3 +198,29 @@ do not receive the video or raw media.
 
 Operational details and credentials are documented in
 `.claude/scripts/youtube/AUTOMATION.md`.
+
+## Audit an Existing Sunrei
+
+Older ingests can leave weak data on the public map. Before reusing or
+extending a Sunrei, read it through `GET /admin/sunreis/{id}` and check for the
+items below. Skip spots from members-only videos: their captions, audio, and
+frames cannot be fetched, and they are not worth recovering by other means.
+
+- Contexts that are placeholders, a bare dish name, extraction notes, or
+  copied transcript text
+- Spots with an empty title or a placeholder `sourceLink`
+- Place names that are address fragments, list labels, or a city, street, or
+  station standing in for a building
+- Several spots of one video on one Place, where the card shows only the first
+  context
+- Spot addresses that differ from the store-information block in the video
+  description
+
+To repair contexts, collect captions again at the 60-90 second pace, run OCR on
+every video in the language of its burned-in subtitles, and write each spot
+from its own video's captions, OCR, and description chapters together.
+Music-only scenes, places named only in on-screen subtitles, and wrong caption
+uploads all hide places from the speech track. Re-point a wrong place by
+geocoding the venue name from the description, and follow the spot rules in
+`youtube-create-sunrei` step 5.
+Preview large changes on a local server before writing to production.

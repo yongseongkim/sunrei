@@ -189,7 +189,7 @@ step 4.
 ```json
 {
   "title": "시부야의 맛있는 야키토리 맛집 투어",
-  "context": "시부야 뒷골목 야키토리 투어에서 방문한 카운터 10석 규모의 노포. 대표 메뉴는 비장탄에 구운 쓰쿠네와 레바로, 쓰쿠네는 겉을 바삭하게 구운 뒤 노른자에 찍어 먹고(육즙이 팡 터진다고 표현), 레바는 비린내 없이 부드럽다고 강조했다 (12:30).",
+  "context": "시부야 뒷골목 야키토리 투어에서 방문한 카운터 10석 규모의 노포. 대표 메뉴는 비장탄에 구운 쓰쿠네와 레바로, 쓰쿠네는 겉을 바삭하게 구운 뒤 노른자에 찍어 먹고(육즙이 팡 터진다고 표현), 레바는 비린내 없이 부드럽다고 강조했다.",
   "images": [],
   "sourceLink": "https://youtube.com/watch?v=VIDEO_ID&t=123",
   "tagIds": ["..."],
@@ -215,6 +215,28 @@ step 4.
 
 If a video contains several locations, create a separate SunreiSpot for each
 one and reuse the video title.
+
+Before saving, check every spot for problems that are hard to fix later:
+
+- No placeholders. Every spot needs its video title, a real video URL with
+  `&t=` (not a city or playlist placeholder such as `watch?v=city:Chengdu`), and
+  a context written from the evidence, not text like
+  `<name> — <playlist> 영상에서 소개한 <area> 맛집.` or a bare dish name.
+- A real venue name in `place.name`. The admin API cannot rename a Place:
+  `findOrCreatePlace` reuses the existing Place for a `googleMapsId` and ignores
+  the new name, so a name such as `13-3` or `1) 카덴` later needs a DB update.
+- The name the video introduces, in Korean, when Google returns only a
+  foreign-language name. Example: the Nexus World buildings come back as
+  `ネクサスワールド レム棟・コールハース棟` and `ネクサスワールド石山棟`; save them as
+  `넥서스 월드 렘 쿨하스 동` and `넥서스 월드 이시야마 오사무 동`, the names the
+  context uses. Keep the Google `googleMapsId` and coordinates as they are.
+  When the video shows its own Korean spelling on screen, use it: the Osaka
+  ramen shop 人情麺家 牛骨王 is saved as `닌조멘 규코츠오 (우골왕)`, the spelling
+  and gloss from the burned-in subtitles.
+- One Place per building or venue. Spots of the same video on one Place
+  collapse into one card line that shows only the first context. Give each
+  building its own Google place; when the video really covers one site, write
+  one spot whose context covers all of it.
 
 Present all spots in a table and wait for approval.
 
@@ -355,6 +377,9 @@ Edit via `PUT {SERVER_URL}/admin/sunreis/{id}`:
 - To replace all spots, send only the new spot list. Explicit delete entries are
   rarely needed, because every spot item must include `title`, including
   `{ "id": "...", "_delete": true }`.
+- To change a few spots, still list every live spot with at least `id` and
+  `title`, and compare the spot count before and after the PUT. A partial list
+  silently deletes the rest.
 - Tags update per spot. Send `tagIds` or `tagLabels` only when replacing that
   spot's tag set.
 - Send one PUT per Sunrei. Start from a fresh `GET /admin/sunreis/{id}`, combine
