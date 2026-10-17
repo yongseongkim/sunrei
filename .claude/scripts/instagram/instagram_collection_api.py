@@ -72,6 +72,13 @@ class InstagramCollectionApi(CollectionApi):
         body = {key: value for key, value in {"status": status, "stage": stage, "error": error}.items() if value is not None}
         return self.request("PATCH", f"/admin/instagram/posts/{post_id}", body)
 
+    def set_post_images(self, post_id, images):
+        return self.request("PUT", f"/admin/instagram/posts/{post_id}/images", {"images": images})
+
+    def upload_image_from_url(self, url):
+        """Copy an image into Sunrei's image storage; returns the MultiSizeImage of the copy."""
+        return self.request("POST", "/admin/images/upload-url", {"url": url}, timeout=180)
+
     def set_location_tag(self, post_id, location_tag):
         return self.request("PUT", f"/admin/instagram/posts/{post_id}/location-tag", {"locationTag": location_tag})
 

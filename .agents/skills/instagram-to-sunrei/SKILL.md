@@ -58,6 +58,9 @@ python3 .claude/scripts/instagram/instagram_accounts.py add USERNAME
   the app. Instagram picture URLs expire, so it is copied into Sunrei's image
   storage. `instagram_accounts.py update USERNAME --refresh-picture` replaces
   it after the account changes its picture.
+- The account's Sunrei may be moved under another Source of the same series,
+  as choiza11's Sunrei sits under the 최자로드 YouTube channel. The scripts then
+  leave that Source's poster alone.
 - Every post is collected, history included. `--baseline skip` records the
   newest page as SKIPPED so only later posts are processed; use it only when
   the user asks for new posts only.
@@ -96,7 +99,25 @@ Pace and limits:
 - Disclosed ads and the author's own promotions produce no candidates; the
   server enforces this.
 
-## 4. Review Candidates
+## 4. Copy Post Images
+
+Spots show their post's images in the app (place detail) and the admin (spot
+card). The collector copies them for new posts with candidates. For posts
+imported or collected before that, run:
+
+```bash
+python3 .claude/scripts/instagram/post_images.py USERNAME
+python3 .claude/scripts/instagram/post_images.py USERNAME --commit
+```
+
+It takes each post's images (a reel's cover, the photo, or up to five carousel
+items) through Business Discovery, copies them into Sunrei's image storage with
+`/admin/images/upload-url`, and stores them on the post; spots already approved
+from the post that have no images get them. Instagram's image URLs expire, so
+never store them directly. Posts flagged for copyright can come back without an
+image URL; those are reported and skipped.
+
+## 5. Review Candidates
 
 List what needs a decision:
 

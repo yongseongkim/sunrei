@@ -994,6 +994,37 @@ paths:
         '401': { description: Unauthorized }
         '404': { description: Not found }
 
+  /admin/instagram/posts/{id}/images:
+    put:
+      summary: Replace the copies of a post's images
+      description: >
+        The images must already be in Sunrei's image storage (for example through
+        /admin/images/upload-url), because Instagram's image URLs expire. Spots already
+        approved from the post that have no images get these images.
+      operationId: setInstagramPostImages
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetInstagramPostImagesRequest'
+      responses:
+        '200':
+          description: Post updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InstagramPostDTO'
+        '400': { description: Bad request }
+        '401': { description: Unauthorized }
+        '404': { description: Not found }
+
   /admin/instagram/posts/{id}/texts:
     post:
       summary: Store a Whisper transcript or OCR text for a reel
@@ -2006,7 +2037,7 @@ components:
 
     InstagramPostDTO:
       type: object
-      required: [id, accountId, shortcode, permalink, mediaType, title, postedAt, status, createdAt, updatedAt]
+      required: [id, accountId, shortcode, permalink, mediaType, title, postedAt, images, status, createdAt, updatedAt]
       properties:
         id: { type: string }
         accountId: { type: string }
@@ -2023,6 +2054,10 @@ components:
           allOf: [{ $ref: '#/components/schemas/InstagramLocationTagDTO' }]
           nullable: true
         locationTagReadAt: { type: string, format: date-time, nullable: true }
+        images:
+          type: array
+          description: Copies of the post's images in Sunrei's image storage, at most 5
+          items: { $ref: '#/components/schemas/MultiSizeImageDTO' }
         promotion:
           allOf: [{ $ref: '#/components/schemas/InstagramPromotion' }]
           nullable: true
@@ -2059,6 +2094,15 @@ components:
         locationTag:
           allOf: [{ $ref: '#/components/schemas/InstagramLocationTagDTO' }]
           nullable: true
+
+    SetInstagramPostImagesRequest:
+      type: object
+      required: [images]
+      properties:
+        images:
+          type: array
+          maxItems: 5
+          items: { $ref: '#/components/schemas/MultiSizeImageDTO' }
 
     InstagramPostAttemptDTO:
       type: object

@@ -9,10 +9,11 @@ sys.path.insert(0, str(SCRIPT_DIR))
 from download_reels import classify, reel_urls
 from extract_locations import evidence_inputs, post_input as prompt_post_input
 from extraction_runs import candidate_input, evidence_items, ocr_text, run_request, status_after_run, whisper_text
-from graph_api import iso_timestamp, post_input, shortcode_of
+from graph_api import TooMuchData, iso_timestamp, post_input, shortcode_of
 from import_workspace import geocoding_of
 from instagram_accounts import set_profile_picture
 from place_search import branch_mismatch, from_result
+from post_images import PAGE_SIZE, image_sources, save_post_images
 
 EVIDENCE = {
     "shortcode": "DdfnSrZT9zZ",
@@ -177,7 +178,7 @@ class ProfilePictureTest(unittest.TestCase):
 
     def test_copies_the_picture_when_the_source_has_no_poster(self):
         api = self.FakeApi(self.IMAGE)
-        self.assertTrue(set_profile_picture(api, {"id": "SRC1"}, "https://scontent.cdninstagram.com/p.jpg"))
+        self.assertTrue(set_profile_picture(api, {"id": "SRC1", "type": "INSTAGRAM"}, "https://scontent.cdninstagram.com/p.jpg"))
         self.assertEqual(api.calls, [
             ("POST", "/admin/images/upload-url", {"url": "https://scontent.cdninstagram.com/p.jpg"}),
             ("PUT", "/admin/sources/SRC1", {"posterImage": self.IMAGE}),
@@ -185,11 +186,62 @@ class ProfilePictureTest(unittest.TestCase):
 
     def test_keeps_an_existing_poster_unless_replacing(self):
         api = self.FakeApi(self.IMAGE)
-        source = {"id": "SRC1", "posterImage": self.IMAGE}
+        source = {"id": "SRC1", "type": "INSTAGRAM", "posterImage": self.IMAGE}
         self.assertFalse(set_profile_picture(api, source, "https://scontent.cdninstagram.com/p.jpg"))
         self.assertEqual(api.calls, [])
         self.assertTrue(set_profile_picture(api, source, "https://scontent.cdninstagram.com/p.jpg", replace=True))
-        self.assertFalse(set_profile_picture(self.FakeApi(self.IMAGE), {"id": "SRC1"}, None))
+        self.assertFalse(set_profile_picture(self.FakeApi(self.IMAGE), {"id": "SRC1", "type": "INSTAGRAM"}, None))
+
+    def test_leaves_a_youtube_source_alone(self):
+        api = self.FakeApi(self.IMAGE)
+        source = {"id": "SRC2", "type": "YOUTUBE", "posterImage": self.IMAGE}
+        self.assertFalse(set_profile_picture(api, source, "https://scontent.cdninstagram.com/p.jpg", replace=True))
+        self.assertEqual(api.calls, [])
+
+
+class PostImagesTest(unittest.TestCase):
+    def test_reel_uses_its_cover(self):
+        self.assertEqual(image_sources({"media_type": "VIDEO", "media_url": "v.mp4", "thumbnail_url": "cover.jpg"}), ["cover.jpg"])
+
+    def test_photo_uses_the_photo(self):
+        self.assertEqual(image_sources({"media_type": "IMAGE", "media_url": "p.jpg"}), ["p.jpg"])
+
+    def test_carousel_uses_items_up_to_five(self):
+        children = [{"media_type": "VIDEO", "media_url": "v.mp4", "thumbnail_url": "c0.jpg"}] + \
+            [{"media_type": "IMAGE", "media_url": f"i{n}.jpg"} for n in range(1, 7)]
+        media = {"media_type": "CAROUSEL_ALBUM", "media_url": "first.jpg", "children": {"data": children}}
+        self.assertEqual(image_sources(media), ["c0.jpg", "i1.jpg", "i2.jpg", "i3.jpg", "i4.jpg"])
+
+    def test_missing_urls_are_skipped(self):
+        self.assertEqual(image_sources({"media_type": "VIDEO", "media_url": "v.mp4"}), [])
+        self.assertEqual(image_sources({"media_type": "CAROUSEL_ALBUM", "media_url": "first.jpg"}), ["first.jpg"])
+
+    def test_halves_the_page_when_meta_asks_for_less_data(self):
+        class FakeGraph:
+            limits = []
+
+            def media_page(self, username, after=None, limit=None, fields=None):
+                self.limits.append(limit)
+                if limit == PAGE_SIZE and after is None:
+                    raise TooMuchData("Please reduce the amount of data you're asking for")
+                if after is None:
+                    return {}, [{"id": "1", "media_type": "IMAGE", "media_url": "p1.jpg"}], "c1"
+                return {}, [{"id": "2", "media_type": "IMAGE", "media_url": "p2.jpg"}], None
+
+        class FakeApi:
+            saved = {}
+
+            def upload_image_from_url(self, url):
+                return {"images": [{"url": url}]}
+
+            def set_post_images(self, post_id, images):
+                self.saved[post_id] = images
+
+        graph, api = FakeGraph(), FakeApi()
+        counts = save_post_images(graph, api, "choiza11", {"1": "A", "2": "B"})
+        self.assertEqual(graph.limits, [PAGE_SIZE, PAGE_SIZE // 2, PAGE_SIZE])
+        self.assertEqual(counts, {"saved": 2, "no_image": 0, "not_found": 0, "failed": 0})
+        self.assertEqual(sorted(api.saved), ["1", "2"])
 
 
 if __name__ == "__main__":

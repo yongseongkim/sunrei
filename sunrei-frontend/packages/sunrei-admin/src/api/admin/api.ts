@@ -334,6 +334,10 @@ export interface InstagramPostDTO {
     'commentsCount'?: number | null;
     'locationTag'?: InstagramLocationTagDTO | null;
     'locationTagReadAt'?: string | null;
+    /**
+     * Copies of the post\'s images in Sunrei\'s image storage, at most 5
+     */
+    'images': Array<MultiSizeImageDTO>;
     'promotion'?: InstagramPromotion | null;
     'promotionEvidence'?: string | null;
     'status': InstagramPostStatus;
@@ -595,6 +599,9 @@ export interface ReviewYoutubeExtractedPlaceRequest {
 
 export interface SetInstagramLocationTagRequest {
     'locationTag'?: InstagramLocationTagDTO | null;
+}
+export interface SetInstagramPostImagesRequest {
+    'images': Array<MultiSizeImageDTO>;
 }
 export interface SourceDTO {
     'id': string;
@@ -2599,6 +2606,50 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * The images must already be in Sunrei\'s image storage (for example through /admin/images/upload-url), because Instagram\'s image URLs expire. Spots already approved from the post that have no images get these images. 
+         * @summary Replace the copies of a post\'s images
+         * @param {string} id 
+         * @param {SetInstagramPostImagesRequest} setInstagramPostImagesRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        setInstagramPostImages: async (id: string, setInstagramPostImagesRequest: SetInstagramPostImagesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('setInstagramPostImages', 'id', id)
+            // verify required parameter 'setInstagramPostImagesRequest' is not null or undefined
+            assertParamExists('setInstagramPostImages', 'setInstagramPostImagesRequest', setInstagramPostImagesRequest)
+            const localVarPath = `/admin/instagram/posts/{id}/images`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(setInstagramPostImagesRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * A null locationTag records that the page was read and has no tag.
          * @summary Record the location tag read from the post page
          * @param {string} id 
@@ -3633,6 +3684,20 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * The images must already be in Sunrei\'s image storage (for example through /admin/images/upload-url), because Instagram\'s image URLs expire. Spots already approved from the post that have no images get these images. 
+         * @summary Replace the copies of a post\'s images
+         * @param {string} id 
+         * @param {SetInstagramPostImagesRequest} setInstagramPostImagesRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async setInstagramPostImages(id: string, setInstagramPostImagesRequest: SetInstagramPostImagesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InstagramPostDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.setInstagramPostImages(id, setInstagramPostImagesRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.setInstagramPostImages']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * A null locationTag records that the page was read and has no tag.
          * @summary Record the location tag read from the post page
          * @param {string} id 
@@ -4200,6 +4265,17 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.searchTags(q, options).then((request) => request(axios, basePath));
         },
         /**
+         * The images must already be in Sunrei\'s image storage (for example through /admin/images/upload-url), because Instagram\'s image URLs expire. Spots already approved from the post that have no images get these images. 
+         * @summary Replace the copies of a post\'s images
+         * @param {string} id 
+         * @param {SetInstagramPostImagesRequest} setInstagramPostImagesRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        setInstagramPostImages(id: string, setInstagramPostImagesRequest: SetInstagramPostImagesRequest, options?: RawAxiosRequestConfig): AxiosPromise<InstagramPostDTO> {
+            return localVarFp.setInstagramPostImages(id, setInstagramPostImagesRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
          * A null locationTag records that the page was read and has no tag.
          * @summary Record the location tag read from the post page
          * @param {string} id 
@@ -4762,6 +4838,18 @@ export class DefaultApi extends BaseAPI {
      */
     public searchTags(q: string, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).searchTags(q, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The images must already be in Sunrei\'s image storage (for example through /admin/images/upload-url), because Instagram\'s image URLs expire. Spots already approved from the post that have no images get these images. 
+     * @summary Replace the copies of a post\'s images
+     * @param {string} id 
+     * @param {SetInstagramPostImagesRequest} setInstagramPostImagesRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public setInstagramPostImages(id: string, setInstagramPostImagesRequest: SetInstagramPostImagesRequest, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).setInstagramPostImages(id, setInstagramPostImagesRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

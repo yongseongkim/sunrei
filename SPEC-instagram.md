@@ -257,7 +257,7 @@ CREATE INDEX idx_instagram_post_attempt_post_id ON instagram_post_attempt(post_i
 - `\d source`에 `INSTAGRAM`이 들어간 새 check가 있다. 타입이 `INSTAGRAM`인 source는 들어가고 `FOO`는
   실패한다.
 
-### V4 (다음 릴리스)
+### V4 (v0.1.2 다음 릴리스)
 
 파일: `V4__drop_spot_youtube_link.sql`. V3 릴리스가 완전히 배포된 뒤에만 내보낸다.
 
@@ -1037,7 +1037,7 @@ choiza11 게시물 2,004개를 가져온다.
 |---|---|
 | `graph_api.py` | Business Discovery 클라이언트: 계정 필드와 미디어 페이지. 토큰은 `sops_secret`에서 읽는다. `x-app-usage`가 75%면 쉬고, #4/#17/#32/#613이면 기다리고, #190이면 갱신 안내와 함께 멈춘다 |
 | `instagram_collection_api.py` | `/admin/instagram/*` 클라이언트. YouTube의 `CollectionApi`를 상속한다. `collection_api.py`로 두면 YouTube 모듈과 import 이름이 겹친다 |
-| `instagram_accounts.py` | `list`, `add USERNAME --sunrei ID [--baseline skip|none]`, `update [--refresh-picture]` (`youtube_playlists.py`와 같은 방식). 프로필 사진을 Source 포스터(앱의 채널 아바타)로 넣는다. Instagram 사진 주소는 만료되므로 `/admin/images/upload-url`로 이미지 저장소에 복사한다. Source에 포스터가 없을 때만 넣고, `--refresh-picture`는 바꿔 넣는다. 수집기도 포스터가 없으면 채운다 |
+| `instagram_accounts.py` | `list`, `add USERNAME --sunrei ID [--baseline skip|none]`, `update [--refresh-picture]` (`youtube_playlists.py`와 같은 방식). 프로필 사진을 Source 포스터(앱의 채널 아바타)로 넣는다. Instagram 사진 주소는 만료되므로 `/admin/images/upload-url`로 이미지 저장소에 복사한다. Source에 포스터가 없을 때만 넣고, `--refresh-picture`는 바꿔 넣는다. 수집기도 포스터가 없으면 채운다. 계정의 Sunrei를 같은 시리즈의 다른 Source(choiza11은 최자로드 YouTube 채널) 아래로 옮기면 INSTAGRAM이 아닌 그 Source의 포스터는 건드리지 않는다 |
 | `location_tags.py` | 로그인하지 않은 게시물 페이지를 headless Chrome으로 읽는다. 5번 연속 실패하면 전에 읽은 게시물을 다시 열어 본다. 그것도 안 열리면 로그인 차단으로 보고 멈추고, 열리면 실패한 게시물만 숨김으로 기록하고 계속한다 |
 | `download_reels.py`, `reel_evidence.py`, `token_status.py`, `refresh_token.py` | 이미 있음 |
 | `extract_locations.py` + `prompts/extract_locations.md` + `extract_locations.schema.json` | 캡션, 위치 태그, 음성, OCR을 넣는 배치 추출(agent 호출 한 번에 15개). 지금 프로토타입 프롬프트를 쓴다 |
@@ -1082,6 +1082,24 @@ choiza11 게시물 2,004개를 가져온다.
    과거 전체 처리를 이미 마쳤으므로 수집기를 기다리지 않는다.
 4. API로 후보를 검토한 뒤 Sunrei를 공개한다.
 
+## 3.5 · 게시물 이미지
+
+공개 앱의 장소 상세와 admin spot 카드에 게시물 이미지를 보여 준다.
+
+- `V5__instagram_post_images.sql`: `instagram_post.images JSONB NOT NULL DEFAULT '[]'`.
+  이미지 저장소에 복사한 이미지(MultiSizeImage) 목록이며, 릴스 커버, 사진, 캐러셀 항목 최대 5장이다.
+  Instagram 이미지 주소는 서명이 만료되므로 원래 주소는 저장하지 않는다.
+- `PUT /admin/instagram/posts/{id}/images` (`SetInstagramPostImagesRequest { images: MultiSizeImageDTO[] }`, 최대 5장):
+  게시물 이미지를 바꾸고, 그 게시물에서 이미 승인했지만 이미지가 없는 spot에도 넣는다. 운영자가 넣은 spot 이미지는 덮어쓰지 않는다.
+  `InstagramPostDTO.images`로 돌려준다.
+- 승인할 때 만드는 spot은 게시물 이미지를 spot 이미지로 가진다.
+- 공개 API의 언급 `images`는 대표 spot의 이미지, 없으면 Sunrei 이미지다.
+  Instagram처럼 Sunrei 하나에 게시물이 여럿이면 spot 이미지가 그 게시물을 보여 준다.
+- 공개 앱 장소 상세의 언급 행에 이미지를 보여 주며 누르면 게시물로 간다. YouTube는 16:9 썸네일 한 장, 그 밖에는 정사각형 최대 4장이다.
+- admin spot 카드의 썸네일은 YouTube가 아니면 spot의 첫 이미지다.
+- `post_images.py USERNAME [--commit]`: 후보(대기 또는 승인)가 있고 이미지가 없는 게시물을 Business Discovery로 찾아
+  이미지를 `/admin/images/upload-url`로 복사하고 위 API로 저장한다. 수집기는 후보를 만든 게시물에 같은 처리를 바로 한다.
+
 ## 3.4 · 스킬
 
 - `instagram-to-sunrei`: 계정 등록, 수집기 실행, 후보 검토, 공개. 토큰 확인과 갱신 단계를 포함해
@@ -1108,6 +1126,7 @@ Phase 1과 2는 한 릴리스(`scripts/release.sh`)로 내보낸다. API 필드 
   대신한다. 몇 분 동안 mention 링크에서 타임스탬프가 빠진다.
 - 배포 중에 이전 서버가 쓴 spot은 `youtube_link`에만 들어간다. V4가 옮긴다.
 - V4는 `youtube_link`를 읽는 코드가 남지 않았는지 확인한 뒤 다음 릴리스로 내보낸다.
+  V3는 v0.1.2로 배포됐고, V4는 게시물 이미지(3.5)와 같은 릴리스로 나간다.
 
 Phase 3은 스크립트뿐이라 릴리스가 필요 없다.
 
