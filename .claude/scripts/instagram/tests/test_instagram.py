@@ -178,7 +178,7 @@ class ProfilePictureTest(unittest.TestCase):
 
     def test_copies_the_picture_when_the_source_has_no_poster(self):
         api = self.FakeApi(self.IMAGE)
-        self.assertTrue(set_profile_picture(api, {"id": "SRC1"}, "https://scontent.cdninstagram.com/p.jpg"))
+        self.assertTrue(set_profile_picture(api, {"id": "SRC1", "type": "INSTAGRAM"}, "https://scontent.cdninstagram.com/p.jpg"))
         self.assertEqual(api.calls, [
             ("POST", "/admin/images/upload-url", {"url": "https://scontent.cdninstagram.com/p.jpg"}),
             ("PUT", "/admin/sources/SRC1", {"posterImage": self.IMAGE}),
@@ -186,11 +186,17 @@ class ProfilePictureTest(unittest.TestCase):
 
     def test_keeps_an_existing_poster_unless_replacing(self):
         api = self.FakeApi(self.IMAGE)
-        source = {"id": "SRC1", "posterImage": self.IMAGE}
+        source = {"id": "SRC1", "type": "INSTAGRAM", "posterImage": self.IMAGE}
         self.assertFalse(set_profile_picture(api, source, "https://scontent.cdninstagram.com/p.jpg"))
         self.assertEqual(api.calls, [])
         self.assertTrue(set_profile_picture(api, source, "https://scontent.cdninstagram.com/p.jpg", replace=True))
-        self.assertFalse(set_profile_picture(self.FakeApi(self.IMAGE), {"id": "SRC1"}, None))
+        self.assertFalse(set_profile_picture(self.FakeApi(self.IMAGE), {"id": "SRC1", "type": "INSTAGRAM"}, None))
+
+    def test_leaves_a_youtube_source_alone(self):
+        api = self.FakeApi(self.IMAGE)
+        source = {"id": "SRC2", "type": "YOUTUBE", "posterImage": self.IMAGE}
+        self.assertFalse(set_profile_picture(api, source, "https://scontent.cdninstagram.com/p.jpg", replace=True))
+        self.assertEqual(api.calls, [])
 
 
 class PostImagesTest(unittest.TestCase):

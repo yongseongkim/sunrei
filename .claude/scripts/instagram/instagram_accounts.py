@@ -37,8 +37,13 @@ def profile_url(username):
 def set_profile_picture(api, source, picture_url, replace=False):
     """Copy the profile picture into image storage and make it the Source's poster image.
 
-    Keeps an existing poster unless ``replace``. Returns True when the poster changed.
+    Keeps an existing poster unless ``replace``, and never touches a non-INSTAGRAM Source: an account's
+    Sunrei may sit under another Source, such as the YouTube channel of the same series.
+    Returns True when the poster changed.
     """
+    if source.get("type") != "INSTAGRAM":
+        print(f"source {source['id']} is {source.get('type')}; poster image unchanged")
+        return False
     if source.get("posterImage") and not replace:
         return False
     if not picture_url:

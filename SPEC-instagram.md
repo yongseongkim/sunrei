@@ -1037,7 +1037,7 @@ choiza11 게시물 2,004개를 가져온다.
 |---|---|
 | `graph_api.py` | Business Discovery 클라이언트: 계정 필드와 미디어 페이지. 토큰은 `sops_secret`에서 읽는다. `x-app-usage`가 75%면 쉬고, #4/#17/#32/#613이면 기다리고, #190이면 갱신 안내와 함께 멈춘다 |
 | `instagram_collection_api.py` | `/admin/instagram/*` 클라이언트. YouTube의 `CollectionApi`를 상속한다. `collection_api.py`로 두면 YouTube 모듈과 import 이름이 겹친다 |
-| `instagram_accounts.py` | `list`, `add USERNAME --sunrei ID [--baseline skip|none]`, `update [--refresh-picture]` (`youtube_playlists.py`와 같은 방식). 프로필 사진을 Source 포스터(앱의 채널 아바타)로 넣는다. Instagram 사진 주소는 만료되므로 `/admin/images/upload-url`로 이미지 저장소에 복사한다. Source에 포스터가 없을 때만 넣고, `--refresh-picture`는 바꿔 넣는다. 수집기도 포스터가 없으면 채운다 |
+| `instagram_accounts.py` | `list`, `add USERNAME --sunrei ID [--baseline skip|none]`, `update [--refresh-picture]` (`youtube_playlists.py`와 같은 방식). 프로필 사진을 Source 포스터(앱의 채널 아바타)로 넣는다. Instagram 사진 주소는 만료되므로 `/admin/images/upload-url`로 이미지 저장소에 복사한다. Source에 포스터가 없을 때만 넣고, `--refresh-picture`는 바꿔 넣는다. 수집기도 포스터가 없으면 채운다. 계정의 Sunrei를 같은 시리즈의 다른 Source(choiza11은 최자로드 YouTube 채널) 아래로 옮기면 INSTAGRAM이 아닌 그 Source의 포스터는 건드리지 않는다 |
 | `location_tags.py` | 로그인하지 않은 게시물 페이지를 headless Chrome으로 읽는다. 5번 연속 실패하면 전에 읽은 게시물을 다시 열어 본다. 그것도 안 열리면 로그인 차단으로 보고 멈추고, 열리면 실패한 게시물만 숨김으로 기록하고 계속한다 |
 | `download_reels.py`, `reel_evidence.py`, `token_status.py`, `refresh_token.py` | 이미 있음 |
 | `extract_locations.py` + `prompts/extract_locations.md` + `extract_locations.schema.json` | 캡션, 위치 태그, 음성, OCR을 넣는 배치 추출(agent 호출 한 번에 15개). 지금 프로토타입 프롬프트를 쓴다 |

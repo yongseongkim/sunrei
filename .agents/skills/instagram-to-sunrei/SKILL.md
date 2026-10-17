@@ -58,6 +58,9 @@ python3 .claude/scripts/instagram/instagram_accounts.py add USERNAME
   the app. Instagram picture URLs expire, so it is copied into Sunrei's image
   storage. `instagram_accounts.py update USERNAME --refresh-picture` replaces
   it after the account changes its picture.
+- The account's Sunrei may be moved under another Source of the same series,
+  as choiza11's Sunrei sits under the 최자로드 YouTube channel. The scripts then
+  leave that Source's poster alone.
 - Every post is collected, history included. `--baseline skip` records the
   newest page as SKIPPED so only later posts are processed; use it only when
   the user asks for new posts only.
