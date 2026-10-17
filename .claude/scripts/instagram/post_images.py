@@ -12,7 +12,7 @@ The command is a dry run unless --commit is given. SUNREI_API_URL selects the
 server (default: production).
 
 Usage:
-    python3 .claude/scripts/instagram/post_images.py USERNAME [--commit] [--limit N] [--max-pages 60]
+    python3 .claude/scripts/instagram/post_images.py USERNAME [--commit] [--limit N] [--max-pages 120]
 """
 
 import argparse
@@ -21,10 +21,13 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from graph_api import IMAGE_FIELDS, GraphApi, TokenExpired, log, shortcode_of  # noqa: E402
+from graph_api import IMAGE_FIELDS, GraphApi, TokenExpired, TooMuchData, log, shortcode_of  # noqa: E402
 from instagram_collection_api import CollectionApiError, InstagramCollectionApi  # noqa: E402
 
 MAX_IMAGES = 5
+# 50 posts with carousel items is more than Business Discovery returns in one page.
+PAGE_SIZE = 25
+MAX_PAGES = 120
 REVIEWABLE = {"PENDING", "APPROVED"}
 
 
@@ -42,17 +45,24 @@ def image_sources(media):
     return [url for url in urls if url][:MAX_IMAGES]
 
 
-def save_post_images(graph, api, username, wanted, max_pages=60):
+def save_post_images(graph, api, username, wanted, max_pages=MAX_PAGES):
     """Find the wanted posts ({post id: shortcode}) through Business Discovery and store their image copies.
 
+    Pages hold PAGE_SIZE posts and are halved while Meta answers that a page asks for too much data.
     Returns {"saved": n, "no_image": n, "not_found": n, "failed": n}.
     """
     counts = {"saved": 0, "no_image": 0, "not_found": 0, "failed": 0}
-    remaining, after = dict(wanted), None
-    for _ in range(max_pages):
-        if not remaining:
-            break
-        _, items, after = graph.media_page(username, after=after, fields=IMAGE_FIELDS)
+    remaining, after, pages, limit = dict(wanted), None, 0, PAGE_SIZE
+    while remaining and pages < max_pages:
+        try:
+            _, items, after = graph.media_page(username, after=after, limit=limit, fields=IMAGE_FIELDS)
+        except TooMuchData:
+            if limit == 1:
+                raise
+            limit = max(1, limit // 2)
+            log(f"Graph API asked for less data; retrying with {limit} posts per page")
+            continue
+        pages, limit = pages + 1, PAGE_SIZE
         for media in items:
             if media["id"] not in remaining:
                 continue
@@ -83,7 +93,7 @@ def main():
     parser.add_argument("username")
     parser.add_argument("--commit", action="store_true")
     parser.add_argument("--limit", type=int, help="At most N posts, newest first, for a trial run")
-    parser.add_argument("--max-pages", type=int, default=60)
+    parser.add_argument("--max-pages", type=int, default=MAX_PAGES)
     args = parser.parse_args()
 
     api = InstagramCollectionApi()

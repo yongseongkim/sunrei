@@ -9,11 +9,11 @@ sys.path.insert(0, str(SCRIPT_DIR))
 from download_reels import classify, reel_urls
 from extract_locations import evidence_inputs, post_input as prompt_post_input
 from extraction_runs import candidate_input, evidence_items, ocr_text, run_request, status_after_run, whisper_text
-from graph_api import iso_timestamp, post_input, shortcode_of
+from graph_api import TooMuchData, iso_timestamp, post_input, shortcode_of
 from import_workspace import geocoding_of
 from instagram_accounts import set_profile_picture
 from place_search import branch_mismatch, from_result
-from post_images import image_sources
+from post_images import PAGE_SIZE, image_sources, save_post_images
 
 EVIDENCE = {
     "shortcode": "DdfnSrZT9zZ",
@@ -209,6 +209,33 @@ class PostImagesTest(unittest.TestCase):
     def test_missing_urls_are_skipped(self):
         self.assertEqual(image_sources({"media_type": "VIDEO", "media_url": "v.mp4"}), [])
         self.assertEqual(image_sources({"media_type": "CAROUSEL_ALBUM", "media_url": "first.jpg"}), ["first.jpg"])
+
+    def test_halves_the_page_when_meta_asks_for_less_data(self):
+        class FakeGraph:
+            limits = []
+
+            def media_page(self, username, after=None, limit=None, fields=None):
+                self.limits.append(limit)
+                if limit == PAGE_SIZE and after is None:
+                    raise TooMuchData("Please reduce the amount of data you're asking for")
+                if after is None:
+                    return {}, [{"id": "1", "media_type": "IMAGE", "media_url": "p1.jpg"}], "c1"
+                return {}, [{"id": "2", "media_type": "IMAGE", "media_url": "p2.jpg"}], None
+
+        class FakeApi:
+            saved = {}
+
+            def upload_image_from_url(self, url):
+                return {"images": [{"url": url}]}
+
+            def set_post_images(self, post_id, images):
+                self.saved[post_id] = images
+
+        graph, api = FakeGraph(), FakeApi()
+        counts = save_post_images(graph, api, "choiza11", {"1": "A", "2": "B"})
+        self.assertEqual(graph.limits, [PAGE_SIZE, PAGE_SIZE // 2, PAGE_SIZE])
+        self.assertEqual(counts, {"saved": 2, "no_image": 0, "not_found": 0, "failed": 0})
+        self.assertEqual(sorted(api.saved), ["1", "2"])
 
 
 if __name__ == "__main__":

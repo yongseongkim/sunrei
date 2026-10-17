@@ -24,8 +24,8 @@ from _common import UA, sops_secret  # noqa: E402
 GRAPH = "https://graph.facebook.com/v25.0"
 MEDIA_FIELDS = "id,permalink,timestamp,media_type,media_product_type,caption,like_count,comments_count"
 ACCOUNT_FIELDS = "id,username,name,biography,followers_count,media_count,profile_picture_url"
-# A reel's cover is thumbnail_url; a carousel's items are in children.
-IMAGE_FIELDS = "id,permalink,media_type,media_url,thumbnail_url,children{media_type,media_url,thumbnail_url}"
+# A reel's cover is thumbnail_url; a carousel's items are in children, of which we keep five.
+IMAGE_FIELDS = "id,permalink,media_type,media_url,thumbnail_url,children.limit(5){media_type,media_url,thumbnail_url}"
 RATE_LIMIT_CODES = {4, 17, 32, 613, 80002}
 USAGE_PAUSE_PERCENT = 75
 REFRESH_HINT = "python3 .claude/scripts/instagram/refresh_token.py"
@@ -34,6 +34,10 @@ SHORTCODE = re.compile(r"instagram\.com/(?:[^/]+/)?(?:p|reel|reels|tv)/([A-Za-z0
 
 class TokenExpired(RuntimeError):
     pass
+
+
+class TooMuchData(RuntimeError):
+    """Meta's #1 "Please reduce the amount of data": the same request may pass with a smaller page."""
 
 
 def log(message):
@@ -91,6 +95,8 @@ class GraphApi:
                 if code in RATE_LIMIT_CODES:
                     log(f"Graph API rate limited (#{code}); waiting 10 minutes")
                     time.sleep(600)
+                elif code == 1 and "reduce the amount of data" in (payload.get("message") or ""):
+                    raise TooMuchData(payload.get("message"))
                 elif code == 190:
                     raise TokenExpired(f"Instagram token expired or invalid. Refresh it with: {REFRESH_HINT}")
                 else:
