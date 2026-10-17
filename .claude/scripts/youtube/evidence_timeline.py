@@ -2,7 +2,7 @@
 
 The input JSON files remain unchanged. The resulting
 ``evidence_timeline.json`` is the normalized source passed to location
-extraction and stored in S3 for debugging.
+extraction and stored as the video's ``TIMELINE`` text by ``renew_playlists.py``.
 
 Usage:
     uv run python .claude/scripts/youtube/evidence_timeline.py RUN_DIR

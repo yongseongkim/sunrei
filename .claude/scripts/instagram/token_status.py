@@ -45,7 +45,7 @@ def main():
         with urllib.request.urlopen(request, timeout=60) as response:
             data = json.load(response)["data"]
     except urllib.error.HTTPError as error:
-        # Report Meta's error only; the request URL carries the token.
+        # 요청 URL에 토큰이 들어 있어서 Meta가 준 오류 내용만 보여 준다.
         payload = json.loads(error.read() or b"{}").get("error", {})
         print(f"Token invalid: #{payload.get('code')} {payload.get('message')}")
         print(f"Refresh by logging in with Facebook:\n  {REFRESH}")

@@ -43,7 +43,7 @@ MAP_LINK_RE = re.compile(
     r"https?://(?:maps\.google\.com|goo\.gl/maps|maps\.app\.goo\.gl|g\.page)/\S+"
 )
 CHAPTER_RE = re.compile(r"^\s*(\d{1,2}:\d{2}(?::\d{2})?)\s*(.*)$")
-EMOJO_LEAD_RE = re.compile(r"^[\s\W_]+", re.UNICODE)  # strip leading emoji/symbol noise crudely
+EMOJO_LEAD_RE = re.compile(r"^[\s\W_]+", re.UNICODE)  # 앞에 붙은 이모지와 기호를 떼어낸다.
 
 
 def load_selected(ws):
@@ -59,7 +59,7 @@ def ts_to_sec(ts):
 
 
 def clean_name(raw):
-    # drop trailing url-ish / map-link fragments and stray punctuation/emoji
+    # 이름 뒤에 붙은 지도 링크 조각과 기호, 이모지를 떼어낸다.
     s = MAP_LINK_RE.sub("", raw)
     s = re.sub(r"http\S*", "", s)
     s = s.strip(" \t-–—•|·:*#")
@@ -110,7 +110,7 @@ def resolve_link(link, cache):
         res = parse_resolved_url(final)
     except Exception:
         try:
-            # some links need a GET to resolve
+            # HEAD에는 redirect를 주지 않는 링크가 있어서 GET으로 한 번 더 연다.
             req = urllib.request.Request(link, headers={"User-Agent": UA})
             with urllib.request.urlopen(req, timeout=20) as r:
                 final = r.url
@@ -118,18 +118,18 @@ def resolve_link(link, cache):
         except Exception as e:
             res = {"error": str(e)}
     cache[link] = res
-    time.sleep(0.25)  # be gentle on goo.gl resolution
+    time.sleep(0.25)  # goo.gl이 연속 요청을 막지 않도록 쉰다.
     return res
 
 
 def parse_resolved_url(url):
     dec = urllib.parse.unquote(url)
     out = {"resolvedUrl": url}
-    # place name in path: /maps/place/<name>/@
+    # 장소 이름은 경로의 /maps/place/<이름>/@ 에 있다.
     m = re.search(r"/maps/place/([^/]+)/@", dec)
     if m:
         out["name"] = m.group(1).replace("+", " ").strip()
-    # precise coords from !8m2!3d<lat>!4d<lng>
+    # 정확한 좌표는 !8m2!3d<위도>!4d<경도> 에 있다.
     m = re.search(r"!8m2!3d(-?[\d.]+)!4d(-?[\d.]+)", dec)
     if m:
         out["latitude"] = float(m.group(1))
@@ -139,7 +139,7 @@ def parse_resolved_url(url):
         if m:
             out["latitude"] = float(m.group(1))
             out["longitude"] = float(m.group(2))
-    # feature id 0x..:0x..
+    # feature id는 0x..:0x.. 꼴이다.
     m = re.search(r"0x[0-9a-f]+:0x[0-9a-f]+", dec)
     if m:
         out["featureId"] = m.group(0)
@@ -201,7 +201,6 @@ def stage_parse(ws):
         d = descs.get(vid, {})
         desc = d.get("description", "")
         title = d.get("title") or v.get("title", "")
-        # chapters
         chapters = []
         for line in desc.splitlines():
             cm = CHAPTER_RE.match(line)
@@ -209,7 +208,6 @@ def stage_parse(ws):
                 name = clean_name(cm.group(2))
                 if name and len(name) <= 60:
                     chapters.append({"timestamp": cm.group(1), "sec": ts_to_sec(cm.group(1)), "name": name})
-        # map links (dedup, preserve order)
         links = []
         seen = set()
         for lk in MAP_LINK_RE.findall(desc):
@@ -217,7 +215,6 @@ def stage_parse(ws):
             if lk not in seen:
                 seen.add(lk)
                 links.append(lk)
-        # resolve links
         resolved = []
         for lk in links:
             r = resolve_link(lk, link_cache)
@@ -283,7 +280,7 @@ def stage_geocode(key, ws):
     done = flagged = 0
     for v in staging["videos"]:
         vid = v["videoId"]
-        # only (re)geocode videos not already finalized
+        # 이미 locations.json에 있는 영상은 다시 지오코딩하지 않는다.
         if vid in existing:
             out_videos.append(existing[vid]); continue
         places = []
@@ -298,7 +295,7 @@ def stage_geocode(key, ws):
                 "googleMapsUri": r.get("resolvedUrl"),
             }
             if err:
-                # fall back to the link coords directly
+                # 검색이 실패하면 링크의 좌표를 그대로 쓴다.
                 entry.update(latitude=r["latitude"], longitude=r["longitude"],
                              address="", geocodeWarning=f"text search: {err}")
                 flagged += 1
@@ -306,12 +303,12 @@ def stage_geocode(key, ws):
                 entry.update(address=res["address"], latitude=res["latitude"], longitude=res["longitude"],
                              googleMapsId=res["googleMapsId"], googleMapsUri=res.get("googleMapsUri") or entry["googleMapsUri"])
                 done += 1
-                # verify against creator pin
+                # 검색 결과가 제작자의 핀에서 멀면 결과는 쓰되 경고를 남긴다.
                 if not (close(entry["latitude"], r["latitude"]) and close(entry["longitude"], r["longitude"])):
                     entry["geocodeWarning"] = f"coords differ from link pin ({r['latitude']:.5f},{r['longitude']:.5f})"
                     flagged += 1
             places.append(entry)
-        # structured description blocks (name + address, no creator pin)
+        # 가게 정보 블록은 제작자 핀이 없어서 이름과 지역으로만 찾는다.
         have_ids = {p.get("googleMapsId") for p in places if p.get("googleMapsId")}
         for b in v.get("blocks", []):
             bname = (b.get("name") or "").strip()
@@ -324,7 +321,7 @@ def stage_geocode(key, ws):
                 flagged += 1
             else:
                 if res["googleMapsId"] in have_ids:
-                    continue  # same place already captured via a map link
+                    continue  # 지도 링크로 이미 잡힌 장소다.
                 bentry.update(address=res.get("address") or bentry["address"],
                               latitude=res["latitude"], longitude=res["longitude"],
                               googleMapsId=res["googleMapsId"], googleMapsUri=res["googleMapsUri"])
@@ -339,7 +336,7 @@ def stage_geocode(key, ws):
             "videoId": vid, "title": v["title"], "concept": "",
             "locations": places,
         })
-        time.sleep(0.3)  # gentle on Places API
+        time.sleep(0.3)  # Places API 호출 사이를 띄운다.
     json.dump({"videos": out_videos}, open(locs_file, "w"), ensure_ascii=False, indent=2)
     print(f"geocode: {done} resolved, {flagged} flagged -> {locs_file}")
 

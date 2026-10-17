@@ -32,7 +32,7 @@ def run_structured(prompt, schema_file, model=None, timeout=900, temp_prefix="su
     if not schema_file.is_file():
         raise FileNotFoundError(schema_file)
     schema = read_json(schema_file)
-    # Claude validates schemas as draft-07, which rejects the 2020-12 `$schema` declaration.
+    # Claude는 schema를 draft-07로 검사해서 2020-12 `$schema` 선언이 있으면 거부한다.
     schema.pop("$schema", None)
     schema = json.dumps(schema, separators=(",", ":"))
 

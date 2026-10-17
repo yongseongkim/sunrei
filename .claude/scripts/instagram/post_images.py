@@ -25,7 +25,7 @@ from graph_api import IMAGE_FIELDS, GraphApi, TokenExpired, TooMuchData, log, sh
 from instagram_collection_api import CollectionApiError, InstagramCollectionApi  # noqa: E402
 
 MAX_IMAGES = 5
-# 50 posts with carousel items is more than Business Discovery returns in one page.
+# 캐러셀 항목까지 붙이면 Business Discovery가 한 페이지에 50개를 돌려주지 못한다.
 PAGE_SIZE = 25
 MAX_PAGES = 120
 REVIEWABLE = {"PENDING", "APPROVED"}

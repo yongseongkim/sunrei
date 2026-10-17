@@ -89,7 +89,7 @@ def ocr(reader, path, interval):
                               "frames": 1, "confidence": round(confidence, 2)})
         timestamp += interval
     capture.release()
-    # Text on nearly every frame is a watermark or a fixed frame label.
+    # 거의 모든 프레임에 나오는 글자는 워터마크나 고정 라벨이다.
     texts = [t for t in texts if frames < 5 or t["frames"] <= frames * PERSISTENT_SHARE]
     return {"duration": round(duration, 1), "frames": frames, "segments": sorted(texts, key=lambda t: t["start"])}
 
@@ -115,7 +115,7 @@ def main():
         result = {"shortcode": video.stem, "whisperModel": args.whisper_model, "ocrInterval": args.interval}
         try:
             result["audio"] = transcribe(model, video) if has_audio(video) else {"error": "no audio track"}
-        except Exception as error:  # keep OCR even when audio fails
+        except Exception as error:  # 소리 처리가 실패해도 OCR 결과는 남긴다.
             result["audio"] = {"error": f"{type(error).__name__}: {error}"[:300]}
         try:
             result["onscreen"] = ocr(reader, video, args.interval)

@@ -15,12 +15,16 @@ from _common import jwt_is_usable, load_google_api_key
 from evidence_timeline import build_timeline, ensure_timeline
 from extract_locations_headless import merge_results, timeline_window
 from collection_api import CollectionApi
+import renew_playlists
 from renew_playlists import (
+    MembersOnlyVideo,
     first_timestamp,
+    is_members_only,
     parse_json_output,
     place_inputs,
     processing_order,
     reset_stale_processing,
+    run_video,
     store_evidence_texts,
     write_primary_transcript,
 )
@@ -359,6 +363,111 @@ class RenewalTests(unittest.TestCase):
             structured_agent.PROVIDERS.update(previous)
 
         self.assertEqual(value, {"locations": [], "agent": "claude"})
+
+    # 실제 멤버십 전용 영상(1qGquB04pus)을 수집하다 기록된 오류 문구 그대로다.
+    MEMBERS_ONLY_DOWNLOAD = (
+        "ERROR: [youtube] 1qGquB04pus: Join this channel to get access to "
+        "members-only content like this video, and other exclusive perks."
+    )
+    MEMBERS_ONLY_CAPTIONS = (
+        "\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=1qGquB04pus! "
+        "This is most likely caused by:\n\nThe video is unplayable for the following reason: "
+        "Join this channel to get access to members-only content like this video, and other exclusive perks."
+    )
+
+    def members_only_evidence(self, **overrides):
+        evidence = {
+            "captions": {"videoId": "abc", "error": self.MEMBERS_ONLY_CAPTIONS},
+            "audio": {"videoId": "abc", "error": self.MEMBERS_ONLY_DOWNLOAD},
+            "onscreen": {"videoId": "abc", "error": self.MEMBERS_ONLY_DOWNLOAD},
+        }
+        evidence.update(overrides)
+        return evidence
+
+    def test_members_only_needs_every_download_refused_and_no_segments(self):
+        self.assertTrue(is_members_only(self.members_only_evidence()))
+        self.assertTrue(
+            is_members_only(self.members_only_evidence(captions={"videoId": "abc", "error": "no_transcript_available"}))
+        )
+        self.assertTrue(is_members_only(self.members_only_evidence(onscreen={"videoId": "abc", "error": "disabled"})))
+
+        usable = {"videoId": "abc", "language": "ko", "segments": [{"text": "간판", "start": 3, "duration": 1}]}
+        self.assertFalse(is_members_only(self.members_only_evidence(onscreen=usable)))
+        self.assertFalse(
+            is_members_only(self.members_only_evidence(onscreen={"videoId": "abc", "error": "Command timed out"}))
+        )
+        self.assertFalse(
+            is_members_only(
+                self.members_only_evidence(
+                    audio={"videoId": "abc", "error": "ERROR: Sign in to confirm you're not a bot"},
+                    onscreen={"videoId": "abc", "error": "ERROR: Sign in to confirm you're not a bot"},
+                )
+            )
+        )
+        self.assertFalse(
+            is_members_only(
+                self.members_only_evidence(
+                    audio={"videoId": "abc", "error": "disabled"},
+                    onscreen={"videoId": "abc", "error": "disabled"},
+                )
+            )
+        )
+
+    def test_members_only_video_stops_before_the_transcript_and_is_stored_as_skipped(self):
+        updates = []
+
+        class FakeApi:
+            def update_video(self, video_id, **fields):
+                updates.append((video_id, fields))
+
+            def create_text(self, video_id, kind, **fields):
+                raise AssertionError("no text should be stored for a members-only video")
+
+        config = {"defaults": {"evidence": {"captions": True, "audio": True, "videoOcr": True}}}
+        playlist = {"id": "PL", "title": "Playlist"}
+        video = {"id": "abc", "title": "Members only", "status": "PENDING"}
+        previous = (renew_playlists.collect_evidence, renew_playlists.RUNS_ROOT)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            renew_playlists.RUNS_ROOT = Path(temp_dir)
+            renew_playlists.collect_evidence = lambda run_dir, metadata, evidence_config: self.members_only_evidence()
+            try:
+                outcome = run_video(FakeApi(), config, playlist, video, {}, None)
+            finally:
+                renew_playlists.collect_evidence, renew_playlists.RUNS_ROOT = previous
+            self.assertFalse((Path(temp_dir) / "abc").exists())
+
+        self.assertEqual(outcome, "skipped")
+        self.assertEqual(updates[0], ("abc", {"stage": "evidence", "status": "PROCESSING", "error": ""}))
+        last_video_id, last = updates[-1]
+        self.assertEqual((last_video_id, last["status"], last["stage"]), ("abc", "SKIPPED", "evidence"))
+        self.assertIn("members-only", last["error"])
+        self.assertNotIn("FAILED", [fields.get("status") for _, fields in updates])
+
+    def test_other_failures_are_still_stored_as_failed(self):
+        updates = []
+
+        class FakeApi:
+            def update_video(self, video_id, **fields):
+                updates.append((video_id, fields))
+
+        def failing(api, config, playlist, video, item, api_key, progress):
+            progress["stage"] = "extraction"
+            raise RuntimeError("codex turn timed out after 900s")
+
+        previous = renew_playlists.process_video
+        renew_playlists.process_video = failing
+        try:
+            outcome = run_video(FakeApi(), {}, {"id": "PL"}, {"id": "abc"}, {}, None)
+        finally:
+            renew_playlists.process_video = previous
+
+        self.assertEqual(outcome, "failed")
+        self.assertEqual(
+            updates,
+            [("abc", {"status": "FAILED", "stage": "extraction", "error": "codex turn timed out after 900s"})],
+        )
+        self.assertTrue(issubclass(MembersOnlyVideo, RuntimeError))
+
 
 if __name__ == "__main__":
     unittest.main()

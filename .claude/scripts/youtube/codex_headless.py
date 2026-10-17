@@ -80,7 +80,7 @@ def run_structured(prompt, schema_file, model=None, timeout=900, temp_prefix="su
     schema = read_json(schema_file)
 
     with tempfile.TemporaryDirectory(prefix=temp_prefix) as temp_dir:
-        # MCP servers from a developer's config.toml must not load in an extraction thread.
+        # 개발자 config.toml의 MCP 서버가 추출 스레드에 붙지 않도록 비운다.
         config = CodexConfig(cwd=temp_dir, config_overrides=("mcp_servers={}",))
         with scrubbed_environment():
             codex = Codex(config)
@@ -93,7 +93,8 @@ def run_structured(prompt, schema_file, model=None, timeout=900, temp_prefix="su
                 sandbox=Sandbox.read_only,
             )
             turn = thread.turn(prompt, output_schema=schema)
-            # The SDK has no turn timeout. On timeout, interrupt; leaving `with` stops the runtime.
+            # SDK에는 turn timeout이 없다.
+            # 시간이 지나면 interrupt하고, with를 빠져나가면 runtime이 멈춘다.
             pool = ThreadPoolExecutor(max_workers=1)
             try:
                 result = pool.submit(turn.run).result(timeout=timeout)

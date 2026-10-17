@@ -9,15 +9,6 @@ Outputs JSON to stdout.
 
 import json
 import sys
-import os
-
-# Load env from sunrei-worker/.env if it exists
-WORKER_ENV = os.path.join(
-    os.path.dirname(__file__), "..", "..", "..", "sunrei-worker", ".env"
-)
-if os.path.exists(WORKER_ENV):
-    from dotenv import load_dotenv
-    load_dotenv(WORKER_ENV)
 
 from youtube_transcript_api import YouTubeTranscriptApi
 
@@ -30,7 +21,6 @@ def extract_transcript(video_id: str, lang: str | None = None):
         ytt_api = YouTubeTranscriptApi()
         transcript_list = ytt_api.list(video_id)
 
-        # Try to find transcript in preferred language order
         transcript = None
         used_language = None
 
@@ -42,7 +32,6 @@ def extract_transcript(video_id: str, lang: str | None = None):
             except Exception:
                 continue
 
-        # If no preferred language found, try any available transcript
         if transcript is None:
             try:
                 for t in transcript_list:
@@ -55,7 +44,6 @@ def extract_transcript(video_id: str, lang: str | None = None):
         if transcript is None:
             return {"videoId": video_id, "error": "no_transcript_available"}
 
-        # Fetch the transcript data
         fetched = transcript.fetch()
 
         segments = []

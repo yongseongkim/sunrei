@@ -74,10 +74,11 @@ def load_workspace(ws):
         by_post.setdefault(candidate["postId"], []).append(candidate)
     batch_of = {}
     for batch in extraction["batches"]:
-        # Prototype batches have no id; derive one so posts extracted together share it.
+        # 프로토타입 배치에는 id가 없어서, 함께 추출된 게시물이 같은 batchId를 갖도록 시작 시각에서 만든다.
         batch.setdefault("batchId", "ws" + hashlib.sha1(batch["startedAt"].encode()).hexdigest()[:24])
         for post_id in batch["postIds"]:
-            batch_of[post_id] = batch  # later batches win: a re-extracted post keeps its latest batch
+            # 다시 추출한 게시물은 마지막 배치를 따른다.
+            batch_of[post_id] = batch
     return listing, tags, extraction["posts"], by_post, batch_of
 
 

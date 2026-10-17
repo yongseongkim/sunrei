@@ -47,8 +47,8 @@ def main():
         print(f"registry GET failed: HTTP {status}: {str(body)[:300]}")
         sys.exit(1)
 
-    # Full rebuild: existing entries are stale (post-DB-reset dead IDs), so build
-    # the sunreis array only from the live Sunrei IDs given. Keep channelName/link.
+    # 운영 DB를 초기화한 뒤 registry에 죽은 ID가 남아 있어서, sunreis는 인자로 받은 살아 있는 ID로만 다시 만든다.
+    # channelName과 link는 기존 값을 유지한다.
     entries = []
     for sid in sunrei_ids:
         st, body = admin_api("GET", f"/admin/sunreis/{sid}", token, prod=prod)
