@@ -20,6 +20,12 @@ Use Codex to compare aligned time ranges without changing the raw sources.
 Attempt all three sources for each video. Do not treat Whisper and OCR only as
 fallbacks for missing captions.
 
+Always run OCR, even when captions and Whisper look complete. Creators often
+say where they are only in burned-in subtitles: the shop name, address, or
+neighborhood appears on screen while the speech says nothing about it. Skipping
+OCR is how a context refill once missed 거대돼지국밥, 강풍해장국, 산지해장국, and
+동화반점, and how a ramen shop stayed pinned to the wrong place.
+
 ### YouTube captions
 
 ```bash
@@ -28,6 +34,12 @@ uv run --with youtube-transcript-api --with python-dotenv \
 ```
 
 Save the unmodified result as `captions.json`.
+
+Check that the captions belong to this video. A manually uploaded track can be
+another video's subtitles: one 비밀이야 video about a Busan restaurant carried
+Korean and English captions for a Beijing dinner. When the captions contradict
+the title, description, and on-screen text, treat them as unusable and rely on
+Whisper and OCR.
 
 ### Whisper audio transcription
 
@@ -40,6 +52,11 @@ uv run --python 3.11 --with yt-dlp --with openai-whisper \
 Save the unmodified result as `audio_transcript.json`. Whisper runs locally;
 the script downloads temporary audio and deletes it after transcription.
 
+The script prints yt-dlp download progress to stdout before its JSON result.
+When calling it from another script, parse the trailing JSON object, as
+`parse_json_output` in `renew_playlists.py` does, instead of `json.loads` on
+the whole output.
+
 ### Video OCR
 
 ```bash
@@ -48,9 +65,17 @@ uv run --python 3.11 --with easyocr --with opencv-python-headless --with yt-dlp 
   "https://www.youtube.com/watch?v={VIDEO_ID}" --lang ko,en --interval 1.0
 ```
 
-Save the unmodified result as `onscreen_text.json`. Use `--lang ja,en` for
-Japanese videos. EasyOCR cannot load Korean and Japanese together. Use
-`--interval 0.5` for rapidly changing text.
+Save the unmodified result as `onscreen_text.json`. Choose `--lang` by the
+language of the burned-in subtitles, not the country in the video: a Korean
+channel's Tokyo or Osaka video needs `ko,en`, and `ja,en` reads only Japanese
+signs. EasyOCR cannot load Korean and Japanese together, so run a second pass
+with `ja,en` when a sign or menu matters. In one Osaka video the speech track
+garbled a ramen shop's name, and only the Korean subtitle `우골왕` led to
+人情麺家 牛骨王. Use `--interval 0.5` for rapidly changing text.
+
+Vlogs often show a place with music and burned-in subtitles only, so OCR can be
+the only source that names the place, the dishes, and the prices. A 30-minute
+video takes about seven minutes on an Apple Silicon Mac.
 
 Preserve a source's structured error in its file and continue collecting the
 other sources. Stop only when every source is empty or unavailable.
@@ -83,6 +108,9 @@ segments, and Whisper and OCR events from the same time range. Apply these
 rules:
 
 - Use agreement between sources to correct clear recognition errors.
+- Read garbled proper nouns in the language of the video's region. A Korean
+  caption like `닌냐 꼬치우` in an Osaka video is a Japanese shop name heard as
+  Korean; the on-screen text gave `닌조멘 규코츠오` (人情麺家 牛骨王).
 - Give exact text in a title, description, or on-screen label more weight for
   person, place, restaurant, dish, and brand names.
 - Treat OCR as a separate visual annotation. Do not insert `WOW`, prices, signs,
@@ -140,6 +168,12 @@ names instead of inventing a correction or venue.
 For playlists, wait a random 60-90 seconds between caption requests. After
 repeated `RequestBlocked` or `IpBlocked` errors, stop caption requests for that
 run instead of repeatedly retrying the same IP. Continue with Whisper and OCR.
+The 60-90 second pace fetched 269 videos in a row without a block.
+
+Members-only videos fail captions, audio, and video download with "Join this
+channel to get access to members-only content". They are out of scope: do not
+retry them, do not look for their places another way, and mark them `SKIPPED`
+in playlist renewal.
 
 An yt-dlp login challenge is separate from caption IP blocking. If audio or
 video download requires authentication, provide a protected Netscape cookie

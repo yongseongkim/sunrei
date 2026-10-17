@@ -36,6 +36,14 @@ Use this path for:
 - Structured-block channels, such as 비밀이야 bimirya. Descriptions contain a
   `* 가게 정보` block with `- <name>` and `- 주소 : <address>`. The script pairs
   each address with the nearest preceding name and geocodes by name plus area.
+  Other videos use `[name]` headings, `*주소:` lines, a road name split as
+  `도산대로 59길 16`, or no name line at all, and many add `mm:ss <name>`
+  chapters that give each place's timestamp. When a block has an address but
+  no name, take the name from the title, chapters, or on-screen text first.
+  Geocoding the bare address is how older ingests created places named `3`,
+  `13-3`, and `16`. Check each address against the on-screen text as well: one
+  목포 video listed 금메달식당 with a 수원 address copied from elsewhere, while
+  the video showed the 목포 address.
 
 The script caches intermediate files as `descriptions.json`, `staging.json`, and
 `resolved_links.json`, so reruns can resume from any stage. Use resolved links
@@ -154,6 +162,9 @@ Guard against two common errors:
 - Never geocode an address alone. Google may return a nearby hotel or office
   with plausible coordinates but the wrong `googleMapsId`. Search for the
   business name and area together.
+- Never geocode a short romanized name alone either. `Nakano` matched Tokyo's
+  Nakano ward instead of the Shibuya izakaya 奈加野 that the description's map
+  link pointed to. When the description has a map link, use its pin.
 - Compare `displayName` with the extracted name, allowing for translation and
   romanization. Refine obvious mismatches, but do not invent a phonetic
   correction when the venue name appears only in speech. If the returned
@@ -223,7 +234,7 @@ Save to `.claude/workspace/youtube/{ID}/locations.json`:
           "source": "transcript_mention",
           "timestamp": 125.5,
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=VIDEO_ID&t=125",
-          "description": "시부야 뒷골목 야키토리 투어에서 방문한 카운터 10석 규모의 노포. 대표 메뉴는 비장탄에 구운 쓰쿠네와 레바로, 쓰쿠네는 겉을 바삭하게 구운 뒤 노른자에 찍어 먹고(육즙이 팡 터진다고 표현), 레바는 비린내 없이 부드럽다고 강조했다 (12:30)."
+          "description": "시부야 뒷골목 야키토리 투어에서 방문한 카운터 10석 규모의 노포. 대표 메뉴는 비장탄에 구운 쓰쿠네와 레바로, 쓰쿠네는 겉을 바삭하게 구운 뒤 노른자에 찍어 먹고(육즙이 팡 터진다고 표현), 레바는 비린내 없이 부드럽다고 강조했다."
         }
       ]
     }
