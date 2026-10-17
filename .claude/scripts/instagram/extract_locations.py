@@ -39,7 +39,7 @@ def evidence_inputs(evidence):
     if not evidence:
         return None, None
     speech = [{"t": s["start"], "text": s["text"]} for s in (evidence.get("audio") or {}).get("segments", [])] or None
-    # OCR fragments that are neither Korean nor confidently read are mostly background noise.
+    # 한글도 아니고 또렷하게 읽히지도 않은 OCR 조각은 대개 배경 글자다.
     onscreen = [
         {"t": s["start"], "text": s["text"]}
         for s in (evidence.get("onscreen") or {}).get("segments", [])

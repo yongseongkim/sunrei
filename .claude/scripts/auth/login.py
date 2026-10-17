@@ -101,7 +101,7 @@ class OAuthCallbackHandler(http.server.BaseHTTPRequestHandler):
         self.wfile.write(html.encode())
 
     def log_message(self, format, *args):
-        pass  # Suppress HTTP server logs
+        pass
 
 
 def main():
@@ -128,12 +128,10 @@ def main():
 
     print(f"Server: {server_url}")
 
-    # Start local callback server
     server = http.server.HTTPServer(("localhost", CALLBACK_PORT), OAuthCallbackHandler)
     server_thread = threading.Thread(target=server.handle_request, daemon=True)
     server_thread.start()
 
-    # Open browser to Google OAuth consent screen
     auth_url = (
         "https://accounts.google.com/o/oauth2/v2/auth?"
         + urllib.parse.urlencode(
@@ -152,7 +150,6 @@ def main():
     webbrowser.open(auth_url)
     print("Waiting for authorization...")
 
-    # Wait for callback
     server_thread.join(timeout=120)
     server.server_close()
 
@@ -166,7 +163,6 @@ def main():
 
     print("Authorization code received. Exchanging for token...")
 
-    # Exchange code for JWT via server
     try:
         resp = requests.post(
             f"{server_url}/api/auth/google/code",
@@ -189,7 +185,6 @@ def main():
     token = data["token"]
     user = data["user"]
 
-    # Save token to .claude/.env
     _set_env_var("SUNREI_ADMIN_TOKEN", token)
 
     print(f"\nLogged in as: {user.get('name', '')} ({user.get('email', '')})")

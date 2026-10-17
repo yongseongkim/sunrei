@@ -35,7 +35,6 @@ def transcribe(video_url: str, model_name: str = "base"):
 
     audio_path = None
     try:
-        # Download audio with yt-dlp
         import yt_dlp
 
         with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
@@ -67,7 +66,6 @@ def transcribe(video_url: str, model_name: str = "base"):
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             ydl.download([video_url])
 
-        # Transcribe with whisper
         import whisper
 
         model = whisper.load_model(model_name)
@@ -96,10 +94,9 @@ def transcribe(video_url: str, model_name: str = "base"):
         return {"videoId": video_id, "error": str(e)}
 
     finally:
-        # Clean up temp audio file
         if audio_path and os.path.exists(audio_path):
             os.remove(audio_path)
-        # Also try removing the pre-conversion file
+        # yt-dlp가 변환 전 원본도 같은 이름으로 남긴다.
         base = audio_path.rsplit(".", 1)[0] if audio_path else None
         if base:
             for ext in [".webm", ".m4a", ".mp3", ".opus"]:

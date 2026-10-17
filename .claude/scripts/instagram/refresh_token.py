@@ -34,7 +34,7 @@ from _common import SECRETS_FILE, UA, sops_secret  # noqa: E402
 
 GRAPH = "https://graph.facebook.com/v25.0"
 DIALOG = "https://www.facebook.com/v25.0/dialog/oauth"
-CALLBACK_PORT = 9877  # login.py uses 9876 for Google
+CALLBACK_PORT = 9877  # Google 로그인용 login.py가 9876을 쓴다.
 REDIRECT_URI = f"http://localhost:{CALLBACK_PORT}/callback"
 SCOPES = "instagram_basic,instagram_manage_insights,pages_show_list,pages_read_engagement"
 LOGIN_TIMEOUT_SECONDS = 300
@@ -59,7 +59,7 @@ def graph_token(params):
         with urllib.request.urlopen(request, timeout=60) as response:
             return json.load(response)
     except urllib.error.HTTPError as error:
-        # Report Meta's error only; the request URL carries the secrets.
+        # 요청 URL에 앱 시크릿과 토큰이 들어 있어서 Meta가 준 오류 내용만 보여 준다.
         payload = json.loads(error.read() or b"{}").get("error", {})
         raise SystemExit(f"Token request failed (HTTP {error.code}): #{payload.get('code')} {payload.get('message')}")
 

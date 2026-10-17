@@ -21,7 +21,6 @@ def extract_transcript(video_id: str, lang: str | None = None):
         ytt_api = YouTubeTranscriptApi()
         transcript_list = ytt_api.list(video_id)
 
-        # Try to find transcript in preferred language order
         transcript = None
         used_language = None
 
@@ -33,7 +32,6 @@ def extract_transcript(video_id: str, lang: str | None = None):
             except Exception:
                 continue
 
-        # If no preferred language found, try any available transcript
         if transcript is None:
             try:
                 for t in transcript_list:
@@ -46,7 +44,6 @@ def extract_transcript(video_id: str, lang: str | None = None):
         if transcript is None:
             return {"videoId": video_id, "error": "no_transcript_available"}
 
-        # Fetch the transcript data
         fetched = transcript.fetch()
 
         segments = []

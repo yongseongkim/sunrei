@@ -117,7 +117,8 @@ def process_posts(api, account, posts, run_dir):
     codes_file = run_dir / "codes.txt"
     codes_file.write_text("\n".join(by_code) + "\n")
 
-    # Location tags: a login wall (exit 3) leaves the rest unread, which only loses a hint.
+    # 위치 태그 읽기가 로그인 벽(exit 3)에 막히면 나머지는 못 읽은 채 넘어간다.
+    # 위치 태그는 참고 정보라서 없어도 추출은 진행한다.
     tags_file = run_dir / "location_tags.json"
     run_uv(["--with", "playwright", "python", str(HERE / "location_tags.py"), str(tags_file), str(codes_file)], 3600, allowed=(0, 3))
     tags = json.loads(tags_file.read_text()) if tags_file.is_file() else {}
@@ -125,7 +126,7 @@ def process_posts(api, account, posts, run_dir):
         if code in by_code:
             api.set_location_tag(by_code[code]["id"], api_location_tag(tag.get("location")))
 
-    # Reels: download, then Whisper and OCR. Throttled downloads (exit 3) are retried in a later run.
+    # 릴스 다운로드가 throttle(exit 3)되면 그 게시물은 다음 실행에서 다시 시도한다.
     videos_dir, evidence_dir = run_dir / "videos", run_dir / "evidence"
     reels = [post for post in posts if post["mediaType"] == "VIDEO"]
     text_ids = {post["id"]: [] for post in posts}
@@ -147,7 +148,7 @@ def process_posts(api, account, posts, run_dir):
                     kind = text.pop("kind")
                     text_ids[post["id"]].append(api.create_text(post["id"], kind, **text)["id"])
 
-    # Extraction in batches of 15 posts per agent call.
+    # 게시물 15개씩 묶어 에이전트에 보낸다.
     input_file, output_file = run_dir / "extraction_input.json", run_dir / "extraction.json"
     input_file.write_text(json.dumps({
         "account": {"username": username, "name": account.get("name") or username},
@@ -173,7 +174,7 @@ def process_posts(api, account, posts, run_dir):
             tag = api_location_tag((tags.get(post["shortcode"]) or {}).get("location"))
             candidates = []
             for place in item["places"]:
-                # Ads produce no candidates on the server, so skip their Places searches.
+                # 광고 글은 서버가 후보를 만들지 않으므로 Places 검색도 하지 않는다.
                 fields = {"geocodeStatus": "NOT_SEARCHED"} if item["promotion"] in AD_PROMOTIONS else geocode(key, place, tag, cache)
                 candidates.append(candidate_input(place, fields, evidence.get(post["id"])))
             run = api.create_extraction_run(post["id"], run_request(item, batch_of.get(post["id"], {}), candidates, text_ids[post["id"]]))
@@ -186,7 +187,7 @@ def process_posts(api, account, posts, run_dir):
             api.update_post(post["id"], status="FAILED", stage="store", error=str(error)[:1000])
             log(f"{post['shortcode']}: FAILED {error}")
 
-    # Copy the images of posts that produced candidates, so their spots show the post.
+    # 후보가 나온 게시물의 이미지만 복사해 spot이 그 게시물을 보여 주게 한다.
     if with_places:
         log(f"post images: {save_post_images(GraphApi(), api, username, with_places)}")
     shutil.rmtree(videos_dir, ignore_errors=True)
@@ -212,7 +213,7 @@ def main():
             if graph:
                 added, profile = sync_posts(graph, api, account, args.max_pages, args.commit)
                 log(f"{username}: {added} new posts")
-                # The channel avatar: copy the profile picture once, when the Source has no poster yet.
+                # 프로필 사진은 Source에 포스터가 없을 때 한 번만 복사한다.
                 if args.commit and profile and account.get("sunreiId"):
                     set_profile_picture(api, source_of_sunrei(api, account["sunreiId"]), profile.get("profile_picture_url"))
         except TokenExpired as error:

@@ -24,7 +24,7 @@ from _common import UA, sops_secret  # noqa: E402
 GRAPH = "https://graph.facebook.com/v25.0"
 MEDIA_FIELDS = "id,permalink,timestamp,media_type,media_product_type,caption,like_count,comments_count"
 ACCOUNT_FIELDS = "id,username,name,biography,followers_count,media_count,profile_picture_url"
-# A reel's cover is thumbnail_url; a carousel's items are in children, of which we keep five.
+# 릴스의 표지는 thumbnail_url에 있고, 캐러셀의 항목은 children에 있으며 다섯 개까지만 가져온다.
 IMAGE_FIELDS = "id,permalink,media_type,media_url,thumbnail_url,children.limit(5){media_type,media_url,thumbnail_url}"
 RATE_LIMIT_CODES = {4, 17, 32, 613, 80002}
 USAGE_PAUSE_PERCENT = 75
@@ -89,7 +89,7 @@ class GraphApi:
                     time.sleep(600)
                 return body
             except urllib.error.HTTPError as error:
-                # Report Meta's error only; the request URL carries the token.
+                # 요청 URL에 토큰이 들어 있어서 Meta가 준 오류 내용만 보여 준다.
                 payload = json.loads(error.read() or b"{}").get("error", {})
                 code = payload.get("code")
                 if code in RATE_LIMIT_CODES:

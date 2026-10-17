@@ -61,7 +61,7 @@ def geocode_query(name, district, city):
 
 def load_vendors(path):
     data = json.load(open(path))
-    # the agent may return {"city":..., "vendors":[...]} or a bare list
+    # 리서치 에이전트의 출력은 {"city":..., "vendors":[...]}일 수도, 배열만일 수도 있다.
     if isinstance(data, dict) and "vendors" in data:
         data = data["vendors"]
     return data
@@ -76,7 +76,7 @@ def main():
     key = load_google_api_key()
     entries = load_vendors(vendors_file)
 
-    # group entries by vendor
+    # 같은 가게의 항목을 하나로 묶는다.
     groups = {}
     order = []
     for e in entries:
@@ -102,7 +102,7 @@ def main():
         if not g["note"]:
             g["note"] = field(e, "note", "notes")
 
-    # geocode each vendor
+    # 가게마다 지오코딩한다.
     geocoded = {}
     ok = warn = 0
     for gk in order:
@@ -124,7 +124,7 @@ def main():
         else:
             entry.update(address=res["address"], latitude=res["latitude"], longitude=res["longitude"],
                          googleMapsId=res["googleMapsId"], googleMapsUri=res["googleMapsUri"])
-            # loose name check across scripts (original names rarely match displayName verbatim)
+            # 원어 상호와 Google displayName이 글자 그대로 같은 일은 드물어서 느슨하게 비교한다.
             if not (name_matches(g["name"], res.get("displayName", "")) or name_matches(g["name_ko"], res.get("displayName", ""))):
                 entry["geocodeWarning"] = f"displayName '{res.get('displayName')}' vs '{g['name'] or g['name_ko']}'"
                 warn += 1
@@ -133,7 +133,7 @@ def main():
         geocoded[gk] = entry
         time.sleep(0.3)
 
-    # group by city -> locations.json
+    # 도시별로 묶어 locations.json에 합친다.
     locfile = ws / "locations.json"
     if locfile.is_file():
         out = json.load(open(locfile))

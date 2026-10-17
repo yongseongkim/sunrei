@@ -83,7 +83,8 @@ def existing_file(out_dir, code):
 
 
 def classify(message):
-    # Match phrases, not bare numbers: shortcodes in the message can contain "429".
+    # 숫자만으로 찾지 않는다.
+    # 메시지에 섞인 shortcode에 "429"가 들어 있을 수 있다.
     text = message.lower()
     if "isn't available to everyone" in text or "certain audiences" in text:
         return "login_required"
@@ -108,7 +109,7 @@ def download(out_dir, code, url):
     options = {
         "format": FORMAT,
         "merge_output_format": "mp4",
-        # Carousel posts expand to several videos: {code}_1.mp4, {code}_2.mp4, ...
+        # 캐러셀 게시물은 {code}_1.mp4, {code}_2.mp4처럼 영상 여러 개로 받아진다.
         "outtmpl": str(out_dir / f"{code}%(playlist_index&_{{}}|)s.%(ext)s"),
         "logger": _Silent(),
         "noprogress": True,

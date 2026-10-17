@@ -31,17 +31,17 @@ def extract_video_id(url: str) -> str | None:
     return None
 
 
-# Noise patterns to filter out
+# 구독·좋아요 안내처럼 장소와 무관한 화면 글자를 거른다.
 NOISE_PATTERNS = [
     re.compile(r"구독", re.IGNORECASE),
     re.compile(r"좋아요", re.IGNORECASE),
     re.compile(r"subscribe", re.IGNORECASE),
     re.compile(r"\blike\b", re.IGNORECASE),
     re.compile(r"@\w+"),  # @handles
-    re.compile(r"https?://\S+"),  # URLs
-    re.compile(r"www\.\S+"),  # URLs without protocol
-    re.compile(r"^\d{1,2}:\d{2}(:\d{2})?$"),  # Timecodes like 1:23 or 1:23:45
-    re.compile(r"[♪♫♬]+"),  # Music symbols
+    re.compile(r"https?://\S+"),  # URL
+    re.compile(r"www\.\S+"),  # 프로토콜 없는 URL
+    re.compile(r"^\d{1,2}:\d{2}(:\d{2})?$"),  # 1:23, 1:23:45 같은 타임코드
+    re.compile(r"[♪♫♬]+"),  # 음표 기호
 ]
 
 
@@ -82,11 +82,11 @@ def download_video(video_url: str, video_id: str) -> str:
     tmp = tempfile.NamedTemporaryFile(suffix=".mp4", delete=False)
     video_path = tmp.name
     tmp.close()
-    os.remove(video_path)  # yt-dlp skips download if file exists
+    os.remove(video_path)  # 파일이 이미 있으면 yt-dlp가 내려받지 않는다.
 
     ydl_opts = {
-        # OCR does not need audio. Prefer a progressive or video-only stream to
-        # avoid failures from downloading and merging two separate formats.
+        # OCR에는 소리가 필요 없다.
+        # 영상과 소리를 따로 받아 합치다 실패하는 일이 있어서, 한 파일짜리 스트림이나 영상만 있는 스트림을 먼저 고른다.
         "format": "best[height<=720][ext=mp4]/best[height<=720]/bestvideo[height<=720][ext=mp4]/bestvideo[height<=720]",
         "outtmpl": video_path,
         "quiet": True,
@@ -135,10 +135,9 @@ def extract_frames_and_ocr(video_path: str, ocr_langs: list[str], interval: floa
             break
 
         h, w = frame.shape[:2]
-        # Crop to bottom 30% — subtitle region
+        # 번인 자막은 화면 아래쪽에 있어서 아래 30%만 읽는다.
         crop = frame[int(h * 0.7):h, 0:w]
 
-        # Preprocess: grayscale + CLAHE contrast enhancement
         gray = cv2.cvtColor(crop, cv2.COLOR_BGR2GRAY)
         clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
         enhanced = clahe.apply(gray)
@@ -182,13 +181,12 @@ def deduplicate_segments(detections: list, interval: float):
     for ts, text, conf in detections[1:]:
         similarity = SequenceMatcher(None, current_text, text).ratio()
         if similarity >= 0.8:
-            # Extend current segment, keep highest confidence version
+            # 같은 자막이 이어지는 동안은 한 구간으로 합치고, 글자는 가장 또렷하게 읽힌 판을 남긴다.
             current_end = ts
             if conf > current_conf:
                 current_text = text
                 current_conf = conf
         else:
-            # Finalize current segment
             duration = current_end - current_start + interval
             if duration >= 0.5:
                 segments.append({
@@ -196,13 +194,11 @@ def deduplicate_segments(detections: list, interval: float):
                     "start": round(current_start, 2),
                     "duration": round(duration, 2),
                 })
-            # Start new segment
             current_text = text
             current_conf = conf
             current_start = ts
             current_end = ts
 
-    # Finalize last segment
     duration = current_end - current_start + interval
     if duration >= 0.5:
         segments.append({
@@ -224,23 +220,19 @@ def extract_onscreen_text(video_url: str, langs: list[str] | None = None, interv
     video_path = None
 
     try:
-        # Phase 1: Download video
         video_path = download_video(video_url, video_id)
 
-        # Phase 2: Extract frames + OCR
         raw_detections = extract_frames_and_ocr(video_path, ocr_langs, interval)
 
         if not raw_detections:
             return {"videoId": video_id, "error": "no_text_detected"}
 
-        # Phase 3: Filter persistent text (watermarks/logos)
         total_timestamps = int((raw_detections[-1][0] - raw_detections[0][0]) / interval) + 1
         filtered = filter_persistent_text(raw_detections, total_timestamps)
 
         if not filtered:
             return {"videoId": video_id, "error": "no_text_after_filtering"}
 
-        # Phase 4: Merge multiple texts per frame, then deduplicate
         grouped = defaultdict(list)
         for ts, text, conf in filtered:
             grouped[ts].append((text, conf))
@@ -257,7 +249,6 @@ def extract_onscreen_text(video_url: str, langs: list[str] | None = None, interv
         if not segments:
             return {"videoId": video_id, "error": "no_segments_after_dedup"}
 
-        # Phase 5: Build output
         full_text = " ".join(seg["text"] for seg in segments)
         language = detect_language(full_text)
 
@@ -291,7 +282,6 @@ def main():
     langs = None
     interval = 1.0
 
-    # Parse optional args
     i = 2
     while i < len(sys.argv):
         if sys.argv[i] == "--lang" and i + 1 < len(sys.argv):

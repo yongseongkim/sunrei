@@ -39,8 +39,7 @@ def main():
     locs = json.load(open(ws / "locations.json"))
     new_spots, skipped = build_spots(locs, tag_ids)
 
-    # The server auto-soft-deletes existing spots whose id is omitted from the
-    # request, so sending only the new spots (id=null) replaces the set.
+    # 서버는 요청에 id가 빠진 기존 spot을 soft delete하므로, 새 spot만 보내면 전체가 교체된다.
     payload = {"spots": new_spots}
     if arg(args, "--summary"):
         payload["summary"] = arg(args, "--summary")
