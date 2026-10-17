@@ -9,15 +9,6 @@ Outputs JSON to stdout.
 
 import json
 import sys
-import os
-
-# Load env from sunrei-worker/.env if it exists
-WORKER_ENV = os.path.join(
-    os.path.dirname(__file__), "..", "..", "..", "sunrei-worker", ".env"
-)
-if os.path.exists(WORKER_ENV):
-    from dotenv import load_dotenv
-    load_dotenv(WORKER_ENV)
 
 from youtube_transcript_api import YouTubeTranscriptApi
 

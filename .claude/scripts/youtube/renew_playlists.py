@@ -168,11 +168,12 @@ def has_segments(value):
     return isinstance(value, dict) and bool(value.get("segments")) and not value.get("error")
 
 
+# yt-dlp는 멤버십 전용 영상을 "Join this channel to get access to members-only content"로 거부한다.
 MEMBERS_ONLY_MARKER = "members-only"
 
 
 class MembersOnlyVideo(RuntimeError):
-    """The video is members-only, so its captions, audio, and frames cannot be fetched."""
+    """멤버십 전용 영상은 수집하지 않기로 해서 FAILED가 아니라 SKIPPED로 끝낸다."""
 
 
 def is_members_only_error(value):
@@ -181,13 +182,9 @@ def is_members_only_error(value):
 
 
 def is_members_only(evidence):
-    """True when no source has segments and every enabled download was refused as members-only.
-
-    yt-dlp reports "Join this channel to get access to members-only content"
-    for the audio and video downloads. Captions are not consulted: their
-    library wraps the same reason in a different message, and a caption error
-    alone also covers IP blocks and missing tracks.
-    """
+    # 자막 실패는 판정에 넣지 않는다.
+    # youtube-transcript-api는 같은 사유를 다른 문구로 감싼다.
+    # 자막만 실패한 경우는 IP 차단이나 자막 없음과 구분되지 않는다.
     if any(has_segments(value) for value in evidence.values()):
         return False
     downloads = [
@@ -246,8 +243,6 @@ def collect_evidence(run_dir, metadata, evidence_config):
             command_uv(
                 "--with",
                 "youtube-transcript-api",
-                "--with",
-                "python-dotenv",
                 "python",
                 str(SCRIPT_DIR / "extract_transcript.py"),
                 video_id,
@@ -623,18 +618,15 @@ def record_outcome(api, video_id, **fields):
 
 
 def run_video(api, config, playlist, video, item, api_key):
-    """Process one video and record how it ended.
-
-    Returns ``stored`` when candidates were stored, ``skipped`` when the video
-    is members-only and was set to ``SKIPPED``, or ``failed`` when it was set
-    to ``FAILED`` for the next run to retry.
-    """
+    # FAILED는 다음 실행이 다시 집어 가지만 SKIPPED는 그대로 남는다.
+    # 멤버십 전용은 실패로 세지 않는다.
     progress = {"stage": "evidence"}
     try:
         count = process_video(api, config, playlist, video, item, api_key, progress)
     except MembersOnlyVideo as error:
         print(f"  skipped: {video['id']}: {error}")
         record_outcome(api, video["id"], status="SKIPPED", stage=progress["stage"], error=str(error))
+        # 실패한 영상의 run dir은 다음 실행이 이어서 쓰도록 남기고, 끝난 영상은 지운다.
         shutil.rmtree(RUNS_ROOT / video["id"], ignore_errors=True)
         return "skipped"
     except (OSError, RuntimeError, subprocess.TimeoutExpired) as error:

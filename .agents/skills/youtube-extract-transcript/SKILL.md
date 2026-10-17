@@ -25,8 +25,7 @@ extractor later weighs them against each other.
 Captions:
 
 ```bash
-uv run --with youtube-transcript-api --with python-dotenv \
-  python .claude/scripts/youtube/extract_transcript.py "{VIDEO_ID}"
+uv run --with youtube-transcript-api python .claude/scripts/youtube/extract_transcript.py "{VIDEO_ID}"
 ```
 
 Save the unmodified result as `captions.json`. Check that the track belongs to

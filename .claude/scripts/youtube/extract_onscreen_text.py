@@ -17,14 +17,6 @@ import tempfile
 from collections import Counter, defaultdict
 from difflib import SequenceMatcher
 
-# Load env from sunrei-worker/.env if it exists
-WORKER_ENV = os.path.join(
-    os.path.dirname(__file__), "..", "..", "..", "sunrei-worker", ".env"
-)
-if os.path.exists(WORKER_ENV):
-    from dotenv import load_dotenv
-    load_dotenv(WORKER_ENV)
-
 
 def extract_video_id(url: str) -> str | None:
     """Extract video ID from YouTube URL."""
@@ -100,7 +92,7 @@ def download_video(video_url: str, video_id: str) -> str:
         "quiet": True,
         "no_warnings": True,
     }
-    # Optional auth for members-only videos (see whisper_transcribe.py).
+    # 로그인 쿠키 설정은 whisper_transcribe.py와 같다.
     cf = os.environ.get("SUNREI_YT_COOKIES")
     cb = os.environ.get("SUNREI_YT_BROWSER")
     if cf:

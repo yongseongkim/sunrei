@@ -13,14 +13,6 @@ import re
 import sys
 import tempfile
 
-# Load env from sunrei-worker/.env if it exists
-WORKER_ENV = os.path.join(
-    os.path.dirname(__file__), "..", "..", "..", "sunrei-worker", ".env"
-)
-if os.path.exists(WORKER_ENV):
-    from dotenv import load_dotenv
-    load_dotenv(WORKER_ENV)
-
 
 def extract_video_id(url: str) -> str | None:
     """Extract video ID from YouTube URL."""
@@ -62,9 +54,9 @@ def transcribe(video_url: str, model_name: str = "base"):
             "quiet": True,
             "no_warnings": True,
         }
-        # Optional auth for members-only videos:
-        #   SUNREI_YT_COOKIES=<path to Netscape cookies.txt>
-        #   SUNREI_YT_BROWSER=<chrome|firefox|brave|safari>  (logged-in profile)
+        # SUNREI_YT_COOKIES(Netscape cookies.txt)나 SUNREI_YT_BROWSER(로그인된 브라우저 프로필)가 있으면 로그인 상태로 받는다.
+        # 봇 확인이나 연령 제한 같은 로그인 요구를 넘기기 위한 것이다.
+        # 멤버십 전용 영상은 수집하지 않기로 했으므로, 쿠키로 받아지면 renew_playlists의 SKIPPED 판정은 일어나지 않는다.
         cf = os.environ.get("SUNREI_YT_COOKIES")
         cb = os.environ.get("SUNREI_YT_BROWSER")
         if cf:

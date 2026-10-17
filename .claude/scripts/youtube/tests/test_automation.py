@@ -364,7 +364,7 @@ class RenewalTests(unittest.TestCase):
 
         self.assertEqual(value, {"locations": [], "agent": "claude"})
 
-    # Error strings recorded by a real members-only video (1qGquB04pus).
+    # 실제 멤버십 전용 영상(1qGquB04pus)을 수집하다 기록된 오류 문구 그대로다.
     MEMBERS_ONLY_DOWNLOAD = (
         "ERROR: [youtube] 1qGquB04pus: Join this channel to get access to "
         "members-only content like this video, and other exclusive perks."

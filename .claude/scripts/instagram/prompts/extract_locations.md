@@ -77,7 +77,10 @@ context, not a venue name.
 Set `nameFound` to true when the evidence states the business name. When no
 source names it, set `nameFound` to false, put a short description of the
 place in `name` (area plus type, for example "필동 중식당"), set
-`needsVerification`, and explain in `reason`. Never invent a business name.
+`needsVerification`, and explain in `reason`. Never invent a business name,
+and never supply one from your own knowledge of which venue the post is
+likely about: a guessed name looks like a confirmed match to the reviewer and
+sends the pin to the wrong business.
 
 ## 3. Record Evidence
 
