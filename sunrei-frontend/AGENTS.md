@@ -89,6 +89,7 @@ pnpm codegen
   언급의 `images`(spot 이미지, 없으면 Sunrei 이미지)를 링크와 함께 보여 주며, YouTube 썸네일은 16:9 한 장, 그 밖에는 정사각형 최대 4장이다.
 - 태그 필터는 서버에 다시 묻지 않고 이미 받은 장소를 브라우저에서 거른다.
   선택한 태그를 모두 가진 장소만 목록에 남기고, 지도에서는 나머지 핀을 흐리게 표시한다.
+- 장소의 `isClosed`가 참이면 PlaceCard와 장소 상세의 이름 옆에 "폐업" 칩을 보여 준다.
 - URL query의 `sourceIds`, `tags`, `place`, `sunrei`로 deep link를 만든다.
   지도 페이지를 다시 불러오지 않도록 `history.replaceState`로 URL만 바꾼다.
 - locale은 URL 경로나 cookie 없이 `Accept-Language`로 정하고, 지원하지 않는 언어면 한국어로 보여 준다.
@@ -118,3 +119,5 @@ pnpm codegen
   폼에서 없는 태그를 입력하면 한국어와 영어 라벨을 모두 입력값으로 만들고, 영어 번역은 Tags 화면에서 고친다.
 - YouTube와 Instagram Source는 `externalUrl`(채널이나 프로필 주소)이 필수다.
 - spot 카드의 썸네일은 링크가 YouTube면 영상 썸네일, 아니면 spot의 첫 이미지(Instagram 게시물 이미지 등)다.
+- Places 화면에서 장소를 폐업으로 바꾸거나 되돌린다(`PATCH /admin/places/{id}`).
+  폐업은 장소 단위라 그 장소를 가리키는 모든 spot에 함께 보인다.

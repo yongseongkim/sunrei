@@ -21,7 +21,8 @@
     "nearestFirst": "nearest first",
     "featuredBySources": "Featured by {count, plural, one {# source} other {# sources}}",
     "featuredInVideos": "Featured in {count, plural, one {# video} other {# videos}}",
-    "andOtherSources": "and {count, plural, one {# other source} other {# other sources}}"
+    "andOtherSources": "and {count, plural, one {# other source} other {# other sources}}",
+    "closed": "Closed"
   },
   "search": {
     "placeholder": "Search areas, channels, videos",
@@ -59,7 +60,8 @@
     "openNow": "Open",
     "closedNow": "Closed",
     "introducedBy": "How it's featured",
-    "sourceCount": "{count, plural, one {# source} other {# sources}}"
+    "sourceCount": "{count, plural, one {# source} other {# sources}}",
+    "closed": "Closed"
   },
   "tags": {
     "title": "Filter by tag",

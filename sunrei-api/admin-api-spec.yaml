@@ -264,6 +264,35 @@ paths:
                 $ref: '#/components/schemas/ListPlacesResult'
         '401': { description: Unauthorized }
 
+  /admin/places/{id}:
+    patch:
+      summary: Mark a place closed or open
+      description: >
+        Closing is a fact about the place, so every spot that points to it shows it as closed.
+        closedAt is set when the place becomes closed and cleared with closedReason when it reopens.
+      operationId: updatePlace
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePlaceRequest'
+      responses:
+        '200':
+          description: Place updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlaceDTO'
+        '401': { description: Unauthorized }
+        '404': { description: Not found }
+
   # ===== Tags =====
   /admin/tags:
     get:
@@ -1369,6 +1398,13 @@ components:
           additionalProperties: { type: integer }
 
     # ===== Places (list rows) =====
+    UpdatePlaceRequest:
+      type: object
+      required: [isClosed]
+      properties:
+        isClosed: { type: boolean }
+        closedReason: { type: string, maxLength: 255, nullable: true, description: "Why it closed, such as permanently closed on Google Maps" }
+
     PlaceListItemDTO:
       type: object
       required: [id, name, latitude, longitude, isClosed, sourceCount, spotCount]
