@@ -102,6 +102,7 @@ export function PlaceCard({
         <span className="flex-1 min-w-0 truncate text-[14px] font-extrabold text-foreground">
           {card.place.name}
         </span>
+        {card.place.isClosed && <ClosedChip label={t('closed')} />}
         {tag && (
           <span className="shrink-0 rounded-full bg-bg2 px-[9px] py-0.5 text-[10.5px] font-bold text-ink2">
             {tagLabel(tag)}
@@ -133,5 +134,14 @@ export function PlaceCard({
         </div>
       )}
     </div>
+  );
+}
+
+/** 폐업한 장소도 방송 기록이라 지도에 남기고, 찾아가기 전에 알 수 있게 표시한다. */
+export function ClosedChip({ label }: { label: string }) {
+  return (
+    <span className="shrink-0 rounded-full border border-line2 px-[9px] py-0.5 text-[10.5px] font-extrabold text-ink3">
+      {label}
+    </span>
   );
 }

@@ -21,7 +21,8 @@
     "nearestFirst": "가까운 순",
     "featuredBySources": "소스 {count}개가 소개",
     "featuredInVideos": "영상 {count}개에 등장",
-    "andOtherSources": "외 소스 {count}개"
+    "andOtherSources": "외 소스 {count}개",
+    "closed": "폐업"
   },
   "search": {
     "placeholder": "지역, 채널, 영상 검색",
@@ -59,7 +60,8 @@
     "openNow": "영업 중",
     "closedNow": "영업 종료",
     "introducedBy": "이렇게 소개됐어요",
-    "sourceCount": "{count}개 소스"
+    "sourceCount": "{count}개 소스",
+    "closed": "폐업"
   },
   "tags": {
     "title": "태그로 필터",

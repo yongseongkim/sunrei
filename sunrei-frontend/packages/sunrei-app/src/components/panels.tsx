@@ -18,7 +18,7 @@ import {
   type GooglePlaceInfo,
 } from '@/hooks/use-google-places';
 import { useTagLabel } from '@/lib/i18n';
-import { PlaceCard } from './place-card';
+import { ClosedChip, PlaceCard } from './place-card';
 import type { PlaceCardDTO, PlaceMentionDTO, SourceType, SunreiDTO, TagDTO } from '@/dto';
 import { useEffect, useState } from 'react';
 
@@ -360,6 +360,7 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
           <span className="min-w-0 flex-1 truncate text-[20px] font-extrabold tracking-tight text-foreground">
             {place.name}
           </span>
+          {place.isClosed && <ClosedChip label={t('closed')} />}
           {tag && (
             <span className="shrink-0 rounded-full bg-bg2 px-[10px] py-[3px] text-[10.5px] font-bold text-ink2">
               {tagLabel(tag)}

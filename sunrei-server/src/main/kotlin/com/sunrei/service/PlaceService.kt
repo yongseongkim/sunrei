@@ -6,8 +6,10 @@ import com.sunrei.database.Sunreis
 import com.sunrei.database.insertAndGetId
 import com.sunrei.generated.dto.admin.ListPlacesResult
 import com.sunrei.generated.dto.admin.PlaceListItemDTO
+import com.sunrei.generated.dto.admin.UpdatePlaceRequest
 import com.sunrei.model.Place
 import com.sunrei.utils.PaginationToken
+import kotlinx.datetime.Clock
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.SortOrder
 import org.jetbrains.exposed.sql.alias
@@ -18,6 +20,7 @@ import org.jetbrains.exposed.sql.lowerCase
 import org.jetbrains.exposed.sql.or
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
+import org.jetbrains.exposed.sql.update
 import java.sql.SQLIntegrityConstraintViolationException
 
 class PlaceService(
@@ -81,6 +84,25 @@ class PlaceService(
     fun getById(id: String): Place? = transaction {
         Places.select { (Places.id eq id) and (Places.deletedAt.isNull()) }
             .firstOrNull()?.toPlace()
+    }
+
+    /** 폐업으로 바꿀 때 closedAt을 기록하고, 다시 영업하면 closedAt과 closedReason을 지운다. */
+    fun update(id: String, request: UpdatePlaceRequest): Place? = transaction {
+        val existing = Places.select { (Places.id eq id) and (Places.deletedAt.isNull()) }
+            .firstOrNull() ?: return@transaction null
+        val now = Clock.System.now()
+        Places.update({ Places.id eq id }) { stmt ->
+            stmt[Places.isClosed] = request.isClosed
+            if (request.isClosed) {
+                if (!existing[Places.isClosed]) stmt[Places.closedAt] = now
+                request.closedReason?.let { stmt[Places.closedReason] = it }
+            } else {
+                stmt[Places.closedAt] = null
+                stmt[Places.closedReason] = null
+            }
+            stmt[Places.updatedAt] = now
+        }
+        Places.select { Places.id eq id }.first().toPlace()
     }
 
     /**

@@ -1,9 +1,10 @@
 'use client';
 
-import { usePlaces } from '@/lib/hooks/use-places';
+import { usePlaces, useUpdatePlace } from '@/lib/hooks/use-places';
 import { PlaceListItemDTO } from '@/api/admin';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { AlertCircle, Loader2, MapPin } from 'lucide-react';
 import { useState } from 'react';
@@ -62,11 +63,19 @@ export default function PlacesPage() {
 }
 
 function PlaceRow({ place }: { place: PlaceListItemDTO }) {
+  const updatePlace = useUpdatePlace(place.id);
   return (
     <Card className="py-3">
       <CardContent className="flex items-center justify-between gap-4">
         <div className="min-w-0">
-          <p className="font-medium truncate">{place.name}</p>
+          <p className="font-medium truncate">
+            {place.name}
+            {place.isClosed && (
+              <Badge variant="destructive" className="ml-2">
+                Closed
+              </Badge>
+            )}
+          </p>
           <p className="text-xs text-muted-foreground truncate">
             {place.googleMapsId ?? '—'}
           </p>
@@ -77,6 +86,15 @@ function PlaceRow({ place }: { place: PlaceListItemDTO }) {
         <div className="flex items-center gap-2 shrink-0 text-xs text-muted-foreground">
           <Badge variant="outline">{place.sourceCount} src</Badge>
           <Badge variant="outline">{place.spotCount} spots</Badge>
+          {/* 폐업은 장소 단위라 이 장소를 가리키는 모든 spot에 함께 보인다. */}
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={updatePlace.isPending}
+            onClick={() => updatePlace.mutate({ isClosed: !place.isClosed })}
+          >
+            {place.isClosed ? 'Reopen' : 'Mark closed'}
+          </Button>
         </div>
       </CardContent>
     </Card>
