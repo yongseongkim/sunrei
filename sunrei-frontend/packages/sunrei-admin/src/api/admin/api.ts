@@ -722,11 +722,17 @@ export interface UpdateInstagramPostRequest {
 
 
 export interface UpdatePlaceRequest {
-    'isClosed': boolean;
+    'name'?: string | null;
+    'address'?: string | null;
+    'latitude'?: number | null;
+    'longitude'?: number | null;
+    'googleMapsId'?: string | null;
+    'isClosed'?: boolean | null;
     /**
      * Why it closed, such as permanently closed on Google Maps
      */
     'closedReason'?: string | null;
+    'notes'?: string | null;
 }
 export interface UpdateSourceRequest {
     'type'?: SourceType;
@@ -2789,8 +2795,8 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * Closing is a fact about the place, so every spot that points to it shows it as closed. closedAt is set when the place becomes closed and cleared with closedReason when it reopens. 
-         * @summary Mark a place closed or open
+         * Only the fields in the request change; an omitted or null field keeps its value, and an empty notes or closedReason clears it. The change applies to every spot that points to the place, including whether it is closed. latitude and longitude change together. closedAt is set when the place becomes closed and cleared with closedReason when it reopens. A googleMapsId that another place already has is a conflict, because one Google place is one Sunrei place. 
+         * @summary Update a place
          * @param {string} id 
          * @param {UpdatePlaceRequest} updatePlaceRequest 
          * @param {*} [options] Override http request option.
@@ -3791,8 +3797,8 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Closing is a fact about the place, so every spot that points to it shows it as closed. closedAt is set when the place becomes closed and cleared with closedReason when it reopens. 
-         * @summary Mark a place closed or open
+         * Only the fields in the request change; an omitted or null field keeps its value, and an empty notes or closedReason clears it. The change applies to every spot that points to the place, including whether it is closed. latitude and longitude change together. closedAt is set when the place becomes closed and cleared with closedReason when it reopens. A googleMapsId that another place already has is a conflict, because one Google place is one Sunrei place. 
+         * @summary Update a place
          * @param {string} id 
          * @param {UpdatePlaceRequest} updatePlaceRequest 
          * @param {*} [options] Override http request option.
@@ -4374,8 +4380,8 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.updateInstagramPost(id, updateInstagramPostRequest, options).then((request) => request(axios, basePath));
         },
         /**
-         * Closing is a fact about the place, so every spot that points to it shows it as closed. closedAt is set when the place becomes closed and cleared with closedReason when it reopens. 
-         * @summary Mark a place closed or open
+         * Only the fields in the request change; an omitted or null field keeps its value, and an empty notes or closedReason clears it. The change applies to every spot that points to the place, including whether it is closed. latitude and longitude change together. closedAt is set when the place becomes closed and cleared with closedReason when it reopens. A googleMapsId that another place already has is a conflict, because one Google place is one Sunrei place. 
+         * @summary Update a place
          * @param {string} id 
          * @param {UpdatePlaceRequest} updatePlaceRequest 
          * @param {*} [options] Override http request option.
@@ -4965,8 +4971,8 @@ export class DefaultApi extends BaseAPI {
     }
 
     /**
-     * Closing is a fact about the place, so every spot that points to it shows it as closed. closedAt is set when the place becomes closed and cleared with closedReason when it reopens. 
-     * @summary Mark a place closed or open
+     * Only the fields in the request change; an omitted or null field keeps its value, and an empty notes or closedReason clears it. The change applies to every spot that points to the place, including whether it is closed. latitude and longitude change together. closedAt is set when the place becomes closed and cleared with closedReason when it reopens. A googleMapsId that another place already has is a conflict, because one Google place is one Sunrei place. 
+     * @summary Update a place
      * @param {string} id 
      * @param {UpdatePlaceRequest} updatePlaceRequest 
      * @param {*} [options] Override http request option.

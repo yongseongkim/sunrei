@@ -65,7 +65,9 @@ spot 이미지가 있으면 공개 지도의 언급에 그 이미지를 보여 �
 같은 장소인지는 Google place ID인 `google_maps_id`로 판정한다.
 Public 지도에서는 Place 하나가 마커 하나와 카드 하나로 표시되며, 같은 Place의 여러 Source/SunreiSpot 언급은 카드 안에 집계된다.
 카드에는 Sunrei마다 한 줄씩 보이므로, 같은 채널이라도 영상이 다르면 따로 보인다.
-폐업은 Place 단위로 `is_closed`에 기록하며, 어드민 Places 화면이나 `PATCH /admin/places/{id}`로 바꾼다.
+`PATCH /admin/places/{id}`는 보낸 필드만 바꾸며, 이름, 주소, 좌표, `google_maps_id`, 폐업 여부, 메모를 고칠 수 있다.
+다른 Place가 이미 가진 `google_maps_id`로 바꾸면 409다.
+폐업은 Place 단위로 `is_closed`에 기록하며, 어드민 Places 화면에서도 바꿀 수 있다.
 폐업한 곳도 방송에 나온 기록이라 지도에 남기고, 앱은 카드와 상세에 "폐업"을 표시한다.
 
 ### Tag
