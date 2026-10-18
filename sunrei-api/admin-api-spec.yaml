@@ -266,10 +266,14 @@ paths:
 
   /admin/places/{id}:
     patch:
-      summary: Mark a place closed or open
+      summary: Update a place
       description: >
-        Closing is a fact about the place, so every spot that points to it shows it as closed.
-        closedAt is set when the place becomes closed and cleared with closedReason when it reopens.
+        Only the fields in the request change; an omitted or null field keeps its value, and an empty
+        notes or closedReason clears it.
+        The change applies to every spot that points to the place, including whether it is closed.
+        latitude and longitude change together. closedAt is set when the place becomes closed and
+        cleared with closedReason when it reopens. A googleMapsId that another place already has is
+        a conflict, because one Google place is one Sunrei place.
       operationId: updatePlace
       security: [{ bearerAuth: [] }]
       parameters:
@@ -290,8 +294,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PlaceDTO'
+        '400': { description: Bad request }
         '401': { description: Unauthorized }
         '404': { description: Not found }
+        '409': { description: Another place has the googleMapsId }
 
   # ===== Tags =====
   /admin/tags:
@@ -1400,10 +1406,15 @@ components:
     # ===== Places (list rows) =====
     UpdatePlaceRequest:
       type: object
-      required: [isClosed]
       properties:
-        isClosed: { type: boolean }
+        name: { type: string, maxLength: 128, nullable: true }
+        address: { type: string, maxLength: 255, nullable: true }
+        latitude: { type: number, format: float, nullable: true }
+        longitude: { type: number, format: float, nullable: true }
+        googleMapsId: { type: string, maxLength: 255, nullable: true }
+        isClosed: { type: boolean, nullable: true }
         closedReason: { type: string, maxLength: 255, nullable: true, description: "Why it closed, such as permanently closed on Google Maps" }
+        notes: { type: string, nullable: true }
 
     PlaceListItemDTO:
       type: object

@@ -86,20 +86,43 @@ class PlaceService(
             .firstOrNull()?.toPlace()
     }
 
-    /** 폐업으로 바꿀 때 closedAt을 기록하고, 다시 영업하면 closedAt과 closedReason을 지운다. */
+    /**
+     * 요청에 있는 필드만 바꾸며, 빈 notes와 closedReason은 지운다. 좌표는 위도와 경도를 함께 받고, geom은 DB trigger가 다시 계산한다.
+     * 폐업으로 바꿀 때 closedAt을 기록하고, 다시 영업하면 closedAt과 closedReason을 지운다.
+     */
     fun update(id: String, request: UpdatePlaceRequest): Place? = transaction {
         val existing = Places.select { (Places.id eq id) and (Places.deletedAt.isNull()) }
             .firstOrNull() ?: return@transaction null
+        require((request.latitude == null) == (request.longitude == null)) {
+            "latitude and longitude must be given together"
+        }
+        request.googleMapsId?.let { googleMapsId ->
+            Places.select {
+                (Places.googleMapsId eq googleMapsId) and (Places.id neq id) and (Places.deletedAt.isNull())
+            }.firstOrNull()?.let { throw ConflictException("Another place has this Google place ID", it[Places.id]) }
+        }
+
         val now = Clock.System.now()
         Places.update({ Places.id eq id }) { stmt ->
-            stmt[Places.isClosed] = request.isClosed
-            if (request.isClosed) {
-                if (!existing[Places.isClosed]) stmt[Places.closedAt] = now
-                request.closedReason?.let { stmt[Places.closedReason] = it }
-            } else {
-                stmt[Places.closedAt] = null
-                stmt[Places.closedReason] = null
+            request.name?.let { stmt[Places.name] = it }
+            request.address?.let { stmt[Places.address] = it }
+            request.latitude?.let { stmt[Places.latitude] = it }
+            request.longitude?.let { stmt[Places.longitude] = it }
+            request.googleMapsId?.let { stmt[Places.googleMapsId] = it }
+            request.notes?.let { stmt[Places.notes] = it.ifBlank { null } }
+            when (request.isClosed) {
+                true -> {
+                    if (!existing[Places.isClosed]) stmt[Places.closedAt] = now
+                    stmt[Places.isClosed] = true
+                }
+                false -> {
+                    stmt[Places.isClosed] = false
+                    stmt[Places.closedAt] = null
+                    stmt[Places.closedReason] = null
+                }
+                null -> {}
             }
+            if (request.isClosed != false) request.closedReason?.let { stmt[Places.closedReason] = it.ifBlank { null } }
             stmt[Places.updatedAt] = now
         }
         Places.select { Places.id eq id }.first().toPlace()
