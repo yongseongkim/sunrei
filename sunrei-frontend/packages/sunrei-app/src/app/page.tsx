@@ -154,7 +154,7 @@ export default function AppShell() {
           <div className="absolute inset-0 z-[15] bg-black/20 pointer-events-none" />
         )}
 
-        <SearchNearbyButton isFetching={isFetching} />
+        <SearchNearbyButton isFetching={isFetching} mobile={isMobile} hidden={isMobile && mobileSnap === 'full'} />
       </div>
 
       {isMobile && (

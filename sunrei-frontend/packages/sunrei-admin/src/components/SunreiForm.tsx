@@ -212,6 +212,8 @@ export default function SunreiForm({
   }
 
   const published = watch('published');
+  // 필드 배열 오류는 spot 위치마다 비어 있을 수 있어 실제로 오류가 있는 spot만 센다.
+  const spotErrorCount = Array.isArray(errors.spots) ? errors.spots.filter(Boolean).length : 0;
 
   return (
     <div className="space-y-6">
@@ -228,7 +230,8 @@ export default function SunreiForm({
 
       <Card>
         <CardContent className="pt-6">
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          {/* 브라우저 기본 검증 말풍선 대신 zod 오류를 각 필드와 Save 옆에 보여 준다. */}
+          <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">
             {error && (
               <Alert variant="destructive">
                 <AlertCircle className="h-4 w-4" />
@@ -313,6 +316,7 @@ export default function SunreiForm({
                 register={register}
                 setValue={setValue}
                 watch={watch}
+                errors={errors}
                 spotTags={spotTags}
                 onAddSpot={handleAddSpot}
                 onRemoveSpot={handleRemoveSpot}
@@ -334,6 +338,11 @@ export default function SunreiForm({
               mode={mode}
               isSubmitting={createMutation.isPending || updateMutation.isPending}
               onCancel={onCancel}
+              errorText={
+                spotErrorCount > 0
+                  ? `${spotErrorCount} ${spotErrorCount === 1 ? 'spot has' : 'spots have'} errors`
+                  : undefined
+              }
             />
           </form>
 

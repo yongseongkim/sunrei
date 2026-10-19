@@ -72,6 +72,7 @@ pnpm codegen
 - nearby 모드는 기본 모드다.
   지도 화면 영역(`swLat,swLng,neLat,neLng`) 안의 장소를 `GET /api/map`으로 가져온다.
   지도를 옮기면 "이 주변 검색" 버튼을 눌러야 새 영역을 불러오고, 지금 영역에 장소가 없으면 버튼 없이 바로 불러온다.
+  버튼은 데스크톱에서는 지도 아래 가운데, 모바일에서는 하단 시트에 가리지 않도록 지역 칩 줄 아래에 두고 시트를 끝까지 펼치면 숨긴다.
 - source 모드는 검색이나 "주변 소스" 레일에서 Source를 고르면 들어간다.
   화면 영역과 관계없이 그 Source의 모든 장소를 `sourceIds`로 가져와 지도를 거기에 맞추고, 지도를 옮겨도 다시 불러오지 않는다.
   목록 자리에는 채널 화면이 보인다.
@@ -85,6 +86,7 @@ pnpm codegen
   위치 권한은 처음 보여 줄 지도 위치만 정하고, 권한이 없으면 서울에서 시작한다.
 - nearby와 source 모드의 PlaceCard는 서버가 언급을 묶고 정렬해서 내려준다.
   미리보기 목록만 Sunrei의 spot을 브라우저에서 장소별 카드로 묶는다.
+  배너가 이미 Source와 시리즈를 보여 주므로, 미리보기 카드는 언급 대신 spot마다 회차 제목과 맥락 한 줄씩을 보여 주고 "이 시리즈에서 N번"으로 센다.
 - 장소 상세의 언급 링크는 spot의 `sourceLink`, 없으면 Sunrei 링크로 보내며, 주소에 따라 YouTube, Instagram, Link로 표시한다.
   언급의 `images`(spot 이미지, 없으면 Sunrei 이미지)를 링크와 함께 보여 주며, YouTube 썸네일은 16:9 한 장, 그 밖에는 정사각형 최대 4장이다.
 - 태그 필터는 서버에 다시 묻지 않고 이미 받은 장소를 브라우저에서 거른다.
@@ -111,6 +113,9 @@ pnpm codegen
 - Sunrei 폼(`src/components/SunreiForm.tsx`, `src/components/sunrei-form/`)은 Source, 공개 상태, 요약, 이미지, spot 목록을 한 요청으로 저장한다.
   요청에서 빠진 기존 spot은 서버가 삭제한다.
 - spot의 장소는 `PlaceSearchModal`에서 Google Places 검색, 좌표 입력, 지도 클릭 중 하나로 고른다.
+  검색 결과나 지도의 가게 아이콘으로 고르면 Google place ID도 저장해, 서버의 장소 중복 판정과 앱의 Google 정보 카드에 쓴다.
+  빈 곳 클릭과 좌표 입력은 Google place ID 없이 저장한다.
+- 저장할 때 spot마다 제목, 장소, 링크 형식을 검사해, 오류가 있는 spot 카드에 빨간 테두리와 필드별 문구를 보이고 Save 옆에 오류 spot 수를 보인다.
   오른쪽 지도의 핀 번호는 spot 목록 번호와 같다.
 - 공개 상태는 `published` 값으로 보내고 `published_at`은 서버가 정한다.
   공개된 Sunrei를 다시 저장해도 처음 공개한 시각이 유지되고, 공개를 해제하면 `published_at`을 지운다.
