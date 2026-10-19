@@ -21,7 +21,10 @@ export function SourceRail() {
 
   return (
     <div className="border-b border-line px-4 py-[14px]">
-      <SectionLabel count={sources.length}>{t('sourcesInView')}</SectionLabel>
+      <div className="flex items-baseline gap-[7px]">
+        <span className="text-[12px] font-extrabold text-foreground">{t('sourcesInView')}</span>
+        <span className="text-[11.5px] font-extrabold text-accent-ink">{sources.length}</span>
+      </div>
       <div className="mt-[11px] flex gap-[9px] overflow-x-auto pb-0.5">
         {sources.map((s) => {
           const active = selected.includes(s.id);

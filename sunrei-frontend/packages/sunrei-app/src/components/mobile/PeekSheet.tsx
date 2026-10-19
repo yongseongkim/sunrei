@@ -35,7 +35,7 @@ export function PeekSheet({
   return (
     <div
       className={cn(
-        'absolute left-0 right-0 bottom-0 bg-card border-t border-line rounded-t-2xl z-20 flex flex-col shadow-[0_-4px_20px_rgba(0,0,0,0.08)] transition-[height] duration-[250ms] ease-out',
+        'absolute left-0 right-0 bottom-0 bg-card border-t border-line2 rounded-t-[18px] z-20 flex flex-col shadow-[0_-4px_16px_rgba(0,0,0,0.06)] transition-[height] duration-[250ms] ease-out',
         detailPanel || channelPanel
           ? 'h-[72%]'
           : snap === 'peek'

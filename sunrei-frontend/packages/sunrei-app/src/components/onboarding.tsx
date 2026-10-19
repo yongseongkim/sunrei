@@ -69,7 +69,7 @@ export function Onboarding() {
     <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/35 p-4">
       {onboarding === 'priming' ? (
         <div className="w-full max-w-[432px] rounded-2xl bg-card p-8 text-center shadow-2xl">
-          <div className="mx-auto grid h-[52px] w-[52px] place-items-center rounded-2xl border-2 border-primary bg-accent-soft">
+          <div className="mx-auto grid h-[52px] w-[52px] place-items-center rounded-[14px] border-2 border-primary bg-accent-soft">
             <MapPin className="h-6 w-6 text-primary" />
           </div>
           <h2 className="mt-4 text-[21px] font-extrabold tracking-tight text-foreground">
