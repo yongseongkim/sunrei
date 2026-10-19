@@ -21,6 +21,18 @@ import { ClosedChip, PlaceCard, type SeriesTake } from './place-card';
 import type { PlaceCardDTO, PlaceMentionDTO, SourceType, SunreiDTO, TagDTO } from '@/dto';
 import { useEffect, useState } from 'react';
 
+/** 장소 상세, 채널, 미리보기 패널 위쪽의 뒤로 버튼이다. */
+export function BackPill({ onClick, children }: { onClick: () => void; children: React.ReactNode }) {
+  return (
+    <button
+      onClick={onClick}
+      className="mb-3 inline-flex items-center gap-1 rounded-full border border-primary bg-accent-soft py-[7px] pl-2 pr-3 text-[12.5px] font-extrabold text-accent-ink"
+    >
+      <ChevronLeft className="h-3.5 w-3.5" strokeWidth={2.4} /> {children}
+    </button>
+  );
+}
+
 /**
  * 지도를 아직 안 부른 영역으로 옮겼을 때 그 영역을 불러오는 버튼이다.
  * 모바일은 하단 시트 높이와 무관하게 보이도록 지역 칩 줄 아래에 두고, 지도를 덮는 펼침 상태에서는 숨긴다.
@@ -46,7 +58,7 @@ export function SearchNearbyButton({
   if (!pendingArea && !finding) return null;
 
   return (
-    <div className={cn('absolute left-1/2 z-20 -translate-x-1/2', mobile ? 'top-[108px]' : 'bottom-6')}>
+    <div className={cn('absolute left-1/2 z-20 -translate-x-1/2', mobile ? 'top-[108px]' : 'bottom-7')}>
       <button
         onClick={commit}
         disabled={finding}
@@ -89,10 +101,10 @@ export function TagChipRail() {
             key={tag.id}
             onClick={() => toggleTag(tag.id)}
             className={
-              'shrink-0 text-xs px-2.5 py-1 rounded-full border transition-colors ' +
+              'shrink-0 rounded-full border px-[11px] py-[5px] text-xs font-semibold transition-colors ' +
               (active
                 ? 'bg-primary text-primary-foreground border-primary'
-                : 'bg-card border-line hover:bg-accent-soft')
+                : 'bg-card border-line text-ink2 hover:bg-accent-soft')
             }
           >
             {tagLabel(tag)}
@@ -151,7 +163,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
     gPredictions.length;
 
   return (
-    <div className="absolute inset-0 z-50 flex flex-col bg-background">
+    <div className="absolute inset-0 z-50 flex flex-col bg-card">
       {/* 누른 검색 pill이 그대로 입력창이 되도록 같은 모양을 쓰고, 넓은 화면에서는 가운데 640px로 읽기 쉽게 둔다. */}
       <div className="border-b border-line">
         <div className="mx-auto flex w-full max-w-[640px] items-center gap-2 p-3">
@@ -251,7 +263,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   if (!arr.filter(Boolean).length) return null;
   return (
     <div>
-      <h3 className="text-xs font-semibold text-ink3 uppercase mb-1.5">{title}</h3>
+      <h3 className="mb-1.5 text-[11px] font-extrabold uppercase tracking-wide text-ink3">{title}</h3>
       <div className="space-y-1">{children}</div>
     </div>
   );
@@ -345,12 +357,7 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
       <div className="border-b border-line px-4 pb-3.5 pt-2">
-        <button
-          onClick={() => setActivePlace(null)}
-          className="mb-3 inline-flex items-center gap-1 rounded-full border border-primary bg-accent-soft px-3 py-[7px] text-[12.5px] font-extrabold text-accent-ink"
-        >
-          <ChevronLeft className="h-3.5 w-3.5" strokeWidth={2.4} /> {t('backToList')}
-        </button>
+        <BackPill onClick={() => setActivePlace(null)}>{t('backToList')}</BackPill>
 
         <div className="flex items-center gap-2">
           <span className="min-w-0 flex-1 truncate text-[20px] font-extrabold tracking-tight text-foreground">
@@ -504,7 +511,7 @@ function GoogleInfoCard({ info }: { info: GooglePlaceInfo }) {
     <div className="rounded-xl border border-line bg-background p-3">
       <div className="mb-2.5 flex items-center gap-1.5">
         <GoogleGlyph />
-        <span className="text-[10.5px] font-extrabold uppercase tracking-wide text-ink3">
+        <span className="text-[10.5px] font-extrabold uppercase tracking-wide text-ink2">
           {t('googleInfo')}
         </span>
       </div>
@@ -622,22 +629,19 @@ export function VideoPreviewPanel() {
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
       <div className="border-b border-line px-4 pb-3.5 pt-2">
-        <button onClick={exit} className="mb-2.5 flex items-center gap-0.5 text-ink2 hover:text-foreground">
-          <ChevronLeft className="h-[18px] w-[18px]" />
-          <span className="text-[13px] font-semibold">{backLabel}</span>
-        </button>
+        <BackPill onClick={exit}>{backLabel}</BackPill>
         <div className="flex items-center gap-2.5 rounded-[10px] border border-primary bg-accent-soft px-2.5 py-2">
           <Avatar label={sunrei?.source.name ?? '?'} src={sourceAvatarUrl(sunrei?.source, 26)} size={26} />
           <div className="min-w-0 flex-1">
             <div className="truncate text-[12.5px] font-extrabold text-foreground">{sunrei?.title ?? '…'}</div>
             {sunrei && (
-              <div className="text-[10.5px] font-bold text-accent-ink">{t('spotCount', { count: cards.length })}</div>
+              <div className="text-[11.5px] font-bold text-accent-ink">{t('spotCount', { count: cards.length })}</div>
             )}
           </div>
           <button
             onClick={exit}
             aria-label={nav('clear')}
-            className="grid h-[22px] w-[22px] shrink-0 place-items-center rounded-full border border-primary bg-card text-accent-ink"
+            className="grid h-[22px] w-[22px] shrink-0 place-items-center rounded-full border border-line2 bg-card text-ink2"
           >
             <X className="h-3 w-3" strokeWidth={2.5} />
           </button>

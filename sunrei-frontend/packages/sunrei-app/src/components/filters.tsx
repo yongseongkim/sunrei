@@ -30,18 +30,19 @@ export function FiltersPanel({ places }: { places: PlaceCardDTO[] }) {
           .length;
 
   const body = (
-    <div className="flex flex-col max-h-[80vh]">
-      <div className="flex items-center justify-between px-4 py-3 border-b border-line">
-        <span className="text-sm font-semibold">{t('title')}</span>
-        <button onClick={() => setOpen(false)} className="text-ink3 hover:text-foreground">
+    <div className={cn('flex max-h-[80vh] flex-col', isMobile ? 'px-[18px] pb-[22px] pt-2' : 'p-[22px]')}>
+      {isMobile && <div className="mx-auto mb-3 h-1 w-9 shrink-0 rounded-full bg-line2" />}
+      <div className="flex items-center">
+        <span className="text-[16px] font-extrabold">{t('title')}</span>
+        <button onClick={() => setOpen(false)} className="ml-auto text-ink2 hover:text-foreground">
           <X className="h-4 w-4" />
         </button>
       </div>
-      <div className="flex-1 overflow-auto p-4">
+      <div className="mt-4 flex-1 overflow-auto">
         {tags.length === 0 ? (
-          <p className="text-sm text-ink3 text-center py-6">—</p>
+          <p className="py-6 text-center text-sm text-ink3">—</p>
         ) : (
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-[7px]">
             {tags.map((tag) => {
               const on = activeTagIds.includes(tag.id);
               return (
@@ -70,17 +71,17 @@ export function FiltersPanel({ places }: { places: PlaceCardDTO[] }) {
           </div>
         )}
       </div>
-      <div className="flex items-center gap-2 px-4 py-3 border-t border-line">
+      <div className="mt-5 flex gap-2">
         <button
           onClick={clear}
           disabled={activeTagIds.length === 0}
-          className="text-sm font-medium text-ink2 disabled:opacity-40"
+          className="h-[42px] rounded-full border border-line2 bg-card px-[18px] text-[13.5px] font-extrabold text-foreground disabled:opacity-40"
         >
           {t('reset')}
         </button>
         <button
           onClick={() => setOpen(false)}
-          className="ml-auto rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold shadow-[0_4px_12px_oklch(0.66_0.13_264/0.3)]"
+          className="h-[42px] flex-1 rounded-full bg-primary px-[18px] text-[13.5px] font-extrabold text-primary-foreground shadow-[0_4px_12px_oklch(0.66_0.13_264/0.3)]"
         >
           {t('showPlaces', { count: matched })}
         </button>
@@ -101,8 +102,8 @@ export function FiltersPanel({ places }: { places: PlaceCardDTO[] }) {
         className={cn(
           'bg-card overflow-hidden',
           isMobile
-            ? 'w-full rounded-t-2xl'
-            : 'w-[440px] max-w-[92vw] rounded-2xl border border-line shadow-xl'
+            ? 'w-full rounded-t-[18px]'
+            : 'w-[440px] max-w-[92vw] rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.18)]'
         )}
       >
         {body}

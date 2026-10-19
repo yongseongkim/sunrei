@@ -15,8 +15,8 @@ export function ViewToggle({ map, onChange }: { map: boolean; onChange: (map: bo
             type="button"
             onClick={() => onChange(isMap)}
             className={cn(
-              'px-2.5 py-1 rounded-full text-[11.5px] font-bold transition-colors',
-              on ? 'bg-card text-foreground shadow-sm' : 'text-ink3'
+              'px-[11px] py-1 rounded-full text-[12px] font-bold transition-colors',
+              on ? 'bg-card text-foreground shadow-sm' : 'text-ink2'
             )}
           >
             {t(key)}

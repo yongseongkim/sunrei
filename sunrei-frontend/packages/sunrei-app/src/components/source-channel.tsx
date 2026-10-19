@@ -1,12 +1,13 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { ChevronLeft, Loader2, MapPin, Play } from 'lucide-react';
+import { Loader2, MapPin, Play } from 'lucide-react';
 import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useSourceDetail } from '@/hooks/use-map';
 import { SectionLabel } from '@/components/desktop/SourceRail';
 import { Avatar, sourceAvatarUrl } from '@/components/wf';
+import { BackPill } from '@/components/panels';
 
 /**
  * 검색이나 "주변 소스" 레일에서 Source를 고르면 목록 자리에 열리는 채널 화면이다.
@@ -45,15 +46,7 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
       <div className="border-b border-line px-4 pb-[14px] pt-2">
-        <button
-          onClick={back}
-          className="mb-2.5 flex items-center gap-0.5 text-ink2 hover:text-foreground"
-        >
-          <ChevronLeft className="h-[18px] w-[18px]" />
-          <span className="text-[13px] font-semibold">
-            {sourceFromSearch ? search('back') : nav('back')}
-          </span>
-        </button>
+        <BackPill onClick={back}>{sourceFromSearch ? search('back') : nav('back')}</BackPill>
         {isLoading || !source ? (
           <div className="grid place-items-center py-6">
             <Loader2 className="h-5 w-5 animate-spin text-ink3" />
@@ -64,7 +57,7 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
               <Avatar label={source.name} src={sourceAvatarUrl(source, 44)} size={44} />
               <div className="min-w-0 flex-1">
                 <div className="truncate text-[16px] font-extrabold text-foreground">{source.name}</div>
-                <div className="text-[11.5px] font-semibold text-ink2">
+                <div className="mt-0.5 text-[12px] font-semibold text-ink2">
                   {typeT(source.type)}
                   {source.placeCount != null && ` · ${td('spotCount', { count: source.placeCount })}`}
                 </div>

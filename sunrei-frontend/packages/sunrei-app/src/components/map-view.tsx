@@ -39,7 +39,7 @@ function makePinOverlay(
   const dot = document.createElement('div');
   dot.style.borderRadius = '50%';
   dot.style.border = '2px solid #fff';
-  dot.style.boxShadow = '0 2px 7px rgba(0,0,0,.34)';
+  dot.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
   dot.style.display = 'flex';
   dot.style.alignItems = 'center';
   dot.style.justifyContent = 'center';
