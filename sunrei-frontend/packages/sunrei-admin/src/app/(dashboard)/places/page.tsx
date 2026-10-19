@@ -6,12 +6,14 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { AlertCircle, Loader2, MapPin } from 'lucide-react';
+import { AlertCircle, Edit2, Loader2, MapPin } from 'lucide-react';
 import { useState } from 'react';
+import { PlaceEditSheet } from '@/components/PlaceEditSheet';
 
 export default function PlacesPage() {
   const [q, setQ] = useState('');
   const { data: places = [], isLoading, error } = usePlaces(q);
+  const [editing, setEditing] = useState<PlaceListItemDTO | null>(null);
 
   if (isLoading) {
     return (
@@ -54,15 +56,17 @@ export default function PlacesPage() {
       ) : (
         <div className="space-y-2">
           {places.map((p) => (
-            <PlaceRow key={p.id} place={p} />
+            <PlaceRow key={p.id} place={p} onEdit={() => setEditing(p)} />
           ))}
         </div>
       )}
+
+      <PlaceEditSheet place={editing} onClose={() => setEditing(null)} />
     </div>
   );
 }
 
-function PlaceRow({ place }: { place: PlaceListItemDTO }) {
+function PlaceRow({ place, onEdit }: { place: PlaceListItemDTO; onEdit: () => void }) {
   const updatePlace = useUpdatePlace(place.id);
   return (
     <Card className="py-3">
@@ -71,7 +75,8 @@ function PlaceRow({ place }: { place: PlaceListItemDTO }) {
           <p className="font-medium truncate">
             {place.name}
             {place.isClosed && (
-              <Badge variant="destructive" className="ml-2">
+              // 폐업은 오류가 아니라 기록 상태라 앱과 같은 중립 외곽선으로 보인다.
+              <Badge variant="outline" className="ml-2 rounded-full text-muted-foreground">
                 Closed
               </Badge>
             )}
@@ -94,6 +99,9 @@ function PlaceRow({ place }: { place: PlaceListItemDTO }) {
             onClick={() => updatePlace.mutate({ isClosed: !place.isClosed })}
           >
             {place.isClosed ? 'Reopen' : 'Mark closed'}
+          </Button>
+          <Button variant="ghost" size="sm" onClick={onEdit} aria-label="Edit place">
+            <Edit2 className="h-4 w-4" />
           </Button>
         </div>
       </CardContent>

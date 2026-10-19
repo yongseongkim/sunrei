@@ -1,9 +1,8 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Check, ChevronLeft, Loader2, MapPin, Navigation, Play, Search, Star, X } from 'lucide-react';
+import { ChevronLeft, Loader2, MapPin, Navigation, Play, Search, Star, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Avatar, fittedImageUrl, sourceAvatarUrl } from '@/components/wf';
 import { cn, linkKind } from '@/lib/utils';
 import { useMapStore } from '@/stores/map-store';
@@ -79,7 +78,7 @@ export function TagChipRail() {
     <div className="flex gap-1.5 overflow-x-auto px-4 py-2 border-b border-line bg-background/80 backdrop-blur">
       <button
         onClick={() => setFiltersOpen(true)}
-        className="shrink-0 inline-flex items-center gap-1 text-xs font-bold whitespace-nowrap px-2.5 py-1 rounded-full border border-dashed border-line2 bg-card text-ink2 hover:bg-accent-soft"
+        className="shrink-0 inline-flex items-center gap-1 text-xs font-bold whitespace-nowrap px-2.5 py-1 rounded-full border border-dashed border-primary bg-card text-accent-ink hover:bg-accent-soft"
       >
         ✦ {t('filters')}
       </button>
@@ -103,7 +102,7 @@ export function TagChipRail() {
       {activeTagIds.length > 0 && (
         <button
           onClick={() => useFilterStore.getState().clear()}
-          className="shrink-0 text-xs px-2 py-1 text-ink3"
+          className="shrink-0 px-1 py-1 text-xs font-bold text-ink2 underline underline-offset-[3px]"
         >
           {t('clear')}
         </button>
@@ -114,6 +113,7 @@ export function TagChipRail() {
 
 export function UnifiedSearch({ onClose }: { onClose: () => void }) {
   const t = useTranslations('search');
+  const typeT = useTranslations('sourceType');
   const q = useUiStore((s) => s.searchQuery);
   const setQ = useUiStore((s) => s.setSearchQuery);
   const [debounced, setDebounced] = useState(q);
@@ -151,19 +151,26 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
     gPredictions.length;
 
   return (
-    <div className="absolute inset-0 z-50 bg-background flex flex-col">
-      <div className="flex gap-2 p-3 border-b border-line">
-        <Input
-          autoFocus
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-          placeholder={t('placeholder')}
-        />
-        <Button variant="ghost" size="icon" onClick={onClose}>
-          <X className="h-4 w-4" />
-        </Button>
+    <div className="absolute inset-0 z-50 flex flex-col bg-background">
+      {/* 누른 검색 pill이 그대로 입력창이 되도록 같은 모양을 쓰고, 넓은 화면에서는 가운데 640px로 읽기 쉽게 둔다. */}
+      <div className="border-b border-line">
+        <div className="mx-auto flex w-full max-w-[640px] items-center gap-2 p-3">
+          <label className="flex h-[42px] min-w-0 flex-1 items-center gap-2.5 rounded-full border border-line2 bg-card px-[15px]">
+            <Search className="h-[15px] w-[15px] shrink-0 text-ink3" />
+            <input
+              autoFocus
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              placeholder={t('placeholder')}
+              className="min-w-0 flex-1 bg-transparent text-[13.5px] font-semibold text-foreground outline-none placeholder:font-normal placeholder:text-ink3"
+            />
+          </label>
+          <Button variant="ghost" size="icon" onClick={onClose}>
+            <X className="h-4 w-4" />
+          </Button>
+        </div>
       </div>
-      <div className="flex-1 overflow-auto p-3 space-y-4">
+      <div className="mx-auto w-full max-w-[640px] flex-1 space-y-4 overflow-auto p-3">
         {isFetching && (
           <div className="flex justify-center">
             <Loader2 className="h-5 w-5 animate-spin text-ink3" />
@@ -204,7 +211,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
                   key={s.id}
                   icon={<Avatar label={s.name} src={sourceAvatarUrl(s, 28)} size={28} />}
                   title={s.name}
-                  sub={SRC_TYPE_LABEL[s.type]}
+                  sub={typeT(s.type)}
                   hint={t('open')}
                   onClick={() => {
                     setSourceMode([s.id]);
@@ -250,17 +257,8 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
-function IconCircle({ children, square }: { children: React.ReactNode; square?: boolean }) {
-  return (
-    <span
-      className={cn(
-        'shrink-0 grid place-items-center h-7 w-7 bg-bg2 text-ink2',
-        square ? 'rounded-[7px]' : 'rounded-full'
-      )}
-    >
-      {children}
-    </span>
-  );
+function IconCircle({ children }: { children: React.ReactNode }) {
+  return <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-bg2 text-ink2">{children}</span>;
 }
 
 /** 영상 결과를 장소나 채널 결과와 바로 구분할 수 있도록 썸네일을 보여 준다. */
@@ -294,40 +292,22 @@ function ResultRow({
   sub,
   hint,
   icon,
-  selected,
   onClick,
 }: {
   title: string;
   sub?: string;
   hint?: string;
   icon?: React.ReactNode;
-  selected?: boolean;
   onClick: () => void;
 }) {
   return (
-    <button
-      onClick={onClick}
-      className={cn(
-        'w-full text-left p-2 rounded-md flex items-center gap-2.5',
-        selected ? 'bg-accent-soft' : 'hover:bg-accent-soft'
-      )}
-    >
+    <button onClick={onClick} className="flex w-full items-center gap-2.5 rounded-md p-2 text-left hover:bg-accent-soft">
       {icon}
       <div className="min-w-0 flex-1">
-        <div className="text-sm font-medium truncate">{title}</div>
-        {sub && <div className="text-xs text-ink3 truncate">{sub}</div>}
+        <div className="truncate text-[13.5px] font-bold">{title}</div>
+        {sub && <div className="truncate text-[11.5px] text-ink3">{sub}</div>}
       </div>
-      {hint &&
-        (selected ? (
-          <span className="shrink-0 inline-flex items-center gap-1 text-[10.5px] font-extrabold tracking-wide text-accent-ink whitespace-nowrap">
-            <span className="grid place-items-center h-4 w-4 rounded-full bg-primary text-primary-foreground">
-              <Check className="h-2.5 w-2.5" strokeWidth={3} />
-            </span>
-            {hint}
-          </span>
-        ) : (
-          <span className="text-xs shrink-0 text-accent-ink">{hint}</span>
-        ))}
+      {hint && <span className="shrink-0 text-[11.5px] font-bold text-ink3">{hint}</span>}
     </button>
   );
 }
@@ -437,23 +417,17 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
   );
 }
 
-const SRC_TYPE_LABEL: Record<SourceType, string> = {
-  YOUTUBE: 'YouTube',
-  INSTAGRAM: 'Instagram',
-  TV: 'TV',
-  ANIME: 'Anime',
-  OTHER: 'Other',
-};
-
 function TypeBadge({ type }: { type: SourceType }) {
+  const typeT = useTranslations('sourceType');
   return (
     <span className="shrink-0 rounded bg-bg2 px-1.5 py-0.5 text-[9.5px] font-extrabold uppercase tracking-wide text-ink3">
-      {SRC_TYPE_LABEL[type] ?? type}
+      {typeT(type)}
     </span>
   );
 }
 
 function PDMention({ m }: { m: PlaceMentionDTO }) {
+  const t = useTranslations('detail');
   // spot의 링크(YouTube 타임스탬프나 Instagram 게시물)가 있으면 그곳으로, 없으면 Sunrei 링크로 보낸다.
   const link = m.sourceLink ?? m.sunreiLink;
   const kind = link ? linkKind(link) : null;
@@ -480,12 +454,12 @@ function PDMention({ m }: { m: PlaceMentionDTO }) {
         >
           {kind === 'youtube' ? (
             <>
-              <Play className="h-3 w-3 text-primary" fill="currentColor" strokeWidth={0} /> YouTube
+              <Play className="h-3 w-3 text-primary" fill="currentColor" strokeWidth={0} /> {t('linkYoutube')}
             </>
           ) : kind === 'instagram' ? (
-            'Instagram'
+            t('linkInstagram')
           ) : (
-            'Link'
+            t('linkWeb')
           )}{' '}
           <span className="text-ink3">↗</span>
         </a>
@@ -544,8 +518,8 @@ function GoogleInfoCard({ info }: { info: GooglePlaceInfo }) {
                   <Star
                     key={i}
                     className="h-[11px] w-[11px]"
-                    style={{ color: '#f5a623' }}
-                    fill={i < Math.round(info.rating!) ? '#f5a623' : 'none'}
+                    style={{ color: 'var(--star)' }}
+                    fill={i < Math.round(info.rating!) ? 'var(--star)' : 'none'}
                     strokeWidth={1}
                   />
                 ))}
@@ -568,11 +542,11 @@ function GoogleInfoCard({ info }: { info: GooglePlaceInfo }) {
               {dot}
               <span
                 className="inline-flex items-center gap-1 text-[11.5px] font-bold"
-                style={{ color: info.openNow ? 'oklch(0.60 0.12 150)' : 'var(--ink3)' }}
+                style={{ color: info.openNow ? 'var(--success)' : 'var(--ink3)' }}
               >
                 <span
                   className="h-1.5 w-1.5 rounded-full"
-                  style={{ background: info.openNow ? 'oklch(0.60 0.12 150)' : 'var(--ink3)' }}
+                  style={{ background: info.openNow ? 'var(--success)' : 'var(--ink3)' }}
                 />
                 {info.openNow ? t('openNow') : t('closedNow')}
               </span>

@@ -45,7 +45,7 @@ export function PeekSheet({
               : 'h-[56%]'
       )}
     >
-      <button onClick={cycle} className="w-full" aria-label="Toggle sheet">
+      <button onClick={cycle} className="w-full" aria-label={t('resizeSheet')}>
         <Handle />
       </button>
       {detailPanel ? (

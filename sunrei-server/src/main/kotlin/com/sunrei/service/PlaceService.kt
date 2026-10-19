@@ -64,6 +64,9 @@ class PlaceService(
                     longitude = row[Places.longitude],
                     googleMapsId = row[Places.googleMapsId],
                     isClosed = row[Places.isClosed],
+                    closedReason = row[Places.closedReason],
+                    closedAt = row[Places.closedAt],
+                    notes = row[Places.notes],
                     area = null,
                     sourceCount = sourceCountByPlace[id] ?: 0,
                     spotCount = spotCountByPlace[id] ?: 0

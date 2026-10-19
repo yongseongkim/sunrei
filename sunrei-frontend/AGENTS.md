@@ -66,6 +66,8 @@ pnpm codegen
 모든 화면을 지도 페이지 하나(`src/app/page.tsx`)에서 처리한다.
 장소 상세, 채널 화면, Sunrei 미리보기는 route가 아니라 데스크톱 사이드바나 모바일 아래 시트 안에서 바뀌는 패널이다.
 화면 폭이 1024px보다 좁으면 모바일 배치를 쓴다.
+태그 필터와 로그인 모달도 같은 기준(`isMobile`)으로 모바일에서는 아래 시트로 연다.
+앱은 라이트 테마만 쓰며, 지도 핀, 별점, 영업 중 표시 색도 `globals.css` 토큰(`--pin`, `--pin-selected`, `--star`, `--success`)에서 가져온다.
 
 지도 상태는 두 기본 모드와 그 위에 겹치는 패널로 나뉜다.
 
@@ -92,6 +94,9 @@ pnpm codegen
 - 태그 필터는 서버에 다시 묻지 않고 이미 받은 장소를 브라우저에서 거른다.
   선택한 태그를 모두 가진 장소만 목록에 남기고, 지도에서는 나머지 핀을 흐리게 표시한다.
 - 장소의 `isClosed`가 참이면 PlaceCard와 장소 상세의 이름 옆에 "폐업" 칩을 보여 준다.
+- Sunrei는 화면에서 "시리즈"라고 부른다. YouTube 재생목록, Instagram 계정, 기사 시즌이 모두 Sunrei라 "영상"이 맞지 않기 때문이다.
+  카드 눈썹은 Source가 하나면 "{n}번 소개됨", 둘 이상이면 "소스 {n}개가 소개"다.
+- Source 타입 이름과 언급 링크 라벨도 번역 키(`sourceType.*`, `detail.link*`)로 보여 준다.
 - URL query의 `sourceIds`, `tags`, `place`, `sunrei`로 deep link를 만든다.
   지도 페이지를 다시 불러오지 않도록 `history.replaceState`로 URL만 바꾼다.
 - locale은 URL 경로나 cookie 없이 `Accept-Language`로 정하고, 지원하지 않는 언어면 한국어로 보여 준다.
@@ -124,5 +129,5 @@ pnpm codegen
   폼에서 없는 태그를 입력하면 한국어와 영어 라벨을 모두 입력값으로 만들고, 영어 번역은 Tags 화면에서 고친다.
 - YouTube와 Instagram Source는 `externalUrl`(채널이나 프로필 주소)이 필수다.
 - spot 카드의 썸네일은 링크가 YouTube면 영상 썸네일, 아니면 spot의 첫 이미지(Instagram 게시물 이미지 등)다.
-- Places 화면에서 장소를 폐업으로 바꾸거나 되돌린다(`PATCH /admin/places/{id}`).
-  폐업은 장소 단위라 그 장소를 가리키는 모든 spot에 함께 보인다.
+- Places 화면에서 장소를 폐업으로 바꾸거나 되돌리고, Edit 시트에서 이름, 주소, 좌표, Google place ID, 폐업 사유, 메모를 고친다(`PATCH /admin/places/{id}`).
+  폐업은 장소 단위라 그 장소를 가리키는 모든 spot에 함께 보이며, 오류가 아니라 기록 상태라 앱과 같은 중립 외곽선 배지로 보인다.

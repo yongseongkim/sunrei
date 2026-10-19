@@ -20,16 +20,19 @@
     "places": "Places",
     "nearestFirst": "nearest first",
     "featuredBySources": "Featured by {count, plural, one {# source} other {# sources}}",
-    "featuredInVideos": "Featured in {count, plural, one {# video} other {# videos}}",
+    "featuredTimes": "Featured {count, plural, one {once} other {# times}}",
     "andOtherSources": "and {count, plural, one {# other source} other {# other sources}}",
     "closed": "Closed",
-    "inSeries": "{count, plural, one {Once} other {# times}} in this series"
+    "inSeries": "{count, plural, one {Once} other {# times}} in this series",
+    "viewList": "List",
+    "viewMap": "Map",
+    "resizeSheet": "Resize list"
   },
   "search": {
-    "placeholder": "Search areas, channels, videos",
+    "placeholder": "Search areas, channels, series",
     "areas": "Areas & places",
     "channels": "Channels & programs",
-    "videos": "Videos",
+    "videos": "Series",
     "noResults": "No results",
     "addSource": "Add source",
     "applied": "Source added",
@@ -39,35 +42,37 @@
     "back": "Back to search"
   },
   "source": {
-    "clearSource": "Clear source",
-    "noPlaces": "No places for this source yet",
     "watchOnYoutube": "Watch on YouTube ↗",
     "viewOnInstagram": "View on Instagram ↗",
     "whereToWatch": "Where to watch ↗",
     "spots": "Spots",
     "series": "Series",
     "allSeries": "{name} · All series",
-    "seriesPlacesSub": "Places in this series"
+    "seriesPlacesSub": "Places in this series",
+    "empty": "No published places yet"
   },
   "detail": {
     "mentions": "Mentions",
     "context": "Context",
     "directions": "Directions",
     "backToList": "Back to list",
-    "spotCount": "{count, plural, one {# spot} other {# spots}}",
+    "spotCount": "{count, plural, one {# place} other {# places}}",
     "viewOnGoogleMaps": "View on Google Maps",
     "googleInfo": "Google info",
     "reviews": "{count, plural, one {# review} other {# reviews}}",
     "openNow": "Open",
-    "closedNow": "Closed",
+    "closedNow": "Closed now",
     "introducedBy": "How it's featured",
     "sourceCount": "{count, plural, one {# source} other {# sources}}",
-    "closed": "Closed"
+    "closed": "Closed",
+    "linkYoutube": "YouTube",
+    "linkInstagram": "Instagram",
+    "linkWeb": "Link"
   },
   "tags": {
     "title": "Filter by tag",
     "reset": "Reset",
-    "showPlaces": "Show {count} places"
+    "showPlaces": "Show {count, plural, one {# place} other {# places}}"
   },
   "geo": {
     "useLocation": "Use my location",
@@ -87,5 +92,19 @@
     "connected": "Connected with Google",
     "logout": "Sign out",
     "failed": "Sign-in failed"
+  },
+  "sourceType": {
+    "YOUTUBE": "YouTube",
+    "INSTAGRAM": "Instagram",
+    "TV": "TV",
+    "ANIME": "Anime",
+    "OTHER": "Other"
+  },
+  "map": {
+    "loading": "Loading map…",
+    "failed": "Map failed to load",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "myLocation": "My location"
   }
 }

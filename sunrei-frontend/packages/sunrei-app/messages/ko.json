@@ -20,16 +20,19 @@
     "places": "장소",
     "nearestFirst": "가까운 순",
     "featuredBySources": "소스 {count}개가 소개",
-    "featuredInVideos": "영상 {count}개에 등장",
+    "featuredTimes": "{count}번 소개됨",
     "andOtherSources": "외 소스 {count}개",
     "closed": "폐업",
-    "inSeries": "이 시리즈에서 {count}번"
+    "inSeries": "이 시리즈에서 {count}번",
+    "viewList": "목록",
+    "viewMap": "지도",
+    "resizeSheet": "목록 높이 바꾸기"
   },
   "search": {
-    "placeholder": "지역, 채널, 영상 검색",
+    "placeholder": "지역, 채널, 시리즈 검색",
     "areas": "지역 및 장소",
     "channels": "채널 및 작품",
-    "videos": "영상",
+    "videos": "시리즈",
     "noResults": "결과 없음",
     "addSource": "소스 추가",
     "applied": "추가됨",
@@ -39,15 +42,14 @@
     "back": "검색으로"
   },
   "source": {
-    "clearSource": "소스 해제",
-    "noPlaces": "이 소스의 장소가 아직 없어요",
     "watchOnYoutube": "YouTube에서 보기 ↗",
     "viewOnInstagram": "인스타그램에서 보기 ↗",
     "whereToWatch": "보러가기 ↗",
     "spots": "등장 장소",
     "series": "시리즈",
     "allSeries": "{name} · 모든 시리즈",
-    "seriesPlacesSub": "이 시리즈가 다룬 장소"
+    "seriesPlacesSub": "이 시리즈가 다룬 장소",
+    "empty": "아직 공개된 장소가 없어요"
   },
   "detail": {
     "mentions": "언급",
@@ -62,7 +64,10 @@
     "closedNow": "영업 종료",
     "introducedBy": "이렇게 소개됐어요",
     "sourceCount": "{count}개 소스",
-    "closed": "폐업"
+    "closed": "폐업",
+    "linkYoutube": "YouTube",
+    "linkInstagram": "Instagram",
+    "linkWeb": "링크"
   },
   "tags": {
     "title": "태그로 필터",
@@ -87,5 +92,19 @@
     "connected": "Google 계정으로 연결됨",
     "logout": "로그아웃",
     "failed": "로그인에 실패했어요"
+  },
+  "sourceType": {
+    "YOUTUBE": "YouTube",
+    "INSTAGRAM": "Instagram",
+    "TV": "TV",
+    "ANIME": "애니",
+    "OTHER": "기타"
+  },
+  "map": {
+    "loading": "지도를 불러오는 중…",
+    "failed": "지도를 불러오지 못했어요",
+    "zoomIn": "확대",
+    "zoomOut": "축소",
+    "myLocation": "내 위치"
   }
 }

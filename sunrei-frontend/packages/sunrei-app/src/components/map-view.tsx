@@ -1,6 +1,7 @@
 'use client';
 
 import { Wrapper, Status } from '@googlemaps/react-wrapper';
+import { useTranslations } from 'next-intl';
 import { useEffect, useRef } from 'react';
 import { config } from '@/lib/config';
 import { useMapStore } from '@/stores/map-store';
@@ -42,6 +43,7 @@ function makePinOverlay(
   dot.style.display = 'flex';
   dot.style.alignItems = 'center';
   dot.style.justifyContent = 'center';
+  dot.style.transition = 'transform 120ms ease-out';
   const num = document.createElement('span');
   num.style.fontWeight = '800';
   num.style.color = '#fff';
@@ -53,7 +55,9 @@ function makePinOverlay(
     const size = s.active ? 34 : 28;
     dot.style.width = `${size}px`;
     dot.style.height = `${size}px`;
-    dot.style.background = s.active ? '#3f63a8' : '#6495ED';
+    dot.style.background = s.active ? 'var(--pin-selected)' : 'var(--pin)';
+    // 선택된 핀은 조금 띄워 다른 핀과 구분한다.
+    dot.style.transform = s.active ? 'translateY(-4px)' : '';
     num.textContent = s.label;
     num.style.fontSize = s.active ? '14px' : '12.5px';
     container.style.opacity = s.dim ? '0.4' : '1';
@@ -213,11 +217,12 @@ export function MapView({
   cards: PlaceCardDTO[];
   previewSpots?: SunreiSpotDTO[] | null;
 }) {
+  const t = useTranslations('map');
   const render = (status: Status) =>
     status === Status.LOADING ? (
-      <div className="absolute inset-0 grid place-items-center text-ink3">Loading map…</div>
+      <div className="absolute inset-0 grid place-items-center text-ink3">{t('loading')}</div>
     ) : (
-      <div className="absolute inset-0 grid place-items-center text-destructive">Map failed to load</div>
+      <div className="absolute inset-0 grid place-items-center text-destructive">{t('failed')}</div>
     );
 
   return (

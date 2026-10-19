@@ -7,7 +7,6 @@ import { useNearbySources } from '@/hooks/use-map';
 import { Avatar, sourceAvatarUrl } from '@/components/wf';
 import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
-import type { SourceDTO } from '@/dto';
 
 export function SourceRail() {
   const t = useTranslations('list');
@@ -20,15 +19,12 @@ export function SourceRail() {
   const setSourceFromSearch = useUiStore((s) => s.setSourceFromSearch);
   if (sources.length === 0) return null;
 
-  const count = (s: SourceDTO) => s.placeCount ?? s.spotCount ?? s.videoCount ?? null;
-
   return (
     <div className="border-b border-line px-4 py-[14px]">
       <SectionLabel count={sources.length}>{t('sourcesInView')}</SectionLabel>
       <div className="mt-[11px] flex gap-[9px] overflow-x-auto pb-0.5">
         {sources.map((s) => {
           const active = selected.includes(s.id);
-          const n = count(s);
           return (
             <button
               key={s.id}
@@ -48,11 +44,6 @@ export function SourceRail() {
             >
               <Avatar label={s.name} src={sourceAvatarUrl(s, 22)} size={22} />
               <span className="whitespace-nowrap text-[12.5px] font-bold text-foreground">{s.name}</span>
-              {n != null && (
-                <span className="rounded-full bg-bg2 px-[7px] py-px text-[10.5px] font-extrabold text-ink2">
-                  {n}
-                </span>
-              )}
             </button>
           );
         })}

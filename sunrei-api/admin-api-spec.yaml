@@ -1427,6 +1427,9 @@ components:
         longitude: { type: number, format: float }
         googleMapsId: { type: string, nullable: true }
         isClosed: { type: boolean }
+        closedReason: { type: string, nullable: true }
+        closedAt: { type: string, format: date-time, nullable: true }
+        notes: { type: string, nullable: true }
         area:
           type: string
           nullable: true

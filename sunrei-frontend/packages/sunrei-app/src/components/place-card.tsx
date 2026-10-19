@@ -76,14 +76,10 @@ function SeriesTakeRow({ take }: { take: SeriesTake }) {
 
 export function PlaceCard({
   card,
-  active,
-  dimmed,
   seriesTakes,
   onClick,
 }: {
   card: PlaceCardDTO;
-  active?: boolean;
-  dimmed?: boolean;
   /** 있으면 미리보기 카드로 그려, 언급 대신 이 시리즈의 spot을 보여 준다. */
   seriesTakes?: SeriesTake[];
   onClick?: () => void;
@@ -103,18 +99,12 @@ export function PlaceCard({
     ? t('inSeries', { count: seriesTakes.length })
     : card.sourceCount > 1
       ? t('featuredBySources', { count: card.sourceCount })
-      : t('featuredInVideos', { count: mentions.length });
+      : t('featuredTimes', { count: mentions.length });
 
   return (
     <div
       onClick={onClick}
-      className={cn(
-        'rounded-xl px-[13px] py-[11px] cursor-pointer transition-colors bg-card',
-        active
-          ? 'border-[1.5px] border-primary bg-accent-soft shadow-[0_4px_14px_oklch(0.66_0.13_264/0.16)]'
-          : 'border border-line hover:border-ink3/40',
-        dimmed && 'opacity-40'
-      )}
+      className="cursor-pointer rounded-xl border border-line bg-card px-[13px] py-[11px] transition-colors hover:border-ink3/40"
     >
       <div className="flex items-center gap-2">
         <span className="flex-1 min-w-0 truncate text-[14px] font-extrabold text-foreground">

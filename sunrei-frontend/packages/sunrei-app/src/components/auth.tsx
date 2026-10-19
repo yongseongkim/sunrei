@@ -207,16 +207,24 @@ export function LoginModal() {
   const t = useTranslations('auth');
   const open = useUiStore((s) => s.loginOpen);
   const setLoginOpen = useUiStore((s) => s.setLoginOpen);
+  const isMobile = useUiStore((s) => s.isMobile);
   const { login, loading, error } = useGoogleLogin(() => setLoginOpen(false));
   if (!open) return null;
+  // 모바일 판단은 앱 레이아웃과 같은 1024px 기준(isMobile)을 따른다.
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-end justify-center bg-black/35 sm:items-center sm:p-4"
+      className={cn(
+        'fixed inset-0 z-[60] flex justify-center bg-black/35',
+        isMobile ? 'items-end' : 'items-center p-4'
+      )}
       onClick={() => setLoginOpen(false)}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-[384px] rounded-t-2xl bg-card p-8 pb-7 text-center shadow-2xl sm:rounded-2xl"
+        className={cn(
+          'w-full bg-card p-8 pb-7 text-center shadow-2xl',
+          isMobile ? 'rounded-t-2xl' : 'max-w-[384px] rounded-2xl'
+        )}
       >
         <div className="mx-auto grid h-[46px] w-[46px] place-items-center rounded-xl bg-primary">
           <span className="h-[22px] w-[22px] rounded-md bg-white/90" />

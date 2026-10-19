@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { X } from 'lucide-react';
 import { useUiStore } from '@/stores/ui-store';
 import { useFilterStore } from '@/stores/filter-store';
@@ -12,6 +12,7 @@ import type { PlaceCardDTO } from '@/dto';
 export function FiltersPanel({ places }: { places: PlaceCardDTO[] }) {
   const t = useTranslations('tags');
   const tagLabel = useTagLabel();
+  const locale = useLocale();
   const open = useUiStore((s) => s.filtersOpen);
   const setOpen = useUiStore((s) => s.setFiltersOpen);
   const isMobile = useUiStore((s) => s.isMobile);
@@ -48,18 +49,21 @@ export function FiltersPanel({ places }: { places: PlaceCardDTO[] }) {
                   key={tag.id}
                   onClick={() => toggleTag(tag.id)}
                   className={cn(
-                    'rounded-full border px-3 py-2 text-left transition-colors',
+                    'rounded-xl border px-[13px] py-1.5 text-left transition-colors',
                     on
                       ? 'bg-primary text-primary-foreground border-primary'
-                      : 'bg-card border-line2 hover:bg-accent-soft'
+                      : 'bg-card border-line hover:bg-accent-soft'
                   )}
                 >
                   <span className="block text-[13px] font-semibold leading-tight">
                     {tagLabel(tag)}
                   </span>
-                  <span className={cn('block text-[10px]', on ? 'text-primary-foreground/80' : 'text-ink3')}>
-                    {tag.labelEn}
-                  </span>
+                  {/* 영어 라벨은 한국어 화면에서만 덧붙인다. 영어 화면에서는 첫 줄과 같은 말이다. */}
+                  {locale === 'ko' && tag.labelEn && tag.labelEn !== tag.labelKo && (
+                    <span className={cn('block text-[10px]', on ? 'text-primary-foreground/80' : 'text-ink3')}>
+                      {tag.labelEn}
+                    </span>
+                  )}
                 </button>
               );
             })}
@@ -86,7 +90,10 @@ export function FiltersPanel({ places }: { places: PlaceCardDTO[] }) {
 
   return (
     <div
-      className="absolute inset-0 z-40 bg-black/30 flex items-end sm:items-center sm:justify-center"
+      className={cn(
+        'absolute inset-0 z-40 flex bg-black/30',
+        isMobile ? 'items-end' : 'items-center justify-center'
+      )}
       onClick={() => setOpen(false)}
     >
       <div
