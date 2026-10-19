@@ -11,6 +11,7 @@ import { Trash2 } from 'lucide-react';
 import { TagDTO } from '@/api/admin';
 import { UseFormRegister, UseFormSetValue, UseFormWatch } from 'react-hook-form';
 import { SunreiFormValue } from '@/lib/schemas';
+import { cn } from '@/lib/utils';
 
 // watch, youtu.be, embed, shorts 형식의 URL에서 썸네일에 쓸 영상 id만 뽑는다.
 function youtubeVideoId(url?: string | null): string | null {
@@ -30,6 +31,11 @@ interface SpotCardProps {
   onTagsChange: (tagIds: string[], tags: TagDTO[]) => void;
   onRemove: (index: number) => void;
   onOpenMap: (spotIndex: number) => void;
+  errors?: { title?: string; sourceLink?: string; place?: string };
+}
+
+function FieldError({ message }: { message?: string }) {
+  return message ? <p className="text-[11px] font-medium text-destructive">{message}</p> : null;
 }
 
 export default function SpotCard({
@@ -41,12 +47,14 @@ export default function SpotCard({
   onTagsChange,
   onRemove,
   onOpenMap,
+  errors,
 }: SpotCardProps) {
+  const hasError = !!(errors?.title || errors?.sourceLink || errors?.place);
   const videoId = youtubeVideoId(watch(`spots.${index}.sourceLink` as const));
   // YouTube가 아니면 spot의 첫 이미지(Instagram 게시물 이미지 등)를 썸네일로 보여 준다.
   const firstImage = watch(`spots.${index}.images` as const)?.[0];
   return (
-    <Card className="py-0 px-0 rounded-lg gap-0">
+    <Card className={cn('py-0 px-0 rounded-lg gap-0', hasError && 'border-destructive')}>
       <CardHeader className="py-1 px-2 gap-0">
         <div className="flex items-center justify-between">
           <span className="flex items-center gap-1.5 text-xs font-medium">
@@ -89,14 +97,18 @@ export default function SpotCard({
               type="url"
               placeholder="YouTube timestamp or Instagram post link"
               className="h-8 text-xs"
+              aria-invalid={!!errors?.sourceLink}
             />
+            <FieldError message={errors?.sourceLink} />
           </div>
           <div className="flex-1 min-w-0 space-y-1.5">
             <Input
               {...register(`spots.${index}.title` as const)}
               placeholder="Spot title"
               className="h-8"
+              aria-invalid={!!errors?.title}
             />
+            <FieldError message={errors?.title} />
             <Textarea
               {...register(`spots.${index}.context` as const)}
               rows={2}
@@ -111,6 +123,7 @@ export default function SpotCard({
           setValue={setValue}
           onOpenMap={onOpenMap}
         />
+        <FieldError message={errors?.place} />
         <div className="space-y-1">
           <Label className="text-xs">Spot tags (bilingual)</Label>
           <SpotTagAutocomplete

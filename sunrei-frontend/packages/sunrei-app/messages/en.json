@@ -22,7 +22,8 @@
     "featuredBySources": "Featured by {count, plural, one {# source} other {# sources}}",
     "featuredInVideos": "Featured in {count, plural, one {# video} other {# videos}}",
     "andOtherSources": "and {count, plural, one {# other source} other {# other sources}}",
-    "closed": "Closed"
+    "closed": "Closed",
+    "inSeries": "{count, plural, one {Once} other {# times}} in this series"
   },
   "search": {
     "placeholder": "Search areas, channels, videos",

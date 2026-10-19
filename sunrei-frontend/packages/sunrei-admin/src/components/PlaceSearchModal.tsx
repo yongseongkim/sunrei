@@ -37,6 +37,7 @@ export default function PlaceSearchModal({
       address: '',
       latitude: 0,
       longitude: 0,
+      googleMapsId: null,
     },
   );
   const [mapCenter, setMapCenter] = useState({ lat: 35.6762, lng: 139.6503 }); // 도쿄
@@ -76,6 +77,7 @@ export default function PlaceSearchModal({
           address: '',
           latitude: 0,
           longitude: 0,
+          googleMapsId: null,
         });
         setMapCenter({ lat: 35.6762, lng: 139.6503 }); // 도쿄
         setMapZoom(14);
@@ -102,11 +104,13 @@ export default function PlaceSearchModal({
         const lat = place.geometry.location.lat();
         const lng = place.geometry.location.lng();
 
+        // Google place ID는 서버가 같은 장소를 하나로 묶는 기준이고, 앱의 Google 정보 카드도 이 값으로 불러온다.
         setSelectedPlace({
           name: place.name || '',
           address: place.formatted_address || '',
           latitude: lat,
           longitude: lng,
+          googleMapsId: place.place_id ?? null,
         });
 
         setMapCenter({ lat, lng });
@@ -127,6 +131,27 @@ export default function PlaceSearchModal({
 
     const lat = e.latLng.lat();
     const lng = e.latLng.lng();
+
+    // 지도의 가게 아이콘을 누르면 그 장소의 Google place ID까지 가져오고, 빈 곳을 누르면 주소만 찾는다.
+    const placeId = 'placeId' in e ? (e as google.maps.IconMouseEvent).placeId : null;
+    if (placeId && map) {
+      e.stop();
+      new google.maps.places.PlacesService(map).getDetails(
+        { placeId, fields: ['name', 'formatted_address', 'geometry', 'place_id'] },
+        (place, status) => {
+          if (status !== google.maps.places.PlacesServiceStatus.OK || !place) return;
+          const location = place.geometry?.location;
+          setSelectedPlace({
+            name: place.name || 'Selected Location',
+            address: place.formatted_address || '',
+            latitude: location ? location.lat() : lat,
+            longitude: location ? location.lng() : lng,
+            googleMapsId: place.place_id ?? placeId,
+          });
+        },
+      );
+      return;
+    }
 
     if (!geocoder.current) {
       geocoder.current = new google.maps.Geocoder();
@@ -163,6 +188,7 @@ export default function PlaceSearchModal({
             address: result.formatted_address || '',
             latitude: lat,
             longitude: lng,
+            googleMapsId: null,
           });
         } else {
           setSelectedPlace({
@@ -170,6 +196,7 @@ export default function PlaceSearchModal({
             address: '',
             latitude: lat,
             longitude: lng,
+            googleMapsId: null,
           });
         }
       },
@@ -219,6 +246,7 @@ export default function PlaceSearchModal({
               address: result.formatted_address || `${lat}, ${lng}`,
               latitude: lat,
               longitude: lng,
+              googleMapsId: null,
             });
           } else {
             setSelectedPlace({
@@ -226,6 +254,7 @@ export default function PlaceSearchModal({
               address: `${lat}, ${lng}`,
               latitude: lat,
               longitude: lng,
+              googleMapsId: null,
             });
           }
         },
@@ -410,6 +439,16 @@ export default function PlaceSearchModal({
                   }
                   placeholder="0.000000"
                   step="any"
+                />
+              </div>
+              <div className="col-span-2 space-y-2">
+                <Label htmlFor="google-place-id">Google place ID</Label>
+                <Input
+                  id="google-place-id"
+                  readOnly
+                  value={selectedPlace.googleMapsId ?? ''}
+                  placeholder="Not linked: pick a search result or a place icon on the map"
+                  className="font-mono text-xs bg-muted/40"
                 />
               </div>
             </div>

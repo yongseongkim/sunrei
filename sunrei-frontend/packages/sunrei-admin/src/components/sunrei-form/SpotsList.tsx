@@ -5,6 +5,7 @@ import { MapPin, Plus } from 'lucide-react';
 import { TagDTO } from '@/api/admin';
 import {
   FieldArrayWithId,
+  FieldErrors,
   UseFormRegister,
   UseFormSetValue,
   UseFormWatch,
@@ -16,6 +17,7 @@ interface SpotsListProps {
   register: UseFormRegister<SunreiFormValue>;
   setValue: UseFormSetValue<SunreiFormValue>;
   watch: UseFormWatch<SunreiFormValue>;
+  errors: FieldErrors<SunreiFormValue>;
   spotTags: TagDTO[][];
   onAddSpot: () => void;
   onRemoveSpot: (index: number) => void;
@@ -32,6 +34,7 @@ export default function SpotsList({
   register,
   setValue,
   watch,
+  errors,
   spotTags,
   onAddSpot,
   onRemoveSpot,
@@ -56,6 +59,11 @@ export default function SpotsList({
             register={register}
             setValue={setValue}
             watch={watch}
+            errors={{
+              title: errors.spots?.[index]?.title?.message,
+              sourceLink: errors.spots?.[index]?.sourceLink?.message,
+              place: errors.spots?.[index]?.place?.message,
+            }}
             selectedTags={spotTags[index] ?? []}
             onTagsChange={(tagIds, tags) => onSpotTagsChange(index, tagIds, tags)}
             onRemove={onRemoveSpot}

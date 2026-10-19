@@ -5,15 +5,19 @@ interface FormActionsProps {
   mode: 'create' | 'edit';
   isSubmitting: boolean;
   onCancel: () => void;
+  /** 저장이 막힌 이유를 Save 옆에 보여 준다. */
+  errorText?: string;
 }
 
 export default function FormActions({
   mode,
   isSubmitting,
   onCancel,
+  errorText,
 }: FormActionsProps) {
   return (
-    <div className="flex justify-end gap-2">
+    <div className="flex items-center justify-end gap-2">
+      {errorText && <span className="mr-1 text-sm font-medium text-destructive">{errorText}</span>}
       <Button type="button" variant="outline" onClick={onCancel}>
         Cancel
       </Button>

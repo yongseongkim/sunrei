@@ -18,35 +18,51 @@ import {
   type GooglePlaceInfo,
 } from '@/hooks/use-google-places';
 import { useTagLabel } from '@/lib/i18n';
-import { ClosedChip, PlaceCard } from './place-card';
+import { ClosedChip, PlaceCard, type SeriesTake } from './place-card';
 import type { PlaceCardDTO, PlaceMentionDTO, SourceType, SunreiDTO, TagDTO } from '@/dto';
 import { useEffect, useState } from 'react';
 
-export function SearchNearbyButton({ isFetching }: { isFetching: boolean }) {
+/**
+ * 지도를 아직 안 부른 영역으로 옮겼을 때 그 영역을 불러오는 버튼이다.
+ * 모바일은 하단 시트 높이와 무관하게 보이도록 지역 칩 줄 아래에 두고, 지도를 덮는 펼침 상태에서는 숨긴다.
+ */
+export function SearchNearbyButton({
+  isFetching,
+  mobile,
+  hidden,
+}: {
+  isFetching: boolean;
+  mobile: boolean;
+  hidden?: boolean;
+}) {
   const t = useTranslations('list');
   const pendingArea = useMapStore((s) => s.pendingArea);
   const commit = useMapStore((s) => s.commitSearchArea);
   const mode = useMapStore((s) => s.mode);
   const videoPreview = useUiStore((s) => s.videoPreview);
   // source 모드와 미리보기는 화면 영역과 관계없이 장소를 보여 주므로 버튼을 띄우지 않는다.
-  if (mode !== 'nearby' || videoPreview) return null;
+  if (mode !== 'nearby' || videoPreview || hidden) return null;
 
   const finding = isFetching && !pendingArea;
   if (!pendingArea && !finding) return null;
 
   return (
-    <div className="absolute left-1/2 -translate-x-1/2 bottom-[calc(40%+12px)] z-20 sm:bottom-6">
-      <Button size="sm" onClick={commit} disabled={finding} className="shadow-lg">
+    <div className={cn('absolute left-1/2 z-20 -translate-x-1/2', mobile ? 'top-[108px]' : 'bottom-6')}>
+      <button
+        onClick={commit}
+        disabled={finding}
+        className="inline-flex items-center gap-[7px] whitespace-nowrap rounded-full bg-primary px-3.5 py-2 text-[12.5px] font-extrabold text-primary-foreground shadow-[0_4px_12px_oklch(0.66_0.13_264/0.3)] disabled:opacity-90"
+      >
         {finding ? (
           <>
-            <Loader2 className="h-4 w-4 animate-spin" /> {t('finding')}
+            <Loader2 className="h-[13px] w-[13px] animate-spin" /> {t('finding')}
           </>
         ) : (
           <>
-            <Search className="h-4 w-4" /> {t('searchNearby')}
+            <Search className="h-[13px] w-[13px]" strokeWidth={2.4} /> {t('searchNearby')}
           </>
         )}
-      </Button>
+      </button>
     </div>
   );
 }
@@ -624,7 +640,7 @@ export function VideoPreviewPanel() {
   const { data, isLoading } = useSunreiDetail(videoPreview?.sunreiId ?? null);
   if (!videoPreview) return null;
   const sunrei = data?.sunrei;
-  const cards = sunrei ? spotsToPlaceCards(sunrei) : [];
+  const cards = sunrei ? spotsToSeriesCards(sunrei) : [];
   const backLabel = videoPreview.fromSearch
     ? searchT('back')
     : sourceT('allSeries', { name: sunrei?.source.name ?? '' });
@@ -666,8 +682,13 @@ export function VideoPreviewPanel() {
             <span className="ml-auto text-[11px] font-semibold text-ink3">{sourceT('seriesPlacesSub')}</span>
           </div>
           <div className="space-y-2.5">
-            {cards.map((c) => (
-              <PlaceCard key={c.place.id} card={c} onClick={() => setActivePlace(c.place.id)} />
+            {cards.map(({ card, takes }) => (
+              <PlaceCard
+                key={card.place.id}
+                card={card}
+                seriesTakes={takes}
+                onClick={() => setActivePlace(card.place.id)}
+              />
             ))}
           </div>
         </div>
@@ -676,8 +697,11 @@ export function VideoPreviewPanel() {
   );
 }
 
-/** 미리보기 목록에도 PlaceCard를 쓰도록 Sunrei의 spot을 장소별 카드로 묶는다. */
-function spotsToPlaceCards(sunrei: SunreiDTO): PlaceCardDTO[] {
+/**
+ * 미리보기 목록에도 PlaceCard를 쓰도록 Sunrei의 spot을 장소별 카드로 묶는다.
+ * 한 장소에 spot이 여럿이면 카드 하나에 회차 줄로 넣어, 같은 Source·시리즈 줄이 반복되지 않게 한다.
+ */
+function spotsToSeriesCards(sunrei: SunreiDTO): { card: PlaceCardDTO; takes: SeriesTake[] }[] {
   const byPlace = new Map<string, SunreiDTO['spots']>();
   for (const s of sunrei.spots) {
     const arr = byPlace.get(s.place.id) ?? [];
@@ -698,7 +722,7 @@ function spotsToPlaceCards(sunrei: SunreiDTO): PlaceCardDTO[] {
       images: s.images,
       tags: s.tags,
     }));
-    return {
+    const card: PlaceCardDTO = {
       place: group[0].place,
       distanceMeters: group[0].distanceMeters ?? null,
       mentions,
@@ -707,5 +731,7 @@ function spotsToPlaceCards(sunrei: SunreiDTO): PlaceCardDTO[] {
       sunreiCount: 1,
       spotCount: group.length,
     };
+    const takes = group.map((s) => ({ spotId: s.id, title: s.title, context: s.context }));
+    return { card, takes };
   });
 }

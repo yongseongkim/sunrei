@@ -60,15 +60,32 @@ function PlaceTake({ mention }: { mention: PlaceMentionDTO }) {
   );
 }
 
+/** 미리보기에서 한 시리즈 안의 spot 하나다. 배너가 Source와 시리즈를 이미 보여 주므로 회차 제목과 맥락만 쓴다. */
+export type SeriesTake = { spotId: string; title?: string | null; context?: string | null };
+
+function SeriesTakeRow({ take }: { take: SeriesTake }) {
+  return (
+    <div className="border-t border-line py-2">
+      {take.title && <div className="truncate text-[11.5px] font-extrabold text-foreground">{take.title}</div>}
+      {take.context && (
+        <div className="mt-[3px] text-[12px] leading-relaxed text-ink2 line-clamp-2">{take.context}</div>
+      )}
+    </div>
+  );
+}
+
 export function PlaceCard({
   card,
   active,
   dimmed,
+  seriesTakes,
   onClick,
 }: {
   card: PlaceCardDTO;
   active?: boolean;
   dimmed?: boolean;
+  /** 있으면 미리보기 카드로 그려, 언급 대신 이 시리즈의 spot을 보여 준다. */
+  seriesTakes?: SeriesTake[];
   onClick?: () => void;
 }) {
   const t = useTranslations('list');
@@ -82,8 +99,9 @@ export function PlaceCard({
     mentions.slice(2).map((m) => m.source.id).filter((id) => !shownIds.has(id))
   ).size;
 
-  const eyebrow =
-    card.sourceCount > 1
+  const eyebrow = seriesTakes
+    ? t('inSeries', { count: seriesTakes.length })
+    : card.sourceCount > 1
       ? t('featuredBySources', { count: card.sourceCount })
       : t('featuredInVideos', { count: mentions.length });
 
@@ -122,12 +140,12 @@ export function PlaceCard({
       )}
 
       <div>
-        {mentions.slice(0, 2).map((m) => (
-          <PlaceTake key={m.spotId} mention={m} />
-        ))}
+        {seriesTakes
+          ? seriesTakes.map((take) => <SeriesTakeRow key={take.spotId} take={take} />)
+          : mentions.slice(0, 2).map((m) => <PlaceTake key={m.spotId} mention={m} />)}
       </div>
 
-      {otherSources > 0 && (
+      {!seriesTakes && otherSources > 0 && (
         <div className="mt-2 flex items-center gap-1.5 border-t border-line pt-[9px] text-[11.5px] font-bold text-accent-ink">
           {t('andOtherSources', { count: otherSources })}
           <ChevronRight className="h-3 w-3" strokeWidth={2.4} />
