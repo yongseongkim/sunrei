@@ -3,11 +3,11 @@ import ImageUpload from '@/components/ImageUpload';
 import ResponsiveImage from '@/components/ResponsiveImage';
 import PlaceSection from '@/components/sunrei-form/PlaceSection';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Trash2 } from 'lucide-react';
+import { AlertCircle, Trash2 } from 'lucide-react';
 import { TagDTO } from '@/api/admin';
 import { UseFormRegister, UseFormSetValue, UseFormWatch } from 'react-hook-form';
 import { SunreiFormValue } from '@/lib/schemas';
@@ -35,7 +35,12 @@ interface SpotCardProps {
 }
 
 function FieldError({ message }: { message?: string }) {
-  return message ? <p className="text-[11px] font-medium text-destructive">{message}</p> : null;
+  return message ? (
+    <p className="flex items-center gap-1 text-[11px] font-medium text-destructive">
+      <AlertCircle className="h-3 w-3 shrink-0" />
+      {message}
+    </p>
+  ) : null;
 }
 
 export default function SpotCard({
@@ -53,93 +58,100 @@ export default function SpotCard({
   const videoId = youtubeVideoId(watch(`spots.${index}.sourceLink` as const));
   // YouTube가 아니면 spot의 첫 이미지(Instagram 게시물 이미지 등)를 썸네일로 보여 준다.
   const firstImage = watch(`spots.${index}.images` as const)?.[0];
+  const link = watch(`spots.${index}.sourceLink` as const);
   return (
-    <Card className={cn('py-0 px-0 rounded-lg gap-0', hasError && 'border-destructive')}>
-      <CardHeader className="py-1 px-2 gap-0">
-        <div className="flex items-center justify-between">
-          <span className="flex items-center gap-1.5 text-xs font-medium">
-            <span className="grid place-items-center h-5 w-5 rounded-full bg-primary text-primary-foreground text-[11px] font-bold">
-              {index + 1}
-            </span>
-            Spot {index + 1}
-          </span>
-          <Button
-            type="button"
-            onClick={() => onRemove(index)}
-            variant="ghost"
-            size="sm"
-            className="h-6 w-6 p-0"
-          >
-            <Trash2 className="h-3 w-3" />
-          </Button>
+    <Card className={cn('gap-3 p-4', hasError && 'border-destructive')}>
+      <div className="flex items-center gap-2">
+        <span className="grid h-[22px] w-[22px] place-items-center rounded-full bg-primary text-[11.5px] font-bold text-primary-foreground">
+          {index + 1}
+        </span>
+        <span className="text-sm font-semibold">Spot {index + 1}</span>
+        <Button
+          type="button"
+          onClick={() => onRemove(index)}
+          variant="ghost"
+          size="sm"
+          className="ml-auto h-7 w-7 p-0 text-destructive hover:text-destructive"
+          aria-label="Remove spot"
+        >
+          <Trash2 className="h-3.5 w-3.5" />
+        </Button>
+      </div>
+
+      <div className="grid grid-cols-[180px_minmax(0,1fr)] gap-3.5">
+        <div className="space-y-2">
+          {videoId ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
+              alt="Video thumbnail"
+              className="aspect-video w-full rounded-md border object-cover"
+            />
+          ) : firstImage ? (
+            <ResponsiveImage
+              multiSizeImage={firstImage}
+              alt="Post image"
+              size="small"
+              className="aspect-square w-[101px] rounded-md border object-cover"
+            />
+          ) : (
+            <div className="grid h-10 place-items-center rounded-md border border-dashed text-[11.5px] text-muted-foreground">
+              No thumbnail
+            </div>
+          )}
+          <Input
+            {...register(`spots.${index}.sourceLink` as const)}
+            type="url"
+            placeholder="YouTube timestamp or Instagram post link"
+            className={cn('h-9 text-xs', link && 'font-mono')}
+            aria-invalid={!!errors?.sourceLink}
+          />
+          <FieldError message={errors?.sourceLink} />
         </div>
-      </CardHeader>
-      <CardContent className="space-y-1.5 px-2 py-0 pt-1.5">
-        <div className="flex gap-2">
-          <div className="w-2/5 shrink-0 space-y-1.5">
-            {videoId ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
-                alt="Video thumbnail"
-                className="w-full rounded border object-cover aspect-video"
-              />
-            ) : firstImage ? (
-              <ResponsiveImage
-                multiSizeImage={firstImage}
-                alt="Post image"
-                size="small"
-                className="w-full rounded border object-cover aspect-square"
-              />
-            ) : null}
-            <Input
-              {...register(`spots.${index}.sourceLink` as const)}
-              type="url"
-              placeholder="YouTube timestamp or Instagram post link"
-              className="h-8 text-xs"
-              aria-invalid={!!errors?.sourceLink}
-            />
-            <FieldError message={errors?.sourceLink} />
-          </div>
-          <div className="flex-1 min-w-0 space-y-1.5">
-            <Input
-              {...register(`spots.${index}.title` as const)}
-              placeholder="Spot title"
-              className="h-8"
-              aria-invalid={!!errors?.title}
-            />
-            <FieldError message={errors?.title} />
-            <Textarea
-              {...register(`spots.${index}.context` as const)}
-              rows={2}
-              placeholder="Context — what this source says here (e.g. 7화에서 울며 식사한 식당)"
-              className="text-xs resize-none"
-            />
-          </div>
+        <div className="space-y-2">
+          <Input
+            {...register(`spots.${index}.title` as const)}
+            placeholder="Spot title"
+            aria-invalid={!!errors?.title}
+          />
+          <FieldError message={errors?.title} />
+          <Textarea
+            {...register(`spots.${index}.context` as const)}
+            rows={3}
+            placeholder="Context — what this source says here (e.g. 7화에서 울며 식사한 식당)"
+            className="resize-none text-[13px]"
+          />
         </div>
-        <PlaceSection
-          spotIndex={index}
-          watch={watch}
-          setValue={setValue}
-          onOpenMap={onOpenMap}
-        />
-        <FieldError message={errors?.place} />
-        <div className="space-y-1">
-          <Label className="text-xs">Spot tags (bilingual)</Label>
+      </div>
+
+      <div className="grid grid-cols-2 gap-3">
+        <div className="space-y-1.5">
+          <PlaceSection
+            spotIndex={index}
+            watch={watch}
+            setValue={setValue}
+            onOpenMap={onOpenMap}
+            error={!!errors?.place}
+          />
+          <FieldError message={errors?.place} />
+        </div>
+        <div className="space-y-1.5">
+          <Label className="text-[13px] font-semibold">Spot tags</Label>
           <SpotTagAutocomplete
             selectedTagIds={watch(`spots.${index}.tagIds`) || []}
             selectedTags={selectedTags}
             onChange={onTagsChange}
           />
         </div>
-        <ImageUpload
-          images={watch(`spots.${index}.images`) || []}
-          onChange={(newImages) => setValue(`spots.${index}.images`, newImages)}
-          label="Spot Images"
-          maxImages={5}
-          compact
-        />
-      </CardContent>
+      </div>
+
+      <ImageUpload
+        images={watch(`spots.${index}.images`) || []}
+        onChange={(newImages) => setValue(`spots.${index}.images`, newImages)}
+        label="Spot Images"
+        maxImages={5}
+        compact
+      />
     </Card>
   );
 }

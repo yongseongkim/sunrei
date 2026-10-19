@@ -8,18 +8,21 @@ import SpotsMapSection from '@/components/sunrei-form/SpotsMapSection';
 import ImageUpload from '@/components/ImageUpload';
 import PlaceSearchModal from '@/components/PlaceSearchModal';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Separator } from '@/components/ui/separator';
+import { Textarea } from '@/components/ui/textarea';
 import {
   useCreateSunrei,
   useSunrei,
   useUpdateSunrei,
 } from '@/lib/hooks/use-sunreis';
 import { sunreiSchema, SunreiFormValue } from '@/lib/schemas';
-import { CreateSunreiRequest, PlaceInput, TagDTO, UpdateSunreiRequest } from '@/api/admin';
+import {
+  CreateSunreiRequest,
+  PlaceInput,
+  TagDTO,
+  UpdateSunreiRequest,
+} from '@/api/admin';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { AlertCircle, Loader2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -183,7 +186,7 @@ export default function SunreiForm({
   const handleSpotTagsChange = (
     index: number,
     tagIds: string[],
-    tags: TagDTO[]
+    tags: TagDTO[],
   ) => {
     setValue(`spots.${index}.tagIds`, tagIds);
     setSpotTags((prev) => {
@@ -213,38 +216,44 @@ export default function SunreiForm({
 
   const published = watch('published');
   // 필드 배열 오류는 spot 위치마다 비어 있을 수 있어 실제로 오류가 있는 spot만 센다.
-  const spotErrorCount = Array.isArray(errors.spots) ? errors.spots.filter(Boolean).length : 0;
+  const spotErrorCount = Array.isArray(errors.spots)
+    ? errors.spots.filter(Boolean).length
+    : 0;
+
+  const summaryLength = (watch('summary') || '').length;
 
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">
+        <h1 className="text-2xl font-bold tracking-tight">
           {mode === 'create' ? 'Create New Sunrei' : 'Edit Sunrei'}
         </h1>
-        <p className="text-muted-foreground mt-2">
+        <p className="mt-1 text-sm text-muted-foreground">
           {mode === 'create'
             ? 'Add a new Sunrei (video/work) under a source'
-            : 'Update sunrei information and spots'}
+            : `${spotFields.length} ${spotFields.length === 1 ? 'spot' : 'spots'}`}
         </p>
       </div>
 
-      <Card>
-        <CardContent className="pt-6">
-          {/* 브라우저 기본 검증 말풍선 대신 zod 오류를 각 필드와 Save 옆에 보여 준다. */}
-          <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">
-            {error && (
-              <Alert variant="destructive">
-                <AlertCircle className="h-4 w-4" />
-                <AlertDescription>{error}</AlertDescription>
-              </Alert>
-            )}
+      {/* 브라우저 기본 검증 말풍선 대신 zod 오류를 각 필드와 Save 옆에 보여 준다. */}
+      <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">
+        {error && (
+          <Alert variant="destructive">
+            <AlertCircle className="h-4 w-4" />
+            <AlertDescription>{error}</AlertDescription>
+          </Alert>
+        )}
 
+        <Card>
+          <CardContent className="space-y-4">
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-2">
                 <Label className="text-sm font-medium">Source *</Label>
                 <SourceSelectField
                   value={watch('sourceId') || undefined}
-                  onChange={(id) => setValue('sourceId', id, { shouldValidate: true })}
+                  onChange={(id) =>
+                    setValue('sourceId', id, { shouldValidate: true })
+                  }
                 />
                 {errors.sourceId && (
                   <p className="text-sm text-destructive">
@@ -254,24 +263,22 @@ export default function SunreiForm({
               </div>
               <div className="space-y-2">
                 <Label className="text-sm font-medium">Status</Label>
-                <div className="flex gap-2">
-                  <Button
-                    type="button"
-                    variant={!published ? 'default' : 'outline'}
-                    size="sm"
-                    onClick={() => setValue('published', false)}
-                    className={cn(!published && 'bg-muted-foreground/80')}
-                  >
-                    Draft
-                  </Button>
-                  <Button
-                    type="button"
-                    variant={published ? 'default' : 'outline'}
-                    size="sm"
-                    onClick={() => setValue('published', true)}
-                  >
-                    Published
-                  </Button>
+                <div className="inline-flex w-fit rounded-lg bg-muted p-[3px]">
+                  {([false, true] as const).map((value) => (
+                    <button
+                      key={String(value)}
+                      type="button"
+                      onClick={() => setValue('published', value)}
+                      className={cn(
+                        'rounded-md px-3.5 py-1 text-sm font-semibold transition-colors',
+                        published === value
+                          ? 'bg-background text-foreground shadow-sm'
+                          : 'text-muted-foreground',
+                      )}
+                    >
+                      {value ? 'Published' : 'Draft'}
+                    </button>
+                  ))}
                 </div>
                 <p className="text-xs text-muted-foreground">
                   Drafts are hidden from the public app.
@@ -281,25 +288,39 @@ export default function SunreiForm({
 
             <BasicInfoSection register={register} errors={errors} />
 
-            <Separator />
-
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="summary" className="text-sm font-medium">
-                  Summary
-                </Label>
-                <span className="text-xs text-muted-foreground">
-                  {(watch('summary') || '').length} chars
-                </span>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="space-y-2">
+                <Label htmlFor="description">Description</Label>
+                <Textarea
+                  id="description"
+                  {...register('description')}
+                  rows={3}
+                  placeholder="Describe this Sunrei"
+                />
               </div>
-              <Input
-                id="summary"
-                {...register('summary')}
-                placeholder="One-line summary of this Sunrei"
-              />
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="summary">Summary</Label>
+                  {/* 공개 앱 카드와 검색 결과에 한두 줄로 보이므로 200자 안쪽을 권한다. */}
+                  <span
+                    className={cn(
+                      'text-xs',
+                      summaryLength > 200
+                        ? 'text-destructive'
+                        : 'text-muted-foreground',
+                    )}
+                  >
+                    {summaryLength} / 200
+                  </span>
+                </div>
+                <Textarea
+                  id="summary"
+                  {...register('summary')}
+                  rows={3}
+                  placeholder="One-line summary of this Sunrei"
+                />
+              </div>
             </div>
-
-            <Separator />
 
             <ImageUpload
               images={watch('images') || []}
@@ -307,53 +328,49 @@ export default function SunreiForm({
               label="Sunrei Images"
               maxImages={10}
             />
+          </CardContent>
+        </Card>
 
-            <Separator />
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              <SpotsList
-                spotFields={spotFields}
-                register={register}
-                setValue={setValue}
-                watch={watch}
-                errors={errors}
-                spotTags={spotTags}
-                onAddSpot={handleAddSpot}
-                onRemoveSpot={handleRemoveSpot}
-                onOpenMap={openMapForPlace}
-                onSpotTagsChange={handleSpotTagsChange}
-              />
-
-              <SpotsMapSection
-                spots={spotFields.map((field, index) => ({
-                  title: watch(`spots.${index}.title`) || `Spot ${index + 1}`,
-                  place: watch(`spots.${index}.place`) ?? null,
-                }))}
-              />
-            </div>
-
-            <Separator />
-
-            <FormActions
-              mode={mode}
-              isSubmitting={createMutation.isPending || updateMutation.isPending}
-              onCancel={onCancel}
-              errorText={
-                spotErrorCount > 0
-                  ? `${spotErrorCount} ${spotErrorCount === 1 ? 'spot has' : 'spots have'} errors`
-                  : undefined
-              }
-            />
-          </form>
-
-          <PlaceSearchModal
-            isOpen={mapModalOpen}
-            onClose={() => setMapModalOpen(false)}
-            onPlaceSelect={handlePlaceSelect}
-            initialPlace={editingPlace}
+        <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-[minmax(0,1fr)_380px]">
+          <SpotsList
+            spotFields={spotFields}
+            register={register}
+            setValue={setValue}
+            watch={watch}
+            errors={errors}
+            spotTags={spotTags}
+            onAddSpot={handleAddSpot}
+            onRemoveSpot={handleRemoveSpot}
+            onOpenMap={openMapForPlace}
+            onSpotTagsChange={handleSpotTagsChange}
           />
-        </CardContent>
-      </Card>
+
+          <SpotsMapSection
+            spots={spotFields.map((field, index) => ({
+              title: watch(`spots.${index}.title`) || `Spot ${index + 1}`,
+              place: watch(`spots.${index}.place`) ?? null,
+            }))}
+          />
+        </div>
+
+        <FormActions
+          mode={mode}
+          isSubmitting={createMutation.isPending || updateMutation.isPending}
+          onCancel={onCancel}
+          errorText={
+            spotErrorCount > 0
+              ? `${spotErrorCount} ${spotErrorCount === 1 ? 'spot has' : 'spots have'} errors`
+              : undefined
+          }
+        />
+      </form>
+
+      <PlaceSearchModal
+        isOpen={mapModalOpen}
+        onClose={() => setMapModalOpen(false)}
+        onPlaceSelect={handlePlaceSelect}
+        initialPlace={editingPlace}
+      />
     </div>
   );
 }

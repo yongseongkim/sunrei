@@ -3,6 +3,7 @@
 import SourcesList from '@/components/SourcesList';
 import { useSources } from '@/lib/hooks/use-sources';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { AlertCircle, Loader2, Plus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -23,10 +24,10 @@ export default function SourcesPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-end justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Channels / Sources</h1>
-          <p className="text-muted-foreground mt-2">
+          <h1 className="text-2xl font-bold tracking-tight">Channels / Sources</h1>
+          <p className="mt-1 text-sm text-muted-foreground">
             Content sources (YouTube / Instagram / TV / Anime / Other)
           </p>
         </div>
@@ -36,12 +37,7 @@ export default function SourcesPage() {
         </Button>
       </div>
 
-      <input
-        value={q}
-        onChange={(e) => setQ(e.target.value)}
-        placeholder="Search sources..."
-        className="w-full max-w-sm rounded-md border bg-background px-3 py-2 text-sm"
-      />
+      <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search sources…" className="w-80" />
 
       {error && (
         <Alert variant="destructive">

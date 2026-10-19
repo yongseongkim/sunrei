@@ -1,7 +1,6 @@
 'use client';
 
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import {
   Command,
   CommandEmpty,
@@ -17,7 +16,7 @@ import {
 } from '@/components/ui/popover';
 import { useCreateTag, useSearchTags } from '@/lib/hooks/use-tags';
 import { TagDTO } from '@/api/admin';
-import { Check, ChevronsUpDown, Plus, X } from 'lucide-react';
+import { Check, Plus, X } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -93,22 +92,40 @@ export default function SpotTagAutocomplete({
   const hasQuery = debouncedQuery.trim().length > 0;
 
   return (
-    <div className="space-y-2">
+    <div>
       <Popover open={open} onOpenChange={setOpen}>
+        {/* 고른 태그를 입력칸 안에 배지로 두고, 칸을 누르면 검색 목록이 열린다. */}
         <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            role="combobox"
+          <div
+            role="button"
+            aria-haspopup="listbox"
             aria-expanded={open}
-            className="w-full justify-between h-8"
+            tabIndex={0}
+            className="flex min-h-9 w-full cursor-text flex-wrap items-center gap-1.5 rounded-md border px-2 py-1.5 shadow-sm"
           >
-            <span className="truncate">
-              {selectedTags.length > 0
-                ? `${selectedTags.length} tag(s)`
-                : 'Spot tags...'}
-            </span>
-            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-          </Button>
+            {selectedTags.map((tag) => {
+              const shown = selectedById.get(tag.id) ?? tag;
+              return (
+                <Badge key={tag.id} variant="secondary" className="gap-1 text-xs">
+                  {shown.labelEn && shown.labelEn !== shown.labelKo
+                    ? `${shown.labelKo} · ${shown.labelEn}`
+                    : shown.labelKo}
+                  <button
+                    type="button"
+                    aria-label="Remove tag"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      remove(tag.id!);
+                    }}
+                    className="rounded-full hover:bg-muted"
+                  >
+                    <X className="h-3 w-3" />
+                  </button>
+                </Badge>
+              );
+            })}
+            <span className="text-[12.5px] text-muted-foreground">Add tag…</span>
+          </div>
         </PopoverTrigger>
         <PopoverContent className="w-[380px] p-0">
           <Command shouldFilter={false}>
@@ -165,22 +182,6 @@ export default function SpotTagAutocomplete({
         </PopoverContent>
       </Popover>
 
-      {selectedTags.length > 0 && (
-        <div className="flex flex-wrap gap-1">
-          {selectedTags.map((tag) => (
-            <Badge key={tag.id} variant="secondary" className="gap-1 text-xs">
-              {selectedById.get(tag.id)?.labelKo ?? tag.labelKo}
-              <button
-                type="button"
-                onClick={() => remove(tag.id!)}
-                className="ml-1 rounded-full hover:bg-muted"
-              >
-                <X className="h-3 w-3" />
-              </button>
-            </Badge>
-          ))}
-        </div>
-      )}
     </div>
   );
 }

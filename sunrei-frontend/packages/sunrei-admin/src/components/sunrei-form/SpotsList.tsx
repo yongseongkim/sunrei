@@ -44,14 +44,14 @@ export default function SpotsList({
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <Label className="text-base">Spots</Label>
+        <Label className="text-base font-bold">Spots</Label>
         <Button type="button" onClick={onAddSpot} size="sm" variant="outline">
-          <Plus className="h-4 w-4 mr-2" />
-          Add Spot
+          <Plus className="h-3.5 w-3.5" />
+          Add spot
         </Button>
       </div>
 
-      <div className="space-y-1.5">
+      <div className="space-y-3">
         {spotFields.map((field, index) => (
           <SpotCard
             key={field.id}

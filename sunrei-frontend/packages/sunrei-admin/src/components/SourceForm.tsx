@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import ImageUpload from '@/components/ImageUpload';
+import ResponsiveImage from '@/components/ResponsiveImage';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { AlertCircle, Loader2 } from 'lucide-react';
 import { useEffect } from 'react';
@@ -107,10 +108,10 @@ export default function SourceForm({ mode, sourceId }: SourceFormProps) {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">
+        <h1 className="text-2xl font-bold tracking-tight">
           {mode === 'create' ? 'New Source' : 'Edit Source'}
         </h1>
-        <p className="text-muted-foreground mt-2">
+        <p className="mt-1 text-sm text-muted-foreground">
           {linksOut
             ? 'Link-out source (YouTube/Instagram) — provides the channel/profile link.'
             : 'Managed work (TV/Anime/Other) — renders a Sunrei info page.'}
@@ -170,8 +171,32 @@ export default function SourceForm({ mode, sourceId }: SourceFormProps) {
               </div>
             )}
 
-            {/* Instagram은 계정 등록 스크립트가 프로필 사진을 넣지만, 다른 이미지로 바꿀 수 있게 업로드를 남긴다. */}
-            {type !== 'YOUTUBE' && (
+            {/* Instagram 아바타는 프로필 사진을 저장해 둔 사본이라 수집 스크립트만 바꾼다. 서버는 Instagram을 호출하지 않는다. */}
+            {type === 'INSTAGRAM' && (
+              <div className="space-y-2">
+                <Label>Avatar</Label>
+                <div className="flex items-center gap-2.5">
+                  <div className="h-11 w-11 shrink-0 overflow-hidden rounded-full border bg-muted">
+                    {watch('posterImage') && (
+                      <ResponsiveImage
+                        multiSizeImage={watch('posterImage')!}
+                        alt="Profile picture"
+                        size="small"
+                        className="h-full w-full object-cover"
+                      />
+                    )}
+                  </div>
+                  <p className="text-xs leading-relaxed text-muted-foreground">
+                    Updated by the collection script only:
+                    <br />
+                    <code className="font-mono text-[11.5px] text-foreground">
+                      instagram_accounts.py update --refresh-picture
+                    </code>
+                  </p>
+                </div>
+              </div>
+            )}
+            {!linksOut && (
               <div className="space-y-2">
                 <Label>Poster image</Label>
                 <ImageUpload

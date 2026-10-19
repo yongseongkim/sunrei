@@ -1,6 +1,5 @@
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
 import { SunreiFormValue } from '@/lib/schemas';
 
@@ -41,15 +40,6 @@ export default function BasicInfoSection({
         </div>
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="description">Description</Label>
-        <Textarea
-          id="description"
-          {...register('description')}
-          rows={3}
-          placeholder="Describe this Sunrei"
-        />
-      </div>
     </div>
   );
 }
