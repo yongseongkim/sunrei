@@ -556,6 +556,9 @@ export interface PlaceListItemDTO {
     'longitude': number;
     'googleMapsId'?: string | null;
     'isClosed': boolean;
+    'closedReason'?: string | null;
+    'closedAt'?: string | null;
+    'notes'?: string | null;
     /**
      * Area label (KO), derived from address.
      */

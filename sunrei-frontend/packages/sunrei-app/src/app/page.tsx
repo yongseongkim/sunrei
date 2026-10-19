@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { cn } from '@/lib/utils';
 import { MapPin } from 'lucide-react';
 import { MapView } from '@/components/map-view';
 import { PlaceCard, PlaceCardSkeleton } from '@/components/place-card';
@@ -80,16 +81,14 @@ export default function AppShell() {
           ))}
         </div>
       ) : visibleCards.length === 0 ? (
-        <EmptyState mode={mode} />
+        <EmptyState />
       ) : (
-        visibleCards.map((c) => (
-          <PlaceCard
-            key={c.place.id}
-            card={c}
-            active={c.place.id === activePlaceId}
-            onClick={() => setActivePlace(c.place.id)}
-          />
-        ))
+        // 지도를 옮겨 새 영역을 아직 안 불렀으면 지금 목록이 이전 영역이라는 걸 흐리게 보여 준다.
+        <div className={cn('space-y-2.5 transition-opacity', showingPrevious && 'opacity-[0.55]')}>
+          {visibleCards.map((c) => (
+            <PlaceCard key={c.place.id} card={c} onClick={() => setActivePlace(c.place.id)} />
+          ))}
+        </div>
       )}
     </div>
   );
@@ -176,26 +175,20 @@ export default function AppShell() {
   );
 }
 
-function EmptyState({ mode }: { mode: 'nearby' | 'source' }) {
-  const t = useTranslations(mode === 'source' ? 'source' : 'list');
+/** 주변 목록이 비었을 때다. 소스 모드에서는 채널 패널이 목록 자리를 차지하므로 여기에 오지 않는다. */
+function EmptyState() {
+  const t = useTranslations('list');
   const nav = useTranslations('nav');
-  const clearSources = useMapStore((s) => s.clearSources);
   const clearFilters = useFilterStore((s) => s.clear);
   const hasFilter = useFilterStore((s) => s.activeTagIds.length > 0);
   return (
     <div className="text-center py-10 text-ink3">
       <MapPin className="h-10 w-10 mx-auto mb-2 opacity-40" />
-      <p className="text-sm">{mode === 'source' ? t('noPlaces') : t('empty')}</p>
-      {mode === 'source' ? (
-        <button onClick={clearSources} className="mt-1 text-sm text-primary font-medium">
-          {t('clearSource')}
+      <p className="text-sm">{t('empty')}</p>
+      {hasFilter && (
+        <button onClick={clearFilters} className="mt-1 text-sm text-primary font-medium">
+          {nav('clear')}
         </button>
-      ) : (
-        hasFilter && (
-          <button onClick={clearFilters} className="mt-1 text-sm text-primary font-medium">
-            {nav('clear')}
-          </button>
-        )
       )}
     </div>
   );

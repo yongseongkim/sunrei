@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useTranslations } from 'next-intl';
 import { Minus, Plus, MapPin, LocateFixed } from 'lucide-react';
 import { useMapStore } from '@/stores/map-store';
 import { reverseGeocode } from '@/hooks/use-google-places';
@@ -81,6 +82,7 @@ function MapBtn({
 
 /** 모바일은 지도 영역이 좁아서 `zoom={false}`로 내 위치 버튼만 보여 준다. */
 export function MapControls({ zoom = true }: { zoom?: boolean }) {
+  const t = useTranslations('map');
   const map = useMapStore((s) => s.map);
   const panTo = useMapStore((s) => s.panTo);
   const initialSeed = useMapStore((s) => s.initialSeed);
@@ -104,16 +106,16 @@ export function MapControls({ zoom = true }: { zoom?: boolean }) {
     <div className="flex flex-col gap-2">
       {zoom && (
         <>
-          <MapBtn onClick={() => zoomBy(1)} label="Zoom in">
+          <MapBtn onClick={() => zoomBy(1)} label={t('zoomIn')}>
             <Plus className="h-[18px] w-[18px]" strokeWidth={2} />
           </MapBtn>
-          <MapBtn onClick={() => zoomBy(-1)} label="Zoom out">
+          <MapBtn onClick={() => zoomBy(-1)} label={t('zoomOut')}>
             <Minus className="h-[18px] w-[18px]" strokeWidth={2} />
           </MapBtn>
           <div className="h-1" />
         </>
       )}
-      <MapBtn onClick={recenter} label="My location" accent>
+      <MapBtn onClick={recenter} label={t('myLocation')} accent>
         <LocateFixed className="h-[17px] w-[17px]" strokeWidth={1.8} />
       </MapBtn>
     </div>

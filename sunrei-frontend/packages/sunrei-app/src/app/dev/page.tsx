@@ -2,7 +2,6 @@
 
 import { PlaceCard, PlaceCardSkeleton } from '@/components/place-card';
 import type { PlaceCardDTO, SourceDTO } from '@/dto';
-import { useState } from 'react';
 
 // 백엔드 데이터 없이 PlaceCard 상태를 눈으로 확인하는 개발용 페이지이며 앱 안에서는 링크하지 않는다.
 
@@ -61,22 +60,27 @@ function Cell({ label, children }: { label: string; children: React.ReactNode })
 }
 
 export default function DevSandbox() {
-  const [active, setActive] = useState(false);
   return (
     <div className="min-h-screen bg-background p-8">
       <h1 className="text-xl font-extrabold mb-6">PlaceCard — states</h1>
       <div className="flex flex-wrap gap-7">
-        <Cell label="One mention (compact)">
+        <Cell label="One mention">
           <PlaceCard card={single} />
         </Cell>
-        <Cell label="Many videos (rich)">
+        <Cell label="Several sources">
           <PlaceCard card={multi} />
         </Cell>
-        <Cell label="Active / selected (click)">
-          <PlaceCard card={single} active={active} onClick={() => setActive((v) => !v)} />
+        <Cell label="Closed">
+          <PlaceCard card={{ ...single, place: { ...single.place, isClosed: true } }} />
         </Cell>
-        <Cell label="Dimmed (tag filter miss)">
-          <PlaceCard card={single} dimmed />
+        <Cell label="Series preview">
+          <PlaceCard
+            card={single}
+            seriesTakes={[
+              { spotId: 'sp1', title: 'EP.1 Namba', context: 'A lantern-lit stone alley of tiny ramen and oden counters.' },
+              { spotId: 'sp5', title: 'EP.8 Namba again', context: 'Back for the late-night oden.' },
+            ]}
+          />
         </Cell>
         <Cell label="Loading">
           <PlaceCardSkeleton />

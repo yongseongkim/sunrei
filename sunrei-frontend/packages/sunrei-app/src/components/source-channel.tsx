@@ -1,21 +1,12 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { ChevronLeft, ExternalLink, Loader2 } from 'lucide-react';
+import { ChevronLeft, Loader2, MapPin, Play } from 'lucide-react';
 import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useSourceDetail } from '@/hooks/use-map';
 import { SectionLabel } from '@/components/desktop/SourceRail';
 import { Avatar, sourceAvatarUrl } from '@/components/wf';
-import type { SourceType } from '@/dto';
-
-const TYPE_LABEL: Record<SourceType, string> = {
-  YOUTUBE: 'YouTube',
-  INSTAGRAM: 'Instagram',
-  TV: 'TV',
-  ANIME: 'Anime',
-  OTHER: 'Other',
-};
 
 /**
  * 검색이나 "주변 소스" 레일에서 Source를 고르면 목록 자리에 열리는 채널 화면이다.
@@ -27,6 +18,7 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
   const nav = useTranslations('nav');
   const search = useTranslations('search');
   const td = useTranslations('detail');
+  const typeT = useTranslations('sourceType');
   const mapCenter = useMapStore((s) => s.mapCenter);
   const clearSources = useMapStore((s) => s.clearSources);
   const enterPreview = useUiStore((s) => s.enterVideoPreview);
@@ -73,7 +65,7 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
               <div className="min-w-0 flex-1">
                 <div className="truncate text-[16px] font-extrabold text-foreground">{source.name}</div>
                 <div className="text-[11.5px] font-semibold text-ink2">
-                  {TYPE_LABEL[source.type]}
+                  {typeT(source.type)}
                   {source.placeCount != null && ` · ${td('spotCount', { count: source.placeCount })}`}
                 </div>
               </div>
@@ -83,9 +75,10 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
                 href={source.externalUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2.5 inline-flex items-center gap-1.5 rounded-full border border-line2 bg-card px-3 py-1.5 text-[11.5px] font-bold text-foreground hover:border-ink3"
+                className="mt-2.5 inline-flex h-8 items-center gap-1.5 rounded-full border border-line2 bg-card px-[13px] text-[12.5px] font-bold text-foreground hover:border-ink3"
               >
-                <ExternalLink className="h-3.5 w-3.5" />
+                {/* 라벨 끝의 "↗"가 외부 링크 표시라 아이콘은 YouTube 재생 표시만 둔다. */}
+                {source.type === 'YOUTUBE' && <Play className="h-3 w-3 fill-primary text-primary" />}
                 {externalLabel}
               </a>
             )}
@@ -96,6 +89,12 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
       <div className="flex-1 overflow-auto px-4 pb-2 pt-[15px]">
         <SectionLabel count={sunreis.length}>{t('series')}</SectionLabel>
         <div className="mt-[11px] flex flex-col gap-2.5">
+          {!isLoading && source && sunreis.length === 0 && (
+            <div className="flex flex-col items-center gap-2.5 py-9 text-ink2">
+              <MapPin className="h-9 w-9 opacity-40" strokeWidth={1.4} />
+              <span className="text-[13.5px] font-bold">{t('empty')}</span>
+            </div>
+          )}
           {sunreis.map((s) => (
             <button
               key={s.id}

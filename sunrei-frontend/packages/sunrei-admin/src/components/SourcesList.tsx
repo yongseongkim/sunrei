@@ -4,14 +4,14 @@ import { SourceRowDTO } from '@/api/admin';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Edit2, ExternalLink } from 'lucide-react';
+import { Edit2 } from 'lucide-react';
 
 const TYPE_BEHAVIOR: Record<string, string> = {
-  YOUTUBE: 'links out ↗',
-  INSTAGRAM: 'links out ↗',
-  TV: '✦ managed page',
-  ANIME: '✦ managed page',
-  OTHER: '✦ managed page',
+  YOUTUBE: 'Links out ↗',
+  INSTAGRAM: 'Links out ↗',
+  TV: 'Managed page',
+  ANIME: 'Managed page',
+  OTHER: 'Managed page',
 };
 
 export default function SourcesList({
@@ -46,14 +46,7 @@ export default function SourcesList({
               </div>
             </div>
             <div className="flex items-center gap-3 shrink-0">
-              <span className="text-xs text-muted-foreground hidden sm:inline">
-                {s.type === 'YOUTUBE' || s.type === 'INSTAGRAM' ? (
-                  <ExternalLink className="inline h-3 w-3" />
-                ) : (
-                  '✦'
-                )}{' '}
-                {TYPE_BEHAVIOR[s.type]}
-              </span>
+              <span className="text-xs text-muted-foreground hidden sm:inline">{TYPE_BEHAVIOR[s.type]}</span>
               <Button variant="ghost" size="sm" onClick={() => onEdit(s.id!)}>
                 <Edit2 className="h-4 w-4" />
               </Button>

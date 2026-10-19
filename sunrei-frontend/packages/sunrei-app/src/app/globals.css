@@ -46,39 +46,12 @@
   --line2: #d2cdc1;
   --ink2: #6e6860;
   --ink3: #a39e95;
-}
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-
-  /* 다크 모드에서는 primary, secondary, accent를 각각 밝힌 Cornflower Blue, Tendril, Viola로 쓴다. */
-  --primary: oklch(0.72 0.18 265);
-  --primary-foreground: oklch(0.145 0 0);
-
-  --secondary: oklch(0.75 0.12 130);
-  --secondary-foreground: oklch(0.145 0 0);
-
-  --accent: oklch(0.74 0.22 290);
-  --accent-foreground: oklch(0.145 0 0);
-
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.72 0.18 265);
-
-  --accent-soft: oklch(0.32 0.06 290);
-  --accent-ink: oklch(0.8 0.16 290);
-  --line: oklch(1 0 0 / 12%);
-  --line2: oklch(1 0 0 / 18%);
-  --ink2: oklch(0.78 0 0);
-  --ink3: oklch(0.62 0 0);
+  /* 지도 핀, 별점, 영업 중 표시처럼 토큰 밖에 흩어져 있던 색이다. 앱은 라이트 테마만 쓴다. */
+  --pin: #6495ED;
+  --pin-selected: #3f63a8;
+  --star: #f5a623;
+  --success: #2f9e5a;
 }
 
 @layer base {
