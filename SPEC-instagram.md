@@ -993,7 +993,7 @@ admin(`packages/sunrei-admin/src`):
 | `components/sunrei-form/SpotCard.tsx:44, 69-82` | `sourceLink`를 본다. YouTube 썸네일은 YouTube 링크일 때만 그대로 보인다. placeholder는 "YouTube timestamp or Instagram post link" |
 | `lib/schemas.ts:59` | source type enum에 `'INSTAGRAM'` 추가 |
 | `lib/schemas.ts:67-74` | `externalUrl`을 YOUTUBE와 INSTAGRAM에서 필수로 |
-| `components/SourceForm.tsx:24, 42, 67, 114-116, 156-184` | `TYPES`에 INSTAGRAM 추가. 설명 문구, URL 라벨, 이름·시놉시스 숨김에 쓰는 `isYoutube`를 `linksOut = type === 'YOUTUBE' \|\| type === 'INSTAGRAM'`으로 바꾼다. INSTAGRAM은 포스터 업로드를 계속 보여 준다(프로필 사진을 가져오는 스크립트가 없고, Instagram CDN 주소는 만료된다) |
+| `components/SourceForm.tsx:24, 42, 67, 114-116, 156-184` | `TYPES`에 INSTAGRAM 추가. 설명 문구, URL 라벨, 이름·시놉시스 숨김에 쓰는 `isYoutube`를 `linksOut = type === 'YOUTUBE' \|\| type === 'INSTAGRAM'`으로 바꾼다. INSTAGRAM은 프로필 사진 사본을 아바타로 보여 주고 업로드 칸은 없다(수집 스크립트가 넣고 `--refresh-picture`로 갱신한다) |
 | `components/SourcesList.tsx:9-14, 49` | `TYPE_BEHAVIOR.INSTAGRAM = 'links out ↗'`. 외부로 나가는 두 타입 모두 외부 링크 아이콘 |
 | `components/sunrei-form/SourceSelectField.tsx:24-29` | `TYPE_BADGE.INSTAGRAM = 'Instagram'` |
 | `app/(dashboard)/sources/page.tsx:30` | 부제 "(YouTube / Instagram / TV / Anime / Other)" |

@@ -2,7 +2,6 @@
 
 import { PlaceInput } from '@/api/admin';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
 import {
   Dialog,
   DialogContent,
@@ -11,10 +10,9 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { config } from '@/lib/config';
-import { MapPin, Navigation, Search } from 'lucide-react';
+import { MapPin, Search } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import GoogleMap from './GoogleMap';
 
@@ -43,7 +41,8 @@ export default function PlaceSearchModal({
   const [mapCenter, setMapCenter] = useState({ lat: 35.6762, lng: 139.6503 }); // 도쿄
   const [mapZoom, setMapZoom] = useState(14);
   const [addressSearchInput, setAddressSearchInput] = useState('');
-  const [coordinateSearchInput, setCoordinateSearchInput] = useState('');
+  const [latInput, setLatInput] = useState('');
+  const [lngInput, setLngInput] = useState('');
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const searchBoxRef = useRef<google.maps.places.SearchBox | null>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -57,7 +56,8 @@ export default function PlaceSearchModal({
   useEffect(() => {
     if (isOpen) {
       setAddressSearchInput('');
-      setCoordinateSearchInput('');
+      setLatInput('');
+      setLngInput('');
 
       if (searchInputRef.current) {
         searchInputRef.current.value = '';
@@ -203,13 +203,33 @@ export default function PlaceSearchModal({
     );
   };
 
+  // 검색창에서 제안을 고르지 않고 Search를 누르면 입력한 말로 찾아 첫 결과를 고른다.
+  const handleAddressSearch = () => {
+    const query = addressSearchInput.trim();
+    if (!query || !map) return;
+    new google.maps.places.PlacesService(map).textSearch({ query }, (results, status) => {
+      const place = results?.[0];
+      const location = place?.geometry?.location;
+      if (status !== google.maps.places.PlacesServiceStatus.OK || !place || !location) return;
+      const lat = location.lat();
+      const lng = location.lng();
+      setSelectedPlace({
+        name: place.name || '',
+        address: place.formatted_address || '',
+        latitude: lat,
+        longitude: lng,
+        googleMapsId: place.place_id ?? null,
+      });
+      setMapCenter({ lat, lng });
+      map.setCenter({ lat, lng });
+      map.setZoom(16);
+    });
+  };
+
   const handleCoordinateSearch = () => {
-    const coords = coordinateSearchInput.match(
-      /(-?\d+\.?\d*)[,\s]+(-?\d+\.?\d*)/,
-    );
-    if (coords) {
-      const lat = parseFloat(coords[1]);
-      const lng = parseFloat(coords[2]);
+    const lat = parseFloat(latInput);
+    const lng = parseFloat(lngInput);
+    if (Number.isFinite(lat) && Number.isFinite(lng)) {
 
       if (!geocoder.current) {
         geocoder.current = new google.maps.Geocoder();
@@ -277,87 +297,74 @@ export default function PlaceSearchModal({
 
   const handleClose = () => {
     setAddressSearchInput('');
-    setCoordinateSearchInput('');
+    setLatInput('');
+    setLngInput('');
     if (searchInputRef.current) {
       searchInputRef.current.value = '';
     }
     onClose();
   };
 
+  const hasPoint = !!selectedPlace.latitude && !!selectedPlace.longitude;
+
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
+      <DialogContent className="flex max-h-[90vh] flex-col overflow-hidden sm:max-w-[640px]">
         <DialogHeader>
-          <DialogTitle className="text-xl flex items-center gap-2">
-            <MapPin className="h-5 w-5" />
-            Search Location
-          </DialogTitle>
+          <DialogTitle className="text-[17px]">Select Location</DialogTitle>
         </DialogHeader>
 
-        <div className="flex-1 overflow-y-auto space-y-4">
+        <div className="flex-1 space-y-3 overflow-y-auto">
           <Tabs defaultValue="address" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="address">
-                <MapPin className="h-4 w-4 mr-2" />
-                Search by Address
-              </TabsTrigger>
-              <TabsTrigger value="coordinates">
-                <Navigation className="h-4 w-4 mr-2" />
-                Search by Coordinates
-              </TabsTrigger>
+              <TabsTrigger value="address">Search by Address</TabsTrigger>
+              <TabsTrigger value="coordinates">Search by Coordinates</TabsTrigger>
             </TabsList>
 
-            <TabsContent value="address" className="mt-4 space-y-2">
-              <Label htmlFor="address-search">Address or Place Name</Label>
-              <Input
-                id="address-search"
-                ref={searchInputRef}
-                type="text"
-                value={addressSearchInput}
-                onChange={(e) => setAddressSearchInput(e.target.value)}
-                placeholder="Enter address or place name (e.g., Tokyo Tower, Shibuya Station)"
-                className="w-full"
-              />
-              <p className="text-xs text-muted-foreground">
-                Start typing to search for places. Select from suggestions or
-                click on the map.
-              </p>
-            </TabsContent>
-
-            <TabsContent value="coordinates" className="mt-4 space-y-2">
-              <Label htmlFor="coord-search">GPS Coordinates</Label>
+            <TabsContent value="address" className="mt-3">
               <div className="flex gap-2">
                 <Input
-                  id="coord-search"
+                  id="address-search"
+                  ref={searchInputRef}
                   type="text"
-                  value={coordinateSearchInput}
-                  onChange={(e) => setCoordinateSearchInput(e.target.value)}
-                  placeholder="35.6762, 139.6503"
+                  value={addressSearchInput}
+                  onChange={(e) => setAddressSearchInput(e.target.value)}
+                  placeholder="Address or place name (e.g., Tokyo Tower, Shibuya Station)"
                   className="flex-1"
-                  onKeyPress={(e) => {
-                    if (e.key === 'Enter') {
-                      handleCoordinateSearch();
-                    }
-                  }}
                 />
-                <Button
-                  onClick={handleCoordinateSearch}
-                  variant="default"
-                  size="default"
-                  className="min-w-[100px]"
-                >
-                  <Search className="h-4 w-4 mr-2" />
+                <Button type="button" variant="outline" onClick={handleAddressSearch}>
+                  <Search className="h-3.5 w-3.5" />
                   Search
                 </Button>
               </div>
-              <p className="text-xs text-muted-foreground">
-                Enter coordinates in format: latitude, longitude (e.g., 35.6762,
-                139.6503)
-              </p>
+            </TabsContent>
+
+            <TabsContent value="coordinates" className="mt-3">
+              <div className="grid grid-cols-[1fr_1fr_auto] gap-2">
+                <Input
+                  id="coord-lat"
+                  value={latInput}
+                  onChange={(e) => setLatInput(e.target.value)}
+                  placeholder="Latitude (35.6762)"
+                  className="font-mono"
+                  onKeyDown={(e) => e.key === 'Enter' && handleCoordinateSearch()}
+                />
+                <Input
+                  id="coord-lng"
+                  value={lngInput}
+                  onChange={(e) => setLngInput(e.target.value)}
+                  placeholder="Longitude (139.6503)"
+                  className="font-mono"
+                  onKeyDown={(e) => e.key === 'Enter' && handleCoordinateSearch()}
+                />
+                <Button type="button" variant="outline" onClick={handleCoordinateSearch}>
+                  Go
+                </Button>
+              </div>
             </TabsContent>
           </Tabs>
 
-          <div className="h-96 border rounded-lg overflow-hidden">
+          <div className="h-96 overflow-hidden rounded-lg border">
             <GoogleMap
               apiKey={config.googleMaps.apiKey}
               center={mapCenter}
@@ -365,110 +372,71 @@ export default function PlaceSearchModal({
               onClick={handleMapClick}
               onLoad={setMap}
               markers={
-                selectedPlace.latitude && selectedPlace.longitude
-                  ? [
-                      {
-                        position: {
-                          lat: selectedPlace.latitude,
-                          lng: selectedPlace.longitude,
-                        },
-                      },
-                    ]
+                hasPoint
+                  ? [{ position: { lat: selectedPlace.latitude, lng: selectedPlace.longitude } }]
                   : []
               }
             />
           </div>
 
-          <Card className="p-4">
-            <h3 className="font-medium mb-3">Selected Location</h3>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
+          <div className="space-y-2.5 rounded-lg bg-muted p-3">
+            <div className="flex items-center gap-1.5 text-[11px] font-semibold text-muted-foreground">
+              <MapPin className="h-3.5 w-3.5 text-primary" />
+              Selected Location
+              {hasPoint && (
+                <span className="ml-auto font-mono">
+                  {selectedPlace.latitude.toFixed(5)}, {selectedPlace.longitude.toFixed(5)}
+                </span>
+              )}
+            </div>
+            <div className="grid grid-cols-[1fr_1.4fr] gap-2.5">
+              <div className="space-y-1.5">
                 <Label htmlFor="name">Name</Label>
                 <Input
                   id="name"
-                  type="text"
                   value={selectedPlace.name || ''}
-                  onChange={(e) =>
-                    setSelectedPlace({ ...selectedPlace, name: e.target.value })
-                  }
-                  placeholder="Enter place name"
+                  onChange={(e) => setSelectedPlace({ ...selectedPlace, name: e.target.value })}
+                  placeholder="Place name"
+                  className="bg-background"
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <Label htmlFor="address">Address</Label>
                 <Input
                   id="address"
-                  type="text"
                   value={selectedPlace.address || ''}
-                  onChange={(e) =>
-                    setSelectedPlace({
-                      ...selectedPlace,
-                      address: e.target.value,
-                    })
-                  }
-                  placeholder="Enter address"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="latitude">Latitude</Label>
-                <Input
-                  id="latitude"
-                  type="number"
-                  value={selectedPlace.latitude || ''}
-                  onChange={(e) =>
-                    setSelectedPlace({
-                      ...selectedPlace,
-                      latitude: parseFloat(e.target.value),
-                    })
-                  }
-                  placeholder="0.000000"
-                  step="any"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="longitude">Longitude</Label>
-                <Input
-                  id="longitude"
-                  type="number"
-                  value={selectedPlace.longitude || ''}
-                  onChange={(e) =>
-                    setSelectedPlace({
-                      ...selectedPlace,
-                      longitude: parseFloat(e.target.value),
-                    })
-                  }
-                  placeholder="0.000000"
-                  step="any"
-                />
-              </div>
-              <div className="col-span-2 space-y-2">
-                <Label htmlFor="google-place-id">Google place ID</Label>
-                <Input
-                  id="google-place-id"
-                  readOnly
-                  value={selectedPlace.googleMapsId ?? ''}
-                  placeholder="Not linked: pick a search result or a place icon on the map"
-                  className="font-mono text-xs bg-muted/40"
+                  onChange={(e) => setSelectedPlace({ ...selectedPlace, address: e.target.value })}
+                  placeholder="Address"
+                  className="bg-background"
                 />
               </div>
             </div>
-          </Card>
+            {selectedPlace.googleMapsId && (
+              <p className="text-xs text-muted-foreground">
+                Results follow the browser language — fix the name/address here before adding.
+              </p>
+            )}
+          </div>
+
+          <div className="space-y-1.5">
+            <Label htmlFor="google-place-id">Google place ID</Label>
+            <Input
+              id="google-place-id"
+              readOnly
+              value={selectedPlace.googleMapsId ?? ''}
+              placeholder="Not linked: pick a search result or a place icon on the map"
+              className="bg-muted font-mono text-xs shadow-none"
+            />
+          </div>
         </div>
 
-        <Separator className="my-4" />
-
-        <div className="flex justify-end gap-2">
+        <div className="flex justify-end gap-2 pt-2">
           <Button onClick={handleClose} variant="outline">
             Cancel
           </Button>
           <Button
             onClick={handleSave}
-            disabled={
-              !selectedPlace.name ||
-              !selectedPlace.address ||
-              selectedPlace.latitude === 0 ||
-              selectedPlace.longitude === 0
-            }
+            disabled={!selectedPlace.name || !selectedPlace.address || !hasPoint}
           >
             Add Location
           </Button>

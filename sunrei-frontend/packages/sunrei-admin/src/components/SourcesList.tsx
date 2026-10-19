@@ -31,29 +31,27 @@ export default function SourcesList({
     );
   }
 
+  // 목록은 카드 하나에 행을 구분선으로 나눈다.
   return (
-    <div className="space-y-2">
+    <Card className="gap-0 divide-y py-0">
       {sources.map((s) => (
-        <Card key={s.id} className="py-3">
-          <CardContent className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3 min-w-0">
-              <Badge variant="secondary">{s.type}</Badge>
-              <div className="min-w-0">
-                <p className="font-medium truncate">{s.name}</p>
-                <p className="text-xs text-muted-foreground truncate">
-                  {s.sunreiCount ?? 0} sunreis · {s.spotCount ?? 0} spots
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 shrink-0">
-              <span className="text-xs text-muted-foreground hidden sm:inline">{TYPE_BEHAVIOR[s.type]}</span>
-              <Button variant="ghost" size="sm" onClick={() => onEdit(s.id!)}>
-                <Edit2 className="h-4 w-4" />
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+        <div key={s.id} className="flex items-center gap-3 px-4 py-3">
+          <span className="w-24 shrink-0">
+            <Badge variant="outline">{s.type}</Badge>
+          </span>
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-sm font-semibold">{s.name}</p>
+            <p className="mt-0.5 truncate text-[12.5px] text-muted-foreground">
+              {s.sunreiCount ?? 0} sunreis · {s.spotCount ?? 0} spots
+            </p>
+          </div>
+          <span className="hidden text-[12.5px] text-muted-foreground sm:inline">{TYPE_BEHAVIOR[s.type]}</span>
+          <Button variant="outline" size="sm" onClick={() => onEdit(s.id!)}>
+            <Edit2 className="h-3.5 w-3.5" />
+            Edit
+          </Button>
+        </div>
       ))}
-    </div>
+    </Card>
   );
 }

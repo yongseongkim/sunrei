@@ -5,19 +5,26 @@ import { CreateTagRequest, UpdateTagRequest, TagDTO } from '@/api/admin';
 export const tagKeys = {
   all: ['tags'] as const,
   lists: () => [...tagKeys.all, 'list'] as const,
-  list: (nextToken?: string, size?: number) =>
-    [...tagKeys.lists(), { nextToken, size }] as const,
   search: (query: string) => [...tagKeys.all, 'search', query] as const,
   details: () => [...tagKeys.all, 'detail'] as const,
   detail: (id: string) => [...tagKeys.details(), id] as const,
 };
 
-export function useTags(nextToken?: string, size?: number) {
+/** 태그 화면은 번호로 페이지를 넘기므로 서버 페이지를 모두 이어 받아 브라우저에서 나눈다. */
+export function useAllTags() {
   return useQuery({
-    queryKey: tagKeys.list(nextToken, size),
+    queryKey: [...tagKeys.lists(), 'all'] as const,
     queryFn: async () => {
-      const response = await adminApi.listTags(nextToken, size);
-      return response.data;
+      const tags: TagDTO[] = [];
+      const spotCountByTagId: Record<string, number> = {};
+      let token: string | undefined;
+      do {
+        const { data } = await adminApi.listTags(token, 100);
+        tags.push(...data.data);
+        Object.assign(spotCountByTagId, data.spotCountByTagId ?? {});
+        token = data.nextToken ?? undefined;
+      } while (token);
+      return { tags, spotCountByTagId };
     },
   });
 }

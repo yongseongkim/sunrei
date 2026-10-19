@@ -1,65 +1,56 @@
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { MapPin, X } from 'lucide-react';
+import { MapPin, Plus, X } from 'lucide-react';
 import { UseFormSetValue, UseFormWatch } from 'react-hook-form';
 import { SunreiFormValue } from '@/lib/schemas';
+import { cn } from '@/lib/utils';
 
 interface PlaceSectionProps {
   spotIndex: number;
   watch: UseFormWatch<SunreiFormValue>;
   setValue: UseFormSetValue<SunreiFormValue>;
   onOpenMap: (spotIndex: number) => void;
+  error?: boolean;
 }
 
-export default function PlaceSection({
-  spotIndex,
-  watch,
-  setValue,
-  onOpenMap,
-}: PlaceSectionProps) {
+export default function PlaceSection({ spotIndex, watch, setValue, onOpenMap, error }: PlaceSectionProps) {
   const place = watch(`spots.${spotIndex}.place`) ?? null;
 
-  const handleRemovePlace = () => {
-    setValue(`spots.${spotIndex}.place`, null);
-  };
-
   return (
-    <div className="space-y-1">
-      <div className="flex items-center justify-between">
-        <Label className="text-xs">Place</Label>
-        <Button
-          type="button"
-          onClick={() => onOpenMap(spotIndex)}
-          variant="outline"
-          size="sm"
-          className="h-6 text-xs px-2"
-        >
-          <MapPin className="h-2.5 w-2.5 mr-1" />
-          {place ? 'Edit' : 'Add'}
-        </Button>
-      </div>
-
-      {place && (
-        <div className="bg-muted rounded-md p-1.5 flex items-start justify-between">
-          <div className="flex-1 space-y-0">
-            <p className="text-xs font-medium truncate">
-              {place.name || 'Unnamed Place'}
-            </p>
-            <p className="text-[10px] text-muted-foreground truncate">
-              {place.address}
-            </p>
-            <p className="text-[10px] font-mono text-muted-foreground">
-              {place.latitude.toFixed(5)}, {place.longitude.toFixed(5)}
-            </p>
+    <div className="space-y-1.5">
+      <Label className="text-[13px] font-semibold">Place</Label>
+      {place ? (
+        <div className="flex items-center gap-2 rounded-lg bg-muted px-2.5 py-[7px] text-[12.5px]">
+          <MapPin className="h-3.5 w-3.5 shrink-0 text-primary" />
+          <div className="min-w-0 flex-1">
+            <p className="truncate font-semibold">{place.name || 'Unnamed Place'}</p>
+            <p className="truncate text-[11.5px] text-muted-foreground">{place.address}</p>
           </div>
+          <Button type="button" variant="outline" size="sm" className="h-7" onClick={() => onOpenMap(spotIndex)}>
+            Edit
+          </Button>
           <Button
             type="button"
-            onClick={handleRemovePlace}
             variant="ghost"
             size="sm"
-            className="h-5 w-5 p-0 ml-1"
+            className="h-7 w-7 p-0 text-muted-foreground"
+            aria-label="Remove place"
+            onClick={() => setValue(`spots.${spotIndex}.place`, null)}
           >
-            <X className="h-2.5 w-2.5" />
+            <X className="h-3.5 w-3.5" />
+          </Button>
+        </div>
+      ) : (
+        <div
+          className={cn(
+            'flex items-center gap-2 rounded-lg border border-dashed px-2.5 py-[7px] text-[12.5px] text-muted-foreground',
+            error && 'border-destructive'
+          )}
+        >
+          No place yet
+          <Button type="button" variant="outline" size="sm" className="ml-auto h-7" onClick={() => onOpenMap(spotIndex)}>
+            <Plus className="h-3 w-3" />
+            Add
           </Button>
         </div>
       )}

@@ -25,6 +25,7 @@ interface ImageUploadProps {
   onChange: (images: MultiSizeImageDTO[]) => void;
   maxImages?: number;
   label?: string;
+  /** spot 카드처럼 좁은 곳에서는 52px 칸과 "+" 칸만 보여 준다. */
   compact?: boolean;
 }
 
@@ -44,6 +45,7 @@ export default function ImageUpload({
   const [uploadingImages, setUploadingImages] = useState<UploadingImage[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [urlInput, setUrlInput] = useState('');
+  const [showUrl, setShowUrl] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -169,11 +171,109 @@ export default function ImageUpload({
     onChange(newImages);
   };
 
+  if (compact) {
+    const full = images.length + uploadingImages.length >= maxImages;
+    return (
+      <div className="space-y-1.5">
+        <div className="flex items-center gap-2">
+          <Label className="text-[13px] font-semibold">{`${label} (${images.length}/${maxImages})`}</Label>
+          {!full && (
+            <button
+              type="button"
+              onClick={() => setShowUrl((v) => !v)}
+              className="ml-auto text-xs text-muted-foreground hover:text-foreground"
+            >
+              From URL
+            </button>
+          )}
+        </div>
+        <div className="flex flex-wrap gap-1.5">
+          {images.map((multiSizeImage, index) => {
+            // 서버는 큰 것부터 담으므로 마지막이 52px 칸에 맞는 가장 작은 크기다.
+            const smallest =
+              multiSizeImage.images[multiSizeImage.images.length - 1];
+            return (
+              <div
+                key={`${smallest?.url || index}-${index}`}
+                className="group relative h-[52px] w-[52px] overflow-hidden rounded-md border bg-muted"
+              >
+                {smallest?.url && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={smallest.url}
+                    alt={`Image ${index + 1}`}
+                    className="h-full w-full object-cover"
+                  />
+                )}
+                <button
+                  type="button"
+                  onClick={() => handleRemoveImage(index)}
+                  aria-label="Remove image"
+                  className="absolute right-0.5 top-0.5 hidden h-4 w-4 place-items-center rounded-full bg-destructive text-white group-hover:grid"
+                >
+                  <X className="h-2.5 w-2.5" />
+                </button>
+              </div>
+            );
+          })}
+          {uploadingImages.map((u) => (
+            <div
+              key={u.id}
+              className="grid h-[52px] w-[52px] place-items-center rounded-md border bg-muted"
+            >
+              <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
+            </div>
+          ))}
+          {!full && (
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              aria-label="Add images"
+              className="grid h-[52px] w-[52px] place-items-center rounded-md border border-dashed text-muted-foreground hover:bg-muted"
+            >
+              <Plus className="h-3.5 w-3.5" />
+            </button>
+          )}
+        </div>
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="image/*"
+          multiple
+          className="hidden"
+          onChange={handleFileUpload}
+        />
+        {showUrl && !full && (
+          <div className="flex gap-1.5">
+            <Input
+              value={urlInput}
+              onChange={(e) => setUrlInput(e.target.value)}
+              placeholder="https://example.com/image.jpg"
+              className="h-8 text-xs"
+            />
+            <Button
+              type="button"
+              size="sm"
+              variant="outline"
+              onClick={handleUrlAdd}
+              disabled={!urlInput.trim()}
+            >
+              Add
+            </Button>
+          </div>
+        )}
+        {error && (
+          <p className="text-[11px] font-medium text-destructive">{error}</p>
+        )}
+      </div>
+    );
+  }
+
   return (
-    <div className={compact ? "space-y-1" : "space-y-4"}>
+    <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <Label className={compact ? "text-[10px]" : undefined}>{label}</Label>
-        <Badge variant="outline" className={compact ? "text-[10px] px-1.5 h-4" : undefined}>
+        <Label>{label}</Label>
+        <Badge variant="outline">
           {images.length} / {maxImages} images
         </Badge>
       </div>
@@ -187,20 +287,20 @@ export default function ImageUpload({
 
       {images.length < maxImages && (
         <Tabs defaultValue="file" className="w-full">
-          <TabsList className={compact ? "grid w-full grid-cols-2 h-7" : "grid w-full grid-cols-2"}>
-            <TabsTrigger className={compact ? "text-xs h-6" : ""} value="file">
-              <Upload className={compact ? "h-3 w-3 mr-1" : "h-4 w-4 mr-2"} />
-              {compact ? 'File' : 'Upload File'}
+          <TabsList className={'grid w-full grid-cols-2'}>
+            <TabsTrigger className={''} value="file">
+              <Upload className={'h-4 w-4 mr-2'} />
+              {'Upload File'}
             </TabsTrigger>
-            <TabsTrigger className={compact ? "text-xs h-6" : ""} value="url">
-              <Link className={compact ? "h-3 w-3 mr-1" : "h-4 w-4 mr-2"} />
-              {compact ? 'URL' : 'From URL'}
+            <TabsTrigger className={''} value="url">
+              <Link className={'h-4 w-4 mr-2'} />
+              {'From URL'}
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="file" className={compact ? "mt-1" : "mt-4"}>
-            <Card className={compact ? "py-1 px-1" : ""}>
-              <CardContent className={compact ? "pt-2 pb-1 px-1" : "pt-6"}>
+          <TabsContent value="file" className={'mt-4'}>
+            <Card className={''}>
+              <CardContent className={'pt-6'}>
                 <div className="space-y-1">
                   <input
                     ref={fileInputRef}
@@ -214,64 +314,60 @@ export default function ImageUpload({
                   <Button
                     type="button"
                     variant="outline"
-                    className={compact ? "w-full h-7 text-xs" : "w-full"}
+                    className={'w-full'}
                     onClick={() => fileInputRef.current?.click()}
                     disabled={uploadingImages.length > 0}
                   >
                     {uploadingImages.length > 0 ? (
                       <>
-                        <Loader2 className={compact ? "h-3 w-3 mr-1 animate-spin" : "h-4 w-4 mr-2 animate-spin"} />
+                        <Loader2 className={'h-4 w-4 mr-2 animate-spin'} />
                         Uploading...
                       </>
                     ) : (
                       <>
-                        <Plus className={compact ? "h-3 w-3 mr-1" : "h-4 w-4 mr-2"} />
+                        <Plus className={'h-4 w-4 mr-2'} />
                         Choose Images
                       </>
                     )}
                   </Button>
-                  {!compact && (
-                    <p className="text-xs text-muted-foreground text-center">
-                      Max file size: 5MB. Supported formats: JPG, PNG, GIF, WebP
-                    </p>
-                  )}
+                  <p className="text-xs text-muted-foreground text-center">
+                    Max file size: 5MB. Supported formats: JPG, PNG, GIF, WebP
+                  </p>
                 </div>
               </CardContent>
             </Card>
           </TabsContent>
 
-          <TabsContent value="url" className={compact ? "mt-1" : "mt-4"}>
-            <Card className={compact ? "py-1 px-1" : ""}>
-              <CardContent className={compact ? "pt-2 pb-1 px-1" : "pt-6"}>
+          <TabsContent value="url" className={'mt-4'}>
+            <Card className={''}>
+              <CardContent className={'pt-6'}>
                 <div className="space-y-1">
-                  <div className={compact ? "flex gap-1" : "flex gap-2"}>
+                  <div className={'flex gap-2'}>
                     <Input
                       type="url"
                       placeholder="https://example.com/image.jpg"
                       value={urlInput}
                       onChange={(e) => setUrlInput(e.target.value)}
                       disabled={uploadingImages.length > 0}
-                      className={compact ? "h-7 text-xs" : ""}
+                      className={''}
                     />
                     <Button
                       type="button"
                       onClick={handleUrlAdd}
                       disabled={uploadingImages.length > 0 || !urlInput.trim()}
-                      className={compact ? "h-7 px-2 text-xs" : ""}
+                      className={''}
                     >
                       {uploadingImages.length > 0 ? (
-                        <Loader2 className={compact ? "h-3 w-3 animate-spin" : "h-4 w-4 animate-spin"} />
+                        <Loader2 className={'h-4 w-4 animate-spin'} />
                       ) : (
                         'Add'
                       )}
                     </Button>
                   </div>
-                  {!compact && (
-                    <p className="text-xs text-muted-foreground">
-                      Enter a direct link to an image. The image will be
-                      downloaded and stored.
-                    </p>
-                  )}
+                  <p className="text-xs text-muted-foreground">
+                    Enter a direct link to an image. The image will be
+                    downloaded and stored.
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -280,10 +376,10 @@ export default function ImageUpload({
       )}
 
       {(images.length > 0 || uploadingImages.length > 0) && (
-        <div className={compact ? "grid grid-cols-4 gap-1" : "grid grid-cols-2 md:grid-cols-4 gap-4"}>
+        <div className={'grid grid-cols-2 md:grid-cols-4 gap-4'}>
           {uploadingImages.map((uploadingImg) => (
             <div key={uploadingImg.id} className="relative">
-              <Card className={compact ? "overflow-hidden rounded-md" : "overflow-hidden"}>
+              <Card className={'overflow-hidden'}>
                 <div className="aspect-square relative">
                   <img
                     src={uploadingImg.preview}
@@ -314,7 +410,7 @@ export default function ImageUpload({
                 key={`${largestImage?.url || index}-${index}`}
                 className="relative group"
               >
-                <Card className={compact ? "overflow-hidden rounded-md" : "overflow-hidden"}>
+                <Card className={'overflow-hidden'}>
                   <div className="aspect-square relative">
                     {largestImage?.url ? (
                       <img
@@ -335,15 +431,13 @@ export default function ImageUpload({
                       type="button"
                       variant="destructive"
                       size="sm"
-                      className={compact
-                        ? "absolute top-0.5 right-0.5 opacity-0 group-hover:opacity-100 transition-opacity h-4 w-4 p-0"
-                        : "absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"}
+                      className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
                       onClick={() => handleRemoveImage(index)}
                     >
-                      <X className={compact ? "h-2.5 w-2.5" : "h-4 w-4"} />
+                      <X className={'h-4 w-4'} />
                     </Button>
                   </div>
-                  {!compact && largestImage?.width && largestImage?.height && (
+                  {largestImage?.width && largestImage?.height && (
                     <div className="p-2 text-xs text-muted-foreground text-center">
                       {largestImage.width} × {largestImage.height}
                     </div>

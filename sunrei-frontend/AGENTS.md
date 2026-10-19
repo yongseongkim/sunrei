@@ -115,11 +115,15 @@ pnpm codegen
 ## sunrei-admin
 
 - 메뉴는 Content(`/sunreis`), Channels / Sources(`/sources`), Places(`/places`), Tags(`/tags`)이며 `/`는 `/sunreis`로 보낸다.
+  사이드바는 접으면 아이콘 줄로 남고(`collapsible="icon"`), 상단 바에 "Sunrei Admin › 화면" 경로를 보여 준다.
+- 어드민은 Tailwind 3.4를 쓴다. shadcn 부품을 새로 가져오면 Tailwind 4 문법(`w-(--var)`, `size-8!`, `--spacing()`)을 3.4 문법(`w-[var(--var)]`, `!size-8`)으로 바꿔야 동작한다.
+- 목록 화면(Content, Sources, Places)은 카드 하나에 행을 구분선으로 나눈다.
 - Sunrei 폼(`src/components/SunreiForm.tsx`, `src/components/sunrei-form/`)은 Source, 공개 상태, 요약, 이미지, spot 목록을 한 요청으로 저장한다.
   요청에서 빠진 기존 spot은 서버가 삭제한다.
 - spot의 장소는 `PlaceSearchModal`에서 Google Places 검색, 좌표 입력, 지도 클릭 중 하나로 고른다.
   검색 결과나 지도의 가게 아이콘으로 고르면 Google place ID도 저장해, 서버의 장소 중복 판정과 앱의 Google 정보 카드에 쓴다.
   빈 곳 클릭과 좌표 입력은 Google place ID 없이 저장한다.
+  좌표는 지도나 좌표 탭으로만 정하고, 이름과 주소는 추가하기 전에 고칠 수 있다(브라우저가 영어면 Google 결과가 영어 이름으로 들어온다).
 - 저장할 때 spot마다 제목, 장소, 링크 형식을 검사해, 오류가 있는 spot 카드에 빨간 테두리와 필드별 문구를 보이고 Save 옆에 오류 spot 수를 보인다.
   오른쪽 지도의 핀 번호는 spot 목록 번호와 같다.
 - 공개 상태는 `published` 값으로 보내고 `published_at`은 서버가 정한다.
@@ -127,7 +131,9 @@ pnpm codegen
 - 이미지는 `/admin/images/*` API로 서버에 올리며 Sunrei당 10장, spot당 5장까지다.
 - 태그는 spot에 붙는다.
   폼에서 없는 태그를 입력하면 한국어와 영어 라벨을 모두 입력값으로 만들고, 영어 번역은 Tags 화면에서 고친다.
+  Tags 화면의 New Tag로 두 라벨을 넣어 만들 수도 있으며, 목록은 전체를 받아 브라우저에서 번호 페이지로 나눈다.
 - YouTube와 Instagram Source는 `externalUrl`(채널이나 프로필 주소)이 필수다.
+  Instagram Source의 아바타는 수집 스크립트가 넣은 프로필 사진 사본이라 폼에서 올리지 않고(`instagram_accounts.py update --refresh-picture`로 갱신), 포스터 업로드는 TV/Anime/Other에만 있다.
 - spot 카드의 썸네일은 링크가 YouTube면 영상 썸네일, 아니면 spot의 첫 이미지(Instagram 게시물 이미지 등)다.
 - Places 화면에서 장소를 폐업으로 바꾸거나 되돌리고, Edit 시트에서 이름, 주소, 좌표, Google place ID, 폐업 사유, 메모를 고친다(`PATCH /admin/places/{id}`).
   폐업은 장소 단위라 그 장소를 가리키는 모든 spot에 함께 보이며, 오류가 아니라 기록 상태라 앱과 같은 중립 외곽선 배지로 보인다.
