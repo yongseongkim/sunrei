@@ -73,10 +73,10 @@ export default function AppShell() {
   }, [mode, isFetching, allCards.length]);
 
   const listBody = (
-    <div className="flex-1 overflow-auto px-4 py-2 space-y-2.5">
+    <div className="flex-1 overflow-auto px-4 pb-2 pt-3">
       {firstLoad ? (
-        <div className="space-y-2">
-          {Array.from({ length: 4 }).map((_, i) => (
+        <div className="space-y-2.5">
+          {Array.from({ length: isMobile ? 2 : 4 }).map((_, i) => (
             <PlaceCardSkeleton key={i} />
           ))}
         </div>
@@ -137,7 +137,7 @@ export default function AppShell() {
         {isMobile && !videoPreview && (
           <>
             <div className="absolute left-3 right-3 top-3 z-20 flex items-center gap-2">
-              <SearchPill placeholder={search('placeholder')} onClick={openSearch} className="flex-1" />
+              <SearchPill placeholder={search('placeholder')} onClick={openSearch} shadow className="flex-1" />
               <AuthControl variant="mobile" />
             </div>
             <div className="absolute left-3 top-16 z-20">
@@ -182,11 +182,14 @@ function EmptyState() {
   const clearFilters = useFilterStore((s) => s.clear);
   const hasFilter = useFilterStore((s) => s.activeTagIds.length > 0);
   return (
-    <div className="text-center py-10 text-ink3">
-      <MapPin className="h-10 w-10 mx-auto mb-2 opacity-40" />
-      <p className="text-sm">{t('empty')}</p>
+    <div className="flex flex-col items-center gap-3 pb-5 pt-12 text-ink2">
+      <MapPin className="h-10 w-10 opacity-40" strokeWidth={1.2} />
+      <p className="text-[13.5px] font-bold">{t('empty')}</p>
       {hasFilter && (
-        <button onClick={clearFilters} className="mt-1 text-sm text-primary font-medium">
+        <button
+          onClick={clearFilters}
+          className="h-[34px] rounded-full border border-line2 bg-card px-3.5 text-[12.5px] font-extrabold text-foreground hover:bg-bg2"
+        >
           {nav('clear')}
         </button>
       )}

@@ -231,7 +231,12 @@ export default function SunreiForm({
         <p className="mt-1 text-sm text-muted-foreground">
           {mode === 'create'
             ? 'Add a new Sunrei (video/work) under a source'
-            : `${spotFields.length} ${spotFields.length === 1 ? 'spot' : 'spots'}`}
+            : [
+                sunreiData?.source?.name,
+                `${spotFields.length} ${spotFields.length === 1 ? 'spot' : 'spots'}`,
+              ]
+                .filter(Boolean)
+                .join(' · ')}
         </p>
       </div>
 
@@ -327,6 +332,8 @@ export default function SunreiForm({
               onChange={(newImages) => setValue('images', newImages)}
               label="Sunrei Images"
               maxImages={10}
+              compact
+              tileSize={64}
             />
           </CardContent>
         </Card>

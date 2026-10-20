@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { Loader2, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { useMapStore, SEOUL } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import type { LatLng } from '@/hooks/use-map';
@@ -68,37 +68,37 @@ export function Onboarding() {
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/35 p-4">
       {onboarding === 'priming' ? (
-        <div className="w-full max-w-[432px] rounded-2xl bg-card p-8 text-center shadow-2xl">
+        <div className="w-full max-w-[432px] rounded-[18px] bg-card px-[22px] pb-5 pt-[26px] text-center shadow-[0_16px_48px_rgba(0,0,0,0.2)] sm:px-[30px] sm:pb-6 sm:pt-[30px]">
           <div className="mx-auto grid h-[52px] w-[52px] place-items-center rounded-[14px] border-2 border-primary bg-accent-soft">
-            <MapPin className="h-6 w-6 text-primary" />
+            <MapPin className="h-6 w-6 text-accent-ink" strokeWidth={1.5} />
           </div>
           <h2 className="mt-4 text-[21px] font-extrabold tracking-tight text-foreground">
             {t('primingTitle')}
           </h2>
-          <p className="mt-2.5 text-[13.5px] leading-relaxed text-ink2">{t('primingBody')}</p>
-          <div className="mt-5 flex flex-col gap-2.5">
+          <p className="mt-[9px] text-[13.5px] leading-relaxed text-ink2">{t('primingBody')}</p>
+          <div className="mt-5 flex flex-col gap-2">
             <button
               type="button"
               onClick={allow}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-[14px] font-bold text-primary-foreground shadow-[0_4px_12px_oklch(0.66_0.13_264/0.3)]"
+              className="h-11 w-full rounded-full bg-primary px-[18px] text-[14px] font-extrabold text-primary-foreground shadow-[0_4px_12px_oklch(0.66_0.13_264/0.3)]"
             >
-              <MapPin className="h-4 w-4" /> {t('useLocation')}
+              {t('useLocation')}
             </button>
             <button
               type="button"
               onClick={deny}
-              className="w-full rounded-full border border-line2 bg-card px-4 py-2.5 text-[13.5px] font-bold text-ink2 hover:bg-bg2"
+              className="h-11 w-full rounded-full border border-line2 bg-card px-[18px] text-[14px] font-extrabold text-foreground hover:bg-bg2"
             >
               {t('browseSeoul')}
             </button>
           </div>
         </div>
       ) : (
-        <div className="flex items-center gap-3.5 rounded-2xl bg-card px-6 py-5 shadow-2xl">
-          <Loader2 className="h-7 w-7 animate-spin text-primary" />
+        <div className="flex items-center gap-3 rounded-[14px] bg-card px-5 py-4 shadow-[0_12px_36px_rgba(0,0,0,0.18)]">
+          <span className="h-5 w-5 shrink-0 animate-spin rounded-full border-2 border-line2 border-t-primary" />
           <div className="text-left">
-            <div className="text-[14.5px] font-extrabold text-foreground">{t('locating')}</div>
-            <div className="mt-0.5 text-[12px] text-ink2">{t('locatingSub')}</div>
+            <div className="text-[14px] font-extrabold text-foreground">{t('locating')}</div>
+            <div className="mt-0.5 text-[12px] text-ink3">{t('locatingSub')}</div>
           </div>
         </div>
       )}

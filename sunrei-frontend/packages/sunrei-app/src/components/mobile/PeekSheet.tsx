@@ -5,6 +5,7 @@ import { TagChipRail } from '@/components/panels';
 import { SourceRail } from '@/components/desktop/SourceRail';
 import { Handle, ViewToggle } from '@/components/wf';
 import { cn } from '@/lib/utils';
+import { ChevronUp } from 'lucide-react';
 import { useState, type ReactNode } from 'react';
 
 export type Snap = 'peek' | 'half' | 'full';
@@ -55,17 +56,19 @@ export function PeekSheet({
       ) : snap === 'peek' ? (
         <button
           onClick={() => setSnap('half')}
-          className="flex items-center justify-between px-4 pb-3 text-left"
+          className="flex items-center justify-between px-[18px] py-2 text-left"
         >
-          <span className="text-[13px] font-semibold">
+          <span className="text-[15px] font-extrabold">
             {showingPrevious ? t('showPrevious') : t('placesNear', { count })}
           </span>
-          <span className="text-[12px] font-semibold text-primary">{t('showList')} ⌃</span>
+          <span className="inline-flex items-center gap-1 text-[12.5px] font-bold text-accent-ink">
+            {t('showList')} <ChevronUp className="h-3 w-3" strokeWidth={2.4} />
+          </span>
         </button>
       ) : (
         <>
-          <div className="flex items-center justify-between px-4 pb-1">
-            <span className="text-[13px] font-semibold">
+          <div className="flex items-center justify-between px-[14px] pb-2.5 pt-0.5">
+            <span className="text-[15px] font-extrabold">
               {showingPrevious ? t('showPrevious') : t('placesNear', { count })}
             </span>
             <ViewToggle map={false} onChange={(m) => setSnap(m ? 'peek' : 'half')} />

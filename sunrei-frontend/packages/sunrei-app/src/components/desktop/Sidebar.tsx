@@ -42,7 +42,7 @@ export function Sidebar({
         <>
           <SourceRail />
           <TagChipRail />
-          <div className="px-4 pb-2 pt-[15px]">
+          <div className="px-4 pt-[15px]">
             <SectionLabel count={count} sub={showingPrevious ? t('showPrevious') : t('nearestFirst')}>
               {t('places')}
             </SectionLabel>

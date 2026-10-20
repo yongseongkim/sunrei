@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Loader2, Save } from 'lucide-react';
+import { AlertCircle, Loader2 } from 'lucide-react';
 
 interface FormActionsProps {
   mode: 'create' | 'edit';
@@ -17,7 +17,12 @@ export default function FormActions({
 }: FormActionsProps) {
   return (
     <div className="flex items-center justify-end gap-2">
-      {errorText && <span className="mr-1 text-sm font-medium text-destructive">{errorText}</span>}
+      {errorText && (
+        <span className="mr-0.5 flex items-center gap-1.5 text-[11px] font-medium text-destructive">
+          <AlertCircle className="h-[11px] w-[11px]" />
+          {errorText}
+        </span>
+      )}
       <Button type="button" variant="outline" onClick={onCancel}>
         Cancel
       </Button>
@@ -27,11 +32,10 @@ export default function FormActions({
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
             {mode === 'create' ? 'Creating...' : 'Saving...'}
           </>
+        ) : mode === 'create' ? (
+          'Create Sunrei'
         ) : (
-          <>
-            <Save className="mr-2 h-4 w-4" />
-            {mode === 'create' ? 'Create Sunrei' : 'Save Changes'}
-          </>
+          'Save'
         )}
       </Button>
     </div>

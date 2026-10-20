@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Loader2 } from 'lucide-react';
+import { AlertCircle, Loader2 } from 'lucide-react';
 import { PlaceListItemDTO } from '@/api/admin';
 import { useUpdatePlace } from '@/lib/hooks/use-places';
 import { Button } from '@/components/ui/button';
@@ -34,11 +34,12 @@ function draftOf(place: PlaceListItemDTO): Draft {
   };
 }
 
-function errorMessage(error: unknown): string | null {
+/** 중복 place ID(409)는 그 칸 아래에, 나머지 오류는 시트 아래에 보여 준다. */
+function saveError(error: unknown): { duplicate: boolean; message: string } | null {
   if (!error) return null;
   const data = (error as { response?: { status?: number; data?: { error?: string } } }).response;
-  if (data?.status === 409) return 'Another place already has this Google place ID.';
-  return data?.data?.error || 'Failed to save the place.';
+  if (data?.status === 409) return { duplicate: true, message: 'Another place already has this Google place ID.' };
+  return { duplicate: false, message: data?.data?.error || 'Failed to save the place.' };
 }
 
 /**
@@ -57,6 +58,7 @@ export function PlaceEditSheet({ place, onClose }: { place: PlaceListItemDTO | n
   }, [place?.id]);
 
   const set = <K extends keyof Draft>(key: K, value: Draft[K]) => setDraft((d) => (d ? { ...d, [key]: value } : d));
+  const error = saveError(updatePlace.error);
   const latitude = Number(draft?.latitude);
   const longitude = Number(draft?.longitude);
   const valid =
@@ -81,7 +83,7 @@ export function PlaceEditSheet({ place, onClose }: { place: PlaceListItemDTO | n
 
   return (
     <Sheet open={!!place} onOpenChange={(open) => !open && onClose()}>
-      <SheetContent className="w-[420px] sm:max-w-[420px] overflow-y-auto">
+      <SheetContent className="w-[440px] sm:max-w-[440px] overflow-y-auto">
         <SheetHeader>
           <SheetTitle>Edit Place</SheetTitle>
           <SheetDescription>Changes apply to every spot that points to this place.</SheetDescription>
@@ -127,10 +129,17 @@ export function PlaceEditSheet({ place, onClose }: { place: PlaceListItemDTO | n
                 className="font-mono text-xs"
                 value={draft.googleMapsId}
                 placeholder="Not linked"
+                aria-invalid={error?.duplicate || undefined}
                 onChange={(e) => set('googleMapsId', e.target.value)}
               />
+              {error?.duplicate && (
+                <p className="flex items-center gap-1.5 text-[11px] font-medium text-destructive">
+                  <AlertCircle className="h-[11px] w-[11px]" />
+                  {error.message}
+                </p>
+              )}
             </div>
-            <div className="space-y-3 rounded-md bg-muted/50 p-3">
+            <div className="space-y-2.5">
               <label className="flex items-center gap-2 text-sm font-medium">
                 <input
                   id="place-closed"
@@ -162,7 +171,7 @@ export function PlaceEditSheet({ place, onClose }: { place: PlaceListItemDTO | n
               <Label htmlFor="place-notes">Memo</Label>
               <Textarea id="place-notes" rows={3} value={draft.notes} onChange={(e) => set('notes', e.target.value)} />
             </div>
-            {updatePlace.error && <p className="text-sm font-medium text-destructive">{errorMessage(updatePlace.error)}</p>}
+            {error && !error.duplicate && <p className="text-sm font-medium text-destructive">{error.message}</p>}
           </div>
         )}
         <SheetFooter className="flex-row justify-end gap-2">
