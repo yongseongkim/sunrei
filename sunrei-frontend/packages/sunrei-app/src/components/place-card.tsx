@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 import { ChevronRight } from 'lucide-react';
 import { Avatar, sourceAvatarUrl } from '@/components/wf';
 import { useTagLabel } from '@/lib/i18n';
-import { cn } from '@/lib/utils';
 
 function formatDistance(m?: number | null) {
   if (m == null) return '';
@@ -13,27 +12,24 @@ function formatDistance(m?: number | null) {
   return `${(m / 1000).toFixed(1)} km`;
 }
 
+/** 카드와 같은 자리에 장소 이름, 눈썹, 언급 한 줄 모양의 막대를 깜빡이며 보여 준다. */
 export function PlaceCardSkeleton() {
-  const bar = (w: string, h = 'h-1.5') => (
-    <div className={cn('rounded-full bg-line', h)} style={{ width: w }} />
+  const bar = (w: string | number, h = 10) => (
+    <span className="block animate-pulse rounded-[5px] bg-bg2" style={{ width: w, height: h }} />
   );
   return (
-    <div className="rounded-xl px-3 py-[11px] bg-card border border-line flex flex-col gap-2.5">
-      <div className="flex items-center gap-[7px]">
-        <span
-          className="bg-bg2 shrink-0"
-          style={{ width: 13, height: 13, borderRadius: '50% 50% 50% 0', transform: 'rotate(-45deg)' }}
-        />
-        {bar('50%')}
-        <div className="flex-1" />
-        {bar('18%')}
+    <div className="rounded-xl border border-line bg-card p-[13px]">
+      <div className="flex gap-2">
+        {bar('46%', 13)}
+        <span className="ml-auto">{bar(36)}</span>
       </div>
-      <div className="flex gap-2.5">
-        <div className="h-[26px] w-[26px] rounded-full bg-bg2 shrink-0" />
-        <div className="flex-1 flex flex-col gap-1.5 pt-1">
-          {bar('70%')}
-          {bar('92%')}
+      <div className="mt-3">{bar('30%', 8)}</div>
+      <div className="mt-2.5 flex gap-[9px]">
+        <span className="h-[22px] w-[22px] shrink-0 animate-pulse rounded-full bg-bg2" />
+        <div className="flex-1">
           {bar('55%')}
+          <div className="h-1.5" />
+          {bar('90%')}
         </div>
       </div>
     </div>

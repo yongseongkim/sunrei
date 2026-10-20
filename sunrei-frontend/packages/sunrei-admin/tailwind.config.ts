@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   darkMode: 'class',
@@ -81,7 +82,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // shadcn 부품은 Tailwind 4의 aria-invalid: 변형을 쓰는데 3.4에는 없어서, 오류 칸의 빨간 테두리가 보이도록 직접 정의한다.
+    plugin(({ addVariant }) => addVariant('aria-invalid', '&[aria-invalid="true"]')),
+  ],
 };
 
 export default config;

@@ -222,27 +222,28 @@ export function LoginModal() {
       <div
         onClick={(e) => e.stopPropagation()}
         className={cn(
-          'w-full bg-card p-8 pb-7 text-center shadow-2xl',
-          isMobile ? 'rounded-t-2xl' : 'max-w-[384px] rounded-2xl'
+          'w-full bg-card text-center shadow-[0_16px_48px_rgba(0,0,0,0.2)]',
+          isMobile ? 'rounded-t-[18px] px-[22px] pb-[22px] pt-2' : 'max-w-[384px] rounded-[18px] px-[26px] pb-[18px] pt-7'
         )}
       >
+        {isMobile && <div className="mx-auto mb-5 h-1 w-9 rounded-full bg-line2" />}
         <div className="mx-auto grid h-[46px] w-[46px] place-items-center rounded-xl bg-primary">
           <span className="h-[22px] w-[22px] rounded-md bg-white/90" />
         </div>
-        <h2 className="mt-4 text-[20px] font-extrabold tracking-tight text-foreground">{t('signInTitle')}</h2>
+        <h2 className="mt-[14px] text-[20px] font-extrabold tracking-tight text-foreground">{t('signInTitle')}</h2>
         <p className="mt-2 text-[13px] leading-relaxed text-ink2">{t('signInBody')}</p>
-        <div className="mt-5">
+        <div className="mt-[18px]">
           <GoogleButton full onClick={login} loading={loading} />
         </div>
         {error ? (
-          <p className="mt-2.5 text-[11.5px] font-semibold text-destructive">{t('failed')}</p>
+          <p className="mt-[9px] text-[11.5px] font-bold text-destructive">{t('failed')}</p>
         ) : (
-          <p className="mt-2.5 text-[11px] leading-snug text-ink3">{t('signInNote')}</p>
+          <p className="mt-[9px] text-[11.5px] leading-snug text-ink3">{t('signInNote')}</p>
         )}
         <button
           type="button"
           onClick={() => setLoginOpen(false)}
-          className="mt-4 text-[12.5px] font-bold text-ink3 hover:text-foreground"
+          className="mt-[14px] text-[13px] font-bold text-ink2 hover:text-foreground"
         >
           {t('later')}
         </button>

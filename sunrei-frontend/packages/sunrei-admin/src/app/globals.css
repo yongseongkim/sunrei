@@ -22,6 +22,8 @@
 
 :root {
   --font-sans: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  /* tailwind의 font-mono가 이 변수를 쓰므로, 비어 있으면 place ID와 좌표가 본문 글꼴로 보인다. */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   /* 브랜드 색은 Pantone 2025 팔레트에서 골랐다. */
   --pantone-mocha-mousse: #A47764;

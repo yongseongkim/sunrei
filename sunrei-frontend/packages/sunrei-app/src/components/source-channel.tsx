@@ -45,7 +45,7 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
-      <div className="border-b border-line px-4 pb-[14px] pt-2">
+      <div className="border-b border-line px-4 pb-[14px] pt-2 lg:pt-[15px]">
         <BackPill onClick={back}>{sourceFromSearch ? search('back') : nav('back')}</BackPill>
         {isLoading || !source ? (
           <div className="grid place-items-center py-6">

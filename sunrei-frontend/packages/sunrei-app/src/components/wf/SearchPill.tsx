@@ -5,10 +5,13 @@ import { cn } from '@/lib/utils';
 export function SearchPill({
   placeholder,
   onClick,
+  shadow,
   className,
 }: {
   placeholder: string;
   onClick?: () => void;
+  /** 지도 위에 떠 있는 모바일 검색창만 그림자를 준다. */
+  shadow?: boolean;
   className?: string;
 }) {
   return (
@@ -16,8 +19,9 @@ export function SearchPill({
       type="button"
       onClick={onClick}
       className={cn(
-        'flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-card border border-line2 text-left',
-        'shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:border-ink3 transition-colors',
+        'flex h-[42px] items-center gap-[9px] px-[15px] rounded-full bg-card border border-line2 text-left',
+        'hover:border-ink3 transition-colors',
+        shadow && 'shadow-[0_2px_8px_rgba(0,0,0,0.08)]',
         className
       )}
     >
@@ -25,7 +29,7 @@ export function SearchPill({
         <circle cx="6.5" cy="6.5" r="4.5" />
         <path d="M10 10l3.5 3.5" strokeLinecap="round" />
       </svg>
-      <span className="text-[13px] text-ink3 truncate">{placeholder}</span>
+      <span className="text-[13.5px] text-ink3 truncate">{placeholder}</span>
     </button>
   );
 }

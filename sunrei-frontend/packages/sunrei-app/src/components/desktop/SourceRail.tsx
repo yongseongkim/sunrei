@@ -20,12 +20,12 @@ export function SourceRail() {
   if (sources.length === 0) return null;
 
   return (
-    <div className="border-b border-line px-4 py-[14px]">
+    <div className="px-4 pt-1 lg:pt-[15px]">
       <div className="flex items-baseline gap-[7px]">
         <span className="text-[12px] font-extrabold text-foreground">{t('sourcesInView')}</span>
         <span className="text-[11.5px] font-extrabold text-accent-ink">{sources.length}</span>
       </div>
-      <div className="mt-[11px] flex gap-[9px] overflow-x-auto pb-0.5">
+      <div className="mt-2 flex gap-[7px] overflow-x-auto pb-0.5">
         {sources.map((s) => {
           const active = selected.includes(s.id);
           return (
@@ -41,7 +41,7 @@ export function SourceRail() {
               }}
               title={s.name}
               className={cn(
-                'flex shrink-0 items-center gap-[7px] rounded-full border py-[5px] pl-[5px] pr-[10px] transition-colors',
+                'flex shrink-0 items-center gap-[7px] rounded-full border py-1 pl-1 pr-[11px] transition-colors',
                 active ? 'border-primary bg-accent-soft' : 'border-line2 bg-card hover:border-ink3'
               )}
             >

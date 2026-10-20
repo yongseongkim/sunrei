@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { adminApi } from '@/lib/api-client';
+import { cn } from '@/lib/utils';
 import {
   AlertCircle,
   Image as ImageIcon,
@@ -25,8 +26,10 @@ interface ImageUploadProps {
   onChange: (images: MultiSizeImageDTO[]) => void;
   maxImages?: number;
   label?: string;
-  /** spot 카드처럼 좁은 곳에서는 52px 칸과 "+" 칸만 보여 준다. */
+  /** 작은 칸과 "+" 칸만 보여 준다. Sunrei 폼과 spot 카드가 쓴다. */
   compact?: boolean;
+  /** compact 칸 크기다. spot 카드는 52px, Sunrei 이미지는 64px이다. */
+  tileSize?: 52 | 64;
 }
 
 interface UploadingImage {
@@ -41,6 +44,7 @@ export default function ImageUpload({
   maxImages = 10,
   label = 'Images',
   compact = false,
+  tileSize = 52,
 }: ImageUploadProps) {
   const [uploadingImages, setUploadingImages] = useState<UploadingImage[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -173,6 +177,8 @@ export default function ImageUpload({
 
   if (compact) {
     const full = images.length + uploadingImages.length >= maxImages;
+    const tile = { width: tileSize, height: tileSize };
+    const radius = tileSize > 52 ? 'rounded-lg' : 'rounded-md';
     return (
       <div className="space-y-1.5">
         <div className="flex items-center gap-2">
@@ -187,15 +193,16 @@ export default function ImageUpload({
             </button>
           )}
         </div>
-        <div className="flex flex-wrap gap-1.5">
+        <div className={cn('flex flex-wrap', tileSize > 52 ? 'gap-2' : 'gap-1.5')}>
           {images.map((multiSizeImage, index) => {
-            // 서버는 큰 것부터 담으므로 마지막이 52px 칸에 맞는 가장 작은 크기다.
+            // 서버는 큰 것부터 담으므로 마지막이 작은 칸에 맞는 가장 작은 크기다.
             const smallest =
               multiSizeImage.images[multiSizeImage.images.length - 1];
             return (
               <div
                 key={`${smallest?.url || index}-${index}`}
-                className="group relative h-[52px] w-[52px] overflow-hidden rounded-md border bg-muted"
+                className={cn('group relative overflow-hidden border bg-muted', radius)}
+                style={tile}
               >
                 {smallest?.url && (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -219,7 +226,8 @@ export default function ImageUpload({
           {uploadingImages.map((u) => (
             <div
               key={u.id}
-              className="grid h-[52px] w-[52px] place-items-center rounded-md border bg-muted"
+              className={cn('grid place-items-center border bg-muted', radius)}
+              style={tile}
             >
               <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
             </div>
@@ -229,9 +237,10 @@ export default function ImageUpload({
               type="button"
               onClick={() => fileInputRef.current?.click()}
               aria-label="Add images"
-              className="grid h-[52px] w-[52px] place-items-center rounded-md border border-dashed text-muted-foreground hover:bg-muted"
+              className={cn('grid place-items-center border border-dashed text-muted-foreground hover:bg-muted', radius)}
+              style={tile}
             >
-              <Plus className="h-3.5 w-3.5" />
+              <Plus className={tileSize > 52 ? 'h-4 w-4' : 'h-3.5 w-3.5'} />
             </button>
           )}
         </div>

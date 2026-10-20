@@ -117,6 +117,7 @@ pnpm codegen
 - 메뉴는 Content(`/sunreis`), Channels / Sources(`/sources`), Places(`/places`), Tags(`/tags`)이며 `/`는 `/sunreis`로 보낸다.
   사이드바는 접으면 아이콘 줄로 남고(`collapsible="icon"`), 상단 바에 "Sunrei Admin › 화면" 경로를 보여 준다.
 - 어드민은 Tailwind 3.4를 쓴다. shadcn 부품을 새로 가져오면 Tailwind 4 문법(`w-(--var)`, `size-8!`, `--spacing()`)을 3.4 문법(`w-[var(--var)]`, `!size-8`)으로 바꿔야 동작한다.
+  `aria-invalid:` 변형은 3.4에 없어서 `tailwind.config.ts`의 plugin으로 정의해 두었으므로, 오류 칸은 `aria-invalid`만 붙이면 빨간 테두리가 된다.
 - 목록 화면(Content, Sources, Places)은 카드 하나에 행을 구분선으로 나눈다.
 - Sunrei 폼(`src/components/SunreiForm.tsx`, `src/components/sunrei-form/`)은 Source, 공개 상태, 요약, 이미지, spot 목록을 한 요청으로 저장한다.
   요청에서 빠진 기존 spot은 서버가 삭제한다.

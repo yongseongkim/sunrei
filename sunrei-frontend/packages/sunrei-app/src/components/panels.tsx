@@ -2,7 +2,6 @@
 
 import { useTranslations } from 'next-intl';
 import { ChevronLeft, Loader2, MapPin, Navigation, Play, Search, Star, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Avatar, fittedImageUrl, sourceAvatarUrl } from '@/components/wf';
 import { cn, linkKind } from '@/lib/utils';
 import { useMapStore } from '@/stores/map-store';
@@ -87,10 +86,10 @@ export function TagChipRail() {
   const setFiltersOpen = useUiStore((s) => s.setFiltersOpen);
   if (tags.length === 0) return null;
   return (
-    <div className="flex gap-1.5 overflow-x-auto px-4 py-2 border-b border-line bg-background/80 backdrop-blur">
+    <div className="flex items-center gap-1.5 overflow-x-auto px-4 pt-3">
       <button
         onClick={() => setFiltersOpen(true)}
-        className="shrink-0 inline-flex items-center gap-1 text-xs font-bold whitespace-nowrap px-2.5 py-1 rounded-full border border-dashed border-primary bg-card text-accent-ink hover:bg-accent-soft"
+        className="shrink-0 inline-flex items-center gap-1 text-xs font-bold whitespace-nowrap px-[11px] py-[5px] rounded-full border border-dashed border-primary bg-card text-accent-ink hover:bg-accent-soft"
       >
         ✦ {t('filters')}
       </button>
@@ -125,6 +124,7 @@ export function TagChipRail() {
 
 export function UnifiedSearch({ onClose }: { onClose: () => void }) {
   const t = useTranslations('search');
+  const nav = useTranslations('nav');
   const typeT = useTranslations('sourceType');
   const q = useUiStore((s) => s.searchQuery);
   const setQ = useUiStore((s) => s.setSearchQuery);
@@ -165,8 +165,8 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
   return (
     <div className="absolute inset-0 z-50 flex flex-col bg-card">
       {/* 누른 검색 pill이 그대로 입력창이 되도록 같은 모양을 쓰고, 넓은 화면에서는 가운데 640px로 읽기 쉽게 둔다. */}
-      <div className="border-b border-line">
-        <div className="mx-auto flex w-full max-w-[640px] items-center gap-2 p-3">
+      <div>
+        <div className="mx-auto flex w-full max-w-[640px] items-center gap-2.5 px-[14px] pt-2 lg:px-6 lg:pt-7">
           <label className="flex h-[42px] min-w-0 flex-1 items-center gap-2.5 rounded-full border border-line2 bg-card px-[15px]">
             <Search className="h-[15px] w-[15px] shrink-0 text-ink3" />
             <input
@@ -177,14 +177,19 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
               className="min-w-0 flex-1 bg-transparent text-[13.5px] font-semibold text-foreground outline-none placeholder:font-normal placeholder:text-ink3"
             />
           </label>
-          <Button variant="ghost" size="icon" onClick={onClose}>
-            <X className="h-4 w-4" />
-          </Button>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label={nav('back')}
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-ink2 hover:bg-bg2"
+          >
+            <X className="h-[17px] w-[17px]" strokeWidth={2} />
+          </button>
         </div>
       </div>
-      <div className="mx-auto w-full max-w-[640px] flex-1 space-y-4 overflow-auto p-3">
+      <div className="mx-auto w-full max-w-[640px] flex-1 overflow-auto px-[14px] pb-4 lg:px-6">
         {isFetching && (
-          <div className="flex justify-center">
+          <div className="mt-[18px] flex justify-center">
             <Loader2 className="h-5 w-5 animate-spin text-ink3" />
           </div>
         )}
@@ -249,7 +254,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
               ))}
             </Section>
             {total === 0 && (
-              <p className="text-sm text-ink3 text-center">{t('noResults')}</p>
+              <p className="py-14 text-center text-[13.5px] font-bold text-ink3">{t('noResults')}</p>
             )}
           </>
         )}
@@ -262,9 +267,9 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   const arr = Array.isArray(children) ? children.flat() : [children];
   if (!arr.filter(Boolean).length) return null;
   return (
-    <div>
-      <h3 className="mb-1.5 text-[11px] font-extrabold uppercase tracking-wide text-ink3">{title}</h3>
-      <div className="space-y-1">{children}</div>
+    <div className="mt-[18px]">
+      <h3 className="mb-0.5 text-[11px] font-extrabold uppercase tracking-wide text-ink3">{title}</h3>
+      <div>{children}</div>
     </div>
   );
 }
@@ -313,7 +318,7 @@ function ResultRow({
   onClick: () => void;
 }) {
   return (
-    <button onClick={onClick} className="flex w-full items-center gap-2.5 rounded-md p-2 text-left hover:bg-accent-soft">
+    <button onClick={onClick} className="flex w-full items-center gap-[11px] rounded-md px-0.5 py-[9px] text-left hover:bg-accent-soft">
       {icon}
       <div className="min-w-0 flex-1">
         <div className="truncate text-[13.5px] font-bold">{title}</div>
@@ -356,7 +361,7 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
-      <div className="border-b border-line px-4 pb-3.5 pt-2">
+      <div className="border-b border-line px-4 pb-3.5 pt-2 lg:pt-[15px]">
         <BackPill onClick={() => setActivePlace(null)}>{t('backToList')}</BackPill>
 
         <div className="flex items-center gap-2">
@@ -395,7 +400,7 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
             rel="noreferrer"
             className="flex flex-1 items-center justify-center gap-1.5 rounded-[10px] border border-line2 bg-card px-3 py-2.5 text-[13px] font-extrabold text-foreground hover:border-ink3"
           >
-            <MapPin className="h-[15px] w-[15px] text-ink2" /> {t('viewOnGoogleMaps')}{' '}
+            {t('viewOnGoogleMaps')}
             <span className="text-ink3">↗</span>
           </a>
         </div>
@@ -628,9 +633,9 @@ export function VideoPreviewPanel() {
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
-      <div className="border-b border-line px-4 pb-3.5 pt-2">
+      <div className="border-b border-line px-4 pb-3.5 pt-2 lg:pt-[15px]">
         <BackPill onClick={exit}>{backLabel}</BackPill>
-        <div className="flex items-center gap-2.5 rounded-[10px] border border-primary bg-accent-soft px-2.5 py-2">
+        <div className="flex items-center gap-2.5 rounded-xl border border-primary bg-accent-soft px-3 py-2.5">
           <Avatar label={sunrei?.source.name ?? '?'} src={sourceAvatarUrl(sunrei?.source, 26)} size={26} />
           <div className="min-w-0 flex-1">
             <div className="truncate text-[12.5px] font-extrabold text-foreground">{sunrei?.title ?? '…'}</div>
