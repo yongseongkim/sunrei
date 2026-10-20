@@ -361,7 +361,7 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
-      <div className="border-b border-line px-4 pb-3.5 pt-2">
+      <div className="border-b border-line px-4 pb-3.5 pt-2 lg:pt-[15px]">
         <BackPill onClick={() => setActivePlace(null)}>{t('backToList')}</BackPill>
 
         <div className="flex items-center gap-2">
@@ -633,7 +633,7 @@ export function VideoPreviewPanel() {
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
-      <div className="border-b border-line px-4 pb-3.5 pt-2">
+      <div className="border-b border-line px-4 pb-3.5 pt-2 lg:pt-[15px]">
         <BackPill onClick={exit}>{backLabel}</BackPill>
         <div className="flex items-center gap-2.5 rounded-xl border border-primary bg-accent-soft px-3 py-2.5">
           <Avatar label={sunrei?.source.name ?? '?'} src={sourceAvatarUrl(sunrei?.source, 26)} size={26} />
