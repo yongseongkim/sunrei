@@ -153,17 +153,20 @@ export function AuthControl({ variant = 'header' }: { variant?: 'header' | 'mobi
         type="button"
         onClick={() => setMenuOpen((v) => !v)}
         className={cn(
-          'inline-flex items-center gap-2 rounded-full border py-1 pl-1 pr-2.5',
+          'inline-flex items-center gap-1.5 rounded-full border',
+          variant === 'mobile'
+            ? 'h-10 pl-[5px] pr-[7px] shadow-[0_2px_8px_rgba(0,0,0,0.08)]'
+            : 'h-8 pl-[3px] pr-[9px]',
           menuOpen ? 'border-primary bg-accent-soft' : 'border-line2 bg-card'
         )}
       >
-        <Avatar label={user.name || user.email} size={variant === 'mobile' ? 30 : 26} />
+        <Avatar label={user.name || user.email} size={variant === 'mobile' ? 30 : 26} fill />
         {variant === 'header' && (
           <span className="max-w-[90px] truncate text-[12.5px] font-bold text-foreground">
             {user.name || user.email}
           </span>
         )}
-        <span className={cn('text-[9px] text-ink3 transition-transform', menuOpen && 'rotate-180')}>▾</span>
+        <span className={cn('text-[10px] text-ink3 transition-transform', menuOpen && 'rotate-180')}>▾</span>
       </button>
       {menuOpen && (
         <>
@@ -173,18 +176,18 @@ export function AuthControl({ variant = 'header' }: { variant?: 'header' | 'mobi
             onClick={() => setMenuOpen(false)}
             className="fixed inset-0 z-40 cursor-default"
           />
-          <div className="absolute right-0 top-[calc(100%+6px)] z-50 w-60 overflow-hidden rounded-xl border border-line2 bg-card shadow-[0_14px_40px_rgba(0,0,0,0.2)]">
-            <div className="flex items-center gap-2.5 border-b border-line px-4 py-3.5">
-              <Avatar label={user.name || user.email} size={38} />
+          <div className="absolute right-0 top-[calc(100%+6px)] z-50 w-60 overflow-hidden rounded-[14px] border border-line bg-card p-1.5 shadow-[0_12px_32px_rgba(0,0,0,0.14)]">
+            <div className="flex items-center gap-2.5 px-2.5 pb-3 pt-2.5">
+              <Avatar label={user.name || user.email} size={38} fill />
               <div className="min-w-0">
-                <div className="truncate text-[13px] font-extrabold text-foreground">
+                <div className="truncate text-[14px] font-extrabold text-foreground">
                   {user.name || user.email}
                 </div>
-                <div className="truncate text-[11.5px] text-ink3">{user.email}</div>
+                <div className="mt-px truncate text-[12px] text-ink3">{user.email}</div>
               </div>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2.5 text-[11.5px] text-ink3">
-              <GoogleG size={14} /> {t('connected')}
+            <div className="flex items-center gap-[7px] border-t border-line px-2.5 py-[9px] text-[12px] text-ink2">
+              <GoogleG size={13} /> {t('connected')}
             </div>
             <button
               type="button"
@@ -192,9 +195,9 @@ export function AuthControl({ variant = 'header' }: { variant?: 'header' | 'mobi
                 setMenuOpen(false);
                 logout();
               }}
-              className="flex w-full items-center gap-2 border-t border-line px-4 py-3 text-left text-[13px] font-bold text-foreground hover:bg-bg2"
+              className="flex w-full items-center gap-[7px] border-t border-line px-2.5 py-2.5 text-left text-[13px] font-bold text-foreground hover:bg-bg2"
             >
-              <LogOut className="h-4 w-4" /> {t('logout')}
+              <LogOut className="h-3.5 w-3.5 text-ink2" /> {t('logout')}
             </button>
           </div>
         </>
