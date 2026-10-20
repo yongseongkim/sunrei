@@ -81,7 +81,7 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
 
       <div className="flex-1 overflow-auto px-4 pb-2 pt-[15px]">
         <SectionLabel count={sunreis.length}>{t('series')}</SectionLabel>
-        <div className="mt-[11px] flex flex-col gap-2.5">
+        <div className="mt-2.5 flex flex-col gap-2">
           {!isLoading && source && sunreis.length === 0 && (
             <div className="flex flex-col items-center gap-2.5 py-9 text-ink2">
               <MapPin className="h-9 w-9 opacity-40" strokeWidth={1.4} />
@@ -93,11 +93,11 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
               key={s.id}
               type="button"
               onClick={() => enterPreview(s.id, 'source')}
-              className="rounded-xl border border-line bg-card p-3 text-left transition-colors hover:border-ink3/40"
+              className="rounded-xl border border-line bg-card px-[13px] py-[11px] text-left transition-colors hover:border-ink3/40"
             >
               <div className="text-[14px] font-extrabold text-foreground">{s.title}</div>
               {s.summary && <div className="mt-1 line-clamp-2 text-[12px] text-ink2">{s.summary}</div>}
-              <div className="mt-1.5 text-[11px] font-bold text-accent-ink">
+              <div className="mt-1.5 text-[11.5px] font-bold text-accent-ink">
                 {td('spotCount', { count: s.placeCount ?? s.spotCount })}
               </div>
             </button>
