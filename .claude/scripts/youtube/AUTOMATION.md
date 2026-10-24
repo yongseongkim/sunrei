@@ -123,3 +123,10 @@ with `PATCH /admin/youtube/extracted-places/{id}`; approval adds a spot to the
 playlist's Sunrei, using the reviewer's place or the geocoded suggestion. The
 video becomes `COMPLETED` once no candidate is pending. Rejected candidates
 remain for reference.
+
+A candidate whose name the extractor marked unknown ("상호 미상") gets no
+suggestion, because a search by dish and area returns whatever shop is nearby.
+A suggestion carries a `geocodeWarning` when Google's name differs, adds words
+other than a branch or area, or sits outside the area's 시/구/군. Research those
+candidates on the web before approving; see "Reviewing Candidates" in
+`.agents/skills/youtube-to-sunrei/references/playlist-renewal.md`.

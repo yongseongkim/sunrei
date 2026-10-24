@@ -8,9 +8,11 @@ Two modes:
     uv run python .claude/scripts/youtube/geocode.py <ID>
 
 Guards (from experience): never geocode a bare address — an address-only query returns
-the nearest business (a wrong pin); a `name` that looks like hours/phone/an address is
-rejected instead of searched; each result's displayName is checked against the queried
-name and flagged (`geocodeWarning`) on mismatch.
+the nearest business (a wrong pin); a `name` that looks like hours/phone/an address, or
+that the extractor marked as unknown ("상호 미상"), is not searched; each result is flagged
+(`geocodeWarning`) when its displayName differs from the queried name, adds words other
+than a branch or area to it ('옛집' -> '옛집국수'), or its Korean address is outside the
+area's 시/구/군.
 """
 import json
 import re
@@ -34,6 +36,60 @@ def norm(s):
 def name_matches(a, b):
     x, y = norm(a), norm(b)
     return bool(x) and bool(y) and (x in y or y in x)
+
+
+# 추출기가 상호를 못 찾으면 이름에 "상호 미상", "(상호 미확인)"처럼 남긴다.
+UNNAMED = re.compile(r"상호\s*(?:미상|미확인|불명)|(?:미상|미확인)\s*\)")
+UNNAMED_WARNING = "venue name unknown; not searched — find the venue by web research and give its place when approving"
+PARENS = re.compile(r"\([^)]*\)")
+# 시/구/군만 본다. 도로명 주소에는 동이 잘 들어가지 않아서 동까지 보면 대부분 걸린다.
+DISTRICT = re.compile(r"[가-힣]{1,6}(?:시|구|군)(?![가-힣])")
+# 건대입구, 부산항구 같은 역·항구 이름도 구로 끝난다.
+NOT_DISTRICT_SUFFIXES = ("입구", "출구", "항구")
+
+
+def looks_unnamed(name):
+    return bool(UNNAMED.search(name or ""))
+
+
+def extra_words(name, display, area=""):
+    """Return what Google's name adds to the extracted name, or None when the rest is a branch, the area, or a romanization."""
+    x, y = norm(PARENS.sub("", name or "")), norm(PARENS.sub("", display or ""))
+    if not x or not y or x == y or not (x in y or y in x):
+        return None
+    shorter, longer = sorted((x, y), key=len)
+    extra = longer.replace(shorter, "", 1)
+    if extra.endswith("점") or re.fullmatch(r"[a-z0-9&'.]+", extra) or extra in norm(area):
+        return None
+    return extra
+
+
+def branch_mismatch(area, address):
+    """Return the area districts missing from a Korean address, or None when it agrees or cannot be judged."""
+    if not area or not address or not address.startswith("대한민국"):
+        return None
+    districts = [d for d in DISTRICT.findall(area) if not d.endswith(NOT_DISTRICT_SUFFIXES)]
+    missing = [district for district in districts if district not in address]
+    return missing or None
+
+
+def venue_warning(name, display, area="", address="", aliases=()):
+    """Return why a Places result may not be the venue the video named, or None.
+
+    A substring match alone let '옛집' land on '옛집국수' in another district, so a match also has to
+    add nothing but a branch or area word, and a Korean address has to sit in the area's 시/구/군.
+    """
+    names = [n for n in (name, *aliases) if n]
+    matching = [n for n in names if name_matches(n, display)]
+    if not matching:
+        return f"displayName '{display}' != '{name}'; verify"
+    extras = [extra_words(n, display, area) for n in matching]
+    if all(extras):
+        return f"displayName '{display}' adds '{extras[0]}' to '{name}'; check it is the same venue"
+    missing = branch_mismatch(area, address)
+    if missing:
+        return f"address '{address}' is not in {', '.join(missing)} from the area '{area}'; verify"
+    return None
 
 
 def search(key, text):
@@ -67,8 +123,9 @@ def run_query(key, q, area):
         print(err)
         sys.exit(1)
     print(json.dumps(res, ensure_ascii=False, indent=2))
-    if not name_matches(q, res["displayName"]):
-        print(f"WARNING: returned '{res['displayName']}' != queried '{q}' — verify.")
+    warning = venue_warning(q, res["displayName"], area, res["address"])
+    if warning:
+        print(f"WARNING: {warning}")
 
 
 def run_workspace(key, ws_id):
@@ -89,6 +146,10 @@ def run_workspace(key, ws_id):
                 loc["geocodeWarning"] = "name looks like hours/phone/address; needs a real venue name"
                 skipped += 1
                 continue
+            if looks_unnamed(name):
+                loc["geocodeWarning"] = UNNAMED_WARNING
+                skipped += 1
+                continue
             res, err = search(key, f"{name} {area}".strip())
             if err:
                 loc["geocodeWarning"] = f"geocode failed: {err}"
@@ -100,8 +161,9 @@ def run_workspace(key, ws_id):
             loc["googleMapsId"] = res["googleMapsId"]
             loc["googleMapsUri"] = res["googleMapsUri"]
             filled += 1
-            if not name_matches(name, res["displayName"]):
-                loc["geocodeWarning"] = f"displayName '{res['displayName']}' != '{name}'; verify"
+            warning = venue_warning(name, res["displayName"], loc.get("area") or area, res["address"], loc.get("aliases") or ())
+            if warning:
+                loc["geocodeWarning"] = warning
                 flagged += 1
     json.dump(data, open(locfile, "w"), ensure_ascii=False, indent=2)
     print(f"filled {filled}, flagged {flagged}, skipped {skipped} -> {locfile}")

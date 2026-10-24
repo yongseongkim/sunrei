@@ -15,6 +15,7 @@ from _common import jwt_is_usable, load_google_api_key
 from evidence_timeline import build_timeline, ensure_timeline
 from extract_locations_headless import merge_results, timeline_window
 from collection_api import CollectionApi
+import geocode
 import renew_playlists
 from renew_playlists import (
     MembersOnlyVideo,
@@ -26,6 +27,7 @@ from renew_playlists import (
     reset_stale_processing,
     run_video,
     store_evidence_texts,
+    suggested_place,
     write_primary_transcript,
 )
 from review_transcripts import update_reviewed_transcript
@@ -467,6 +469,26 @@ class RenewalTests(unittest.TestCase):
             [("abc", {"status": "FAILED", "stage": "extraction", "error": "codex turn timed out after 900s"})],
         )
         self.assertTrue(issubclass(MembersOnlyVideo, RuntimeError))
+
+    def test_unnamed_venues_are_left_for_the_reviewer(self):
+        place, warning = suggested_place("key", {"name": "제주 오리전골 식당 (상호 미확인)", "area": "제주"})
+        self.assertIsNone(place)
+        self.assertEqual(warning, geocode.UNNAMED_WARNING)
+        self.assertTrue(geocode.looks_unnamed("상호 미상 강남 한우 오마카세"))
+        self.assertFalse(geocode.looks_unnamed("의령식당"))
+
+    def test_venue_warning_flags_extra_words_and_other_districts(self):
+        seoul = "대한민국 서울특별시 "
+        # 이름이 겹쳐도 다른 말이 더 붙으면 다른 가게일 수 있다.
+        self.assertIn("adds '국수'", geocode.venue_warning("옛집", "옛집국수", "서울 홍대·신촌 일대", seoul + "용산구 한강대로62길 26"))
+        # 지점, 지역, 영문 표기, 괄호 안 설명은 같은 가게로 본다.
+        self.assertIsNone(geocode.venue_warning("청춘극장", "청춘극장 행당직영점", "서울 성동구 행당동", seoul + "성동구 행당로 112-5"))
+        self.assertIsNone(geocode.venue_warning("보석", "을지로 보석", "서울 중구 을지로", seoul + "중구 마른내로 11-10"))
+        self.assertIsNone(geocode.venue_warning("브리즈버거", "BREEZE BURGER 브리즈 버거", "서울 서초구 방배동", seoul + "서초구 방배로19길 14"))
+        self.assertIsNone(geocode.venue_warning("맥파이 탑동점", "맥파이 탑동점(Magpie Tapdong)", "제주 제주시 탑동", "대한민국 제주특별자치도 제주시 탑동로2길 7"))
+        self.assertIn("is not in 기장군", geocode.venue_warning(
+            "대성갈치찌개", "대성갈치찌개", "부산 기장군 기장읍", "대한민국 부산광역시 해운대구 달맞이길 1"))
+        self.assertIn("!= '산골면옥'", geocode.venue_warning("산골면옥", "산골막국수", "서울 중구", seoul + "중구 을지로 175-3"))
 
 
 if __name__ == "__main__":

@@ -7,28 +7,15 @@ business name are never searched. A location tag's coordinates bias the search
 only when the tag names the venue itself.
 """
 
-import re
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "youtube"))
 from _common import http_json  # noqa: E402
-from geocode import FIELDS, PLACES, looks_like_non_name, name_matches  # noqa: E402
+# branch_mismatch는 YouTube 지오코더와 같이 쓰며, import_workspace와 테스트가 이 모듈에서 가져간다.
+from geocode import FIELDS, PLACES, branch_mismatch, looks_like_non_name, name_matches  # noqa: E402,F401
 
-# 시/구/군 only: Korean road-name addresses rarely include the 동, so a 동 check would flag most results.
-DISTRICT = re.compile(r"[가-힣]{1,6}(?:시|구|군)(?![가-힣])")
-# Station and port names such as 건대입구 or 부산항구 end like districts.
-NOT_DISTRICT_SUFFIXES = ("입구", "출구", "항구")
 BIAS_RADIUS_METERS = 500.0
-
-
-def branch_mismatch(area, address):
-    """Return the area districts missing from a Korean address, or None when it agrees or cannot be judged."""
-    if not area or not address or not address.startswith("대한민국"):
-        return None
-    districts = [d for d in DISTRICT.findall(area) if not d.endswith(NOT_DISTRICT_SUFFIXES)]
-    missing = [district for district in districts if district not in address]
-    return missing or None
 
 
 def search(key, text, bias=None, cache=None):
