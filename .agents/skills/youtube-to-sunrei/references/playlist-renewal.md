@@ -63,3 +63,17 @@ Run only one renewal at a time, on a machine YouTube does not block.
   playlist's Sunrei; the collector itself never changes a Sunrei.
 - The agents receive the metadata and one timeline window at a time, never
   the video, the raw media, or credentials.
+
+## Reviewing Candidates
+
+The renewal does no web research, and the extractor never guesses a shop name.
+A venue the video doesn't name stays "상호 미확인" with no place.
+- Bulk-approve only candidates that have a place and no `geocodeWarning`.
+- Research the rest on the web before approving, following "Web Research for
+  Review" in `youtube-extract-locations/references/geocoding-and-review.md`.
+  Pass the found place in the approval.
+- Show the user what you found, with YouTube links at the scene as plain URLs,
+  and approve only what they accept.
+- When an approved spot turns out wrong, repoint it with `PUT /admin/sunreis/{id}`:
+  send every spot as `{id, title}` (omitted spots are deleted) and add `place`
+  only to the one being fixed.

@@ -413,6 +413,9 @@ def suggested_place(api_key, location):
         return None, "geocode skipped: no Google API key"
     if geocode.looks_like_non_name(name):
         return None, "name looks like hours/phone/address; needs a real venue name"
+    # 상호 없이 메뉴와 지역으로 검색하면 근처 아무 가게나 돌아오므로, 검토자가 웹 리서치로 장소를 정하게 둔다.
+    if geocode.looks_unnamed(name):
+        return None, geocode.UNNAMED_WARNING
     result, error = geocode.search(api_key, f"{name} {location.get('area', '')}".strip())
     if error:
         return None, f"geocode failed: {error}"
@@ -425,9 +428,9 @@ def suggested_place(api_key, location):
         "longitude": result["longitude"],
         "googleMapsId": result.get("googleMapsId"),
     }
-    warning = None
-    if not geocode.name_matches(name, result.get("displayName")):
-        warning = f"displayName '{result.get('displayName')}' != '{name}'; verify"
+    warning = geocode.venue_warning(
+        name, result.get("displayName"), location.get("area") or "", result.get("address") or "", location.get("aliases") or ()
+    )
     return place, warning
 
 
