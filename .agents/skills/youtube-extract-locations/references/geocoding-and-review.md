@@ -22,6 +22,39 @@ obvious mismatch, but do not invent a phonetic correction for a venue named
 only in speech. If the returned business is plausibly the spoken venue, keep
 it and flag only genuine uncertainty.
 
+A shared substring is not a match. 최자로드's "옛집", a closed 신촌 돈까스
+restaurant, came back as "옛집국수" in 용산 with no warning, and a bulk
+approval put it on the map. `geocode.venue_warning` also flags a result that
+adds words other than a branch (`…점`), an area word, or a romanization, and a
+Korean address outside the area's 시/구/군. Google often omits closed
+businesses, so the top result for a closed shop's name is usually another shop.
+
+Never search for an unnamed venue. A candidate the extractor marked "상호
+미상" or "(상호 미확인)" matched a neighbouring shop and even a street when
+searched with its dish and area. `geocode.py` and the renewal skip it and leave
+the warning `venue name unknown; not searched`. Find the venue by web research
+and pass its place when approving.
+
+## Web Research for Review
+
+Before approving, research every candidate that has no place or carries a
+warning. Evidence that names only a kind of place and an area, such as
+"a 막국수 집 in 을지로", is not enough.
+- Search in the language of the video's region, on the sites people there use
+  for reviews and maps, such as Naver blogs and Kakao Map in Korea or Tabelog
+  in Japan. Claude's WebSearch rarely finds these; fetch the search page with
+  curl and a browser User-Agent, for example
+  `https://search.naver.com/search.naver?where=blog&query=…`.
+- Search the channel or show name together with the area and what the video
+  shows. Review sites and fans often tag a place with the show that visited it.
+- Read the video's description and pinned comments.
+- Accept a place only when a source ties it to that video, or the video's own
+  frames show its sign or name.
+- Check whether the scene is a preview of the next episode before approving it.
+
+Bulk-approve only candidates with a place and no warning. Show the reviewer
+the rest with YouTube links at the scene, as plain URLs.
+
 ## Region Check
 
 Validate accepted coordinates against the playlist's region. A foreign place
