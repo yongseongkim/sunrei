@@ -26,13 +26,14 @@ said about each place. Use them together.
 
 Write `concept` from the title and description, and `geographicScope` as the
 most specific region the video covers, as a place name rather than a note. The
-concept names the region, the
-content type (food tour, travel vlog, architecture guide), the kind of
-destinations to extract, and distinctive details such as dishes, chefs, or
-price range.
+concept names the region, the content type (food tour, travel vlog,
+architecture guide, filming-location tour), the kind of destinations to
+extract, and distinctive details such as dishes, architects, scenes, or price
+range.
 
 - Specific enough: "싱가포르 현지 맛집 투어 - 바쿠테, 프론미, 하이난 치킨 라이스",
-  "랭스 럭셔리 레스토랑 Le Parc Les Crayères, 600종 샴페인"
+  "도쿄 메타볼리즘 건축 답사 - 나카긴 캡슐 타워, 시즈오카 신문·방송 빌딩",
+  "영화 '너의 이름은.' 배경지 순례 - 스가 신사 계단, 히다후루카와역"
 - Too vague: "이탈리아 맛집 방문기". Prefer "피렌체 미슐랭 3스타 와인 셀러 레스토랑".
 
 The concept decides what counts as a location in the next step.
@@ -47,6 +48,8 @@ buildings, viewpoints, and other specific destinations.
   the video eats there, such as a bakery queue inside a museum or a market
   stall.
 - A general travel vlog includes attractions, restaurants, and viewpoints.
+- A filming-location or pilgrimage video includes the places where a scene was
+  shot or that a scene depicts.
 - A place listed in the description's chapters or store-information block is
   a destination even when the speech at that time is only music. Take its
   details from the on-screen text around the chapter time.
@@ -149,12 +152,16 @@ Every location needs at least one verbatim `evidence` quote.
 
 `description` becomes the spot's context, the only editorial text on the
 public map card. Write three to six Korean sentences, more when the video
-covers several dishes, covering:
+covers several things at the place, covering:
 
-1. The type of place, its atmosphere, distinguishing features, geographic
-   context, and connection to the video's theme
-2. Signature items, preparation and serving details, taste or texture, and
-   the creator's assessment
+1. What the place is: its type, where it is, what sets it apart, and why the
+   video goes there
+2. What the video shows there: for a restaurant, the dishes, how they are made
+   and served, and how they taste; for a building, its design and what a
+   visitor sees; for a filming location, the scene and how the spot looks now;
+   for a viewpoint, the view
+3. The creator's assessment, and practical notes the video gives, such as
+   waiting, reservations, or the best time to visit
 
 Use only details the evidence supports; do not turn uncertain ASR wording into
 a factual claim. Write finished public text: summarize in your own sentences
@@ -164,10 +171,41 @@ notes. Those belong in `reason`, `issues`, and the evidence `startSeconds`.
 
 - Insufficient: "야키토리 맛집" (no context)
 - Insufficient: "쓰쿠네가 극찬받았다" (reaction only)
-- Useful: "시부야 뒷골목 야키토리 투어에서 방문한 카운터 10석 규모의 노포
-  야키토리 전문점. 대표 메뉴는 비장탄에 구운 쓰쿠네와 레바로, 쓰쿠네는 겉을
-  바삭하게 구운 뒤 날달걀 노른자에 찍어 먹으며 유튜버가 '육즙이 팡 터진다'고
-  표현했고, 레바는 비린내 없이 부드럽다고 강조했다."
+- Useful: "시부야 뒷골목 야키토리 투어에서 들른, 카운터 10석짜리 오래된
+  야키토리집이다. 대표 메뉴는 비장탄에 구운 쓰쿠네와 레바다. 쓰쿠네는 겉을
+  바삭하게 구워 날달걀 노른자에 찍어 먹는데, 유튜버는 '육즙이 팡 터진다'고
+  했다. 레바는 비린내 없이 부드럽다고 했다."
+- Useful: "1972년에 지은 메타볼리즘 건축의 대표작으로, 콘크리트 코어 두 개에
+  캡슐 방 140개를 매달았다. 영상은 해체를 앞두고 공개된 캡슐 안의 둥근 창과
+  붙박이 가구를 보여 준다. 유튜버는 50년 전에 상상한 미래의 집에 들어와 본
+  느낌이라고 했다."
+
+### Korean Style
+
+Write Korean as a Korean speaker describes the place, not as a translation of
+English.
+
+- A noun Korean speakers already say as a loanword, such as 오마카세, 루프톱,
+  or 필로티, may stay.
+- Write verbs and adjectives as what actually happens at the place. Avoid
+  Sino-Korean words that people do not use in everyday speech.
+- Put one fact in a sentence. Split a long sentence at a clause boundary.
+
+Translated phrasing (left) rewritten (right):
+
+- 시부야에 위치한 노포 야키토리 전문점이다 (located in) → 시부야 뒷골목에 있는
+  오래된 야키토리집이다.
+- 다양한 메뉴를 제공한다 (offers a variety of) → 라멘 세 가지와 교자를 판다.
+- 시그니처 메뉴인 쓰쿠네는 풍부한 육즙을 자랑한다 (signature, boasts) → 대표
+  메뉴인 쓰쿠네는 베어 물면 육즙이 흘러나온다.
+- 모던한 감성의 공간을 선사한다 (offers a modern vibe) → 벽과 천장을 노출
+  콘크리트로 마감했고, 통유리창이라 낮에는 조명 없이도 밝다.
+- 도시의 랜드마크로 기능한다 (serves as a landmark) → 역에서 나오면 가장 먼저
+  보이는 건물이라 약속 장소로 많이 쓴다.
+- 영화의 상징적인 장면의 배경으로 알려져 있다 (iconic, is known as) → 영화
+  마지막에 두 주인공이 계단에서 엇갈리다 서로를 알아보는 장면의 배경이다.
+- 유튜버가 강력 추천했다 (highly recommended) → 유튜버는 오사카에 오면 다시
+  들르겠다고 했다.
 
 ## Output Checks
 
@@ -179,4 +217,6 @@ Before returning, confirm that:
   contains, with no address, label, category, or guess standing in for it;
 - buildings the video introduces separately are separate locations;
 - every location has verbatim evidence with the right source label and time;
-- no `description` contains a timestamp or an extraction note.
+- no `description` contains a timestamp or an extraction note;
+- every `description` reads as Korean written from scratch, without
+  translated phrasing such as 위치한, 제공한다, or 선사한다.
