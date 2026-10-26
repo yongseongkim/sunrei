@@ -66,7 +66,7 @@ Run only one renewal at a time, on a machine YouTube does not block.
 
 ## Reviewing Candidates
 
-The renewal does no web research, and the extractor never guesses a shop name.
+The renewal does no web research, and the extractor never guesses a name.
 A venue the video doesn't name stays "상호 미확인" with no place.
 - Bulk-approve only candidates that have a place and no `geocodeWarning`.
 - Research the rest on the web before approving, following "Web Research for
