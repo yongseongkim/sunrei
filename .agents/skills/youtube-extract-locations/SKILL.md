@@ -30,7 +30,7 @@ Inspect a few descriptions, then pick one path per playlist or video:
 | --- | --- | --- |
 | Description-first | Descriptions carry a Google Maps link per place or a structured store-information block | `extract_from_descriptions.py` |
 | Timeline-driven | Places are named only in speech and on-screen text | `extract_locations_headless.py` |
-| Web research | TV-show clip compilations name a dish but not a venue | `geocode_food_vendors.py` |
+| Web research | The video shows places but no source names them, such as clip compilations of a TV show | `geocode_food_vendors.py`, `geocode.py` |
 
 Every path still uses the full evidence timeline for context, proper-name
 correction, and audit. When sources disagree about which place it is, the
@@ -72,9 +72,11 @@ The script fills identity and coordinates only. Write `concept` and each
 location's `description` from the evidence timeline, following the shared
 rules.
 
-Web-research path: identify the vendors through web research, cross-check
-Korean fan blogs with local sources, dedupe clips to distinct vendors, and
-geocode the list:
+Web-research path: identify each place through web research, cross-check
+fan sites and blogs with local review and map sites in the language of the
+video's region, and dedupe clips to distinct places. Geocode a food-vendor list
+from a research agent in one pass, and other places one at a time with
+`geocode.py --query` as in "Geocode and Verify":
 
 ```bash
 uv run python .claude/scripts/youtube/geocode_food_vendors.py <ID> <vendors.json>
@@ -122,6 +124,10 @@ one video keeps the earliest), generic entries, and geocode warnings. The user
 approves the list, adds, removes, or edits entries, or asks for another pass
 with a revised concept.
 
+When you write or edit a `description`, follow "Write the Public Context" in
+the shared rules, including its Korean style: no translated phrasing, verbs
+that say what happens at the place, and one fact per sentence.
+
 ## Save Approved Locations
 
 Write `.claude/workspace/youtube/{ID}/locations.json`:
@@ -144,7 +150,7 @@ Write `.claude/workspace/youtube/{ID}/locations.json`:
           "source": "transcript_mention",
           "timestamp": 125.5,
           "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=VIDEO_ID&t=125",
-          "description": "시부야 뒷골목 야키토리 투어에서 방문한 카운터 10석 규모의 노포. 대표 메뉴는 비장탄에 구운 쓰쿠네와 레바로, ..."
+          "description": "시부야 뒷골목 야키토리 투어에서 들른, 카운터 10석짜리 오래된 야키토리집이다. 대표 메뉴는 비장탄에 구운 쓰쿠네와 레바다. ..."
         }
       ]
     }
