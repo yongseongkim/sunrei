@@ -137,12 +137,49 @@ curl -s -H "Authorization: Bearer $TOKEN" \
   from another post. The public card shows one mention per Sunrei and place, so
   rejecting the repeat is usually right.
 
+### Search with the Post's Own Keywords
+
+Research every candidate that is not `MATCHED` before approving it. Build the
+searches from words the post itself gives, never from a guess:
+
+- the name as spoken in the video or shown on screen, and the area from the
+  caption, hashtags, or location tag;
+- people and shows the post names, such as a chef's name or nickname and the
+  TV program ("소바쥬 무쇠팔 박주성", "흑백요리사");
+- facts that set the place apart, such as short opening hours or entry by
+  password;
+- the author's own comments, which sometimes give the address. The scripts
+  cannot read comments without logging in, so when the post gives no name or
+  address, ask the user to check the comments on the post page.
+
+Search where people in the post's region look up places, such as Naver blogs
+and Kakao Map in Korea or Tabelog in Japan. Fetch the search page with curl
+and a browser User-Agent, for example
+`https://search.naver.com/search.naver?where=blog&query=…`. Accept a place
+only when a source matches facts from the post, such as the address, the chef,
+the hours, or the menu.
+
+Then search Google with what the research found:
+
+- A short or common name needs the category and area. "중국" in 서촌 returns
+  other Chinese restaurants nearby; "중국 중식당 종로구 서촌" finds it.
+- A name the video writes differently from its Google listing needs the listed
+  name: "202호" in the video is listed as "이백이호".
+- A branch that Google does not list needs its street address. Pass that
+  result as `place`, with the business name and full address set by hand.
+
+A candidate that had no place has an empty `existingSpotIds`. After choosing
+its place, check the Sunrei's spots for the same `googleMapsId`.
+
 Approve or reject:
 
 ```bash
 curl -s -X PATCH -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
   -d '{"reviewStatus": "APPROVED"}' "$SUNREI_API_URL/admin/instagram/extracted-places/ID"
 ```
+
+To approve with a place you found, add `"place": {"name", "address",
+"latitude", "longitude", "googleMapsId"}` to the body.
 
 Show the user the candidates and get their decisions before approving in
 bulk. Publish the Sunrei only when the user asks.
