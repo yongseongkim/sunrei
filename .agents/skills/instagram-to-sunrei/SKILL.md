@@ -152,25 +152,33 @@ searches from words the post itself gives, never from a guess:
   cannot read comments without logging in, so when the post gives no name or
   address, ask the user to check the comments on the post page.
 
-Search where people in the post's region look up places, such as Naver blogs
-and Kakao Map in Korea or Tabelog in Japan. Fetch the search page with curl
-and a browser User-Agent, for example
-`https://search.naver.com/search.naver?where=blog&query=…`. Accept a place
-only when a source matches facts from the post, such as the address, the chef,
-the hours, or the menu.
+Search where people in the post's region look up places, such as Naver and
+Kakao Map in Korea or Tabelog in Japan. Claude's WebSearch rarely finds these;
+fetch the search page with curl and a browser User-Agent.
 
-Then search Google with what the research found:
+In Korea, start with Naver Map. Naver's search page,
+`https://search.naver.com/search.naver?query=…`, embeds Naver Map's place
+cards, and each card's `"roadAddress"` in the page source is the current
+address. Naver Map lists branches that Google lacks and addresses that Google
+has not updated. Add the area or branch to the query when the name is short or
+has several branches ("방울과꼬막 서순라길", "중국 청운동"). Blog posts
+(`where=blog`) help confirm that the place is the one in the post. Accept a
+place only when a source matches facts from the post, such as the address, the
+chef, the hours, or the menu.
 
-- A short or common name needs the category and area. "중국" in 서촌 returns
-  other Chinese restaurants nearby; "중국 중식당 종로구 서촌" finds it.
-- A name the video writes differently from its Google listing needs the listed
-  name: "202호" in the video is listed as "이백이호".
-- A branch that Google does not list needs another listing at the same
-  address, such as the building's own name: 방울과꼬막 서순라길점 is in the
-  old inn listed as "대림장". With none, search the street address. Either
-  way, set the full address by hand.
-- A place that moved needs its current address, even when Google still lists
-  the old one: 소바쥬 moved from 공덕 to 신사.
+Then search Google with what the research found. In Korea, search the Naver
+Map address:
+
+- When Google's result at that address is the business, use it. The Google
+  name can differ from the one in the video: "202호" is listed as "이백이호".
+- When Google lists only another business in the same building, such as the
+  old inn "대림장" around 방울과꼬막 서순라길점, or only the address, use that
+  result and set the full address by hand.
+- Google can keep a place's old address after it moves. Take the Naver Map
+  address over it: 소바쥬 moved from 공덕 to 신사.
+- Without an address, a short or common name needs the category and area in
+  the query. "중국" in 서촌 returns other Chinese restaurants nearby;
+  "중국 중식당 종로구 서촌" finds it.
 
 A candidate that had no place has an empty `existingSpotIds`. After choosing
 its place, check the Sunrei's spots for the same `googleMapsId`.

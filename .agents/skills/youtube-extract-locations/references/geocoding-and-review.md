@@ -45,6 +45,10 @@ warning. Evidence that names only a kind of place and an area, such as
   in Japan. Claude's WebSearch rarely finds these; fetch the search page with
   curl and a browser User-Agent, for example
   `https://search.naver.com/search.naver?where=blog&query=…`.
+- In Korea, find the address on Naver Map and search Google with it. The
+  search page without `where=blog` embeds Naver Map's place cards, and each
+  card's `"roadAddress"` is the current address. Naver Map lists branches that
+  Google lacks and addresses that Google has not updated after a move.
 - Search the channel or show name together with the area and what the video
   shows. Review sites and fans often tag a place with the show that visited it.
 - Read the video's description and pinned comments.
