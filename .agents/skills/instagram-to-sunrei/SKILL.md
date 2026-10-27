@@ -165,8 +165,12 @@ Then search Google with what the research found:
   other Chinese restaurants nearby; "중국 중식당 종로구 서촌" finds it.
 - A name the video writes differently from its Google listing needs the listed
   name: "202호" in the video is listed as "이백이호".
-- A branch that Google does not list needs its street address. Pass that
-  result as `place`, with the business name and full address set by hand.
+- A branch that Google does not list needs another listing at the same
+  address, such as the building's own name: 방울과꼬막 서순라길점 is in the
+  old inn listed as "대림장". With none, search the street address. Either
+  way, set the full address by hand.
+- A place that moved needs its current address, even when Google still lists
+  the old one: 소바쥬 moved from 공덕 to 신사.
 
 A candidate that had no place has an empty `existingSpotIds`. After choosing
 its place, check the Sunrei's spots for the same `googleMapsId`.
