@@ -165,9 +165,10 @@ fetch the search page with curl and a browser User-Agent.
 
 In Korea, start with Naver Map. Naver's search page,
 `https://search.naver.com/search.naver?query=…`, embeds Naver Map's place
-cards, and each card's `"roadAddress"` in the page source is the current
-address. Naver Map lists branches that Google lacks and addresses that Google
-has not updated. Add the area or branch to the query when the name is short or
+cards, and each card's `"roadAddress"` is the listed address. Verify its branch
+and freshness when it conflicts with the footage or dated sources. Naver Map
+can list branches or moves that Google lacks. Add the area or branch to the
+query when the name is short or
 has several branches ("방울과꼬막 서순라길", "중국 청운동"). Blog posts
 (`where=blog`) help confirm that the place is the one in the post. Accept a
 place only when a source matches facts from the post, such as the address, the
@@ -192,6 +193,11 @@ Map address:
 
 A candidate that had no place has an empty `existingSpotIds`. After choosing
 its place, check the Sunrei's spots for the same `googleMapsId`.
+
+When signs or interiors need image review, or an old post differs from today's
+business, use [visual and historical review](../youtube-extract-locations/references/visual-and-historical-review.md).
+Keep filming and source dates separate, and resolve relocation versus another
+branch before choosing the pin.
 
 Approve or reject:
 

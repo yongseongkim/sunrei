@@ -48,9 +48,9 @@ warning. Evidence that names only a kind of place and an area, such as
   `https://search.naver.com/search.naver?where=blog&query=…`.
 - In Korea, find the address on Naver Map and search Google with it. The
   search page without `where=blog` embeds Naver Map's place cards, and each
-  card's `"roadAddress"` is the current address. Naver Map lists branches that
-  Google lacks and addresses that Google has not updated after a move.
-  Confirm that the card represents the right branch; a card or an old blog
+  card's `"roadAddress"` is its listed address. Naver Map can list branches or
+  moves that Google lacks. Verify the listing's branch and freshness against
+  the footage and dated sources; a card or an old blog
   address alone does not establish a relocation.
 - Search the channel or show name together with the area and what the video
   shows. Review sites and fans often tag a place with the show that visited it.
@@ -71,6 +71,10 @@ or restaurant the same destination. Confirm the premises from the video and
 address evidence. Record the filming address separately from a later address,
 and follow the user's mapping choice rather than treating another branch as
 an assumed relocation.
+
+Use [visual and historical review](visual-and-historical-review.md) for dated
+web evidence, frame/photo comparison, move versus closure checks, and the
+record that separates filmed premises from the chosen visitor destination.
 
 Once the venue and exact address are independently verified, an address or
 building pin can be a fallback when Google has no business listing. Confirm

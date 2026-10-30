@@ -127,6 +127,10 @@ one video keeps the earliest), generic entries, and geocode warnings. The user
 approves the list, adds, removes, or edits entries, or asks for another pass
 with a revised concept.
 
+When visual clues are needed or filming-era and current information differ,
+read [visual and historical review](references/visual-and-historical-review.md)
+before resolving the venue or changing its pin.
+
 Verify the scene timestamp from timed evidence or frames before saving the
 link. Metadata evidence at time zero and a matching search result do not
 identify the scene's start. For Instagram comparisons or source deduplication,
