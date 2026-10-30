@@ -22,6 +22,10 @@ Action: OCR is the only source for the name, address, and prices. A context
 refill that skipped OCR missed four restaurants in one playlist and left a
 ramen shop pinned to the wrong place.
 
+Check [the OCR crop limitation](../SKILL.md#1-collect-every-source) when the
+sign is outside the subtitle area; changing languages cannot recover pixels
+that the helper never reads.
+
 ## Foreign proper noun garbled in speech
 
 Symptom: captions and Whisper render a Japanese, Italian, or French name as

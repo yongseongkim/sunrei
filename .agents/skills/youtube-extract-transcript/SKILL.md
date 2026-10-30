@@ -5,16 +5,20 @@ description: Collect, align, and review YouTube captions, Whisper audio transcri
 
 # Extract and Review YouTube Text
 
-Collect captions, audio transcription, and on-screen text as three independent
-pieces of evidence, review the primary transcript with an isolated agent, and
+Collect captions, audio transcription, and on-screen text as three separate
+evidence tracks, review the primary transcript with an isolated agent, and
 align everything on one timeline. Raw source files are never modified.
 
 ## Prerequisites
 
-- Video metadata from `youtube-fetch-info`, saved as `metadata.json` with the
-  video ID, URL, channel, title, and description.
+- `youtube-fetch-info` writes `video_info.json`. For a single-video run, copy
+  that video's file to `{RUN_DIR}/metadata.json`; its `id` is accepted by the
+  timeline builder. Collector runs already supply `metadata.json` with
+  `videoId`. Keep the original fetch output unchanged.
 - One run directory per video, so each run holds one video's metadata and
-  evidence files. Process playlist videos independently.
+  evidence files. A playlist's `selectedVideos` entries lack full video
+  descriptions: fetch each selected video's metadata before preparing its run,
+  rather than using the playlist description as the video's evidence.
 
 ## 1. Collect Every Source
 
@@ -62,6 +66,10 @@ burned-in subtitles, not the country in the video. EasyOCR cannot load Korean
 and Japanese together, so run a second pass with `ja,en` when a sign or menu
 matters. Use `--interval 0.5` for rapidly changing text.
 
+This helper crops the bottom 30% of each frame. Signs elsewhere need a
+targeted full-frame inspection or separate OCR pass; changing `--lang` alone
+does not read the omitted area.
+
 Preserve a source's structured error in its file and continue with the other
 sources. Stop only when every source is empty or unavailable.
 
@@ -94,6 +102,10 @@ segment boundary and timestamp.
 
 ## 3. Review with Codex
 
+Write `{RUN_DIR}/descriptions.json` with the video's description, for example
+`{"VIDEO_ID": {"description": "the video's full description"}}`. The reviewer
+reads this file, not `metadata.json`; the automated collector prepares it.
+
 ```bash
 uv run --with openai-codex==0.160.0 python .claude/scripts/youtube/review_transcripts.py "{RUN_DIR}" --all
 ```
@@ -113,8 +125,9 @@ The reviewer writes `transcript_review.json` with every proposal `pending` and
 `captions.json`, `audio_transcript.json`, `onscreen_text.json`, or
 `transcripts.json`.
 
-Do not bulk-accept medium- or low-confidence proposals. After the user has
-decided each proposal, set it to `accept` or `reject` and rebuild without
+Keep proposals pending until the user decides them, carrying forward explicit
+decisions already given. Do not infer approval from confidence alone. Set
+decided proposals to `accept` or `reject` and rebuild without
 another model call:
 
 ```bash
@@ -136,7 +149,8 @@ uv run python .claude/scripts/youtube/evidence_timeline.py "{RUN_DIR}" --force
 `whisper`, or `ocr`, plus each source's status and input hash. A track that
 duplicates another is marked `duplicate` and does not count as independent
 confirmation. This file and `metadata.json` are the input to
-`youtube-extract-locations`.
+`youtube-extract-locations`. The CLI reads the video ID from `metadata.json`;
+when using a run without that file, supply `--video-id VIDEO_ID`.
 
 ## 5. Blocking and Unavailable Videos
 
@@ -161,6 +175,7 @@ Keep these files in the run directory for review and debugging:
 
 ```text
 metadata.json
+descriptions.json
 captions.json
 audio_transcript.json
 onscreen_text.json

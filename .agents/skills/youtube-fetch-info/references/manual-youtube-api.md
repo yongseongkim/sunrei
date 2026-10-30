@@ -5,22 +5,19 @@ for example to inspect a response field it does not keep.
 
 ## API Key
 
-Read `google.youtubeApiKey` from the server config when `YOUTUBE_API_KEY` is
-not set:
-
-```bash
-grep -E '^[[:space:]]*youtubeApiKey' sunrei-server/src/main/resources/application-local.conf \
-  | sed -E 's/.*=[[:space:]]*"?([^"]+)"?.*/\1/'
-```
-
-Use POSIX `[[:space:]]`; the BSD `grep` and `sed` on macOS do not support `\s`.
-The same key serves the Places API in `youtube-extract-locations`.
+The scripts use `_common.load_google_api_key()` from
+`.claude/scripts/youtube/_common.py`: it reads `YOUTUBE_API_KEY`, then
+`google.youtubeApiKey` in the server's `application-local.conf`. Reuse that
+helper inside the process making a manual request. Keep the key out of tool
+output, shell tracing, and saved evidence. If missing, ask the user to
+configure it locally. The same configured key serves the Places lookups.
 
 ## Parse the URL
 
 - A video URL contains `watch?v=`, `youtu.be/`, or `/shorts/`.
 - A playlist URL contains `list=`.
-- When both are present, ask whether to process the video or the playlist.
+- When both are present, use the user's requested scope and pass `--video`
+  for one video. Ask only if the scope is unresolved.
 
 ## Video
 

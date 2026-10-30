@@ -126,6 +126,10 @@ Rules for comparing sources:
   or on-screen text, infer the city and neighborhood from those sources, set
   `area` to that region so the map search runs there, and record the conflict
   in `issues`.
+- A brand can operate several distinct premises, such as a production
+  facility, tasting room, shop, and restaurant. Identify the space actually
+  shown; a generic brand or chapter label does not resolve its branch. Keep
+  a conflict with the description's pin or address in `issues` for review.
 
 ## 4. Record Evidence
 
@@ -164,7 +168,9 @@ covers several things at the place, covering:
    waiting, reservations, or the best time to visit
 
 Use only details the evidence supports; do not turn uncertain ASR wording into
-a factual claim. Write finished public text: summarize in your own sentences
+a factual claim. Keep each place's context within its own scene; food or
+activities at a later destination do not belong to the earlier venue. Write
+finished public text: summarize in your own sentences
 instead of copying transcript passages, use the corrected name, and leave out
 timestamps such as `(12:30)`, source comparisons, exclusions, and verification
 notes. Those belong in `reason`, `issues`, and the evidence `startSeconds`.
@@ -213,8 +219,10 @@ Before returning, confirm that:
 
 - every location fits the concept and is a place the video introduces, not a
   comparison, a warned-against venue, or a stop along the way;
-- every `name` is a real business or building name that the evidence
-  contains, with no address, label, category, or guess standing in for it;
+- each identified venue uses its evidenced business or building name, with
+  no address fragment, label, category, or guess presented as a confirmed
+  name; a specific destination whose name is absent remains an explicitly
+  unnamed, low-confidence candidate under section 3;
 - buildings the video introduces separately are separate locations;
 - every location has verbatim evidence with the right source label and time;
 - no `description` contains a timestamp or an extraction note;

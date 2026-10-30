@@ -7,11 +7,7 @@ repaired.
 ## Server and Token
 
 `SERVER_URL` is `http://localhost:3030` locally and
-`https://sunrei-api.yongseongkimm.com` in production. Check it first:
-
-```bash
-curl -s "{SERVER_URL}/health"
-```
+`https://sunrei-api.yongseongkimm.com` in production.
 
 Mint a short-lived admin JWT. The script decrypts `auth-jwt-secret` from
 `deploy/secrets/secrets.enc.yaml` with SOPS and signs the token, so no browser
@@ -20,6 +16,13 @@ login is needed:
 ```bash
 TOKEN=$(python3 .claude/scripts/auth/mint_token.py)               # 60 minutes
 TOKEN=$(python3 .claude/scripts/auth/mint_token.py --minutes 180)
+```
+
+Check connectivity and authentication with a read-only admin request; the
+server has no `/health` route:
+
+```bash
+curl -sS -f -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/sources?size=1"
 ```
 
 Keep the token in the shell variable and never write it to a file. When
@@ -154,8 +157,34 @@ uv run python .claude/scripts/youtube/registry_update.py <channelId> <liveId1,li
 - Tags update per spot: send `tagIds` or `tagLabels` only when replacing that
   spot's tag set.
 - Send one PUT per Sunrei with all changes combined. Concurrent PUTs overwrite
-  each other; when that has already left the data inconsistent, recreate the
-  Sunrei from `locations.json`.
+  each other. If the current data differs from the reviewed snapshot, stop
+  that write and reconcile it from the fresh GET and backup before retrying.
+
+Before writing, save the full GET response and the exact change plan in the
+project workspace. Re-read immediately before each PUT; if another edit has
+changed the reviewed state, rebuild the payload. Preserve publication status
+unless the user explicitly requests a change.
+
+After each write, GET the Sunrei again and compare spot IDs, counts, source
+links, and the intended field changes. Check that all other spot fields and
+top-level fields remain the same, apart from update timestamps. The server
+stores Place coordinates as Float: allow its rounding (for example an
+absolute difference below 0.00001 degrees), rather than requiring identical
+decimal strings. A matching coordinate does not replace the Google ID and
+venue checks.
+
+If a write times out or verification stops, inspect the live result before
+retrying. Match the intended additions by source link and Google ID and keep
+their existing spot IDs; do not resubmit new entries blindly. Stop further
+writes if unexpected differences remain. Keep the before/after responses and
+verification outcome so a partial batch can be resumed.
+
+`findOrCreatePlace` reuses the canonical Place for a Google ID without changing
+its name, address, or coordinates. To correct that shared record, review its
+other uses and send the intended fields to `PATCH /admin/places/{id}`. Latitude
+and longitude must be supplied together. Repoint a spot instead when it was
+attached to a different venue; renaming that other Place would affect its
+remaining spots.
 
 Full spot replacement from `locations.json`, keeping the Sunrei ID, Source,
 and published state:
