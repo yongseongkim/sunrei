@@ -121,6 +121,7 @@ pnpm codegen
 - 목록 화면(Content, Sources, Places)은 카드 하나에 행을 구분선으로 나눈다.
 - Sunrei 폼(`src/components/SunreiForm.tsx`, `src/components/sunrei-form/`)은 Source, 공개 상태, 요약, 이미지, spot 목록을 한 요청으로 저장한다.
   요청에서 빠진 기존 spot은 서버가 삭제한다.
+  spot 배열 순서가 서버의 표시 순서로 저장되며, 조회 시에도 같은 순서로 돌아온다.
 - spot의 장소는 `PlaceSearchModal`에서 Google Places 검색, 좌표 입력, 지도 클릭 중 하나로 고른다.
   검색 결과나 지도의 가게 아이콘으로 고르면 Google place ID도 저장해, 서버의 장소 중복 판정과 앱의 Google 정보 카드에 쓴다.
   빈 곳 클릭과 좌표 입력은 Google place ID 없이 저장한다.

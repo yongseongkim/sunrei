@@ -42,6 +42,11 @@ docker compose up -d     # PostgreSQL + PostGIS
 
 Flyway Gradle task는 `DB_URL`, `DB_USER`, `DB_PASSWORD` 환경 변수를 읽고, 없으면 docker compose의 로컬 DB에 접속한다.
 
+## 테스트
+
+`./gradlew test`는 실행 중인 Docker를 사용해 격리된 PostGIS DB를 띄우고 migration과 spot 순서 저장·조회·추가, 거리 정렬을 검증한다.
+운영 DB나 로컬 개발 DB는 사용하지 않는다.
+
 ## 규칙
 
 - DB 스키마의 기준은 `src/main/resources/db/migration`의 Flyway migration이다.

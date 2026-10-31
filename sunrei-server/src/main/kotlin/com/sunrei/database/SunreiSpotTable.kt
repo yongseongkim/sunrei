@@ -12,5 +12,6 @@ object SunreiSpots : ULIDTimestampedTable("sunrei_spot", "SS") {
     val images = json<List<MultiSizeImage>>("images", Json.Default).default(emptyList())
     val placeId = varchar("place_id", 32).references(Places.id)
     val sunreiId = varchar("sunrei_id", 32).references(Sunreis.id)
+    val sortOrder = integer("sort_order").default(0)
     val deletedAt = timestamp("deleted_at").nullable()
 }

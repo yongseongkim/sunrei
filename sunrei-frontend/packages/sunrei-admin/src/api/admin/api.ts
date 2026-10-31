@@ -80,6 +80,9 @@ export interface CreateSunreiRequest {
     'description'?: string | null;
     'link'?: string | null;
     'images'?: Array<MultiSizeImageDTO>;
+    /**
+     * The array order becomes the saved spot display order.
+     */
     'spots'?: Array<CreateSunreiSpotInline>;
 }
 export interface CreateSunreiSpotInline {
@@ -670,6 +673,9 @@ export interface SunreiDTO {
     'summary'?: string | null;
     'link'?: string | null;
     'images': Array<MultiSizeImageDTO>;
+    /**
+     * Spots in their saved display order.
+     */
     'spots': Array<SunreiSpotDTO>;
     'createdAt'?: string;
     'updatedAt'?: string;
@@ -756,6 +762,9 @@ export interface UpdateSunreiRequest {
     'description'?: string | null;
     'link'?: string | null;
     'images'?: Array<MultiSizeImageDTO> | null;
+    /**
+     * Replaces spot membership and saves this array order. Omitted live spots are soft-deleted; omitting this field preserves membership and order.
+     */
     'spots'?: Array<UpdateSunreiSpotInline>;
 }
 export interface UpdateSunreiSpotInline {

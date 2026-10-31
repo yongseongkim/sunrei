@@ -341,6 +341,7 @@ components:
             $ref: '#/components/schemas/MultiSizeImageDTO'
         spots:
           type: array
+          description: Saved display order by default. When a map center is supplied, distance takes priority and saved order breaks distance ties.
           items:
             $ref: '#/components/schemas/SunreiSpotDTO'
 

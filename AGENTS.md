@@ -57,6 +57,9 @@ Source가 해당 장소를 언급한 맥락(context)과 spot 단위 태그를 �
 YouTube 영상의 그 장면 시각이나 Instagram 게시물 주소다.
 V3에서 `youtube_link`를 대신했고, V4에서 `youtube_link`를 지웠다.
 spot 이미지가 있으면 공개 지도의 언급에 그 이미지를 보여 주고, 없으면 Sunrei 이미지를 보여 준다.
+Sunrei 안의 표시 순서는 `sort_order`에 저장하며, 생성·수정 요청의 `spots` 배열 순서를 따른다.
+`spots`를 보내지 않는 수정은 순서를 유지하고, 수집 승인으로 추가한 spot은 마지막에 붙인다.
+좌표를 지정한 공개 조회는 거리순을 우선하고, 같은 거리에서는 저장된 순서와 ID를 따른다.
 
 ### Place
 
