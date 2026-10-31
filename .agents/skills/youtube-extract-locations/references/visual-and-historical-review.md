@@ -14,6 +14,11 @@ the frame images. It cannot establish an unseen facade or interior from OCR
 alone. The methods below are targeted review options and implementation
 candidates, not features already enabled by these instructions.
 
+Use local transcription and OCR text for normal extraction. Supplement a
+cropped pass with local full-frame OCR when useful. Send images to an
+image-capable LLM only for a specific unresolved venue, branch, or scene
+question; do not routinely attach frames from every video or post.
+
 | Method | Useful result | Limit on what it establishes |
 | --- | --- | --- |
 | Shot-change detection and periodic sampling | A contact sheet covering entrances, signs, menus, interiors, and transitions | An editing cut does not necessarily mean a new venue; a venue can span many cuts |
@@ -22,12 +27,18 @@ candidates, not features already enabled by these instructions.
 | Feature matching against dated reference photos | A candidate facade, sign, or architectural detail to inspect | Similarity is corroboration; chain interiors, renovation, viewpoint, and lighting can mislead |
 | Object or text-region detection | Candidate regions to inspect with OCR or an image-capable reviewer | A detected class/box does not establish the business name, branch, or address |
 
-Start with a contact sheet combining shot representatives, periodic coverage,
-and frames around chapter or spoken-name anchors. Keep original timestamps
-and the excerpt's offset; a frame 12 seconds into an excerpt starting at 410
-seconds belongs at 422 seconds in the source. Refine short intervals around
-signs or entrances. Retain neighboring frames when a sign appears briefly;
-do not let near-duplicate removal discard changed subtitles or unique clues.
+Use timed speech and OCR to shortlist short intervals locally. Include
+introductions and area/address phrases even when the spoken name is garbled,
+and allow for subtitles leading or lagging speech. When text gives no timing
+anchor, use chapters, shot representatives, or periodic coverage. OpenCV
+can select clearer neighboring frames; a local contact sheet is optional.
+
+Start image verification with a few selected images, typically two or three,
+that address the missing fact. Include context and a readable sign/menu
+crop when needed; do not send every sampled frame or contact sheet by
+default. Keep original timestamps and the excerpt offset: 12 seconds into
+an excerpt starting at 410 seconds belongs at 422 seconds in the source.
+Retain brief unique clues even when adjacent frames look similar.
 
 If image review is available, inspect the actual frames together with timed
 speech and OCR. Record observable details separately from interpretations:
@@ -35,7 +46,15 @@ speech and OCR. Record observable details separately from interpretations:
 production brewery was filmed" needs additional evidence. Do not use a
 text-only model's imagined image description as a visual observation.
 
-Fixed-text filtering can discard a real venue sign along with watermarks.
+Save the finding and reuse it rather than resending unchanged images. Add
+images only when a specific missing view could resolve the question; keep
+the candidate unresolved when further images would add no useful evidence.
+Record image count and actual token usage when available; OCR runtime alone
+does not establish LLM cost.
+
+Check program logos and neighboring signs before accepting an OCR name
+match, and retain aliases actually observed in the content. Fixed-text
+filtering can discard a real venue sign along with watermarks.
 Revisit frames when the remaining OCR lacks the name. Instagram's OCR helper
 can merge repeated text across separated appearances: its start/end range
 does not establish continuous presence or the correct visit's start time.

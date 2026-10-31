@@ -70,9 +70,10 @@ This helper crops the bottom 30% of each frame. Signs elsewhere need a
 targeted full-frame inspection or separate OCR pass; changing `--lang` alone
 does not read the omitted area.
 
-For unresolved visual clues or a mismatch with today's premises, read
-[visual and historical review](../youtube-extract-locations/references/visual-and-historical-review.md).
-It covers representative frames, optional detection, and dated web evidence.
+Keep regular transcript review text-only. For unresolved visual clues or a
+mismatch with today's premises, read
+[visual and historical review](../youtube-extract-locations/references/visual-and-historical-review.md)
+for local frame selection, selective image verification, and dated web evidence.
 
 Preserve a source's structured error in its file and continue with the other
 sources. Stop only when every source is empty or unavailable.

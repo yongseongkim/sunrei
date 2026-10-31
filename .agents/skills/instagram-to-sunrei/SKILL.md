@@ -194,8 +194,10 @@ Map address:
 A candidate that had no place has an empty `existingSpotIds`. After choosing
 its place, check the Sunrei's spots for the same `googleMapsId`.
 
-When signs or interiors need image review, or an old post differs from today's
-business, use [visual and historical review](../youtube-extract-locations/references/visual-and-historical-review.md).
+Use caption, transcript, and OCR text for normal extraction. When these leave
+visual clues or filming-era conflicts unresolved, use
+[visual and historical review](../youtube-extract-locations/references/visual-and-historical-review.md)
+to select a few images for verification.
 Keep filming and source dates separate, and resolve relocation versus another
 branch before choosing the pin.
 
