@@ -38,9 +38,9 @@ Set these without asking:
 
 ## 2. Choose Spot Tags
 
-Tags belong to spots. List them and let the user pick. The same set applies to
-every spot unless the user overrides one; when no tags exist, every spot gets
-an empty `tagIds`.
+Tags belong to spots. Reuse the user's tag choices; list tags for selection
+when a choice is still needed. The same set applies to every spot unless the
+user overrides one; when no tags exist, every spot gets an empty `tagIds`.
 
 ```bash
 TOKEN=$(python3 .claude/scripts/auth/mint_token.py)
@@ -64,9 +64,10 @@ hard to fix after saving:
   `<name> — <playlist> 영상에서 소개한 <area> 맛집.`, and never a bare dish name.
 - `videoUrlWithTimestamp` is a real video URL with `&t=`, not a city or
   playlist placeholder.
-- `name` is a real venue name. The admin API cannot rename a Place:
-  `findOrCreatePlace` reuses the existing Place for a `googleMapsId` and keeps
-  its old name, so `13-3` or `1) 카덴` needs a DB fix later.
+- `name` is a verified venue name. `findOrCreatePlace` reuses the existing
+  Place for a `googleMapsId` and keeps its canonical fields. A corrected label
+  in a spot payload does not rename that Place; review the shared record and
+  use `PATCH /admin/places/{id}` if it needs correction.
 - `name` is the name the video introduces, in Korean when Google returns only
   a foreign-language name (`ネクサスワールド石山棟` is saved as
   `넥서스 월드 이시야마 오사무 동`, keeping Google's `googleMapsId` and
@@ -79,7 +80,9 @@ hard to fix after saving:
 - The video URL goes in `sourceLink`; the old `youtubeLink` field no longer
   exists.
 
-Present the spots in a table and wait for the user's approval.
+Present the spot table and compare it with the approved locations and tag
+choices. Reuse that approval when the payload agrees; resolve new choices or
+changes before writing.
 
 ## 4. Dry Run, Then Commit
 
@@ -96,8 +99,9 @@ per workspace.
 - HTTP 409: a Sunrei with this link already exists (`existingId`). Do not
   create another; update that Sunrei instead, as described in
   `references/admin-operations.md`.
-- Other errors: check required fields and tag IDs, correct the payload, and
-  retry.
+- Other errors: check required fields and tag IDs. After a timeout or unclear
+  write result, read the live Sunrei before retrying so successful additions
+  are not created twice; follow the verification rules in the admin reference.
 
 The script does not select tags, does not review spot quality, and does not
 update the channel registry. Those are steps 2, 3, and 5.
@@ -116,6 +120,10 @@ uv run python .claude/scripts/youtube/registry_update.py <channelId> <sunreiId1,
 Pass every live Sunrei ID for the channel; entries for IDs left out are
 dropped. Run it once per channel.
 
+If registry access fails after a Sunrei was saved, record the saved ID and
+the registry failure separately. Retry the registry step from live data;
+do not repeat creation or report the registry as updated.
+
 ## Editing an Existing Sunrei
 
 `PUT /admin/sunreis/{id}` changes only the top-level fields it receives, but
@@ -129,9 +137,11 @@ calls are in `references/admin-operations.md`.
 ## Finish
 
 Report the Sunrei ID, the admin URL
-(`https://sunrei-admin.yongseongkimm.com/sunreis/{id}` in production), the
-number of spots created, and whether the registry was updated. Leave the
-Sunrei a draft and keep the workspace unless the user asks otherwise.
+(`https://sunrei-admin.yongseongkimm.com/sunreis/{id}/edit` in production),
+the spots added, changed, or removed, any unresolved items, and whether the
+registry was updated. State the verified publication status. Leave newly
+created Sunreis a draft, preserve an existing Sunrei's publication status,
+and keep the workspace unless the user asks otherwise.
 
 ## References
 

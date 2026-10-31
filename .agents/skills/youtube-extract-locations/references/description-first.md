@@ -27,7 +27,8 @@ Map-link channels, such as @saturdaytokyo / 토요일의 도쿄:
   `g.page`.
 - The script follows each short link to the creator's pin and checks that the
   Places result lies within about 200 m of it.
-- The resolved pin is the place identity. It beats any search by name.
+- The resolved pin is stronger than a name search. Verify a conflict with the
+  filmed branch as described below.
 
 Structured-block channels, such as 비밀이야 bimirya:
 
@@ -60,5 +61,7 @@ conflict for review.
 
 ### Sources disagree about which place it is
 
-Action: the description link wins. Keep the other evidence for the
-description and the audit trail.
+Action: a creator's pin outweighs a name-search guess, but it can still point
+to an old branch or different premises. Keep the conflict unresolved until
+the filmed venue is verified, following
+[geocoding and review](geocoding-and-review.md#filmed-premises-moves-and-missing-listings).

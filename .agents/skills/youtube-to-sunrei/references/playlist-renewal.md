@@ -68,12 +68,12 @@ Run only one renewal at a time, on a machine YouTube does not block.
 
 The renewal does no web research, and the extractor never guesses a name.
 A venue the video doesn't name stays "상호 미확인" with no place.
-- Bulk-approve only candidates that have a place and no `geocodeWarning`.
-- Research the rest on the web before approving, following "Web Research for
-  Review" in `youtube-extract-locations/references/geocoding-and-review.md`.
-  Pass the found place in the approval.
+- Apply the identity, branch, and approval checks in
+  [geocoding and review](../../youtube-extract-locations/references/geocoding-and-review.md).
+  No warning is not proof of a correct match. Research missing or conflicting
+  identities, and pass the verified place in the approval.
 - Show the user what you found, with YouTube links at the scene as plain URLs,
   and approve only what they accept.
-- When an approved spot turns out wrong, repoint it with `PUT /admin/sunreis/{id}`:
-  send every spot as `{id, title}` (omitted spots are deleted) and add `place`
-  only to the one being fixed.
+- When an approved spot turns out wrong, follow
+  [the existing-Sunrei update rules](../../youtube-create-sunrei/references/admin-operations.md#edit-an-existing-sunrei)
+  for the complete spot list, backups, and verification before sending a PUT.

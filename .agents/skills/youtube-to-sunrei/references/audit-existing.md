@@ -30,10 +30,17 @@ places from the speech track.
 
 Places: re-point a wrong place by geocoding the venue name from the
 description with its area, never the bare address. Split merged buildings into
-one Place each. The admin API cannot rename an existing Place, so a wrong name
-on a reused `googleMapsId` needs a DB update.
+one Place each. Check the filmed premises and any relocation against
+[geocoding and review](../../youtube-extract-locations/references/geocoding-and-review.md).
+A wrong canonical name or address on the correct Place can be changed with
+`PATCH /admin/places/{id}`; check its other uses first. Repoint the spot when
+it is the wrong venue instead of renaming another venue's shared Place.
 
-Saving: follow the spot checks in `youtube-create-sunrei` step 3 and the PUT
-rules in `youtube-create-sunrei/references/admin-operations.md`. Send every live spot in one
-PUT, compare spot counts before and after, and preview large changes on a
-local server before writing to production.
+For an Instagram-to-YouTube comparison or source migration, read
+[cross-platform review](../../instagram-to-sunrei/references/cross-platform-review.md).
+Check uploads and relevant playlists as well as saved spots before marking a
+video missing, and apply the user's source preference only to verified matches.
+
+Saving: follow [the spot checks](../../youtube-create-sunrei/SKILL.md#3-check-every-spot)
+and [the existing-Sunrei update rules](../../youtube-create-sunrei/references/admin-operations.md#edit-an-existing-sunrei)
+for payloads, backups, and read-back verification.

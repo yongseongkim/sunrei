@@ -23,12 +23,17 @@ starting the next step.
 
 ## Workflow
 
-Every step reads and writes `.claude/workspace/youtube/{ID}/`.
+Keep the selected playlist or video metadata and final `locations.json` in
+`.claude/workspace/youtube/{ID}/`. Evidence collection and timeline extraction
+use one run directory per selected video; the transcript skill explains the
+metadata and description files each run needs. Assemble approved per-video
+locations into the workspace's final `locations.json`.
 
 1. Fetch metadata with `youtube-fetch-info`. It saves `video_info.json`,
    including the `channel` object that becomes the Source, and for a playlist
    settles which videos to process.
-   Checkpoint: confirm the selection before collecting evidence.
+   Reuse the user's selected scope; resolve an ambiguous selection before
+   collecting evidence.
 2. Collect evidence with `youtube-extract-transcript`, once per selected
    video. It collects captions, Whisper, and OCR for every video, runs the
    isolated transcript reviewer, and builds `evidence_timeline.json`.
@@ -43,12 +48,17 @@ Every step reads and writes `.claude/workspace/youtube/{ID}/`.
 4. Create the Sunrei with `youtube-create-sunrei`. It composes the Sunrei,
    builds one SunreiSpot per approved location, creates a draft through the
    admin API, and updates the channel registry.
-   Checkpoint: the user approves the spot table before the commit.
+   Check the spot table against the approved locations and tag choices. Reuse
+   that approval when the payload agrees; ask only for new choices or changes.
 
 ## Approval Boundaries
 
+- Carry forward explicit approvals, exclusions, and holds already given for
+  this scope. Ask for a decision only when it remains unresolved or the scope
+  changes.
 - No Sunrei is created or updated before the location list is approved.
-- Review proposals are accepted or rejected one by one, never in bulk.
+- Resolve transcript proposals under the transcript skill's review rules;
+  a pending proposal is not an accepted correction.
 - Created Sunreis are drafts. Publish only when the user asks.
 - A members-only video ends the pipeline for that video. Do not look for its
   places another way.
@@ -60,13 +70,22 @@ Before starting, inspect the workspace:
 1. Identify the completed steps from the files present: `video_info.json`,
    the evidence files and `evidence_timeline.json`, `location_candidates.json`
    or `locations.json`.
-2. Summarize the saved progress and ask whether to resume or start over.
+2. Summarize the saved progress and resume when the user asked to continue.
+   Ask only when choosing a workspace or replacing saved decisions is unclear.
 3. When a step fails, report the error and retry that step only. Intermediate
    files stay, so the user can stop at any checkpoint and continue later.
 
 If videos were re-edited after an earlier ingest, redo steps 2 and 3 against
 the current video; `youtube-extract-locations` explains how to keep verified
 geocodes.
+
+## Finish
+
+Report the selected videos and the counts of evidence collected, locations
+reviewed, and spots saved. List unresolved locations, unprocessed videos or
+playlists, registry failures, and any source migration left undone. State
+publication status separately. Describe a completed batch by its scope;
+finishing it does not mean the whole channel has been processed.
 
 ## References
 

@@ -1,6 +1,6 @@
 ---
 name: instagram-download-reels
-description: Download Instagram reels as MP4 files, paced to stay under Instagram's throttling. Use when the user asks to download Instagram videos or reels, or needs reel audio and frames for Whisper or OCR.
+description: Download Instagram reels as MP4 files with request pacing, resumable status, and an API fallback. Use when the user asks to download Instagram videos or reels, or needs reel audio and frames for Whisper or OCR.
 ---
 
 # Download Instagram Reels
@@ -11,16 +11,15 @@ an interruption.
 
 ## Rate Limits
 
-Instagram publishes no limit for logged-out access, but it does throttle, and
-the threshold is unknown. A throttled request rarely fails with HTTP 429.
-Instead, yt-dlp reports `Instagram sent an empty media response` or
-`rate-limit reached or login required`.
+Treat the safe threshold for logged-out access as unknown. Throttling may
+appear without HTTP 429: yt-dlp reports `Instagram sent an empty media response`
+or `rate-limit reached or login required`.
 
-The script stays under the limit by:
+The script limits request pressure and handles throttling by:
 
 - downloading one reel at a time with a random 5-10 second pause
-- backing off for 2 minutes after a throttled reel, then retrying it once after
-  the main pass
+- backing off for 2 minutes after a throttled reel, then waiting 5 minutes
+  before one retry pass after the main pass
 - stopping after three throttled reels in a row, which leaves the rest for a
   rerun an hour or so later
 
@@ -39,12 +38,14 @@ uv run --with yt-dlp python .claude/scripts/instagram/download_reels.py \
 ```
 
 Inputs can be reel or post URLs, shortcodes, or text files with one per line.
-Lines starting with `#` are ignored. Each reel is saved as `{shortcode}.mp4` at
-up to 720p, which is enough for Whisper and OCR. A carousel post with videos is
-saved as `{shortcode}_1.mp4`, `{shortcode}_2.mp4`, and so on.
+Lines starting with `#` are ignored. Each reel is saved as `{shortcode}.mp4`.
+The format selection prefers 720p or lower but has an unrestricted fallback.
+A carousel post with videos is saved as `{shortcode}_1.mp4`,
+`{shortcode}_2.mp4`, and so on.
 
-Download only the reels the workflow needs, such as video posts that have
-place candidates and are not disclosed ads. Do not download a whole account.
+Download the selected video posts needed for evidence, skipping known ads
+when the collection scope excludes them. Do not expand a request for specific
+posts into a whole-account download.
 
 `status.json` in the output directory decides what a rerun does:
 
@@ -59,12 +60,15 @@ place candidates and are not disclosed ads. Do not download a whole account.
 Exit code 3 means throttled or unattempted reels remain. Report the counts to the
 user and rerun later instead of retrying immediately.
 
+Inspect the status counts even on exit 0: `failed` or `login_required` entries
+may still remain.
+
 ## Age-Restricted Reels
 
 Instagram hides some reels from logged-out visitors, often because they show
 alcohol. yt-dlp reports `This content isn't available to everyone`. Do not pass
-browser cookies or a logged-in session; automated logged-in access is against
-Instagram's terms and risks the account.
+browser cookies or a logged-in session; this workflow deliberately uses
+logged-out downloads and the official API fallback.
 
 Download them through the official Graph API instead. Check the token first
 (step 1 of `instagram-to-sunrei`), then run:

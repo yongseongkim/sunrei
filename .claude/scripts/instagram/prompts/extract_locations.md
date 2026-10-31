@@ -58,9 +58,11 @@ Exclude:
 - Places mentioned only in passing or as a comparison, such as the original
   branch of a restaurant whose other branch the post reviews
 - Neighborhoods, streets, and markets without a specific venue
-- Generic names ("중국집", "횟집") and dishes rather than places
+- Generic categories or dishes without a specific introduced destination
 
 A post can introduce several places, such as a food crawl. Return each one.
+A specific venue the post reviews still counts when its name is missing;
+keep it with `nameFound: false` as described below.
 
 Find the business name in every source. Captions often describe a place
 without naming it while the video says or shows the name, so read `speech` and
@@ -69,6 +71,11 @@ speech and on-screen text, is confirmed. When sources spell a name
 differently, use the spelling they agree on or the one in the caption; correct
 a recognition error only when another source shows the right form. Include the
 branch when the evidence gives it, such as "전자방 필동점".
+
+A brand's production facility, tasting room, shop, and restaurant may be
+different places. Use the premises shown or described in this post. A brand
+name alone does not settle the branch; keep that uncertainty in `reason` and
+set `needsVerification` when the evidence does not distinguish them.
 
 Use `locationTag` when it names a specific venue and agrees with the other
 evidence. A location tag that names only a neighborhood or market is area
@@ -105,7 +112,9 @@ type of place and its setting, signature menu items and how they are served,
 taste or texture, the author's assessment and recommendation, and practical
 notes such as waiting, crowds, or reservations. Prefer details the author
 states over generic praise, and include assessments that appear only in the
-speech. Paraphrase in a neutral third person; do not copy long passages and do
-not repeat recognition errors. Refer to the author by the short name people
+speech. For a post with several stops, attach each dish, activity, and
+assessment to the place where it occurs. Paraphrase in a neutral third person;
+do not copy long passages or repeat recognition errors. Refer to the author
+by the short name people
 know them by, taken from `account.name` without group names, titles, or
 handles (for "홍길동 Gildong of bandname", write "홍길동").

@@ -6,9 +6,10 @@ guards automatically; apply them yourself when calling the Places API by hand.
 
 ## Query Guards
 
-Never geocode an address alone. Google returns the nearest business at that
-address, often a hotel or office, with plausible coordinates but the wrong
-`googleMapsId`. Search for the business name and its area together, such as
+Do not use an address-only search to identify an unknown business. Google
+returns a business at or near that address, often a hotel or office, with
+plausible coordinates but the wrong `googleMapsId`. Search for the business
+name and its area together, such as
 "시부야 야키토리 가게" rather than "야키토리 가게". `geocode.py` refuses a name
 that looks like opening hours, a phone number, or an address.
 
@@ -45,6 +46,12 @@ warning. Evidence that names only a kind of place and an area, such as
   in Japan. Claude's WebSearch rarely finds these; fetch the search page with
   curl and a browser User-Agent, for example
   `https://search.naver.com/search.naver?where=blog&query=…`.
+- In Korea, find the address on Naver Map and search Google with it. The
+  search page without `where=blog` embeds Naver Map's place cards, and each
+  card's `"roadAddress"` is its listed address. Naver Map can list branches or
+  moves that Google lacks. Verify the listing's branch and freshness against
+  the footage and dated sources; a card or an old blog
+  address alone does not establish a relocation.
 - Search the channel or show name together with the area and what the video
   shows. Review sites and fans often tag a place with the show that visited it.
 - Read the video's description and pinned comments.
@@ -52,8 +59,35 @@ warning. Evidence that names only a kind of place and an area, such as
   frames show its sign or name.
 - Check whether the scene is a preview of the next episode before approving it.
 
-Bulk-approve only candidates with a place and no warning. Show the reviewer
-the rest with YouTube links at the scene, as plain URLs.
+An unflagged search match still needs the venue and branch checks. Bulk
+approval applies only to candidates the user has approved within the current
+scope. Show unresolved candidates with YouTube links at the scene, as plain
+URLs.
+
+## Filmed Premises, Moves, and Missing Listings
+
+A shared brand name does not make a production facility, tasting room, shop,
+or restaurant the same destination. Confirm the premises from the video and
+address evidence. Record the filming address separately from a later address,
+and follow the user's mapping choice rather than treating another branch as
+an assumed relocation.
+
+Use [visual and historical review](visual-and-historical-review.md) for dated
+web evidence, frame/photo comparison, move versus closure checks, and the
+record that separates filmed premises from the chosen visitor destination.
+
+Once the venue and exact address are independently verified, an address or
+building pin can be a fallback when Google has no business listing. Confirm
+that its coordinates represent the actual premises, retain the verified venue
+name and full address in the payload, and record the fallback in the review
+notes. A result for another shop nearby is not confirmation. Preserve an
+existing user-approved proxy mapping rather than silently replacing it.
+
+The admin API reuses the canonical Place for a `googleMapsId`; sending a
+different label or address in a spot does not overwrite that Place. Inspect
+the saved response, and use a reviewed `PATCH /admin/places/{id}` when the
+shared Place itself needs correction. Keep address-pin or proxy limitations
+in review notes, outside the public context.
 
 ## Region Check
 
@@ -80,15 +114,9 @@ name the video uses, such as `넥서스 월드 이시야마 오사무 동`.
 
 ## Places API by Hand
 
-The Places API (New) must be enabled for the key. When the key is not in the
-environment, read it from the server config:
-
-```bash
-grep -E '^[[:space:]]*youtubeApiKey' sunrei-server/src/main/resources/application-local.conf \
-  | sed -E 's/.*=[[:space:]]*"?([^"]+)"?.*/\1/'
-```
-
-Use POSIX `[[:space:]]`; the BSD `grep` and `sed` on macOS do not support `\s`.
+The Places API (New) must be enabled for the key. Reuse
+[the shared Google key loader](../../youtube-fetch-info/references/manual-youtube-api.md#api-key)
+without printing the key.
 
 ```bash
 curl -s -X POST "https://places.googleapis.com/v1/places:searchText" \
@@ -98,5 +126,5 @@ curl -s -X POST "https://places.googleapis.com/v1/places:searchText" \
   -d '{"textQuery": "{LOCATION_NAME} {AREA_CONTEXT}", "languageCode": "ko"}'
 ```
 
-Keep the field mask to these fields. Every request is billed, and extra
-fields move it to a more expensive SKU.
+Keep the field mask to what the review needs. Add `places.businessStatus`
+when checking whether the venue is closed; the example mask above omits it.

@@ -1,6 +1,6 @@
 ---
 name: youtube-fetch-info
-description: Fetch metadata for a YouTube video, playlist, and channel. Use when the user provides a YouTube URL, asks for video or playlist details, or starts the YouTube-to-Sunrei workflow.
+description: Fetch metadata for a YouTube video, playlist, and channel. Use for video or playlist details and for the metadata stage of a YouTube ingest. Use youtube-to-sunrei to coordinate an end-to-end conversion.
 ---
 
 # Fetch YouTube Metadata
@@ -15,16 +15,18 @@ uv run python .claude/scripts/youtube/fetch_info.py "<URL>" [--videos all|1,3,5|
 ```
 
 - A video URL contains `watch?v=`, `youtu.be/`, or `/shorts/`; a playlist URL
-  contains `list=`. When a URL has both, the script takes the playlist. Ask
-  the user which they meant and pass `--video` for the single video.
+  contains `list=`. When a URL has both, the script takes the playlist. Follow
+  the scope the user requested and pass `--video` for a single video; ask only
+  when that scope is unclear.
 - `--videos` selects the playlist entries written to `selectedVideos`, by
   1-based indices or `first:N`. Downstream scripts process only that array.
-  Use `all` for a real ingest, and `first:1` or explicit indices only for
-  disposable tests.
+  Use `all` when the user wants the whole playlist. Honor an explicit subset
+  for a real ingest too; do not silently expand it or treat a sample as the
+  whole playlist.
 - The script reads the API key from `YOUTUBE_API_KEY` or from
   `google.youtubeApiKey` in
   `sunrei-server/src/main/resources/application-local.conf`. When neither is
-  set, ask the user for the key.
+  set, ask the user to configure it locally without pasting the key into chat.
 
 The result is written to `.claude/workspace/youtube/{ID}/video_info.json`,
 where `{ID}` is the video or playlist ID. Call the YouTube Data API by hand
@@ -59,15 +61,15 @@ Fields the later skills depend on:
 
 Show the title, the channel name and handle, and the description truncated
 when long. For a video add the published date and duration; for a playlist
-add the video count and an indexed list of the selected titles, and confirm
-the selection with the user.
+add the video count and an indexed list of the selected titles. Reuse the
+user's existing selection; request a decision only for an unresolved scope.
 
 ## Registered Playlists
 
 Playlists registered for periodic collection keep their videos and processing
 state in the Sunrei DB through the admin API, not in workspace files. Do not
 rebuild a curated `video_info.json` for them; see
-`youtube-to-sunrei/references/playlist-renewal.md`.
+[playlist renewal](../youtube-to-sunrei/references/playlist-renewal.md).
 
 ## Finish
 

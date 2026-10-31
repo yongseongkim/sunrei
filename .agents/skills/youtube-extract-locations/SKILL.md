@@ -20,7 +20,9 @@ into geocoded place candidates, then review them with the user.
   `sunrei-server/src/main/resources/application-local.conf`. The Places API
   and the YouTube Data API share it.
 
-When an input is missing, report which step produces it and stop.
+When a required input is missing, identify its producing step and collect it
+within the authorized workflow. A recorded failure of one evidence source is
+not a reason to discard the other usable sources; report the coverage.
 
 ## Choose an Extraction Path
 
@@ -33,9 +35,10 @@ Inspect a few descriptions, then pick one path per playlist or video:
 | Web research | The video shows places but no source names them, such as clip compilations of a TV show | `geocode_food_vendors.py`, `geocode.py` |
 
 Every path still uses the full evidence timeline for context, proper-name
-correction, and audit. When sources disagree about which place it is, the
-description link wins. The formats the first path parses, and their failure
-modes, are in `references/description-first.md`.
+correction, and audit. A description link is stronger than a name search;
+when it conflicts with the filmed branch or premises, flag the conflict
+instead of forcing that pin. The formats the first path parses, and their
+failure modes, are in `references/description-first.md`.
 
 ## Load the Shared Extraction Rules
 
@@ -74,8 +77,8 @@ rules.
 
 Web-research path: identify each place through web research, cross-check
 fan sites and blogs with local review and map sites in the language of the
-video's region, and dedupe clips to distinct places. Geocode a food-vendor list
-from a research agent in one pass, and other places one at a time with
+video's region, and dedupe clips to distinct places. Geocode a prepared
+food-vendor list in one pass, and other places one at a time with
 `geocode.py --query` as in "Geocode and Verify":
 
 ```bash
@@ -123,6 +126,16 @@ Show every candidate in one table:
 one video keeps the earliest), generic entries, and geocode warnings. The user
 approves the list, adds, removes, or edits entries, or asks for another pass
 with a revised concept.
+
+Use OCR and transcript text for normal extraction. For unresolved visual
+clues or filming-era conflicts, read
+[visual and historical review](references/visual-and-historical-review.md)
+before selecting a few images for verification or changing the pin.
+
+Verify the scene timestamp from timed evidence or frames before saving the
+link. Metadata evidence at time zero and a matching search result do not
+identify the scene's start. For Instagram comparisons or source deduplication,
+read [cross-platform review](../instagram-to-sunrei/references/cross-platform-review.md).
 
 When you write or edit a `description`, follow "Write the Public Context" in
 the shared rules, including its Korean style: no translated phrasing, verbs
