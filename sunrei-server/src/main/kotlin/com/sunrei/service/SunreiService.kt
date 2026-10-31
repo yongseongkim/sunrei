@@ -32,6 +32,7 @@ import org.jetbrains.exposed.sql.and
 import org.jetbrains.exposed.sql.andWhere
 import org.jetbrains.exposed.sql.deleteWhere
 import org.jetbrains.exposed.sql.insert
+import org.jetbrains.exposed.sql.max
 import org.jetbrains.exposed.sql.or
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
@@ -140,7 +141,7 @@ class SunreiService(
             stmt[Sunreis.images] = request.images?.map { it.toModel() } ?: emptyList()
         }
 
-        request.spots?.forEach { spot -> createSunreiSpot(sunreiId, spot) }
+        request.spots?.forEachIndexed { index, spot -> createSunreiSpot(sunreiId, spot, index) }
 
         getById(sunreiId) ?: error("Failed to create Sunrei")
     }
@@ -174,16 +175,16 @@ class SunreiService(
                 .select { (SunreiSpots.sunreiId eq id) and (SunreiSpots.deletedAt.isNull()) }
                 .map { it[SunreiSpots.id] }
 
-            spotRequests.forEach { spot ->
+            spotRequests.forEachIndexed { index, spot ->
                 when {
                     spot.id != null && spot.id in existingSpotIds && spot.delete == true ->
                         softDeleteSpot(spot.id)
 
                     spot.id != null && spot.id in existingSpotIds ->
-                        updateSunreiSpot(spot.id, spot)
+                        updateSunreiSpot(spot.id, spot, index)
 
                     spot.id == null && spot.delete != true ->
-                        createSunreiSpot(id, spot)
+                        createSunreiSpot(id, spot, index)
                     // 삭제 표시가 붙은 새 spot과 이 Sunrei에 없는 id는 무시한다.
                 }
             }
@@ -217,16 +218,16 @@ class SunreiService(
         spotId
     }
 
-    private fun createSunreiSpot(sunreiId: String, spot: CreateSunreiSpotInline): String =
+    private fun createSunreiSpot(sunreiId: String, spot: CreateSunreiSpotInline, sortOrder: Int? = null): String =
         doCreateSpot(
             sunreiId, spot.title, spot.context, spot.sourceLink,
-            spot.place, spot.images, spot.tagIds, spot.tagLabels
+            spot.place, spot.images, spot.tagIds, spot.tagLabels, sortOrder
         )
 
-    private fun createSunreiSpot(sunreiId: String, spot: UpdateSunreiSpotInline): String =
+    private fun createSunreiSpot(sunreiId: String, spot: UpdateSunreiSpotInline, sortOrder: Int): String =
         doCreateSpot(
             sunreiId, spot.title, spot.context, spot.sourceLink,
-            spot.place, spot.images, spot.tagIds, spot.tagLabels
+            spot.place, spot.images, spot.tagIds, spot.tagLabels, sortOrder
         )
 
     @Suppress("UNUSED_PARAMETER")
@@ -238,7 +239,8 @@ class SunreiService(
         place: PlaceInput?,
         images: List<MultiSizeImageDTO>?,
         tagIds: List<String>?,
-        tagLabels: List<String>?
+        tagLabels: List<String>?,
+        sortOrder: Int?
     ): String {
         val placeId = place?.let {
             placeService.findOrCreatePlace(it.name, it.address, it.latitude, it.longitude, it.googleMapsId)
@@ -246,6 +248,7 @@ class SunreiService(
 
         val spotId = SunreiSpots.insertAndGetId { stmt ->
             stmt[SunreiSpots.sunreiId] = sunreiId
+            stmt[SunreiSpots.sortOrder] = sortOrder ?: nextSpotOrder(sunreiId)
             stmt[SunreiSpots.title] = title
             stmt[SunreiSpots.context] = context
             stmt[SunreiSpots.placeId] = placeId
@@ -262,9 +265,17 @@ class SunreiService(
         return spotId
     }
 
-    private fun updateSunreiSpot(spotId: String, spot: UpdateSunreiSpotInline) {
+    private fun nextSpotOrder(sunreiId: String): Int {
+        val highest = SunreiSpots.sortOrder.max()
+        return (SunreiSpots.slice(highest)
+            .select { (SunreiSpots.sunreiId eq sunreiId) and SunreiSpots.deletedAt.isNull() }
+            .firstOrNull()?.get(highest) ?: -1) + 1
+    }
+
+    private fun updateSunreiSpot(spotId: String, spot: UpdateSunreiSpotInline, sortOrder: Int) {
         SunreiSpots.update({ SunreiSpots.id eq spotId }) { stmt ->
             stmt[SunreiSpots.title] = spot.title
+            stmt[SunreiSpots.sortOrder] = sortOrder
             spot.context?.let { stmt[SunreiSpots.context] = it }
             spot.sourceLink?.let { stmt[SunreiSpots.sourceLink] = it }
             spot.place?.let { placeInput ->
@@ -365,11 +376,12 @@ class SunreiService(
             (SunreiSpots innerJoin Places)
                 .slice(cols + dist)
                 .select { (SunreiSpots.sunreiId inList sunreiIds) and (SunreiSpots.deletedAt.isNull()) }
-                .orderBy(dist to SortOrder.ASC)
+                .orderBy(dist to SortOrder.ASC, SunreiSpots.sortOrder to SortOrder.ASC, SunreiSpots.id to SortOrder.ASC)
                 .toList()
         } else {
             (SunreiSpots innerJoin Places)
                 .select { (SunreiSpots.sunreiId inList sunreiIds) and (SunreiSpots.deletedAt.isNull()) }
+                .orderBy(SunreiSpots.sortOrder to SortOrder.ASC, SunreiSpots.id to SortOrder.ASC)
                 .toList()
         }
 

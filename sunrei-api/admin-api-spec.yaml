@@ -1489,6 +1489,7 @@ components:
             $ref: '#/components/schemas/MultiSizeImageDTO'
         spots:
           type: array
+          description: Spots in their saved display order.
           items:
             $ref: '#/components/schemas/SunreiSpotDTO'
         createdAt: { type: string, format: date-time }
@@ -1512,6 +1513,7 @@ components:
             $ref: '#/components/schemas/MultiSizeImageDTO'
         spots:
           type: array
+          description: The array order becomes the saved spot display order.
           items:
             $ref: '#/components/schemas/CreateSunreiSpotInline'
 
@@ -1533,6 +1535,7 @@ components:
             $ref: '#/components/schemas/MultiSizeImageDTO'
         spots:
           type: array
+          description: Replaces spot membership and saves this array order. Omitted live spots are soft-deleted; omitting this field preserves membership and order.
           items:
             $ref: '#/components/schemas/UpdateSunreiSpotInline'
 

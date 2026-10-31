@@ -585,7 +585,7 @@ export interface SunreiDTO {
      */
     'images': Array<MultiSizeImageDTO>;
     /**
-     * 
+     * Saved display order by default. When a map center is supplied, distance takes priority and saved order breaks distance ties.
      * @type {Array<SunreiSpotDTO>}
      * @memberof SunreiDTO
      */
