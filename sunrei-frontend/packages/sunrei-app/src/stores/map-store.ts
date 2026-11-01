@@ -21,6 +21,8 @@ interface MapState {
   map: google.maps.Map | null;
   // source 모드는 지도를 Source의 모든 장소에 맞춰 옮기므로, 들어가기 전 nearby 화면을 저장했다가 나올 때 되돌린다.
   savedView: SavedView | null;
+  // 뒤로/앞으로 복원한 화면은 데이터가 늦게 도착해도 자동 fit으로 카메라를 덮어쓰지 않는다.
+  restoredScopeKey: string | null;
 
   setMap: (m: google.maps.Map | null) => void;
   setCenter: (c: LatLng) => void;
@@ -70,6 +72,7 @@ export const useMapStore = create<MapState>((set, get) => {
     zoom: DEFAULT_ZOOM,
     map: null,
     savedView: null,
+    restoredScopeKey: null,
 
     setMap: (m) => set({ map: m }),
     setCenter: (c) => set({ mapCenter: c }),
@@ -156,7 +159,7 @@ export const useMapStore = create<MapState>((set, get) => {
       const map = get().map;
       if (map) map.panTo(c);
       if (zoom) map?.setZoom(zoom);
-      set({ mapCenter: c, commitNextIdle: commitOnIdle });
+      set({ mapCenter: c, zoom: zoom ?? get().zoom, commitNextIdle: commitOnIdle });
     },
 
     fitToPoints: (points, maxZoom = 16) => {

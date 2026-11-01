@@ -35,12 +35,13 @@ pnpm dev:app
 pnpm dev:admin
 pnpm build
 pnpm lint
+pnpm --filter sunrei-app test
 pnpm codegen
 ```
 
 - 개발 서버는 sunrei-app이 3000번, sunrei-admin이 3001번 포트를 쓴다.
   `pnpm dev`는 둘을 함께 띄운다.
-- 테스트 코드는 없다.
+- public 앱의 `tests/navigation-history.test.mjs`는 화면 이동, 브라우저 뒤로/앞으로, 직접 링크와 상태 복원을 Node 테스트 러너로 검증한다.
   `next build`가 타입 검사를 하고, `next.config.ts`가 빌드 중 ESLint를 끄므로 lint는 `pnpm lint`로 따로 돌린다.
 - 환경 변수는 각 패키지의 `.env.local`에 두며 이 파일은 git에 올리지 않는다.
 - 두 앱 모두 `NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`, `NEXT_PUBLIC_GOOGLE_CLIENT_ID`를 읽는다.
@@ -97,8 +98,14 @@ pnpm codegen
 - Sunrei는 화면에서 "시리즈"라고 부른다. YouTube 재생목록, Instagram 계정, 기사 시즌이 모두 Sunrei라 "영상"이 맞지 않기 때문이다.
   카드 눈썹은 Source가 하나면 "{n}번 소개됨", 둘 이상이면 "소스 {n}개가 소개"다.
 - Source 타입 이름과 언급 링크 라벨도 번역 키(`sourceType.*`, `detail.link*`)로 보여 준다.
-- URL query의 `sourceIds`, `tags`, `place`, `sunrei`로 deep link를 만든다.
-  지도 페이지를 다시 불러오지 않도록 `history.replaceState`로 URL만 바꾼다.
+- URL query의 `sourceIds`, `tags`, `place`, `sunrei`, `search`로 deep link를 만든다.
+  `search`가 있으면 검색 화면을 열며 그 값은 검색어다.
+  채널·시리즈·장소 선택과 검색 열기는 `history.pushState`로 기록하고, 검색어·태그·지도 이동·시트 높이는 현재 기록만 갱신한다.
+  같은 동작에서 여러 store가 바뀌어도 방문 기록은 한 번만 추가한다.
+  브라우저 뒤로/앞으로와 앱의 뒤로 버튼은 같은 기록을 사용해 선택한 콘텐츠, 검색어, 필터, 지도 중심·줌·조회 영역, 목록 스크롤과 모바일 시트 높이를 복원한다.
+  복원한 지도는 데이터가 늦게 도착해도 source·시리즈 자동 fit으로 다시 움직이지 않는다.
+  직접 링크로 처음 들어와 이전 Sunrei 기록이 없으면 앱의 뒤로 버튼은 상위 화면으로 전환하고 현재 기록을 교체한다. 브라우저 뒤로가기는 서비스 진입 이전 페이지로 나갈 수 있다.
+  Next.js의 방문 기록 데이터와 Sunrei가 관리하지 않는 query/hash는 보존한다.
 - locale은 URL 경로나 cookie 없이 `Accept-Language`로 정하고, 지원하지 않는 언어면 한국어로 보여 준다.
   문구는 `messages/ko.json`과 `messages/en.json`에 있다.
 - 장소 상세의 "Google 정보" 카드는 브라우저에서 Places Details를 직접 호출하며, 이 요청에는 Google 요금이 나간다.
@@ -107,7 +114,7 @@ pnpm codegen
 
 - `src/stores/`: `map-store`는 모드, 불러온 영역, 지도 인스턴스를, `ui-store`는 패널, 검색, 미리보기를, `filter-store`는 선택한 태그를 가진다.
 - `src/hooks/use-map.ts`: 지도와 상세 조회, 태그 필터 selector가 있다.
-  deep link는 `use-deep-link.ts`, Google Places와 Geocoding 호출은 `use-google-places.ts`에 있다.
+  deep link와 방문 기록 연결은 `use-deep-link.ts`, 기록·URL·뒤로가기 규칙은 `src/lib/navigation-history.ts`, Google Places와 Geocoding 호출은 `use-google-places.ts`에 있다.
 - `src/components/`: `map-view.tsx`는 OverlayView 핀을, `panels.tsx`는 검색, 장소 상세, 미리보기를 그린다.
   `source-channel.tsx`는 채널 화면, `desktop/`과 `mobile/`은 화면별 배치, `wf/`는 작은 공용 UI다.
 - `/dev`는 백엔드 없이 PlaceCard 상태를 눈으로 확인하는 개발용 페이지다.
