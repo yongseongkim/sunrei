@@ -7,10 +7,12 @@ import { useFilterStore } from '@/stores/filter-store';
 import { useTags } from '@/hooks/use-discovery';
 import { useTagLabel } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
+import { navigateBack } from '@/lib/navigation-history';
 import type { PlaceCardDTO } from '@/dto';
 
 export function FiltersPanel({ places }: { places: PlaceCardDTO[] }) {
   const t = useTranslations('tags');
+  const nav = useTranslations('nav');
   const tagLabel = useTagLabel();
   const locale = useLocale();
   const open = useUiStore((s) => s.filtersOpen);
@@ -22,6 +24,7 @@ export function FiltersPanel({ places }: { places: PlaceCardDTO[] }) {
   const clear = useFilterStore((s) => s.clear);
 
   if (!open) return null;
+  const close = () => navigateBack(() => setOpen(false));
 
   const matched =
     activeTagIds.length === 0
@@ -34,7 +37,7 @@ export function FiltersPanel({ places }: { places: PlaceCardDTO[] }) {
       {isMobile && <div className="mx-auto mb-3 h-1 w-9 shrink-0 rounded-full bg-line2" />}
       <div className="flex items-center">
         <span className="text-[16px] font-extrabold">{t('title')}</span>
-        <button onClick={() => setOpen(false)} className="ml-auto text-ink2 hover:text-foreground">
+        <button onClick={close} aria-label={nav('close')} className="ml-auto text-ink2 hover:text-foreground">
           <X className="h-4 w-4" />
         </button>
       </div>
@@ -80,7 +83,7 @@ export function FiltersPanel({ places }: { places: PlaceCardDTO[] }) {
           {t('reset')}
         </button>
         <button
-          onClick={() => setOpen(false)}
+          onClick={close}
           className="h-[42px] flex-1 rounded-full bg-primary px-[18px] text-[13.5px] font-extrabold text-primary-foreground shadow-[0_4px_12px_oklch(0.66_0.13_264/0.3)]"
         >
           {t('showPlaces', { count: matched })}
@@ -95,9 +98,12 @@ export function FiltersPanel({ places }: { places: PlaceCardDTO[] }) {
         'absolute inset-0 z-40 flex bg-black/30',
         isMobile ? 'items-end' : 'items-center justify-center'
       )}
-      onClick={() => setOpen(false)}
+      onClick={close}
     >
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={t('title')}
         onClick={(e) => e.stopPropagation()}
         className={cn(
           'bg-card overflow-hidden',

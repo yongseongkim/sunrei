@@ -4,7 +4,8 @@
     "search": "Search",
     "filters": "Filters",
     "clear": "Clear",
-    "back": "Back"
+    "back": "Back",
+    "close": "Close"
   },
   "list": {
     "title": "Places near map center",
@@ -67,7 +68,11 @@
     "closed": "Closed",
     "linkYoutube": "YouTube",
     "linkInstagram": "Instagram",
-    "linkWeb": "Link"
+    "linkWeb": "Link",
+    "loadingPlace": "Loading place…",
+    "placeNotFound": "This place could not be found.",
+    "placeLoadFailed": "Could not load this place. Please try again.",
+    "retry": "Try again"
   },
   "tags": {
     "title": "Filter by tag",

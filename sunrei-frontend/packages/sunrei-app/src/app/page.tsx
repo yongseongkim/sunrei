@@ -14,7 +14,7 @@ import {
 } from '@/components/panels';
 import { SourceChannelPanel } from '@/components/source-channel';
 import { Sidebar } from '@/components/desktop/Sidebar';
-import { PeekSheet, type Snap } from '@/components/mobile/PeekSheet';
+import { PeekSheet } from '@/components/mobile/PeekSheet';
 import { SearchPill } from '@/components/wf';
 import { AreaChip, MapControls } from '@/components/map-chrome';
 import { Onboarding, useOnboarding } from '@/components/onboarding';
@@ -25,7 +25,7 @@ import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useAuthStore } from '@/stores/auth-store';
 import { useFilterStore } from '@/stores/filter-store';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function AppShell() {
   const search = useTranslations('search');
@@ -47,7 +47,7 @@ export default function AppShell() {
   const searchOpen = useUiStore((s) => s.searchOpen);
   const videoPreview = useUiStore((s) => s.videoPreview);
 
-  const [mobileSnap, setMobileSnap] = useState<Snap>('half');
+  const mobileSnap = useUiStore((s) => s.mobileSnap);
 
   const { data, isFetching, isLoading } = useMapPlaces({
     mode,
@@ -73,7 +73,7 @@ export default function AppShell() {
   }, [mode, isFetching, allCards.length]);
 
   const listBody = (
-    <div className="flex-1 overflow-auto px-4 pb-2 pt-3">
+    <div data-navigation-scroll="nearby-list" className="flex-1 overflow-auto px-4 pb-2 pt-3">
       {firstLoad ? (
         <div className="space-y-2.5">
           {Array.from({ length: isMobile ? 2 : 4 }).map((_, i) => (
@@ -96,14 +96,14 @@ export default function AppShell() {
   // 장소 상세가 Sunrei 미리보기보다 우선한다.
   // 그래서 미리보기 안에서 장소를 누르면 상세가 위에 열리고, 뒤로 가면 채널 화면이 아니라 미리보기로 돌아온다.
   const detailPanel = activePlaceId ? (
-    <PlaceDetail placeId={activePlaceId} />
+    <PlaceDetail key={activePlaceId} placeId={activePlaceId} />
   ) : videoPreview ? (
-    <VideoPreviewPanel />
+    <VideoPreviewPanel key={videoPreview.sunreiId} />
   ) : null;
 
   const channelPanel =
     mode === 'source' && selectedSourceIds.length > 0 ? (
-      <SourceChannelPanel sourceId={selectedSourceIds[0]} />
+      <SourceChannelPanel key={selectedSourceIds[0]} sourceId={selectedSourceIds[0]} />
     ) : null;
 
   return (
@@ -163,7 +163,6 @@ export default function AppShell() {
           listBody={listBody}
           count={visibleCards.length}
           showingPrevious={showingPrevious}
-          onSnapChange={setMobileSnap}
         />
       )}
 

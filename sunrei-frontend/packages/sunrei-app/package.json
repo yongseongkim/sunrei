@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "node --test tests/*.test.mjs",
     "clean": "rm -rf .next node_modules",
     "codegen": "rm -rf src/dto && openapi-generator-cli generate -i ../../../sunrei-api/app-api-spec.yaml -g typescript-axios -o src/dto --additional-properties=typescriptThreePlus=true --global-property=apiDocs=false,modelDocs=false"
   },

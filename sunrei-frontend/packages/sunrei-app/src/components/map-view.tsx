@@ -4,6 +4,7 @@ import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import { useTranslations } from 'next-intl';
 import { useEffect, useRef } from 'react';
 import { config } from '@/lib/config';
+import { mapScopeKey } from '@/lib/navigation-history';
 import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useTagFilter, type Bounds } from '@/hooks/use-map';
@@ -108,6 +109,8 @@ function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previe
   const zoom = useMapStore((s) => s.zoom);
   const mode = useMapStore((s) => s.mode);
   const selectedSourceIds = useMapStore((s) => s.selectedSourceIds);
+  const restoredScopeKey = useMapStore((s) => s.restoredScopeKey);
+  const videoPreview = useUiStore((s) => s.videoPreview);
   const activePlaceId = useUiStore((s) => s.activePlaceId);
   const setActivePlace = useUiStore((s) => s.setActivePlace);
   const { dimmedIds } = useTagFilter(cards);
@@ -117,14 +120,16 @@ function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previe
   useEffect(() => {
     if (!ref.current || (window as any).google?.maps == null) return;
     const map = new google.maps.Map(ref.current, {
-      center: initialSeed,
-      zoom,
+      center: useMapStore.getState().mapCenter ?? initialSeed,
+      zoom: useMapStore.getState().zoom ?? zoom,
       disableDefaultUI: true,
       zoomControl: false,
       clickableIcons: false,
     });
     setMap(map);
     map.addListener('idle', () => {
+      const currentZoom = map.getZoom();
+      if (currentZoom != null) useMapStore.getState().setZoom(currentZoom);
       onIdle(toBounds(map.getBounds())!, map.getCenter()!.toJSON());
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -190,6 +195,13 @@ function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previe
   // 지도가 생기기 전에 키를 기록하면 끝내 맞추지 못하므로 mapInstance가 생긴 뒤에만 실행한다.
   useEffect(() => {
     if (!mapInstance) return;
+    if (restoredScopeKey === mapScopeKey({ sourceIds: selectedSourceIds, preview: videoPreview })) {
+      fittedKeyRef.current = previewSpots?.length
+        ? 'preview:' + previewSpots.map((s) => s.id).join(',')
+        : mode === 'source' ? 'source:' + selectedSourceIds.join(',') + ':' + cards.length : null;
+      return;
+    }
+    if (videoPreview && !previewSpots?.length) return;
     if (previewSpots && previewSpots.length) {
       const key = 'preview:' + previewSpots.map((s) => s.id).join(',');
       if (fittedKeyRef.current === key) return;
@@ -205,7 +217,7 @@ function GoogleMapInner({ cards, previewSpots }: { cards: PlaceCardDTO[]; previe
       return;
     }
     if (!previewSpots && mode === 'nearby') fittedKeyRef.current = null;
-  }, [mapInstance, previewSpots, mode, selectedSourceIds, cards, fitToPoints]);
+  }, [mapInstance, previewSpots, mode, selectedSourceIds, cards, fitToPoints, restoredScopeKey, videoPreview]);
 
   return <div ref={ref} className="absolute inset-0" />;
 }

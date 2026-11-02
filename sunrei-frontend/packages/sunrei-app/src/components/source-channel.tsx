@@ -79,7 +79,7 @@ export function SourceChannelPanel({ sourceId }: { sourceId: string }) {
         )}
       </div>
 
-      <div className="flex-1 overflow-auto px-4 pb-2 pt-[15px]">
+      <div data-navigation-scroll={`source-series:${encodeURIComponent(sourceId)}`} className="flex-1 overflow-auto px-4 pb-2 pt-[15px]">
         <SectionLabel count={sunreis.length}>{t('series')}</SectionLabel>
         <div className="mt-2.5 flex flex-col gap-2">
           {!isLoading && source && sunreis.length === 0 && (

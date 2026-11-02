@@ -6,7 +6,8 @@ import { SourceRail } from '@/components/desktop/SourceRail';
 import { Handle, ViewToggle } from '@/components/wf';
 import { cn } from '@/lib/utils';
 import { ChevronUp } from 'lucide-react';
-import { useState, type ReactNode } from 'react';
+import { useUiStore } from '@/stores/ui-store';
+import type { ReactNode } from 'react';
 
 export type Snap = 'peek' | 'half' | 'full';
 
@@ -16,21 +17,16 @@ export function PeekSheet({
   listBody,
   count,
   showingPrevious,
-  onSnapChange,
 }: {
   detailPanel: ReactNode | null;
   channelPanel: ReactNode | null;
   listBody: ReactNode;
   count: number;
   showingPrevious: boolean;
-  onSnapChange?: (snap: Snap) => void;
 }) {
   const t = useTranslations('list');
-  const [snap, setSnapState] = useState<Snap>('half');
-  const setSnap = (s: Snap) => {
-    setSnapState(s);
-    onSnapChange?.(s);
-  };
+  const snap = useUiStore((s) => s.mobileSnap);
+  const setSnap = useUiStore((s) => s.setMobileSnap);
   const cycle = () => setSnap(snap === 'peek' ? 'half' : snap === 'half' ? 'full' : 'peek');
 
   return (

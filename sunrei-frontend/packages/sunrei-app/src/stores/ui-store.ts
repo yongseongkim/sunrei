@@ -13,6 +13,8 @@ interface VideoPreview {
 interface UiState {
   isMobile: boolean;
   setIsMobile: (m: boolean) => void;
+  mobileSnap: 'peek' | 'half' | 'full';
+  setMobileSnap: (snap: 'peek' | 'half' | 'full') => void;
 
   activePlaceId: string | null;
   setActivePlace: (id: string | null) => void;
@@ -44,6 +46,8 @@ interface UiState {
 export const useUiStore = create<UiState>((set) => ({
   isMobile: false,
   setIsMobile: (m) => set({ isMobile: m }),
+  mobileSnap: 'half',
+  setMobileSnap: (mobileSnap) => set({ mobileSnap }),
 
   activePlaceId: null,
   setActivePlace: (id) => set({ activePlaceId: id }),

@@ -4,7 +4,8 @@
     "search": "검색",
     "filters": "필터",
     "clear": "초기화",
-    "back": "뒤로"
+    "back": "뒤로",
+    "close": "닫기"
   },
   "list": {
     "title": "지도 중심 기준 장소",
@@ -67,7 +68,11 @@
     "closed": "폐업",
     "linkYoutube": "YouTube",
     "linkInstagram": "Instagram",
-    "linkWeb": "링크"
+    "linkWeb": "링크",
+    "loadingPlace": "장소를 불러오는 중…",
+    "placeNotFound": "장소를 찾을 수 없어요.",
+    "placeLoadFailed": "장소를 불러오지 못했어요. 다시 시도해 주세요.",
+    "retry": "다시 시도"
   },
   "tags": {
     "title": "태그로 필터",

@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { ChevronLeft, Loader2, MapPin, Navigation, Play, Search, Star, X } from 'lucide-react';
 import { Avatar, fittedImageUrl, sourceAvatarUrl } from '@/components/wf';
 import { cn, linkKind } from '@/lib/utils';
+import { navigateBack } from '@/lib/navigation-history';
 import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
 import { useFilterStore } from '@/stores/filter-store';
@@ -19,12 +20,13 @@ import { useTagLabel } from '@/lib/i18n';
 import { ClosedChip, PlaceCard, type SeriesTake } from './place-card';
 import type { PlaceCardDTO, PlaceMentionDTO, SourceType, SunreiDTO, TagDTO } from '@/dto';
 import { useEffect, useState } from 'react';
+import { isAxiosError } from 'axios';
 
 /** 장소 상세, 채널, 미리보기 패널 위쪽의 뒤로 버튼이다. */
 export function BackPill({ onClick, children }: { onClick: () => void; children: React.ReactNode }) {
   return (
     <button
-      onClick={onClick}
+      onClick={() => navigateBack(onClick)}
       className="mb-3 inline-flex items-center gap-1 rounded-full border border-primary bg-accent-soft py-[7px] pl-2 pr-3 text-[12.5px] font-extrabold text-accent-ink"
     >
       <ChevronLeft className="h-3.5 w-3.5" strokeWidth={2.4} /> {children}
@@ -151,6 +153,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
     if (loc) {
       // 위치를 고르면 source 모드를 풀고 nearby 모드에서 그 지역을 바로 불러온다.
       clearSources();
+      useUiStore.setState({ activePlaceId: null, videoPreview: null, sourceFromSearch: false });
       panTo(loc, 14, true);
       onClose();
     }
@@ -179,7 +182,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
           </label>
           <button
             type="button"
-            onClick={onClose}
+            onClick={() => navigateBack(onClose)}
             aria-label={nav('back')}
             className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-ink2 hover:bg-bg2"
           >
@@ -187,7 +190,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
           </button>
         </div>
       </div>
-      <div className="mx-auto w-full max-w-[640px] flex-1 overflow-auto px-[14px] pb-4 lg:px-6">
+      <div data-navigation-scroll="search-results" className="mx-auto w-full max-w-[640px] flex-1 overflow-auto px-[14px] pb-4 lg:px-6">
         {isFetching && (
           <div className="mt-[18px] flex justify-center">
             <Loader2 className="h-5 w-5 animate-spin text-ink3" />
@@ -205,6 +208,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
                   hint={t('moveMap')}
                   onClick={() => {
                     clearSources();
+                    useUiStore.setState({ videoPreview: null, sourceFromSearch: false });
                     panTo({ lat: p.place.latitude, lng: p.place.longitude }, 14, true);
                     setActivePlace(p.place.id);
                     onClose();
@@ -232,6 +236,7 @@ export function UnifiedSearch({ onClose }: { onClose: () => void }) {
                   hint={t('open')}
                   onClick={() => {
                     setSourceMode([s.id]);
+                    useUiStore.setState({ activePlaceId: null, videoPreview: null });
                     setSourceFromSearch(true);
                     onClose();
                   }}
@@ -332,19 +337,45 @@ function ResultRow({
 /** PlaceCard는 언급을 두 개까지만 보여 주고, 장소 상세는 이 장소의 모든 언급을 보여 준다. */
 export function PlaceDetail({ placeId }: { placeId: string }) {
   const t = useTranslations('detail');
+  const nav = useTranslations('nav');
   const tagLabel = useTagLabel();
   const mapCenter = useMapStore((s) => s.mapCenter);
   const setActivePlace = useUiStore((s) => s.setActivePlace);
-  const { data, isLoading } = usePlaceDetail(placeId, mapCenter);
+  const { data, isLoading, isFetching, error, refetch } = usePlaceDetail(placeId, mapCenter);
   const info = useGooglePlaceDetails(data?.place.googleMapsId ?? null);
 
-  if (isLoading)
+  if (isLoading || !data) {
+    const notFound = isAxiosError(error) && error.response?.status === 404;
     return (
-      <div className="grid flex-1 place-items-center py-8">
-        <Loader2 className="h-5 w-5 animate-spin text-ink3" />
+      <div className="flex flex-1 flex-col overflow-hidden">
+        <div className="border-b border-line px-4 pb-3.5 pt-2 lg:pt-[15px]">
+          <BackPill onClick={() => setActivePlace(null)}>{nav('back')}</BackPill>
+        </div>
+        <div className="flex flex-1 flex-col items-center justify-center gap-3 px-4 py-8 text-center">
+          {isLoading ? (
+            <div role="status" className="flex items-center gap-2 text-sm text-ink2">
+              <Loader2 className="h-5 w-5 animate-spin" />
+              {t('loadingPlace')}
+            </div>
+          ) : (
+            <>
+              <p role="alert" className="text-sm font-semibold text-ink2">
+                {notFound ? t('placeNotFound') : t('placeLoadFailed')}
+              </p>
+              <button
+                type="button"
+                onClick={() => refetch()}
+                disabled={isFetching}
+                className="rounded-full border border-line2 px-4 py-2 text-sm font-bold hover:bg-bg2 disabled:opacity-50"
+              >
+                {t('retry')}
+              </button>
+            </>
+          )}
+        </div>
       </div>
     );
-  if (!data) return null;
+  }
 
   const { place, mentions } = data;
   const tag = mentions.flatMap((m) => m.tags)[0];
@@ -362,7 +393,7 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
       <div className="border-b border-line px-4 pb-3.5 pt-2 lg:pt-[15px]">
-        <BackPill onClick={() => setActivePlace(null)}>{t('backToList')}</BackPill>
+        <BackPill onClick={() => setActivePlace(null)}>{nav('back')}</BackPill>
 
         <div className="flex items-center gap-2">
           <span className="min-w-0 flex-1 truncate text-[20px] font-extrabold tracking-tight text-foreground">
@@ -406,7 +437,7 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
         </div>
       </div>
 
-      <div className="flex-1 overflow-auto px-4 pb-4 pt-3.5">
+      <div data-navigation-scroll={`place-detail:${encodeURIComponent(placeId)}`} className="flex-1 overflow-auto px-4 pb-4 pt-3.5">
         {info && <GoogleInfoCard info={info} />}
 
         <div className="mt-4 flex items-baseline gap-2">
@@ -644,7 +675,7 @@ export function VideoPreviewPanel() {
             )}
           </div>
           <button
-            onClick={exit}
+            onClick={() => navigateBack(exit)}
             aria-label={nav('clear')}
             className="grid h-[22px] w-[22px] shrink-0 place-items-center rounded-full border border-line2 bg-card text-ink2"
           >
@@ -658,7 +689,7 @@ export function VideoPreviewPanel() {
           <Loader2 className="h-5 w-5 animate-spin text-ink3" />
         </div>
       ) : (
-        <div className="flex-1 overflow-auto px-4 pb-2 pt-[15px]">
+        <div data-navigation-scroll={`video-places:${encodeURIComponent(videoPreview.sunreiId)}`} className="flex-1 overflow-auto px-4 pb-2 pt-[15px]">
           <div className="mb-[11px] flex items-baseline gap-2">
             <span className="text-[11px] font-extrabold uppercase tracking-wide text-foreground">{listT('places')}</span>
             <span className="text-[11.5px] font-extrabold text-accent-ink">{cards.length}</span>
