@@ -9,6 +9,7 @@ import { useAuthStore } from '@/stores/auth-store';
 import { useUiStore } from '@/stores/ui-store';
 import { Avatar } from '@/components/wf';
 import { cn } from '@/lib/utils';
+import { navigateBack } from '@/lib/navigation-history';
 
 declare global {
   interface Window {
@@ -211,7 +212,11 @@ export function LoginModal() {
   const open = useUiStore((s) => s.loginOpen);
   const setLoginOpen = useUiStore((s) => s.setLoginOpen);
   const isMobile = useUiStore((s) => s.isMobile);
-  const { login, loading, error } = useGoogleLogin(() => setLoginOpen(false));
+  const close = () => {
+    // A Google callback may finish after the user has already gone back.
+    if (useUiStore.getState().loginOpen) navigateBack(() => setLoginOpen(false));
+  };
+  const { login, loading, error } = useGoogleLogin(close);
   if (!open) return null;
   // 모바일 판단은 앱 레이아웃과 같은 1024px 기준(isMobile)을 따른다.
   return (
@@ -220,9 +225,12 @@ export function LoginModal() {
         'fixed inset-0 z-[60] flex justify-center bg-black/35',
         isMobile ? 'items-end' : 'items-center p-4'
       )}
-      onClick={() => setLoginOpen(false)}
+      onClick={close}
     >
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={t('signInTitle')}
         onClick={(e) => e.stopPropagation()}
         className={cn(
           'w-full bg-card text-center shadow-[0_16px_48px_rgba(0,0,0,0.2)]',
@@ -245,7 +253,7 @@ export function LoginModal() {
         )}
         <button
           type="button"
-          onClick={() => setLoginOpen(false)}
+          onClick={close}
           className="mt-[14px] text-[13px] font-bold text-ink2 hover:text-foreground"
         >
           {t('later')}

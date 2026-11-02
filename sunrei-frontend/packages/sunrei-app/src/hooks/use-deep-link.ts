@@ -23,6 +23,7 @@ function capture(restoring?: NavigationSnapshot): NavigationSnapshot {
     preview: ui.videoPreview ? { ...ui.videoPreview } : null,
     searchOpen: ui.searchOpen,
     searchQuery: ui.searchQuery,
+    overlay: ui.loginOpen ? 'login' : ui.filtersOpen ? 'filters' : null,
     sourceFromSearch: ui.sourceFromSearch,
     mobileSnap: ui.mobileSnap,
     scrollTop: 0,
@@ -110,8 +111,8 @@ export function useDeepLinkSync() {
           searchQuery: snapshot.searchQuery,
           sourceFromSearch: snapshot.sourceFromSearch,
           mobileSnap: snapshot.mobileSnap,
-          filtersOpen: false,
-          loginOpen: false,
+          filtersOpen: snapshot.overlay === 'filters',
+          loginOpen: snapshot.overlay === 'login',
         });
         if (restoreViewport && state.center) {
           const map = useMapStore.getState().map;

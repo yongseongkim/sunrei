@@ -20,6 +20,7 @@ import { useTagLabel } from '@/lib/i18n';
 import { ClosedChip, PlaceCard, type SeriesTake } from './place-card';
 import type { PlaceCardDTO, PlaceMentionDTO, SourceType, SunreiDTO, TagDTO } from '@/dto';
 import { useEffect, useState } from 'react';
+import { isAxiosError } from 'axios';
 
 /** 장소 상세, 채널, 미리보기 패널 위쪽의 뒤로 버튼이다. */
 export function BackPill({ onClick, children }: { onClick: () => void; children: React.ReactNode }) {
@@ -340,16 +341,41 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
   const tagLabel = useTagLabel();
   const mapCenter = useMapStore((s) => s.mapCenter);
   const setActivePlace = useUiStore((s) => s.setActivePlace);
-  const { data, isLoading } = usePlaceDetail(placeId, mapCenter);
+  const { data, isLoading, isFetching, error, refetch } = usePlaceDetail(placeId, mapCenter);
   const info = useGooglePlaceDetails(data?.place.googleMapsId ?? null);
 
-  if (isLoading)
+  if (isLoading || !data) {
+    const notFound = isAxiosError(error) && error.response?.status === 404;
     return (
-      <div className="grid flex-1 place-items-center py-8">
-        <Loader2 className="h-5 w-5 animate-spin text-ink3" />
+      <div className="flex flex-1 flex-col overflow-hidden">
+        <div className="border-b border-line px-4 pb-3.5 pt-2 lg:pt-[15px]">
+          <BackPill onClick={() => setActivePlace(null)}>{nav('back')}</BackPill>
+        </div>
+        <div className="flex flex-1 flex-col items-center justify-center gap-3 px-4 py-8 text-center">
+          {isLoading ? (
+            <div role="status" className="flex items-center gap-2 text-sm text-ink2">
+              <Loader2 className="h-5 w-5 animate-spin" />
+              {t('loadingPlace')}
+            </div>
+          ) : (
+            <>
+              <p role="alert" className="text-sm font-semibold text-ink2">
+                {notFound ? t('placeNotFound') : t('placeLoadFailed')}
+              </p>
+              <button
+                type="button"
+                onClick={() => refetch()}
+                disabled={isFetching}
+                className="rounded-full border border-line2 px-4 py-2 text-sm font-bold hover:bg-bg2 disabled:opacity-50"
+              >
+                {t('retry')}
+              </button>
+            </>
+          )}
+        </div>
       </div>
     );
-  if (!data) return null;
+  }
 
   const { place, mentions } = data;
   const tag = mentions.flatMap((m) => m.tags)[0];

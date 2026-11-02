@@ -16,6 +16,7 @@ const tick = () => new Promise((resolve) => setImmediate(resolve));
 const initial = () => ({
   sourceIds: [], tagIds: [], placeId: null, preview: null,
   searchOpen: false, searchQuery: '', sourceFromSearch: false,
+  overlay: null,
   mobileSnap: 'half', scrollTop: 0,
   map: {
     center: { lat: 37.5665, lng: 126.978 }, zoom: 12,
@@ -269,4 +270,61 @@ test('URL parsing/formatting preserves search and each panel has a distinct scro
   parsed.sourceIds = [];
   assert.equal(navigationScrollKey(parsed), 'nearby-list');
   assert.equal(mapScopeKey(parsed), 'nearby');
+});
+
+test('Back dismisses a root filter dialog without exiting and keeps the applied filters', async () => {
+  const h = harness();
+  h.scroll(320);
+  h.update({ overlay: 'filters' }); await tick();
+  assert.equal(h.saved.scrollTop, 320);
+  h.update({ tagIds: ['food'] }); await tick();
+  h.win.history.back(); await tick();
+  assert.equal(h.current.overlay, null);
+  assert.deepEqual(h.current.tagIds, ['food']);
+  assert.equal(h.current.scrollTop, 320);
+  assert.equal(h.win.exits, 0);
+  h.win.history.back(); await tick();
+  assert.equal(h.win.exits, 1);
+  h.controller.dispose();
+});
+
+test('dialog close, Forward and reload keep the current content and latest filters', async () => {
+  const h = harness();
+  h.update({ sourceIds: ['s1'] }); await tick();
+  h.update({ overlay: 'filters' }); await tick();
+  h.update({ tagIds: ['food'] }); await tick();
+  h.controller.back(() => assert.fail('dialog has a parent entry')); await tick();
+  assert.deepEqual(h.current.sourceIds, ['s1']);
+  h.update({ tagIds: ['coffee'] }); await tick();
+  h.win.history.forward(); await tick();
+  assert.equal(h.current.overlay, 'filters');
+  assert.deepEqual(h.current.tagIds, ['coffee']);
+  const restored = harness(h.win.location.href, h.win.history.state);
+  assert.equal(restored.current.overlay, 'filters');
+  assert.deepEqual(restored.current.tagIds, ['coffee']);
+  restored.controller.dispose();
+  h.controller.dispose();
+});
+
+test('login Back preserves a place, and the next Back returns to its list', async () => {
+  const h = harness();
+  h.update({ placeId: 'p1' }); await tick();
+  h.update({ overlay: 'login' }); await tick();
+  h.controller.back(() => assert.fail('login has a parent entry')); await tick();
+  assert.equal(h.current.overlay, null);
+  assert.equal(h.current.placeId, 'p1');
+  h.win.history.back(); await tick();
+  assert.equal(h.current.placeId, null);
+  h.controller.dispose();
+});
+
+test('history entries created before dialogs were tracked still restore', () => {
+  const old = harness();
+  const state = old.win.history.state;
+  delete state.sunreiNavigation.snapshot.overlay;
+  const restored = harness(old.win.location.href, state);
+  assert.equal(restored.current.placeId, null);
+  assert.equal(restored.win.history.length, 1);
+  restored.controller.dispose();
+  old.controller.dispose();
 });

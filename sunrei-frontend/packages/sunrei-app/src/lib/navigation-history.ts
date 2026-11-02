@@ -7,6 +7,7 @@ export interface NavigationSnapshot {
   preview: { sunreiId: string; returnTo: 'nearby' | 'source'; fromSearch?: boolean } | null;
   searchOpen: boolean;
   searchQuery: string;
+  overlay: 'filters' | 'login' | null;
   sourceFromSearch: boolean;
   mobileSnap: 'peek' | 'half' | 'full';
   scrollTop: number;
@@ -52,6 +53,7 @@ export function navigationFromUrl(url: URL, current: NavigationSnapshot): Naviga
     preview: sunreiId ? { sunreiId, returnTo: sourceIds.length ? 'source' : 'nearby' } : null,
     searchOpen: url.searchParams.has('search'),
     searchQuery: url.searchParams.get('search') ?? '',
+    overlay: null,
     sourceFromSearch: false,
     scrollTop: 0,
   };
@@ -75,9 +77,13 @@ export function navigationUrl(snapshot: NavigationSnapshot, current: URL): strin
   return url.pathname + url.search + url.hash;
 }
 
-export function navigationViewKey(snapshot: NavigationSnapshot): string {
+function contentKey(snapshot: NavigationSnapshot): string {
   // Typing, filtering, moving the map and resizing the sheet update the current entry.
   return JSON.stringify([snapshot.sourceIds, snapshot.preview?.sunreiId, snapshot.placeId, snapshot.searchOpen]);
+}
+
+export function navigationViewKey(snapshot: NavigationSnapshot): string {
+  return JSON.stringify([contentKey(snapshot), snapshot.overlay ?? null]);
 }
 
 export function mapScopeKey(snapshot: Pick<NavigationSnapshot, 'sourceIds' | 'preview'>): string {
@@ -139,13 +145,16 @@ export function createNavigationHistory({ browser, read, restore, onNavigate }: 
     if (disposed || restoring || traversing) return;
     const snapshot = read();
     const changedView = navigationViewKey(snapshot) !== navigationViewKey(entry.snapshot);
+    const changedContent = contentKey(snapshot) !== contentKey(entry.snapshot);
     const method = changedView && !replaceNext ? 'pushState' : 'replaceState';
     replaceNext = false;
     if (JSON.stringify(snapshot) === JSON.stringify(entry.snapshot) && !scrollDirty) return;
     if (changedView) {
       if (scrollDirty) write('replaceState');
-      snapshot.scrollTop = 0;
-      onNavigate?.();
+      if (changedContent) {
+        snapshot.scrollTop = 0;
+        onNavigate?.();
+      }
     }
     scrollDirty = false;
     entry = { ...entry, index: entry.index + (method === 'pushState' ? 1 : 0), snapshot };
@@ -160,6 +169,7 @@ export function createNavigationHistory({ browser, read, restore, onNavigate }: 
 
   const pop = (event: PopStateEvent) => {
     traversing = false;
+    const previous = entry.snapshot;
     const target = historyEntry(event.state);
     entry = target ? { ...target, snapshot: remembered.get(entryKey(target)) ?? target.snapshot } : {
       version: 1,
@@ -167,6 +177,10 @@ export function createNavigationHistory({ browser, read, restore, onNavigate }: 
       index: 0,
       snapshot: navigationFromUrl(new URL(browser.location.href), read()),
     };
+    // Closing/reopening a temporary dialog must keep the filters and viewport just edited.
+    if (target && (previous.overlay || entry.snapshot.overlay) && contentKey(previous) === contentKey(entry.snapshot)) {
+      entry = { ...entry, snapshot: { ...previous, overlay: entry.snapshot.overlay ?? null } };
+    }
     replaceNext = false;
     scrollDirty = false;
     apply(entry.snapshot, !!target?.snapshot.map.center);

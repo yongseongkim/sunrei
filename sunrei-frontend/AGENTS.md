@@ -41,7 +41,7 @@ pnpm codegen
 
 - 개발 서버는 sunrei-app이 3000번, sunrei-admin이 3001번 포트를 쓴다.
   `pnpm dev`는 둘을 함께 띄운다.
-- public 앱의 `tests/navigation-history.test.mjs`는 화면 이동, 브라우저 뒤로/앞으로, 직접 링크와 상태 복원을 Node 테스트 러너로 검증한다.
+- 방문 기록 회귀 테스트는 테스트가 있는 앱의 `test` 명령으로 실행한다.
   `next build`가 타입 검사를 하고, `next.config.ts`가 빌드 중 ESLint를 끄므로 lint는 `pnpm lint`로 따로 돌린다.
 - 환경 변수는 각 패키지의 `.env.local`에 두며 이 파일은 git에 올리지 않는다.
 - 두 앱 모두 `NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`, `NEXT_PUBLIC_GOOGLE_CLIENT_ID`를 읽는다.
@@ -106,6 +106,8 @@ pnpm codegen
   복원한 지도는 데이터가 늦게 도착해도 source·시리즈 자동 fit으로 다시 움직이지 않는다.
   직접 링크로 처음 들어와 이전 Sunrei 기록이 없으면 앱의 뒤로 버튼은 상위 화면으로 전환하고 현재 기록을 교체한다. 브라우저 뒤로가기는 서비스 진입 이전 페이지로 나갈 수 있다.
   Next.js의 방문 기록 데이터와 Sunrei가 관리하지 않는 query/hash는 보존한다.
+  필터·로그인 팝업도 임시 방문 기록으로 열고, 뒤로·닫기·적용은 그 기록에서 돌아온다. 팝업을 닫거나 앞으로 다시 열어도 변경한 태그와 원래 화면의 위치는 유지한다.
+- 장소 상세는 로딩·조회 실패 중에도 뒤로 버튼을 유지한다. 실패하면 한국어·영어 오류 안내와 재시도를 제공하며, 404는 장소를 찾을 수 없다고 안내한다.
 - locale은 URL 경로나 cookie 없이 `Accept-Language`로 정하고, 지원하지 않는 언어면 한국어로 보여 준다.
   문구는 `messages/ko.json`과 `messages/en.json`에 있다.
 - 장소 상세의 "Google 정보" 카드는 브라우저에서 Places Details를 직접 호출하며, 이 요청에는 Google 요금이 나간다.
