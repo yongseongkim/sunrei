@@ -40,7 +40,7 @@ pnpm codegen
 
 - 개발 서버는 sunrei-app이 3000번, sunrei-admin이 3001번 포트를 쓴다.
   `pnpm dev`는 둘을 함께 띄운다.
-- 테스트 코드는 없다.
+- 방문 기록 회귀 테스트는 테스트가 있는 앱의 `test` 명령으로 실행한다.
   `next build`가 타입 검사를 하고, `next.config.ts`가 빌드 중 ESLint를 끄므로 lint는 `pnpm lint`로 따로 돌린다.
 - 환경 변수는 각 패키지의 `.env.local`에 두며 이 파일은 git에 올리지 않는다.
 - 두 앱 모두 `NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`, `NEXT_PUBLIC_GOOGLE_CLIENT_ID`를 읽는다.
@@ -119,6 +119,11 @@ pnpm codegen
 - 어드민은 Tailwind 3.4를 쓴다. shadcn 부품을 새로 가져오면 Tailwind 4 문법(`w-(--var)`, `size-8!`, `--spacing()`)을 3.4 문법(`w-[var(--var)]`, `!size-8`)으로 바꿔야 동작한다.
   `aria-invalid:` 변형은 3.4에 없어서 `tailwind.config.ts`의 plugin으로 정의해 두었으므로, 오류 칸은 `aria-invalid`만 붙이면 빨간 테두리가 된다.
 - 목록 화면(Content, Sources, Places)은 카드 하나에 행을 구분선으로 나눈다.
+- 목록의 검색어는 `q`, Content의 공개 상태·타입은 `status`·`type`, Tags의 페이지 번호는 `page` query에 저장한다. 검색·필터는 현재 기록을 교체하고, 페이지 이동은 기록을 추가한다. 브라우저 뒤로·앞으로와 새로고침은 URL에서 조건을 복원한다.
+  목록을 다시 조회하는 동안에도 검색창과 필터는 유지한다.
+- 목록에서 편집·생성·태그 상세를 열면 `returnTo`에 목록 URL을 보존한다. 저장·취소·목록으로 돌아가기는 실제 목록에서 들어온 기록이면 뒤로 이동하고, 직접 링크로 진입했으면 해당 목록으로 현재 기록을 교체한다. `returnTo`는 같은 앱의 해당 목록 경로만 허용한다.
+  URL·페이지 번호·복귀 규칙은 `src/lib/list-navigation.ts`, React 연결은 `src/lib/hooks/use-list-navigation.ts`에 있다.
+  `pnpm --filter sunrei-admin test`가 query 갱신, 페이지 번호와 목록 복귀를 검증한다.
 - Sunrei 폼(`src/components/SunreiForm.tsx`, `src/components/sunrei-form/`)은 Source, 공개 상태, 요약, 이미지, spot 목록을 한 요청으로 저장한다.
   요청에서 빠진 기존 spot은 서버가 삭제한다.
   spot 배열 순서가 서버의 표시 순서로 저장되며, 조회 시에도 같은 순서로 돌아온다.

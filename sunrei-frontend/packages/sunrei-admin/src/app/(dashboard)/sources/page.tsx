@@ -6,21 +6,12 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { AlertCircle, Loader2, Plus } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useListNavigation } from '@/lib/hooks/use-list-navigation';
 
 export default function SourcesPage() {
-  const router = useRouter();
-  const [q, setQ] = useState('');
+  const { params, setParam, openDetail } = useListNavigation('/sources');
+  const q = params.get('q') ?? '';
   const { data: sources = [], isLoading, error } = useSources(q);
-
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-[400px]">
-        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-      </div>
-    );
-  }
 
   return (
     <div className="space-y-6">
@@ -31,13 +22,13 @@ export default function SourcesPage() {
             Content sources (YouTube / Instagram / TV / Anime / Other)
           </p>
         </div>
-        <Button onClick={() => router.push('/sources/new')}>
+        <Button onClick={() => openDetail('/sources/new')}>
           <Plus className="h-4 w-4 mr-2" />
           New Source
         </Button>
       </div>
 
-      <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search sources…" className="w-80" />
+      <Input value={q} onChange={(e) => setParam('q', e.target.value)} placeholder="Search sources…" className="w-80" />
 
       {error && (
         <Alert variant="destructive">
@@ -46,10 +37,13 @@ export default function SourcesPage() {
         </Alert>
       )}
 
-      <SourcesList
-        sources={sources}
-        onEdit={(id) => router.push(`/sources/${id}/edit`)}
-      />
+      {isLoading ? (
+        <div role="status" aria-label="Loading sources" className="flex min-h-[400px] items-center justify-center">
+          <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+        </div>
+      ) : (
+        <SourcesList sources={sources} onEdit={(id) => openDetail(`/sources/${id}/edit`)} />
+      )}
     </div>
   );
 }
