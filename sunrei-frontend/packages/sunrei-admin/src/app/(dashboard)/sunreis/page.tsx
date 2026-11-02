@@ -6,8 +6,7 @@ import {
   useDeleteSunrei,
   useSetSunreiPublished,
 } from '@/lib/hooks/use-sunreis';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useListNavigation } from '@/lib/hooks/use-list-navigation';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -27,10 +26,11 @@ import {
 } from 'lucide-react';
 
 export default function SunreisPage() {
-  const router = useRouter();
-  const [q, setQ] = useState('');
-  const [publishedFilter, setPublishedFilter] = useState<boolean | undefined>(undefined);
-  const [typeFilter, setTypeFilter] = useState<SourceType | undefined>(undefined);
+  const { params, setParam, openDetail } = useListNavigation('/sunreis');
+  const q = params.get('q') ?? '';
+  const publishedFilter = params.get('status') === 'published' ? true : params.get('status') === 'drafts' ? false : undefined;
+  const typeFilter = Object.values(SourceType).includes(params.get('type') as SourceType)
+    ? params.get('type') as SourceType : undefined;
 
   const {
     data: allSunreis = [],
@@ -59,14 +59,6 @@ export default function SunreisPage() {
     publishMutation.mutate({ id: s.id, published: s.publishedAt == null });
   };
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-[400px]">
-        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-      </div>
-    );
-  }
-
   return (
     <div className="space-y-6">
       <div className="flex items-end justify-between">
@@ -74,7 +66,7 @@ export default function SunreisPage() {
           <h1 className="text-2xl font-bold tracking-tight">Content</h1>
           <p className="mt-1 text-sm text-muted-foreground">Manage Sunreis (videos / works)</p>
         </div>
-        <Button onClick={() => router.push('/sunreis/new')}>
+        <Button onClick={() => openDetail('/sunreis/new')}>
           <Plus className="h-4 w-4 mr-2" />
           New Sunrei
         </Button>
@@ -83,13 +75,13 @@ export default function SunreisPage() {
       <div className="flex flex-wrap items-center gap-2.5">
         <Input
           value={q}
-          onChange={(e) => setQ(e.target.value)}
+          onChange={(e) => setParam('q', e.target.value)}
           placeholder="Search title or summary…"
           className="w-80"
         />
         <Select
           value={publishedFilter === undefined ? 'all' : publishedFilter ? 'published' : 'drafts'}
-          onValueChange={(v) => setPublishedFilter(v === 'all' ? undefined : v === 'published')}
+          onValueChange={(v) => setParam('status', v === 'all' ? '' : v)}
         >
           <SelectTrigger className="w-[150px]">
             <SelectValue />
@@ -102,7 +94,7 @@ export default function SunreisPage() {
         </Select>
         <Select
           value={typeFilter ?? 'all'}
-          onValueChange={(v) => setTypeFilter(v === 'all' ? undefined : (v as SourceType))}
+          onValueChange={(v) => setParam('type', v === 'all' ? '' : v)}
         >
           <SelectTrigger className="w-[170px]">
             <SelectValue />
@@ -125,12 +117,16 @@ export default function SunreisPage() {
         </Alert>
       )}
 
-      {sunreis.length === 0 ? (
+      {loading ? (
+        <div role="status" aria-label="Loading content" className="flex min-h-[400px] items-center justify-center">
+          <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+        </div>
+      ) : sunreis.length === 0 ? (
         <Card>
           <CardContent className="text-center py-12">
             <MapPin className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
             <h3 className="text-lg font-medium mb-2">No Sunreis yet</h3>
-            <Button onClick={() => router.push('/sunreis/new')}>
+            <Button onClick={() => openDetail('/sunreis/new')}>
               <Plus className="h-4 w-4 mr-2" />
               Create First Sunrei
             </Button>
@@ -143,7 +139,7 @@ export default function SunreisPage() {
             <SunreiRow
               key={sunrei.id}
               sunrei={sunrei}
-              onEdit={() => router.push(`/sunreis/${sunrei.id}/edit`)}
+              onEdit={() => openDetail(`/sunreis/${sunrei.id}/edit`)}
               onDelete={() => handleDelete(sunrei.id)}
               onTogglePublish={() => togglePublish(sunrei)}
               toggling={

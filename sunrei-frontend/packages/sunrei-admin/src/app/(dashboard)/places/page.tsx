@@ -10,19 +10,13 @@ import { Input } from '@/components/ui/input';
 import { AlertCircle, Edit2, Loader2, MapPin } from 'lucide-react';
 import { useState } from 'react';
 import { PlaceEditSheet } from '@/components/PlaceEditSheet';
+import { useListNavigation } from '@/lib/hooks/use-list-navigation';
 
 export default function PlacesPage() {
-  const [q, setQ] = useState('');
+  const { params, setParam } = useListNavigation('/places');
+  const q = params.get('q') ?? '';
   const { data: places = [], isLoading, error } = usePlaces(q);
   const [editing, setEditing] = useState<PlaceListItemDTO | null>(null);
-
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-[400px]">
-        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-      </div>
-    );
-  }
 
   return (
     <div className="space-y-6">
@@ -33,7 +27,7 @@ export default function PlacesPage() {
             Real-world locations, keyed by Google place_id (auto-deduped)
           </p>
         </div>
-        <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search places…" className="w-[280px]" />
+        <Input value={q} onChange={(e) => setParam('q', e.target.value)} placeholder="Search places…" className="w-[280px]" />
       </div>
 
       {error && (
@@ -43,7 +37,11 @@ export default function PlacesPage() {
         </Alert>
       )}
 
-      {places.length === 0 ? (
+      {isLoading ? (
+        <div role="status" aria-label="Loading places" className="flex min-h-[400px] items-center justify-center">
+          <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+        </div>
+      ) : places.length === 0 ? (
         <Card>
           <CardContent className="text-center py-12 text-muted-foreground">
             <MapPin className="h-10 w-10 mx-auto mb-3 opacity-50" />

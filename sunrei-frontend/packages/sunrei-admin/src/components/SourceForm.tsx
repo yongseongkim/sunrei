@@ -14,7 +14,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { AlertCircle, Loader2 } from 'lucide-react';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useRouter } from 'next/navigation';
+import { useReturnToList } from '@/lib/hooks/use-list-navigation';
 import { CreateSourceRequest, UpdateSourceRequest } from '@/api/admin';
 
 type SourceFormProps = {
@@ -25,7 +25,7 @@ type SourceFormProps = {
 const TYPES: SourceFormValue['type'][] = ['YOUTUBE', 'INSTAGRAM', 'TV', 'ANIME', 'OTHER'];
 
 export default function SourceForm({ mode, sourceId }: SourceFormProps) {
-  const router = useRouter();
+  const returnToList = useReturnToList('/sources');
   const { data: source, isLoading } = useSource(sourceId || '');
   const createMutation = useCreateSource();
   const updateMutation = useUpdateSource();
@@ -81,11 +81,11 @@ export default function SourceForm({ mode, sourceId }: SourceFormProps) {
     if (mode === 'edit' && sourceId) {
       updateMutation.mutate(
         { id: sourceId, data: payload as UpdateSourceRequest },
-        { onSuccess: () => router.push('/sources') }
+        { onSuccess: returnToList }
       );
     } else {
       createMutation.mutate(payload, {
-        onSuccess: () => router.push('/sources'),
+        onSuccess: returnToList,
       });
     }
   };
@@ -226,7 +226,7 @@ export default function SourceForm({ mode, sourceId }: SourceFormProps) {
             </div>
 
             <div className="flex gap-2 justify-end">
-              <Button type="button" variant="outline" onClick={() => router.push('/sources')}>
+              <Button type="button" variant="outline" onClick={returnToList}>
                 Cancel
               </Button>
               <Button type="submit" disabled={createMutation.isPending || updateMutation.isPending}>

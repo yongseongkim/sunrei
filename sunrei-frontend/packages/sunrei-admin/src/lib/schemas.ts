@@ -32,7 +32,7 @@ export const spotSchema = z.object({
   context: z.string().optional(),
   sourceLink: z.string().url('Enter a full URL (https://…)').or(z.literal('')).optional(),
   // 서버는 장소 없는 새 spot을 거부하므로 저장 전에 막는다.
-  place: placeInputSchema.nullable().refine((place) => place !== null, 'Pick a place before saving'),
+  place: placeInputSchema.nullable().refine((place): boolean => place !== null, 'Pick a place before saving'),
   tagIds: z.array(z.string()),
   tagLabels: z.array(z.string()),
   images: z.array(imageSchema).max(5),

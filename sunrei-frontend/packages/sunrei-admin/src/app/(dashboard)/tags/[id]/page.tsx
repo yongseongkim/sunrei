@@ -2,7 +2,7 @@
 
 import { use, useState } from 'react';
 import { useTag, useUpdateTag, useDetachSpotFromTag } from '@/lib/hooks/use-tags';
-import { useRouter } from 'next/navigation';
+import { useReturnToList } from '@/lib/hooks/use-list-navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -23,7 +23,7 @@ import { Tag, AlertCircle, Loader2, ArrowLeft, Edit2, Save, X, Trash2 } from 'lu
 
 export default function TagDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
-  const router = useRouter();
+  const returnToList = useReturnToList('/tags');
   const { data: tag, isLoading, error: queryError } = useTag(id);
   const updateTagMutation = useUpdateTag(id);
   const detachMutation = useDetachSpotFromTag(id);
@@ -79,7 +79,7 @@ export default function TagDetailPage({ params }: { params: Promise<{ id: string
   if (error || !tag) {
     return (
       <div className="space-y-6">
-        <Button variant="ghost" onClick={() => router.push('/tags')}>
+        <Button variant="ghost" onClick={returnToList}>
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Tags
         </Button>
@@ -94,7 +94,7 @@ export default function TagDetailPage({ params }: { params: Promise<{ id: string
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <Button variant="ghost" onClick={() => router.push('/tags')}>
+        <Button variant="ghost" onClick={returnToList}>
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Tags
         </Button>

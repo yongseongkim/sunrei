@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { TagDTO } from '@/api/admin';
 import { useAllTags, useCreateTag } from '@/lib/hooks/use-tags';
-import { useRouter } from 'next/navigation';
+import { useListNavigation } from '@/lib/hooks/use-list-navigation';
+import { listPage } from '@/lib/list-navigation';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -17,8 +18,9 @@ import { cn } from '@/lib/utils';
 const PAGE_SIZE = 18;
 
 export default function TagsPage() {
-  const router = useRouter();
-  const [page, setPage] = useState(0);
+  const { params, setParam, openDetail } = useListNavigation('/tags');
+  const page = listPage(params.get('page'));
+  const setPage = (index: number) => setParam('page', index === 0 ? '' : String(index + 1), true);
   const [creating, setCreating] = useState(false);
   const { data, isLoading: loading, error: queryError } = useAllTags();
 
@@ -72,7 +74,7 @@ export default function TagsPage() {
               key={tag.id}
               tag={tag}
               spotCount={spotCountByTagId[tag.id!] || 0}
-              onClick={() => router.push(`/tags/${tag.id}`)}
+              onClick={() => openDetail(`/tags/${tag.id}`)}
             />
           ))}
         </div>
@@ -108,7 +110,7 @@ export default function TagsPage() {
       <NewTagDialog
         open={creating}
         onClose={() => setCreating(false)}
-        onCreated={(tag) => router.push(`/tags/${tag.id}`)}
+        onCreated={(tag) => openDetail(`/tags/${tag.id}`)}
       />
     </div>
   );

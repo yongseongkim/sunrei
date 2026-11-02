@@ -1,16 +1,16 @@
 'use client';
 
 import SunreiForm from '@/components/SunreiForm';
-import { useRouter } from 'next/navigation';
+import { useReturnToList } from '@/lib/hooks/use-list-navigation';
 
 export default function NewSunreiPage() {
-  const router = useRouter();
+  const returnToList = useReturnToList('/sunreis');
 
   return (
     <SunreiForm
       mode="create"
-      onSuccess={() => router.push('/sunreis')}
-      onCancel={() => router.push('/sunreis')}
+      onSuccess={returnToList}
+      onCancel={returnToList}
     />
   );
 }
