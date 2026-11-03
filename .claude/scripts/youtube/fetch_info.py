@@ -13,6 +13,7 @@ import sys
 import urllib.parse
 
 from _common import WS_ROOT, http_json, load_google_api_key
+from youtube_data import best_thumbnail
 
 API = "https://www.googleapis.com/youtube/v3"
 
@@ -40,8 +41,7 @@ def parse_url(url):
 
 
 def best_thumb(thumbs):
-    t = thumbs.get("high") or thumbs.get("medium") or thumbs.get("default") or {}
-    return t.get("url")
+    return best_thumbnail(thumbs)
 
 
 def channel_obj(key, channel_id):
@@ -97,6 +97,7 @@ def fetch_playlist(key, pl, videos_spec):
     print(f"playlist: {sn.get('title')} — {len(vids)} videos, {len(selected)} selected")
     return pl, {
         "type": "playlist", "id": pl, "title": sn.get("title"),
+        "thumbnailUrl": best_thumb(sn.get("thumbnails", {})),
         "description": sn.get("description"),
         "url": f"https://www.youtube.com/playlist?list={pl}",
         "channelName": sn.get("channelTitle"),

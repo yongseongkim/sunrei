@@ -28,6 +28,7 @@ from pathlib import Path
 import geocode
 from _common import ROOT, WS_ROOT, load_env, load_google_api_key
 from collection_api import CollectionApi, json_string
+from playlist_covers import ensure_playlist_cover
 from youtube_data import fetch_playlist, fetch_video_details, video_inputs
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -724,6 +725,9 @@ def main():
     for playlist in playlists:
         try:
             remote = fetch_playlist(api_key, playlist["id"])
+            cover = ensure_playlist_cover(api, playlist, remote, commit=args.commit)
+            if cover["status"] in {"updated", "would_update"}:
+                print(f"{playlist['title']}: cover={cover['status']}")
         except RuntimeError as error:
             had_failures = True
             print(f"{playlist['title']}: blocked: {error}", file=sys.stderr)

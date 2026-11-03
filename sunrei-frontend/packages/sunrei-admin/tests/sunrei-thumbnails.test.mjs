@@ -11,6 +11,15 @@ const { sunreiThumbnailCandidates, youtubeThumbnail } =
   await import('data:text/javascript;base64,' + Buffer.from(outputText).toString('base64'));
 const image = url => ({ images: [{url, width:320, height:180}] });
 
+test('a saved playlist cover takes priority over an arbitrary video or place image', () => {
+  const cover = 'https://i.ytimg.com/playlist-cover.jpg';
+  const candidates = sunreiThumbnailCandidates({
+    images:[{images:[{url:cover}]}], link:'https://www.youtube.com/playlist?list=PLtest',
+    spots:[{images:[image('/place.jpg')],sourceLink:'https://youtu.be/abcdefghijk'}],
+  });
+  assert.equal(candidates[0],cover);
+});
+
 test('use saved content, then spot, video and source images without duplicates', () => {
   const sunrei = {
     images:[image('/cover.jpg')],

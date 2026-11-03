@@ -16,6 +16,7 @@ import sys
 
 from _common import load_google_api_key
 from collection_api import CollectionApi
+from playlist_covers import ensure_playlist_cover
 from youtube_data import fetch_playlist, fetch_video_details, playlist_input, video_inputs
 
 
@@ -62,6 +63,7 @@ def register(api, api_key, playlist_id, sunrei_id, baseline, sync_enabled):
     remote = fetch_playlist(api_key, playlist_id)
     details = fetch_video_details(api_key, [item["videoId"] for item in remote["videos"]])
     api.upsert_playlist(playlist_id, playlist_input(remote, sunrei_id, sync_enabled))
+    ensure_playlist_cover(api, {"id": playlist_id, "sunreiId": sunrei_id}, remote, commit=True)
     result = api.sync_playlist_videos(
         playlist_id,
         video_inputs(remote, details),

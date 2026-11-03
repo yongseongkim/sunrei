@@ -22,6 +22,7 @@ import sys
 import urllib.parse
 
 from _common import admin_api, admin_token, workspace
+from playlist_covers import thumbnail_images
 
 
 def arg(args, flag, default=None):
@@ -76,8 +77,8 @@ def main():
     commit = "--commit" in args
     publish = "--publish" in args
 
-    info = json.load(open(ws / "video_info.json"))
-    locs = json.load(open(ws / "locations.json"))
+    info = json.loads((ws / "video_info.json").read_text(encoding="utf-8"))
+    locs = json.loads((ws / "locations.json").read_text(encoding="utf-8"))
 
     is_playlist = info.get("type") == "playlist"
     title = (info.get("title") or "")[:128]
@@ -132,7 +133,7 @@ def main():
         print(f"created source {source_id}")
 
     payload = {"sourceId": source_id, "published": publish, "title": title,
-               "summary": summary, "description": description, "link": link, "images": [], "spots": spots}
+               "summary": summary, "description": description, "link": link, "images": thumbnail_images(info), "spots": spots}
     st, resp = admin_api("POST", "/admin/sunreis", token, payload, prod=prod)
     if st == 201 and (resp or {}).get("id"):
         sid = resp["id"]

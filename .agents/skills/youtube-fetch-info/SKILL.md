@@ -50,12 +50,16 @@ Fields the later skills depend on:
 | --- | --- | --- |
 | `type` | `video` | `playlist` |
 | `id`, `title`, `description`, `url`, `channelName`, `channel{...}` | yes | yes |
-| `channelId`, `publishedAt`, `duration`, `thumbnailUrl` | yes | no |
+| `thumbnailUrl` (the video's or playlist's own cover) | yes | yes |
+| `channelId`, `publishedAt`, `duration` | yes | no |
 | `selectedVideos[]` with `videoId`, `title`, `channelName`, `position`, `url` | no | yes |
 
 `url` becomes the Sunrei link and is the duplicate key for
 `POST /admin/sunreis`. Full JSON examples are in
 `references/manual-youtube-api.md`.
+The top-level `thumbnailUrl` becomes the Sunrei cover (`images`); the channel's
+`thumbnailUrl` remains the Source poster. Do not substitute a channel avatar or
+an arbitrary playlist item's thumbnail for the playlist resource's own cover.
 
 ## Present the Result
 

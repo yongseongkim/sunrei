@@ -132,3 +132,21 @@ A suggestion carries a `geocodeWarning` when Google's name differs, adds words
 other than a branch or area, or sits outside the area's 시/구/군. Research those
 candidates on the web before approving; see "Reviewing Candidates" in
 `.agents/skills/youtube-to-sunrei/references/playlist-renewal.md`.
+
+## Playlist covers
+
+Playlist metadata includes the playlist resource's own `thumbnailUrl`. Workspace
+creation saves it to the Sunrei's `images`; registration and committed renewal
+fill an empty cover for the linked Sunrei. Existing covers are kept, and a
+playlist link must match before its cover is used. This never changes spots.
+
+To fill covers on existing registered playlists without collecting videos or
+extracting places, preview the metadata-only changes and then apply them:
+
+```bash
+uv run python .claude/scripts/youtube/playlist_covers.py [--playlist PLAYLIST_ID]
+uv run python .claude/scripts/youtube/playlist_covers.py [--playlist PLAYLIST_ID] --commit
+```
+
+The command uses `SUNREI_API_URL` (production by default). It leaves an existing
+Sunrei cover, an unlinked playlist, or a mismatched Sunrei link unchanged.

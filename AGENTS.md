@@ -95,6 +95,7 @@ Place의 태그는 그 Place에 있는 공개 spot의 태그를 모두 합친 �
 ## YouTube 수집
 
 등록한 플레이리스트의 새 영상에서 장소 후보를 추출하고, 어드민 검토를 거쳐 SunreiSpot으로 만든다.
+플레이리스트 표지는 YouTube `playlists.snippet.thumbnails`에서 받아 Sunrei의 `images`에 저장한다. 등록·갱신 시 빈 대표 이미지만 보충하며 기존 대표 이미지는 유지한다. `playlist_covers.py`로 영상·장소 재수집 없이 기존 항목의 표지만 보충할 수 있다.
 수집 스크립트와 스킬은 `/admin/youtube/*` admin API로 같은 DB 상태를 읽고 쓴다.
 S3에 플레이리스트나 채널 registry JSON을 따로 저장하거나 갱신하지 않는다.
 `GET /admin/resources/youtube/{channelId}`는 등록 플레이리스트와 채널 URL로 Source를 찾아 그 아래의 live Sunrei·spot을 DB에서 읽는 조회 API다.
