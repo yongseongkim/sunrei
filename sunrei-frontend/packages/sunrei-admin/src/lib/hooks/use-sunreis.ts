@@ -1,9 +1,12 @@
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useInfiniteQuery, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { adminApi } from '@/lib/api-client';
 import {
   CreateSunreiRequest,
   UpdateSunreiRequest,
   SunreiDTO,
+  SunreiSort,
+  SourceType,
+  ListSunreisResult,
 } from '@/api/admin';
 
 export const sunreiKeys = {
@@ -15,6 +18,8 @@ export const sunreiKeys = {
     q?: string;
     sourceId?: string;
     published?: boolean;
+    sort?: SunreiSort;
+    sourceType?: SourceType;
   }) => [...sunreiKeys.lists(), params] as const,
   details: () => [...sunreiKeys.all, 'detail'] as const,
   detail: (id: string) => [...sunreiKeys.details(), id] as const,
@@ -26,20 +31,27 @@ export function useSunreis(params: {
   q?: string;
   sourceId?: string;
   published?: boolean;
+  sort?: SunreiSort;
+  sourceType?: SourceType;
 } = {}) {
-  const { nextToken, size = 100, q, sourceId, published } = params;
-  return useQuery({
-    queryKey: sunreiKeys.list({ nextToken, size, q, sourceId, published }),
-    queryFn: async () => {
+  const { nextToken, size = 100, q, sourceId, published, sort = SunreiSort.CreatedDesc, sourceType } = params;
+  return useInfiniteQuery({
+    queryKey: sunreiKeys.list({ nextToken, size, q, sourceId, published, sort, sourceType }),
+    initialPageParam: nextToken,
+    queryFn: async ({ pageParam, signal }): Promise<ListSunreisResult> => {
       const response = await adminApi.listSunreis(
-        nextToken,
+        pageParam,
         size,
         q,
         sourceId,
-        published
+        published,
+        sort,
+        sourceType,
+        { signal },
       );
-      return response.data.data || [];
+      return response.data;
     },
+    getNextPageParam: (lastPage) => lastPage.nextToken || undefined,
   });
 }
 

@@ -47,6 +47,7 @@ YouTube와 Instagram Source는 외부 링크로 이동하고, Anime/TV/Other Sou
 공개 상태는 `published_at`으로 관리한다.
 `NULL`이면 draft이고, 값이 있으면 published다.
 Public 엔드포인트는 `published_at IS NOT NULL`인 Sunrei와 그 spot만 노출하며, Admin은 모두 본다.
+Admin 목록은 최근 등록순이 기본이고 최근 수정순·제목순도 지원한다. 타입 필터와 정렬은 페이지를 나누기 전에 적용하며, 동률은 ID 내림차순이다. 새 Sunrei의 생성·수정 시각은 생성 요청을 처리한 시각으로 저장한다.
 
 ### SunreiSpot
 

@@ -154,6 +154,16 @@ paths:
         - name: published
           in: query
           schema: { type: boolean }
+        - name: sort
+          in: query
+          description: Sort the complete result before pagination. Follow nextToken with the same filters and sort; equal values are ordered by ID descending.
+          schema:
+            $ref: '#/components/schemas/SunreiSort'
+        - name: sourceType
+          in: query
+          description: Filter by source type before pagination.
+          schema:
+            $ref: '#/components/schemas/SourceType'
       responses:
         '200':
           description: Paginated list of Sunreis
@@ -161,6 +171,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListSunreisResult'
+        '400': { description: Unsupported sort or source type }
         '401': { description: Unauthorized }
     post:
       summary: Create new Sunrei
@@ -1483,6 +1494,10 @@ components:
           items:
             $ref: '#/components/schemas/TagDTO'
 
+    SunreiSort:
+      type: string
+      enum: [created_desc, updated_desc, title_asc]
+      default: created_desc
     SunreiDTO:
       type: object
       required: [id, sourceId, source, title, images, spots]

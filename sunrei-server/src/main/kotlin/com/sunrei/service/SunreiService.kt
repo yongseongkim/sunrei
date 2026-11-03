@@ -12,10 +12,12 @@ import com.sunrei.generated.dto.admin.CreateSunreiSpotInline
 import com.sunrei.generated.dto.admin.ListSunreisResult
 import com.sunrei.generated.dto.admin.MultiSizeImageDTO
 import com.sunrei.generated.dto.admin.PlaceInput
+import com.sunrei.generated.dto.admin.SunreiSort
 import com.sunrei.generated.dto.admin.UpdateSunreiRequest
 import com.sunrei.generated.dto.admin.UpdateSunreiSpotInline
 import com.sunrei.model.Place
 import com.sunrei.model.Source
+import com.sunrei.model.SourceType
 import com.sunrei.model.Sunrei
 import com.sunrei.model.SunreiSpot
 import com.sunrei.model.Tag
@@ -50,7 +52,9 @@ class SunreiService(
         size: Int = 20,
         q: String? = null,
         sourceId: String? = null,
-        published: Boolean? = null
+        published: Boolean? = null,
+        sort: SunreiSort = SunreiSort.CREATED_DESC,
+        sourceType: SourceType? = null
     ): ListSunreisResult {
         val tokenData = pageToken.decodeToken(nextToken)
         val offset = tokenData?.offset ?: 0
@@ -69,6 +73,13 @@ class SunreiService(
             if (sourceId != null) {
                 query = query.andWhere { Sunreis.sourceId eq sourceId }
             }
+            if (sourceType != null) {
+                query = query.andWhere {
+                    Sunreis.sourceId inSubQuery Sources.slice(Sources.id).select {
+                        (Sources.type eq sourceType.name) and Sources.deletedAt.isNull()
+                    }
+                }
+            }
             if (published != null) {
                 query = query.andWhere {
                     if (published) Sunreis.publishedAt.isNotNull() else Sunreis.publishedAt.isNull()
@@ -76,8 +87,13 @@ class SunreiService(
             }
 
             val totalElements = query.count().toInt()
+            val ordering = when (sort) {
+                SunreiSort.CREATED_DESC -> Sunreis.createdAt to SortOrder.DESC
+                SunreiSort.UPDATED_DESC -> Sunreis.updatedAt to SortOrder.DESC
+                SunreiSort.TITLE_ASC -> Sunreis.title to SortOrder.ASC
+            }
             val rows = query
-                .orderBy(Sunreis.createdAt to SortOrder.DESC)
+                .orderBy(ordering, Sunreis.id to SortOrder.DESC)
                 .limit(effectiveSize, offset.toLong())
                 .toList()
 
@@ -131,9 +147,12 @@ class SunreiService(
             }
         }
 
+        val now = Clock.System.now()
         val sunreiId = Sunreis.insertAndGetId { stmt ->
             stmt[Sunreis.sourceId] = request.sourceId
-            stmt[Sunreis.publishedAt] = if (request.published) Clock.System.now() else null
+            stmt[Sunreis.publishedAt] = if (request.published) now else null
+            stmt[Sunreis.createdAt] = now
+            stmt[Sunreis.updatedAt] = now
             stmt[Sunreis.title] = request.title
             stmt[Sunreis.summary] = request.summary
             stmt[Sunreis.description] = request.description

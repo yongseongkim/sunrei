@@ -1,6 +1,7 @@
 'use client';
 
-import { SunreiDTO, SourceType } from '@/api/admin';
+import { SunreiDTO, SourceType, SunreiSort } from '@/api/admin';
+import { useMemo } from 'react';
 import {
   useSunreis,
   useDeleteSunrei,
@@ -13,7 +14,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import ResponsiveImage from '@/components/ResponsiveImage';
+import { SunreiThumbnail } from '@/components/SunreiThumbnail';
 import {
   Plus,
   Edit2,
@@ -31,17 +32,20 @@ export default function SunreisPage() {
   const publishedFilter = params.get('status') === 'published' ? true : params.get('status') === 'drafts' ? false : undefined;
   const typeFilter = Object.values(SourceType).includes(params.get('type') as SourceType)
     ? params.get('type') as SourceType : undefined;
+  const sort = Object.values(SunreiSort).includes(params.get('sort') as SunreiSort)
+    ? params.get('sort') as SunreiSort : SunreiSort.CreatedDesc;
 
   const {
-    data: allSunreis = [],
+    data,
     isLoading: loading,
     error: queryError,
-  } = useSunreis({ q: q || undefined, published: publishedFilter });
+    hasNextPage,
+    fetchNextPage,
+    isFetchingNextPage,
+  } = useSunreis({ q: q || undefined, published: publishedFilter, sourceType: typeFilter, sort });
 
-  const sunreis =
-    typeFilter === undefined
-      ? allSunreis
-      : allSunreis.filter((s) => s.source?.type === typeFilter);
+  const sunreis = useMemo(() => data?.pages.flatMap(page => page.data ?? []) ?? [], [data]);
+  const total = data?.pages[0]?.totalElements ?? sunreis.length;
   const deleteMutation = useDeleteSunrei();
   const publishMutation = useSetSunreiPublished();
 
@@ -64,7 +68,7 @@ export default function SunreisPage() {
       <div className="flex items-end justify-between">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Content</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Manage Sunreis (videos / works)</p>
+          <p className="mt-1 text-sm text-muted-foreground">Manage Sunreis (videos / works) · {sunreis.length} of {total}</p>
         </div>
         <Button onClick={() => openDetail('/sunreis/new')}>
           <Plus className="h-4 w-4 mr-2" />
@@ -108,6 +112,16 @@ export default function SunreisPage() {
             ))}
           </SelectContent>
         </Select>
+        <Select value={sort} onValueChange={(value) => setParam('sort', value === SunreiSort.CreatedDesc ? '' : value)}>
+          <SelectTrigger aria-label="Sort content" className="ml-auto w-[180px]">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value={SunreiSort.CreatedDesc}>Recently added</SelectItem>
+            <SelectItem value={SunreiSort.UpdatedDesc}>Recently updated</SelectItem>
+            <SelectItem value={SunreiSort.TitleAsc}>Title A–Z</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
 
       {error && (
@@ -139,6 +153,7 @@ export default function SunreisPage() {
             <SunreiRow
               key={sunrei.id}
               sunrei={sunrei}
+              showUpdated={sort === SunreiSort.UpdatedDesc}
               onEdit={() => openDetail(`/sunreis/${sunrei.id}/edit`)}
               onDelete={() => handleDelete(sunrei.id)}
               onTogglePublish={() => togglePublish(sunrei)}
@@ -150,41 +165,53 @@ export default function SunreisPage() {
           ))}
         </Card>
       )}
+      {hasNextPage && (
+        <div className="flex justify-center">
+          <Button variant="outline" disabled={isFetchingNextPage} onClick={() => fetchNextPage()}>
+            {isFetchingNextPage && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            {isFetchingNextPage ? 'Loading…' : 'Load more'}
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
 
 function SunreiRow({
   sunrei,
+  showUpdated,
   onEdit,
   onDelete,
   onTogglePublish,
   toggling,
 }: {
   sunrei: SunreiDTO;
+  showUpdated: boolean;
   onEdit: () => void;
   onDelete: () => void;
   onTogglePublish: () => void;
   toggling: boolean;
 }) {
   const published = sunrei.publishedAt != null;
+  const timestamp = showUpdated ? sunrei.updatedAt : sunrei.createdAt;
+  const date = timestamp ? new Date(timestamp) : null;
+  const validDate = date && !Number.isNaN(date.getTime());
   return (
-    <div className="flex items-center gap-3 px-4 py-3">
-      <div className="h-10 w-10 shrink-0 overflow-hidden rounded-md bg-muted">
-        {sunrei.images?.[0] && (
-          <ResponsiveImage
-            multiSizeImage={sunrei.images[0]}
-            alt={sunrei.title}
-            size="small"
-            className="h-full w-full object-cover"
-          />
-        )}
-      </div>
+    <div data-sunrei-id={sunrei.id} className="flex items-center gap-3 px-4 py-3">
+      <SunreiThumbnail sunrei={sunrei} />
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-semibold">{sunrei.title}</p>
         <p className="mt-0.5 truncate text-[12.5px] text-muted-foreground">
           {sunrei.source?.name ?? '—'} · {sunrei.spots?.length || 0} spots
         </p>
+        {validDate && (
+          <p className="mt-0.5 text-xs text-muted-foreground">
+            {showUpdated ? 'Updated' : 'Added'}{' '}
+            <time dateTime={timestamp} title={date.toLocaleString()}>
+              {date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
+            </time>
+          </p>
+        )}
       </div>
       <Badge variant={published ? 'default' : 'secondary'}>{published ? 'Published' : 'Draft'}</Badge>
       <Button
