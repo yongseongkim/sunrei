@@ -47,7 +47,7 @@ locations into the workspace's final `locations.json`.
    Checkpoint: the user approves the location list.
 4. Create the Sunrei with `youtube-create-sunrei`. It composes the Sunrei,
    builds one SunreiSpot per approved location, creates a draft through the
-   admin API, and updates the channel registry.
+   admin API, then verifies the saved database records.
    Check the spot table against the approved locations and tag choices. Reuse
    that approval when the payload agrees; ask only for new choices or changes.
 
@@ -83,7 +83,7 @@ geocodes.
 
 Report the selected videos and the counts of evidence collected, locations
 reviewed, and spots saved. List unresolved locations, unprocessed videos or
-playlists, registry failures, and any source migration left undone. State
+playlists, and any source migration left undone. State
 publication status separately. Describe a completed batch by its scope;
 finishing it does not mean the whole channel has been processed.
 

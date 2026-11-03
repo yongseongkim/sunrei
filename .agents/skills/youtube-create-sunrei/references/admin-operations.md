@@ -1,6 +1,6 @@
 # Admin API Operations by Hand
 
-`create_sunrei.py`, `registry_update.py`, and `update_sunrei_spots.py` cover
+`create_sunrei.py` and `update_sunrei_spots.py` cover
 the normal path. Use these calls when a step has to be done by hand or
 repaired.
 
@@ -103,44 +103,22 @@ Tags belong to `spots[].tagIds`; there is no top-level `tagIds`.
 HTTP 409 means a Sunrei with the same `link` exists, and the body carries
 `existingId`. Update that Sunrei instead of creating another.
 
-## Channel Registry
+## Channel Resources
 
-The server stores one JSON document per channel in S3 behind
-`/admin/resources/youtube/{channelId}` and owns the AWS credentials.
+The database is the source of truth. Use `/admin/youtube/playlists` and
+`/admin/youtube/videos` for collection state, and `/admin/sunreis` for saved
+Sunreis and spots. Follow pagination where present.
 
-```bash
-curl -s -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/resources/youtube/{channelId}"
+`GET /admin/resources/youtube/{channelId}` is an optional read-only DB view of
+all live Sunreis and spots under the channel's Sources, including drafts.
+It keeps the `channelName`, `link`, and `sunreis` response fields. Sources are
+resolved from registered playlists and canonical channel URLs. A Source using
+a handle URL needs a linked registered playlist to resolve its channel ID.
+Non-YouTube spot links have no `videoId`.
 
-curl -s -X PUT -H "Authorization: Bearer ${TOKEN}" -H "Content-Type: application/json" \
-  --data-binary @registry.json "{SERVER_URL}/admin/resources/youtube/{channelId}"
-```
-
-```json
-{
-  "channelName": "비밀이야 bimirya",
-  "link": "https://www.youtube.com/channel/UC...",
-  "sunreis": [
-    {
-      "sunreiId": "SR...",
-      "createdAt": "2026-02-17T10:06:43Z",
-      "spots": [
-        { "spotId": "SS...", "videoId": "abc123", "videoTitle": "..." }
-      ]
-    }
-  ]
-}
-```
-
-`spots[].videoId` is the `v` parameter of each spot's `sourceLink`, and
-`videoTitle` comes from `selectedVideos[].title`.
-
-A production database reset leaves dead IDs in the registry. Check one entry
-with `GET /admin/sunreis/{sunreiId}`; on 404, rebuild the registry from the
-live Sunreis instead of appending to it:
-
-```bash
-uv run python .claude/scripts/youtube/registry_update.py <channelId> <liveId1,liveId2> --commit
-```
+There is no registry refresh step, S3 JSON file, or resource PUT operation.
+After a successful save, verify the DB records rather than writing a second
+copy of their IDs.
 
 ## Edit an Existing Sunrei
 

@@ -2,7 +2,8 @@
 
 The renewal command checks registered playlists for new videos, extracts location
 candidates, and stores everything in the Sunrei DB through the admin YouTube
-API (`/admin/youtube/*`). Candidates become Sunrei spots only when an admin
+API (`/admin/youtube/*`). No separate S3 JSON registry is maintained.
+Candidates become Sunrei spots only when an admin
 approves them, so the command never changes a Sunrei itself.
 
 Because all state lives behind the API, the command runs on any machine that

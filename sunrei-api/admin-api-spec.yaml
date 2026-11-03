@@ -490,10 +490,16 @@ paths:
         '400': { description: Bad request }
         '401': { description: Unauthorized }
 
-  # ===== Resources (YouTube channel registries) =====
+  # ===== Resources (live YouTube channel content) =====
   /admin/resources/youtube/{channelId}:
     get:
-      summary: Get YouTube channel registry (raw JSON from S3)
+      summary: Get YouTube channel resources from the database
+      description: |-
+        Read-only view of live Sunreis and spots for a YouTube channel, including drafts.
+        Resolves Sources through registered playlists and canonical channel URLs, then
+        includes every live Sunrei under those Sources. Non-YouTube spot links have a
+        null videoId. Playlist and video collection state is managed by /admin/youtube/*.
+        This endpoint does not read or write S3 JSON.
       operationId: getYoutubeResource
       security: [{ bearerAuth: [] }]
       parameters:
@@ -503,35 +509,14 @@ paths:
           schema: { type: string }
       responses:
         '200':
-          description: Channel registry JSON (free-form)
+          description: Current channel resources
           content:
             application/json:
               schema:
-                type: object
-                additionalProperties: true
+                $ref: '#/components/schemas/YoutubeResourceDTO'
         '400': { description: channelId is required }
         '401': { description: Unauthorized }
-        '404': { description: Channel registry not found }
-    put:
-      summary: Store YouTube channel registry (raw JSON to S3)
-      operationId: putYoutubeResource
-      security: [{ bearerAuth: [] }]
-      parameters:
-        - name: channelId
-          in: path
-          required: true
-          schema: { type: string }
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties: true
-      responses:
-        '200': { description: Channel registry saved }
-        '400': { description: Invalid JSON body or channelId is required }
-        '401': { description: Unauthorized }
+        '404': { description: Channel not found in the database }
 
   # ===== YouTube collection =====
   /admin/youtube/playlists:
@@ -1214,6 +1199,34 @@ components:
       description: JWT token for admin authentication
 
   schemas:
+    YoutubeResourceDTO:
+      type: object
+      required: [channelName, link, sunreis]
+      properties:
+        channelName: { type: string }
+        link: { type: string }
+        sunreis:
+          type: array
+          items: { $ref: '#/components/schemas/YoutubeResourceSunreiDTO' }
+
+    YoutubeResourceSunreiDTO:
+      type: object
+      required: [sunreiId, createdAt, spots]
+      properties:
+        sunreiId: { type: string }
+        createdAt: { type: string, format: date-time }
+        spots:
+          type: array
+          items: { $ref: '#/components/schemas/YoutubeResourceSpotDTO' }
+
+    YoutubeResourceSpotDTO:
+      type: object
+      required: [spotId, videoTitle]
+      properties:
+        spotId: { type: string }
+        videoId: { type: string, nullable: true }
+        videoTitle: { type: string }
+
     # ===== Common =====
     PlaceDTO:
       type: object

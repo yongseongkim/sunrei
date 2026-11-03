@@ -95,6 +95,9 @@ Place의 태그는 그 Place에 있는 공개 spot의 태그를 모두 합친 �
 
 등록한 플레이리스트의 새 영상에서 장소 후보를 추출하고, 어드민 검토를 거쳐 SunreiSpot으로 만든다.
 수집 스크립트와 스킬은 `/admin/youtube/*` admin API로 같은 DB 상태를 읽고 쓴다.
+S3에 플레이리스트나 채널 registry JSON을 따로 저장하거나 갱신하지 않는다.
+`GET /admin/resources/youtube/{channelId}`는 등록 플레이리스트와 채널 URL로 Source를 찾아 그 아래의 live Sunrei·spot을 DB에서 읽는 조회 API다.
+같은 경로의 JSON 저장 PUT은 제공하지 않으며 S3는 서비스 이미지 저장에 사용한다.
 YouTube가 데이터센터 IP에서 오는 자막과 영상 다운로드를 막으므로, 수집은 클러스터가 아닌 개인 머신에서 실행한다.
 실행 방법은 `.claude/scripts/youtube/AUTOMATION.md`에, 테이블별 설명은 `sunrei-server/src/main/resources/db/migration/V2__youtube_collection.sql` 주석에 있다.
 
