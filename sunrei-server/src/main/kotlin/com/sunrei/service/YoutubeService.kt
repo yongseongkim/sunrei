@@ -2,6 +2,7 @@ package com.sunrei.service
 
 import com.sunrei.database.SunreiSpots
 import com.sunrei.database.Sunreis
+import com.sunrei.database.Sources
 import com.sunrei.database.YoutubeExtractedPlaces
 import com.sunrei.database.YoutubeExtractionRuns
 import com.sunrei.database.YoutubePlaylistVideos
@@ -29,6 +30,9 @@ import com.sunrei.generated.dto.admin.YoutubeExtractionRunDTO
 import com.sunrei.generated.dto.admin.YoutubeExtractionRunStatus
 import com.sunrei.generated.dto.admin.YoutubePlaylistDTO
 import com.sunrei.generated.dto.admin.YoutubeReviewStatus
+import com.sunrei.generated.dto.admin.YoutubeResourceDTO
+import com.sunrei.generated.dto.admin.YoutubeResourceSunreiDTO
+import com.sunrei.generated.dto.admin.YoutubeResourceSpotDTO
 import com.sunrei.generated.dto.admin.YoutubeSegmentDTO
 import com.sunrei.generated.dto.admin.YoutubeTextKind
 import com.sunrei.generated.dto.admin.YoutubeVideoAttemptDTO
@@ -37,6 +41,7 @@ import com.sunrei.generated.dto.admin.YoutubeVideoDetailDTO
 import com.sunrei.generated.dto.admin.YoutubeVideoStatus
 import com.sunrei.generated.dto.admin.YoutubeVideoTextDTO
 import com.sunrei.utils.PaginationToken
+import io.ktor.http.Url
 import kotlinx.datetime.Clock
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
@@ -64,6 +69,63 @@ class YoutubeService(
 ) {
     private val pageToken = PaginationToken(pageTokenSecret)
     private val json = Json { ignoreUnknownKeys = true }
+
+    /** A live DB view; channel content has no separately maintained S3 registry. */
+    fun getChannelResource(channelId: String): YoutubeResourceDTO? = transaction {
+        val playlists = YoutubePlaylists.select { YoutubePlaylists.channelId eq channelId }
+            .orderBy(YoutubePlaylists.createdAt to SortOrder.ASC, YoutubePlaylists.id to SortOrder.ASC).toList()
+        val canonicalUrl = "https://www.youtube.com/channel/$channelId"
+        val channelUrls = listOf(canonicalUrl, "$canonicalUrl/",
+            "https://youtube.com/channel/$channelId", "https://youtube.com/channel/$channelId/")
+        val sourceIds = Sources.select {
+            Sources.deletedAt.isNull() and (Sources.type eq "YOUTUBE") and (Sources.externalUrl inList channelUrls)
+        }.map { it[Sources.id] }.toMutableSet()
+        val playlistSunreiIds = playlists.mapNotNull { it[YoutubePlaylists.sunreiId] }.distinct()
+        if (playlistSunreiIds.isNotEmpty()) {
+            Sunreis.select { (Sunreis.id inList playlistSunreiIds) and Sunreis.deletedAt.isNull() }
+                .forEach { sourceIds.add(it[Sunreis.sourceId]) }
+        }
+        val sources = if (sourceIds.isEmpty()) emptyList() else Sources.select {
+            (Sources.id inList sourceIds) and Sources.deletedAt.isNull() and (Sources.type eq "YOUTUBE")
+        }.orderBy(Sources.createdAt to SortOrder.ASC, Sources.id to SortOrder.ASC).toList()
+        if (sources.isEmpty() && playlists.isEmpty()) return@transaction null
+
+        val liveSourceIds = sources.map { it[Sources.id] }
+        val sunreis = if (liveSourceIds.isEmpty()) emptyList() else Sunreis.select {
+            (Sunreis.sourceId inList liveSourceIds) and Sunreis.deletedAt.isNull()
+        }.orderBy(Sunreis.createdAt to SortOrder.DESC, Sunreis.id to SortOrder.ASC).toList()
+        val sunreiIds = sunreis.map { it[Sunreis.id] }
+        val spots = if (sunreiIds.isEmpty()) emptyMap() else SunreiSpots.select {
+            (SunreiSpots.sunreiId inList sunreiIds) and SunreiSpots.deletedAt.isNull()
+        }.orderBy(SunreiSpots.sortOrder to SortOrder.ASC, SunreiSpots.createdAt to SortOrder.ASC,
+            SunreiSpots.id to SortOrder.ASC).groupBy { it[SunreiSpots.sunreiId] }
+        val source = sources.firstOrNull()
+        YoutubeResourceDTO(
+            channelName = source?.get(Sources.name)
+                ?: playlists.firstNotNullOfOrNull { it[YoutubePlaylists.channelTitle] } ?: channelId,
+            link = source?.get(Sources.externalUrl) ?: canonicalUrl,
+            sunreis = sunreis.map { sr ->
+                YoutubeResourceSunreiDTO(
+                    sunreiId = sr[Sunreis.id], createdAt = sr[Sunreis.createdAt],
+                    spots = spots[sr[Sunreis.id]].orEmpty().map { spot ->
+                        YoutubeResourceSpotDTO(
+                            spotId = spot[SunreiSpots.id], videoTitle = spot[SunreiSpots.title],
+                            videoId = youtubeVideoId(spot[SunreiSpots.sourceLink])
+                        )
+                    }
+                )
+            }
+        )
+    }
+
+    private fun youtubeVideoId(link: String?): String? = runCatching {
+        val url = Url(link ?: return null)
+        when (url.host.lowercase()) {
+            "youtube.com", "www.youtube.com", "m.youtube.com" -> url.parameters["v"]
+            "youtu.be" -> url.encodedPath.trim('/').takeIf { it.isNotEmpty() }
+            else -> null
+        }
+    }.getOrNull()
 
     fun listPlaylists(): ListYoutubePlaylistsResult = transaction {
         val rows = YoutubePlaylists.selectAll().orderBy(YoutubePlaylists.createdAt to SortOrder.ASC).toList()

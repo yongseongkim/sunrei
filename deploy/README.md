@@ -120,6 +120,14 @@ ArgoCD는 chart만 배포하고 Secret은 적용하지 않으며, Pod는 시작�
 그 키를 읽지 않는 코드를 릴리스하고, 모든 Pod가 새 버전으로 바뀐 뒤에 키를 지우고 Secret을 적용한다.
 키를 먼저 지우면 다시 시작한 이전 버전 Pod가 실패하므로, Secret에는 돌고 있는 모든 버전이 읽는 키를 남겨 둔다.
 
+## S3 접근 권한
+
+`sunrei-resources`는 `images/` 아래의 서비스 이미지를 저장한다.
+YouTube 플레이리스트·영상·추출 상태와 채널 리소스 조회는 DB를 사용하며,
+`youtube/*.json` registry를 만들거나 갱신하지 않는다.
+서버용 IAM 정책에는 `images/*`에 필요한 객체 권한만 두고, registry용
+`youtube/*` 객체 권한과 `s3:ListBucket` 권한은 사용하지 않는다.
+
 ## 문제 해결
 
 ### ImagePullBackOff

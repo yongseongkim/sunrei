@@ -103,26 +103,10 @@ per workspace.
   write result, read the live Sunrei before retrying so successful additions
   are not created twice; follow the verification rules in the admin reference.
 
-The script does not select tags, does not review spot quality, and does not
-update the channel registry. Those are steps 2, 3, and 5.
-
-## 5. Update the Channel Registry
-
-The server keeps a per-channel registry of Sunreis and spots in S3. After a
-successful create, rebuild it from every live Sunrei of that channel.
-Production is the default; add `--local` for a local server:
-
-```bash
-uv run python .claude/scripts/youtube/registry_update.py <channelId> <sunreiId1,sunreiId2,...> \
-  [--channel-name "..."] [--channel-link "..."] --commit
-```
-
-Pass every live Sunrei ID for the channel; entries for IDs left out are
-dropped. Run it once per channel.
-
-If registry access fails after a Sunrei was saved, record the saved ID and
-the registry failure separately. Retry the registry step from live data;
-do not repeat creation or report the registry as updated.
+The script does not select tags or review spot quality; complete steps 2 and 3
+before committing. Sunreis and spots are stored in the database. Registered
+playlists, videos, evidence, and review state use `/admin/youtube/*`; there is
+no S3 JSON registry to save or refresh.
 
 ## Editing an Existing Sunrei
 
@@ -138,14 +122,13 @@ calls are in `references/admin-operations.md`.
 
 Report the Sunrei ID, the admin URL
 (`https://sunrei-admin.yongseongkimm.com/sunreis/{id}/edit` in production),
-the spots added, changed, or removed, any unresolved items, and whether the
-registry was updated. State the verified publication status. Leave newly
+the spots added, changed, or removed, and any unresolved items. State the
+verified publication status. Leave newly
 created Sunreis a draft, preserve an existing Sunrei's publication status,
 and keep the workspace unless the user asks otherwise.
 
 ## References
 
 - `references/admin-operations.md`: minting a token, the production
-  User-Agent, Source and Sunrei requests by hand, HTTP 409, the registry
-  format and stale-registry recovery, and editing or publishing an existing
-  Sunrei.
+  User-Agent, Source and Sunrei requests by hand, HTTP 409, database-backed
+  channel resources, and editing or publishing an existing Sunrei.
