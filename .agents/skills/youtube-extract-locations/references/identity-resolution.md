@@ -23,8 +23,8 @@ a verified map match.
 
 Before Places Text Search, answer all three questions:
 
-1. **Which venue?** Its business/building name is actually present in the
-   content or supported by research tied to this visit. Preserve source
+1. **Which place?** Its venue, building, street or natural-feature name is
+   present in the content or supported by research tied to this visit. Preserve source
    spellings and confirmed aliases. A dish, address fragment, product brand,
    generic category, or plausible ASR reconstruction is not a resolved name.
 2. **Which premises?** Region, branch, exact address, or other visit-specific

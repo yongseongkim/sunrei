@@ -10,7 +10,7 @@ place of YouTube metadata. Worked failures live in
 1. Resolve an associated creator map link before falling back to text search.
    Compare the resolved Google place ID or CID with the result. A shared brand
    name or distance threshold does not show they are the same listing.
-2. For Text Search, use the evidenced business/building name plus country,
+2. For Text Search, use the evidenced venue/site/feature name plus country,
    city and supported branch/address. Keep native spellings and genuine
    numeric prefixes. Do not search a generic category, a guessed alias, or an
    address alone to discover which business was visited.

@@ -42,14 +42,22 @@ can introduce destinations in several regions; scope each visit accordingly.
 
 ## 2. Select Destinations
 
-Include a place only when the video introduces it as a subject that fits the
-theme of its title and description: restaurants, shops, attractions,
-buildings, viewpoints, and other specific destinations.
+Follow the user's explicit destination scope. Otherwise include specific
+real places the video meaningfully visits, films, or introduces as subjects,
+regardless of popularity or category: food venues, ordinary shops and markets,
+lodging, buildings, museums, parks, trails, beaches, viewpoints, named streets,
+and other identifiable destinations.
 
-- A food video includes food venues only. A non-restaurant still counts when
-  the video eats there, such as a bakery queue inside a museum or a market
-  stall.
-- A general travel vlog includes attractions, restaurants, and viewpoints.
+Use the title and description to understand the trip and each visit's role,
+not as a category whitelist. A food-focused title does not exclude a bookshop,
+park, hotel, or building that the same video deliberately introduces.
+
+- A food video can include a museum cafe, market stall, or a separately
+  introduced non-food stop. Explain each place's actual role in that visit.
+- Small, local, little-known destinations qualify on the same evidence as
+  famous landmarks. Search visibility or review count is not an inclusion test.
+- A named street or area can be a destination when the video explores it as a
+  subject; an unspecified walking street or neighborhood is not an identity.
 - A filming-location or pilgrimage video includes the places where a scene was
   shot or that a scene depicts.
 - A place listed in the description's chapters or store-information block is
@@ -69,10 +77,12 @@ Exclude:
 - Places the video tells viewers not to visit. The map lists places worth
   visiting; mention the warning in the description of the recommended
   alternative, if any.
-- Stops that do not fit the theme: a station, shopping street, or landmark
-  passed on a food tour, or a lunch stop without a chapter in an architecture
-  walk.
-- Places outside the geographic scope.
+- Incidental transit points, background signs, and locations mentioned only
+  in navigation, without a meaningful visit or introduction. Category mismatch
+  with the title or absence of a chapter alone is not a reason to exclude an
+  actual destination.
+- Places outside the user's explicit geographic scope, and unrelated reference
+  locations that the video does not introduce as destinations.
 - Generic streets, neighborhoods, and categories without a specific
   destination ("Walking Street", "라멘집"), and concepts rather than places.
 - The creator's home, sponsors, real estate offices, and locations inferred
@@ -95,8 +105,9 @@ branch remains flagged rather than receiving an invented branch name.
 
 Rules for the name:
 
-- Require the actual business name, taken from the evidence: a Maps link, the
-  description, on-screen text, or speech. Description blocks can put hours,
+- Require the actual place name, taken from the evidence: a Maps link, the
+  description, on-screen text, or speech. This can name a business, building,
+  street, park, trail or natural feature. Description blocks can put hours,
   phone numbers, address fragments, or list labels such as `1) 카덴` where a
   name belongs; recover the name from the title, captions, or on-screen text.
 - Never build a name from an address, dish, or category, and never supply one

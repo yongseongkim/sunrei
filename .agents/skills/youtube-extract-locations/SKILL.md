@@ -24,7 +24,9 @@ boundaries and artifacts sequentially; report that limitation.
 Read the selected video IDs, full per-video metadata, playlist memberships, and
 existing user decisions. State what destinations this content introduces. Use
 each video's scenes to establish its region; a playlist title is context, not a
-country boundary. Preserve shared-video memberships and existing holds.
+country boundary. Include meaningful destinations across categories and
+popularity; theme guides relevance rather than restricting the result to food
+venues or landmarks. Preserve shared-video memberships and existing holds.
 
 **Output:** `manifest.json` with scope, run/content IDs, ID registry and user
 decisions. Missing metadata goes back to `youtube-fetch-info`; missing timed evidence goes to
@@ -68,7 +70,7 @@ invent its name, branch, or context.
 
 Assign the identity resolver. Apply the [identity
 gate](references/identity-resolution.md) to every candidate. Require an
-evidenced venue name and enough region/premises information to distinguish the
+evidenced place name and enough region/site information to distinguish the
 intended destination. A creator's direct map link may be resolved as source
 evidence; it is not permission to ignore a conflict.
 

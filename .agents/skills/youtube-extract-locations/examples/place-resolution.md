@@ -4,6 +4,19 @@ Use these to understand phase decisions, not as a database of current venue
 facts. The real cases describe observed extraction failures; recheck source
 and map data before a new import. The export below uses illustrative values.
 
+## Ordinary Places and Mixed Categories
+
+A food-focused trip deliberately visits a small bookshop and an old bridge
+alongside its restaurants; a travel clip introduces a guesthouse and a quiet
+walking trail. The source names and describes each stop.
+
+**Decision:** include those destinations with their own visit context even
+when they are neither food venues nor famous sights. The title explains the
+trip's theme; it does not erase meaningful stops in another category. A station
+name shown only for directions remains incidental. An unnamed building that
+is an actual subject stays a candidate for identity research, not a substitute
+famous landmark.
+
 ## Similar Romanized Names
 
 **Evidence:** a Tokyo visit names Kenuki Sushi; the creator's direct map link
