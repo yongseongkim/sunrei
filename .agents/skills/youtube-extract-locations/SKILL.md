@@ -38,7 +38,8 @@ Every path still uses the full evidence timeline for context, proper-name
 correction, and audit. A description link is stronger than a name search;
 when it conflicts with the filmed branch or premises, flag the conflict
 instead of forcing that pin. The formats the first path parses, and their
-failure modes, are in `references/description-first.md`.
+failure modes, are in `references/description-first.md`. Read its creator-comment
+section when the user requests comments or descriptions lack venue details.
 
 ## Load the Shared Extraction Rules
 
@@ -99,15 +100,16 @@ uv run python .claude/scripts/youtube/geocode.py --query "<business name>" --are
 uv run python .claude/scripts/youtube/geocode.py <ID>                                        # fill locations.json
 ```
 
-Verify each result before accepting it:
+A search result is a place proposal. Before accepting it or writing a spot,
+verify venue identity for every candidate in the final batch, including later
+workers and retries; a pilot check does not cover the rest:
 
 - The query names a business, not a bare address or a short romanized name.
-- The pin lies in the video's region. Re-geocode outliers with country and
-  city context; for a single-country playlist run
-  `uv run python .claude/scripts/youtube/cleanup_geocodes.py <ID> japan|france|italy`.
-- `displayName` matches the extracted name, allowing for translation and
-  romanization. Keep a plausible match for a venue named only in speech and
-  flag only real uncertainty.
+- The pin lies in the region evidenced by that video or scene. A playlist
+  title alone does not exclude a real visit elsewhere.
+- The returned business and branch match the evidence, allowing verified
+  translation and romanization. Matching coordinates or an address alone
+  does not establish identity; hold unresolved identity conflicts.
 - Buildings the video introduces separately have separate Google places.
 
 The failures each check prevents are in
@@ -134,7 +136,9 @@ before selecting a few images for verification or changing the pin.
 
 Verify the scene timestamp from timed evidence or frames before saving the
 link. Metadata evidence at time zero and a matching search result do not
-identify the scene's start. For Instagram comparisons or source deduplication,
+identify the scene's start. Preserve a genuine zero-second scene; when no
+scene time is supported, keep a whole-video link and mark the time unknown.
+For Instagram comparisons or source deduplication,
 read [cross-platform review](../instagram-to-sunrei/references/cross-platform-review.md).
 
 When you write or edit a `description`, follow "Write the Public Context" in

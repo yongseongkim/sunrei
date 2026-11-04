@@ -9,26 +9,39 @@ guards automatically; apply them yourself when calling the Places API by hand.
 Do not use an address-only search to identify an unknown business. Google
 returns a business at or near that address, often a hotel or office, with
 plausible coordinates but the wrong `googleMapsId`. Search for the business
-name and its area together, such as
-"시부야 야키토리 가게" rather than "야키토리 가게". `geocode.py` refuses a name
-that looks like opening hours, a phone number, or an address.
+name and its area together, using `<verified venue name> <city> <country>`.
+`geocode.py` refuses a name that looks like opening hours, a phone number, or
+an address. Its numeric-prefix guard can also reject real brands such as
+`29 Terrace` or `3 STARS PANCAKE`. Confirm the full name from the source and
+use a direct named lookup with area context; do not strip its digits or
+replace it with an address.
 
 Never geocode a short romanized name alone. `Nakano` matched Tokyo's Nakano
 ward instead of the Shibuya izakaya 奈加野 that the description's map link
-pointed to. When the description has a map link, use its pin.
+pointed to. Resolve a creator's map link before falling back to name search.
+Compare the returned Google place ID or CID with the resolved listing; retain
+its URL and the comparison. A search bias or a result within 200 m can still
+select another business in the same building.
 
 Compare `displayName` with the extracted name, allowing for translation and
 romanization. `geocode.py` writes a `geocodeWarning` on a mismatch. Refine an
-obvious mismatch, but do not invent a phonetic correction for a venue named
-only in speech. If the returned business is plausibly the spoken venue, keep
-it and flag only genuine uncertainty.
+obvious mismatch with original-language aliases and country/city context.
+Record why a different spelling is the same venue; an unresolved phonetic
+match remains a proposal. Do not invent a correction for a name heard only
+in speech.
 
 A shared substring is not a match. 최자로드's "옛집", a closed 신촌 돈까스
 restaurant, came back as "옛집국수" in 용산 with no warning, and a bulk
 approval put it on the map. `geocode.venue_warning` also flags a result that
 adds words other than a branch (`…점`), an area word, or a romanization, and a
 Korean address outside the area's 시/구/군. Google often omits closed
-businesses, so the top result for a closed shop's name is usually another shop.
+businesses, so the top result for a closed shop's name can be another shop.
+A matching full address is also insufficient: different tenants can share it.
+Compare business identity, branch, and the filmed activity; a sushi restaurant
+at a cracker shop's address is not the same place. Preserve the Google result
+name separately from the proposed display label so a renamed payload does
+not conceal the mismatch. A chain-wide product review without a visited
+branch does not justify selecting a convenient branch.
 
 Never search for an unnamed venue. A candidate the extractor marked "상호
 미상" or "(상호 미확인)" matched a neighbouring shop and even a street when
@@ -54,7 +67,8 @@ warning. Evidence that names only a kind of place and an area, such as
   address alone does not establish a relocation.
 - Search the channel or show name together with the area and what the video
   shows. Review sites and fans often tag a place with the show that visited it.
-- Read the video's description and pinned comments.
+- Read the description and creator-authored venue comments using the
+  [comment checks](description-first.md#creator-authored-comments).
 - Accept a place only when a source ties it to that video, or the video's own
   frames show its sign or name.
 - Check whether the scene is a preview of the next episode before approving it.
@@ -89,10 +103,16 @@ the saved response, and use a reviewed `PATCH /admin/places/{id}` when the
 shared Place itself needs correction. Keep address-pin or proxy limitations
 in review notes, outside the public context.
 
-## Region Check
+## Final Batch and Region Check
 
-Validate accepted coordinates against the playlist's region. A foreign place
-name matched by its Korean transliteration often lands in another country.
+Run the venue/branch and coordinate checks across the complete candidate set
+after all batches and retries. Link every warning to its candidate and video,
+and record whether it was resolved, held, or is only an unknown scene time.
+Unresolved identity conflicts stay out of a draft import, including an import
+for later admin review. A valid ID or successful API write is not a venue check.
+
+Validate accepted coordinates against each video's evidenced region. A foreign
+place name matched by its Korean transliteration often lands in another country.
 Re-geocode outliers with country and city context. For a single-country
 playlist, `cleanup_geocodes.py <ID> japan|france|italy` finds pins outside that
 country and re-geocodes them with city context taken from the video concept.

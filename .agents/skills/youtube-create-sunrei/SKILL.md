@@ -11,9 +11,10 @@ Sunrei, and each approved location of each video is one SunreiSpot.
 
 ## Prerequisites
 
-- `.claude/workspace/youtube/{ID}/video_info.json` and an approved
-  `.claude/workspace/youtube/{ID}/locations.json`. Without the user's approval
-  of the location list, stop.
+- `.claude/workspace/youtube/{ID}/video_info.json` and a prepared
+  `.claude/workspace/youtube/{ID}/locations.json`. Require location approval
+  unless the user explicitly requested uploading for admin review, as described
+  in `youtube-to-sunrei`'s Approval Boundaries.
 - `transcripts.json` or `transcripts.reviewed.json` for the summary; fall back
   to the video descriptions when absent.
 - A reachable server: `http://localhost:3030` by default, production with
@@ -62,8 +63,13 @@ hard to fix after saving:
 - The context is the approved `description` as written: finished public text
   with no timestamps, source notes, or placeholders such as
   `<name> — <playlist> 영상에서 소개한 <area> 맛집.`, and never a bare dish name.
-- `videoUrlWithTimestamp` is a real video URL with `&t=`, not a city or
-  playlist placeholder.
+- `videoUrlWithTimestamp` points to the source video. Add `&t=` only for a
+  verified scene time, including a genuine zero-second scene; otherwise keep
+  the whole-video link. Never use a city or playlist placeholder.
+- Each place passed the final-batch identity checks in
+  [geocoding and review](../youtube-extract-locations/references/geocoding-and-review.md#final-batch-and-region-check).
+  A coordinate, address, or Google ID alone is insufficient; unresolved
+  venue/branch conflicts stay held even for an admin review import.
 - `name` is a verified venue name. `findOrCreatePlace` reuses the existing
   Place for a `googleMapsId` and keeps its canonical fields. A corrected label
   in a spot payload does not rename that Place; review the shared record and
@@ -80,9 +86,10 @@ hard to fix after saving:
 - The video URL goes in `sourceLink`; the old `youtubeLink` field no longer
   exists.
 
-Present the spot table and compare it with the approved locations and tag
-choices. Reuse that approval when the payload agrees; resolve new choices or
-changes before writing.
+Present the spot table and compare it with the reviewed locations, tag
+choices, and authorized import scope. Reuse prior approval when the payload
+agrees; an explicit admin review import follows the Approval Boundaries in
+`youtube-to-sunrei`.
 
 ## 4. Dry Run, Then Commit
 

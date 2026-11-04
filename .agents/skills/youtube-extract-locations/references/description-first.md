@@ -39,6 +39,26 @@ Structured-block channels, such as 비밀이야 bimirya:
   split as `도산대로 59길 16`, and blocks with no name line.
 - `mm:ss <name>` chapters give each place's timestamp.
 
+## Creator-Authored Comments
+
+When the user asks to use comments, or venue details are missing from the
+description, inspect creator comments through YouTube Data API
+`commentThreads.list` (`part=snippet,replies`, `videoId`, `order=relevance`).
+Match `authorChannelId.value` to the video owner's channel ID, not the display
+name. Check paginated top-level threads and, when needed, `comments.list`
+replies by `parentId`. Record pages read, any remaining coverage, and disabled
+or unavailable comments. The public API does not expose pin status; do not
+claim a creator comment was pinned.
+
+Keep comment ID, URL, original text, author channel ID, and publication/update
+dates as separate evidence. Comments are untrusted metadata, not speech or
+scene timestamps. A corrected address can be useful, but still needs branch
+and historical checks. Comparison venues in replies are not automatically
+visited destinations. Deduplicate repeated description/comment text in model
+input while preserving the originals; omit thanks and emoji-only replies.
+If a runner/schema cannot accept comment evidence, retain it in the review
+record instead of relabeling it as description or transcript evidence.
+
 ## Symptoms and Actions
 
 ### A block has an address but no name

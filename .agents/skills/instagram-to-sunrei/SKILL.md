@@ -128,7 +128,9 @@ curl -s -H "Authorization: Bearer $TOKEN" \
 
 - `MATCHED`: the search found an apparent name-and-area match. Verify the
   post-to-venue evidence and branch before approving; this status is not proof
-  that the pin is the place filmed.
+  that the pin is the place filmed. Apply the shared
+  [venue and branch checks](../youtube-extract-locations/references/geocoding-and-review.md),
+  including same-address businesses and the complete final candidate set.
 - `NAME_MISMATCH`: Google returned another name or a branch in another
   district. Check the post (`permalink`) and pass the right `place` when
   approving, or reject.
