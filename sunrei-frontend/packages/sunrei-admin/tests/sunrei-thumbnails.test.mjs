@@ -45,6 +45,19 @@ test('prefer an adequate small image but retain other sizes for load failure fal
   assert.deepEqual(sizes,original);
 });
 
+test('a 96px list row selects the API medium variant before the large playlist cover', () => {
+  const variants = [
+    {url:'https://i.ytimg.com/custom-large?rs=large',width:1280,height:720},
+    {url:'https://i.ytimg.com/custom-high?rs=high',width:480,height:360},
+    {url:'https://i.ytimg.com/custom-medium?rs=medium',width:320,height:180},
+    {url:'https://i.ytimg.com/custom-default?rs=default',width:120,height:90},
+  ];
+  const candidates = sunreiThumbnailCandidates({images:[{images:variants}]});
+  assert.equal(candidates[0],variants[2].url);
+  assert.ok(candidates.indexOf(variants[0].url)>0);
+  assert.deepEqual(new Set(candidates),new Set(variants.map(variant=>variant.url)));
+});
+
 test('recognize actual watch, shorts, embed, live and short YouTube video links', () => {
   for (const url of [
     'https://www.youtube.com/watch?list=PLtest&v=abcdefghijk&t=90',

@@ -85,6 +85,36 @@ class PlaylistCoverTests(unittest.TestCase):
         self.assertEqual(api.sunrei["images"], existing)
         self.assertEqual([call[0] for call in api.calls], ["GET"])
 
+    def test_available_thumbnail_urls_and_dimensions_are_kept_together(self):
+        metadata = {**METADATA, "thumbnails": {
+            "default": {"url": "https://i.ytimg.com/default.jpg", "width": 120, "height": 90},
+            "medium": {"url": "https://i.ytimg.com/medium.jpg", "width": 320, "height": 180},
+            "maxres": {"url": METADATA["thumbnailUrl"], "width": 1280, "height": 720},
+        }}
+        [group] = playlist_covers.thumbnail_images(metadata)
+        self.assertEqual([image["width"] for image in group["images"]], [1280, 320, 120])
+        self.assertEqual(group["images"][1], metadata["thumbnails"]["medium"])
+        self.assertEqual(len(group["images"]), 3)
+
+    def test_a_saved_matching_cover_gains_sizes_once_without_changing_the_image(self):
+        metadata = {**METADATA, "thumbnails": {
+            "medium": {"url": "https://i.ytimg.com/medium.jpg", "width": 320, "height": 180},
+            "maxres": {"url": METADATA["thumbnailUrl"], "width": 1280, "height": 720},
+        }}
+        api = FakeApi(images=[{"images": [{"url": METADATA["thumbnailUrl"]}]}])
+        result = playlist_covers.ensure_playlist_cover(api, PLAYLIST, metadata, commit=True)
+        self.assertEqual(result["status"], "updated")
+        self.assertEqual(api.sunrei["images"][0]["images"][0]["url"], METADATA["thumbnailUrl"])
+        self.assertEqual(api.sunrei["images"][0]["images"][1]["width"], 320)
+        self.assertEqual(playlist_covers.ensure_playlist_cover(api, PLAYLIST, metadata, commit=True)["status"], "kept_existing")
+        self.assertEqual(sum(method == "PUT" for method, _, _ in api.calls), 1)
+        custom = FakeApi(images=[{"images": [{"url": "https://example.com/custom.jpg"}]}])
+        self.assertEqual(playlist_covers.ensure_playlist_cover(custom, PLAYLIST, metadata, commit=True)["status"], "kept_existing")
+
+    def test_variant_metadata_with_no_width_keeps_the_url_without_inventing_dimensions(self):
+        [group] = playlist_covers.thumbnail_images({"thumbnails": {"medium": {"url": "https://i.ytimg.com/custom?rs=signed"}}})
+        self.assertEqual(group["images"], [{"url": "https://i.ytimg.com/custom?rs=signed"}])
+
     def test_unlinked_missing_and_mismatched_playlists_are_not_written(self):
         for link, source_type in [("https://www.youtube.com/playlist?list=PLother", "YOUTUBE"), ("https://www.youtube.com/@channel", "YOUTUBE"), ("https://www.youtube.com/playlist?list=PLtest", "INSTAGRAM"), ("https://youtube.com.evil.test/playlist?list=PLtest", "YOUTUBE")]:
             api = FakeApi(link=link, source_type=source_type)

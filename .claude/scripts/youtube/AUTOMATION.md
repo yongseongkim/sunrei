@@ -139,6 +139,9 @@ Playlist metadata includes the playlist resource's own `thumbnailUrl`. Workspace
 creation saves it to the Sunrei's `images`; registration and committed renewal
 fill an empty cover for the linked Sunrei. Existing covers are kept, and a
 playlist link must match before its cover is used. This never changes spots.
+The available thumbnail URLs and dimensions are stored together. A previously
+saved matching playlist cover gains its other sizes, allowing small list rows
+to request a small image while keeping larger versions for detail views.
 
 To fill covers on existing registered playlists without collecting videos or
 extracting places, preview the metadata-only changes and then apply them:
@@ -149,4 +152,4 @@ uv run python .claude/scripts/youtube/playlist_covers.py [--playlist PLAYLIST_ID
 ```
 
 The command uses `SUNREI_API_URL` (production by default). It leaves an existing
-Sunrei cover, an unlinked playlist, or a mismatched Sunrei link unchanged.
+custom Sunrei cover, an unlinked playlist, or a mismatched Sunrei link unchanged.

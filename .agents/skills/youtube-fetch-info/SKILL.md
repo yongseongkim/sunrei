@@ -51,6 +51,7 @@ Fields the later skills depend on:
 | `type` | `video` | `playlist` |
 | `id`, `title`, `description`, `url`, `channelName`, `channel{...}` | yes | yes |
 | `thumbnailUrl` (the video's or playlist's own cover) | yes | yes |
+| `thumbnails` (available size variants with URL, width and height) | yes | yes |
 | `channelId`, `publishedAt`, `duration` | yes | no |
 | `selectedVideos[]` with `videoId`, `title`, `channelName`, `position`, `url` | no | yes |
 
@@ -58,7 +59,9 @@ Fields the later skills depend on:
 `POST /admin/sunreis`. Full JSON examples are in
 `references/manual-youtube-api.md`.
 The top-level `thumbnailUrl` becomes the Sunrei cover (`images`); the channel's
-`thumbnailUrl` remains the Source poster. Do not substitute a channel avatar or
+`thumbnailUrl` remains the Source poster. Store all available variants from
+`thumbnails` in the image group so small UI elements can choose a small image.
+Do not substitute a channel avatar or
 an arbitrary playlist item's thumbnail for the playlist resource's own cover.
 
 ## Present the Result

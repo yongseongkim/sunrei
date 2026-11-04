@@ -123,8 +123,9 @@ def main():
     if not source_id:
         payload = {"type": "YOUTUBE", "name": channel.get("title") or info.get("channelName"),
                    "synopsis": (channel.get("description") or "")[:500], "externalUrl": channel.get("url")}
-        if channel.get("thumbnailUrl"):
-            payload["posterImage"] = {"images": [{"url": channel["thumbnailUrl"]}]}
+        channel_images = thumbnail_images(channel)
+        if channel_images:
+            payload["posterImage"] = channel_images[0]
         st, resp = admin_api("POST", "/admin/sources", token, payload, prod=prod)
         if st != 201 or not (resp or {}).get("id"):
             print(f"source create failed {st}: {str(resp)[:300]}")

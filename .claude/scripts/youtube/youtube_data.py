@@ -39,6 +39,7 @@ def fetch_playlist_metadata(api_key, playlist_id):
         "channelId": snippet.get("channelId", ""),
         "channelName": snippet.get("channelTitle", ""),
         "thumbnailUrl": best_thumbnail(snippet.get("thumbnails", {})),
+        "thumbnails": snippet.get("thumbnails") or {},
     }
 
 

@@ -1,6 +1,7 @@
-"""Fill missing Sunrei covers with the actual YouTube playlist thumbnail.
+"""Fill Sunrei playlist covers and add their available thumbnail sizes.
 
-Metadata only: never downloads videos or changes spots, publication or existing covers.
+Metadata only: preserves custom covers, spots and publication. Matching saved
+playlist covers gain their available sizes without changing the cover image.
 Dry-run by default. SUNREI_API_URL selects the API (default: production).
 
     uv run python .claude/scripts/youtube/playlist_covers.py [--playlist ID] [--commit]
@@ -17,17 +18,39 @@ from youtube_data import fetch_playlist_metadata
 
 
 def thumbnail_images(metadata):
-    url = metadata.get("thumbnailUrl")
+    variants = []
+    thumbnails = metadata.get("thumbnails") or {}
+    if isinstance(thumbnails, dict):
+        for name in ("maxres", "standard", "high", "medium", "default"):
+            image = thumbnails.get(name) or {}
+            if isinstance(image, dict):
+                parsed = thumbnail_variant(image)
+                if parsed and parsed["url"] not in {item["url"] for item in variants}:
+                    variants.append(parsed)
+    fallback = thumbnail_variant({"url": metadata.get("thumbnailUrl")})
+    if fallback and fallback["url"] not in {item["url"] for item in variants}:
+        variants.append(fallback)
+    variants.sort(key=lambda image: image.get("width", 0), reverse=True)
+    return [{"images": variants}] if variants else []
+
+
+def thumbnail_variant(image):
+    url = image.get("url")
     if not isinstance(url, str) or not url.strip():
-        return []
+        return None
     url = url.strip()
     try:
         parsed = urllib.parse.urlparse(url)
     except ValueError:
-        return []
+        return None
     if parsed.scheme not in {"https", "http"} or not parsed.hostname:
-        return []
-    return [{"images": [{"url": url}]}]
+        return None
+    variant = {"url": url}
+    for field in ("width", "height"):
+        value = image.get(field)
+        if isinstance(value, int) and not isinstance(value, bool) and value > 0:
+            variant[field] = value
+    return variant
 
 
 def playlist_id(url):
@@ -55,12 +78,17 @@ def ensure_playlist_cover(api, playlist, metadata, commit=False):
     sunrei = api.request("GET", f"/admin/sunreis/{playlist['sunreiId']}")
     if sunrei.get("source", {}).get("type") != "YOUTUBE" or playlist_id(sunrei.get("link")) != playlist["id"]:
         return {**result, "status": "link_mismatch"}
-    if any(
-        isinstance(image.get("url"), str) and image["url"].strip()
-        for group in sunrei.get("images") or []
+    existing = sunrei.get("images") or []
+    existing_urls = {
+        image["url"].strip()
+        for group in existing
         for image in group.get("images") or []
-    ):
-        return {**result, "status": "kept_existing"}
+        if isinstance(image.get("url"), str) and image["url"].strip()
+    }
+    if existing_urls:
+        playlist_urls = {image["url"] for image in images[0]["images"]}
+        if len(existing) != 1 or not existing_urls.issubset(playlist_urls) or existing == images:
+            return {**result, "status": "kept_existing"}
 
     if commit:
         # A partial PUT changes only this field; never send a stale spots array.
