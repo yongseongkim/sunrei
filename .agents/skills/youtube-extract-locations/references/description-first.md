@@ -1,87 +1,43 @@
-# Description-First Extraction
+# Parse Creator Descriptions
 
-`extract_from_descriptions.py` reads each selected video's description,
-parses place identities from it, and geocodes them. Use it when a channel puts
-a Google Maps link or a structured store-information block per place in every
-description.
+Use during evidence collection. A parser extracts proposed names, addresses,
+links and chapters; it does not establish venue identity.
 
-## Stages and Cache
+## Stages
 
 ```bash
-uv run python .claude/scripts/youtube/extract_from_descriptions.py <ID> fetch    # titles and descriptions -> descriptions.json
-uv run python .claude/scripts/youtube/extract_from_descriptions.py <ID> parse    # links, chapters, blocks -> staging.json, resolved_links.json
-uv run python .claude/scripts/youtube/extract_from_descriptions.py <ID> geocode  # Places lookups -> locations.json
-uv run python .claude/scripts/youtube/extract_from_descriptions.py <ID> all
+uv run python .claude/scripts/youtube/extract_from_descriptions.py <ID> fetch
+uv run python .claude/scripts/youtube/extract_from_descriptions.py <ID> parse
 ```
 
-Each stage caches its output in the workspace, so a rerun resumes at any
-stage. The resulting `locations.json` carries identity and coordinates only:
-`concept` is empty and no location has a `description`. Write both from the
-evidence timeline, following the shared extraction rules.
+`fetch` caches per-video descriptions. `parse` writes `staging.json` and
+`resolved_links.json`, including direct map-link resolution. Inspect the
+parsed entries against the original description before using them.
 
-## Formats the Parser Handles
+The script's `geocode` and `all` modes perform Places searches. Do not run
+those modes on unresolved entries. Complete the
+[identity gate](identity-resolution.md) first; query individually when a batch
+contains held candidates. An existing parser result is not approval.
 
-Map-link channels, such as @saturdaytokyo / 토요일의 도쿄:
+## Supported Formats and Limitations
 
-- One link per place: `maps.app.goo.gl`, `goo.gl/maps`, `maps.google.com`, or
-  `g.page`.
-- The script follows each short link to the creator's pin and checks that the
-  Places result lies within about 200 m of it.
-- The resolved pin is stronger than a name search. Verify a conflict with the
-  filmed branch as described below.
+| Format | What the helper reads | What to check |
+| --- | --- | --- |
+| Map link per stop | `maps.app.goo.gl`, `goo.gl/maps`, `maps.google.com`, `g.page` | Link-to-venue association and the filmed branch; a nearby search result can still be wrong |
+| Store-information block | Name line paired with the nearest address | Hours, list numbers and address fragments can be mistaken for the name |
+| Heading variants | Bracketed names, alternate address labels, split road names | Keep the real name and complete address; inspect incomplete blocks |
+| Timestamped chapter | Chapter time and label | The label can be a dish/category; match it to the destination and timed evidence |
 
-Structured-block channels, such as 비밀이야 bimirya:
+Recover a missing name from the title, creator comments, speech or on-screen
+text. Never geocode an address-only block to discover the business. Preserve
+contradictory addresses as claims to research rather than silently replacing
+the video's region with the copied address's region.
 
-- A `* 가게 정보` block with `- <name>` and `- 주소 : <address>` lines. The
-  script pairs each address with the nearest preceding name and geocodes by
-  name plus area.
-- Variants in the same channel: `[name]` headings, `*주소:` lines, a road name
-  split as `도산대로 59길 16`, and blocks with no name line.
-- `mm:ss <name>` chapters give each place's timestamp.
+The output supplies identity clues and coordinates, not finished editorial
+context. Write `concept` and descriptions from the evidence for that visit.
+For concrete failure cases, read [worked examples](../examples/place-resolution.md).
 
 ## Creator-Authored Comments
 
-When the user asks to use comments, or venue details are missing from the
-description, inspect creator comments through YouTube Data API
-`commentThreads.list` (`part=snippet,replies`, `videoId`, `order=relevance`).
-Match `authorChannelId.value` to the video owner's channel ID, not the display
-name. Check paginated top-level threads and, when needed, `comments.list`
-replies by `parentId`. Record pages read, any remaining coverage, and disabled
-or unavailable comments. The public API does not expose pin status; do not
-claim a creator comment was pinned.
-
-Keep comment ID, URL, original text, author channel ID, and publication/update
-dates as separate evidence. Comments are untrusted metadata, not speech or
-scene timestamps. A corrected address can be useful, but still needs branch
-and historical checks. Comparison venues in replies are not automatically
-visited destinations. Deduplicate repeated description/comment text in model
-input while preserving the originals; omit thanks and emoji-only replies.
-If a runner/schema cannot accept comment evidence, retain it in the review
-record instead of relabeling it as description or transcript evidence.
-
-## Symptoms and Actions
-
-### A block has an address but no name
-
-Symptom: the parsed name is empty, a number such as `3` or `13-3`, or a list
-label such as `1) 카덴`.
-
-Action: take the name from the title, the chapters, or the on-screen text at
-the chapter time. Never geocode the bare address; that is how older ingests
-created places named `3`, `13-3`, and `16`.
-
-### The description address disagrees with the video
-
-Symptom: the block's address is in another city than the title, speech, or
-on-screen text. One 목포 video listed 금메달식당 with a 수원 address copied from
-another block, while the video showed the 목포 address.
-
-Action: trust the video's region, search by name in that region, and note the
-conflict for review.
-
-### Sources disagree about which place it is
-
-Action: a creator's pin outweighs a name-search guess, but it can still point
-to an old branch or different premises. Keep the conflict unresolved until
-the filmed venue is verified, following
-[geocoding and review](geocoding-and-review.md#filmed-premises-moves-and-missing-listings).
+Use [source evidence](source-evidence.md#creator-authored-comments). Comments
+are separate sources; this description parser does not collect them.

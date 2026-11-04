@@ -36,7 +36,9 @@ range.
   "영화 '너의 이름은.' 배경지 순례 - 스가 신사 계단, 히다후루카와역"
 - Too vague: "이탈리아 맛집 방문기". Prefer "피렌체 미슐랭 3스타 와인 셀러 레스토랑".
 
-The concept decides what counts as a location in the next step.
+The concept decides what counts as a location in the next step. Infer it
+from this video's visit evidence, not only its playlist label. A compilation
+can introduce destinations in several regions; scope each visit accordingly.
 
 ## 2. Select Destinations
 
@@ -78,13 +80,18 @@ Exclude:
 
 ## 3. Resolve the Place Identity
 
-Identify each place in this order of strength:
+Identify the venue from the content before any external map lookup. Use the
+title for theme, chapters and venue blocks for named stops, direct map links
+for a proposed listing, and timed speech/OCR for the actual visit. Weigh each
+claim's specificity, connection to that visit, relevant date, and independent
+support. A direct link is stronger than a speculative name search, but can
+still refer to another branch, an old address, or a moved listing.
 
-1. A Google Maps link in the description (`maps.google.com`, `goo.gl/maps`,
-   `maps.app.goo.gl`, `g.page`). A linked pin beats any search by name.
-2. Timestamped chapters and store-information blocks in the description.
-3. Places central to the title or description.
-4. Timestamped transcript, Whisper, and OCR evidence.
+Keep observed facts, inferred identity hypotheses, and unresolved conflicts
+separate. Do not fill a missing name or branch from prior knowledge, or attach
+one venue-list entry's menu or assessment to another scene. A product-only
+chain review does not introduce a branch. A real chain visit with unknown
+branch remains flagged rather than receiving an invented branch name.
 
 Rules for the name:
 
@@ -115,8 +122,9 @@ Rules for the name:
 
 Rules for comparing sources:
 
-- A creator-provided link or block, or agreement between several sources,
-  outweighs a name inferred from one corrupted ASR token.
+- An explicit venue-specific link or block can resolve a corrupted ASR
+  token. It does not override an unresolved branch/address conflict merely
+  because it is metadata; preserve the competing claims in `issues`.
 - Captions and Whisper are independent speech recognizers. When they disagree
   on a proper noun, prefer the spelling that matches the description, title,
   or on-screen text. A source marked duplicate in `sourceStatus` is not
@@ -137,16 +145,17 @@ Every location needs at least one verbatim `evidence` quote.
 
 - Label timed evidence `transcript`, `whisper`, or `ocr` exactly as the
   timeline does, with its `startSeconds`. Use `title` or `description` with
-  `startSeconds` 0 for metadata evidence.
+  `startSeconds` 0 for metadata evidence. That metadata convention does not
+  identify the visit's start; actual timed evidence at 0 is a valid scene.
 - `area`: the neighborhood, city, and country context a map search needs,
   such as "도쿄 시부야".
 - `category`: a short English noun such as restaurant, cafe, bar, shop,
   market, attraction, building, viewpoint, or lodging.
 - `aliases`: other spellings of the name, including the original-language
   and Google Maps forms.
-- `confidence`: `high` when a link, block, or several sources agree; `medium`
-  when one clear source names the place; `low` when the name rests on weak
-  OCR or ASR.
+- `confidence`: reflect support for the proposed identity, considering source
+  relevance and independence. Copied description text and a repeated source
+  are not extra confirmations. Confidence never approves a map match.
 - `needsVerification`: true when sources disagree, the business name is
   uncertain, or only weak evidence supports the candidate.
 - `reason`: a concise note on why the identity is accepted or flagged.
@@ -155,8 +164,9 @@ Every location needs at least one verbatim `evidence` quote.
 ## 5. Write the Public Context
 
 `description` becomes the spot's context, the only editorial text on the
-public map card. Write three to six Korean sentences, more when the video
-covers several things at the place, covering:
+public map card. Write supported Korean sentences, usually three to six when
+enough facts exist, and more when the visit covers several things. Use fewer
+sentences when evidence is sparse instead of padding with guesses. Cover:
 
 1. What the place is: its type, where it is, what sets it apart, and why the
    video goes there

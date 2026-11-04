@@ -40,10 +40,14 @@ locations into the workspace's final `locations.json`.
    Checkpoint: the user accepts or rejects proposed transcript corrections
    before those corrections enter saved text. Pending proposals can accompany
    extraction or an explicitly requested admin review import.
-3. Extract locations with `youtube-extract-locations`. It chooses the
-   extraction path from the videos' structure and evidence, applies the shared
-   rules in `.claude/scripts/youtube/prompts/extract_locations.md`, geocodes,
-   and writes the reviewed list to `locations.json`.
+3. Extract locations with `youtube-extract-locations`: establish scope,
+   collect source evidence including needed creator comments, build contextual
+   candidates, resolve identity before new map queries, verify the exact
+   Google place, then reconcile the final set. Its references hold commands,
+   detailed checks, export formats, and examples. The coordinator delegates
+   narrow subagents and validates their stage artifacts under its handoff
+   contract before advancing. Early collector geocodes are
+   unverified proposals; write only verified matches to `locations.json`.
    Checkpoint: the user approves the location list, unless they explicitly
    requested an admin review import under the Approval Boundaries below.
 4. Create the Sunrei with `youtube-create-sunrei`. It composes the Sunrei,

@@ -41,10 +41,10 @@ an excerpt starting at 410 seconds belongs at 422 seconds in the source.
 Retain brief unique clues even when adjacent frames look similar.
 
 If image review is available, inspect the actual frames together with timed
-speech and OCR. Record observable details separately from interpretations:
-"CHOILEE LAB is visible on the wall" is an observation; "therefore the brand's
-production brewery was filmed" needs additional evidence. Do not use a
-text-only model's imagined image description as a visual observation.
+speech and OCR. Record visible details separately from inferred premises or
+branch identity. A visible brand does not establish which facility was filmed.
+Do not use a text-only model's imagined image description as an observation.
+See the [worked cases](../examples/place-resolution.md) for branch decisions.
 
 Save the finding and reuse it rather than resending unchanged images. Add
 images only when a specific missing view could resolve the question; keep
