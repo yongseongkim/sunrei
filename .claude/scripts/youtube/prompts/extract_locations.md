@@ -36,18 +36,28 @@ range.
   "영화 '너의 이름은.' 배경지 순례 - 스가 신사 계단, 히다후루카와역"
 - Too vague: "이탈리아 맛집 방문기". Prefer "피렌체 미슐랭 3스타 와인 셀러 레스토랑".
 
-The concept decides what counts as a location in the next step.
+The concept decides what counts as a location in the next step. Infer it
+from this video's visit evidence, not only its playlist label. A compilation
+can introduce destinations in several regions; scope each visit accordingly.
 
 ## 2. Select Destinations
 
-Include a place only when the video introduces it as a subject that fits the
-theme of its title and description: restaurants, shops, attractions,
-buildings, viewpoints, and other specific destinations.
+Follow the user's explicit destination scope. Otherwise include specific
+real places the video meaningfully visits, films, or introduces as subjects,
+regardless of popularity or category: food venues, ordinary shops and markets,
+lodging, buildings, museums, parks, trails, beaches, viewpoints, named streets,
+and other identifiable destinations.
 
-- A food video includes food venues only. A non-restaurant still counts when
-  the video eats there, such as a bakery queue inside a museum or a market
-  stall.
-- A general travel vlog includes attractions, restaurants, and viewpoints.
+Use the title and description to understand the trip and each visit's role,
+not as a category whitelist. A food-focused title does not exclude a bookshop,
+park, hotel, or building that the same video deliberately introduces.
+
+- A food video can include a museum cafe, market stall, or a separately
+  introduced non-food stop. Explain each place's actual role in that visit.
+- Small, local, little-known destinations qualify on the same evidence as
+  famous landmarks. Search visibility or review count is not an inclusion test.
+- A named street or area can be a destination when the video explores it as a
+  subject; an unspecified walking street or neighborhood is not an identity.
 - A filming-location or pilgrimage video includes the places where a scene was
   shot or that a scene depicts.
 - A place listed in the description's chapters or store-information block is
@@ -67,10 +77,12 @@ Exclude:
 - Places the video tells viewers not to visit. The map lists places worth
   visiting; mention the warning in the description of the recommended
   alternative, if any.
-- Stops that do not fit the theme: a station, shopping street, or landmark
-  passed on a food tour, or a lunch stop without a chapter in an architecture
-  walk.
-- Places outside the geographic scope.
+- Incidental transit points, background signs, and locations mentioned only
+  in navigation, without a meaningful visit or introduction. Category mismatch
+  with the title or absence of a chapter alone is not a reason to exclude an
+  actual destination.
+- Places outside the user's explicit geographic scope, and unrelated reference
+  locations that the video does not introduce as destinations.
 - Generic streets, neighborhoods, and categories without a specific
   destination ("Walking Street", "라멘집"), and concepts rather than places.
 - The creator's home, sponsors, real estate offices, and locations inferred
@@ -78,18 +90,24 @@ Exclude:
 
 ## 3. Resolve the Place Identity
 
-Identify each place in this order of strength:
+Identify the venue from the content before any external map lookup. Use the
+title for theme, chapters and venue blocks for named stops, direct map links
+for a proposed listing, and timed speech/OCR for the actual visit. Weigh each
+claim's specificity, connection to that visit, relevant date, and independent
+support. A direct link is stronger than a speculative name search, but can
+still refer to another branch, an old address, or a moved listing.
 
-1. A Google Maps link in the description (`maps.google.com`, `goo.gl/maps`,
-   `maps.app.goo.gl`, `g.page`). A linked pin beats any search by name.
-2. Timestamped chapters and store-information blocks in the description.
-3. Places central to the title or description.
-4. Timestamped transcript, Whisper, and OCR evidence.
+Keep observed facts, inferred identity hypotheses, and unresolved conflicts
+separate. Do not fill a missing name or branch from prior knowledge, or attach
+one venue-list entry's menu or assessment to another scene. A product-only
+chain review does not introduce a branch. A real chain visit with unknown
+branch remains flagged rather than receiving an invented branch name.
 
 Rules for the name:
 
-- Require the actual business name, taken from the evidence: a Maps link, the
-  description, on-screen text, or speech. Description blocks can put hours,
+- Require the actual place name, taken from the evidence: a Maps link, the
+  description, on-screen text, or speech. This can name a business, building,
+  street, park, trail or natural feature. Description blocks can put hours,
   phone numbers, address fragments, or list labels such as `1) 카덴` where a
   name belongs; recover the name from the title, captions, or on-screen text.
 - Never build a name from an address, dish, or category, and never supply one
@@ -115,8 +133,9 @@ Rules for the name:
 
 Rules for comparing sources:
 
-- A creator-provided link or block, or agreement between several sources,
-  outweighs a name inferred from one corrupted ASR token.
+- An explicit venue-specific link or block can resolve a corrupted ASR
+  token. It does not override an unresolved branch/address conflict merely
+  because it is metadata; preserve the competing claims in `issues`.
 - Captions and Whisper are independent speech recognizers. When they disagree
   on a proper noun, prefer the spelling that matches the description, title,
   or on-screen text. A source marked duplicate in `sourceStatus` is not
@@ -137,16 +156,17 @@ Every location needs at least one verbatim `evidence` quote.
 
 - Label timed evidence `transcript`, `whisper`, or `ocr` exactly as the
   timeline does, with its `startSeconds`. Use `title` or `description` with
-  `startSeconds` 0 for metadata evidence.
+  `startSeconds` 0 for metadata evidence. That metadata convention does not
+  identify the visit's start; actual timed evidence at 0 is a valid scene.
 - `area`: the neighborhood, city, and country context a map search needs,
   such as "도쿄 시부야".
 - `category`: a short English noun such as restaurant, cafe, bar, shop,
   market, attraction, building, viewpoint, or lodging.
 - `aliases`: other spellings of the name, including the original-language
   and Google Maps forms.
-- `confidence`: `high` when a link, block, or several sources agree; `medium`
-  when one clear source names the place; `low` when the name rests on weak
-  OCR or ASR.
+- `confidence`: reflect support for the proposed identity, considering source
+  relevance and independence. Copied description text and a repeated source
+  are not extra confirmations. Confidence never approves a map match.
 - `needsVerification`: true when sources disagree, the business name is
   uncertain, or only weak evidence supports the candidate.
 - `reason`: a concise note on why the identity is accepted or flagged.
@@ -155,8 +175,9 @@ Every location needs at least one verbatim `evidence` quote.
 ## 5. Write the Public Context
 
 `description` becomes the spot's context, the only editorial text on the
-public map card. Write three to six Korean sentences, more when the video
-covers several things at the place, covering:
+public map card. Write supported Korean sentences, usually three to six when
+enough facts exist, and more when the visit covers several things. Use fewer
+sentences when evidence is sparse instead of padding with guesses. Cover:
 
 1. What the place is: its type, where it is, what sets it apart, and why the
    video goes there

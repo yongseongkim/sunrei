@@ -1,193 +1,128 @@
 ---
 name: youtube-extract-locations
-description: Extract and verify places mentioned in YouTube videos. Use when the user asks to find locations in a video or continues the YouTube-to-Sunrei workflow after transcript extraction.
+description: Extract and verify places introduced in YouTube videos, using creator metadata, comments, and timed evidence before matching Google places. Use for location extraction or review after evidence collection; youtube-to-sunrei owns saving and publication.
 ---
 
-# Extract and Verify Locations
+# Extract and Verify YouTube Locations
 
-Turn a video's description, captions, Whisper transcript, and on-screen text
-into geocoded place candidates, then review them with the user.
+Identify the destination from the content before asking Google to locate it. A
+plausible search result must never supply a missing business name or branch.
+Keep evidence, identity decisions, map matches, and user approval separate.
 
-## Inputs
+## Execution Model
 
-- `video_info.json` from `youtube-fetch-info` for a workspace, or
-  `metadata.json` for a single-video run directory.
-- The evidence files from `youtube-extract-transcript`: `captions.json`,
-  `audio_transcript.json`, `onscreen_text.json`, and
-  `transcripts.reviewed.json` when a review ran.
-- The Google API key. The scripts read `YOUTUBE_API_KEY` from the environment
-  or `google.youtubeApiKey` from
-  `sunrei-server/src/main/resources/application-local.conf`. The Places API
-  and the YouTube Data API share it.
+The coordinator owns scope, delegation, artifact validation and resumption.
+Delegate Phases 2–6 as narrow subagent tasks with the [role and handoff
+contract](references/subagent-workflow.md). Pass declared inputs, allowed
+actions, expected output and exit criteria, not the full chat. Validate each
+artifact before advancing. The final reviewer is independent of the identity
+resolver and map matcher. If delegation is unavailable, retain the same role
+boundaries and artifacts sequentially; report that limitation.
 
-When a required input is missing, identify its producing step and collect it
-within the authorized workflow. A recorded failure of one evidence source is
-not a reason to discard the other usable sources; report the coverage.
+## Phase 1 — Establish Scope
 
-## Choose an Extraction Path
+Read the selected video IDs, full per-video metadata, playlist memberships, and
+existing user decisions. State what destinations this content introduces. Use
+each video's scenes to establish its region; a playlist title is context, not a
+country boundary. Include meaningful destinations across categories and
+popularity; theme guides relevance rather than restricting the result to food
+venues or landmarks. Preserve shared-video memberships and existing holds.
 
-Inspect a few descriptions, then pick one path per playlist or video:
+**Output:** `manifest.json` with scope, run/content IDs, ID registry and user
+decisions. Missing metadata goes back to `youtube-fetch-info`; missing timed evidence goes to
+`youtube-extract-transcript` within the authorized workflow.
 
-| Path | Choose when | Tool |
-| --- | --- | --- |
-| Description-first | Descriptions carry a Google Maps link per place or a structured store-information block | `extract_from_descriptions.py` |
-| Timeline-driven | Places are named only in speech and on-screen text | `extract_locations_headless.py` |
-| Web research | The video shows places but no source names them, such as clip compilations of a TV show | `geocode_food_vendors.py`, `geocode.py` |
+## Phase 2 — Collect and Index Evidence
 
-Every path still uses the full evidence timeline for context, proper-name
-correction, and audit. A description link is stronger than a name search;
-when it conflicts with the filmed branch or premises, flag the conflict
-instead of forcing that pin. The formats the first path parses, and their
-failure modes, are in `references/description-first.md`.
+Assign the evidence collector. Read the title, full description, chapters,
+creator venue blocks and map links, then align them with captions, Whisper, and
+OCR. Inspect creator comments when requested or needed to identify the
+destination. Record source availability and coverage; do not silently treat a
+missing source as checked.
 
-## Load the Shared Extraction Rules
+Use [source evidence](references/source-evidence.md) for author verification,
+provenance, and the facts each source can establish. Use [description
+parsing](references/description-first.md) only for parser details.
 
-Read `.claude/scripts/youtube/prompts/extract_locations.md` before selecting
-or describing any place. It is the single source of truth for scope, which
-places to include or exclude, place identity, evidence, and the public
-context, and the headless extractor sends the same file to Codex. When a rule
-needs to change, change it there, not here.
+**Output:** `01-evidence.json`. A source ledger links observations and verbatim
+excerpts to their video/comment URLs and, where supported, scene times.
+Unavailable evidence is recorded. Metadata time zero is not a scene anchor.
 
-Keep hand-written candidates in the shape of
-`.claude/scripts/youtube/location_candidates.schema.json` until they are
-converted to `locations.json`.
+## Phase 3 — Build Contextual Candidates
 
-## Extract Candidates
+Assign the text-only candidate extractor. Read the [shared extraction
+rules](../../../.claude/scripts/youtube/prompts/extract_locations.md) for
+destination selection and public context. Group evidence by the visit it belongs
+to; infer the video's theme and purpose without inventing venue facts.
+Distinguish a visit from a comparison, product-only review, or passing mention.
 
-Timeline-driven path, per video:
+For each candidate, separate observed name/aliases, region, branch/address, menu
+or activity, and the creator's assessment from hypotheses and conflicts. Keep
+unnamed destinations explicitly unnamed. Use the [extraction
+tools](references/extraction-tools.md) without running a combined
+extract-and-geocode path on unresolved candidates.
 
-```bash
-uv run python .claude/scripts/youtube/evidence_timeline.py "{RUN_DIR}"
-uv run --with openai-codex==0.160.0 python .claude/scripts/youtube/extract_locations_headless.py "{RUN_DIR}"
-```
+**Output:** `02-candidates.json`. Every candidate has a stable ID, visit
+evidence and a proposed identity to test. No Google result has been used to
+invent its name, branch, or context.
 
-The extractor sends the metadata and one timeline window at a time, records
-verbatim evidence per source, and writes `location_candidates.json` with every
-location at `decision: pending`. Pass `--restart` to discard a cached result.
+## Phase 4 — Resolve Identity Before Map Search
 
-Description-first path, per workspace:
+Assign the identity resolver. Apply the [identity
+gate](references/identity-resolution.md) to every candidate. Require an
+evidenced place name and enough region/site information to distinguish the
+intended destination. A creator's direct map link may be resolved as source
+evidence; it is not permission to ignore a conflict.
 
-```bash
-uv run python .claude/scripts/youtube/extract_from_descriptions.py <ID> all   # or: fetch | parse | geocode
-```
+For missing or conflicting identities, research the source's own clues and
+original-language aliases first. Use local OCR and text normally; consult
+[visual and historical review](references/visual-and-historical-review.md) only
+for a specific unresolved scene, branch, move, or closure.
 
-The script fills identity and coordinates only. Write `concept` and each
-location's `description` from the evidence timeline, following the shared
-rules.
+**Output:** `03-identities.json`. Each candidate is ready for map lookup, held
+with a specific missing fact, or excluded with a reason. Only ready candidates
+enter Places Text Search. Generic categories, guessed aliases, and arbitrary
+chain branches do not pass. These are review decisions, not new API status
+values.
 
-Web-research path: identify each place through web research, cross-check
-fan sites and blogs with local review and map sites in the language of the
-video's region, and dedupe clips to distinct places. Geocode a prepared
-food-vendor list in one pass, and other places one at a time with
-`geocode.py --query` as in "Geocode and Verify":
+## Phase 5 — Locate and Verify the Exact Place
 
-```bash
-uv run python .claude/scripts/youtube/geocode_food_vendors.py <ID> <vendors.json>
-```
+Assign the map matcher only candidates that passed Phase 4. Use [geocoding and
+review](references/geocoding-and-review.md) to resolve a provided pin or query
+the evidenced name with its region. Compare Google's unaltered result name,
+ID/CID, address, coordinates, and premises with the candidate. Neither a nearby
+pin nor an identical address proves identity.
 
-For playlists with dozens of videos, work in batches of three or four videos.
-Larger batches hit HTTP 429 on the Places API; retry a failed batch in smaller
-groups. Match results by video ID and place name, never by list order.
+Reject conflicting results and return to Phase 4. Keep the filmed location
+separate from a current branch or successor. A missing listing follows the
+verified fallback rules; it never licenses selecting another business.
 
-## Geocode and Verify
+**Output:** `04-matches.json`. Accepted matches have recorded venue/branch
+evidence and a verified Google ID/pin. Unresolved matches remain held, without
+an accepted place.
 
-Geocode each candidate that has no pin from a Maps link with Places Text
-Search, searching for the business name together with its area:
+## Phase 6 — Reconcile and Hand Off
 
-```bash
-uv run python .claude/scripts/youtube/geocode.py --query "<business name>" --area "<area>"   # one lookup
-uv run python .claude/scripts/youtube/geocode.py <ID>                                        # fill locations.json
-```
+Assign an independent final reviewer. Recheck the complete final set, including
+later batches and retries. Merge same-video duplicates without losing visit
+context or valid scene times; preserve other videos and playlist memberships.
+Keep separately introduced buildings distinct. Verify source links from timed
+evidence, retaining a real zero-second scene or a whole-video link when the time
+is unknown.
 
-Verify each result before accepting it:
+Follow [review and output](references/review-output.md) for the review table,
+record shapes, public text, and `locations.json` export. Report extraction,
+identity verification, map verification, holds, and scene-time coverage
+separately. Export only verified matches within the user's approved or explicit
+admin-review import scope. `youtube-to-sunrei` owns authorization;
+`youtube-create-sunrei` owns writing spots and publication.
 
-- The query names a business, not a bare address or a short romanized name.
-- The pin lies in the video's region. Re-geocode outliers with country and
-  city context; for a single-country playlist run
-  `uv run python .claude/scripts/youtube/cleanup_geocodes.py <ID> japan|france|italy`.
-- `displayName` matches the extracted name, allowing for translation and
-  romanization. Keep a plausible match for a venue named only in speech and
-  flag only real uncertainty.
-- Buildings the video introduces separately have separate Google places.
+**Output:** `05-review.json` plus a verified export proposal. A reviewable
+result and unresolved list exist. No Sunrei has been created or changed by this
+skill. Extraction completion is not venue approval.
 
-The failures each check prevents are in
-`references/geocoding-and-review.md`, with the Places API call for lookups by
-hand.
+## Examples
 
-## Review
-
-Show every candidate in one table:
-
-| # | Name | Address | Lat/Lng | Source | Timestamp | Google Maps |
-| --- | --- | --- | --- | --- | --- | --- |
-
-`Source` is `description_link`, `description_block`, `transcript_mention`, or
-`both`. Flag out-of-scope places, duplicates (the same `googleMapsId` twice in
-one video keeps the earliest), generic entries, and geocode warnings. The user
-approves the list, adds, removes, or edits entries, or asks for another pass
-with a revised concept.
-
-Use OCR and transcript text for normal extraction. For unresolved visual
-clues or filming-era conflicts, read
-[visual and historical review](references/visual-and-historical-review.md)
-before selecting a few images for verification or changing the pin.
-
-Verify the scene timestamp from timed evidence or frames before saving the
-link. Metadata evidence at time zero and a matching search result do not
-identify the scene's start. For Instagram comparisons or source deduplication,
-read [cross-platform review](../instagram-to-sunrei/references/cross-platform-review.md).
-
-When you write or edit a `description`, follow "Write the Public Context" in
-the shared rules, including its Korean style: no translated phrasing, verbs
-that say what happens at the place, and one fact per sentence.
-
-## Save Approved Locations
-
-Write `.claude/workspace/youtube/{ID}/locations.json`:
-
-```json
-{
-  "videos": [
-    {
-      "videoId": "...",
-      "title": "...",
-      "concept": "Food tour in Shibuya, Tokyo",
-      "locations": [
-        {
-          "name": "야키토리 가게 이름",
-          "address": "東京都渋谷区...",
-          "latitude": 35.6595,
-          "longitude": 139.7004,
-          "googleMapsId": "ChIJ...",
-          "googleMapsUri": "https://maps.google.com/...",
-          "source": "transcript_mention",
-          "timestamp": 125.5,
-          "videoUrlWithTimestamp": "https://www.youtube.com/watch?v=VIDEO_ID&t=125",
-          "description": "시부야 뒷골목 야키토리 투어에서 들른, 카운터 10석짜리 오래된 야키토리집이다. 대표 메뉴는 비장탄에 구운 쓰쿠네와 레바다. ..."
-        }
-      ]
-    }
-  ]
-}
-```
-
-`description` is the approved candidate description and becomes the spot's
-public context unchanged.
-
-If videos were re-edited after an earlier ingest, recollect the evidence and
-rebuild the candidates against the current video. Reuse verified geocodes for
-places that still appear, and keep the old file as `locations.legacy.json`
-until the review is done.
-
-## Finish
-
-Report the path of `location_candidates.json` or the approved
-`locations.json`, the number of locations, and any unresolved warnings. Do not
-create or update a Sunrei; `youtube-to-sunrei` decides the next step.
-
-## References
-
-- `references/description-first.md`: the description formats the fast path
-  parses, and what to do when a block has no name or a wrong address.
-- `references/geocoding-and-review.md`: why each geocoding guard exists, how
-  spots merge on the public card, and the Places API call by hand.
+Read [worked cases](examples/place-resolution.md) when applying an unfamiliar
+identity, branch, timestamp, or map-match decision. Cases illustrate the phases;
+their venue-specific outcomes are not universal mapping rules.

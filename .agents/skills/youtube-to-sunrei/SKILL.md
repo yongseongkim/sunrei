@@ -37,14 +37,19 @@ locations into the workspace's final `locations.json`.
 2. Collect evidence with `youtube-extract-transcript`, once per selected
    video. It collects captions, Whisper, and OCR for every video, runs the
    isolated transcript reviewer, and builds `evidence_timeline.json`.
-   Checkpoint: the user accepts or rejects the review proposals. Candidates
-   may be extracted from a timeline with pending proposals, but nothing is
-   saved to a Sunrei until the decisions are explicit.
-3. Extract locations with `youtube-extract-locations`. It chooses the
-   extraction path from the videos' structure and evidence, applies the shared
-   rules in `.claude/scripts/youtube/prompts/extract_locations.md`, geocodes,
-   and writes the reviewed list to `locations.json`.
-   Checkpoint: the user approves the location list.
+   Checkpoint: the user accepts or rejects proposed transcript corrections
+   before those corrections enter saved text. Pending proposals can accompany
+   extraction or an explicitly requested admin review import.
+3. Extract locations with `youtube-extract-locations`: establish scope,
+   collect source evidence including needed creator comments, build contextual
+   candidates, resolve identity before new map queries, verify the exact
+   Google place, then reconcile the final set. Its references hold commands,
+   detailed checks, export formats, and examples. The coordinator delegates
+   narrow subagents and validates their stage artifacts under its handoff
+   contract before advancing. Early collector geocodes are
+   unverified proposals; write only verified matches to `locations.json`.
+   Checkpoint: the user approves the location list, unless they explicitly
+   requested an admin review import under the Approval Boundaries below.
 4. Create the Sunrei with `youtube-create-sunrei`. It composes the Sunrei,
    builds one SunreiSpot per approved location, creates a draft through the
    admin API, then verifies the saved database records.
@@ -56,7 +61,12 @@ locations into the workspace's final `locations.json`.
 - Carry forward explicit approvals, exclusions, and holds already given for
   this scope. Ask for a decision only when it remains unresolved or the scope
   changes.
-- No Sunrei is created or updated before the location list is approved.
+- Normally the user approves the location list before a Sunrei write. An
+  explicit request to upload for review in admin authorizes importing into
+  unpublished drafts without asking for the same approval again. Keep
+  unresolved venue/branch conflicts held, preserve transcript decisions, and
+  identify the result as a review draft. A candidate transferred with
+  `APPROVED` is not evidence that a person verified its quality.
 - Resolve transcript proposals under the transcript skill's review rules;
   a pending proposal is not an accepted correction.
 - Created Sunreis are drafts. Publish only when the user asks.
@@ -84,8 +94,18 @@ geocodes.
 Report the selected videos and the counts of evidence collected, locations
 reviewed, and spots saved. List unresolved locations, unprocessed videos or
 playlists, and any source migration left undone. State
-publication status separately. Describe a completed batch by its scope;
-finishing it does not mean the whole channel has been processed.
+publication status separately. Distinguish evidence collection, location
+extraction, venue verification, draft upload, and publication; report unresolved
+identity, address, transcript, and scene-time issues without calling them all
+wrong places. Describe a completed batch by its scope; finishing extraction or
+upload does not imply every venue is verified or the whole channel processed.
+
+When the user asks to clean up, first confirm that collection evidence is
+stored and readable through the DB API, including creator comments when used.
+Remove completed-run caches, logs, disposable helpers, and redundant snapshots.
+Retain a compact current review record for unresolved decisions and applied
+place corrections that are not represented by the original candidates. Do not
+keep a second registry or treat an old import script as the current state.
 
 ## References
 

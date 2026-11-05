@@ -117,105 +117,31 @@ from the post that have no images get them. Instagram's image URLs expire, so
 never store them directly. Posts flagged for copyright can come back without an
 image URL; those are reported and skipped.
 
-## 5. Review Candidates
+## 5. Resolve and Review Locations
 
-List what needs a decision:
+Use [Instagram location review](references/location-review.md) for status
+queries, regional research, duplicate checks and approval requests. Apply the
+shared extraction phases to the post before accepting a map suggestion.
+For subagent execution, use the shared
+[role and handoff contract](../youtube-extract-locations/references/subagent-workflow.md)
+with post IDs and Instagram evidence:
 
-```bash
-curl -s -H "Authorization: Bearer $TOKEN" \
-  "$SUNREI_API_URL/admin/instagram/extracted-places?accountId=ACCOUNT_ID&reviewStatus=PENDING&size=100"
-```
+1. Collect caption, location tag, creator comments when accessible, and timed
+   reel/OCR evidence; record coverage and source identity.
+2. Reconstruct the visit and separate observed venue clues from hypotheses.
+3. Pass the [identity gate](../youtube-extract-locations/references/identity-resolution.md)
+   before a new Places query. Missing names or conflicting branches stay held.
+4. Verify the [exact map match](../youtube-extract-locations/references/geocoding-and-review.md),
+   including premises and filming-versus-current address. `MATCHED` is a search
+   proposal, not proof that this is the filmed venue.
+5. Review the complete set, reuse existing user decisions, and approve only
+   within the authorized scope. Publish only when the user asks.
 
-- `MATCHED`: the search found an apparent name-and-area match. Verify the
-  post-to-venue evidence and branch before approving; this status is not proof
-  that the pin is the place filmed.
-- `NAME_MISMATCH`: Google returned another name or a branch in another
-  district. Check the post (`permalink`) and pass the right `place` when
-  approving, or reject.
-- `NOT_FOUND`, `NOT_SEARCHED` (`nameFound` false): no usable match; approve
-  only with a `place` you verified.
-- `existingSpotIds`: the account's Sunrei already has a spot at this place
-  from another post. The public card shows one mention per Sunrei and place, so
-  rejecting the repeat is usually right.
-
-When comparing posts with YouTube or choosing between duplicate sources, read
-[cross-platform review](references/cross-platform-review.md). Keep the user's
-existing exclusions, holds, and source preference; a review request does not
-authorize migrating every post or registering additional playlists.
-
-### Search with the Post's Own Keywords
-
-Research every candidate that is not `MATCHED` before approving it. Build the
-searches from words the post itself gives, never from a guess:
-
-- the name as spoken in the video or shown on screen, and the area from the
-  caption, hashtags, or location tag;
-- people and shows the post names, such as a chef's name or nickname and the
-  TV program ("소바쥬 무쇠팔 박주성", "흑백요리사");
-- facts that set the place apart, such as short opening hours or entry by
-  password;
-- the author's own comments, which sometimes give the address. Business
-  Discovery does not supply these; public page reads may expose only some.
-  Continue with other evidence when comments are unavailable, and ask the user
-  only if a missing comment is needed to settle the identity.
-
-Search where people in the post's region look up places, such as Naver and
-Kakao Map in Korea or Tabelog in Japan. Claude's WebSearch rarely finds these;
-fetch the search page with curl and a browser User-Agent.
-
-In Korea, start with Naver Map. Naver's search page,
-`https://search.naver.com/search.naver?query=…`, embeds Naver Map's place
-cards, and each card's `"roadAddress"` is the listed address. Verify its branch
-and freshness when it conflicts with the footage or dated sources. Naver Map
-can list branches or moves that Google lacks. Add the area or branch to the
-query when the name is short or
-has several branches ("방울과꼬막 서순라길", "중국 청운동"). Blog posts
-(`where=blog`) help confirm that the place is the one in the post. Accept a
-place only when a source matches facts from the post, such as the address, the
-chef, the hours, or the menu.
-
-Then search Google with what the research found. In Korea, search the Naver
-Map address:
-
-- When Google's result at that address is the business, use it. The Google
-  name can differ from the one in the video: "202호" is listed as "이백이호".
-- When there is no business listing, follow the verified address-pin rules in
-  [geocoding and review](../youtube-extract-locations/references/geocoding-and-review.md).
-  Keep existing user-approved proxy mappings, such as 방울과꼬막 서순라길점;
-  do not treat an unrelated business returned nearby as a new match.
-- Google can keep an old address after a move. Confirm the relocation, keep
-  filming and current addresses separate, and follow the user's mapping
-  choice. For 소바쥬, the user chose the current 신사 address over the filmed
-  공덕 address.
-- Without an address, a short or common name needs the category and area in
-  the query. "중국" in 서촌 returns other Chinese restaurants nearby;
-  "중국 중식당 종로구 서촌" finds it.
-
-A candidate that had no place has an empty `existingSpotIds`. After choosing
-its place, check the Sunrei's spots for the same `googleMapsId`.
-
-Use caption, transcript, and OCR text for normal extraction. When these leave
-visual clues or filming-era conflicts unresolved, use
-[visual and historical review](../youtube-extract-locations/references/visual-and-historical-review.md)
-to select a few images for verification.
-Keep filming and source dates separate, and resolve relocation versus another
-branch before choosing the pin.
-
-Approve or reject:
-
-```bash
-curl -s -X PATCH -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
-  -d '{"reviewStatus": "APPROVED"}' "$SUNREI_API_URL/admin/instagram/extracted-places/ID"
-```
-
-To approve with a place you found, add `"place": {"name", "address",
-"latitude", "longitude", "googleMapsId"}` to the body.
-
-Get decisions for unresolved candidates before approving in bulk; reuse
-explicit decisions already given for this scope. Approve sequentially to
-avoid concurrent Place creation. For changes to existing spots, follow
-[the admin update rules](../youtube-create-sunrei/references/admin-operations.md).
-Publish the Sunrei only when the user asks.
+For unresolved visual or historical clues, use
+[selective visual review](../youtube-extract-locations/references/visual-and-historical-review.md).
+Keep the user's exclusions and source preferences. Cross-platform decisions
+follow [cross-platform review](references/cross-platform-review.md); reviewing
+one account does not authorize migrating posts or adding related playlists.
 
 ## Import a Prototype Workspace
 

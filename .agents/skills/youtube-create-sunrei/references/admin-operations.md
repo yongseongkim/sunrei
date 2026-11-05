@@ -164,6 +164,13 @@ and longitude must be supplied together. Repoint a spot instead when it was
 attached to a different venue; renaming that other Place would affect its
 remaining spots.
 
+An already approved YouTube candidate cannot be used to edit its linked spot
+by approving it again. Repair the actual Sunrei spot through the full-list PUT
+above. Keep a correction record keyed by candidate ID and spot ID with the
+old/new Google IDs and evidence when the raw candidate retains its historical
+place proposal. Re-fetch the final spot and shared Place after any closure
+patch; review displays and verification must use that final state.
+
 Full spot replacement from `locations.json`, keeping the Sunrei ID, Source,
 and published state:
 
