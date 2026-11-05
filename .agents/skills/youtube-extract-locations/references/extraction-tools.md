@@ -1,92 +1,100 @@
 # Extraction Tools by Phase
 
-Tools support the phases; their cached outputs do not bypass a phase's exit
-condition. Scripts below live under `.claude/scripts/youtube/`.
+Scripts below live under `.claude/scripts/youtube/`. Cached output does not
+bypass a phase's exit condition. See `AUTOMATION.md` for automatic renewal.
 
 ## Evidence and Text Candidates — Phases 2–3
 
-Prepare one run per video from `youtube-fetch-info` and
-`youtube-extract-transcript`, then:
+Prepare one run per video with metadata, available timed sources and the
+verified `creator_comments.json` envelope described in
+[source evidence](source-evidence.md#current-tool-boundary), then:
 
 ```bash
 uv run python .claude/scripts/youtube/evidence_timeline.py "{RUN_DIR}"
 uv run --with openai-codex==0.160.0 python .claude/scripts/youtube/extract_locations_headless.py "{RUN_DIR}"
 ```
 
-The headless extractor consumes metadata plus text windows, writes
-`location_candidates.json` with pending decisions, and does not browse,
-geocode, or write spots. It does not see frames. Its treatment of creator
-comments is limited as described in [source evidence](source-evidence.md#current-tool-boundary).
-Review omitted sources alongside its output; do not count them as consumed.
-Use `--restart` only when intentionally replacing a cached proposal, keeping
-previous decisions and raw inputs available for comparison.
+The extractor consumes metadata, verified creator comments and text windows,
+writes `location_candidates.json` with pending decisions, and does not browse,
+see frames, geocode or write spots. It supports metadata-only proposals with
+unknown scene times; that does not establish full visit context or coverage.
+
+Window attempts are persisted separately, so a retry reuses valid completed
+windows. Reuse checks inputs, prompts, schema, provider code and configuration,
+not just file existence. `--restart` forces new attempts while retaining old
+proposals/history. Legacy output is archived before replacement.
 
 For structured descriptions, use only `fetch` and `parse` first, as described
-in [description parsing](description-first.md). All extraction paths still
-need the timed evidence for visit context and source-link times.
+in [description parsing](description-first.md). Timed evidence is still needed
+for visit context and source-link times.
 
-## Named Lookup — After the Phase 4 Gate
+## Identity and Map Proposals — Phases 4–5
 
-The Google key is loaded by the existing helpers from `YOUTUBE_API_KEY` or
-`google.youtubeApiKey` in the server's `application-local.conf`. Keep it out
-of model input and logs. Follow [geocoding and review](geocoding-and-review.md)
-for query/result checks and targeted Places calls.
+```bash
+uv run --with openai-codex==0.160.0 python .claude/scripts/youtube/location_workflow.py "{RUN_DIR}"
+```
+
+Use `--no-geocode` to resolve source-backed identities without Places requests.
+The runner writes accepted envelopes `01-evidence.json`, `02-candidates.json`,
+`03-identities.json` and `04-matches.json`, plus `location_workflow.json`.
+`stage-store/manifest.json` and immutable attempts hold input/policy/output
+hashes, run/candidate IDs, failures and lineage. Each candidate's identity and
+match are cached independently; a revised identity invalidates its match.
+These are local workflow objects, not API DTOs or DB status values.
+
+Only ready identities with cited original name, area and distinguishing
+premises enter Places. The matcher preserves the raw response and compares
+name, region and premises. A provider-added branch/name cannot rescue missing
+source evidence. Held/excluded identities remain review candidates without a
+lookup or attached place. The agents cannot browse, resolve moves or use
+uncited model knowledge: research those cases separately under the full
+[handoff contract](subagent-workflow.md). Stage 05 independent/final review
+remains coordinator/admin work; accepted matches are proposals, never approvals.
+
+The Google key comes from `YOUTUBE_API_KEY` or `google.youtubeApiKey` in
+`application-local.conf`, never model input or logs. For researched cases that
+passed the full identity gate, use a targeted named lookup:
 
 ```bash
 uv run python .claude/scripts/youtube/geocode.py --query "<evidenced venue name>" --area "<city country>"
 ```
 
-`geocode.py <ID>` fills missing pins in a workspace. Use it only when every
-entry it would query passed the gate. It can skip entries with existing
-coordinates, so run final verification independently of its skipped count.
-Numeric-prefix guards can reject real names; use a direct named lookup after
-source verification rather than deleting digits or using an address alone.
+The legacy `geocode.py <ID>`, `geocode_food_vendors.py` and description
+helper's `geocode`/`all` modes do not enforce this gate. Use them only when every
+entry they would query already passed it. Numeric-prefix guards in those
+helpers can reject real names; retain the digits and use verified targeted
+lookup rather than an address alone. Pace requests and retry failed calls.
 
-`geocode_food_vendors.py <ID> <vendors.json>` and the description helper's
-`geocode`/`all` modes also query Places. They are not identity research tools.
-For mixed ready/held candidates, prefer individual ready-candidate queries.
-Pace lookups and retry only the failed requests after API throttling.
+## Changed Videos and Cleanup
 
-## Existing Collector Suggestions
+Recollect evidence when a video is edited. A local cache cannot detect a
+remote edit while the same video ID and source settings remain unchanged.
+Explicitly force/recollect those sources; preserve earlier review decisions as
+history. Reuse a pin only after confirming the same premises still appears.
 
-`renew_playlists.py` currently generates preliminary geocode suggestions
-automatically. They do not show that the pre-lookup identity gate was passed.
-When resuming such runs, reconstruct the identity decision from the original
-evidence before accepting any suggested place. No warning, an API status,
-or a completed extraction run substitutes for that review.
-
-For a new manual extraction that must defer map lookup, use the separated
-text-candidate and named-lookup tools above. These instructions do not add
-phase enforcement or comment support to the automated collector.
-
-## Changed Videos
-
-When content was re-edited, recollect the current evidence and rebuild its
-candidates. Keep earlier decisions as history. Reuse a geocode only after
-confirming that the same venue/premises still appears; cached coordinates
-must not decide identity for a new scene.
+Renewal stores comments and workflow snapshots in the extraction run's DB
+`rawOutput`, with source texts referenced by ID. It retains local artifacts for
+resume/debugging. Verify remote evidence before cleanup. A stored-export receipt
+prevents duplicate import after an interrupted final status update; intentionally
+re-extracting an already exported video requires coordinator review of that
+receipt rather than silently replacing admin decisions.
 
 ## Review Boundaries of Stock Tools
 
-The subagent artifacts supply guarantees the current scripts do not:
-
-- The strict candidate schema has no stable IDs, source URLs, comment kind,
-  explicit premises fields or nullable quote times. Use review sidecars.
-- The headless extractor merges candidates by normalized name alone and drops
-  empty names. That can collapse distinct branches/visits or omit an unnamed
-  destination. Compare the source ledger and retain separate sidecar records
-  where the name is not sufficient identity; never accept the merge blindly.
-- An existing `location_candidates.json` is reused by file existence, without
-  checking its recorded source/prompt hashes. The coordinator must check inputs
-  and policy before reuse. Preserve old proposals before using `--restart`.
-- Extraction windows run sequentially and the final output is written after
-  all finish. There is no persisted per-window checkpoint; do not promise
-  retrying only a failed window without a separately checkpointing runner.
-- Timeline `ready` means nonempty segments, not full-video coverage. Its
-  duration can stop at the final evidence event, and source selection uses
-  existing files rather than guaranteeing a useful fallback. Compare source
-  coverage with video duration and inspect empty/error tracks explicitly.
-
-Stable IDs, manifest transitions and input-hash invalidation are coordinator
-responsibilities under the [handoff contract](subagent-workflow.md), not new
-features automatically provided by these instructions.
+- The strict model schema has comments and nullable times, but source URLs,
+  identity fields and candidate IDs live in workflow sidecars. The admin evidence
+  DTO still uses 0 for missing time; scene `timestampSeconds` stays null.
+- Window merging requires matching name/area and overlapping scene evidence;
+  distinct regions and distant visits survive. Dense same-name visits can still
+  need manual split/merge. Shared ambiguous anchors stay held with new IDs and
+  lineage rather than inheriting another candidate's decision.
+- Timeline ready means nonempty segments, not full-video coverage. Duration can
+  stop at the final evidence event, and first-existing track selection may need
+  manual fallback for an empty/error reviewed file. Compare source coverage with
+  video duration; missing evidence is not proof that no destination exists.
+- Automatic lookup examines the first Places result conservatively. Differing
+  scripts/names, aliases, historical premises and uncertain address comparisons
+  require research. A held result is not an excluded destination.
+- Renewal imports review candidates only. It does not create `05-review.json`,
+  approve places, create spots or publish a Sunrei. The manual coordinator still
+  owns user decisions and final independent review.

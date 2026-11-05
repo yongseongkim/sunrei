@@ -1,8 +1,11 @@
 # Subagent Roles and Handoff Contract
 
-This is the coordinator's workflow, not an orchestrator already implemented
-by the collection scripts. Existing outputs remain raw inputs to these review
-artifacts. Use the same roles when reviewing Instagram, substituting post and
+This is the coordinator's full workflow. `location_workflow.py` implements
+source indexing, candidate IDs, source-only identity resolution and gated map
+comparison for YouTube (stages 01–04), with durable attempts and hash validation.
+It cannot browse, resolve historical premises, or perform stage 05 final review;
+held cases need research and final review remains manual/admin-owned.
+Use the same roles when reviewing Instagram, substituting post and
 caption evidence; do not apply YouTube's comment API to Instagram.
 
 ## Ownership and Actions
@@ -64,9 +67,10 @@ The candidate extractor obtains new-visit IDs from the coordinator's allocation;
 the coordinator persists that registry before downstream work. Research evidence
 can add new cited records without altering raw observations.
 
-The stock candidate schema is unchanged: sidecar IDs, decision fields, URLs,
-branches and nullable times must not be injected into its strict output or
-sent blindly to an API DTO. Refer to raw records by path and pointer.
+The strict model-output schema accepts `author_comment` and nullable times,
+but IDs, identity decisions, URLs and branch fields remain in sidecars rather
+than extra model-output properties. Do not send sidecars blindly to API DTOs.
+Refer to raw records by path and pointer.
 
 ## Validate Before Advancing
 
@@ -98,6 +102,12 @@ or a concrete unanswered lookup; repeated guesses do not close a hold.
 Unclear remote-write outcomes are handled by the coordinator's existing fresh
 GET/verification rules, not by rerunning an import.
 
-Current helpers do not implement this contract's cache validation, stable IDs,
-or per-stage orchestration. Their specific cache/merge/coverage limitations
-are in [extraction tools](extraction-tools.md#review-boundaries-of-stock-tools).
+The runtime's `stage-store/manifest.json` tracks accepted attempts and a separate
+immutable candidate registry; `01`–`04` JSON files expose accepted envelopes.
+Local `stageStatus` controls phase completion; domain statuses such as held or
+review_pending are data. DB status values are unchanged. Scene anchors reuse
+an ID across spelling corrections. Ambiguous shared anchors allocate held IDs
+with related-ID lineage instead of borrowing the first array item's ID.
+Research merges/splits and user decisions still need coordinator review.
+See [extraction tools](extraction-tools.md#review-boundaries-of-stock-tools)
+for remaining limits.

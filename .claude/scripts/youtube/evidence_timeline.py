@@ -16,6 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from _common import workspace
+from stage_store import StageStore
 
 OUTPUT_FILE = "evidence_timeline.json"
 RAW_INPUT_FILES = (
@@ -109,6 +110,7 @@ def input_records(run_dir):
 
 def input_fingerprint(records):
     digest = hashlib.sha256()
+    digest.update(Path(__file__).read_bytes())
     for record in sorted(records, key=lambda value: value["file"]):
         digest.update(record["file"].encode())
         digest.update(record["sha256"].encode())
@@ -228,15 +230,9 @@ def ensure_timeline(run_dir, video_id, force=False):
     output = run_dir / OUTPUT_FILE
     records = input_records(run_dir)
     fingerprint = input_fingerprint(records)
-    if output.is_file() and not force:
-        cached = read_json(output)
-        if (
-            cached.get("schemaVersion") == 1
-            and cached.get("videoId") == video_id
-            and cached.get("inputFingerprint") == fingerprint
-        ):
-            return cached, output
-    value = build_timeline(run_dir, video_id)
+    store = StageStore(run_dir, video_id)
+    value = store.run("timeline", {"inputFingerprint": fingerprint}, [Path(__file__)],
+                      lambda: build_timeline(run_dir, video_id), force=force)
     write_json(output, value)
     return value, output
 

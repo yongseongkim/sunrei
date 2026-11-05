@@ -156,8 +156,11 @@ Every location needs at least one verbatim `evidence` quote.
 
 - Label timed evidence `transcript`, `whisper`, or `ocr` exactly as the
   timeline does, with its `startSeconds`. Use `title` or `description` with
-  `startSeconds` 0 for metadata evidence. That metadata convention does not
-  identify the visit's start; actual timed evidence at 0 is a valid scene.
+  `startSeconds` null for metadata evidence. Use `author_comment` for verified
+  creator comments, retaining a verbatim quote; comment publication times and
+  timestamp text inside comments do not identify the visit's scene time.
+  Actual timed evidence at 0 is a valid scene. For metadata-only input keep
+  all scene times null and state the missing timed coverage in issues.
 - `area`: the neighborhood, city, and country context a map search needs,
   such as "도쿄 시부야".
 - `category`: a short English noun such as restaurant, cafe, bar, shop,
