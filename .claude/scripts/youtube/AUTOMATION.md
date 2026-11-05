@@ -132,3 +132,32 @@ A suggestion carries a `geocodeWarning` when Google's name differs, adds words
 other than a branch or area, or sits outside the area's 시/구/군. Research those
 candidates on the web before approving; see "Reviewing Candidates" in
 `.agents/skills/youtube-to-sunrei/references/playlist-renewal.md`.
+
+## Playlist covers
+
+Playlist metadata includes the playlist resource's own `thumbnailUrl`.
+Workspace creation, registration and committed renewal send one large cover to
+`POST /admin/images/upload-url`. The server downloads it, generates size
+variants, and stores them in S3; the returned URLs and actual dimensions are
+saved as one group in `Sunrei.images`. Small list rows can use the 200px variant
+while larger versions remain available for detail views.
+
+Empty covers and a single cover group whose URLs match the current YouTube
+playlist cover are migrated. Already stored S3 covers and other custom covers
+are kept. A playlist link must match before its cover is used. Upload failure
+keeps the old cover; a cover edited during upload is reported as `kept_changed`.
+This never changes spots or publication. Individual video covers and channel
+avatars keep their current behavior.
+
+To fill covers on existing registered playlists without collecting videos or
+extracting places, preview eligibility and then copy the images:
+
+```bash
+uv run python .claude/scripts/youtube/playlist_covers.py [--playlist PLAYLIST_ID]
+uv run python .claude/scripts/youtube/playlist_covers.py [--playlist PLAYLIST_ID] --commit
+```
+
+The command uses `SUNREI_API_URL` (production by default). It leaves an existing
+custom Sunrei cover, an unlinked playlist, or a mismatched Sunrei link unchanged.
+Dry-run makes no image upload or content write. After an uncertain upload or
+write, inspect the live Sunrei before retrying.

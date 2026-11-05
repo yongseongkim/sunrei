@@ -680,6 +680,16 @@ export interface SunreiDTO {
     'createdAt'?: string;
     'updatedAt'?: string;
 }
+
+export const SunreiSort = {
+    CreatedDesc: 'created_desc',
+    UpdatedDesc: 'updated_desc',
+    TitleAsc: 'title_asc'
+} as const;
+
+export type SunreiSort = typeof SunreiSort[keyof typeof SunreiSort];
+
+
 export interface SunreiSpotDTO {
     'id': string;
     'sunreiId': string;
@@ -2194,10 +2204,12 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {string} [q] 
          * @param {string} [sourceId] 
          * @param {boolean} [published] 
+         * @param {SunreiSort} [sort] Sort the complete result before pagination. Follow nextToken with the same filters and sort; equal values are ordered by ID descending.
+         * @param {SourceType} [sourceType] Filter by source type before pagination.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listSunreis: async (nextToken?: string, size?: number, q?: string, sourceId?: string, published?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listSunreis: async (nextToken?: string, size?: number, q?: string, sourceId?: string, published?: boolean, sort?: SunreiSort, sourceType?: SourceType, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/admin/sunreis`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -2232,6 +2244,14 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
             if (published !== undefined) {
                 localVarQueryParameter['published'] = published;
+            }
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (sourceType !== undefined) {
+                localVarQueryParameter['sourceType'] = sourceType;
             }
 
 
@@ -3587,11 +3607,13 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {string} [q] 
          * @param {string} [sourceId] 
          * @param {boolean} [published] 
+         * @param {SunreiSort} [sort] Sort the complete result before pagination. Follow nextToken with the same filters and sort; equal values are ordered by ID descending.
+         * @param {SourceType} [sourceType] Filter by source type before pagination.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listSunreis(nextToken?: string, size?: number, q?: string, sourceId?: string, published?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListSunreisResult>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listSunreis(nextToken, size, q, sourceId, published, options);
+        async listSunreis(nextToken?: string, size?: number, q?: string, sourceId?: string, published?: boolean, sort?: SunreiSort, sourceType?: SourceType, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListSunreisResult>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listSunreis(nextToken, size, q, sourceId, published, sort, sourceType, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.listSunreis']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -4198,11 +4220,13 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {string} [q] 
          * @param {string} [sourceId] 
          * @param {boolean} [published] 
+         * @param {SunreiSort} [sort] Sort the complete result before pagination. Follow nextToken with the same filters and sort; equal values are ordered by ID descending.
+         * @param {SourceType} [sourceType] Filter by source type before pagination.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listSunreis(nextToken?: string, size?: number, q?: string, sourceId?: string, published?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<ListSunreisResult> {
-            return localVarFp.listSunreis(nextToken, size, q, sourceId, published, options).then((request) => request(axios, basePath));
+        listSunreis(nextToken?: string, size?: number, q?: string, sourceId?: string, published?: boolean, sort?: SunreiSort, sourceType?: SourceType, options?: RawAxiosRequestConfig): AxiosPromise<ListSunreisResult> {
+            return localVarFp.listSunreis(nextToken, size, q, sourceId, published, sort, sourceType, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4764,11 +4788,13 @@ export class DefaultApi extends BaseAPI {
      * @param {string} [q] 
      * @param {string} [sourceId] 
      * @param {boolean} [published] 
+     * @param {SunreiSort} [sort] Sort the complete result before pagination. Follow nextToken with the same filters and sort; equal values are ordered by ID descending.
+     * @param {SourceType} [sourceType] Filter by source type before pagination.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public listSunreis(nextToken?: string, size?: number, q?: string, sourceId?: string, published?: boolean, options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).listSunreis(nextToken, size, q, sourceId, published, options).then((request) => request(this.axios, this.basePath));
+    public listSunreis(nextToken?: string, size?: number, q?: string, sourceId?: string, published?: boolean, sort?: SunreiSort, sourceType?: SourceType, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).listSunreis(nextToken, size, q, sourceId, published, sort, sourceType, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

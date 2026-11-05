@@ -13,6 +13,7 @@ import sys
 import urllib.parse
 
 from _common import WS_ROOT, http_json, load_google_api_key
+from youtube_data import best_thumbnail
 
 API = "https://www.googleapis.com/youtube/v3"
 
@@ -40,8 +41,7 @@ def parse_url(url):
 
 
 def best_thumb(thumbs):
-    t = thumbs.get("high") or thumbs.get("medium") or thumbs.get("default") or {}
-    return t.get("url")
+    return best_thumbnail(thumbs)
 
 
 def channel_obj(key, channel_id):
@@ -54,6 +54,7 @@ def channel_obj(key, channel_id):
     return {
         "id": channel_id, "title": sn.get("title"), "handle": custom, "url": url,
         "description": sn.get("description"), "thumbnailUrl": best_thumb(sn.get("thumbnails", {})),
+        "thumbnails": sn.get("thumbnails") or {},
     }
 
 
@@ -97,6 +98,8 @@ def fetch_playlist(key, pl, videos_spec):
     print(f"playlist: {sn.get('title')} — {len(vids)} videos, {len(selected)} selected")
     return pl, {
         "type": "playlist", "id": pl, "title": sn.get("title"),
+        "thumbnailUrl": best_thumb(sn.get("thumbnails", {})),
+        "thumbnails": sn.get("thumbnails") or {},
         "description": sn.get("description"),
         "url": f"https://www.youtube.com/playlist?list={pl}",
         "channelName": sn.get("channelTitle"),
@@ -119,6 +122,7 @@ def fetch_video(key, vid):
         "channelId": sn["channelId"], "publishedAt": sn.get("publishedAt"),
         "duration": it.get("contentDetails", {}).get("duration"),
         "thumbnailUrl": best_thumb(sn.get("thumbnails", {})),
+        "thumbnails": sn.get("thumbnails") or {},
         "url": f"https://www.youtube.com/watch?v={vid}",
         "channel": channel_obj(key, sn["channelId"]),
     }

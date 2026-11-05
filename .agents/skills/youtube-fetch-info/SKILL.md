@@ -50,12 +50,21 @@ Fields the later skills depend on:
 | --- | --- | --- |
 | `type` | `video` | `playlist` |
 | `id`, `title`, `description`, `url`, `channelName`, `channel{...}` | yes | yes |
-| `channelId`, `publishedAt`, `duration`, `thumbnailUrl` | yes | no |
+| `thumbnailUrl` (the video's or playlist's own cover) | yes | yes |
+| `thumbnails` (available size variants with URL, width and height) | yes | yes |
+| `channelId`, `publishedAt`, `duration` | yes | no |
 | `selectedVideos[]` with `videoId`, `title`, `channelName`, `position`, `url` | no | yes |
 
 `url` becomes the Sunrei link and is the duplicate key for
 `POST /admin/sunreis`. Full JSON examples are in
 `references/manual-youtube-api.md`.
+These URLs describe the YouTube resources; fetching metadata does not upload
+images. For playlists, `youtube-create-sunrei` copies the top-level cover
+through the image upload API and saves its returned S3 variants in
+`Sunrei.images`. Registration and renewal do the same. Video covers and the
+channel's Source poster retain their current URL-based behavior and available
+size variants. Do not substitute a channel avatar or
+an arbitrary playlist item's thumbnail for the playlist resource's own cover.
 
 ## Present the Result
 

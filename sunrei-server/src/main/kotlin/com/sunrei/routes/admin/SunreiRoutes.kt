@@ -2,7 +2,9 @@ package com.sunrei.routes.admin
 
 import com.sunrei.di.injectSunreiService
 import com.sunrei.generated.dto.admin.CreateSunreiRequest
+import com.sunrei.generated.dto.admin.SunreiSort
 import com.sunrei.generated.dto.admin.UpdateSunreiRequest
+import com.sunrei.model.SourceType
 import com.sunrei.routes.admin.converter.toDTO
 import com.sunrei.service.ConflictException
 import com.sunrei.service.SunreiService
@@ -25,13 +27,23 @@ fun Route.adminSunreiRoutes() {
             val q = call.request.queryParameters["q"]
             val sourceId = call.request.queryParameters["sourceId"]
             val published = call.request.queryParameters["published"]?.toBooleanStrictOrNull()
+            val sortParam = call.request.queryParameters["sort"] ?: "created_desc"
+            val sort = SunreiSort.entries.firstOrNull { it.value == sortParam }
+                ?: return@get call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Unsupported sort"))
+            val typeParam = call.request.queryParameters["sourceType"]
+            val sourceType = typeParam?.let { type -> SourceType.entries.firstOrNull { it.name == type } }
+            if (typeParam != null && sourceType == null) {
+                return@get call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Unsupported source type"))
+            }
 
             val result = sunreiService.list(
                 nextToken = nextToken,
                 size = size,
                 q = q,
                 sourceId = sourceId,
-                published = published
+                published = published,
+                sort = sort,
+                sourceType = sourceType
             )
             call.respond(result)
         }

@@ -21,7 +21,9 @@ import json
 import sys
 import urllib.parse
 
-from _common import admin_api, admin_token, workspace
+from _common import admin_api, admin_token, server_url, workspace
+from collection_api import CollectionApi
+from playlist_covers import thumbnail_images, upload_playlist_cover
 
 
 def arg(args, flag, default=None):
@@ -76,8 +78,8 @@ def main():
     commit = "--commit" in args
     publish = "--publish" in args
 
-    info = json.load(open(ws / "video_info.json"))
-    locs = json.load(open(ws / "locations.json"))
+    info = json.loads((ws / "video_info.json").read_text(encoding="utf-8"))
+    locs = json.loads((ws / "locations.json").read_text(encoding="utf-8"))
 
     is_playlist = info.get("type") == "playlist"
     title = (info.get("title") or "")[:128]
@@ -122,8 +124,9 @@ def main():
     if not source_id:
         payload = {"type": "YOUTUBE", "name": channel.get("title") or info.get("channelName"),
                    "synopsis": (channel.get("description") or "")[:500], "externalUrl": channel.get("url")}
-        if channel.get("thumbnailUrl"):
-            payload["posterImage"] = {"images": [{"url": channel["thumbnailUrl"]}]}
+        channel_images = thumbnail_images(channel)
+        if channel_images:
+            payload["posterImage"] = channel_images[0]
         st, resp = admin_api("POST", "/admin/sources", token, payload, prod=prod)
         if st != 201 or not (resp or {}).get("id"):
             print(f"source create failed {st}: {str(resp)[:300]}")
@@ -131,8 +134,11 @@ def main():
         source_id = resp["id"]
         print(f"created source {source_id}")
 
+    images = upload_playlist_cover(
+        CollectionApi(base_url=server_url(prod), token_provider=lambda: token), info
+    ) if is_playlist else thumbnail_images(info)
     payload = {"sourceId": source_id, "published": publish, "title": title,
-               "summary": summary, "description": description, "link": link, "images": [], "spots": spots}
+               "summary": summary, "description": description, "link": link, "images": images, "spots": spots}
     st, resp = admin_api("POST", "/admin/sunreis", token, payload, prod=prod)
     if st == 201 and (resp or {}).get("id"):
         sid = resp["id"]

@@ -23,7 +23,7 @@ def youtube_get(api_key, resource, params):
     return body or {}
 
 
-def fetch_playlist(api_key, playlist_id):
+def fetch_playlist_metadata(api_key, playlist_id):
     metadata = youtube_get(
         api_key,
         "playlists",
@@ -31,7 +31,20 @@ def fetch_playlist(api_key, playlist_id):
     ).get("items", [])
     if not metadata:
         raise RuntimeError(f"Playlist not found: {playlist_id}")
-    playlist_snippet = metadata[0].get("snippet", {})
+    snippet = metadata[0].get("snippet", {})
+    return {
+        "id": playlist_id,
+        "title": snippet.get("title", ""),
+        "description": snippet.get("description", ""),
+        "channelId": snippet.get("channelId", ""),
+        "channelName": snippet.get("channelTitle", ""),
+        "thumbnailUrl": best_thumbnail(snippet.get("thumbnails", {})),
+        "thumbnails": snippet.get("thumbnails") or {},
+    }
+
+
+def fetch_playlist(api_key, playlist_id):
+    metadata = fetch_playlist_metadata(api_key, playlist_id)
     videos = []
     page_token = None
     while True:
@@ -57,7 +70,7 @@ def fetch_playlist(api_key, playlist_id):
                     "videoId": video_id,
                     "title": title,
                     "channelName": snippet.get("videoOwnerChannelTitle")
-                    or playlist_snippet.get("channelTitle", ""),
+                    or metadata["channelName"],
                     "position": snippet.get("position", len(videos)),
                     "url": f"https://www.youtube.com/watch?v={video_id}",
                 }
@@ -65,14 +78,7 @@ def fetch_playlist(api_key, playlist_id):
         page_token = body.get("nextPageToken")
         if not page_token:
             break
-    return {
-        "id": playlist_id,
-        "title": playlist_snippet.get("title", ""),
-        "description": playlist_snippet.get("description", ""),
-        "channelId": playlist_snippet.get("channelId", ""),
-        "channelName": playlist_snippet.get("channelTitle", ""),
-        "videos": videos,
-    }
+    return {**metadata, "videos": videos}
 
 
 def best_thumbnail(thumbnails):
