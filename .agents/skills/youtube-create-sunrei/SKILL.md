@@ -35,6 +35,15 @@ Set these without asking:
   `POST /admin/sunreis`; the channel URL is only the Source `externalUrl`.
 - Published: false. Ingested Sunreis stay drafts until an administrator
   publishes them.
+- Playlist cover: use the playlist resource's own thumbnail from
+  `video_info.json`. On commit, `create_sunrei.py` sends it to
+  `POST /admin/images/upload-url` on the same selected server and stores the
+  returned S3 size variants in the Sunrei's top-level `images`. The server
+  resizes without changing the aspect ratio (currently maximum dimensions
+  200, 800 and 1920px when the input supports them, plus the processed original).
+  Dry-run never uploads. An upload failure stops creation; do not silently
+  substitute remote URLs. Individual video covers and channel avatars keep
+  their current behavior.
 
 ## 2. Choose Spot Tags
 
@@ -75,7 +84,7 @@ hard to fix after saving:
   it.
 - One Place per building or venue. Spots of the same video on one Place
   collapse into one card line that shows only the first context.
-- `images` stays empty. There is no YouTube image collection yet, and the
+- Spot `images` stays empty. A playlist cover belongs to the Sunrei, and a
   video thumbnail is not a spot image.
 - The video URL goes in `sourceLink`; the old `youtubeLink` field no longer
   exists.

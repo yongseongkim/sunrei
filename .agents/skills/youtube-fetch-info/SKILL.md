@@ -58,10 +58,12 @@ Fields the later skills depend on:
 `url` becomes the Sunrei link and is the duplicate key for
 `POST /admin/sunreis`. Full JSON examples are in
 `references/manual-youtube-api.md`.
-The top-level `thumbnailUrl` becomes the Sunrei cover (`images`); the channel's
-`thumbnailUrl` remains the Source poster. Store all available variants from
-`thumbnails` in the image group so small UI elements can choose a small image.
-Do not substitute a channel avatar or
+These URLs describe the YouTube resources; fetching metadata does not upload
+images. For playlists, `youtube-create-sunrei` copies the top-level cover
+through the image upload API and saves its returned S3 variants in
+`Sunrei.images`. Registration and renewal do the same. Video covers and the
+channel's Source poster retain their current URL-based behavior and available
+size variants. Do not substitute a channel avatar or
 an arbitrary playlist item's thumbnail for the playlist resource's own cover.
 
 ## Present the Result

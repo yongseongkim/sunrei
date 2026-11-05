@@ -58,6 +58,16 @@ test('a 96px list row selects the API medium variant before the large playlist c
   assert.deepEqual(new Set(candidates),new Set(variants.map(variant=>variant.url)));
 });
 
+test('a stored playlist cover uses the 200px S3 image before the detail sizes', () => {
+  const variants = [
+    {url:'https://sunrei-resources.s3.ap-northeast-2.amazonaws.com/images/cover.jpg',width:1280,height:720},
+    {url:'https://sunrei-resources.s3.ap-northeast-2.amazonaws.com/images/cover_800x450.jpg',width:800,height:450},
+    {url:'https://sunrei-resources.s3.ap-northeast-2.amazonaws.com/images/cover_200x113.jpg',width:200,height:113},
+  ];
+  const candidates = sunreiThumbnailCandidates({images:[{images:variants}]});
+  assert.deepEqual(candidates,[variants[2].url,variants[1].url,variants[0].url]);
+});
+
 test('recognize actual watch, shorts, embed, live and short YouTube video links', () => {
   for (const url of [
     'https://www.youtube.com/watch?list=PLtest&v=abcdefghijk&t=90',

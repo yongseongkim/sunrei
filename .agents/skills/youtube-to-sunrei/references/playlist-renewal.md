@@ -51,6 +51,35 @@ uv run python .claude/scripts/youtube/renew_playlists.py --commit [--max-videos 
 
 Run only one renewal at a time, on a machine YouTube does not block.
 
+## Playlist Cover Storage
+
+Registration and committed renewal copy the playlist resource's own cover
+through `POST /admin/images/upload-url`. The server downloads one large cover,
+resizes it while preserving its aspect ratio, and stores the variants in S3.
+Save the returned `MultiSizeImageDTO` as one group in `Sunrei.images`; use the
+returned URLs, widths and heights rather than the YouTube URLs.
+
+Empty covers and an existing single cover group whose URLs match the current
+YouTube playlist cover are eligible. Keep already stored S3 covers and custom
+images. Upload failure leaves the previous cover intact; inspect a successful
+upload or uncertain write before retrying. This does not change spots or
+publication status. Source avatars and individual video covers keep their
+current behavior.
+
+To migrate existing registered playlist covers without collecting videos or
+extracting places:
+
+```bash
+uv run python .claude/scripts/youtube/playlist_covers.py [--playlist PLAYLIST_ID]
+uv run python .claude/scripts/youtube/playlist_covers.py [--playlist PLAYLIST_ID] --commit
+```
+
+The first command only previews eligibility: no download, upload or content
+write. `SUNREI_API_URL` selects the server (production by default). Run the
+commit only for the user's requested scope, then verify the saved image URLs
+and dimensions. Directly customized covers and mismatched Sunrei links are
+left unchanged. A cover edited during upload is reported as `kept_changed`.
+
 ## Results
 
 - A processed video ends as `REVIEW_PENDING`, or `COMPLETED` when no
@@ -60,7 +89,7 @@ Run only one renewal at a time, on a machine YouTube does not block.
 - A members-only video becomes `SKIPPED` and is not retried.
 - Candidates wait as `PENDING` until an admin approves or rejects them with
   `PATCH /admin/youtube/extracted-places/{id}`. Approval adds the spot to the
-  playlist's Sunrei; the collector itself never changes a Sunrei.
+  playlist's Sunrei; the collector changes only the eligible cover, never spots.
 - The agents receive the metadata and one timeline window at a time, never
   the video, the raw media, or credentials.
 

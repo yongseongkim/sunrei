@@ -1,7 +1,7 @@
-"""Fill Sunrei playlist covers and add their available thumbnail sizes.
+"""Copy YouTube playlist covers into Sunrei's resized image storage.
 
-Metadata only: preserves custom covers, spots and publication. Matching saved
-playlist covers gain their available sizes without changing the cover image.
+Preserves custom covers, spots and publication. An empty cover or matching
+YouTube cover is replaced with the image upload API's stored size variants.
 Dry-run by default. SUNREI_API_URL selects the API (default: production).
 
     uv run python .claude/scripts/youtube/playlist_covers.py [--playlist ID] [--commit]
@@ -53,6 +53,22 @@ def thumbnail_variant(image):
     return variant
 
 
+def upload_playlist_cover(api, metadata):
+    """Upload one playlist cover; the server returns its resized S3 images."""
+    images = thumbnail_images(metadata)
+    if not images:
+        return []
+    original = thumbnail_variant({"url": metadata.get("thumbnailUrl")}) or images[0]["images"][0]
+    uploaded = api.request("POST", "/admin/images/upload-url", {"url": original["url"]}, timeout=180)
+    variants = uploaded.get("images") if isinstance(uploaded, dict) else None
+    if not isinstance(variants, list) or not variants or any(
+        not isinstance(image, dict) or thumbnail_variant(image) is None
+        for image in variants
+    ):
+        raise RuntimeError("Image upload returned no valid playlist cover")
+    return [uploaded]
+
+
 def playlist_id(url):
     try:
         parsed = urllib.parse.urlparse(url or "")
@@ -87,13 +103,18 @@ def ensure_playlist_cover(api, playlist, metadata, commit=False):
     }
     if existing_urls:
         playlist_urls = {image["url"] for image in images[0]["images"]}
-        if len(existing) != 1 or not existing_urls.issubset(playlist_urls) or existing == images:
+        if len(existing) != 1 or not existing_urls.issubset(playlist_urls):
             return {**result, "status": "kept_existing"}
 
     if commit:
+        images = upload_playlist_cover(api, metadata)
+        # Uploading can take a few seconds. Preserve a cover edited in that time.
+        current = api.request("GET", f"/admin/sunreis/{playlist['sunreiId']}")
+        if current.get("images") != sunrei.get("images") or current.get("link") != sunrei.get("link"):
+            return {**result, "status": "kept_changed"}
         # A partial PUT changes only this field; never send a stale spots array.
         api.request("PUT", f"/admin/sunreis/{playlist['sunreiId']}", {"images": images})
-    return {**result, "status": "updated" if commit else "would_update", "thumbnailUrl": metadata["thumbnailUrl"]}
+    return {**result, "status": "updated" if commit else "would_update"}
 
 
 def main():

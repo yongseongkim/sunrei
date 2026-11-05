@@ -19,6 +19,11 @@ import youtube_playlists
 
 PLAYLIST = {"id": "PLtest", "sunreiId": "SRtest"}
 METADATA = {"id": "PLtest", "thumbnailUrl": "https://i.ytimg.com/playlist-cover.jpg"}
+STORED_COVER = {"images": [
+    {"url": "https://sunrei-images.s3.ap-northeast-2.amazonaws.com/images/cover_200x113.jpg", "width": 200, "height": 113},
+    {"url": "https://sunrei-images.s3.ap-northeast-2.amazonaws.com/images/cover_800x450.jpg", "width": 800, "height": 450},
+    {"url": "https://sunrei-images.s3.ap-northeast-2.amazonaws.com/images/cover.jpg", "width": 1280, "height": 720},
+]}
 
 
 class FakeApi:
@@ -29,8 +34,10 @@ class FakeApi:
     def list_playlists(self):
         return [PLAYLIST]
 
-    def request(self, method, path, body=None):
+    def request(self, method, path, body=None, timeout=120):
         self.calls.append((method, path, body))
+        if path == "/admin/images/upload-url":
+            return copy.deepcopy(STORED_COVER)
         if method == "PUT":
             self.sunrei.update(body)
         return copy.deepcopy(self.sunrei)
@@ -72,11 +79,13 @@ class PlaylistCoverTests(unittest.TestCase):
         api = FakeApi()
         result = playlist_covers.ensure_playlist_cover(api, PLAYLIST, METADATA, commit=True)
         self.assertEqual(result["status"], "updated")
-        self.assertEqual(api.calls[-1], ("PUT", "/admin/sunreis/SRtest", {"images": [{"images": [{"url": METADATA["thumbnailUrl"]}]}]}))
+        self.assertEqual(api.calls[1], ("POST", "/admin/images/upload-url", {"url": METADATA["thumbnailUrl"]}))
+        self.assertEqual(api.calls[-1], ("PUT", "/admin/sunreis/SRtest", {"images": [STORED_COVER]}))
         self.assertEqual(api.sunrei["spots"], [{"id": "keep-me"}])
         result = playlist_covers.ensure_playlist_cover(api, PLAYLIST, METADATA, commit=True)
         self.assertEqual(result["status"], "kept_existing")
         self.assertEqual(sum(method == "PUT" for method, _, _ in api.calls), 1)
+        self.assertEqual(sum(method == "POST" for method, _, _ in api.calls), 1)
 
     def test_existing_custom_cover_is_preserved(self):
         existing = [{"images": [{"url": "https://example.com/custom.jpg"}]}]
@@ -96,7 +105,7 @@ class PlaylistCoverTests(unittest.TestCase):
         self.assertEqual(group["images"][1], metadata["thumbnails"]["medium"])
         self.assertEqual(len(group["images"]), 3)
 
-    def test_a_saved_matching_cover_gains_sizes_once_without_changing_the_image(self):
+    def test_a_saved_matching_youtube_cover_moves_to_storage_only_once(self):
         metadata = {**METADATA, "thumbnails": {
             "medium": {"url": "https://i.ytimg.com/medium.jpg", "width": 320, "height": 180},
             "maxres": {"url": METADATA["thumbnailUrl"], "width": 1280, "height": 720},
@@ -104,12 +113,55 @@ class PlaylistCoverTests(unittest.TestCase):
         api = FakeApi(images=[{"images": [{"url": METADATA["thumbnailUrl"]}]}])
         result = playlist_covers.ensure_playlist_cover(api, PLAYLIST, metadata, commit=True)
         self.assertEqual(result["status"], "updated")
-        self.assertEqual(api.sunrei["images"][0]["images"][0]["url"], METADATA["thumbnailUrl"])
-        self.assertEqual(api.sunrei["images"][0]["images"][1]["width"], 320)
+        self.assertEqual(api.sunrei["images"], [STORED_COVER])
         self.assertEqual(playlist_covers.ensure_playlist_cover(api, PLAYLIST, metadata, commit=True)["status"], "kept_existing")
         self.assertEqual(sum(method == "PUT" for method, _, _ in api.calls), 1)
+        self.assertEqual(sum(method == "POST" for method, _, _ in api.calls), 1)
         custom = FakeApi(images=[{"images": [{"url": "https://example.com/custom.jpg"}]}])
         self.assertEqual(playlist_covers.ensure_playlist_cover(custom, PLAYLIST, metadata, commit=True)["status"], "kept_existing")
+
+    def test_a_cover_with_all_youtube_sizes_also_moves_to_storage(self):
+        metadata = {**METADATA, "thumbnails": {
+            "maxres": {"url": METADATA["thumbnailUrl"], "width": 1280, "height": 720},
+            "medium": {"url": "https://i.ytimg.com/medium.jpg", "width": 320, "height": 180},
+        }}
+        api = FakeApi(images=playlist_covers.thumbnail_images(metadata))
+        playlist_covers.ensure_playlist_cover(api, PLAYLIST, metadata, commit=True)
+        self.assertEqual(api.sunrei["images"], [STORED_COVER])
+        self.assertEqual(sum(method == "POST" for method, _, _ in api.calls), 1)
+
+    def test_upload_failure_keeps_the_live_cover_and_spots(self):
+        for response in (None, {}, {"images": []}, {"images": [{"url": "not a URL"}]}):
+            api = FakeApi(images=[{"images": [{"url": METADATA["thumbnailUrl"]}]}])
+            before = copy.deepcopy(api.sunrei)
+            original_request = api.request
+
+            def failing_request(method, path, body=None, **kwargs):
+                if method == "POST":
+                    return response
+                return original_request(method, path, body, **kwargs)
+
+            api.request = failing_request
+            with self.assertRaises(RuntimeError):
+                playlist_covers.ensure_playlist_cover(api, PLAYLIST, METADATA, commit=True)
+            self.assertEqual(api.sunrei, before)
+            self.assertFalse(any(method == "PUT" for method, _, _ in api.calls))
+
+    def test_a_cover_edited_during_upload_is_preserved(self):
+        api = FakeApi()
+        original_request = api.request
+        edited = [{"images": [{"url": "https://example.com/admin-edited.jpg"}]}]
+
+        def concurrent_edit(method, path, body=None, **kwargs):
+            response = original_request(method, path, body, **kwargs)
+            if method == "POST":
+                api.sunrei["images"] = edited
+            return response
+
+        api.request = concurrent_edit
+        self.assertEqual(playlist_covers.ensure_playlist_cover(api, PLAYLIST, METADATA, commit=True)["status"], "kept_changed")
+        self.assertEqual(api.sunrei["images"], edited)
+        self.assertFalse(any(method == "PUT" for method, _, _ in api.calls))
 
     def test_variant_metadata_with_no_width_keeps_the_url_without_inventing_dimensions(self):
         [group] = playlist_covers.thumbnail_images({"thumbnails": {"medium": {"url": "https://i.ytimg.com/custom?rs=signed"}}})
@@ -151,7 +203,7 @@ class PlaylistCoverTests(unittest.TestCase):
         remote = {**METADATA, "title": "Playlist", "videos": []}
         with patch.object(youtube_playlists, "fetch_playlist", return_value=remote), patch.object(youtube_playlists, "fetch_video_details", return_value={}), contextlib.redirect_stdout(io.StringIO()):
             youtube_playlists.register(api, "test-key", "PLtest", "SRtest", "all", True)
-        self.assertEqual(api.sunrei["images"], [{"images": [{"url": METADATA["thumbnailUrl"]}]}])
+        self.assertEqual(api.sunrei["images"], [STORED_COVER])
 
     def test_create_sunrei_uses_the_fetched_playlist_or_video_cover(self):
         for content_type in ("playlist", "video"):
@@ -159,9 +211,25 @@ class PlaylistCoverTests(unittest.TestCase):
                 workspace = Path(temp)
                 (workspace / "video_info.json").write_text(json.dumps({**METADATA, "type": content_type, "title": "Title"}))
                 (workspace / "locations.json").write_text('{"videos":[]}')
-                with patch.object(sys, "argv", ["create_sunrei.py", "workspace", "--commit", "--summary", "Reviewed"]), patch.object(create_sunrei, "workspace", return_value=workspace), patch.object(create_sunrei, "admin_token", return_value="test-token"), patch.object(create_sunrei, "resolve_source", return_value=("SRCtest", "reuse")), patch.object(create_sunrei, "admin_api", return_value=(201, {"id": "SRtest", "spots": []})) as request, contextlib.redirect_stdout(io.StringIO()):
+                api = FakeApi()
+                with patch.object(sys, "argv", ["create_sunrei.py", "workspace", "--commit", "--summary", "Reviewed"]), patch.object(create_sunrei, "workspace", return_value=workspace), patch.object(create_sunrei, "admin_token", return_value="test-token"), patch.object(create_sunrei, "resolve_source", return_value=("SRCtest", "reuse")), patch.object(create_sunrei, "CollectionApi", return_value=api) as image_api, patch.object(create_sunrei, "admin_api", return_value=(201, {"id": "SRtest", "spots": []})) as request, contextlib.redirect_stdout(io.StringIO()):
                     create_sunrei.main()
-                self.assertEqual(request.call_args.args[3]["images"], [{"images": [{"url": METADATA["thumbnailUrl"]}]}])
+                expected = [STORED_COVER] if content_type == "playlist" else [{"images": [{"url": METADATA["thumbnailUrl"]}]}]
+                self.assertEqual(request.call_args.args[3]["images"], expected)
+                if content_type == "playlist":
+                    self.assertEqual(image_api.call_args.kwargs["base_url"], "http://localhost:3030")
+                else:
+                    image_api.assert_not_called()
+
+    def test_workspace_dry_run_never_uploads_the_playlist_image_or_creates_content(self):
+        with tempfile.TemporaryDirectory() as temp:
+            workspace = Path(temp)
+            (workspace / "video_info.json").write_text(json.dumps({**METADATA, "type": "playlist", "title": "Title"}))
+            (workspace / "locations.json").write_text('{"videos":[]}')
+            with patch.object(sys, "argv", ["create_sunrei.py", "workspace"]), patch.object(create_sunrei, "workspace", return_value=workspace), patch.object(create_sunrei, "admin_token", return_value="test-token"), patch.object(create_sunrei, "resolve_source", return_value=("SRCtest", "reuse")), patch.object(create_sunrei, "CollectionApi") as image_api, patch.object(create_sunrei, "admin_api") as request, contextlib.redirect_stdout(io.StringIO()):
+                create_sunrei.main()
+            image_api.assert_not_called()
+            request.assert_not_called()
 
     def test_unavailable_thumbnail_does_not_create_an_empty_image_record(self):
         for thumbnail in (None, "", "  ", "not a URL", "javascript:alert(1)", "http://["):

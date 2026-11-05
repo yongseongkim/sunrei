@@ -48,6 +48,9 @@ locations into the workspace's final `locations.json`.
 4. Create the Sunrei with `youtube-create-sunrei`. It composes the Sunrei,
    builds one SunreiSpot per approved location, creates a draft through the
    admin API, then verifies the saved database records.
+   For a playlist, it copies the playlist's own cover through the image upload
+   API and saves the returned S3 size variants. Registration and renewal use
+   the same path; see `references/playlist-renewal.md` for existing covers.
    Check the spot table against the approved locations and tag choices. Reuse
    that approval when the payload agrees; ask only for new choices or changes.
 

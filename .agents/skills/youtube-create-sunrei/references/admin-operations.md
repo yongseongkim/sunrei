@@ -68,6 +68,15 @@ curl -s -H "Authorization: Bearer ${TOKEN}" "{SERVER_URL}/admin/tags" | jq '.dat
 
 ## Create the Sunrei
 
+For a playlist, first send its own `thumbnailUrl` to
+`POST {SERVER_URL}/admin/images/upload-url` with JSON `{ "url": "..." }` and
+the same admin authentication. Store the returned `MultiSizeImageDTO` as
+`"images": [<upload response>]` below, including every returned URL and
+dimension. The server downloads, resizes and stores the cover in S3. Stop on
+upload failure; the dry-run path does not call this endpoint. Keep spot images
+empty. Existing covers can be migrated without a spot update using
+`playlist_covers.py`; see the playlist-renewal reference.
+
 ```bash
 curl -s -X POST "{SERVER_URL}/admin/sunreis" \
   -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \

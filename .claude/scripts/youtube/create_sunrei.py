@@ -21,8 +21,9 @@ import json
 import sys
 import urllib.parse
 
-from _common import admin_api, admin_token, workspace
-from playlist_covers import thumbnail_images
+from _common import admin_api, admin_token, server_url, workspace
+from collection_api import CollectionApi
+from playlist_covers import thumbnail_images, upload_playlist_cover
 
 
 def arg(args, flag, default=None):
@@ -133,8 +134,11 @@ def main():
         source_id = resp["id"]
         print(f"created source {source_id}")
 
+    images = upload_playlist_cover(
+        CollectionApi(base_url=server_url(prod), token_provider=lambda: token), info
+    ) if is_playlist else thumbnail_images(info)
     payload = {"sourceId": source_id, "published": publish, "title": title,
-               "summary": summary, "description": description, "link": link, "images": thumbnail_images(info), "spots": spots}
+               "summary": summary, "description": description, "link": link, "images": images, "spots": spots}
     st, resp = admin_api("POST", "/admin/sunreis", token, payload, prod=prod)
     if st == 201 and (resp or {}).get("id"):
         sid = resp["id"]
