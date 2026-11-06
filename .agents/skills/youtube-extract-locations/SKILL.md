@@ -19,6 +19,11 @@ artifact before advancing. The final reviewer is independent of the identity
 resolver and map matcher. If delegation is unavailable, retain the same role
 boundaries and artifacts sequentially; report that limitation.
 
+For the implemented YouTube runner and its limits, use
+[extraction tools](references/extraction-tools.md). It persists stages 01–04
+and enforces source-backed lookup; web research and final independent review
+remain coordinator/admin work.
+
 ## Phase 1 — Establish Scope
 
 Read the selected video IDs, full per-video metadata, playlist memberships, and

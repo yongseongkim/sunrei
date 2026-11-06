@@ -10,6 +10,7 @@ Usage:
 import argparse
 import hashlib
 import json
+import os
 import re
 import subprocess
 import sys
@@ -17,6 +18,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from _common import workspace
+from creator_comments import model_creator_comments
+from stage_store import StageStore
 from structured_agent import run_structured
 from evidence_timeline import ensure_timeline
 
@@ -67,6 +70,9 @@ def load_metadata(ws):
         if path.is_file():
             value = read_json(path)
             if value.get("type") == "video" or value.get("videoId"):
+                comments_path = ws / "creator_comments.json"
+                if comments_path.is_file():
+                    value["creatorComments"] = read_json(comments_path)
                 return value
     raise FileNotFoundError(f"No single-video metadata found in {ws}")
 
@@ -94,9 +100,14 @@ def timeline_window(timeline, start, end):
 
 
 def make_prompt(metadata, timeline, start, end):
+    video_id = metadata.get("videoId") or metadata.get("id")
+    comments = model_creator_comments(
+        metadata.get("creatorComments"), video_id, metadata.get("channelId")
+    )
+    metadata_only = not timeline.get("events")
     payload = {
         "metadata": {
-            "videoId": metadata.get("videoId") or metadata.get("id"),
+            "videoId": video_id,
             "title": metadata.get("title", ""),
             "description": metadata.get("description", ""),
             "channelId": metadata.get("channelId", ""),
@@ -105,9 +116,11 @@ def make_prompt(metadata, timeline, start, end):
             "playlistTitle": metadata.get("playlistTitle", ""),
             "publishedAt": metadata.get("publishedAt"),
             "url": metadata.get("url", ""),
+            "creatorComments": comments,
         },
         "timeline": {
-            "window": {"startSeconds": start, "endSeconds": end},
+            "window": None if metadata_only else {"startSeconds": start, "endSeconds": end},
+            "metadataOnly": metadata_only,
             "sourceStatus": timeline.get("sources", {}),
             "events": timeline_window(timeline, start, end),
         },
@@ -117,6 +130,20 @@ def make_prompt(metadata, timeline, start, end):
         + "\n## Input Data\n\n"
         + json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
     )
+
+
+def has_metadata_evidence(metadata):
+    if any(
+        any(character.isalnum() for character in str(metadata.get(field) or ""))
+        for field in ("title", "description")
+    ):
+        return True
+    comments = model_creator_comments(
+        metadata.get("creatorComments"),
+        metadata.get("videoId") or metadata.get("id"),
+        metadata.get("channelId"),
+    )
+    return bool(comments["comments"])
 
 
 def norm_name(value):
@@ -151,24 +178,33 @@ def merge_location(existing, incoming):
         existing["reason"] = (existing.get("reason", "") + " " + incoming["reason"]).strip()
 
 
-def extract(metadata, timeline, model, timeout, window_seconds, overlap_seconds):
+def extract(metadata, timeline, model, timeout, window_seconds, overlap_seconds, store=None, force=False):
+    if not timeline.get("events") and not has_metadata_evidence(metadata):
+        raise ValueError("No timed evidence or meaningful title, description, or creator comments found")
     results = []
     for start, end in windows(
-        float(timeline.get("durationSeconds") or 0),
+        float(timeline.get("durationSeconds") or 0) if timeline.get("events") else 0,
         window_seconds,
         overlap_seconds,
     ):
-        print(f"location extraction [{start:.0f}:{end:.0f}]", flush=True)
-        result = run_structured(
-            make_prompt(metadata, timeline, start, end),
-            SCHEMA_FILE,
-            model=model,
-            timeout=timeout,
-            temp_prefix="sunrei-location-extract-",
-        )
+        window_label = f"{start:.0f}:{end:.0f}" if timeline.get("events") else "metadata only"
+        print(f"location extraction [{window_label}]", flush=True)
+        prompt = make_prompt(metadata, timeline, start, end)
+
+        def produce():
+            return run_structured(prompt, SCHEMA_FILE, model=model, timeout=timeout,
+                                  temp_prefix="sunrei-location-extract-")
+
+        result = store.run(
+            f"extract-window-{start:g}-{end:g}",
+            {"prompt": prompt, "model": model, "providers": os.environ.get("STRUCTURED_AGENTS", "codex,claude")},
+            [PROMPT_FILE, SCHEMA_FILE, Path(__file__), Path(__file__).with_name("creator_comments.py"),
+             Path(__file__).with_name("structured_agent.py"), Path(__file__).with_name("codex_headless.py"),
+             Path(__file__).with_name("claude_headless.py")], produce, force=force,
+        ) if store else produce()
         result["window"] = {
-            "startSeconds": start,
-            "endSeconds": end,
+            "startSeconds": start if timeline.get("events") else None,
+            "endSeconds": end if timeline.get("events") else None,
             "agent": result.pop("agent", None),
         }
         results.append(result)
@@ -176,7 +212,7 @@ def extract(metadata, timeline, model, timeout, window_seconds, overlap_seconds)
 
 
 def merge_results(metadata, source_sha, results):
-    locations = {}
+    locations = []
     issues = []
     concepts = []
     scopes = []
@@ -187,14 +223,28 @@ def merge_results(metadata, source_sha, results):
             scopes.append(result["geographicScope"])
         issues.extend(result.get("issues", []))
         for location in result.get("locations", []):
-            key = norm_name(location.get("name"))
-            if not key:
-                continue
-            if key in locations:
-                merge_location(locations[key], location)
+            if not location.get("name", "").strip():
+                location["name"] = "상호 미상"
+                location["needsVerification"] = True
+            times = [e["startSeconds"] for e in location.get("evidence", [])
+                     if e.get("source") not in {"title", "description", "author_comment"}
+                     and isinstance(e.get("startSeconds"), (int, float))]
+            existing = None
+            for prior in locations:
+                if norm_name(prior["name"]) != norm_name(location["name"]) or norm_name(prior.get("area")) != norm_name(location.get("area")):
+                    continue
+                prior_times = [e["startSeconds"] for e in prior.get("evidence", [])
+                               if e.get("source") not in {"title", "description", "author_comment"}
+                               and isinstance(e.get("startSeconds"), (int, float))]
+                shared = any(e in prior.get("evidence", []) for e in location.get("evidence", []))
+                if (times and prior_times and min(abs(a-b) for a in times for b in prior_times) <= 10) or (not times and not prior_times and shared):
+                    existing = prior
+                    break
+            if existing is not None:
+                merge_location(existing, location)
             else:
                 location["decision"] = "pending"
-                locations[key] = location
+                locations.append(location)
     return {
         "schemaVersion": 1,
         "status": "review_pending",
@@ -204,7 +254,7 @@ def merge_results(metadata, source_sha, results):
         "generatedAt": utc_now(),
         "concept": " / ".join(concepts),
         "geographicScope": " / ".join(scopes),
-        "locations": list(locations.values()),
+        "locations": locations,
         "issues": merge_unique(issues),
         "windows": [result["window"] for result in results],
     }
@@ -216,17 +266,20 @@ def main():
         raise ValueError("window-seconds must be positive and overlap-seconds cannot be negative")
     ws = workspace(args.workspace)
     output = ws / "location_candidates.json"
-    if output.is_file() and not args.restart:
-        print(f"cached -> {output}")
-        return
-
     metadata = load_metadata(ws)
     video_id = metadata.get("videoId") or metadata.get("id")
     timeline, timeline_path = ensure_timeline(ws, video_id)
-    if not timeline.get("events"):
-        raise ValueError(f"No timed transcript, audio, or OCR evidence found in {ws}")
+    if not timeline.get("events") and not has_metadata_evidence(metadata):
+        raise ValueError(f"No timed or meaningful metadata evidence found in {ws}")
     metadata_path = ws / ("metadata.json" if (ws / "metadata.json").is_file() else "video_info.json")
-    source_sha = sha256_files([metadata_path, timeline_path])
+    source_paths = [metadata_path, timeline_path]
+    if (ws / "creator_comments.json").is_file():
+        source_paths.append(ws / "creator_comments.json")
+    source_sha = sha256_files(source_paths)
+    store = StageStore(ws, video_id)
+    if output.is_file() and "text-candidates" not in read_json(store.manifest_path).get("stages", {}):
+        previous = read_json(output)
+        store.run("legacy-candidates", {"proposal": previous}, [Path(__file__)], lambda: {"proposal": previous})
     results = extract(
         metadata,
         timeline,
@@ -234,9 +287,15 @@ def main():
         args.timeout,
         args.window_seconds,
         args.overlap_seconds,
+        store=store,
+        force=args.restart,
     )
-    candidates = merge_results(metadata, source_sha, results)
-    candidates["promptSha256"] = sha256_files([PROMPT_FILE, SCHEMA_FILE])
+    def combine():
+        candidates = merge_results(metadata, source_sha, results)
+        candidates["promptSha256"] = sha256_files([PROMPT_FILE, SCHEMA_FILE])
+        return candidates
+    candidates = store.run("text-candidates", {"sourceSha256": source_sha, "results": results},
+                           [PROMPT_FILE, SCHEMA_FILE, Path(__file__)], combine, force=args.restart)
     write_json(output, candidates)
     print(f"review pending -> {output}")
 

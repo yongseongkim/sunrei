@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "name",
+    "area",
+    "premises",
+    "distinctPremises",
+    "nameEvidenceIds",
+    "areaEvidenceIds",
+    "premisesEvidenceIds",
+    "reason"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "ready",
+        "held",
+        "excluded"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "area": {
+      "type": "string"
+    },
+    "premises": {
+      "type": "string"
+    },
+    "distinctPremises": {
+      "type": "boolean"
+    },
+    "nameEvidenceIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "areaEvidenceIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "premisesEvidenceIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reason": {
+      "type": "string"
+    }
+  }
+}

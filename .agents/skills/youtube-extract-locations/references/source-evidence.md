@@ -56,12 +56,21 @@ prices, reactions, or a start time. An unknown value stays unknown.
 
 ## Current Tool Boundary
 
-The stock `extract_locations_headless.py` input builder selects fixed metadata
-fields and does not forward extra creator-comment fields. Its stock schema
-also lacks `author_comment`. Adding comments to `metadata.json` alone does
-not make that runner consume them. Review such comments separately and carry
-their evidence in the ledger, or use an explicitly compatible runner/schema.
-Do not relabel comments as description or dialogue to fit a tool.
+`creator_comments.collect_creator_comments(videoId, videoOwnerChannelId, key)`
+collects verified creator comments. Save its envelope as `creator_comments.json`
+in the per-video run, or supply it as metadata's `creatorComments` envelope.
+Renewal does this automatically. The headless extractor rechecks video/channel
+scope, consumes relevant comments with provenance/coverage, and supports
+`author_comment` evidence. Do not relabel comments as description or dialogue.
+Raw comments remain intact; duplicate/thanks-only text is filtered only from
+model input. Default page limits and retry behavior are in `AUTOMATION.md`.
+
+The strict schema accepts null scene times for metadata/comments. A time written
+inside a comment is not automatically a scene anchor. Metadata-only extraction
+can propose destinations, but timed coverage and visit context still require
+review. The admin evidence DTO keeps its legacy numeric placeholder; the local
+ledger and run's raw output preserve unknown time, and `timestampSeconds` stays
+null unless supported by actual timed evidence (including genuine 0 seconds).
 
 The ledger is review metadata, not an API DTO. Retain its usable creator
 comments with stored evidence before removing local caches; reference it when

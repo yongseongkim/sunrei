@@ -39,6 +39,7 @@
                   "enum": [
                     "title",
                     "description",
+                    "author_comment",
                     "transcript",
                     "whisper",
                     "ocr",
@@ -48,7 +49,7 @@
                   ]
                 },
                 "quote": { "type": "string" },
-                "startSeconds": { "type": "number", "minimum": 0 }
+                "startSeconds": { "type": ["number", "null"], "minimum": 0 }
               }
             }
           },
@@ -67,7 +68,7 @@
         "required": ["summary", "startSeconds", "sources"],
         "properties": {
           "summary": { "type": "string" },
-          "startSeconds": { "type": "number", "minimum": 0 },
+          "startSeconds": { "type": ["number", "null"], "minimum": 0 },
           "sources": { "type": "array", "items": { "type": "string" } }
         }
       }

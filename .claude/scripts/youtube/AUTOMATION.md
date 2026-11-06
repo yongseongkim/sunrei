@@ -24,13 +24,19 @@ reaches it. `SUNREI_API_URL` selects the server; it defaults to production
    - when no source is usable and the audio and video downloads were refused
      as members-only, set the video to `SKIPPED` and stop; a caption block
      alone does not stop the video, because Whisper and OCR continue;
+   - fetch creator comments, verifying the video's owner channel ID rather
+     than the playlist owner or display name; record pagination/coverage;
    - review the primary transcript and store `TRANSCRIPT_REVIEWED` and
      `TRANSCRIPT_REVIEW`;
    - merge the sources into one timestamp-ordered timeline and store it as
      `TIMELINE`;
    - extract location candidates with the shared rules in
-     `prompts/extract_locations.md`, geocode each candidate as a suggestion,
-     and store the extraction run with its raw output and candidates;
+     `prompts/extract_locations.md`, including verified creator comments;
+   - resolve each candidate's name, area and distinguishing premises from
+     cited original evidence before querying Places; uncertain identities
+     stay held without a query;
+   - compare the raw Places response against the ready identity, then store
+     the extraction run, comments, phase artifacts and candidate proposals;
    - set the video to `REVIEW_PENDING`, or `COMPLETED` when no candidate was
      found.
 5. A failure sets the video to `FAILED` with the stage and error, and a later
@@ -40,8 +46,25 @@ Codex (Python SDK) runs the agents first; when it fails, for example on a usage
 limit, Claude Code (`claude -p`) runs the same prompt and schema.
 `STRUCTURED_AGENTS` changes the order.
 
-Intermediate files are cached under `$SUNREI_YOUTUBE_AUTOMATION_ROOT/runs/{videoId}`
-so a retry skips finished steps, and they are deleted once the video is stored.
+Intermediate files are cached under `$SUNREI_YOUTUBE_AUTOMATION_ROOT/runs/{videoId}`.
+`stage-store/manifest.json` points to immutable attempts, with input, policy,
+code and output hashes. Reuse requires valid hashes; changes invalidate the
+affected window/candidate and downstream judgments. Conventional output files
+are rebuilt from accepted attempts. Transcript chunks validate their own
+prompt/schema/source hashes and retain old decisions as history.
+
+Candidates receive UUIDs from original scene/source anchors, never their name,
+array position or Google ID. Ambiguous shared anchors receive new held IDs
+with registry lineage, so reordering cannot transfer another venue's decision.
+Artifacts remain locally after success; the exported snapshot and creator
+comments are also in the DB run's `rawOutput`. Remove local caches only after
+verifying those remote records; they are not a playlist registry.
+
+Renewal reconciles text and successful-run writes through fresh video-detail
+GETs before POST and after uncertain responses. An acknowledged export receipt
+lets a retry finish the status update without reimporting candidates or
+overwriting intervening admin decisions. Run one collector at a time: this
+client check is not a server-side concurrent-writer uniqueness constraint.
 A video left `PROCESSING` by an interrupted run is reset to `FAILED` after
 `--stale-hours` (default 24).
 
@@ -128,10 +151,24 @@ remain for reference.
 A candidate whose name the extractor marked unknown ("상호 미상") gets no
 suggestion, because a search by what the video shows and its area returns
 whatever place is nearby.
-A suggestion carries a `geocodeWarning` when Google's name differs, adds words
-other than a branch or area, or sits outside the area's 시/구/군. Research those
-candidates on the web before approving; see "Reviewing Candidates" in
+A ready identity requires exact source-backed name, area and premises fields.
+The matcher keeps the raw provider response and identity revision. A differing
+provider name or unresolved branch/address is held without an attached place.
+These text-only agents cannot browse or resolve historical moves; research
+held cases on the web before approving. Stage 05 independent/final review
+remains manual/admin-owned; automated stages 01–04 never approve a spot.
+See "Reviewing Candidates" in
 `.agents/skills/youtube-to-sunrei/references/playlist-renewal.md`.
+
+Comments default to at most 20 thread pages and 20 pages per reply thread;
+partial/failed coverage is explicit and retried rather than cached complete.
+The API does not expose pin status. Metadata-only candidates may be collected
+when timed evidence is unavailable, with scene time unknown. If all timed
+sources fail and metadata yields no candidates, the video stays failed for
+retry rather than being declared complete. Members-only skips take priority.
+Actual timed evidence at 0 produces `timestampSeconds: 0`. Metadata/comment
+quotes keep null times in artifacts; the unchanged admin evidence DTO uses
+0 as its legacy placeholder, while `timestampSeconds` remains null.
 
 ## Playlist covers
 

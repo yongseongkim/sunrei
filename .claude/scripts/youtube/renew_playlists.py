@@ -30,6 +30,9 @@ from _common import ROOT, WS_ROOT, load_env, load_google_api_key
 from collection_api import CollectionApi, json_string
 from playlist_covers import ensure_playlist_cover
 from youtube_data import fetch_playlist, fetch_video_details, video_inputs
+from creator_comments import collect_creator_comments
+from location_workflow import digest, first_timestamp
+from stage_store import StageStore
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_CONFIG = ROOT / ".claude" / "config" / "youtube-renewal.json"
@@ -127,14 +130,16 @@ def run_json_command(command, timeout):
 
 
 def cached_or_run(path, command, timeout):
-    if path.is_file():
-        cached = read_json(path)
-        valid_shape = bool(cached.get("videoId")) and (
-            isinstance(cached.get("segments"), list) or bool(cached.get("error"))
-        )
-        if valid_shape and not cached.get("error"):
-            return cached
-    value = run_json_command(command, timeout)
+    store = StageStore(path.parent, path.parent.name)
+    policies = [Path(__file__)] + [Path(arg) for arg in command if str(arg).endswith(".py") and Path(arg).is_file()]
+
+    def produce():
+        value = run_json_command(command, timeout)
+        if value.get("error"):
+            raise RuntimeError(str(value["error"]))
+        return value
+
+    value = store.run("source-" + path.stem, {"command": command}, policies, produce)
     write_json(path, value)
     return value
 
@@ -199,14 +204,13 @@ def is_members_only(evidence):
 def write_primary_transcript(run_dir, metadata, captions, audio, onscreen):
     primary = captions if has_segments(captions) else audio if has_segments(audio) else onscreen
     if not has_segments(primary):
-        raise RuntimeError("Captions, audio transcription, and OCR all produced no segments")
-    source = (
-        "youtube_captions"
-        if primary is captions
-        else "whisper"
-        if primary is audio
-        else "ocr_frames"
-    )
+        source = "unavailable"
+    elif primary is captions:
+        source = "youtube_captions"
+    elif primary is audio:
+        source = "whisper"
+    else:
+        source = "ocr_frames"
     segments = normalized_segments(primary)
     full_text = " ".join(segment["text"] for segment in segments)
     value = {
@@ -301,6 +305,10 @@ def collect_evidence(run_dir, metadata, evidence_config):
         )
     else:
         results["onscreen"] = {"videoId": video_id, "error": "disabled"}
+    # The reviewer/timeline also read these paths. A disabled source must not
+    # leak an old successful file into a new configuration's evidence.
+    for source, filename in (("captions", "captions.json"), ("audio", "audio_transcript.json"), ("onscreen", "onscreen_text.json")):
+        write_json(run_dir / filename, results[source])
     return results
 
 
@@ -408,7 +416,7 @@ def store_timeline_text(api, video_id, run_dir):
 
 
 def suggested_place(api_key, location):
-    """Return a geocoded place suggestion and a warning for the reviewer."""
+    """Legacy adapter: raw extraction candidates never authorize a lookup."""
     name = location.get("name", "")
     if not api_key:
         return None, "geocode skipped: no Google API key"
@@ -417,36 +425,16 @@ def suggested_place(api_key, location):
     # 상호 없이 메뉴와 지역으로 검색하면 근처 아무 가게나 돌아오므로, 검토자가 웹 리서치로 장소를 정하게 둔다.
     if geocode.looks_unnamed(name):
         return None, geocode.UNNAMED_WARNING
-    result, error = geocode.search(api_key, f"{name} {location.get('area', '')}".strip())
-    if error:
-        return None, f"geocode failed: {error}"
-    if result.get("latitude") is None or result.get("longitude") is None:
-        return None, "geocode returned no coordinates"
-    place = {
-        "name": (result.get("displayName") or name)[:128],
-        "address": (result.get("address") or "")[:255],
-        "latitude": result["latitude"],
-        "longitude": result["longitude"],
-        "googleMapsId": result.get("googleMapsId"),
-    }
-    warning = geocode.venue_warning(
-        name, result.get("displayName"), location.get("area") or "", result.get("address") or "", location.get("aliases") or ()
-    )
-    return place, warning
+    return None, "identity gate not run; no Places query"
 
 
-def first_timestamp(evidence):
-    timed = [
-        item["startSeconds"]
-        for item in evidence
-        if item.get("source") not in {"title", "description"} and item.get("startSeconds", 0) > 0
-    ]
-    return int(min(timed)) if timed else None
-
-
-def place_inputs(candidates, api_key):
+def place_inputs(candidates, api_key, workflow=None):
     places = []
-    for location in candidates.get("locations", []):
+    records = workflow["candidates"] if workflow else [{"observed": loc} for loc in candidates.get("locations", [])]
+    matches = {match["candidateId"]: match for match in workflow["matches"]} if workflow else {}
+    identities = {identity["candidateId"]: identity for identity in workflow["identities"]} if workflow else {}
+    for record in records:
+        location = record["observed"]
         evidence = [
             {
                 "source": item["source"],
@@ -455,7 +443,15 @@ def place_inputs(candidates, api_key):
             }
             for item in location.get("evidence", [])
         ]
+        match = matches.get(record.get("candidateId"))
         place, warning = suggested_place(api_key, location)
+        if match:
+            identity = identities.get(record["candidateId"], {})
+            valid = (match.get("status") == "accepted" and identity.get("status") == "ready"
+                     and identity.get("candidateRevision") == record.get("revision")
+                     and match.get("identityRevision") == digest(identity))
+            place = match.get("place") if valid else None
+            warning = match.get("reason") if valid else "held or stale identity/match; no place exported"
         places.append(
             {
                 "name": location["name"][:255],
@@ -465,9 +461,9 @@ def place_inputs(candidates, api_key):
                 "description": location.get("description") or None,
                 "evidence": evidence,
                 "confidence": (location.get("confidence") or "").upper() or None,
-                "needsVerification": bool(location.get("needsVerification")),
+                "needsVerification": bool(location.get("needsVerification")) or not place,
                 "reason": location.get("reason") or None,
-                "timestampSeconds": first_timestamp(evidence),
+                "timestampSeconds": first_timestamp(location.get("evidence", [])),
                 "place": place,
                 "geocodeWarning": warning,
             }
@@ -507,12 +503,27 @@ def run_metadata(playlist, video, item):
 def process_video(api, config, playlist, video, item, api_key, progress):
     """Collect evidence and candidates for one video and store them through the API.
 
-    Returns the number of stored place candidates. Local files under
-    ``RUNS_ROOT`` cache finished steps until the video is stored.
+    Returns the number of stored place candidates. Stage artifacts remain for
+    hashed resume/debugging; the database holds the exported workflow snapshot.
     """
     video_id = video["id"]
     run_dir = RUNS_ROOT / video_id
     run_dir.mkdir(parents=True, exist_ok=True)
+    receipt_path = run_dir / "stored-extraction.json"
+    if receipt_path.is_file():
+        # An acknowledged export followed by an interrupted status update must
+        # not import again, or supersede decisions an admin made meanwhile.
+        receipt = read_json(receipt_path)
+        detail = api.get_video(video_id)
+        stored = next((run for run in detail["runs"] if run["id"] == receipt["serverRunId"]), None)
+        if stored is None:
+            raise RuntimeError("Stored extraction receipt cannot be verified; review the remote run before retrying")
+        current = detail["video"]["status"]
+        if detail["runs"][0]["id"] == stored["id"] and current in {"PENDING", "FAILED", "PROCESSING"}:
+            pending = any(place.get("reviewStatus") == "PENDING" for place in stored.get("places", []))
+            api.update_video(video_id, status="REVIEW_PENDING" if pending else "COMPLETED",
+                             stage="review" if pending else "done", error="")
+        return receipt["count"]
     metadata = run_metadata(playlist, video, item)
     write_json(run_dir / "metadata.json", metadata)
     write_json(
@@ -527,9 +538,21 @@ def process_video(api, config, playlist, video, item, api_key, progress):
 
     advance("evidence", status="PROCESSING", error="")
     evidence = collect_evidence(run_dir, metadata, evidence_config)
-    text_ids = store_evidence_texts(api, video_id, evidence, evidence_config)
     if is_members_only(evidence):
         raise MembersOnlyVideo("members-only video: captions, audio, and video are not accessible")
+    text_ids = store_evidence_texts(api, video_id, evidence, evidence_config)
+    advance("creator_comments")
+    store = StageStore(run_dir, video_id)
+    def comments_attempt():
+        value = collect_creator_comments(video_id, metadata["channelId"], api_key)
+        value["stageStatus"] = "complete" if value["status"] in {"complete", "disabled"} else "partial"
+        return value
+    comments = store.run(
+        "creator-comments", {"videoId": video_id, "channelId": metadata["channelId"], "keyAvailable": bool(api_key)},
+        [SCRIPT_DIR / "creator_comments.py"],
+        comments_attempt,
+    )
+    write_json(run_dir / "creator_comments.json", comments)
     write_primary_transcript(
         run_dir,
         metadata,
@@ -588,29 +611,34 @@ def process_video(api, config, playlist, video, item, api_key, progress):
         )
         raise
     candidates = read_json(run_dir / "location_candidates.json")
+    if not candidates.get("locations") and not any(has_segments(value) for value in evidence.values()):
+        raise RuntimeError("No timed coverage or metadata candidates; retry evidence collection before declaring this video complete")
 
-    advance("geocode")
-    places = place_inputs(candidates, api_key)
-    api.create_extraction_run(
+    advance("identity_and_match")
+    run_checked(command_uv("--with", CODEX_SDK, "python", str(SCRIPT_DIR / "location_workflow.py"), str(run_dir),
+                           *([] if api_key else ["--no-geocode"])), 7200)
+    workflow = read_json(run_dir / "location_workflow.json")
+    places = place_inputs(candidates, api_key, workflow)
+    stored = api.create_extraction_run(
         video_id,
         {
             "agent": run_agents(candidates),
             "promptSha256": candidates.get("promptSha256"),
             "inputTextIds": text_ids,
             "status": "SUCCEEDED",
-            "rawOutput": json_string(candidates),
+            "rawOutput": json_string({**candidates, "workflow": workflow, "creatorComments": comments}),
             "startedAt": started_at,
             "finishedAt": candidates.get("generatedAt") or utc_now(),
             "places": places,
         },
     )
+    write_json(receipt_path, {"serverRunId": stored["id"], "count": len(places)})
     api.update_video(
         video_id,
         status="REVIEW_PENDING" if places else "COMPLETED",
         stage="review" if places else "done",
         error="",
     )
-    shutil.rmtree(run_dir, ignore_errors=True)
     return len(places)
 
 
@@ -630,10 +658,10 @@ def run_video(api, config, playlist, video, item, api_key):
     except MembersOnlyVideo as error:
         print(f"  skipped: {video['id']}: {error}")
         record_outcome(api, video["id"], status="SKIPPED", stage=progress["stage"], error=str(error))
-        # 실패한 영상의 run dir은 다음 실행이 이어서 쓰도록 남기고, 끝난 영상은 지운다.
+        # 멤버십 전용은 재시도하지 않는다. 완료/실패한 일반 실행의 단계 기록은 보존한다.
         shutil.rmtree(RUNS_ROOT / video["id"], ignore_errors=True)
         return "skipped"
-    except (OSError, RuntimeError, subprocess.TimeoutExpired) as error:
+    except (OSError, ValueError, RuntimeError, subprocess.TimeoutExpired) as error:
         print(f"  failed: {video['id']}: {error}", file=sys.stderr)
         record_outcome(
             api,
@@ -713,7 +741,7 @@ def main():
     max_videos = args.max_videos or config["defaults"].get("maxNewVideosPerRun", 2)
     if max_videos < 1:
         raise ValueError("max-videos must be positive")
-    api = CollectionApi()
+    api = CollectionApi(resume_writes=True)
     playlists = selected_playlists(api, args.playlist_ids)
     remaining = max_videos
     had_failures = False

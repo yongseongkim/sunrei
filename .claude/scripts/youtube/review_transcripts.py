@@ -20,10 +20,16 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from _common import workspace
-from structured_agent import run_structured
+from structured_agent import providers, run_structured
 
 SCHEMA_VERSION = 1
 SCHEMA_FILE = Path(__file__).with_name("transcript_review.schema.json")
+REVIEW_CODE_FILES = tuple(
+    Path(__file__).with_name(name)
+    for name in (
+        "review_transcripts.py", "structured_agent.py", "codex_headless.py", "claude_headless.py",
+    )
+)
 CONFIDENCE_RANK = {"none": 0, "high": 1, "medium": 2}
 AUXILIARY_FILES = {
     "audio": "audio_transcript.json",
@@ -56,7 +62,7 @@ def parse_args():
         help="Bulk-apply pending corrections at this confidence (default: none)",
     )
     parser.add_argument("--dry-run", action="store_true", help="Print the planned chunks only")
-    parser.add_argument("--restart", action="store_true", help="Discard a stale or partial review")
+    parser.add_argument("--restart", action="store_true", help="Start a new review revision, retaining history")
     return parser.parse_args()
 
 
@@ -79,6 +85,42 @@ def sha256_file(path):
         for block in iter(lambda: file.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def sha256_json(value):
+    encoded = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
+
+
+def review_policy(model):
+    """Fingerprint local policy and the requested provider/model configuration.
+
+    A provider's externally configured default model is not introspectable here;
+    pass --model when a run needs an explicit model identity.
+    """
+    return {
+        "schemaSha256": sha256_file(SCHEMA_FILE),
+        "codeSha256": {path.name: sha256_file(path) for path in REVIEW_CODE_FILES},
+        "model": model,
+        "providers": providers(),
+    }
+
+
+def chunk_inputs(prompt, video, start, end, context, policy):
+    """Include raw segment context as well as the exact prompt sent to the agent."""
+    inputs = {
+        "promptSha256": hashlib.sha256(prompt.encode("utf-8")).hexdigest(),
+        "inputContextSha256": sha256_json({
+            "videoId": video["videoId"],
+            "source": video.get("source"),
+            "context": context,
+            "startInclusive": start,
+            "endExclusive": end,
+            "segments": video["segments"][max(0, start - context):end + context],
+        }),
+        "policySha256": sha256_json(policy),
+    }
+    return {**inputs, "cacheKey": sha256_json(inputs), "policy": policy}
 
 
 def utc_now():
@@ -291,6 +333,8 @@ def validate_result(result, video, start, end):
 def new_review(ws, source_path, source_sha):
     return {
         "schemaVersion": SCHEMA_VERSION,
+        "revision": 1,
+        "history": [],
         "workspaceId": ws.name,
         "source": {"file": source_path.name, "sha256": source_sha},
         "updatedAt": utc_now(),
@@ -299,14 +343,57 @@ def new_review(ws, source_path, source_sha):
 
 
 def load_review(path, ws, source_path, source_sha, restart):
-    if restart or not path.is_file():
+    if not path.is_file():
         return new_review(ws, source_path, source_sha)
     review = read_json(path)
-    if review.get("schemaVersion") != SCHEMA_VERSION:
+    if review.get("schemaVersion") != SCHEMA_VERSION and not restart:
         raise ValueError(f"{path} uses a different schema version; rerun with --restart")
-    if review.get("source", {}).get("sha256") != source_sha:
-        raise ValueError(f"{source_path} changed after the review began; rerun with --restart")
+    if restart or review.get("source") != {"file": source_path.name, "sha256": source_sha}:
+        previous = copy.deepcopy(review)
+        history = previous.pop("history", [])
+        current = new_review(ws, source_path, source_sha)
+        current["revision"] = review.get("revision", 1) + 1
+        current["history"] = history + [{
+            "reason": "restart" if restart else "source_changed",
+            "archivedAt": utc_now(),
+            "review": previous,
+        }]
+        return current
+    review.setdefault("revision", 1)
+    review.setdefault("history", [])
     return review
+
+
+def invalidate_chunks(entry, chunks):
+    """Archive stale results and decisions before any new model call or apply."""
+    expected = {(chunk["start"], chunk["end"]): chunk["inputs"] for chunk in chunks}
+    valid = []
+    invalid = []
+    for chunk in entry.get("processedChunks", []):
+        key = (chunk["startInclusive"], chunk["endExclusive"])
+        inputs = expected.get(key)
+        if inputs and all(chunk.get(name) == value for name, value in inputs.items()):
+            valid.append(chunk)
+        else:
+            invalid.append(chunk)
+    valid_ranges = {(chunk["startInclusive"], chunk["endExclusive"]) for chunk in valid}
+    archived = {"processedChunks": invalid}
+    for field in ("corrections", "flags", "rejected"):
+        active = []
+        archived[field] = []
+        for item in entry.get(field, []):
+            if (item.get("chunkStart"), item.get("chunkEnd")) in valid_ranges:
+                active.append(item)
+            else:
+                archived[field].append(item)
+        entry[field] = active
+    if any(archived.values()):
+        entry.setdefault("chunkHistory", []).append({
+            "reason": "chunk_inputs_changed",
+            "archivedAt": utc_now(),
+            **copy.deepcopy(archived),
+        })
+    entry["processedChunks"] = valid
 
 
 def update_cleaned_text(video, corrections):
@@ -425,8 +512,9 @@ def main():
             print(f"{video['videoId']}: {len(video['segments'])} segments -> {chunks}")
         return
 
-    completed_now = 0
-    limit_reached = False
+    # Validate every selected chunk before applying any decision. This also
+    # retires stale results when --max-new-chunks 0 only rebuilds the output.
+    plans = []
     for video in videos:
         video_id = video["videoId"]
         entry = review["videos"].setdefault(
@@ -440,17 +528,8 @@ def main():
                 "rejected": [],
             },
         )
-        completed = {
-            (chunk["startInclusive"], chunk["endExclusive"])
-            for chunk in entry.get("processedChunks", [])
-        }
+        chunks = []
         for start, end in make_chunks(video["segments"], args.chunk_size, args.max_chars):
-            if (start, end) in completed:
-                print(f"{video_id} [{start}:{end}] cached", flush=True)
-                continue
-            if args.max_new_chunks is not None and completed_now >= args.max_new_chunks:
-                limit_reached = True
-                break
             prompt = make_prompt(
                 video,
                 descriptions.get(video_id, ""),
@@ -460,9 +539,53 @@ def main():
                 args.context,
                 auxiliary.get(video_id, {}),
             )
+            chunks.append({
+                "start": start,
+                "end": end,
+                "prompt": prompt,
+                "inputs": chunk_inputs(prompt, video, start, end, args.context, review_policy(args.model)),
+            })
+        invalidate_chunks(entry, chunks)
+        entry.update({"title": video.get("title", ""), "segmentCount": len(video["segments"])})
+        plans.append((video, entry, chunks))
+
+    def save_review():
+        review["updatedAt"] = utc_now()
+        reviewed = update_reviewed_transcript(source, review, args.apply_confidence)
+        write_json(review_path, review)
+        write_json(reviewed_path, reviewed)
+
+    # Persist source revisions/invalidation first, even if the next agent fails.
+    save_review()
+    completed_now = 0
+    limit_reached = False
+    for video, entry, chunks in plans:
+        video_id = video["videoId"]
+        completed = {chunk["cacheKey"] for chunk in entry["processedChunks"]}
+        for chunk in chunks:
+            start, end = chunk["start"], chunk["end"]
+            if chunk["inputs"]["cacheKey"] in completed:
+                print(f"{video_id} [{start}:{end}] cached", flush=True)
+                continue
+            if args.max_new_chunks is not None and completed_now >= args.max_new_chunks:
+                limit_reached = True
+                break
             print(f"{video_id} [{start}:{end}] running agent", flush=True)
-            result = run_agent(prompt, args.model, args.timeout)
-            corrections, flags, rejected = validate_result(result, video, start, end)
+            try:
+                result = run_agent(chunk["prompt"], args.model, args.timeout)
+                raw_result = copy.deepcopy(result)
+                corrections, flags, rejected = validate_result(result, video, start, end)
+            except Exception as error:
+                entry.setdefault("chunkHistory", []).append({
+                    "reason": "agent_failed",
+                    "failedAt": utc_now(),
+                    "startInclusive": start,
+                    "endExclusive": end,
+                    **copy.deepcopy(chunk["inputs"]),
+                    "error": f"{type(error).__name__}: {error}",
+                })
+                save_review()
+                raise
             completed_at = utc_now()
             for item in corrections:
                 item.update(
@@ -485,13 +608,11 @@ def main():
                     "startInclusive": start,
                     "endExclusive": end,
                     "completedAt": completed_at,
-                    "promptSha256": hashlib.sha256(prompt.encode()).hexdigest(),
+                    **chunk["inputs"],
+                    "result": raw_result,
                 }
             )
-            review["updatedAt"] = completed_at
-            reviewed = update_reviewed_transcript(source, review, args.apply_confidence)
-            write_json(review_path, review)
-            write_json(reviewed_path, reviewed)
+            save_review()
             completed_now += 1
             print(
                 f"{video_id} [{start}:{end}] {len(corrections)} corrections, "
@@ -501,9 +622,7 @@ def main():
         if limit_reached:
             break
 
-    reviewed = update_reviewed_transcript(source, review, args.apply_confidence)
-    write_json(review_path, review)
-    write_json(reviewed_path, reviewed)
+    save_review()
     correction_count = sum(len(value.get("corrections", [])) for value in review["videos"].values())
     flag_count = sum(len(value.get("flags", [])) for value in review["videos"].values())
     print(
