@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import './globals.css';
 import { Providers } from './providers';
 import { localeFromAcceptLanguage, loadMessages } from '@/lib/i18n';
+import { GoogleAnalytics } from '@/components/google-analytics';
 
 export const metadata: Metadata = {
   title: 'Sunrei — 성지순례 지도',
@@ -34,6 +35,7 @@ export default async function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <GoogleAnalytics />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers>{children}</Providers>
         </NextIntlClientProvider>

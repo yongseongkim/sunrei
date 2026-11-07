@@ -70,6 +70,11 @@ pnpm codegen
 태그 필터와 로그인 모달도 같은 기준(`isMobile`)으로 모바일에서는 아래 시트로 연다.
 앱은 라이트 테마만 쓰며, 지도 핀, 별점, 영업 중 표시 색도 `globals.css` 토큰(`--pin`, `--pin-selected`, `--star`, `--success`)에서 가져온다.
 
+Google Analytics 4는 `src/components/google-analytics.tsx`에서 측정 ID `G-P1ZJG3T51B`로 불러온다.
+production 빌드에서만 활성화하며, 개발 서버와 admin에는 적용하지 않는다.
+페이지 조회와 URL로 구분되는 패널 이동은 GA4 웹 스트림의 Enhanced measurement → Page views → Page changes based on browser history events를 켜서 집계한다.
+중복 집계를 막기 위해 앱에서 `page_view`를 수동으로 보내지 않는다.
+
 지도 상태는 두 기본 모드와 그 위에 겹치는 패널로 나뉜다.
 
 - nearby 모드는 기본 모드다.
