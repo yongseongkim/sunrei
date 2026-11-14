@@ -1,0 +1,396 @@
+{
+  "schemaVersion": 1,
+  "scope": "Penpot design and primary prototype flows",
+  "applicationImplementation": {
+    "status": "Not implemented",
+    "frontend": false,
+    "backend": false,
+    "openApi": false,
+    "databaseMigration": false,
+    "liveGoogleStreetView": false
+  },
+  "penpot": {
+    "fileId": "3681d377-bc58-8110-8008-ea28a30c0fce",
+    "fileName": "Web",
+    "projectName": "Sunrei",
+    "savedVersion": "User flows · complete Sources/Categories · Roadview prototype",
+    "verifiedAt": "2026-11-14T08:57:51.754Z"
+  },
+  "pages": [
+    {
+      "name": "Desktop",
+      "pageId": "e1cfc106-f9a2-8013-8008-ea2bb0db6562",
+      "flows": [
+        {
+          "name": "01 / Nearby · 주변 탐색",
+          "canvasId": "e1cfc106-f9a2-8013-8008-f148afb0be07",
+          "startingBoardId": "e1cfc106-f9a2-8013-8008-ee1742c63fc4"
+        },
+        {
+          "name": "02 / Channels & series · 채널에서 장소 찾기",
+          "canvasId": "e1cfc106-f9a2-8013-8008-f148b1933091",
+          "startingBoardId": "e1cfc106-f9a2-8013-8008-ee1782db5f90"
+        },
+        {
+          "name": "03 / Search · 검색해서 장소 찾기",
+          "canvasId": "e1cfc106-f9a2-8013-8008-f148b53345f8",
+          "startingBoardId": "e1cfc106-f9a2-8013-8008-ee17940da678"
+        },
+        {
+          "name": "04 / Place & Roadview · 장소와 저장 시점",
+          "canvasId": "e1cfc106-f9a2-8013-8008-f148b74924bc",
+          "startingBoardId": "e1cfc106-f9a2-8013-8008-eb0b50e05af4"
+        },
+        {
+          "name": "05 / Location, account & filters · 보조 흐름",
+          "canvasId": "e1cfc106-f9a2-8013-8008-f148c03372a6",
+          "startingBoardId": "e1cfc106-f9a2-8013-8008-ee177fc0700c"
+        }
+      ]
+    },
+    {
+      "name": "Mobile",
+      "pageId": "e1cfc106-f9a2-8013-8008-ea2bb0dbcd8a",
+      "flows": [
+        {
+          "name": "01 / Nearby · 주변 탐색",
+          "canvasId": "e1cfc106-f9a2-8013-8008-f1931f901c5e",
+          "startingBoardId": "e1cfc106-f9a2-8013-8008-ee17b064a70e"
+        },
+        {
+          "name": "02 / Channels & series · 채널에서 장소 찾기",
+          "canvasId": "e1cfc106-f9a2-8013-8008-f19321cf3ac2",
+          "startingBoardId": "e1cfc106-f9a2-8013-8008-ee17bcb2304a"
+        },
+        {
+          "name": "03 / Search · 검색해서 장소 찾기",
+          "canvasId": "e1cfc106-f9a2-8013-8008-f193243e412f",
+          "startingBoardId": "e1cfc106-f9a2-8013-8008-ee17b2675de2"
+        },
+        {
+          "name": "04 / Place & Roadview · 장소와 저장 시점",
+          "canvasId": "e1cfc106-f9a2-8013-8008-f193256a0a8a",
+          "startingBoardId": "e1cfc106-f9a2-8013-8008-eb185879de59"
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "pageId": "e1cfc106-f9a2-8013-8008-eb1e23221177",
+      "flows": [
+        {
+          "name": "01 / Spot viewpoint · 시점 지정과 저장",
+          "canvasId": "e1cfc106-f9a2-8013-8008-f193597e9a7b",
+          "startingBoardId": "e1cfc106-f9a2-8013-8008-eb1e50b1b163"
+        },
+        {
+          "name": "02 / Place category · 장소 종류 관리",
+          "canvasId": "e1cfc106-f9a2-8013-8008-f193a2c0d7c8",
+          "startingBoardId": "e1cfc106-f9a2-8013-8008-eb1e50a88a3a"
+        }
+      ]
+    }
+  ],
+  "markerSwitching": {
+    "screenPairCount": 22,
+    "desktopPairs": 13,
+    "mobilePairs": 9,
+    "pairs": [
+      {
+        "context": "Nearby places",
+        "page": "Desktop",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee1742c63fc4",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f148625f683a",
+        "width": 1440,
+        "height": 1024
+      },
+      {
+        "context": "Place detail · nearby",
+        "page": "Desktop",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee1771119b07",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f1488890eed5",
+        "width": 1440,
+        "height": 1024
+      },
+      {
+        "context": "Search results",
+        "page": "Desktop",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee1771ac6966",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f1488c872303",
+        "width": 1440,
+        "height": 1024
+      },
+      {
+        "context": "Search this area",
+        "page": "Desktop",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee178225f11b",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f14890c1cad6",
+        "width": 1440,
+        "height": 1024
+      },
+      {
+        "context": "Channel and work picker",
+        "page": "Desktop",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee1782db5f90",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f14894e23350",
+        "width": 1440,
+        "height": 1024
+      },
+      {
+        "context": "Channel overview · world",
+        "page": "Desktop",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee1783c30f5b",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f14898b48de4",
+        "width": 1440,
+        "height": 1024
+      },
+      {
+        "context": "Playlist places",
+        "page": "Desktop",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee17923bc2ac",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f1489c242c2f",
+        "width": 1440,
+        "height": 1024
+      },
+      {
+        "context": "Video place preview",
+        "page": "Desktop",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee179345a6b0",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f148a01a1e71",
+        "width": 1440,
+        "height": 1024
+      },
+      {
+        "context": "Search · recent queries",
+        "page": "Desktop",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee17940da678",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f148a416ff75",
+        "width": 1440,
+        "height": 1024
+      },
+      {
+        "context": "Search · region result",
+        "page": "Desktop",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee179a661030",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f148a9ceed57",
+        "width": 1440,
+        "height": 1024
+      },
+      {
+        "context": "Nearby · empty region",
+        "page": "Desktop",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee179af00904",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f148ae0b9d3b",
+        "width": 1440,
+        "height": 1024
+      },
+      {
+        "context": "Configured Spot with Roadview closed",
+        "page": "Desktop",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-eb0b50e05af4",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f192843057a6",
+        "width": 1440,
+        "height": 1024
+      },
+      {
+        "context": "Small Roadview over the map",
+        "page": "Desktop",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-eb0bc5d43d96",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f1928af9c124",
+        "width": 1440,
+        "height": 1024
+      },
+      {
+        "context": "Nearby places",
+        "page": "Mobile",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee17b064a70e",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f192ec6734f9",
+        "width": 391,
+        "height": 845
+      },
+      {
+        "context": "Place detail · nearby",
+        "page": "Mobile",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee17b15f75c2",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f192ef73d8e0",
+        "width": 391.0,
+        "height": 845
+      },
+      {
+        "context": "Search this area",
+        "page": "Mobile",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee17b2b7361c",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f192f19ab3f6",
+        "width": 391,
+        "height": 845
+      },
+      {
+        "context": "Selected place card",
+        "page": "Mobile",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee17bba02112",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f192f93a2182",
+        "width": 391.0,
+        "height": 845
+      },
+      {
+        "context": "Channel and work picker",
+        "page": "Mobile",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee17bcb2304a",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f192fc8fbe09",
+        "width": 391.0,
+        "height": 845
+      },
+      {
+        "context": "Channel overview · world",
+        "page": "Mobile",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee17be6437d3",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f193000c5049",
+        "width": 391,
+        "height": 845
+      },
+      {
+        "context": "Playlist places",
+        "page": "Mobile",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee17c8f8a50a",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f19308a52d46",
+        "width": 391.0,
+        "height": 845
+      },
+      {
+        "context": "Video place preview",
+        "page": "Mobile",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee17ca16024a",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f1930c568119",
+        "width": 391.0,
+        "height": 845
+      },
+      {
+        "context": "Nearby · empty region",
+        "page": "Mobile",
+        "sourceBoardId": "e1cfc106-f9a2-8013-8008-ee17d4ab38a0",
+        "categoryBoardId": "e1cfc106-f9a2-8013-8008-f1930fc94fca",
+        "width": 391,
+        "height": 845
+      }
+    ]
+  },
+  "roadview": {
+    "presentation": "Static design reference with linked open, close, expand and collapse controls",
+    "screens": [
+      {
+        "platform": "desktop",
+        "map": "e1cfc106-f9a2-8013-8008-eb0b50e05af4",
+        "small": "e1cfc106-f9a2-8013-8008-eb0bc5d43d96",
+        "expanded": "e1cfc106-f9a2-8013-8008-eb600ec68cc1"
+      },
+      {
+        "platform": "mobile",
+        "map": "e1cfc106-f9a2-8013-8008-eb185879de59",
+        "small": "e1cfc106-f9a2-8013-8008-eb1907e763ae",
+        "expanded": "e1cfc106-f9a2-8013-8008-eb1ec87e0419"
+      }
+    ]
+  },
+  "verification": {
+    "scope": "Penpot geometry and prototype interaction graph",
+    "screenSizeTolerancePx": 0.01,
+    "modeSwitchDirections": [
+      "source to category",
+      "category to source"
+    ],
+    "roadviewLinks": [
+      "open",
+      "close",
+      "expand",
+      "collapse"
+    ],
+    "errors": [],
+    "visualChecks": [
+      "Desktop Categories full screen",
+      "Mobile Categories full screen",
+      "Mobile Sources with real channel avatars",
+      "Desktop Categories with small real Roadview"
+    ]
+  },
+  "sourceTypography": "Original PDF lettering is preserved as vector outlines",
+  "media": {
+    "panorama": {
+      "place": "Potsdamer Platz, Berlin",
+      "latitude": 52.50949,
+      "longitude": 13.375868,
+      "author": "Greg Zaal",
+      "source": "https://polyhaven.com/a/potsdamer_platz",
+      "license": "CC0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "captureDate": null,
+      "usage": "Design reference; not Google Street View imagery or evidence of a creator visit"
+    },
+    "map": {
+      "attribution": "© OpenStreetMap contributors",
+      "copyright": "https://www.openstreetmap.org/copyright"
+    },
+    "channelAvatars": "Existing public YouTube channel images are used for source markers"
+  },
+  "screenshots": [
+    {
+      "path": "screenshots/desktop-sources.png",
+      "page": "Desktop",
+      "pageId": "e1cfc106-f9a2-8013-8008-ea2bb0db6562",
+      "boardId": "e1cfc106-f9a2-8013-8008-ee1742c63fc4",
+      "width": 1440,
+      "height": 1024,
+      "sha256": "eb35ba7e5c3695735367cf9d58622611de90e7b47f156c53d6d00eb2681eefdc",
+      "source": "Penpot PNG export"
+    },
+    {
+      "path": "screenshots/desktop-categories.png",
+      "page": "Desktop",
+      "pageId": "e1cfc106-f9a2-8013-8008-ea2bb0db6562",
+      "boardId": "e1cfc106-f9a2-8013-8008-f148625f683a",
+      "width": 1440,
+      "height": 1024,
+      "sha256": "ff71ce6f49881f09f23669554c7ea5b0d6e1d72061a498ce7e053b1a2ba69fee",
+      "source": "Penpot PNG export"
+    },
+    {
+      "path": "screenshots/desktop-roadview.png",
+      "page": "Desktop",
+      "pageId": "e1cfc106-f9a2-8013-8008-ea2bb0db6562",
+      "boardId": "e1cfc106-f9a2-8013-8008-f1928af9c124",
+      "width": 1440,
+      "height": 1024,
+      "sha256": "5bb630b7b90383ceacdd24ce550bbaff6db5b94a859ce350fabcd6968d612083",
+      "source": "Penpot PNG export"
+    },
+    {
+      "path": "screenshots/mobile-sources.png",
+      "page": "Mobile",
+      "pageId": "e1cfc106-f9a2-8013-8008-ea2bb0dbcd8a",
+      "boardId": "e1cfc106-f9a2-8013-8008-ee17b064a70e",
+      "width": 391,
+      "height": 845,
+      "sha256": "16175ce61d8dc665e441f1f156b05f3f4d1b3de9113f79712c8b1b4182f7b48b",
+      "source": "Penpot PNG export"
+    },
+    {
+      "path": "screenshots/mobile-categories.png",
+      "page": "Mobile",
+      "pageId": "e1cfc106-f9a2-8013-8008-ea2bb0dbcd8a",
+      "boardId": "e1cfc106-f9a2-8013-8008-f192ec6734f9",
+      "width": 391,
+      "height": 845,
+      "sha256": "78789aa582278436c8ec19e9124e0d6fbefb004f025bd3ccc08a96c9e990afec",
+      "source": "Penpot PNG export"
+    },
+    {
+      "path": "screenshots/mobile-roadview.png",
+      "page": "Mobile",
+      "pageId": "e1cfc106-f9a2-8013-8008-ea2bb0dbcd8a",
+      "boardId": "e1cfc106-f9a2-8013-8008-eb1907e763ae",
+      "width": 390,
+      "height": 844,
+      "sha256": "7478d5731ffc53110ddd58b7eea6da0ecf11ccf524cb3f59650285351e7e4bf4",
+      "source": "Penpot PNG export"
+    }
+  ]
+}
