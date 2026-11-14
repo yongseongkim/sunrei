@@ -1,8 +1,9 @@
 'use client';
 
+import { PlaceCategorySelect } from '@/components/PlaceCategorySelect';
 import { useEffect, useState } from 'react';
 import { AlertCircle, Loader2 } from 'lucide-react';
-import { PlaceListItemDTO } from '@/api/admin';
+import { PlaceListItemDTO, PlaceCategory } from '@/api/admin';
 import { useUpdatePlace } from '@/lib/hooks/use-places';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,6 +12,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 
 type Draft = {
+  category: PlaceCategory;
   name: string;
   address: string;
   latitude: string;
@@ -24,6 +26,7 @@ type Draft = {
 function draftOf(place: PlaceListItemDTO): Draft {
   return {
     name: place.name,
+    category: place.category ?? PlaceCategory.Other,
     address: place.address ?? '',
     latitude: String(place.latitude),
     longitude: String(place.longitude),
@@ -69,6 +72,7 @@ export function PlaceEditSheet({ place, onClose }: { place: PlaceListItemDTO | n
     updatePlace.mutate(
       {
         name: draft.name.trim(),
+        category: draft.category,
         address: draft.address.trim(),
         latitude,
         longitude,
@@ -94,6 +98,7 @@ export function PlaceEditSheet({ place, onClose }: { place: PlaceListItemDTO | n
               <Label htmlFor="place-name">Name</Label>
               <Input id="place-name" value={draft.name} onChange={(e) => set('name', e.target.value)} />
             </div>
+            <PlaceCategorySelect value={draft.category} onChange={value => set('category', value)} />
             <div className="space-y-1.5">
               <Label htmlFor="place-address">Address</Label>
               <Input id="place-address" value={draft.address} onChange={(e) => set('address', e.target.value)} />

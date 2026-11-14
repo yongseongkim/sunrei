@@ -9,5 +9,6 @@ data class SunreiSpot(
     val images: List<MultiSizeImage>,
     val place: Place,
     val tags: List<Tag> = emptyList(),
-    val distanceMeters: Double? = null
+    val distanceMeters: Double? = null,
+    val streetView: StreetViewSettings? = null
 )

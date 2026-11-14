@@ -9,7 +9,11 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { AlertCircle, Trash2 } from 'lucide-react';
 import { TagDTO } from '@/api/admin';
-import { UseFormRegister, UseFormSetValue, UseFormWatch } from 'react-hook-form';
+import {
+  UseFormRegister,
+  UseFormSetValue,
+  UseFormWatch,
+} from 'react-hook-form';
 import { SunreiFormValue } from '@/lib/schemas';
 import { cn } from '@/lib/utils';
 
@@ -23,6 +27,8 @@ function youtubeVideoId(url?: string | null): string | null {
 }
 
 interface SpotCardProps {
+  onOpenRoadview: () => void;
+  canEditRoadview: boolean;
   index: number;
   register: UseFormRegister<SunreiFormValue>;
   setValue: UseFormSetValue<SunreiFormValue>;
@@ -45,6 +51,8 @@ function FieldError({ message }: { message?: string }) {
 
 export default function SpotCard({
   index,
+  onOpenRoadview,
+  canEditRoadview,
   register,
   setValue,
   watch,
@@ -145,6 +153,22 @@ export default function SpotCard({
         </div>
       </div>
 
+      <div className="flex items-center gap-3 border-t pt-3">
+        <Button
+          type="button"
+          variant="outline"
+          className="min-h-11"
+          disabled={!canEditRoadview}
+          onClick={onOpenRoadview}
+        >
+          Edit Roadview
+        </Button>
+        <span className="text-xs text-muted-foreground">
+          {canEditRoadview
+            ? 'Review the panorama and save its camera direction for this spot.'
+            : 'Save the Sunrei and any place or source-link changes before editing Roadview.'}
+        </span>
+      </div>
       <ImageUpload
         images={watch(`spots.${index}.images`) || []}
         onChange={(newImages) => setValue(`spots.${index}.images`, newImages)}

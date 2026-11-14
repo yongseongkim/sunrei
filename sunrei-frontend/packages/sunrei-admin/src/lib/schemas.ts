@@ -1,3 +1,4 @@
+import { PlaceCategory } from '@/api/admin';
 import { z } from 'zod';
 
 // 생성된 MultiSizeImageDTO와 같은 모양을 유지한다.
@@ -17,6 +18,7 @@ export type ImageFormValue = z.infer<typeof imageSchema>;
 // 생성된 PlaceInput과 PlaceDTO에서 address와 googleMapsId는 없거나 null일 수 있어서 nullish로 둔다.
 export const placeInputSchema = z.object({
   id: z.string().optional(),
+  category: z.nativeEnum(PlaceCategory).optional(),
   name: z.string().min(1),
   address: z.string().nullish(),
   latitude: z.number(),

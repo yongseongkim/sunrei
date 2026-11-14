@@ -167,7 +167,7 @@ class SunreiService(
 
     fun update(id: String, request: UpdateSunreiRequest): Sunrei? = transaction {
         val existing = Sunreis.select { (Sunreis.id eq id) and (Sunreis.deletedAt.isNull()) }
-            .firstOrNull() ?: return@transaction null
+            .forUpdate().firstOrNull() ?: return@transaction null
         val currentPublishedAt = existing[Sunreis.publishedAt]
 
         request.sourceId?.let { requireSourceExists(it) }
@@ -262,7 +262,7 @@ class SunreiService(
         sortOrder: Int?
     ): String {
         val placeId = place?.let {
-            placeService.findOrCreatePlace(it.name, it.address, it.latitude, it.longitude, it.googleMapsId)
+            placeService.resolvePlace(it)
         } ?: error("Place is required for SunreiSpot")
 
         val spotId = SunreiSpots.insertAndGetId { stmt ->
@@ -298,9 +298,7 @@ class SunreiService(
             spot.context?.let { stmt[SunreiSpots.context] = it }
             spot.sourceLink?.let { stmt[SunreiSpots.sourceLink] = it }
             spot.place?.let { placeInput ->
-                stmt[SunreiSpots.placeId] = placeService.findOrCreatePlace(
-                    placeInput.name, placeInput.address, placeInput.latitude, placeInput.longitude, placeInput.googleMapsId
-                )
+                stmt[SunreiSpots.placeId] = placeService.resolvePlace(placeInput)
             }
             spot.images?.let { stmt[SunreiSpots.images] = it.map { img -> img.toModel() } }
             stmt[SunreiSpots.updatedAt] = Clock.System.now()
@@ -419,6 +417,7 @@ class SunreiService(
                     sourceLink = row[SunreiSpots.sourceLink],
                     images = row[SunreiSpots.images],
                     place = row.toPlace(),
+                    streetView = StreetViewService.publicView(row),
                     tags = tagsBySpot[spotId] ?: emptyList(),
                     distanceMeters = dist?.let { row.getOrNull(it) }
                 )

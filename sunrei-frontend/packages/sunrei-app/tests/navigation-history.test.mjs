@@ -328,3 +328,78 @@ test('history entries created before dialogs were tracked still restore', () => 
   restored.controller.dispose();
   old.controller.dispose();
 });
+
+test('spot selection pushes once while Roadview camera, expansion and close replace', async () => {
+  const h = harness('https://sunrei.test/?sourceIds=s1&sunrei=v1&tags=t1&extra=keep#map');
+  h.update({ placeId: 'p1', spotId: 'spot-1', streetViewOpen: true }); await tick();
+  assert.equal(h.win.history.length, 2);
+  const map = copy(h.current.map);
+  h.update({ streetViewCamera: { panoramaId: 'walking', heading: 45, pitch: 10, zoom: 2 }, streetViewExpanded: true }); await tick();
+  h.update({ streetViewExpanded: false, streetViewOpen: false }); await tick();
+  assert.equal(h.win.history.length, 2);
+  assert.equal(new URL(h.win.location.href).searchParams.has('view'), false);
+  h.update({ spotId: 'spot-2', streetViewOpen: true, streetViewCamera: null }); await tick();
+  h.win.history.back(); await tick();
+  assert.equal(h.current.spotId, 'spot-1');
+  assert.equal(h.current.streetViewOpen, false);
+  assert.equal(h.current.streetViewCamera.panoramaId, 'walking');
+  assert.deepEqual(h.current.map, map);
+  assert.deepEqual(h.current.tagIds, ['t1']);
+  assert.equal(h.current.preview.sunreiId, 'v1');
+  assert.equal(new URL(h.win.location.href).searchParams.get('extra'), 'keep');
+  assert.equal(new URL(h.win.location.href).hash, '#map');
+  h.win.history.forward(); await tick();
+  assert.equal(h.current.spotId, 'spot-2');
+  assert.equal(h.current.streetViewCamera, null);
+  h.controller.dispose();
+});
+
+test('invalid spot cleanup replaces the link without a history loop', async () => {
+  const h = harness('https://sunrei.test/?place=p1&spot=private&view=streetview&extra=keep');
+  assert.equal(h.current.streetViewOpen, true);
+  h.controller.replace(() => h.update({ spotId: null, streetViewOpen: false, streetViewCamera: null })); await tick();
+  assert.equal(h.win.history.length, 1);
+  assert.equal(h.current.placeId, 'p1');
+  assert.equal(new URL(h.win.location.href).searchParams.has('spot'), false);
+  assert.equal(new URL(h.win.location.href).searchParams.has('view'), false);
+  assert.equal(new URL(h.win.location.href).searchParams.get('extra'), 'keep');
+  h.controller.dispose();
+});
+
+test('Roadview requires both place and spot and a shared link starts at the saved camera', () => {
+  for (const query of ['view=streetview', 'spot=s&view=streetview', 'place=p&view=streetview', 'place=&spot=s&view=streetview']) {
+    const parsed = navigationFromUrl(new URL(`https://sunrei.test/?${query}`), initial());
+    assert.equal(parsed.streetViewOpen, false);
+  }
+  const parsed = navigationFromUrl(new URL('https://sunrei.test/?place=p&spot=s&view=streetview'), { ...initial(), streetViewCamera: { panoramaId: 'old' }, streetViewExpanded: true });
+  assert.equal(parsed.spotId, 's');
+  assert.equal(parsed.streetViewCamera, null);
+  assert.equal(parsed.streetViewExpanded, false);
+});
+
+test('changing a scene within the same Place preserves detail scroll and sheet height', async () => {
+  const h = harness('https://sunrei.test/?place=p1');
+  h.scroll(480); h.controller.schedule(); await tick();
+  h.update({ spotId: 's1', streetViewOpen: true }); await tick();
+  assert.equal(h.saved.scrollTop, 480);
+  assert.equal(h.saved.mobileSnap, 'half');
+  h.update({ spotId: 's2', streetViewOpen: false }); await tick();
+  assert.equal(h.saved.scrollTop, 480);
+  h.win.history.back(); await tick();
+  assert.equal(h.current.spotId, 's1');
+  assert.equal(h.current.scrollTop, 480);
+  h.controller.dispose();
+});
+
+test('Back preserves a pending camera update for Forward without creating a new entry', async () => {
+  const h = harness();
+  h.update({ placeId: 'p1', spotId: 's1', streetViewOpen: true }); await tick();
+  // Camera writes may be delayed while dragging, but read() already sees the latest POV.
+  h.current.streetViewCamera = { panoramaId: 'walked', heading: 55, pitch: 3, zoom: 1 };
+  h.win.history.back(); await tick();
+  assert.equal(h.current.placeId, null);
+  h.win.history.forward(); await tick();
+  assert.equal(h.current.streetViewCamera.panoramaId, 'walked');
+  assert.equal(h.win.history.length, 2);
+  h.controller.dispose();
+});

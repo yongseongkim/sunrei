@@ -1,5 +1,6 @@
 package com.sunrei.routes.admin
 
+import com.sunrei.di.injectStreetViewService
 import com.sunrei.di.injectSunreiService
 import com.sunrei.generated.dto.admin.CreateSunreiRequest
 import com.sunrei.generated.dto.admin.SunreiSort
@@ -15,11 +16,30 @@ import io.ktor.server.routing.Route
 import io.ktor.server.routing.delete
 import io.ktor.server.routing.get
 import io.ktor.server.routing.post
+import io.ktor.server.routing.patch
 import io.ktor.server.routing.put
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.decodeFromJsonElement
+import com.sunrei.generated.dto.admin.UpdateSunreiSpotStreetViewRequest
 import io.ktor.server.routing.route
 
 fun Route.adminSunreiRoutes() {
     route("/sunreis") {
+        get("/{sunreiId}/spots/{spotId}/street-view") {
+            call.handleErrors {
+                call.respond(call.injectStreetViewService().get(call.parameters["sunreiId"]!!, call.parameters["spotId"]!!))
+            }
+        }
+        patch("/{sunreiId}/spots/{spotId}/street-view") {
+            call.handleErrors {
+                val body = call.receive<JsonObject>()
+                require(body.containsKey("streetView") && body.containsKey("expectedRevision")) { "streetView and expectedRevision are required" }
+                val request = Json { ignoreUnknownKeys = true }.decodeFromJsonElement<UpdateSunreiSpotStreetViewRequest>(body)
+                call.respond(call.injectStreetViewService().update(call.parameters["sunreiId"]!!, call.parameters["spotId"]!!, request))
+            }
+        }
+
         get {
             val sunreiService: SunreiService = call.injectSunreiService()
             val nextToken = call.request.queryParameters["nextToken"]

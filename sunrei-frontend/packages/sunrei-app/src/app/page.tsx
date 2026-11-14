@@ -1,6 +1,8 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { StreetViewWindow, StreetViewNotice } from '@/components/street-view';
+import { replaceNavigationSelection } from '@/lib/navigation-history';
 import { cn } from '@/lib/utils';
 import { MapPin } from 'lucide-react';
 import { MapView } from '@/components/map-view';
@@ -16,10 +18,19 @@ import { SourceChannelPanel } from '@/components/source-channel';
 import { Sidebar } from '@/components/desktop/Sidebar';
 import { PeekSheet } from '@/components/mobile/PeekSheet';
 import { SearchPill } from '@/components/wf';
-import { AreaChip, MapControls } from '@/components/map-chrome';
+import {
+  AreaChip,
+  MapControls,
+  MarkerIconSwitch,
+} from '@/components/map-chrome';
 import { Onboarding, useOnboarding } from '@/components/onboarding';
 import { AuthControl, LoginModal } from '@/components/auth';
-import { useMapPlaces, useSunreiDetail, useTagFilter } from '@/hooks/use-map';
+import {
+  useMapPlaces,
+  usePlaceDetail,
+  useSunreiDetail,
+  useTagFilter,
+} from '@/hooks/use-map';
 import { useDeepLinkSync } from '@/hooks/use-deep-link';
 import { useMapStore } from '@/stores/map-store';
 import { useUiStore } from '@/stores/ui-store';
@@ -47,6 +58,41 @@ export default function AppShell() {
   const searchOpen = useUiStore((s) => s.searchOpen);
   const videoPreview = useUiStore((s) => s.videoPreview);
 
+  const activeSpotId = useUiStore((state) => state.activeSpotId);
+  const streetViewOpen = useUiStore((state) => state.streetViewOpen);
+  const { data: selectedDetail, error: detailError } = usePlaceDetail(
+    activePlaceId,
+    mapCenter,
+  );
+  const selectedSpot = selectedDetail?.spots.find(
+    (spot) => spot.id === activeSpotId && spot.place.id === activePlaceId,
+  );
+  const selectedSource = selectedDetail?.mentions.find(
+    (mention) => mention.sunreiId === selectedSpot?.sunreiId,
+  )?.source;
+  useEffect(() => {
+    if (!activeSpotId) return;
+    if (
+      selectedDetail &&
+      (!selectedSpot || (!selectedSpot.streetView && streetViewOpen))
+    ) {
+      replaceNavigationSelection(() =>
+        useUiStore.setState({
+          activeSpotId: selectedSpot?.id ?? null,
+          streetViewOpen: false,
+          streetViewExpanded: false,
+          streetViewCamera: null,
+        }),
+      );
+    } else if (
+      (detailError as { response?: { status?: number } } | null)?.response
+        ?.status === 404
+    ) {
+      replaceNavigationSelection(() =>
+        useUiStore.getState().setActivePlace(null),
+      );
+    }
+  }, [activeSpotId, selectedDetail, selectedSpot, streetViewOpen, detailError]);
   const mobileSnap = useUiStore((s) => s.mobileSnap);
 
   const { data, isFetching, isLoading } = useMapPlaces({
@@ -58,9 +104,13 @@ export default function AppShell() {
 
   const allCards = data?.places ?? [];
   const { dimmedIds, hasFilter } = useTagFilter(allCards);
-  const visibleCards = hasFilter ? allCards.filter((c) => !dimmedIds.has(c.place.id)) : allCards;
+  const visibleCards = hasFilter
+    ? allCards.filter((c) => !dimmedIds.has(c.place.id))
+    : allCards;
   const { data: previewData } = useSunreiDetail(videoPreview?.sunreiId ?? null);
-  const previewSpots = videoPreview ? previewData?.sunrei.spots ?? null : null;
+  const previewSpots = videoPreview
+    ? (previewData?.sunrei.spots ?? null)
+    : null;
 
   const firstLoad = isLoading && allCards.length === 0;
   const showingPrevious = mode === 'nearby' && !!pendingArea;
@@ -73,7 +123,10 @@ export default function AppShell() {
   }, [mode, isFetching, allCards.length]);
 
   const listBody = (
-    <div data-navigation-scroll="nearby-list" className="flex-1 overflow-auto px-4 pb-2 pt-3">
+    <div
+      data-navigation-scroll="nearby-list"
+      className="flex-1 overflow-auto px-4 pb-2 pt-3"
+    >
       {firstLoad ? (
         <div className="space-y-2.5">
           {Array.from({ length: isMobile ? 2 : 4 }).map((_, i) => (
@@ -84,9 +137,18 @@ export default function AppShell() {
         <EmptyState />
       ) : (
         // 지도를 옮겨 새 영역을 아직 안 불렀으면 지금 목록이 이전 영역이라는 걸 흐리게 보여 준다.
-        <div className={cn('space-y-2.5 transition-opacity', showingPrevious && 'opacity-[0.55]')}>
+        <div
+          className={cn(
+            'space-y-2.5 transition-opacity',
+            showingPrevious && 'opacity-[0.55]',
+          )}
+        >
           {visibleCards.map((c) => (
-            <PlaceCard key={c.place.id} card={c} onClick={() => setActivePlace(c.place.id)} />
+            <PlaceCard
+              key={c.place.id}
+              card={c}
+              onClick={() => setActivePlace(c.place.id)}
+            />
           ))}
         </div>
       )}
@@ -103,7 +165,10 @@ export default function AppShell() {
 
   const channelPanel =
     mode === 'source' && selectedSourceIds.length > 0 ? (
-      <SourceChannelPanel key={selectedSourceIds[0]} sourceId={selectedSourceIds[0]} />
+      <SourceChannelPanel
+        key={selectedSourceIds[0]}
+        sourceId={selectedSourceIds[0]}
+      />
     ) : null;
 
   return (
@@ -120,9 +185,30 @@ export default function AppShell() {
 
       <div className="relative flex-1">
         <div className="absolute inset-0">
-          <MapView cards={allCards} previewSpots={previewSpots} />
+          <MapView
+            cards={allCards}
+            previewSpots={previewSpots}
+            previewSource={
+              videoPreview ? previewData?.sunrei.source : undefined
+            }
+          />
         </div>
 
+        <div
+          className={cn(
+            'absolute z-20',
+            isMobile ? 'left-3 top-[108px]' : 'right-[70px] top-[18px]',
+          )}
+        >
+          <MarkerIconSwitch />
+        </div>
+        {!isMobile && streetViewOpen && selectedSpot?.streetView && (
+          <StreetViewWindow
+            key={selectedSpot.id}
+            spot={selectedSpot}
+            sourceName={selectedSource?.name}
+          />
+        )}
         {!isMobile && !videoPreview && (
           <>
             <div className="absolute left-[18px] top-[18px] z-20">
@@ -137,7 +223,12 @@ export default function AppShell() {
         {isMobile && !videoPreview && (
           <>
             <div className="absolute left-3 right-3 top-3 z-20 flex items-center gap-2">
-              <SearchPill placeholder={search('placeholder')} onClick={openSearch} shadow className="flex-1" />
+              <SearchPill
+                placeholder={search('placeholder')}
+                onClick={openSearch}
+                shadow
+                className="flex-1"
+              />
               <AuthControl variant="mobile" />
             </div>
             <div className="absolute left-3 top-16 z-20">
@@ -153,7 +244,11 @@ export default function AppShell() {
           <div className="absolute inset-0 z-[15] bg-black/20 pointer-events-none" />
         )}
 
-        <SearchNearbyButton isFetching={isFetching} mobile={isMobile} hidden={isMobile && mobileSnap === 'full'} />
+        <SearchNearbyButton
+          isFetching={isFetching}
+          mobile={isMobile}
+          hidden={isMobile && mobileSnap === 'full'}
+        />
       </div>
 
       {isMobile && (
@@ -170,6 +265,7 @@ export default function AppShell() {
       <FiltersPanel places={allCards} />
       <LoginModal />
       <Onboarding />
+      <StreetViewNotice />
     </div>
   );
 }

@@ -11,6 +11,42 @@ servers:
 security: [ ]
 
 paths:
+  /admin/sunreis/{sunreiId}/spots/{spotId}/street-view:
+    parameters:
+      - { in: path, name: sunreiId, required: true, schema: { type: string } }
+      - { in: path, name: spotId, required: true, schema: { type: string } }
+    get:
+      tags: [Sunreis]
+      security: [{ bearerAuth: [] }]
+      operationId: getSunreiSpotStreetView
+      summary: Get a saved Spot viewpoint, stale reasons, and revision
+      responses:
+        '200':
+          description: Current viewpoint state, including stale settings for review
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/SunreiSpotStreetViewDTO' }
+        '404': { description: "Sunrei or Spot not found, deleted, or not related" }
+    patch:
+      tags: [Sunreis]
+      security: [{ bearerAuth: [] }]
+      operationId: updateSunreiSpotStreetView
+      summary: Replace or explicitly clear only this Spot viewpoint
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/UpdateSunreiSpotStreetViewRequest' }
+      responses:
+        '200':
+          description: Updated viewpoint state and revision
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/SunreiSpotStreetViewDTO' }
+        '400': { description: Invalid or missing viewpoint fields }
+        '404': { description: "Sunrei or Spot not found, deleted, or not related" }
+        '409': { description: Settings or Spot and Place binding changed since the expected revision }
+
   /admin/auth/login:
     post:
       summary: Admin login
@@ -1243,6 +1279,8 @@ components:
       type: object
       required: [id, name, latitude, longitude, isClosed]
       properties:
+        category:
+          $ref: '#/components/schemas/PlaceCategory'
         id: { type: string }
         name: { type: string }
         address: { type: string, nullable: true }
@@ -1275,6 +1313,8 @@ components:
       type: object
       required: [name, address, latitude, longitude]
       properties:
+        category:
+          $ref: '#/components/schemas/PlaceCategory'
         id: { type: string, description: ID for existing place (omit to create new) }
         name: { type: string }
         address: { type: string }
@@ -1431,6 +1471,8 @@ components:
     UpdatePlaceRequest:
       type: object
       properties:
+        category:
+          $ref: '#/components/schemas/PlaceCategory'
         name: { type: string, maxLength: 128, nullable: true }
         address: { type: string, maxLength: 255, nullable: true }
         latitude: { type: number, format: float, nullable: true }
@@ -1444,6 +1486,8 @@ components:
       type: object
       required: [id, name, latitude, longitude, isClosed, sourceCount, spotCount]
       properties:
+        category:
+          $ref: '#/components/schemas/PlaceCategory'
         id: { type: string }
         name: { type: string }
         address: { type: string, nullable: true }
@@ -2409,3 +2453,73 @@ components:
         id: { type: string }
         username: { type: string }
         role: { type: string }
+
+
+    PlaceCategory:
+      type: string
+      enum: [RESTAURANT, CAFE, BAR, SHOP, STAY, SIGHTSEEING, PARK, TRANSPORT, OTHER]
+
+    StreetViewAnchor:
+      type: object
+      required: [latitude, longitude]
+      properties:
+        latitude: { type: number, format: double, minimum: -90, maximum: 90 }
+        longitude: { type: number, format: double, minimum: -180, maximum: 180 }
+
+    StreetViewDTO:
+      type: object
+      description: Editor-selected viewpoint. Only valid settings are exposed publicly; Google panorama IDs are revalidated when opened.
+      required: [panoramaId, heading, pitch, zoom, reviewedAt]
+      properties:
+        panoramaId: { type: string, minLength: 1, maxLength: 2048 }
+        searchAnchor:
+          allOf:
+            - $ref: '#/components/schemas/StreetViewAnchor'
+          nullable: true
+        heading: { type: number, format: double, minimum: 0, exclusiveMaximum: true, maximum: 360 }
+        pitch: { type: number, format: double, minimum: -90, maximum: 90 }
+        zoom: { type: number, format: double, minimum: 0, maximum: 3 }
+        reviewedAt: { type: string, format: date-time, readOnly: true }
+
+    StreetViewInput:
+      type: object
+      required: [panoramaId, heading, pitch, zoom]
+      properties:
+        panoramaId: { type: string, minLength: 1, maxLength: 2048 }
+        searchAnchor:
+          allOf:
+            - $ref: '#/components/schemas/StreetViewAnchor'
+          nullable: true
+        heading: { type: number, format: double, description: "Finite heading normalized to the range [0, 360)." }
+        pitch: { type: number, format: double, minimum: -90, maximum: 90 }
+        zoom: { type: number, format: double, minimum: 0, maximum: 3 }
+
+    StreetViewStaleReason:
+      type: string
+      enum: [PLACE_CHANGED, PLACE_LOCATION_CHANGED, GOOGLE_PLACE_ID_CHANGED, SOURCE_LINK_CHANGED]
+
+    SunreiSpotStreetViewDTO:
+      type: object
+      required: [spotId, streetView, isStale, staleReasons, revision]
+      properties:
+        spotId: { type: string }
+        streetView:
+          allOf:
+            - $ref: '#/components/schemas/StreetViewDTO'
+          nullable: true
+        isStale: { type: boolean }
+        staleReasons:
+          type: array
+          items:
+            $ref: '#/components/schemas/StreetViewStaleReason'
+        revision: { type: string, description: Opaque revision of saved settings and the current Spot and Place binding. }
+
+    UpdateSunreiSpotStreetViewRequest:
+      type: object
+      required: [expectedRevision, streetView]
+      properties:
+        expectedRevision: { type: string, minLength: 1 }
+        streetView:
+          allOf:
+            - $ref: '#/components/schemas/StreetViewInput'
+          nullable: true

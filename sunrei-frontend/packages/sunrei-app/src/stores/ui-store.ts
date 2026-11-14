@@ -10,7 +10,29 @@ interface VideoPreview {
   fromSearch?: boolean; // 검색 결과에서 열었으면 뒤로 가기가 검색 화면을 다시 연다.
 }
 
+export type StreetViewCamera = {
+  panoramaId: string;
+  heading: number;
+  pitch: number;
+  zoom: number;
+};
+const closedView = {
+  activeSpotId: null,
+  streetViewOpen: false,
+  streetViewExpanded: false,
+  streetViewCamera: null,
+  streetViewNotice: false,
+};
+
 interface UiState {
+  activeSpotId: string | null;
+  streetViewOpen: boolean;
+  streetViewExpanded: boolean;
+  streetViewCamera: StreetViewCamera | null;
+  streetViewNotice: boolean;
+  selectSpot: (placeId: string, spotId: string, open: boolean) => void;
+  closeStreetView: () => void;
+  unavailableStreetView: () => void;
   isMobile: boolean;
   setIsMobile: (m: boolean) => void;
   mobileSnap: 'peek' | 'half' | 'full';
@@ -39,7 +61,11 @@ interface UiState {
 
   // Sunrei 하나의 장소만 지도와 목록에 보여 주는 미리보기이며 nearby와 source 모드 위에 겹쳐 열린다.
   videoPreview: VideoPreview | null;
-  enterVideoPreview: (sunreiId: string, returnTo: MapMode, fromSearch?: boolean) => void;
+  enterVideoPreview: (
+    sunreiId: string,
+    returnTo: MapMode,
+    fromSearch?: boolean,
+  ) => void;
   exitVideoPreview: () => void;
 }
 
@@ -49,12 +75,31 @@ export const useUiStore = create<UiState>((set) => ({
   mobileSnap: 'half',
   setMobileSnap: (mobileSnap) => set({ mobileSnap }),
 
+  ...closedView,
+  selectSpot: (placeId, spotId, open) =>
+    set((state) => ({
+      ...closedView,
+      activePlaceId: placeId,
+      activeSpotId: spotId,
+      streetViewOpen: open,
+      streetViewCamera:
+        state.activeSpotId === spotId ? state.streetViewCamera : null,
+    })),
+  closeStreetView: () =>
+    set({ streetViewOpen: false, streetViewExpanded: false }),
+  unavailableStreetView: () =>
+    set({
+      streetViewOpen: false,
+      streetViewExpanded: false,
+      streetViewNotice: true,
+    }),
   activePlaceId: null,
-  setActivePlace: (id) => set({ activePlaceId: id }),
+  setActivePlace: (id) => set({ ...closedView, activePlaceId: id }),
 
   searchOpen: false,
   setSearchOpen: (v) => set({ searchOpen: v }),
-  openSearch: () => set({ searchOpen: true, searchQuery: '', sourceFromSearch: false }),
+  openSearch: () =>
+    set({ searchOpen: true, searchQuery: '', sourceFromSearch: false }),
   searchQuery: '',
   setSearchQuery: (q) => set({ searchQuery: q }),
   sourceFromSearch: false,
@@ -70,7 +115,15 @@ export const useUiStore = create<UiState>((set) => ({
   videoPreview: null,
   enterVideoPreview: (sunreiId, returnTo, fromSearch = false) =>
     // 장소 상세가 미리보기보다 우선하므로 열려 있던 장소를 닫아야 미리보기가 보인다.
-    set({ videoPreview: { sunreiId, returnTo, fromSearch }, activePlaceId: null }),
+    set({
+      ...closedView,
+      videoPreview: { sunreiId, returnTo, fromSearch },
+      activePlaceId: null,
+    }),
   exitVideoPreview: () =>
-    set((s) => (s.videoPreview?.fromSearch ? { videoPreview: null, searchOpen: true } : { videoPreview: null })),
+    set((s) =>
+      s.videoPreview?.fromSearch
+        ? { videoPreview: null, searchOpen: true }
+        : { videoPreview: null },
+    ),
 }));

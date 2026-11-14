@@ -195,6 +195,7 @@ class SunreiSpotService {
                 sourceLink = row[SunreiSpots.sourceLink],
                 images = row[SunreiSpots.images],
                 place = row.toPlace(),
+                streetView = StreetViewService.publicView(row),
                 tags = tagsBySpot[spotId] ?: emptyList()
             )
         }

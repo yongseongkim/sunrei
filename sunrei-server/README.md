@@ -46,6 +46,7 @@ Flyway Gradle task는 `DB_URL`, `DB_USER`, `DB_PASSWORD` 환경 변수를 읽고
 
 `./gradlew test`는 실행 중인 Docker를 사용해 격리된 PostGIS DB를 띄우고 migration과 spot 순서 저장·조회·추가, 거리 정렬을 검증한다.
 운영 DB나 로컬 개발 DB는 사용하지 않는다.
+`StreetViewServiceTest`는 V7 JSONB 저장, 시점 범위, 공개 상태, 연결 변경 시 공개 제외, 기존 PUT 보존, 동시 revision 충돌과 HTTP 400/404/409, category 부분 수정·재사용을 검증한다.
 
 ## 규칙
 
@@ -55,3 +56,11 @@ Flyway Gradle task는 `DB_URL`, `DB_USER`, `DB_PASSWORD` 환경 변수를 읽고
 - 시각 컬럼은 모두 `TIMESTAMPTZ`이고, 코드에서는 `Instant`로, API JSON에서는 `2026-06-18T00:00:00Z` 같은 UTC 값으로 다룬다.
 - Google 로그인은 OAuth provider의 사용자 ID로 먼저 찾고, 없으면 같은 이메일의 사용자에 연결한다.
   새 사용자는 `user` 권한으로 만들어지며, admin 권한은 DB에서 직접 준다.
+
+## Spot 로드뷰와 장소 종류
+
+V7 migration은 `place.category`(기본 OTHER), `sunrei_spot.street_view` JSONB와 `street_view_revision`을 추가한다.
+`StreetViewService`가 인증된 admin GET/PATCH의 revision·연결 기준값·시점 검증을 담당한다. 명시적 null은 설정 삭제이며 일반 Sunrei PUT은 설정을 보존한다.
+부모 Sunrei → Spot → Place 잠금 안에서 revision 비교와 저장을 처리하고, Place의 위치·ID 또는 Spot 원문 링크가 바뀐 저장 설정은 공개 조회에서 제외한다.
+서버는 Google을 호출하거나 로드뷰 이미지·전체 응답을 캐시하지 않는다. 브라우저는 공식 StreetViewService/Panorama로 저장 ID를 재검증한다.
+Place category는 명세의 enum으로 검증하고, PATCH에서 누락은 보존한다. 기존 Place를 재사용할 때 PlaceInput의 category는 무시한다.

@@ -62,6 +62,12 @@ Sunrei 안의 표시 순서는 `sort_order`에 저장하며, 생성·수정 요�
 `spots`를 보내지 않는 수정은 순서를 유지하고, 수집 승인으로 추가한 spot은 마지막에 붙인다.
 좌표를 지정한 공개 조회는 거리순을 우선하고, 같은 거리에서는 저장된 순서와 ID를 따른다.
 
+Spot별 로드뷰는 `sunrei_spot.street_view` JSONB에 파노라마 ID·시점·검토 시각과 서버가 만든 연결 기준값을 함께 저장한다.
+`GET/PATCH /admin/sunreis/{sunreiId}/spots/{spotId}/street-view`로만 편집하며 PATCH는 `expectedRevision`과 `streetView`(명시적 null이면 삭제)가 필수다.
+서버는 부모 Sunrei → Spot → Place 순서로 잠그고 revision을 비교해 저장한다. 일반 Sunrei PUT은 기존 시점 설정을 보존한다.
+Place ID·좌표·Google place ID 또는 Spot의 sourceLink가 달라지면 공개 `streetView`는 null이며, admin은 원래 설정과 재검토 사유를 반환한다.
+공개 앱은 Place 핀·카드 선택으로 Spot을 임의로 고르지 않으며, 유효한 저장 설정이 있는 개별 Spot만 로드뷰로 연다. 공개 주변 파노라마 자동 조회는 하지 않는다.
+
 ### Place
 
 실제 위치 정보로 현재는 GoogleMaps 정보를 이용한다.
@@ -73,6 +79,10 @@ Public 지도에서는 Place 하나가 마커 하나와 카드 하나로 표시�
 다른 Place가 이미 가진 `google_maps_id`로 바꾸면 409다.
 폐업은 Place 단위로 `is_closed`에 기록하며, 어드민 Places 화면에서도 바꿀 수 있다.
 폐업한 곳도 방송에 나온 기록이라 지도에 남기고, 앱은 카드와 상세에 "폐업"을 표시한다.
+
+Place의 `category`는 `RESTAURANT/CAFE/BAR/SHOP/STAY/SIGHTSEEING/PARK/TRANSPORT/OTHER` 중 하나이며 기본은 `OTHER`다.
+PATCH에서 생략하면 유지하고, null·미지원 값은 400이다. PlaceInput의 category는 새 장소에만 적용하며 기존 ID·Google place ID로 재사용한 장소는 덮어쓰지 않는다.
+카테고리는 Spot 태그와 별개이며 로드뷰의 연결 기준값에 포함하지 않는다.
 
 ### Tag
 
@@ -91,6 +101,10 @@ Place의 태그는 그 Place에 있는 공개 spot의 태그를 모두 합친 �
 - 태그 필터는 클라이언트에서 처리한다.
   서버는 태그가 맞지 않는 Place도 돌려주고, 앱은 그 Place를 목록에서 빼고 지도 핀은 흐리게 표시한다.
 - 요청 파라미터는 `sunrei-api/app-api-spec.yaml`의 `/api/map` 설명에 있다.
+
+지도 아이콘 모드는 기본 `source`이며 지도 위 전환으로 `category`를 고를 수 있다. localStorage에만 저장하고 URL·지도 조회·방문 기록과 독립된다.
+source 모드에서는 현재 범위의 Source ID를 중복 제거해 하나면 실제 아바타, 여럿이면 숫자만 표시한다. 이미지가 없거나 실패하면 category 아이콘으로 대체한다.
+nearby는 공개 카드 언급, source는 선택된 Source, 미리보기는 해당 Sunrei의 Source를 기준으로 한다. Place 하나에 핀 하나를 유지한다.
 
 ## YouTube 수집
 

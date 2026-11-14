@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
 import { Minus, Plus, MapPin, LocateFixed } from 'lucide-react';
+import { useMarkerStore } from '@/stores/marker-store';
 import { useMapStore } from '@/stores/map-store';
 import { reverseGeocode } from '@/hooks/use-google-places';
 import { cn } from '@/lib/utils';
@@ -44,7 +45,7 @@ export function AreaChip({ className }: { className?: string }) {
       className={cn(
         'inline-flex items-center gap-1.5 rounded-full border border-line2 bg-card px-[13px] py-[7px]',
         'text-[12.5px] font-bold text-foreground shadow-[0_2px_8px_rgba(0,0,0,0.08)]',
-        className
+        className,
       )}
     >
       <MapPin className="h-3.5 w-3.5 text-ink2" strokeWidth={1.6} />
@@ -72,7 +73,7 @@ function MapBtn({
       className={cn(
         'grid h-[34px] w-[34px] place-items-center rounded-[9px] border border-line2 bg-card',
         'shadow-[0_2px_8px_rgba(0,0,0,0.10)] transition-colors hover:bg-bg2',
-        accent ? 'text-accent-ink' : 'text-ink2'
+        accent ? 'text-accent-ink' : 'text-ink2',
       )}
     >
       {children}
@@ -93,9 +94,10 @@ export function MapControls({ zoom = true }: { zoom?: boolean }) {
   const recenter = () => {
     if (typeof navigator !== 'undefined' && navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        (pos) => panTo({ lat: pos.coords.latitude, lng: pos.coords.longitude }, 14),
+        (pos) =>
+          panTo({ lat: pos.coords.latitude, lng: pos.coords.longitude }, 14),
         () => panTo(initialSeed, 13),
-        { maximumAge: 60_000, timeout: 5000 }
+        { maximumAge: 60_000, timeout: 5000 },
       );
     } else {
       panTo(initialSeed, 13);
@@ -118,6 +120,38 @@ export function MapControls({ zoom = true }: { zoom?: boolean }) {
       <MapBtn onClick={recenter} label={t('myLocation')} accent>
         <LocateFixed className="h-[17px] w-[17px]" strokeWidth={1.8} />
       </MapBtn>
+    </div>
+  );
+}
+
+/** Marker presentation is a local preference and never changes the map query or history. */
+export function MarkerIconSwitch() {
+  const t = useTranslations('map');
+  const mode = useMarkerStore((state) => state.mode);
+  const setMode = useMarkerStore((state) => state.setMode);
+  useEffect(() => useMarkerStore.getState().hydrate(), []);
+  return (
+    <div
+      role="group"
+      aria-label={t('markerMode')}
+      className="flex rounded-xl border border-line2 bg-card p-1 shadow-md"
+    >
+      {(['source', 'category'] as const).map((value) => (
+        <button
+          type="button"
+          key={value}
+          aria-pressed={mode === value}
+          onClick={() => setMode(value)}
+          className={cn(
+            'min-h-11 rounded-lg px-3 text-xs font-bold',
+            mode === value
+              ? 'bg-primary text-primary-foreground'
+              : 'text-ink2 hover:bg-bg2',
+          )}
+        >
+          {t(value === 'source' ? 'sources' : 'categories')}
+        </button>
+      ))}
     </div>
   );
 }

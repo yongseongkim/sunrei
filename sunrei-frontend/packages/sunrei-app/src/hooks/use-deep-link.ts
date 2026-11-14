@@ -10,6 +10,7 @@ import {
   navigationScrollKey,
   navigationViewKey,
   registerNavigationBack,
+  registerNavigationReplace,
   type NavigationSnapshot,
 } from '@/lib/navigation-history';
 
@@ -20,6 +21,10 @@ function capture(restoring?: NavigationSnapshot): NavigationSnapshot {
     sourceIds: [...map.selectedSourceIds],
     tagIds: [...useFilterStore.getState().activeTagIds],
     placeId: ui.activePlaceId,
+    spotId: ui.activeSpotId,
+    streetViewOpen: ui.streetViewOpen,
+    streetViewExpanded: ui.streetViewExpanded,
+    streetViewCamera: ui.streetViewCamera,
     preview: ui.videoPreview ? { ...ui.videoPreview } : null,
     searchOpen: ui.searchOpen,
     searchQuery: ui.searchQuery,
@@ -83,6 +88,7 @@ export function useDeepLinkSync() {
     let cancelScroll = () => {};
     let pendingScroll: NavigationSnapshot | undefined;
     let scrollTimer: ReturnType<typeof setTimeout>;
+    let cameraTimer: ReturnType<typeof setTimeout>;
     const history = createNavigationHistory({
       browser: window,
       read: () => capture(pendingScroll),
@@ -106,6 +112,11 @@ export function useDeepLinkSync() {
         useFilterStore.setState({ activeTagIds: [...snapshot.tagIds] });
         useUiStore.setState({
           activePlaceId: snapshot.placeId,
+          activeSpotId: snapshot.spotId ?? null,
+          streetViewOpen: snapshot.streetViewOpen ?? false,
+          streetViewExpanded: snapshot.streetViewExpanded ?? false,
+          streetViewCamera: snapshot.streetViewCamera ?? null,
+          streetViewNotice: false,
           videoPreview: snapshot.preview,
           searchOpen: snapshot.searchOpen,
           searchQuery: snapshot.searchQuery,
@@ -129,10 +140,18 @@ export function useDeepLinkSync() {
     });
     const subscriptions = [
       useMapStore.subscribe(history.schedule),
-      useUiStore.subscribe(history.schedule),
+      useUiStore.subscribe((state, previous) => {
+        clearTimeout(cameraTimer);
+        const cameraOnly = state.streetViewCamera !== previous.streetViewCamera &&
+          (Object.keys(state) as (keyof typeof state)[]).every(key => key === 'streetViewCamera' || state[key] === previous[key]);
+        // A drag can emit many POV events. Persist the final camera without a history write per frame.
+        if (cameraOnly) cameraTimer = setTimeout(history.schedule, 250);
+        else history.schedule();
+      }),
       useFilterStore.subscribe(history.schedule),
     ];
     const unregister = registerNavigationBack(history.back);
+    const unregisterReplace = registerNavigationReplace(history.replace);
     const onScroll = (event: Event) => {
       if (pendingScroll) return;
       const element = event.target;
@@ -143,9 +162,11 @@ export function useDeepLinkSync() {
     };
     document.addEventListener('scroll', onScroll, true);
     return () => {
+      clearTimeout(cameraTimer);
       history.dispose();
       subscriptions.forEach((unsubscribe) => unsubscribe());
       unregister();
+      unregisterReplace();
       cancelScroll();
       clearTimeout(scrollTimer);
       document.removeEventListener('scroll', onScroll, true);

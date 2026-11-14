@@ -1,7 +1,8 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { ChevronLeft, Loader2, MapPin, Navigation, Play, Search, Star, X } from 'lucide-react';
+import { Camera, ChevronLeft, Loader2, MapPin, Navigation, Play, Search, Star, X } from 'lucide-react';
+import { StreetViewWindow } from '@/components/street-view';
 import { Avatar, fittedImageUrl, sourceAvatarUrl } from '@/components/wf';
 import { cn, linkKind } from '@/lib/utils';
 import { navigateBack } from '@/lib/navigation-history';
@@ -18,7 +19,7 @@ import {
 } from '@/hooks/use-google-places';
 import { useTagLabel } from '@/lib/i18n';
 import { ClosedChip, PlaceCard, type SeriesTake } from './place-card';
-import type { PlaceCardDTO, PlaceMentionDTO, SourceType, SunreiDTO, TagDTO } from '@/dto';
+import type { PlaceCardDTO, PlaceMentionDTO, SourceType, SunreiDTO, SunreiSpotDTO, TagDTO } from '@/dto';
 import { useEffect, useState } from 'react';
 import { isAxiosError } from 'axios';
 
@@ -59,7 +60,7 @@ export function SearchNearbyButton({
   if (!pendingArea && !finding) return null;
 
   return (
-    <div className={cn('absolute left-1/2 z-20 -translate-x-1/2', mobile ? 'top-[108px]' : 'bottom-7')}>
+    <div className={cn('absolute left-1/2 z-20 -translate-x-1/2', mobile ? 'top-[168px]' : 'bottom-7')}>
       <button
         onClick={commit}
         disabled={finding}
@@ -452,7 +453,7 @@ export function PlaceDetail({ placeId }: { placeId: string }) {
         </div>
         <div className="mt-1">
           {mentions.map((m) => (
-            <PDMention key={m.spotId} m={m} />
+            <PDMention key={m.spotId} m={m} spots={data.spots.filter(spot => spot.sunreiId === m.sunreiId)} />
           ))}
         </div>
       </div>
@@ -469,7 +470,18 @@ function TypeBadge({ type }: { type: SourceType }) {
   );
 }
 
-function PDMention({ m }: { m: PlaceMentionDTO }) {
+function PDMention({
+  m,
+  spots,
+}: {
+  m: PlaceMentionDTO;
+  spots: SunreiSpotDTO[];
+}) {
+  const roadview = useTranslations('streetView');
+  const selected = useUiStore((state) => state.activeSpotId);
+  const opened = useUiStore((state) => state.streetViewOpen);
+  const isMobile = useUiStore((state) => state.isMobile);
+  const selectSpot = useUiStore((state) => state.selectSpot);
   const t = useTranslations('detail');
   // spot의 링크(YouTube 타임스탬프나 Instagram 게시물)가 있으면 그곳으로, 없으면 Sunrei 링크로 보낸다.
   const link = m.sourceLink ?? m.sunreiLink;
@@ -477,16 +489,68 @@ function PDMention({ m }: { m: PlaceMentionDTO }) {
   return (
     <div className="border-t border-line py-3">
       <div className="flex items-center gap-2.5">
-        <Avatar label={m.source.name} src={sourceAvatarUrl(m.source, 34)} size={34} />
+        <Avatar
+          label={m.source.name}
+          src={sourceAvatarUrl(m.source, 34)}
+          size={34}
+        />
         <div className="min-w-0 flex-1">
-          <div className="truncate text-[13px] font-extrabold text-foreground">{m.source.name}</div>
+          <div className="truncate text-[13px] font-extrabold text-foreground">
+            {m.source.name}
+          </div>
           <div className="mt-0.5 flex items-center gap-1.5">
             <TypeBadge type={m.source.type} />
-            <span className="min-w-0 truncate text-[11px] font-semibold text-ink3">{m.sunreiTitle}</span>
+            <span className="min-w-0 truncate text-[11px] font-semibold text-ink3">
+              {m.sunreiTitle}
+            </span>
           </div>
         </div>
       </div>
-      {m.context && <p className="mt-2 text-[12.5px] leading-relaxed text-ink2">{m.context}</p>}
+      {m.context && (
+        <p className="mt-2 text-[12.5px] leading-relaxed text-ink2">
+          {m.context}
+        </p>
+      )}
+      {spots.map((spot) => (
+        <div
+          key={spot.id}
+          className={cn(
+            'mt-2 rounded-lg border p-2',
+            selected === spot.id
+              ? 'border-primary bg-accent-soft'
+              : 'border-line',
+          )}
+        >
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              aria-pressed={selected === spot.id}
+              onClick={() =>
+                selectSpot(spot.place.id, spot.id, !!spot.streetView)
+              }
+              className="min-h-11 min-w-0 flex-1 text-left text-xs font-bold"
+            >
+              {spot.title || roadview('select')}
+            </button>
+            {spot.streetView && (
+              <button
+                type="button"
+                className="inline-flex min-h-11 shrink-0 items-center gap-1 rounded-lg border border-line2 bg-card px-2 text-xs font-bold"
+                onClick={() => selectSpot(spot.place.id, spot.id, true)}
+              >
+                <Camera size={14} />
+                {roadview('open')}
+              </button>
+            )}
+          </div>
+          {spot.context && spot.context !== m.context && (
+            <p className="text-xs text-ink2">{spot.context}</p>
+          )}
+          {isMobile && opened && selected === spot.id && spot.streetView && (
+            <StreetViewWindow spot={spot} sourceName={m.source.name} mobile />
+          )}
+        </div>
+      ))}
       <MentionImages images={m.images} link={link} wide={kind === 'youtube'} />
       {link && (
         <a
@@ -497,7 +561,12 @@ function PDMention({ m }: { m: PlaceMentionDTO }) {
         >
           {kind === 'youtube' ? (
             <>
-              <Play className="h-3 w-3 text-primary" fill="currentColor" strokeWidth={0} /> {t('linkYoutube')}
+              <Play
+                className="h-3 w-3 text-primary"
+                fill="currentColor"
+                strokeWidth={0}
+              />{' '}
+              {t('linkYoutube')}
             </>
           ) : kind === 'instagram' ? (
             t('linkInstagram')
@@ -745,7 +814,7 @@ function spotsToSeriesCards(sunrei: SunreiDTO): { card: PlaceCardDTO; takes: Ser
       sunreiCount: 1,
       spotCount: group.length,
     };
-    const takes = group.map((s) => ({ spotId: s.id, title: s.title, context: s.context }));
+    const takes = group.map((s) => ({ spotId: s.id, title: s.title, context: s.context, hasStreetView: !!s.streetView }));
     return { card, takes };
   });
 }

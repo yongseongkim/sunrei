@@ -13,5 +13,6 @@ data class Place(
     val closedReason: String? = null,
     val closedAt: Instant? = null,
     val notes: String? = null,
-    val deletedAt: Instant? = null
+    val deletedAt: Instant? = null,
+    val category: PlaceCategory = PlaceCategory.OTHER
 )

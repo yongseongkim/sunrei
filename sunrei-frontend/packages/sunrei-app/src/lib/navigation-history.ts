@@ -4,6 +4,10 @@ export interface NavigationSnapshot {
   sourceIds: string[];
   tagIds: string[];
   placeId: string | null;
+  spotId?: string | null;
+  streetViewOpen?: boolean;
+  streetViewExpanded?: boolean;
+  streetViewCamera?: { panoramaId: string; heading: number; pitch: number; zoom: number } | null;
   preview: { sunreiId: string; returnTo: 'nearby' | 'source'; fromSearch?: boolean } | null;
   searchOpen: boolean;
   searchQuery: string;
@@ -50,6 +54,10 @@ export function navigationFromUrl(url: URL, current: NavigationSnapshot): Naviga
     sourceIds,
     tagIds: ids(url.searchParams.get('tags')),
     placeId: url.searchParams.get('place') || null,
+    spotId: url.searchParams.has('place') ? url.searchParams.get('spot') || null : null,
+    streetViewOpen: !!url.searchParams.get('place') && !!url.searchParams.get('spot') && url.searchParams.get('view') === 'streetview',
+    streetViewExpanded: false,
+    streetViewCamera: null,
     preview: sunreiId ? { sunreiId, returnTo: sourceIds.length ? 'source' : 'nearby' } : null,
     searchOpen: url.searchParams.has('search'),
     searchQuery: url.searchParams.get('search') ?? '',
@@ -66,6 +74,8 @@ export function navigationUrl(snapshot: NavigationSnapshot, current: URL): strin
     sourceIds: snapshot.sourceIds.join(','),
     tags: snapshot.tagIds.join(','),
     place: snapshot.placeId,
+    spot: snapshot.placeId ? snapshot.spotId : null,
+    view: snapshot.placeId && snapshot.spotId && snapshot.streetViewOpen ? 'streetview' : null,
     sunrei: snapshot.preview?.sunreiId,
   };
   for (const [key, value] of Object.entries(values)) {
@@ -79,7 +89,7 @@ export function navigationUrl(snapshot: NavigationSnapshot, current: URL): strin
 
 function contentKey(snapshot: NavigationSnapshot): string {
   // Typing, filtering, moving the map and resizing the sheet update the current entry.
-  return JSON.stringify([snapshot.sourceIds, snapshot.preview?.sunreiId, snapshot.placeId, snapshot.searchOpen]);
+  return JSON.stringify([snapshot.sourceIds, snapshot.preview?.sunreiId, snapshot.placeId, snapshot.spotId ?? null, snapshot.searchOpen]);
 }
 
 export function navigationViewKey(snapshot: NavigationSnapshot): string {
@@ -151,7 +161,7 @@ export function createNavigationHistory({ browser, read, restore, onNavigate }: 
     if (JSON.stringify(snapshot) === JSON.stringify(entry.snapshot) && !scrollDirty) return;
     if (changedView) {
       if (scrollDirty) write('replaceState');
-      if (changedContent) {
+      if (changedContent && navigationScrollKey(snapshot) !== navigationScrollKey(entry.snapshot)) {
         snapshot.scrollTop = 0;
         onNavigate?.();
       }
@@ -169,6 +179,12 @@ export function createNavigationHistory({ browser, read, restore, onNavigate }: 
 
   const pop = (event: PopStateEvent) => {
     traversing = false;
+    const latest = read();
+    // Camera persistence may be debounced; Back must still remember the last visible POV.
+    if (contentKey(latest) === contentKey(entry.snapshot)) {
+      entry = { ...entry, snapshot: latest };
+      remembered.set(entryKey(entry), latest);
+    }
     const previous = entry.snapshot;
     const target = historyEntry(event.state);
     entry = target ? { ...target, snapshot: remembered.get(entryKey(target)) ?? target.snapshot } : {
@@ -190,6 +206,7 @@ export function createNavigationHistory({ browser, read, restore, onNavigate }: 
 
   return {
     schedule,
+    replace(update: () => void) { replaceNext = true; update(); schedule(); },
     recordScroll(scrollTop: number) {
       if (disposed || restoring || traversing || scrollTop === entry.snapshot.scrollTop) return;
       entry = { ...entry, snapshot: { ...entry.snapshot, scrollTop } };
@@ -226,4 +243,14 @@ export function registerNavigationBack(back: (fallback: () => void) => void) {
 export function navigateBack(fallback: () => void) {
   if (activeBack) activeBack(fallback);
   else fallback();
+}
+
+let activeReplace: ((update: () => void) => void) | undefined;
+export function registerNavigationReplace(replace: (update: () => void) => void) {
+  activeReplace = replace;
+  return () => { if (activeReplace === replace) activeReplace = undefined; };
+}
+export function replaceNavigationSelection(update: () => void) {
+  if (activeReplace) activeReplace(update);
+  else update();
 }

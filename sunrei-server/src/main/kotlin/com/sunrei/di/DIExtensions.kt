@@ -1,6 +1,7 @@
 package com.sunrei.di
 
 import com.sunrei.auth.service.IAuthService
+import com.sunrei.service.StreetViewService
 import com.sunrei.service.PlaceService
 import com.sunrei.service.S3Config
 import com.sunrei.service.S3Service
@@ -15,6 +16,8 @@ import com.sunrei.service.YoutubeService
 import io.ktor.client.HttpClient
 import io.ktor.server.application.Application
 import io.ktor.server.application.ApplicationCall
+
+fun ApplicationCall.injectStreetViewService(): StreetViewService = ServiceLocator.streetViewService
 
 fun ApplicationCall.injectUserService(): UserService = ServiceLocator.userService
 fun ApplicationCall.injectPlaceService(): PlaceService = ServiceLocator.placeService

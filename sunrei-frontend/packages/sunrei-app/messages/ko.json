@@ -110,6 +110,40 @@
     "failed": "지도를 불러오지 못했어요",
     "zoomIn": "확대",
     "zoomOut": "축소",
-    "myLocation": "내 위치"
+    "myLocation": "내 위치",
+    "markerMode": "지도 아이콘",
+    "sources": "소스",
+    "categories": "카테고리",
+    "markerLabel": "{name}, {category}, 소스 {count}개, 소개 {mentions}회",
+    "category": {
+      "RESTAURANT": "음식점",
+      "CAFE": "카페",
+      "BAR": "바",
+      "SHOP": "쇼핑",
+      "STAY": "숙박",
+      "SIGHTSEEING": "관광",
+      "PARK": "공원",
+      "TRANSPORT": "교통",
+      "OTHER": "기타"
+    }
+  },
+  "streetView": {
+    "open": "로드뷰",
+    "select": "장면 선택",
+    "title": "로드뷰",
+    "loading": "로드뷰를 불러오는 중…",
+    "failed": "로드뷰를 불러오지 못했어요.",
+    "retry": "다시 시도",
+    "unavailable": "저장된 로드뷰를 사용할 수 없어 지도로 돌아왔어요.",
+    "expand": "확대",
+    "collapse": "축소",
+    "close": "닫기",
+    "reset": "저장 시점으로",
+    "maps": "Google Maps에서 보기",
+    "saved": "저장된 시점",
+    "exploring": "주변 탐색 중",
+    "date": "촬영: {date}",
+    "unknownDate": "촬영일 미제공",
+    "disclaimer": "촬영 시점에 따라 현재 모습과 다를 수 있어요."
   }
 }
