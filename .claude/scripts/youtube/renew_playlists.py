@@ -33,6 +33,7 @@ from youtube_data import fetch_playlist, fetch_video_details, video_inputs
 from creator_comments import collect_creator_comments
 from location_workflow import digest, first_timestamp
 from stage_store import StageStore
+from video_analysis_plugin import PLUGIN_ENV, skill_directory
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_CONFIG = ROOT / ".claude" / "config" / "youtube-renewal.json"
@@ -775,6 +776,10 @@ def main():
         )
         items = {item["videoId"]: item for item in remote["videos"]}
         chosen = pending[:remaining]
+        if any(not (RUNS_ROOT / video["id"] / "stored-extraction.json").is_file() for video in chosen):
+            # Resolve once before marking a video PROCESSING. The SDK subprocesses
+            # may have a different Codex executable on their PATH.
+            os.environ[PLUGIN_ENV] = str(skill_directory().parents[1])
         for index, video in enumerate(chosen):
             if index:
                 delay = config["defaults"].get("captionDelaySeconds", {})

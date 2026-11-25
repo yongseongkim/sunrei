@@ -21,6 +21,26 @@ a description, and the footage. Record contradictions instead of majority
 voting. Duplicated description/comment text and a transcript copied from
 Whisper are not independent confirmations.
 
+## Reuse a video analysis
+
+Use the per-video `evidence_timeline.json` and metadata as the shared source.
+For an interactive location review, read or write `analysis/locations/analysis.json`
+under the run directory using `references/analysis.json` in the installed plugin skill.
+From the Sunrei root, `python3 .claude/scripts/youtube/video_analysis_plugin.py` prints its directory.
+Check its `videoId` and `timelineFingerprint` against the timeline's `videoId`
+and `inputFingerprint`. After a new edit or transcript correction, recheck the
+affected times and citations against the current timeline before reuse.
+
+Trace a section or finding back to its event index or to the actual frame time
+in `visualChecks`. Record the visible name, observed action, and what remains
+uncertain. A passing sign establishes visibility. A creator's description may
+introduce a venue without a scene time. Keep that time null and link the video.
+A visit, a specific branch, and a Google place match each need their own evidence.
+
+The headless candidate runner reads the tracks and creator comments; the
+coordinator reads the purpose-specific analysis during review. An analysis file
+can support a candidate but cannot approve a correction, place, or spot.
+
 ## Creator-Authored Comments
 
 Use YouTube Data API `commentThreads.list` with `part=snippet,replies`,

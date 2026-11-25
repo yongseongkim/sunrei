@@ -39,7 +39,7 @@ decisions. Missing metadata goes back to `youtube-fetch-info`; missing timed evi
 
 ## Phase 2 — Collect and Index Evidence
 
-Assign the evidence collector. Read the title, full description, chapters,
+Assign the evidence collector. Reuse any matching [video analysis](references/source-evidence.md#reuse-a-video-analysis). Read the title, full description, chapters,
 creator venue blocks and map links, then align them with captions, Whisper, and
 OCR. Inspect creator comments when requested or needed to identify the
 destination. Record source availability and coverage; do not silently treat a
@@ -78,6 +78,12 @@ gate](references/identity-resolution.md) to every candidate. Require an
 evidenced place name and enough region/site information to distinguish the
 intended destination. A creator's direct map link may be resolved as source
 evidence; it is not permission to ignore a conflict.
+
+Use the installed `video-analysis` plugin when the answer depends on the
+image. Pass the video ID, candidate time or interval, and the exact missing fact
+(e.g. “Does the creator enter this shop?”). Follow the
+[analysis handoff](references/source-evidence.md#reuse-a-video-analysis)
+to bring observations back to identity review.
 
 For missing or conflicting identities, research the source's own clues and
 original-language aliases first. Use local OCR and text normally; consult

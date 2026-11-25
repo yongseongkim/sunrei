@@ -13,7 +13,7 @@ import os
 import re
 from pathlib import Path
 
-from _common import http_json, load_google_api_key, workspace
+from _common import http_json, load_google_api_key, video_metadata, workspace
 import geocode
 from stage_store import StageStore
 from structured_agent import run_structured
@@ -66,8 +66,9 @@ def evidence_ledger(metadata, timeline, comments):
             continue
         source = SOURCE_ALIASES.get(event.get("source"), event.get("source"))
         # Source/time is a scene anchor; quote revisions get a new evidence digest.
+        details = {"boundingBox": event["boundingBox"]} if source == "ocr" and "boundingBox" in event else {}
         add(source, f"timeline:{source}:{start}", event.get("text", ""), start,
-            event.get("endSeconds"))
+            event.get("endSeconds"), **details)
     owner = metadata.get("channelId")
     if comments.get("videoId") == (metadata.get("videoId") or metadata.get("id")):
         for comment in comments.get("comments", []):
@@ -231,7 +232,7 @@ def write_json(path, value):
 def run_workflow(run_dir, candidates, api_key, metadata=None, timeline=None, comments=None):
     run_dir = Path(run_dir)
     read = lambda name: json.loads((run_dir / name).read_text(encoding="utf-8"))
-    metadata = metadata if metadata is not None else read("metadata.json")
+    metadata = video_metadata(metadata if metadata is not None else read("metadata.json"))
     timeline = timeline if timeline is not None else read("evidence_timeline.json")
     comments = comments if comments is not None else (read("creator_comments.json")
         if (run_dir / "creator_comments.json").is_file() else {})

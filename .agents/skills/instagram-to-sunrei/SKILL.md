@@ -137,6 +137,13 @@ with post IDs and Instagram evidence:
 5. Review the complete set, reuse existing user decisions, and approve only
    within the authorized scope. Publish only when the user asks.
 
+For a reel scene that needs a closer look, pass the downloaded local MP4 from
+[instagram-download-reels](../instagram-download-reels/SKILL.md), its shortcode
+as the stable video ID, and the missing fact to the installed `video-analysis` plugin.
+Use the plugin's frame inspection workflow for that question.
+Compare the timed observation with the post caption and location tag. Keep
+the post permalink as the spot source and record frame times in review notes.
+
 For unresolved visual or historical clues, use
 [selective visual review](../youtube-extract-locations/references/visual-and-historical-review.md).
 Keep the user's exclusions and source preferences. Cross-platform decisions

@@ -108,6 +108,9 @@ nearby는 공개 카드 언급, source는 선택된 Source, 미리보기는 해�
 
 ## YouTube 수집
 
+공통 영상 분석은 `agent-plugins`에서 배포한 `video-analysis` 플러그인에 맡긴다. 수집기는 설치된 플러그인의 코드로 타임라인을 만들고, 장소 후보를 추출하는 에이전트에는 같은 버전의 분석 지침과 Sunrei의 장소 선정 기준을 전달한다. 설치와 경로 확인 방법은 [수집기 실행 문서](.claude/scripts/youtube/AUTOMATION.md#video-analysis-plugin)에 있다.
+Sunrei는 같은 영상의 타임라인과 확인한 장면을 재사용하고, 방문 맥락·지점 식별·Google 장소 대조·승인을 담당한다. 영상 ID나 타임라인 지문이 바뀌면 기존 분석이 인용한 근거를 다시 확인한다.
+
 등록한 플레이리스트의 새 영상에서 장소 후보를 추출하고, 어드민 검토를 거쳐 SunreiSpot으로 만든다.
 플레이리스트 표지는 YouTube `playlists.snippet.thumbnails`에서 받아 `/admin/images/upload-url`로 다운로드·리사이즈해 S3에 저장하고, 반환된 크기별 URL과 실제 너비·높이를 Sunrei의 `images`에 저장한다. 신규 생성·등록·갱신에서 이 경로를 쓰며, 빈 표지와 동일한 YouTube 표지만 이전하고 이미 S3에 저장한 표지와 다른 대표 이미지는 유지한다. `playlist_covers.py`로 영상·장소 재수집 없이 기존 등록 항목의 표지를 이전할 수 있으며 기본은 dry-run이다. 영상별 표지와 채널 아바타는 기존 URL 저장 방식을 유지한다.
 수집 스크립트와 스킬은 `/admin/youtube/*` admin API로 같은 DB 상태를 읽고 쓴다.
