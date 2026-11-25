@@ -4,6 +4,7 @@ import org.jetbrains.exposed.sql.Column
 import org.jetbrains.exposed.sql.kotlin.datetime.timestamp
 
 object Places : ULIDTimestampedTable("place", "P") {
+    val category = varchar("category", 32).default("OTHER")
     val name = varchar("name", 128)
     val address = varchar("address", 255)
     val latitude = float("latitude")

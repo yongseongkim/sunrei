@@ -3,6 +3,7 @@
 import { PlaceCardDTO, PlaceMentionDTO } from '@/dto';
 import { useTranslations } from 'next-intl';
 import { ChevronRight } from 'lucide-react';
+import { useUiStore } from '@/stores/ui-store';
 import { Avatar, sourceAvatarUrl } from '@/components/wf';
 import { useTagLabel } from '@/lib/i18n';
 
@@ -15,7 +16,10 @@ function formatDistance(m?: number | null) {
 /** 카드와 같은 자리에 장소 이름, 눈썹, 언급 한 줄 모양의 막대를 깜빡이며 보여 준다. */
 export function PlaceCardSkeleton() {
   const bar = (w: string | number, h = 10) => (
-    <span className="block animate-pulse rounded-[5px] bg-bg2" style={{ width: w, height: h }} />
+    <span
+      className="block animate-pulse rounded-[5px] bg-bg2"
+      style={{ width: w, height: h }}
+    />
   );
   return (
     <div className="rounded-xl border border-line bg-card p-[13px]">
@@ -37,14 +41,41 @@ export function PlaceCardSkeleton() {
 }
 
 /** Source 하나가 이 장소를 어떻게 소개했는지 보여 주는 줄이다. */
-function PlaceTake({ mention }: { mention: PlaceMentionDTO }) {
+function PlaceTake({
+  mention,
+  placeId,
+}: {
+  mention: PlaceMentionDTO;
+  placeId: string;
+}) {
+  const t = useTranslations('streetView');
+  const select = useUiStore((state) => state.selectSpot);
   return (
     <div className="flex items-start gap-[9px] border-t border-line py-2">
-      <Avatar label={mention.source.name} src={sourceAvatarUrl(mention.source, 22)} size={22} />
+      <button
+        type="button"
+        aria-label={`${t('select')} · ${mention.source.name}`}
+        onClick={(event) => {
+          event.stopPropagation();
+          select(placeId, mention.spotId, true);
+        }}
+        className="grid min-h-11 min-w-11 place-items-center"
+      >
+        <Avatar
+          label={mention.source.name}
+          src={sourceAvatarUrl(mention.source, 22)}
+          size={22}
+        />
+      </button>
       <div className="min-w-0 flex-1">
         <div className="text-[11.5px] font-extrabold leading-tight text-foreground">
           {mention.source.name}
-          {mention.sunreiTitle && <span className="font-semibold text-ink3"> · {mention.sunreiTitle}</span>}
+          {mention.sunreiTitle && (
+            <span className="font-semibold text-ink3">
+              {' '}
+              · {mention.sunreiTitle}
+            </span>
+          )}
         </div>
         {mention.context && (
           <div className="mt-[3px] text-[12px] leading-relaxed text-ink2 line-clamp-2">
@@ -57,14 +88,41 @@ function PlaceTake({ mention }: { mention: PlaceMentionDTO }) {
 }
 
 /** 미리보기에서 한 시리즈 안의 spot 하나다. 배너가 Source와 시리즈를 이미 보여 주므로 회차 제목과 맥락만 쓴다. */
-export type SeriesTake = { spotId: string; title?: string | null; context?: string | null };
+export type SeriesTake = {
+  spotId: string;
+  title?: string | null;
+  context?: string | null;
+  hasStreetView?: boolean;
+};
 
-function SeriesTakeRow({ take }: { take: SeriesTake }) {
+function SeriesTakeRow({
+  take,
+  placeId,
+}: {
+  take: SeriesTake;
+  placeId: string;
+}) {
+  const t = useTranslations('streetView');
+  const select = useUiStore((state) => state.selectSpot);
   return (
     <div className="border-t border-line py-2">
-      {take.title && <div className="truncate text-[11.5px] font-extrabold text-foreground">{take.title}</div>}
+      <button
+        type="button"
+        onClick={(event) => {
+          event.stopPropagation();
+          select(placeId, take.spotId, !!take.hasStreetView);
+        }}
+        className="min-h-11 w-full text-left text-xs font-bold"
+      >
+        {take.title || t('select')}
+        {take.hasStreetView && (
+          <span className="ml-2 text-accent-ink"> · {t('open')}</span>
+        )}
+      </button>
       {take.context && (
-        <div className="mt-[3px] text-[12px] leading-relaxed text-ink2 line-clamp-2">{take.context}</div>
+        <div className="mt-[3px] text-[12px] leading-relaxed text-ink2 line-clamp-2">
+          {take.context}
+        </div>
       )}
     </div>
   );
@@ -88,7 +146,10 @@ export function PlaceCard({
   // 보여 준 두 언급에 없는 Source만 "외 소스 N개"로 센다.
   const shownIds = new Set(mentions.slice(0, 2).map((m) => m.source.id));
   const otherSources = new Set(
-    mentions.slice(2).map((m) => m.source.id).filter((id) => !shownIds.has(id))
+    mentions
+      .slice(2)
+      .map((m) => m.source.id)
+      .filter((id) => !shownIds.has(id)),
   ).size;
 
   const eyebrow = seriesTakes
@@ -127,8 +188,18 @@ export function PlaceCard({
 
       <div>
         {seriesTakes
-          ? seriesTakes.map((take) => <SeriesTakeRow key={take.spotId} take={take} />)
-          : mentions.slice(0, 2).map((m) => <PlaceTake key={m.spotId} mention={m} />)}
+          ? seriesTakes.map((take) => (
+              <SeriesTakeRow
+                key={take.spotId}
+                take={take}
+                placeId={card.place.id}
+              />
+            ))
+          : mentions
+              .slice(0, 2)
+              .map((m) => (
+                <PlaceTake key={m.spotId} mention={m} placeId={card.place.id} />
+              ))}
       </div>
 
       {!seriesTakes && otherSources > 0 && (

@@ -5,6 +5,7 @@ import com.sunrei.auth.service.AuthRepository
 import com.sunrei.auth.service.AuthService
 import com.sunrei.auth.service.IAuthRepository
 import com.sunrei.auth.service.IAuthService
+import com.sunrei.service.StreetViewService
 import com.sunrei.service.PlaceService
 import com.sunrei.service.S3Config
 import com.sunrei.service.S3Service
@@ -26,6 +27,7 @@ import io.ktor.server.plugins.di.DI
 import io.ktor.server.plugins.di.dependencies
 
 object ServiceLocator {
+    val streetViewService = StreetViewService()
     lateinit var httpClient: Lazy<HttpClient>
     lateinit var s3Config: S3Config
     lateinit var s3Service: S3Service

@@ -242,6 +242,8 @@ components:
       type: object
       required: [id, name, latitude, longitude, isClosed]
       properties:
+        category:
+          $ref: '#/components/schemas/PlaceCategory'
         id: { type: string }
         name: { type: string }
         address: { type: string, nullable: true }
@@ -303,6 +305,10 @@ components:
       type: object
       required: [id, sunreiId, title, images, place, tags]
       properties:
+        streetView:
+          allOf:
+            - $ref: '#/components/schemas/StreetViewDTO'
+          nullable: true
         id: { type: string }
         sunreiId: { type: string }
         title: { type: string, maxLength: 128 }
@@ -491,3 +497,30 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/SunreiSummaryDTO'
+
+
+    PlaceCategory:
+      type: string
+      enum: [RESTAURANT, CAFE, BAR, SHOP, STAY, SIGHTSEEING, PARK, TRANSPORT, OTHER]
+
+    StreetViewAnchor:
+      type: object
+      required: [latitude, longitude]
+      properties:
+        latitude: { type: number, format: double, minimum: -90, maximum: 90 }
+        longitude: { type: number, format: double, minimum: -180, maximum: 180 }
+
+    StreetViewDTO:
+      type: object
+      description: Editor-selected viewpoint. Only valid settings are exposed publicly; Google panorama IDs are revalidated when opened.
+      required: [panoramaId, heading, pitch, zoom, reviewedAt]
+      properties:
+        panoramaId: { type: string, minLength: 1, maxLength: 2048 }
+        searchAnchor:
+          allOf:
+            - $ref: '#/components/schemas/StreetViewAnchor'
+          nullable: true
+        heading: { type: number, format: double, minimum: 0, exclusiveMaximum: true, maximum: 360 }
+        pitch: { type: number, format: double, minimum: -90, maximum: 90 }
+        zoom: { type: number, format: double, minimum: 0, maximum: 3 }
+        reviewedAt: { type: string, format: date-time, readOnly: true }

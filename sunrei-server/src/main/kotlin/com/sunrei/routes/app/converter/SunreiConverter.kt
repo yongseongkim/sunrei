@@ -5,6 +5,7 @@ import com.sunrei.generated.dto.app.SourceDTO
 import com.sunrei.generated.dto.app.SunreiDTO
 import com.sunrei.generated.dto.app.SunreiSpotDTO
 import com.sunrei.generated.dto.app.TagDTO
+import com.sunrei.service.toPublicDTO
 import com.sunrei.model.Place
 import com.sunrei.model.Source
 import com.sunrei.model.SourceType as ModelSourceType
@@ -39,6 +40,7 @@ fun Place.toDTO(): PlaceDTO = PlaceDTO(
     address = address,
     latitude = latitude,
     longitude = longitude,
+    category = com.sunrei.generated.dto.app.PlaceCategory.valueOf(category.name),
     googleMapsId = googleMapsId,
     isClosed = isClosed,
     closedReason = closedReason,
@@ -55,6 +57,7 @@ fun SunreiSpot.toDTO(): SunreiSpotDTO = SunreiSpotDTO(
     images = images.map { it.toDTO() },
     place = place.toDTO(),
     tags = tags.map { it.toDTO() },
+    streetView = streetView?.toPublicDTO(),
     distanceMeters = distanceMeters
 )
 

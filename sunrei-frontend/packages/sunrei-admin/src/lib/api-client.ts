@@ -1,4 +1,4 @@
-import { Configuration, DefaultApi } from '@/api/admin';
+import { Configuration, DefaultApi, SunreisApi } from '@/api/admin';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
@@ -16,6 +16,7 @@ const adminConfig = new Configuration({
 });
 
 export const adminApi = new DefaultApi(adminConfig);
+export const streetViewApi = new SunreisApi(adminConfig);
 
 export const axiosInstance = axios.create({
   baseURL: API_BASE,

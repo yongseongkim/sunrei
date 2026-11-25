@@ -89,6 +89,7 @@ fun Place.toDTO(): PlaceDTO = PlaceDTO(
     address = address,
     latitude = latitude,
     longitude = longitude,
+    category = com.sunrei.generated.dto.admin.PlaceCategory.valueOf(category.name),
     googleMapsId = googleMapsId,
     isClosed = isClosed,
     closedReason = closedReason,

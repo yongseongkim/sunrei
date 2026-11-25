@@ -7,6 +7,8 @@ import com.sunrei.database.insertAndGetId
 import com.sunrei.generated.dto.admin.ListPlacesResult
 import com.sunrei.generated.dto.admin.PlaceListItemDTO
 import com.sunrei.generated.dto.admin.UpdatePlaceRequest
+import com.sunrei.model.PlaceCategory
+import com.sunrei.generated.dto.admin.PlaceInput
 import com.sunrei.model.Place
 import com.sunrei.utils.PaginationToken
 import kotlinx.datetime.Clock
@@ -62,6 +64,7 @@ class PlaceService(
                     address = row[Places.address],
                     latitude = row[Places.latitude],
                     longitude = row[Places.longitude],
+                    category = com.sunrei.generated.dto.admin.PlaceCategory.valueOf(row[Places.category]),
                     googleMapsId = row[Places.googleMapsId],
                     isClosed = row[Places.isClosed],
                     closedReason = row[Places.closedReason],
@@ -95,7 +98,7 @@ class PlaceService(
      */
     fun update(id: String, request: UpdatePlaceRequest): Place? = transaction {
         val existing = Places.select { (Places.id eq id) and (Places.deletedAt.isNull()) }
-            .firstOrNull() ?: return@transaction null
+            .forUpdate().firstOrNull() ?: return@transaction null
         require((request.latitude == null) == (request.longitude == null)) {
             "latitude and longitude must be given together"
         }
@@ -107,6 +110,7 @@ class PlaceService(
 
         val now = Clock.System.now()
         Places.update({ Places.id eq id }) { stmt ->
+            request.category?.let { stmt[Places.category] = it.name }
             request.name?.let { stmt[Places.name] = it }
             request.address?.let { stmt[Places.address] = it }
             request.latitude?.let { stmt[Places.latitude] = it }
@@ -217,7 +221,8 @@ class PlaceService(
         address: String,
         latitude: Float,
         longitude: Float,
-        googleMapsId: String?
+        googleMapsId: String?,
+        category: PlaceCategory = PlaceCategory.OTHER
     ): String = transaction {
         val existing = if (googleMapsId != null) {
             Places.select { (Places.googleMapsId eq googleMapsId) and (Places.deletedAt.isNull()) }
@@ -231,6 +236,7 @@ class PlaceService(
         existing?.get(Places.id) ?: run {
             try {
                 Places.insertAndGetId { stmt ->
+                    stmt[Places.category] = category.name
                     stmt[Places.name] = name
                     stmt[Places.address] = address
                     stmt[Places.latitude] = latitude
@@ -250,6 +256,11 @@ class PlaceService(
                 }
             }
         }
+    }
+
+    fun resolvePlace(input: PlaceInput): String {
+        input.id?.let { return getById(it)?.id ?: throw NotFoundException("Place not found") }
+        return findOrCreatePlace(input.name, input.address, input.latitude, input.longitude, input.googleMapsId, input.category?.let { PlaceCategory.valueOf(it.name) } ?: PlaceCategory.OTHER)
     }
 
     private fun countSpotsByPlace(placeIds: List<String>): Map<String, Int> {
@@ -277,6 +288,7 @@ class PlaceService(
 }
 
 fun ResultRow.toPlace(): Place = Place(
+    category = PlaceCategory.valueOf(this[Places.category]),
     id = this[Places.id],
     name = this[Places.name],
     address = this[Places.address],

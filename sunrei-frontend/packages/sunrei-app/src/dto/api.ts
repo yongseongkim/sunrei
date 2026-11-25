@@ -245,9 +245,36 @@ export interface PlaceCardDTO {
 /**
  * 
  * @export
+ * @enum {string}
+ */
+
+export const PlaceCategory = {
+    Restaurant: 'RESTAURANT',
+    Cafe: 'CAFE',
+    Bar: 'BAR',
+    Shop: 'SHOP',
+    Stay: 'STAY',
+    Sightseeing: 'SIGHTSEEING',
+    Park: 'PARK',
+    Transport: 'TRANSPORT',
+    Other: 'OTHER'
+} as const;
+
+export type PlaceCategory = typeof PlaceCategory[keyof typeof PlaceCategory];
+
+
+/**
+ * 
+ * @export
  * @interface PlaceDTO
  */
 export interface PlaceDTO {
+    /**
+     * 
+     * @type {PlaceCategory}
+     * @memberof PlaceDTO
+     */
+    'category'?: PlaceCategory;
     /**
      * 
      * @type {string}
@@ -315,6 +342,8 @@ export interface PlaceDTO {
      */
     'areaLabel'?: string | null;
 }
+
+
 /**
  * One mention = one video row in the card. Multiple spots of the same video at the same place collapse into one mention.
  * @export
@@ -533,6 +562,68 @@ export type SourceType = typeof SourceType[keyof typeof SourceType];
 /**
  * 
  * @export
+ * @interface StreetViewAnchor
+ */
+export interface StreetViewAnchor {
+    /**
+     * 
+     * @type {number}
+     * @memberof StreetViewAnchor
+     */
+    'latitude': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof StreetViewAnchor
+     */
+    'longitude': number;
+}
+/**
+ * Editor-selected viewpoint. Only valid settings are exposed publicly; Google panorama IDs are revalidated when opened.
+ * @export
+ * @interface StreetViewDTO
+ */
+export interface StreetViewDTO {
+    /**
+     * 
+     * @type {string}
+     * @memberof StreetViewDTO
+     */
+    'panoramaId': string;
+    /**
+     * 
+     * @type {StreetViewAnchor}
+     * @memberof StreetViewDTO
+     */
+    'searchAnchor'?: StreetViewAnchor | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof StreetViewDTO
+     */
+    'heading': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof StreetViewDTO
+     */
+    'pitch': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof StreetViewDTO
+     */
+    'zoom': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof StreetViewDTO
+     */
+    'reviewedAt': string;
+}
+/**
+ * 
+ * @export
  * @interface SunreiDTO
  */
 export interface SunreiDTO {
@@ -597,6 +688,12 @@ export interface SunreiDTO {
  * @interface SunreiSpotDTO
  */
 export interface SunreiSpotDTO {
+    /**
+     * 
+     * @type {StreetViewDTO}
+     * @memberof SunreiSpotDTO
+     */
+    'streetView'?: StreetViewDTO | null;
     /**
      * 
      * @type {string}

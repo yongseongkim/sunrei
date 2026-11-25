@@ -159,6 +159,7 @@ class SearchService {
 }
 
 private fun Place.toPlaceDTO(): PlaceDTO = PlaceDTO(
+    category = com.sunrei.generated.dto.app.PlaceCategory.valueOf(category.name),
     id = id,
     name = name,
     address = address,

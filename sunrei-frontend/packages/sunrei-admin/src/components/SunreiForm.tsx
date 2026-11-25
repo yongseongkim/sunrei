@@ -1,5 +1,6 @@
 'use client';
 
+import StreetViewEditor from '@/components/StreetViewEditor';
 import SourceSelectField from '@/components/sunrei-form/SourceSelectField';
 import BasicInfoSection from '@/components/sunrei-form/BasicInfoSection';
 import FormActions from '@/components/sunrei-form/FormActions';
@@ -53,6 +54,7 @@ export default function SunreiForm({
   onSuccess,
   onCancel,
 }: SunreiFormProps) {
+  const [roadviewSpotId, setRoadviewSpotId] = useState<string | null>(null);
   const [mapModalOpen, setMapModalOpen] = useState(false);
   const [currentSpotIndex, setCurrentSpotIndex] = useState<number | null>(null);
   const [editingPlace, setEditingPlace] = useState<PlaceInput | undefined>();
@@ -341,6 +343,21 @@ export default function SunreiForm({
         <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-[minmax(0,1fr)_380px]">
           <SpotsList
             spotFields={spotFields}
+            onOpenRoadview={(index) =>
+              setRoadviewSpotId(watch(`spots.${index}.id`) ?? null)
+            }
+            canEditRoadview={(index) => {
+              const current = watch(`spots.${index}`);
+              const saved = sunreiData?.spots.find(
+                (spot) => spot.id === current.id,
+              );
+              return (
+                !!sunreiId &&
+                !!saved &&
+                (current.sourceLink || null) === (saved.sourceLink || null) &&
+                JSON.stringify(current.place) === JSON.stringify(saved.place)
+              );
+            }}
             register={register}
             setValue={setValue}
             watch={watch}
@@ -372,6 +389,16 @@ export default function SunreiForm({
         />
       </form>
 
+      {roadviewSpotId &&
+        sunreiId &&
+        sunreiData?.spots.find((spot) => spot.id === roadviewSpotId) && (
+          <StreetViewEditor
+            sunreiId={sunreiId}
+            spot={sunreiData.spots.find((spot) => spot.id === roadviewSpotId)!}
+            sourceName={sunreiData.source?.name}
+            onClose={() => setRoadviewSpotId(null)}
+          />
+        )}
       <PlaceSearchModal
         isOpen={mapModalOpen}
         onClose={() => setMapModalOpen(false)}

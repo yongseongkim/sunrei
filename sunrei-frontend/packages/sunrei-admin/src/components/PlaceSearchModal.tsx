@@ -1,5 +1,6 @@
 'use client';
 
+import { PlaceCategorySelect } from '@/components/PlaceCategorySelect';
 import { PlaceInput } from '@/api/admin';
 import { Button } from '@/components/ui/button';
 import {
@@ -411,6 +412,8 @@ export default function PlaceSearchModal({
                 />
               </div>
             </div>
+            <PlaceCategorySelect value={selectedPlace.category} disabled={!!selectedPlace.id} onChange={category => setSelectedPlace({ ...selectedPlace, category })} />
+            <p className="text-xs text-muted-foreground">Existing places keep their saved category. Edit them in Places.</p>
             {selectedPlace.googleMapsId && (
               <p className="text-xs text-muted-foreground">
                 Results follow the browser language — fix the name/address here before adding.

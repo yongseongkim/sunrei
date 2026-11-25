@@ -110,6 +110,40 @@
     "failed": "Map failed to load",
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",
-    "myLocation": "My location"
+    "myLocation": "My location",
+    "markerMode": "Map icons",
+    "sources": "Sources",
+    "categories": "Categories",
+    "markerLabel": "{name}, {category}, {count} sources, {mentions} mentions",
+    "category": {
+      "RESTAURANT": "Restaurant",
+      "CAFE": "Cafe",
+      "BAR": "Bar",
+      "SHOP": "Shop",
+      "STAY": "Stay",
+      "SIGHTSEEING": "Sightseeing",
+      "PARK": "Park",
+      "TRANSPORT": "Transport",
+      "OTHER": "Other"
+    }
+  },
+  "streetView": {
+    "open": "Roadview",
+    "select": "Select scene",
+    "title": "Roadview",
+    "loading": "Loading Roadview…",
+    "failed": "Could not load Roadview.",
+    "retry": "Retry",
+    "unavailable": "The saved Roadview is unavailable. Returned to the map.",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "close": "Close",
+    "reset": "Reset viewpoint",
+    "maps": "Open in Google Maps",
+    "saved": "Saved viewpoint",
+    "exploring": "Exploring nearby",
+    "date": "Captured: {date}",
+    "unknownDate": "Capture date unavailable",
+    "disclaimer": "Imagery may differ from the current appearance."
   }
 }

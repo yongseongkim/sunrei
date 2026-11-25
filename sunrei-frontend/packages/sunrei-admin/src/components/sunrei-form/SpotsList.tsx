@@ -13,6 +13,8 @@ import {
 import { SunreiFormValue } from '@/lib/schemas';
 
 interface SpotsListProps {
+  onOpenRoadview: (index: number) => void;
+  canEditRoadview: (index: number) => boolean;
   spotFields: FieldArrayWithId<SunreiFormValue, 'spots', 'id'>[];
   register: UseFormRegister<SunreiFormValue>;
   setValue: UseFormSetValue<SunreiFormValue>;
@@ -22,15 +24,13 @@ interface SpotsListProps {
   onAddSpot: () => void;
   onRemoveSpot: (index: number) => void;
   onOpenMap: (spotIndex: number) => void;
-  onSpotTagsChange: (
-    index: number,
-    tagIds: string[],
-    tags: TagDTO[]
-  ) => void;
+  onSpotTagsChange: (index: number, tagIds: string[], tags: TagDTO[]) => void;
 }
 
 export default function SpotsList({
   spotFields,
+  onOpenRoadview,
+  canEditRoadview,
   register,
   setValue,
   watch,
@@ -56,6 +56,8 @@ export default function SpotsList({
           <SpotCard
             key={field.id}
             index={index}
+            onOpenRoadview={() => onOpenRoadview(index)}
+            canEditRoadview={canEditRoadview(index)}
             register={register}
             setValue={setValue}
             watch={watch}
@@ -65,7 +67,9 @@ export default function SpotsList({
               place: errors.spots?.[index]?.place?.message,
             }}
             selectedTags={spotTags[index] ?? []}
-            onTagsChange={(tagIds, tags) => onSpotTagsChange(index, tagIds, tags)}
+            onTagsChange={(tagIds, tags) =>
+              onSpotTagsChange(index, tagIds, tags)
+            }
             onRemove={onRemoveSpot}
             onOpenMap={onOpenMap}
           />

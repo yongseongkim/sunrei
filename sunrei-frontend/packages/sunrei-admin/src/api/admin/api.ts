@@ -525,7 +525,24 @@ export interface LoginResponseUser {
 export interface MultiSizeImageDTO {
     'images': Array<ImageDTO>;
 }
+
+export const PlaceCategory = {
+    Restaurant: 'RESTAURANT',
+    Cafe: 'CAFE',
+    Bar: 'BAR',
+    Shop: 'SHOP',
+    Stay: 'STAY',
+    Sightseeing: 'SIGHTSEEING',
+    Park: 'PARK',
+    Transport: 'TRANSPORT',
+    Other: 'OTHER'
+} as const;
+
+export type PlaceCategory = typeof PlaceCategory[keyof typeof PlaceCategory];
+
+
 export interface PlaceDTO {
+    'category'?: PlaceCategory;
     'id': string;
     'name': string;
     'address'?: string | null;
@@ -537,7 +554,10 @@ export interface PlaceDTO {
     'closedAt'?: string | null;
     'notes'?: string | null;
 }
+
+
 export interface PlaceInput {
+    'category'?: PlaceCategory;
     /**
      * ID for existing place (omit to create new)
      */
@@ -551,7 +571,10 @@ export interface PlaceInput {
      */
     'googleMapsId'?: string | null;
 }
+
+
 export interface PlaceListItemDTO {
+    'category'?: PlaceCategory;
     'id': string;
     'name': string;
     'address'?: string | null;
@@ -569,6 +592,8 @@ export interface PlaceListItemDTO {
     'sourceCount': number;
     'spotCount': number;
 }
+
+
 export interface ReviewInstagramExtractedPlaceRequest {
     'reviewStatus': InstagramReviewStatus;
     /**
@@ -660,6 +685,42 @@ export interface SpotSummaryDTO {
     'sunreiId': string;
     'sunreiTitle': string;
 }
+export interface StreetViewAnchor {
+    'latitude': number;
+    'longitude': number;
+}
+/**
+ * Editor-selected viewpoint. Only valid settings are exposed publicly; Google panorama IDs are revalidated when opened.
+ */
+export interface StreetViewDTO {
+    'panoramaId': string;
+    'searchAnchor'?: StreetViewAnchor | null;
+    'heading': number;
+    'pitch': number;
+    'zoom': number;
+    'reviewedAt': string;
+}
+export interface StreetViewInput {
+    'panoramaId': string;
+    'searchAnchor'?: StreetViewAnchor | null;
+    /**
+     * Finite heading normalized to the range [0, 360).
+     */
+    'heading': number;
+    'pitch': number;
+    'zoom': number;
+}
+
+export const StreetViewStaleReason = {
+    PlaceChanged: 'PLACE_CHANGED',
+    PlaceLocationChanged: 'PLACE_LOCATION_CHANGED',
+    GooglePlaceIdChanged: 'GOOGLE_PLACE_ID_CHANGED',
+    SourceLinkChanged: 'SOURCE_LINK_CHANGED'
+} as const;
+
+export type StreetViewStaleReason = typeof StreetViewStaleReason[keyof typeof StreetViewStaleReason];
+
+
 export interface SunreiDTO {
     'id': string;
     'sourceId': string;
@@ -703,6 +764,16 @@ export interface SunreiSpotDTO {
     'place': PlaceDTO;
     'tags': Array<TagDTO>;
 }
+export interface SunreiSpotStreetViewDTO {
+    'spotId': string;
+    'streetView': StreetViewDTO | null;
+    'isStale': boolean;
+    'staleReasons': Array<StreetViewStaleReason>;
+    /**
+     * Opaque revision of saved settings and the current Spot and Place binding.
+     */
+    'revision': string;
+}
 export interface SyncYoutubePlaylistVideosRequest {
     'videos': Array<YoutubeVideoInput>;
     'initialStatus'?: YoutubeVideoStatus | null;
@@ -741,6 +812,7 @@ export interface UpdateInstagramPostRequest {
 
 
 export interface UpdatePlaceRequest {
+    'category'?: PlaceCategory;
     'name'?: string | null;
     'address'?: string | null;
     'latitude'?: number | null;
@@ -753,6 +825,8 @@ export interface UpdatePlaceRequest {
     'closedReason'?: string | null;
     'notes'?: string | null;
 }
+
+
 export interface UpdateSourceRequest {
     'type'?: SourceType;
     'name'?: string | null;
@@ -799,6 +873,10 @@ export interface UpdateSunreiSpotInline {
      * Mark this spot for deletion
      */
     '_delete'?: boolean;
+}
+export interface UpdateSunreiSpotStreetViewRequest {
+    'expectedRevision': string;
+    'streetView': StreetViewInput | null;
 }
 export interface UpdateTagRequest {
     'labelEn'?: string | null;
@@ -5058,6 +5136,206 @@ export class DefaultApi extends BaseAPI {
      */
     public upsertYoutubePlaylist(id: string, upsertYoutubePlaylistRequest: UpsertYoutubePlaylistRequest, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).upsertYoutubePlaylist(id, upsertYoutubePlaylistRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * SunreisApi - axios parameter creator
+ */
+export const SunreisApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @summary Get a saved Spot viewpoint, stale reasons, and revision
+         * @param {string} sunreiId 
+         * @param {string} spotId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getSunreiSpotStreetView: async (sunreiId: string, spotId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'sunreiId' is not null or undefined
+            assertParamExists('getSunreiSpotStreetView', 'sunreiId', sunreiId)
+            // verify required parameter 'spotId' is not null or undefined
+            assertParamExists('getSunreiSpotStreetView', 'spotId', spotId)
+            const localVarPath = `/admin/sunreis/{sunreiId}/spots/{spotId}/street-view`
+                .replace(`{${"sunreiId"}}`, encodeURIComponent(String(sunreiId)))
+                .replace(`{${"spotId"}}`, encodeURIComponent(String(spotId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Replace or explicitly clear only this Spot viewpoint
+         * @param {string} sunreiId 
+         * @param {string} spotId 
+         * @param {UpdateSunreiSpotStreetViewRequest} updateSunreiSpotStreetViewRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateSunreiSpotStreetView: async (sunreiId: string, spotId: string, updateSunreiSpotStreetViewRequest: UpdateSunreiSpotStreetViewRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'sunreiId' is not null or undefined
+            assertParamExists('updateSunreiSpotStreetView', 'sunreiId', sunreiId)
+            // verify required parameter 'spotId' is not null or undefined
+            assertParamExists('updateSunreiSpotStreetView', 'spotId', spotId)
+            // verify required parameter 'updateSunreiSpotStreetViewRequest' is not null or undefined
+            assertParamExists('updateSunreiSpotStreetView', 'updateSunreiSpotStreetViewRequest', updateSunreiSpotStreetViewRequest)
+            const localVarPath = `/admin/sunreis/{sunreiId}/spots/{spotId}/street-view`
+                .replace(`{${"sunreiId"}}`, encodeURIComponent(String(sunreiId)))
+                .replace(`{${"spotId"}}`, encodeURIComponent(String(spotId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(updateSunreiSpotStreetViewRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * SunreisApi - functional programming interface
+ */
+export const SunreisApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = SunreisApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @summary Get a saved Spot viewpoint, stale reasons, and revision
+         * @param {string} sunreiId 
+         * @param {string} spotId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getSunreiSpotStreetView(sunreiId: string, spotId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SunreiSpotStreetViewDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getSunreiSpotStreetView(sunreiId, spotId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['SunreisApi.getSunreiSpotStreetView']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Replace or explicitly clear only this Spot viewpoint
+         * @param {string} sunreiId 
+         * @param {string} spotId 
+         * @param {UpdateSunreiSpotStreetViewRequest} updateSunreiSpotStreetViewRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateSunreiSpotStreetView(sunreiId: string, spotId: string, updateSunreiSpotStreetViewRequest: UpdateSunreiSpotStreetViewRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SunreiSpotStreetViewDTO>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateSunreiSpotStreetView(sunreiId, spotId, updateSunreiSpotStreetViewRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['SunreisApi.updateSunreiSpotStreetView']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+    }
+};
+
+/**
+ * SunreisApi - factory interface
+ */
+export const SunreisApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = SunreisApiFp(configuration)
+    return {
+        /**
+         * 
+         * @summary Get a saved Spot viewpoint, stale reasons, and revision
+         * @param {string} sunreiId 
+         * @param {string} spotId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getSunreiSpotStreetView(sunreiId: string, spotId: string, options?: RawAxiosRequestConfig): AxiosPromise<SunreiSpotStreetViewDTO> {
+            return localVarFp.getSunreiSpotStreetView(sunreiId, spotId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Replace or explicitly clear only this Spot viewpoint
+         * @param {string} sunreiId 
+         * @param {string} spotId 
+         * @param {UpdateSunreiSpotStreetViewRequest} updateSunreiSpotStreetViewRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateSunreiSpotStreetView(sunreiId: string, spotId: string, updateSunreiSpotStreetViewRequest: UpdateSunreiSpotStreetViewRequest, options?: RawAxiosRequestConfig): AxiosPromise<SunreiSpotStreetViewDTO> {
+            return localVarFp.updateSunreiSpotStreetView(sunreiId, spotId, updateSunreiSpotStreetViewRequest, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * SunreisApi - object-oriented interface
+ */
+export class SunreisApi extends BaseAPI {
+    /**
+     * 
+     * @summary Get a saved Spot viewpoint, stale reasons, and revision
+     * @param {string} sunreiId 
+     * @param {string} spotId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getSunreiSpotStreetView(sunreiId: string, spotId: string, options?: RawAxiosRequestConfig) {
+        return SunreisApiFp(this.configuration).getSunreiSpotStreetView(sunreiId, spotId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Replace or explicitly clear only this Spot viewpoint
+     * @param {string} sunreiId 
+     * @param {string} spotId 
+     * @param {UpdateSunreiSpotStreetViewRequest} updateSunreiSpotStreetViewRequest 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public updateSunreiSpotStreetView(sunreiId: string, spotId: string, updateSunreiSpotStreetViewRequest: UpdateSunreiSpotStreetViewRequest, options?: RawAxiosRequestConfig) {
+        return SunreisApiFp(this.configuration).updateSunreiSpotStreetView(sunreiId, spotId, updateSunreiSpotStreetViewRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -112,6 +112,10 @@ production 빌드에서만 활성화하며, 개발 서버와 admin에는 적용�
   직접 링크로 처음 들어와 이전 Sunrei 기록이 없으면 앱의 뒤로 버튼은 상위 화면으로 전환하고 현재 기록을 교체한다. 브라우저 뒤로가기는 서비스 진입 이전 페이지로 나갈 수 있다.
   Next.js의 방문 기록 데이터와 Sunrei가 관리하지 않는 query/hash는 보존한다.
   필터·로그인 팝업도 임시 방문 기록으로 열고, 뒤로·닫기·적용은 그 기록에서 돌아온다. 팝업을 닫거나 앞으로 다시 열어도 변경한 태그와 원래 화면의 위치는 유지한다.
+- 지도 위 Sources/Categories 전환은 `marker-store`의 `sunrei.marker-mode.v1` localStorage 설정이다. 기본 source이며 기록·URL·태그·조회 범위를 바꾸지 않는다. 핀 DOM은 Place ID로 유지하면서 이미지·종류·좌표·선택·흐림을 갱신한다. 단일 출처는 실제 아바타, 여러 출처는 Source ID 중복을 뺀 숫자, 이미지 실패는 종류 SVG를 쓴다. 최소 44px 버튼과 소개 횟수의 접근성 이름을 제공한다.
+- `activeSpotId`와 `streetViewOpen/Expanded/Camera`는 ui-store에 있다. Place 핀·카드 선택은 Spot 선택을 지우며, 개별 소개 선택만 유효한 저장 `streetView`를 연다. desktop은 지도 오른쪽 아래, mobile은 선택한 소개 안에 한 뷰어를 둔다. 확대·닫기·파노라마 이동은 지도나 시트 상태를 바꾸지 않는다.
+- `use-street-view`는 저장 ID를 StreetViewService로 검증한 뒤 공식 뷰어를 지연 생성한다. ID가 없거나 달라지면 닫고 안내하며, 공개 앱은 위치 기반 대체 조회를 하지 않는다. 언마운트 시 SDK listener·뷰어·ResizeObserver를 해제하고 늦은 응답을 무시한다.
+- `place`·`spot`·`view=streetview`는 실제 공개 Place 상세의 spots로 검증한다. 잘못된 선택 정리는 현재 history를 교체한다. Spot 선택은 한 번 push, 보기·시점·확대·닫기는 replace이고 같은 Place의 소개 변경은 스크롤을 유지한다. 이전 version 1 snapshot에 새 필드가 없으면 닫힌 상태로 복원한다.
 - 장소 상세는 로딩·조회 실패 중에도 뒤로 버튼을 유지한다. 실패하면 한국어·영어 오류 안내와 재시도를 제공하며, 404는 장소를 찾을 수 없다고 안내한다.
 - locale은 URL 경로나 cookie 없이 `Accept-Language`로 정하고, 지원하지 않는 언어면 한국어로 보여 준다.
   문구는 `messages/ko.json`과 `messages/en.json`에 있다.
@@ -163,3 +167,7 @@ production 빌드에서만 활성화하며, 개발 서버와 admin에는 적용�
 - spot 카드의 썸네일은 링크가 YouTube면 영상 썸네일, 아니면 spot의 첫 이미지(Instagram 게시물 이미지 등)다.
 - Places 화면에서 장소를 폐업으로 바꾸거나 되돌리고, Edit 시트에서 이름, 주소, 좌표, Google place ID, 폐업 사유, 메모를 고친다(`PATCH /admin/places/{id}`).
   폐업은 장소 단위라 그 장소를 가리키는 모든 spot에 함께 보이며, 오류가 아니라 기록 상태라 앱과 같은 중립 외곽선 배지로 보인다.
+
+- Spot의 Edit Roadview는 저장된 Spot이고 Place·sourceLink의 미저장 변경이 없을 때만 연다. `StreetViewEditor`는 저장 상태·revision·재검토 사유를 조회하고, 필요하면 명시적으로 연 편집기에서만 OUTDOOR 50m 탐색을 한다. 지도 클릭·좌표로 검색 기준점을 지정하고, ready 상태의 시점만 별도 PATCH로 저장·삭제한다. 409는 최신 설정과 Spot을 다시 읽되 로컬 POV는 유지한다.
+- `streetViewApi`는 생성된 SunreisApi에 admin bearer token을 전달한다. 시점 저장은 Sunrei 전체 PUT을 하지 않으며 Sunrei 폼의 미저장 내용을 초기화하지 않는다.
+- PlaceSearchModal은 새 장소의 category를 받으며, Places의 PlaceEditSheet는 기존 장소 category를 명시적으로 수정한다. 기존 장소를 재사용하는 Spot 저장에서는 category를 바꾸지 않는다.
