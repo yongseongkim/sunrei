@@ -34,12 +34,15 @@ locations into the workspace's final `locations.json`.
    settles which videos to process.
    Reuse the user's selected scope; resolve an ambiguous selection before
    collecting evidence.
-2. Collect evidence with `youtube-extract-transcript`, once per selected
-   video. It collects captions, Whisper, and OCR for every video, runs the
-   isolated transcript reviewer, and builds `evidence_timeline.json`.
-   Checkpoint: the user accepts or rejects proposed transcript corrections
-   before those corrections enter saved text. Pending proposals can accompany
-   extraction or an explicitly requested admin review import.
+2. Use the installed `video-analysis` plugin for the question “Which real
+   places does this video introduce, when, and what connects each place to the visit?”
+   Follow the installed skill's `SKILL.md`. From the Sunrei root,
+   `python3 .claude/scripts/youtube/video_analysis_plugin.py` prints its directory.
+   Reuse the selected video's raw tracks. For a full ingest,
+   [youtube-extract-transcript](../youtube-extract-transcript/SKILL.md) handles
+   missing tracks, transcript decisions, and the resumable timeline.
+   Checkpoint: apply only accepted transcript corrections. Pending proposals
+   can accompany extraction or an explicitly requested admin review import.
 3. Extract locations with `youtube-extract-locations`: establish scope,
    collect source evidence including needed creator comments, build contextual
    candidates, resolve identity before new map queries, verify the exact

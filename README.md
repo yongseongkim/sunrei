@@ -59,7 +59,8 @@ API 계약은 `sunrei-api/`의 OpenAPI 명세 두 개가 기준이다.
 
 ## 콘텐츠 수집
 
-영상 하나를 직접 처리할 때는 Claude Code에서 `/youtube-to-sunrei <URL>` 스킬로 단계마다 확인하며 Sunrei를 만든다.
+영상이나 플레이리스트를 Sunrei로 만들 때는 [youtube-to-sunrei](.agents/skills/youtube-to-sunrei/SKILL.md)를 사용한다.
+영상 내용은 공통 플러그인 `video-analysis`로 확인한다. Sunrei는 자막·음성·화면에서 얻은 근거로 영상이 실제로 소개한 장소를 추리고 지도에서 지점을 대조한다. [수집기 플러그인 설정](.claude/scripts/youtube/AUTOMATION.md#video-analysis-plugin)
 등록한 플레이리스트에 새 영상이 올라오면 수집 스크립트가 장소 후보를 뽑아 DB에 쌓고, 운영자가 승인한 후보만 지도에 나온다.
 실행 방법은 `.claude/scripts/youtube/AUTOMATION.md`에 있다.
 

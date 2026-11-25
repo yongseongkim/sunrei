@@ -29,6 +29,24 @@ PROD_SERVER = "https://sunrei-api.yongseongkimm.com"
 UA = "sunrei-ingest/1.0"
 
 
+def video_metadata(value):
+    """Map a shared analyzer's YouTube .info.json to the public fields used by Sunrei."""
+    if value.get("type") == "video" or value.get("videoId"):
+        return value
+    if (value.get("extractor_key") == "Youtube" and value.get("_type", "video") == "video"
+            and value.get("id") and "entries" not in value):
+        return {
+            "videoId": value["id"],
+            "title": value.get("title", ""),
+            "description": value.get("description", ""),
+            "channelId": value.get("channel_id", ""),
+            "channelName": value.get("channel", ""),
+            "url": value.get("webpage_url") or f"https://www.youtube.com/watch?v={value['id']}",
+            "chapters": value.get("chapters") or [],
+        }
+    return value
+
+
 def workspace(id_or_path):
     p = Path(id_or_path)
     return p if p.is_dir() else WS_ROOT / id_or_path

@@ -7,11 +7,35 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import extract_locations_headless as extractor
-from evidence_timeline import ensure_timeline
+from location_workflow import evidence_ledger
+from evidence_timeline import build_timeline, ensure_timeline
+from video_analysis_plugin import skill_directory
 from stage_store import StageStore
 
 
 class ExtractionResumeTests(unittest.TestCase):
+    def test_shared_analysis_run_supplies_public_metadata_and_positioned_evidence(self):
+        with tempfile.TemporaryDirectory() as directory:
+            run = Path(directory)
+            info = {"id": "abc", "_type": "video", "extractor_key": "Youtube", "channel_id": "owner",
+                    "description": "1층 서점", "url": "https://example.org/temporary-download"}
+            (run / "metadata.json").write_text(json.dumps(info))
+            box = {"x": 0.1, "y": 0.15, "width": 0.3, "height": 0.05}
+            (run / "ocr.jsonl").write_text(json.dumps({"time": 0, "lines": [{"text": "서점", **box}]}))
+            metadata = extractor.load_metadata(run)
+            timeline, _ = ensure_timeline(run, "abc")
+            prompt = extractor.make_prompt(metadata, timeline, 0, 1)
+            self.assertIn((skill_directory() / "SKILL.md").read_text(), prompt)
+            self.assertIn("https://www.youtube.com/watch?v=abc", prompt)
+            self.assertNotIn("temporary-download", prompt)
+            self.assertEqual(metadata["channelId"], "owner")
+            ledger = evidence_ledger(metadata, timeline, {})["records"]
+            self.assertIsNone(next(r for r in ledger if r["source"] == "description")["startSeconds"])
+            observed = next(r for r in ledger if r["source"] == "ocr")
+            self.assertEqual(observed["startSeconds"], 0)
+            self.assertEqual(observed["boundingBox"], box)
+            self.assertEqual(timeline["inputFingerprint"], build_timeline(run, "abc")["inputFingerprint"])
+
     def test_interrupted_window_resumes_then_changed_input_invalidates(self):
         metadata = {"videoId": "abc", "title": "A venue", "description": "Venue A, City, Branch"}
         timeline = {"durationSeconds": 20, "events": [

@@ -15,6 +15,8 @@ Sunrei, and each approved location of each video is one SunreiSpot.
   `.claude/workspace/youtube/{ID}/locations.json`. Require location approval
   unless the user explicitly requested uploading for admin review, as described
   in `youtube-to-sunrei`'s Approval Boundaries.
+- Use the approved location export for spots. Shared `analysis.json` findings and
+  visual checks are evidence for the reviewer; they do not grant approval.
 - `transcripts.json` or `transcripts.reviewed.json` for the summary; fall back
   to the video descriptions when absent.
 - A reachable server: `http://localhost:3030` by default, production with

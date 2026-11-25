@@ -1,6 +1,6 @@
 ---
 name: youtube-extract-transcript
-description: Collect, align, and review YouTube captions, Whisper audio transcripts, and OCR text from video frames. Use when the user asks for a transcript, subtitles, on-screen text, multimodal transcript review, or the evidence stage of the YouTube-to-Sunrei workflow.
+description: Collect, align, and review YouTube captions, Whisper audio transcripts, and OCR text from video frames. Use for Sunrei transcript corrections, review decisions, and the evidence stage of a YouTube ingest.
 ---
 
 # Extract and Review YouTube Text
@@ -8,6 +8,8 @@ description: Collect, align, and review YouTube captions, Whisper audio transcri
 Collect captions, audio transcription, and on-screen text as three separate
 evidence tracks, review the primary transcript with an isolated agent, and
 align everything on one timeline. Raw source files are never modified.
+
+Use this adapter for Sunrei transcript corrections and registered-playlist collection. For a standalone video question, use the installed `video-analysis` plugin.
 
 ## Prerequisites
 
@@ -20,63 +22,25 @@ align everything on one timeline. Raw source files are never modified.
   descriptions: fetch each selected video's metadata before preparing its run,
   rather than using the playlist description as the video's evidence.
 
-## 1. Collect Every Source
+## 1. Collect or reuse tracks
 
-Attempt all three sources for every video. Whisper and OCR are not fallbacks
-for missing captions: each source catches what the others miss, and the
-extractor later weighs them against each other.
+Use the installed plugin's `SKILL.md` to select and interpret evidence.
+From the repository root, `python3 .claude/scripts/youtube/video_analysis_plugin.py` prints its directory.
+A scene question can start with chapters and captions; a full Sunrei ingest
+attempts captions, Whisper, and OCR for each selected video and records gaps.
+Use existing tracks for the same video and edit. When a scene remains ambiguous,
+inspect the original frames with the shared skill and record the observation and
+actual playback time. Ordinary transcript corrections use text evidence.
 
-Captions:
-
-```bash
-uv run --with youtube-transcript-api python .claude/scripts/youtube/extract_transcript.py "{VIDEO_ID}"
-```
-
-Save the unmodified result as `captions.json`. Check that the track belongs to
-this video: an uploaded track can be another video's subtitles. When the
-captions contradict the title, description, and on-screen text, mark them
-unusable and rely on Whisper and OCR.
-
-Whisper:
-
-```bash
-uv run --python 3.11 --with yt-dlp --with openai-whisper \
-  python .claude/scripts/youtube/whisper_transcribe.py \
-  "https://www.youtube.com/watch?v={VIDEO_ID}" base
-```
-
-Save the unmodified result as `audio_transcript.json`. Whisper runs locally,
-and the script deletes the downloaded audio afterwards. The script prints
-yt-dlp progress before its JSON, so a caller parses the trailing JSON object,
-not the whole output.
-
-OCR:
-
-```bash
-uv run --python 3.11 --with easyocr --with opencv-python-headless --with yt-dlp \
-  python .claude/scripts/youtube/extract_onscreen_text.py \
-  "https://www.youtube.com/watch?v={VIDEO_ID}" --lang ko,en --interval 1.0
-```
-
-Save the unmodified result as `onscreen_text.json`. Always run OCR, even when
-captions and Whisper look complete: creators often name the place only in
-burned-in subtitles, and scenes with music instead of speech carry names,
-addresses, and prices on screen only. Choose `--lang` by the language of the
-burned-in subtitles, not the country in the video. EasyOCR cannot load Korean
-and Japanese together, so run a second pass with `ja,en` when a sign or menu
-matters. Use `--interval 0.5` for rapidly changing text.
-
-This helper crops the bottom 30% of each frame. Signs elsewhere need a
-targeted full-frame inspection or separate OCR pass; changing `--lang` alone
-does not read the omitted area.
-
-Keep regular transcript review text-only. For unresolved visual clues or a
-mismatch with today's premises, read
-[visual and historical review](../youtube-extract-locations/references/visual-and-historical-review.md)
-for local frame selection, selective image verification, and dated web evidence.
-
-Preserve a source's structured error in its file and continue with the other
-sources. Stop only when every source is empty or unavailable.
+For the scheduled collector and the isolated transcript reviewer, use the
+[Sunrei track commands and file formats](references/collector-tracks.md).
+The renewal OCR helper reads the lower 30% of the frame. The shared analyzer’s
+full-frame OCR can also capture a sign above that region.
+The location runner accepts the shared run's original YouTube `metadata.json`,
+`captions.vtt`, `asr.json`, and `ocr.jsonl`. For a full ingest, prepare the primary
+review transcript from those tracks, carry forward accepted corrections, and
+rebuild the timeline. For a location-only question, reuse the available evidence
+and report pending decisions.
 
 ## 2. Create the Base Transcript
 
@@ -147,13 +111,13 @@ does not cause unrelated replacements elsewhere.
 ## 4. Build the Evidence Timeline
 
 ```bash
-uv run python .claude/scripts/youtube/evidence_timeline.py "{RUN_DIR}" --force
+uv run python .claude/scripts/youtube/evidence_timeline.py "{RUN_DIR}"
 ```
 
 `evidence_timeline.json` holds timestamp-ordered events labeled `transcript`,
 `whisper`, or `ocr`, plus each source's status and input hash. A track that
 duplicates another is marked `duplicate` and does not count as independent
-confirmation. This file and `metadata.json` are the input to
+confirmation. OCR events retain the original normalized `boundingBox` when supplied. This file and `metadata.json` are the input to
 `youtube-extract-locations`. The CLI reads the video ID from `metadata.json`;
 when using a run without that file, supply `--video-id VIDEO_ID`.
 

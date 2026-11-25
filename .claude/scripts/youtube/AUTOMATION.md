@@ -10,7 +10,34 @@ Because all state lives behind the API, the command runs on any machine that
 reaches it. `SUNREI_API_URL` selects the server; it defaults to production
 (`https://sunrei-api.yongseongkimm.com`).
 
+## Video analysis plugin
+
+The collector and the interactive Sunrei skills use the installed
+`video-analysis@yongseong-plugins` plugin. On a new Codex machine, run once:
+
+```sh
+codex plugin marketplace add yongseongkim/agent-plugins
+codex plugin add video-analysis@yongseong-plugins
+```
+
+From the Sunrei repository root, print the active skill directory with
+`python3 .claude/scripts/youtube/video_analysis_plugin.py`. Agents can open
+its `SKILL.md` and run its helpers from there. With another plugin host or in CI,
+set `SUNREI_VIDEO_ANALYSIS_PLUGIN` to the installed plugin directory containing
+`plugin.json`. Analysis requires an available plugin. The collector prints
+setup instructions when it cannot locate one.
+
 ## Workflow
+
+The plugin builds the timeline. Each headless extraction window receives the
+installed skill's instructions together with Sunrei's candidate schema and
+place-selection rules. The interactive reviewer uses the same plugin to
+inspect frames when the evidence leaves a visual question open.
+Existing Sunrei review files take precedence over portable inputs
+(`captions.vtt`, `asr.json`, `ocr.jsonl`). The scheduled collector still uses
+its per-track retries, transcript decisions and stage store. Interactive review
+can reuse the same timeline for a particular scene; the [handoff](../../../.agents/skills/youtube-extract-locations/references/source-evidence.md#reuse-a-video-analysis)
+describes how to check the analysis fingerprint and original evidence.
 
 1. List the playlists with `syncEnabled` from the API.
 2. Fetch each playlist and its video details from the YouTube Data API.

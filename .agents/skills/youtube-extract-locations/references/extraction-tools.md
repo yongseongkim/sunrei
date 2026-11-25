@@ -14,7 +14,9 @@ uv run python .claude/scripts/youtube/evidence_timeline.py "{RUN_DIR}"
 uv run --with openai-codex==0.160.0 python .claude/scripts/youtube/extract_locations_headless.py "{RUN_DIR}"
 ```
 
-The extractor consumes metadata, verified creator comments and text windows,
+Use a single-video Sunrei run or an existing video-analysis run with its original
+YouTube metadata and track files. The extractor consumes public metadata,
+verified creator comments and text windows,
 writes `location_candidates.json` with pending decisions, and does not browse,
 see frames, geocode or write spots. It supports metadata-only proposals with
 unknown scene times; that does not establish full visit context or coverage.

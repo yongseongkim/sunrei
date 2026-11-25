@@ -83,5 +83,6 @@ rebuild a curated `video_info.json` for them; see
 ## Finish
 
 Report the path of `video_info.json`, the channel, and the number of selected
-videos. Do not start transcript extraction; `youtube-to-sunrei` decides the
+videos. Pass the selected IDs and per-video metadata to the evidence stage; the
+shared analyzer uses each video’s own description and chapters. Do not start transcript extraction; `youtube-to-sunrei` decides the
 next step.

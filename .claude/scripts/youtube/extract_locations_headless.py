@@ -17,11 +17,12 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from _common import workspace
+from _common import video_metadata, workspace
 from creator_comments import model_creator_comments
 from stage_store import StageStore
 from structured_agent import run_structured
 from evidence_timeline import ensure_timeline
+from video_analysis_plugin import skill_directory
 
 SCHEMA_FILE = Path(__file__).with_name("location_candidates.schema.json")
 PROMPT_FILE = Path(__file__).parent / "prompts" / "extract_locations.md"
@@ -68,7 +69,7 @@ def load_metadata(ws):
     for file_name in ("metadata.json", "video_info.json"):
         path = ws / file_name
         if path.is_file():
-            value = read_json(path)
+            value = video_metadata(read_json(path))
             if value.get("type") == "video" or value.get("videoId"):
                 comments_path = ws / "creator_comments.json"
                 if comments_path.is_file():
@@ -110,6 +111,7 @@ def make_prompt(metadata, timeline, start, end):
             "videoId": video_id,
             "title": metadata.get("title", ""),
             "description": metadata.get("description", ""),
+            "chapters": metadata.get("chapters") or [],
             "channelId": metadata.get("channelId", ""),
             "channelName": metadata.get("channelName", ""),
             "playlistId": metadata.get("playlistId", ""),
@@ -126,7 +128,9 @@ def make_prompt(metadata, timeline, start, end):
         },
     }
     return (
-        PROMPT_FILE.read_text(encoding="utf-8")
+        (skill_directory() / "SKILL.md").read_text(encoding="utf-8")
+        + "\n\n"
+        + PROMPT_FILE.read_text(encoding="utf-8")
         + "\n## Input Data\n\n"
         + json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
     )
@@ -290,12 +294,14 @@ def main():
         store=store,
         force=args.restart,
     )
+    policy_files = [skill_directory() / "SKILL.md", PROMPT_FILE, SCHEMA_FILE]
+
     def combine():
         candidates = merge_results(metadata, source_sha, results)
-        candidates["promptSha256"] = sha256_files([PROMPT_FILE, SCHEMA_FILE])
+        candidates["promptSha256"] = sha256_files(policy_files)
         return candidates
     candidates = store.run("text-candidates", {"sourceSha256": source_sha, "results": results},
-                           [PROMPT_FILE, SCHEMA_FILE, Path(__file__)], combine, force=args.restart)
+                           [*policy_files, Path(__file__)], combine, force=args.restart)
     write_json(output, candidates)
     print(f"review pending -> {output}")
 
